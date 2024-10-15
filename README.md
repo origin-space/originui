@@ -1,6 +1,6 @@
 A growing collection of over 50 input components built with Next.js and TailwindCSS.
 
-**Demo** → [originui.vercel.app](https://originui.vercel.app)
+**Demo** → [https://origin-ui-alpha.vercel.app/](https://origin-ui-alpha.vercel.app/)
 
 ## Documentation
 
