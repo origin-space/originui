@@ -1,0 +1,56 @@
+{
+  "name": "originui",
+  "version": "0.1.0",
+  "private": true,
+  "prettier": {
+    "semi": true,
+    "singleQuote": false,
+    "printWidth": 100,
+    "plugins": [
+      "prettier-plugin-organize-imports",
+      "prettier-plugin-tailwindcss"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "tsconfig.json"
+        ],
+        "options": {
+          "parser": "jsonc"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "format": "prettier --write .",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "input-otp": "^1.2.4",
+    "lucide-react": "^0.451.0",
+    "next": "^14.2.15",
+    "react": "^18",
+    "react-aria-components": "^1.4.0",
+    "react-dom": "^18",
+    "react-payment-inputs": "^1.2.0",
+    "react-phone-number-input": "^3.4.8",
+    "tailwind-merge": "^2.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-payment-inputs": "^1.1.4",
+    "postcss": "^8",
+    "prettier": "^3.3.3",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5"
+  }
+}
