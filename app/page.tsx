@@ -1,10 +1,10 @@
 import DemoComponent from "@/demo/demo-component";
 import Image from "next/image";
 
+import GithubButton from "@/demo/github-button";
+import ThemeToggle from "@/demo/theme-toggle";
 import DavideImg from "@/public/x-davide.jpg";
 import PasqualeImg from "@/public/x-pasquale.jpg";
-import ThemeToggle from "@/demo/theme-toggle";
-import GithubButton from "@/demo/github-button";
 
 // Define an array of input file names
 const inputFiles = [
@@ -74,7 +74,7 @@ export default function Home() {
           </header>
           <div className="flex items-center gap-4">
             <ThemeToggle />
-            <GithubButton />    
+            <GithubButton />
           </div>
         </div>
 
