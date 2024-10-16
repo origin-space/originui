@@ -38,7 +38,8 @@
     "react-dom": "^18",
     "react-payment-inputs": "^1.2.0",
     "react-phone-number-input": "^3.4.8",
-    "tailwind-merge": "^2.5.3"
+    "tailwind-merge": "^2.5.3",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^22.7.5",
@@ -50,7 +51,6 @@
     "prettier-plugin-organize-imports": "^4.1.0",
     "prettier-plugin-tailwindcss": "^0.6.8",
     "tailwindcss": "^3.4.1",
-    "tailwindcss-animate": "^1.0.7",
     "typescript": "^5"
   }
 }
