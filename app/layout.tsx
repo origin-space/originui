@@ -1,3 +1,5 @@
+import Header from "@/demo/layout/header";
+import { ThemeProvider } from "@/demo/theme-provider";
 import type { Viewport } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
@@ -20,8 +22,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${fontSans.variable} bg-background font-sans antialiased`}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${fontSans.variable} bg-background font-sans antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="relative flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
+            <Header />
+            {children}
+          </div>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
