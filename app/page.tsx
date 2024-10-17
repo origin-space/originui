@@ -34,7 +34,7 @@ export default function Page() {
             </div>
             <div className="space-y-8">
               <div>
-                <h1 className="mx-auto mb-4 max-w-3xl text-4xl font-black tracking-tight text-foreground md:text-5xl">
+                <h1 className="mx-auto mb-4 max-w-3xl text-4xl/[1.1] font-black tracking-tight text-foreground md:text-5xl/[1.1]">
                   Beautiful UI components built with Tailwind CSS and Next.js.
                 </h1>
                 <p className="text-lg text-muted-foreground">
