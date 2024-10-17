@@ -25,7 +25,7 @@ export default function Input24() {
         <Input
           id="input-24"
           ref={inputRef}
-          className="pr-9"
+          className="pe-9"
           placeholder="Type something..."
           type="text"
           value={inputValue}
@@ -33,7 +33,7 @@ export default function Input24() {
         />
         {inputValue && (
           <button
-            className="absolute inset-y-px right-px flex h-full w-9 items-center justify-center rounded-r-lg border border-transparent text-muted-foreground/80 ring-offset-background transition-shadow animate-in fade-in zoom-in-75 hover:text-foreground focus-visible:border-ring focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+            className="absolute inset-y-px end-px flex h-full w-9 items-center justify-center rounded-e-lg border border-transparent text-muted-foreground/80 ring-offset-background transition-shadow animate-in fade-in zoom-in-75 hover:text-foreground focus-visible:border-ring focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
             aria-label="Clear input"
             onClick={handleClearInput}
           >

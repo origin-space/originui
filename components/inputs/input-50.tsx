@@ -16,8 +16,11 @@ export default function Input50() {
       <legend className="text-sm font-medium text-foreground">Card Details</legend>
       <div className="rounded-lg shadow-sm shadow-black/[.04]">
         <div className="relative focus-within:z-10">
-          <Input className="peer rounded-b-none pr-9 shadow-none" {...getCardNumberProps()} />
-          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center justify-center pr-3 text-muted-foreground/80 peer-disabled:opacity-50">
+          <Input
+            className="peer rounded-b-none pe-9 shadow-none [direction:_inherit]"
+            {...getCardNumberProps()}
+          />
+          <div className="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground/80 peer-disabled:opacity-50">
             {meta.cardType ? (
               <svg
                 className="overflow-hidden rounded-sm"
@@ -32,12 +35,15 @@ export default function Input50() {
         <div className="-mt-px flex">
           <div className="w-1/2 min-w-0 flex-1 focus-within:z-10">
             <Input
-              className="rounded-r-none rounded-t-none shadow-none"
+              className="rounded-e-none rounded-t-none shadow-none [direction:_inherit]"
               {...getExpiryDateProps()}
             />
           </div>
-          <div className="-ml-px w-1/2 min-w-0 flex-1 focus-within:z-10">
-            <Input className="rounded-l-none rounded-t-none shadow-none" {...getCVCProps()} />
+          <div className="-ms-px w-1/2 min-w-0 flex-1 focus-within:z-10">
+            <Input
+              className="rounded-s-none rounded-t-none shadow-none [direction:_inherit]"
+              {...getCVCProps()}
+            />
           </div>
         </div>
       </div>
