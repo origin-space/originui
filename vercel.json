@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://originui.com/:path*",
+      "statusCode": 301,
+      "has": [
+        {
+          "type": "host",
+          "value": "origin-ui-alpha.vercel.app"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "https://originui.com/inputs",
+      "statusCode": 301,
+      "has": [
+        {
+          "type": "host",
+          "value": "origin-ui-alpha.vercel.app"
+        }
+      ]
+    }
+  ]
+}
