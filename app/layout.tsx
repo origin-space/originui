@@ -1,4 +1,4 @@
-import Header from "@/demo/layout/header";
+import Header from "@/demo/header";
 import { ThemeProvider } from "@/demo/theme-provider";
 import type { Viewport } from "next";
 import { Inter as FontSans } from "next/font/google";
