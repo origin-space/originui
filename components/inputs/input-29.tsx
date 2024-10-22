@@ -24,13 +24,13 @@ export default function Input29() {
               slot="increment"
               className="-me-px flex h-1/2 w-6 flex-1 items-center justify-center border border-input bg-background text-sm text-muted-foreground/80 ring-offset-background transition-shadow hover:bg-accent hover:text-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
             >
-              <ChevronUp size={12} strokeWidth={2} aria-hidden="true" role="presentation" />
+              <ChevronUp size={12} strokeWidth={2} aria-hidden="true" />
             </Button>
             <Button
               slot="decrement"
               className="-me-px -mt-px flex h-1/2 w-6 flex-1 items-center justify-center border border-input bg-background text-sm text-muted-foreground/80 ring-offset-background transition-shadow hover:bg-accent hover:text-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
             >
-              <ChevronDown size={12} strokeWidth={2} aria-hidden="true" role="presentation" />
+              <ChevronDown size={12} strokeWidth={2} aria-hidden="true" />
             </Button>
           </div>
         </Group>

@@ -19,7 +19,7 @@ export default function Input39() {
           )}
         </DateInput>
         <div className="pointer-events-none absolute inset-y-0 end-0 z-10 flex items-center justify-center pe-3 text-muted-foreground/80">
-          <Clock size={16} strokeWidth={2} aria-hidden="true" role="presentation" />
+          <Clock size={16} strokeWidth={2} aria-hidden="true" />
         </div>
       </div>
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">

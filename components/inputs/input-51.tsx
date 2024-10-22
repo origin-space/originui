@@ -9,9 +9,9 @@ import { useMemo, useState } from "react";
 
 export default function Input51() {
   const [password, setPassword] = useState("");
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  const toggleVisibility = () => setIsVisible(!isVisible);
+  const toggleVisibility = () => setIsVisible((prevState) => !prevState);
 
   const checkStrength = (pass: string) => {
     const requirements = [
@@ -73,9 +73,9 @@ export default function Input51() {
             aria-controls="password"
           >
             {isVisible ? (
-              <EyeOff size={16} strokeWidth={2} aria-hidden="true" role="presentation" />
+              <EyeOff size={16} strokeWidth={2} aria-hidden="true" />
             ) : (
-              <Eye size={16} strokeWidth={2} aria-hidden="true" role="presentation" />
+              <Eye size={16} strokeWidth={2} aria-hidden="true" />
             )}
           </button>
         </div>

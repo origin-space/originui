@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 
 export default function Input27() {
   const [inputValue, setInputValue] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     if (inputValue) {
@@ -43,7 +43,7 @@ export default function Input27() {
               role="presentation"
             />
           ) : (
-            <Search size={16} strokeWidth={2} aria-hidden="true" role="presentation" />
+            <Search size={16} strokeWidth={2} aria-hidden="true" />
           )}
         </div>
         <button
@@ -51,7 +51,7 @@ export default function Input27() {
           aria-label="Press to speak"
           type="submit"
         >
-          <Mic size={16} strokeWidth={2} aria-hidden="true" role="presentation" />
+          <Mic size={16} strokeWidth={2} aria-hidden="true" />
         </button>
       </div>
     </div>

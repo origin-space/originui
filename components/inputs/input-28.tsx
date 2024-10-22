@@ -17,14 +17,14 @@ export default function Input28() {
             slot="decrement"
             className="-ms-px flex aspect-square h-[inherit] items-center justify-center rounded-s-lg border border-input bg-background text-sm text-muted-foreground/80 ring-offset-background transition-shadow hover:bg-accent hover:text-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
           >
-            <Minus size={16} strokeWidth={2} aria-hidden="true" role="presentation" />
+            <Minus size={16} strokeWidth={2} aria-hidden="true" />
           </Button>
           <Input className="w-full grow bg-background px-3 py-2 text-center tabular-nums text-foreground focus:outline-none" />
           <Button
             slot="increment"
             className="-me-px flex aspect-square h-[inherit] items-center justify-center rounded-e-lg border border-input bg-background text-sm text-muted-foreground/80 ring-offset-background transition-shadow hover:bg-accent hover:text-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
           >
-            <Plus size={16} strokeWidth={2} aria-hidden="true" role="presentation" />
+            <Plus size={16} strokeWidth={2} aria-hidden="true" />
           </Button>
         </Group>
       </div>
