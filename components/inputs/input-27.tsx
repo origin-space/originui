@@ -27,13 +27,13 @@ export default function Input27() {
       <div className="relative">
         <Input
           id="input-27"
-          className="peer pl-9 pr-9"
+          className="peer pe-9 ps-9"
           placeholder="Search..."
           type="search"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-3 text-muted-foreground/80 peer-disabled:opacity-50">
+        <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 peer-disabled:opacity-50">
           {isLoading ? (
             <LoaderCircle
               className="animate-spin"
@@ -47,7 +47,7 @@ export default function Input27() {
           )}
         </div>
         <button
-          className="absolute inset-y-px right-px flex h-full w-9 items-center justify-center rounded-r-lg text-muted-foreground/80 ring-offset-background transition-shadow hover:text-foreground focus-visible:border focus-visible:border-ring focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+          className="absolute inset-y-px end-px flex h-full w-9 items-center justify-center rounded-e-lg text-muted-foreground/80 ring-offset-background transition-shadow hover:text-foreground focus-visible:border focus-visible:border-ring focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
           aria-label="Press to speak"
           type="submit"
         >

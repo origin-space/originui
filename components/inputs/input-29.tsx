@@ -22,13 +22,13 @@ export default function Input29() {
           <div className="flex h-[calc(100%+2px)] flex-col">
             <Button
               slot="increment"
-              className="-mr-px flex h-1/2 w-6 flex-1 items-center justify-center rounded-tr-lg border border-input bg-background text-sm text-muted-foreground/80 ring-offset-background transition-shadow hover:bg-accent hover:text-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+              className="-me-px flex h-1/2 w-6 flex-1 items-center justify-center border border-input bg-background text-sm text-muted-foreground/80 ring-offset-background transition-shadow hover:bg-accent hover:text-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
             >
               <ChevronUp size={12} strokeWidth={2} aria-hidden="true" />
             </Button>
             <Button
               slot="decrement"
-              className="-mr-px -mt-px flex h-1/2 w-6 flex-1 items-center justify-center rounded-br-lg border border-input bg-background text-sm text-muted-foreground/80 ring-offset-background transition-shadow hover:bg-accent hover:text-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+              className="-me-px -mt-px flex h-1/2 w-6 flex-1 items-center justify-center border border-input bg-background text-sm text-muted-foreground/80 ring-offset-background transition-shadow hover:bg-accent hover:text-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
             >
               <ChevronDown size={12} strokeWidth={2} aria-hidden="true" />
             </Button>

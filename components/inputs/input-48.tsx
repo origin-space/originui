@@ -12,7 +12,7 @@ export default function Input48() {
   return (
     <div className="space-y-2">
       <Label htmlFor="expiryDate">Expiry date</Label>
-      <Input {...getExpiryDateProps()} />
+      <Input {...getExpiryDateProps()} className="[direction:_inherit]" />
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
         Built with{" "}
         <a
