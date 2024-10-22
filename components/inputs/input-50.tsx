@@ -25,7 +25,7 @@ export default function Input50() {
                 width={20}
               />
             ) : (
-              <CreditCard size={16} strokeWidth={2} aria-hidden="true" role="presentation" />
+              <CreditCard size={16} strokeWidth={2} aria-hidden="true" />
             )}
           </div>
         </div>

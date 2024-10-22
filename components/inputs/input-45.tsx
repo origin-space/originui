@@ -24,7 +24,7 @@ export default function Input45() {
             </div>
 
             <div className="text-muted-foreground/80">
-              <Minus size={16} strokeWidth={2} aria-hidden="true" role="presentation" />
+              <Minus size={16} strokeWidth={2} aria-hidden="true" />
             </div>
 
             <div className="flex">

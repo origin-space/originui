@@ -104,11 +104,7 @@ const FlagComponent = ({ country, countryName }: RPNInput.FlagProps) => {
 
   return (
     <span className="w-5 overflow-hidden rounded-sm">
-      {Flag ? (
-        <Flag title={countryName} />
-      ) : (
-        <Phone size={16} aria-hidden="true" role="presentation" />
-      )}
+      {Flag ? <Flag title={countryName} /> : <Phone size={16} aria-hidden="true" />}
     </span>
   );
 };

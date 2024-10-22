@@ -37,7 +37,7 @@ export default function Input24() {
             aria-label="Clear input"
             onClick={handleClearInput}
           >
-            <CircleX size={16} strokeWidth={2} aria-hidden="true" role="presentation" />
+            <CircleX size={16} strokeWidth={2} aria-hidden="true" />
           </button>
         )}
       </div>

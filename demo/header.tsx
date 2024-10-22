@@ -9,9 +9,9 @@ export default function Header() {
   return (
     <header>
       <div className="px-4 sm:px-6">
-        <div className="mx-auto mb-16 flex h-[72px] w-full max-w-5xl items-center justify-between">
+        <div className="mx-auto mb-16 flex h-[72px] w-full max-w-6xl items-center justify-between border-b border-border/70">
           <Link href="/" aria-label="Home">
-            <span className="sr-only">OriginUI</span>
+            <span className="sr-only">Origin UI</span>
             <svg
               className="stroke-zinc-800 dark:stroke-zinc-100"
               xmlns="http://www.w3.org/2000/svg"

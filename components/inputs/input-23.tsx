@@ -8,9 +8,9 @@ import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 
 export default function Input23() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  const toggleVisibility = () => setIsVisible(!isVisible);
+  const toggleVisibility = () => setIsVisible((prevState) => !prevState);
 
   return (
     <div className="space-y-2">
@@ -31,9 +31,9 @@ export default function Input23() {
           aria-controls="password"
         >
           {isVisible ? (
-            <EyeOff size={16} strokeWidth={2} aria-hidden="true" role="presentation" />
+            <EyeOff size={16} strokeWidth={2} aria-hidden="true" />
           ) : (
-            <Eye size={16} strokeWidth={2} aria-hidden="true" role="presentation" />
+            <Eye size={16} strokeWidth={2} aria-hidden="true" />
           )}
         </button>
       </div>
