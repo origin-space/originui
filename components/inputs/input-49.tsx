@@ -12,7 +12,7 @@ export default function Input49() {
   return (
     <div className="space-y-2">
       <Label htmlFor="cvc">Code</Label>
-      <Input {...getCVCProps()} className="[direction:_inherit]" />
+      <Input {...getCVCProps()} className="[direction:inherit]" />
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
         Built with{" "}
         <a

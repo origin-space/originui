@@ -17,7 +17,7 @@ export default function Input50() {
       <div className="rounded-lg shadow-sm shadow-black/[.04]">
         <div className="relative focus-within:z-10">
           <Input
-            className="peer rounded-b-none pe-9 shadow-none [direction:_inherit]"
+            className="peer rounded-b-none pe-9 shadow-none [direction:inherit]"
             {...getCardNumberProps()}
           />
           <div className="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground/80 peer-disabled:opacity-50">
@@ -35,13 +35,13 @@ export default function Input50() {
         <div className="-mt-px flex">
           <div className="w-1/2 min-w-0 flex-1 focus-within:z-10">
             <Input
-              className="rounded-e-none rounded-t-none shadow-none [direction:_inherit]"
+              className="rounded-e-none rounded-t-none shadow-none [direction:inherit]"
               {...getExpiryDateProps()}
             />
           </div>
           <div className="-ms-px w-1/2 min-w-0 flex-1 focus-within:z-10">
             <Input
-              className="rounded-s-none rounded-t-none shadow-none [direction:_inherit]"
+              className="rounded-s-none rounded-t-none shadow-none [direction:inherit]"
               {...getCVCProps()}
             />
           </div>
