@@ -5,7 +5,7 @@ export default function Radio12() {
   return (
     <RadioGroup className="grid-cols-3" defaultValue="cc">
       {/* Credit card */}
-      <label className="relative items-center text-center py-3 px-2 border border-input rounded-lg shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-muted-foreground flex flex-col gap-3 cursor-pointer ring-offset-background transition-colors focus-within:ring-2 focus-within:ring-ring/70 focus-within:ring-offset-2">
+      <label className="relative items-center text-center py-3 px-2 border border-input rounded-lg shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-muted-foreground flex flex-col gap-3 cursor-pointer ring-offset-background transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring/70 has-[:focus-visible]:ring-offset-2">
         <RadioGroupItem
           id="radio-12-cc"
           value="cc"
@@ -15,7 +15,7 @@ export default function Radio12() {
         <p className="text-xs font-medium leading-none text-foreground">Card</p>
       </label>
       {/* PayPal */}
-      <label className="relative items-center text-center py-3 px-2 border border-input rounded-lg shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-muted-foreground flex flex-col gap-3 cursor-pointer ring-offset-background transition-colors focus-within:ring-2 focus-within:ring-ring/70 focus-within:ring-offset-2">
+      <label className="relative items-center text-center py-3 px-2 border border-input rounded-lg shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-muted-foreground flex flex-col gap-3 cursor-pointer ring-offset-background transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring/70 has-[:focus-visible]:ring-offset-2">
         <RadioGroupItem
           id="radio-12-paypal"
           value="paypal"
@@ -25,7 +25,7 @@ export default function Radio12() {
         <p className="text-xs font-medium leading-none text-foreground">PayPal</p>
       </label>
       {/* Apple Pay */}
-      <label className="relative items-center text-center py-3 px-2 border border-input rounded-lg shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-muted-foreground flex flex-col gap-3 cursor-pointer ring-offset-background transition-colors focus-within:ring-2 focus-within:ring-ring/70 focus-within:ring-offset-2">
+      <label className="relative items-center text-center py-3 px-2 border border-input rounded-lg shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-muted-foreground flex flex-col gap-3 cursor-pointer ring-offset-background transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring/70 has-[:focus-visible]:ring-offset-2">
         <RadioGroupItem
           id="radio-12-apple-pay"
           value="apple-pay"
