@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { CheckIcon } from "@radix-ui/react-icons"
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
 
 import { cn } from "@/lib/utils"
@@ -12,7 +11,7 @@ const RadioGroup = React.forwardRef<
 >(({ className, ...props }, ref) => {
   return (
     <RadioGroupPrimitive.Root
-      className={cn("grid gap-1", className)}
+      className={cn("grid gap-3", className)}
       {...props}
       ref={ref}
     />
@@ -28,13 +27,25 @@ const RadioGroupItem = React.forwardRef<
     <RadioGroupPrimitive.Item
       ref={ref}
       className={cn(
-        "aspect-square h-4 w-4 rounded-full border border-primary text-primary shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+        "aspect-square size-4 rounded-full border border-input shadow-sm shadow-black/[.04] ring-offset-background transition-shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground data-[state=checked]:border-primary",
         className
       )}
       {...props}
     >
-      <RadioGroupPrimitive.Indicator className="flex items-center justify-center">
-        <CheckIcon className="h-3.5 w-3.5 fill-primary" />
+      <RadioGroupPrimitive.Indicator className="flex items-center justify-center text-current">
+        <svg
+          width="6"
+          height="6"
+          viewBox="0 0 6 6"
+          fill="currentcolor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="3"
+            cy="3"
+            r="3"
+          />
+        </svg>
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
   )

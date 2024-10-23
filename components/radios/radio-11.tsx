@@ -1,24 +1,25 @@
 import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { SwatchBook, Brush, Eraser, Scissors } from "lucide-react";
 
 const items = [
-  { id: "checkbox-1", label: "Palette", Icon: SwatchBook, defaultChecked: true },
-  { id: "checkbox-2", label: "Brush", Icon: Brush },
-  { id: "checkbox-3", label: "Eraser", Icon: Eraser },
-  { id: "checkbox-4", label: "Cut", Icon: Scissors },
+  { id: "radio-1", label: "Palette", Icon: SwatchBook },
+  { id: "radio-2", label: "Brush", Icon: Brush },
+  { id: "radio-3", label: "Eraser", Icon: Eraser },
+  { id: "radio-4", label: "Cut", Icon: Scissors },
 ];
 
-export default function Checkbox14() {
+export default function Radio11() {
   return (
-    <div className="grid grid-cols-2 gap-3">
+    <RadioGroup className="grid-cols-2" defaultValue="radio-1">
       {items.map((item) => (
         <div className="relative items-top p-4 border border-input rounded-lg shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-muted-foreground flex flex-col gap-4">
           <div className="flex justify-between space-x-2 space-x-reverse">
-            <Checkbox
+            <RadioGroupItem
+              key={item.id}
               id={item.id}
+              value={item.id}
               className="order-1 after:absolute after:inset-0"
-              defaultChecked={item.defaultChecked}
             />
             <item.Icon className="opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
           </div>
@@ -27,6 +28,6 @@ export default function Checkbox14() {
           </Label>
         </div>
       ))}
-    </div>
+    </RadioGroup>
   )
 }

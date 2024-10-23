@@ -1,13 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 
-
 export default function Checkbox13() {
   const [checked, setChecked] = useState<boolean | "indeterminate">(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+      if (checked === true && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [checked]);
 
   return (
     <div>
@@ -18,7 +24,7 @@ export default function Checkbox13() {
           onCheckedChange={setChecked}
           aria-controls="checkbox-input-13"    
         />
-        <div className="grow grid gap-3">
+        <div className="grow">
           <div className="grid gap-1">
             <Label htmlFor="checkbox-13">
               Checkbox with expansion
@@ -32,12 +38,13 @@ export default function Checkbox13() {
             role="region"
             id="checkbox-input-13"
             aria-labelledby="checkbox-13" 
-            className="grid overflow-hidden transition-all -m-2 ease-in-out data-[state=expanded]:grid-rows-[1fr] data-[state=expanded]:opacity-100 data-[state=collapsed]:grid-rows-[0fr] data-[state=collapsed]:opacity-0"
+            className="grid transition-all ease-in-out data-[state=expanded]:grid-rows-[1fr] data-[state=expanded]:opacity-100 data-[state=collapsed]:grid-rows-[0fr] data-[state=collapsed]:opacity-0"
             data-state={checked ? "expanded" : "collapsed"}
           >
-            <div className="overflow-hidden">   
-              <div className="p-2">
+            <div className="overflow-hidden -m-2 p-2">   
+              <div className="mt-3">
                 <Input
+                  ref={inputRef}
                   type="text"
                   id="additional-info"
                   placeholder="Enter details"
@@ -48,7 +55,7 @@ export default function Checkbox13() {
             </div>    
           </div>
         </div>    
-      </div>   
+      </div>
     </div>
   )
 }
