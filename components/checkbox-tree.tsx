@@ -7,7 +7,7 @@
 
 "use client";
 
-import React, { useState, useCallback, useMemo } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 
 interface TreeNode {
   id: string;
@@ -31,39 +31,45 @@ function useCheckboxTree(initialTree: TreeNode) {
 
   const [checkedNodes, setCheckedNodes] = useState<Set<string>>(initialCheckedNodes);
 
-  const isChecked = useCallback((node: TreeNode): boolean | "indeterminate" => {
-    if (!node.children) {
-      return checkedNodes.has(node.id);
-    }
-
-    const childrenChecked = node.children.map((child) => isChecked(child));
-    if (childrenChecked.every((status) => status === true)) {
-      return true;
-    }
-    if (childrenChecked.some((status) => status === true || status === "indeterminate")) {
-      return "indeterminate";
-    }
-    return false;
-  }, [checkedNodes]);
-
-  const handleCheck = useCallback((node: TreeNode) => {
-    const newCheckedNodes = new Set(checkedNodes);
-
-    const toggleNode = (n: TreeNode, check: boolean) => {
-      if (check) {
-        newCheckedNodes.add(n.id);
-      } else {
-        newCheckedNodes.delete(n.id);
+  const isChecked = useCallback(
+    (node: TreeNode): boolean | "indeterminate" => {
+      if (!node.children) {
+        return checkedNodes.has(node.id);
       }
-      n.children?.forEach(child => toggleNode(child, check));
-    };
 
-    const currentStatus = isChecked(node);
-    const newCheck = currentStatus !== true;
+      const childrenChecked = node.children.map((child) => isChecked(child));
+      if (childrenChecked.every((status) => status === true)) {
+        return true;
+      }
+      if (childrenChecked.some((status) => status === true || status === "indeterminate")) {
+        return "indeterminate";
+      }
+      return false;
+    },
+    [checkedNodes],
+  );
 
-    toggleNode(node, newCheck);
-    setCheckedNodes(newCheckedNodes);
-  }, [checkedNodes, isChecked]);
+  const handleCheck = useCallback(
+    (node: TreeNode) => {
+      const newCheckedNodes = new Set(checkedNodes);
+
+      const toggleNode = (n: TreeNode, check: boolean) => {
+        if (check) {
+          newCheckedNodes.add(n.id);
+        } else {
+          newCheckedNodes.delete(n.id);
+        }
+        n.children?.forEach((child) => toggleNode(child, check));
+      };
+
+      const currentStatus = isChecked(node);
+      const newCheck = currentStatus !== true;
+
+      toggleNode(node, newCheck);
+      setCheckedNodes(newCheckedNodes);
+    },
+    [checkedNodes, isChecked],
+  );
 
   return { isChecked, handleCheck };
 }

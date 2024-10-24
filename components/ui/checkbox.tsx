@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 const Checkbox = React.forwardRef<
   React.ElementRef<typeof CheckboxPrimitive.Root>,
@@ -12,8 +12,8 @@ const Checkbox = React.forwardRef<
   <CheckboxPrimitive.Root
     ref={ref}
     className={cn(
-      "peer size-4 shrink-0 rounded border border-input shadow-sm shadow-black/[.04] ring-offset-background transition-shadow focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground data-[state=checked]:border-primary data-[state=indeterminate]:bg-primary data-[state=indeterminate]:text-primary-foreground data-[state=indeterminate]:border-primary",
-      className
+      "peer size-4 shrink-0 rounded border border-input shadow-sm shadow-black/[.04] ring-offset-background transition-shadow focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-primary data-[state=indeterminate]:border-primary data-[state=checked]:bg-primary data-[state=indeterminate]:bg-primary data-[state=checked]:text-primary-foreground data-[state=indeterminate]:text-primary-foreground",
+      className,
     )}
     {...props}
   >
@@ -27,10 +27,10 @@ const Checkbox = React.forwardRef<
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M0.75 4.5C0.75 4.08579 1.08579 3.75 1.5 3.75H7.5C7.91421 3.75 8.25 4.08579 8.25 4.5C8.25 4.91421 7.91421 5.25 7.5 5.25H1.5C1.08579 5.25 0.75 4.91421 0.75 4.5Z"
-        />
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M0.75 4.5C0.75 4.08579 1.08579 3.75 1.5 3.75H7.5C7.91421 3.75 8.25 4.08579 8.25 4.5C8.25 4.91421 7.91421 5.25 7.5 5.25H1.5C1.08579 5.25 0.75 4.91421 0.75 4.5Z"
+          />
         </svg>
       ) : (
         <svg
@@ -49,7 +49,7 @@ const Checkbox = React.forwardRef<
       )}
     </CheckboxPrimitive.Indicator>
   </CheckboxPrimitive.Root>
-))
-Checkbox.displayName = CheckboxPrimitive.Root.displayName
+));
+Checkbox.displayName = CheckboxPrimitive.Root.displayName;
 
-export { Checkbox }
+export { Checkbox };

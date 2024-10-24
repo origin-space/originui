@@ -12,10 +12,13 @@ const items = [
 export default function Radio13() {
   return (
     <fieldset className="space-y-3">
-      <legend className="text-sm font-medium leading-none text-foreground">CPU Cores</legend>    
+      <legend className="text-sm font-medium leading-none text-foreground">CPU Cores</legend>
       <RadioGroup className="grid grid-cols-3 gap-2" defaultValue="r1">
         {items.map((item) => (
-          <label key={item.id} className="relative items-center text-center py-3 px-2 border border-input rounded-lg shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-muted-foreground flex flex-col gap-3 cursor-pointer ring-offset-background transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring/70 has-[:focus-visible]:ring-offset-2 has-[[data-disabled]]:cursor-not-allowed has-[[data-disabled]]:opacity-50">
+          <label
+            key={item.id}
+            className="relative flex cursor-pointer flex-col items-center gap-3 rounded-lg border border-input px-2 py-3 text-center shadow-sm shadow-black/[.04] ring-offset-background transition-colors has-[[data-disabled]]:cursor-not-allowed has-[[data-state=checked]]:border-muted-foreground has-[[data-disabled]]:opacity-50 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring/70 has-[:focus-visible]:ring-offset-2"
+          >
             <RadioGroupItem
               id={item.id}
               value={item.value}
@@ -27,5 +30,5 @@ export default function Radio13() {
         ))}
       </RadioGroup>
     </fieldset>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { SwatchBook, Brush, Eraser, Scissors } from "lucide-react";
+import { Label } from "@/components/ui/label";
+import { Brush, Eraser, Scissors, SwatchBook } from "lucide-react";
 
 const items = [
   { id: "checkbox-14-c1", value: "c1", label: "Palette", Icon: SwatchBook, defaultChecked: true },
@@ -13,7 +13,10 @@ export default function Checkbox14() {
   return (
     <div className="grid grid-cols-2 gap-3">
       {items.map((item) => (
-        <label key={item.id} className="relative items-top p-4 border border-input rounded-lg shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-muted-foreground flex flex-col gap-4 cursor-pointer">
+        <label
+          key={item.id}
+          className="items-top relative flex cursor-pointer flex-col gap-4 rounded-lg border border-input p-4 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-muted-foreground"
+        >
           <div className="flex justify-between space-x-2 space-x-reverse">
             <Checkbox
               id={item.id}
@@ -23,11 +26,9 @@ export default function Checkbox14() {
             />
             <item.Icon className="opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
           </div>
-          <Label htmlFor={item.id}>
-            {item.label}
-          </Label>
+          <Label htmlFor={item.id}>{item.label}</Label>
         </label>
       ))}
     </div>
-  )
+  );
 }

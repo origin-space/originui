@@ -1,0 +1,14 @@
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
+
+export default function Switch06() {
+  return (
+    <div className="flex items-center space-x-2">
+      <Switch
+        id="switch-06"
+        className="h-3 w-9 border-none [&_span]:border [&_span]:border-input"
+      />
+      <Label htmlFor="switch-06">M2-style switch</Label>
+    </div>
+  );
+}

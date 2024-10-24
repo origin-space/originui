@@ -1,6 +1,6 @@
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { SwatchBook, Brush, Eraser, Scissors } from "lucide-react";
+import { Brush, Eraser, Scissors, SwatchBook } from "lucide-react";
 
 const items = [
   { id: "radio-11-r1", value: "r1", label: "Palette", Icon: SwatchBook },
@@ -13,7 +13,10 @@ export default function Radio11() {
   return (
     <RadioGroup className="grid-cols-2" defaultValue="r1">
       {items.map((item) => (
-        <div key={item.id} className="relative items-top p-4 border border-input rounded-lg shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-muted-foreground flex flex-col gap-4">
+        <div
+          key={item.id}
+          className="items-top relative flex flex-col gap-4 rounded-lg border border-input p-4 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-muted-foreground"
+        >
           <div className="flex justify-between space-x-2 space-x-reverse">
             <RadioGroupItem
               id={item.id}
@@ -22,11 +25,9 @@ export default function Radio11() {
             />
             <item.Icon className="opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
           </div>
-          <Label htmlFor={item.id}>
-            {item.label}
-          </Label>
+          <Label htmlFor={item.id}>{item.label}</Label>
         </div>
       ))}
     </RadioGroup>
-  )
+  );
 }

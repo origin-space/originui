@@ -1,9 +1,9 @@
 "use client";
 
-import { Fragment } from "react";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
 import { CheckboxTree } from "@/components/checkbox-tree";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
+import { Fragment } from "react";
 
 interface TreeNode {
   id: string;
@@ -37,14 +37,10 @@ export default function Checkbox15() {
         renderNode={({ node, isChecked, onCheckedChange, children }) => (
           <Fragment key={node.id}>
             <div className="flex items-center space-x-2">
-              <Checkbox
-                id={node.id}
-                checked={isChecked}
-                onCheckedChange={onCheckedChange}
-              />
+              <Checkbox id={node.id} checked={isChecked} onCheckedChange={onCheckedChange} />
               <Label htmlFor={node.id}>{node.label}</Label>
             </div>
-            {children && <div className="space-y-3 ms-6">{children}</div>}
+            {children && <div className="ms-6 space-y-3">{children}</div>}
           </Fragment>
         )}
       />

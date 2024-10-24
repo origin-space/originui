@@ -14,7 +14,10 @@ export default function Radio15() {
       <legend className="text-sm font-medium leading-none text-foreground">Choose plan</legend>
       <RadioGroup className="gap-0 -space-y-px" defaultValue="r2">
         {items.map((item) => (
-          <div key={item.id} className="relative items-top p-4 border border-input first:rounded-t-lg last:rounded-b-lg shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-muted-foreground flex flex-col gap-4 has-[[data-state=checked]]:z-10 has-[[data-state=checked]]:bg-accent">
+          <div
+            key={item.id}
+            className="items-top relative flex flex-col gap-4 border border-input p-4 shadow-sm shadow-black/[.04] first:rounded-t-lg last:rounded-b-lg has-[[data-state=checked]]:z-10 has-[[data-state=checked]]:border-muted-foreground has-[[data-state=checked]]:bg-accent"
+          >
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <RadioGroupItem
@@ -26,13 +29,16 @@ export default function Radio15() {
                 <Label className="inline-flex items-start" htmlFor={item.id}>
                   {item.label}
                   {item.value === "r2" && (
-                    <span className="ml-2 -mt-1 inline-flex items-center rounded-full text-[9px] uppercase bg-emerald-50 border border-emerald-500/50 px-1 py-0.5 font-medium text-emerald-500">
+                    <span className="-mt-1 ml-2 inline-flex items-center rounded-full border border-emerald-500/50 bg-emerald-50 px-1 py-0.5 text-[9px] font-medium uppercase text-emerald-500">
                       Popular
                     </span>
                   )}
                 </Label>
               </div>
-              <div id={`${item.id}-price`} className="text-xs leading-[inherit] text-muted-foreground">
+              <div
+                id={`${item.id}-price`}
+                className="text-xs leading-[inherit] text-muted-foreground"
+              >
                 {item.price}
               </div>
             </div>
@@ -40,5 +46,5 @@ export default function Radio15() {
         ))}
       </RadioGroup>
     </fieldset>
-  )
+  );
 }

@@ -1,5 +1,5 @@
-import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 
 export default function Checkbox17() {
   return (
@@ -7,7 +7,7 @@ export default function Checkbox17() {
       <div className="flex items-center space-x-2">
         <Checkbox id="checkbox-17-a" />
         <Label htmlFor="checkbox-17-a">React</Label>
-      </div>    
+      </div>
       <div className="flex items-center space-x-2">
         <Checkbox id="checkbox-17-b" />
         <Label htmlFor="checkbox-17-b">Next.js</Label>
@@ -17,5 +17,5 @@ export default function Checkbox17() {
         <Label htmlFor="checkbox-17-c">Astro</Label>
       </div>
     </div>
-  )
+  );
 }

@@ -1,7 +1,7 @@
 "use client";
 
-import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 import { useState } from "react";
 
 export default function Checkbox02() {
@@ -10,9 +10,7 @@ export default function Checkbox02() {
   return (
     <div className="flex items-center space-x-2">
       <Checkbox id="checkbox-02" checked={checked} onCheckedChange={setChecked} />
-      <Label htmlFor="checkbox-02">
-        Indeterminate checkbox
-      </Label>
-    </div>    
-  )
+      <Label htmlFor="checkbox-02">Indeterminate checkbox</Label>
+    </div>
+  );
 }

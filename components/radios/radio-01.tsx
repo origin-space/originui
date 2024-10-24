@@ -17,5 +17,5 @@ export default function Radio01() {
         <Label htmlFor="radio-01-large">Large</Label>
       </div>
     </RadioGroup>
-  )
+  );
 }

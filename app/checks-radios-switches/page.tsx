@@ -43,6 +43,26 @@ const radioFiles = [
   "radio-16",
 ];
 
+const switchDir = "switches";
+const switchFiles = [
+  "switch-01",
+  "switch-02",
+  "switch-03",
+  "switch-04",
+  "switch-05",
+  "switch-06",
+  "switch-07",
+  "switch-08",
+  "switch-09",
+  "switch-12",
+  "switch-10",
+  "switch-11",
+  "switch-13",
+  "switch-14",
+  "switch-15",
+  "switch-16",
+];
+
 export default function Page() {
   return (
     <main>
@@ -67,6 +87,15 @@ export default function Page() {
                 <DemoComponent
                   key={componentName}
                   directory={radioDir}
+                  componentName={componentName}
+                />
+              );
+            })}
+            {switchFiles.map((componentName) => {
+              return (
+                <DemoComponent
+                  key={componentName}
+                  directory={switchDir}
                   componentName={componentName}
                 />
               );
