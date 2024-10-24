@@ -25,9 +25,9 @@ export default function Radio15() {
                 />
                 <Label className="inline-flex items-start" htmlFor={item.id}>
                   {item.label}
-                  {item.label === "Plus" && (
-                    <span className="ml-2 -mt-1 inline-flex items-center rounded-full text-[10px] uppercase bg-emerald-50 border border-emerald-500/50 px-1 py-0.5 font-medium text-emerald-500" aria-label="Hot deal">
-                      Hot
+                  {item.value === "r2" && (
+                    <span className="ml-2 -mt-1 inline-flex items-center rounded-full text-[9px] uppercase bg-emerald-50 border border-emerald-500/50 px-1 py-0.5 font-medium text-emerald-500">
+                      Popular
                     </span>
                   )}
                 </Label>

@@ -3,7 +3,6 @@ import DemoComponent from "@/demo/demo-component";
 import PageHeader from "@/demo/page-header";
 
 const directory = "buttons";
-// Define an array of file names
 const files = [
   "button-01",
   "button-02",

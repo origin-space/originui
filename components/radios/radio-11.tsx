@@ -13,7 +13,7 @@ export default function Radio11() {
   return (
     <RadioGroup className="grid-cols-2" defaultValue="r1">
       {items.map((item) => (
-        <div className="relative items-top p-4 border border-input rounded-lg shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-muted-foreground flex flex-col gap-4">
+        <div key={item.id} className="relative items-top p-4 border border-input rounded-lg shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-muted-foreground flex flex-col gap-4">
           <div className="flex justify-between space-x-2 space-x-reverse">
             <RadioGroupItem
               id={item.id}
