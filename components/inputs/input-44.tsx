@@ -41,7 +41,7 @@ function Slot(props: SlotProps) {
   return (
     <div
       className={cn(
-        "relative flex size-9 items-center justify-center border-y border-e border-input bg-background font-medium text-foreground shadow-sm shadow-black/[.04] ring-offset-background transition-all first:rounded-s-md first:border-s last:rounded-e-md",
+        "relative flex size-9 items-center justify-center border-y border-e border-input bg-background font-medium text-foreground shadow-sm shadow-black/[.04] ring-offset-background transition-all first:rounded-s-lg first:border-s last:rounded-e-lg",
         { "z-10 border border-ring ring-2 ring-ring/30 ring-offset-2": props.isActive },
       )}
     >
