@@ -47,7 +47,7 @@ export default function Radio05() {
                   <Input
                     ref={inputRef}
                     type="text"
-                    id="additional-info"
+                    id="radio-05-additional-info"
                     placeholder="Enter details"
                     aria-label="Additional Information"
                     disabled={selectedValue !== "with-expansion"}

@@ -46,7 +46,7 @@ export default function Checkbox13() {
                 <Input
                   ref={inputRef}
                   type="text"
-                  id="additional-info"
+                  id="checkbox-13-additional-info"
                   placeholder="Enter details"
                   aria-label="Additional Information"
                   disabled={!checked}

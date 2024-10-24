@@ -37,6 +37,9 @@ const radioFiles = [
   "radio-10",
   "radio-11",
   "radio-12",
+  "radio-13",
+  "radio-14",
+  "radio-15",
 ];
 
 export default function Page() {

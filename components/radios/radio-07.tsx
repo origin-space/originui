@@ -2,7 +2,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 export default function Radio07() {
   return (
-    <div className="space-y-3">
+    <fieldset className="space-y-3">
       <legend className="text-sm font-medium leading-none text-foreground">Choose a color</legend>
       <RadioGroup defaultValue="blue">
         <div className="flex gap-1.5">
@@ -15,6 +15,6 @@ export default function Radio07() {
           <RadioGroupItem value="green" id="radio-07-green" aria-label="green" className="size-6 shadow-none bg-green-500 border-green-500 data-[state=checked]:bg-green-500 data-[state=checked]:border-green-500" />
         </div>
       </RadioGroup>
-    </div>
+    </fieldset>
   )
 }
