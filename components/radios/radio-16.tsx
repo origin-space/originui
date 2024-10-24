@@ -15,7 +15,7 @@ export default function Radio16() {
       <legend className="text-sm font-medium leading-none text-foreground">What's your mood?</legend>    
       <RadioGroup className="flex gap-1.5" defaultValue="r3">
         {items.map((item) => (
-          <label key={item.id} className="relative items-center justify-center text-center text-xl size-9 border border-input rounded-full shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-amber-500 has-[[data-state=checked]]:bg-amber-100 flex flex-col gap-3 cursor-pointer ring-offset-background transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring/70 has-[:focus-visible]:ring-offset-2 has-[[data-disabled]]:cursor-not-allowed has-[[data-disabled]]:opacity-50">
+          <label key={item.id} className="relative items-center justify-center text-center text-xl size-9 border border-input rounded-full shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-amber-500 has-[[data-state=checked]]:bg-amber-100 flex flex-col gap-3 cursor-pointer ring-offset-background transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-amber-500/30 has-[:focus-visible]:ring-offset-2 has-[[data-disabled]]:cursor-not-allowed has-[[data-disabled]]:opacity-50">
             <RadioGroupItem
               id={item.id}
               value={item.value}
