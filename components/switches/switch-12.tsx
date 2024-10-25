@@ -9,7 +9,7 @@ export default function Switch12() {
   const [checked, setChecked] = useState<boolean>(true);
 
   return (
-    <div className="inline-flex items-center space-x-2">
+    <div className="inline-flex items-center gap-2">
       <Switch
         id="switch-12"
         checked={checked}

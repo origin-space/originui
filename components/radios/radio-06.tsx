@@ -5,7 +5,7 @@ import { RiStarFill } from "@remixicon/react";
 export default function Radio06() {
   return (
     <RadioGroup defaultValue="all">
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center gap-2">
         <RadioGroupItem value="all" id="radio-06-all" />
         <Label htmlFor="radio-06-all">
           All reviews{" "}
@@ -14,7 +14,7 @@ export default function Radio06() {
           </span>
         </Label>
       </div>
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center gap-2">
         <RadioGroupItem value="5-stars" id="radio-06-5-stars" />
         <Label htmlFor="radio-06-5-stars" className="inline-flex items-center gap-2">
           <span className="inline-flex items-center text-amber-500" aria-hidden="true">
@@ -30,7 +30,7 @@ export default function Radio06() {
           </span>
         </Label>
       </div>
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center gap-2">
         <RadioGroupItem value="4-stars" id="radio-06-4-stars" />
         <Label htmlFor="radio-06-4-stars" className="inline-flex items-center gap-2">
           <span className="inline-flex items-center text-amber-500" aria-hidden="true">
@@ -46,7 +46,7 @@ export default function Radio06() {
           </span>
         </Label>
       </div>
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center gap-2">
         <RadioGroupItem value="3-stars" id="radio-06-3-stars" />
         <Label htmlFor="radio-06-3-stars" className="inline-flex items-center gap-2">
           <span className="inline-flex items-center text-amber-500" aria-hidden="true">
@@ -62,7 +62,7 @@ export default function Radio06() {
           </span>
         </Label>
       </div>
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center gap-2">
         <RadioGroupItem value="2-stars" id="radio-06-2-stars" />
         <Label htmlFor="radio-06-2-stars" className="inline-flex items-center gap-2">
           <span className="inline-flex items-center text-amber-500" aria-hidden="true">
@@ -78,7 +78,7 @@ export default function Radio06() {
           </span>
         </Label>
       </div>
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center gap-2">
         <RadioGroupItem value="1-star" id="radio-06-1-star" />
         <Label htmlFor="radio-06-1-star" className="inline-flex items-center gap-2">
           <span className="inline-flex items-center text-amber-500" aria-hidden="true">

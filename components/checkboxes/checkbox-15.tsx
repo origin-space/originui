@@ -36,7 +36,7 @@ export default function Checkbox15() {
         tree={initialTree}
         renderNode={({ node, isChecked, onCheckedChange, children }) => (
           <Fragment key={node.id}>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center gap-2">
               <Checkbox id={node.id} checked={isChecked} onCheckedChange={onCheckedChange} />
               <Label htmlFor={node.id}>{node.label}</Label>
             </div>

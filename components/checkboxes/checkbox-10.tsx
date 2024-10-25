@@ -3,7 +3,7 @@ import { Label } from "@/components/ui/label";
 
 export default function Checkbox10() {
   return (
-    <div className="items-top relative flex space-x-2 space-x-reverse rounded-lg border border-input p-4 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-ring">
+    <div className="items-top relative flex gap-2 rounded-lg border border-input p-4 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-ring">
       <Checkbox
         id="checkbox-10"
         className="order-1 after:absolute after:inset-0"

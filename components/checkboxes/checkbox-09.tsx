@@ -3,7 +3,7 @@ import { Label } from "@/components/ui/label";
 
 export default function Checkbox09() {
   return (
-    <div className="items-top flex space-x-2 space-x-reverse">
+    <div className="items-top flex gap-2">
       <Checkbox id="checkbox-09" className="order-1" aria-describedby="checkbox-09-description" />
       <div className="grid grow gap-1">
         <Label htmlFor="checkbox-09">

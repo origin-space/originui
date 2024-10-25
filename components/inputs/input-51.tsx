@@ -104,7 +104,7 @@ export default function Input51() {
       {/* Password requirements list */}
       <ul className="space-y-1.5" aria-label="Password requirements">
         {strength.map((req, index) => (
-          <li key={index} className="flex items-center space-x-2">
+          <li key={index} className="flex items-center gap-2">
             {req.met ? (
               <Check size={16} className="text-emerald-500" aria-hidden="true" />
             ) : (

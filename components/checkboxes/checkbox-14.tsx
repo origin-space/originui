@@ -17,7 +17,7 @@ export default function Checkbox14() {
           key={item.id}
           className="items-top relative flex cursor-pointer flex-col gap-4 rounded-lg border border-input p-4 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-ring"
         >
-          <div className="flex justify-between space-x-2 space-x-reverse">
+          <div className="flex justify-between gap-2">
             <Checkbox
               id={item.id}
               value={item.value}

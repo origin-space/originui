@@ -3,7 +3,7 @@ import { Label } from "@/components/ui/label";
 
 export default function Checkbox06() {
   return (
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center gap-2">
       <Checkbox
         id="checkbox-06"
         className="rounded-full data-[state=checked]:border-emerald-500 data-[state=checked]:bg-emerald-500"

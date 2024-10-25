@@ -3,10 +3,10 @@ import { Switch } from "@/components/ui/switch";
 
 export default function Switch19() {
   return (
-    <div className="items-top relative flex space-x-2 space-x-reverse rounded-lg border border-input p-4 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-ring">
+    <div className="items-top relative flex gap-2 rounded-lg border border-input p-4 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-ring">
       <Switch
         id="switch-19"
-        className="order-1 h-4 w-6 after:absolute after:inset-0 [&_span]:size-3 [&_span]:data-[state=checked]:translate-x-2"
+        className="order-1 h-4 w-6 after:absolute after:inset-0 [&_span]:size-3 [&_span]:data-[state=checked]:translate-x-2 rtl:[&_span]:data-[state=checked]:-translate-x-2"
         aria-describedby="switch-19-description"
       />
       <div className="flex grow items-center gap-3">
