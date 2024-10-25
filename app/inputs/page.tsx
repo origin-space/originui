@@ -3,7 +3,7 @@ import DemoComponent from "@/demo/demo-component";
 import PageHeader from "@/demo/page-header";
 
 const directory = "inputs";
-const inputFiles = [
+const files = [
   "input-01",
   "input-02",
   "input-03",
@@ -63,11 +63,11 @@ export default function Page() {
       <div className="px-4 sm:px-6">
         <div className="mx-auto w-full max-w-6xl">
           <PageHeader title="Input">
-            A growing collection of over 50 input components built with Next.js and TailwindCSS.
+            A growing collection of {files.length} input components built with Next.js and TailwindCSS.
           </PageHeader>
 
           <div className="grid max-w-6xl grid-cols-1 overflow-hidden sm:grid-cols-2 lg:grid-cols-3 [&>*]:relative [&>*]:px-1 [&>*]:py-12 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-8 xl:[&>*]:px-12">
-            {inputFiles.map((componentName) => {
+            {files.map((componentName) => {
               return (
                 <DemoComponent
                   key={componentName}
