@@ -8,7 +8,7 @@ export default function Switch09() {
   const [checked, setChecked] = useState<boolean>(true);
 
   return (
-    <div className="flex items-center space-x-2">
+    <div className="inline-flex items-center space-x-2">
       <Switch
         id="switch-09"
         checked={checked}

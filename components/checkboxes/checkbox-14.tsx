@@ -15,7 +15,7 @@ export default function Checkbox14() {
       {items.map((item) => (
         <label
           key={item.id}
-          className="items-top relative flex cursor-pointer flex-col gap-4 rounded-lg border border-input p-4 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-muted-foreground"
+          className="items-top relative flex cursor-pointer flex-col gap-4 rounded-lg border border-input p-4 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-ring"
         >
           <div className="flex justify-between space-x-2 space-x-reverse">
             <Checkbox

@@ -12,11 +12,14 @@ export default function Radio15() {
   return (
     <fieldset className="space-y-3">
       <legend className="text-sm font-medium leading-none text-foreground">Choose plan</legend>
-      <RadioGroup className="gap-0 -space-y-px" defaultValue="r2">
+      <RadioGroup
+        className="gap-0 -space-y-px rounded-lg shadow-sm shadow-black/[.04]"
+        defaultValue="r2"
+      >
         {items.map((item) => (
           <div
             key={item.id}
-            className="items-top relative flex flex-col gap-4 border border-input p-4 shadow-sm shadow-black/[.04] first:rounded-t-lg last:rounded-b-lg has-[[data-state=checked]]:z-10 has-[[data-state=checked]]:border-muted-foreground has-[[data-state=checked]]:bg-accent"
+            className="items-top relative flex flex-col gap-4 border border-input p-4 first:rounded-t-lg last:rounded-b-lg has-[[data-state=checked]]:z-10 has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent"
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">

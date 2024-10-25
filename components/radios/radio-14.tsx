@@ -15,7 +15,7 @@ export default function Radio14() {
         {items.map((item) => (
           <div
             key={item.id}
-            className="items-top relative flex flex-col gap-4 rounded-lg border border-input p-3 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-muted-foreground"
+            className="items-top relative flex flex-col gap-4 rounded-lg border border-input p-3 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-ring"
           >
             <div className="flex items-center space-x-2">
               <RadioGroupItem

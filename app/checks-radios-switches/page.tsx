@@ -21,6 +21,7 @@ const checboxFiles = [
   "checkbox-12",
   "checkbox-14",
   "checkbox-15",
+  "checkbox-18",
 ];
 
 const radioDir = "radios";
@@ -41,6 +42,8 @@ const radioFiles = [
   "radio-14",
   "radio-15",
   "radio-16",
+  "radio-17",
+  "radio-18",
 ];
 
 const switchDir = "switches";
@@ -52,15 +55,18 @@ const switchFiles = [
   "switch-05",
   "switch-06",
   "switch-07",
-  "switch-08",
+  //"switch-08",
   "switch-09",
-  "switch-12",
   "switch-10",
+  "switch-12",
   "switch-11",
-  "switch-13",
   "switch-14",
   "switch-15",
   "switch-16",
+  "switch-13",
+  "switch-17",
+  "switch-18",
+  "switch-19",
 ];
 
 export default function Page() {
@@ -97,6 +103,7 @@ export default function Page() {
                   key={componentName}
                   directory={switchDir}
                   componentName={componentName}
+                  className="flex justify-center"
                 />
               );
             })}

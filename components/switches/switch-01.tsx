@@ -3,9 +3,11 @@ import { Switch } from "@/components/ui/switch";
 
 export default function Switch01() {
   return (
-    <div className="flex items-center space-x-2">
+    <div className="inline-flex items-center space-x-2">
       <Switch id="switch-01" />
-      <Label htmlFor="switch-01">Simple switch</Label>
+      <Label htmlFor="switch-01" className="sr-only">
+        Simple switch
+      </Label>
     </div>
   );
 }
