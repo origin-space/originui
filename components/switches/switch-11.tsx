@@ -1,3 +1,5 @@
+// Dependencies: npm install lucide-react
+
 "use client";
 
 import { Label } from "@/components/ui/label";
@@ -5,14 +7,14 @@ import { Switch } from "@/components/ui/switch";
 import { Moon, Sun } from "lucide-react";
 import { useState } from "react";
 
-export default function Switch11() {
+export default function Switch10() {
   const [checked, setChecked] = useState(false);
 
   const toggleSwitch = () => setChecked((prev) => !prev);
 
   return (
     <div>
-      <Label htmlFor="switch-11" className="sr-only">
+      <Label htmlFor="switch-10" className="sr-only">
         Toggle switch
       </Label>
       <div
@@ -27,7 +29,7 @@ export default function Switch11() {
           <Moon size={16} strokeWidth={2} aria-hidden="true" />
         </span>
         <Switch
-          id="switch-11"
+          id="switch-10"
           checked={checked}
           onCheckedChange={toggleSwitch}
           aria-labelledby="switch-off-label switch-on-label"

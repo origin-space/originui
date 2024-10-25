@@ -1,3 +1,5 @@
+// Dependencies: npm install @remixicon/react
+
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { RiAppleLine, RiBankCardLine, RiPaypalLine } from "@remixicon/react";
 

@@ -1,44 +1,31 @@
+// Dependencies: npm install lucide-react
+
 "use client";
 
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import { Moon, Sun } from "lucide-react";
 import { useState } from "react";
 
-export default function Switch10() {
-  const [checked, setChecked] = useState(false);
-
-  const toggleSwitch = () => setChecked((prev) => !prev);
+export default function Switch11() {
+  const [checked, setChecked] = useState<boolean>(true);
 
   return (
-    <div>
-      <Label htmlFor="switch-10" className="sr-only">
-        Toggle switch
+    <div className="inline-flex items-center gap-2">
+      <Switch
+        id="switch-11"
+        checked={checked}
+        onCheckedChange={setChecked}
+        aria-label="Toggle switch"
+      />
+      <Label htmlFor="switch-11">
+        <span className="sr-only">Toggle switch</span>
+        {checked ? (
+          <Sun size={16} strokeWidth={2} aria-hidden="true" />
+        ) : (
+          <Moon size={16} strokeWidth={2} aria-hidden="true" />
+        )}
       </Label>
-      <div
-        className="group inline-flex items-center gap-2"
-        data-state={checked ? "checked" : "unchecked"}
-      >
-        <span
-          id="switch-off-label"
-          className="flex-1 cursor-pointer text-right text-sm font-medium group-data-[state=checked]:text-muted-foreground/70"
-          onClick={() => setChecked(false)}
-        >
-          Off
-        </span>
-        <Switch
-          id="switch-10"
-          checked={checked}
-          onCheckedChange={toggleSwitch}
-          aria-labelledby="switch-off-label switch-on-label"
-        />
-        <span
-          id="switch-on-label"
-          className="flex-1 cursor-pointer text-left text-sm font-medium group-data-[state=unchecked]:text-muted-foreground/70"
-          onClick={() => setChecked(true)}
-        >
-          On
-        </span>
-      </div>
     </div>
   );
 }

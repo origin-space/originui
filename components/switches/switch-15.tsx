@@ -2,7 +2,6 @@
 
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { Moon, Sun } from "lucide-react";
 import { useState } from "react";
 
 export default function Switch15() {
@@ -15,17 +14,17 @@ export default function Switch15() {
           id="switch-15"
           checked={checked}
           onCheckedChange={setChecked}
-          className="peer absolute inset-0 h-[inherit] w-auto data-[state=unchecked]:bg-input/50 [&_span]:z-10 [&_span]:h-full [&_span]:w-1/2 [&_span]:transition-transform [&_span]:duration-300 [&_span]:[transition-timing-function:cubic-bezier(0.16,1,0.3,1)] data-[state=checked]:[&_span]:translate-x-full rtl:data-[state=checked]:[&_span]:-translate-x-full"
+          className="peer absolute inset-0 h-[inherit] w-auto rounded-lg data-[state=checked]:bg-input/50 data-[state=unchecked]:bg-input/50 [&_span]:h-full [&_span]:w-1/2 [&_span]:rounded-md [&_span]:transition-transform [&_span]:duration-300 [&_span]:[transition-timing-function:cubic-bezier(0.16,1,0.3,1)] data-[state=checked]:[&_span]:translate-x-full rtl:data-[state=checked]:[&_span]:-translate-x-full"
         />
-        <span className="pointer-events-none relative ms-0.5 flex min-w-8 items-center justify-center text-center transition-transform duration-300 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] peer-data-[state=checked]:invisible peer-data-[state=unchecked]:translate-x-full rtl:peer-data-[state=unchecked]:-translate-x-full">
-          <Moon className="opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
+        <span className="pointer-events-none relative ms-0.5 min-w-8 px-4 text-center peer-data-[state=checked]:text-muted-foreground/70">
+          Lights off
         </span>
-        <span className="pointer-events-none relative me-0.5 flex min-w-8 items-center justify-center text-center transition-transform duration-300 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] peer-data-[state=unchecked]:invisible peer-data-[state=checked]:-translate-x-full rtl:peer-data-[state=checked]:translate-x-full peer-data-[state=checked]:text-background">
-          <Sun className="opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
+        <span className="pointer-events-none relative me-0.5 min-w-8 px-4 text-center peer-data-[state=unchecked]:text-muted-foreground/70 [&_span]:peer-data-[state=checked]:text-emerald-500">
+          Lights on
         </span>
       </div>
       <Label htmlFor="switch-15" className="sr-only">
-        Labeled switch
+        Toggle lights
       </Label>
     </div>
   );

@@ -1,3 +1,5 @@
+// Dependencies: npm install lucide-react
+
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Brush, Eraser, Scissors, SwatchBook } from "lucide-react";
