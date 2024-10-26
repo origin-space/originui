@@ -5,14 +5,14 @@ export default function Radio10() {
   return (
     <RadioGroup className="gap-2" defaultValue="r1">
       {/* Radio card #1 */}
-      <div className="items-top relative flex gap-2 rounded-lg border border-input p-4 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-ring">
+      <div className="items-start relative flex gap-2 rounded-lg border border-input p-4 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-ring w-full">
         <RadioGroupItem
           value="r1"
           id="radio-10-r1"
           aria-describedby="radio-10-r1-description"
           className="order-1 after:absolute after:inset-0"
         />
-        <div className="flex grow items-start gap-3">
+        <div className="flex grow items-center gap-3">
           <svg
             className="shrink-0"
             xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@ export default function Radio10() {
         </div>
       </div>
       {/* Radio card #2 */}
-      <div className="items-top relative flex gap-2 rounded-lg border border-input p-4 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-ring">
+      <div className="items-center relative flex gap-2 rounded-lg border border-input p-4 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-ring">
         <RadioGroupItem
           value="r2"
           id="radio-10-r2"

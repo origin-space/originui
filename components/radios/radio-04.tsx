@@ -4,7 +4,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 export default function Radio04() {
   return (
     <RadioGroup className="gap-6" defaultValue="small">
-      <div className="items-top flex gap-2">
+      <div className="items-start flex gap-2">
         <RadioGroupItem
           value="small"
           id="radio-04-small"
@@ -22,7 +22,7 @@ export default function Radio04() {
           </p>
         </div>
       </div>
-      <div className="items-top flex gap-2">
+      <div className="items-start flex gap-2">
         <RadioGroupItem value="r2" id="radio-04-r2" aria-describedby="radio-04-r2-description" />
         <div className="grid grow gap-1">
           <Label htmlFor="radio-04-r2">

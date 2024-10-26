@@ -44,6 +44,7 @@ const radioFiles = [
   "radio-16",
   "radio-17",
   "radio-18",
+  "radio-19",
 ];
 
 const switchDir = "switches";
@@ -64,8 +65,7 @@ const switchFiles = [
   "switch-14",
   "switch-15",
   "switch-16",
-  "switch-17",
-  "switch-18",
+  "switch-17"
 ];
 
 const totalCheckboxes = checboxFiles.length; // 18

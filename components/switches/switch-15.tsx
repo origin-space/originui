@@ -1,31 +1,25 @@
-"use client";
-
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { useState } from "react";
 
 export default function Switch15() {
-  const [checked, setChecked] = useState<boolean>(true);
-
   return (
-    <div>
-      <div className="relative inline-grid h-9 grid-cols-[1fr_1fr] items-center text-sm font-medium">
-        <Switch
-          id="switch-15"
-          checked={checked}
-          onCheckedChange={setChecked}
-          className="peer absolute inset-0 h-[inherit] w-auto rounded-lg data-[state=checked]:bg-input/50 data-[state=unchecked]:bg-input/50 [&_span]:h-full [&_span]:w-1/2 [&_span]:rounded-md [&_span]:transition-transform [&_span]:duration-300 [&_span]:[transition-timing-function:cubic-bezier(0.16,1,0.3,1)] data-[state=checked]:[&_span]:translate-x-full rtl:data-[state=checked]:[&_span]:-translate-x-full"
-        />
-        <span className="pointer-events-none relative ms-0.5 min-w-8 px-4 text-center peer-data-[state=checked]:text-muted-foreground/70">
-          Lights off
-        </span>
-        <span className="pointer-events-none relative me-0.5 min-w-8 px-4 text-center peer-data-[state=unchecked]:text-muted-foreground/70 [&_span]:peer-data-[state=checked]:text-emerald-500">
-          Lights on
-        </span>
+    <div className="items-start relative flex gap-2 rounded-lg border border-input p-4 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-ring w-full">
+      <Switch
+        id="switch-15"
+        className="order-1 h-4 w-6 after:absolute after:inset-0 [&_span]:size-3 [&_span]:data-[state=checked]:translate-x-2 rtl:[&_span]:data-[state=checked]:-translate-x-2"
+        aria-describedby="switch-15-description"
+      />
+      <div className="grid grow gap-1">
+        <Label htmlFor="checkbox-13">
+          Label{" "}
+          <span className="text-xs font-normal leading-[inherit] text-muted-foreground">
+            (Sublabel)
+          </span>
+        </Label>
+        <p id="checkbox-13-description" className="text-xs text-muted-foreground">
+          A short description goes here.
+        </p>
       </div>
-      <Label htmlFor="switch-15" className="sr-only">
-        Toggle lights
-      </Label>
     </div>
   );
 }

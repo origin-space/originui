@@ -17,7 +17,7 @@ export default function Checkbox11() {
 
   return (
     <div>
-      <div className="items-top flex gap-2">
+      <div className="items-start flex gap-2">
         <Checkbox
           id="checkbox-11"
           checked={checked}

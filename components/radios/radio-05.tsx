@@ -18,7 +18,7 @@ export default function Radio05() {
   return (
     <RadioGroup className="gap-6" value={selectedValue} onValueChange={setSelectedValue}>
       <div>
-        <div className="items-top flex gap-2">
+        <div className="items-start flex gap-2">
           <RadioGroupItem
             value="with-expansion"
             id="radio-05-with-expansion"
@@ -57,7 +57,7 @@ export default function Radio05() {
         </div>
       </div>
 
-      <div className="items-top flex gap-2">
+      <div className="items-start flex gap-2">
         <RadioGroupItem
           value="without-expansion"
           id="radio-05-without-expansion"
