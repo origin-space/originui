@@ -1,18 +1,25 @@
-A growing collection of over 50 input components built with Next.js and TailwindCSS.
+Origin UI is an extensive collection of copy-and-paste components for quickly building app UIs. The collection currently features 100+ components and is constantly updated with new examples.
 
 **Demo** → [https://originui.com](https://originui.com)
 
-## Documentation
+## Overview
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Origin UI streamlines UI development by providing:
+- Hundreds of customizable components
+- Consistent styling
+- Regular updates and new component additions
+- Dark mode support out of the box
 
-This project follows shadcn conventions and structures. If you're already using shadcn, you might only need to install additional dependencies required by some components - check the code comments at the top of each file for details. If you're not using shadcn or encounter issues, here's a checklist:
+## Getting Started
 
-**1. Ensure these files are present in your app:**
+Origin UI is designed to integrate seamlessly with Next.js projects, but the components are also compatible with any React-based project. The components follow shadcn conventions, so they’ll feel familiar to anyone who has used shadcn before.
 
-- components/ui/input.tsx
-- components/ui/label.tsx
-- lib/utils.ts
+**1. Set up the required files:**
+
+- Copy all `.tsx` files from Origin UI's `components/ui` folder to your project's `components/ui` folder.
+- Copy `utils.ts` from Origin UI's `lib` folder to your project's `lib` folder.
+
+Note: If you're using shadcn, you may likely already have these files - however, I would recommend using our components over shadcn's for a consistent styling experience.
 
 **2. Add the following CSS variables to your stylesheet (you don't need to overwrite them if you already have them):**
 
@@ -115,6 +122,10 @@ This project follows shadcn conventions and structures. If you're already using 
 ```
 
 After completing these steps, you can copy and use the components in your project. Note that some components (e.g., number inputs, date pickers, time pickers, phone number inputs) may require additional libraries - refer to the code comments at the top of each file for specific requirements.
+
+## Contributing
+
+We welcome contributions to Origin UI! Please read our [contributing guidelines](CONTRIBUTING.md) on how to submit improvements and new components.
 
 ## Terms of Use
 
