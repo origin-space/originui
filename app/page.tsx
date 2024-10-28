@@ -77,7 +77,10 @@ export default function Page() {
                   <li>
                     <span className="inline-flex w-full flex-col justify-between gap-2 whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/[0.04] sm:h-14 sm:flex-row sm:items-center">
                       <span className="flex items-start gap-2">
-                        More components available soon
+                        Select
+                        <span className="-mt-1 text-[10px] font-medium uppercase text-zinc-400 dark:text-zinc-600">
+                          Available soon
+                        </span>
                       </span>
                       <span className="flex items-center gap-2 text-sm">
                         <span className="font-normal text-muted-foreground">
@@ -115,7 +118,7 @@ export default function Page() {
                         </span>
                       </span>
                     </span>
-                  </li>
+                  </li>                  
                 </ul>
               </nav>
             </div>
