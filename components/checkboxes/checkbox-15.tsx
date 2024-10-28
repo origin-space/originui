@@ -61,7 +61,7 @@ export default function Checkbox15() {
             </clipPath>
           </defs>
         </svg>
-        <div className="grid gap-1">
+        <div className="grid gap-2">
           <Label htmlFor="checkbox-15">
             Label{" "}
             <span className="text-xs font-normal leading-[inherit] text-muted-foreground">

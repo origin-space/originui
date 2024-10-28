@@ -9,7 +9,7 @@ export default function Switch15() {
         className="order-1 h-4 w-6 after:absolute after:inset-0 [&_span]:size-3 [&_span]:data-[state=checked]:translate-x-2 rtl:[&_span]:data-[state=checked]:-translate-x-2"
         aria-describedby="switch-15-description"
       />
-      <div className="grid grow gap-1">
+      <div className="grid grow gap-2">
         <Label htmlFor="checkbox-13">
           Label{" "}
           <span className="text-xs font-normal leading-[inherit] text-muted-foreground">

@@ -64,7 +64,7 @@ export default function Radio10() {
               </clipPath>
             </defs>
           </svg>
-          <div className="grid grow gap-1">
+          <div className="grid grow gap-2">
             <Label htmlFor="radio-10-r1">
               Label{" "}
               <span className="text-xs font-normal leading-[inherit] text-muted-foreground">
@@ -101,7 +101,7 @@ export default function Radio10() {
               clipRule="evenodd"
             />
           </svg>
-          <div className="grid grow gap-1">
+          <div className="grid grow gap-2">
             <Label htmlFor="radio-10-r2">
               Label{" "}
               <span className="text-xs font-normal leading-[inherit] text-muted-foreground">

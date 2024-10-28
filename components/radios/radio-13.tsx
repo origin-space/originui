@@ -11,7 +11,7 @@ const items = [
 
 export default function Radio13() {
   return (
-    <fieldset className="space-y-3">
+    <fieldset className="space-y-4">
       <legend className="text-sm font-medium leading-none text-foreground">CPU Cores</legend>
       <RadioGroup className="grid grid-cols-3 gap-2" defaultValue="r1">
         {items.map((item) => (

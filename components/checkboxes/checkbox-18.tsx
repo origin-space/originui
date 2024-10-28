@@ -12,7 +12,7 @@ const items = [
 
 export default function Checkbox18() {
   return (
-    <fieldset className="space-y-3">
+    <fieldset className="space-y-4">
       <legend className="text-sm font-medium leading-none text-foreground">Days of the week</legend>
       <div className="flex gap-1.5">
         {items.map((item) => (

@@ -29,7 +29,7 @@ export default function Switch16() {
             fill="#F79E1B"
           />
         </svg>
-        <div className="grid grow gap-1">
+        <div className="grid grow gap-2">
           <Label htmlFor="switch-16">
             Label{" "}
             <span className="text-xs font-normal leading-[inherit] text-muted-foreground">

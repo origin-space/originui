@@ -29,7 +29,7 @@ export default function Checkbox14() {
             fill="#F79E1B"
           />
         </svg>
-        <div className="grid gap-1">
+        <div className="grid gap-2">
           <Label htmlFor="checkbox-14">
             Label{" "}
             <span className="text-xs font-normal leading-[inherit] text-muted-foreground">

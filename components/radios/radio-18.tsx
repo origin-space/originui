@@ -15,7 +15,7 @@ const items = [
 
 export default function Radio18() {
   return (
-    <fieldset className="space-y-3">
+    <fieldset className="space-y-4">
       <legend className="text-sm font-medium leading-none text-foreground">Choose a theme</legend>
       <RadioGroup className="flex gap-3" defaultValue="r1">
         {items.map((item) => (

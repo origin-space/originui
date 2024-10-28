@@ -3,7 +3,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 export default function Radio17() {
   return (
     <>
-      <fieldset className="space-y-3">
+      <fieldset className="space-y-4">
         <legend className="text-sm font-medium leading-none text-foreground">
           How likely are you to recommend us?
         </legend>

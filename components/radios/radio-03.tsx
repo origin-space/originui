@@ -3,18 +3,18 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 export default function Radio03() {
   return (
-    <RadioGroup defaultValue="medium" disabled>
+    <RadioGroup defaultValue="r2" disabled>
       <div className="flex items-center gap-2">
-        <RadioGroupItem value="small" id="radio-03-small" />
-        <Label htmlFor="radio-03-small">Small</Label>
+        <RadioGroupItem value="r1" id="radio-03-r1" />
+        <Label htmlFor="radio-03-r1">Option 1</Label>
       </div>
       <div className="flex items-center gap-2">
-        <RadioGroupItem value="medium" id="radio-03-medium" />
-        <Label htmlFor="radio-03-medium">Medium</Label>
+        <RadioGroupItem value="r2" id="radio-03-r2" />
+        <Label htmlFor="radio-03-r2">Option 2</Label>
       </div>
       <div className="flex items-center gap-2">
-        <RadioGroupItem value="large" id="radio-03-large" />
-        <Label htmlFor="radio-03-large">Large</Label>
+        <RadioGroupItem value="r3" id="radio-03-r3" />
+        <Label htmlFor="radio-03-r3">Option 3</Label>
       </div>
     </RadioGroup>
   );

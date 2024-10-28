@@ -25,7 +25,7 @@ export default function Checkbox11() {
           aria-controls="checkbox-input-11"
         />
         <div className="grow">
-          <div className="grid gap-1">
+          <div className="grid gap-2">
             <Label htmlFor="checkbox-11">Checkbox with expansion</Label>
             <p id="checkbox-11-description" className="text-xs text-muted-foreground">
               You can use this checkbox with a label and a description.

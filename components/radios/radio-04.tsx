@@ -10,7 +10,7 @@ export default function Radio04() {
           id="radio-04-small"
           aria-describedby="radio-04-small-description"
         />
-        <div className="grid grow gap-1">
+        <div className="grid grow gap-2">
           <Label htmlFor="radio-04-small">
             Small{" "}
             <span className="text-xs font-normal leading-[inherit] text-muted-foreground">
@@ -24,7 +24,7 @@ export default function Radio04() {
       </div>
       <div className="items-start flex gap-2">
         <RadioGroupItem value="r2" id="radio-04-r2" aria-describedby="radio-04-r2-description" />
-        <div className="grid grow gap-1">
+        <div className="grid grow gap-2">
           <Label htmlFor="radio-04-r2">
             Large{" "}
             <span className="text-xs font-normal leading-[inherit] text-muted-foreground">

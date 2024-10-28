@@ -5,7 +5,7 @@ export default function Checkbox10() {
   return (
     <div className="items-start flex gap-2">
       <Checkbox id="checkbox-10" aria-describedby="checkbox-10-description" />
-      <div className="grid grow gap-1">
+      <div className="grid grow gap-2">
         <Label htmlFor="checkbox-10">
           Label{" "}
           <span className="text-xs font-normal leading-[inherit] text-muted-foreground">

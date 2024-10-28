@@ -26,7 +26,7 @@ export default function Radio05() {
             aria-controls="radio-input-05"
           />
           <div className="grow">
-            <div className="grid grow gap-1">
+            <div className="grid grow gap-2">
               <Label htmlFor="radio-05-with-expansion">Radio with expansion</Label>
               <p id="radio-05-with-expansion-description" className="text-xs text-muted-foreground">
                 You can use this radio with a label and a description.
@@ -63,7 +63,7 @@ export default function Radio05() {
           id="radio-05-without-expansion"
           aria-describedby="radio-05-without-expansion-description"
         />
-        <div className="grid grow gap-1">
+        <div className="grid grow gap-2">
           <Label htmlFor="radio-05-without-expansion">Radio without expansion</Label>
           <p id="radio-05-without-expansion-description" className="text-xs text-muted-foreground">
             You can use this checkbox with a label and a description.

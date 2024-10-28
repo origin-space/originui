@@ -10,7 +10,7 @@ const items = [
 
 export default function Radio15() {
   return (
-    <fieldset className="space-y-3">
+    <fieldset className="space-y-4">
       <legend className="text-sm font-medium leading-none text-foreground">Choose plan</legend>
       <RadioGroup
         className="gap-0 -space-y-px rounded-lg shadow-sm shadow-black/[.04]"
@@ -32,7 +32,7 @@ export default function Radio15() {
                 <Label className="inline-flex items-start" htmlFor={item.id}>
                   {item.label}
                   {item.value === "r2" && (
-                    <span className="-mt-1 ml-2 inline-flex items-center rounded-full border border-emerald-500/50 bg-emerald-50 px-1 py-0.5 text-[9px] font-medium uppercase text-emerald-500">
+                    <span className="-mt-1 ml-2 inline-flex items-center rounded-full borde border-emerald-500/30 bg-emerald-500/20 px-1 py-0.5 text-[10px] font-medium uppercase text-emerald-600">
                       Popular
                     </span>
                   )}

@@ -10,7 +10,7 @@ const items = [
 
 export default function Radio16() {
   return (
-    <fieldset className="space-y-3">
+    <fieldset className="space-y-4">
       <legend className="text-sm font-medium leading-none text-foreground">How did it go?</legend>
       <RadioGroup className="flex gap-1.5" defaultValue="r3">
         {items.map((item) => (

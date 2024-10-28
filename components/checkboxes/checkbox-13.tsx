@@ -9,7 +9,7 @@ export default function Checkbox13() {
         className="order-1 after:absolute after:inset-0"
         aria-describedby="checkbox-13-description"
       />
-      <div className="grid grow gap-1">
+      <div className="grid grow gap-2">
         <Label htmlFor="checkbox-13">
           Label{" "}
           <span className="text-xs font-normal leading-[inherit] text-muted-foreground">

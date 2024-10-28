@@ -32,7 +32,7 @@ export default function Radio09() {
               fill="#F79E1B"
             />
           </svg>
-          <div className="grid grow gap-1">
+          <div className="grid grow gap-2">
             <Label htmlFor="radio-09-r1">
               Label{" "}
               <span className="text-xs font-normal leading-[inherit] text-muted-foreground">
@@ -85,7 +85,7 @@ export default function Radio09() {
               </clipPath>
             </defs>
           </svg>
-          <div className="grid grow gap-1">
+          <div className="grid grow gap-2">
             <Label htmlFor="radio-09-r2">
               Label{" "}
               <span className="text-xs font-normal leading-[inherit] text-muted-foreground">

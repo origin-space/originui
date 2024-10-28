@@ -12,7 +12,7 @@ export default function Radio08() {
           aria-describedby="radio-08-r1-description"
           className="order-1 after:absolute after:inset-0"
         />
-        <div className="grid grow gap-1">
+        <div className="grid grow gap-2">
           <Label htmlFor="radio-08-r1">
             Label{" "}
             <span className="text-xs font-normal leading-[inherit] text-muted-foreground">
@@ -32,7 +32,7 @@ export default function Radio08() {
           aria-describedby="radio-08-r2-description"
           className="order-1 after:absolute after:inset-0"
         />
-        <div className="grid grow gap-1">
+        <div className="grid grow gap-2">
           <Label htmlFor="radio-08-r2">
             Label{" "}
             <span className="text-xs font-normal leading-[inherit] text-muted-foreground">
