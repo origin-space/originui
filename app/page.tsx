@@ -50,7 +50,7 @@ export default function Page() {
                   <li>
                     <Link
                       href="/inputs"
-                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-input bg-background p-4 font-bold shadow-sm shadow-black/[0.04] ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
+                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/[0.04] ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
                     >
                       Input
                       <ArrowRight size={16} strokeWidth={2} className="-mr-1 ml-2 opacity-60" />
@@ -59,14 +59,14 @@ export default function Page() {
                   <li>
                     <Link
                       href="/buttons"
-                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-input bg-background p-4 font-bold shadow-sm shadow-black/[0.04] ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
+                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/[0.04] ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
                     >
                       Button
                       <ArrowRight size={16} strokeWidth={2} className="-mr-1 ml-2 opacity-60" />
                     </Link>
                   </li>
                   <li>
-                    <span className="inline-flex w-full flex-col justify-between gap-2 whitespace-nowrap rounded-lg border border-input bg-background p-4 font-bold shadow-sm shadow-black/[0.04] sm:h-14 sm:flex-row sm:items-center">
+                    <span className="inline-flex w-full flex-col justify-between gap-2 whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/[0.04] sm:h-14 sm:flex-row sm:items-center">
                       <span className="flex items-start gap-2">
                         Checkbox, Radio, and Switch
                         <span className="-mt-1 text-[10px] font-medium uppercase text-zinc-400 dark:text-zinc-600">
