@@ -1,11 +1,11 @@
 "use client";
 
-import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useCharacterLimit } from "@/hooks/use-character-limit";
 
-export default function Input35() {
-  const maxLength = 8;
+export default function Textarea12() {
+  const maxLength = 180;
   const {
     value,
     characterCount,
@@ -15,18 +15,17 @@ export default function Input35() {
 
   return (
     <div className="space-y-2">
-      <Label htmlFor="input-35">Input with characters left</Label>
-      <Input
-        id="input-35"
-        type="text"
+      <Label htmlFor="textarea-12">Textarea with characters left</Label>
+      <Textarea
+        id="textarea-12"
         value={value}
         maxLength={maxLength}
         onChange={handleChange}
-        aria-describedby="characters-left"
+        aria-describedby="characters-left-textarea"
       />
       <p
-        id="characters-left"
-        className="mt-2 text-xs text-muted-foreground"
+        id="characters-left-textarea"
+        className="mt-2 text-xs text-muted-foreground text-right"
         role="status"
         aria-live="polite"
       >
