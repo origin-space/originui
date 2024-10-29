@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 
@@ -22,7 +21,7 @@ const CopyClass = ({ value }: { value: string }) => {
     <div>
       <Button
         variant="ghost"
-        className="text-muted-foreground/80 hover:bg-transparent hover:text-foreground disabled:opacity-100 h-7 text-xs whitespace-normal max-w-full font-normal"
+        className="h-7 max-w-full whitespace-normal text-xs font-normal text-muted-foreground/80 hover:bg-transparent hover:text-foreground disabled:opacity-100"
         onClick={handleCopy}
         aria-label={copied ? "Copied" : "Copy Tailwind class"}
         disabled={copied}
@@ -32,10 +31,7 @@ const CopyClass = ({ value }: { value: string }) => {
         </div>
         <div className="relative ml-2">
           <div
-            className={cn(
-              "transition-all",
-              copied ? "scale-100 opacity-100" : "scale-0 opacity-0",
-            )}
+            className={cn("transition-all", copied ? "scale-100 opacity-100" : "scale-0 opacity-0")}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

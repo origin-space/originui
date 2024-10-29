@@ -1,7 +1,7 @@
 import Header from "@/demo/header";
 import { ThemeProvider } from "@/demo/theme-provider";
 import type { Viewport } from "next";
-import { Inter as FontSans, JetBrains_Mono as FontMono } from "next/font/google";
+import { JetBrains_Mono as FontMono, Inter as FontSans } from "next/font/google";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -28,7 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${fontSans.variable} ${fontMono.variable} bg-background font-sans antialiased`}>
+      <body
+        className={`${fontSans.variable} ${fontMono.variable} bg-background font-sans antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

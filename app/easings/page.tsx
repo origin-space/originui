@@ -1,6 +1,6 @@
-import Easings from "./easings";
 import PageHeader from "@/demo/page-header";
 import XLinks from "@/demo/x-links";
+import Easings from "./easings";
 
 const easings = [
   {
@@ -119,7 +119,7 @@ const easings = [
     name: "easeInOutBack",
     points: [0.68, -0.6, 0.32, 1.6],
   },
-]
+];
 
 export default function Page() {
   return (

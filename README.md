@@ -5,6 +5,7 @@ Origin UI is an extensive collection of copy-and-paste components for quickly bu
 ## Overview
 
 Origin UI streamlines UI development by providing:
+
 - Hundreds of customizable components
 - Consistent styling
 - Regular updates and new component additions
