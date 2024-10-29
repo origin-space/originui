@@ -384,7 +384,7 @@ export default function Easings({ easings }: EasingsProps) {
           </div>      
         ))}
           <div className="relative bg-muted/65 rounded-xl p-6">
-            <p className="mb-4"><strong className="block font-medium text-foreground text-sm">Technical note</strong></p>
+            <p className="mb-4"><strong className="block font-medium text-foreground text-sm">Note</strong></p>
             <p className="text-sm text-muted-foreground leading-relaxed">
              We use class names with arbitrary properties like <code className="font-mono text-foreground text-[13px]">[transition-timing-function:cubic-bezier(...)]</code> instead of <code className="font-mono text-foreground text-[13px]">ease-[cubic-bezier(...)]</code> as recommended in the Tailwind CSS documentation, because the latter won't work with the tailwindcss-animate plugin. See{" "}
             <a
