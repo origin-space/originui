@@ -2,7 +2,7 @@ import Cta from "@/demo/cta";
 import DemoComponent from "@/demo/demo-component";
 import PageHeader from "@/demo/page-header";
 
-// Define an array of input file names
+const inputDir = "inputs";
 const inputFiles = [
   "input-01",
   "input-02",
@@ -57,22 +57,42 @@ const inputFiles = [
   "input-51",
 ];
 
+const textareaDir = "textareas";
+const textareaFiles = [
+  "textarea-01",
+  "textarea-02",
+  "textarea-03",
+  "textarea-04",
+  "textarea-05",
+  "textarea-06",
+  "textarea-07",
+  "textarea-08",
+];
+
 export default function Page() {
   return (
     <main>
       <div className="px-4 sm:px-6">
         <div className="mx-auto w-full max-w-6xl">
-          <PageHeader title="Input">
-            A growing collection of over 50 input components built with Next.js and TailwindCSS.
+          <PageHeader title="Input and Textarea">
+            A growing collection of over 50 input and textarea components built with Next.js and TailwindCSS.
           </PageHeader>
 
           <div className="grid max-w-6xl grid-cols-1 overflow-hidden sm:grid-cols-2 lg:grid-cols-3 [&>*]:relative [&>*]:px-1 [&>*]:py-12 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-8 xl:[&>*]:px-12">
             {inputFiles.map((componentName) => {
-              const directory = "inputs";
               return (
                 <DemoComponent
                   key={componentName}
-                  directory={directory}
+                  directory={inputDir}
+                  componentName={componentName}
+                />
+              );
+            })}
+            {textareaFiles.map((componentName) => {
+              return (
+                <DemoComponent
+                  key={componentName}
+                  directory={textareaDir}
                   componentName={componentName}
                 />
               );
