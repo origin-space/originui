@@ -68,12 +68,10 @@ const switchFiles = [
   "switch-17"
 ];
 
-const totalCheckboxes = checboxFiles.length; // 18
-const totalRadios = radioFiles.length; // 18
-const totalSwitches = switchFiles.length; // 18
-
-const totalComponents = totalCheckboxes + totalRadios + totalSwitches; // 54
-
+const totalCheckboxes = checboxFiles.length;
+const totalRadios = radioFiles.length;
+const totalSwitches = switchFiles.length;
+const totalComponents = totalCheckboxes + totalRadios + totalSwitches;
 
 export default function Page() {
   return (
