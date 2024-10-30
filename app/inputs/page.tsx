@@ -56,6 +56,7 @@ const inputFiles = [
   "input-50",
   "input-51",
   "input-52",
+  "input-53",
 ];
 
 const textareaDir = "textareas";
@@ -78,6 +79,7 @@ const textareaFiles = [
   "textarea-12",
   "textarea-16",
   "textarea-17",
+  "textarea-18",
 ];
 
 export default function Page() {
