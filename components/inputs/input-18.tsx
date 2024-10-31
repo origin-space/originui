@@ -24,7 +24,7 @@ export default function Input18() {
             <option>.org</option>
             <option>.net</option>
           </select>
-          <span className="pointer-events-none absolute inset-y-0 end-px flex h-full w-9 items-center justify-center text-muted-foreground/80 peer-disabled:opacity-50">
+          <span className="pointer-events-none absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center text-muted-foreground/80 peer-disabled:opacity-50">
             <ChevronDown size={16} strokeWidth={2} aria-hidden="true" role="img" />
           </span>
         </div>

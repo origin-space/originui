@@ -1,36 +1,13 @@
-"use client";
-
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { useCharacterLimit } from "@/hooks/use-character-limit";
+import { Button } from "@/components/ui/button";
 
 export default function Textarea12() {
-  const maxLength = 180;
-  const {
-    value,
-    characterCount,
-    handleChange,
-    maxLength: limit,
-  } = useCharacterLimit({ maxLength });
-
   return (
     <div className="space-y-2">
-      <Label htmlFor="textarea-12">Textarea with characters left</Label>
-      <Textarea
-        id="textarea-12"
-        value={value}
-        maxLength={maxLength}
-        onChange={handleChange}
-        aria-describedby="characters-left-textarea"
-      />
-      <p
-        id="characters-left-textarea"
-        className="mt-2 text-xs text-muted-foreground text-right"
-        role="status"
-        aria-live="polite"
-      >
-        <span className="tabular-nums">{limit - characterCount}</span> characters left
-      </p>
+      <Label htmlFor="textarea-12">Textarea with button</Label>
+      <Textarea id="textarea-12" placeholder="Leave a comment" />
+      <Button variant="outline" className="w-full">Send</Button>
     </div>
   );
 }
