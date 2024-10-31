@@ -1,5 +1,5 @@
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function Textarea06() {
   return (
@@ -13,7 +13,7 @@ export default function Textarea06() {
       />
       <p className="mt-2 text-xs text-destructive" role="alert" aria-live="polite">
         Message should be at least 10 characters
-      </p>      
+      </p>
     </div>
   );
 }

@@ -3,23 +3,23 @@
 
 "use client";
 
-import { useState } from 'react';
-import { Label } from '@/components/ui/label';
-import { Tag, TagInput } from 'emblor';
+import { Label } from "@/components/ui/label";
+import { Tag, TagInput } from "emblor";
+import { useState } from "react";
 
 const tags = [
   {
-    "id": "1",
-    "text": "Sport"
+    id: "1",
+    text: "Sport",
   },
   {
-    "id": "2",
-    "text": "Coding"
+    id: "2",
+    text: "Coding",
   },
   {
-    "id": "3",
-    "text": "Travel"
-  }
+    id: "3",
+    text: "Travel",
+  },
 ];
 
 export default function Input56() {
@@ -32,21 +32,19 @@ export default function Input56() {
       <TagInput
         id="input-56"
         tags={exampleTags}
-        setTags={
-          (newTags) => {
-            setExampleTags(newTags);
-          }
-        }
+        setTags={(newTags) => {
+          setExampleTags(newTags);
+        }}
         placeholder="Add a tag"
-        styleClasses={
-          {
-            input: 'rounded-lg ring-offset-background transition-shadow placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2',
-            tag: {
-              body: 'relative bg-background hover:bg-background rounded-lg font-medium text-xs ps-3 pe-8',
-              closeButton: 'absolute -inset-y-px -end-px p-0 rounded-e-lg flex size-8 border border-transparent ring-offset-background transition-colors focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 text-muted-foreground/80 hover:text-foreground',
-            },
-          }
-        }   
+        styleClasses={{
+          input:
+            "rounded-lg ring-offset-background transition-shadow placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2",
+          tag: {
+            body: "relative bg-background hover:bg-background rounded-lg font-medium text-xs ps-3 pe-8",
+            closeButton:
+              "absolute -inset-y-px -end-px p-0 rounded-e-lg flex size-8 border border-transparent ring-offset-background transition-colors focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 text-muted-foreground/80 hover:text-foreground",
+          },
+        }}
         activeTagIndex={activeTagIndex}
         setActiveTagIndex={setActiveTagIndex}
         inlineTags={false}
@@ -62,7 +60,7 @@ export default function Input56() {
         >
           emblor
         </a>
-      </p>       
+      </p>
     </div>
   );
 }

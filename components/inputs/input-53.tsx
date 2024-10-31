@@ -4,10 +4,10 @@
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Copy, Check } from "lucide-react";
-import { useState, useRef } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import { Check, Copy } from "lucide-react";
+import { useRef, useState } from "react";
 
 export default function Input53() {
   const [copied, setCopied] = useState<boolean>(false);
@@ -48,7 +48,12 @@ export default function Input53() {
                     copied ? "scale-100 opacity-100" : "scale-0 opacity-0",
                   )}
                 >
-                  <Check className="stroke-emerald-500" size={16} strokeWidth={2} aria-hidden="true" />
+                  <Check
+                    className="stroke-emerald-500"
+                    size={16}
+                    strokeWidth={2}
+                    aria-hidden="true"
+                  />
                 </div>
                 <div
                   className={cn(
@@ -60,7 +65,9 @@ export default function Input53() {
                 </div>
               </button>
             </TooltipTrigger>
-            <TooltipContent className="border border-input bg-popover px-2 py-1 text-xs text-muted-foreground">Copy to clipboard</TooltipContent>
+            <TooltipContent className="border border-input bg-popover px-2 py-1 text-xs text-muted-foreground">
+              Copy to clipboard
+            </TooltipContent>
           </Tooltip>
         </TooltipProvider>
       </div>

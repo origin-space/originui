@@ -1,7 +1,7 @@
 "use client";
 
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { useCharacterLimit } from "@/hooks/use-character-limit";
 
 export default function Textarea13() {
@@ -25,7 +25,7 @@ export default function Textarea13() {
       />
       <p
         id="characters-left-textarea"
-        className="mt-2 text-xs text-muted-foreground text-right"
+        className="mt-2 text-right text-xs text-muted-foreground"
         role="status"
         aria-live="polite"
       >

@@ -10,12 +10,12 @@ export default function Input54() {
   return (
     <div className="space-y-2">
       <Label htmlFor="input-54">UK Vehicle Registration</Label>
-      <Input 
-        id="input-54" 
-        placeholder="AB12 CDE" 
-        type="text" 
-        ref={withMask('AA99 AAA', {
-          placeholder: '_',
+      <Input
+        id="input-54"
+        placeholder="AB12 CDE"
+        type="text"
+        ref={withMask("AA99 AAA", {
+          placeholder: "_",
           showMaskOnHover: false,
         })}
       />

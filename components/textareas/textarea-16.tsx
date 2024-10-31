@@ -6,7 +6,7 @@ export default function Textarea16() {
       </label>
       <textarea
         id="textarea-16"
-        className="flex w-full bg-transparent px-3 pb-2 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:outline-none min-h-[70px]"        
+        className="flex min-h-[70px] w-full bg-transparent px-3 pb-2 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:outline-none"
       />
     </div>
   );

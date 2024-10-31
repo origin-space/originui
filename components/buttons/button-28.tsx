@@ -3,9 +3,9 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Copy, Check } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import { Check, Copy } from "lucide-react";
 import { useState } from "react";
 
 export default function Button28() {

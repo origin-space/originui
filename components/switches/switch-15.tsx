@@ -3,7 +3,7 @@ import { Switch } from "@/components/ui/switch";
 
 export default function Switch15() {
   return (
-    <div className="items-start relative flex gap-2 rounded-lg border border-input p-4 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-ring w-full">
+    <div className="relative flex w-full items-start gap-2 rounded-lg border border-input p-4 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-ring">
       <Switch
         id="switch-15"
         className="order-1 h-4 w-6 after:absolute after:inset-0 [&_span]:size-3 [&_span]:data-[state=checked]:translate-x-2 rtl:[&_span]:data-[state=checked]:-translate-x-2"

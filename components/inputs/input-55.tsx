@@ -10,12 +10,12 @@ export default function Input55() {
   return (
     <div className="space-y-2">
       <Label htmlFor="input-55">Time (HH:MM:SS)</Label>
-      <Input 
-        id="input-55" 
-        placeholder="00:00:00" 
-        type="text" 
-        ref={withMask('99:99:99', {
-          placeholder: '-',
+      <Input
+        id="input-55"
+        placeholder="00:00:00"
+        type="text"
+        ref={withMask("99:99:99", {
+          placeholder: "-",
           showMaskOnHover: false,
         })}
       />
