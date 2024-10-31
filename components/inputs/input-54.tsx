@@ -15,7 +15,7 @@ export default function Input54() {
         placeholder="AB12 CDE"
         type="text"
         ref={withMask("AA99 AAA", {
-          placeholder: "_",
+          placeholder: "",
           showMaskOnHover: false,
         })}
       />
