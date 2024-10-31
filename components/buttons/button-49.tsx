@@ -87,7 +87,7 @@ export default function Button49() {
         />
       </div>
       {fileName && (
-        <p className="mt-2 text-xs text-muted-foreground lg:opacity-0 lg:group-focus-within/item:opacity-100 lg:group-hover/item:opacity-100">
+        <p className="mt-2 text-xs text-muted-foreground">
           {fileName}
         </p>
       )}
