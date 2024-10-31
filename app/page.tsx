@@ -73,7 +73,7 @@ export default function Page() {
                       Checkbox, Radio, and Switch
                       <ArrowRight size={16} strokeWidth={2} className="-mr-1 ml-2 opacity-60" />
                     </Link>
-                  </li>                  
+                  </li>
                   <li>
                     <span className="inline-flex w-full flex-col justify-between gap-2 whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/[0.04] sm:h-14 sm:flex-row sm:items-center">
                       <span className="flex items-start gap-2">
@@ -118,7 +118,7 @@ export default function Page() {
                         </span>
                       </span>
                     </span>
-                  </li>                  
+                  </li>
                 </ul>
               </nav>
             </div>
