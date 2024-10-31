@@ -36,7 +36,7 @@ export default function Button48() {
 
   return (
     <div>
-      <div className="inline-flex items-center space-x-2 rtl:space-x-reverse">
+      <div className="inline-flex items-center gap-2">
         <div
           className="relative flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-input"
           role="img"
