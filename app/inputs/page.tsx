@@ -86,6 +86,8 @@ const textareaFiles = [
   "textarea-19",
 ];
 
+const files = [...inputFiles, ...textareaFiles];
+
 export default function Page() {
   return (
     <main>
