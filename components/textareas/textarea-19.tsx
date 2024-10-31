@@ -7,7 +7,7 @@ import { ChangeEvent, useRef } from "react";
 export default function Textarea19() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const defaultRows = 1;
-  const maxRows = undefined;
+  const maxRows = undefined; // You can set a max number of rows
 
   const handleInput = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const textarea = e.target;

@@ -4,7 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 export default function Textarea04() {
   return (
     <>
-      <div className="mb-2 flex justify-between gap-1">
+      <div className="mb-2 flex items-center justify-between gap-1">
         <Label htmlFor="textarea-04" className="mb-0">
           Textarea with hint
         </Label>

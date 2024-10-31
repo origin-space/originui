@@ -37,12 +37,15 @@ export default function Input56() {
         }}
         placeholder="Add a tag"
         styleClasses={{
+          tagList: {
+            container: "gap-1",
+          },
           input:
             "rounded-lg ring-offset-background transition-shadow placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2",
           tag: {
-            body: "relative bg-background hover:bg-background rounded-lg font-medium text-xs ps-3 pe-8",
+            body: "relative h-7 bg-background hover:bg-background rounded-md font-medium text-xs ps-2 pe-7",
             closeButton:
-              "absolute -inset-y-px -end-px p-0 rounded-e-lg flex size-8 border border-transparent ring-offset-background transition-colors focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 text-muted-foreground/80 hover:text-foreground",
+              "absolute -inset-y-px -end-px p-0 rounded-e-lg flex size-7 border border-transparent ring-offset-background transition-colors focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 text-muted-foreground/80 hover:text-foreground",
           },
         }}
         activeTagIndex={activeTagIndex}

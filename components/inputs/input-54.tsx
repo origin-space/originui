@@ -9,7 +9,7 @@ import { withMask } from "use-mask-input";
 export default function Input54() {
   return (
     <div className="space-y-2">
-      <Label htmlFor="input-54">UK Vehicle Registration</Label>
+      <Label htmlFor="input-54">Input with mask</Label>
       <Input
         id="input-54"
         placeholder="AB12 CDE"

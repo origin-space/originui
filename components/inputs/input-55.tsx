@@ -9,7 +9,7 @@ import { withMask } from "use-mask-input";
 export default function Input55() {
   return (
     <div className="space-y-2">
-      <Label htmlFor="input-55">Time (HH:MM:SS)</Label>
+      <Label htmlFor="input-55">Timestamp</Label>
       <Input
         id="input-55"
         placeholder="00:00:00"
