@@ -5,9 +5,10 @@
 import { Button } from "@/components/ui/button";
 import { CircleUserRound, X } from "lucide-react";
 import Image from "next/image";
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useRef, useState, useEffect } from "react";
 
 export default function Button49() {
+  const previewRef = useRef<string | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [fileName, setFileName] = useState<string | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
@@ -22,17 +23,26 @@ export default function Button49() {
       setFileName(file.name);
       const url = URL.createObjectURL(file);
       setPreviewUrl(url);
+      previewRef.current = url
       console.log("File selected:", file);
     }
   }, []);
 
   const handleRemove = useCallback(() => {
+    previewUrl && URL.revokeObjectURL(previewUrl)
     setFileName(null);
     setPreviewUrl(null);
+    previewRef.current = null
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
     }
   }, []);
+
+  useEffect(() => {
+    return () => {
+      previewRef.current && URL.revokeObjectURL(previewRef.current)
+    }
+  }, [])
 
   return (
     <div>
