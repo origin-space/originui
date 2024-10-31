@@ -2,10 +2,11 @@
 
 "use client";
 
+import { cn } from '@/lib/utils'
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ChevronDown, Phone } from "lucide-react";
-import React, { useState } from "react";
+import React, { forwardRef, useState, type InputHTMLAttributes } from "react";
 import * as RPNInput from "react-phone-number-input";
 import flags from "react-phone-number-input/flags";
 
@@ -41,13 +42,13 @@ export default function Input46() {
   );
 }
 
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
-const PhoneInput = React.forwardRef<HTMLInputElement, InputProps>(
+const PhoneInput = forwardRef<HTMLInputElement, InputProps>(
   ({ className, ...props }, ref) => {
     return (
       <Input
-        className="-ms-px rounded-s-none shadow-none focus-visible:z-10"
+        className={cn("-ms-px rounded-s-none shadow-none focus-visible:z-10", className)}
         ref={ref}
         {...props}
       />
@@ -61,7 +62,7 @@ type CountrySelectProps = {
   disabled?: boolean;
   value: RPNInput.Country;
   onChange: (value: RPNInput.Country) => void;
-  options: { label: string; value: RPNInput.Country }[];
+  options: { label: string; value: RPNInput.Country | undefined }[];
 };
 
 const CountrySelect = ({ disabled, value, onChange, options }: CountrySelectProps) => {
@@ -79,7 +80,7 @@ const CountrySelect = ({ disabled, value, onChange, options }: CountrySelectProp
       </div>
       <select
         disabled={disabled}
-        value={value || ""}
+        value={value}
         onChange={handleSelect}
         className="absolute inset-0 text-sm opacity-0"
         aria-label="Select country"
@@ -89,8 +90,8 @@ const CountrySelect = ({ disabled, value, onChange, options }: CountrySelectProp
         </option>
         {options
           .filter((x) => x.value)
-          .map((option) => (
-            <option key={option.value || "empty"} value={option.value}>
+          .map((option, i) => (
+            <option key={option.value ?? `empty-${i}`} value={option.value}>
               {option.label} {option.value && `+${RPNInput.getCountryCallingCode(option.value)}`}
             </option>
           ))}
