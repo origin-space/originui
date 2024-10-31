@@ -11,7 +11,7 @@ export default function Button51() {
         <p className="font-normal text-muted-foreground">Matches for your roster</p>
       </div>
       <ChevronRight
-        className="opacity-60 transition-transform group-hover:translate-x-0.5"
+        className="opacity-60 transition-transform group-hover:translate-x-0.5 shrink-0"
         size={16}
         strokeWidth={2}
         aria-hidden="true"
