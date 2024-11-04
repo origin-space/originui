@@ -86,11 +86,7 @@ export default function Button49() {
           aria-label="Upload image file"
         />
       </div>
-      {fileName && (
-        <p className="mt-2 text-xs text-muted-foreground">
-          {fileName}
-        </p>
-      )}
+      {fileName && <p className="mt-2 text-xs text-muted-foreground">{fileName}</p>}
       <div className="sr-only" aria-live="polite" role="status">
         {previewUrl ? "Image uploaded and preview available" : "No image uploaded"}
       </div>

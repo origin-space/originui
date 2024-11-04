@@ -46,7 +46,7 @@ export default function Button48() {
 
   return (
     <div>
-      <div className="inline-flex align-top items-center gap-2">
+      <div className="inline-flex items-center gap-2 align-top">
         <div
           className="relative flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-input"
           aria-label={previewUrl ? "Preview of uploaded image" : "Default user avatar"}

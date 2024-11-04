@@ -2,9 +2,9 @@
 
 "use client";
 
-import { cn } from '@/lib/utils'
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { cn } from "@/lib/utils";
 import { ChevronDown, Phone } from "lucide-react";
 import React, { forwardRef, useState, type InputHTMLAttributes } from "react";
 import * as RPNInput from "react-phone-number-input";
@@ -44,17 +44,15 @@ export default function Input46() {
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
-const PhoneInput = forwardRef<HTMLInputElement, InputProps>(
-  ({ className, ...props }, ref) => {
-    return (
-      <Input
-        className={cn("-ms-px rounded-s-none shadow-none focus-visible:z-10", className)}
-        ref={ref}
-        {...props}
-      />
-    );
-  },
-);
+const PhoneInput = forwardRef<HTMLInputElement, InputProps>(({ className, ...props }, ref) => {
+  return (
+    <Input
+      className={cn("-ms-px rounded-s-none shadow-none focus-visible:z-10", className)}
+      ref={ref}
+      {...props}
+    />
+  );
+});
 
 PhoneInput.displayName = "PhoneInput";
 
