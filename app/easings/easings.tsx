@@ -225,7 +225,7 @@ const AnimatedSquare = ({
   return (
     <div
       key={`${key}-${duration}-${pauseDuration}-${animationType}`}
-      className={`flex w-full items-center ${animationType === "translate" ? "justify-start" : "justify-center"}`}
+      className={`flex w-full items-center pointer-events-none ${animationType === "translate" ? "justify-start" : "justify-center"}`}
       style={animationType === "translate" ? animationStyle : undefined}
     >
       <div
