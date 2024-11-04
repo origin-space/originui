@@ -1,4 +1,4 @@
-// Dependencies: npm install lucide-react
+// Dependencies: pnpm install lucide-react
 
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, Circle } from "lucide-react";

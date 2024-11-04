@@ -1,4 +1,4 @@
-// Dependencies: npm install react-payment-inputs lucide-react
+// Dependencies: pnpm install react-payment-inputs lucide-react
 
 "use client";
 

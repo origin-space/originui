@@ -1,4 +1,4 @@
-// Dependencies: npm install lucide-react
+// Dependencies: pnpm install lucide-react
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";

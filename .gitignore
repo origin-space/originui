@@ -24,6 +24,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-error.log*
 
 # local env files
 .env*.local

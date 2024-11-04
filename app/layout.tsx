@@ -9,7 +9,7 @@ const fontSans = FontSans({
   variable: "--font-sans",
 });
 
-export const fontMono = FontMono({
+const fontMono = FontMono({
   subsets: ["latin"],
   variable: "--font-mono",
 });

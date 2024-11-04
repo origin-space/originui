@@ -1,4 +1,4 @@
-// Dependencies: npm install react-phone-number-input lucide-react
+// Dependencies: pnpm install react-phone-number-input lucide-react
 
 "use client";
 
