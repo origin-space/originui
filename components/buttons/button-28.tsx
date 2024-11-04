@@ -1,4 +1,4 @@
-// Dependencies: npm install @radix-ui/react-tooltip
+// Dependencies: pnpm install @radix-ui/react-tooltip
 
 "use client";
 

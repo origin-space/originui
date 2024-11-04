@@ -1,4 +1,4 @@
-// Dependencies: npm install lucide-react
+// Dependencies: pnpm install lucide-react
 
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";

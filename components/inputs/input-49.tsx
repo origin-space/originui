@@ -1,4 +1,4 @@
-// Dependencies: npm install react-payment-inputs
+// Dependencies: pnpm install react-payment-inputs
 
 "use client";
 

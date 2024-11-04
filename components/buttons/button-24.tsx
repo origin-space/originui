@@ -1,4 +1,4 @@
-// Dependencies: npm install lucide-react @radix-ui/react-tooltip @radix-ui/react-toggle
+// Dependencies: pnpm install lucide-react @radix-ui/react-tooltip @radix-ui/react-toggle
 
 "use client";
 

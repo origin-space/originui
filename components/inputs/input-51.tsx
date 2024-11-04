@@ -1,4 +1,4 @@
-// Dependencies: npm install lucide-react
+// Dependencies: pnpm install lucide-react
 
 "use client";
 

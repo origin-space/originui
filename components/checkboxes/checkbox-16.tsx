@@ -1,4 +1,4 @@
-// Dependencies: npm install lucide-react
+// Dependencies: pnpm install lucide-react
 
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";

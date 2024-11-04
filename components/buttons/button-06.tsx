@@ -1,4 +1,4 @@
-// Dependencies: npm install lucide-react
+// Dependencies: pnpm install lucide-react
 
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";

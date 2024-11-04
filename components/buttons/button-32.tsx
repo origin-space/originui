@@ -1,4 +1,4 @@
-// Dependencies: npm install @radix-ui/react-toggle-group
+// Dependencies: pnpm install @radix-ui/react-toggle-group
 
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 

@@ -1,4 +1,4 @@
-// Dependencies: npm install use-mask-input
+// Dependencies: pnpm install use-mask-input
 
 "use client";
 

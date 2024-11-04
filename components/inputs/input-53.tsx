@@ -1,4 +1,4 @@
-// Dependencies: npm install lucide-react @radix-ui/react-tooltip
+// Dependencies: pnpm install lucide-react @radix-ui/react-tooltip
 
 "use client";
 
@@ -30,7 +30,7 @@ export default function Input53() {
           id="input-53"
           className="pe-9"
           type="text"
-          defaultValue="npm install origin-ui"
+          defaultValue="pnpm install origin-ui"
           readOnly
         />
         <TooltipProvider delayDuration={0}>

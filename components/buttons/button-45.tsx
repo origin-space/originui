@@ -1,4 +1,4 @@
-// Dependencies: npm install @remixicon/react
+// Dependencies: pnpm install @remixicon/react
 
 import { Button } from "@/components/ui/button";
 import { RiFacebookFill, RiGithubFill, RiGoogleFill, RiTwitterXFill } from "@remixicon/react";

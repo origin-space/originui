@@ -1,4 +1,4 @@
-// Dependencies: npm install react-aria-components
+// Dependencies: pnpm install react-aria-components
 
 "use client";
 

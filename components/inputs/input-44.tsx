@@ -1,4 +1,4 @@
-// Dependencies: npm install input-otp
+// Dependencies: pnpm install input-otp
 
 "use client";
 

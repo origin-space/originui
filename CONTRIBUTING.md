@@ -25,7 +25,7 @@ We welcome contributions to our project! Please follow these steps to contribute
 5. Install the project dependencies:
 
    ```
-   npm install
+   pnpm install
    ```
 
 6. Make your changes to the codebase.
@@ -33,13 +33,13 @@ We welcome contributions to our project! Please follow these steps to contribute
 7. Before building, format your code:
 
    ```
-   npm run format
+   pnpm run format
    ```
 
 8. Build the project:
 
    ```
-   npm run build
+   pnpm run build
    ```
 
 9. Test the application to ensure your changes work as expected.

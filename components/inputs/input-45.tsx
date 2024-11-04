@@ -1,4 +1,4 @@
-// Dependencies: npm install input-otp lucide-react
+// Dependencies: pnpm install input-otp lucide-react
 
 "use client";
 

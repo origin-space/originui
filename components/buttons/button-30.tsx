@@ -1,4 +1,4 @@
-// Dependencies: npm install lucide-react @radix-ui/react-toggle-group
+// Dependencies: pnpm install lucide-react @radix-ui/react-toggle-group
 
 "use client";
 

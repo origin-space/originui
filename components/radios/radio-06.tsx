@@ -1,4 +1,4 @@
-// Dependencies: npm install @remixicon/react
+// Dependencies: pnpm install @remixicon/react
 
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";

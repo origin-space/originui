@@ -1,4 +1,4 @@
-// Dependencies: npm install emblor
+// Dependencies: pnpm install emblor
 // Add the following to tailwind.config.ts: "./node_modules/emblor/dist/index.mjs",
 
 "use client";

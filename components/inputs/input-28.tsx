@@ -1,4 +1,4 @@
-// Dependencies: npm install lucide-react react-aria-components
+// Dependencies: pnpm install lucide-react react-aria-components
 
 "use client";
 
