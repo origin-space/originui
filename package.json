@@ -40,6 +40,7 @@
     "@remixicon/react": "^4.3.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "emblor": "^1.4.6",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.451.0",
     "next": "^14.2.15",
@@ -50,7 +51,8 @@
     "react-payment-inputs": "^1.2.0",
     "react-phone-number-input": "^3.4.8",
     "tailwind-merge": "^2.5.4",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "use-mask-input": "^3.4.0"
   },
   "devDependencies": {
     "@types/node": "^22.7.5",

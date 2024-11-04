@@ -1,16 +1,16 @@
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
-export default function Input04() {
+export default function Textarea04() {
   return (
     <>
       <div className="mb-2 flex items-center justify-between gap-1">
-        <Label htmlFor="input-04" className="mb-0">
-          Input with hint
+        <Label htmlFor="textarea-04" className="mb-0">
+          Textarea with hint
         </Label>
         <span className="text-sm text-muted-foreground">Optional</span>
       </div>
-      <Input id="input-04" placeholder="Email" type="email" />
+      <Textarea id="textarea-04" placeholder="Leave a comment" />
     </>
   );
 }
