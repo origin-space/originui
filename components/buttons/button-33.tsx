@@ -10,7 +10,7 @@ export default function Button33() {
 
   return (
     <ToggleGroup
-      className="flex gap-0 -space-x-px rounded-lg shadow-sm shadow-black/[0.04] rtl:space-x-reverse"
+      className="flex gap-0 -space-x-px rounded-lg shadow-sm shadow-black/5 rtl:space-x-reverse"
       type="single"
       variant="outline"
       value={value}

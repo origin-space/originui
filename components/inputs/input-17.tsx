@@ -8,7 +8,7 @@ export default function Input17() {
   return (
     <div className="space-y-2">
       <Label htmlFor="input-17">Input with start select</Label>
-      <div className="flex rounded-lg shadow-sm shadow-black/[.04]">
+      <div className="flex rounded-lg shadow-sm shadow-black/5">
         <div className="inline-flex relative">
           <select
             className="peer inline-flex h-full appearance-none items-center rounded-s-lg border border-input bg-background pe-8 ps-3 text-sm text-muted-foreground ring-offset-background transition-shadow hover:bg-accent hover:text-foreground focus:z-10 focus-visible:border-ring focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
