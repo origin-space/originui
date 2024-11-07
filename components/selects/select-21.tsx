@@ -10,9 +10,9 @@ import {
 export default function Select21() {
   return (
     <div className="space-y-2">
-      <Label htmlFor="select-21">Disabled select</Label>
-      <Select defaultValue="s1" disabled>
-        <SelectTrigger id="select-21">
+      <Label htmlFor="select-21">Select with gray background</Label>
+      <Select defaultValue="s2">
+        <SelectTrigger id="select-21" className="border-transparent bg-muted shadow-none">
           <SelectValue placeholder="Select framework" />
         </SelectTrigger>
         <SelectContent>

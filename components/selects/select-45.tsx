@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Check, ChevronDown, Plus } from "lucide-react"
+import { Check, ChevronDown } from "lucide-react"
 import { Label } from "@/components/ui/label"
 
 import { cn } from "@/lib/utils"
@@ -13,32 +13,95 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-  CommandSeparator,
 } from "@/components/ui/command"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import {
+  Blocks,
+  Brain,
+  Cpu,
+  Database,
+  Globe,
+  Layout,
+  LineChart,
+  Network,
+  Search,
+  Server,
+} from "lucide-react"
 
-const organizations = [
+const items = [
   {
-    value: "originui",
-    label: "Origin UI",
+    value: "analytics platform",
+    label: "Analytics Platform",
+    icon: LineChart,
+    number: 2451
   },
   {
-    value: "cruip",
-    label: "Cruip",
+    value: "ai services",
+    label: "AI Services",
+    icon: Brain,
+    number: 1832
+  },
+  {
+    value: "database systems",
+    label: "Database Systems",
+    icon: Database,
+    number: 1654
+  },
+  {
+    value: "compute resources",
+    label: "Compute Resources",
+    icon: Cpu,
+    number: 943
+  },
+  {
+    value: "network services",
+    label: "Network Services",
+    icon: Network,
+    number: 832
+  },
+  {
+    value: "web services",
+    label: "Web Services",
+    icon: Globe,
+    number: 654
+  },
+  {
+    value: "monitoring tools",
+    label: "Monitoring Tools",
+    icon: Search,
+    number: 432
+  },
+  {
+    value: "server management",
+    label: "Server Management",
+    icon: Server,
+    number: 321
+  },
+  {
+    value: "infrastructure",
+    label: "Infrastructure",
+    icon: Blocks,
+    number: 234
+  },
+  {
+    value: "frontend services",
+    label: "Frontend Services",
+    icon: Layout,
+    number: 123
   },
 ]
 
 export default function Select45() {
   const [open, setOpen] = useState<boolean>(false)
-  const [value, setValue] = useState<string>("originui")
+  const [value, setValue] = useState<string>("")
 
   return (
     <div className="space-y-2">
-      <Label htmlFor="select-45">Select with search and button</Label>
+      <Label htmlFor="select-45">Options with icon and number</Label>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button
@@ -48,45 +111,51 @@ export default function Select45() {
             aria-expanded={open}
             className="w-full justify-between font-normal px-3 bg-background hover:bg-background"
           >
-            <span className={cn("truncate", !value && "text-muted-foreground")}>
-              {value
-                ? organizations.find((organization) => organization.value === value)?.label
-                : "Select organization"}
-            </span>
+            {value ? (
+              <span className="flex items-center gap-2 min-w-0">
+                {(() => {
+                  const selectedItem = items.find((item) => item.value === value);
+                  if (selectedItem) {
+                    const Icon = selectedItem.icon;
+                    return <Icon className="h-4 w-4 text-muted-foreground" />;
+                  }
+                  return null;
+                })()}
+                <span className="truncate">
+                  {items.find((item) => item.value === value)?.label}
+                </span>
+              </span>
+            ) : (
+              <span className="text-muted-foreground">Select service category</span>
+            )}
             <ChevronDown size={16} strokeWidth={2} className="text-muted-foreground/80 shrink-0" aria-hidden="true" />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-full p-0 min-w-[var(--radix-popper-anchor-width)]" align="start">
           <Command>
-            <CommandInput placeholder="Find organization" />
+            <CommandInput placeholder="Search services..." />
             <CommandList>
-              <CommandEmpty>No organization found.</CommandEmpty>
+              <CommandEmpty>No service found.</CommandEmpty>
               <CommandGroup>
-                {organizations.map((organization) => (
+                {items.map((item) => (
                   <CommandItem
-                    key={organization.value}
-                    value={organization.value}
+                    key={item.value}
+                    value={item.value}
                     onSelect={(currentValue) => {
                       setValue(currentValue === value ? "" : currentValue)
                       setOpen(false)
                     }}
+                    className="flex items-center justify-between"
                   >
-                    {organization.label}
-                    <Check
-                      className={cn(
-                        "ml-auto",
-                        value === organization.value ? "opacity-100" : "opacity-0"
-                      )}
-                    />
+                    <div className="flex items-center gap-2">
+                      <item.icon className="h-4 w-4 text-muted-foreground" />
+                      {item.label}
+                    </div>
+                    <span className="text-xs text-muted-foreground">
+                      {item.number.toLocaleString()}
+                    </span>
                   </CommandItem>
                 ))}
-              </CommandGroup>
-              <CommandSeparator />
-              <CommandGroup>
-                <Button variant="ghost" className="w-full justify-start font-normal">
-                  <Plus size={16} strokeWidth={2} className="-ms-2 me-2 opacity-60" aria-hidden="true" />
-                  New organization
-                </Button>
               </CommandGroup>
             </CommandList>
           </Command>

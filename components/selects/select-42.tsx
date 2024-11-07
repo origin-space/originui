@@ -1,49 +1,97 @@
-// Dependencies: pnpm install react-aria-components
+"use client"
 
-"use client";
+import { useState } from "react"
+import { Check, ChevronDown, Plus } from "lucide-react"
+import { Label } from "@/components/ui/label"
 
-import { Label } from "@/components/ui/label";
-import { Section, Header, Separator, ListBox, ListBoxItem } from 'react-aria-components';
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+} from "@/components/ui/command"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+
+const organizations = [
+  {
+    value: "originui",
+    label: "Origin UI",
+  },
+  {
+    value: "cruip",
+    label: "Cruip",
+  },
+]
 
 export default function Select42() {
+  const [open, setOpen] = useState<boolean>(false)
+  const [value, setValue] = useState<string>("originui")
+
   return (
     <div className="space-y-2">
-      <Label>Listbox with option groups</Label>
-      <div className="overflow-hidden rounded-lg border border-input">
-        <ListBox className="min-h-20 max-h-72 overflow-auto bg-background shadow-sm shadow-black/[.04] ring-offset-background transition-shadow p-1 text-sm space-y-2" aria-label="Select some foods" selectionMode="multiple" defaultSelectedKeys={["lettuce", "tuna"]}>
-          <Section className="space-y-1">
-            <Header className="px-2 py-1.5 font-medium text-muted-foreground text-xs">Veggies</Header>
-            <ListBoxItem id="lettuce" className="relative rounded-md focus:outline-none px-2 py-1.5 data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30 data-[focus-visible]:z-10">Lettuce</ListBoxItem>
-            <ListBoxItem id="tomato" className="relative rounded-md focus:outline-none px-2 py-1.5 data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30 data-[focus-visible]:z-10">Tomato</ListBoxItem>
-            <ListBoxItem id="onion" className="relative rounded-md focus:outline-none px-2 py-1.5 data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30 data-[focus-visible]:z-10">Onion</ListBoxItem>
-          </Section>
-          <Separator className="-mx-1 my-1 h-px bg-border" />
-          <Section className="space-y-1">
-            <Header className="px-2 py-1.5 font-medium text-muted-foreground text-xs">Protein</Header>
-            <ListBoxItem id="ham" className="relative rounded-md focus:outline-none px-2 py-1.5 data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30 data-[focus-visible]:z-10">Ham</ListBoxItem>
-            <ListBoxItem id="tuna" className="relative rounded-md focus:outline-none px-2 py-1.5 data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30 data-[focus-visible]:z-10">Tuna</ListBoxItem>
-            <ListBoxItem id="tofu" className="relative rounded-md focus:outline-none px-2 py-1.5 data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30 data-[focus-visible]:z-10">Tofu</ListBoxItem>
-          </Section>
-          <Separator className="-mx-1 my-1 h-px bg-border" />
-          <Section className="space-y-1">
-            <Header className="px-2 py-1.5 font-medium text-muted-foreground text-xs">Condiments</Header>
-            <ListBoxItem id="mayo" className="relative rounded-md focus:outline-none px-2 py-1.5 data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30 data-[focus-visible]:z-10">Mayonaise</ListBoxItem>
-            <ListBoxItem id="mustard" className="relative rounded-md focus:outline-none px-2 py-1.5 data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30 data-[focus-visible]:z-10">Mustard</ListBoxItem>
-            <ListBoxItem id="ranch" className="relative rounded-md focus:outline-none px-2 py-1.5 data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30 data-[focus-visible]:z-10">Ranch</ListBoxItem>
-          </Section>
-        </ListBox>
-      </div>
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
-        Built with{" "}
-        <a
-          className="underline hover:text-foreground"
-          href="https://react-spectrum.adobe.com/react-aria/ListBox.html"
-          target="_blank"
-          rel="noopener nofollow"
-        >
-          React Aria
-        </a>
-      </p>           
+      <Label htmlFor="select-42">Select with search and button</Label>
+      <Popover open={open} onOpenChange={setOpen}>
+        <PopoverTrigger asChild>
+          <Button
+            id="select-42"
+            variant="outline"
+            role="combobox"
+            aria-expanded={open}
+            className="w-full justify-between font-normal px-3 bg-background hover:bg-background"
+          >
+            <span className={cn("truncate", !value && "text-muted-foreground")}>
+              {value
+                ? organizations.find((organization) => organization.value === value)?.label
+                : "Select organization"}
+            </span>
+            <ChevronDown size={16} strokeWidth={2} className="text-muted-foreground/80 shrink-0" aria-hidden="true" />
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent className="w-full p-0 min-w-[var(--radix-popper-anchor-width)]" align="start">
+          <Command>
+            <CommandInput placeholder="Find organization" />
+            <CommandList>
+              <CommandEmpty>No organization found.</CommandEmpty>
+              <CommandGroup>
+                {organizations.map((organization) => (
+                  <CommandItem
+                    key={organization.value}
+                    value={organization.value}
+                    onSelect={(currentValue) => {
+                      setValue(currentValue === value ? "" : currentValue)
+                      setOpen(false)
+                    }}
+                  >
+                    {organization.label}
+                    <Check
+                      className={cn(
+                        "ml-auto",
+                        value === organization.value ? "opacity-100" : "opacity-0"
+                      )}
+                    />
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+              <CommandSeparator />
+              <CommandGroup>
+                <Button variant="ghost" className="w-full justify-start font-normal">
+                  <Plus size={16} strokeWidth={2} className="-ms-2 me-2 opacity-60" aria-hidden="true" />
+                  New organization
+                </Button>
+              </CommandGroup>
+            </CommandList>
+          </Command>
+        </PopoverContent>
+      </Popover>
     </div>
-  );
+  )
 }

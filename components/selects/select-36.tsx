@@ -1,3 +1,4 @@
+import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
@@ -8,20 +9,31 @@ import {
 
 export default function Select36() {
   return (
-    <div className="group relative">
-      <label
-        htmlFor="select-36"
-        className="absolute start-1 top-0 z-10 block -translate-y-1/2 bg-background px-2 text-xs font-medium text-foreground group-has-[:disabled]:opacity-50"
-      >Select with overlapping label</label>
-      <Select>
-        <SelectTrigger id="select-36">
-          <SelectValue placeholder="Select framework" />
+    <div className="space-y-2">
+      <Label htmlFor="select-36">Select with description and right indicator</Label>
+      <Select defaultValue="s2">
+        <SelectTrigger id="select-36" className="[&_[data-desc]]:hidden">
+          <SelectValue placeholder="Choose a plan" />
         </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="s1">React</SelectItem>
-          <SelectItem value="s2">Next.js</SelectItem>
-          <SelectItem value="s3">Astro</SelectItem>
-          <SelectItem value="s4">Gatsby</SelectItem>
+        <SelectContent className="[&_*[role=option]]:pe-8 [&_*[role=option]]:ps-2 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
+          <SelectItem value="s1">
+            Standard Plan
+            <span className="block text-xs text-muted-foreground mt-1" data-desc>
+              Ideal for individuals
+            </span>
+          </SelectItem>
+          <SelectItem value="s2">
+            Pro Plan
+            <span className="block text-xs text-muted-foreground mt-1" data-desc>
+              For professional users
+            </span>
+          </SelectItem>
+          <SelectItem value="s3">
+            Enterprise Plan
+            <span className="block text-xs text-muted-foreground mt-1" data-desc>
+              Built for large teams
+            </span>
+          </SelectItem>
         </SelectContent>
       </Select>
     </div>

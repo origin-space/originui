@@ -10,8 +10,8 @@ import {
 export default function Select15() {
   return (
     <div className="space-y-2">
-      <Label htmlFor="select-15">Select with placeholder</Label>
-      <Select>
+      <Label htmlFor="select-15">Simple select with default value</Label>
+      <Select defaultValue="s1">
         <SelectTrigger id="select-15">
           <SelectValue placeholder="Select framework" />
         </SelectTrigger>

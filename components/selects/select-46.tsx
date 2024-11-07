@@ -1,105 +1,106 @@
-"use client"
+import React from 'react';
+import MultipleSelector, { Option } from '@/components/ui/multiselect';
+import { Label } from '@/components/ui/label';
 
-import { useState, useMemo } from "react"
-import { Check, ChevronDown } from "lucide-react"
-import { Label } from "@/components/ui/label"
-
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
+const frameworks: Option[] = [
+  {
+    value: "next.js",
+    label: "Next.js",
+  },
+  {
+    value: "sveltekit",
+    label: "SvelteKit",
+  },
+  {
+    value: "nuxt.js",
+    label: "Nuxt.js",
+    disable: true,
+  },
+  {
+    value: "remix",
+    label: "Remix",
+  },
+  {
+    value: "astro",
+    label: "Astro",
+  },
+  {
+    value: "angular",
+    label: "Angular",
+  },
+  {
+    value: "vue",
+    label: "Vue.js",
+  },
+  {
+    value: "react",
+    label: "React",
+  },
+  {
+    value: "ember",
+    label: "Ember.js",
+  },
+  {
+    value: "gatsby",
+    label: "Gatsby",
+  },
+  {
+    value: "eleventy",
+    label: "Eleventy",
+    disable: true,
+  },
+  {
+    value: "solid",
+    label: "SolidJS",
+  },
+  {
+    value: "preact",
+    label: "Preact",
+  },
+  {
+    value: "qwik",
+    label: "Qwik",
+  },
+  {
+    value: "alpine",
+    label: "Alpine.js",
+  },
+  {
+    value: "lit",
+    label: "Lit",
+  },
+]
 
 export default function Select46() {
-  const [open, setOpen] = useState<boolean>(false)
-  const [value, setValue] = useState<string>("Europe/London")
-
-  const timezones = Intl.supportedValuesOf('timeZone');  
-  
-  const formattedTimezones = useMemo(() => {
-    return timezones.map(timezone => {
-      const formatter = new Intl.DateTimeFormat('en', {
-        timeZone: timezone,
-        timeZoneName: 'shortOffset',
-      });
-      const parts = formatter.formatToParts(new Date());
-      const offset = parts.find(part => part.type === 'timeZoneName')?.value || '';
-      const modifiedOffset = offset === 'GMT' ? 'GMT+0' : offset;
-      
-      return {
-        value: timezone,
-        label: `(${modifiedOffset}) ${timezone.replace(/_/g, ' ')}`,
-        numericOffset: parseInt(offset.replace('GMT', '').replace('+', '') || '0')
-      };
-    })
-    .sort((a, b) => a.numericOffset - b.numericOffset);
-  }, [timezones]);  
-
   return (
     <div className="space-y-2">
-      <Label htmlFor="select-46">Timezone select with search</Label>
-      <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <Button
-            id="select-46"
-            variant="outline"
-            role="combobox"
-            aria-expanded={open}
-            className="w-full justify-between font-normal px-3 bg-background hover:bg-background"
-          >
-            <span className={cn("truncate", !value && "text-muted-foreground")}>
-              {value
-                ? formattedTimezones.find((timezone) => timezone.value === value)?.label
-                : "Select timezone"}
-            </span>
-            <ChevronDown size={16} strokeWidth={2} className="text-muted-foreground/80 shrink-0" aria-hidden="true" />
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-full p-0 min-w-[var(--radix-popper-anchor-width)]" align="start">
-          <Command
-            filter={(value, search) => {
-              const normalizedValue = value.toLowerCase();
-              const normalizedSearch = search.toLowerCase().replace(/\s+/g, '');
-              return normalizedValue.includes(normalizedSearch) ? 1 : 0;
-            }}
-          >
-            <CommandInput placeholder="Search timezone..." />
-            <CommandList>
-              <CommandEmpty>No timezone found.</CommandEmpty>
-              <CommandGroup>
-                {formattedTimezones.map(({ value: itemValue, label }) => (
-                  <CommandItem
-                    key={itemValue}
-                    value={itemValue}
-                    onSelect={(currentValue) => {
-                      setValue(currentValue === value ? "" : currentValue)
-                      setOpen(false)
-                    }}
-                  >
-                    {label}
-                    <Check
-                      className={cn(
-                        "ml-auto",
-                        value === itemValue ? "opacity-100" : "opacity-0"
-                      )}
-                    />
-                  </CommandItem>
-                ))}
-              </CommandGroup>
-            </CommandList>
-          </Command>
-        </PopoverContent>
-      </Popover>
+      <Label>Multiselect</Label>
+      <MultipleSelector
+        commandProps={{
+          label: 'Select frameworks',
+        }}
+        value={frameworks.slice(0, 2)}
+        defaultOptions={frameworks}
+        placeholder="Select frameworks"
+        hideClearAllButton
+        hidePlaceholderWhenSelected
+        emptyIndicator={
+          <p className="text-center text-sm">
+            No results found
+          </p>
+        }
+      />
+      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+        Inspired to{" "}
+        <a
+          className="underline hover:text-foreground"
+          href="https://shadcnui-expansions.typeart.cc/docs/multiple-selector"
+          target="_blank"
+          rel="noopener nofollow"
+        >
+          shadcn/ui expansions
+        </a>
+      </p>      
     </div>
-  )
-}
+  );
+};

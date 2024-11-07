@@ -9,11 +9,11 @@ import {
 
 export default function Select20() {
   return (
-    <div className="space-y-2">
-      <Label htmlFor="select-20">Select with gray background</Label>
-      <Select defaultValue="s2">
-        <SelectTrigger id="select-20" className="border-transparent bg-muted shadow-none">
-          <SelectValue placeholder="Select framework" />
+    <div className="space-y-2 [&_svg]:text-destructive/80">
+      <Label htmlFor="select-20">Select with error</Label>
+      <Select defaultValue="s1">
+        <SelectTrigger id="select-20" className="border-destructive/80 text-destructive focus-visible:border-destructive/80 focus-visible:ring-destructive/30">
+          <SelectValue />
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="s1">React</SelectItem>
@@ -22,6 +22,9 @@ export default function Select20() {
           <SelectItem value="s4">Gatsby</SelectItem>
         </SelectContent>
       </Select>
+      <p className="mt-2 text-xs text-destructive" role="alert" aria-live="polite">
+        Selected option is invalid
+      </p>      
     </div>
   );
 }

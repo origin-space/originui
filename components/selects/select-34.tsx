@@ -6,33 +6,28 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { RiReactjsLine, RiNextjsLine, RiGatsbyLine } from "@remixicon/react";
 
 export default function Select34() {
   return (
     <div className="space-y-2">
-      <Label htmlFor="select-34">Select with description and right indicator</Label>
-      <Select defaultValue="s2">
-        <SelectTrigger id="select-34" className="[&_[data-desc]]:hidden">
-          <SelectValue placeholder="Choose a plan" />
+      <Label htmlFor="select-34">Options with icon</Label>
+      <Select defaultValue="s3">
+        <SelectTrigger id="select-34" className="[&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_svg]:shrink-0 [&>span_svg]:text-muted-foreground/80">
+          <SelectValue placeholder="Select framework" />
         </SelectTrigger>
-        <SelectContent className="[&_*[role=option]]:pe-8 [&_*[role=option]]:ps-2 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
+        <SelectContent className="[&_*[role=option]>span]:flex [&_*[role=option]>span]:gap-2 [&_*[role=option]>span>svg]:shrink-0 [&_*[role=option]>span>svg]:text-muted-foreground/80">
           <SelectItem value="s1">
-            Standard Plan
-            <span className="block text-xs text-muted-foreground mt-1" data-desc>
-              Ideal for individuals
-            </span>
+            <RiReactjsLine size={16} aria-hidden="true" />
+            <span className="truncate">React</span>
           </SelectItem>
           <SelectItem value="s2">
-            Pro Plan
-            <span className="block text-xs text-muted-foreground mt-1" data-desc>
-              For professional users
-            </span>
+            <RiNextjsLine size={16} aria-hidden="true" />
+            <span className="truncate">Next.js</span>
           </SelectItem>
           <SelectItem value="s3">
-            Enterprise Plan
-            <span className="block text-xs text-muted-foreground mt-1" data-desc>
-              Built for large teams
-            </span>
+            <RiGatsbyLine size={16} aria-hidden="true" />
+            <span className="truncate">Gatsby</span>
           </SelectItem>
         </SelectContent>
       </Select>

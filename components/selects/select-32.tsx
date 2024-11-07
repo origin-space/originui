@@ -1,45 +1,67 @@
-import { cn } from "@/lib/utils";
 import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
-  SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
 
-const Square = ({ className, children }: { className?: string, children: React.ReactNode }) => (
-  <span data-square className={cn("size-5 rounded flex items-center justify-center text-xs font-medium bg-muted text-muted-foreground", className)} aria-hidden="true">
-    {children}
-  </span>
-);
+function StatusDot({ className }: { className?: string }) {
+  return (
+    <svg 
+      width="8" 
+      height="8" 
+      fill="currentColor" 
+      viewBox="0 0 8 8" 
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      <circle cx="4" cy="4" r="4" />
+    </svg>
+  );
+}
 
 export default function Select32() {
   return (
     <div className="space-y-2">
-      <Label htmlFor="select-32">Options with placeholder avatar</Label>
+      <Label htmlFor="select-32">Status select</Label>
       <Select defaultValue="s1">
-        <SelectTrigger id="select-32" className="[&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_[data-square]]:shrink-0 ps-2">
-          <SelectValue placeholder="Select framework" />
+        <SelectTrigger id="select-32" className="[&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_svg]:shrink-0">
+          <SelectValue placeholder="Select status" />
         </SelectTrigger>
-        <SelectContent className="[&_*[role=option]]:pe-8 [&_*[role=option]]:ps-2 [&_*[role=option]>span]:flex [&_*[role=option]>span]:gap-2 [&_*[role=option]>span]:items-center [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
-          <SelectGroup>
-            <SelectLabel className="ps-2">Impersonate user</SelectLabel>
-            <SelectItem value="s1">
-              <Square className="bg-indigo-400/20 text-indigo-500">F</Square>
-              <span className="truncate">Frank Morris</span>
-            </SelectItem>
-            <SelectItem value="s2">
-              <Square className="bg-purple-400/20 text-purple-500">X</Square>
-              <span className="truncate">Xavier Guerra</span>
-            </SelectItem>
-            <SelectItem value="s3">
-              <Square className="bg-rose-400/20 text-rose-500">A</Square>
-              <span className="truncate">Anne Kelley</span>
-            </SelectItem>
-          </SelectGroup>
+        <SelectContent className="[&_*[role=option]]:pe-8 [&_*[role=option]]:ps-2 [&_*[role=option]>span]:flex [&_*[role=option]>span]:gap-2 [&_*[role=option]>span]:items-center [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2 [&_*[role=option]>span>svg]:shrink-0 [&_*[role=option]>span>svg]:text-muted-foreground/80">
+          <SelectItem value="s1">
+            <span className="flex items-center gap-2">
+              <StatusDot className="text-green-600" />
+              <span className="truncate">Completed</span>
+            </span>
+          </SelectItem>
+          <SelectItem value="s2">
+            <span className="flex items-center gap-2">
+              <StatusDot className="text-blue-500" />
+              <span className="truncate">In Progress</span>
+            </span>
+          </SelectItem>
+          <SelectItem value="s3">
+            <span className="flex items-center gap-2">
+              <StatusDot className="text-yellow-500" />
+              <span className="truncate">Pending</span>
+            </span>
+          </SelectItem>
+          <SelectItem value="s4">
+            <span className="flex items-center gap-2">
+              <StatusDot className="text-gray-500" />
+              <span className="truncate">Cancelled</span>
+            </span>
+          </SelectItem>
+          <SelectItem value="s5">
+            <span className="flex items-center gap-2">
+              <StatusDot className="text-red-500" />
+              <span className="truncate">Failed</span>
+            </span>
+          </SelectItem>
         </SelectContent>
       </Select>
     </div>

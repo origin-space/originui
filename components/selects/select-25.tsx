@@ -5,17 +5,16 @@ import {
   SelectGroup,
   SelectItem,
   SelectLabel,
-  SelectSeparator,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
 
-export default function Select15() {
+export default function Select25() {
   return (
     <div className="space-y-2">
-      <Label htmlFor="select-24">Select with separator</Label>
+      <Label htmlFor="select-25">Select with options groups</Label>
       <Select defaultValue="s1">
-        <SelectTrigger id="select-24">
+        <SelectTrigger id="select-25">
           <SelectValue placeholder="Select food" />
         </SelectTrigger>
         <SelectContent>
@@ -25,7 +24,6 @@ export default function Select15() {
             <SelectItem value="s2">Banana</SelectItem>
             <SelectItem value="s3">Orange</SelectItem>
           </SelectGroup>
-          <SelectSeparator />
           <SelectGroup>
             <SelectLabel>Vegetables</SelectLabel>
             <SelectItem value="s4">Carrot</SelectItem>

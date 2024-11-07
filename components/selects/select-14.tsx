@@ -1,27 +1,19 @@
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+import { SelectNative } from "@/components/ui/select-native";
 
 export default function Select14() {
   return (
-    <div className="space-y-2">
-      <Label htmlFor="select-14">Simple select with default value</Label>
-      <Select defaultValue="s1">
-        <SelectTrigger id="select-14">
-          <SelectValue placeholder="Select framework" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="s1">React</SelectItem>
-          <SelectItem value="s2">Next.js</SelectItem>
-          <SelectItem value="s3">Astro</SelectItem>
-          <SelectItem value="s4">Gatsby</SelectItem>
-        </SelectContent>
-      </Select>
+    <div className="relative rounded-lg border border-input bg-background shadow-sm shadow-black/5 ring-offset-background transition-shadow focus-within:border-ring focus-within:ring-2 focus-within:ring-ring/30 focus-within:ring-offset-2 has-[select:disabled]:cursor-not-allowed has-[select:disabled]:opacity-50 [&:has(select:is(:disabled))_*]:pointer-events-none">
+      <label
+        htmlFor="select-14"
+        className="block px-3 pt-2 text-xs font-medium text-foreground"
+      >Select with inset label (native)</label>
+      <SelectNative id="select-14" defaultValue="" className="border-none shadow-none focus-visible:ring-0 bg-transparent focus-visible:ring-offset-0">
+        <option value="" disabled>Select framework</option>
+        <option value="s1">React</option>
+        <option value="s2">Next.js</option>
+        <option value="s3">Astro</option>
+        <option value="s4">Gatsby</option>
+      </SelectNative> 
     </div>
   );
 }

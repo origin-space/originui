@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -8,18 +9,40 @@ import {
 } from "@/components/ui/select"
 
 export default function Select30() {
+  const timezones = Intl.supportedValuesOf('timeZone');  
+  
+  const formattedTimezones = useMemo(() => {
+    return timezones.map(timezone => {
+      const formatter = new Intl.DateTimeFormat('en', {
+        timeZone: timezone,
+        timeZoneName: 'shortOffset',
+      });
+      const parts = formatter.formatToParts(new Date());
+      const offset = parts.find(part => part.type === 'timeZoneName')?.value || '';
+      const modifiedOffset = offset === 'GMT' ? 'GMT+0' : offset;
+      
+      return {
+        value: timezone,
+        label: `(${modifiedOffset}) ${timezone.replace(/_/g, ' ')}`,
+        numericOffset: parseInt(offset.replace('GMT', '').replace('+', '') || '0')
+      };
+    })
+    .sort((a, b) => a.numericOffset - b.numericOffset);
+  }, [timezones]);
+
   return (
     <div className="space-y-2">
-      <Label htmlFor="select-30">Select with disabled options</Label>
-      <Select defaultValue="s2">
+      <Label htmlFor="select-30">Timezone select</Label>
+      <Select defaultValue="Europe/London">
         <SelectTrigger id="select-30">
-          <SelectValue placeholder="Select framework" />
+          <SelectValue placeholder="Select timezone" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="s1" disabled>React</SelectItem>
-          <SelectItem value="s2">Next.js</SelectItem>
-          <SelectItem value="s3" disabled>Astro</SelectItem>
-          <SelectItem value="s4">Gatsby</SelectItem>
+          {formattedTimezones.map(({ value, label }) => (
+            <SelectItem key={value} value={value}>
+              {label}
+            </SelectItem>
+          ))}          
         </SelectContent>
       </Select>
     </div>

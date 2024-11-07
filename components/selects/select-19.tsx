@@ -9,11 +9,15 @@ import {
 
 export default function Select19() {
   return (
-    <div className="space-y-2 [&_svg]:text-destructive/80">
-      <Label htmlFor="select-19">Select with error</Label>
+    <div
+      className="space-y-2"
+      // NOTE: This inline style is to show how to set the --ring variable in your CSS file in order to change the focus ring color.
+      style={{ "--ring": "234 89% 74%" } as React.CSSProperties}      
+    >
+      <Label htmlFor="select-19">Select with colored border and ring</Label>
       <Select defaultValue="s1">
-        <SelectTrigger id="select-19" className="border-destructive/80 text-destructive focus-visible:border-destructive/80 focus-visible:ring-destructive/30">
-          <SelectValue />
+        <SelectTrigger id="select-19">
+          <SelectValue placeholder="Select framework" />
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="s1">React</SelectItem>
@@ -22,9 +26,6 @@ export default function Select19() {
           <SelectItem value="s4">Gatsby</SelectItem>
         </SelectContent>
       </Select>
-      <p className="mt-2 text-xs text-destructive" role="alert" aria-live="polite">
-        Selected option is invalid
-      </p>      
     </div>
   );
 }

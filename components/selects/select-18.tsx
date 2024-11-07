@@ -9,13 +9,9 @@ import {
 
 export default function Select18() {
   return (
-    <div
-      className="space-y-2"
-      // NOTE: This inline style is to show how to set the --ring variable in your CSS file in order to change the focus ring color.
-      style={{ "--ring": "234 89% 74%" } as React.CSSProperties}      
-    >
-      <Label htmlFor="select-18">Select with colored border and ring</Label>
-      <Select defaultValue="s1">
+    <div className="space-y-2">
+      <Label htmlFor="select-18">Select with helper text</Label>
+      <Select defaultValue="s3">
         <SelectTrigger id="select-18">
           <SelectValue placeholder="Select framework" />
         </SelectTrigger>
@@ -26,6 +22,9 @@ export default function Select18() {
           <SelectItem value="s4">Gatsby</SelectItem>
         </SelectContent>
       </Select>
+      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+        Tell us what's your favorite Select framework
+      </p>         
     </div>
   );
 }

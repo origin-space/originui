@@ -10,8 +10,8 @@ import {
 export default function Select22() {
   return (
     <div className="space-y-2">
-      <Label htmlFor="select-22">Required select <span className="text-destructive">*</span></Label>
-      <Select defaultValue="s4" required>
+      <Label htmlFor="select-22">Disabled select</Label>
+      <Select defaultValue="s1" disabled>
         <SelectTrigger id="select-22">
           <SelectValue placeholder="Select framework" />
         </SelectTrigger>
