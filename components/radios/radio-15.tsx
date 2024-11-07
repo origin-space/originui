@@ -13,7 +13,7 @@ export default function Radio15() {
     <fieldset className="space-y-4">
       <legend className="text-sm font-medium leading-none text-foreground">Choose plan</legend>
       <RadioGroup
-        className="gap-0 -space-y-px rounded-lg shadow-sm shadow-black/[.04]"
+        className="gap-0 -space-y-px rounded-lg shadow-sm shadow-black/5"
         defaultValue="r2"
       >
         {items.map((item) => (

@@ -8,7 +8,7 @@ export default function Input18() {
   return (
     <div className="space-y-2">
       <Label htmlFor="input-18">Input with end select</Label>
-      <div className="flex rounded-lg shadow-sm shadow-black/[.04]">
+      <div className="flex rounded-lg shadow-sm shadow-black/5">
         <Input
           id="input-18"
           className="-me-px rounded-e-none shadow-none focus-visible:z-10"

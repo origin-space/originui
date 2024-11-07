@@ -5,7 +5,7 @@ export default function Radio08() {
   return (
     <RadioGroup className="gap-2" defaultValue="r1">
       {/* Radio card #1 */}
-      <div className="relative flex w-full items-start gap-2 rounded-lg border border-input p-4 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-ring">
+      <div className="relative flex w-full items-start gap-2 rounded-lg border border-input p-4 shadow-sm shadow-black/5 has-[[data-state=checked]]:border-ring">
         <RadioGroupItem
           value="r1"
           id="radio-08-r1"
@@ -25,7 +25,7 @@ export default function Radio08() {
         </div>
       </div>
       {/* Radio card #2 */}
-      <div className="relative flex w-full items-start gap-2 rounded-lg border border-input p-4 shadow-sm shadow-black/[.04] has-[[data-state=checked]]:border-ring">
+      <div className="relative flex w-full items-start gap-2 rounded-lg border border-input p-4 shadow-sm shadow-black/5 has-[[data-state=checked]]:border-ring">
         <RadioGroupItem
           value="r2"
           id="radio-08-r2"

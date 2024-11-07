@@ -7,7 +7,7 @@ export default function Radio17() {
         <legend className="text-sm font-medium leading-none text-foreground">
           How likely are you to recommend us?
         </legend>
-        <RadioGroup className="flex gap-0 -space-x-px rounded-lg shadow-sm shadow-black/[.04]">
+        <RadioGroup className="flex gap-0 -space-x-px rounded-lg shadow-sm shadow-black/5">
           {[0, 1, 2, 3, 4, 5].map((number) => (
             <label
               key={number}

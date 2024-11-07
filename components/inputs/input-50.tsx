@@ -14,7 +14,7 @@ export default function Input50() {
   return (
     <div className="space-y-2">
       <legend className="text-sm font-medium text-foreground">Card Details</legend>
-      <div className="rounded-lg shadow-sm shadow-black/[.04]">
+      <div className="rounded-lg shadow-sm shadow-black/5">
         <div className="relative focus-within:z-10">
           <Input
             className="peer rounded-b-none pe-9 shadow-none [direction:inherit]"

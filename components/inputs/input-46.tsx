@@ -17,7 +17,7 @@ export default function Input46() {
     <div className="space-y-2" dir="ltr">
       <Label htmlFor="input-46">Phone number input</Label>
       <RPNInput.default
-        className="flex rounded-lg shadow-sm shadow-black/[.04]"
+        className="flex rounded-lg shadow-sm shadow-black/5"
         international
         flagComponent={FlagComponent}
         countrySelectComponent={CountrySelect}

@@ -30,7 +30,7 @@ export default function Input57() {
         placeholder="Add a tag"
         styleClasses={{
           inlineTagsContainer:
-            "border-input rounded-lg bg-background shadow-sm shadow-black/[.04] ring-offset-background transition-shadow focus-within:border-ring focus-within:ring-2 focus-within:ring-ring/30 focus-within:ring-offset-2 p-1 gap-1",
+            "border-input rounded-lg bg-background shadow-sm shadow-black/5 ring-offset-background transition-shadow focus-within:border-ring focus-within:ring-2 focus-within:ring-ring/30 focus-within:ring-offset-2 p-1 gap-1",
           input: "w-full min-w-[80px] focus-visible:outline-none shadow-none px-2 h-7",
           tag: {
             body: "h-7 relative bg-background border border-input hover:bg-background rounded-md font-medium text-xs ps-2 pe-7",
