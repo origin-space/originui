@@ -13,7 +13,7 @@ export default function Select04() {
       </SelectNative>
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
         Tell us what's your favorite Select framework
-      </p>      
+      </p>
     </div>
   );
 }

@@ -1,11 +1,12 @@
-"use client"
+// Dependencies: pnpm install lucide-react
 
-import { useState, Fragment } from "react"
-import { Check, ChevronDown } from "lucide-react"
-import { Label } from "@/components/ui/label"
+"use client";
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { Label } from "@/components/ui/label";
+import { Check, ChevronDown } from "lucide-react";
+import { Fragment, useState } from "react";
+
+import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -13,12 +14,9 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/ui/command"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ui/command";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
 
 const countries = [
   {
@@ -63,8 +61,8 @@ const countries = [
 ];
 
 export default function Select44() {
-  const [open, setOpen] = useState<boolean>(false)
-  const [value, setValue] = useState<string>("")
+  const [open, setOpen] = useState<boolean>(false);
+  const [value, setValue] = useState<string>("");
 
   return (
     <div className="space-y-2">
@@ -76,24 +74,34 @@ export default function Select44() {
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="w-full justify-between font-normal px-3 bg-background hover:bg-background"
+            className="w-full justify-between bg-background px-3 font-normal hover:bg-background"
           >
             {value ? (
-              <span className="flex items-center gap-2 min-w-0">
+              <span className="flex min-w-0 items-center gap-2">
                 <span className="text-lg leading-none">
-                  {countries.map(group => 
-                    group.items.find(item => item.value === value)
-                  ).filter(Boolean)[0]?.flag}
+                  {
+                    countries
+                      .map((group) => group.items.find((item) => item.value === value))
+                      .filter(Boolean)[0]?.flag
+                  }
                 </span>
                 <span className="truncate">{value}</span>
               </span>
             ) : (
               <span className="text-muted-foreground">Select country</span>
             )}
-            <ChevronDown size={16} strokeWidth={2} className="text-muted-foreground/80 shrink-0" aria-hidden="true" />
+            <ChevronDown
+              size={16}
+              strokeWidth={2}
+              className="shrink-0 text-muted-foreground/80"
+              aria-hidden="true"
+            />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-full p-0 min-w-[var(--radix-popper-anchor-width)]" align="start">
+        <PopoverContent
+          className="w-full min-w-[var(--radix-popper-anchor-width)] p-0"
+          align="start"
+        >
           <Command>
             <CommandInput placeholder="Search country..." />
             <CommandList>
@@ -106,15 +114,15 @@ export default function Select44() {
                         key={country.value}
                         value={country.value}
                         onSelect={(currentValue) => {
-                          setValue(currentValue)
-                          setOpen(false)
+                          setValue(currentValue);
+                          setOpen(false);
                         }}
                       >
-                        <span className="text-lg leading-none">{country.flag}</span> {country.value}  
+                        <span className="text-lg leading-none">{country.flag}</span> {country.value}
                         <Check
                           className={cn(
                             "ml-auto",
-                            value === country.value ? "opacity-100" : "opacity-0"
+                            value === country.value ? "opacity-100" : "opacity-0",
                           )}
                         />
                       </CommandItem>
@@ -127,5 +135,5 @@ export default function Select44() {
         </PopoverContent>
       </Popover>
     </div>
-  )
+  );
 }

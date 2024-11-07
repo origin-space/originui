@@ -5,7 +5,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
 
 export default function Select18() {
   return (
@@ -24,7 +24,7 @@ export default function Select18() {
       </Select>
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
         Tell us what's your favorite Select framework
-      </p>         
+      </p>
     </div>
   );
 }

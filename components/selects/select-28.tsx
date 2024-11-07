@@ -4,7 +4,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
 
 export default function Select28() {
   return (
@@ -12,7 +12,9 @@ export default function Select28() {
       <label
         htmlFor="select-28"
         className="absolute start-1 top-0 z-10 block -translate-y-1/2 bg-background px-2 text-xs font-medium text-foreground group-has-[:disabled]:opacity-50"
-      >Select with overlapping label</label>
+      >
+        Select with overlapping label
+      </label>
       <Select>
         <SelectTrigger id="select-28">
           <SelectValue placeholder="Select framework" />

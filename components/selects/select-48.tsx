@@ -6,7 +6,7 @@ export default function Select48() {
     <div className="space-y-2">
       <Label htmlFor="select-48">Multiple select (native)</Label>
       <div className="overflow-hidden rounded-lg border border-input">
-        <SelectNative id="select-48" multiple className="border-none rounded-none">
+        <SelectNative id="select-48" multiple className="rounded-none border-none">
           <option value="s1">React</option>
           <option value="s2">Next.js</option>
           <option value="s3">Astro</option>

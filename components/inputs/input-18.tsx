@@ -15,7 +15,7 @@ export default function Input18() {
           placeholder="google"
           type="text"
         />
-        <div className="inline-flex relative">
+        <div className="relative inline-flex">
           <select
             className="peer inline-flex h-full appearance-none items-center rounded-e-lg border border-input bg-background pe-8 ps-3 text-sm text-muted-foreground ring-offset-background transition-shadow hover:bg-accent hover:text-foreground focus:z-10 focus-visible:border-ring focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
             aria-label="Domain suffix"

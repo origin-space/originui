@@ -3,33 +3,89 @@
 "use client";
 
 import { Label } from "@/components/ui/label";
-import { Section, Header, Separator, ListBox, ListBoxItem } from 'react-aria-components';
+import { Header, ListBox, ListBoxItem, Section, Separator } from "react-aria-components";
 
 export default function Select51() {
   return (
     <div className="space-y-2">
       <Label>Listbox with option groups</Label>
       <div className="overflow-hidden rounded-lg border border-input">
-        <ListBox className="min-h-20 max-h-72 overflow-auto bg-background shadow-sm shadow-black/[.04] ring-offset-background transition-shadow p-1 text-sm space-y-2" aria-label="Select some foods" selectionMode="multiple" defaultSelectedKeys={["lettuce", "tuna"]}>
+        <ListBox
+          className="max-h-72 min-h-20 space-y-2 overflow-auto bg-background p-1 text-sm shadow-sm shadow-black/[.04] ring-offset-background transition-shadow"
+          aria-label="Select some foods"
+          selectionMode="multiple"
+          defaultSelectedKeys={["lettuce", "tuna"]}
+        >
           <Section className="space-y-1">
-            <Header className="px-2 py-1.5 font-medium text-muted-foreground text-xs">Veggies</Header>
-            <ListBoxItem id="lettuce" className="relative rounded-md focus:outline-none px-2 py-1.5 data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30 data-[focus-visible]:z-10">Lettuce</ListBoxItem>
-            <ListBoxItem id="tomato" className="relative rounded-md focus:outline-none px-2 py-1.5 data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30 data-[focus-visible]:z-10">Tomato</ListBoxItem>
-            <ListBoxItem id="onion" className="relative rounded-md focus:outline-none px-2 py-1.5 data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30 data-[focus-visible]:z-10">Onion</ListBoxItem>
+            <Header className="px-2 py-1.5 text-xs font-medium text-muted-foreground">
+              Veggies
+            </Header>
+            <ListBoxItem
+              id="lettuce"
+              className="relative rounded-md px-2 py-1.5 focus:outline-none data-[focus-visible]:z-10 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30"
+            >
+              Lettuce
+            </ListBoxItem>
+            <ListBoxItem
+              id="tomato"
+              className="relative rounded-md px-2 py-1.5 focus:outline-none data-[focus-visible]:z-10 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30"
+            >
+              Tomato
+            </ListBoxItem>
+            <ListBoxItem
+              id="onion"
+              className="relative rounded-md px-2 py-1.5 focus:outline-none data-[focus-visible]:z-10 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30"
+            >
+              Onion
+            </ListBoxItem>
           </Section>
           <Separator className="-mx-1 my-1 h-px bg-border" />
           <Section className="space-y-1">
-            <Header className="px-2 py-1.5 font-medium text-muted-foreground text-xs">Protein</Header>
-            <ListBoxItem id="ham" className="relative rounded-md focus:outline-none px-2 py-1.5 data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30 data-[focus-visible]:z-10">Ham</ListBoxItem>
-            <ListBoxItem id="tuna" className="relative rounded-md focus:outline-none px-2 py-1.5 data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30 data-[focus-visible]:z-10">Tuna</ListBoxItem>
-            <ListBoxItem id="tofu" className="relative rounded-md focus:outline-none px-2 py-1.5 data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30 data-[focus-visible]:z-10">Tofu</ListBoxItem>
+            <Header className="px-2 py-1.5 text-xs font-medium text-muted-foreground">
+              Protein
+            </Header>
+            <ListBoxItem
+              id="ham"
+              className="relative rounded-md px-2 py-1.5 focus:outline-none data-[focus-visible]:z-10 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30"
+            >
+              Ham
+            </ListBoxItem>
+            <ListBoxItem
+              id="tuna"
+              className="relative rounded-md px-2 py-1.5 focus:outline-none data-[focus-visible]:z-10 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30"
+            >
+              Tuna
+            </ListBoxItem>
+            <ListBoxItem
+              id="tofu"
+              className="relative rounded-md px-2 py-1.5 focus:outline-none data-[focus-visible]:z-10 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30"
+            >
+              Tofu
+            </ListBoxItem>
           </Section>
           <Separator className="-mx-1 my-1 h-px bg-border" />
           <Section className="space-y-1">
-            <Header className="px-2 py-1.5 font-medium text-muted-foreground text-xs">Condiments</Header>
-            <ListBoxItem id="mayo" className="relative rounded-md focus:outline-none px-2 py-1.5 data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30 data-[focus-visible]:z-10">Mayonaise</ListBoxItem>
-            <ListBoxItem id="mustard" className="relative rounded-md focus:outline-none px-2 py-1.5 data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30 data-[focus-visible]:z-10">Mustard</ListBoxItem>
-            <ListBoxItem id="ranch" className="relative rounded-md focus:outline-none px-2 py-1.5 data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30 data-[focus-visible]:z-10">Ranch</ListBoxItem>
+            <Header className="px-2 py-1.5 text-xs font-medium text-muted-foreground">
+              Condiments
+            </Header>
+            <ListBoxItem
+              id="mayo"
+              className="relative rounded-md px-2 py-1.5 focus:outline-none data-[focus-visible]:z-10 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30"
+            >
+              Mayonaise
+            </ListBoxItem>
+            <ListBoxItem
+              id="mustard"
+              className="relative rounded-md px-2 py-1.5 focus:outline-none data-[focus-visible]:z-10 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30"
+            >
+              Mustard
+            </ListBoxItem>
+            <ListBoxItem
+              id="ranch"
+              className="relative rounded-md px-2 py-1.5 focus:outline-none data-[focus-visible]:z-10 data-[disabled]:cursor-not-allowed data-[focus-visible]:border-ring data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled]:opacity-50 data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring/30"
+            >
+              Ranch
+            </ListBoxItem>
           </Section>
         </ListBox>
       </div>
@@ -43,7 +99,7 @@ export default function Select51() {
         >
           React Aria
         </a>
-      </p>           
+      </p>
     </div>
   );
 }

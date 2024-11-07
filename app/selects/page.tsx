@@ -54,7 +54,7 @@ const files = [
   "select-48",
   "select-49",
   "select-50",
-  "select-51"
+  "select-51",
 ];
 
 export default function Page() {

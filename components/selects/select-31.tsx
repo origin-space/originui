@@ -5,7 +5,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
 
 export default function Select31() {
   return (
@@ -15,7 +15,7 @@ export default function Select31() {
         <SelectTrigger id="select-31">
           <SelectValue placeholder="Select framework" />
         </SelectTrigger>
-        <SelectContent className="[&_*[role=option]]:pe-8 [&_*[role=option]]:ps-2 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
+        <SelectContent className="[&_*[role=option]>span]:end-2 [&_*[role=option]>span]:start-auto [&_*[role=option]]:pe-8 [&_*[role=option]]:ps-2">
           <SelectItem value="s1">React</SelectItem>
           <SelectItem value="s2">Next.js</SelectItem>
           <SelectItem value="s3">Astro</SelectItem>

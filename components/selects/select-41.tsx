@@ -1,11 +1,12 @@
-"use client"
+// Dependencies: pnpm install lucide-react
 
-import { useState } from "react"
-import { Check, ChevronDown } from "lucide-react"
-import { Label } from "@/components/ui/label"
+"use client";
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { Label } from "@/components/ui/label";
+import { Check, ChevronDown } from "lucide-react";
+import { useState } from "react";
+
+import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -13,12 +14,9 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/ui/command"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ui/command";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
 
 const frameworks = [
   {
@@ -85,11 +83,11 @@ const frameworks = [
     value: "lit",
     label: "Lit",
   },
-]
+];
 
 export default function Select41() {
-  const [open, setOpen] = useState<boolean>(false)
-  const [value, setValue] = useState<string>("")
+  const [open, setOpen] = useState<boolean>(false);
+  const [value, setValue] = useState<string>("");
 
   return (
     <div className="space-y-2">
@@ -101,17 +99,25 @@ export default function Select41() {
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="w-full justify-between font-normal px-3 bg-background hover:bg-background"
+            className="w-full justify-between bg-background px-3 font-normal hover:bg-background"
           >
             <span className={cn("truncate", !value && "text-muted-foreground")}>
               {value
                 ? frameworks.find((framework) => framework.value === value)?.label
                 : "Select framework"}
             </span>
-            <ChevronDown size={16} strokeWidth={2} className="text-muted-foreground/80 shrink-0" aria-hidden="true" />
+            <ChevronDown
+              size={16}
+              strokeWidth={2}
+              className="shrink-0 text-muted-foreground/80"
+              aria-hidden="true"
+            />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-full p-0 min-w-[var(--radix-popper-anchor-width)]" align="start">
+        <PopoverContent
+          className="w-full min-w-[var(--radix-popper-anchor-width)] p-0"
+          align="start"
+        >
           <Command>
             <CommandInput placeholder="Search framework..." />
             <CommandList>
@@ -122,15 +128,15 @@ export default function Select41() {
                     key={framework.value}
                     value={framework.value}
                     onSelect={(currentValue) => {
-                      setValue(currentValue === value ? "" : currentValue)
-                      setOpen(false)
+                      setValue(currentValue === value ? "" : currentValue);
+                      setOpen(false);
                     }}
                   >
                     {framework.label}
                     <Check
                       className={cn(
                         "ml-auto",
-                        value === framework.value ? "opacity-100" : "opacity-0"
+                        value === framework.value ? "opacity-100" : "opacity-0",
                       )}
                     />
                   </CommandItem>
@@ -141,5 +147,5 @@ export default function Select41() {
         </PopoverContent>
       </Popover>
     </div>
-  )
+  );
 }

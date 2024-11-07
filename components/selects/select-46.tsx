@@ -1,6 +1,5 @@
-import React from 'react';
-import MultipleSelector, { Option } from '@/components/ui/multiselect';
-import { Label } from '@/components/ui/label';
+import { Label } from "@/components/ui/label";
+import MultipleSelector, { Option } from "@/components/ui/multiselect";
 
 const frameworks: Option[] = [
   {
@@ -69,7 +68,7 @@ const frameworks: Option[] = [
     value: "lit",
     label: "Lit",
   },
-]
+];
 
 export default function Select46() {
   return (
@@ -77,18 +76,14 @@ export default function Select46() {
       <Label>Multiselect</Label>
       <MultipleSelector
         commandProps={{
-          label: 'Select frameworks',
+          label: "Select frameworks",
         }}
         value={frameworks.slice(0, 2)}
         defaultOptions={frameworks}
         placeholder="Select frameworks"
         hideClearAllButton
         hidePlaceholderWhenSelected
-        emptyIndicator={
-          <p className="text-center text-sm">
-            No results found
-          </p>
-        }
+        emptyIndicator={<p className="text-center text-sm">No results found</p>}
       />
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
         Inspired to{" "}
@@ -100,7 +95,7 @@ export default function Select46() {
         >
           shadcn/ui expansions
         </a>
-      </p>      
+      </p>
     </div>
   );
-};
+}

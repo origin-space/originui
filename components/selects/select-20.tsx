@@ -5,14 +5,17 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
 
 export default function Select20() {
   return (
     <div className="space-y-2 [&_svg]:text-destructive/80">
       <Label htmlFor="select-20">Select with error</Label>
       <Select defaultValue="s1">
-        <SelectTrigger id="select-20" className="border-destructive/80 text-destructive focus-visible:border-destructive/80 focus-visible:ring-destructive/30">
+        <SelectTrigger
+          id="select-20"
+          className="border-destructive/80 text-destructive focus-visible:border-destructive/80 focus-visible:ring-destructive/30"
+        >
           <SelectValue />
         </SelectTrigger>
         <SelectContent>
@@ -24,7 +27,7 @@ export default function Select20() {
       </Select>
       <p className="mt-2 text-xs text-destructive" role="alert" aria-live="polite">
         Selected option is invalid
-      </p>      
+      </p>
     </div>
   );
 }
