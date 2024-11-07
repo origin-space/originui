@@ -32,7 +32,7 @@ export default function Select23() {
 
   return (
     <div className="space-y-2">
-      <Label htmlFor="select-23">Select timezone</Label>
+      <Label htmlFor="select-23">Timezone select</Label>
       <Select defaultValue="Europe/London">
         <SelectTrigger id="select-23">
           <SelectValue placeholder="Select timezone" />

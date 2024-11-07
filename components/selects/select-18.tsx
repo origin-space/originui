@@ -15,7 +15,7 @@ export default function Select18() {
       style={{ "--ring": "234 89% 74%" } as React.CSSProperties}      
     >
       <Label htmlFor="select-18">Select with colored border and ring</Label>
-      <Select>
+      <Select defaultValue="s1">
         <SelectTrigger id="select-18">
           <SelectValue placeholder="Select framework" />
         </SelectTrigger>

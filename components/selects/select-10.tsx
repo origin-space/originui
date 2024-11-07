@@ -26,7 +26,7 @@ export default function Select10() {
   
   return (
     <div className="space-y-2">
-      <Label htmlFor="select-10">Select timezone (native)</Label>
+      <Label htmlFor="select-10">Timezone select (native)</Label>
       <SelectNative id="select-10" defaultValue="Europe/London">
         {formattedTimezones.map(({ value, label }) => (
           <option key={value} value={value}>

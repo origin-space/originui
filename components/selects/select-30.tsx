@@ -11,7 +11,7 @@ export default function Select30() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-30">Select with disabled options</Label>
-      <Select>
+      <Select defaultValue="s2">
         <SelectTrigger id="select-30">
           <SelectValue placeholder="Select framework" />
         </SelectTrigger>

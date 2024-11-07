@@ -11,7 +11,7 @@ import { RiReactjsLine, RiNextjsLine, RiGatsbyLine } from "@remixicon/react";
 export default function Select28() {
   return (
     <div className="space-y-2">
-      <Label htmlFor="select-28">Options with icons and right indicator</Label>
+      <Label htmlFor="select-28">Options with icon and right indicator</Label>
       <Select defaultValue="s2">
         <SelectTrigger id="select-28" className="[&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_svg]:shrink-0 [&>span_svg]:text-muted-foreground/80">
           <SelectValue placeholder="Select framework" />

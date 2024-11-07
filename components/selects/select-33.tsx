@@ -10,7 +10,7 @@ import {
 export default function Select33() {
   return (
     <div className="space-y-2">
-      <Label htmlFor="select-33">Select with left add-on</Label>
+      <Label htmlFor="select-33">Select with left text</Label>
       <Select defaultValue="s1">
         <SelectTrigger id="select-33">
           <span>

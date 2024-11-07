@@ -11,7 +11,7 @@ export default function Select17() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-17">Select with helper text</Label>
-      <Select>
+      <Select defaultValue="s3">
         <SelectTrigger id="select-17">
           <SelectValue placeholder="Select framework" />
         </SelectTrigger>

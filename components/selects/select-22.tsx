@@ -11,7 +11,7 @@ export default function Select22() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-22">Required select <span className="text-destructive">*</span></Label>
-      <Select required>
+      <Select defaultValue="s4" required>
         <SelectTrigger id="select-22">
           <SelectValue placeholder="Select framework" />
         </SelectTrigger>

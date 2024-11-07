@@ -11,7 +11,7 @@ export default function Select20() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-20">Select with gray background</Label>
-      <Select>
+      <Select defaultValue="s2">
         <SelectTrigger id="select-20" className="border-transparent bg-muted shadow-none">
           <SelectValue placeholder="Select framework" />
         </SelectTrigger>

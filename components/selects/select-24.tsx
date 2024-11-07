@@ -13,7 +13,7 @@ export default function Select15() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-24">Select with options groups</Label>
-      <Select>
+      <Select defaultValue="s1">
         <SelectTrigger id="select-24">
           <SelectValue placeholder="Select food" />
         </SelectTrigger>

@@ -12,7 +12,7 @@ const SelectNative = React.forwardRef<HTMLSelectElement, SelectPropsNative>(
       <div className="relative">
         <select
           className={cn(
-            "peer inline-flex w-full appearance-none items-center rounded-lg border border-input bg-background text-sm text-foreground shadow-sm shadow-black/[.04] ring-offset-background transition-shadow cursor-pointer focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 has-[option[disabled]:checked]:text-muted-foreground/70 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50",
+            "peer inline-flex w-full appearance-none items-center rounded-lg border border-input bg-background text-sm text-foreground shadow-sm shadow-black/[.04] ring-offset-background transition-shadow cursor-pointer focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 has-[option[disabled]:checked]:text-muted-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50",
             props.multiple ? "[&>*]:px-3 [&>*]:py-1 py-1 [&_option:checked]:bg-accent" : "h-9 ps-3 pe-8",
             className,
           )}

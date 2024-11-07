@@ -12,7 +12,7 @@ export default function Select16() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-16">Select with icon</Label>
-      <Select>
+      <Select defaultValue="s1">
         <SelectTrigger id="select-16" className="relative ps-9">
           <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 group-has-[[disabled]]:opacity-50">
             <Clock size={16} strokeWidth={2} aria-hidden="true" />        

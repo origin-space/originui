@@ -19,7 +19,7 @@ const Square = ({ className, children }: { className?: string, children: React.R
 export default function Select32() {
   return (
     <div className="space-y-2">
-      <Label htmlFor="select-32">Options with letter and right indicator</Label>
+      <Label htmlFor="select-32">Options with placeholder avatar</Label>
       <Select defaultValue="s1">
         <SelectTrigger id="select-32" className="[&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_[data-square]]:shrink-0 ps-2">
           <SelectValue placeholder="Select framework" />
@@ -28,15 +28,15 @@ export default function Select32() {
           <SelectGroup>
             <SelectLabel className="ps-2">Impersonate user</SelectLabel>
             <SelectItem value="s1">
-              <Square className="bg-indigo-100 text-indigo-600">F</Square>
-              <span className="truncate">Frank Allison</span>
+              <Square className="bg-indigo-400/20 text-indigo-500">F</Square>
+              <span className="truncate">Frank Morris</span>
             </SelectItem>
             <SelectItem value="s2">
-              <Square className="bg-purple-100 text-purple-600">X</Square>
+              <Square className="bg-purple-400/20 text-purple-500">X</Square>
               <span className="truncate">Xavier Guerra</span>
             </SelectItem>
             <SelectItem value="s3">
-              <Square className="bg-rose-100 text-rose-600">A</Square>
+              <Square className="bg-rose-400/20 text-rose-500">A</Square>
               <span className="truncate">Anne Kelley</span>
             </SelectItem>
           </SelectGroup>
