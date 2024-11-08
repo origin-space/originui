@@ -54,7 +54,8 @@
     "react-phone-number-input": "^3.4.8",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
-    "use-mask-input": "^3.4.0"
+    "use-mask-input": "^3.4.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^22.7.5",

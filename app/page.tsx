@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import Newsletter from "@/demo/subscribe-form";
 
 import Illustration from "@/demo/illustration";
 import DavideImg from "@/public/x-davide.jpg";
@@ -121,6 +122,10 @@ export default function Page() {
                   </li>
                 </ul>
               </nav>
+            </div>
+
+            <div>
+              <Newsletter />
             </div>
           </div>
         </div>
