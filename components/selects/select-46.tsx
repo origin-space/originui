@@ -86,7 +86,7 @@ export default function Select46() {
         emptyIndicator={<p className="text-center text-sm">No results found</p>}
       />
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
-        Inspired to{" "}
+        Inspired by{" "}
         <a
           className="underline hover:text-foreground"
           href="https://shadcnui-expansions.typeart.cc/docs/multiple-selector"
