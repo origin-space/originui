@@ -1,11 +1,11 @@
 "use client";
 
-import { LoaderCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
+import { LoaderCircle } from "lucide-react";
 import { useState } from "react";
 import { subscribe } from "./subscribe-action";
-import { cn } from "@/lib/utils";
 
 // Add type for form state
 type FormStatus = "idle" | "loading" | "success" | "error";
@@ -15,40 +15,35 @@ export default function SubscribeForm() {
   const [formState, setFormState] = useState({
     email: "",
     status: "idle" as FormStatus,
-    message: ""
+    message: "",
   });
 
   const isLoading = formState.status === "loading";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormState(prev => ({ ...prev, status: "loading", message: "" }));
+    setFormState((prev) => ({ ...prev, status: "loading", message: "" }));
 
     try {
       const result = await subscribe(formState.email);
       if (!result.success) {
-        setFormState(prev => ({ ...prev, status: "error", message: result.error }));
+        setFormState((prev) => ({ ...prev, status: "error", message: result.error }));
       } else {
         setFormState({ email: "", status: "success", message: "Thanks for subscribing!" });
       }
     } catch (error) {
-      setFormState(prev => ({
+      setFormState((prev) => ({
         ...prev,
         status: "error",
-        message: error instanceof Error ? error.message : "Failed to subscribe"
+        message: error instanceof Error ? error.message : "Failed to subscribe",
       }));
     }
   };
 
   return (
-    <div className="relative rounded-xl bg-zinc-900 px-4 py-10 sm:px-8 overflow-hidden dark">
-      <div className="absolute -right-64 -top-48 pointer-events-none" aria-hidden="true">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="856"
-          height="745"
-          fill="none"
-        >
+    <div className="dark relative overflow-hidden rounded-xl bg-zinc-900 px-4 py-10 sm:px-8">
+      <div className="pointer-events-none absolute -right-64 -top-48" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="856" height="745" fill="none">
           <g filter="url(#ill-a)" opacity="0.2">
             <path
               fill="url(#ill-b)"
@@ -125,11 +120,11 @@ export default function SubscribeForm() {
           <div className="inline-flex gap-2">
             <Input
               id="subscribe-form"
-              className="flex-1 md:min-w-64 bg-zinc-700/30 border-zinc-600/65 text-zinc-100 placeholder:text-zinc-500 [&:-webkit-autofill]:bg-zinc-700/30 [&:-webkit-autofill]:[transition:background-color_5000000s_ease-in-out_0s]"
+              className="flex-1 border-zinc-600/65 bg-zinc-700/30 text-zinc-100 placeholder:text-zinc-500 md:min-w-64 [&:-webkit-autofill]:bg-zinc-700/30 [&:-webkit-autofill]:[transition:background-color_5000000s_ease-in-out_0s]"
               placeholder="Your email"
               type="email"
               value={formState.email}
-              onChange={(e) => setFormState(prev => ({ ...prev, email: e.target.value }))}
+              onChange={(e) => setFormState((prev) => ({ ...prev, email: e.target.value }))}
               disabled={isLoading}
               aria-label="Subscribe to the newsletter"
               required
@@ -140,25 +135,32 @@ export default function SubscribeForm() {
               disabled={isLoading}
               data-loading={isLoading}
             >
-              <span className="group-data-[loading=true]:text-transparent">Subscribe <span className="tracking-normal opacity-50 -mr-1">-&gt;</span></span>
+              <span className="group-data-[loading=true]:text-transparent">
+                Subscribe <span className="-mr-1 tracking-normal opacity-50">-&gt;</span>
+              </span>
               {isLoading && (
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <LoaderCircle className="animate-spin" size={16} strokeWidth={2} aria-hidden="true" />
+                  <LoaderCircle
+                    className="animate-spin"
+                    size={16}
+                    strokeWidth={2}
+                    aria-hidden="true"
+                  />
                 </div>
               )}
             </Button>
           </div>
           {formState.message && (
-            <p 
+            <p
               className={cn(
                 "mt-2 text-xs",
-                formState.status === "error" ? "text-destructive" : "text-muted-foreground"
-              )} 
-              role="alert" 
+                formState.status === "error" ? "text-destructive" : "text-muted-foreground",
+              )}
+              role="alert"
               aria-live="polite"
             >
               {formState.message}
-            </p>            
+            </p>
           )}
         </div>
       </form>

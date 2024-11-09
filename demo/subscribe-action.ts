@@ -42,7 +42,7 @@ export async function subscribe(email: string): Promise<SubscribeResult> {
           fields: {},
           tags: [],
         }),
-      }
+      },
     );
 
     const data = (await response.json()) as EmailOctopusError;
