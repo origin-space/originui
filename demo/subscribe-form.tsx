@@ -120,7 +120,7 @@ export default function SubscribeForm() {
           <div className="inline-flex gap-2">
             <Input
               id="subscribe-form"
-              className="flex-1 border-zinc-600/65 bg-zinc-700/30 text-zinc-100 placeholder:text-zinc-500 md:min-w-64 [&:-webkit-autofill]:bg-zinc-700/30 [&:-webkit-autofill]:[transition:background-color_5000000s_ease-in-out_0s]"
+              className="flex-1 border-zinc-600/65 bg-zinc-700/30 text-zinc-100 placeholder:text-zinc-500 md:min-w-64 [&:-webkit-autofill]:bg-zinc-700/30 [&:-webkit-autofill]:[transition:background-color_5000000s_ease-in-out_0s] [&:-webkit-autofill]:[-webkit-text-fill-color:#fff]"
               placeholder="Your email"
               type="email"
               value={formState.email}
