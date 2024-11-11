@@ -11,7 +11,7 @@ export default function Button30() {
 
   return (
     <ToggleGroup
-      className="inline-flex gap-0 -space-x-px divide-x divide-background rounded-lg shadow-sm shadow-black/[0.04] rtl:space-x-reverse"
+      className="inline-flex gap-0 -space-x-px divide-x divide-background rounded-lg shadow-sm shadow-black/5 rtl:space-x-reverse"
       type="single"
       value={value}
       onValueChange={(value) => {

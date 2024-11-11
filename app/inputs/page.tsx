@@ -2,7 +2,7 @@ import Cta from "@/demo/cta";
 import DemoComponent from "@/demo/demo-component";
 import PageHeader from "@/demo/page-header";
 
-// Define an array of input file names
+const inputDir = "inputs";
 const inputFiles = [
   "input-01",
   "input-02",
@@ -55,7 +55,38 @@ const inputFiles = [
   "input-49",
   "input-50",
   "input-51",
+  "input-52",
+  "input-53",
+  "input-54",
+  "input-55",
+  "input-56",
+  "input-57",
 ];
+
+const textareaDir = "textareas";
+const textareaFiles = [
+  "textarea-01",
+  "textarea-02",
+  "textarea-03",
+  "textarea-04",
+  "textarea-05",
+  "textarea-06",
+  "textarea-07",
+  "textarea-08",
+  "textarea-09",
+  "textarea-10",
+  "textarea-11",
+  "textarea-12",
+  "textarea-13",
+  "textarea-14",
+  "textarea-15",
+  "textarea-16",
+  "textarea-17",
+  "textarea-18",
+  "textarea-19",
+];
+
+const files = [...inputFiles, ...textareaFiles];
 
 export default function Page() {
   return (
@@ -63,16 +94,25 @@ export default function Page() {
       <div className="px-4 sm:px-6">
         <div className="mx-auto w-full max-w-6xl">
           <PageHeader title="Input">
-            A growing collection of over 50 input components built with Next.js and TailwindCSS.
+            A growing collection of {files.length} input components built with Next.js and
+            TailwindCSS.
           </PageHeader>
 
           <div className="grid max-w-6xl grid-cols-1 overflow-hidden sm:grid-cols-2 lg:grid-cols-3 [&>*]:relative [&>*]:px-1 [&>*]:py-12 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-8 xl:[&>*]:px-12">
             {inputFiles.map((componentName) => {
-              const directory = "inputs";
               return (
                 <DemoComponent
                   key={componentName}
-                  directory={directory}
+                  directory={inputDir}
+                  componentName={componentName}
+                />
+              );
+            })}
+            {textareaFiles.map((componentName) => {
+              return (
+                <DemoComponent
+                  key={componentName}
+                  directory={textareaDir}
                   componentName={componentName}
                 />
               );

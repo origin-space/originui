@@ -5,7 +5,7 @@ export default function Input16() {
   return (
     <div className="space-y-2">
       <Label htmlFor="input-16">Input with inline start and end add-on</Label>
-      <div className="relative flex rounded-lg shadow-sm shadow-black/[.04]">
+      <div className="relative flex rounded-lg shadow-sm shadow-black/5">
         <span className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-sm text-muted-foreground">
           €
         </span>

@@ -6,7 +6,7 @@ export default function Button32() {
   return (
     <ToggleGroup
       variant="outline"
-      className="inline-flex gap-0 -space-x-px rounded-lg shadow-sm shadow-black/[0.04] rtl:space-x-reverse"
+      className="inline-flex gap-0 -space-x-px rounded-lg shadow-sm shadow-black/5 rtl:space-x-reverse"
       type="single"
     >
       <ToggleGroupItem

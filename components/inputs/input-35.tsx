@@ -25,7 +25,7 @@ export default function Input35() {
         aria-describedby="characters-left"
       />
       <p
-        id="charactes-left"
+        id="characters-left"
         className="mt-2 text-xs text-muted-foreground"
         role="status"
         aria-live="polite"

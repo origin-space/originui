@@ -5,7 +5,7 @@ export default function Input21() {
   return (
     <div className="space-y-2">
       <Label htmlFor="input-21">Input with end button</Label>
-      <div className="flex rounded-lg shadow-sm shadow-black/[.04]">
+      <div className="flex rounded-lg shadow-sm shadow-black/5">
         <Input
           id="input-21"
           className="-me-px flex-1 rounded-e-none shadow-none focus-visible:z-10"

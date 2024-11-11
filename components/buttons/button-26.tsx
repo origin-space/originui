@@ -5,7 +5,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 
 export default function Button26() {
   return (
-    <div className="inline-flex -space-x-px rounded-full shadow-sm shadow-black/[0.04] rtl:space-x-reverse">
+    <div className="inline-flex -space-x-px rounded-full shadow-sm shadow-black/5 rtl:space-x-reverse">
       <Button
         className="rounded-none shadow-none first:rounded-s-full last:rounded-e-full focus-visible:z-10"
         size="icon"

@@ -5,9 +5,10 @@
 import { Button } from "@/components/ui/button";
 import { CircleUserRound } from "lucide-react";
 import Image from "next/image";
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 export default function Button48() {
+  const previewRef = useRef<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [fileName, setFileName] = useState<string | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
@@ -22,24 +23,32 @@ export default function Button48() {
       setFileName(file.name);
       const url = URL.createObjectURL(file);
       setPreviewUrl(url);
+      previewRef.current = url;
       console.log("File selected:", file);
     }
   }, []);
 
   const handleRemove = useCallback(() => {
+    previewUrl && URL.revokeObjectURL(previewUrl);
     setFileName(null);
     setPreviewUrl(null);
+    previewRef.current = null;
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
     }
   }, []);
 
+  useEffect(() => {
+    return () => {
+      previewRef.current && URL.revokeObjectURL(previewRef.current);
+    };
+  }, []);
+
   return (
     <div>
-      <div className="inline-flex items-center space-x-2 rtl:space-x-reverse">
+      <div className="inline-flex items-center gap-2 align-top">
         <div
           className="relative flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-input"
-          role="img"
           aria-label={previewUrl ? "Preview of uploaded image" : "Default user avatar"}
         >
           {previewUrl ? (
@@ -71,17 +80,19 @@ export default function Button48() {
         </div>
       </div>
       {fileName && (
-        <div className="mt-2 inline-flex gap-2 text-xs">
-          <p className="truncate text-muted-foreground" aria-live="polite">
-            {fileName}
-          </p>{" "}
-          <button
-            onClick={handleRemove}
-            className="font-medium text-red-500 hover:underline"
-            aria-label={`Remove ${fileName}`}
-          >
-            Remove
-          </button>
+        <div className="mt-2">
+          <div className="inline-flex gap-2 text-xs">
+            <p className="truncate text-muted-foreground" aria-live="polite">
+              {fileName}
+            </p>{" "}
+            <button
+              onClick={handleRemove}
+              className="font-medium text-red-500 hover:underline"
+              aria-label={`Remove ${fileName}`}
+            >
+              Remove
+            </button>
+          </div>
         </div>
       )}
       <div className="sr-only" aria-live="polite" role="status">

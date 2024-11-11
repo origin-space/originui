@@ -4,8 +4,9 @@
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { cn } from "@/lib/utils";
 import { ChevronDown, Phone } from "lucide-react";
-import React, { useState } from "react";
+import React, { forwardRef, useState, type InputHTMLAttributes } from "react";
 import * as RPNInput from "react-phone-number-input";
 import flags from "react-phone-number-input/flags";
 
@@ -16,7 +17,7 @@ export default function Input46() {
     <div className="space-y-2" dir="ltr">
       <Label htmlFor="input-46">Phone number input</Label>
       <RPNInput.default
-        className="flex rounded-lg shadow-sm shadow-black/[.04]"
+        className="flex rounded-lg shadow-sm shadow-black/5"
         international
         flagComponent={FlagComponent}
         countrySelectComponent={CountrySelect}
@@ -41,19 +42,17 @@ export default function Input46() {
   );
 }
 
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
-const PhoneInput = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, ...props }, ref) => {
-    return (
-      <Input
-        className="-ml-px rounded-l-none shadow-none focus-visible:z-10"
-        ref={ref}
-        {...props}
-      />
-    );
-  },
-);
+const PhoneInput = forwardRef<HTMLInputElement, InputProps>(({ className, ...props }, ref) => {
+  return (
+    <Input
+      className={cn("-ms-px rounded-s-none shadow-none focus-visible:z-10", className)}
+      ref={ref}
+      {...props}
+    />
+  );
+});
 
 PhoneInput.displayName = "PhoneInput";
 
@@ -61,7 +60,7 @@ type CountrySelectProps = {
   disabled?: boolean;
   value: RPNInput.Country;
   onChange: (value: RPNInput.Country) => void;
-  options: { label: string; value: RPNInput.Country }[];
+  options: { label: string; value: RPNInput.Country | undefined }[];
 };
 
 const CountrySelect = ({ disabled, value, onChange, options }: CountrySelectProps) => {
@@ -70,7 +69,7 @@ const CountrySelect = ({ disabled, value, onChange, options }: CountrySelectProp
   };
 
   return (
-    <div className="relative inline-flex items-center self-stretch rounded-l-lg border border-input bg-background py-2 pe-2 ps-3 text-muted-foreground ring-offset-background transition-shadow focus-within:z-10 focus-within:border-ring focus-within:text-foreground focus-within:outline-none focus-within:ring-2 focus-within:ring-ring/30 focus-within:ring-offset-2 hover:bg-accent hover:text-foreground has-[:disabled]:pointer-events-none has-[:disabled]:opacity-50">
+    <div className="relative inline-flex items-center self-stretch rounded-s-lg border border-input bg-background py-2 pe-2 ps-3 text-muted-foreground ring-offset-background transition-shadow focus-within:z-10 focus-within:border-ring focus-within:text-foreground focus-within:outline-none focus-within:ring-2 focus-within:ring-ring/30 focus-within:ring-offset-2 hover:bg-accent hover:text-foreground has-[:disabled]:pointer-events-none has-[:disabled]:opacity-50">
       <div className="inline-flex items-center gap-1" aria-hidden="true">
         <FlagComponent country={value} countryName={value} aria-hidden="true" />
         <span className="text-muted-foreground/80">
@@ -79,7 +78,7 @@ const CountrySelect = ({ disabled, value, onChange, options }: CountrySelectProp
       </div>
       <select
         disabled={disabled}
-        value={value || ""}
+        value={value}
         onChange={handleSelect}
         className="absolute inset-0 text-sm opacity-0"
         aria-label="Select country"
@@ -89,8 +88,8 @@ const CountrySelect = ({ disabled, value, onChange, options }: CountrySelectProp
         </option>
         {options
           .filter((x) => x.value)
-          .map((option) => (
-            <option key={option.value || "empty"} value={option.value}>
+          .map((option, i) => (
+            <option key={option.value ?? `empty-${i}`} value={option.value}>
               {option.label} {option.value && `+${RPNInput.getCountryCallingCode(option.value)}`}
             </option>
           ))}
