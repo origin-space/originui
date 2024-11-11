@@ -35,7 +35,7 @@ export default function Page() {
               </p>
             </div>
 
-            <div className="mb-16">
+            <div className="mb-12">
               <h2 className="mb-5 text-muted-foreground">Components</h2>
               <nav>
                 <ul className="flex flex-col gap-2">
@@ -44,8 +44,8 @@ export default function Page() {
                       href="/inputs"
                       className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
                     >
-                      Input
-                      <ArrowRight size={16} strokeWidth={2} className="-mr-1 ml-2 opacity-60" />
+                      <span className="truncate">Input</span>
+                      <ArrowRight size={16} strokeWidth={2} className="-mr-1 ml-2 opacity-60 shrink-0" />
                     </Link>
                   </li>
                   <li>
@@ -53,17 +53,17 @@ export default function Page() {
                       href="/buttons"
                       className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
                     >
-                      Button
-                      <ArrowRight size={16} strokeWidth={2} className="-mr-1 ml-2 opacity-60" />
+                      <span className="truncate">Button</span>
+                      <ArrowRight size={16} strokeWidth={2} className="-mr-1 ml-2 opacity-60 shrink-0" />
                     </Link>
                   </li>
                   <li>
                     <Link
                       href="/checks-radios-switches"
-                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
+                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/[0.04] sm:h-14"
                     >
-                      Checkbox, Radio, and Switch
-                      <ArrowRight size={16} strokeWidth={2} className="-mr-1 ml-2 opacity-60" />
+                      <span className="truncate">Checkbox, Radio, and Switch</span>
+                      <ArrowRight size={16} strokeWidth={2} className="-mr-1 ml-2 opacity-60 shrink-0" />
                     </Link>
                   </li>
                   <li>
@@ -77,6 +77,24 @@ export default function Page() {
                 </ul>
               </nav>
             </div>
+
+            <div className="mb-16">
+              <h2 className="mb-5 text-muted-foreground">Utilities</h2>
+              <nav>
+                <ul className="flex flex-col gap-2">
+                  <li>
+                    <Link
+                      href="/easings"
+                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
+                    >
+                      <span className="truncate">Tailwind CSS easing classes</span>
+                      <ArrowRight size={16} strokeWidth={2} className="-mr-1 ml-2 opacity-60 shrink-0" />
+                    </Link>
+                  </li>
+
+                </ul>
+              </nav>
+            </div>            
 
             <Newsletter />
 
