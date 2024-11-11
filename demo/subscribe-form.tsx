@@ -44,7 +44,7 @@ export default function SubscribeForm() {
     <div className="dark relative overflow-hidden rounded-xl bg-zinc-900 px-4 py-10 sm:px-8">
       <div className="pointer-events-none absolute -right-64 -top-48" aria-hidden="true">
         <svg xmlns="http://www.w3.org/2000/svg" width="856" height="745" fill="none">
-          <g filter="url(#ill-a)" opacity="0.2">
+          <g filter="url(#ill-a)">
             <path
               fill="url(#ill-b)"
               fillRule="evenodd"
@@ -52,7 +52,7 @@ export default function SubscribeForm() {
               clipRule="evenodd"
             />
           </g>
-          <g filter="url(#ill-c)" opacity="0.28">
+          <g filter="url(#ill-c)">
             <path
               fill="url(#ill-d)"
               fillRule="evenodd"
