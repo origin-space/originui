@@ -5,6 +5,12 @@ import PageHeader from "@/demo/page-header";
 const directory = "sliders";
 const files = [
   "slider-01",
+  "slider-01b",
+  "slider-02",
+  "slider-03",
+  "slider-04",
+  "slider-05",
+  "slider-06",
 ];
 
 export default function Page() {
@@ -24,7 +30,6 @@ export default function Page() {
                   key={componentName}
                   directory={directory}
                   componentName={componentName}
-                  className="text-center"
                 />
               );
             })}

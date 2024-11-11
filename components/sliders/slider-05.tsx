@@ -1,0 +1,11 @@
+import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
+
+export default function Slider05() {
+  return (
+    <div className="space-y-4">
+      <Label>Slider with tiny thumb</Label>
+      <Slider defaultValue={[25]} max={100} step={1} className="[&>:last-child>span]:w-2 [&>:last-child>span]:h-6 [&>:last-child>span]:bg-primary [&>:last-child>span]:border-background" />
+    </div>
+  );
+}

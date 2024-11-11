@@ -4,8 +4,8 @@ import { Slider } from "@/components/ui/slider";
 export default function Slider01() {
   return (
     <div className="space-y-4">
-      <Label>Simple slider</Label>
-      <Slider defaultValue={[25]} max={100} step={1} />
+      <Label>Slider with primary color for the thumb</Label>
+      <Slider defaultValue={[25]} max={100} step={1} className="[&>:last-child>span]:bg-primary [&>:first-child>span]:opacity-70" />
     </div>
   );
 }
