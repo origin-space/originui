@@ -15,20 +15,20 @@ export default function Select25() {
       <Label htmlFor="select-25">Select with options groups</Label>
       <Select defaultValue="s1">
         <SelectTrigger id="select-25">
-          <SelectValue placeholder="Select food" />
+          <SelectValue placeholder="Select framework" />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectLabel>Fruits</SelectLabel>
-            <SelectItem value="s1">Apple</SelectItem>
-            <SelectItem value="s2">Banana</SelectItem>
-            <SelectItem value="s3">Orange</SelectItem>
+            <SelectLabel>Frontend</SelectLabel>
+            <SelectItem value="s1">React</SelectItem>
+            <SelectItem value="s2">Vue</SelectItem>
+            <SelectItem value="s3">Angular</SelectItem>
           </SelectGroup>
           <SelectGroup>
-            <SelectLabel>Vegetables</SelectLabel>
-            <SelectItem value="s4">Carrot</SelectItem>
-            <SelectItem value="s5">Broccoli</SelectItem>
-            <SelectItem value="s6">Spinach</SelectItem>
+            <SelectLabel>Backend</SelectLabel>
+            <SelectItem value="s4">Node.js</SelectItem>
+            <SelectItem value="s5">Python</SelectItem>
+            <SelectItem value="s6">Java</SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>
