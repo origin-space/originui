@@ -4,8 +4,10 @@ import { Slider } from "@/components/ui/slider";
 export default function Slider13() {
   return (
     <div className="space-y-4">
-      <Label>Equalizer</Label>
-      <Slider defaultValue={[5]} max={10} step={1} orientation="vertical" />
+      <Label>Vertical slider</Label>
+      <div className="flex justify-center">
+        <Slider defaultValue={[5]} max={10} orientation="vertical" aria-label="Vertical slider" />
+      </div>
     </div>
   );
 }

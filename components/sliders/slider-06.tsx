@@ -4,8 +4,8 @@ import { Slider } from "@/components/ui/slider";
 export default function Slider06() {
   return (
     <div className="space-y-4">
-      <Label>Simple slider</Label>
-      <Slider defaultValue={[25,75]} max={100} step={10} />
+      <Label>Range slider</Label>
+      <Slider defaultValue={[25,75]} step={10} aria-label="Range slider" />
     </div>
   );
 }

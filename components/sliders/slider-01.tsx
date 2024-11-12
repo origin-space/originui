@@ -5,7 +5,7 @@ export default function Slider01() {
   return (
     <div className="space-y-4">
       <Label>Simple slider</Label>
-      <Slider defaultValue={[25]} max={100} step={1} />
+      <Slider defaultValue={[25]} aria-label="Simple slider" />
     </div>
   );
 }

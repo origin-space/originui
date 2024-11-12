@@ -9,11 +9,11 @@ export default function Slider06() {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-2">
         <Label>Range slider with output</Label>
         <output className="text-sm text-muted-foreground tabular-nums">{value[0]} - {value[1]}</output>
       </div>
-      <Slider value={value} onValueChange={setValue} max={100} step={1} />
+      <Slider value={value} onValueChange={setValue} aria-label="Range slider with output" />
     </div>
   );
 }

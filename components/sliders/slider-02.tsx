@@ -5,7 +5,7 @@ export default function Slider02() {
   return (
     <div className="space-y-4">
       <Label>Disabled slider</Label>
-      <Slider defaultValue={[25]} max={100} step={1} disabled />
+      <Slider defaultValue={[25]} disabled aria-label="Disabled slider" />
     </div>
   );
 }

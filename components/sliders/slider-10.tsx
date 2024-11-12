@@ -6,7 +6,7 @@ export default function Slider10() {
     <div className="space-y-4">
       <Label>Slider with marks</Label>
       <div>
-        <Slider defaultValue={[2500]} max={10000} step={1} />
+        <Slider defaultValue={[2500]} max={10000} aria-label="Slider with marks" />
         <span className="w-full px-2.5 mt-4 flex items-center justify-between gap-1 text-xs text-muted-foreground tabular-nums" aria-hidden="true">
           <span className="w-0 flex items-center justify-center">0</span>
           <span className="w-0 flex items-center justify-center">5,000</span>

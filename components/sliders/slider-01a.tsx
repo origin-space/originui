@@ -9,7 +9,7 @@ export default function Slider01a() {
       style={{ "--primary": "238.7 83.5% 66.7%" } as React.CSSProperties}
     >
       <Label>Slider with custom primary color</Label>
-      <Slider defaultValue={[25]} max={100} step={1} />
+      <Slider defaultValue={[25]} aria-label="Slider with custom primary color" />
     </div>
   );
 }

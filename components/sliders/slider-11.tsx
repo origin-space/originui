@@ -9,7 +9,7 @@ export default function Slider11() {
     <div className="space-y-4">
       <Label>Slider with ticks</Label>
       <div>
-        <Slider defaultValue={[5]} max={max} step={1} />
+        <Slider defaultValue={[5]} max={max} aria-label="Slider with ticks" />
         <span className="w-full px-2.5 mt-4 flex items-center justify-between gap-1 text-xs text-muted-foreground tabular-nums" aria-hidden="true">
           {ticks.map((_, i) => (
             <span key={i} className="w-0.5 h-0.5 rounded-full bg-ring" />

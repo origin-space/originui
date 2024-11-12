@@ -10,7 +10,7 @@ export default function Slider12() {
           <span>Low</span>
           <span>High</span>
         </span>
-        <SliderWithTooltip defaultValue={[50]} max={100} step={10} showTooltip={true} />
+        <SliderWithTooltip defaultValue={[50]} step={10} showTooltip={true} aria-label="Slider with tooltip" />
       </div>
     </div>
   );
