@@ -5,12 +5,22 @@ import PageHeader from "@/demo/page-header";
 const directory = "sliders";
 const files = [
   "slider-01",
+  "slider-01a",
   "slider-01b",
   "slider-02",
   "slider-03",
   "slider-04",
   "slider-05",
   "slider-06",
+  "slider-06b",
+  "slider-07",
+  "slider-07b",
+  "slider-08",
+  "slider-09",
+  "slider-10",
+  "slider-11",
+  "slider-12",
+  "slider-13",
 ];
 
 export default function Page() {
