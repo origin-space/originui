@@ -1,7 +1,7 @@
 "use client";
 
 import { Label } from "@/components/ui/label";
-import { SliderWithTooltip } from "@/components/ui/slider-with-tooltip";
+import { Slider } from "@/components/ui/slider";
 import { useState } from "react";
 
 export default function Slider16() {
@@ -16,7 +16,7 @@ export default function Slider16() {
         <Label>Rate your experience</Label>
       </div>
       <div className="flex items-center gap-2">
-        <SliderWithTooltip 
+        <Slider 
           value={value} 
           onValueChange={setValue} 
           min={1} 

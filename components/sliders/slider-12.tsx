@@ -1,5 +1,5 @@
 import { Label } from "@/components/ui/label";
-import { SliderWithTooltip } from "@/components/ui/slider-with-tooltip";
+import { Slider } from "@/components/ui/slider";
 
 export default function Slider12() {
   return (
@@ -10,7 +10,7 @@ export default function Slider12() {
           <span>Low</span>
           <span>High</span>
         </span>
-        <SliderWithTooltip defaultValue={[50]} step={10} showTooltip={true} aria-label="Slider with labels and tooltip" />
+        <Slider defaultValue={[50]} step={10} showTooltip={true} aria-label="Slider with labels and tooltip" />
       </div>
     </div>
   );
