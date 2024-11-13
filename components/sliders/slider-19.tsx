@@ -131,7 +131,7 @@ const items = [
 
 export default function Slider19() {
   // Define the number of ticks
-  const tick_count = 30;
+  const tick_count = 40;
   // Find the min and max values across all items
   const minValue = Math.min(...items.map(item => item.price));
   const maxValue = Math.max(...items.map(item => item.price));
@@ -142,7 +142,7 @@ export default function Slider19() {
     validateAndUpdateValue,
     handleInputChange,
     handleSliderChange,
-  } = useSliderWithInput({ minValue, maxValue, initialValue: [200, 800] }); // set initialValue: [minValue, maxValue] to show all items by default
+  } = useSliderWithInput({ minValue, maxValue, initialValue: [200, 780] }); // set initialValue: [minValue, maxValue] to show all items by default
 
   // Calculate the price step based on the min and max prices
   const priceStep = (maxValue - minValue) / tick_count;
@@ -195,7 +195,7 @@ export default function Slider19() {
       <div>
         
         {/* Histogram bars */}
-        <div className="w-full flex items-end gap-0.5 h-12 px-3 mb-1" aria-hidden="true">
+        <div className="w-full flex items-end h-12 px-3 mb-0.5" aria-hidden="true">
           {itemCounts.map((count, i) => (
             <div
               key={i}
@@ -206,7 +206,7 @@ export default function Slider19() {
             >
               <span
                 data-selected={isBarInSelectedRange(i, minValue, priceStep, sliderValue)}
-                className="w-full max-w-[3px] h-full rounded-md bg-primary/20 data-[selected=true]:bg-primary"
+                className="w-full max-w-[75%] h-full rounded-[2px] bg-muted data-[selected=true]:bg-primary"
               ></span>
             </div>
           ))}
