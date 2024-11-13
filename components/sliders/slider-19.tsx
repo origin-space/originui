@@ -4,7 +4,6 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Input } from "@/components/ui/input";
 import { useSliderWithInput } from "@/hooks/use-slider-with-input";
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const items = [
@@ -143,7 +142,7 @@ export default function Slider19() {
     validateAndUpdateValue,
     handleInputChange,
     handleSliderChange,
-  } = useSliderWithInput({ minValue, maxValue, initialValue: [minValue, maxValue] });
+  } = useSliderWithInput({ minValue, maxValue, initialValue: [200, 800] }); // set initialValue: [minValue, maxValue] to show all items by default
 
   // Calculate the price step based on the min and max prices
   const priceStep = (maxValue - minValue) / tick_count;
