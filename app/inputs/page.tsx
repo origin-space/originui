@@ -1,6 +1,13 @@
 import Cta from "@/demo/cta";
 import DemoComponent from "@/demo/demo-component";
 import PageHeader from "@/demo/page-header";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Input Components - Origin UI",
+  description:
+    "A collection of beautiful and accessible input components built with Tailwind CSS and Next.js.",
+};
 
 const inputDir = "inputs";
 const inputFiles = [
