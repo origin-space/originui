@@ -1,6 +1,13 @@
 import Cta from "@/demo/cta";
 import DemoComponent from "@/demo/demo-component";
 import PageHeader from "@/demo/page-header";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Checkbox, Radio, and Switch Components - Origin UI",
+  description:
+    "A collection of beautiful and accessible checkbox, radio and switch components built with Tailwind CSS and Next.js.",
+};
 
 const checboxDir = "checkboxes";
 const checboxFiles = [
