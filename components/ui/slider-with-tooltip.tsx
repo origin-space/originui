@@ -22,6 +22,7 @@ const SliderWithTooltip = React.forwardRef<
     (props.defaultValue as number[]) ?? (props.value as number[]) ?? [0],
   );
   const [showTooltipState, setShowTooltipState] = React.useState(false);
+  const [activeThumbIndex, setActiveThumbIndex] = React.useState<number | null>(null);
 
   React.useEffect(() => {
     if (props.value !== undefined) {
@@ -34,12 +35,14 @@ const SliderWithTooltip = React.forwardRef<
     props.onValueChange?.(newValue);
   };
 
-  const handlePointerDown = () => {
-    setShowTooltipState(true);    
+  const handlePointerDown = (index: number) => {
+    setShowTooltipState(true);
+    setActiveThumbIndex(index);
   };
 
   const handlePointerUp = () => {
     setShowTooltipState(false);
+    setActiveThumbIndex(null);
   };
 
   React.useEffect(() => {
@@ -55,7 +58,6 @@ const SliderWithTooltip = React.forwardRef<
       className={cn("relative data-[orientation=horizontal]:flex touch-none select-none items-center data-[disabled]:opacity-50 data-[orientation=horizontal]:w-full data-[orientation=vertical]:inline-flex data-[orientation=vertical]:flex-col data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-48", className)}
       onValueChange={handleValueChange}
       value={props.value as number[] | undefined}
-      onPointerDown={handlePointerDown}
       {...props}
     >
       <SliderPrimitive.Track className="relative grow overflow-hidden rounded-full bg-secondary data-[orientation=horizontal]:h-1.5 data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1.5">
@@ -63,14 +65,15 @@ const SliderWithTooltip = React.forwardRef<
       </SliderPrimitive.Track>
       {internalValue?.map((value, i) => (
         <TooltipProvider key={i}>
-          <Tooltip open={showTooltip && showTooltipState}>
+          <Tooltip open={showTooltip && showTooltipState && activeThumbIndex === i}>
             <TooltipTrigger asChild>
               <SliderPrimitive.Thumb
                 key={i}
                 className="block h-5 w-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-shadows focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 data-[disabled]:cursor-not-allowed"
+                onPointerDown={() => handlePointerDown(i)}
               />
             </TooltipTrigger>
-            <TooltipContent className="border border-input bg-popover px-2 py-1 text-xs text-muted-foreground" sideOffset={8}>
+            <TooltipContent className="border border-input bg-popover px-2 py-1 text-xs text-muted-foreground" sideOffset={8} side={props.orientation === "vertical" ? "right" : "top"}>
               <p>{tooltipContent ? tooltipContent(value) : value}</p>
             </TooltipContent>
           </Tooltip>

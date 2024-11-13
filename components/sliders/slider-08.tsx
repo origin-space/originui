@@ -12,7 +12,7 @@ export default function Slider08() {
     <div className="space-y-4">
       <div className="flex items-center justify-between gap-2">
         <Label>Volume</Label>
-        <output className="text-sm text-muted-foreground tabular-nums">{value[0]}</output>
+        <output className="text-sm text-muted-foreground tabular-nums font-medium">{value[0]}</output>
       </div>
       <div className="flex items-center gap-2">
         <VolumeX className="shrink-0 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />

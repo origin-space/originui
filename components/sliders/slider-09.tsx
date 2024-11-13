@@ -1,12 +1,13 @@
+"use client";
 
 import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
+import { SliderWithTooltip } from "@/components/ui/slider-with-tooltip";
 
 export default function Slider09() {
   return (
     <div className="space-y-4">
       <Label>Slider with multiple thumbs</Label>
-      <Slider defaultValue={[25,50,100]} aria-label="Slider with multiple thumbs" />
+      <SliderWithTooltip defaultValue={[25,50,100]} aria-label="Slider with multiple thumbs" showTooltip tooltipContent={(value) => `${value}%`} />
     </div>
   );
 }

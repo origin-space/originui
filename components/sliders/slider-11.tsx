@@ -12,7 +12,7 @@ export default function Slider11() {
       <Label>Slider with ticks</Label>
       <div>
         <Slider defaultValue={[5]} max={max} aria-label="Slider with ticks" />
-        <span className="w-full px-2.5 mt-3 flex items-center justify-between gap-1 text-xs text-muted-foreground" aria-hidden="true">
+        <span className="w-full px-2.5 mt-3 flex items-center justify-between gap-1 text-xs text-muted-foreground font-medium" aria-hidden="true">
           {ticks.map((_, i) => (
             <span key={i} className="w-0 flex flex-col items-center justify-center gap-2">
               <span className={cn(

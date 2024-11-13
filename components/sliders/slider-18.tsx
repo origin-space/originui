@@ -20,7 +20,7 @@ export default function Slider18() {
 
   return (
     <div className="space-y-4">
-      <Label>Slider with input</Label>
+      <Label>Dual range slider with input</Label>
       <div className="flex items-center gap-4">
         <Input 
           className="w-12 px-2 py-1 h-8"
@@ -42,7 +42,7 @@ export default function Slider18() {
           onValueChange={handleSliderChange} 
           min={minValue}
           max={maxValue} 
-          aria-label="Slider with input"
+          aria-label="Dual range slider with input"
         />
         <Input 
           className="w-12 px-2 py-1 h-8"

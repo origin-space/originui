@@ -24,9 +24,11 @@ const files = [
   "slider-16",
   "slider-17",
   "slider-18",
-  "slider-07c",
-  "slider-13",
+  "slider-21",
   "slider-20",
+  "slider-13",
+  "slider-22",
+  "slider-07c",
   "slider-19",
   "slider-14",
 ];

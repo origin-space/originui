@@ -18,12 +18,7 @@ export default function Slider07c() {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between gap-2">
-        <Label>Price Range</Label>
-        <span className="text-sm text-muted-foreground tabular-nums">
-          {formatPrice(value[0])} - {formatPrice(value[1])}
-        </span>
-      </div>
+      <Label className="tabular-nums">From {formatPrice(value[0])} to {formatPrice(value[1])}</Label>
       <div className="flex items-center gap-4">
         <Slider 
           value={value} 

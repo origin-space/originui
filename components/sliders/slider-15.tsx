@@ -13,7 +13,7 @@ export default function Slider15() {
     <div className="space-y-4">
       <div className="flex items-center justify-between gap-2">
         <Label>Rate your experience</Label>
-        <span className="text-xs font-medium text-muted-foreground tabular-nums">
+        <span className="text-sm font-medium text-muted-foreground tabular-nums">
           {labels[value[0] - 1]}
         </span>
       </div>
