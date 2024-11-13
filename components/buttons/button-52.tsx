@@ -13,7 +13,7 @@ export default function Button52() {
         whitespace-nowrap rounded-md text-sm font-medium
       "
     >
-      Shimmer
+      Button
     </Button>
   );
 }
