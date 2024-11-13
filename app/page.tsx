@@ -45,7 +45,11 @@ export default function Page() {
                       className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
                     >
                       <span className="truncate">Input</span>
-                      <ArrowRight size={16} strokeWidth={2} className="-mr-1 ml-2 opacity-60 shrink-0" />
+                      <ArrowRight
+                        size={16}
+                        strokeWidth={2}
+                        className="-mr-1 ml-2 shrink-0 opacity-60"
+                      />
                     </Link>
                   </li>
                   <li>
@@ -54,7 +58,11 @@ export default function Page() {
                       className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
                     >
                       <span className="truncate">Button</span>
-                      <ArrowRight size={16} strokeWidth={2} className="-mr-1 ml-2 opacity-60 shrink-0" />
+                      <ArrowRight
+                        size={16}
+                        strokeWidth={2}
+                        className="-mr-1 ml-2 shrink-0 opacity-60"
+                      />
                     </Link>
                   </li>
                   <li>
@@ -63,7 +71,11 @@ export default function Page() {
                       className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
                     >
                       <span className="truncate">Checkbox, Radio, and Switch</span>
-                      <ArrowRight size={16} strokeWidth={2} className="-mr-1 ml-2 opacity-60 shrink-0" />
+                      <ArrowRight
+                        size={16}
+                        strokeWidth={2}
+                        className="-mr-1 ml-2 shrink-0 opacity-60"
+                      />
                     </Link>
                   </li>
                   <li>
@@ -72,9 +84,13 @@ export default function Page() {
                       className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
                     >
                       <span className="truncate">Select</span>
-                      <ArrowRight size={16} strokeWidth={2} className="-mr-1 ml-2 opacity-60 shrink-0" />
+                      <ArrowRight
+                        size={16}
+                        strokeWidth={2}
+                        className="-mr-1 ml-2 shrink-0 opacity-60"
+                      />
                     </Link>
-                  </li>                  
+                  </li>
                   <li>
                     <span className="inline-flex w-full flex-col justify-between gap-2 whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 sm:h-14 sm:flex-row sm:items-center">
                       Slider
@@ -97,13 +113,16 @@ export default function Page() {
                       className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
                     >
                       <span className="truncate">Tailwind CSS easing classes</span>
-                      <ArrowRight size={16} strokeWidth={2} className="-mr-1 ml-2 opacity-60 shrink-0" />
+                      <ArrowRight
+                        size={16}
+                        strokeWidth={2}
+                        className="-mr-1 ml-2 shrink-0 opacity-60"
+                      />
                     </Link>
                   </li>
-
                 </ul>
               </nav>
-            </div>            
+            </div>
 
             <Newsletter />
 

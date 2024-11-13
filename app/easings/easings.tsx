@@ -225,7 +225,7 @@ const AnimatedSquare = ({
   return (
     <div
       key={`${key}-${duration}-${pauseDuration}-${animationType}`}
-      className={`flex w-full items-center pointer-events-none ${animationType === "translate" ? "justify-start" : "justify-center"}`}
+      className={`pointer-events-none flex w-full items-center ${animationType === "translate" ? "justify-start" : "justify-center"}`}
       style={animationType === "translate" ? animationStyle : undefined}
     >
       <div
@@ -448,10 +448,12 @@ export default function Easings({ easings }: EasingsProps) {
           <p className="text-sm leading-relaxed text-muted-foreground">
             We use class names with arbitrary properties like{" "}
             <code className="font-mono text-[13px] text-foreground">
-            &#91;transition-timing-function:cubic-bezier(...)&#93;
+              &#91;transition-timing-function:cubic-bezier(...)&#93;
             </code>{" "}
             instead of{" "}
-            <code className="font-mono text-[13px] text-foreground">ease-&#91;cubic-bezier(...)&#93;</code>{" "}
+            <code className="font-mono text-[13px] text-foreground">
+              ease-&#91;cubic-bezier(...)&#93;
+            </code>{" "}
             as recommended in the Tailwind CSS documentation, because the latter won't work with the
             tailwindcss-animate plugin. See{" "}
             <a

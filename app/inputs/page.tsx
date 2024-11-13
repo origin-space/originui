@@ -61,6 +61,7 @@ const inputFiles = [
   "input-55",
   "input-56",
   "input-57",
+  "input-58",
 ];
 
 const textareaDir = "textareas";
