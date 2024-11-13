@@ -11,6 +11,6 @@ export default function Input04() {
         <span className="text-sm text-muted-foreground">Optional</span>
       </div>
       <Input id="input-04" placeholder="Email" type="email" />
-    </div>
+    </>
   );
 }
