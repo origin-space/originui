@@ -21,8 +21,9 @@ export default function Slider20() {
   return (
     <div className="space-y-4">
       <Label>Vertical slider with input</Label>
-      <div className="flex flex-col items-center justify-center gap-4">
+      <div className="flex flex-col items-center justify-center gap-4 h-48">
         <Slider
+          className="data-[orientation=vertical]:min-h-0"
           value={sliderValue} 
           onValueChange={handleSliderChange} 
           min={minValue}
