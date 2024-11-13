@@ -60,15 +60,24 @@ export default function Page() {
                   <li>
                     <Link
                       href="/checks-radios-switches"
-                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/[0.04] sm:h-14"
+                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
                     >
                       <span className="truncate">Checkbox, Radio, and Switch</span>
                       <ArrowRight size={16} strokeWidth={2} className="-mr-1 ml-2 opacity-60 shrink-0" />
                     </Link>
                   </li>
                   <li>
+                    <Link
+                      href="/selects"
+                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
+                    >
+                      <span className="truncate">Select</span>
+                      <ArrowRight size={16} strokeWidth={2} className="-mr-1 ml-2 opacity-60 shrink-0" />
+                    </Link>
+                  </li>                  
+                  <li>
                     <span className="inline-flex w-full flex-col justify-between gap-2 whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 sm:h-14 sm:flex-row sm:items-center">
-                      Select
+                      Slider
                       <span className="text-xs font-medium uppercase text-zinc-400 dark:text-zinc-600">
                         Available soon!
                       </span>
