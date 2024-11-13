@@ -17,7 +17,7 @@ export default function Slider07c() {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       <Label className="tabular-nums">From {formatPrice(value[0])} to {formatPrice(value[1])}</Label>
       <div className="flex items-center gap-4">
         <Slider 

@@ -10,9 +10,9 @@ export default function Slider15() {
   const labels = ["Awful", "Poor", "Okay", "Good", "Amazing"];
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       <div className="flex items-center justify-between gap-2">
-        <Label>Rate your experience</Label>
+        <Label className="leading-6">Rate your experience</Label>
         <span className="text-sm font-medium text-muted-foreground tabular-nums">
           {labels[value[0] - 1]}
         </span>

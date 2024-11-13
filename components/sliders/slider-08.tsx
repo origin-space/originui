@@ -9,9 +9,9 @@ export default function Slider08() {
   const [value, setValue] = useState([25]);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       <div className="flex items-center justify-between gap-2">
-        <Label>Volume</Label>
+        <Label className="leading-6">Volume</Label>
         <output className="text-sm text-muted-foreground tabular-nums font-medium">{value[0]}</output>
       </div>
       <div className="flex items-center gap-2">

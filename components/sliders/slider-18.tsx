@@ -19,7 +19,7 @@ export default function Slider18() {
   } = useSliderWithInput({ minValue, maxValue, initialValue });
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       <Label>Dual range slider with input</Label>
       <div className="flex items-center gap-4">
         <Input 

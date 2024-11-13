@@ -11,10 +11,8 @@ export default function Slider16() {
   const labels = ["Awful", "Poor", "Okay", "Good", "Amazing"];
 
   return (
-    <div className="space-y-4">
-      <div className="flex items-center justify-between gap-2">
-        <Label>Rate your experience</Label>
-      </div>
+    <div className="space-y-3">
+      <Label>Rate your experience</Label>
       <div className="flex items-center gap-2">
         <Slider 
           value={value} 
