@@ -16,7 +16,6 @@ export default function Slider16() {
         <Label>Rate your experience</Label>
       </div>
       <div className="flex items-center gap-2">
-        <span className="text-2xl">{emojis[value[0] - 1]}</span>
         <SliderWithTooltip 
           value={value} 
           onValueChange={setValue} 
@@ -26,6 +25,7 @@ export default function Slider16() {
           tooltipContent={(value) => labels[value - 1]}
           aria-label="Rate your experience"
         />
+        <span className="text-2xl">{emojis[value[0] - 1]}</span>        
       </div>
     </div>
   );
