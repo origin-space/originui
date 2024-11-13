@@ -55,6 +55,15 @@ const config: Config = {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
       },
+      keyframes: {
+        shimmer: {
+          '0%, 100%': { backgroundPosition: '200% 50%' },
+          '50%': { backgroundPosition: '-200% 50%' }
+        }
+      },
+      animation: {
+        shimmer: "shimmer 8s ease-in-out infinite",
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
