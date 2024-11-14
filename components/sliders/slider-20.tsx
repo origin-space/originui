@@ -1,50 +1,59 @@
+// Dependencies: pnpm install lucide-react
+
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { Input } from "@/components/ui/input";
-import { useSliderWithInput } from "@/hooks/use-slider-with-input";
+import { Minus, Plus } from "lucide-react";
+import { useState } from "react";
 
 export default function Slider20() {
   const minValue = 0;
-  const maxValue = 100;
-  const initialValue = [25];
+  const maxValue = 200;
+  const steps = 5;
+  const [value, setValue] = useState([100]);
 
-  const {
-    sliderValue,
-    inputValues,
-    validateAndUpdateValue,
-    handleInputChange,
-    handleSliderChange,
-  } = useSliderWithInput({ minValue, maxValue, initialValue });
+  const decreaseValue = () => setValue((prev) => [Math.max(minValue, prev[0] - steps)]);
+  const increaseValue = () => setValue((prev) => [Math.min(maxValue, prev[0] + steps)]);
 
   return (
-    <div className="space-y-4">
-      <Label>Vertical slider with input</Label>
-      <div className="flex flex-col items-center justify-center gap-4 h-48">
+    <div className="space-y-3">
+      <Label className="tabular-nums">{value[0]} credits/mo</Label>
+      <div className="flex items-center gap-4">
+        <div>
+          <Button
+            variant="outline"
+            size="icon"
+            className="size-8"
+            aria-label="Decrease value"
+            onClick={decreaseValue}
+            disabled={value[0] === 0}
+          >
+            <Minus size={16} strokeWidth={2} aria-hidden="true" />
+          </Button>
+        </div>
         <Slider
-          className="data-[orientation=vertical]:min-h-0"
-          value={sliderValue} 
-          onValueChange={handleSliderChange} 
+          className="flex-grow"
+          value={value}
+          onValueChange={setValue}
           min={minValue}
           max={maxValue}
-          orientation="vertical" 
-          aria-label="Slider with input"
+          step={steps}
+          aria-label="Dual range slider with buttons"
         />
-        <Input 
-          className="w-12 px-2 py-1 h-8"
-          type="text"
-          inputMode="decimal"
-          value={inputValues[0]}
-          onChange={(e) => handleInputChange(e, 0)}
-          onBlur={() => validateAndUpdateValue(inputValues[0], 0)}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              validateAndUpdateValue(inputValues[0], 0);
-            }
-          }}
-          aria-label="Enter value"
-        />        
+        <div>
+          <Button
+            variant="outline"
+            size="icon"
+            className="size-8"
+            aria-label="Increase value"
+            onClick={increaseValue}
+            disabled={value[0] === 200}
+          >
+            <Plus size={16} strokeWidth={2} aria-hidden="true" />
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 
-export default function Slider01a() {
+export default function Slider04() {
   return (
     <div
       className="space-y-4"

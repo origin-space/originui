@@ -1,23 +1,30 @@
-"use client";
-
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { useState } from "react";
-import { VolumeX, Volume2 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export default function Slider08() {
-  const [value, setValue] = useState([25]);
+  const max = 12;
+  const skipInterval = 2; // Set to 1 to allow no text skipping
+  const ticks = [...Array(max + 1)].map((_, i) => i);
 
   return (
-    <div className="space-y-3">
-      <div className="flex items-center justify-between gap-2">
-        <Label className="leading-6">Volume</Label>
-        <output className="text-sm text-muted-foreground tabular-nums font-medium">{value[0]}</output>
-      </div>
-      <div className="flex items-center gap-2">
-        <VolumeX className="shrink-0 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
-        <Slider value={value} onValueChange={setValue} aria-label="Volume slider" />
-        <Volume2 className="shrink-0 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
+    <div className="space-y-4">
+      <Label>Slider with ticks</Label>
+      <div>
+        <Slider defaultValue={[5]} max={max} aria-label="Slider with ticks" />
+        <span
+          className="mt-3 flex w-full items-center justify-between gap-1 px-2.5 text-xs font-medium text-muted-foreground"
+          aria-hidden="true"
+        >
+          {ticks.map((_, i) => (
+            <span key={i} className="flex w-0 flex-col items-center justify-center gap-2">
+              <span
+                className={cn("h-1 w-px bg-muted-foreground/70", i % skipInterval !== 0 && "h-0.5")}
+              />
+              <span className={cn(i % skipInterval !== 0 && "opacity-0")}>{i}</span>
+            </span>
+          ))}
+        </span>
       </div>
     </div>
   );

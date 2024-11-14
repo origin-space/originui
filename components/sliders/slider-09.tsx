@@ -2,12 +2,20 @@
 
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import { useState } from "react";
 
 export default function Slider09() {
+  const [value, setValue] = useState([25]);
+
   return (
     <div className="space-y-4">
-      <Label>Slider with multiple thumbs</Label>
-      <Slider defaultValue={[25,50,100]} aria-label="Slider with multiple thumbs" showTooltip tooltipContent={(value) => `${value}%`} />
+      <div className="flex items-center justify-between gap-2">
+        <Label className="leading-6">Slider with output</Label>
+        <output className="text-sm font-medium tabular-nums text-muted-foreground">
+          {value[0]}
+        </output>
+      </div>
+      <Slider value={value} onValueChange={setValue} aria-label="Slider with output" />
     </div>
   );
 }

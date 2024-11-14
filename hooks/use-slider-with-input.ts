@@ -9,10 +9,10 @@ type UseSliderWithInputProps = {
 export function useSliderWithInput({
   minValue = 0,
   maxValue = 100,
-  initialValue = [minValue]
+  initialValue = [minValue],
 }: UseSliderWithInputProps) {
   const [sliderValue, setSliderValue] = useState(initialValue);
-  const [inputValues, setInputValues] = useState(initialValue.map(v => v.toString()));
+  const [inputValues, setInputValues] = useState(initialValue.map((v) => v.toString()));
 
   const validateAndUpdateValue = useCallback(
     (rawValue: string, index: number) => {
@@ -20,7 +20,7 @@ export function useSliderWithInput({
         const newInputValues = [...inputValues];
         newInputValues[index] = "0";
         setInputValues(newInputValues);
-        
+
         const newSliderValues = [...sliderValue];
         newSliderValues[index] = 0;
         setSliderValue(newSliderValues);
@@ -37,7 +37,7 @@ export function useSliderWithInput({
       }
 
       let clampedValue = Math.min(maxValue, Math.max(minValue, numValue));
-      
+
       if (sliderValue.length > 1) {
         if (index === 0) {
           clampedValue = Math.min(clampedValue, sliderValue[1]);
@@ -45,16 +45,16 @@ export function useSliderWithInput({
           clampedValue = Math.max(clampedValue, sliderValue[0]);
         }
       }
-      
+
       const newSliderValues = [...sliderValue];
       newSliderValues[index] = clampedValue;
       setSliderValue(newSliderValues);
-      
+
       const newInputValues = [...inputValues];
       newInputValues[index] = clampedValue.toString();
       setInputValues(newInputValues);
     },
-    [sliderValue, inputValues, minValue, maxValue]
+    [sliderValue, inputValues, minValue, maxValue],
   );
 
   const handleInputChange = useCallback(
@@ -66,12 +66,12 @@ export function useSliderWithInput({
         setInputValues(newInputValues);
       }
     },
-    [inputValues]
+    [inputValues],
   );
 
   const handleSliderChange = useCallback((newValue: number[]) => {
     setSliderValue(newValue);
-    setInputValues(newValue.map(v => v.toString()));
+    setInputValues(newValue.map((v) => v.toString()));
   }, []);
 
   return {

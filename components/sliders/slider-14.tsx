@@ -1,31 +1,27 @@
+// Dependencies: pnpm install lucide-react
+
+"use client";
+
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import { Volume2, VolumeX } from "lucide-react";
+import { useState } from "react";
 
 export default function Slider14() {
+  const [value, setValue] = useState([25]);
+
   return (
-    <div className="space-y-4">
-      <legend className="text-sm font-medium text-foreground">Equalizer</legend>
-      <div className="flex justify-center gap-8 h-48">
-        <div className="flex flex-col gap-2 items-center">
-          <Slider defaultValue={[2]} min={-5} max={5} orientation="vertical" className="[&>:last-child>span]:rounded [&>:last-child>span]:h-6 [&>:last-child>span]:w-4" aria-label="60 Hz" showTooltip />
-          <Label className="w-0 flex justify-center">60</Label>
-        </div>
-        <div className="flex flex-col gap-2 items-center">
-          <Slider defaultValue={[1]} min={-5} max={5} orientation="vertical" className="[&>:last-child>span]:rounded [&>:last-child>span]:h-6 [&>:last-child>span]:w-4" aria-label="250 Hz" showTooltip />
-          <Label className="w-0 flex justify-center">250</Label>
-        </div>
-        <div className="flex flex-col gap-2 items-center">
-          <Slider defaultValue={[-1]} min={-5} max={5} orientation="vertical" className="[&>:last-child>span]:rounded [&>:last-child>span]:h-6 [&>:last-child>span]:w-4" aria-label="1k" showTooltip />
-          <Label className="w-0 flex justify-center">1k</Label>
-        </div>
-        <div className="flex flex-col gap-2 items-center">
-          <Slider defaultValue={[-3]} min={-5} max={5} orientation="vertical" className="[&>:last-child>span]:rounded [&>:last-child>span]:h-6 [&>:last-child>span]:w-4" aria-label="4k" showTooltip />
-          <Label className="w-0 flex justify-center">4k</Label>
-        </div>
-        <div className="flex flex-col gap-2 items-center">
-          <Slider defaultValue={[2]} min={-5} max={5} orientation="vertical" className="[&>:last-child>span]:rounded [&>:last-child>span]:h-6 [&>:last-child>span]:w-4" aria-label="16k" showTooltip />
-          <Label className="w-0 flex justify-center">16K</Label>
-        </div>
+    <div className="space-y-3">
+      <div className="flex items-center justify-between gap-2">
+        <Label className="leading-6">Volume</Label>
+        <output className="text-sm font-medium tabular-nums text-muted-foreground">
+          {value[0]}
+        </output>
+      </div>
+      <div className="flex items-center gap-2">
+        <VolumeX className="shrink-0 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
+        <Slider value={value} onValueChange={setValue} aria-label="Volume slider" />
+        <Volume2 className="shrink-0 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
       </div>
     </div>
   );

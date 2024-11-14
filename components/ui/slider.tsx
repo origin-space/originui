@@ -1,15 +1,10 @@
 "use client";
 
-import * as React from "react";
 import * as SliderPrimitive from "@radix-ui/react-slider";
+import * as React from "react";
 
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 
 const Slider = React.forwardRef<
   React.ElementRef<typeof SliderPrimitive.Root>,
@@ -19,11 +14,9 @@ const Slider = React.forwardRef<
   }
 >(({ className, showTooltip = false, tooltipContent, ...props }, ref) => {
   const [showTooltipState, setShowTooltipState] = React.useState(false);
-  const [activeThumbIndex, setActiveThumbIndex] = React.useState<number | null>(
-    null
-  );
+  const [activeThumbIndex, setActiveThumbIndex] = React.useState<number | null>(null);
   const [internalValue, setInternalValue] = React.useState<number[]>(
-    (props.defaultValue as number[]) ?? (props.value as number[]) ?? [0]
+    (props.defaultValue as number[]) ?? (props.value as number[]) ?? [0],
   );
 
   React.useEffect(() => {
@@ -90,19 +83,17 @@ const Slider = React.forwardRef<
     <SliderPrimitive.Root
       ref={ref}
       className={cn(
-        "relative data-[orientation=horizontal]:flex touch-none select-none items-center data-[disabled]:opacity-50 data-[orientation=horizontal]:w-full data-[orientation=vertical]:inline-flex data-[orientation=vertical]:flex-col data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-48",
-        className
+        "relative touch-none select-none items-center data-[orientation=horizontal]:flex data-[orientation=vertical]:inline-flex data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-48 data-[orientation=horizontal]:w-full data-[orientation=vertical]:flex-col data-[disabled]:opacity-50",
+        className,
       )}
       onValueChange={handleValueChange}
       {...props}
     >
-      <SliderPrimitive.Track className="relative grow overflow-hidden rounded-full bg-secondary data-[orientation=horizontal]:h-1.5 data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1.5">
+      <SliderPrimitive.Track className="relative grow overflow-hidden rounded-full bg-secondary data-[orientation=horizontal]:h-1.5 data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-1.5">
         <SliderPrimitive.Range className="absolute bg-primary data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full" />
       </SliderPrimitive.Track>
       {internalValue?.map((value, index) => (
-        <React.Fragment key={index}>
-          {renderThumb(value, index)}
-        </React.Fragment>
+        <React.Fragment key={index}>{renderThumb(value, index)}</React.Fragment>
       ))}
     </SliderPrimitive.Root>
   );

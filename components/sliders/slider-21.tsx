@@ -1,57 +1,33 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Minus, Plus } from "lucide-react";
 
-export default function Slider18() {
-  const minValue = 0;
-  const maxValue = 200;
-  const steps = 5;
-  const [value, setValue] = useState([100]);
+export default function Slider21() {
+  const min_price = 5;
+  const max_price = 1240;
+  const [value, setValue] = useState([min_price, max_price]);
 
-  const decreaseValue = () => setValue((prev) => [Math.max(minValue, prev[0] - steps)]);
-  const increaseValue = () => setValue((prev) => [Math.min(maxValue, prev[0] + steps)]);
+  const formatPrice = (price: number) => {
+    return price === max_price ? `$${price.toLocaleString()}+` : `$${price.toLocaleString()}`;
+  };
 
   return (
     <div className="space-y-3">
-      <Label className="tabular-nums">{value[0]} credits/mo</Label>   
+      <Label className="tabular-nums">
+        From {formatPrice(value[0])} to {formatPrice(value[1])}
+      </Label>
       <div className="flex items-center gap-4">
-        <div>
-          <Button
-            variant="outline"
-            size="icon"
-            className="size-8"
-            aria-label="Decrease value"
-            onClick={decreaseValue}
-            disabled={value[0] === 0}
-          >
-            <Minus size={16} strokeWidth={2} aria-hidden="true" />
-          </Button>
-        </div>
-        <Slider 
-          className="flex-grow"
+        <Slider
           value={value}
           onValueChange={setValue}
-          min={minValue}
-          max={maxValue} 
-          step={steps}
-          aria-label="Dual range slider with buttons"
+          min={min_price}
+          max={max_price}
+          aria-label="Price range slider"
         />
-        <div>
-          <Button
-            variant="outline"
-            size="icon"
-            className="size-8"
-            aria-label="Increase value"
-            onClick={increaseValue}
-            disabled={value[0] === 200}
-          >
-            <Plus size={16} strokeWidth={2} aria-hidden="true" />
-          </Button>
-        </div>
+        <Button variant="outline">Go</Button>
       </div>
     </div>
   );
