@@ -5,7 +5,7 @@ export default function Slider24() {
   return (
     <div className="space-y-4">
       <Label>Vertical dual range slider and tooltip</Label>
-      <div className="flex justify-center">
+      <div className="flex h-40 justify-center">
         <Slider
           defaultValue={[2, 7]}
           max={10}

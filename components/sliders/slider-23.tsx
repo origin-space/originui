@@ -21,7 +21,7 @@ export default function Slider23() {
   return (
     <div className="space-y-4">
       <Label>Vertical slider with input</Label>
-      <div className="flex h-48 flex-col items-center justify-center gap-4">
+      <div className="flex h-40 flex-col items-center justify-center gap-4">
         <Slider
           className="data-[orientation=vertical]:min-h-0"
           value={sliderValue}
