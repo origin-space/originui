@@ -14,7 +14,6 @@ const Slider = React.forwardRef<
   }
 >(({ className, showTooltip = false, tooltipContent, ...props }, ref) => {
   const [showTooltipState, setShowTooltipState] = React.useState(false);
-  const [activeThumbIndex, setActiveThumbIndex] = React.useState<number | null>(null);
   const [internalValue, setInternalValue] = React.useState<number[]>(
     (props.defaultValue as number[]) ?? (props.value as number[]) ?? [0],
   );
@@ -30,17 +29,15 @@ const Slider = React.forwardRef<
     props.onValueChange?.(newValue);
   };
 
-  const handlePointerDown = (index: number) => {
+  const handlePointerDown = () => {
     if (showTooltip) {
       setShowTooltipState(true);
-      setActiveThumbIndex(index);
     }
   };
 
   const handlePointerUp = () => {
     if (showTooltip) {
       setShowTooltipState(false);
-      setActiveThumbIndex(null);
     }
   };
 
@@ -57,7 +54,7 @@ const Slider = React.forwardRef<
     const thumb = (
       <SliderPrimitive.Thumb
         className="block h-5 w-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 data-[disabled]:cursor-not-allowed"
-        onPointerDown={() => handlePointerDown(index)}
+        onPointerDown={handlePointerDown}
       />
     );
 
@@ -65,7 +62,7 @@ const Slider = React.forwardRef<
 
     return (
       <TooltipProvider>
-        <Tooltip open={showTooltipState && activeThumbIndex === index}>
+        <Tooltip open={showTooltipState}>
           <TooltipTrigger asChild>{thumb}</TooltipTrigger>
           <TooltipContent
             className="border border-input bg-popover px-2 py-1 text-xs text-muted-foreground"
