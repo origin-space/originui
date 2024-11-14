@@ -11,7 +11,7 @@ export default function Slider08() {
     <div className="space-y-4">
       <div className="flex items-center justify-between gap-2">
         <Label className="leading-6">Slider with output</Label>
-        <output className="text-sm font-medium tabular-nums text-muted-foreground">
+        <output className="text-sm font-medium tabular-nums">
           {value[0]}
         </output>
       </div>

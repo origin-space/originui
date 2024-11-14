@@ -195,7 +195,7 @@ export default function Slider26() {
       <Label>Price slider</Label>
       <div>
         {/* Histogram bars */}
-        <div className="mb-0.5 flex h-12 w-full items-end px-3" aria-hidden="true">
+        <div className="flex h-12 w-full items-end px-3" aria-hidden="true">
           {itemCounts.map((count, i) => (
             <div
               key={i}
@@ -206,7 +206,7 @@ export default function Slider26() {
             >
               <span
                 data-selected={isBarInSelectedRange(i, minValue, priceStep, sliderValue)}
-                className="h-full w-full max-w-[75%] rounded-[2px] bg-muted data-[selected=true]:bg-primary"
+                className="h-full w-full bg-primary/20"
               ></span>
             </div>
           ))}
