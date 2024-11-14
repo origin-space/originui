@@ -12,9 +12,9 @@ import { RotateCcw } from "lucide-react";
 
 export default function Slider15() {
   const minValue = 0.0;
-  const maxValue = 2.0;
-  const initialValue = [1.2];
-  const defaultValue = [1.0];
+  const maxValue = 2;
+  const initialValue = [1.25];
+  const defaultValue = [1];
 
   const {
     sliderValue,
@@ -52,7 +52,7 @@ export default function Slider15() {
             className="h-7 w-12 px-2 py-0"
             type="text"
             inputMode="decimal"
-            value={Number(inputValues[0]).toFixed(2)}
+            value={inputValues[0]}
             onChange={(e) => handleInputChange(e, 0)}
             onBlur={() => validateAndUpdateValue(inputValues[0], 0)}
             onKeyDown={(e) => {

@@ -92,7 +92,7 @@ function SliderWithInput({
     <div className="flex items-center gap-2">
       <Label>{label}</Label>
       <Slider
-        className="flex-grow [&>:last-child>span]:h-6 [&>:last-child>span]:w-4 [&>:last-child>span]:rounded"
+        className="flex-grow [&>:last-child>span]:rounded"
         value={sliderValue}
         onValueChange={handleSliderChange}
         min={minValue}
