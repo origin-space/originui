@@ -16,7 +16,7 @@ export default function Slider27() {
             aria-label="60 Hz"
             showTooltip
           />
-          <Label className="flex w-0 justify-center">60</Label>
+          <Label className="text-muted-foreground text-xs flex w-0 justify-center">60</Label>
         </div>
         <div className="flex flex-col items-center gap-2">
           <Slider
@@ -28,7 +28,7 @@ export default function Slider27() {
             aria-label="250 Hz"
             showTooltip
           />
-          <Label className="flex w-0 justify-center">250</Label>
+          <Label className="text-muted-foreground text-xs flex w-0 justify-center">250</Label>
         </div>
         <div className="flex flex-col items-center gap-2">
           <Slider
@@ -40,7 +40,7 @@ export default function Slider27() {
             aria-label="1k"
             showTooltip
           />
-          <Label className="flex w-0 justify-center">1k</Label>
+          <Label className="text-muted-foreground text-xs flex w-0 justify-center">1k</Label>
         </div>
         <div className="flex flex-col items-center gap-2">
           <Slider
@@ -52,7 +52,7 @@ export default function Slider27() {
             aria-label="4k"
             showTooltip
           />
-          <Label className="flex w-0 justify-center">4k</Label>
+          <Label className="text-muted-foreground text-xs flex w-0 justify-center">4k</Label>
         </div>
         <div className="flex flex-col items-center gap-2">
           <Slider
@@ -64,7 +64,7 @@ export default function Slider27() {
             aria-label="16k"
             showTooltip
           />
-          <Label className="flex w-0 justify-center">16K</Label>
+          <Label className="text-muted-foreground text-xs flex w-0 justify-center">16K</Label>
         </div>
       </div>
     </div>
