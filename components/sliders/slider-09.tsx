@@ -1,21 +1,20 @@
-"use client";
-
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { useState } from "react";
 
 export default function Slider09() {
-  const [value, setValue] = useState([25]);
-
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between gap-2">
-        <Label className="leading-6">Slider with output</Label>
-        <output className="text-sm font-medium tabular-nums text-muted-foreground">
-          {value[0]}
-        </output>
+      <Label>Slider with labels</Label>
+      <div>
+        <span
+          className="mb-3 flex w-full items-center justify-between gap-2 text-xs font-medium text-muted-foreground"
+          aria-hidden="true"
+        >
+          <span>Low</span>
+          <span>High</span>
+        </span>
+        <Slider defaultValue={[50]} step={10} aria-label="Slider with labels" />
       </div>
-      <Slider value={value} onValueChange={setValue} aria-label="Slider with output" />
     </div>
   );
 }

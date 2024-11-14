@@ -6,21 +6,20 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { useSliderWithInput } from "@/hooks/use-slider-with-input";
 import { RotateCcw } from "lucide-react";
-import React from "react";
-
-type SliderHandlerRef = {
-  handleReset: () => void;
-};
+import React, { useRef } from "react";
 
 export default function Slider25() {
-  const sliderXRef = React.useRef<SliderHandlerRef>();
-  const sliderYRef = React.useRef<SliderHandlerRef>();
-  const sliderZRef = React.useRef<SliderHandlerRef>();
+  // Create refs to store reset functions
+  const resetFunctionsRef = useRef<(() => void)[]>([]);
 
-  const reset = () => {
-    sliderXRef.current?.handleReset();
-    sliderYRef.current?.handleReset();
-    sliderZRef.current?.handleReset();
+  // Function to reset all sliders to default
+  const resetAll = () => {
+    resetFunctionsRef.current.forEach((resetFn) => resetFn());
+  };
+
+  // Function to register reset functions
+  const registerResetFunction = (resetFn: () => void, index: number) => {
+    resetFunctionsRef.current[index] = resetFn;
   };
 
   return (
@@ -31,25 +30,28 @@ export default function Slider25() {
           minValue={-10}
           maxValue={10}
           initialValue={[-2]}
+          defaultValue={[0]}
           label="X"
-          handlerRef={sliderXRef}
+          onRegisterReset={(resetFn) => registerResetFunction(resetFn, 0)}
         />
         <SliderWithInput
           minValue={-10}
           maxValue={10}
           initialValue={[4]}
+          defaultValue={[0]}
           label="Y"
-          handlerRef={sliderYRef}
+          onRegisterReset={(resetFn) => registerResetFunction(resetFn, 1)}
         />
         <SliderWithInput
           minValue={-10}
           maxValue={10}
           initialValue={[2]}
+          defaultValue={[0]}
           label="Z"
-          handlerRef={sliderZRef}
+          onRegisterReset={(resetFn) => registerResetFunction(resetFn, 2)}
         />
       </div>
-      <Button className="w-full" variant="outline" onClick={reset}>
+      <Button className="w-full" variant="outline" onClick={resetAll}>
         <RotateCcw className="-ms-1 me-2 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
         Reset
       </Button>
@@ -61,14 +63,16 @@ function SliderWithInput({
   minValue,
   maxValue,
   initialValue,
+  defaultValue,
   label,
-  handlerRef,
+  onRegisterReset,
 }: {
   minValue: number;
   maxValue: number;
   initialValue: number[];
+  defaultValue: number[];
   label: string;
-  handlerRef: React.MutableRefObject<SliderHandlerRef | undefined>;
+  onRegisterReset: (resetFn: () => void) => void;
 }) {
   const {
     sliderValue,
@@ -76,14 +80,13 @@ function SliderWithInput({
     validateAndUpdateValue,
     handleInputChange,
     handleSliderChange,
-  } = useSliderWithInput({ minValue, maxValue, initialValue });
+    resetToDefault,
+  } = useSliderWithInput({ minValue, maxValue, initialValue, defaultValue });
 
-  // Expose reset handler to parent
+  // Register the reset function when the component mounts
   React.useEffect(() => {
-    handlerRef.current = {
-      handleReset: () => handleSliderChange([0]),
-    };
-  }, [handleSliderChange]);
+    onRegisterReset(resetToDefault);
+  }, [onRegisterReset, resetToDefault]);
 
   return (
     <div className="flex items-center gap-2">

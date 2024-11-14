@@ -4,7 +4,7 @@ import { Slider } from "@/components/ui/slider";
 export default function Slider10() {
   return (
     <div className="space-y-4">
-      <Label>Slider with labels</Label>
+      <Label>Slider with labels and tooltip</Label>
       <div>
         <span
           className="mb-3 flex w-full items-center justify-between gap-2 text-xs font-medium text-muted-foreground"
@@ -13,7 +13,12 @@ export default function Slider10() {
           <span>Low</span>
           <span>High</span>
         </span>
-        <Slider defaultValue={[50]} step={10} aria-label="Slider with labels" />
+        <Slider
+          defaultValue={[50]}
+          step={10}
+          showTooltip={true}
+          aria-label="Slider with labels and tooltip"
+        />
       </div>
     </div>
   );

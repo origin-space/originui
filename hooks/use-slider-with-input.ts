@@ -4,12 +4,14 @@ type UseSliderWithInputProps = {
   minValue?: number;
   maxValue?: number;
   initialValue?: number[];
+  defaultValue?: number[];
 };
 
 export function useSliderWithInput({
   minValue = 0,
   maxValue = 100,
   initialValue = [minValue],
+  defaultValue = [minValue],
 }: UseSliderWithInputProps) {
   const [sliderValue, setSliderValue] = useState(initialValue);
   const [inputValues, setInputValues] = useState(initialValue.map((v) => v.toString()));
@@ -74,11 +76,17 @@ export function useSliderWithInput({
     setInputValues(newValue.map((v) => v.toString()));
   }, []);
 
+  const resetToDefault = useCallback(() => {
+    setSliderValue(defaultValue);
+    setInputValues(defaultValue.map((v) => v.toString()));
+  }, [defaultValue]);
+
   return {
     sliderValue,
     inputValues,
     validateAndUpdateValue,
     handleInputChange,
     handleSliderChange,
+    resetToDefault,
   };
 }

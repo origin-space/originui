@@ -3,13 +3,13 @@ import { Slider } from "@/components/ui/slider";
 
 export default function Slider04() {
   return (
-    <div
-      className="space-y-4"
-      // NOTE: This inline style is to show how to set the --primary variable in your CSS file in order to change the focus ring color.
-      style={{ "--primary": "238.7 83.5% 66.7%" } as React.CSSProperties}
-    >
-      <Label>Slider with custom color</Label>
-      <Slider defaultValue={[25]} aria-label="Slider with custom color" />
+    <div className="space-y-4">
+      <Label>Slider with solid thumb</Label>
+      <Slider
+        defaultValue={[25]}
+        className="[&>:first-child>span]:opacity-70 [&>:last-child>span]:bg-primary"
+        aria-label="Slider with solid thumb"
+      />
     </div>
   );
 }

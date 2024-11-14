@@ -4,12 +4,18 @@ import { Slider } from "@/components/ui/slider";
 export default function Slider06() {
   return (
     <div className="space-y-4">
-      <Label>Slider with tiny thumb</Label>
-      <Slider
-        defaultValue={[25]}
-        className="[&>:last-child>span]:h-6 [&>:last-child>span]:w-2.5 [&>:last-child>span]:border-[3px] [&>:last-child>span]:border-background [&>:last-child>span]:bg-primary [&>:last-child>span]:ring-offset-0"
-        aria-label="Slider with tiny thumb"
-      />
+      <Label>Slider with reference labels</Label>
+      <div>
+        <Slider defaultValue={[15]} min={5} max={35} aria-label="Slider with reference labels" />
+        <span
+          className="mt-4 flex w-full items-center justify-between gap-1 text-xs font-medium text-muted-foreground"
+          aria-hidden="true"
+        >
+          <span>5 GB</span>
+          <span>20 GB</span>
+          <span>35 GB</span>
+        </span>
+      </div>
     </div>
   );
 }

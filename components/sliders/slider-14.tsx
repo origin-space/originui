@@ -1,28 +1,18 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { Volume2, VolumeX } from "lucide-react";
-import { useState } from "react";
 
 export default function Slider14() {
-  const [value, setValue] = useState([25]);
-
   return (
-    <div className="space-y-3">
-      <div className="flex items-center justify-between gap-2">
-        <Label className="leading-6">Volume</Label>
-        <output className="text-sm font-medium tabular-nums text-muted-foreground">
-          {value[0]}
-        </output>
-      </div>
-      <div className="flex items-center gap-2">
-        <VolumeX className="shrink-0 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
-        <Slider value={value} onValueChange={setValue} aria-label="Volume slider" />
-        <Volume2 className="shrink-0 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
-      </div>
+    <div className="space-y-4">
+      <Label>Slider with multiple thumbs</Label>
+      <Slider
+        defaultValue={[25, 50, 100]}
+        aria-label="Slider with multiple thumbs"
+        showTooltip
+        tooltipContent={(value) => `${value}%`}
+      />
     </div>
   );
 }
