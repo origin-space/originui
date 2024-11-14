@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import CopyButton from "./copy-button";
 import { readComponentSource } from "./read-component-source";
+import ViewCodeButton from "./view-code-button";
 
 export default async function DemoComponent({
   directory,
@@ -17,7 +18,9 @@ export default async function DemoComponent({
   return (
     <div className={cn("group/item relative", className)}>
       <Component />
+
       <CopyButton componentSource={source || ""} />
+      <ViewCodeButton componentSource={source || ""} />
     </div>
   );
 }
