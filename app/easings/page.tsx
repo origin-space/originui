@@ -1,6 +1,13 @@
 import PageHeader from "@/demo/page-header";
 import XLinks from "@/demo/x-links";
+import type { Metadata } from "next";
 import Easings from "./easings";
+
+export const metadata: Metadata = {
+  title: "Tailwind CSS Easing Classes - Origin UI",
+  description:
+    "A collection of easing utility classes to enhance your Tailwind CSS animations and transitions.",
+};
 
 const easings = [
   {
