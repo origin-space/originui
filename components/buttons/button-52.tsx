@@ -4,7 +4,7 @@ import { Bell } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 
-export default function NotificationButton() {
+export default function Button52() {
     const [count, setCount] = useState(100);
 
     const handleClick = () => {
