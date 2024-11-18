@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const directory = "buttons";
-const files = [
+const files: string[] = [
   "button-01",
   "button-02",
   "button-03",
@@ -62,6 +62,7 @@ const files = [
   "button-49",
   "button-50",
   "button-51",
+  "button-53"
 ];
 
 export default function Page() {
