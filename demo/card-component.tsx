@@ -44,7 +44,7 @@ const CardComponent = ({
 			data-selected={selected}
 			className={cn(
 				"group/item relative hover",
-				selected && "bg-zinc-50",
+				selected && "bg-zinc-50 border-x-2 border-zinc-200",
 				className,
 			)}
 		>

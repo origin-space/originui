@@ -17,14 +17,13 @@ interface ShareButtonProps {
 }
 
 const ShareButton = ({ componentName, directory }: ShareButtonProps) => {
-	console.log("directory", directory);
 	const [copied, setCopied] = useState<boolean>(false);
-	const url =
-		typeof window !== "undefined" &&
-		`${window.location.origin}/${directory}#${componentName}`;
 
 	const handleCopy = async () => {
 		try {
+			const url =
+				typeof window !== "undefined" &&
+				`${window.location.origin}/${directory}#${componentName}`;
 			await navigator.clipboard.writeText(url || "");
 			setCopied(true);
 			setTimeout(() => setCopied(false), 1500);
