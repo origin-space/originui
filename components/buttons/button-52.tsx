@@ -23,6 +23,7 @@ export default function Button52() {
         >
             <Bell
                 size={16}
+                strokeWidth={2}  
                 aria-hidden="true"
             />
             {count > 0 && (
