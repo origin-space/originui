@@ -86,7 +86,7 @@ export default function Page() {
       <div className="px-4 sm:px-6">
         <div className="mx-auto w-full max-w-6xl">
           <PageHeader title="Checkbox, Radio, and Switch">
-            A growing collection of {totalComponents} button components built with Next.js and
+            A growing collection of {totalComponents} checkbox, radio and switch components built with Next.js and
             TailwindCSS.
           </PageHeader>
 
