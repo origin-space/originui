@@ -36,16 +36,16 @@ export default function Radio07() {
           className="size-6 border-orange-500 bg-orange-500 shadow-none data-[state=checked]:border-orange-500 data-[state=checked]:bg-orange-500"
         />
         <RadioGroupItem
-          value="yellow"
-          id="radio-07-yellow"
-          aria-label="yellow"
-          className="size-6 border-yellow-500 bg-yellow-500 shadow-none data-[state=checked]:border-yellow-500 data-[state=checked]:bg-yellow-500"
+          value="amber"
+          id="radio-07-amber"
+          aria-label="amber"
+          className="size-6 border-amber-500 bg-amber-500 shadow-none data-[state=checked]:border-amber-500 data-[state=checked]:bg-amber-500"
         />
         <RadioGroupItem
-          value="green"
-          id="radio-07-green"
-          aria-label="green"
-          className="size-6 border-green-500 bg-green-500 shadow-none data-[state=checked]:border-green-500 data-[state=checked]:bg-green-500"
+          value="emerald"
+          id="radio-07-emerald"
+          aria-label="emerald"
+          className="size-6 border-emerald-500 bg-emerald-500 shadow-none data-[state=checked]:border-emerald-500 data-[state=checked]:bg-emerald-500"
         />
       </RadioGroup>
     </fieldset>
