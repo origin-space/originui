@@ -113,7 +113,7 @@ export default function Page() {
                   </li>
                   <li>
                     <span className="inline-flex w-full flex-col justify-between gap-2 whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 sm:h-14 sm:flex-row sm:items-center">
-                      Alert, Toast, and Notification
+                      Alert, Notification, and Banner
                       <span className="text-xs font-medium uppercase text-zinc-400 dark:text-zinc-600">
                         Available soon!
                       </span>
