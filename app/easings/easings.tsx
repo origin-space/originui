@@ -293,29 +293,6 @@ export default function Easings({ easings }: EasingsProps) {
     }
   };
 
-  const handlePauseSliderChangeEnd = (value: number[]) => {
-    setPauseDuration(value[0]);
-  };
-
-  const handlePauseSliderChange = (value: number[]) => {
-    setTempPauseDuration(value[0]);
-  };
-
-  const handlePauseInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseInt(event.target.value, 10);
-    if (!isNaN(value) && value >= 0 && value <= 5000) {
-      setTempPauseDuration(value);
-    }
-  };
-
-  const handlePauseInputBlur = () => {
-    if (tempPauseDuration >= 0 && tempPauseDuration <= 5000) {
-      setPauseDuration(tempPauseDuration);
-    } else {
-      setTempPauseDuration(pauseDuration);
-    }
-  };
-
   const getFilteredEasings = () => {
     if (easingFilter === "all") return easings;
 

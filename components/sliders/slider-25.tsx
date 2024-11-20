@@ -90,7 +90,7 @@ function SliderWithInput({
 
   return (
     <div className="flex items-center gap-2">
-      <Label className="text-muted-foreground text-xs">{label}</Label>
+      <Label className="text-xs text-muted-foreground">{label}</Label>
       <Slider
         className="flex-grow [&>:last-child>span]:rounded"
         value={sliderValue}
