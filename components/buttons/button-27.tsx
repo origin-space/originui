@@ -29,7 +29,6 @@ export default function Button27() {
         disabled={volume === 0}
       >
         <Minus size={16} strokeWidth={2} aria-hidden="true" />
-        <span className="sr-only">Decrease</span>
       </Button>
       <div className="flex items-center px-3 text-sm font-medium tabular-nums" aria-live="polite">
         <VolumeIcon className="opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
@@ -46,7 +45,6 @@ export default function Button27() {
         disabled={volume === 6}
       >
         <Plus size={16} strokeWidth={2} aria-hidden="true" />
-        <span className="sr-only">Increase</span>
       </Button>
     </div>
   );

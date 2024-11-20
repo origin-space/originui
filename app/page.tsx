@@ -99,8 +99,21 @@ export default function Page() {
                     </Link>
                   </li>
                   <li>
+                    <Link
+                      href="/sliders"
+                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/[0.04] sm:h-14"
+                    >
+                      <span className="truncate">Sliders</span>
+                      <ArrowRight
+                        size={16}
+                        strokeWidth={2}
+                        className="-mr-1 ml-2 shrink-0 opacity-60"
+                      />
+                    </Link>
+                  </li>
+                  <li>
                     <span className="inline-flex w-full flex-col justify-between gap-2 whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 sm:h-14 sm:flex-row sm:items-center">
-                      Slider
+                      Alert, Notification, and Banner
                       <span className="text-xs font-medium uppercase text-zinc-400 dark:text-zinc-600">
                         Available soon!
                       </span>
