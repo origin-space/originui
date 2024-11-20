@@ -53,6 +53,10 @@ const notificationFiles = [
   "notification-14",
   "notification-15",
   "notification-16",
+  "notification-21",
+  "notification-20",
+  "notification-22",
+  "notification-23",
 ];
 
 const bannerDir = "banners";

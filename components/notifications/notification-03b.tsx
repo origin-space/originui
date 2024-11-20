@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export default function Notification03() {
   return (
     // To make the notification fixed, add classes like `fixed bottom-4 right-4` to the container element.
-    <div className="px-4 py-3 border border-border rounded-lg shadow-lg shadow-black/5 max-w-sm z-50 bg-background">
+    <div className="px-4 py-3 border border-border rounded-lg shadow-lg shadow-black/5 max-w-[400px] z-[100] bg-background">
       <div className="flex gap-2">
         <p className="text-sm grow">
           <Info className="text-blue-500 inline-flex -mt-0.5 me-2" size={16} strokeWidth={2} aria-hidden="true" />
