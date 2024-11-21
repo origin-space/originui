@@ -10,7 +10,7 @@ export default function Header() {
     <header>
       <div className="px-4 sm:px-6">
         <div className="mx-auto mb-16 flex h-[72px] w-full max-w-6xl items-center justify-between border-b border-border/70">
-          <Link href="/" aria-label="Home">
+          <Link href="/" aria-label="Home" className="rounded-full outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70">
             <span className="sr-only">Origin UI</span>
             <svg
               className="stroke-zinc-800 dark:stroke-zinc-100"

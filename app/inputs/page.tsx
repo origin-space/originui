@@ -4,7 +4,7 @@ import PageHeader from "@/demo/page-header";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Input Components - Origin UI",
+  title: "Input and Textarea Components - Origin UI",
   description:
     "A collection of beautiful and accessible input components built with Tailwind CSS and Next.js.",
 };
@@ -100,8 +100,8 @@ export default function Page() {
     <main>
       <div className="px-4 sm:px-6">
         <div className="mx-auto w-full max-w-6xl">
-          <PageHeader title="Input">
-            A growing collection of {files.length} input components built with Next.js and
+          <PageHeader title="Input and Textarea">
+            A growing collection of {files.length} input and textarea components built with Next.js and
             TailwindCSS.
           </PageHeader>
 
