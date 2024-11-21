@@ -106,7 +106,7 @@ export default function Select45() {
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="w-full justify-between bg-background px-3 font-normal hover:bg-background"
+            className="w-full justify-between bg-background px-3 font-normal hover:bg-background focus-visible:outline-ring/20 outline-offset-0 focus-visible:outline-[3px] focus-visible:border-ring"
           >
             {value ? (
               <span className="flex min-w-0 items-center gap-2">

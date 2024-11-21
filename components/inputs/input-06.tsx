@@ -7,7 +7,7 @@ export default function Input06() {
       <Label htmlFor="input-06">Input with error</Label>
       <Input
         id="input-06"
-        className="border-destructive/80 text-destructive focus-visible:border-destructive/80 focus-visible:ring-destructive/30"
+        className="border-destructive/80 text-destructive focus-visible:border-destructive/80 focus-visible:ring-destructive/20"
         placeholder="Email"
         type="email"
         defaultValue="invalid@email.com"

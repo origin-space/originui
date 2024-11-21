@@ -14,7 +14,7 @@ export default function Select20() {
       <Select defaultValue="s1">
         <SelectTrigger
           id="select-20"
-          className="border-destructive/80 text-destructive focus-visible:border-destructive/80 focus-visible:ring-destructive/30"
+          className="border-destructive/80 text-destructive focus:border-destructive/80 focus:ring-destructive/20"
         >
           <SelectValue />
         </SelectTrigger>

@@ -9,7 +9,7 @@ export default function XLinks() {
       <span className="text-zinc-500">Brought to you by</span>
       <span className="-ml-0.5 flex -space-x-2">
         <a
-          className="group relative h-7 w-7 overflow-hidden rounded-full border-2 border-background"
+          className="group relative h-7 w-7 overflow-hidden rounded-full border-2 border-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
           href="https://x.com/intent/follow?screen_name=pacovitiello"
           target="_blank"
           rel="noopener noreferrer"
@@ -23,7 +23,7 @@ export default function XLinks() {
           />
         </a>
         <a
-          className="group relative z-10 h-7 w-7 overflow-hidden rounded-full border-2 border-background"
+          className="group relative z-10 h-7 w-7 overflow-hidden rounded-full border-2 border-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
           href="https://x.com/intent/follow?screen_name=DavidePacilio"
           target="_blank"
           rel="noopener noreferrer"
