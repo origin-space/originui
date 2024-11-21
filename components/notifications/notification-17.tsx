@@ -1,29 +1,35 @@
-import { CircleCheck, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CircleCheck, X } from "lucide-react";
 
 export default function Notification01() {
   return (
     // To make the notification fixed, add classes like `fixed bottom-4 right-4` to the container element.
-    <div className="px-4 py-3 border border-border rounded-lg shadow-lg shadow-black/5 max-w-[400px] z-[100] bg-background">
-      <div className="flex gap-2 items-center">
-        <div className="grow flex gap-3 items-center">
-          <CircleCheck className="text-emerald-500 shrink-0 mt-0.5" size={16} strokeWidth={2} aria-hidden="true" />
-          <div className="grow flex justify-between items-center gap-12">
-            <p className="text-sm">
-              You've made changes!
-            </p>
-            <Button size="sm">
-              Undo
-            </Button>            
+    <div className="z-[100] max-w-[400px] rounded-lg border border-border bg-background px-4 py-3 shadow-lg shadow-black/5">
+      <div className="flex items-center gap-2">
+        <div className="flex grow items-center gap-3">
+          <CircleCheck
+            className="mt-0.5 shrink-0 text-emerald-500"
+            size={16}
+            strokeWidth={2}
+            aria-hidden="true"
+          />
+          <div className="flex grow items-center justify-between gap-12">
+            <p className="text-sm">You've made changes!</p>
+            <Button size="sm">Undo</Button>
           </div>
         </div>
         <Button
           variant="ghost"
-          className="shrink-0 -me-2 -my-1.5 p-0 size-8 hover:bg-transparent group"
+          className="group -my-1.5 -me-2 size-8 shrink-0 p-0 hover:bg-transparent"
           aria-label="Close banner"
         >
-          <X size={16} strokeWidth={2} className="opacity-60 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
-        </Button>           
+          <X
+            size={16}
+            strokeWidth={2}
+            className="opacity-60 transition-opacity group-hover:opacity-100"
+            aria-hidden="true"
+          />
+        </Button>
       </div>
     </div>
   );

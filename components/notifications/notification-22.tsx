@@ -1,7 +1,7 @@
 "use client";
 
-import { toast } from "sonner"
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 export default function Notification01() {
   return (
@@ -13,8 +13,8 @@ export default function Notification01() {
           action: {
             label: "Undo",
             onClick: () => console.log("Undo"),
-          }
-        })
+          },
+        });
       }}
     >
       Show sonner

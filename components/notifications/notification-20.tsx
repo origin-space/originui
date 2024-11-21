@@ -3,18 +3,18 @@
 
 "use client";
 
-import { useState, useRef } from "react";
-import { CircleCheck, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Toast,
+  ToastAction,
   ToastClose,
   ToastDescription,
   ToastProvider,
   ToastTitle,
-  ToastAction,
   ToastViewport,
 } from "@/components/ui/toast";
+import { CircleCheck, X } from "lucide-react";
+import { useRef, useState } from "react";
 
 export default function Notification01() {
   const [open, setOpen] = useState(false);
@@ -31,14 +31,23 @@ export default function Notification01() {
             setOpen(true);
           }, 100);
         }}
-      >Custom toast</Button>
+      >
+        Custom toast
+      </Button>
       <Toast open={open} onOpenChange={setOpen}>
-        <div className="w-full flex justify-between gap-3">
-          <CircleCheck className="text-emerald-500 shrink-0 mt-0.5" size={16} strokeWidth={2} aria-hidden="true" />
-          <div className="grow flex flex-col gap-3">
+        <div className="flex w-full justify-between gap-3">
+          <CircleCheck
+            className="mt-0.5 shrink-0 text-emerald-500"
+            size={16}
+            strokeWidth={2}
+            aria-hidden="true"
+          />
+          <div className="flex grow flex-col gap-3">
             <div className="space-y-1">
               <ToastTitle>Your request was completed!</ToastTitle>
-              <ToastDescription>It demonstrates that the task or request has been processed.</ToastDescription>
+              <ToastDescription>
+                It demonstrates that the task or request has been processed.
+              </ToastDescription>
             </div>
             <div>
               <ToastAction altText="Undo changes" asChild>
@@ -49,10 +58,15 @@ export default function Notification01() {
           <ToastClose asChild>
             <Button
               variant="ghost"
-              className="shrink-0 -me-2 -my-1.5 p-0 size-8 hover:bg-transparent group"
+              className="group -my-1.5 -me-2 size-8 shrink-0 p-0 hover:bg-transparent"
               aria-label="Close notification"
             >
-              <X size={16} strokeWidth={2} className="opacity-60 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+              <X
+                size={16}
+                strokeWidth={2}
+                className="opacity-60 transition-opacity group-hover:opacity-100"
+                aria-hidden="true"
+              />
             </Button>
           </ToastClose>
         </div>

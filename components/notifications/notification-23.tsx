@@ -1,8 +1,8 @@
 "use client";
 
-import { toast } from "sonner"
 import { Button } from "@/components/ui/button";
 import { CircleCheck, X } from "lucide-react";
+import { toast } from "sonner";
 
 export default function Notification01() {
   return (
@@ -10,32 +10,45 @@ export default function Notification01() {
       variant="outline"
       onClick={() => {
         toast.custom((t) => (
-          <div className="px-4 py-3 border border-border rounded-lg bg-background w-[var(--width)]">
+          <div className="w-[var(--width)] rounded-lg border border-border bg-background px-4 py-3">
             <div className="flex gap-2">
-              <div className="grow flex gap-3">
-                <CircleCheck className="text-emerald-500 shrink-0 mt-0.5" size={16} strokeWidth={2} aria-hidden="true" />
-                <div className="grow flex justify-between gap-12">
-                  <p className="text-sm">
-                    Message sent
-                  </p>
-                  <div className="text-sm whitespace-nowrap">
+              <div className="flex grow gap-3">
+                <CircleCheck
+                  className="mt-0.5 shrink-0 text-emerald-500"
+                  size={16}
+                  strokeWidth={2}
+                  aria-hidden="true"
+                />
+                <div className="flex grow justify-between gap-12">
+                  <p className="text-sm">Message sent</p>
+                  <div className="whitespace-nowrap text-sm">
                     <button className="text-sm font-medium hover:underline">View</button>{" "}
-                    <span className="text-muted-foreground mx-1">·</span>{" "}
-                    <button className="text-sm font-medium hover:underline" onClick={() => toast.dismiss(t)}>Undo</button>
+                    <span className="mx-1 text-muted-foreground">·</span>{" "}
+                    <button
+                      className="text-sm font-medium hover:underline"
+                      onClick={() => toast.dismiss(t)}
+                    >
+                      Undo
+                    </button>
                   </div>
                 </div>
               </div>
               <Button
                 variant="ghost"
-                className="shrink-0 -me-2 -my-1.5 p-0 size-8 hover:bg-transparent group"
+                className="group -my-1.5 -me-2 size-8 shrink-0 p-0 hover:bg-transparent"
                 onClick={() => toast.dismiss(t)}
                 aria-label="Close banner"
               >
-                <X size={16} strokeWidth={2} className="opacity-60 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+                <X
+                  size={16}
+                  strokeWidth={2}
+                  className="opacity-60 transition-opacity group-hover:opacity-100"
+                  aria-hidden="true"
+                />
               </Button>
             </div>
           </div>
-        ))
+        ));
       }}
     >
       Custom sonner

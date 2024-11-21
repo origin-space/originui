@@ -1,35 +1,43 @@
-import { RefreshCw, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { RefreshCw, X } from "lucide-react";
 
 export default function Notification01() {
   return (
     // To make the notification fixed, add classes like `fixed bottom-4 right-4` to the container element.
-    <div className="p-4 border border-border rounded-lg shadow-lg shadow-black/5 max-w-[400px] z-[100] bg-background">
+    <div className="z-[100] max-w-[400px] rounded-lg border border-border bg-background p-4 shadow-lg shadow-black/5">
       <div className="flex gap-3">
-        <div className="size-9 border border-border flex items-center justify-center rounded-full shrink-0" aria-hidden="true">
+        <div
+          className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border"
+          aria-hidden="true"
+        >
           <RefreshCw className="opacity-60" size={16} strokeWidth={2} />
         </div>
-        <div className="grow flex flex-col gap-3">
+        <div className="flex grow flex-col gap-3">
           <div className="space-y-1">
-            <p className="text-sm font-medium">
-              Version 1.4 is now available!
-            </p>
+            <p className="text-sm font-medium">Version 1.4 is now available!</p>
             <p className="text-sm text-muted-foreground">
-            This update contains several bug fixes and performance improvements. 
+              This update contains several bug fixes and performance improvements.
             </p>
           </div>
           <div className="flex gap-2">
             <Button size="sm">Install</Button>
-            <Button size="sm" variant="link">Later</Button>
+            <Button size="sm" variant="link">
+              Later
+            </Button>
           </div>
         </div>
         <Button
           variant="ghost"
-          className="shrink-0 -me-2 -my-1.5 p-0 size-8 hover:bg-transparent group"
+          className="group -my-1.5 -me-2 size-8 shrink-0 p-0 hover:bg-transparent"
           aria-label="Close notification"
         >
-          <X size={16} strokeWidth={2} className="opacity-60 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
-        </Button>          
+          <X
+            size={16}
+            strokeWidth={2}
+            className="opacity-60 transition-opacity group-hover:opacity-100"
+            aria-hidden="true"
+          />
+        </Button>
       </div>
     </div>
   );

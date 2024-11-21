@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { CircleAlert, ArrowRight, X } from "lucide-react";
+import { ArrowRight, CircleAlert, X } from "lucide-react";
 import { useState } from "react";
 
 export default function Banner20() {
@@ -10,18 +10,23 @@ export default function Banner20() {
   if (!isVisible) return null;
 
   return (
-    <div className="px-4 py-3 bg-red-400 bg-opacity-20 dark:bg-opacity-10 text-red-700 dark:text-red-600">
+    <div className="bg-red-400 bg-opacity-20 px-4 py-3 text-red-700 dark:bg-opacity-10 dark:text-red-600">
       <div className="flex gap-2">
-        <div className="grow flex gap-3">
-          <CircleAlert className="shrink-0 mt-0.5 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
-          <div className="grow flex flex-col md:flex-row justify-between gap-2">
+        <div className="flex grow gap-3">
+          <CircleAlert
+            className="mt-0.5 shrink-0 opacity-60"
+            size={16}
+            strokeWidth={2}
+            aria-hidden="true"
+          />
+          <div className="flex grow flex-col justify-between gap-2 md:flex-row">
             <p className="text-sm">
               We couldn't complete your request. Please try again or check your connection.
             </p>
-            <a href="#" className="text-sm font-medium whitespace-nowrap group">
+            <a href="#" className="group whitespace-nowrap text-sm font-medium">
               Learn more
               <ArrowRight
-                className="inline-flex -mt-0.5 ms-1 opacity-60 transition-transform group-hover:translate-x-0.5"
+                className="-mt-0.5 ms-1 inline-flex opacity-60 transition-transform group-hover:translate-x-0.5"
                 size={16}
                 strokeWidth={2}
                 aria-hidden="true"
@@ -31,12 +36,17 @@ export default function Banner20() {
         </div>
         <Button
           variant="ghost"
-          className="shrink-0 -me-2 -my-1.5 p-0 size-8 hover:bg-transparent hover:text-current group focus-visible:outline-current"
+          className="group -my-1.5 -me-2 size-8 shrink-0 p-0 hover:bg-transparent hover:text-current focus-visible:outline-current"
           onClick={() => setIsVisible(false)}
           aria-label="Close banner"
         >
-          <X size={16} strokeWidth={2} className="opacity-60 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
-        </Button>      
+          <X
+            size={16}
+            strokeWidth={2}
+            className="opacity-60 transition-opacity group-hover:opacity-100"
+            aria-hidden="true"
+          />
+        </Button>
       </div>
     </div>
   );

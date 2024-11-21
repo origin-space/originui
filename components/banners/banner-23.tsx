@@ -10,26 +10,38 @@ export default function Banner20() {
   if (!isVisible) return null;
 
   return (
-    <div className="px-4 py-3 md:py-2 bg-muted text-foreground dark">
+    <div className="dark bg-muted px-4 py-3 text-foreground md:py-2">
       <div className="flex gap-2 md:items-center">
-        <div className="grow flex gap-3 md:items-center md:justify-center">
-          <Eclipse className="shrink-0 max-md:mt-0.5 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
-          <div className="flex flex-col md:flex-row justify-between md:items-center gap-3">
+        <div className="flex grow gap-3 md:items-center md:justify-center">
+          <Eclipse
+            className="shrink-0 opacity-60 max-md:mt-0.5"
+            size={16}
+            strokeWidth={2}
+            aria-hidden="true"
+          />
+          <div className="flex flex-col justify-between gap-3 md:flex-row md:items-center">
             <p className="text-sm">
               It's live and ready to use! Start exploring the latest addition to your toolkit.
             </p>
-            <div className="flex max-md:flex-wrap gap-2">
-              <Button size="sm" className="rounded-full">Learn more</Button>
+            <div className="flex gap-2 max-md:flex-wrap">
+              <Button size="sm" className="rounded-full">
+                Learn more
+              </Button>
             </div>
           </div>
         </div>
         <Button
           variant="ghost"
-          className="shrink-0 -me-2 -my-1.5 p-0 size-8 hover:bg-transparent group"
+          className="group -my-1.5 -me-2 size-8 shrink-0 p-0 hover:bg-transparent"
           onClick={() => setIsVisible(false)}
           aria-label="Close banner"
         >
-          <X size={16} strokeWidth={2} className="opacity-60 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+          <X
+            size={16}
+            strokeWidth={2}
+            className="opacity-60 transition-opacity group-hover:opacity-100"
+            aria-hidden="true"
+          />
         </Button>
       </div>
     </div>

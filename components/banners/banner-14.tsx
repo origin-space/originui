@@ -1,9 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+import { Download, LoaderCircle } from "lucide-react";
 import { useState } from "react";
-import { LoaderCircle } from "lucide-react";
 
 export default function Banner14() {
   const [isDownloading, setIsDownloading] = useState(false);
@@ -33,12 +32,17 @@ export default function Banner14() {
         >
           {isDownloading ? (
             <>
-              <LoaderCircle className="animate-spin me-2 -ms-0.5" size={16} strokeWidth={2} aria-hidden="true" />
+              <LoaderCircle
+                className="-ms-0.5 me-2 animate-spin"
+                size={16}
+                strokeWidth={2}
+                aria-hidden="true"
+              />
               Updating...
             </>
           ) : (
             <>
-              <Download size={16} className="me-2 -ms-0.5" aria-hidden="true" />
+              <Download size={16} className="-ms-0.5 me-2" aria-hidden="true" />
               Update now
             </>
           )}
@@ -47,4 +51,3 @@ export default function Banner14() {
     </div>
   );
 }
-

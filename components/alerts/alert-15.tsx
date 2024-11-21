@@ -1,16 +1,19 @@
-import { Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Info } from "lucide-react";
 
 export default function Alert15() {
   return (
-    <div className="px-4 py-3 border border-border rounded-lg">
+    <div className="rounded-lg border border-border px-4 py-3">
       <div className="flex gap-3">
-        <Info className="text-blue-500 shrink-0 mt-0.5" size={16} strokeWidth={2} aria-hidden="true" />
-        <div className="grow flex flex-col gap-3">
+        <Info
+          className="mt-0.5 shrink-0 text-blue-500"
+          size={16}
+          strokeWidth={2}
+          aria-hidden="true"
+        />
+        <div className="flex grow flex-col gap-3">
           <div className="space-y-1">
-            <p className="text-sm font-medium">
-              Here is some helpful information!
-            </p>
+            <p className="text-sm font-medium">Here is some helpful information!</p>
             <p className="text-sm text-muted-foreground">
               It aims to provide support for better decision-making.
             </p>

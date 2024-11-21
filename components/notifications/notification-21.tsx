@@ -1,11 +1,11 @@
 "use client";
 
-import { useToast } from "@/hooks/use-toast"
 import { Button } from "@/components/ui/button";
 import { ToastAction } from "@/components/ui/toast";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Notification01() {
-	const { toast } = useToast()
+  const { toast } = useToast();
 
   return (
     <Button
@@ -15,7 +15,7 @@ export default function Notification01() {
           title: "We couldn't complete your request!",
           description: "There was a problem with your request.",
           action: <ToastAction altText="Try again">Try again</ToastAction>,
-        })
+        });
       }}
     >
       Show toast

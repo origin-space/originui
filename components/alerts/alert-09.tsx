@@ -2,9 +2,14 @@ import { CircleCheck } from "lucide-react";
 
 export default function Alert03() {
   return (
-    <div className="px-4 py-3 border border-eborder rounded-lg">
+    <div className="border-eborder rounded-lg border px-4 py-3">
       <p className="text-sm">
-        <CircleCheck className="text-emerald-500 inline-flex -mt-0.5 me-3" size={16} strokeWidth={2} aria-hidden="true" />
+        <CircleCheck
+          className="-mt-0.5 me-3 inline-flex text-emerald-500"
+          size={16}
+          strokeWidth={2}
+          aria-hidden="true"
+        />
         Completed successfully!
       </p>
     </div>
