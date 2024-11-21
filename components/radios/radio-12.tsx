@@ -7,7 +7,7 @@ export default function Radio12() {
   return (
     <RadioGroup className="grid-cols-3" defaultValue="cc">
       {/* Credit card */}
-      <label className="relative flex cursor-pointer flex-col items-center gap-3 rounded-lg border border-input px-2 py-3 text-center shadow-sm shadow-black/5 transition-colors has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent outline-offset-2 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70">
+      <label className="relative flex cursor-pointer flex-col items-center gap-3 rounded-lg border border-input px-2 py-3 text-center shadow-sm shadow-black/5 outline-offset-2 transition-colors has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70">
         <RadioGroupItem
           id="radio-12-cc"
           value="cc"
@@ -17,7 +17,7 @@ export default function Radio12() {
         <p className="text-xs font-medium leading-none text-foreground">Card</p>
       </label>
       {/* PayPal */}
-      <label className="relative flex cursor-pointer flex-col items-center gap-3 rounded-lg border border-input px-2 py-3 text-center shadow-sm shadow-black/5 transition-colors has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent outline-offset-2 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70">
+      <label className="relative flex cursor-pointer flex-col items-center gap-3 rounded-lg border border-input px-2 py-3 text-center shadow-sm shadow-black/5 outline-offset-2 transition-colors has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70">
         <RadioGroupItem
           id="radio-12-paypal"
           value="paypal"
@@ -27,7 +27,7 @@ export default function Radio12() {
         <p className="text-xs font-medium leading-none text-foreground">PayPal</p>
       </label>
       {/* Apple Pay */}
-      <label className="relative flex cursor-pointer flex-col items-center gap-3 rounded-lg border border-input px-2 py-3 text-center shadow-sm shadow-black/5 transition-colors has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent outline-offset-2 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70">
+      <label className="relative flex cursor-pointer flex-col items-center gap-3 rounded-lg border border-input px-2 py-3 text-center shadow-sm shadow-black/5 outline-offset-2 transition-colors has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70">
         <RadioGroupItem
           id="radio-12-apple-pay"
           value="apple-pay"

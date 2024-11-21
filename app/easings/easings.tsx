@@ -265,8 +265,7 @@ const AnimatedSquare = ({
 export default function Easings({ easings }: EasingsProps) {
   const [duration, setDuration] = useState(defaultConfig.animationDuration);
   const [tempDuration, setTempDuration] = useState(defaultConfig.animationDuration);
-  const [pauseDuration, setPauseDuration] = useState(defaultConfig.pauseDuration);
-  const [tempPauseDuration, setTempPauseDuration] = useState(defaultConfig.pauseDuration);
+  const pauseDuration = defaultConfig.pauseDuration;
   const [animationType, setAnimationType] = useState<AnimationType>("translate");
   const [easingFilter, setEasingFilter] = useState<EasingFilter>("all");
 
@@ -431,8 +430,8 @@ export default function Easings({ easings }: EasingsProps) {
             <code className="font-mono text-[13px] text-foreground">
               ease-&#91;cubic-bezier(...)&#93;
             </code>{" "}
-            as recommended in the Tailwind CSS documentation, because the latter won't work with the
-            tailwindcss-animate plugin. See{" "}
+            as recommended in the Tailwind CSS documentation, because the latter won&lsquo;t work
+            with the tailwindcss-animate plugin. See{" "}
             <a
               href="https://github.com/jamiebuilds/tailwindcss-animate/pull/46"
               className="underline hover:no-underline"

@@ -17,7 +17,7 @@ export default function XLinks() {
           <Image
             className="absolute inset-0 object-cover object-center transition-transform duration-300 group-hover:scale-110"
             src={PasqualeImg}
-            alt="Pasquale's profile image"
+            alt="Pasquale&lsquo;s profile image"
             width={24}
             height={24}
           />
@@ -31,7 +31,7 @@ export default function XLinks() {
           <Image
             className="absolute inset-0 object-cover object-center transition-transform duration-300 group-hover:scale-110"
             src={DavideImg}
-            alt="Davide's profile image"
+            alt="Davide&lsquo;s profile image"
             width={24}
             height={24}
           />
