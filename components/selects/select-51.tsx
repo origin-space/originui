@@ -11,7 +11,7 @@ export default function Select51() {
       <Label>Listbox with option groups</Label>
       <div className="overflow-hidden rounded-lg border border-input">
         <ListBox
-          className="max-h-72 min-h-20 space-y-2 overflow-auto bg-background p-1 text-sm shadow-sm shadow-black/[.04] transition-shadow"
+          className="max-h-72 min-h-20 space-y-2 overflow-auto bg-background p-1 text-sm shadow-sm shadow-black/5 transition-shadow"
           aria-label="Select some foods"
           selectionMode="multiple"
           defaultSelectedKeys={["lettuce", "tuna"]}
