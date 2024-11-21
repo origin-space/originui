@@ -12,17 +12,18 @@ export default function Banner20() {
   return (
     <div className="px-4 py-3 md:py-2 bg-muted text-foreground dark">
       <div className="flex gap-2 md:items-center">
-        <div className="grow flex gap-2 md:items-center">
+        <div className="grow flex gap-3 md:items-center">
           <Eclipse className="shrink-0 max-md:mt-0.5 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
           <div className="grow flex flex-col md:flex-row justify-between md:items-center gap-3">
             <p className="text-sm">
               It's live and ready to use! Start exploring the latest addition to your toolkit.
             </p>
             <div className="flex max-md:flex-wrap gap-2">
-              <Button size="sm">Download</Button>
+              <Button size="sm" className="text-sm">Download</Button>
               <Button
                 variant="link"
                 size="sm"
+                className="text-sm"
               >
                 Learn more
               </Button>
@@ -31,7 +32,7 @@ export default function Banner20() {
         </div>
         <Button
           variant="ghost"
-          className="shrink-0 -me-2 -my-1.5 p-0 size-8 group"
+          className="shrink-0 -me-2 -my-1.5 p-0 size-8 hover:bg-transparent group"
           onClick={() => setIsVisible(false)}
           aria-label="Close banner"
         >

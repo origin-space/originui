@@ -59,14 +59,14 @@ export default function Banner20() {
   if (!isVisible || timeLeft.isExpired) return null;
 
   return (
-    <div className="px-4 py-3 md:py-2 bg-muted text-foreground dark">
+    <div className="px-4 py-3 bg-muted text-foreground dark">
       <div className="flex gap-2 md:items-center">
         <div className="grow flex gap-3 md:items-center">
           <div className="size-9 flex items-center justify-center shrink-0 max-md:mt-0.5 rounded-full bg-primary/15" aria-hidden="true">
             <TicketPercent className="opacity-80" size={16} strokeWidth={2} />
           </div>
           <div className="grow flex flex-col md:flex-row justify-between md:items-center gap-3">
-            <div>
+            <div className="space-y-0.5">
               <p className="text-sm font-medium">
                 Black Friday Sale!
               </p>
@@ -74,20 +74,20 @@ export default function Banner20() {
                 It kicks off today and is available for just 24 hours—don't miss out!
               </p>
             </div>
-            <div className="flex max-md:flex-wrap gap-2">
+            <div className="flex max-md:flex-wrap gap-3">
               <div className="flex items-center text-sm tabular-nums bg-primary/15 rounded-lg divide-x divide-primary-foreground">
                 {timeLeft.days > 0 && <span className="h-8 flex items-center justify-center p-2">{timeLeft.days}<span className="text-muted-foreground">d</span></span>}
                 <span className="h-8 flex items-center justify-center p-2">{timeLeft.hours.toString().padStart(2, '0')}<span className="text-muted-foreground">h</span></span>
                 <span className="h-8 flex items-center justify-center p-2">{timeLeft.minutes.toString().padStart(2, '0')}<span className="text-muted-foreground">m</span></span>
                 <span className="h-8 flex items-center justify-center p-2">{timeLeft.seconds.toString().padStart(2, '0')}<span className="text-muted-foreground">s</span></span>
               </div>
-              <Button size="sm">Buy now</Button>
+              <Button size="sm" className="text-sm">Buy now</Button>
             </div>
           </div>
         </div>
         <Button
           variant="ghost"
-          className="shrink-0 -me-2 -my-1.5 p-0 size-8 group"
+          className="shrink-0 -me-2 -my-1.5 p-0 size-8 hover:bg-transparent group"
           onClick={() => setIsVisible(false)}
           aria-label="Close banner"
         >

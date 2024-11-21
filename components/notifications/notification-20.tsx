@@ -33,7 +33,7 @@ export default function Notification01() {
         }}
       >Custom toast</Button>
       <Toast open={open} onOpenChange={setOpen}>
-        <div className="w-full flex justify-between gap-2">
+        <div className="w-full flex justify-between gap-3">
           <CircleCheck className="text-emerald-500 shrink-0 mt-0.5" size={16} strokeWidth={2} aria-hidden="true" />
           <div className="grow flex flex-col gap-3">
             <div className="space-y-1">
@@ -49,7 +49,7 @@ export default function Notification01() {
           <ToastClose asChild>
             <Button
               variant="ghost"
-              className="shrink-0 -me-2 -my-1.5 p-0 size-8 group"
+              className="shrink-0 -me-2 -my-1.5 p-0 size-8 hover:bg-transparent group"
               aria-label="Close notification"
             >
               <X size={16} strokeWidth={2} className="opacity-60 group-hover:opacity-100 transition-opacity" aria-hidden="true" />

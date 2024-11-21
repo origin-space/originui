@@ -7,7 +7,7 @@ import AvatarImg from "@/public/avatar-32-01.jpg";
 export default function Notification01() {
   return (
     // To make the notification fixed, add classes like `fixed bottom-4 right-4` to the container element.
-    <div className="px-4 py-3 border border-border rounded-lg shadow-lg shadow-black/5 max-w-[400px] z-[100] bg-background">
+    <div className="p-4 border border-border rounded-lg shadow-lg shadow-black/5 max-w-[400px] z-[100] bg-background">
       <div className="flex gap-3">
         <Image className="size-9 rounded-full" src={AvatarImg} width={32} height={32} alt="Mary Palmer" />
         <div className="grow flex flex-col gap-3">
@@ -26,7 +26,7 @@ export default function Notification01() {
         </div>
         <Button
           variant="ghost"
-          className="shrink-0 -me-2 -my-1.5 p-0 size-8 group"
+          className="shrink-0 -me-2 -my-1.5 p-0 size-8 hover:bg-transparent group"
           aria-label="Close notification"
         >
           <X size={16} strokeWidth={2} className="opacity-60 group-hover:opacity-100 transition-opacity" aria-hidden="true" />

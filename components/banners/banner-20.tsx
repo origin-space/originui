@@ -12,7 +12,7 @@ export default function Banner20() {
   return (
     <div className="px-4 py-3 bg-muted text-foreground dark">
       <div className="flex gap-2">
-        <div className="grow flex gap-2">
+        <div className="grow flex gap-3">
           <Eclipse className="shrink-0 mt-0.5 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
           <div className="grow flex flex-col md:flex-row justify-between gap-2">
             <p className="text-sm">
@@ -31,7 +31,7 @@ export default function Banner20() {
         </div>
         <Button
           variant="ghost"
-          className="shrink-0 -me-2 -my-1.5 p-0 size-8 group"
+          className="shrink-0 -me-2 -my-1.5 p-0 size-8 hover:bg-transparent group"
           onClick={() => setIsVisible(false)}
           aria-label="Close banner"
         >

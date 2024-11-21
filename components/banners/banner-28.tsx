@@ -12,7 +12,7 @@ export default function Banner20() {
   return (
     <div className="px-4 py-3 bg-red-400 bg-opacity-20 dark:bg-opacity-10 text-red-700 dark:text-red-600">
       <div className="flex gap-2">
-        <div className="grow flex gap-2">
+        <div className="grow flex gap-3">
           <CircleAlert className="shrink-0 mt-0.5 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
           <div className="grow flex flex-col md:flex-row justify-between gap-2">
             <p className="text-sm">
