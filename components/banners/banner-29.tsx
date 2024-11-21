@@ -31,7 +31,7 @@ export default function Banner20() {
         </div>
         <Button
           variant="ghost"
-          className="shrink-0 -me-2 -my-1.5 p-0 size-8 hover:bg-transparent hover:text-current group focus-visible:ring-emerald-400/50 !ring-offset-0"
+          className="shrink-0 -me-2 -my-1.5 p-0 size-8 hover:bg-transparent hover:text-current group focus-visible:outline-current"
           onClick={() => setIsVisible(false)}
           aria-label="Close banner"
         >

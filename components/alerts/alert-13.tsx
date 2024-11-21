@@ -16,7 +16,7 @@ export default function Alert10() {
             </p>
           </div>
           <div>
-            <Button size="sm" variant="outline" className="border-none bg-background hover:bg-background/80 hover:text-current shadow-none">Learn more</Button>
+            <Button size="sm" variant="outline" className="border-none bg-background hover:bg-background/80 hover:text-current shadow-none focus-visible:outline-current">Learn more</Button>
           </div>
         </div>
       </div>
