@@ -6,8 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { withMask } from "use-mask-input";
 
-export default function InputDemo(
-) {
+export default function InputDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="input-55">Timestamp</Label>

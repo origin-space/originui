@@ -7,8 +7,7 @@ import { Slider } from "@/components/ui/slider";
 import { Volume2, VolumeX } from "lucide-react";
 import { useState } from "react";
 
-export default function SliderDemo(
-) {
+export default function SliderDemo() {
   const [value, setValue] = useState([25]);
 
   return (

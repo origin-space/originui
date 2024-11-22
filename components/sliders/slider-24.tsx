@@ -1,8 +1,7 @@
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 
-export default function SliderDemo(
-) {
+export default function SliderDemo() {
   return (
     <div className="space-y-4">
       <Label>Vertical dual range slider and tooltip</Label>

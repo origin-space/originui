@@ -29,8 +29,7 @@ const initialTree: TreeNode = {
   ],
 };
 
-export default function CheckboxDemo(
-) {
+export default function CheckboxDemo() {
   return (
     <div className="space-y-3">
       <CheckboxTree

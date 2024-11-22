@@ -1,8 +1,7 @@
 import { Label } from "@/components/ui/label";
 import { SelectNative } from "@/components/ui/select-native";
 
-export default function SelectDemo(
-) {
+export default function SelectDemo() {
   return (
     <div
       className="space-y-2"

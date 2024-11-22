@@ -6,8 +6,7 @@ import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import { OTPInput, SlotProps } from "input-otp";
 
-export default function InputDemo(
-) {
+export default function InputDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="input-44">OTP input single</Label>

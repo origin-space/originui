@@ -51,8 +51,7 @@ const countries = [
   },
 ];
 
-export default function SelectDemo(
-) {
+export default function SelectDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-37">Options with flag</Label>

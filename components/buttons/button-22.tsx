@@ -6,8 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Plus } from "lucide-react";
 
-export default function ButtonDemo(
-) {
+export default function ButtonDemo() {
   return (
     <TooltipProvider delayDuration={0}>
       <Tooltip>

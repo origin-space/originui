@@ -1,7 +1,6 @@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
-export default function RadioDemo(
-) {
+export default function RadioDemo() {
   return (
     <fieldset className="space-y-4">
       <legend className="text-sm font-medium leading-none text-foreground">Choose a color</legend>
