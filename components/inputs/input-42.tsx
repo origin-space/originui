@@ -24,7 +24,7 @@ import {
 } from "react-aria-components";
 
 export default function Input42() {
-  let now = today(getLocalTimeZone());
+  const now = today(getLocalTimeZone());
   return (
     <DateRangePicker className="space-y-2">
       <Label className="text-sm font-medium text-foreground">Date range picker</Label>

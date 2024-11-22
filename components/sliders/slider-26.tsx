@@ -163,13 +163,6 @@ export default function Slider26() {
     handleSliderChange(values);
   };
 
-  // Function to map price to index
-  const priceToIndex = (price: number) => {
-    const index = Math.floor((price - minValue) / priceStep);
-    // Clamp the index to prevent out of bounds
-    return Math.min(Math.max(0, index), tick_count - 1);
-  };
-
   // Function to count items in the selected range
   const countItemsInRange = (min: number, max: number) => {
     return items.filter((item) => item.price >= min && item.price <= max).length;

@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { getLocalTimeZone, isWeekend, today } from "@internationalized/date";
 import { CalendarIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLocale } from "react-aria";
+import type { DateValue } from "react-aria-components";
 import {
   Button,
   CalendarCell,
@@ -25,20 +26,20 @@ import {
 } from "react-aria-components";
 
 export default function Input43() {
-  let now = today(getLocalTimeZone());
-  let disabledRanges = [
+  const now = today(getLocalTimeZone());
+  const disabledRanges = [
     [now, now.add({ days: 5 })],
     [now.add({ days: 14 }), now.add({ days: 16 })],
     [now.add({ days: 23 }), now.add({ days: 24 })],
   ];
 
-  let { locale } = useLocale();
-  let isDateUnavailable = (date: any) =>
+  const { locale } = useLocale();
+  const isDateUnavailable = (date: DateValue) =>
     isWeekend(date, locale) ||
     disabledRanges.some(
       (interval) => date.compare(interval[0]) >= 0 && date.compare(interval[1]) <= 0,
     );
-  let validate = (value: any) =>
+  const validate = (value: { start: DateValue; end: DateValue } | null) =>
     disabledRanges.some(
       (interval) =>
         value && value.end.compare(interval[0]) >= 0 && value.start.compare(interval[1]) <= 0,

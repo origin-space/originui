@@ -69,6 +69,8 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-payment-inputs": "^1.1.4",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.3",
     "postcss": "^8",
     "prettier": "^3.3.3",
     "prettier-plugin-organize-imports": "^4.1.0",

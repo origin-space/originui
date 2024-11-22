@@ -23,7 +23,7 @@ export default function Select18() {
         </SelectContent>
       </Select>
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
-        Tell us what's your favorite Select framework
+        Tell us what&lsquo;s your favorite Select framework
       </p>
     </div>
   );
