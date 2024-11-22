@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 
-export default function Notification23() {
+export default function NotificationDemo() {
   return (
     // To make the notification fixed, add classes like `fixed bottom-4 inset-x-4` to the container element.
     <div className="z-[100] rounded-lg border border-border bg-background px-4 py-3 shadow-lg shadow-black/5">

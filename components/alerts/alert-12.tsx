@@ -2,7 +2,7 @@
 
 import { CircleAlert } from "lucide-react";
 
-export default function Alert12() {
+export default function AlertDemo() {
   return (
     <div className="rounded-lg bg-red-400 bg-opacity-20 px-4 py-3 text-red-700 dark:bg-opacity-10 dark:text-red-600">
       <div className="flex gap-3">

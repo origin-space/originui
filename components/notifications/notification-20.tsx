@@ -94,7 +94,7 @@ function useProgressTimer({ duration, interval = 100, onComplete }: UseProgressT
   };
 }
 
-export default function Notification20() {
+export default function NotificationDemo() {
   const [open, setOpen] = useState(false);
   const toastDuration = 5000;
   const { progress, start, pause, resume, reset } = useProgressTimer({

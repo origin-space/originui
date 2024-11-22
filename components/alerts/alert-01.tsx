@@ -2,7 +2,7 @@
 
 import { TriangleAlert } from "lucide-react";
 
-export default function Alert01() {
+export default function AlertDemo() {
   return (
     <div className="rounded-lg border border-border px-4 py-3">
       <p className="text-sm">

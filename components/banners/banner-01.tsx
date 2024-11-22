@@ -2,7 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 
-export default function Banner01() {
+export default function BannerDemo() {
   return (
     <div className="dark bg-muted px-4 py-3 text-foreground">
       <p className="flex justify-center text-sm">

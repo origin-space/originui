@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Download, LoaderCircle } from "lucide-react";
 import { useState } from "react";
 
-export default function Banner11() {
+export default function BannerDemo() {
   const [isDownloading, setIsDownloading] = useState(false);
 
   const handleDownload = () => {

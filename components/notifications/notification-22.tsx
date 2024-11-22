@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { CircleCheck, X } from "lucide-react";
 import { toast } from "sonner";
 
-export default function Notification22() {
+export default function NotificationDemo() {
   return (
     <Button
       variant="outline"

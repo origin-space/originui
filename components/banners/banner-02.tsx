@@ -2,7 +2,7 @@
 
 import { Eclipse } from "lucide-react";
 
-export default function Banner02() {
+export default function BannerDemo() {
   return (
     <div className="dark bg-muted px-4 py-3 text-foreground">
       <p className="text-center text-sm">

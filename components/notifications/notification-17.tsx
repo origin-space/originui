@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import AvatarImg from "@/public/avatar-32-01.jpg";
 
-export default function Notification17() {
+export default function NotificationDemo() {
   return (
     // To make the notification fixed, add classes like `fixed bottom-4 right-4` to the container element.
     <div className="z-[100] max-w-[400px] rounded-lg border border-border bg-background p-4 shadow-lg shadow-black/5">

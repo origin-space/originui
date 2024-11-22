@@ -2,7 +2,7 @@
 
 import { Info } from "lucide-react";
 
-export default function Alert07() {
+export default function AlertDemo() {
   return (
     <div className="rounded-lg border border-border px-4 py-3">
       <p className="text-sm">

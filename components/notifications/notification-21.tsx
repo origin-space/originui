@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 
-export default function Notification21() {
+export default function NotificationDemo() {
   return (
     <Button
       variant="outline"

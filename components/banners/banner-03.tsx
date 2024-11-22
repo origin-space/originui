@@ -2,7 +2,7 @@
 
 import { ArrowRight, Eclipse } from "lucide-react";
 
-export default function Banner03() {
+export default function BannerDemo() {
   return (
     <div className="dark bg-muted px-4 py-3 text-foreground">
       <div className="flex flex-col justify-between gap-2 md:flex-row">

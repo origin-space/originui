@@ -2,7 +2,7 @@
 
 import { CircleCheck } from "lucide-react";
 
-export default function Alert05() {
+export default function AlertDemo() {
   return (
     <div className="border-eborder rounded-lg border px-4 py-3">
       <p className="text-sm">

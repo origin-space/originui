@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ToastAction } from "@/components/ui/toast";
 import { useToast } from "@/hooks/use-toast";
 
-export default function Notification19() {
+export default function NotificationDemo() {
   const { toast } = useToast();
 
   return (

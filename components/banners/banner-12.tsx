@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, TriangleAlert, X } from "lucide-react";
 import { useState } from "react";
 
-export default function Banner12() {
+export default function BannerDemo() {
   const [isVisible, setIsVisible] = useState(true);
 
   if (!isVisible) return null;

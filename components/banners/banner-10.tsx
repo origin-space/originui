@@ -1,4 +1,4 @@
-export default function Banner10() {
+export default function BannerDemo() {
   return (
     <div className="border-b border-border px-4 py-3">
       <p className="text-center text-sm">

@@ -17,7 +17,7 @@ interface TimeLeft {
   isExpired: boolean;
 }
 
-export default function Banner09() {
+export default function BannerDemo() {
   const [isVisible, setIsVisible] = useState(true);
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,

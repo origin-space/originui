@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Info } from "lucide-react";
 
-export default function Alert13() {
+export default function AlertDemo() {
   return (
     <div className="rounded-lg border border-border px-4 py-3">
       <div className="flex gap-3">
