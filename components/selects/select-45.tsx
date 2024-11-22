@@ -92,7 +92,8 @@ const items = [
   },
 ];
 
-export default function Select45() {
+export default function SelectDemo(
+) {
   const [open, setOpen] = useState<boolean>(false);
   const [value, setValue] = useState<string>("");
 

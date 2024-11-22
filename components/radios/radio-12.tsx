@@ -3,7 +3,8 @@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { RiAppleLine, RiBankCardLine, RiPaypalLine } from "@remixicon/react";
 
-export default function Radio12() {
+export default function RadioDemo(
+) {
   return (
     <RadioGroup className="grid-cols-3" defaultValue="cc">
       {/* Credit card */}

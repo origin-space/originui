@@ -1,6 +1,7 @@
 import { Textarea } from "@/components/ui/textarea";
 
-export default function Textarea14() {
+export default function TextareaDemo(
+) {
   return (
     <div className="group relative">
       <label

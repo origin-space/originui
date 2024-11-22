@@ -7,7 +7,8 @@ import { Label } from "@/components/ui/label";
 import { LoaderCircle, Mic, Search } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export default function Input27() {
+export default function InputDemo(
+) {
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
 

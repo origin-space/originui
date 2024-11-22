@@ -4,7 +4,8 @@
 
 import { DateField, DateInput, DateSegment, Label } from "react-aria-components";
 
-export default function Input40() {
+export default function InputDemo(
+) {
   return (
     <DateField className="space-y-2" granularity="minute" hourCycle={24}>
       <Label className="text-sm font-medium text-foreground">Date and time input</Label>

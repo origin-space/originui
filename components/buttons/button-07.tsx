@@ -3,7 +3,8 @@
 import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
 
-export default function Button07() {
+export default function ButtonDemo(
+) {
   return (
     <Button variant="outline">
       Button

@@ -4,7 +4,8 @@
 
 import { DateField, DateInput, DateSegment, Label } from "react-aria-components";
 
-export default function Input36() {
+export default function InputDemo(
+) {
   return (
     <DateField className="space-y-2">
       <Label className="text-sm font-medium text-foreground">Date input</Label>

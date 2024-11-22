@@ -5,7 +5,8 @@
 import { Clock } from "lucide-react";
 import { DateInput, DateSegment, Label, TimeField } from "react-aria-components";
 
-export default function Input39() {
+export default function InputDemo(
+) {
   return (
     <TimeField className="space-y-2">
       <Label className="text-sm font-medium text-foreground">Time input with end icon</Label>

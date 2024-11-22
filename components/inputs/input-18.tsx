@@ -4,7 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ChevronDown } from "lucide-react";
 
-export default function Input18() {
+export default function InputDemo(
+) {
   return (
     <div className="space-y-2">
       <Label htmlFor="input-18">Input with end select</Label>

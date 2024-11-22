@@ -1,7 +1,8 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export default function Input21() {
+export default function InputDemo(
+) {
   return (
     <div className="space-y-2">
       <Label htmlFor="input-21">Input with end button</Label>

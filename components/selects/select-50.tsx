@@ -5,7 +5,8 @@
 import { Label } from "@/components/ui/label";
 import { ListBox, ListBoxItem } from "react-aria-components";
 
-export default function Select50() {
+export default function SelectDemo(
+) {
   return (
     <div className="space-y-2">
       <Label>Listbox with multiple options</Label>
