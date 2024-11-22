@@ -15,7 +15,7 @@ export default function ButtonDemo() {
           >
             {[...Array(10)].map((_, j) => (
               <span key={j} className="ml-4 space-x-4 text-sm">
-                <span>Get Started</span>
+                <span>Click Me</span>
                 <span>•</span>
               </span>
             ))}
