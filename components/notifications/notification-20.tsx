@@ -14,27 +14,123 @@ import {
   ToastViewport,
 } from "@/components/ui/toast";
 import { CircleCheck, X } from "lucide-react";
-import { useRef, useState } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
+
+interface UseProgressTimerProps {
+  duration: number;
+  interval?: number;
+  onComplete?: () => void;
+}
+
+function useProgressTimer({ duration, interval = 100, onComplete }: UseProgressTimerProps) {
+  const [progress, setProgress] = useState(duration);
+  const timerRef = useRef(0);
+  const timerState = useRef({
+    startTime: 0,
+    remaining: duration,
+    isPaused: false
+  });
+
+  const cleanup = useCallback(() => {
+    window.clearInterval(timerRef.current);
+  }, []);
+
+  const reset = useCallback(() => {
+    cleanup();
+    setProgress(duration);
+    timerState.current = {
+      startTime: 0,
+      remaining: duration,
+      isPaused: false
+    };
+  }, [duration, cleanup]);
+
+  const start = useCallback(() => {
+    const state = timerState.current;
+    state.startTime = Date.now();
+    state.isPaused = false;
+
+    timerRef.current = window.setInterval(() => {
+      const elapsedTime = Date.now() - state.startTime;
+      const remaining = Math.max(0, state.remaining - elapsedTime);
+      
+      setProgress(remaining);
+      
+      if (remaining <= 0) {
+        cleanup();
+        onComplete?.();
+      }
+    }, interval);
+  }, [interval, cleanup, onComplete]);
+
+  const pause = useCallback(() => {
+    const state = timerState.current;
+    if (!state.isPaused) {
+      cleanup();
+      state.remaining = Math.max(0, state.remaining - (Date.now() - state.startTime));
+      state.isPaused = true;
+    }
+  }, [cleanup]);
+
+  const resume = useCallback(() => {
+    const state = timerState.current;
+    if (state.isPaused && state.remaining > 0) {
+      start();
+    }
+  }, [start]);
+
+  useEffect(() => {
+    return cleanup;
+  }, [cleanup]);
+
+  return {
+    progress,
+    start,
+    pause,
+    resume,
+    reset
+  };
+}
 
 export default function Notification01() {
   const [open, setOpen] = useState(false);
-  const timerRef = useRef(0);
+  const toastDuration = 5000;
+  const { progress, start, pause, resume, reset } = useProgressTimer({
+    duration: toastDuration,
+    onComplete: () => setOpen(false)
+  });
+
+  const handleOpenChange = useCallback((isOpen: boolean) => {
+    setOpen(isOpen);
+    if (isOpen) {
+      reset();
+      start();
+    }
+  }, [reset, start]);
+
+  const handleButtonClick = useCallback(() => {
+    if (open) {
+      setOpen(false);
+      // Wait for the close animation to finish
+      window.setTimeout(() => {
+        handleOpenChange(true);
+      }, 150);
+    } else {
+      handleOpenChange(true);
+    }
+  }, [open, handleOpenChange]);
 
   return (
     <ToastProvider swipeDirection="left">
-      <Button
-        variant="outline"
-        onClick={() => {
-          setOpen(false);
-          window.clearTimeout(timerRef.current);
-          timerRef.current = window.setTimeout(() => {
-            setOpen(true);
-          }, 100);
-        }}
-      >
+      <Button variant="outline" onClick={handleButtonClick}>
         Custom toast
       </Button>
-      <Toast open={open} onOpenChange={setOpen}>
+      <Toast 
+        open={open} 
+        onOpenChange={handleOpenChange}
+        onPause={pause}
+        onResume={resume}
+      >
         <div className="flex w-full justify-between gap-3">
           <CircleCheck
             className="mt-0.5 shrink-0 text-emerald-500"
@@ -69,6 +165,15 @@ export default function Notification01() {
               />
             </Button>
           </ToastClose>
+        </div>
+        <div className="contents" aria-hidden="true">
+          <div
+            className="absolute w-full left-0 bottom-0 h-1 bg-emerald-500 pointer-events-none"
+            style={{ 
+              width: `${(progress / toastDuration) * 100}%`,
+              transition: 'width 100ms linear'
+            }}          
+          />        
         </div>
       </Toast>
       <ToastViewport className="sm:left-0 sm:right-auto" />
