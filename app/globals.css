@@ -25,6 +25,7 @@
     --ring: 240 5% 64.9%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 240 4.8% 95.9%;
@@ -48,10 +49,40 @@
   }
 }
 
+.hueSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 4px solid white;
+  outline: 0.5px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+  background: var(--thumb-color);
+  cursor: grab;
+  position: relative;
+  z-index: 4;
+}
+
+.opacitySlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--thumb)
+}
+
+.hueSlider::-webkit-slider-thumb:active,
+.opacitySlider::-webkit-slider-thumb:active {
+  cursor: grabbing;
+}
+
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
