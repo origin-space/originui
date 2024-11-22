@@ -1,6 +1,8 @@
+// Dependencies: pnpm install lucide-react
+
 import { CircleAlert } from "lucide-react";
 
-export default function Alert19() {
+export default function Alert11() {
   return (
     <div className="rounded-lg border border-border px-4 py-3">
       <div className="flex gap-3">

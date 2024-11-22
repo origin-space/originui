@@ -1,3 +1,5 @@
+// Dependencies: pnpm install lucide-react
+
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -15,7 +17,7 @@ interface TimeLeft {
   isExpired: boolean;
 }
 
-export default function Banner20() {
+export default function Banner09() {
   const [isVisible, setIsVisible] = useState(true);
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
@@ -72,7 +74,7 @@ export default function Banner20() {
             <div className="space-y-0.5">
               <p className="text-sm font-medium">Black Friday Sale!</p>
               <p className="text-sm text-muted-foreground">
-                It kicks off today and is available for just 24 hours—don't miss out!
+                It kicks off today and is available for just 24 hours—don&lsquo;t miss out!
               </p>
             </div>
             <div className="flex gap-3 max-md:flex-wrap">

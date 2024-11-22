@@ -1,10 +1,12 @@
+// Dependencies: pnpm install lucide-react
+
 "use client";
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CircleAlert, X } from "lucide-react";
 import { useState } from "react";
 
-export default function Banner20() {
+export default function Banner13() {
   const [isVisible, setIsVisible] = useState(true);
 
   if (!isVisible) return null;
@@ -21,7 +23,7 @@ export default function Banner20() {
           />
           <div className="flex grow flex-col justify-between gap-2 md:flex-row">
             <p className="text-sm">
-              We couldn't complete your request. Please try again or check your connection.
+              We couldn&lsquo;t complete your request. Please try again or check your connection.
             </p>
             <a href="#" className="group whitespace-nowrap text-sm font-medium">
               Learn more

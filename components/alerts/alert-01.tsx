@@ -1,11 +1,13 @@
+// Dependencies: pnpm install lucide-react
+
 import { TriangleAlert } from "lucide-react";
 
 export default function Alert01() {
   return (
-    <div className="rounded-lg bg-amber-400 bg-opacity-20 px-4 py-3 text-amber-700 dark:bg-opacity-10 dark:text-amber-600">
+    <div className="rounded-lg border border-border px-4 py-3">
       <p className="text-sm">
         <TriangleAlert
-          className="-mt-0.5 me-3 inline-flex opacity-60"
+          className="-mt-0.5 me-3 inline-flex text-amber-500"
           size={16}
           strokeWidth={2}
           aria-hidden="true"

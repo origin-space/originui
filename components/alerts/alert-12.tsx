@@ -1,17 +1,25 @@
-import { Info } from "lucide-react";
+// Dependencies: pnpm install lucide-react
+
+import { CircleAlert } from "lucide-react";
 
 export default function Alert12() {
   return (
-    <div className="rounded-lg border border-border px-4 py-3">
-      <p className="text-sm">
-        <Info
-          className="-mt-0.5 me-3 inline-flex text-blue-500"
+    <div className="rounded-lg bg-red-400 bg-opacity-20 px-4 py-3 text-red-700 dark:bg-opacity-10 dark:text-red-600">
+      <div className="flex gap-3">
+        <CircleAlert
+          className="mt-0.5 shrink-0 opacity-60"
           size={16}
           strokeWidth={2}
           aria-hidden="true"
         />
-        Just a quick note!
-      </p>
+        <div className="grow space-y-1">
+          <p className="text-sm font-medium">Password does not meet requirements:</p>
+          <ul className="list-inside list-disc text-sm opacity-80">
+            <li>Minimum 8 characters</li>
+            <li>Inlcude a special character</li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }

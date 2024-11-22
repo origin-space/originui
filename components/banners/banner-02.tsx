@@ -1,3 +1,5 @@
+// Dependencies: pnpm install lucide-react
+
 import { Eclipse } from "lucide-react";
 
 export default function Banner02() {

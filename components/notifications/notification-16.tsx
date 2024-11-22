@@ -1,23 +1,32 @@
-import { Button } from "@/components/ui/button";
-import { Radio, X } from "lucide-react";
+// Dependencies: pnpm install lucide-react
 
-export default function Notification01() {
+import { Button } from "@/components/ui/button";
+import { RefreshCw, X } from "lucide-react";
+
+export default function Notification16() {
   return (
     // To make the notification fixed, add classes like `fixed bottom-4 right-4` to the container element.
     <div className="z-[100] max-w-[400px] rounded-lg border border-border bg-background p-4 shadow-lg shadow-black/5">
-      <div className="flex items-center gap-2">
+      <div className="flex gap-3">
         <div
           className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border"
           aria-hidden="true"
         >
-          <Radio className="opacity-60" size={16} strokeWidth={2} />
+          <RefreshCw className="opacity-60" size={16} strokeWidth={2} />
         </div>
-        <div className="flex grow items-center gap-12">
+        <div className="flex grow flex-col gap-3">
           <div className="space-y-1">
-            <p className="text-sm font-medium">Live in 27 hours</p>
-            <p className="text-xs text-muted-foreground">November 20 at 8:00 PM.</p>
+            <p className="text-sm font-medium">Version 1.4 is now available!</p>
+            <p className="text-sm text-muted-foreground">
+              This update contains several bug fixes and performance improvements.
+            </p>
           </div>
-          <Button size="sm">Notify me</Button>
+          <div className="flex gap-2">
+            <Button size="sm">Install</Button>
+            <Button size="sm" variant="link">
+              Later
+            </Button>
+          </div>
         </div>
         <Button
           variant="ghost"

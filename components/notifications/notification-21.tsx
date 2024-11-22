@@ -1,24 +1,23 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ToastAction } from "@/components/ui/toast";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 
-export default function Notification01() {
-  const { toast } = useToast();
-
+export default function Notification21() {
   return (
     <Button
       variant="outline"
       onClick={() => {
-        toast({
-          title: "We couldn't complete your request!",
-          description: "There was a problem with your request.",
-          action: <ToastAction altText="Try again">Try again</ToastAction>,
+        toast("Your request was completed!", {
+          description: "It was a long journey, but we made it!",
+          action: {
+            label: "Undo",
+            onClick: () => console.log("Undo"),
+          },
         });
       }}
     >
-      Show toast
+      Show sonner
     </Button>
   );
 }

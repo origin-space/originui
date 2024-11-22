@@ -1,10 +1,12 @@
+// Dependencies: pnpm install lucide-react
+
 "use client";
 
 import { Button } from "@/components/ui/button";
 import { Eclipse, X } from "lucide-react";
 import { useState } from "react";
 
-export default function Banner20() {
+export default function Banner05() {
   const [isVisible, setIsVisible] = useState(true);
 
   if (!isVisible) return null;
@@ -21,13 +23,13 @@ export default function Banner20() {
           />
           <div className="flex grow flex-col justify-between gap-3 md:flex-row md:items-center">
             <p className="text-sm">
-              It's live and ready to use! Start exploring the latest addition to your toolkit.
+              It&lsquo;s live and ready to use! Start exploring the latest addition to your toolkit.
             </p>
             <div className="flex gap-2 max-md:flex-wrap">
               <Button size="sm" className="text-sm">
                 Download
               </Button>
-              <Button variant="link" size="sm" className="text-sm">
+              <Button variant="outline" size="sm" className="text-sm">
                 Learn more
               </Button>
             </div>

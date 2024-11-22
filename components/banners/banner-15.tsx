@@ -1,28 +1,28 @@
+// Dependencies: pnpm install lucide-react
+
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Eclipse, X } from "lucide-react";
+import { ArrowRight, Info, X } from "lucide-react";
 import { useState } from "react";
 
-export default function Banner20() {
+export default function Banner15() {
   const [isVisible, setIsVisible] = useState(true);
 
   if (!isVisible) return null;
 
   return (
-    <div className="dark bg-muted px-4 py-3 text-foreground">
+    <div className="bg-blue-400 bg-opacity-20 px-4 py-3 text-blue-700 dark:bg-opacity-10 dark:text-blue-600">
       <div className="flex gap-2">
         <div className="flex grow gap-3">
-          <Eclipse
+          <Info
             className="mt-0.5 shrink-0 opacity-60"
             size={16}
             strokeWidth={2}
             aria-hidden="true"
           />
           <div className="flex grow flex-col justify-between gap-2 md:flex-row">
-            <p className="text-sm">
-              We just added something awesome to make your experience even better.
-            </p>
+            <p className="text-sm">Your request was completed without any issues. Great job!</p>
             <a href="#" className="group whitespace-nowrap text-sm font-medium">
               Learn more
               <ArrowRight
@@ -36,7 +36,7 @@ export default function Banner20() {
         </div>
         <Button
           variant="ghost"
-          className="group -my-1.5 -me-2 size-8 shrink-0 p-0 hover:bg-transparent"
+          className="group -my-1.5 -me-2 size-8 shrink-0 p-0 hover:bg-transparent hover:text-current focus-visible:outline-current"
           onClick={() => setIsVisible(false)}
           aria-label="Close banner"
         >

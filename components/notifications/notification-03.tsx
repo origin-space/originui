@@ -1,3 +1,5 @@
+// Dependencies: pnpm install lucide-react
+
 import { Button } from "@/components/ui/button";
 import { CircleCheck, X } from "lucide-react";
 

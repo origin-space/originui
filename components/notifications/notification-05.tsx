@@ -1,20 +1,22 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, CircleAlert, X } from "lucide-react";
+// Dependencies: pnpm install lucide-react
 
-export default function Notification01() {
+import { Button } from "@/components/ui/button";
+import { ArrowRight, TriangleAlert, X } from "lucide-react";
+
+export default function Notification05() {
   return (
     // To make the notification fixed, add classes like `fixed bottom-4 right-4` to the container element.
     <div className="z-[100] max-w-[400px] rounded-lg border border-border bg-background px-4 py-3 shadow-lg shadow-black/5">
       <div className="flex gap-2">
         <div className="flex grow gap-3">
-          <CircleAlert
-            className="mt-0.5 shrink-0 text-red-500"
+          <TriangleAlert
+            className="mt-0.5 shrink-0 text-amber-500"
             size={16}
             strokeWidth={2}
             aria-hidden="true"
           />
           <div className="flex grow justify-between gap-12">
-            <p className="text-sm">An error occurred!</p>
+            <p className="text-sm">Some information is missing!</p>
             <a href="#" className="group whitespace-nowrap text-sm font-medium">
               Link
               <ArrowRight

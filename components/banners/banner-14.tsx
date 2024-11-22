@@ -1,51 +1,51 @@
+// Dependencies: pnpm install lucide-react
+
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Download, LoaderCircle } from "lucide-react";
+import { ArrowRight, CircleCheck, X } from "lucide-react";
 import { useState } from "react";
 
 export default function Banner14() {
-  const [isDownloading, setIsDownloading] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
-  const handleDownload = () => {
-    setIsDownloading(true);
-    // Simulate download
-    setTimeout(() => {
-      setIsDownloading(false);
-    }, 2000);
-  };
+  if (!isVisible) return null;
 
   return (
-    <div className="bg-muted px-4 py-3 md:py-2">
-      <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
-        <p className="text-sm">
-          <span className="font-medium">v2.1.0</span>
-          <span className="mx-2 text-muted-foreground">•</span>
-          New features and improvements available
-        </p>
-        <Button
-          size="sm"
-          variant="outline"
-          disabled={isDownloading}
-          onClick={handleDownload}
-          className="min-w-24"
-        >
-          {isDownloading ? (
-            <>
-              <LoaderCircle
-                className="-ms-0.5 me-2 animate-spin"
+    <div className="bg-emerald-400 bg-opacity-20 px-4 py-3 text-emerald-700 dark:bg-opacity-10 dark:text-emerald-600">
+      <div className="flex gap-2">
+        <div className="flex grow gap-3">
+          <CircleCheck
+            className="mt-0.5 shrink-0 opacity-60"
+            size={16}
+            strokeWidth={2}
+            aria-hidden="true"
+          />
+          <div className="flex grow flex-col justify-between gap-2 md:flex-row">
+            <p className="text-sm">Your request was completed without any issues. Great job!</p>
+            <a href="#" className="group whitespace-nowrap text-sm font-medium">
+              Learn more
+              <ArrowRight
+                className="-mt-0.5 ms-1 inline-flex opacity-60 transition-transform group-hover:translate-x-0.5"
                 size={16}
                 strokeWidth={2}
                 aria-hidden="true"
               />
-              Updating...
-            </>
-          ) : (
-            <>
-              <Download size={16} className="-ms-0.5 me-2" aria-hidden="true" />
-              Update now
-            </>
-          )}
+            </a>
+          </div>
+        </div>
+        <Button
+          variant="ghost"
+          className="group -my-1.5 -me-2 size-8 shrink-0 p-0 hover:bg-transparent hover:text-current focus-visible:outline-current"
+          onClick={() => setIsVisible(false)}
+          aria-label="Close banner"
+        >
+          <X
+            size={16}
+            strokeWidth={2}
+            className="opacity-60 transition-opacity group-hover:opacity-100"
+            aria-hidden="true"
+          />
         </Button>
       </div>
     </div>

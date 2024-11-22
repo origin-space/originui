@@ -1,34 +1,19 @@
+// Dependencies: pnpm install lucide-react
+
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
-import Image from "next/image";
 
-import AvatarImg from "@/public/avatar-32-01.jpg";
-
-export default function Notification01() {
+export default function Notification15() {
   return (
     // To make the notification fixed, add classes like `fixed bottom-4 right-4` to the container element.
     <div className="z-[100] max-w-[400px] rounded-lg border border-border bg-background p-4 shadow-lg shadow-black/5">
-      <div className="flex gap-3">
-        <Image
-          className="size-9 rounded-full"
-          src={AvatarImg}
-          width={32}
-          height={32}
-          alt="Mary Palmer"
-        />
+      <div className="flex gap-2">
         <div className="flex grow flex-col gap-3">
           <div className="space-y-1">
+            <p className="text-sm font-medium">We Value Your Privacy 🍪</p>
             <p className="text-sm text-muted-foreground">
-              <a className="font-medium text-foreground hover:underline" href="#">
-                Mary Palmer
-              </a>{" "}
-              mentioned you in{" "}
-              <a className="font-medium text-foreground hover:underline" href="#">
-                project-campaign-02
-              </a>
-              .
+              We use cookies to improve your experience, and show personalized content.
             </p>
-            <p className="text-xs text-muted-foreground">2 min ago</p>
           </div>
           <div className="flex gap-2">
             <Button size="sm">Accept</Button>

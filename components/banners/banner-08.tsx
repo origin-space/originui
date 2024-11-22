@@ -1,10 +1,12 @@
+// Dependencies: pnpm install lucide-react
+
 "use client";
 
 import { Button } from "@/components/ui/button";
 import { Rocket, X } from "lucide-react";
 import { useState } from "react";
 
-export default function Banner20() {
+export default function Banner08() {
   const [isVisible, setIsVisible] = useState(true);
 
   if (!isVisible) return null;

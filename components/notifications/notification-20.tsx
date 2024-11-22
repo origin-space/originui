@@ -1,3 +1,5 @@
+// Dependencies: pnpm install lucide-react
+
 // This is a standalone toast implementation using Radix UI Primitives directly
 // For a more opinionated solution, see notification-21.tsx which uses the Toaster component
 
@@ -14,7 +16,7 @@ import {
   ToastViewport,
 } from "@/components/ui/toast";
 import { CircleCheck, X } from "lucide-react";
-import { useRef, useState, useCallback, useEffect } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 interface UseProgressTimerProps {
   duration: number;
@@ -28,7 +30,7 @@ function useProgressTimer({ duration, interval = 100, onComplete }: UseProgressT
   const timerState = useRef({
     startTime: 0,
     remaining: duration,
-    isPaused: false
+    isPaused: false,
   });
 
   const cleanup = useCallback(() => {
@@ -41,7 +43,7 @@ function useProgressTimer({ duration, interval = 100, onComplete }: UseProgressT
     timerState.current = {
       startTime: 0,
       remaining: duration,
-      isPaused: false
+      isPaused: false,
     };
   }, [duration, cleanup]);
 
@@ -53,9 +55,9 @@ function useProgressTimer({ duration, interval = 100, onComplete }: UseProgressT
     timerRef.current = window.setInterval(() => {
       const elapsedTime = Date.now() - state.startTime;
       const remaining = Math.max(0, state.remaining - elapsedTime);
-      
+
       setProgress(remaining);
-      
+
       if (remaining <= 0) {
         cleanup();
         onComplete?.();
@@ -88,25 +90,28 @@ function useProgressTimer({ duration, interval = 100, onComplete }: UseProgressT
     start,
     pause,
     resume,
-    reset
+    reset,
   };
 }
 
-export default function Notification01() {
+export default function Notification20() {
   const [open, setOpen] = useState(false);
   const toastDuration = 5000;
   const { progress, start, pause, resume, reset } = useProgressTimer({
     duration: toastDuration,
-    onComplete: () => setOpen(false)
+    onComplete: () => setOpen(false),
   });
 
-  const handleOpenChange = useCallback((isOpen: boolean) => {
-    setOpen(isOpen);
-    if (isOpen) {
-      reset();
-      start();
-    }
-  }, [reset, start]);
+  const handleOpenChange = useCallback(
+    (isOpen: boolean) => {
+      setOpen(isOpen);
+      if (isOpen) {
+        reset();
+        start();
+      }
+    },
+    [reset, start],
+  );
 
   const handleButtonClick = useCallback(() => {
     if (open) {
@@ -125,12 +130,7 @@ export default function Notification01() {
       <Button variant="outline" onClick={handleButtonClick}>
         Custom toast
       </Button>
-      <Toast 
-        open={open} 
-        onOpenChange={handleOpenChange}
-        onPause={pause}
-        onResume={resume}
-      >
+      <Toast open={open} onOpenChange={handleOpenChange} onPause={pause} onResume={resume}>
         <div className="flex w-full justify-between gap-3">
           <CircleCheck
             className="mt-0.5 shrink-0 text-emerald-500"
@@ -168,12 +168,12 @@ export default function Notification01() {
         </div>
         <div className="contents" aria-hidden="true">
           <div
-            className="absolute w-full left-0 bottom-0 h-1 bg-emerald-500 pointer-events-none"
-            style={{ 
+            className="pointer-events-none absolute bottom-0 left-0 h-1 w-full bg-emerald-500"
+            style={{
               width: `${(progress / toastDuration) * 100}%`,
-              transition: 'width 100ms linear'
-            }}          
-          />        
+              transition: "width 100ms linear",
+            }}
+          />
         </div>
       </Toast>
       <ToastViewport className="sm:left-0 sm:right-auto" />

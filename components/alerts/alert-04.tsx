@@ -2,12 +2,12 @@
 
 import { CircleAlert } from "lucide-react";
 
-export default function Alert03() {
+export default function Alert04() {
   return (
-    <div className="rounded-lg border border-border px-4 py-3">
+    <div className="rounded-lg bg-red-400 bg-opacity-20 px-4 py-3 text-red-700 dark:bg-opacity-10 dark:text-red-600">
       <p className="text-sm">
         <CircleAlert
-          className="-mt-0.5 me-3 inline-flex text-red-500"
+          className="-mt-0.5 me-3 inline-flex opacity-60"
           size={16}
           strokeWidth={2}
           aria-hidden="true"

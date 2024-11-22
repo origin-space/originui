@@ -1,3 +1,5 @@
+// Dependencies: pnpm install lucide-react
+
 import { ArrowRight } from "lucide-react";
 
 export default function Banner01() {

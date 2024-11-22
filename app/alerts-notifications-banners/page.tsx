@@ -11,20 +11,20 @@ export const metadata: Metadata = {
 
 const alertDir = "alerts";
 const alertFiles = [
-  "alert-07",
   "alert-01",
-  "alert-08",
   "alert-02",
-  "alert-09",
   "alert-03",
-  "alert-12",
+  "alert-04",
+  "alert-05",
+  "alert-06",
+  "alert-07",
+  "alert-08",
+  "alert-09",
   "alert-10",
-  "alert-18",
-  "alert-16",
-  "alert-20",
-  "alert-19",
-  "alert-15",
+  "alert-11",
+  "alert-12",
   "alert-13",
+  "alert-14",
 ];
 
 const notificationDir = "notifications";
@@ -32,13 +32,11 @@ const notificationFiles = [
   "notification-01",
   "notification-02",
   "notification-03",
-  "notification-03b",
   "notification-04",
   "notification-05",
   "notification-06",
-  "notification-06b",
-  "notification-17",
-  "notification-18",
+  "notification-07",
+  "notification-08",
   "notification-09",
   "notification-10",
   "notification-11",
@@ -47,29 +45,31 @@ const notificationFiles = [
   "notification-14",
   "notification-15",
   "notification-16",
-  "notification-21",
+  "notification-17",
+  "notification-18",
+  "notification-19",
   "notification-20",
+  "notification-21",
   "notification-22",
-  "notification-23",
 ];
 
 const bannerDir = "banners";
 const bannerFiles = [
   "banner-01",
   "banner-02",
-  "banner-19",
-  "banner-20",
-  "banner-21",
-  "banner-22",
-  "banner-23",
-  "banner-24",
-  "banner-25",
   "banner-03",
+  "banner-04",
+  "banner-05",
+  "banner-06",
+  "banner-07",
+  "banner-08",
+  "banner-09",
+  "banner-10",
+  "banner-11",
+  "banner-12",
+  "banner-13",
   "banner-14",
-  "banner-27",
-  "banner-28",
-  "banner-29",
-  "banner-30",
+  "banner-15",
 ];
 
 const totalAlerts = alertFiles.length;
@@ -113,7 +113,7 @@ export default function Page() {
           </div>
 
           <div className="grid max-w-6xl grid-cols-1 overflow-hidden [&>*]:relative [&>*]:px-1 [&>*]:py-12 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-8 xl:[&>*]:px-12">
-            <DemoComponent directory="notifications" componentName="notification-19" />
+            <DemoComponent directory="notifications" componentName="notification-23" />
             {bannerFiles.map((componentName) => {
               return (
                 <DemoComponent
