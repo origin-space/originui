@@ -3,7 +3,8 @@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useState } from "react";
 
-export default function Radio19() {
+export default function RadioDemo(
+) {
   const [selectedValue, setSelectedValue] = useState("on");
 
   return (

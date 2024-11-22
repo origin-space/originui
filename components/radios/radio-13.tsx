@@ -9,7 +9,8 @@ const items = [
   { id: "radio-13-r6", value: "r6", label: "16 CPU", disabled: true },
 ];
 
-export default function Radio13() {
+export default function RadioDemo(
+) {
   return (
     <fieldset className="space-y-4">
       <legend className="text-sm font-medium leading-none text-foreground">CPU Cores</legend>

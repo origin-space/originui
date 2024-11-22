@@ -4,7 +4,8 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { useState } from "react";
 
-export default function Slider12() {
+export default function SliderDemo(
+) {
   const [value, setValue] = useState([25, 75]);
 
   return (

@@ -4,7 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ArrowRight, Search } from "lucide-react";
 
-export default function Input26() {
+export default function InputDemo(
+) {
   return (
     <div className="space-y-2">
       <Label htmlFor="input-26">Search input with icon and button</Label>

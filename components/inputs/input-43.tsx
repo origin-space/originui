@@ -25,7 +25,8 @@ import {
   RangeCalendar,
 } from "react-aria-components";
 
-export default function Input43() {
+export default function InputDemo(
+) {
   const now = today(getLocalTimeZone());
   const disabledRanges = [
     [now, now.add({ days: 5 })],

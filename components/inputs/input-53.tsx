@@ -9,7 +9,8 @@ import { cn } from "@/lib/utils";
 import { Check, Copy } from "lucide-react";
 import { useRef, useState } from "react";
 
-export default function Input53() {
+export default function InputDemo(
+) {
   const [copied, setCopied] = useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement>(null);
 

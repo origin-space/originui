@@ -5,7 +5,8 @@
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { Button, Group, Input, Label, NumberField } from "react-aria-components";
 
-export default function Input29() {
+export default function InputDemo(
+) {
   return (
     <NumberField
       defaultValue={99}

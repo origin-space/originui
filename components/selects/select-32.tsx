@@ -23,7 +23,8 @@ function StatusDot({ className }: { className?: string }) {
   );
 }
 
-export default function Select32() {
+export default function SelectDemo(
+) {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-32">Status select</Label>

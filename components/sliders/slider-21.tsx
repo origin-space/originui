@@ -5,7 +5,8 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { useState } from "react";
 
-export default function Slider21() {
+export default function SliderDemo(
+) {
   const min_price = 5;
   const max_price = 1240;
   const [value, setValue] = useState([min_price, max_price]);

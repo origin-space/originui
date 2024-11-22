@@ -5,7 +5,8 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useEffect, useRef, useState } from "react";
 
-export default function Radio05() {
+export default function RadioDemo(
+) {
   const [selectedValue, setSelectedValue] = useState("without-expansion");
   const inputRef = useRef<HTMLInputElement>(null);
 

@@ -1,7 +1,8 @@
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-export default function Textarea06() {
+export default function TextareaDemo(
+) {
   return (
     <div className="space-y-2">
       <Label htmlFor="textarea-06">Textarea with error</Label>

@@ -7,7 +7,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export default function Select20() {
+export default function SelectDemo(
+) {
   return (
     <div className="space-y-2 [&_svg]:text-destructive/80">
       <Label htmlFor="select-20">Select with error</Label>

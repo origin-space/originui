@@ -5,7 +5,8 @@
 import { Minus, Plus } from "lucide-react";
 import { Button, Group, Input, Label, NumberField } from "react-aria-components";
 
-export default function Input28() {
+export default function InputDemo(
+) {
   return (
     <NumberField defaultValue={2048} minValue={0}>
       <div className="space-y-2">

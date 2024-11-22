@@ -18,7 +18,8 @@ import {
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 
-export default function Select43() {
+export default function SelectDemo(
+) {
   const [open, setOpen] = useState<boolean>(false);
   const [value, setValue] = useState<string>("Europe/London");
 

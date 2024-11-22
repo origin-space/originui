@@ -3,7 +3,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-export default function Button10() {
+export default function ButtonDemo(
+) {
   return (
     <Button className="group">
       Button
