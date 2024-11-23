@@ -31,7 +31,7 @@ export default function SocialDropdown() {
       <DropdownMenuContent className="w-36" align="end">
         <DropdownMenuItem asChild>
           <a
-            className="group cursor-pointer justify-between"
+            className="group cursor-pointer justify-between [&_svg]:size-3.5"
             href="https://x.com/intent/follow?screen_name=pacovitiello"
             target="_blank"
             rel="noopener noreferrer"
@@ -56,7 +56,7 @@ export default function SocialDropdown() {
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
           <a
-            className="group cursor-pointer justify-between"
+            className="group cursor-pointer justify-between [&_svg]:size-3.5"
             href="https://x.com/intent/follow?screen_name=DavidePacilio"
             target="_blank"
             rel="noopener noreferrer"
