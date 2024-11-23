@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import Illustration from "@/demo/illustration";
 import Newsletter from "@/demo/subscribe-form";
 import XLinks from "@/demo/x-links";
@@ -32,7 +33,7 @@ export default function Page() {
               </p>
             </div>
 
-            <div className="mb-16">
+            <div className="mb-10">
               <h1 className="mx-auto mb-4 max-w-3xl text-4xl/[1.1] font-extrabold tracking-tight text-foreground md:text-5xl/[1.1]">
                 Beautiful UI components built with Tailwind CSS and Next.js.
               </h1>
@@ -40,6 +41,11 @@ export default function Page() {
                 Origin UI is an extensive collection of copy-and-paste components for quickly
                 building app UIs. It's free, open-source, and ready to drop into your projects.
               </p>
+            </div>
+            <div className="mb-10">
+              <Link href="/content/docs/get-started">
+                <Button className="truncate">Get Started</Button>
+              </Link>
             </div>
 
             <div className="mb-12">
