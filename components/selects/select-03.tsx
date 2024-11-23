@@ -4,8 +4,7 @@ import { Label } from "@/components/ui/label";
 import { SelectNative } from "@/components/ui/select-native";
 import { Clock } from "lucide-react";
 
-export default function SelectDemo(
-) {
+export default function SelectDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-03">Select with icon (native)</Label>

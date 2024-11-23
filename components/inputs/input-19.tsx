@@ -4,8 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Send } from "lucide-react";
 
-export default function InputDemo(
-) {
+export default function InputDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="input-19">Input with end inline button</Label>

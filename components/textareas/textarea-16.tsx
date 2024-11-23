@@ -4,8 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useCharacterLimit } from "@/hooks/use-character-limit";
 
-export default function TextareaDemo(
-) {
+export default function TextareaDemo() {
   const maxLength = 180;
   const {
     value,

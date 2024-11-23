@@ -2,8 +2,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { cn } from "@/lib/utils";
 
-export default function SliderDemo(
-) {
+export default function SliderDemo() {
   const max = 12;
   const skipInterval = 2; // Set to 1 to allow no text skipping
   const ticks = [...Array(max + 1)].map((_, i) => i);

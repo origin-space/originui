@@ -3,8 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-export default function ButtonDemo(
-) {
+export default function ButtonDemo() {
   return (
     <div className="inline-flex -space-x-px rounded-full shadow-sm shadow-black/5 rtl:space-x-reverse">
       <Button

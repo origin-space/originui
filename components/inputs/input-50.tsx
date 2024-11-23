@@ -7,8 +7,7 @@ import { CreditCard } from "lucide-react";
 import { usePaymentInputs } from "react-payment-inputs";
 import images, { type CardImages } from "react-payment-inputs/images";
 
-export default function InputDemo(
-) {
+export default function InputDemo() {
   const { meta, getCardNumberProps, getExpiryDateProps, getCVCProps, getCardImageProps } =
     usePaymentInputs();
 

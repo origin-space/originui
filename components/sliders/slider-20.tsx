@@ -8,8 +8,7 @@ import { Slider } from "@/components/ui/slider";
 import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 
-export default function SliderDemo(
-) {
+export default function SliderDemo() {
   const minValue = 0;
   const maxValue = 200;
   const steps = 5;

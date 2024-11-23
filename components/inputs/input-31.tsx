@@ -1,7 +1,6 @@
 import { Input } from "@/components/ui/input";
 
-export default function InputDemo(
-) {
+export default function InputDemo() {
   return (
     <div className="group relative">
       <label

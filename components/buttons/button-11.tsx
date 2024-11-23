@@ -3,8 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
-export default function ButtonDemo(
-) {
+export default function ButtonDemo() {
   return (
     <Button>
       Button
