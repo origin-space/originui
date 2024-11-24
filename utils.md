@@ -141,6 +141,5 @@ extend: {
 },
 ```
 
-After completing these steps, Origin UI components are ready to use in your project. Some components (e.g., number inputs, date pickers, time pickers, phone number inputs) may require additional libraries. Refer to the comments at the top of each component file for specific setup instructions.
-
+After completing these steps, Origin UI components are ready to use in your project.
    
