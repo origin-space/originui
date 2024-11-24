@@ -1,7 +1,7 @@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 
-export default function Checkbox08() {
+export default function CheckboxDemo() {
   return (
     <div className="flex gap-6">
       <div className="flex items-center gap-2">

@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
-export default function Button08() {
+export default function ButtonDemo() {
   return (
     <Button className="group" variant="ghost">
       <ArrowLeft

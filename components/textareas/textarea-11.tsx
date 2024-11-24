@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-export default function Textarea11() {
+export default function TextareaDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="textarea-11">Textarea with right button</Label>

@@ -70,7 +70,7 @@ const frameworks: Option[] = [
   },
 ];
 
-export default function Select46() {
+export default function SelectDemo() {
   return (
     <div className="space-y-2">
       <Label>Multiselect</Label>

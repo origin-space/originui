@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { RiFacebookFill, RiGithubFill, RiGoogleFill, RiTwitterXFill } from "@remixicon/react";
 
-export default function Button44() {
+export default function ButtonDemo() {
   return (
     <div className="flex flex-col gap-2">
       <Button variant="outline">

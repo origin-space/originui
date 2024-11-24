@@ -2,7 +2,7 @@ import { Label } from "@/components/ui/label";
 import { SelectNative } from "@/components/ui/select-native";
 import { useMemo } from "react";
 
-export default function Select12() {
+export default function SelectDemo() {
   const timezones = Intl.supportedValuesOf("timeZone");
 
   const formattedTimezones = useMemo(() => {

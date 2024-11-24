@@ -7,7 +7,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export default function Select36() {
+export default function SelectDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-36">Select with description and right indicator</Label>

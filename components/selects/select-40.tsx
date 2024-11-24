@@ -11,7 +11,7 @@ import Avatar02 from "@/public/avatar-40-02.jpg";
 import Avatar03 from "@/public/avatar-40-03.jpg";
 import Image from "next/image";
 
-export default function Select40() {
+export default function SelectDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-40">Options with portrait</Label>

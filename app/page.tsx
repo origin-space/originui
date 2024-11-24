@@ -39,7 +39,8 @@ export default function Page() {
               </h1>
               <p className="text-lg text-muted-foreground">
                 Origin UI is an extensive collection of copy-and-paste components for quickly
-                building app UIs. It's free, open-source, and ready to drop into your projects.
+                building app UIs. It&lsquo;s free, open-source, and ready to drop into your
+                projects.
               </p>
             </div>
             <div className="mb-10">

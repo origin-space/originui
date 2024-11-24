@@ -10,7 +10,7 @@ const items = [
   { id: "checkbox-18-c7", value: "c7", label: "Sunday", disabled: true },
 ];
 
-export default function Checkbox18() {
+export default function CheckboxDemo() {
   return (
     <fieldset className="space-y-4">
       <legend className="text-sm font-medium leading-none text-foreground">Days of the week</legend>
@@ -18,7 +18,7 @@ export default function Checkbox18() {
         {items.map((item) => (
           <label
             key={item.id}
-            className="relative flex size-9 cursor-pointer flex-col items-center justify-center gap-3 rounded-full border border-input text-center shadow-sm shadow-black/5 ring-offset-background transition-colors has-[[data-disabled]]:cursor-not-allowed has-[[data-state=checked]]:border-primary has-[[data-state=checked]]:bg-primary has-[[data-state=checked]]:text-primary-foreground has-[[data-disabled]]:opacity-50 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring/70 has-[:focus-visible]:ring-offset-2"
+            className="relative flex size-9 cursor-pointer flex-col items-center justify-center gap-3 rounded-full border border-input text-center shadow-sm shadow-black/5 outline-offset-2 transition-colors has-[[data-disabled]]:cursor-not-allowed has-[[data-state=checked]]:border-primary has-[[data-state=checked]]:bg-primary has-[[data-state=checked]]:text-primary-foreground has-[[data-disabled]]:opacity-50 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70"
           >
             <Checkbox
               id={item.id}

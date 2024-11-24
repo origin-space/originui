@@ -13,7 +13,7 @@ import Avatar02 from "@/public/avatar-20-02.jpg";
 import Avatar03 from "@/public/avatar-20-03.jpg";
 import Image from "next/image";
 
-export default function Select38() {
+export default function SelectDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-38">Options with avatar</Label>

@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useEffect, useRef, useState } from "react";
 
-export default function Checkbox11() {
+export default function CheckboxDemo() {
   const [checked, setChecked] = useState<boolean | "indeterminate">(false);
   const inputRef = useRef<HTMLInputElement>(null);
 

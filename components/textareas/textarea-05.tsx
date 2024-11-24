@@ -1,7 +1,7 @@
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-export default function Textarea05() {
+export default function TextareaDemo() {
   return (
     <div
       className="space-y-2"

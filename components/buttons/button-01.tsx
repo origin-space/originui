@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
 
-export default function Button01() {
+export default function ButtonDemo() {
   return <Button>Button</Button>;
 }

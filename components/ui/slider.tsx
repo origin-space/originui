@@ -35,11 +35,11 @@ const Slider = React.forwardRef<
     }
   };
 
-  const handlePointerUp = () => {
+  const handlePointerUp = React.useCallback(() => {
     if (showTooltip) {
       setShowTooltipState(false);
     }
-  };
+  }, [showTooltip]);
 
   React.useEffect(() => {
     if (showTooltip) {
@@ -48,12 +48,12 @@ const Slider = React.forwardRef<
         document.removeEventListener("pointerup", handlePointerUp);
       };
     }
-  }, [showTooltip]);
+  }, [showTooltip, handlePointerUp]);
 
-  const renderThumb = (value: number, index: number) => {
+  const renderThumb = (value: number) => {
     const thumb = (
       <SliderPrimitive.Thumb
-        className="block h-5 w-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 data-[disabled]:cursor-not-allowed"
+        className="block h-5 w-5 rounded-full border-2 border-primary bg-background transition-colors focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-ring/40 data-[disabled]:cursor-not-allowed"
         onPointerDown={handlePointerDown}
       />
     );
@@ -90,7 +90,7 @@ const Slider = React.forwardRef<
         <SliderPrimitive.Range className="absolute bg-primary data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full" />
       </SliderPrimitive.Track>
       {internalValue?.map((value, index) => (
-        <React.Fragment key={index}>{renderThumb(value, index)}</React.Fragment>
+        <React.Fragment key={index}>{renderThumb(value)}</React.Fragment>
       ))}
     </SliderPrimitive.Root>
   );

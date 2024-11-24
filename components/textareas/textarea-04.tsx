@@ -1,7 +1,7 @@
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-export default function Textarea04() {
+export default function TextareaDemo() {
   return (
     <>
       <div className="mb-2 flex items-center justify-between gap-1">

@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { useState } from "react";
 
-export default function Switch14() {
+export default function SwitchDemo() {
   const [checked, setChecked] = useState<boolean>(true);
 
   return (

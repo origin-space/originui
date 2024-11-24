@@ -8,7 +8,7 @@ const items = [
   { id: "radio-15-r4", value: "r4", label: "Enterprise", price: "Custom" },
 ];
 
-export default function Radio15() {
+export default function RadioDemo() {
   return (
     <fieldset className="space-y-4">
       <legend className="text-sm font-medium leading-none text-foreground">Choose plan</legend>

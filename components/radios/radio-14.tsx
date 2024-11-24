@@ -7,7 +7,7 @@ const items = [
   { id: "radio-14-r3", value: "r3", label: "France" },
 ];
 
-export default function Radio14() {
+export default function RadioDemo() {
   return (
     <fieldset className="space-y-4">
       <legend className="text-sm font-medium leading-none text-foreground">Server location</legend>

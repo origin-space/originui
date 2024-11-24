@@ -129,7 +129,7 @@ const items = [
   { id: 120, price: 900 },
 ];
 
-export default function Slider26() {
+export default function SliderDemo() {
   // Define the number of ticks
   const tick_count = 40;
   // Find the min and max values across all items
@@ -161,13 +161,6 @@ export default function Slider26() {
 
   const handleSliderValueChange = (values: number[]) => {
     handleSliderChange(values);
-  };
-
-  // Function to map price to index
-  const priceToIndex = (price: number) => {
-    const index = Math.floor((price - minValue) / priceStep);
-    // Clamp the index to prevent out of bounds
-    return Math.min(Math.max(0, index), tick_count - 1);
   };
 
   // Function to count items in the selected range

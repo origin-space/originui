@@ -11,7 +11,7 @@ const items = [
   { id: "checkbox-16-c4", value: "c4", label: "Cut", Icon: Scissors },
 ];
 
-export default function Checkbox16() {
+export default function CheckboxDemo() {
   return (
     <div className="grid grid-cols-2 gap-3">
       {items.map((item) => (

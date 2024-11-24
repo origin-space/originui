@@ -9,7 +9,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export default function Select25() {
+export default function SelectDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-25">Select with options groups</Label>

@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Archive } from "lucide-react";
 
-export default function Button04() {
+export default function ButtonDemo() {
   return (
     <Button>
       <Archive className="-ms-1 me-2 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />

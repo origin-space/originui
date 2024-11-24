@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { RiFacebookFill, RiGithubFill, RiGoogleFill, RiTwitterXFill } from "@remixicon/react";
 
-export default function Button45() {
+export default function ButtonDemo() {
   return (
     <div className="flex flex-col gap-2">
       <Button className="bg-[#DB4437] text-white after:flex-1 hover:bg-[#DB4437]/90">

@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { OTPInput, SlotProps } from "input-otp";
 import { Minus } from "lucide-react";
 
-export default function Input45() {
+export default function InputDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="input-45">OTP input double</Label>
@@ -54,8 +54,8 @@ function Slot(props: SlotProps) {
   return (
     <div
       className={cn(
-        "relative flex size-9 items-center justify-center border-y border-e border-input bg-background font-medium text-foreground shadow-sm shadow-black/5 ring-offset-background transition-all first:rounded-s-lg first:border-s last:rounded-e-lg",
-        { "z-10 border border-ring ring-2 ring-ring/30 ring-offset-2": props.isActive },
+        "relative -ms-px flex size-9 items-center justify-center border border-input bg-background font-medium text-foreground shadow-sm shadow-black/5 transition-shadow first:ms-0 first:rounded-s-lg last:rounded-e-lg",
+        { "z-10 border border-ring ring-[3px] ring-ring/20": props.isActive },
       )}
     >
       {props.char !== null && <div>{props.char}</div>}

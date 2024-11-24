@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Printer } from "lucide-react";
 
-export default function Button116() {
+export default function ButtonDemo() {
   return (
     <Button variant="outline">
       <Printer className="-ms-1 me-2 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />

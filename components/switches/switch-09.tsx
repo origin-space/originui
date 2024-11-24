@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { useState } from "react";
 
-export default function Switch09() {
+export default function SwitchDemo() {
   const [checked, setChecked] = useState(false);
 
   const toggleSwitch = () => setChecked((prev) => !prev);

@@ -1,7 +1,7 @@
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 
-export default function Switch05() {
+export default function SwitchDemo() {
   return (
     <div className="inline-flex items-center gap-2">
       <Switch id="switch-05" className="rounded-md [&_span]:rounded" />

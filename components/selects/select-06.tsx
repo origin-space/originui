@@ -1,13 +1,13 @@
 import { Label } from "@/components/ui/label";
 import { SelectNative } from "@/components/ui/select-native";
 
-export default function Select06() {
+export default function SelectDemo() {
   return (
     <div className="space-y-2 [&_svg]:text-destructive/80">
       <Label htmlFor="select-06">Select with error (native)</Label>
       <SelectNative
         id="select-06"
-        className="border-destructive/80 text-destructive focus-visible:border-destructive/80 focus-visible:ring-destructive/30"
+        className="border-destructive/80 text-destructive focus-visible:border-destructive/80 focus-visible:ring-destructive/20"
       >
         <option value="s1">React</option>
         <option value="s2">Next.js</option>

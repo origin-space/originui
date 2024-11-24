@@ -1,7 +1,7 @@
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
-export default function Radio08() {
+export default function RadioDemo() {
   return (
     <RadioGroup className="gap-2" defaultValue="r1">
       {/* Radio card #1 */}

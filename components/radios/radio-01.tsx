@@ -1,7 +1,7 @@
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
-export default function Radio01() {
+export default function RadioDemo() {
   return (
     <RadioGroup defaultValue="r1">
       <div className="flex items-center gap-2">

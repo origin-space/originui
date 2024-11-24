@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { RiStarFill } from "@remixicon/react";
 
-export default function Radio06() {
+export default function RadioDemo() {
   return (
     <RadioGroup defaultValue="all">
       <div className="flex items-center gap-2">

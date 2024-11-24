@@ -1,7 +1,7 @@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 
-export default function Checkbox12() {
+export default function CheckboxDemo() {
   return (
     <div className="flex items-start gap-2">
       <Checkbox id="checkbox-12" className="order-1" aria-describedby="checkbox-12-description" />

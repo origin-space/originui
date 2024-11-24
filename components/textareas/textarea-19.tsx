@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { ChangeEvent, useRef } from "react";
 
-export default function Textarea19() {
+export default function TextareaDemo() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const defaultRows = 1;
   const maxRows = undefined; // You can set a max number of rows

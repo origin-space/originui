@@ -1,13 +1,13 @@
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-export default function Textarea06() {
+export default function TextareaDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="textarea-06">Textarea with error</Label>
       <Textarea
         id="textarea-06"
-        className="border-destructive/80 text-destructive focus-visible:border-destructive/80 focus-visible:ring-destructive/30"
+        className="border-destructive/80 text-destructive focus-visible:border-destructive/80 focus-visible:ring-destructive/20"
         placeholder="Leave a comment"
         defaultValue="Hello!"
       />

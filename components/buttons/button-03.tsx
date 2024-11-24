@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
 
-export default function Button03() {
+export default function ButtonDemo() {
   return <Button className="rounded-full">Button</Button>;
 }

@@ -7,7 +7,7 @@ import { Switch } from "@/components/ui/switch";
 import { Moon, Sun } from "lucide-react";
 import { useState } from "react";
 
-export default function Switch13() {
+export default function SwitchDemo() {
   const [checked, setChecked] = useState<boolean>(true);
 
   return (

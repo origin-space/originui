@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { FlipHorizontal, FlipVertical } from "lucide-react";
 
-export default function Button29() {
+export default function ButtonDemo() {
   return (
     <div className="inline-flex -space-x-px rounded-lg shadow-sm shadow-black/5 rtl:space-x-reverse">
       <Button
