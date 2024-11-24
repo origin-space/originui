@@ -30,7 +30,7 @@ const organizations = [
   },
 ];
 
-export default function Select42() {
+export default function SelectDemo() {
   const [open, setOpen] = useState<boolean>(false);
   const [value, setValue] = useState<string>("originui");
 
@@ -44,7 +44,7 @@ export default function Select42() {
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="w-full justify-between bg-background px-3 font-normal hover:bg-background"
+            className="w-full justify-between bg-background px-3 font-normal outline-offset-0 hover:bg-background focus-visible:border-ring focus-visible:outline-[3px] focus-visible:outline-ring/20"
           >
             <span className={cn("truncate", !value && "text-muted-foreground")}>
               {value

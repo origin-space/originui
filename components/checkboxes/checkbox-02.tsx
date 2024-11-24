@@ -4,7 +4,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 
-export default function Checkbox02() {
+export default function CheckboxDemo() {
   const [checked, setChecked] = useState<boolean | "indeterminate">("indeterminate");
 
   return (

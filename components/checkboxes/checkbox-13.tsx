@@ -1,7 +1,7 @@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 
-export default function Checkbox13() {
+export default function CheckboxDemo() {
   return (
     <div className="relative flex w-full items-start gap-2 rounded-lg border border-input p-4 shadow-sm shadow-black/5 has-[[data-state=checked]]:border-ring">
       <Checkbox

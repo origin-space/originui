@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Mail } from "lucide-react";
 
-export default function Input10() {
+export default function InputDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="input-10">Input with end icon</Label>

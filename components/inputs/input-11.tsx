@@ -1,7 +1,7 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export default function Input11() {
+export default function InputDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="input-11">Input with start inline add-on</Label>

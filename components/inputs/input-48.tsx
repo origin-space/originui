@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { usePaymentInputs } from "react-payment-inputs";
 
-export default function Input48() {
+export default function InputDemo() {
   const { getExpiryDateProps } = usePaymentInputs();
 
   return (

@@ -5,7 +5,7 @@
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { useState } from "react";
 
-export default function Button33() {
+export default function ButtonDemo() {
   const [value, setValue] = useState<string>("left");
 
   return (

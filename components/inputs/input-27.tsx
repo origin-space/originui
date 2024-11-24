@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { LoaderCircle, Mic, Search } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export default function Input27() {
+export default function InputDemo() {
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -47,7 +47,7 @@ export default function Input27() {
           )}
         </div>
         <button
-          className="absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg text-muted-foreground/80 ring-offset-background transition-shadow hover:text-foreground focus-visible:border focus-visible:border-ring focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+          className="absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg text-muted-foreground/80 outline-offset-2 transition-colors hover:text-foreground focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
           aria-label="Press to speak"
           type="submit"
         >

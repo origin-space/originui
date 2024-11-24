@@ -6,7 +6,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export default function Select28() {
+export default function SelectDemo() {
   return (
     <div className="group relative">
       <label

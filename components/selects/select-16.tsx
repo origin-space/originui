@@ -7,7 +7,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export default function Select16() {
+export default function SelectDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-16">Select with placeholder</Label>

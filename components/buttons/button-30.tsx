@@ -6,7 +6,7 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { AlignCenter, AlignJustify, AlignLeft, AlignRight } from "lucide-react";
 import { useState } from "react";
 
-export default function Button30() {
+export default function ButtonDemo() {
   const [value, setValue] = useState<string>("center");
 
   return (

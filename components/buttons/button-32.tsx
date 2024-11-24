@@ -2,7 +2,7 @@
 
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
-export default function Button32() {
+export default function ButtonDemo() {
   return (
     <ToggleGroup
       variant="outline"

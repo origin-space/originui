@@ -7,7 +7,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export default function Select22() {
+export default function SelectDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-22">Disabled select</Label>

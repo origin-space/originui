@@ -1,6 +1,6 @@
 import { SelectNative } from "@/components/ui/select-native";
 
-export default function Select13() {
+export default function SelectDemo() {
   return (
     <div className="group relative">
       <label

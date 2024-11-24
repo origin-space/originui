@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { useState } from "react";
 
-export default function Slider18() {
+export default function SliderDemo() {
   const [value, setValue] = useState([3]);
 
   const emojis = ["😡", "🙁", "😐", "🙂", "😍"];

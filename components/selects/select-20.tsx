@@ -7,14 +7,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export default function Select20() {
+export default function SelectDemo() {
   return (
     <div className="space-y-2 [&_svg]:text-destructive/80">
       <Label htmlFor="select-20">Select with error</Label>
       <Select defaultValue="s1">
         <SelectTrigger
           id="select-20"
-          className="border-destructive/80 text-destructive focus-visible:border-destructive/80 focus-visible:ring-destructive/30"
+          className="border-destructive/80 text-destructive focus:border-destructive/80 focus:ring-destructive/20"
         >
           <SelectValue />
         </SelectTrigger>

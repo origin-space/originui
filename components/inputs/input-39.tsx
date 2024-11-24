@@ -5,12 +5,12 @@
 import { Clock } from "lucide-react";
 import { DateInput, DateSegment, Label, TimeField } from "react-aria-components";
 
-export default function Input39() {
+export default function InputDemo() {
   return (
     <TimeField className="space-y-2">
       <Label className="text-sm font-medium text-foreground">Time input with end icon</Label>
       <div className="relative">
-        <DateInput className="relative inline-flex h-9 w-full items-center overflow-hidden whitespace-nowrap rounded-lg border border-input bg-background px-3 py-2 pe-9 text-sm shadow-sm shadow-black/5 ring-offset-background transition-shadow data-[focus-within]:border-ring data-[disabled]:opacity-50 data-[focus-within]:outline-none data-[focus-within]:ring-2 data-[focus-within]:ring-ring/30 data-[focus-within]:ring-offset-2">
+        <DateInput className="relative inline-flex h-9 w-full items-center overflow-hidden whitespace-nowrap rounded-lg border border-input bg-background px-3 py-2 pe-9 text-sm shadow-sm shadow-black/5 transition-shadow data-[focus-within]:border-ring data-[disabled]:opacity-50 data-[focus-within]:outline-none data-[focus-within]:ring-[3px] data-[focus-within]:ring-ring/20">
           {(segment) => (
             <DateSegment
               segment={segment}

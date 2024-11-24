@@ -1,6 +1,6 @@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
-export default function Radio17() {
+export default function RadioDemo() {
   return (
     <>
       <fieldset className="space-y-4">
@@ -11,7 +11,7 @@ export default function Radio17() {
           {[0, 1, 2, 3, 4, 5].map((number) => (
             <label
               key={number}
-              className="relative flex size-9 flex-1 cursor-pointer flex-col items-center justify-center gap-3 border border-input text-center text-sm font-medium ring-offset-background transition-colors first:rounded-s-lg last:rounded-e-lg has-[[data-state=checked]]:z-10 has-[[data-disabled]]:cursor-not-allowed has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent has-[[data-disabled]]:opacity-50 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring/70 has-[:focus-visible]:ring-offset-2"
+              className="relative flex size-9 flex-1 cursor-pointer flex-col items-center justify-center gap-3 border border-input text-center text-sm font-medium outline-offset-2 transition-colors first:rounded-s-lg last:rounded-e-lg has-[[data-state=checked]]:z-10 has-[[data-disabled]]:cursor-not-allowed has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent has-[[data-disabled]]:opacity-50 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70"
             >
               <RadioGroupItem
                 id={`radio-17-r${number}`}

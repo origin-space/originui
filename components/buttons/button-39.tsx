@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 
-export default function Button39() {
+export default function ButtonDemo() {
   return (
     <Button className="relative pe-12">
       Next

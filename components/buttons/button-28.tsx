@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
 
-export default function Button28() {
+export default function ButtonDemo() {
   const [copied, setCopied] = useState<boolean>(false);
 
   const handleCopy = async () => {

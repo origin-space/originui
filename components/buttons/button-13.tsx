@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { LoaderCircle } from "lucide-react";
 
-export default function Button13() {
+export default function ButtonDemo() {
   return (
     <Button disabled>
       <LoaderCircle

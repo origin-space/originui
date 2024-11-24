@@ -60,7 +60,7 @@ const countries = [
   },
 ];
 
-export default function Select44() {
+export default function SelectDemo() {
   const [open, setOpen] = useState<boolean>(false);
   const [value, setValue] = useState<string>("");
 
@@ -74,7 +74,7 @@ export default function Select44() {
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="w-full justify-between bg-background px-3 font-normal hover:bg-background"
+            className="w-full justify-between bg-background px-3 font-normal outline-offset-0 hover:bg-background focus-visible:border-ring focus-visible:outline-[3px] focus-visible:outline-ring/20"
           >
             {value ? (
               <span className="flex min-w-0 items-center gap-2">

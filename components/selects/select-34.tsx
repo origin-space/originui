@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/select";
 import { RiGatsbyLine, RiNextjsLine, RiReactjsLine } from "@remixicon/react";
 
-export default function Select34() {
+export default function SelectDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-34">Options with icon</Label>

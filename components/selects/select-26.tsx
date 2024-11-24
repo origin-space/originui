@@ -10,7 +10,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export default function Select26() {
+export default function SelectDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-26">Select with separator</Label>

@@ -6,11 +6,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import { ChevronDown, Phone } from "lucide-react";
-import React, { forwardRef, useState, type InputHTMLAttributes } from "react";
+import React, { forwardRef, useState } from "react";
 import * as RPNInput from "react-phone-number-input";
 import flags from "react-phone-number-input/flags";
 
-export default function Input46() {
+export default function InputDemo() {
   const [value, setValue] = useState("");
 
   return (
@@ -42,17 +42,17 @@ export default function Input46() {
   );
 }
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
-
-const PhoneInput = forwardRef<HTMLInputElement, InputProps>(({ className, ...props }, ref) => {
-  return (
-    <Input
-      className={cn("-ms-px rounded-s-none shadow-none focus-visible:z-10", className)}
-      ref={ref}
-      {...props}
-    />
-  );
-});
+const PhoneInput = forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
+  ({ className, ...props }, ref) => {
+    return (
+      <Input
+        className={cn("-ms-px rounded-s-none shadow-none focus-visible:z-10", className)}
+        ref={ref}
+        {...props}
+      />
+    );
+  },
+);
 
 PhoneInput.displayName = "PhoneInput";
 
@@ -69,7 +69,7 @@ const CountrySelect = ({ disabled, value, onChange, options }: CountrySelectProp
   };
 
   return (
-    <div className="relative inline-flex items-center self-stretch rounded-s-lg border border-input bg-background py-2 pe-2 ps-3 text-muted-foreground ring-offset-background transition-shadow focus-within:z-10 focus-within:border-ring focus-within:text-foreground focus-within:outline-none focus-within:ring-2 focus-within:ring-ring/30 focus-within:ring-offset-2 hover:bg-accent hover:text-foreground has-[:disabled]:pointer-events-none has-[:disabled]:opacity-50">
+    <div className="relative inline-flex items-center self-stretch rounded-s-lg border border-input bg-background py-2 pe-2 ps-3 text-muted-foreground transition-shadow focus-within:z-10 focus-within:border-ring focus-within:outline-none focus-within:ring-[3px] focus-within:ring-ring/20 hover:bg-accent hover:text-foreground has-[:disabled]:pointer-events-none has-[:disabled]:opacity-50">
       <div className="inline-flex items-center gap-1" aria-hidden="true">
         <FlagComponent country={value} countryName={value} aria-hidden="true" />
         <span className="text-muted-foreground/80">

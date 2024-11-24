@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { LoaderCircle } from "lucide-react";
 import { useState } from "react";
 
-export default function Button14() {
+export default function ButtonDemo() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleClick = () => {

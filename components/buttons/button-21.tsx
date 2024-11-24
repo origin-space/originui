@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 
-export default function Button21() {
+export default function ButtonDemo() {
   const [open, setOpen] = useState<boolean>(false);
 
   return (

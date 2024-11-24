@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { RiFacebookFill, RiGithubFill, RiGoogleFill, RiTwitterXFill } from "@remixicon/react";
 
-export default function Button43() {
+export default function ButtonDemo() {
   return (
     <div className="flex flex-wrap gap-2">
       <Button className="flex-1" variant="outline" aria-label="Login with Google" size="icon">

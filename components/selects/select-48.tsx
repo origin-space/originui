@@ -1,7 +1,7 @@
 import { Label } from "@/components/ui/label";
 import { SelectNative } from "@/components/ui/select-native";
 
-export default function Select48() {
+export default function SelectDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-48">Multiple select (native)</Label>

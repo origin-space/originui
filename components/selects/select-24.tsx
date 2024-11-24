@@ -7,7 +7,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export default function Select24() {
+export default function SelectDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-24">Select with auto-width</Label>

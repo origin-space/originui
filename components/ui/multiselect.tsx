@@ -12,7 +12,7 @@ export interface Option {
   value: string;
   label: string;
   disable?: boolean;
-  /** fixed option that can't be removed. */
+  /** fixed option that can&lsquo;t be removed. */
   fixed?: boolean;
   /** Group the options by providing key. */
   [key: string]: string | boolean | undefined;
@@ -419,7 +419,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
           return value.toLowerCase().includes(search.toLowerCase()) ? 1 : -1;
         };
       }
-      // Using default filter in `cmdk`. We don't have to provide it.
+      // Using default filter in `cmdk`. We don&lsquo;t have to provide it.
       return undefined;
     }, [creatable, commandProps?.filter]);
 
@@ -434,12 +434,12 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
         className={cn("h-auto overflow-visible bg-transparent", commandProps?.className)}
         shouldFilter={
           commandProps?.shouldFilter !== undefined ? commandProps.shouldFilter : !onSearch
-        } // When onSearch is provided, we don't want to filter the options. You can still override it.
+        } // When onSearch is provided, we don&lsquo;t want to filter the options. You can still override it.
         filter={commandFilter()}
       >
         <div
           className={cn(
-            "relative min-h-[38px] rounded-lg border border-input text-sm ring-offset-background transition-shadow focus-within:border-ring focus-within:ring-2 focus-within:ring-ring/30 focus-within:ring-offset-2 has-[:disabled]:cursor-not-allowed has-[:disabled]:opacity-50",
+            "relative min-h-[38px] rounded-lg border border-input text-sm transition-shadow focus-within:border-ring focus-within:outline-none focus-within:ring-[3px] focus-within:ring-ring/20 has-[:disabled]:cursor-not-allowed has-[:disabled]:opacity-50",
             {
               "p-1": selected.length !== 0,
               "cursor-text": !disabled && selected.length !== 0,
@@ -466,7 +466,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 >
                   {option.label}
                   <button
-                    className="absolute -inset-y-px -end-px flex size-7 items-center justify-center rounded-e-lg border border-transparent p-0 text-muted-foreground/80 ring-offset-background transition-colors hover:text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2"
+                    className="absolute -inset-y-px -end-px flex size-7 items-center justify-center rounded-e-lg border border-transparent p-0 text-muted-foreground/80 outline-0 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
                     onKeyDown={(e) => {
                       if (e.key === "Enter") {
                         handleUnselect(option);
@@ -502,7 +502,9 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
               }}
               onFocus={(event) => {
                 setOpen(true);
-                triggerSearchOnFocus && onSearch?.(debouncedSearchTerm);
+                if (triggerSearchOnFocus) {
+                  onSearch?.(debouncedSearchTerm);
+                }
                 inputProps?.onFocus?.(event);
               }}
               placeholder={hidePlaceholderWhenSelected && selected.length !== 0 ? "" : placeholder}
@@ -523,7 +525,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 onChange?.(selected.filter((s) => s.fixed));
               }}
               className={cn(
-                "absolute end-0 top-0 flex size-9 items-center justify-center rounded-lg border border-transparent text-muted-foreground/80 transition-shadow hover:text-foreground focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30",
+                "absolute end-0 top-0 flex size-9 items-center justify-center rounded-lg border border-transparent text-muted-foreground/80 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70",
                 (hideClearAllButton ||
                   disabled ||
                   selected.length < 1 ||

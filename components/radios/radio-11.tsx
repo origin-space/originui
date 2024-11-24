@@ -11,7 +11,7 @@ const items = [
   { id: "radio-11-r4", value: "r4", label: "Cut", Icon: Scissors },
 ];
 
-export default function Radio11() {
+export default function RadioDemo() {
   return (
     <RadioGroup className="grid-cols-2" defaultValue="r1">
       {items.map((item) => (

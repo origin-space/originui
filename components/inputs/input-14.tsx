@@ -1,7 +1,7 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export default function Input14() {
+export default function InputDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="input-14">Input with start add-on</Label>

@@ -1,7 +1,7 @@
 import { Label } from "@/components/ui/label";
 import { SelectNative } from "@/components/ui/select-native";
 
-export default function Select02() {
+export default function SelectDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-02">Select with placeholder (native)</Label>

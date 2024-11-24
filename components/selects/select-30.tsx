@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/select";
 import { useMemo } from "react";
 
-export default function Select30() {
+export default function SelectDemo() {
   const timezones = Intl.supportedValuesOf("timeZone");
 
   const formattedTimezones = useMemo(() => {
