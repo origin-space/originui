@@ -27,7 +27,7 @@ export default function GithubButton() {
       target="_blank"
     >
       <svg
-        className="-ms-0.5 me-2 fill-current text-zinc-500"
+        className="-ms-0.5 me-2 fill-current text-white dark:text-black"
         xmlns="http://www.w3.org/2000/svg"
         width="17"
         height="16"

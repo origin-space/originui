@@ -44,8 +44,8 @@ export default function Page() {
               </p>
             </div>
             <div className="mb-10">
-              <p>Before using components we would like to request you to set up all the required files and configurations </p>
-              <Link href="https://github.com/AdityaSrivastava185/originui/blob/main/utils.md">
+              <p className="pb-2 text-md">Before using components we would like to request you to set up all the required files and configurations </p>
+              <Link href="https://github.com/AdityaSrivastava185/originui/blob/main/utils.md" target="_blank">
                 <Button className="truncate">Get Started</Button>
               </Link>
             </div>
