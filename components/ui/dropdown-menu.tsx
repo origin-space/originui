@@ -6,6 +6,9 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
+type PointerDownEvent = Parameters<NonNullable<DropdownMenuPrimitive.DropdownMenuContentProps['onPointerDown']>>[0];
+type PointerDownOutsideEvent = Parameters<NonNullable<DropdownMenuPrimitive.DropdownMenuContentProps['onPointerDownOutside']>>[0];
+
 const DropdownMenu = DropdownMenuPrimitive.Root;
 
 const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
@@ -57,19 +60,58 @@ DropdownMenuSubContent.displayName = DropdownMenuPrimitive.SubContent.displayNam
 const DropdownMenuContent = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content>
->(({ className, sideOffset = 4, ...props }, ref) => (
-  <DropdownMenuPrimitive.Portal>
-    <DropdownMenuPrimitive.Content
-      ref={ref}
-      sideOffset={sideOffset}
-      className={cn(
-        "border-birder z-50 min-w-[8rem] overflow-hidden rounded-lg border bg-popover p-1 text-popover-foreground shadow-lg shadow-black/5 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
-        className,
-      )}
-      {...props}
-    />
-  </DropdownMenuPrimitive.Portal>
-));
+>(({ className, sideOffset = 4, onPointerDown, onPointerDownOutside, onCloseAutoFocus, ...props }, ref) => {
+  const isCloseFromMouse = React.useRef<boolean>(false);
+
+  const handlePointerDown = React.useCallback(
+    (e: PointerDownEvent) => {
+      isCloseFromMouse.current = true;
+      onPointerDown?.(e);
+    },
+    [onPointerDown]
+  );   
+
+  const handlePointerDownOutside = React.useCallback(
+    (e: PointerDownOutsideEvent) => {
+      isCloseFromMouse.current = true;
+      onPointerDownOutside?.(e);
+    },
+    [onPointerDownOutside]
+  ); 
+
+  const handleCloseAutoFocus = React.useCallback(
+    (e: Event) => {
+      if (onCloseAutoFocus) {
+        return onCloseAutoFocus(e);
+      }
+
+      if (!isCloseFromMouse.current) {
+        return;
+      }
+
+      e.preventDefault();
+      isCloseFromMouse.current = false;
+    },
+    [onCloseAutoFocus]
+  );
+
+  return (
+    <DropdownMenuPrimitive.Portal>
+      <DropdownMenuPrimitive.Content
+        ref={ref}
+        sideOffset={sideOffset}
+        className={cn(
+          "border-birder z-50 min-w-[8rem] overflow-hidden rounded-lg border bg-popover p-1 text-popover-foreground shadow-lg shadow-black/5 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+          className,
+        )}
+        onPointerDown={handlePointerDown}
+        onPointerDownOutside={handlePointerDownOutside}
+        onCloseAutoFocus={handleCloseAutoFocus}
+        {...props}
+      />
+    </DropdownMenuPrimitive.Portal>
+  );
+});
 DropdownMenuContent.displayName = DropdownMenuPrimitive.Content.displayName;
 
 const DropdownMenuItem = React.forwardRef<
