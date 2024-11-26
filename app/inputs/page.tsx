@@ -56,6 +56,7 @@ const inputFiles = [
   "input-43",
   "input-44",
   "input-45",
+  "input-58",
   "input-46",
   "input-47",
   "input-48",

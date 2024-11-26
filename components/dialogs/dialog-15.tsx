@@ -9,13 +9,12 @@ import {
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
-import { Mail } from "lucide-react"
 
 export default function DialogDemo() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Subscribe</Button>
+        <Button variant="outline">Sign up</Button>
       </DialogTrigger>
       <DialogContent>
         <div className="flex flex-col items-center gap-2">
@@ -35,29 +34,38 @@ export default function DialogDemo() {
             </svg>
           </div>
           <DialogHeader>
-            <DialogTitle className="sm:text-center">Never miss an update</DialogTitle>
+            <DialogTitle className="sm:text-center">Sign up Origin UI</DialogTitle>
             <DialogDescription className="sm:text-center">
-            Subscribe to receive news and special offers.
+            We just need a few details to get you started.
             </DialogDescription>
           </DialogHeader>
         </div>
 
         <form className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="subscribe-email">Email</Label>
-            <div className="relative">
-              <Input id="input-09" className="peer ps-9" placeholder="hi@yourcompany.com" type="email" />
-              <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 peer-disabled:opacity-50">
-                <Mail size={16} strokeWidth={2} aria-hidden="true" />
-              </div>
-            </div>
+            <Label htmlFor="signup-name">Full name</Label>
+            <Input id="signup-name" placeholder="Matt Welsh" type="text" required />
+          </div>             
+          <div className="space-y-2">
+            <Label htmlFor="signup-email">Email</Label>
+            <Input id="signup-email" placeholder="hi@yourcompany.com" type="email" required />
           </div>              
+          <div className="space-y-2">
+            <Label htmlFor="signup-password">Password</Label>
+            <Input id="signup-password" placeholder="Enter your password" type="password" required />
+          </div>
           <Button type="button" className="w-full">
-            Subscribe
+            Sign up
           </Button>
         </form>
 
-        <p className="text-xs text-muted-foreground text-center">By subscribing you agree to our <a className="underline hover:no-underline" href="#">Privacy Policy</a>.</p>
+        <div className="flex items-center gap-3 before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border">
+          <span className="text-xs text-muted-foreground">Or</span>
+        </div>
+
+        <Button variant="outline">Continue with Google</Button>
+
+        <p className="text-xs text-muted-foreground text-center">By signing up you agree to our <a className="underline hover:no-underline" href="#">Terms</a>.</p>
       </DialogContent>
     </Dialog>
   )

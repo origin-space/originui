@@ -9,13 +9,13 @@ import {
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
-import { Mail } from "lucide-react"
+import { Checkbox } from "@/components/ui/checkbox"
 
 export default function DialogDemo() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Subscribe</Button>
+        <Button variant="outline">Sign in</Button>
       </DialogTrigger>
       <DialogContent>
         <div className="flex flex-col items-center gap-2">
@@ -35,29 +35,40 @@ export default function DialogDemo() {
             </svg>
           </div>
           <DialogHeader>
-            <DialogTitle className="sm:text-center">Never miss an update</DialogTitle>
+            <DialogTitle className="sm:text-center">Welcome back</DialogTitle>
             <DialogDescription className="sm:text-center">
-            Subscribe to receive news and special offers.
+            Enter your credentials to login to your account.
             </DialogDescription>
           </DialogHeader>
         </div>
 
-        <form className="space-y-4">
+        <form className="space-y-4">       
           <div className="space-y-2">
-            <Label htmlFor="subscribe-email">Email</Label>
-            <div className="relative">
-              <Input id="input-09" className="peer ps-9" placeholder="hi@yourcompany.com" type="email" />
-              <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 peer-disabled:opacity-50">
-                <Mail size={16} strokeWidth={2} aria-hidden="true" />
-              </div>
-            </div>
+            <Label htmlFor="login-email">Email</Label>
+            <Input id="login-email" placeholder="hi@yourcompany.com" type="email" required />
           </div>              
+          <div className="space-y-2">
+            <Label htmlFor="login-password">Password</Label>
+            <Input id="login-password" placeholder="Enter your password" type="password" required />
+          </div>
+          <div className="flex justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <Checkbox id="login-remember" />
+              <Label htmlFor="login-remember">Remember me</Label>
+            </div>            
+            <a className="text-sm text-muted-foreground hover:underline" href="#">Forgot password?</a>          
+          </div>
           <Button type="button" className="w-full">
-            Subscribe
+            Sign in
           </Button>
         </form>
 
-        <p className="text-xs text-muted-foreground text-center">By subscribing you agree to our <a className="underline hover:no-underline" href="#">Privacy Policy</a>.</p>
+        <div className="flex items-center gap-3 before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border">
+          <span className="text-xs text-muted-foreground">Or</span>
+        </div>
+
+        <Button variant="outline">Login with Google</Button>
+
       </DialogContent>
     </Dialog>
   )

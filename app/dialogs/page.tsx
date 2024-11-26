@@ -24,6 +24,13 @@ const files = [
   "dialog-11",
   "dialog-12",
   "dialog-13",
+  "dialog-14",
+  "dialog-15",
+  "dialog-16",
+  "dialog-17",
+  "dialog-18",
+  "dialog-19",
+  "dialog-20",
 ];
 
 export default function Page() {
