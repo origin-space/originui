@@ -23,7 +23,7 @@ export default function DialogDemo() {
           </DialogDescription>
         </DialogHeader>
         <div className="flex flex-col gap-4">
-          <Textarea id="feedback" placeholder="How can we improve origin UI?" aria-label="Send feedback" />
+          <Textarea id="feedback" placeholder="How can we improve Origin UI?" aria-label="Send feedback" />
           <div className="flex flex-col sm:flex-row sm:justify-end">
             <Button type="button">
               Send feedback

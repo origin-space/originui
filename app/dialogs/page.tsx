@@ -23,6 +23,7 @@ const files = [
   "dialog-10",
   "dialog-11",
   "dialog-12",
+  "dialog-13",
 ];
 
 export default function Page() {
