@@ -10,8 +10,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { useSliderWithInput } from "@/hooks/use-slider-with-input";
 import { RotateCcw } from "lucide-react";
 
-export default function SliderDemo(
-) {
+export default function SliderDemo() {
   const minValue = 0.0;
   const maxValue = 2;
   const initialValue = [1.25];

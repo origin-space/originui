@@ -85,8 +85,7 @@ const frameworks = [
   },
 ];
 
-export default function SelectDemo(
-) {
+export default function SelectDemo() {
   const [open, setOpen] = useState<boolean>(false);
   const [value, setValue] = useState<string>("");
 

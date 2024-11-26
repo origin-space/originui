@@ -10,8 +10,7 @@ const items = [
   { id: "checkbox-18-c7", value: "c7", label: "Sunday", disabled: true },
 ];
 
-export default function CheckboxDemo(
-) {
+export default function CheckboxDemo() {
   return (
     <fieldset className="space-y-4">
       <legend className="text-sm font-medium leading-none text-foreground">Days of the week</legend>

@@ -10,8 +10,7 @@ import {
 } from "@/components/ui/select";
 import { Clock } from "lucide-react";
 
-export default function SelectDemo(
-) {
+export default function SelectDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-17">Select with icon</Label>

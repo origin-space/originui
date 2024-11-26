@@ -23,8 +23,7 @@ const Square = ({ className, children }: { className?: string; children: React.R
   </span>
 );
 
-export default function SelectDemo(
-) {
+export default function SelectDemo() {
   return (
     <div className="space-y-2">
       <Label htmlFor="select-39">Options with placeholder avatar</Label>

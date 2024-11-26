@@ -129,8 +129,7 @@ const items = [
   { id: 120, price: 900 },
 ];
 
-export default function SliderDemo(
-) {
+export default function SliderDemo() {
   // Define the number of ticks
   const tick_count = 40;
   // Find the min and max values across all items

@@ -7,8 +7,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { Bookmark } from "lucide-react";
 import { useState } from "react";
 
-export default function ButtonDemo(
-) {
+export default function ButtonDemo() {
   const [bookmarked, setBookmarked] = useState<boolean>(false);
   return (
     <TooltipProvider>

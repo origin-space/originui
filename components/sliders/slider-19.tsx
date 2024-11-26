@@ -5,8 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { useSliderWithInput } from "@/hooks/use-slider-with-input";
 
-export default function SliderDemo(
-) {
+export default function SliderDemo() {
   const minValue = 0;
   const maxValue = 200;
   const initialValue = [50, 150];

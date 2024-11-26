@@ -8,8 +8,7 @@ import { useSliderWithInput } from "@/hooks/use-slider-with-input";
 import { RotateCcw } from "lucide-react";
 import React, { useRef } from "react";
 
-export default function SliderDemo(
-) {
+export default function SliderDemo() {
   // Create refs to store reset functions
   const resetFunctionsRef = useRef<(() => void)[]>([]);
 

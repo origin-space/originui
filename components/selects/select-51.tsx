@@ -5,8 +5,7 @@
 import { Label } from "@/components/ui/label";
 import { Header, ListBox, ListBoxItem, Section, Separator } from "react-aria-components";
 
-export default function SelectDemo(
-) {
+export default function SelectDemo() {
   return (
     <div className="space-y-2">
       <Label>Listbox with option groups</Label>

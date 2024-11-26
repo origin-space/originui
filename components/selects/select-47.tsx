@@ -68,8 +68,7 @@ const frameworks: Option[] = [
   },
 ];
 
-export default function SelectDemo(
-) {
+export default function SelectDemo() {
   return (
     <div className="space-y-2">
       <Label>Multiselect with placeholder and clear</Label>

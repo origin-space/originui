@@ -3,8 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, Circle } from "lucide-react";
 
-export default function ButtonDemo(
-) {
+export default function ButtonDemo() {
   return (
     <div className="inline-grid w-fit grid-cols-3 gap-1">
       <div></div>
