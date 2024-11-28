@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Check, Store } from "lucide-react";
+import { Check, RefreshCcw } from "lucide-react";
 
 export default function DialogDemo() {
   return (
@@ -21,12 +21,12 @@ export default function DialogDemo() {
         <Button variant="outline">Change plan</Button>
       </DialogTrigger>
       <DialogContent>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 mb-2">
           <div
             className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
             aria-hidden="true"
           >
-            <Store className="opacity-80" size={16} strokeWidth={2} />
+            <RefreshCcw className="opacity-80" size={16} strokeWidth={2} />
           </div>
           <DialogHeader>
             <DialogTitle className="text-left">Change your plan</DialogTitle>

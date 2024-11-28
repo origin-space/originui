@@ -140,7 +140,7 @@ export default function DialogDemo() {
         <DialogFooter className="border-t border-border px-6 py-4 sm:items-center">
           {!hasReadToBottom && (
             <span className="grow text-xs text-muted-foreground max-sm:text-center">
-              Read all to accept
+              Read all terms before accepting.
             </span>
           )}
           <DialogClose asChild>

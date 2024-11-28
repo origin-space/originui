@@ -164,7 +164,7 @@ function ProfileBg({ defaultImage }: { defaultImage?: StaticImageData }) {
   };
 
   return (
-    <div className="h-24">
+    <div className="h-32">
       <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-muted">
         {currentImage && (
           <Image
