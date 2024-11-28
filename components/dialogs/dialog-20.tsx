@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react"
 import {
   Dialog,
   DialogContent,
@@ -12,17 +9,9 @@ import {
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Store, CreditCard, Check } from "lucide-react";
-import { usePaymentInputs } from "react-payment-inputs";
-import images, { type CardImages } from "react-payment-inputs/images";
+import { Store, Check } from "lucide-react";
 
 export default function DialogDemo() {
-  const { meta, getCardNumberProps, getExpiryDateProps, getCVCProps, getCardImageProps } =
-    usePaymentInputs();
-  const [showCouponInput, setShowCouponInput] = useState(false);
-  const [couponCode, setCouponCode] = useState("");
-
   return (
     <Dialog>
       <DialogTrigger asChild>

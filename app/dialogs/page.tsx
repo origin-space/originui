@@ -13,12 +13,12 @@ const directory = "dialogs";
 const files = [
   "dialog-01",
   "dialog-02",
-  "dialog-03",
+  //"dialog-03",
   "dialog-09",
   "dialog-06",
   "dialog-05",
   "dialog-07",
-  "dialog-04",
+  //"dialog-04",
   "dialog-08",
   "dialog-10",
   "dialog-11",
@@ -31,6 +31,9 @@ const files = [
   "dialog-18",
   "dialog-19",
   "dialog-20",
+  "dialog-21",
+  "dialog-23",
+  "dialog-22",
 ];
 
 export default function Page() {
