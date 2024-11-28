@@ -59,8 +59,8 @@ export default function DialogDemo() {
                       </p>
                       <p>
                         Users are responsible for maintaining the confidentiality of their account
-                        credentials. Any activities occurring under a user&lsquo;s account are the sole
-                        responsibility of the account holder. Users must notify the website
+                        credentials. Any activities occurring under a user&lsquo;s account are the
+                        sole responsibility of the account holder. Users must notify the website
                         administrators immediately of any unauthorized account access.
                       </p>
                     </div>
@@ -82,9 +82,10 @@ export default function DialogDemo() {
                         <strong>Limitation of Liability</strong>
                       </p>
                       <p>
-                        The website provides content &ldquo;as is&ldquo; without any warranties. The website
-                        owners shall not be liable for direct, indirect, incidental, consequential,
-                        or punitive damages arising from user interactions with the platform.
+                        The website provides content &ldquo;as is&ldquo; without any warranties. The
+                        website owners shall not be liable for direct, indirect, incidental,
+                        consequential, or punitive damages arising from user interactions with the
+                        platform.
                       </p>
                     </div>
 
