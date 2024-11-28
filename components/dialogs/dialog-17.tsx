@@ -64,24 +64,26 @@ export default function DialogDemo() {
           </DialogHeader>
         </div>
 
-        <form className="space-y-4">
-          <div className="space-y-2">
-            <Label>Invite via email</Label>
-            <div className="space-y-3">
-              {emails.map((email, index) => (
-                <Input
-                  key={index}
-                  id={`team-email-${index + 1}`}
-                  placeholder="hi@yourcompany.com"
-                  type="email"
-                  value={email}
-                  onChange={(e) => handleEmailChange(index, e.target.value)}
-                  ref={index === emails.length - 1 ? lastInputRef : undefined}
-                />
-              ))}
+        <form className="space-y-5">
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <Label>Invite via email</Label>
+              <div className="space-y-3">
+                {emails.map((email, index) => (
+                  <Input
+                    key={index}
+                    id={`team-email-${index + 1}`}
+                    placeholder="hi@yourcompany.com"
+                    type="email"
+                    value={email}
+                    onChange={(e) => handleEmailChange(index, e.target.value)}
+                    ref={index === emails.length - 1 ? lastInputRef : undefined}
+                  />
+                ))}
+              </div>
             </div>
+            <button type="button" onClick={addEmail} className="underline hover:no-underline text-sm">+ Add another</button>
           </div>
-          <button type="button" onClick={addEmail} className="underline hover:no-underline text-sm">+ Add another</button>
           <Button type="button" className="w-full">
             Send invites
           </Button>

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Dialog,
   DialogContent,
@@ -12,8 +14,13 @@ import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { CircleAlert } from "lucide-react"
+import { useState } from "react"
+
+const PROJECT_NAME = "Origin UI"
 
 export default function DialogDemo() {
+  const [inputValue, setInputValue] = useState("")
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -35,10 +42,16 @@ export default function DialogDemo() {
           </DialogHeader>
         </div>
 
-        <div className="space-y-4">
+        <form className="space-y-5">
           <div className="space-y-2">
             <Label htmlFor="project-name">Project name</Label>
-            <Input id="project-name" type="text" placeholder="Type Origin UI to confirm" />
+            <Input 
+              id="project-name" 
+              type="text" 
+              placeholder="Type Origin UI to confirm" 
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+            />
           </div>              
           <DialogFooter>
             <DialogClose asChild>
@@ -46,11 +59,15 @@ export default function DialogDemo() {
                 Cancel
               </Button>
             </DialogClose>
-            <Button type="button" className="flex-1">
+            <Button 
+              type="button" 
+              className="flex-1"
+              disabled={inputValue !== PROJECT_NAME}
+            >
               Delete
             </Button>
           </DialogFooter>
-        </div>
+        </form>
 
       </DialogContent>
     </Dialog>

@@ -41,7 +41,7 @@ export default function DialogDemo() {
           </DialogHeader>
         </div>
 
-        <form className="space-y-4">
+        <form className="space-y-5">
           <div className="space-y-2">
             <div className="relative">
               <Input id="dialog-subscribe" className="peer ps-9" placeholder="hi@yourcompany.com" type="email" aria-label="Email" />

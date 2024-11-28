@@ -41,44 +41,46 @@ export default function DialogDemo() {
           </DialogHeader>
         </div>
 
-        <form className="space-y-4">      
-          <div className="space-y-2">
-            <Label htmlFor="nameOnCard">Name on card</Label>
-            <Input id="nameOnCard" type="text" required />
-          </div>              
-          <div className="space-y-2">
-            <Label htmlFor="cardNumber">Card Number</Label>
-            <div className="relative">
-              <Input {...getCardNumberProps()} className="peer pe-9 [direction:inherit]" />
-              <div className="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground/80 peer-disabled:opacity-50">
-                  {meta.cardType ? (
-                    <svg
-                      className="overflow-hidden rounded-sm"
-                      {...getCardImageProps({ images: images as unknown as CardImages })}
-                      width={20}
-                    />
-                  ) : (
-                    <CreditCard size={16} strokeWidth={2} aria-hidden="true" />
-                  )}
-                </div>        
+        <form className="space-y-5">    
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="nameOnCard">Name on card</Label>
+              <Input id="nameOnCard" type="text" required />
+            </div>              
+            <div className="space-y-2">
+              <Label htmlFor="cardNumber">Card Number</Label>
+              <div className="relative">
+                <Input {...getCardNumberProps()} className="peer pe-9 [direction:inherit]" />
+                <div className="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground/80 peer-disabled:opacity-50">
+                    {meta.cardType ? (
+                      <svg
+                        className="overflow-hidden rounded-sm"
+                        {...getCardImageProps({ images: images as unknown as CardImages })}
+                        width={20}
+                      />
+                    ) : (
+                      <CreditCard size={16} strokeWidth={2} aria-hidden="true" />
+                    )}
+                  </div>        
+              </div>
             </div>
-          </div>
-          <div className="flex gap-4">
-            <div className="flex-1 space-y-2">
-              <Label htmlFor="expiryDate">Expiry date</Label>
-              <Input
-                className="[direction:inherit]"
-                {...getExpiryDateProps()}
-              />
+            <div className="flex gap-4">
+              <div className="flex-1 space-y-2">
+                <Label htmlFor="expiryDate">Expiry date</Label>
+                <Input
+                  className="[direction:inherit]"
+                  {...getExpiryDateProps()}
+                />
+              </div>
+              <div className="flex-1 space-y-2">
+                <Label htmlFor="cvc">CVC</Label>
+                <Input
+                  className="[direction:inherit]"
+                  {...getCVCProps()}
+                />
+              </div>          
             </div>
-            <div className="flex-1 space-y-2">
-              <Label htmlFor="cvc">CVC</Label>
-              <Input
-                className="[direction:inherit]"
-                {...getCVCProps()}
-              />
-            </div>          
-          </div>
+          </div>  
           <div className="flex items-center gap-2">
             <Checkbox id="card-primary" />
             <Label htmlFor="card-primary" className="font-normal text-muted-foreground">Set as default payment method</Label>

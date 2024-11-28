@@ -39,16 +39,16 @@ export default function DialogDemo() {
       <DialogContent className="p-0 sm:max-w-lg flex flex-col gap-0 [&>button:last-child]:top-3.5 overflow-y-visible">
         <DialogHeader className="text-left contents space-y-0">
           <DialogTitle className="px-6 py-4 border-b border-border text-base">Edit profile</DialogTitle>
-          <ProfileBg defaultImage={ProfileBgImg} />
         </DialogHeader>
         <DialogDescription className="sr-only">
           Make changes to your profile here. You can change your photo and set a username.
         </DialogDescription>
-        <Avatar defaultImage={AvatarImg} />
         <div className="overflow-y-auto">
+          <ProfileBg defaultImage={ProfileBgImg} />
+          <Avatar defaultImage={AvatarImg} />
           <div className="px-6 pt-4 pb-6">
             <form className="space-y-4">
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-3">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <div className="flex-1 space-y-2">
                   <Label htmlFor="edit-first-name">First name</Label>
                   <Input id="edit-first-name" placeholder="Matt" defaultValue="Margaret" type="text" required />
@@ -141,7 +141,7 @@ function ProfileBg({ defaultImage }: {
   };
 
   return (
-    <div className="h-24 -mx-px">
+    <div className="h-24">
       <div
         className="relative w-full h-full flex items-center justify-center bg-muted overflow-hidden"
       >

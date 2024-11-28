@@ -42,14 +42,16 @@ export default function DialogDemo() {
           </DialogHeader>
         </div>
 
-        <form className="space-y-4">       
-          <div className="space-y-2">
-            <Label htmlFor="login-email">Email</Label>
-            <Input id="login-email" placeholder="hi@yourcompany.com" type="email" required />
-          </div>              
-          <div className="space-y-2">
-            <Label htmlFor="login-password">Password</Label>
-            <Input id="login-password" placeholder="Enter your password" type="password" required />
+        <form className="space-y-5">
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="login-email">Email</Label>
+              <Input id="login-email" placeholder="hi@yourcompany.com" type="email" required />
+            </div>              
+            <div className="space-y-2">
+              <Label htmlFor="login-password">Password</Label>
+              <Input id="login-password" placeholder="Enter your password" type="password" required />
+            </div>
           </div>
           <div className="flex justify-between gap-2">
             <div className="flex items-center gap-2">

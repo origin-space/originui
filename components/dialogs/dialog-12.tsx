@@ -22,14 +22,14 @@ export default function DialogDemo() {
             Watch <a className="text-foreground hover:underline" href="#">tutorials</a>, read Origin UI&lsquo;s <a className="text-foreground hover:underline" href="#">documentation</a>, or join our <a className="text-foreground hover:underline" href="#">Discord</a> for community help.
           </DialogDescription>
         </DialogHeader>
-        <div className="flex flex-col gap-4">
+        <form className="space-y-5">
           <Textarea id="feedback" placeholder="How can we improve Origin UI?" aria-label="Send feedback" />
           <div className="flex flex-col sm:flex-row sm:justify-end">
             <Button type="button">
               Send feedback
             </Button>
           </div>
-        </div>
+        </form>
       </DialogContent>
     </Dialog>
   )

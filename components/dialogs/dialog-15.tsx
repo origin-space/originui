@@ -41,18 +41,20 @@ export default function DialogDemo() {
           </DialogHeader>
         </div>
 
-        <form className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="signup-name">Full name</Label>
-            <Input id="signup-name" placeholder="Matt Welsh" type="text" required />
-          </div>             
-          <div className="space-y-2">
-            <Label htmlFor="signup-email">Email</Label>
-            <Input id="signup-email" placeholder="hi@yourcompany.com" type="email" required />
-          </div>              
-          <div className="space-y-2">
-            <Label htmlFor="signup-password">Password</Label>
-            <Input id="signup-password" placeholder="Enter your password" type="password" required />
+        <form className="space-y-5">
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="signup-name">Full name</Label>
+              <Input id="signup-name" placeholder="Matt Welsh" type="text" required />
+            </div>             
+            <div className="space-y-2">
+              <Label htmlFor="signup-email">Email</Label>
+              <Input id="signup-email" placeholder="hi@yourcompany.com" type="email" required />
+            </div>              
+            <div className="space-y-2">
+              <Label htmlFor="signup-password">Password</Label>
+              <Input id="signup-password" placeholder="Enter your password" type="password" required />
+            </div>
           </div>
           <Button type="button" className="w-full">
             Sign up

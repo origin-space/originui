@@ -34,7 +34,7 @@ export default function DialogDemo() {
           </DialogHeader>
         </div>
 
-        <form className="space-y-4">
+        <form className="space-y-5">
           <RadioGroup className="gap-2" defaultValue="plan-02">
             {/* Radio card #1 */}
             <div className="relative flex w-full items-center gap-2 rounded-lg border border-input px-4 py-3 shadow-sm shadow-black/5 has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent">
