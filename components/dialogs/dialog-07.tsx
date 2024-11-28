@@ -14,7 +14,7 @@ export default function DialogDemo() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Sticky footer</Button>
+        <Button variant="outline">Scrollable (sticky footer)</Button>
       </DialogTrigger>
       <DialogContent className="p-0 sm:max-w-lg sm:max-h-[min(640px,80vh)] flex flex-col gap-0 [&>button:last-child]:hidden">
         <div className="overflow-y-auto">

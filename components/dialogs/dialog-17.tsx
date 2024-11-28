@@ -51,7 +51,7 @@ export default function DialogDemo() {
       }}>
         <div className="flex flex-col gap-2">
           <div
-            className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border"
+            className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
             aria-hidden="true"
           >
             <UserRoundPlus className="opacity-80" size={16} strokeWidth={2} />

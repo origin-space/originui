@@ -5,6 +5,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from "@/components/ui/dialog"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Button } from "@/components/ui/button"
@@ -20,7 +21,7 @@ export default function DialogDemo() {
       <DialogContent>
         <div className="flex flex-col gap-2">
           <div
-            className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border"
+            className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
             aria-hidden="true"
           >
             <Store className="opacity-80" size={16} strokeWidth={2} />
@@ -122,9 +123,11 @@ export default function DialogDemo() {
             <Button type="button" className="w-full">
               Change plan
             </Button>
-            <Button type="button" variant="ghost" className="w-full">
-              Cancel
-            </Button>
+            <DialogClose asChild>
+              <Button type="button" variant="ghost" className="w-full">
+                Cancel
+              </Button>
+            </DialogClose>
           </div>
         </form>
 

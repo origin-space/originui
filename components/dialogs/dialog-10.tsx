@@ -38,7 +38,7 @@ export default function DialogDemo() {
         <div className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="project-name">Project name</Label>
-            <Input id="project-name" type="text" placeholder="Type Origin UI" />
+            <Input id="project-name" type="text" placeholder="Type Origin UI to confirm" />
           </div>              
           <DialogFooter>
             <DialogClose asChild>
@@ -46,7 +46,7 @@ export default function DialogDemo() {
                 Cancel
               </Button>
             </DialogClose>
-            <Button type="button" className="flex-1" variant="destructive">
+            <Button type="button" className="flex-1">
               Delete
             </Button>
           </DialogFooter>

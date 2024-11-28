@@ -28,7 +28,7 @@ export default function DialogDemo() {
       <DialogContent>
         <div className="flex flex-col gap-2">
           <div
-            className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border"
+            className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
             aria-hidden="true"
           >
             <Wallet className="opacity-80" size={16} strokeWidth={2} />
@@ -81,7 +81,7 @@ export default function DialogDemo() {
           </div>
           <div className="flex items-center gap-2">
             <Checkbox id="card-primary" />
-            <Label htmlFor="card-primary">Set as default payment method</Label>
+            <Label htmlFor="card-primary" className="font-normal text-muted-foreground">Set as default payment method</Label>
           </div>            
           <Button type="button" className="w-full">
             Update card

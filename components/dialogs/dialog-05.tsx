@@ -14,7 +14,7 @@ export default function DialogDemo() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Sticky header</Button>
+        <Button variant="outline">Scrollable (sticky header)</Button>
       </DialogTrigger>
       <DialogContent className="p-0 sm:max-w-lg sm:max-h-[min(640px,80vh)] flex flex-col gap-0 [&>button:last-child]:top-3.5">
         <DialogHeader className="text-left contents space-y-0">

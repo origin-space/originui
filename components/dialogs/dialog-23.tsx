@@ -52,7 +52,7 @@ export default function DialogDemo() {
       if (open) setStep(1)
     }}>
       <DialogTrigger asChild>
-        <Button variant="outline">Walk-through</Button>
+        <Button variant="outline">Onboarding</Button>
       </DialogTrigger>
       <DialogContent className="p-0 gap-0 [&>button:last-child]:text-white">
         <div className="p-2">

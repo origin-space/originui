@@ -57,17 +57,17 @@ export default function DialogDemo() {
             <CommandItem>
               <FolderPlus size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
               <span>New folder</span>
-              <CommandShortcut className="min-w-7 justify-center">⌘N</CommandShortcut>              
+              <CommandShortcut className="justify-center">⌘N</CommandShortcut>              
             </CommandItem>
             <CommandItem>
               <FileInput size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
               <span>Import document</span>
-              <CommandShortcut className="min-w-7 justify-center">⌘I</CommandShortcut> 
+              <CommandShortcut className="justify-center">⌘I</CommandShortcut> 
             </CommandItem>
             <CommandItem>
               <CircleFadingPlus size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
               <span>Add block</span>
-              <CommandShortcut className="min-w-7 justify-center">⌘B</CommandShortcut>
+              <CommandShortcut className="justify-center">⌘B</CommandShortcut>
             </CommandItem>
           </CommandGroup>
           <CommandSeparator />

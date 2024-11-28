@@ -7,7 +7,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Mail } from "lucide-react"
 
@@ -15,12 +14,12 @@ export default function DialogDemo() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Subscribe</Button>
+        <Button variant="outline">Newsletter</Button>
       </DialogTrigger>
       <DialogContent>
         <div className="flex flex-col items-center gap-2">
           <div
-            className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border"
+            className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
             aria-hidden="true"
           >
             <svg
@@ -44,9 +43,8 @@ export default function DialogDemo() {
 
         <form className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="subscribe-email">Email</Label>
             <div className="relative">
-              <Input id="input-09" className="peer ps-9" placeholder="hi@yourcompany.com" type="email" />
+              <Input id="dialog-subscribe" className="peer ps-9" placeholder="hi@yourcompany.com" type="email" aria-label="Email" />
               <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 peer-disabled:opacity-50">
                 <Mail size={16} strokeWidth={2} aria-hidden="true" />
               </div>

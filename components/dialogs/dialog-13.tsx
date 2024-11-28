@@ -14,7 +14,7 @@ export default function DialogDemo() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Rate us</Button>
+        <Button variant="outline">Rating</Button>
       </DialogTrigger>
       <DialogContent className="p-0 flex flex-col gap-0 [&>button:last-child]:top-3.5">
         <DialogHeader className="text-left contents space-y-0">
@@ -32,7 +32,7 @@ export default function DialogDemo() {
                   {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((number) => (
                     <label
                       key={number}
-                      className="relative flex size-9 flex-1 cursor-pointer flex-col items-center justify-center gap-3 border border-input text-center text-sm font-medium outline-offset-2 transition-colors first:rounded-s-lg last:rounded-e-lg has-[[data-state=checked]]:z-10 has-[[data-disabled]]:cursor-not-allowed has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent has-[[data-disabled]]:opacity-50 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70"
+                      className="relative flex size-9 flex-1 cursor-pointer flex-col items-center justify-center gap-3 border border-input text-center text-sm outline-offset-2 transition-colors first:rounded-s-lg last:rounded-e-lg has-[[data-state=checked]]:z-10 has-[[data-disabled]]:cursor-not-allowed has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent has-[[data-disabled]]:opacity-50 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70"
                     >
                       <RadioGroupItem
                         id={`radio-17-r${number}`}

@@ -20,7 +20,7 @@ export default function DialogDemo() {
       <DialogContent>
         <div className="flex flex-col items-center gap-2">
           <div
-            className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border"
+            className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
             aria-hidden="true"
           >
             <svg
@@ -54,9 +54,9 @@ export default function DialogDemo() {
           <div className="flex justify-between gap-2">
             <div className="flex items-center gap-2">
               <Checkbox id="login-remember" />
-              <Label htmlFor="login-remember">Remember me</Label>
+              <Label htmlFor="login-remember" className="font-normal text-muted-foreground">Remember me</Label>
             </div>            
-            <a className="text-sm text-muted-foreground hover:underline" href="#">Forgot password?</a>          
+            <a className="text-sm underline hover:no-underline" href="#">Forgot password?</a>          
           </div>
           <Button type="button" className="w-full">
             Sign in

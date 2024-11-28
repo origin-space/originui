@@ -13,7 +13,7 @@ export default function DialogDemo() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Send feedback</Button>
+        <Button variant="outline">Feedback</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>

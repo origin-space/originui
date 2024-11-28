@@ -11,17 +11,47 @@ import {
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils";
 import { OTPInput, SlotProps } from "input-otp";
+import { useState, useRef, useEffect } from "react";
+import { Check } from "lucide-react";
+import { DialogClose } from "@radix-ui/react-dialog";
+
+const CORRECT_CODE = '6548'
 
 export default function DialogDemo() {
+  const [value, setValue] = useState('')
+  const [hasGuessed, setHasGuessed] = useState<undefined|boolean>(undefined)
+  const inputRef = useRef<HTMLInputElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    if (hasGuessed) {
+      closeButtonRef.current?.focus()
+    }
+  }, [hasGuessed])
+
+  async function onSubmit(e?: React.FormEvent<HTMLFormElement>) {
+    e?.preventDefault?.()
+
+    inputRef.current?.select()
+    await new Promise(r => setTimeout(r, 1_00))
+
+    setHasGuessed(value === CORRECT_CODE)
+
+    setValue('')
+    setTimeout(() => {
+      inputRef.current?.blur()
+    }, 20)
+  }
+
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Confirmation code</Button>
+        <Button variant="outline">OTP code</Button>
       </DialogTrigger>
       <DialogContent>
         <div className="flex flex-col items-center gap-2">
           <div
-            className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border"
+            className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
             aria-hidden="true"
           >
             <svg
@@ -36,31 +66,52 @@ export default function DialogDemo() {
             </svg>
           </div>
           <DialogHeader>
-            <DialogTitle className="sm:text-center">Enter confirmation code</DialogTitle>
+            <DialogTitle className="sm:text-center">
+              {hasGuessed ? 'Code verified!' : 'Enter confirmation code'}
+            </DialogTitle>
             <DialogDescription className="sm:text-center">
-            Kindly check your email and enter the code.
+              {hasGuessed 
+                ? 'Your code has been successfully verified.'
+                : `Check your email and enter the code - Try ${CORRECT_CODE}`}
             </DialogDescription>
           </DialogHeader>
         </div>
 
-        <div className="space-y-4">
-          <div className="flex justify-center">
-            <OTPInput
-              id="input-58"
-              containerClassName="flex items-center gap-3 has-[:disabled]:opacity-50"
-              maxLength={4}
-              render={({ slots }) => (
-                <div className="flex gap-2">
-                  {slots.map((slot, idx) => (
-                    <Slot key={idx} {...slot} />
-                  ))}
-                </div>
-              )}
-            />          
+        {hasGuessed ? (
+          <div className="text-center">
+            <DialogClose asChild>
+              <Button type="button" ref={closeButtonRef}>Close</Button>
+            </DialogClose>
           </div>
-          <p className="text-sm text-center"><a className="underline hover:no-underline" href="#">Resend code</a></p>
-        </div>
-
+        ) : (
+          <div className="space-y-4">
+            <div className="flex justify-center">
+              <OTPInput
+                id="cofirmation-code"
+                ref={inputRef}
+                value={value}
+                onChange={setValue}
+                containerClassName="flex items-center gap-3 has-[:disabled]:opacity-50"
+                maxLength={4}
+                onFocus={() => setHasGuessed(undefined)}
+                render={({ slots }) => (
+                  <div className="flex gap-2">
+                    {slots.map((slot, idx) => (
+                      <Slot key={idx} {...slot} />
+                    ))}
+                  </div>
+                )}
+                onComplete={onSubmit}
+              />
+            </div>
+            {hasGuessed === false && (
+              <p className="text-xs text-center text-muted-foreground" role="alert" aria-live="polite">Invalid code. Please try again.</p>
+            )}
+            <p className="text-sm text-center">
+              <a className="underline hover:no-underline" href="#">Resend code</a>
+            </p>
+          </div>
+        )}
       </DialogContent>
     </Dialog>
   )
