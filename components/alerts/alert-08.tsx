@@ -4,7 +4,7 @@ import { Info } from "lucide-react";
 
 export default function AlertDemo() {
   return (
-    <div className="rounded-lg bg-blue-400 bg-opacity-20 px-4 py-3 text-blue-700 dark:bg-opacity-10 dark:text-blue-600">
+    <div className="rounded-lg border border-blue-500/50 px-4 py-3 text-blue-600">
       <p className="text-sm">
         <Info
           className="-mt-0.5 me-3 inline-flex opacity-60"

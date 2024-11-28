@@ -4,7 +4,7 @@ import { CircleCheck } from "lucide-react";
 
 export default function AlertDemo() {
   return (
-    <div className="rounded-lg bg-emerald-400 bg-opacity-20 px-4 py-3 text-emerald-700 dark:bg-opacity-10 dark:text-emerald-600">
+    <div className="rounded-lg border border-emerald-500/50 px-4 py-3 text-emerald-600">
       <p className="text-sm">
         <CircleCheck
           className="-mt-0.5 me-3 inline-flex opacity-60"

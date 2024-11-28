@@ -23,8 +23,6 @@ const alertFiles = [
   "alert-10",
   "alert-11",
   "alert-12",
-  "alert-13",
-  "alert-14",
 ];
 
 const notificationDir = "notifications";
@@ -66,10 +64,6 @@ const bannerFiles = [
   "banner-09",
   "banner-10",
   "banner-11",
-  "banner-12",
-  "banner-13",
-  "banner-14",
-  "banner-15",
 ];
 
 const totalAlerts = alertFiles.length;

@@ -4,7 +4,7 @@ import { ArrowRight, TriangleAlert } from "lucide-react";
 
 export default function AlertDemo() {
   return (
-    <div className="rounded-lg bg-amber-400 bg-opacity-20 px-4 py-3 text-amber-700 dark:bg-opacity-10 dark:text-amber-600">
+    <div className="rounded-lg border border-amber-500/50 px-4 py-3 text-amber-600">
       <div className="flex gap-3">
         <TriangleAlert
           className="mt-0.5 shrink-0 opacity-60"
