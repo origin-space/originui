@@ -1,44 +1,118 @@
-// Dependencies: pnpm install lucide-react react-aria-components
-
 "use client";
 
+import { cn } from "@/lib/utils";
 import { Minus, Plus } from "lucide-react";
-import { Button, Group, Input, Label, NumberField } from "react-aria-components";
+import { ChangeEvent, useMemo, useState } from "react";
 
-export default function InputDemo() {
+interface NumberInputProps {
+  defaultValue?: number;
+  minValue?: number;
+  maxValue?: number;
+  step?: number;
+}
+
+export default function InputDemo({
+  defaultValue = 2.048,
+  minValue = 0,
+  maxValue,
+  step,
+}: NumberInputProps) {
+  const [inputValue, setInputValue] = useState(defaultValue.toString());
+
+  const { precision, effectiveStep } = useMemo(() => {
+    const calculatePrecision = (num: number) => {
+      const decimalPart = num.toString().split(".")[1];
+      return decimalPart?.length || 0;
+    };
+
+    const parsedValue = parseFloat(inputValue);
+    const activePrecision = !isNaN(parsedValue)
+      ? calculatePrecision(parsedValue)
+      : calculatePrecision(step ?? defaultValue);
+
+    return {
+      precision: activePrecision,
+      effectiveStep: step ?? Math.pow(10, -activePrecision),
+    };
+  }, [inputValue, step, defaultValue]);
+
+  const validateValue = (value: number) => {
+    return Math.min(Math.max(value, minValue ?? -Infinity), maxValue ?? Infinity);
+  };
+
+  const adjustValue = (isIncrement: boolean) => {
+    const currentValue = parseFloat(inputValue) || 0;
+    const multiplier = Math.pow(10, precision);
+
+    const newValue = validateValue(
+      (Math.round(currentValue * multiplier) +
+        Math.round(effectiveStep * multiplier) * (isIncrement ? 1 : -1)) /
+        multiplier,
+    );
+
+    setInputValue(newValue.toFixed(precision));
+  };
+
+  const handleChange = ({ target: { value } }: ChangeEvent<HTMLInputElement>) => {
+    if (/^-?\d*\.?\d*$/.test(value) || /^[-.]$/.test(value)) {
+      setInputValue(value);
+    }
+  };
+
+  const handleBlur = () => {
+    const parsedValue = parseFloat(inputValue);
+    if (isNaN(parsedValue)) {
+      setInputValue(defaultValue.toFixed(precision));
+      return;
+    }
+    setInputValue(validateValue(parsedValue).toFixed(precision));
+  };
+
+  const buttonBaseClass = cn(
+    "flex h-full w-9 items-center justify-center border-input bg-background text-foreground",
+    "hover:bg-accent hover:text-accent-foreground disabled:cursor-not-allowed disabled:opacity-50",
+  );
+
   return (
-    <NumberField defaultValue={2048} minValue={0}>
-      <div className="space-y-2">
-        <Label className="text-sm font-medium text-foreground">
-          Number input with plus/minus buttons
-        </Label>
-        <Group className="relative inline-flex h-9 w-full items-center overflow-hidden whitespace-nowrap rounded-lg border border-input text-sm shadow-sm shadow-black/5 transition-shadow data-[focus-within]:border-ring data-[disabled]:opacity-50 data-[focus-within]:outline-none data-[focus-within]:ring-[3px] data-[focus-within]:ring-ring/20">
-          <Button
-            slot="decrement"
-            className="-ms-px flex aspect-square h-[inherit] items-center justify-center rounded-s-lg border border-input bg-background text-sm text-muted-foreground/80 transition-shadow hover:bg-accent hover:text-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            <Minus size={16} strokeWidth={2} aria-hidden="true" />
-          </Button>
-          <Input className="w-full grow bg-background px-3 py-2 text-center tabular-nums text-foreground focus:outline-none" />
-          <Button
-            slot="increment"
-            className="-me-px flex aspect-square h-[inherit] items-center justify-center rounded-e-lg border border-input bg-background text-sm text-muted-foreground/80 transition-shadow hover:bg-accent hover:text-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            <Plus size={16} strokeWidth={2} aria-hidden="true" />
-          </Button>
-        </Group>
-      </div>
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
-        Built with{" "}
-        <a
-          className="underline hover:text-foreground"
-          href="https://react-spectrum.adobe.com/react-aria/DateField.html"
-          target="_blank"
-          rel="noopener nofollow"
+    <div className="space-y-2">
+      <label className="text-sm font-medium text-foreground">
+        Number input with plus/minus buttons
+      </label>
+      <div
+        className={cn(
+          "flex h-9 w-full items-center rounded-md border border-input bg-transparent px-0",
+          "shadow-sm transition-colors focus-within:border-ring focus-within:outline-none focus-within:ring-[3px] focus-within:ring-ring/20",
+        )}
+      >
+        <button
+          onClick={() => adjustValue(false)}
+          className={cn(buttonBaseClass, "rounded-l-md border-r")}
+          disabled={minValue !== undefined && parseFloat(inputValue) <= minValue}
         >
-          React Aria
-        </a>
-      </p>
-    </NumberField>
+          <Minus size={16} strokeWidth={2} aria-hidden="true" />
+        </button>
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          className={cn(
+            "h-full w-full bg-transparent text-center text-sm",
+            "placeholder:text-muted-foreground",
+            "focus:outline-none",
+          )}
+          min={minValue}
+          max={maxValue}
+          pattern="^-?\d*\.?\d*$"
+        />
+        <button
+          onClick={() => adjustValue(true)}
+          className={cn(buttonBaseClass, "rounded-r-md border-l")}
+          disabled={maxValue !== undefined && parseFloat(inputValue) >= maxValue}
+        >
+          <Plus size={16} strokeWidth={2} aria-hidden="true" />
+        </button>
+      </div>
+    </div>
   );
 }
