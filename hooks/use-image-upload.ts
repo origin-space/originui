@@ -14,16 +14,19 @@ export function useImageUpload({ onUpload }: UseImageUploadProps = {}) {
     fileInputRef.current?.click();
   }, []);
 
-  const handleFileChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      setFileName(file.name);
-      const url = URL.createObjectURL(file);
-      setPreviewUrl(url);
-      previewRef.current = url;
-      onUpload?.(url);
-    }
-  }, [onUpload]);
+  const handleFileChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const file = event.target.files?.[0];
+      if (file) {
+        setFileName(file.name);
+        const url = URL.createObjectURL(file);
+        setPreviewUrl(url);
+        previewRef.current = url;
+        onUpload?.(url);
+      }
+    },
+    [onUpload],
+  );
 
   const handleRemove = useCallback(() => {
     if (previewUrl) {

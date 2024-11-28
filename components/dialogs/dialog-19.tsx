@@ -1,143 +1,247 @@
+// Dependencies: pnpm install lucide-react
+
 "use client";
 
-import { useState } from "react"
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Store, CreditCard } from "lucide-react";
-import { usePaymentInputs } from "react-payment-inputs";
-import images, { type CardImages } from "react-payment-inputs/images";
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { useCharacterLimit } from "@/hooks/use-character-limit";
+import { useImageUpload } from "@/hooks/use-image-upload";
+import AvatarImg from "@/public/avatar-72-01.jpg";
+import ProfileBgImg from "@/public/profile-bg.jpg";
+import { Check, ImagePlus, X } from "lucide-react";
+import Image, { StaticImageData } from "next/image";
+import { useState } from "react";
 
 export default function DialogDemo() {
-  const { meta, getCardNumberProps, getExpiryDateProps, getCVCProps, getCardImageProps } =
-    usePaymentInputs();
-  const [showCouponInput, setShowCouponInput] = useState(false);
-  const [couponCode, setCouponCode] = useState("");
+  const maxLength = 180;
+  const {
+    value,
+    characterCount,
+    handleChange,
+    maxLength: limit,
+  } = useCharacterLimit({
+    maxLength,
+    initialValue:
+      "Hey, I am Margaret, a web developer who loves turning ideas into amazing websites!",
+  });
 
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Checkout</Button>
+        <Button variant="outline">Edit profile</Button>
       </DialogTrigger>
-      <DialogContent>
-        <div className="flex flex-col gap-2">
-          <div
-            className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
-            aria-hidden="true"
-          >
-            <Store className="opacity-80" size={16} strokeWidth={2} />
-          </div>
-          <DialogHeader>
-            <DialogTitle className="text-left">Confirm and pay</DialogTitle>
-            <DialogDescription className="text-left">
-              Pay securely and cancel any time.
-            </DialogDescription>
-          </DialogHeader>
-        </div>
-
-        <form className="space-y-5">
-          <div className="space-y-4">
-            <RadioGroup className="grid-cols-2" defaultValue="yearly">
-              {/* Monthly */}
-              <label className="relative flex flex-col gap-1 cursor-pointer rounded-lg border border-input px-4 py-3 shadow-sm shadow-black/5 outline-offset-2 transition-colors has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70">
-                <RadioGroupItem
-                  id="radio-monthly"
-                  value="monthly"
-                  className="sr-only after:absolute after:inset-0"
-                />
-                <p className="text-sm font-medium text-foreground">Monthly</p>
-                <p className="text-sm text-muted-foreground">$32/month</p>
-              </label>
-              {/* Yearly */}
-              <label className="relative flex flex-col gap-1 cursor-pointer rounded-lg border border-input px-4 py-3 shadow-sm shadow-black/5 outline-offset-2 transition-colors has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70">
-                <RadioGroupItem
-                  id="radio-yearly"
-                  value="yearly"
-                  className="sr-only after:absolute after:inset-0"
-                />
-                <div className="inline-flex items-start justify-between gap-2">
-                  <p className="text-sm font-medium text-foreground">Yearly</p>
-                  <div className="text-xs leading-5 inline-flex items-center rounded-full bg-primary px-2 font-medium text-primary-foreground">Popular</div>
-                </div>
-                <p className="text-sm text-muted-foreground">$320/month</p>
-              </label>
-            </RadioGroup>
-            <div className="space-y-2">
-              <Label htmlFor="nameOnCard">Name on card</Label>
-              <Input id="nameOnCard" type="text" required />
-            </div>
-            <div className="space-y-2">
-              <legend className="text-sm font-medium text-foreground">Card Details</legend>
-              <div className="rounded-lg shadow-sm shadow-black/5">
-                <div className="relative focus-within:z-10">
+      <DialogContent className="flex flex-col gap-0 overflow-y-visible p-0 sm:max-w-lg [&>button:last-child]:top-3.5">
+        <DialogHeader className="contents space-y-0 text-left">
+          <DialogTitle className="border-b border-border px-6 py-4 text-base">
+            Edit profile
+          </DialogTitle>
+        </DialogHeader>
+        <DialogDescription className="sr-only">
+          Make changes to your profile here. You can change your photo and set a username.
+        </DialogDescription>
+        <div className="overflow-y-auto">
+          <ProfileBg defaultImage={ProfileBgImg} />
+          <Avatar defaultImage={AvatarImg} />
+          <div className="px-6 pb-6 pt-4">
+            <form className="space-y-4">
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <div className="flex-1 space-y-2">
+                  <Label htmlFor="edit-first-name">First name</Label>
                   <Input
-                    className="peer rounded-b-none pe-9 shadow-none [direction:inherit]"
-                    {...getCardNumberProps()}
+                    id="edit-first-name"
+                    placeholder="Matt"
+                    defaultValue="Margaret"
+                    type="text"
+                    required
+                  />
+                </div>
+                <div className="flex-1 space-y-2">
+                  <Label htmlFor="edit-last-name">Last name</Label>
+                  <Input
+                    id="edit-last-name"
+                    placeholder="Welsh"
+                    defaultValue="Villard"
+                    type="text"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="edit-username">Username</Label>
+                <div className="relative">
+                  <Input
+                    id="edit-username"
+                    className="peer pe-9"
+                    placeholder="Username"
+                    defaultValue="margaret-villard-69"
+                    type="text"
+                    required
                   />
                   <div className="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground/80 peer-disabled:opacity-50">
-                    {meta.cardType ? (
-                      <svg
-                        className="overflow-hidden rounded-sm"
-                        {...getCardImageProps({ images: images as unknown as CardImages })}
-                        width={20}
-                      />
-                    ) : (
-                      <CreditCard size={16} strokeWidth={2} aria-hidden="true" />
-                    )}
-                  </div>
-                </div>
-                <div className="-mt-px flex">
-                  <div className="min-w-0 flex-1 focus-within:z-10">
-                    <Input
-                      className="rounded-e-none rounded-t-none shadow-none [direction:inherit]"
-                      {...getExpiryDateProps()}
-                    />
-                  </div>
-                  <div className="-ms-px min-w-0 flex-1 focus-within:z-10">
-                    <Input
-                      className="rounded-s-none rounded-t-none shadow-none [direction:inherit]"
-                      {...getCVCProps()}
+                    <Check
+                      size={16}
+                      strokeWidth={2}
+                      className="text-emerald-500"
+                      aria-hidden="true"
                     />
                   </div>
                 </div>
               </div>
-            </div>
-            {!showCouponInput ? (
-              <button
-                type="button"
-                onClick={() => setShowCouponInput(true)}
-                className="underline hover:no-underline text-sm"
-              >
-                + Add coupon
-              </button>
-            ) : (
               <div className="space-y-2">
-                <Label htmlFor="coupon">Coupon code</Label>
-                <Input
-                  id="coupon"
-                  placeholder="Enter your code"
-                  value={couponCode}
-                  onChange={(e) => setCouponCode(e.target.value)}
-                />
+                <Label htmlFor="edit-website">Website</Label>
+                <div className="flex rounded-lg shadow-sm shadow-black/5">
+                  <span className="-z-10 inline-flex items-center rounded-s-lg border border-input bg-background px-3 text-sm text-muted-foreground">
+                    https://
+                  </span>
+                  <Input
+                    id="edit-website"
+                    className="-ms-px rounded-s-none shadow-none"
+                    placeholder="yourwebsite.com"
+                    defaultValue="www.margaret.com"
+                    type="text"
+                  />
+                </div>
               </div>
-            )}
+              <div className="space-y-2">
+                <Label htmlFor="edit-bio">Biography</Label>
+                <Textarea
+                  id="edit-bio"
+                  placeholder="Write a few sentences about yourself"
+                  defaultValue={value}
+                  maxLength={maxLength}
+                  onChange={handleChange}
+                  aria-describedby="characters-left-textarea"
+                />
+                <p
+                  id="characters-left-textarea"
+                  className="mt-2 text-right text-xs text-muted-foreground"
+                  role="status"
+                  aria-live="polite"
+                >
+                  <span className="tabular-nums">{limit - characterCount}</span> characters left
+                </p>
+              </div>
+            </form>
           </div>
-          <Button type="button" className="w-full">
-            Subscribe
-          </Button>
-        </form>
-
-        <p className="text-xs text-muted-foreground text-center">Payments are non-refundable. Cancel anytime.</p>
+        </div>
+        <DialogFooter className="border-t border-border px-6 py-4">
+          <DialogClose asChild>
+            <Button type="button" variant="outline">
+              Cancel
+            </Button>
+          </DialogClose>
+          <DialogClose asChild>
+            <Button type="button">Save changes</Button>
+          </DialogClose>
+        </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  );
+}
+
+function ProfileBg({ defaultImage }: { defaultImage?: StaticImageData }) {
+  const [hideDefault, setHideDefault] = useState(false);
+  const { previewUrl, fileInputRef, handleThumbnailClick, handleFileChange, handleRemove } =
+    useImageUpload();
+
+  const currentImage = previewUrl || (!hideDefault ? defaultImage : null);
+
+  const handleImageRemove = () => {
+    handleRemove();
+    setHideDefault(true);
+  };
+
+  return (
+    <div className="h-24">
+      <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-muted">
+        {currentImage && (
+          <Image
+            className="h-full w-full object-cover"
+            src={currentImage}
+            alt={previewUrl ? "Preview of uploaded image" : "Default profile background"}
+            width={512}
+            height={96}
+          />
+        )}
+        <div className="absolute inset-0 flex items-center justify-center gap-2">
+          <button
+            type="button"
+            className="z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-offset-2 transition-colors hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
+            onClick={handleThumbnailClick}
+            aria-label={currentImage ? "Change image" : "Upload image"}
+          >
+            <ImagePlus size={16} strokeWidth={2} aria-hidden="true" />
+          </button>
+          {currentImage && (
+            <button
+              type="button"
+              className="z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-offset-2 transition-colors hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
+              onClick={handleImageRemove}
+              aria-label="Remove image"
+            >
+              <X size={16} strokeWidth={2} aria-hidden="true" />
+            </button>
+          )}
+        </div>
+      </div>
+      <input
+        type="file"
+        ref={fileInputRef}
+        onChange={handleFileChange}
+        className="hidden"
+        accept="image/*"
+        aria-label="Upload image file"
+      />
+    </div>
+  );
+}
+
+function Avatar({ defaultImage }: { defaultImage?: StaticImageData }) {
+  const { previewUrl, fileInputRef, handleThumbnailClick, handleFileChange } = useImageUpload();
+
+  const currentImage = previewUrl || defaultImage;
+
+  return (
+    <div className="-mt-10 px-6">
+      <div className="relative flex size-20 items-center justify-center overflow-hidden rounded-full border-4 border-background bg-muted shadow-sm shadow-black/10">
+        {currentImage && (
+          <Image
+            src={currentImage}
+            className="h-full w-full object-cover"
+            width={80}
+            height={80}
+            alt="Profile image"
+          />
+        )}
+        <button
+          type="button"
+          className="absolute flex size-8 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-offset-2 transition-colors hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
+          onClick={handleThumbnailClick}
+          aria-label="Change profile picture"
+        >
+          <ImagePlus size={16} strokeWidth={2} aria-hidden="true" />
+        </button>
+        <input
+          type="file"
+          ref={fileInputRef}
+          onChange={handleFileChange}
+          className="hidden"
+          accept="image/*"
+          aria-label="Upload profile picture"
+        />
+      </div>
+    </div>
+  );
 }

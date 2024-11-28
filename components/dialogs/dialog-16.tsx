@@ -1,3 +1,9 @@
+// Dependencies: pnpm install lucide-react react-payment-inputs
+
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Dialog,
   DialogContent,
@@ -5,39 +11,34 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Checkbox } from "@/components/ui/checkbox"
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { CreditCard, Wallet } from "lucide-react";
+import { usePaymentInputs } from "react-payment-inputs";
+import images, { type CardImages } from "react-payment-inputs/images";
 
 export default function DialogDemo() {
+  const { meta, getCardNumberProps, getExpiryDateProps, getCVCProps, getCardImageProps } =
+    usePaymentInputs();
+
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Sign in</Button>
+        <Button variant="outline">Card details</Button>
       </DialogTrigger>
       <DialogContent>
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col gap-2">
           <div
             className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
             aria-hidden="true"
           >
-            <svg
-              className="stroke-zinc-800 dark:stroke-zinc-100"
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 32 32"
-              aria-hidden="true"
-            >
-              <circle cx="16" cy="16" r="12" fill="none" strokeWidth="8" />
-            </svg>
+            <Wallet className="opacity-80" size={16} strokeWidth={2} />
           </div>
           <DialogHeader>
-            <DialogTitle className="sm:text-center">Welcome back</DialogTitle>
-            <DialogDescription className="sm:text-center">
-            Enter your credentials to login to your account.
+            <DialogTitle className="text-left">Update your card</DialogTitle>
+            <DialogDescription className="text-left">
+              Your new card will replace your current card.
             </DialogDescription>
           </DialogHeader>
         </div>
@@ -45,33 +46,48 @@ export default function DialogDemo() {
         <form className="space-y-5">
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="login-email">Email</Label>
-              <Input id="login-email" placeholder="hi@yourcompany.com" type="email" required />
-            </div>              
+              <Label htmlFor="nameOnCard">Name on card</Label>
+              <Input id="nameOnCard" type="text" required />
+            </div>
             <div className="space-y-2">
-              <Label htmlFor="login-password">Password</Label>
-              <Input id="login-password" placeholder="Enter your password" type="password" required />
+              <Label htmlFor="cardNumber">Card Number</Label>
+              <div className="relative">
+                <Input {...getCardNumberProps()} className="peer pe-9 [direction:inherit]" />
+                <div className="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground/80 peer-disabled:opacity-50">
+                  {meta.cardType ? (
+                    <svg
+                      className="overflow-hidden rounded-sm"
+                      {...getCardImageProps({ images: images as unknown as CardImages })}
+                      width={20}
+                    />
+                  ) : (
+                    <CreditCard size={16} strokeWidth={2} aria-hidden="true" />
+                  )}
+                </div>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-1 space-y-2">
+                <Label htmlFor="expiryDate">Expiry date</Label>
+                <Input className="[direction:inherit]" {...getExpiryDateProps()} />
+              </div>
+              <div className="flex-1 space-y-2">
+                <Label htmlFor="cvc">CVC</Label>
+                <Input className="[direction:inherit]" {...getCVCProps()} />
+              </div>
             </div>
           </div>
-          <div className="flex justify-between gap-2">
-            <div className="flex items-center gap-2">
-              <Checkbox id="login-remember" />
-              <Label htmlFor="login-remember" className="font-normal text-muted-foreground">Remember me</Label>
-            </div>            
-            <a className="text-sm underline hover:no-underline" href="#">Forgot password?</a>          
+          <div className="flex items-center gap-2">
+            <Checkbox id="card-primary" />
+            <Label htmlFor="card-primary" className="font-normal text-muted-foreground">
+              Set as default payment method
+            </Label>
           </div>
           <Button type="button" className="w-full">
-            Sign in
+            Update card
           </Button>
         </form>
-
-        <div className="flex items-center gap-3 before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border">
-          <span className="text-xs text-muted-foreground">Or</span>
-        </div>
-
-        <Button variant="outline">Login with Google</Button>
-
       </DialogContent>
     </Dialog>
-  )
+  );
 }

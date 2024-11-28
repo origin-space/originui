@@ -1,10 +1,9 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { useImageUpload } from "@/hooks/use-image-upload";
 import { CircleUserRound } from "lucide-react";
 import Image from "next/image";
-import { useImageUpload } from "@/hooks/use-image-upload";
-import React from "react";
 
 export default function ButtonDemo() {
   const {

@@ -1,86 +1,159 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
-  DialogHeader,
   DialogFooter,
+  DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogClose,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
+} from "@/components/ui/dialog";
+import { useRef, useState } from "react";
 
 export default function DialogDemo() {
+  const [hasReadToBottom, setHasReadToBottom] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    const content = contentRef.current;
+    if (!content) return;
+
+    const scrollPercentage = content.scrollTop / (content.scrollHeight - content.clientHeight);
+    if (scrollPercentage >= 0.99 && !hasReadToBottom) {
+      setHasReadToBottom(true);
+    }
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Scrollable (sticky footer)</Button>
+        <Button variant="outline">Terms & Conditions</Button>
       </DialogTrigger>
-      <DialogContent className="p-0 sm:max-w-lg sm:max-h-[min(640px,80vh)] flex flex-col gap-0 [&>button:last-child]:hidden">
-        <div className="overflow-y-auto">
-          <DialogHeader className="text-left contents space-y-0">
-            <DialogTitle className="px-6 pt-6 text-base">Frequently Asked Questions (FAQ)</DialogTitle>
+      <DialogContent className="flex flex-col gap-0 p-0 sm:max-h-[min(640px,80vh)] sm:max-w-lg [&>button:last-child]:top-3.5">
+        <DialogHeader className="contents space-y-0 text-left">
+          <DialogTitle className="border-b border-border px-6 py-4 text-base">
+            Terms & Conditions
+          </DialogTitle>
+          <div ref={contentRef} onScroll={handleScroll} className="overflow-y-auto">
             <DialogDescription asChild>
-              <div className="p-6">
+              <div className="px-6 py-4">
                 <div className="space-y-4 [&_strong]:font-semibold [&_strong]:text-foreground">
-                  <div className="space-y-1">
-                    <p><strong>Account Management</strong></p>
-                    <p>Navigate to the registration page, provide required information, and verify your email address. You can sign up using your email or through social media platforms.</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p><strong>Password Reset Process</strong></p>
-                    <p>Users can reset their password through the account settings page. Click &quot;Forgot Password&quot; and follow the email verification steps to regain account access quickly and securely.</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p><strong>Service Pricing Tiers</strong></p>
-                    <p>We offer three primary subscription levels designed to meet diverse user needs: Basic (free with limited features), Professional (monthly fee with comprehensive access), and Enterprise (custom pricing with full platform capabilities).</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p><strong>Technical Support Channels</strong></p>
-                    <p>Customer support is accessible through multiple communication methods including email support, live chat during business hours, an integrated support ticket system, and phone support specifically for enterprise-level customers.</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p><strong>Data Protection Strategies</strong></p>
-                    <p>Our platform implements rigorous security measures including 256-bit SSL encryption, regular comprehensive security audits, strict data access controls, and compliance with international privacy protection standards.</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p><strong>Platform Compatibility</strong></p>
-                    <p>The service supports multiple device and operating system environments, including web browsers like Chrome and Firefox, mobile applications for iOS and Android, and desktop applications compatible with Windows and macOS.</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p><strong>Subscription Management</strong></p>
-                    <p>Subscriptions can be cancelled at any time through account settings, with pro-rated refunds available within 30 days of payment. Both monthly and annual billing options are provided, with special discounts offered for annual commitments.</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p><strong>Payment Method Options</strong></p>
-                    <p>We accept a wide range of payment methods including major credit cards such as Visa, MasterCard, and American Express, digital payment platforms like PayPal, and direct bank transfers. Regional payment options may also be available depending on user location.</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p><strong>Customer Support</strong></p>
-                    <p>Our dedicated customer support team is available 24/7, providing quick and efficient assistance to address any inquiries or issues you may have.</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p><strong>Privacy Policy</strong></p>
-                    <p>Our privacy policy outlines how we collect, use, and protect your personal data, ensuring your privacy is protected at all times.</p>
+                  <div className="space-y-4">
+                    <div className="space-y-1">
+                      <p>
+                        <strong>Acceptance of Terms</strong>
+                      </p>
+                      <p>
+                        By accessing and using this website, users agree to comply with and be bound
+                        by these Terms of Service. Users who do not agree with these terms should
+                        discontinue use of the website immediately.
+                      </p>
+                    </div>
+
+                    <div className="space-y-1">
+                      <p>
+                        <strong>User Account Responsibilities</strong>
+                      </p>
+                      <p>
+                        Users are responsible for maintaining the confidentiality of their account
+                        credentials. Any activities occurring under a user&lsquo;s account are the sole
+                        responsibility of the account holder. Users must notify the website
+                        administrators immediately of any unauthorized account access.
+                      </p>
+                    </div>
+
+                    <div className="space-y-1">
+                      <p>
+                        <strong>Content Usage and Restrictions</strong>
+                      </p>
+                      <p>
+                        The website and its original content are protected by intellectual property
+                        laws. Users may not reproduce, distribute, modify, create derivative works,
+                        or commercially exploit any content without explicit written permission from
+                        the website owners.
+                      </p>
+                    </div>
+
+                    <div className="space-y-1">
+                      <p>
+                        <strong>Limitation of Liability</strong>
+                      </p>
+                      <p>
+                        The website provides content &ldquo;as is&ldquo; without any warranties. The website
+                        owners shall not be liable for direct, indirect, incidental, consequential,
+                        or punitive damages arising from user interactions with the platform.
+                      </p>
+                    </div>
+
+                    <div className="space-y-1">
+                      <p>
+                        <strong>User Conduct Guidelines</strong>
+                      </p>
+                      <ul className="list-disc pl-6">
+                        <li>Not upload harmful or malicious content</li>
+                        <li>Respect the rights of other users</li>
+                        <li>Avoid activities that could disrupt website functionality</li>
+                        <li>Comply with applicable local and international laws</li>
+                      </ul>
+                    </div>
+
+                    <div className="space-y-1">
+                      <p>
+                        <strong>Modifications to Terms</strong>
+                      </p>
+                      <p>
+                        The website reserves the right to modify these terms at any time. Continued
+                        use of the website after changes constitutes acceptance of the new terms.
+                      </p>
+                    </div>
+
+                    <div className="space-y-1">
+                      <p>
+                        <strong>Termination Clause</strong>
+                      </p>
+                      <p>
+                        The website may terminate or suspend user access without prior notice for
+                        violations of these terms or for any other reason deemed appropriate by the
+                        administration.
+                      </p>
+                    </div>
+
+                    <div className="space-y-1">
+                      <p>
+                        <strong>Governing Law</strong>
+                      </p>
+                      <p>
+                        These terms are governed by the laws of the jurisdiction where the website
+                        is primarily operated, without regard to conflict of law principles.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </DialogDescription>
-          </DialogHeader>
-        </div>
-        <DialogFooter className="px-6 py-4 border-t border-border">
+          </div>
+        </DialogHeader>
+        <DialogFooter className="border-t border-border px-6 py-4 sm:items-center">
+          {!hasReadToBottom && (
+            <span className="grow text-xs text-muted-foreground max-sm:text-center">
+              Read all to accept
+            </span>
+          )}
           <DialogClose asChild>
             <Button type="button" variant="outline">
               Cancel
             </Button>
-          </DialogClose>          
+          </DialogClose>
           <DialogClose asChild>
-            <Button type="button">
-              Okay
+            <Button type="button" disabled={!hasReadToBottom}>
+              I agree
             </Button>
           </DialogClose>
-        </DialogFooter>          
+        </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

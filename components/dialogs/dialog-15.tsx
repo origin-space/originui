@@ -1,3 +1,8 @@
+// Dependencies: pnpm install lucide-react
+
+"use client";
+
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -5,38 +10,60 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
+import { Check, Copy, UserRoundPlus } from "lucide-react";
+import { useRef, useState } from "react";
 
 export default function DialogDemo() {
+  const [emails, setEmails] = useState(["mark@yourcompany.com", "jane@yourcompany.com", ""]);
+  const [copied, setCopied] = useState<boolean>(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const lastInputRef = useRef<HTMLInputElement>(null);
+
+  const addEmail = () => {
+    setEmails([...emails, ""]);
+  };
+
+  const handleEmailChange = (index: number, value: string) => {
+    const newEmails = [...emails];
+    newEmails[index] = value;
+    setEmails(newEmails);
+  };
+
+  const handleCopy = () => {
+    if (inputRef.current) {
+      navigator.clipboard.writeText(inputRef.current.value);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    }
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Sign up</Button>
+        <Button variant="outline">Invite members</Button>
       </DialogTrigger>
-      <DialogContent>
-        <div className="flex flex-col items-center gap-2">
+      <DialogContent
+        onOpenAutoFocus={(e) => {
+          e.preventDefault();
+          lastInputRef.current?.focus();
+        }}
+      >
+        <div className="flex flex-col gap-2">
           <div
             className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
             aria-hidden="true"
           >
-            <svg
-              className="stroke-zinc-800 dark:stroke-zinc-100"
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 32 32"
-              aria-hidden="true"
-            >
-              <circle cx="16" cy="16" r="12" fill="none" strokeWidth="8" />
-            </svg>
+            <UserRoundPlus className="opacity-80" size={16} strokeWidth={2} />
           </div>
           <DialogHeader>
-            <DialogTitle className="sm:text-center">Sign up Origin UI</DialogTitle>
-            <DialogDescription className="sm:text-center">
-            We just need a few details to get you started.
+            <DialogTitle className="text-left">Invite team members</DialogTitle>
+            <DialogDescription className="text-left">
+              Invite teammates to earn free components.
             </DialogDescription>
           </DialogHeader>
         </div>
@@ -44,31 +71,87 @@ export default function DialogDemo() {
         <form className="space-y-5">
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="signup-name">Full name</Label>
-              <Input id="signup-name" placeholder="Matt Welsh" type="text" required />
-            </div>             
-            <div className="space-y-2">
-              <Label htmlFor="signup-email">Email</Label>
-              <Input id="signup-email" placeholder="hi@yourcompany.com" type="email" required />
-            </div>              
-            <div className="space-y-2">
-              <Label htmlFor="signup-password">Password</Label>
-              <Input id="signup-password" placeholder="Enter your password" type="password" required />
+              <Label>Invite via email</Label>
+              <div className="space-y-3">
+                {emails.map((email, index) => (
+                  <Input
+                    key={index}
+                    id={`team-email-${index + 1}`}
+                    placeholder="hi@yourcompany.com"
+                    type="email"
+                    value={email}
+                    onChange={(e) => handleEmailChange(index, e.target.value)}
+                    ref={index === emails.length - 1 ? lastInputRef : undefined}
+                  />
+                ))}
+              </div>
             </div>
+            <button
+              type="button"
+              onClick={addEmail}
+              className="text-sm underline hover:no-underline"
+            >
+              + Add another
+            </button>
           </div>
           <Button type="button" className="w-full">
-            Sign up
+            Send invites
           </Button>
         </form>
 
-        <div className="flex items-center gap-3 before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border">
-          <span className="text-xs text-muted-foreground">Or</span>
+        <hr className="my-1 border-t border-border" />
+
+        <div className="space-y-2">
+          <Label htmlFor="input-53">Invite via magic link</Label>
+          <div className="relative">
+            <Input
+              ref={inputRef}
+              id="input-53"
+              className="pe-9"
+              type="text"
+              defaultValue="https://originui.com/refer/87689"
+              readOnly
+            />
+            <TooltipProvider delayDuration={0}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button
+                    onClick={handleCopy}
+                    className="absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg border border-transparent text-muted-foreground/80 outline-offset-2 transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:cursor-not-allowed"
+                    aria-label={copied ? "Copied" : "Copy to clipboard"}
+                    disabled={copied}
+                  >
+                    <div
+                      className={cn(
+                        "transition-all",
+                        copied ? "scale-100 opacity-100" : "scale-0 opacity-0",
+                      )}
+                    >
+                      <Check
+                        className="stroke-emerald-500"
+                        size={16}
+                        strokeWidth={2}
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <div
+                      className={cn(
+                        "absolute transition-all",
+                        copied ? "scale-0 opacity-0" : "scale-100 opacity-100",
+                      )}
+                    >
+                      <Copy size={16} strokeWidth={2} aria-hidden="true" />
+                    </div>
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent className="border border-input bg-popover px-2 py-1 text-xs text-muted-foreground">
+                  Copy to clipboard
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </div>
         </div>
-
-        <Button variant="outline">Continue with Google</Button>
-
-        <p className="text-xs text-muted-foreground text-center">By signing up you agree to our <a className="underline hover:no-underline" href="#">Terms</a>.</p>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

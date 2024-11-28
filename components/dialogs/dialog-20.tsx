@@ -1,137 +1,118 @@
+// Dependencies: pnpm install lucide-react
+
+"use client";
+
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogClose,
-} from "@/components/ui/dialog"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
-import { Store, Check } from "lucide-react";
+} from "@/components/ui/dialog";
+import { cn } from "@/lib/utils";
+import DialogImg from "@/public/dialog-content.png";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
 export default function DialogDemo() {
+  const [step, setStep] = useState(1);
+
+  const stepContent = [
+    {
+      title: "Welcome to Origin UI",
+      description:
+        "Discover a powerful collection of components designed to enhance your development workflow.",
+    },
+    {
+      title: "Customizable Components",
+      description:
+        "Each component is fully customizable and built with modern web standards in mind.",
+    },
+    {
+      title: "Ready to Start?",
+      description: "Begin building amazing interfaces with our comprehensive component library.",
+    },
+    {
+      title: "Get Support",
+      description:
+        "Access our extensive documentation and community resources to make the most of Origin UI.",
+    },
+  ];
+
+  const totalSteps = stepContent.length;
+
+  const handleContinue = () => {
+    if (step < totalSteps) {
+      setStep(step + 1);
+    }
+  };
+
   return (
-    <Dialog>
+    <Dialog
+      onOpenChange={(open) => {
+        if (open) setStep(1);
+      }}
+    >
       <DialogTrigger asChild>
-        <Button variant="outline">Change plan</Button>
+        <Button variant="outline">Onboarding</Button>
       </DialogTrigger>
-      <DialogContent>
-        <div className="flex flex-col gap-2">
-          <div
-            className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
-            aria-hidden="true"
-          >
-            <Store className="opacity-80" size={16} strokeWidth={2} />
-          </div>
-          <DialogHeader>
-            <DialogTitle className="text-left">Change your plan</DialogTitle>
-            <DialogDescription className="text-left">
-              Pick one of the following plans.
-            </DialogDescription>
-          </DialogHeader>
+      <DialogContent className="gap-0 p-0 [&>button:last-child]:text-white">
+        <div className="p-2">
+          <Image
+            className="w-full rounded-lg"
+            src={DialogImg}
+            width={382}
+            height={216}
+            alt="dialog"
+          />
         </div>
-
-        <form className="space-y-5">
-          <RadioGroup className="gap-2" defaultValue="plan-02">
-            {/* Radio card #1 */}
-            <div className="relative flex w-full items-center gap-2 rounded-lg border border-input px-4 py-3 shadow-sm shadow-black/5 has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent">
-              <RadioGroupItem
-                value="plan-01"
-                id="plan-01"
-                aria-describedby="plan-01-description"
-                className="order-1 after:absolute after:inset-0"
-              />
-              <div className="grid grow gap-1">
-                <Label htmlFor="plan-01">
-                  Essential
-                </Label>
-                <p id="plan-01-description" className="text-xs text-muted-foreground">
-                  $4 per member/month
-                </p>
-              </div>
+        <div className="space-y-6 px-6 pb-6 pt-3">
+          <DialogHeader>
+            <DialogTitle>{stepContent[step - 1].title}</DialogTitle>
+            <DialogDescription>{stepContent[step - 1].description}</DialogDescription>
+          </DialogHeader>
+          <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+            <div className="flex justify-center space-x-1.5 max-sm:order-1">
+              {[...Array(totalSteps)].map((_, index) => (
+                <div
+                  key={index}
+                  className={cn(
+                    "h-1.5 w-1.5 rounded-full bg-primary",
+                    index + 1 === step ? "bg-primary" : "opacity-20",
+                  )}
+                />
+              ))}
             </div>
-            {/* Radio card #2 */}
-            <div className="relative flex w-full items-center gap-2 rounded-lg border border-input px-4 py-3 shadow-sm shadow-black/5 has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent">
-              <RadioGroupItem
-                value="plan-02"
-                id="plan-02"
-                aria-describedby="plan-02-description"
-                className="order-1 after:absolute after:inset-0"
-              />
-              <div className="grid grow gap-1">
-                <Label htmlFor="plan-02">
-                  Standard
-                </Label>
-                <p id="plan-02-description" className="text-xs text-muted-foreground">
-                  $19 per member/month
-                </p>
-              </div>
-            </div>
-            {/* Radio card #3 */}
-            <div className="relative flex w-full items-center gap-2 rounded-lg border border-input px-4 py-3 shadow-sm shadow-black/5 has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent">
-              <RadioGroupItem
-                value="plan-03"
-                id="plan-03"
-                aria-describedby="plan-03-description"
-                className="order-1 after:absolute after:inset-0"
-              />
-              <div className="grid grow gap-1">
-                <Label htmlFor="plan-03">
-                Enterprise
-                </Label>
-                <p id="plan-03-description" className="text-xs text-muted-foreground">
-                  $32 per member/month
-                </p>
-              </div>
-            </div>
-          </RadioGroup>
-
-          <div className="space-y-3">
-            <p><strong className="text-sm font-medium">Features include:</strong></p>
-            <ul className="text-sm space-y-2 text-muted-foreground">
-              <li className="flex gap-2">
-                <Check size={16} strokeWidth={2} className="shrink-0 text-primary mt-0.5" aria-hidden="true" />
-                Create unlimited projects.
-              </li>
-              <li className="flex gap-2">
-                <Check size={16} strokeWidth={2} className="shrink-0 text-primary mt-0.5" aria-hidden="true" />
-                Remove watermarks.
-              </li>
-              <li className="flex gap-2">
-                <Check size={16} strokeWidth={2} className="shrink-0 text-primary mt-0.5" aria-hidden="true" />
-                Add unlimited users and free viewers.
-              </li>
-              <li className="flex gap-2">
-                <Check size={16} strokeWidth={2} className="shrink-0 text-primary mt-0.5" aria-hidden="true" />
-                Upload unlimited files.
-              </li>
-              <li className="flex gap-2">
-                <Check size={16} strokeWidth={2} className="shrink-0 text-primary mt-0.5" aria-hidden="true" />
-                7-day money back guarantee.
-              </li>
-              <li className="flex gap-2">
-                <Check size={16} strokeWidth={2} className="shrink-0 text-primary mt-0.5" aria-hidden="true" />
-                Advanced permissions.
-              </li>                                                                      
-            </ul>
+            <DialogFooter>
+              <DialogClose asChild>
+                <Button type="button" variant="ghost">
+                  Skip
+                </Button>
+              </DialogClose>
+              {step < totalSteps ? (
+                <Button className="group" type="button" onClick={handleContinue}>
+                  Next
+                  <ArrowRight
+                    className="-me-1 ms-2 opacity-60 transition-transform group-hover:translate-x-0.5"
+                    size={16}
+                    strokeWidth={2}
+                    aria-hidden="true"
+                  />
+                </Button>
+              ) : (
+                <DialogClose asChild>
+                  <Button type="button">Okay</Button>
+                </DialogClose>
+              )}
+            </DialogFooter>
           </div>
-
-          <div className="grid gap-2">
-            <Button type="button" className="w-full">
-              Change plan
-            </Button>
-            <DialogClose asChild>
-              <Button type="button" variant="ghost" className="w-full">
-                Cancel
-              </Button>
-            </DialogClose>
-          </div>
-        </form>
-
+        </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

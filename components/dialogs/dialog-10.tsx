@@ -1,75 +1,52 @@
-"use client";
+// Dependencies: pnpm install lucide-react
 
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogClose,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { CircleAlert } from "lucide-react"
-import { useState } from "react"
-
-const PROJECT_NAME = "Origin UI"
+} from "@/components/ui/dialog";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function DialogDemo() {
-  const [inputValue, setInputValue] = useState("")
-
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Delete project</Button>
+        <Button variant="outline">Feedback</Button>
       </DialogTrigger>
       <DialogContent>
-        <div className="flex flex-col items-center gap-2">
-          <div
-            className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border"
-            aria-hidden="true"
-          >
-            <CircleAlert className="opacity-80" size={16} strokeWidth={2} />
-          </div>
-          <DialogHeader>
-            <DialogTitle className="sm:text-center">Final confirmation</DialogTitle>
-            <DialogDescription className="sm:text-center">
-              This action cannot be undone. To confirm, please enter the project name <span className="text-foreground">Origin UI</span>.
-            </DialogDescription>
-          </DialogHeader>
-        </div>
-
+        <DialogHeader>
+          <DialogTitle>Send us feedback</DialogTitle>
+          <DialogDescription>
+            Watch{" "}
+            <a className="text-foreground hover:underline" href="#">
+              tutorials
+            </a>
+            , read Origin UI&lsquo;s{" "}
+            <a className="text-foreground hover:underline" href="#">
+              documentation
+            </a>
+            , or join our{" "}
+            <a className="text-foreground hover:underline" href="#">
+              Discord
+            </a>{" "}
+            for community help.
+          </DialogDescription>
+        </DialogHeader>
         <form className="space-y-5">
-          <div className="space-y-2">
-            <Label htmlFor="project-name">Project name</Label>
-            <Input 
-              id="project-name" 
-              type="text" 
-              placeholder="Type Origin UI to confirm" 
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-            />
-          </div>              
-          <DialogFooter>
-            <DialogClose asChild>
-              <Button type="button" variant="outline" className="flex-1">
-                Cancel
-              </Button>
-            </DialogClose>
-            <Button 
-              type="button" 
-              className="flex-1"
-              disabled={inputValue !== PROJECT_NAME}
-            >
-              Delete
-            </Button>
-          </DialogFooter>
+          <Textarea
+            id="feedback"
+            placeholder="How can we improve Origin UI?"
+            aria-label="Send feedback"
+          />
+          <div className="flex flex-col sm:flex-row sm:justify-end">
+            <Button type="button">Send feedback</Button>
+          </div>
         </form>
-
       </DialogContent>
     </Dialog>
-  )
+  );
 }

@@ -1,3 +1,5 @@
+// Dependencies: pnpm install lucide-react
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -8,9 +10,9 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
-import { Button } from "@/components/ui/button"
-import { CircleAlert } from "lucide-react"
+} from "@/components/ui/alert-dialog";
+import { Button } from "@/components/ui/button";
+import { CircleAlert } from "lucide-react";
 
 export default function AlertDialogDemo() {
   return (
@@ -19,7 +21,7 @@ export default function AlertDialogDemo() {
         <Button variant="outline">Alert dialog with icon</Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
-        <div className="flex flex-col sm:flex-row max-sm:items-center gap-2 sm:gap-4">
+        <div className="flex flex-col gap-2 max-sm:items-center sm:flex-row sm:gap-4">
           <div
             className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border"
             aria-hidden="true"
@@ -39,5 +41,5 @@ export default function AlertDialogDemo() {
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
-  )
+  );
 }

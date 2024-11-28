@@ -1,133 +1,73 @@
-"use client"
+// Dependencies: pnpm install lucide-react
 
+"use client";
+
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogClose,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { useState, useRef } from "react"
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { CircleAlert } from "lucide-react";
+import { useState } from "react";
+
+const PROJECT_NAME = "Origin UI";
 
 export default function DialogDemo() {
-  const [hasReadToBottom, setHasReadToBottom] = useState(false);
-  const contentRef = useRef<HTMLDivElement>(null);
-
-  const handleScroll = () => {
-    const content = contentRef.current;
-    if (!content) return;
-    
-    const scrollPercentage = content.scrollTop / (content.scrollHeight - content.clientHeight);
-    if (scrollPercentage >= 0.99 && !hasReadToBottom) {
-      setHasReadToBottom(true);
-    }
-  };
+  const [inputValue, setInputValue] = useState("");
 
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Terms & Conditions</Button>
+        <Button variant="outline">Delete project</Button>
       </DialogTrigger>
-      <DialogContent className="p-0 sm:max-w-lg sm:max-h-[min(640px,80vh)] flex flex-col gap-0 [&>button:last-child]:top-3.5">
-        <DialogHeader className="text-left contents space-y-0">
-          <DialogTitle className="px-6 py-4 border-b border-border text-base">Terms & Conditions</DialogTitle>
-          <div 
-            ref={contentRef}
-            onScroll={handleScroll}
-            className="overflow-y-auto"
+      <DialogContent>
+        <div className="flex flex-col items-center gap-2">
+          <div
+            className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border"
+            aria-hidden="true"
           >
-            <DialogDescription asChild>
-              <div className="px-6 py-4">
-                <div className="space-y-4 [&_strong]:font-semibold [&_strong]:text-foreground">
-                  <div className="space-y-4">
-                    <div className="space-y-1">
-                      <p><strong>Acceptance of Terms</strong></p>
-                      <p>
-                        By accessing and using this website, users agree to comply with and be bound by these Terms of Service. Users who do not agree with these terms should discontinue use of the website immediately.
-                      </p>
-                    </div>
-
-                    <div className="space-y-1">
-                      <p><strong>User Account Responsibilities</strong></p>
-                      <p>
-                        Users are responsible for maintaining the confidentiality of their account credentials. Any activities occurring under a user's account are the sole responsibility of the account holder. Users must notify the website administrators immediately of any unauthorized account access.
-                      </p>
-                    </div>
-
-                    <div className="space-y-1">
-                      <p><strong>Content Usage and Restrictions</strong></p>
-                      <p>
-                        The website and its original content are protected by intellectual property laws. Users may not reproduce, distribute, modify, create derivative works, or commercially exploit any content without explicit written permission from the website owners.
-                      </p>
-                    </div>
-
-                    <div className="space-y-1">
-                      <p><strong>Limitation of Liability</strong></p>
-                      <p>
-                        The website provides content "as is" without any warranties. The website owners shall not be liable for direct, indirect, incidental, consequential, or punitive damages arising from user interactions with the platform.
-                      </p>
-                    </div>
-
-                    <div className="space-y-1">
-                      <p><strong>User Conduct Guidelines</strong></p>
-                      <ul className="list-disc pl-6">
-                        <li>Not upload harmful or malicious content</li>
-                        <li>Respect the rights of other users</li>
-                        <li>Avoid activities that could disrupt website functionality</li>
-                        <li>Comply with applicable local and international laws</li>
-                      </ul>
-                    </div>
-
-                    <div className="space-y-1">
-                      <p><strong>Modifications to Terms</strong></p>
-                      <p>
-                        The website reserves the right to modify these terms at any time. Continued use of the website after changes constitutes acceptance of the new terms.
-                      </p>
-                    </div>
-
-                    <div className="space-y-1">
-                      <p><strong>Termination Clause</strong></p>
-                      <p>
-                        The website may terminate or suspend user access without prior notice for violations of these terms or for any other reason deemed appropriate by the administration.
-                      </p>
-                    </div>
-
-                    <div className="space-y-1">
-                      <p><strong>Governing Law</strong></p>
-                      <p>
-                        These terms are governed by the laws of the jurisdiction where the website is primarily operated, without regard to conflict of law principles.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </DialogDescription>
+            <CircleAlert className="opacity-80" size={16} strokeWidth={2} />
           </div>
-        </DialogHeader>
-        <DialogFooter className="px-6 py-4 border-t border-border sm:items-center">
-          {
-            !hasReadToBottom && (
-              <span className="text-muted-foreground text-xs max-sm:text-center grow">
-                Read all to accept
-              </span>
-            )
-          }
-          <DialogClose asChild>
-            <Button type="button" variant="outline">
-              Cancel
+          <DialogHeader>
+            <DialogTitle className="sm:text-center">Final confirmation</DialogTitle>
+            <DialogDescription className="sm:text-center">
+              This action cannot be undone. To confirm, please enter the project name{" "}
+              <span className="text-foreground">Origin UI</span>.
+            </DialogDescription>
+          </DialogHeader>
+        </div>
+
+        <form className="space-y-5">
+          <div className="space-y-2">
+            <Label htmlFor="project-name">Project name</Label>
+            <Input
+              id="project-name"
+              type="text"
+              placeholder="Type Origin UI to confirm"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+            />
+          </div>
+          <DialogFooter>
+            <DialogClose asChild>
+              <Button type="button" variant="outline" className="flex-1">
+                Cancel
+              </Button>
+            </DialogClose>
+            <Button type="button" className="flex-1" disabled={inputValue !== PROJECT_NAME}>
+              Delete
             </Button>
-          </DialogClose>
-          <DialogClose asChild>
-            <Button type="button" disabled={!hasReadToBottom}>
-              I agree
-            </Button>
-          </DialogClose>
-        </DialogFooter>
+          </DialogFooter>
+        </form>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

@@ -1,227 +1,98 @@
-"use client"
+// Dependencies: pnpm install lucide-react
+
+"use client";
+
+import { ArrowUpRight, CircleFadingPlus, FileInput, FolderPlus, Search } from "lucide-react";
+import * as React from "react";
 
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-  DialogClose,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea";
-import { useCharacterLimit } from "@/hooks/use-character-limit";
-import { useImageUpload } from "@/hooks/use-image-upload";
-import Image, { StaticImageData } from "next/image"
-import AvatarImg from "@/public/avatar-72-01.jpg"
-import ProfileBgImg from "@/public/profile-bg.jpg"
-import { Check, ImagePlus, X } from "lucide-react";
-import React, { useState } from "react";
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from "@/components/ui/command";
 
 export default function DialogDemo() {
-  const maxLength = 180;
-  const {
-    value,
-    characterCount,
-    handleChange,
-    maxLength: limit,
-  } = useCharacterLimit({ maxLength, initialValue: "Hey, I am Margaret, a web developer who loves turning ideas into amazing websites!" });
+  const [open, setOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        setOpen((open) => !open);
+      }
+    };
+
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, []);
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline">Edit profile</Button>
-      </DialogTrigger>
-      <DialogContent className="p-0 sm:max-w-lg flex flex-col gap-0 [&>button:last-child]:top-3.5 overflow-y-visible">
-        <DialogHeader className="text-left contents space-y-0">
-          <DialogTitle className="px-6 py-4 border-b border-border text-base">Edit profile</DialogTitle>
-        </DialogHeader>
-        <DialogDescription className="sr-only">
-          Make changes to your profile here. You can change your photo and set a username.
-        </DialogDescription>
-        <div className="overflow-y-auto">
-          <ProfileBg defaultImage={ProfileBgImg} />
-          <Avatar defaultImage={AvatarImg} />
-          <div className="px-6 pt-4 pb-6">
-            <form className="space-y-4">
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="flex-1 space-y-2">
-                  <Label htmlFor="edit-first-name">First name</Label>
-                  <Input id="edit-first-name" placeholder="Matt" defaultValue="Margaret" type="text" required />
-                </div>
-                <div className="flex-1 space-y-2">
-                  <Label htmlFor="edit-last-name">Last name</Label>
-                  <Input id="edit-last-name" placeholder="Welsh" defaultValue="Villard" type="text" required />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="edit-username">Username</Label>
-                <div className="relative">
-                  <Input id="edit-username" className="peer pe-9" placeholder="Username" defaultValue="margaret-villard-69" type="text" required />
-                  <div className="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground/80 peer-disabled:opacity-50">
-                    <Check size={16} strokeWidth={2} className="text-emerald-500" aria-hidden="true" />
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="edit-website">Website</Label>
-                <div className="flex rounded-lg shadow-sm shadow-black/5">
-                  <span className="-z-10 inline-flex items-center rounded-s-lg border border-input bg-background px-3 text-sm text-muted-foreground">
-                    https://
-                  </span>
-                  <Input
-                    id="edit-website"
-                    className="-ms-px rounded-s-none shadow-none"
-                    placeholder="yourwebsite.com"
-                    defaultValue="www.margaret.com"
-                    type="text"
-                  />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="edit-bio">Biography</Label>
-                <Textarea
-                  id="edit-bio"
-                  placeholder="Write a few sentences about yourself"
-                  defaultValue={value}
-                  maxLength={maxLength}
-                  onChange={handleChange}
-                  aria-describedby="characters-left-textarea"
-                />
-                <p
-                  id="characters-left-textarea"
-                  className="mt-2 text-right text-xs text-muted-foreground"
-                  role="status"
-                  aria-live="polite"
-                >
-                  <span className="tabular-nums">{limit - characterCount}</span> characters left
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-        <DialogFooter className="px-6 py-4 border-t border-border">
-          <DialogClose asChild>
-            <Button type="button" variant="outline">
-              Cancel
-            </Button>
-          </DialogClose>
-          <DialogClose asChild>
-            <Button type="button">
-              Save changes
-            </Button>
-          </DialogClose>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
-  )
-}
-
-function ProfileBg({ defaultImage }: {
-  defaultImage?: StaticImageData;
-}) {
-  const [hideDefault, setHideDefault] = useState(false);
-  const {
-    previewUrl,
-    fileInputRef,
-    handleThumbnailClick,
-    handleFileChange,
-    handleRemove,
-  } = useImageUpload();
-
-  const currentImage = previewUrl || (!hideDefault ? defaultImage : null);
-
-  const handleImageRemove = () => {
-    handleRemove();
-    setHideDefault(true);
-  };
-
-  return (
-    <div className="h-24">
-      <div
-        className="relative w-full h-full flex items-center justify-center bg-muted overflow-hidden"
+    <>
+      <button
+        className="inline-flex h-9 w-fit rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground shadow-sm shadow-black/5 transition-shadow placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/20"
+        onClick={() => setOpen(true)}
       >
-        {currentImage && (
-          <Image
-            className="h-full w-full object-cover"
-            src={currentImage}
-            alt={previewUrl ? "Preview of uploaded image" : "Default profile background"}
-            width={512}
-            height={96}
+        <span className="flex grow items-center">
+          <Search
+            className="-ms-1 me-3 text-muted-foreground/80"
+            size={16}
+            strokeWidth={2}
+            aria-hidden="true"
           />
-        )}
-        <div className="flex items-center justify-center gap-2 absolute inset-0">
-          <button type="button" className="size-10 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-colors outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 cursor-pointer z-50"
-            onClick={handleThumbnailClick}
-            aria-label={currentImage ? "Change image" : "Upload image"}>
-            <ImagePlus size={16} strokeWidth={2} aria-hidden="true" />
-          </button>
-          {currentImage && (
-            <button type="button" className="size-10 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-colors outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 cursor-pointer z-50"
-              onClick={handleImageRemove}
-              aria-label="Remove image">
-              <X size={16} strokeWidth={2} aria-hidden="true" />
-            </button>
-          )}
-        </div>
-      </div>
-      <input
-        type="file"
-        ref={fileInputRef}
-        onChange={handleFileChange}
-        className="hidden"
-        accept="image/*"
-        aria-label="Upload image file"
-      />
-    </div>
-  );
-}
-
-function Avatar({ defaultImage }: {
-  defaultImage?: StaticImageData;
-}) {
-  const {
-    previewUrl,
-    fileInputRef,
-    handleThumbnailClick,
-    handleFileChange,
-  } = useImageUpload();
-
-  const currentImage = previewUrl || defaultImage;
-
-  return (
-    <div className="px-6 -mt-10">
-      <div className="relative flex items-center justify-center size-20 rounded-full bg-muted border-4 border-background shadow-sm shadow-black/10 overflow-hidden">
-        {currentImage && (
-          <Image
-            src={currentImage}
-            className="h-full w-full object-cover"
-            width={80}
-            height={80}
-            alt="Profile image"
-          />
-        )}
-        <button
-          type="button"
-          className="absolute size-8 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-colors outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 cursor-pointer"
-          onClick={handleThumbnailClick}
-          aria-label="Change profile picture"
-        >
-          <ImagePlus size={16} strokeWidth={2} aria-hidden="true" />
-        </button>
-        <input
-          type="file"
-          ref={fileInputRef}
-          onChange={handleFileChange}
-          className="hidden"
-          accept="image/*"
-          aria-label="Upload profile picture"
-        />
-      </div>
-    </div>
+          <span className="font-normal text-muted-foreground/70">Search</span>
+        </span>
+        <kbd className="-me-1 ms-12 inline-flex h-5 max-h-full items-center rounded border border-border bg-background px-1 font-[inherit] text-[0.625rem] font-medium text-muted-foreground/70">
+          ⌘K
+        </kbd>
+      </button>
+      <CommandDialog open={open} onOpenChange={setOpen}>
+        <CommandInput placeholder="Type a command or search..." />
+        <CommandList>
+          <CommandEmpty>No results found.</CommandEmpty>
+          <CommandGroup heading="Quick start">
+            <CommandItem>
+              <FolderPlus size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+              <span>New folder</span>
+              <CommandShortcut className="justify-center">⌘N</CommandShortcut>
+            </CommandItem>
+            <CommandItem>
+              <FileInput size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+              <span>Import document</span>
+              <CommandShortcut className="justify-center">⌘I</CommandShortcut>
+            </CommandItem>
+            <CommandItem>
+              <CircleFadingPlus
+                size={16}
+                strokeWidth={2}
+                className="opacity-60"
+                aria-hidden="true"
+              />
+              <span>Add block</span>
+              <CommandShortcut className="justify-center">⌘B</CommandShortcut>
+            </CommandItem>
+          </CommandGroup>
+          <CommandSeparator />
+          <CommandGroup heading="Navigation">
+            <CommandItem>
+              <ArrowUpRight size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+              <span>Go to dashboard</span>
+            </CommandItem>
+            <CommandItem>
+              <ArrowUpRight size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+              <span>Go to apps</span>
+            </CommandItem>
+            <CommandItem>
+              <ArrowUpRight size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+              <span>Go to connections</span>
+            </CommandItem>
+          </CommandGroup>
+        </CommandList>
+      </CommandDialog>
+    </>
   );
 }

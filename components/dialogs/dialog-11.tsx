@@ -1,62 +1,72 @@
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Mail } from "lucide-react"
+} from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function DialogDemo() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Newsletter</Button>
+        <Button variant="outline">Rating</Button>
       </DialogTrigger>
-      <DialogContent>
-        <div className="flex flex-col items-center gap-2">
-          <div
-            className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
-            aria-hidden="true"
-          >
-            <svg
-              className="stroke-zinc-800 dark:stroke-zinc-100"
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 32 32"
-              aria-hidden="true"
-            >
-              <circle cx="16" cy="16" r="12" fill="none" strokeWidth="8" />
-            </svg>
-          </div>
-          <DialogHeader>
-            <DialogTitle className="sm:text-center">Never miss an update</DialogTitle>
-            <DialogDescription className="sm:text-center">
-            Subscribe to receive news and special offers.
-            </DialogDescription>
-          </DialogHeader>
-        </div>
+      <DialogContent className="flex flex-col gap-0 p-0 [&>button:last-child]:top-3.5">
+        <DialogHeader className="contents space-y-0 text-left">
+          <DialogTitle className="border-b border-border px-6 py-4 text-base">
+            Help us improve
+          </DialogTitle>
+        </DialogHeader>
+        <div className="px-6 py-4">
+          <form className="space-y-5">
+            <div className="space-y-4">
+              <div>
+                <fieldset className="space-y-4">
+                  <legend className="text-lg font-semibold leading-none text-foreground">
+                    How hard was it to set up your account?
+                  </legend>
+                  <RadioGroup className="flex gap-0 -space-x-px rounded-lg shadow-sm shadow-black/5">
+                    {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((number) => (
+                      <label
+                        key={number}
+                        className="relative flex size-9 flex-1 cursor-pointer flex-col items-center justify-center gap-3 border border-input text-center text-sm outline-offset-2 transition-colors first:rounded-s-lg last:rounded-e-lg has-[[data-state=checked]]:z-10 has-[[data-disabled]]:cursor-not-allowed has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent has-[[data-disabled]]:opacity-50 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70"
+                      >
+                        <RadioGroupItem
+                          id={`radio-17-r${number}`}
+                          value={number.toString()}
+                          className="sr-only after:absolute after:inset-0"
+                        />
+                        {number}
+                      </label>
+                    ))}
+                  </RadioGroup>
+                </fieldset>
+                <div className="mt-2 flex justify-between text-xs text-muted-foreground">
+                  <p>Very easy</p>
+                  <p>Very dificult</p>
+                </div>
+              </div>
 
-        <form className="space-y-5">
-          <div className="space-y-2">
-            <div className="relative">
-              <Input id="dialog-subscribe" className="peer ps-9" placeholder="hi@yourcompany.com" type="email" aria-label="Email" />
-              <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 peer-disabled:opacity-50">
-                <Mail size={16} strokeWidth={2} aria-hidden="true" />
+              <div className="space-y-2">
+                <Label>Why did you give this rating?</Label>
+                <Textarea
+                  id="feedback"
+                  placeholder="How can we improve Origin UI?"
+                  aria-label="Send feedback"
+                />
               </div>
             </div>
-          </div>              
-          <Button type="button" className="w-full">
-            Subscribe
-          </Button>
-        </form>
-
-        <p className="text-xs text-muted-foreground text-center">By subscribing you agree to our <a className="underline hover:no-underline" href="#">Privacy Policy</a>.</p>
+            <Button type="button" className="w-full">
+              Send feedback
+            </Button>
+          </form>
+        </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

@@ -1,73 +1,85 @@
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea";
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 export default function DialogDemo() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Rating</Button>
+        <Button variant="outline">Sign up</Button>
       </DialogTrigger>
-      <DialogContent className="p-0 flex flex-col gap-0 [&>button:last-child]:top-3.5">
-        <DialogHeader className="text-left contents space-y-0">
-          <DialogTitle className="px-6 py-4 border-b border-border text-base">Help us improve</DialogTitle>
-        </DialogHeader>
-        <div className="px-6 py-4">
-          <form className="space-y-5">
-            <div className="space-y-4">
-
-              <div>
-                <fieldset className="space-y-4">
-                  <legend className="text-lg font-semibold leading-none text-foreground">
-                    How hard was it to set up your account?
-                  </legend>
-                  <RadioGroup className="flex gap-0 -space-x-px rounded-lg shadow-sm shadow-black/5">
-                    {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((number) => (
-                      <label
-                        key={number}
-                        className="relative flex size-9 flex-1 cursor-pointer flex-col items-center justify-center gap-3 border border-input text-center text-sm outline-offset-2 transition-colors first:rounded-s-lg last:rounded-e-lg has-[[data-state=checked]]:z-10 has-[[data-disabled]]:cursor-not-allowed has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent has-[[data-disabled]]:opacity-50 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70"
-                      >
-                        <RadioGroupItem
-                          id={`radio-17-r${number}`}
-                          value={number.toString()}
-                          className="sr-only after:absolute after:inset-0"
-                        />
-                        {number}
-                      </label>
-                    ))}
-                  </RadioGroup>
-                </fieldset>
-                <div className="mt-2 flex justify-between text-xs text-muted-foreground">
-                  <p>
-                    Very easy
-                  </p>
-                  <p>
-                    Very dificult
-                  </p>
-                </div>            
-              </div>
-
-              <div className="space-y-2">
-                <Label>Why did you give this rating?</Label>
-                <Textarea id="feedback" placeholder="How can we improve Origin UI?" aria-label="Send feedback" />
-              </div>
-
-            </div>
-              <Button type="button" className="w-full">
-                Send feedback
-              </Button>
-          </form>
+      <DialogContent>
+        <div className="flex flex-col items-center gap-2">
+          <div
+            className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
+            aria-hidden="true"
+          >
+            <svg
+              className="stroke-zinc-800 dark:stroke-zinc-100"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 32 32"
+              aria-hidden="true"
+            >
+              <circle cx="16" cy="16" r="12" fill="none" strokeWidth="8" />
+            </svg>
+          </div>
+          <DialogHeader>
+            <DialogTitle className="sm:text-center">Sign up Origin UI</DialogTitle>
+            <DialogDescription className="sm:text-center">
+              We just need a few details to get you started.
+            </DialogDescription>
+          </DialogHeader>
         </div>
+
+        <form className="space-y-5">
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="signup-name">Full name</Label>
+              <Input id="signup-name" placeholder="Matt Welsh" type="text" required />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="signup-email">Email</Label>
+              <Input id="signup-email" placeholder="hi@yourcompany.com" type="email" required />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="signup-password">Password</Label>
+              <Input
+                id="signup-password"
+                placeholder="Enter your password"
+                type="password"
+                required
+              />
+            </div>
+          </div>
+          <Button type="button" className="w-full">
+            Sign up
+          </Button>
+        </form>
+
+        <div className="flex items-center gap-3 before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border">
+          <span className="text-xs text-muted-foreground">Or</span>
+        </div>
+
+        <Button variant="outline">Continue with Google</Button>
+
+        <p className="text-center text-xs text-muted-foreground">
+          By signing up you agree to our{" "}
+          <a className="underline hover:no-underline" href="#">
+            Terms
+          </a>
+          .
+        </p>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
-
