@@ -1,0 +1,11 @@
+node_modules
+.next
+pnpm-lock.yaml
+
+# Build output
+.next
+build
+dist
+
+# Cache
+.cache
