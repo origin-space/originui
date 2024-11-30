@@ -10,7 +10,13 @@ export default function ColorInput02() {
     const [inputValue, setInputValue] = useState("#FF0000");
     const [invalidCode, setInvalidCode] = useState(false);
 
-    const handleInputChange = (e) => {
+    interface HandleInputChangeEvent {
+        target: {
+            value: string;
+        };
+    }
+
+    const handleInputChange = (e: HandleInputChangeEvent): void => {
         const newValue = e.target.value;
         setInputValue(newValue);
 
@@ -25,12 +31,12 @@ export default function ColorInput02() {
 
     return (
         <div className="flex flex-col space-y-2">
-            <Label htmlFor="color-input-02">Color input + color code</Label>
+            <Label htmlFor="color-input-03">Color input</Label>
             <Popover>
-                <div className="flex justify-center items-center" id="color-input-02">
+                <div className="relative" id="color-input-03">
                     <PopoverTrigger asChild>
                         <div
-                            className="flex-shrink-0 w-10 h-9 border border-r-none rounded-l-lg focus:border-ring focus:ring-[3px] focus:ring-ring/20 cursor-pointer"
+                            className="absolute top-1/2 left-1 -translate-y-1/2 w-7 h-7 border rounded-md focus:border-ring focus:ring-[3px] focus:ring-ring/20 cursor-pointer"
                             style={{ backgroundColor: color }}
                         ></div>
                     </PopoverTrigger>
@@ -38,10 +44,10 @@ export default function ColorInput02() {
                         type="text"
                         value={inputValue}
                         onChange={handleInputChange}
-                        className="rounded-l-none uppercase" 
+                        className="pl-10 uppercase"
                     />
                 </div>
-                <PopoverContent onOpenAutoFocus={(e) => e.preventDefault()} align="start" className="p-0 m-0 border-none">
+                <PopoverContent onOpenAutoFocus={(e) => e.preventDefault()} align="start" className="p-0 m-0 border-none rounded-2xl">
                     <ColorPicker
                         onColorChange={(newColor) => {
                             setColor(newColor);
@@ -49,6 +55,9 @@ export default function ColorInput02() {
                             setInvalidCode(false);
                         }}
                         defaultColor={color}
+                        isColorFormat={true}
+                        isOpacity={true}
+                        isEyeDropper={true}
                     />
                 </PopoverContent>
             </Popover>

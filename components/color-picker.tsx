@@ -11,7 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-export interface ColorPickerPropsBase {
+export interface ColorPickerProps {
   onColorChange?: (color: string) => void;
   defaultColor?: string;
   isColorFormat?: boolean;
@@ -19,22 +19,11 @@ export interface ColorPickerPropsBase {
   isOpacity?: boolean;
 }
 
-export interface ColorPickerPropsWithOpacity extends ColorPickerPropsBase {
-  colorFormat: 'hexa' | 'rgba' | 'hsla' | 'hsva';
-}
-
-export interface ColorPickerPropsWithoutOpacity extends ColorPickerPropsBase {
-  colorFormat: 'hex' | 'rgb' | 'hsl' | 'hsv';
-}
-
 export type ColorFormats = 'hex' | 'hexa' | 'rgb' | 'rgba' | 'hsl' | 'hsla' | 'hsv' | 'hsva';
-
-export type ColorPickerProps = ColorPickerPropsWithOpacity | ColorPickerPropsWithoutOpacity;
 
 export function ColorPicker({
   onColorChange,
   defaultColor,
-  colorFormat = 'hex',
   isColorFormat = true,
   isEyeDropper = true,
   isOpacity = true
@@ -47,7 +36,6 @@ export function ColorPicker({
   const [colorCode, setColorCode] = React.useState(defaultColor)
   const [inputFormat, setInputFormat] = React.useState<ColorFormats>(isOpacity ? 'hexa' : 'hex')
 
-  // Effect to update HSV values when default color changes
   useEffect(() => {
     if (colorCode.startsWith('#')) {
       const rgb = hexToRGBA(colorCode)
@@ -59,7 +47,6 @@ export function ColorPicker({
     }
   }, [colorCode])
 
-  // Eyedropper functionality
   const handleEyeDropper = async () => {
     if ('EyeDropper' in window) {
       try {
@@ -78,7 +65,6 @@ export function ColorPicker({
     }
   }
 
-  // Convert HSV to RGB
   const hsvToRgb = (h: number, s: number, v: number) => {
     let r = 0, g = 0, b = 0
     const i = Math.floor(h * 6)
@@ -103,7 +89,6 @@ export function ColorPicker({
     }
   }
 
-  // Convert RGB to HSV
   const RGBtoHSV = (r: number, g: number, b: number) => {
     r /= 255
     g /= 255
@@ -134,14 +119,12 @@ export function ColorPicker({
     return { h, s, v }
   }
 
-  // Convert RGB to HEX
   const RGBtoHex = (r: number, g: number, b: number, a: number = 1) => {
     const alpha = Math.round(a * 255)
     const hex = ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
     return isOpacity && a !== 1 ? `#${hex}${alpha.toString(16).padStart(2, '0')}` : `#${hex}`
   }
 
-  // Convert HEX to RGB
   const hexToRGBA = (hex: string) => {
     hex = hex.replace(/^#/, '')
     if (hex.length === 3) {
@@ -154,7 +137,6 @@ export function ColorPicker({
     return { r, g, b, a }
   }
 
-  // Format color for input field
   const formatInputColor = (): string => {
     const rgb = hsvToRgb(hue, saturation, value)
     const h = Math.round(hue * 360)
@@ -185,7 +167,6 @@ export function ColorPicker({
     }
   }
 
-  // Format color for output (based on colorFormat prop)
   const formatOutputColor = (): string => {
     const rgb = hsvToRgb(hue, saturation, value)
     const h = Math.round(hue * 360)
@@ -194,21 +175,9 @@ export function ColorPicker({
     const l = Math.round((2 - saturation) * value / 2 * 100)
     const a = alpha.toFixed(2)
 
-    switch (colorFormat) {
-      case 'hex':
-        return RGBtoHex(rgb.r, rgb.g, rgb.b, isOpacity ? alpha : undefined)
-      case 'rgb':
-        return `rgb${isOpacity ? 'a' : ''}(${rgb.r}, ${rgb.g}, ${rgb.b}${isOpacity ? `, ${a}` : ''})`
-      case 'hsl':
-        return `hsl${isOpacity ? 'a' : ''}(${h}, ${s}%, ${l}%${isOpacity ? `, ${a}` : ''})`
-      case 'hsv':
-        return `hsv${isOpacity ? 'a' : ''}(${h}, ${s}%, ${v}%${isOpacity ? `, ${a}` : ''})`
-      default:
-        return RGBtoHex(rgb.r, rgb.g, rgb.b, alpha)
-    }
+    return RGBtoHex(rgb.r, rgb.g, rgb.b, alpha)
   }
 
-  // Handle color input change
   const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const color = e.target.value
     if (/^#[0-9A-Fa-f]{6}$/.test(color)) {
@@ -217,7 +186,6 @@ export function ColorPicker({
     }
   }
 
-  // Update color values and trigger onChange
   const updateColor = () => {
     if (onColorChange) {
       onColorChange(formatOutputColor())
@@ -229,15 +197,12 @@ export function ColorPicker({
   }, [hue, saturation, value, alpha])
 
   const handleMouseOrTouchEvent = (e: React.MouseEvent | React.TouchEvent) => {
-    // Prevent default touch behavior to avoid scrolling
     e.preventDefault();
     e.stopPropagation();
 
-    // Ensure we have a valid target
     const target = e.currentTarget as HTMLDivElement | null;
     if (!target) return;
 
-    // Ensure we have valid coordinates
     const isTouchEvent = 'touches' in e;
     const clientX = isTouchEvent ? e.touches[0]?.clientX : (e as React.MouseEvent).clientX;
     const clientY = isTouchEvent ? e.touches[0]?.clientY : (e as React.MouseEvent).clientY;
@@ -248,7 +213,6 @@ export function ColorPicker({
       moveEvent.preventDefault();
       moveEvent.stopPropagation();
 
-      // Ensure we have valid move coordinates
       const moveClientX = 'touches' in moveEvent
         ? moveEvent.touches[0]?.clientX
         : moveEvent.clientX;
@@ -264,13 +228,11 @@ export function ColorPicker({
       const x = moveClientX - boundingRect.left;
       const y = moveClientY - boundingRect.top;
 
-      // Calculate saturation and value with full range and smooth clamping
       setSaturation(Math.max(0, Math.min(1, x / boundingRect.width)));
       setValue(Math.max(0, Math.min(1, 1 - y / boundingRect.height)));
     };
 
     const endHandler = () => {
-      // Remove event listeners
       if (isTouchEvent) {
         document.removeEventListener('touchmove', moveHandler as EventListener);
         document.removeEventListener('touchend', endHandler as EventListener);
@@ -301,13 +263,13 @@ export function ColorPicker({
   };
 
   return (
-    <div className="w-64 bg-background border rounded-2xl shadow-2xl mt-1">
+    <div className={`${!isColorFormat && !isEyeDropper ? "w-56" : "w-64"} bg-background border rounded-2xl shadow-2xl mt-1`}>
       <div className="flex flex-col">
         <div className="flex m-2 gap-2">
           <Input
             value={formatInputColor()}
             onChange={handleColorChange}
-            className={`h-8 flex-1 text-xs px-2 py-1.5 ${inputFormat ==  (isOpacity ? 'hexa' : 'hex') ? 'uppercase' : ''}`}
+            className={`h-8 flex-1 text-xs px-2 py-1.5 ${inputFormat == (isOpacity ? 'hexa' : 'hex') ? 'uppercase' : ''}`}
             placeholder="#FF0000"
           />
           {isColorFormat && (
@@ -331,7 +293,7 @@ export function ColorPicker({
         </div>
 
         <div
-          className="relative w-full h-64 border-y cursor-crosshair active:cursor-grabbing"
+          className={`relative w-full ${!isColorFormat && !isEyeDropper ? "h-56" : "h-64"} border-y cursor-crosshair active:cursor-grabbing`}
           style={{
             background: `linear-gradient(to bottom, rgba(0,0,0,0), black), 
                         linear-gradient(to right, white, hsl(${hue * 360}, 100%, 50%))`

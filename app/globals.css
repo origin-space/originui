@@ -70,7 +70,8 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--thumb)
+  background: var(--thumb);
+  cursor: grab;
 }
 
 .hueSlider::-webkit-slider-thumb:active,

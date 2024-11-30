@@ -9,14 +9,12 @@ import { useEffect, useState, memo, useCallback } from 'react';
 
 // Memoized Picker component to optimize re-rendering
 const Picker = memo(({ 
-    setColor, 
-    colorFormat, 
+    setColor,
     isColorFormat, 
     isOpacity, 
     isEyeDropper 
 }: {
-    setColor: (color: string) => void, 
-    colorFormat: 'hex' | 'rgb' | 'hsl' | 'hsv', 
+    setColor: (color: string) => void,
     isColorFormat: boolean, 
     isOpacity: boolean, 
     isEyeDropper: boolean 
@@ -24,7 +22,6 @@ const Picker = memo(({
     return (
         <ColorPicker
             onColorChange={(color) => setColor(color)}
-            colorFormat={colorFormat}
             isColorFormat={isColorFormat}
             isOpacity={isOpacity}
             isEyeDropper={isEyeDropper}
@@ -89,8 +86,7 @@ export default function ColorPickerDemo() {
     return (
         <div className="flex justify-center items-center gap-12 w-full">
             <Picker
-                setColor={setColor} 
-                colorFormat={colorFormat} 
+                setColor={setColor}
                 isColorFormat={isColorFormat} 
                 isOpacity={isOpacity} 
                 isEyeDropper={isEyeDropper} 
@@ -102,28 +98,13 @@ export default function ColorPickerDemo() {
                     <Input
                         id="color-code"
                         value={color}
-                        className="w-full"
+                        className="w-full uppercase disabled:opacity-100"
+                        disabled
                     />
                 </div>
+                <label className="w-full font-sm font-bold">Picker's Properties</label>
                 <div className="w-full flex items-center gap-2">
-                    <Label className="flex-shrink-0 w-44" htmlFor="color-format">Output <span className="font-mono border rounded-lg px-1.5 py-1 mx-1 bg-secondary/50">colorFormat</span></Label>
-                    <Select
-                        value={colorFormat}
-                        onValueChange={(value: 'hex' | 'rgb' | 'hsl' | 'hsv') => setColorFormat(value)}
-                    >
-                        <SelectTrigger id="color-format" className="w-[72px] h-8 text-xs px-2">
-                            <SelectValue placeholder="Format" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectItem value="hex">HEX</SelectItem>
-                            <SelectItem value="rgb">RGB</SelectItem>
-                            <SelectItem value="hsl">HSL</SelectItem>
-                            <SelectItem value="hsv">HSV</SelectItem>
-                        </SelectContent>
-                    </Select>
-                </div>
-                <div className="w-full flex items-center gap-2">
-                    <Label className="flex-shrink-0 w-44" htmlFor="color-format-need"><span className="font-mono border rounded-lg px-1.5 py-1 bg-secondary/50">isColorFormat</span></Label>
+                    <Label className="flex-shrink-0 w-44 font-mono" htmlFor="color-format-need">isColorFormat</Label>
                     <Switch
                         id="color-format-need"
                         className="rounded-md [&_span]:rounded"
@@ -132,7 +113,7 @@ export default function ColorPickerDemo() {
                     />
                 </div>
                 <div className="w-full flex items-center gap-2">
-                    <Label className="flex-shrink-0 w-44" htmlFor="opacity"><span className="font-mono border rounded-lg px-1.5 py-1 bg-secondary/50">isOpacity</span></Label>
+                    <Label className="flex-shrink-0 w-44 font-mono" htmlFor="opacity">isOpacity</Label>
                     <Switch
                         id="opacity"
                         className="rounded-md [&_span]:rounded"
@@ -141,7 +122,7 @@ export default function ColorPickerDemo() {
                     />
                 </div>
                 <div className="w-full flex items-center gap-2">
-                    <Label className="flex-shrink-0 w-44" htmlFor="eye-dropper"><span className="font-mono border rounded-lg px-1.5 py-1 bg-secondary/50">isEyeDropper</span></Label>
+                    <Label className="flex-shrink-0 w-44 font-mono" htmlFor="eye-dropper">isEyeDropper</Label>
                     <Switch
                         id="eye-dropper"
                         className="rounded-md [&_span]:rounded"
