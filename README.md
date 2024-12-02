@@ -1,4 +1,4 @@
-Origin UI is an extensive collection of copy-and-paste components for quickly building app UIs. The collection currently features 100+ components and is constantly updated with new examples.
+Origin UI is an extensive collection of copy-and-paste components for quickly building app UIs. It includes hundreds of components and is constantly updated with new stuff.
 
 **Demo** → [https://originui.com](https://originui.com)
 
