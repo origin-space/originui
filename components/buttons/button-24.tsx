@@ -24,7 +24,7 @@ export default function ButtonDemo() {
             </Toggle>
           </div>
         </TooltipTrigger>
-        <TooltipContent className="border border-input bg-popover px-2 py-1 text-xs text-muted-foreground">
+        <TooltipContent className="px-2 py-1 text-xs">
           <p>{bookmarked ? "Remove bookmark" : "Bookmark this"}</p>
         </TooltipContent>
       </Tooltip>
