@@ -31,7 +31,7 @@ export default function DialogDemo() {
         <Button variant="outline">Checkout</Button>
       </DialogTrigger>
       <DialogContent>
-        <div className="flex flex-col gap-2 mb-2">
+        <div className="mb-2 flex flex-col gap-2">
           <div
             className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
             aria-hidden="true"
