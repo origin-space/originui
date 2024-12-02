@@ -1,52 +1,19 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { useImageUpload } from "@/hooks/use-image-upload";
 import { CircleUserRound } from "lucide-react";
 import Image from "next/image";
-import React, { useCallback, useEffect, useRef, useState } from "react";
 
 export default function ButtonDemo() {
-  const previewRef = useRef<string | null>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
-  const [fileName, setFileName] = useState<string | null>(null);
-  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
-
-  const handleButtonClick = useCallback(() => {
-    fileInputRef.current?.click();
-  }, []);
-
-  const handleFileChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      setFileName(file.name);
-      const url = URL.createObjectURL(file);
-      setPreviewUrl(url);
-      previewRef.current = url;
-      console.log("File selected:", file);
-    }
-  }, []);
-
-  const handleRemove = useCallback(() => {
-    if (previewUrl) {
-      URL.revokeObjectURL(previewUrl);
-    }
-    setFileName(null);
-    setPreviewUrl(null);
-    previewRef.current = null;
-    if (fileInputRef.current) {
-      fileInputRef.current.value = "";
-    }
-  }, [previewUrl]);
-
-  useEffect(() => {
-    return () => {
-      if (previewRef.current) {
-        URL.revokeObjectURL(previewRef.current);
-      }
-    };
-  }, []);
+  const {
+    previewUrl,
+    fileInputRef,
+    handleThumbnailClick: handleButtonClick,
+    handleFileChange,
+    handleRemove,
+    fileName,
+  } = useImageUpload();
 
   return (
     <div>

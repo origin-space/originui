@@ -33,13 +33,13 @@ export default function InputDemo() {
           </div>
         </div>
         <div className="-mt-px flex">
-          <div className="w-1/2 min-w-0 flex-1 focus-within:z-10">
+          <div className="min-w-0 flex-1 focus-within:z-10">
             <Input
               className="rounded-e-none rounded-t-none shadow-none [direction:inherit]"
               {...getExpiryDateProps()}
             />
           </div>
-          <div className="-ms-px w-1/2 min-w-0 flex-1 focus-within:z-10">
+          <div className="-ms-px min-w-0 flex-1 focus-within:z-10">
             <Input
               className="rounded-s-none rounded-t-none shadow-none [direction:inherit]"
               {...getCVCProps()}
