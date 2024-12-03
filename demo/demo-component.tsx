@@ -1,23 +1,28 @@
-import { cn } from "@/lib/utils";
-import CopyButton from "./copy-button";
 import { readComponentSource } from "./read-component-source";
+import CardComponent from "./card-component";
 
 export default async function DemoComponent({
-  directory,
-  componentName,
-  className,
+	directory,
+	componentName,
+	className,
 }: {
-  directory: string;
-  componentName: string;
-  className?: string;
+	directory: string;
+	componentName: string;
+	className?: string;
 }) {
-  const Component = (await import(`@/components/${directory}/${componentName}`)).default;
-  const source = await readComponentSource(directory, componentName);
+	// get anchor from url
+	const Component = (await import(`@/components/${directory}/${componentName}`))
+		.default;
+	const source = await readComponentSource(directory, componentName);
 
-  return (
-    <div className={cn("group/item relative", className)}>
-      <Component />
-      <CopyButton componentSource={source || ""} />
-    </div>
-  );
+	return (
+		<CardComponent
+			componentName={componentName}
+			className={className}
+			directory={directory}
+			source={source || ""}
+		>
+			<Component />
+		</CardComponent>
+	);
 }
