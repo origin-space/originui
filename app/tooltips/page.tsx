@@ -10,7 +10,18 @@ export const metadata: Metadata = {
 };
 
 const directory = "tooltips";
-const files = ["tooltip-01", "tooltip-02", "tooltip-03", "tooltip-04", "tooltip-05", "tooltip-06"];
+const files = [
+  "tooltip-01",
+  "tooltip-02",
+  "tooltip-03",
+  "tooltip-04",
+  "tooltip-05",
+  "tooltip-06",
+  "tooltip-07",
+  "tooltip-08",
+  "tooltip-09",
+  "tooltip-08x",
+];
 
 export default function Page() {
   return (

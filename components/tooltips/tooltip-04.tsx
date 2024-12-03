@@ -6,11 +6,11 @@ export default function TooltipDemo() {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button variant="outline">Rich</Button>
+          <Button variant="outline" size="sm">Rich</Button>
         </TooltipTrigger>
         <TooltipContent className="py-3">
           <div className="space-y-1">
-            <p className="font-medium">Tooltip with title</p>
+            <p className="text-[13px] font-medium">Tooltip with title</p>
             <p className="text-xs text-muted-foreground">
               Tooltips are made to be highly customizable, with features like dynamic placement,
               rich content, and a robust API. You can even use them as a full-featured dropdown menu

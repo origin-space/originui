@@ -8,18 +8,13 @@ import {
 } from "@/components/ui/accordion";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import {
-  Accessibility,
-  Book,
+  CircleDashed,
   ChevronDown,
-  FileCode,
   Gauge,
-  Keyboard,
-  Layers,
   LucideIcon,
-  Monitor,
-  Package,
-  Palette,
-  Split,
+  AtSign,
+  Command,
+  Eclipse,
   Zap,
 } from "lucide-react";
 
@@ -27,7 +22,7 @@ const items = [
   {
     id: "1",
     title: "What makes Origin UI different?",
-    icon: Layers,
+    icon: Command,
     collapsibles: [
       {
         title: "What about performance?",
@@ -38,25 +33,25 @@ const items = [
         title: "How is the documentation?",
         content:
           "Our documentation is comprehensive and includes live examples for every component.",
-        icon: Book,
+        icon: CircleDashed,
       },
     ],
   },
   {
     id: "2",
     title: "How can I customize the components?",
-    icon: Palette,
+    icon: Eclipse,
     collapsibles: [
       {
         title: "Can I use custom themes?",
         content:
           "Yes, our theming system is fully customizable and supports both light and dark modes.",
-        icon: FileCode,
+        icon: Gauge,
       },
       {
         title: "What about Tailwind support?",
         content: "We have first-class support for Tailwind CSS with custom utility classes.",
-        icon: Monitor,
+        icon: CircleDashed,
       },
     ],
   },
@@ -70,30 +65,30 @@ const items = [
         content:
           "Our components are tree-shakeable and typically add minimal overhead to your bundle.",
         open: true,
-        icon: Package,
+        icon: Gauge,
       },
       {
         title: "How is code splitting handled?",
         content: "We support automatic code splitting for optimal loading performance.",
-        icon: Split,
+        icon: CircleDashed,
       },
     ],
   },
   {
     id: "4",
     title: "How accessible are the components?",
-    icon: Accessibility,
+    icon: AtSign,
     collapsibles: [
       {
         title: "Which screen readers are supported?",
         content: "We test with NVDA, VoiceOver, and JAWS to ensure broad compatibility.",
-        icon: Monitor,
+        icon: Gauge,
       },
       {
         title: "What about keyboard navigation?",
         content:
           "Full keyboard navigation support is implemented following WAI-ARIA best practices.",
-        icon: Keyboard,
+        icon: CircleDashed,
       },
     ],
   },
@@ -102,7 +97,7 @@ const items = [
 export default function AccordionDemo() {
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-bold">Multi-level 2</h2>
+      <h2 className="text-xl font-bold">Multi-level w/ icon</h2>
       <Accordion type="single" collapsible className="w-full" defaultValue="3">
         {items.map((item) => (
           <AccordionItem value={item.id} key={item.id}>

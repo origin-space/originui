@@ -6,7 +6,7 @@ export default function TooltipDemo() {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button variant="outline">Mini</Button>
+          <Button variant="outline" size="sm">Mini</Button>
         </TooltipTrigger>
         <TooltipContent className="px-2 py-1 text-xs">This is a simple tooltip</TooltipContent>
       </Tooltip>

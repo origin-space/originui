@@ -99,7 +99,7 @@ export default function SelectDemo() {
           </Button>
         </PopoverTrigger>
         <PopoverContent
-          className="w-full min-w-[var(--radix-popper-anchor-width)] p-0"
+          className="w-full min-w-[var(--radix-popper-anchor-width)] p-0 border-input"
           align="start"
         >
           <Command>

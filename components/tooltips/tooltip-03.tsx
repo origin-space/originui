@@ -6,7 +6,7 @@ export default function TooltipDemo() {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button variant="outline">With arrow</Button>
+          <Button variant="outline" size="sm">With arrow</Button>
         </TooltipTrigger>
         <TooltipContent className="dark px-2 py-1 text-xs" showArrow={true}>
           This tooltip has an arrow

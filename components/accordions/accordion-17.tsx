@@ -35,7 +35,7 @@ const items = [
 export default function AccordionDemo() {
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-bold">Table</h2>
+      <h2 className="text-xl font-bold">Table w/ left chevron</h2>
       <Accordion type="single" collapsible className="w-full -space-y-px" defaultValue="3">
         {items.map((item) => (
           <AccordionItem
