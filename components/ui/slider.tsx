@@ -65,7 +65,7 @@ const Slider = React.forwardRef<
         <Tooltip open={showTooltipState}>
           <TooltipTrigger asChild>{thumb}</TooltipTrigger>
           <TooltipContent
-            className="border border-input bg-popover px-2 py-1 text-xs text-muted-foreground"
+            className="px-2 py-1 text-xs"
             sideOffset={8}
             side={props.orientation === "vertical" ? "right" : "top"}
           >

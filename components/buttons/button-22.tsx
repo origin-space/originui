@@ -15,9 +15,7 @@ export default function ButtonDemo() {
             <Plus size={16} strokeWidth={2} aria-hidden="true" />
           </Button>
         </TooltipTrigger>
-        <TooltipContent className="border border-input bg-popover px-2 py-1 text-xs text-muted-foreground">
-          Tooltip
-        </TooltipContent>
+        <TooltipContent className="px-2 py-1 text-xs">Tooltip</TooltipContent>
       </Tooltip>
     </TooltipProvider>
   );

@@ -75,9 +75,7 @@ const CopyButton = ({ componentSource }: { componentSource: string }) => {
               </div>
             </Button>
           </TooltipTrigger>
-          <TooltipContent className="border border-input bg-popover px-2 py-1 text-xs text-muted-foreground">
-            Copy
-          </TooltipContent>
+          <TooltipContent className="px-2 py-1 text-xs text-muted-foreground">Copy</TooltipContent>
         </Tooltip>
       </TooltipProvider>
     </div>

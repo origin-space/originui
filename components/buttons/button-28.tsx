@@ -51,9 +51,7 @@ export default function ButtonDemo() {
             </div>
           </Button>
         </TooltipTrigger>
-        <TooltipContent className="border border-input bg-popover px-2 py-1 text-xs text-muted-foreground">
-          Click to copy
-        </TooltipContent>
+        <TooltipContent className="px-2 py-1 text-xs">Click to copy</TooltipContent>
       </Tooltip>
     </TooltipProvider>
   );
