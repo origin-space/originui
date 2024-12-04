@@ -12,7 +12,7 @@ export default function PopoverDemo() {
         <Button variant="outline" size="sm">Tooltip-like popover</Button>
       </PopoverTrigger>
       <PopoverContent className="py-3 max-w-[280px] shadow-none" side="top">
-        <div className="space-y-2">
+        <div className="space-y-3">
           <div className="space-y-1">
             <p className="text-[13px] font-medium">Popover with button</p>
             <p className="text-xs text-muted-foreground">

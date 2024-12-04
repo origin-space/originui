@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import Image from "next/image";
 
-import DialogImg from "@/public/dialog-content.png";
+import ContentImg from "@/public/dialog-content.png";
 
 export default function TooltipDemo() {
   return (
@@ -15,10 +15,10 @@ export default function TooltipDemo() {
           <div className="space-y-2">
             <Image
               className="w-full rounded"
-              src={DialogImg}
+              src={ContentImg}
               width={382}
               height={216}
-              alt="dialog"
+              alt="Content image"
             />
             <div className="space-y-1">
               <p className="text-[13px] font-medium">Tooltip with title and icon</p>
