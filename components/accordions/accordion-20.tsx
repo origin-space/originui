@@ -8,13 +8,13 @@ import {
 } from "@/components/ui/accordion";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import {
-  CircleDashed,
-  ChevronDown,
-  Gauge,
-  LucideIcon,
   AtSign,
+  ChevronDown,
+  CircleDashed,
   Command,
   Eclipse,
+  Gauge,
+  LucideIcon,
   Zap,
 } from "lucide-react";
 

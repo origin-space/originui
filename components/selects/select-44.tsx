@@ -98,7 +98,7 @@ export default function SelectDemo() {
           </Button>
         </PopoverTrigger>
         <PopoverContent
-          className="w-full min-w-[var(--radix-popper-anchor-width)] p-0 border-input"
+          className="w-full min-w-[var(--radix-popper-anchor-width)] border-input p-0"
           align="start"
         >
           <Command>
@@ -119,11 +119,7 @@ export default function SelectDemo() {
                       >
                         <span className="text-lg leading-none">{country.flag}</span> {country.value}
                         {value === country.value && (
-                          <Check
-                            size={16}
-                            strokeWidth={2}
-                            className="ml-auto"
-                          />
+                          <Check size={16} strokeWidth={2} className="ml-auto" />
                         )}
                       </CommandItem>
                     ))}
