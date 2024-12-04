@@ -119,12 +119,13 @@ export default function SelectDemo() {
                         }}
                       >
                         <span className="text-lg leading-none">{country.flag}</span> {country.value}
-                        <Check
-                          className={cn(
-                            "ml-auto",
-                            value === country.value ? "opacity-100" : "opacity-0",
-                          )}
-                        />
+                        {value === country.value && (
+                          <Check
+                            size={16}
+                            strokeWidth={2}
+                            className="ml-auto"
+                          />
+                        )}
                       </CommandItem>
                     ))}
                   </CommandGroup>
