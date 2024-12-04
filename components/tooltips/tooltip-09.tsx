@@ -17,11 +17,11 @@ export default function TooltipDemo() {
             </div>
             <div className="flex items-center gap-2 text-xs">
               <svg width="8" height="8" fill="currentColor" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg" className="shrink-0 text-purple-500" aria-hidden="true"><circle cx="4" cy="4" r="4"></circle></svg>
-              <span className="flex gap-2 grow">Appointments <span className="ml-auto font-medium">$280</span></span>
+              <span className="flex gap-2 grow">Revenue <span className="ml-auto font-medium">$280</span></span>
             </div>
             <div className="flex items-center gap-2 text-xs">
               <svg width="8" height="8" fill="currentColor" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg" className="shrink-0 text-rose-500" aria-hidden="true"><circle cx="4" cy="4" r="4"></circle></svg>
-              <span className="flex gap-2 grow">Expenses <span className="ml-auto font-medium">$410</span></span>
+              <span className="flex gap-2 grow">Costs <span className="ml-auto font-medium">$410</span></span>
             </div>
           </div>
         </TooltipContent>

@@ -19,7 +19,7 @@ export default function PopoverDemo() {
               I am a popover that would like to look like a tooltip. I can't be a tooltip because of the interactive element inside me.
             </p>
           </div>
-          <Button size="sm">Custom Action</Button>
+          <Button size="sm" className="h-7 px-2">Know more</Button>
         </div>
       </PopoverContent>
     </Popover>
