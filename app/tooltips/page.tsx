@@ -4,9 +4,9 @@ import PageHeader from "@/demo/page-header";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tooltip Components - Origin UI",
+  title: "Tooltip and Hover Card Components - Origin UI",
   description:
-    "A collection of beautiful and accessible tooltip components built with Tailwind CSS and Next.js.",
+    "A collection of beautiful and accessible tooltip and hover card components built with Tailwind CSS and Next.js.",
 };
 
 const tooltipDir = "tooltips";
@@ -20,9 +20,6 @@ const tooltipFiles = [
   "tooltip-07",
   "tooltip-08",
   "tooltip-09",
-  "tooltip-10",
-  "tooltip-11",
-  "tooltip-12",
 ];
 
 const hoverCardDir = "hover-cards";
@@ -40,7 +37,7 @@ export default function Page() {
       <div className="px-4 sm:px-6">
         <div className="mx-auto w-full max-w-6xl">
           <PageHeader title="Tooltip">
-            A growing collection of {totalComponents} tooltip components built with Next.js and
+            A growing collection of {totalComponents} tooltip and hover card components built with Next.js and
             TailwindCSS.
           </PageHeader>
 
