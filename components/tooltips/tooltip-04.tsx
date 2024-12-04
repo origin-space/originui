@@ -6,7 +6,9 @@ export default function TooltipDemo() {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button variant="outline" size="sm">Rich</Button>
+          <Button variant="outline" size="sm">
+            Rich
+          </Button>
         </TooltipTrigger>
         <TooltipContent className="py-3">
           <div className="space-y-1">
@@ -14,7 +16,7 @@ export default function TooltipDemo() {
             <p className="text-xs text-muted-foreground">
               Tooltips are made to be highly customizable, with features like dynamic placement,
               rich content, and a robust API. You can even use them as a full-featured dropdown menu
-              by setting the <code>trigger</code> prop to <code>"click"</code>.
+              by setting the <code>trigger</code> prop to <code>click</code>.
             </p>
           </div>
         </TooltipContent>

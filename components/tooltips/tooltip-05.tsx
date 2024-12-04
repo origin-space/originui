@@ -7,7 +7,9 @@ export default function TooltipDemo() {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button variant="outline" size="sm">Rich</Button>
+          <Button variant="outline" size="sm">
+            Rich
+          </Button>
         </TooltipTrigger>
         <TooltipContent className="py-3">
           <div className="flex gap-3">

@@ -3,7 +3,7 @@
 import { Accordion, AccordionContent, AccordionItem } from "@/components/ui/accordion";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 
-import { AtSign, Command, Eclipse, Zap, Plus } from "lucide-react";
+import { AtSign, Command, Eclipse, Plus, Zap } from "lucide-react";
 
 const items = [
   {

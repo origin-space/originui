@@ -6,7 +6,9 @@ export default function TooltipDemo() {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button variant="outline" size="sm">Rich</Button>
+          <Button variant="outline" size="sm">
+            Rich
+          </Button>
         </TooltipTrigger>
         <TooltipContent className="py-3">
           <ul className="grid gap-3 text-xs">

@@ -23,11 +23,7 @@ const tooltipFiles = [
 ];
 
 const hoverCardDir = "hover-cards";
-const hoverCardFiles = [
-  "hover-card-01",
-  "hover-card-02",
-  "hover-card-03",
-];
+const hoverCardFiles = ["hover-card-01", "hover-card-02", "hover-card-03"];
 
 const totalComponents = tooltipFiles.length + hoverCardFiles.length;
 
@@ -37,8 +33,8 @@ export default function Page() {
       <div className="px-4 sm:px-6">
         <div className="mx-auto w-full max-w-6xl">
           <PageHeader title="Tooltip">
-            A growing collection of {totalComponents} tooltip and hover card components built with Next.js and
-            TailwindCSS.
+            A growing collection of {totalComponents} tooltip and hover card components built with
+            Next.js and TailwindCSS.
           </PageHeader>
 
           <div className="grid max-w-6xl grid-cols-1 overflow-hidden sm:grid-cols-2 md:grid-cols-3 [&>*]:relative [&>*]:px-1 [&>*]:py-12 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-8 xl:[&>*]:px-12">
@@ -58,7 +54,7 @@ export default function Page() {
                   key={componentName}
                   directory={hoverCardDir}
                   componentName={componentName}
-                  className="flex justify-center items-start"
+                  className="flex items-start justify-center"
                 />
               );
             })}
