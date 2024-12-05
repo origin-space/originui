@@ -133,12 +133,9 @@ export default function SelectDemo() {
                     }}
                   >
                     {framework.label}
-                    <Check
-                      className={cn(
-                        "ml-auto",
-                        value === framework.value ? "opacity-100" : "opacity-0",
-                      )}
-                    />
+                    {value === framework.value && (
+                      <Check size={16} strokeWidth={2} className="ml-auto" />
+                    )}
                   </CommandItem>
                 ))}
               </CommandGroup>
