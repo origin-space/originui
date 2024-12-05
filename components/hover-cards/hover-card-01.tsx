@@ -30,7 +30,9 @@ export default function HoverCardDemo() {
           />
           <div className="space-y-1">
             <p className="text-sm font-medium">@Origin_UI</p>
-            <p className="text-sm">Beautiful UI components built with Tailwind CSS and Next.js.</p>
+            <p className="text-sm text-muted-foreground">
+              Beautiful UI components built with Tailwind CSS and Next.js.
+            </p>
           </div>
         </div>
       </HoverCardContent>

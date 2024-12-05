@@ -1,3 +1,5 @@
+// Dependencies: pnpm install lucide-react
+
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, Circle } from "lucide-react";
@@ -5,7 +7,7 @@ import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, Circle } from "lucid
 export default function PopoverDemo() {
   return (
     <div className="inline-grid w-fit grid-cols-3 gap-1">
-      <TooltipProvider>
+      <TooltipProvider delayDuration={0}>
         <Tooltip>
           <TooltipTrigger asChild>
             <Button
@@ -25,7 +27,7 @@ export default function PopoverDemo() {
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
-      <TooltipProvider>
+      <TooltipProvider delayDuration={0}>
         <Tooltip>
           <TooltipTrigger asChild>
             <Button
@@ -48,7 +50,7 @@ export default function PopoverDemo() {
       <div className="flex items-center justify-center" aria-hidden="true">
         <Circle className="opacity-60" size={16} strokeWidth={2} />
       </div>
-      <TooltipProvider>
+      <TooltipProvider delayDuration={0}>
         <Tooltip>
           <TooltipTrigger asChild>
             <Button variant="outline" size="icon" aria-label="Pan camera right">
@@ -63,7 +65,7 @@ export default function PopoverDemo() {
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
-      <TooltipProvider>
+      <TooltipProvider delayDuration={0}>
         <Tooltip>
           <TooltipTrigger asChild>
             <Button

@@ -44,7 +44,7 @@ export default function Page() {
                   key={componentName}
                   directory={tooltipDir}
                   componentName={componentName}
-                  className="text-center"
+                  className="flex items-center justify-center"
                 />
               );
             })}

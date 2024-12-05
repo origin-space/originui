@@ -1,17 +1,19 @@
+// Dependencies: pnpm install lucide-react
+
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Globe } from "lucide-react";
 
 export default function TooltipDemo() {
   return (
-    <TooltipProvider>
+    <TooltipProvider delayDuration={0}>
       <Tooltip>
         <TooltipTrigger asChild>
           <Button variant="outline" size="sm">
-            Rich
+            W/ icon
           </Button>
         </TooltipTrigger>
-        <TooltipContent className="py-3">
+        <TooltipContent className="dark py-3">
           <div className="flex gap-3">
             <Globe
               className="mt-0.5 shrink-0 opacity-60"

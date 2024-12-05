@@ -6,11 +6,11 @@ import ContentImg from "@/public/dialog-content.png";
 
 export default function TooltipDemo() {
   return (
-    <TooltipProvider>
+    <TooltipProvider delayDuration={0}>
       <Tooltip>
         <TooltipTrigger asChild>
           <Button variant="outline" size="sm">
-            Rich
+            W/ image
           </Button>
         </TooltipTrigger>
         <TooltipContent className="py-3">

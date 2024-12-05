@@ -3,11 +3,11 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 
 export default function TooltipDemo() {
   return (
-    <TooltipProvider>
+    <TooltipProvider delayDuration={0}>
       <Tooltip>
         <TooltipTrigger asChild>
           <Button variant="outline" size="sm">
-            With arrow
+            W/ arrow
           </Button>
         </TooltipTrigger>
         <TooltipContent className="dark px-2 py-1 text-xs" showArrow={true}>

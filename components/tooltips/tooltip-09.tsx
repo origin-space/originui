@@ -3,14 +3,14 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 
 export default function TooltipDemo() {
   return (
-    <TooltipProvider>
+    <TooltipProvider delayDuration={0}>
       <Tooltip>
         <TooltipTrigger asChild>
           <Button variant="outline" size="sm">
-            Rich
+            Chart
           </Button>
         </TooltipTrigger>
-        <TooltipContent className="py-3">
+        <TooltipContent className="py-2">
           <div className="space-y-2">
             <div className="text-[13px] font-medium">Tuesday, Aug 13</div>
             <div className="flex items-center gap-2 text-xs">
@@ -26,7 +26,7 @@ export default function TooltipDemo() {
                 <circle cx="4" cy="4" r="4"></circle>
               </svg>
               <span className="flex grow gap-2">
-                Sales <span className="ml-auto font-medium">$40</span>
+                Sales <span className="ml-auto">$40</span>
               </span>
             </div>
             <div className="flex items-center gap-2 text-xs">
@@ -42,7 +42,7 @@ export default function TooltipDemo() {
                 <circle cx="4" cy="4" r="4"></circle>
               </svg>
               <span className="flex grow gap-2">
-                Revenue <span className="ml-auto font-medium">$280</span>
+                Revenue <span className="ml-auto">$74</span>
               </span>
             </div>
             <div className="flex items-center gap-2 text-xs">
@@ -58,7 +58,7 @@ export default function TooltipDemo() {
                 <circle cx="4" cy="4" r="4"></circle>
               </svg>
               <span className="flex grow gap-2">
-                Costs <span className="ml-auto font-medium">$410</span>
+                Costs <span className="ml-auto">$410</span>
               </span>
             </div>
           </div>
