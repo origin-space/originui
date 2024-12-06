@@ -1,37 +1,43 @@
+// Dependencies: pnpm install lucide-react
+
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuTrigger,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuGroup
-} from "@/components/ui/dropdown-menu"
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import AvatarImg from "@/public/avatar.jpg";
+import Image from "next/image";
 
-import { ChevronDown, LogOut, Bolt, Layers2, BookOpen, Pin, UserPen } from "lucide-react"
+import { Bolt, BookOpen, CircleUserRound, Layers2, LogOut, Pin, UserPen } from "lucide-react";
 
 export default function DropdownDemo() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-      <Button variant="ghost" className="h-auto p-0 hover:bg-transparent">
-          <Avatar>
-            <AvatarImage src="https://raw.githubusercontent.com/origin-space/originui/refs/heads/tooltip/public/avatar.jpg" alt="Profile image" />
-            <AvatarFallback>KK</AvatarFallback>
-          </Avatar>
-          <ChevronDown size={16} strokeWidth={2} className="ms-2 opacity-60" aria-hidden="true" />
+        <Button size="icon" variant="outline" aria-label="Open account menu">
+          <CircleUserRound size={16} strokeWidth={2} aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="max-w-64">
-        <DropdownMenuLabel className="flex flex-col min-w-0">
-          <span className="font-medium text-foreground text-sm truncate">Keith Kennedy</span>
-          <span className="text-xs font-normal text-muted-foreground truncate">k.kennedy@originui.com</span>
+        <DropdownMenuLabel className="flex items-start gap-3">
+          <Image
+            src={AvatarImg}
+            alt="Avatar"
+            width={32}
+            height={32}
+            className="shrink-0 rounded-full"
+          />
+          <div className="flex min-w-0 flex-col">
+            <span className="truncate text-sm font-medium text-foreground">Keith Kennedy</span>
+            <span className="truncate text-xs font-normal text-muted-foreground">
+              k.kennedy@originui.com
+            </span>
+          </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
@@ -58,7 +64,7 @@ export default function DropdownDemo() {
             <UserPen size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
             <span>Option 5</span>
           </DropdownMenuItem>
-        </DropdownMenuGroup>        
+        </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
           <LogOut size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
@@ -67,4 +73,4 @@ export default function DropdownDemo() {
       </DropdownMenuContent>
     </DropdownMenu>
   );
-} 
+}

@@ -1,17 +1,13 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { Input } from "@/components/ui/input";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger
-} from "@/components/ui/popover"
-import { RiFacebookFill, RiCodeFill, RiTwitterXFill, RiMailFill } from "@remixicon/react";
-import { Check, Copy } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import { RiCodeFill, RiFacebookFill, RiMailFill, RiTwitterXFill } from "@remixicon/react";
+import { Check, Copy } from "lucide-react";
+import { useRef, useState } from "react";
 
 export default function PopoverDemo() {
   const [copied, setCopied] = useState<boolean>(false);
@@ -23,23 +19,21 @@ export default function PopoverDemo() {
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     }
-  };  
+  };
 
   return (
     <div className="flex flex-col gap-4">
       <Popover>
         <PopoverTrigger asChild>
-          <Button variant="outline">
-            Share
-          </Button>
+          <Button variant="outline">Share</Button>
         </PopoverTrigger>
         <PopoverContent className="w-72">
           <div className="flex flex-col gap-3 text-center">
-            <div className="font-medium text-sm">Share code</div>
+            <div className="text-sm font-medium">Share code</div>
             <div className="flex flex-wrap justify-center gap-2">
               <Button size="icon" variant="outline" aria-label="Embed">
                 <RiCodeFill size={16} strokeWidth={2} aria-hidden="true" />
-              </Button>      
+              </Button>
               <Button size="icon" variant="outline" aria-label="Share on Twitter">
                 <RiTwitterXFill size={16} strokeWidth={2} aria-hidden="true" />
               </Button>

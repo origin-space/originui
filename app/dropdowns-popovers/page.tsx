@@ -12,33 +12,33 @@ export const metadata: Metadata = {
 const dropdownDir = "dropdowns";
 const dropdownFiles = [
   "dropdown-01",
-  "dropdown-01b",
   "dropdown-02",
   "dropdown-03",
   "dropdown-04",
   "dropdown-05",
+  "dropdown-06",
   "dropdown-07",
   "dropdown-08",
-  "dropdown-06",
   "dropdown-09",
   "dropdown-10",
   "dropdown-11",
   "dropdown-12",
   "dropdown-13",
   "dropdown-14",
+  "dropdown-15",
 ];
 
 const popoverDir = "popovers";
 const popoverFiles = [
   "popover-01",
-  "popover-01b",
   "popover-02",
+  "popover-03",
   "popover-04",
   "popover-05",
   "popover-06",
-  "popover-01x",
-  "popover-02x",
-  "popover-03x",
+  "popover-07",
+  "popover-08",
+  "popover-09",
 ];
 
 const totalComponents = dropdownFiles.length + popoverFiles.length;
@@ -49,7 +49,7 @@ export default function Page() {
       <div className="px-4 sm:px-6">
         <div className="mx-auto w-full max-w-6xl">
           <PageHeader title="Dropdown and Popover">
-            A growing collection of {totalComponents} dropdown and popover components built
+            A growing collection of {totalComponents} dropdown menu and popover components built
             with Next.js and TailwindCSS.
           </PageHeader>
 

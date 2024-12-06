@@ -1,117 +1,172 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-  PopoverAnchor
-} from "@/components/ui/popover"
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Bell } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
-import { Heart, Diamond, Club, Spade, LucideIcon } from "lucide-react"
+import UserImg01 from "@/public/avatar-80-01.jpg";
+import UserImg02 from "@/public/avatar-80-02.jpg";
+import UserImg03 from "@/public/avatar-80-03.jpg";
+import UserImg04 from "@/public/avatar-80-04.jpg";
+import UserImg05 from "@/public/avatar-80-05.jpg";
+import UserImg06 from "@/public/avatar-80-06.jpg";
 
-interface TourStep {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-}
-
-const tourSteps: TourStep[] = [
+const initialNotifications = [
   {
-    icon: Heart,
-    title: "Heart",
-    description: "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more."
+    id: 1,
+    image: UserImg01,
+    user: "Chris Thompson",
+    action: "requested review on",
+    target: "PR #42: Feature implementation",
+    timestamp: "15 minutes ago",
+    unread: true,
   },
   {
-    icon: Diamond,
-    title: "Diamond",
-    description: "Use the toolbar above to create new projects, invite team members, or access settings."
+    id: 2,
+    image: UserImg02,
+    user: "Emma Davis",
+    action: "shared",
+    target: "New component library",
+    timestamp: "45 minutes ago",
+    unread: true,
   },
   {
-    icon: Club,
-    title: "Club",
-    description: "Click the support icon in the top right corner to access our help center and documentation."
+    id: 3,
+    image: UserImg03,
+    user: "James Wilson",
+    action: "assigned you to",
+    target: "API integration task",
+    timestamp: "4 hours ago",
+    unread: false,
   },
   {
-    icon: Spade,
-    title: "Spade",
-    description: "Press ⌘K to open the command palette. Use arrow keys to navigate and Enter to select an action."
-  }
+    id: 4,
+    image: UserImg04,
+    user: "Alex Morgan",
+    action: "replied to your comment in",
+    target: "Authentication flow",
+    timestamp: "12 hours ago",
+    unread: false,
+  },
+  {
+    id: 5,
+    image: UserImg05,
+    user: "Sarah Chen",
+    action: "commented on",
+    target: "Dashboard redesign",
+    timestamp: "2 days ago",
+    unread: false,
+  },
+  {
+    id: 6,
+    image: UserImg06,
+    user: "Miky Derya",
+    action: "mentioned you in",
+    target: "Origin UI open graph image",
+    timestamp: "2 weeks ago",
+    unread: false,
+  },
 ];
 
-interface CardProps {
-  icon: LucideIcon;
-  isActive: boolean;
-}
-
-function Card({ icon: Icon, isActive }: CardProps) {
-  const content = (
-    <div className="size-10 bg-secondary rounded-lg flex items-center justify-center">
-      <Icon size={16} strokeWidth={2} />
-    </div>
+function Dot({ className }: { className?: string }) {
+  return (
+    <svg
+      width="6"
+      height="6"
+      fill="currentColor"
+      viewBox="0 0 6 6"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      <circle cx="3" cy="3" r="3" />
+    </svg>
   );
-
-  return isActive ? <PopoverAnchor>{content}</PopoverAnchor> : content;
 }
 
 export default function PopoverDemo() {
-  const [currentTip, setCurrentTip] = useState(0);
+  const [notifications, setNotifications] = useState(initialNotifications);
+  const unreadCount = notifications.filter((n) => n.unread).length;
 
-  const handleNavigation = () => {
-    if (currentTip === tourSteps.length - 1) {
-      setCurrentTip(0);
-    } else {
-      setCurrentTip(currentTip + 1);
-    }
+  const handleMarkAllAsRead = () => {
+    setNotifications(
+      notifications.map((notification) => ({
+        ...notification,
+        unread: false,
+      })),
+    );
+  };
+
+  const handleNotificationClick = (id: number) => {
+    setNotifications(
+      notifications.map((notification) =>
+        notification.id === id ? { ...notification, unread: false } : notification,
+      ),
+    );
   };
 
   return (
-    <div className="flex flex-col gap-4">
-      <Popover onOpenChange={(open) => {
-        if (open) setCurrentTip(0);
-      }}>
-        
-        <div className="grid grid-cols-2 gap-4 place-items-center">
-          {tourSteps.map((step, index) => (
-            <Card
-              key={step.title}
-              icon={step.icon}
-              isActive={currentTip === index}
-            />
-          ))}
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button size="icon" variant="outline" className="relative" aria-label="Open notifications">
+          <Bell size={16} strokeWidth={2} aria-hidden="true" />
+          {unreadCount > 0 && (
+            <span
+              className="absolute -top-2 left-full inline-flex h-5 min-w-[20px] -translate-x-1/2 items-center justify-center rounded-full bg-primary px-1 text-xs font-medium text-primary-foreground"
+              aria-hidden="true"
+            >
+              {unreadCount > 99 ? "99+" : unreadCount}
+            </span>
+          )}
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-80 p-1">
+        <div className="flex items-baseline justify-between gap-4 px-3 py-2">
+          <div className="text-sm font-semibold">Notifications</div>
+          {unreadCount > 0 && (
+            <button className="text-xs font-medium hover:underline" onClick={handleMarkAllAsRead}>
+              Mark all as read
+            </button>
+          )}
         </div>
-
-        <PopoverTrigger asChild>
-          <Button variant="outline">
-            Start tour
-          </Button>
-        </PopoverTrigger>
-
-        <PopoverContent 
-          className="py-3 max-w-[280px] shadow-none"
-          side={currentTip % 2 === 0 ? "left" : "right"}
-          showArrow={true}
-        >
-          <div className="space-y-3">
-            <div className="space-y-1">
-              <p className="text-[13px] font-medium">{tourSteps[currentTip].title}</p>
-              <p className="text-xs text-muted-foreground">
-                {tourSteps[currentTip].description}
-              </p>
-            </div>
-            <div className="flex justify-between items-center gap-2">
-              <span className="text-xs text-muted-foreground">{currentTip + 1}/{tourSteps.length}</span>
+        <div
+          role="separator"
+          aria-orientation="horizontal"
+          className="-mx-1 my-1 h-px bg-border"
+        ></div>
+        {notifications.map((notification) => (
+          <div
+            key={notification.id}
+            className="relative flex items-start gap-3 rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent"
+          >
+            <Image
+              className="size-9 rounded-md"
+              src={notification.image}
+              width={32}
+              height={32}
+              alt={notification.user}
+            />
+            <div className="flex-1 space-y-1">
               <button
-                className="text-xs font-medium hover:underline"
-                onClick={handleNavigation}
+                className="text-left after:absolute after:inset-0"
+                onClick={() => handleNotificationClick(notification.id)}
               >
-                {currentTip === tourSteps.length - 1 ? 'Start over' : 'Next'}
+                <span className="font-medium hover:underline">{notification.user}</span>{" "}
+                {notification.action}{" "}
+                <span className="font-medium hover:underline">{notification.target}</span>.
               </button>
+              <div className="text-xs text-muted-foreground">{notification.timestamp}</div>
             </div>
+            {notification.unread && (
+              <div className="self-center">
+                <Dot />
+              </div>
+            )}
           </div>
-        </PopoverContent>
-      </Popover>
-    </div>
+        ))}
+      </PopoverContent>
+    </Popover>
   );
 }
