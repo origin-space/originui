@@ -12,7 +12,7 @@ export default function ThemeToggle() {
         name="theme-toggle"
         id="theme-toggle"
         className="peer sr-only"
-        checked={theme === "light"}
+        checked={theme === "dark"}
         onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
         aria-label="Toggle dark mode"
       />
