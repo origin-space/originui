@@ -35,6 +35,8 @@ const files = [
   "button-22",
   "button-23",
   "button-24",
+  "button-52",
+  "button-53",
   "button-25",
   "button-26",
   "button-27",
@@ -62,7 +64,6 @@ const files = [
   "button-49",
   "button-50",
   "button-51",
-  "button-52"
 ];
 
 export default function Page() {

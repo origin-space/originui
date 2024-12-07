@@ -19,6 +19,7 @@ const checboxFiles = [
   "checkbox-06",
   "checkbox-07",
   "checkbox-08",
+  "checkbox-20",
   "checkbox-09",
   "checkbox-10",
   "checkbox-11",
@@ -29,6 +30,7 @@ const checboxFiles = [
   "checkbox-16",
   "checkbox-17",
   "checkbox-18",
+  "checkbox-19",
 ];
 
 const radioDir = "radios";
