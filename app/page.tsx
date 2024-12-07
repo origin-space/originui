@@ -11,6 +11,18 @@ export const metadata: Metadata = {
     "An extensive collection of copy-and-paste components for quickly building app UIs. Free, open-source, and ready to drop into your projects.",
 };
 
+const componentLinks = [
+  { href: "/inputs", label: "Input and Textarea" },
+  { href: "/buttons", label: "Button" },
+  { href: "/checks-radios-switches", label: "Checkbox, Radio, and Switch" },
+  { href: "/selects", label: "Select" },
+  { href: "/sliders", label: "Slider" },
+  { href: "/alerts-notifications-banners", label: "Alert, Notification, and Banner" },
+  { href: "/dialogs", label: "Dialog" },
+  { href: "/accordions", label: "Accordion" },
+  { href: "/tooltips", label: "Tooltip" },
+];
+
 export default function Page() {
   return (
     <>
@@ -47,123 +59,21 @@ export default function Page() {
               <h2 className="mb-5 text-muted-foreground">Components</h2>
               <nav>
                 <ul className="flex flex-col gap-2">
-                  <li>
-                    <Link
-                      href="/inputs"
-                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 outline-offset-2 transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
-                    >
-                      <span className="truncate">Input and Textarea</span>
-                      <ArrowRight
-                        size={16}
-                        strokeWidth={2}
-                        className="-mr-1 ml-2 shrink-0 opacity-60"
-                      />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/buttons"
-                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 outline-offset-2 transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
-                    >
-                      <span className="truncate">Button</span>
-                      <ArrowRight
-                        size={16}
-                        strokeWidth={2}
-                        className="-mr-1 ml-2 shrink-0 opacity-60"
-                      />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/checks-radios-switches"
-                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 outline-offset-2 transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
-                    >
-                      <span className="truncate">Checkbox, Radio, and Switch</span>
-                      <ArrowRight
-                        size={16}
-                        strokeWidth={2}
-                        className="-mr-1 ml-2 shrink-0 opacity-60"
-                      />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/selects"
-                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 outline-offset-2 transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
-                    >
-                      <span className="truncate">Select</span>
-                      <ArrowRight
-                        size={16}
-                        strokeWidth={2}
-                        className="-mr-1 ml-2 shrink-0 opacity-60"
-                      />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/sliders"
-                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 outline-offset-2 transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
-                    >
-                      <span className="truncate">Slider</span>
-                      <ArrowRight
-                        size={16}
-                        strokeWidth={2}
-                        className="-mr-1 ml-2 shrink-0 opacity-60"
-                      />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/alerts-notifications-banners"
-                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 outline-offset-2 transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
-                    >
-                      <span className="truncate">Alert, Notification, and Banner</span>
-                      <ArrowRight
-                        size={16}
-                        strokeWidth={2}
-                        className="-mr-1 ml-2 shrink-0 opacity-60"
-                      />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/dialogs"
-                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 outline-offset-2 transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
-                    >
-                      <span className="truncate">Dialog</span>
-                      <ArrowRight
-                        size={16}
-                        strokeWidth={2}
-                        className="-mr-1 ml-2 shrink-0 opacity-60"
-                      />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/accordions"
-                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 outline-offset-2 transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
-                    >
-                      <span className="truncate">Accordion</span>
-                      <ArrowRight
-                        size={16}
-                        strokeWidth={2}
-                        className="-mr-1 ml-2 shrink-0 opacity-60"
-                      />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/tooltips"
-                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 outline-offset-2 transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
-                    >
-                      <span className="truncate">Tooltip</span>
-                      <ArrowRight
-                        size={16}
-                        strokeWidth={2}
-                        className="-mr-1 ml-2 shrink-0 opacity-60"
-                      />
-                    </Link>
-                  </li>
+                  {componentLinks.map(({ href, label }) => (
+                    <li key={href}>
+                      <Link
+                        href={href}
+                        className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 outline-offset-2 transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
+                      >
+                        <span className="truncate">{label}</span>
+                        <ArrowRight
+                          size={16}
+                          strokeWidth={2}
+                          className="-mr-1 ml-2 shrink-0 opacity-60"
+                        />
+                      </Link>
+                    </li>
+                  ))}
                   <li>
                     <span className="inline-flex w-full flex-col justify-between gap-2 whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 sm:h-14 sm:flex-row sm:items-center">
                       Dropdown & Popover
