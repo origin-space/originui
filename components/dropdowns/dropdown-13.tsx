@@ -1,66 +1,61 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Info } from "lucide-react";
 
-import { Bolt, BookOpen, ChevronDown, Layers2, LogOut, Pin, UserPen } from "lucide-react";
+import { Book, LifeBuoy, MessageCircleMore } from "lucide-react";
 
 export default function DropdownDemo() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="h-auto p-0 hover:bg-transparent">
-          <Avatar>
-            <AvatarImage src="./avatar.jpg" alt="Profile image" />
-            <AvatarFallback>KK</AvatarFallback>
-          </Avatar>
-          <ChevronDown size={16} strokeWidth={2} className="ms-2 opacity-60" aria-hidden="true" />
+        <Button
+          size="icon"
+          variant="ghost"
+          className="rounded-full shadow-none"
+          aria-label="Open edit menu"
+        >
+          <Info size={16} strokeWidth={2} aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="max-w-64">
-        <DropdownMenuLabel className="flex min-w-0 flex-col">
-          <span className="truncate text-sm font-medium text-foreground">Keith Kennedy</span>
-          <span className="truncate text-xs font-normal text-muted-foreground">
-            k.kennedy@originui.com
-          </span>
-        </DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <Bolt size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
-            <span>Option 1</span>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Layers2 size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
-            <span>Option 2</span>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <BookOpen size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
-            <span>Option 3</span>
-          </DropdownMenuItem>
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <Pin size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
-            <span>Option 4</span>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <UserPen size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
-            <span>Option 5</span>
-          </DropdownMenuItem>
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <LogOut size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
-          <span>Logout</span>
+      <DropdownMenuContent className="pb-2">
+        <DropdownMenuLabel>Need help?</DropdownMenuLabel>
+        <DropdownMenuItem
+          className="cursor-pointer py-1 focus:bg-transparent focus:underline"
+          asChild
+        >
+          <a href="#">
+            <Book size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            Documentation
+          </a>
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          className="cursor-pointer py-1 focus:bg-transparent focus:underline"
+          asChild
+        >
+          <a href="#">
+            <LifeBuoy size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            Support
+          </a>
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          className="cursor-pointer py-1 focus:bg-transparent focus:underline"
+          asChild
+        >
+          <a href="#">
+            <MessageCircleMore
+              size={16}
+              strokeWidth={2}
+              className="opacity-60"
+              aria-hidden="true"
+            />
+            Contact us
+          </a>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

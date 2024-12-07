@@ -6,9 +6,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Info } from "lucide-react";
+import { Plus } from "lucide-react";
 
-import { Book, LifeBuoy, MessageCircleMore } from "lucide-react";
+import { CaseSensitive, Heading1, Heading2, Minus, Quote } from "lucide-react";
 
 export default function DropdownDemo() {
   return (
@@ -20,42 +20,70 @@ export default function DropdownDemo() {
           className="rounded-full shadow-none"
           aria-label="Open edit menu"
         >
-          <Info size={16} strokeWidth={2} aria-hidden="true" />
+          <Plus size={16} strokeWidth={2} aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="pb-2">
-        <DropdownMenuLabel>Need help?</DropdownMenuLabel>
-        <DropdownMenuItem
-          className="cursor-pointer py-1 focus:bg-transparent focus:underline"
-          asChild
-        >
-          <a href="#">
-            <Book size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
-            Documentation
-          </a>
+        <DropdownMenuLabel>Add block</DropdownMenuLabel>
+        <DropdownMenuItem>
+          <div
+            className="flex size-8 items-center justify-center rounded-lg border border-border bg-background"
+            aria-hidden="true"
+          >
+            <CaseSensitive size={16} strokeWidth={2} />
+          </div>
+          <div>
+            <div className="text-sm font-medium">Text</div>
+            <div className="text-xs text-muted-foreground">Start writing with plain text</div>
+          </div>
         </DropdownMenuItem>
-        <DropdownMenuItem
-          className="cursor-pointer py-1 focus:bg-transparent focus:underline"
-          asChild
-        >
-          <a href="#">
-            <LifeBuoy size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
-            Support
-          </a>
+        <DropdownMenuItem>
+          <div
+            className="flex size-8 items-center justify-center rounded-lg border border-border bg-background"
+            aria-hidden="true"
+          >
+            <Quote size={16} strokeWidth={2} />
+          </div>
+          <div>
+            <div className="text-sm font-medium">Quote</div>
+            <div className="text-xs text-muted-foreground">Capture a quote</div>
+          </div>
         </DropdownMenuItem>
-        <DropdownMenuItem
-          className="cursor-pointer py-1 focus:bg-transparent focus:underline"
-          asChild
-        >
-          <a href="#">
-            <MessageCircleMore
-              size={16}
-              strokeWidth={2}
-              className="opacity-60"
-              aria-hidden="true"
-            />
-            Contact us
-          </a>
+        <DropdownMenuItem>
+          <div
+            className="flex size-8 items-center justify-center rounded-lg border border-border bg-background"
+            aria-hidden="true"
+          >
+            <Minus size={16} strokeWidth={2} />
+          </div>
+          <div>
+            <div className="text-sm font-medium">Divider</div>
+            <div className="text-xs text-muted-foreground">Visually divide blocks</div>
+          </div>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <div
+            className="flex size-8 items-center justify-center rounded-lg border border-border bg-background"
+            aria-hidden="true"
+          >
+            <Heading1 size={16} strokeWidth={2} />
+          </div>
+          <div>
+            <div className="text-sm font-medium">Heading 1</div>
+            <div className="text-xs text-muted-foreground">Big section heading</div>
+          </div>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <div
+            className="flex size-8 items-center justify-center rounded-lg border border-border bg-background"
+            aria-hidden="true"
+          >
+            <Heading2 size={16} strokeWidth={2} />
+          </div>
+          <div>
+            <div className="text-sm font-medium">Heading 2</div>
+            <div className="text-xs text-muted-foreground">Medium section subheading</div>
+          </div>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

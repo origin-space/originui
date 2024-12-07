@@ -1,91 +1,54 @@
+"use client";
+
+// Dependencies: pnpm install lucide-react
+
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Plus } from "lucide-react";
+import { Monitor, Moon, Sun } from "lucide-react";
+import { useState } from "react";
 
-import { CaseSensitive, Heading1, Heading2, Minus, Quote } from "lucide-react";
+type Theme = "light" | "dark" | "system";
 
 export default function DropdownDemo() {
+  const [theme, setTheme] = useState<Theme>("system");
+  
+  // For demo purposes, we'll simulate system preference as "light"
+  const systemPreference = "light";
+  const displayTheme = theme === "system" ? systemPreference : theme;
+
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button
-          size="icon"
-          variant="ghost"
-          className="rounded-full shadow-none"
-          aria-label="Open edit menu"
-        >
-          <Plus size={16} strokeWidth={2} aria-hidden="true" />
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="pb-2">
-        <DropdownMenuLabel>Add block</DropdownMenuLabel>
-        <DropdownMenuItem>
-          <div
-            className="flex size-8 items-center justify-center rounded-lg border border-border bg-background"
-            aria-hidden="true"
+    <div>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button
+            size="icon"
+            variant="outline"
+            aria-label="Select theme"
           >
-            <CaseSensitive size={16} strokeWidth={2} />
-          </div>
-          <div>
-            <div className="text-sm font-medium">Text</div>
-            <div className="text-xs text-muted-foreground">Start writing with plain text</div>
-          </div>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <div
-            className="flex size-8 items-center justify-center rounded-lg border border-border bg-background"
-            aria-hidden="true"
-          >
-            <Quote size={16} strokeWidth={2} />
-          </div>
-          <div>
-            <div className="text-sm font-medium">Quote</div>
-            <div className="text-xs text-muted-foreground">Capture a quote</div>
-          </div>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <div
-            className="flex size-8 items-center justify-center rounded-lg border border-border bg-background"
-            aria-hidden="true"
-          >
-            <Minus size={16} strokeWidth={2} />
-          </div>
-          <div>
-            <div className="text-sm font-medium">Divider</div>
-            <div className="text-xs text-muted-foreground">Visually divide blocks</div>
-          </div>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <div
-            className="flex size-8 items-center justify-center rounded-lg border border-border bg-background"
-            aria-hidden="true"
-          >
-            <Heading1 size={16} strokeWidth={2} />
-          </div>
-          <div>
-            <div className="text-sm font-medium">Heading 1</div>
-            <div className="text-xs text-muted-foreground">Big section heading</div>
-          </div>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <div
-            className="flex size-8 items-center justify-center rounded-lg border border-border bg-background"
-            aria-hidden="true"
-          >
-            <Heading2 size={16} strokeWidth={2} />
-          </div>
-          <div>
-            <div className="text-sm font-medium">Heading 2</div>
-            <div className="text-xs text-muted-foreground">Medium section subheading</div>
-          </div>
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+            {displayTheme === "light" && <Sun size={16} strokeWidth={2} aria-hidden="true" />}
+            {displayTheme === "dark" && <Moon size={16} strokeWidth={2} aria-hidden="true" />}
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent className="min-w-32">
+          <DropdownMenuItem onClick={() => setTheme("light")}>
+            <Sun size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            <span>Light</span>
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => setTheme("dark")}>
+            <Moon size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            <span>Dark</span>
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => setTheme("system")}>
+            <Monitor size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            <span>System</span>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
   );
 }

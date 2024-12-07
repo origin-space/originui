@@ -1,12 +1,17 @@
 // Dependencies: pnpm install lucide-react
 
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
+  DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuPortal,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuSub,
@@ -14,14 +19,19 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown } from "lucide-react";
+import { ArchiveRestore, ChevronDown, Plus, Share2, Trash } from "lucide-react";
+import { useState } from "react";
 
 export default function DropdownDemo() {
+  const [framework, setFramework] = useState("nextjs");
+  const [emailNotifications, setEmailNotifications] = useState(false);
+  const [pushNotifications, setPushNotifications] = useState(true);
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
-          Complex menu
+          Complex menu with icons
           <ChevronDown
             className="-me-1 ms-2 opacity-60"
             size={16}
@@ -33,39 +43,62 @@ export default function DropdownDemo() {
       <DropdownMenuContent>
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <span>Edit</span>
-            <DropdownMenuShortcut>⌘E</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <span>Duplicate</span>
-            <DropdownMenuShortcut>⌘D</DropdownMenuShortcut>
+            <Plus size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            <span>New</span>
+            <DropdownMenuShortcut>⌘N</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <span>Archive</span>
-            <DropdownMenuShortcut>⌘A</DropdownMenuShortcut>
-          </DropdownMenuItem>
           <DropdownMenuSub>
-            <DropdownMenuSubTrigger>More</DropdownMenuSubTrigger>
+            <DropdownMenuSubTrigger inset>Framework</DropdownMenuSubTrigger>
             <DropdownMenuPortal>
               <DropdownMenuSubContent>
-                <DropdownMenuItem>Move to project</DropdownMenuItem>
-                <DropdownMenuItem>Move to folder</DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>Advanced options</DropdownMenuItem>
+                <DropdownMenuRadioGroup value={framework} onValueChange={setFramework}>
+                  <DropdownMenuRadioItem value="nextjs">Next.js</DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="sveltekit" disabled>
+                    SvelteKit
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="remix">Remix</DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="astro">Astro</DropdownMenuRadioItem>
+                </DropdownMenuRadioGroup>
+              </DropdownMenuSubContent>
+            </DropdownMenuPortal>
+          </DropdownMenuSub>
+          <DropdownMenuSub>
+            <DropdownMenuSubTrigger inset>Notifications</DropdownMenuSubTrigger>
+            <DropdownMenuPortal>
+              <DropdownMenuSubContent>
+                <DropdownMenuCheckboxItem
+                  checked={emailNotifications}
+                  onCheckedChange={setEmailNotifications}
+                >
+                  Email
+                </DropdownMenuCheckboxItem>
+                <DropdownMenuCheckboxItem
+                  checked={pushNotifications}
+                  onCheckedChange={setPushNotifications}
+                >
+                  Push
+                </DropdownMenuCheckboxItem>
               </DropdownMenuSubContent>
             </DropdownMenuPortal>
           </DropdownMenuSub>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>Share</DropdownMenuItem>
-          <DropdownMenuItem>Add to favorites</DropdownMenuItem>
+          <DropdownMenuItem>
+            <Share2 size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            <span>Share</span>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <ArchiveRestore size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            <span>Archive</span>
+          </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem className="text-destructive focus:text-destructive">
+          <Trash size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
           <span>Delete</span>
           <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
         </DropdownMenuItem>

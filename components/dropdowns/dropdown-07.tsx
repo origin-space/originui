@@ -5,27 +5,22 @@
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
-  DropdownMenuCheckboxItem,
   DropdownMenuContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
-type Checked = DropdownMenuCheckboxItemProps["checked"];
-
 export default function DropdownDemo() {
-  const [nextjs, setNextjs] = useState<Checked>(false);
-  const [sveltekit, setSveltekit] = useState<Checked>(true);
-  const [astro, setAstro] = useState<Checked>(false);
-  const [remix, setRemix] = useState<Checked>(false);
+  const [framework, setFramework] = useState("nextjs");
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
-          Checkbox items
+          Radio items
           <ChevronDown
             className="-me-1 ms-2 opacity-60"
             size={16}
@@ -35,18 +30,14 @@ export default function DropdownDemo() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuCheckboxItem checked={nextjs} onCheckedChange={setNextjs}>
-          Next.js
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem checked={sveltekit} onCheckedChange={setSveltekit}>
-          SvelteKit
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem checked={remix} onCheckedChange={setRemix} disabled>
-          Remix
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem checked={astro} onCheckedChange={setAstro}>
-          Astro
-        </DropdownMenuCheckboxItem>
+        <DropdownMenuRadioGroup value={framework} onValueChange={setFramework}>
+          <DropdownMenuRadioItem value="nextjs">Next.js</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="sveltekit" disabled>
+            SvelteKit
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="remix">Remix</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="astro">Astro</DropdownMenuRadioItem>
+        </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>
   );

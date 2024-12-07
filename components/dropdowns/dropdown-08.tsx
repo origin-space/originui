@@ -1,26 +1,27 @@
 // Dependencies: pnpm install lucide-react
 
-"use client";
-
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
-import { useState } from "react";
 
 export default function DropdownDemo() {
-  const [framework, setFramework] = useState("nextjs");
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
-          Radio items
+          Complex menu
           <ChevronDown
             className="-me-1 ms-2 opacity-60"
             size={16}
@@ -30,14 +31,44 @@ export default function DropdownDemo() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuRadioGroup value={framework} onValueChange={setFramework}>
-          <DropdownMenuRadioItem value="nextjs">Next.js</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="sveltekit" disabled>
-            SvelteKit
-          </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="remix">Remix</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="astro">Astro</DropdownMenuRadioItem>
-        </DropdownMenuRadioGroup>
+        <DropdownMenuGroup>
+          <DropdownMenuItem>
+            <span>Edit</span>
+            <DropdownMenuShortcut>⌘E</DropdownMenuShortcut>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <span>Duplicate</span>
+            <DropdownMenuShortcut>⌘D</DropdownMenuShortcut>
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuGroup>
+          <DropdownMenuItem>
+            <span>Archive</span>
+            <DropdownMenuShortcut>⌘A</DropdownMenuShortcut>
+          </DropdownMenuItem>
+          <DropdownMenuSub>
+            <DropdownMenuSubTrigger>More</DropdownMenuSubTrigger>
+            <DropdownMenuPortal>
+              <DropdownMenuSubContent>
+                <DropdownMenuItem>Move to project</DropdownMenuItem>
+                <DropdownMenuItem>Move to folder</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>Advanced options</DropdownMenuItem>
+              </DropdownMenuSubContent>
+            </DropdownMenuPortal>
+          </DropdownMenuSub>
+        </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuGroup>
+          <DropdownMenuItem>Share</DropdownMenuItem>
+          <DropdownMenuItem>Add to favorites</DropdownMenuItem>
+        </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem className="text-destructive focus:text-destructive">
+          <span>Delete</span>
+          <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
