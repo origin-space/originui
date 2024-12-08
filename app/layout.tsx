@@ -4,6 +4,7 @@ import Header from "@/demo/header";
 import { ThemeProvider } from "@/demo/theme-provider";
 import type { Viewport } from "next";
 import { JetBrains_Mono as FontMono, Inter as FontSans } from "next/font/google";
+import type { Metadata } from "next";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -21,6 +22,13 @@ export const viewport: Viewport = {
   width: "device-width",
   maximumScale: 1,
   viewportFit: "cover",
+};
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://originui.com'),
+  title: "Origin UI - Beautiful UI components built with Tailwind CSS and Next.js",
+  description:
+    "An extensive collection of copy-and-paste components for quickly building app UIs. Free, open-source, and ready to drop into your projects.",
 };
 
 export default function RootLayout({
