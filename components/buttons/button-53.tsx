@@ -13,7 +13,7 @@ export default function ButtonDemo() {
     <div>
       <Toggle
         variant="outline"
-        className="size-9 group"
+        className="group size-9"
         pressed={theme === "dark"}
         onPressedChange={() => setTheme((prev) => (prev === "dark" ? "light" : "dark"))}
         aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
