@@ -19,6 +19,7 @@ export default function InputDemo() {
       }, 500);
       return () => clearTimeout(timer);
     }
+    setIsLoading(false);
   }, [inputValue]);
 
   return (
@@ -39,8 +40,8 @@ export default function InputDemo() {
               className="animate-spin"
               size={16}
               strokeWidth={2}
-              aria-hidden="true"
-              role="presentation"
+              role="status"
+              aria-label="Loading..."
             />
           ) : (
             <Search size={16} strokeWidth={2} aria-hidden="true" />
