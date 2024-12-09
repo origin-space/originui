@@ -3,6 +3,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Bell } from "lucide-react";
 import { useState } from "react";
 
@@ -23,12 +24,9 @@ export default function ButtonDemo() {
     >
       <Bell size={16} strokeWidth={2} aria-hidden="true" />
       {count > 0 && (
-        <span
-          className="absolute -top-2 left-full inline-flex h-5 min-w-[20px] -translate-x-1/2 items-center justify-center rounded-full bg-primary px-1 text-xs font-medium text-primary-foreground"
-          aria-hidden="true"
-        >
+        <Badge className="absolute -top-2 left-full -translate-x-1/2 px-1 min-w-5">
           {count > 99 ? "99+" : count}
-        </span>
+        </Badge>
       )}
     </Button>
   );
