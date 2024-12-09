@@ -20,19 +20,27 @@ export default function PopoverDemo() {
             <form className="space-y-3">
               <div className="flex items-center gap-2">
                 <Checkbox id="popover-filter-01" />
-                <Label htmlFor="popover-filter-01">Real Time</Label>
+                <Label htmlFor="popover-filter-01" className="font-normal">
+                  Real Time
+                </Label>
               </div>
               <div className="flex items-center gap-2">
                 <Checkbox id="popover-filter-02" />
-                <Label htmlFor="popover-filter-02">Top Channels</Label>
+                <Label htmlFor="popover-filter-02" className="font-normal">
+                  Top Channels
+                </Label>
               </div>
               <div className="flex items-center gap-2">
                 <Checkbox id="popover-filter-03" />
-                <Label htmlFor="popover-filter-03">Last Orders</Label>
+                <Label htmlFor="popover-filter-03" className="font-normal">
+                  Last Orders
+                </Label>
               </div>
               <div className="flex items-center gap-2">
                 <Checkbox id="popover-filter-04" />
-                <Label htmlFor="popover-filter-04">Total Spent</Label>
+                <Label htmlFor="popover-filter-04" className="font-normal">
+                  Total Spent
+                </Label>
               </div>
               <div
                 role="separator"

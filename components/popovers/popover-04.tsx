@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import { RiCodeFill, RiFacebookFill, RiMailFill, RiTwitterXFill } from "@remixicon/react";
+import { RiCodeFill, RiFacebookFill, RiMailLine, RiTwitterXFill } from "@remixicon/react";
 import { Check, Copy } from "lucide-react";
 import { useRef, useState } from "react";
 
@@ -41,7 +41,7 @@ export default function PopoverDemo() {
                 <RiFacebookFill size={16} strokeWidth={2} aria-hidden="true" />
               </Button>
               <Button size="icon" variant="outline" aria-label="Share via email">
-                <RiMailFill size={16} strokeWidth={2} aria-hidden="true" />
+                <RiMailLine size={16} strokeWidth={2} aria-hidden="true" />
               </Button>
             </div>
             <div className="space-y-2">

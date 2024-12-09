@@ -31,7 +31,7 @@ export default function DropdownDemo() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
-          Complex menu with icons
+          Rich menu with icons
           <ChevronDown
             className="-me-1 ms-2 opacity-60"
             size={16}

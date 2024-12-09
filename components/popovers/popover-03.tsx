@@ -40,14 +40,14 @@ const tourSteps: TourStep[] = [
 ];
 
 interface CardProps {
-  icon: LucideIcon;
+  number: number;
   isActive: boolean;
 }
 
-function Card({ icon: Icon, isActive }: CardProps) {
+function Card({ number, isActive }: CardProps) {
   const content = (
-    <div className="flex size-10 items-center justify-center rounded-lg bg-secondary">
-      <Icon size={16} strokeWidth={2} />
+    <div className="flex size-10 items-center justify-center rounded-lg bg-secondary text-sm font-medium text-muted-foreground">
+      {number + 1}
     </div>
   );
 
@@ -74,7 +74,7 @@ export default function PopoverDemo() {
       >
         <div className="grid grid-cols-2 place-items-center gap-4">
           {tourSteps.map((step, index) => (
-            <Card key={step.title} icon={step.icon} isActive={currentTip === index} />
+            <Card key={step.title} number={index} isActive={currentTip === index} />
           ))}
         </div>
 

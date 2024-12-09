@@ -150,12 +150,17 @@ export default function PopoverDemo() {
             />
             <div className="flex-1 space-y-1">
               <button
-                className="text-left after:absolute after:inset-0"
+                className="text-left text-foreground/80 after:absolute after:inset-0"
                 onClick={() => handleNotificationClick(notification.id)}
               >
-                <span className="font-medium hover:underline">{notification.user}</span>{" "}
+                <span className="font-medium text-foreground hover:underline">
+                  {notification.user}
+                </span>{" "}
                 {notification.action}{" "}
-                <span className="font-medium hover:underline">{notification.target}</span>.
+                <span className="font-medium text-foreground hover:underline">
+                  {notification.target}
+                </span>
+                .
               </button>
               <div className="text-xs text-muted-foreground">{notification.timestamp}</div>
             </div>

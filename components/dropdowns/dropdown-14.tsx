@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Plus } from "lucide-react";
 
-import { CaseSensitive, Heading1, Heading2, Minus, Quote } from "lucide-react";
+import { Heading1, Heading2, Minus, TextQuote, Type } from "lucide-react";
 
 export default function DropdownDemo() {
   return (
@@ -30,7 +30,7 @@ export default function DropdownDemo() {
             className="flex size-8 items-center justify-center rounded-lg border border-border bg-background"
             aria-hidden="true"
           >
-            <CaseSensitive size={16} strokeWidth={2} />
+            <Type size={16} strokeWidth={2} className="opacity-60" />
           </div>
           <div>
             <div className="text-sm font-medium">Text</div>
@@ -42,7 +42,7 @@ export default function DropdownDemo() {
             className="flex size-8 items-center justify-center rounded-lg border border-border bg-background"
             aria-hidden="true"
           >
-            <Quote size={16} strokeWidth={2} />
+            <TextQuote size={16} strokeWidth={2} className="opacity-60" />
           </div>
           <div>
             <div className="text-sm font-medium">Quote</div>
@@ -54,7 +54,7 @@ export default function DropdownDemo() {
             className="flex size-8 items-center justify-center rounded-lg border border-border bg-background"
             aria-hidden="true"
           >
-            <Minus size={16} strokeWidth={2} />
+            <Minus size={16} strokeWidth={2} className="opacity-60" />
           </div>
           <div>
             <div className="text-sm font-medium">Divider</div>
@@ -66,7 +66,7 @@ export default function DropdownDemo() {
             className="flex size-8 items-center justify-center rounded-lg border border-border bg-background"
             aria-hidden="true"
           >
-            <Heading1 size={16} strokeWidth={2} />
+            <Heading1 size={16} strokeWidth={2} className="opacity-60" />
           </div>
           <div>
             <div className="text-sm font-medium">Heading 1</div>
@@ -78,7 +78,7 @@ export default function DropdownDemo() {
             className="flex size-8 items-center justify-center rounded-lg border border-border bg-background"
             aria-hidden="true"
           >
-            <Heading2 size={16} strokeWidth={2} />
+            <Heading2 size={16} strokeWidth={2} className="opacity-60" />
           </div>
           <div>
             <div className="text-sm font-medium">Heading 2</div>

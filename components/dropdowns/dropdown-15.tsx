@@ -16,7 +16,7 @@ type Theme = "light" | "dark" | "system";
 
 export default function DropdownDemo() {
   const [theme, setTheme] = useState<Theme>("system");
-  
+
   // For demo purposes, we'll simulate system preference as "light"
   const systemPreference = "light";
   const displayTheme = theme === "system" ? systemPreference : theme;
@@ -25,11 +25,7 @@ export default function DropdownDemo() {
     <div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button
-            size="icon"
-            variant="outline"
-            aria-label="Select theme"
-          >
+          <Button size="icon" variant="outline" aria-label="Select theme">
             {displayTheme === "light" && <Sun size={16} strokeWidth={2} aria-hidden="true" />}
             {displayTheme === "dark" && <Moon size={16} strokeWidth={2} aria-hidden="true" />}
           </Button>
