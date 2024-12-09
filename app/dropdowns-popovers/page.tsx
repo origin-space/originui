@@ -30,15 +30,15 @@ const dropdownFiles = [
 
 const popoverDir = "popovers";
 const popoverFiles = [
-  "popover-06",
   "popover-01",
   "popover-02",
+  "popover-03",
+  "popover-04",
+  "popover-05",
+  "popover-06",
   "popover-07",
   "popover-08",
   "popover-09",
-  "popover-04",
-  "popover-05",
-  "popover-03",
 ];
 
 const totalComponents = dropdownFiles.length + popoverFiles.length;

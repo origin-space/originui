@@ -1,96 +1,108 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Popover, PopoverAnchor, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { useState } from "react";
 
-const tips = [
+import { Club, Diamond, Heart, LucideIcon, Spade } from "lucide-react";
+
+interface TourStep {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+const tourSteps: TourStep[] = [
   {
-    title: "Welcome to Dashboard",
+    icon: Heart,
+    title: "Heart",
     description:
       "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more.",
   },
   {
-    title: "Quick Actions",
+    icon: Diamond,
+    title: "Diamond",
     description:
       "Use the toolbar above to create new projects, invite team members, or access settings.",
   },
   {
-    title: "Need Help?",
+    icon: Club,
+    title: "Club",
     description:
       "Click the support icon in the top right corner to access our help center and documentation.",
   },
   {
-    title: "Keyboard Shortcuts",
+    icon: Spade,
+    title: "Spade",
     description:
       "Press ⌘K to open the command palette. Use arrow keys to navigate and Enter to select an action.",
   },
-  {
-    title: "Stay Updated",
-    description:
-      "Enable notifications to receive updates about your projects, team activity, and important deadlines.",
-  },
 ];
+
+interface CardProps {
+  number: number;
+  isActive: boolean;
+}
+
+function Card({ number, isActive }: CardProps) {
+  const content = (
+    <div className="flex size-10 items-center justify-center rounded-lg bg-secondary text-sm font-medium text-muted-foreground">
+      {number + 1}
+    </div>
+  );
+
+  return isActive ? <PopoverAnchor>{content}</PopoverAnchor> : content;
+}
 
 export default function PopoverDemo() {
   const [currentTip, setCurrentTip] = useState(0);
 
-  const handleNext = () => {
-    if (currentTip < tips.length - 1) {
+  const handleNavigation = () => {
+    if (currentTip === tourSteps.length - 1) {
+      setCurrentTip(0);
+    } else {
       setCurrentTip(currentTip + 1);
     }
   };
 
-  const handlePrev = () => {
-    if (currentTip > 0) {
-      setCurrentTip(currentTip - 1);
-    }
-  };
-
-  const isFirstTip = currentTip === 0;
-  const isLastTip = currentTip === tips.length - 1;
-
   return (
-    <Popover>
-      <PopoverTrigger asChild>
-        <Button variant="outline">Tooltip-like with nav</Button>
-      </PopoverTrigger>
-      <PopoverContent className="max-w-[280px] py-3 shadow-none" side="top">
-        <div className="space-y-3">
-          <div className="space-y-1">
-            <p className="text-[13px] font-medium">{tips[currentTip].title}</p>
-            <p className="text-xs text-muted-foreground">{tips[currentTip].description}</p>
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="text-xs text-muted-foreground">
-              {currentTip + 1}/{tips.length}
-            </span>
-            <div className="flex gap-0.5">
-              <Button
-                size="icon"
-                variant="ghost"
-                className="size-6"
-                onClick={handlePrev}
-                disabled={isFirstTip}
-                aria-label="Previous tip"
-              >
-                <ArrowLeft size={14} strokeWidth={2} aria-hidden="true" />
-              </Button>
-              <Button
-                size="icon"
-                variant="ghost"
-                className="size-6"
-                onClick={handleNext}
-                disabled={isLastTip}
-                aria-label="Next tip"
-              >
-                <ArrowRight size={14} strokeWidth={2} aria-hidden="true" />
-              </Button>
+    <div className="flex flex-col gap-4">
+      <Popover
+        onOpenChange={(open) => {
+          if (open) setCurrentTip(0);
+        }}
+      >
+        <div className="grid grid-cols-2 place-items-center gap-4">
+          {tourSteps.map((step, index) => (
+            <Card key={step.title} number={index} isActive={currentTip === index} />
+          ))}
+        </div>
+
+        <PopoverTrigger asChild>
+          <Button variant="outline">Start tour</Button>
+        </PopoverTrigger>
+
+        <PopoverContent
+          className="max-w-[280px] py-3 shadow-none"
+          side={currentTip % 2 === 0 ? "left" : "right"}
+          showArrow={true}
+        >
+          <div className="space-y-3">
+            <div className="space-y-1">
+              <p className="text-[13px] font-medium">{tourSteps[currentTip].title}</p>
+              <p className="text-xs text-muted-foreground">{tourSteps[currentTip].description}</p>
+            </div>
+            <div className="flex items-center justify-between gap-2">
+              <span className="text-xs text-muted-foreground">
+                {currentTip + 1}/{tourSteps.length}
+              </span>
+              <button className="text-xs font-medium hover:underline" onClick={handleNavigation}>
+                {currentTip === tourSteps.length - 1 ? "Start over" : "Next"}
+              </button>
             </div>
           </div>
-        </div>
-      </PopoverContent>
-    </Popover>
+        </PopoverContent>
+      </Popover>
+    </div>
   );
 }

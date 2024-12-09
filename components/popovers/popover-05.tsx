@@ -1,28 +1,59 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
+
+const tips = [
+  {
+    title: "Welcome to Dashboard",
+    description:
+      "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more.",
+  },
+  {
+    title: "Quick Actions",
+    description:
+      "Use the toolbar above to create new projects, invite team members, or access settings.",
+  },
+  {
+    title: "Need Help?",
+    description:
+      "Click the support icon in the top right corner to access our help center and documentation.",
+  },
+];
 
 export default function PopoverDemo() {
+  const [currentTip, setCurrentTip] = useState(0);
+
+  const handleNavigation = () => {
+    if (currentTip === tips.length - 1) {
+      setCurrentTip(0);
+    } else {
+      setCurrentTip(currentTip + 1);
+    }
+  };
+
   return (
-    <div className="flex flex-col gap-4">
-      <Popover>
-        <PopoverTrigger asChild>
-          <Button variant="outline">Feedback</Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-72">
-          <h2 className="mb-2 text-sm font-semibold">Send us feedback</h2>
-          <form className="space-y-3">
-            <Textarea
-              id="feedback"
-              placeholder="How can we improve Origin UI?"
-              aria-label="Send feedback"
-            />
-            <div className="flex flex-col sm:flex-row sm:justify-end">
-              <Button size="sm">Send feedback</Button>
-            </div>
-          </form>
-        </PopoverContent>
-      </Popover>
-    </div>
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button variant="outline">Tooltip-like with steps</Button>
+      </PopoverTrigger>
+      <PopoverContent className="max-w-[280px] py-3 shadow-none" side="top">
+        <div className="space-y-3">
+          <div className="space-y-1">
+            <p className="text-[13px] font-medium">{tips[currentTip].title}</p>
+            <p className="text-xs text-muted-foreground">{tips[currentTip].description}</p>
+          </div>
+          <div className="flex items-center justify-between gap-2">
+            <span className="text-xs text-muted-foreground">
+              {currentTip + 1}/{tips.length}
+            </span>
+            <button className="text-xs font-medium hover:underline" onClick={handleNavigation}>
+              {currentTip === tips.length - 1 ? "Start over" : "Next"}
+            </button>
+          </div>
+        </div>
+      </PopoverContent>
+    </Popover>
   );
 }

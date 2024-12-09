@@ -1,156 +1,64 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Bell } from "lucide-react";
-import { useState } from "react";
 
-const initialNotifications = [
-  {
-    id: 1,
-    user: "Chris Thompson",
-    action: "requested review on",
-    target: "PR #42: Feature implementation",
-    timestamp: "15 minutes ago",
-    unread: true,
-  },
-  {
-    id: 2,
-    user: "Emma Davis",
-    action: "shared",
-    target: "New component library",
-    timestamp: "45 minutes ago",
-    unread: true,
-  },
-  {
-    id: 3,
-    user: "James Wilson",
-    action: "assigned you to",
-    target: "API integration task",
-    timestamp: "4 hours ago",
-    unread: false,
-  },
-  {
-    id: 4,
-    user: "Alex Morgan",
-    action: "replied to your comment in",
-    target: "Authentication flow",
-    timestamp: "12 hours ago",
-    unread: false,
-  },
-  {
-    id: 5,
-    user: "Sarah Chen",
-    action: "commented on",
-    target: "Dashboard redesign",
-    timestamp: "2 days ago",
-    unread: false,
-  },
-  {
-    id: 6,
-    user: "Miky Derya",
-    action: "mentioned you in",
-    target: "Origin UI open graph image",
-    timestamp: "2 weeks ago",
-    unread: false,
-  },
-];
-
-function Dot({ className }: { className?: string }) {
-  return (
-    <svg
-      width="6"
-      height="6"
-      fill="currentColor"
-      viewBox="0 0 6 6"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-hidden="true"
-    >
-      <circle cx="3" cy="3" r="3" />
-    </svg>
-  );
-}
+import { ListFilter } from "lucide-react";
 
 export default function PopoverDemo() {
-  const [notifications, setNotifications] = useState(initialNotifications);
-  const unreadCount = notifications.filter((n) => n.unread).length;
-
-  const handleMarkAllAsRead = () => {
-    setNotifications(
-      notifications.map((notification) => ({
-        ...notification,
-        unread: false,
-      })),
-    );
-  };
-
-  const handleNotificationClick = (id: number) => {
-    setNotifications(
-      notifications.map((notification) =>
-        notification.id === id ? { ...notification, unread: false } : notification,
-      ),
-    );
-  };
-
   return (
-    <Popover>
-      <PopoverTrigger asChild>
-        <Button size="icon" variant="outline" className="relative" aria-label="Open notifications">
-          <Bell size={16} strokeWidth={2} aria-hidden="true" />
-          {unreadCount > 0 && (
-            <span
-              className="absolute -top-2 left-full inline-flex h-5 min-w-[20px] -translate-x-1/2 items-center justify-center rounded-full bg-primary px-1 text-xs font-medium text-primary-foreground"
-              aria-hidden="true"
-            >
-              {unreadCount > 99 ? "99+" : unreadCount}
-            </span>
-          )}
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-80 p-1">
-        <div className="flex items-baseline justify-between gap-4 px-3 py-2">
-          <div className="text-sm font-semibold">Notifications</div>
-          {unreadCount > 0 && (
-            <button className="text-xs font-medium hover:underline" onClick={handleMarkAllAsRead}>
-              Mark all as read
-            </button>
-          )}
-        </div>
-        <div
-          role="separator"
-          aria-orientation="horizontal"
-          className="-mx-1 my-1 h-px bg-border"
-        ></div>
-        {notifications.map((notification) => (
-          <div
-            key={notification.id}
-            className="relative flex items-start gap-3 rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent"
-          >
-            <div className="flex-1 space-y-1">
-              <button
-                className="text-left text-foreground/80 after:absolute after:inset-0"
-                onClick={() => handleNotificationClick(notification.id)}
-              >
-                <span className="font-medium text-foreground hover:underline">
-                  {notification.user}
-                </span>{" "}
-                {notification.action}{" "}
-                <span className="font-medium text-foreground hover:underline">
-                  {notification.target}
-                </span>
-                .
-              </button>
-              <div className="text-xs text-muted-foreground">{notification.timestamp}</div>
-            </div>
-            {notification.unread && (
-              <div className="self-center">
-                <Dot />
+    <div className="flex flex-col gap-4">
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button variant="outline" size="icon" aria-label="Filters">
+            <ListFilter size={16} strokeWidth={2} aria-hidden="true" />
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent className="w-36 p-3">
+          <div className="space-y-3">
+            <div className="text-xs font-medium text-muted-foreground">Filters</div>
+            <form className="space-y-3">
+              <div className="flex items-center gap-2">
+                <Checkbox id="popover-filter-01" />
+                <Label htmlFor="popover-filter-01" className="font-normal">
+                  Real Time
+                </Label>
               </div>
-            )}
+              <div className="flex items-center gap-2">
+                <Checkbox id="popover-filter-02" />
+                <Label htmlFor="popover-filter-02" className="font-normal">
+                  Top Channels
+                </Label>
+              </div>
+              <div className="flex items-center gap-2">
+                <Checkbox id="popover-filter-03" />
+                <Label htmlFor="popover-filter-03" className="font-normal">
+                  Last Orders
+                </Label>
+              </div>
+              <div className="flex items-center gap-2">
+                <Checkbox id="popover-filter-04" />
+                <Label htmlFor="popover-filter-04" className="font-normal">
+                  Total Spent
+                </Label>
+              </div>
+              <div
+                role="separator"
+                aria-orientation="horizontal"
+                className="-mx-3 my-1 h-px bg-border"
+              ></div>
+              <div className="flex justify-between gap-2">
+                <Button size="sm" variant="outline" className="h-7 px-2">
+                  Clear
+                </Button>
+                <Button size="sm" className="h-7 px-2">
+                  Apply
+                </Button>
+              </div>
+            </form>
           </div>
-        ))}
-      </PopoverContent>
-    </Popover>
+        </PopoverContent>
+      </Popover>
+    </div>
   );
 }
