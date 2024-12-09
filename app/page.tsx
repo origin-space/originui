@@ -2,14 +2,7 @@ import Illustration from "@/demo/illustration";
 import Newsletter from "@/demo/subscribe-form";
 import XLinks from "@/demo/x-links";
 import { ArrowRight } from "lucide-react";
-import type { Metadata } from "next";
 import Link from "next/link";
-
-export const metadata: Metadata = {
-  title: "Origin UI - Beautiful UI components built with Tailwind CSS and Next.js",
-  description:
-    "An extensive collection of copy-and-paste components for quickly building app UIs. Free, open-source, and ready to drop into your projects.",
-};
 
 export default function Page() {
   return (

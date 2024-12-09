@@ -3,7 +3,7 @@
 "use client";
 
 import { Label } from "@/components/ui/label";
-import { Header, ListBox, ListBoxItem, Section, Separator } from "react-aria-components";
+import { Header, ListBox, ListBoxItem, ListBoxSection, Separator } from "react-aria-components";
 
 export default function SelectDemo() {
   return (
@@ -16,7 +16,7 @@ export default function SelectDemo() {
           selectionMode="multiple"
           defaultSelectedKeys={["lettuce", "tuna"]}
         >
-          <Section className="space-y-1">
+          <ListBoxSection className="space-y-1">
             <Header className="px-2 py-1.5 text-xs font-medium text-muted-foreground">
               Veggies
             </Header>
@@ -38,9 +38,9 @@ export default function SelectDemo() {
             >
               Onion
             </ListBoxItem>
-          </Section>
+          </ListBoxSection>
           <Separator className="-mx-1 my-1 h-px bg-border" />
-          <Section className="space-y-1">
+          <ListBoxSection className="space-y-1">
             <Header className="px-2 py-1.5 text-xs font-medium text-muted-foreground">
               Protein
             </Header>
@@ -62,9 +62,9 @@ export default function SelectDemo() {
             >
               Tofu
             </ListBoxItem>
-          </Section>
+          </ListBoxSection>
           <Separator className="-mx-1 my-1 h-px bg-border" />
-          <Section className="space-y-1">
+          <ListBoxSection className="space-y-1">
             <Header className="px-2 py-1.5 text-xs font-medium text-muted-foreground">
               Condiments
             </Header>
@@ -86,7 +86,7 @@ export default function SelectDemo() {
             >
               Ranch
             </ListBoxItem>
-          </Section>
+          </ListBoxSection>
         </ListBox>
       </div>
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
