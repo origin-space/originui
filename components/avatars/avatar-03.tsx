@@ -1,15 +1,14 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+// Dependencies: pnpm install lucide-react
+
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { UserRound } from "lucide-react";
 
 export default function AvatarDemo() {
   return (
-    <div className="relative">
-      <Avatar>
-        <AvatarImage src="./avatar-80-07.jpg" alt="Kelly King" />
-        <AvatarFallback>KK</AvatarFallback>
-      </Avatar>
-      <span className="absolute bottom-0 end-0 size-3 rounded-full border-2 border-background bg-emerald-500">
-        <span className="sr-only">Online</span>
-      </span>
-    </div>
+    <Avatar>
+      <AvatarFallback>
+        <UserRound size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+      </AvatarFallback>
+    </Avatar>
   );
 }

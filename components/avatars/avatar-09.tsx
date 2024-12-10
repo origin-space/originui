@@ -1,4 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 
 export default function AvatarDemo() {
   return (
@@ -7,9 +8,9 @@ export default function AvatarDemo() {
         <AvatarImage src="./avatar-80-07.jpg" alt="Kelly King" />
         <AvatarFallback>KK</AvatarFallback>
       </Avatar>
-      <span className="absolute bottom-0 end-0 size-3 rounded-full border-2 border-background bg-muted-foreground">
-        <span className="sr-only">Offline</span>
-      </span>
+      <Badge className="absolute -top-1 left-full min-w-5 -translate-x-4 border-background px-1">
+        6
+      </Badge>
     </div>
   );
 }

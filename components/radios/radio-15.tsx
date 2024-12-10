@@ -1,6 +1,6 @@
+import { Badge } from "@/components/ui/badge";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Badge } from "@/components/ui/badge";
 
 const items = [
   { id: "radio-15-r1", value: "r1", label: "Hobby", price: "$9/mo" },
@@ -32,11 +32,7 @@ export default function RadioDemo() {
                 />
                 <Label className="inline-flex items-start" htmlFor={item.id}>
                   {item.label}
-                  {item.value === "r2" && (
-                    <Badge className="ms-2 -mt-1">
-                      Popular
-                    </Badge>
-                  )}
+                  {item.value === "r2" && <Badge className="-mt-1 ms-2">Popular</Badge>}
                 </Label>
               </div>
               <div

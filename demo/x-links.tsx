@@ -5,11 +5,11 @@ import PasqualeImg from "@/public/x-pasquale.jpg";
 
 export default function XLinks() {
   return (
-    <div className="mb-12 flex items-center justify-center gap-2 text-sm">
+    <div className="mb-12 flex items-center justify-center gap-1.5 text-sm">
       <span className="text-zinc-500">Brought to you by</span>
-      <span className="-ml-0.5 flex -space-x-2">
+      <span className="flex -space-x-1">
         <a
-          className="group relative h-7 w-7 overflow-hidden rounded-full border-2 border-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
+          className="group relative size-6 overflow-hidden rounded-full ring-2 ring-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
           href="https://x.com/intent/follow?screen_name=pacovitiello"
           target="_blank"
           rel="noopener noreferrer"
@@ -23,7 +23,7 @@ export default function XLinks() {
           />
         </a>
         <a
-          className="group relative z-10 h-7 w-7 overflow-hidden rounded-full border-2 border-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
+          className="group relative z-10 size-6 overflow-hidden rounded-full ring-2 ring-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
           href="https://x.com/intent/follow?screen_name=DavidePacilio"
           target="_blank"
           rel="noopener noreferrer"
