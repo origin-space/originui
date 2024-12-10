@@ -20,7 +20,7 @@ const initialNotifications = [
   {
     id: 1,
     image: UserImg01,
-    user: "Chris Thompson",
+    user: "Chris Tompson",
     action: "requested review on",
     target: "PR #42: Feature implementation",
     timestamp: "15 minutes ago",
@@ -139,36 +139,38 @@ export default function PopoverDemo() {
         {notifications.map((notification) => (
           <div
             key={notification.id}
-            className="relative flex items-start gap-3 rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent"
+            className="rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent"
           >
-            <Image
-              className="size-9 rounded-md"
-              src={notification.image}
-              width={32}
-              height={32}
-              alt={notification.user}
-            />
-            <div className="flex-1 space-y-1">
-              <button
-                className="text-left text-foreground/80 after:absolute after:inset-0"
-                onClick={() => handleNotificationClick(notification.id)}
-              >
-                <span className="font-medium text-foreground hover:underline">
-                  {notification.user}
-                </span>{" "}
-                {notification.action}{" "}
-                <span className="font-medium text-foreground hover:underline">
-                  {notification.target}
-                </span>
-                .
-              </button>
-              <div className="text-xs text-muted-foreground">{notification.timestamp}</div>
-            </div>
-            {notification.unread && (
-              <div className="self-center">
-                <Dot />
+            <div className="relative flex items-start gap-3 pe-3">
+              <Image
+                className="size-9 rounded-md"
+                src={notification.image}
+                width={32}
+                height={32}
+                alt={notification.user}
+              />
+              <div className="flex-1 space-y-1">
+                <button
+                  className="text-left text-foreground/80 after:absolute after:inset-0"
+                  onClick={() => handleNotificationClick(notification.id)}
+                >
+                  <span className="font-medium text-foreground hover:underline">
+                    {notification.user}
+                  </span>{" "}
+                  {notification.action}{" "}
+                  <span className="font-medium text-foreground hover:underline">
+                    {notification.target}
+                  </span>
+                  .
+                </button>
+                <div className="text-xs text-muted-foreground">{notification.timestamp}</div>
               </div>
-            )}
+              {notification.unread && (
+                <div className="self-center absolute end-0">
+                  <Dot />
+                </div>
+              )}
+            </div>
           </div>
         ))}
       </PopoverContent>
