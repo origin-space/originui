@@ -26,11 +26,20 @@ const avatarFiles = [
 const badgeDir = "badges";
 const badgeFiles = [
   "badge-01",
+  "badge-01a",
+  "badge-01b",
+  "badge-02",
+  "badge-03",
+  "badge-04",
+  "badge-05",
+  "badge-06",
+  "badge-07",
 ];
 
-const chipDir = "chipes";
+const chipDir = "chips";
 const chipFiles = [
   "chip-01",
+  "chip-02",
 ];
 
 const totalAvatars = avatarFiles.length;
@@ -55,7 +64,7 @@ export default function Page() {
                   key={componentName}
                   directory={avatarDir}
                   componentName={componentName}
-                  className="flex justify-center"
+                  className="flex justify-center items-center"
                 />
               );
             })}
@@ -65,7 +74,17 @@ export default function Page() {
                   key={componentName}
                   directory={badgeDir}
                   componentName={componentName}
-                  className="flex justify-center items-start"
+                  className="flex justify-center items-center"
+                />
+              );
+            })}
+            {chipFiles.map((componentName) => {
+              return (
+                <DemoComponent
+                  key={componentName}
+                  directory={chipDir}
+                  componentName={componentName}
+                  className="flex justify-center items-center"
                 />
               );
             })}

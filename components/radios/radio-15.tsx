@@ -1,5 +1,6 @@
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Badge } from "@/components/ui/badge";
 
 const items = [
   { id: "radio-15-r1", value: "r1", label: "Hobby", price: "$9/mo" },
@@ -32,9 +33,9 @@ export default function RadioDemo() {
                 <Label className="inline-flex items-start" htmlFor={item.id}>
                   {item.label}
                   {item.value === "r2" && (
-                    <span className="-mt-1 ml-2 inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-300/15 px-1 py-0.5 text-[10px] font-medium uppercase text-emerald-600">
+                    <Badge className="ms-2 -mt-1">
                       Popular
-                    </span>
+                    </Badge>
                   )}
                 </Label>
               </div>
