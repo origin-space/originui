@@ -23,7 +23,7 @@ export default function DropdownDemo() {
       <DropdownMenuContent className="max-w-64">
         <DropdownMenuLabel className="flex flex-col">
           <span>Signed in as</span>
-          <span className="text-sm font-normal text-foreground">k.kennedy@originui.com</span>
+          <span className="text-xs font-normal text-foreground">k.kennedy@originui.com</span>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>

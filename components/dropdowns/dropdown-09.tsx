@@ -98,7 +98,7 @@ export default function DropdownDemo() {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem className="text-destructive focus:text-destructive">
-          <Trash size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+          <Trash size={16} strokeWidth={2} aria-hidden="true" />
           <span>Delete</span>
           <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
         </DropdownMenuItem>
