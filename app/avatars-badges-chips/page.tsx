@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 const avatarDir = "avatars";
 const avatarFiles = [
+  "avatar-02",
   "avatar-01",
   "avatar-01b",
-  "avatar-02",
   "avatar-02b",
   "avatar-03",
   "avatar-04",
