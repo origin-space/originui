@@ -15,8 +15,10 @@ const files = [
   "tab-02",
   "tab-03",
   "tab-04",
+  "tab-04b",
   "tab-05",
   "tab-06",
+  "tab-08",
 ];
 
 export default function Page() {
