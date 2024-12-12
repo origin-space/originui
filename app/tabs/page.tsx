@@ -15,10 +15,22 @@ const files = [
   "tab-02",
   "tab-03",
   "tab-04",
-  "tab-04b",
   "tab-05",
   "tab-06",
+  "tab-07",
   "tab-08",
+  "tab-09",
+  "tab-10",
+  "tab-11",
+  "tab-12",
+  "tab-13",
+  "tab-14",
+  "tab-15",
+  "tab-16",
+  "tab-17",
+  "tab-18",
+  "tab-19",
+  "tab-20",
 ];
 
 export default function Page() {

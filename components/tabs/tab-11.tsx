@@ -1,6 +1,5 @@
 // Dependencies: pnpm install lucide-react
 
-import { Badge } from "@/components/ui/badge";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookMarked, Box, House } from "lucide-react";
@@ -9,8 +8,11 @@ export default function TabDemo() {
   return (
     <Tabs defaultValue="tab-1">
       <ScrollArea>
-        <TabsList className="mb-3">
-          <TabsTrigger value="tab-1">
+        <TabsList className="relative mb-3 h-auto w-full gap-0.5 bg-transparent p-0 before:absolute before:inset-x-0 before:bottom-0 before:h-px before:bg-border">
+          <TabsTrigger
+            value="tab-1"
+            className="overflow-hidden rounded-b-none border-x border-t border-border bg-muted py-2 data-[state=active]:z-10 data-[state=active]:shadow-none"
+          >
             <House
               className="-ms-0.5 me-1.5 opacity-60"
               size={16}
@@ -19,7 +21,10 @@ export default function TabDemo() {
             />
             Overview
           </TabsTrigger>
-          <TabsTrigger value="tab-2" className="group">
+          <TabsTrigger
+            value="tab-2"
+            className="overflow-hidden rounded-b-none border-x border-t border-border bg-muted py-2 data-[state=active]:z-10 data-[state=active]:shadow-none"
+          >
             <BookMarked
               className="-ms-0.5 me-1.5 opacity-60"
               size={16}
@@ -27,14 +32,11 @@ export default function TabDemo() {
               aria-hidden="true"
             />
             Repositories
-            <Badge
-              className="ms-1.5 min-w-5 bg-primary/15 px-1 transition-opacity group-data-[state=inactive]:opacity-50"
-              variant="secondary"
-            >
-              3
-            </Badge>
           </TabsTrigger>
-          <TabsTrigger value="tab-3" className="group">
+          <TabsTrigger
+            value="tab-3"
+            className="overflow-hidden rounded-b-none border-x border-t border-border bg-muted py-2 data-[state=active]:z-10 data-[state=active]:shadow-none"
+          >
             <Box
               className="-ms-0.5 me-1.5 opacity-60"
               size={16}
@@ -42,9 +44,6 @@ export default function TabDemo() {
               aria-hidden="true"
             />
             Packages
-            <Badge className="ms-1.5 transition-opacity group-data-[state=inactive]:opacity-50">
-              New
-            </Badge>
           </TabsTrigger>
         </TabsList>
         <ScrollBar orientation="horizontal" />
