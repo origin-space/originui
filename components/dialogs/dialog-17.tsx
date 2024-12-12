@@ -2,6 +2,7 @@
 
 "use client";
 
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -68,9 +69,7 @@ export default function DialogDemo() {
                 />
                 <div className="inline-flex items-start justify-between gap-2">
                   <p className="text-sm font-medium text-foreground">Yearly</p>
-                  <div className="inline-flex items-center rounded-full bg-primary px-2 text-xs font-medium leading-5 text-primary-foreground">
-                    Popular
-                  </div>
+                  <Badge>Popular</Badge>
                 </div>
                 <p className="text-sm text-muted-foreground">$320/month</p>
               </label>
