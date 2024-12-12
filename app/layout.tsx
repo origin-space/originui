@@ -1,10 +1,10 @@
-import PlausibleProvider from 'next-plausible'
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/demo/header";
 import { ThemeProvider } from "@/demo/theme-provider";
 import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono as FontMono, Inter as FontSans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -47,15 +47,19 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <PlausibleProvider domain="originui.com">
-            <div className="relative flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
-              <Header />
-              {children}
-            </div>
-          </PlausibleProvider>
+          <div className="relative flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
+            <Header />
+            {children}
+          </div>
         </ThemeProvider>
         <Toaster />
         <Sonner />
+        <Script
+          src="https://plausible.cruip.com/js/script.js"
+          data-domain="originui.com"
+          strategy="beforeInteractive"
+          defer
+        />
       </body>
     </html>
   );
