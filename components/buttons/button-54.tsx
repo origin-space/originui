@@ -52,14 +52,14 @@ export default function ButtonDemo() {
           className="max-w-64 md:max-w-xs"
           side="bottom"
           sideOffset={4}
-          align="center"
+          align="end"
         >
           <DropdownMenuRadioGroup value={selectedIndex} onValueChange={setSelectedIndex}>
             {options.map((option, index) => (
               <DropdownMenuRadioItem
                 key={option.label}
                 value={String(index)}
-                className="flex items-start [&>span]:pt-1.5"
+                className="items-start [&>span]:pt-1.5"
               >
                 <div className="flex flex-col gap-1">
                   <span className="text-sm font-medium">{option.label}</span>
