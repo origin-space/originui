@@ -15,7 +15,7 @@ export default function CheckboxDemo() {
   return (
     <div className="grid grid-cols-2 gap-3">
       {items.map((item) => (
-        <label
+        <div
           key={item.id}
           className="relative flex cursor-pointer flex-col gap-4 rounded-lg border border-input p-4 shadow-sm shadow-black/5 has-[[data-state=checked]]:border-ring"
         >
@@ -29,7 +29,7 @@ export default function CheckboxDemo() {
             <item.Icon className="opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
           </div>
           <Label htmlFor={item.id}>{item.label}</Label>
-        </label>
+        </div>
       ))}
     </div>
   );

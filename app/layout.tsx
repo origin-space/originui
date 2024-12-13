@@ -4,6 +4,7 @@ import Header from "@/demo/header";
 import { ThemeProvider } from "@/demo/theme-provider";
 import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono as FontMono, Inter as FontSans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -53,6 +54,12 @@ export default function RootLayout({
         </ThemeProvider>
         <Toaster />
         <Sonner />
+        <Script
+          src="https://plausible.cruip.com/js/script.js"
+          data-domain="originui.com"
+          strategy="beforeInteractive"
+          defer
+        />
       </body>
     </html>
   );
