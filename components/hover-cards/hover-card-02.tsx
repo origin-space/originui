@@ -47,27 +47,27 @@ export default function HoverCardDemo() {
             Crafting web experiences with Tailwind CSS.
           </p>
           <div className="flex items-center gap-2">
-            <div className="flex -space-x-2">
+            <div className="flex -space-x-1.5">
               <Image
-                className="shrink-0 rounded-full ring-1 ring-background"
+                className="rounded-full ring-1 ring-background"
                 src={FriendImg01}
                 width={20}
                 height={20}
                 alt="Friend 01"
               />
               <Image
-                className="shrink-0 rounded-full ring-1 ring-background"
+                className="rounded-full ring-1 ring-background"
                 src={FriendImg02}
                 width={20}
                 height={20}
-                alt="Friend 01"
+                alt="Friend 02"
               />
               <Image
-                className="shrink-0 rounded-full ring-1 ring-background"
+                className="rounded-full ring-1 ring-background"
                 src={FriendImg03}
                 width={20}
                 height={20}
-                alt="Friend 01"
+                alt="Friend 03"
               />
             </div>
             <div className="text-xs text-muted-foreground">3 mutual friends</div>
