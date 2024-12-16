@@ -1,38 +1,17 @@
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function PaginationDemo() {
   return (
-    <Pagination>
-      <PaginationContent>
-        <PaginationItem>
-          <PaginationPrevious href="#" />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">1</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#" isActive>
-            2
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">3</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationEllipsis />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationNext href="#" />
-        </PaginationItem>
-      </PaginationContent>
-    </Pagination>
+    <div className="flex justify-between gap-3">
+      <Button variant="outline">
+        <ChevronLeft className="-ms-1 me-2 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
+        Previous
+      </Button>
+      <Button variant="outline">
+        Next
+        <ChevronRight className="-me-1 ms-2 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
+      </Button>
+    </div>
   );
 }

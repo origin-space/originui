@@ -24,6 +24,17 @@ const breadcrumbFiles = [
 const paginationDir = "paginations";
 const paginationFiles = [
   "pagination-01",
+  "pagination-01b",
+  "pagination-01d",
+  "pagination-01c",
+  "pagination-03",
+  "pagination-04",
+  "pagination-05",
+  "pagination-06",
+  "pagination-07",
+  "pagination-08",
+  "pagination-09",
+  "pagination-10",
 ];
 
 const totalComponents = breadcrumbFiles.length + paginationFiles.length;
@@ -55,7 +66,6 @@ export default function Page() {
                   key={componentName}
                   directory={paginationDir}
                   componentName={componentName}
-                  className="flex items-start justify-center"
                 />
               );
             })}
