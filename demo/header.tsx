@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 
 import GithubButton from "@/demo/github-button";
