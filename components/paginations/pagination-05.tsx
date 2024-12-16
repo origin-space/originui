@@ -1,51 +1,44 @@
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-} from "@/components/ui/pagination";
-import { ChevronLeft, ChevronRight, ChevronFirst, ChevronLast } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Pagination, PaginationContent, PaginationItem } from "@/components/ui/pagination";
 
-export default function PaginationDemo() {
+type PaginationProps = {
+  currentPage: number;
+  totalPages: number;
+};
+
+export default function PaginationDemo({ currentPage, totalPages }: PaginationProps) {
   return (
-    <Pagination>
-      <PaginationContent>
-        <PaginationItem>
-          <PaginationLink href="#" aria-label="Go to first page">
-            <ChevronFirst size={16} strokeWidth={2} aria-hidden="true" />
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#" aria-label="Go to previous page">
-            <ChevronLeft size={16} strokeWidth={2} aria-hidden="true" />
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">1</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#" isActive>
-            2
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">3</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationEllipsis />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#" aria-label="Go to next page">
-            <ChevronRight size={16} strokeWidth={2} aria-hidden="true" />
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#" aria-label="Go to last page">
-            <ChevronLast size={16} strokeWidth={2} aria-hidden="true" />
-          </PaginationLink>
-        </PaginationItem>
-      </PaginationContent>
-    </Pagination>
+    <div className="flex items-center justify-between gap-3">
+      <p className="grow text-sm text-muted-foreground" aria-live="polite">
+        Page <span className="text-foreground">{currentPage}</span> of{" "}
+        <span className="text-foreground">{totalPages}</span>
+      </p>
+      <Pagination className="w-auto">
+        <PaginationContent className="gap-3">
+          <PaginationItem>
+            <Button
+              variant="outline"
+              className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
+              aria-disabled={currentPage === 1 ? true : undefined}
+              role={currentPage === 1 ? "link" : undefined}
+              asChild
+            >
+              <a href={currentPage === 1 ? undefined : `/page/${currentPage - 1}`}>Previous</a>
+            </Button>
+          </PaginationItem>
+          <PaginationItem>
+            <Button
+              variant="outline"
+              className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
+              aria-disabled={currentPage === totalPages ? true : undefined}
+              role={currentPage === totalPages ? "link" : undefined}
+              asChild
+            >
+              <a href={currentPage === totalPages ? undefined : `/page/${currentPage + 1}`}>Next</a>
+            </Button>
+          </PaginationItem>
+        </PaginationContent>
+      </Pagination>
+    </div>
   );
 }

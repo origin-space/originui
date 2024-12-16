@@ -1,5 +1,7 @@
 // Dependencies: pnpm install lucide-react
 
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Pagination,
   PaginationContent,
@@ -7,13 +9,6 @@ import {
   PaginationItem,
   PaginationLink,
 } from "@/components/ui/pagination";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { usePagination } from "@/hooks/use-pagination";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -35,13 +30,7 @@ export default function PaginationDemo({
   });
 
   return (
-    <div className="flex items-center justify-between gap-3">
-      {/* Page number information */}
-      <p className="flex-1 whitespace-nowrap text-sm text-muted-foreground" aria-live="polite">
-        Page <span className="text-foreground">{currentPage}</span> of{" "}
-        <span className="text-foreground">{totalPages}</span>
-      </p>
-
+    <div className="flex items-center justify-between gap-4">
       {/* Pagination */}
       <div>
         <Pagination>
@@ -98,19 +87,17 @@ export default function PaginationDemo({
         </Pagination>
       </div>
 
-      {/* Results per page */}
-      <div className="flex flex-1 justify-end">
-        <Select defaultValue="10" aria-label="Results per page">
-          <SelectTrigger id="results-per-page" className="w-fit whitespace-nowrap">
-            <SelectValue placeholder="Select number of results" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="10">10 / page</SelectItem>
-            <SelectItem value="20">20 / page</SelectItem>
-            <SelectItem value="50">50 / page</SelectItem>
-            <SelectItem value="100">100 / page</SelectItem>
-          </SelectContent>
-        </Select>
+      {/* Go to page input */}
+      <div className="flex items-center gap-3">
+        <Label htmlFor="pagination-input" className="whitespace-nowrap">
+          Go to page
+        </Label>
+        <Input
+          id="pagination-input"
+          type="text"
+          className="w-14"
+          defaultValue={String(currentPage)}
+        />
       </div>
     </div>
   );

@@ -1,51 +1,110 @@
+// Dependencies: pnpm install lucide-react
+
+import { buttonVariants } from "@/components/ui/button";
 import {
   Pagination,
   PaginationContent,
+  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
 } from "@/components/ui/pagination";
-import { ChevronLeft, ChevronRight, ChevronFirst, ChevronLast } from "lucide-react"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { usePagination } from "@/hooks/use-pagination";
+import { cn } from "@/lib/utils";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function PaginationDemo() {
+type PaginationProps = {
+  currentPage: number;
+  totalPages: number;
+  paginationItemsToDisplay?: number;
+};
+
+export default function PaginationDemo({
+  currentPage,
+  totalPages,
+  paginationItemsToDisplay = 5,
+}: PaginationProps) {
+  const { pages, showLeftEllipsis, showRightEllipsis } = usePagination({
+    currentPage,
+    totalPages,
+    paginationItemsToDisplay,
+  });
+
   return (
     <Pagination>
-      <PaginationContent>
-        <PaginationItem>
-          <PaginationLink href="#" aria-label="Go to first page">
-            <ChevronFirst size={16} strokeWidth={2} aria-hidden="true" />
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#" aria-label="Go to previous page">
+      <PaginationContent className="inline-flex gap-0 -space-x-px rounded-lg shadow-sm shadow-black/5 rtl:space-x-reverse">
+        {/* Previous page button */}
+        <PaginationItem className="[&:first-child>a]:rounded-s-lg [&:last-child>a]:rounded-e-lg">
+          <PaginationLink
+            className={cn(
+              buttonVariants({
+                variant: "outline",
+              }),
+              "rounded-none shadow-none focus-visible:z-10 aria-disabled:pointer-events-none [&[aria-disabled]>svg]:opacity-50",
+            )}
+            href={currentPage === 1 ? undefined : `/page/${currentPage - 1}`}
+            aria-label="Go to previous page"
+            aria-disabled={currentPage === 1 ? true : undefined}
+            role={currentPage === 1 ? "link" : undefined}
+          >
             <ChevronLeft size={16} strokeWidth={2} aria-hidden="true" />
           </PaginationLink>
         </PaginationItem>
-        <Select defaultValue="1" aria-label="Select page">
-          <SelectTrigger id="select-page" className="w-fit whitespace-nowrap">
-            <SelectValue placeholder="Select page" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="1">Page 1</SelectItem>
-            <SelectItem value="2">Page 2</SelectItem>
-            <SelectItem value="3">Page 3</SelectItem>
-            <SelectItem value="4">Page 4</SelectItem>
-          </SelectContent>
-        </Select>
-        <PaginationItem>
-          <PaginationLink href="#" aria-label="Go to next page">
+
+        {/* Left ellipsis (...) */}
+        {showLeftEllipsis && (
+          <PaginationItem className="[&:first-child>a]:rounded-s-lg [&:last-child>a]:rounded-e-lg">
+            <PaginationEllipsis />
+          </PaginationItem>
+        )}
+
+        {/* Page number links */}
+        {pages.map((page) => (
+          <PaginationItem key={page}>
+            <PaginationLink
+              className={cn(
+                buttonVariants({
+                  variant: "outline",
+                }),
+                "rounded-none shadow-none focus-visible:z-10",
+                page === currentPage && "bg-accent",
+              )}
+              href={`/page/${page}`}
+              isActive={page === currentPage}
+            >
+              {page}
+            </PaginationLink>
+          </PaginationItem>
+        ))}
+
+        {/* Right ellipsis (...) */}
+        {showRightEllipsis && (
+          <PaginationItem className="[&:first-child>a]:rounded-s-lg [&:last-child>a]:rounded-e-lg">
+            <PaginationEllipsis
+              className={cn(
+                buttonVariants({
+                  variant: "outline",
+                }),
+                "pointer-events-none rounded-none shadow-none",
+              )}
+            />
+          </PaginationItem>
+        )}
+
+        {/* Next page button */}
+        <PaginationItem className="[&:first-child>a]:rounded-s-lg [&:last-child>a]:rounded-e-lg">
+          <PaginationLink
+            className={cn(
+              buttonVariants({
+                variant: "outline",
+              }),
+              "rounded-none shadow-none focus-visible:z-10 aria-disabled:pointer-events-none [&[aria-disabled]>svg]:opacity-50",
+            )}
+            href={currentPage === totalPages ? undefined : `/page/${currentPage + 1}`}
+            aria-label="Go to next page"
+            aria-disabled={currentPage === totalPages ? true : undefined}
+            role={currentPage === totalPages ? "link" : undefined}
+          >
             <ChevronRight size={16} strokeWidth={2} aria-hidden="true" />
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#" aria-label="Go to last page">
-            <ChevronLast size={16} strokeWidth={2} aria-hidden="true" />
           </PaginationLink>
         </PaginationItem>
       </PaginationContent>

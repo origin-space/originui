@@ -12,21 +12,19 @@ export const metadata: Metadata = {
 const breadcrumbDir = "breadcrumbs";
 const breadcrumbFiles = [
   "breadcrumb-01",
-  "breadcrumb-01b",
   "breadcrumb-02",
   "breadcrumb-03",
   "breadcrumb-04",
   "breadcrumb-05",
   "breadcrumb-06",
   "breadcrumb-07",
+  "breadcrumb-08",
 ];
 
 const paginationDir = "paginations";
 const paginationFiles = [
   "pagination-01",
-  "pagination-01b",
-  "pagination-01d",
-  "pagination-01c",
+  "pagination-02",
   "pagination-03",
   "pagination-04",
   "pagination-05",
@@ -35,6 +33,8 @@ const paginationFiles = [
   "pagination-08",
   "pagination-09",
   "pagination-10",
+  "pagination-11",
+  "pagination-12",
 ];
 
 const totalComponents = breadcrumbFiles.length + paginationFiles.length;
@@ -66,6 +66,8 @@ export default function Page() {
                   key={componentName}
                   directory={paginationDir}
                   componentName={componentName}
+                  currentPage={1}
+                  totalPages={10}
                 />
               );
             })}

@@ -4,65 +4,74 @@ import {
   PaginationEllipsis,
   PaginationItem,
   PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
 } from "@/components/ui/pagination";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { usePagination } from "@/hooks/use-pagination";
 
-export default function PaginationDemo() {
+type PaginationProps = {
+  currentPage: number;
+  totalPages: number;
+  paginationItemsToDisplay?: number;
+};
+
+export default function PaginationDemo({
+  currentPage,
+  totalPages,
+  paginationItemsToDisplay = 5,
+}: PaginationProps) {
+  const { pages, showLeftEllipsis, showRightEllipsis } = usePagination({
+    currentPage,
+    totalPages,
+    paginationItemsToDisplay,
+  });
+
   return (
-    <div className="flex justify-between items-center gap-3">
-      <div className="flex-1 text-muted-foreground text-sm whitespace-nowrap">
-        Page <span className="text-foreground">2</span> of <span className="text-foreground">10</span>
-      </div>
-      <div>
-        <Pagination>
-          <PaginationContent>
-            <PaginationItem>
-              <PaginationLink href="#" aria-label="Go to previous page">
-                <ChevronLeft size={16} strokeWidth={2} aria-hidden="true" />
-              </PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">1</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#" isActive>
-                2
-              </PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">3</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationEllipsis />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#" aria-label="Go to next page">
-                <ChevronRight size={16} strokeWidth={2} aria-hidden="true" />
-              </PaginationLink>
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
-      </div>
-      <div className="flex-1 flex justify-end">
-        <Select defaultValue="10" aria-label="Results per page">
-          <SelectTrigger id="results-per-page" className="w-fit whitespace-nowrap">
-            <SelectValue placeholder="Select number of results" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="10">10 / page</SelectItem>
-            <SelectItem value="20">20 / page</SelectItem>
-            <SelectItem value="50">50 / page</SelectItem>
-            <SelectItem value="100">100 / page</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-    </div>
+    <Pagination>
+      <PaginationContent>
+        {/* Previous page button */}
+        <PaginationItem>
+          <PaginationPrevious
+            className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
+            href={currentPage === 1 ? undefined : `/page/${currentPage - 1}`}
+            aria-disabled={currentPage === 1 ? true : undefined}
+            role={currentPage === 1 ? "link" : undefined}
+          />
+        </PaginationItem>
+
+        {/* Left ellipsis (...) */}
+        {showLeftEllipsis && (
+          <PaginationItem>
+            <PaginationEllipsis />
+          </PaginationItem>
+        )}
+
+        {/* Page number links */}
+        {pages.map((page) => (
+          <PaginationItem key={page}>
+            <PaginationLink href={`/page/${page}`} isActive={page === currentPage}>
+              {page}
+            </PaginationLink>
+          </PaginationItem>
+        ))}
+
+        {/* Right ellipsis (...) */}
+        {showRightEllipsis && (
+          <PaginationItem>
+            <PaginationEllipsis />
+          </PaginationItem>
+        )}
+
+        {/* Next page button */}
+        <PaginationItem>
+          <PaginationNext
+            className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
+            href={currentPage === totalPages ? undefined : `/page/${currentPage + 1}`}
+            aria-disabled={currentPage === totalPages ? true : undefined}
+            role={currentPage === totalPages ? "link" : undefined}
+          />
+        </PaginationItem>
+      </PaginationContent>
+    </Pagination>
   );
 }

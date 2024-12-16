@@ -1,74 +1,111 @@
+// Dependencies: pnpm install lucide-react
+
+import { Label } from "@/components/ui/label";
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
 } from "@/components/ui/pagination";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react"
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { ChevronFirst, ChevronLast, ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function PaginationDemo() {
+type PaginationProps = {
+  currentPage: number;
+  totalPages: number;
+};
+
+export default function PaginationDemo({ currentPage, totalPages }: PaginationProps) {
   return (
-    <Pagination>
-      <PaginationContent>
-        <PaginationItem>
-          <PaginationLink href="#" aria-label="Go to previous page">
-            <ChevronLeft size={16} strokeWidth={2} aria-hidden="true" />
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">1</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#" isActive>
-            2
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">3</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="More pages">
-                <PaginationEllipsis />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="min-w-12 [&_a]:justify-center">
-              <DropdownMenuItem asChild>
-                <a href="#">4</a>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <a href="#">5</a>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <a href="#">6</a>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <a href="#">7</a>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <a href="#">8</a>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">9</PaginationLink>
-        </PaginationItem>        
-        <PaginationItem>
-          <PaginationLink href="#" aria-label="Go to next page">
-            <ChevronRight size={16} strokeWidth={2} aria-hidden="true" />
-          </PaginationLink>
-        </PaginationItem>
-      </PaginationContent>
-    </Pagination>
+    <div className="flex items-center justify-between gap-8">
+      {/* Results per page */}
+      <div className="flex items-center gap-3">
+        <Label htmlFor="rows-per-page">Rows per page</Label>
+        <Select defaultValue="25">
+          <SelectTrigger id="rows-per-page" className="w-fit whitespace-nowrap">
+            <SelectValue placeholder="Select number of results" />
+          </SelectTrigger>
+          <SelectContent className="[&_*[role=option]>span]:end-2 [&_*[role=option]>span]:start-auto [&_*[role=option]]:pe-8 [&_*[role=option]]:ps-2">
+            <SelectItem value="10">10</SelectItem>
+            <SelectItem value="25">25</SelectItem>
+            <SelectItem value="50">50</SelectItem>
+            <SelectItem value="100">100</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      {/* Page number information */}
+      <div className="flex grow justify-end whitespace-nowrap text-sm text-muted-foreground">
+        <p className="whitespace-nowrap text-sm text-muted-foreground" aria-live="polite">
+          <span className="text-foreground">1-25</span> of{" "}
+          <span className="text-foreground">100</span>
+        </p>
+      </div>
+
+      {/* Pagination */}
+      <div>
+        <Pagination>
+          <PaginationContent>
+            {/* First page button */}
+            <PaginationItem>
+              <PaginationLink
+                className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
+                href={currentPage === 1 ? undefined : `/page/${currentPage - 1}`}
+                aria-label="Go to first page"
+                aria-disabled={currentPage === 1 ? true : undefined}
+                role={currentPage === 1 ? "link" : undefined}
+              >
+                <ChevronFirst size={16} strokeWidth={2} aria-hidden="true" />
+              </PaginationLink>
+            </PaginationItem>
+
+            {/* Previous page button */}
+            <PaginationItem>
+              <PaginationLink
+                className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
+                href={currentPage === 1 ? undefined : `/page/${currentPage - 1}`}
+                aria-label="Go to previous page"
+                aria-disabled={currentPage === 1 ? true : undefined}
+                role={currentPage === 1 ? "link" : undefined}
+              >
+                <ChevronLeft size={16} strokeWidth={2} aria-hidden="true" />
+              </PaginationLink>
+            </PaginationItem>
+
+            {/* Next page button */}
+            <PaginationItem>
+              <PaginationLink
+                className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
+                href={currentPage === totalPages ? undefined : `/page/${currentPage + 1}`}
+                aria-label="Go to next page"
+                aria-disabled={currentPage === totalPages ? true : undefined}
+                role={currentPage === totalPages ? "link" : undefined}
+              >
+                <ChevronRight size={16} strokeWidth={2} aria-hidden="true" />
+              </PaginationLink>
+            </PaginationItem>
+
+            {/* Last page button */}
+            <PaginationItem>
+              <PaginationLink
+                className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
+                href={currentPage === totalPages ? undefined : `/page/${totalPages}`}
+                aria-label="Go to last page"
+                aria-disabled={currentPage === totalPages ? true : undefined}
+                role={currentPage === totalPages ? "link" : undefined}
+              >
+                <ChevronLast size={16} strokeWidth={2} aria-hidden="true" />
+              </PaginationLink>
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      </div>
+    </div>
   );
 }

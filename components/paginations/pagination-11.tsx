@@ -3,11 +3,16 @@
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
 } from "@/components/ui/pagination";
-import { usePagination } from "@/hooks/use-pagination";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { ChevronFirst, ChevronLast, ChevronLeft, ChevronRight } from "lucide-react";
 
 type PaginationProps = {
@@ -16,17 +21,7 @@ type PaginationProps = {
   paginationItemsToDisplay?: number;
 };
 
-export default function PaginationDemo({
-  currentPage,
-  totalPages,
-  paginationItemsToDisplay = 5,
-}: PaginationProps) {
-  const { pages, showLeftEllipsis, showRightEllipsis } = usePagination({
-    currentPage,
-    totalPages,
-    paginationItemsToDisplay,
-  });
-
+export default function PaginationDemo({ currentPage, totalPages }: PaginationProps) {
   return (
     <Pagination>
       <PaginationContent>
@@ -56,28 +51,21 @@ export default function PaginationDemo({
           </PaginationLink>
         </PaginationItem>
 
-        {/* Left ellipsis (...) */}
-        {showLeftEllipsis && (
-          <PaginationItem>
-            <PaginationEllipsis />
-          </PaginationItem>
-        )}
-
-        {/* Page number links */}
-        {pages.map((page) => (
-          <PaginationItem key={page}>
-            <PaginationLink href={`/page/${page}`} isActive={page === currentPage}>
-              {page}
-            </PaginationLink>
-          </PaginationItem>
-        ))}
-
-        {/* Right ellipsis (...) */}
-        {showRightEllipsis && (
-          <PaginationItem>
-            <PaginationEllipsis />
-          </PaginationItem>
-        )}
+        {/* Page number select */}
+        <PaginationItem>
+          <Select defaultValue={String(currentPage)} aria-label="Select page">
+            <SelectTrigger id="select-page" className="w-fit whitespace-nowrap">
+              <SelectValue placeholder="Select page" />
+            </SelectTrigger>
+            <SelectContent>
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <SelectItem key={page} value={String(page)}>
+                  Page {page}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </PaginationItem>
 
         {/* Next page button */}
         <PaginationItem>

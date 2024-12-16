@@ -1,36 +1,49 @@
+// Dependencies: pnpm install lucide-react
+
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
 } from "@/components/ui/pagination";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function PaginationDemo() {
+type PaginationProps = {
+  currentPage: number;
+  totalPages: number;
+};
+
+export default function PaginationDemo({ currentPage, totalPages }: PaginationProps) {
   return (
     <Pagination>
-      <PaginationContent>
+      <PaginationContent className="gap-3">
         <PaginationItem>
-          <PaginationPrevious href="#" />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">1</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#" isActive>
-            2
+          <PaginationLink
+            className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
+            href={currentPage === 1 ? undefined : `/page/${currentPage - 1}`}
+            aria-label="Go to previous page"
+            aria-disabled={currentPage === 1 ? true : undefined}
+            role={currentPage === 1 ? "link" : undefined}
+          >
+            <ChevronLeft size={16} strokeWidth={2} aria-hidden="true" />
           </PaginationLink>
         </PaginationItem>
         <PaginationItem>
-          <PaginationLink href="#">3</PaginationLink>
+          <p className="text-sm text-muted-foreground" aria-live="polite">
+            Page <span className="text-foreground">{currentPage}</span> of{" "}
+            <span className="text-foreground">{totalPages}</span>
+          </p>
         </PaginationItem>
         <PaginationItem>
-          <PaginationEllipsis />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationNext href="#" />
+          <PaginationLink
+            className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
+            href={currentPage === totalPages ? undefined : `/page/${currentPage + 1}`}
+            aria-label="Go to next page"
+            aria-disabled={currentPage === totalPages ? true : undefined}
+            role={currentPage === totalPages ? "link" : undefined}
+          >
+            <ChevronRight size={16} strokeWidth={2} aria-hidden="true" />
+          </PaginationLink>
         </PaginationItem>
       </PaginationContent>
     </Pagination>

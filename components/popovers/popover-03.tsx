@@ -166,7 +166,7 @@ export default function PopoverDemo() {
                 <div className="text-xs text-muted-foreground">{notification.timestamp}</div>
               </div>
               {notification.unread && (
-                <div className="self-center absolute end-0">
+                <div className="absolute end-0 self-center">
                   <Dot />
                 </div>
               )}

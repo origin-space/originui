@@ -5,22 +5,47 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Home } from "lucide-react"
+} from "@/components/ui/breadcrumb";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Folders } from "lucide-react";
 
 export default function BreadcrumbDemo() {
   return (
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href="#">
-            <Home size={16} strokeWidth={2} aria-hidden="true" />
-            <span className="sr-only">Home</span>
-          </BreadcrumbLink>
+          <BreadcrumbLink href="#">Home</BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator />      
+        <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink href="#">Components</BreadcrumbLink>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="hover:text-foreground">
+              <span
+                role="presentation"
+                aria-hidden="true"
+                className="flex size-5 items-center justify-center"
+              >
+                <Folders size={16} strokeWidth={2} />
+              </span>
+              <span className="sr-only">Toggle menu</span>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start">
+              <DropdownMenuItem asChild>
+                <a href="#">Documentation</a>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <a href="#">Themes</a>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <a href="#">GitHub</a>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
@@ -28,5 +53,5 @@ export default function BreadcrumbDemo() {
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
-  )
+  );
 }

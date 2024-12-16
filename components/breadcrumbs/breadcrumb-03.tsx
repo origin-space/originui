@@ -5,25 +5,22 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Home, Component, Puzzle } from "lucide-react"
+} from "@/components/ui/breadcrumb";
+import { Home } from "lucide-react";
 
 export default function BreadcrumbDemo() {
   return (
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href="#" className="inline-flex items-center gap-1.5">
+          <BreadcrumbLink href="#">
             <Home size={16} strokeWidth={2} aria-hidden="true" />
-            Home
+            <span className="sr-only">Home</span>
           </BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator />      
+        <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink href="#" className="inline-flex items-center gap-1.5">
-            <Component size={16} strokeWidth={2} aria-hidden="true" />
-            Components
-          </BreadcrumbLink>
+          <BreadcrumbLink href="#">Components</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
@@ -31,5 +28,5 @@ export default function BreadcrumbDemo() {
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
-  )
+  );
 }
