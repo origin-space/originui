@@ -12,6 +12,9 @@ export const metadata: Metadata = {
 const directory = "paginations";
 const files = [
   "pagination-01",
+  "pagination-02",
+  "pagination-03",
+  "pagination-04",
  
 ];
 
