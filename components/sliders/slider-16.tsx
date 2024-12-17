@@ -23,7 +23,7 @@ export default function SliderDemo() {
       <Label>Slider with input</Label>
       <div className="flex items-center gap-4">
         <Slider
-          className="flex-grow"
+          className="grow"
           value={sliderValue}
           onValueChange={handleSliderChange}
           min={minValue}

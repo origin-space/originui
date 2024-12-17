@@ -37,7 +37,7 @@ export default function SliderDemo() {
           aria-label="Enter minimum value"
         />
         <Slider
-          className="flex-grow"
+          className="grow"
           value={sliderValue}
           onValueChange={handleSliderChange}
           min={minValue}
