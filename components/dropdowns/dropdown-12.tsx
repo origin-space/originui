@@ -16,12 +16,12 @@ export default function DropdownDemo() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="h-auto p-0 hover:bg-transparent">
+        <Button variant="ghost" className="h-auto p-0 hover:bg-transparent group">
           <Avatar>
             <AvatarImage src="./avatar.jpg" alt="Profile image" />
             <AvatarFallback>KK</AvatarFallback>
           </Avatar>
-          <ChevronDown size={16} strokeWidth={2} className="ms-2 opacity-60" aria-hidden="true" />
+          <ChevronDown size={16} strokeWidth={2} className="ms-2 opacity-60 transition-transform group-data-[state=open]:rotate-180" aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="max-w-64">
