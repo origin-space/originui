@@ -172,10 +172,10 @@ export default function Page() {
                   </li>
                   <li>
                     <Link
-                      href="/tabs"
+                      href="/avatars-badges"
                       className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 outline-offset-2 transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
                     >
-                      <span className="truncate">Tab</span>
+                      <span className="truncate">Avatar and Badge</span>
                       <ArrowRight
                         size={16}
                         strokeWidth={2}
@@ -197,12 +197,17 @@ export default function Page() {
                     </Link>
                   </li>                     
                   <li>
-                    <span className="inline-flex w-full flex-col justify-between gap-2 whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 sm:h-14 sm:flex-row sm:items-center">
-                      Breadcrumb and Pagination
-                      <span className="text-xs font-medium uppercase text-zinc-400 dark:text-zinc-600">
-                        Available soon!
-                      </span>
-                    </span>
+                    <Link
+                      href="/breadcrumbs-paginations"
+                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 outline-offset-2 transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
+                    >
+                      <span className="truncate">Breadcrumb and Pagination</span>
+                      <ArrowRight
+                        size={16}
+                        strokeWidth={2}
+                        className="-mr-1 ml-2 shrink-0 opacity-60"
+                      />
+                    </Link>
                   </li>
                 </ul>
               </nav>
