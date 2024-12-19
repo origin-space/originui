@@ -14,7 +14,7 @@ export default function TabDemo() {
           value="tab-2"
           className="relative w-full justify-start rounded-none after:absolute after:inset-y-0 after:start-0 after:w-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary"
         >
-          Repositories
+          Projects
         </TabsTrigger>
         <TabsTrigger
           value="tab-3"
