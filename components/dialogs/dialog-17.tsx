@@ -16,15 +16,23 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { CreditCard, Store } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { usePaymentInputs } from "react-payment-inputs";
 import images, { type CardImages } from "react-payment-inputs/images";
 
 export default function DialogDemo() {
   const { meta, getCardNumberProps, getExpiryDateProps, getCVCProps, getCardImageProps } =
     usePaymentInputs();
+  const couponInputRef = useRef<HTMLInputElement>(null);
   const [showCouponInput, setShowCouponInput] = useState(false);
   const [couponCode, setCouponCode] = useState("");
+
+  // Auto-focus the coupon input when it's shown
+  useEffect(() => {
+    if (showCouponInput && couponInputRef.current) {
+      couponInputRef.current.focus();
+    }
+  }, [showCouponInput]);  
 
   return (
     <Dialog>
@@ -127,6 +135,7 @@ export default function DialogDemo() {
                 <Label htmlFor="coupon">Coupon code</Label>
                 <Input
                   id="coupon"
+                  ref={couponInputRef}
                   placeholder="Enter your code"
                   value={couponCode}
                   onChange={(e) => setCouponCode(e.target.value)}

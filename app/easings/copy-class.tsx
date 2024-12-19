@@ -26,7 +26,7 @@ const CopyClass = ({ value }: { value: string }) => {
         aria-label={copied ? "Copied" : "Copy Tailwind class"}
         disabled={copied}
       >
-        <div className="flex-[1]">
+        <div className="flex-1">
           {copied ? "Copied" : <span className="transition-colors">Copy class</span>}
         </div>
         <div className="relative ml-2">

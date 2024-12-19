@@ -34,7 +34,7 @@ export default function SliderDemo() {
           </Button>
         </div>
         <Slider
-          className="flex-grow"
+          className="grow"
           value={value}
           onValueChange={setValue}
           min={minValue}
