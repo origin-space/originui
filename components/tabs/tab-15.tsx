@@ -3,7 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { BookMarked, Box, House } from "lucide-react";
+import { PanelsTopLeft, Box, House } from "lucide-react";
 
 export default function TabDemo() {
   return (
@@ -27,7 +27,7 @@ export default function TabDemo() {
               <span>
                 <TabsTrigger value="tab-2" className="group py-3">
                   <span className="relative">
-                    <BookMarked size={16} strokeWidth={2} aria-hidden="true" />
+                    <PanelsTopLeft size={16} strokeWidth={2} aria-hidden="true" />
                     <Badge className="absolute -top-2.5 left-full min-w-4 -translate-x-1.5 border-background px-0.5 text-[10px]/[.875rem] transition-opacity group-data-[state=inactive]:opacity-50">
                       3
                     </Badge>
@@ -35,7 +35,7 @@ export default function TabDemo() {
                 </TabsTrigger>
               </span>
             </TooltipTrigger>
-            <TooltipContent className="px-2 py-1 text-xs">Repositories</TooltipContent>
+            <TooltipContent className="px-2 py-1 text-xs">Projects</TooltipContent>
           </Tooltip>
         </TooltipProvider>
         <TooltipProvider delayDuration={0}>

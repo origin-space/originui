@@ -1,7 +1,7 @@
 // Dependencies: pnpm install lucide-react
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookMarked, Box, House } from "lucide-react";
+import { PanelsTopLeft, Box, House } from "lucide-react";
 
 export default function TabDemo() {
   return (
@@ -18,8 +18,8 @@ export default function TabDemo() {
           value="tab-2"
           className="relative flex-col rounded-none px-4 py-2 text-xs after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary"
         >
-          <BookMarked className="mb-1.5 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
-          Repositories
+          <PanelsTopLeft className="mb-1.5 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
+          Projects
         </TabsTrigger>
         <TabsTrigger
           value="tab-3"

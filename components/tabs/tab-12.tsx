@@ -3,7 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookMarked, Box, ChartLine, House, Settings, UsersRound } from "lucide-react";
+import { PanelsTopLeft, Box, ChartLine, House, Settings, UsersRound } from "lucide-react";
 
 export default function TabDemo() {
   return (
@@ -26,13 +26,13 @@ export default function TabDemo() {
             value="tab-2"
             className="relative after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:bg-accent hover:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent"
           >
-            <BookMarked
+            <PanelsTopLeft
               className="-ms-0.5 me-1.5 opacity-60"
               size={16}
               strokeWidth={2}
               aria-hidden="true"
             />
-            Repositories
+            Projects
             <Badge className="ms-1.5 min-w-5 bg-primary/15 px-1" variant="secondary">
               3
             </Badge>

@@ -8,7 +8,7 @@ export default function TabDemo() {
           Overview
         </TabsTrigger>
         <TabsTrigger value="tab-2" className="w-full">
-          Repositories
+          Projects
         </TabsTrigger>
         <TabsTrigger value="tab-3" className="w-full">
           Packages

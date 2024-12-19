@@ -14,7 +14,7 @@ export default function TabDemo() {
           value="tab-2"
           className="w-full justify-start data-[state=active]:bg-muted data-[state=active]:shadow-none"
         >
-          Repositories
+          Projects
         </TabsTrigger>
         <TabsTrigger
           value="tab-3"

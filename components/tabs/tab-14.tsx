@@ -21,7 +21,7 @@ export default function TabDemo() {
           <Badge className="mb-1.5 min-w-5 px-1 transition-opacity group-data-[state=inactive]:opacity-50">
             0
           </Badge>
-          Repositories
+          Projects
         </TabsTrigger>
         <TabsTrigger
           value="tab-3"

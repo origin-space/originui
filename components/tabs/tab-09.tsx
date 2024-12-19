@@ -2,7 +2,7 @@
 
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookMarked, Box, House } from "lucide-react";
+import { PanelsTopLeft, Box, House } from "lucide-react";
 
 export default function TabDemo() {
   return (
@@ -25,13 +25,13 @@ export default function TabDemo() {
             value="tab-2"
             className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-none"
           >
-            <BookMarked
+            <PanelsTopLeft
               className="-ms-0.5 me-1.5 opacity-60"
               size={16}
               strokeWidth={2}
               aria-hidden="true"
             />
-            Repositories
+            Projects
           </TabsTrigger>
           <TabsTrigger
             value="tab-3"
