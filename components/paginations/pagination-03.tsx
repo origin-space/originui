@@ -27,7 +27,7 @@ export default function PaginationDemo({ currentPage, totalPages }: PaginationPr
                 variant: "outline",
               }),
             )}
-            href={currentPage === 1 ? undefined : `/page/${currentPage - 1}`}
+            href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}
             aria-label="Go to previous page"
             aria-disabled={currentPage === 1 ? true : undefined}
             role={currentPage === 1 ? "link" : undefined}
@@ -49,7 +49,7 @@ export default function PaginationDemo({ currentPage, totalPages }: PaginationPr
                 variant: "outline",
               }),
             )}
-            href={currentPage === totalPages ? undefined : `/page/${currentPage + 1}`}
+            href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}
             aria-label="Go to next page"
             aria-disabled={currentPage === totalPages ? true : undefined}
             role={currentPage === totalPages ? "link" : undefined}

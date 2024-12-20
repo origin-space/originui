@@ -21,7 +21,7 @@ export default function PaginationDemo({ currentPage, totalPages }: PaginationPr
             role={currentPage === 1 ? "link" : undefined}
             asChild
           >
-            <a href={currentPage === 1 ? undefined : `/page/${currentPage - 1}`}>
+            <a href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}>
               <ChevronLeft
                 className="-ms-1 me-2 opacity-60"
                 size={16}
@@ -40,7 +40,7 @@ export default function PaginationDemo({ currentPage, totalPages }: PaginationPr
             role={currentPage === totalPages ? "link" : undefined}
             asChild
           >
-            <a href={currentPage === totalPages ? undefined : `/page/${currentPage + 1}`}>
+            <a href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}>
               Next
               <ChevronRight
                 className="-me-1 ms-2 opacity-60"

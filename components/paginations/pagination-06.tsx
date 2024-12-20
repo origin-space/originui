@@ -33,7 +33,7 @@ export default function PaginationDemo({
         <PaginationItem>
           <PaginationPrevious
             className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
-            href={currentPage === 1 ? undefined : `/page/${currentPage - 1}`}
+            href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}
             aria-disabled={currentPage === 1 ? true : undefined}
             role={currentPage === 1 ? "link" : undefined}
           />
@@ -49,7 +49,7 @@ export default function PaginationDemo({
         {/* Page number links */}
         {pages.map((page) => (
           <PaginationItem key={page}>
-            <PaginationLink href={`/page/${page}`} isActive={page === currentPage}>
+            <PaginationLink href={`#/page/${page}`} isActive={page === currentPage}>
               {page}
             </PaginationLink>
           </PaginationItem>
@@ -66,7 +66,7 @@ export default function PaginationDemo({
         <PaginationItem>
           <PaginationNext
             className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
-            href={currentPage === totalPages ? undefined : `/page/${currentPage + 1}`}
+            href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}
             aria-disabled={currentPage === totalPages ? true : undefined}
             role={currentPage === totalPages ? "link" : undefined}
           />

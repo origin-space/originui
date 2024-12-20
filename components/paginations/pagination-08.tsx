@@ -41,7 +41,7 @@ export default function PaginationDemo({
               }),
               "rounded-none shadow-none focus-visible:z-10 aria-disabled:pointer-events-none [&[aria-disabled]>svg]:opacity-50",
             )}
-            href={currentPage === 1 ? undefined : `/page/${currentPage - 1}`}
+            href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}
             aria-label="Go to previous page"
             aria-disabled={currentPage === 1 ? true : undefined}
             role={currentPage === 1 ? "link" : undefined}
@@ -68,7 +68,7 @@ export default function PaginationDemo({
                 "rounded-none shadow-none focus-visible:z-10",
                 page === currentPage && "bg-accent",
               )}
-              href={`/page/${page}`}
+              href={`#/page/${page}`}
               isActive={page === currentPage}
             >
               {page}
@@ -99,7 +99,7 @@ export default function PaginationDemo({
               }),
               "rounded-none shadow-none focus-visible:z-10 aria-disabled:pointer-events-none [&[aria-disabled]>svg]:opacity-50",
             )}
-            href={currentPage === totalPages ? undefined : `/page/${currentPage + 1}`}
+            href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}
             aria-label="Go to next page"
             aria-disabled={currentPage === totalPages ? true : undefined}
             role={currentPage === totalPages ? "link" : undefined}
