@@ -44,7 +44,7 @@ export default function AccordionDemo() {
         {items.map((item) => (
           <AccordionItem value={item.id} key={item.id} className="py-2">
             <AccordionPrimitive.Header className="flex">
-              <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between py-2 text-left text-[15px] font-semibold leading-6 transition-all [&[data-state=open]>svg]:rotate-180">
+              <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between py-2 text-left text-[15px] font-semibold leading-6 transition-all [&>svg>path:last-child]:origin-center [&>svg>path:last-child]:transition-all [&>svg>path:last-child]:duration-200 [&[data-state=open]>svg>path:last-child]:rotate-90 [&[data-state=open]>svg>path:last-child]:opacity-0 [&[data-state=open]>svg]:rotate-180">
                 <span className="flex flex-col space-y-1">
                   <span>{item.title}</span>
                   {item.sub && <span className="text-sm font-normal">{item.sub}</span>}
