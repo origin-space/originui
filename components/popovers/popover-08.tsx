@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/registry/default/ui/button";
+import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
+import { Textarea } from "@/registry/default/ui/textarea";
 
 export default function PopoverDemo() {
   return (

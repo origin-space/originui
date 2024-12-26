@@ -1,13 +1,13 @@
 // Dependencies: pnpm install lucide-react
 
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/registry/default/ui/button";
 import {
   Pagination,
   PaginationContent,
   PaginationItem,
   PaginationLink,
-} from "@/components/ui/pagination";
-import { cn } from "@/lib/utils";
+} from "@/registry/default/ui/pagination";
+import { cn } from "@/registry/default/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type PaginationProps = {

@@ -1,4 +1,4 @@
-import { SelectNative } from "@/components/ui/select-native";
+import { SelectNative } from "@/registry/default/ui/select-native";
 
 export default function SelectDemo() {
   return (

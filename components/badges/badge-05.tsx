@@ -1,5 +1,5 @@
-import { badgeVariants } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
+import { badgeVariants } from "@/registry/default/ui/badge";
+import { cn } from "@/registry/default/lib/utils";
 
 export default function BadgeDemo() {
   return (

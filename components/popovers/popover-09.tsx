@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Popover, PopoverAnchor, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Button } from "@/registry/default/ui/button";
+import { Popover, PopoverAnchor, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
 import { useState } from "react";
 
 import { Club, Diamond, Heart, LucideIcon, Spade } from "lucide-react";

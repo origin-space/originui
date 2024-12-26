@@ -1,7 +1,7 @@
 // Dependencies: pnpm install lucide-react
 
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/registry/default/ui/checkbox";
+import { Label } from "@/registry/default/ui/label";
 import { Brush, Eraser, Scissors, SwatchBook } from "lucide-react";
 
 const items = [

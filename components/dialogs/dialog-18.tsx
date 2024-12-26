@@ -1,6 +1,6 @@
 // Dependencies: pnpm install lucide-react
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -9,9 +9,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+} from "@/registry/default/ui/dialog";
+import { Label } from "@/registry/default/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 import { Check, RefreshCcw } from "lucide-react";
 
 export default function DialogDemo() {

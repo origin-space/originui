@@ -1,15 +1,15 @@
 "use client";
 
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Slider } from "@/components/ui/slider";
+} from "@/registry/default/ui/select";
+import { Slider } from "@/registry/default/ui/slider";
 import React, { useEffect, useState } from "react";
 import CopyClass from "./copy-class";
 

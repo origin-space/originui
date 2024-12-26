@@ -1,8 +1,8 @@
 "use client";
 
-import { CheckboxTree } from "@/components/checkbox-tree";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
+import { CheckboxTree } from "@/registry/default/ui/checkbox-tree";
+import { Checkbox } from "@/registry/default/ui/checkbox";
+import { Label } from "@/registry/default/ui/label";
 import { Fragment } from "react";
 
 interface TreeNode {

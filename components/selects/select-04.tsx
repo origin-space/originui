@@ -1,5 +1,5 @@
-import { Label } from "@/components/ui/label";
-import { SelectNative } from "@/components/ui/select-native";
+import { Label } from "@/registry/default/ui/label";
+import { SelectNative } from "@/registry/default/ui/select-native";
 
 export default function SelectDemo() {
   return (

@@ -6,8 +6,8 @@ import {
   PaginationEllipsis,
   PaginationItem,
   PaginationLink,
-} from "@/components/ui/pagination";
-import { usePagination } from "@/hooks/use-pagination";
+} from "@/registry/default/ui/pagination";
+import { usePagination } from "@/registry/default/hooks/use-pagination";
 import { ChevronFirst, ChevronLast, ChevronLeft, ChevronRight } from "lucide-react";
 
 type PaginationProps = {

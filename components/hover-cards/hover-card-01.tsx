@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import { Button } from "@/components/ui/button";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import { Button } from "@/registry/default/ui/button";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/registry/default/ui/hover-card";
 
 import AvatarImg from "@/public/avatar-40-04.jpg";
 

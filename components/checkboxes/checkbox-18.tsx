@@ -1,4 +1,4 @@
-import { Checkbox } from "@/components/ui/checkbox";
+import { Checkbox } from "@/registry/default/ui/checkbox";
 
 const items = [
   { id: "checkbox-18-c1", value: "c1", label: "Monday", defaultChecked: true },

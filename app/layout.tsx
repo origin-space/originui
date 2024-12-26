@@ -1,5 +1,5 @@
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/registry/default/ui/sonner";
+import { Toaster } from "@/registry/default/ui/toaster";
 import Header from "@/demo/header";
 import { ThemeProvider } from "@/demo/theme-provider";
 import type { Metadata, Viewport } from "next";

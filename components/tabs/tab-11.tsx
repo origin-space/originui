@@ -1,7 +1,7 @@
 // Dependencies: pnpm install lucide-react
 
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ScrollArea, ScrollBar } from "@/registry/default/ui/scroll-area";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/default/ui/tabs";
 import { PanelsTopLeft, Box, House } from "lucide-react";
 
 export default function TabDemo() {

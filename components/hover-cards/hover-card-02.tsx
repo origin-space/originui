@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/registry/default/ui/hover-card";
 
 import FriendImg01 from "@/public/avatar-20-04.jpg";
 import FriendImg02 from "@/public/avatar-20-05.jpg";

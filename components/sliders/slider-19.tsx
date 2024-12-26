@@ -1,9 +1,9 @@
 "use client";
 
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
-import { useSliderWithInput } from "@/hooks/use-slider-with-input";
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
+import { Slider } from "@/registry/default/ui/slider";
+import { useSliderWithInput } from "@/registry/default/hooks/use-slider-with-input";
 
 export default function SliderDemo() {
   const minValue = 0;

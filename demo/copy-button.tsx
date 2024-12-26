@@ -1,29 +1,29 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { cn } from "@/lib/utils";
+import { Button } from "@/registry/default/ui/button";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/registry/default/ui/tooltip";
+import { cn } from "@/registry/default/lib/utils";
 import { useState } from "react";
+import { useCopy } from "@/hooks/use-copy"
 
-const CopyButton = ({ componentSource }: { componentSource: string }) => {
-  const [copied, setCopied] = useState<boolean>(false);
-
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(componentSource);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
-    } catch (err) {
-      console.error("Failed to copy text: ", err);
-    }
-  };
+const CopyButton = ({
+  componentSource,
+  codeBlock,
+  className,
+}: {
+  componentSource: string
+  codeBlock?: boolean
+  className?: string
+}) => {
+  const { copied, copy } = useCopy();
 
   return (
     <div
       className={cn(
-        "absolute right-2 top-2 transition-opacity",
-        !copied &&
+        !codeBlock ? "transition-opacity" : "dark absolute top-2 right-2",
+        !copied && !codeBlock &&
           "lg:opacity-0 lg:group-focus-within/item:opacity-100 lg:group-hover/item:opacity-100",
+        className,
       )}
     >
       <TooltipProvider delayDuration={0}>
@@ -32,8 +32,11 @@ const CopyButton = ({ componentSource }: { componentSource: string }) => {
             <Button
               variant="ghost"
               size="icon"
-              className="text-muted-foreground/80 hover:bg-transparent hover:text-foreground disabled:opacity-100"
-              onClick={handleCopy}
+              className={cn(
+                "hover:text-foreground hover:bg-transparent disabled:opacity-100 transition-none",
+                !codeBlock ? "text-muted-foreground/80" : "text-muted-foreground",
+              )}              
+              onClick={() => copy(componentSource)}
               aria-label={copied ? "Copied" : "Copy component source"}
               disabled={copied}
             >

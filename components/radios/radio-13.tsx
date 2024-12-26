@@ -1,4 +1,4 @@
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 
 const items = [
   { id: "radio-13-r1", value: "r1", label: "2 CPU" },

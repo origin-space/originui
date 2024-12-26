@@ -2,7 +2,7 @@
 
 "use client";
 
-import { Label } from "@/components/ui/label";
+import { Label } from "@/registry/default/ui/label";
 import { ListBox, ListBoxItem } from "react-aria-components";
 
 export default function SelectDemo() {

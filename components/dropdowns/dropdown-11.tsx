@@ -1,6 +1,6 @@
 // Dependencies: pnpm install lucide-react
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/default/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,7 +9,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/registry/default/ui/dropdown-menu";
 import AvatarImg from "@/public/avatar.jpg";
 import Image from "next/image";
 

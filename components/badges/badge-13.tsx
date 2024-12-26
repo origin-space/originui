@@ -2,7 +2,7 @@
 
 "use client";
 
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/registry/default/ui/badge";
 import { X } from "lucide-react";
 import { useState } from "react";
 

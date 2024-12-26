@@ -14,7 +14,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@/components/ui/command";
+} from "@/registry/default/ui/command";
 
 export default function DialogDemo() {
   const [open, setOpen] = React.useState(false);

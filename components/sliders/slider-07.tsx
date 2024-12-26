@@ -1,6 +1,6 @@
-import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
-import { cn } from "@/lib/utils";
+import { Label } from "@/registry/default/ui/label";
+import { Slider } from "@/registry/default/ui/slider";
+import { cn } from "@/registry/default/lib/utils";
 
 export default function SliderDemo() {
   const max = 12;

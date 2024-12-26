@@ -1,6 +1,6 @@
 // Dependencies: pnpm install lucide-react
 
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 import UiDark from "@/public/ui-dark.png";
 import UiLight from "@/public/ui-light.png";
 import UiSystem from "@/public/ui-system.png";

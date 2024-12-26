@@ -2,8 +2,8 @@
 
 "use client";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Badge } from "@/registry/default/ui/badge";
+import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -11,10 +11,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+} from "@/registry/default/ui/dialog";
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 import { CreditCard, Store } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { usePaymentInputs } from "react-payment-inputs";

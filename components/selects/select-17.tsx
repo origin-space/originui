@@ -1,13 +1,13 @@
 // Dependencies: pnpm install lucide-react
 
-import { Label } from "@/components/ui/label";
+import { Label } from "@/registry/default/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@/registry/default/ui/select";
 import { Clock } from "lucide-react";
 
 export default function SelectDemo() {

@@ -1,7 +1,7 @@
 // Dependencies: pnpm install lucide-react
 
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/registry/default/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 import { Brush, Eraser, Scissors, SwatchBook } from "lucide-react";
 
 const items = [

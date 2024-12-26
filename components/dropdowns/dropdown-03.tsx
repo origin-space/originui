@@ -1,12 +1,12 @@
 // Dependencies: pnpm install lucide-react
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/default/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/registry/default/ui/dropdown-menu";
 import { Bolt, ChevronDown, CopyPlus, Files, Layers2 } from "lucide-react";
 
 export default function DropdownDemo() {

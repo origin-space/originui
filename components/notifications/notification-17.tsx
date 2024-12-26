@@ -1,6 +1,6 @@
 // Dependencies: pnpm install lucide-react
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/default/ui/button";
 import { X } from "lucide-react";
 import Image from "next/image";
 

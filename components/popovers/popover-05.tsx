@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Button } from "@/registry/default/ui/button";
+import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
 import { useState } from "react";
 
 const tips = [

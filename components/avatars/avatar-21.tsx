@@ -4,7 +4,7 @@ import AvatarImg01 from "@/public/avatar-80-06.jpg";
 import AvatarImg04 from "@/public/avatar-80-07.jpg";
 import Image from "next/image";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/default/ui/button";
 
 export default function AvatarDemo() {
   return (

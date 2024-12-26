@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Pagination, PaginationContent, PaginationItem } from "@/components/ui/pagination";
+import { Button } from "@/registry/default/ui/button";
+import { Pagination, PaginationContent, PaginationItem } from "@/registry/default/ui/pagination";
 
 type PaginationProps = {
   currentPage: number;

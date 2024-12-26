@@ -1,0 +1,17 @@
+{
+  "name": "comp-01",
+  "type": "registry:component",
+  "registryDependencies": [
+    "http://localhost:3000/r/label.json",
+    "http://localhost:3000/r/input.json"
+  ],
+  "files": [
+    {
+      "path": "compositions/comp-01.tsx",
+      "content": "import { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function Component() {\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor=\"input-01\">Simple input</Label>\n      <Input id=\"input-01\" placeholder=\"Email\" type=\"email\" />\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "tags": []
+}

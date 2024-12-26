@@ -1,7 +1,7 @@
 // Dependencies: pnpm install lucide-react
 
-import { Button } from "@/components/ui/button";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Button } from "@/registry/default/ui/button";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/registry/default/ui/tooltip";
 import { Globe } from "lucide-react";
 
 export default function TooltipDemo() {

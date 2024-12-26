@@ -6,8 +6,8 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination";
-import { usePagination } from "@/hooks/use-pagination";
+} from "@/registry/default/ui/pagination";
+import { usePagination } from "@/registry/default/hooks/use-pagination";
 
 type PaginationProps = {
   currentPage: number;

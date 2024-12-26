@@ -2,11 +2,11 @@
 
 "use client";
 
-import { Label } from "@/components/ui/label";
+import { Label } from "@/registry/default/ui/label";
 import { Check, ChevronDown, Plus } from "lucide-react";
 import { useState } from "react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/default/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -15,9 +15,9 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "@/components/ui/command";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
+} from "@/registry/default/ui/command";
+import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
+import { cn } from "@/registry/default/lib/utils";
 
 const organizations = [
   {

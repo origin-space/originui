@@ -2,7 +2,7 @@
 
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -12,12 +12,12 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { useCharacterLimit } from "@/hooks/use-character-limit";
-import { useImageUpload } from "@/hooks/use-image-upload";
+} from "@/registry/default/ui/dialog";
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
+import { Textarea } from "@/registry/default/ui/textarea";
+import { useCharacterLimit } from "@/registry/default/hooks/use-character-limit";
+import { useImageUpload } from "@/registry/default/hooks/use-image-upload";
 import AvatarImg from "@/public/avatar-72-01.jpg";
 import ProfileBgImg from "@/public/profile-bg.jpg";
 import { Check, ImagePlus, X } from "lucide-react";

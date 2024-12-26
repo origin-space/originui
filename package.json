@@ -1,6 +1,7 @@
 {
   "name": "originui",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "prettier": {
     "semi": true,
@@ -25,6 +26,7 @@
     "format": "prettier --write .",
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:registry": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts && prettier --log-level silent --write \"registry/**/*.{ts,tsx,mdx}\" --cache",
     "start": "next start",
     "lint": "next lint"
   },
@@ -57,6 +59,8 @@
     "cmdk": "1.0.4",
     "emblor": "^1.4.7",
     "input-otp": "^1.4.1",
+    "jotai": "^2.11.0",
+    "lodash": "^4.17.21",
     "lucide-react": "^0.468.0",
     "next": "^15.0.4",
     "next-themes": "^0.4.4",
@@ -69,6 +73,8 @@
     "sonner": "^1.7.1",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
+    "ts-morph": "^24.0.0",
+    "tsx": "^4.19.2",
     "use-mask-input": "^3.4.2",
     "zod": "^3.23.8"
   },
@@ -83,6 +89,8 @@
     "prettier": "^3.4.2",
     "prettier-plugin-organize-imports": "^4.1.0",
     "prettier-plugin-tailwindcss": "^0.6.9",
+    "rimraf": "^6.0.1",
+    "shiki": "^1.24.4",
     "tailwindcss": "^3.4.16",
     "typescript": "^5.7.2"
   }

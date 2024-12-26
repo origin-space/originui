@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Button } from "@/registry/default/ui/button";
+import { Checkbox } from "@/registry/default/ui/checkbox";
+import { Label } from "@/registry/default/ui/label";
+import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
 
 import { ListFilter } from "lucide-react";
 

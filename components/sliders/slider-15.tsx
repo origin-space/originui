@@ -2,12 +2,12 @@
 
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { useSliderWithInput } from "@/hooks/use-slider-with-input";
+import { Button } from "@/registry/default/ui/button";
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
+import { Slider } from "@/registry/default/ui/slider";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/registry/default/ui/tooltip";
+import { useSliderWithInput } from "@/registry/default/hooks/use-slider-with-input";
 import { RotateCcw } from "lucide-react";
 
 export default function SliderDemo() {

@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/registry/default/ui/avatar";
 
 export default function AvatarDemo() {
   return (

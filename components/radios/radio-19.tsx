@@ -1,6 +1,6 @@
 "use client";
 
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 import { useState } from "react";
 
 export default function RadioDemo() {

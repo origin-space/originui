@@ -1,4 +1,4 @@
-import { Label } from "@/components/ui/label";
+import { Label } from "@/registry/default/ui/label";
 import {
   Select,
   SelectContent,
@@ -7,8 +7,8 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { cn } from "@/lib/utils";
+} from "@/registry/default/ui/select";
+import { cn } from "@/registry/default/lib/utils";
 
 const Square = ({ className, children }: { className?: string; children: React.ReactNode }) => (
   <span

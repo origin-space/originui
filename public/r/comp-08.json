@@ -1,0 +1,13 @@
+{
+  "name": "comp-08",
+  "type": "registry:component",
+  "files": [
+    {
+      "path": "compositions/comp-08.tsx",
+      "content": "import { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function Component() {\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor=\"input-08\">Disabled input</Label>\n      <Input id=\"input-08\" placeholder=\"Email\" type=\"email\" disabled />\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "tags": []
+}

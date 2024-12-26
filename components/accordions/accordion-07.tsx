@@ -1,6 +1,6 @@
 // Dependencies: pnpm install lucide-react
 
-import { Accordion, AccordionContent, AccordionItem } from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem } from "@/registry/default/ui/accordion";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 
 import { ChevronDown } from "lucide-react";

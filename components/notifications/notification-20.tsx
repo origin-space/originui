@@ -5,7 +5,7 @@
 
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/default/ui/button";
 import {
   Toast,
   ToastAction,
@@ -14,7 +14,7 @@ import {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from "@/components/ui/toast";
+} from "@/registry/default/ui/toast";
 import { CircleCheck, X } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 

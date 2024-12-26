@@ -2,9 +2,9 @@
 
 "use client";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Badge } from "@/registry/default/ui/badge";
+import { Button } from "@/registry/default/ui/button";
+import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
 import { Bell } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";

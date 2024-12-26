@@ -1,6 +1,6 @@
 // Dependencies: pnpm install lucide-react
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/default/ui/button";
 import { RefreshCw, X } from "lucide-react";
 
 export default function NotificationDemo() {

@@ -1,4 +1,4 @@
-import { Label } from "@/components/ui/label";
+import { Label } from "@/registry/default/ui/label";
 import {
   Select,
   SelectContent,
@@ -7,7 +7,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@/registry/default/ui/select";
 import Avatar01 from "@/public/avatar-20-01.jpg";
 import Avatar02 from "@/public/avatar-20-02.jpg";
 import Avatar03 from "@/public/avatar-20-03.jpg";

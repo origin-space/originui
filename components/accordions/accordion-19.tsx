@@ -5,8 +5,8 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+} from "@/registry/default/ui/accordion";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/registry/default/ui/collapsible";
 import { ChevronDown } from "lucide-react";
 
 const items = [

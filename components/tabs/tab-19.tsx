@@ -1,6 +1,6 @@
 // Dependencies: pnpm install lucide-react
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/default/ui/tabs";
 import { PanelsTopLeft, Box, House } from "lucide-react";
 
 export default function TabDemo() {

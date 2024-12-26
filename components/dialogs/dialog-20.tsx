@@ -2,7 +2,7 @@
 
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -12,8 +12,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { cn } from "@/lib/utils";
+} from "@/registry/default/ui/dialog";
+import { cn } from "@/registry/default/lib/utils";
 import DialogImg from "@/public/dialog-content.png";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";

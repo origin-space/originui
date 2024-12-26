@@ -1,8 +1,8 @@
 // Dependencies: pnpm install lucide-react
 
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Badge } from "@/registry/default/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/default/ui/tabs";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/registry/default/ui/tooltip";
 import { PanelsTopLeft, Box, House } from "lucide-react";
 
 export default function TabDemo() {

@@ -2,7 +2,7 @@
 
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/default/ui/button";
 import { TicketPercent, X } from "lucide-react";
 import { useEffect, useState } from "react";
 

@@ -5,7 +5,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "@/registry/default/ui/accordion";
 import { AtSign, Command, Eclipse, Zap } from "lucide-react";
 
 const items = [

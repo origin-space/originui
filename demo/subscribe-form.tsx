@@ -1,8 +1,8 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
+import { Button } from "@/registry/default/ui/button";
+import { Input } from "@/registry/default/ui/input";
+import { cn } from "@/registry/default/lib/utils";
 import { LoaderCircle } from "lucide-react";
 import { useState } from "react";
 import { subscribe } from "./subscribe-action";

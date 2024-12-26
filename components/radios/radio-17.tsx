@@ -1,4 +1,4 @@
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 
 export default function RadioDemo() {
   return (

@@ -1,6 +1,6 @@
 // Dependencies: pnpm install lucide-react
 
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/registry/default/ui/avatar";
 import { UserRound } from "lucide-react";
 
 export default function AvatarDemo() {

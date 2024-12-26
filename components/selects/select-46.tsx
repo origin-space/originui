@@ -1,5 +1,5 @@
-import { Label } from "@/components/ui/label";
-import MultipleSelector, { Option } from "@/components/ui/multiselect";
+import { Label } from "@/registry/default/ui/label";
+import MultipleSelector, { Option } from "@/registry/default/ui/multiselect";
 
 const frameworks: Option[] = [
   {

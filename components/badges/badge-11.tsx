@@ -1,8 +1,8 @@
 // Dependencies: pnpm install lucide-react
 
-import { badgeVariants } from "@/components/ui/badge";
-import { Checkbox } from "@/components/ui/checkbox";
-import { cn } from "@/lib/utils";
+import { badgeVariants } from "@/registry/default/ui/badge";
+import { Checkbox } from "@/registry/default/ui/checkbox";
+import { cn } from "@/registry/default/lib/utils";
 import { Check } from "lucide-react";
 
 export default function BadgeDemo() {

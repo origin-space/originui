@@ -1,6 +1,6 @@
 // Dependencies: pnpm install lucide-react
 
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/registry/default/ui/badge";
 import { Check } from "lucide-react";
 
 export default function BadgeDemo() {

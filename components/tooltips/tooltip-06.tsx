@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Button } from "@/registry/default/ui/button";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/registry/default/ui/tooltip";
 import Image from "next/image";
 
 import ContentImg from "@/public/dialog-content.png";

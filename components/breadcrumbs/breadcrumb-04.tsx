@@ -5,7 +5,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+} from "@/registry/default/ui/breadcrumb";
 import { Component, Home } from "lucide-react";
 
 export default function BreadcrumbDemo() {

@@ -2,11 +2,11 @@
 
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { cn } from "@/lib/utils";
+import { Button } from "@/registry/default/ui/button";
+import { Input } from "@/registry/default/ui/input";
+import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/registry/default/ui/tooltip";
+import { cn } from "@/registry/default/lib/utils";
 import { RiCodeFill, RiFacebookFill, RiMailLine, RiTwitterXFill } from "@remixicon/react";
 import { Check, Copy } from "lucide-react";
 import { useRef, useState } from "react";

@@ -5,7 +5,7 @@ import {
   PaginationContent,
   PaginationItem,
   PaginationLink,
-} from "@/components/ui/pagination";
+} from "@/registry/default/ui/pagination";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type PaginationProps = {

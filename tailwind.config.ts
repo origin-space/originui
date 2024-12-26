@@ -6,6 +6,7 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./demo/**/*.{js,ts,jsx,tsx,mdx}",
+    "./registry/**/*.{ts,tsx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/emblor/dist/index.mjs",
   ],

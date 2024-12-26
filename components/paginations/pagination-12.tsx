@@ -1,15 +1,15 @@
 // Dependencies: pnpm install lucide-react
 
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
 import {
   Pagination,
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,
   PaginationLink,
-} from "@/components/ui/pagination";
-import { usePagination } from "@/hooks/use-pagination";
+} from "@/registry/default/ui/pagination";
+import { usePagination } from "@/registry/default/hooks/use-pagination";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type PaginationProps = {
