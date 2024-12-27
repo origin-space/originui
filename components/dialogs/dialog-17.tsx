@@ -16,7 +16,7 @@ import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 import { CreditCard, Store } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePaymentInputs } from "react-payment-inputs";
 import images, { type CardImages } from "react-payment-inputs/images";
 
@@ -32,7 +32,7 @@ export default function DialogDemo() {
     if (showCouponInput && couponInputRef.current) {
       couponInputRef.current.focus();
     }
-  }, [showCouponInput]);  
+  }, [showCouponInput]);
 
   return (
     <Dialog>
