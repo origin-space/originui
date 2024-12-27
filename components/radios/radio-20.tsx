@@ -25,7 +25,7 @@ export default function RadioDemo() {
             <RiStarFill
               size={24}
               className={`transition-all ${
-                (hoverRating || currentRating) >= value ? "text-amber-400" : "text-input"
+                (hoverRating || currentRating) >= value ? "text-amber-500" : "text-input"
               } group-hover:scale-110`}
             />
             <span className="sr-only">
