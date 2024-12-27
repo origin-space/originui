@@ -34,7 +34,9 @@ export default function PaginationDemo({ currentPage, totalPages }: PaginationPr
               role={currentPage === totalPages ? "link" : undefined}
               asChild
             >
-              <a href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}>Next</a>
+              <a href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}>
+                Next
+              </a>
             </Button>
           </PaginationItem>
         </PaginationContent>

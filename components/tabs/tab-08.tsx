@@ -3,7 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { PanelsTopLeft, Box, House } from "lucide-react";
+import { Box, House, PanelsTopLeft } from "lucide-react";
 
 export default function TabDemo() {
   return (

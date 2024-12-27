@@ -195,7 +195,7 @@ export default function Page() {
                         className="-mr-1 ml-2 shrink-0 opacity-60"
                       />
                     </Link>
-                  </li>                     
+                  </li>
                   <li>
                     <Link
                       href="/breadcrumbs-paginations"
@@ -216,7 +216,7 @@ export default function Page() {
                         Coming in 2025
                       </span>
                     </span>
-                  </li>                  
+                  </li>
                 </ul>
               </nav>
             </div>
