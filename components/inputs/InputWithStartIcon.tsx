@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { AtSign } from "lucide-react";
 
-export default function InputDemo() {
+export default function InputWithStartIcon() {
   return (
     <div className="space-y-2">
       <Label htmlFor="input-09">Input with start icon</Label>
