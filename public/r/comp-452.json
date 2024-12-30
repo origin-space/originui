@@ -2,7 +2,7 @@
   "name": "comp-452",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/breadcrumb.json"
+    "https://originui.com/r/breadcrumb.json"
   ],
   "files": [
     {

@@ -2,8 +2,8 @@
   "name": "comp-352",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/accordion.json",
-    "http://localhost:3000/r/collapsible.json"
+    "https://originui.com/r/accordion.json",
+    "https://originui.com/r/collapsible.json"
   ],
   "files": [
     {

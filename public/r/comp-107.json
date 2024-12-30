@@ -2,7 +2,7 @@
   "name": "comp-107",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/toggle-group.json"
+    "https://originui.com/r/toggle-group.json"
   ],
   "files": [
     {

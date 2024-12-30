@@ -55,7 +55,7 @@ export default function CliCommands({ name }: { name: string }) {
         </TabsList>
         {Object.entries(commands).map(([pkg, command]) => (
           <TabsContent className="m-0" key={pkg} value={pkg}>
-            <pre className="overflow-auto p-4 font-mono text-sm text-zinc-100">{command}</pre>
+            <pre className="overflow-auto p-4 font-mono text-[12.8px] text-zinc-100">{command}</pre>
           </TabsContent>
         ))}
       </Tabs>

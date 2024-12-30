@@ -5,7 +5,7 @@
     "@remixicon/react"
   ],
   "registryDependencies": [
-    "http://localhost:3000/r/button.json"
+    "https://originui.com/r/button.json"
   ],
   "files": [
     {

@@ -2,7 +2,7 @@
   "name": "comp-280",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/button.json"
+    "https://originui.com/r/button.json"
   ],
   "files": [
     {

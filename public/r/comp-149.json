@@ -2,7 +2,7 @@
   "name": "comp-149",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/checkbox.json"
+    "https://originui.com/r/checkbox.json"
   ],
   "files": [
     {

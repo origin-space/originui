@@ -2,8 +2,8 @@
   "name": "comp-234",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/label.json",
-    "http://localhost:3000/r/multiselect.json"
+    "https://originui.com/r/label.json",
+    "https://originui.com/r/multiselect.json"
   ],
   "files": [
     {

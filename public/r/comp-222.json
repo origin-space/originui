@@ -5,8 +5,8 @@
     "@remixicon/react"
   ],
   "registryDependencies": [
-    "http://localhost:3000/r/select.json",
-    "http://localhost:3000/r/label.json"
+    "https://originui.com/r/select.json",
+    "https://originui.com/r/label.json"
   ],
   "files": [
     {

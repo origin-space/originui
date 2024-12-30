@@ -2,8 +2,8 @@
   "name": "comp-358",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/button.json",
-    "http://localhost:3000/r/tooltip.json"
+    "https://originui.com/r/button.json",
+    "https://originui.com/r/tooltip.json"
   ],
   "files": [
     {

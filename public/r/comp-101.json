@@ -2,8 +2,8 @@
   "name": "comp-101",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/toggle.json",
-    "http://localhost:3000/r/tooltip.json"
+    "https://originui.com/r/toggle.json",
+    "https://originui.com/r/tooltip.json"
   ],
   "files": [
     {

@@ -2,7 +2,7 @@
   "name": "comp-426",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/tabs.json"
+    "https://originui.com/r/tabs.json"
   ],
   "files": [
     {

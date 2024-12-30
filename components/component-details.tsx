@@ -39,7 +39,7 @@ const ComponentDetails = ({ name, children }: { name: string; children: React.Re
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
-      <DialogContent className="sm:max-w-3xl">
+      <DialogContent className="sm:max-w-[600px]">
         <DialogHeader>
           <DialogTitle className="text-left">Installation</DialogTitle>
           <DialogDescription className="sr-only">

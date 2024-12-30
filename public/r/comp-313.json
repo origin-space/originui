@@ -2,8 +2,8 @@
   "name": "comp-313",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/alert-dialog.json",
-    "http://localhost:3000/r/button.json"
+    "https://originui.com/r/alert-dialog.json",
+    "https://originui.com/r/button.json"
   ],
   "files": [
     {

@@ -2,8 +2,8 @@
   "name": "comp-440",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/tabs.json",
-    "http://localhost:3000/r/tooltip.json"
+    "https://originui.com/r/tabs.json",
+    "https://originui.com/r/tooltip.json"
   ],
   "files": [
     {

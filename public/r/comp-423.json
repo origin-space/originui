@@ -2,7 +2,7 @@
   "name": "comp-423",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/badge.json"
+    "https://originui.com/r/badge.json"
   ],
   "files": [
     {

@@ -2,7 +2,7 @@
   "name": "comp-217",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/select.json"
+    "https://originui.com/r/select.json"
   ],
   "files": [
     {

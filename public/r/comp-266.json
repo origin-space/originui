@@ -2,8 +2,8 @@
   "name": "comp-266",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/label.json",
-    "http://localhost:3000/r/slider.json"
+    "https://originui.com/r/label.json",
+    "https://originui.com/r/slider.json"
   ],
   "files": [
     {

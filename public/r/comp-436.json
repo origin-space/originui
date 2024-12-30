@@ -2,8 +2,8 @@
   "name": "comp-436",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/scroll-area.json",
-    "http://localhost:3000/r/tabs.json"
+    "https://originui.com/r/scroll-area.json",
+    "https://originui.com/r/tabs.json"
   ],
   "files": [
     {

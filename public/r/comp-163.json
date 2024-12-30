@@ -5,7 +5,7 @@
     "@remixicon/react"
   ],
   "registryDependencies": [
-    "http://localhost:3000/r/radio-group.json"
+    "https://originui.com/r/radio-group.json"
   ],
   "files": [
     {

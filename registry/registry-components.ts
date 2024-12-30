@@ -5,8 +5,8 @@ export const components: Registry = [
     name: "comp-01",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -20,8 +20,8 @@ export const components: Registry = [
     name: "comp-02",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -35,8 +35,8 @@ export const components: Registry = [
     name: "comp-03",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -50,8 +50,8 @@ export const components: Registry = [
     name: "comp-04",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -65,8 +65,8 @@ export const components: Registry = [
     name: "comp-05",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -80,8 +80,8 @@ export const components: Registry = [
     name: "comp-06",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -95,8 +95,8 @@ export const components: Registry = [
     name: "comp-07",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -110,8 +110,8 @@ export const components: Registry = [
     name: "comp-08",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -125,8 +125,8 @@ export const components: Registry = [
     name: "comp-09",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -140,8 +140,8 @@ export const components: Registry = [
     name: "comp-10",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -155,8 +155,8 @@ export const components: Registry = [
     name: "comp-11",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -170,8 +170,8 @@ export const components: Registry = [
     name: "comp-12",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -185,8 +185,8 @@ export const components: Registry = [
     name: "comp-13",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -200,8 +200,8 @@ export const components: Registry = [
     name: "comp-14",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -215,8 +215,8 @@ export const components: Registry = [
     name: "comp-15",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -230,8 +230,8 @@ export const components: Registry = [
     name: "comp-16",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -245,8 +245,8 @@ export const components: Registry = [
     name: "comp-17",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -260,8 +260,8 @@ export const components: Registry = [
     name: "comp-18",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -275,8 +275,8 @@ export const components: Registry = [
     name: "comp-19",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -290,8 +290,8 @@ export const components: Registry = [
     name: "comp-20",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -305,8 +305,8 @@ export const components: Registry = [
     name: "comp-21",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -320,8 +320,8 @@ export const components: Registry = [
     name: "comp-22",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -335,8 +335,8 @@ export const components: Registry = [
     name: "comp-23",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -350,8 +350,8 @@ export const components: Registry = [
     name: "comp-24",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -365,8 +365,8 @@ export const components: Registry = [
     name: "comp-25",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -380,8 +380,8 @@ export const components: Registry = [
     name: "comp-26",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -395,8 +395,8 @@ export const components: Registry = [
     name: "comp-27",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -434,8 +434,8 @@ export const components: Registry = [
     name: "comp-30",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -448,7 +448,7 @@ export const components: Registry = [
   {
     name: "comp-31",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/input.json"],
+    registryDependencies: ["https://originui.com/r/input.json"],
     files: [
       {
         path: "compositions/comp-31.tsx",
@@ -460,7 +460,7 @@ export const components: Registry = [
   {
     name: "comp-32",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/input.json"],
+    registryDependencies: ["https://originui.com/r/input.json"],
     files: [
       {
         path: "compositions/comp-32.tsx",
@@ -484,8 +484,8 @@ export const components: Registry = [
     name: "comp-34",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -503,8 +503,8 @@ export const components: Registry = [
     name: "comp-35",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -617,7 +617,7 @@ export const components: Registry = [
   {
     name: "comp-44",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/label.json"],
+    registryDependencies: ["https://originui.com/r/label.json"],
     dependencies: ["input-otp"],
     files: [
       {
@@ -630,7 +630,7 @@ export const components: Registry = [
   {
     name: "comp-45",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/label.json"],
+    registryDependencies: ["https://originui.com/r/label.json"],
     dependencies: ["input-otp"],
     files: [
       {
@@ -644,8 +644,8 @@ export const components: Registry = [
     name: "comp-46",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     dependencies: ["react-phone-number-input", "react-phone-number-input/flags"],
     files: [
@@ -660,8 +660,8 @@ export const components: Registry = [
     name: "comp-47",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     dependencies: ["react-payment-inputs", "@types/react-payment-inputs"],
     // devDependencies: ["@types/react-payment-inputs"],
@@ -678,8 +678,8 @@ export const components: Registry = [
     name: "comp-48",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     dependencies: ["react-payment-inputs", "@types/react-payment-inputs"],
     // devDependencies: ["@types/react-payment-inputs"],
@@ -696,8 +696,8 @@ export const components: Registry = [
     name: "comp-49",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     dependencies: ["react-payment-inputs", "@types/react-payment-inputs"],
     // devDependencies: ["@types/react-payment-inputs"],
@@ -714,8 +714,8 @@ export const components: Registry = [
     name: "comp-50",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     dependencies: ["react-payment-inputs", "@types/react-payment-inputs"],
     // devDependencies: ["@types/react-payment-inputs"],
@@ -732,8 +732,8 @@ export const components: Registry = [
     name: "comp-51",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -747,8 +747,8 @@ export const components: Registry = [
     name: "comp-52",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -762,9 +762,9 @@ export const components: Registry = [
     name: "comp-53",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/tooltip.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/tooltip.json",
     ],
     files: [
       {
@@ -778,8 +778,8 @@ export const components: Registry = [
     name: "comp-54",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     dependencies: ["use-mask-input"],
     files: [
@@ -794,8 +794,8 @@ export const components: Registry = [
     name: "comp-55",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     dependencies: ["use-mask-input"],
     files: [
@@ -809,7 +809,7 @@ export const components: Registry = [
   {
     name: "comp-56",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/label.json"],
+    registryDependencies: ["https://originui.com/r/label.json"],
     dependencies: ["emblor"],
     files: [
       {
@@ -822,7 +822,7 @@ export const components: Registry = [
   {
     name: "comp-57",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/label.json"],
+    registryDependencies: ["https://originui.com/r/label.json"],
     dependencies: ["emblor"],
     files: [
       {
@@ -835,7 +835,7 @@ export const components: Registry = [
   {
     name: "comp-58",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/label.json"],
+    registryDependencies: ["https://originui.com/r/label.json"],
     dependencies: ["input-otp"],
     files: [
       {
@@ -849,8 +849,8 @@ export const components: Registry = [
     name: "comp-59",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -864,8 +864,8 @@ export const components: Registry = [
     name: "comp-60",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -879,8 +879,8 @@ export const components: Registry = [
     name: "comp-61",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -894,8 +894,8 @@ export const components: Registry = [
     name: "comp-62",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -909,8 +909,8 @@ export const components: Registry = [
     name: "comp-63",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -924,8 +924,8 @@ export const components: Registry = [
     name: "comp-64",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -939,8 +939,8 @@ export const components: Registry = [
     name: "comp-65",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -954,8 +954,8 @@ export const components: Registry = [
     name: "comp-67",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -969,9 +969,9 @@ export const components: Registry = [
     name: "comp-68",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -985,9 +985,9 @@ export const components: Registry = [
     name: "comp-69",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -1001,9 +1001,9 @@ export const components: Registry = [
     name: "comp-70",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -1017,8 +1017,8 @@ export const components: Registry = [
     name: "comp-71",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -1031,7 +1031,7 @@ export const components: Registry = [
   {
     name: "comp-72",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/textarea.json"],
+    registryDependencies: ["https://originui.com/r/textarea.json"],
     files: [
       {
         path: "compositions/comp-72.tsx",
@@ -1055,8 +1055,8 @@ export const components: Registry = [
     name: "comp-74",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -1074,8 +1074,8 @@ export const components: Registry = [
     name: "comp-75",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -1089,8 +1089,8 @@ export const components: Registry = [
     name: "comp-76",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -1104,8 +1104,8 @@ export const components: Registry = [
     name: "comp-77",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -1118,7 +1118,7 @@ export const components: Registry = [
   {
     name: "comp-78",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-78.tsx",
@@ -1130,7 +1130,7 @@ export const components: Registry = [
   {
     name: "comp-79",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-79.tsx",
@@ -1142,7 +1142,7 @@ export const components: Registry = [
   {
     name: "comp-80",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-80.tsx",
@@ -1154,7 +1154,7 @@ export const components: Registry = [
   {
     name: "comp-81",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-81.tsx",
@@ -1166,7 +1166,7 @@ export const components: Registry = [
   {
     name: "comp-82",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-82.tsx",
@@ -1178,7 +1178,7 @@ export const components: Registry = [
   {
     name: "comp-83",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-83.tsx",
@@ -1190,7 +1190,7 @@ export const components: Registry = [
   {
     name: "comp-84",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-84.tsx",
@@ -1202,7 +1202,7 @@ export const components: Registry = [
   {
     name: "comp-85",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-85.tsx",
@@ -1214,7 +1214,7 @@ export const components: Registry = [
   {
     name: "comp-86",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-86.tsx",
@@ -1226,7 +1226,7 @@ export const components: Registry = [
   {
     name: "comp-87",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-87.tsx",
@@ -1238,7 +1238,7 @@ export const components: Registry = [
   {
     name: "comp-88",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-88.tsx",
@@ -1250,7 +1250,7 @@ export const components: Registry = [
   {
     name: "comp-89",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-89.tsx",
@@ -1262,7 +1262,7 @@ export const components: Registry = [
   {
     name: "comp-90",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-90.tsx",
@@ -1274,7 +1274,7 @@ export const components: Registry = [
   {
     name: "comp-91",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-91.tsx",
@@ -1286,7 +1286,7 @@ export const components: Registry = [
   {
     name: "comp-92",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-92.tsx",
@@ -1298,7 +1298,7 @@ export const components: Registry = [
   {
     name: "comp-93",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-93.tsx",
@@ -1310,7 +1310,7 @@ export const components: Registry = [
   {
     name: "comp-94",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-94.tsx",
@@ -1322,7 +1322,7 @@ export const components: Registry = [
   {
     name: "comp-95",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-95.tsx",
@@ -1334,7 +1334,7 @@ export const components: Registry = [
   {
     name: "comp-96",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-96.tsx",
@@ -1346,7 +1346,7 @@ export const components: Registry = [
   {
     name: "comp-97",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-97.tsx",
@@ -1358,7 +1358,7 @@ export const components: Registry = [
   {
     name: "comp-98",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-98.tsx",
@@ -1371,8 +1371,8 @@ export const components: Registry = [
     name: "comp-99",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/tooltip.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/tooltip.json",
     ],
     files: [
       {
@@ -1385,7 +1385,7 @@ export const components: Registry = [
   {
     name: "comp-100",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-100.tsx",
@@ -1398,8 +1398,8 @@ export const components: Registry = [
     name: "comp-101",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/toggle.json",
-      "http://localhost:3000/r/tooltip.json",
+      "https://originui.com/r/toggle.json",
+      "https://originui.com/r/tooltip.json",
     ],
     files: [
       {
@@ -1412,7 +1412,7 @@ export const components: Registry = [
   {
     name: "comp-102",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-102.tsx",
@@ -1424,7 +1424,7 @@ export const components: Registry = [
   {
     name: "comp-103",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-103.tsx",
@@ -1436,7 +1436,7 @@ export const components: Registry = [
   {
     name: "comp-104",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-104.tsx",
@@ -1449,8 +1449,8 @@ export const components: Registry = [
     name: "comp-105",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/tooltip.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/tooltip.json",
     ],
     files: [
       {
@@ -1463,7 +1463,7 @@ export const components: Registry = [
   {
     name: "comp-106",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-106.tsx",
@@ -1475,7 +1475,7 @@ export const components: Registry = [
   {
     name: "comp-107",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/toggle-group.json"],
+    registryDependencies: ["https://originui.com/r/toggle-group.json"],
     files: [
       {
         path: "compositions/comp-107.tsx",
@@ -1487,7 +1487,7 @@ export const components: Registry = [
   {
     name: "comp-108",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-108.tsx",
@@ -1499,7 +1499,7 @@ export const components: Registry = [
   {
     name: "comp-109",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/toggle-group.json"],
+    registryDependencies: ["https://originui.com/r/toggle-group.json"],
     files: [
       {
         path: "compositions/comp-109.tsx",
@@ -1511,7 +1511,7 @@ export const components: Registry = [
   {
     name: "comp-110",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/toggle-group.json"],
+    registryDependencies: ["https://originui.com/r/toggle-group.json"],
     files: [
       {
         path: "compositions/comp-110.tsx",
@@ -1523,7 +1523,7 @@ export const components: Registry = [
   {
     name: "comp-111",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-111.tsx",
@@ -1535,7 +1535,7 @@ export const components: Registry = [
   {
     name: "comp-112",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-112.tsx",
@@ -1547,7 +1547,7 @@ export const components: Registry = [
   {
     name: "comp-113",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-113.tsx",
@@ -1559,7 +1559,7 @@ export const components: Registry = [
   {
     name: "comp-114",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-114.tsx",
@@ -1571,7 +1571,7 @@ export const components: Registry = [
   {
     name: "comp-115",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-115.tsx",
@@ -1583,7 +1583,7 @@ export const components: Registry = [
   {
     name: "comp-116",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-116.tsx",
@@ -1595,7 +1595,7 @@ export const components: Registry = [
   {
     name: "comp-117",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-117.tsx",
@@ -1607,7 +1607,7 @@ export const components: Registry = [
   {
     name: "comp-118",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-118.tsx",
@@ -1619,7 +1619,7 @@ export const components: Registry = [
   {
     name: "comp-119",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     dependencies: ["@remixicon/react"],
     files: [
       {
@@ -1632,7 +1632,7 @@ export const components: Registry = [
   {
     name: "comp-120",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     dependencies: ["@remixicon/react"],
     files: [
       {
@@ -1645,7 +1645,7 @@ export const components: Registry = [
   {
     name: "comp-121",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     dependencies: ["@remixicon/react"],
     files: [
       {
@@ -1658,7 +1658,7 @@ export const components: Registry = [
   {
     name: "comp-122",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     dependencies: ["@remixicon/react"],
     files: [
       {
@@ -1671,7 +1671,7 @@ export const components: Registry = [
   {
     name: "comp-123",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-123.tsx",
@@ -1683,7 +1683,7 @@ export const components: Registry = [
   {
     name: "comp-124",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-124.tsx",
@@ -1695,7 +1695,7 @@ export const components: Registry = [
   {
     name: "comp-125",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-125.tsx",
@@ -1711,7 +1711,7 @@ export const components: Registry = [
   {
     name: "comp-126",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-126.tsx",
@@ -1727,7 +1727,7 @@ export const components: Registry = [
   {
     name: "comp-127",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-127.tsx",
@@ -1739,7 +1739,7 @@ export const components: Registry = [
   {
     name: "comp-128",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-128.tsx",
@@ -1752,8 +1752,8 @@ export const components: Registry = [
     name: "comp-129",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/badge.json",
-      "http://localhost:3000/r/button.json",
+      "https://originui.com/r/badge.json",
+      "https://originui.com/r/button.json",
     ],
     files: [
       {
@@ -1766,7 +1766,7 @@ export const components: Registry = [
   {
     name: "comp-130",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/toggle.json"],
+    registryDependencies: ["https://originui.com/r/toggle.json"],
     files: [
       {
         path: "compositions/comp-130.tsx",
@@ -1779,8 +1779,8 @@ export const components: Registry = [
     name: "comp-131",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dropdown-menu.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dropdown-menu.json",
     ],
     files: [
       {
@@ -1794,8 +1794,8 @@ export const components: Registry = [
     name: "comp-132",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -1809,8 +1809,8 @@ export const components: Registry = [
     name: "comp-133",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -1824,8 +1824,8 @@ export const components: Registry = [
     name: "comp-134",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -1839,8 +1839,8 @@ export const components: Registry = [
     name: "comp-135",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -1854,8 +1854,8 @@ export const components: Registry = [
     name: "comp-136",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -1869,8 +1869,8 @@ export const components: Registry = [
     name: "comp-137",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -1884,8 +1884,8 @@ export const components: Registry = [
     name: "comp-138",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -1899,8 +1899,8 @@ export const components: Registry = [
     name: "comp-139",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -1914,8 +1914,8 @@ export const components: Registry = [
     name: "comp-140",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -1929,8 +1929,8 @@ export const components: Registry = [
     name: "comp-141",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -1944,9 +1944,9 @@ export const components: Registry = [
     name: "comp-142",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -1960,8 +1960,8 @@ export const components: Registry = [
     name: "comp-143",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -1975,8 +1975,8 @@ export const components: Registry = [
     name: "comp-144",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -1990,8 +1990,8 @@ export const components: Registry = [
     name: "comp-145",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2005,8 +2005,8 @@ export const components: Registry = [
     name: "comp-146",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2020,8 +2020,8 @@ export const components: Registry = [
     name: "comp-147",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2035,9 +2035,9 @@ export const components: Registry = [
     name: "comp-148",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/checkbox-tree.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/checkbox-tree.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2050,7 +2050,7 @@ export const components: Registry = [
   {
     name: "comp-149",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/checkbox.json"],
+    registryDependencies: ["https://originui.com/r/checkbox.json"],
     files: [
       {
         path: "compositions/comp-149.tsx",
@@ -2074,8 +2074,8 @@ export const components: Registry = [
     name: "comp-151",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2089,8 +2089,8 @@ export const components: Registry = [
     name: "comp-152",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/radio-group.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/radio-group.json",
     ],
     files: [
       {
@@ -2104,8 +2104,8 @@ export const components: Registry = [
     name: "comp-153",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/radio-group.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/radio-group.json",
     ],
     files: [
       {
@@ -2119,8 +2119,8 @@ export const components: Registry = [
     name: "comp-154",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/radio-group.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/radio-group.json",
     ],
     files: [
       {
@@ -2134,8 +2134,8 @@ export const components: Registry = [
     name: "comp-155",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/radio-group.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/radio-group.json",
     ],
     files: [
       {
@@ -2149,9 +2149,9 @@ export const components: Registry = [
     name: "comp-156",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/radio-group.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/radio-group.json",
     ],
     files: [
       {
@@ -2165,8 +2165,8 @@ export const components: Registry = [
     name: "comp-157",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/radio-group.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/radio-group.json",
     ],
     dependencies: ["@remixicon/react"],
     files: [
@@ -2180,7 +2180,7 @@ export const components: Registry = [
   {
     name: "comp-158",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/radio-group.json"],
+    registryDependencies: ["https://originui.com/r/radio-group.json"],
     files: [
       {
         path: "compositions/comp-158.tsx",
@@ -2193,8 +2193,8 @@ export const components: Registry = [
     name: "comp-159",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/radio-group.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/radio-group.json",
     ],
     files: [
       {
@@ -2208,8 +2208,8 @@ export const components: Registry = [
     name: "comp-160",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/radio-group.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/radio-group.json",
     ],
     files: [
       {
@@ -2223,8 +2223,8 @@ export const components: Registry = [
     name: "comp-161",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/radio-group.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/radio-group.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2238,8 +2238,8 @@ export const components: Registry = [
     name: "comp-162",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/radio-group.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/radio-group.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2252,7 +2252,7 @@ export const components: Registry = [
   {
     name: "comp-163",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/radio-group.json"],
+    registryDependencies: ["https://originui.com/r/radio-group.json"],
     dependencies: ["@remixicon/react"],
     files: [
       {
@@ -2265,7 +2265,7 @@ export const components: Registry = [
   {
     name: "comp-164",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/radio-group.json"],
+    registryDependencies: ["https://originui.com/r/radio-group.json"],
     files: [
       {
         path: "compositions/comp-164.tsx",
@@ -2278,8 +2278,8 @@ export const components: Registry = [
     name: "comp-165",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/radio-group.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/radio-group.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2293,9 +2293,9 @@ export const components: Registry = [
     name: "comp-166",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/radio-group.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/badge.json",
+      "https://originui.com/r/radio-group.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/badge.json",
     ],
     files: [
       {
@@ -2308,7 +2308,7 @@ export const components: Registry = [
   {
     name: "comp-167",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/radio-group.json"],
+    registryDependencies: ["https://originui.com/r/radio-group.json"],
     files: [
       {
         path: "compositions/comp-167.tsx",
@@ -2320,7 +2320,7 @@ export const components: Registry = [
   {
     name: "comp-168",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/radio-group.json"],
+    registryDependencies: ["https://originui.com/r/radio-group.json"],
     files: [
       {
         path: "compositions/comp-168.tsx",
@@ -2332,7 +2332,7 @@ export const components: Registry = [
   {
     name: "comp-169",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/radio-group.json"],
+    registryDependencies: ["https://originui.com/r/radio-group.json"],
     files: [
       {
         path: "compositions/comp-169.tsx",
@@ -2344,7 +2344,7 @@ export const components: Registry = [
   {
     name: "comp-170",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/radio-group.json"],
+    registryDependencies: ["https://originui.com/r/radio-group.json"],
     files: [
       {
         path: "compositions/comp-170.tsx",
@@ -2356,7 +2356,7 @@ export const components: Registry = [
   {
     name: "comp-171",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/radio-group.json"],
+    registryDependencies: ["https://originui.com/r/radio-group.json"],
     dependencies: ["@remixicon/react"],
     files: [
       {
@@ -2370,8 +2370,8 @@ export const components: Registry = [
     name: "comp-172",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/switch.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/switch.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2385,8 +2385,8 @@ export const components: Registry = [
     name: "comp-173",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/switch.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/switch.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2400,8 +2400,8 @@ export const components: Registry = [
     name: "comp-174",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/switch.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/switch.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2415,8 +2415,8 @@ export const components: Registry = [
     name: "comp-175",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/switch.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/switch.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2430,8 +2430,8 @@ export const components: Registry = [
     name: "comp-176",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/switch.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/switch.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2445,8 +2445,8 @@ export const components: Registry = [
     name: "comp-177",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/switch.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/switch.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2460,8 +2460,8 @@ export const components: Registry = [
     name: "comp-178",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/switch.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/switch.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2475,8 +2475,8 @@ export const components: Registry = [
     name: "comp-179",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/switch.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/switch.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2489,7 +2489,7 @@ export const components: Registry = [
   {
     name: "comp-180",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/switch.json"],
+    registryDependencies: ["https://originui.com/r/switch.json"],
     files: [
       {
         path: "compositions/comp-180.tsx",
@@ -2502,8 +2502,8 @@ export const components: Registry = [
     name: "comp-181",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/switch.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/switch.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2516,7 +2516,7 @@ export const components: Registry = [
   {
     name: "comp-182",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/switch.json"],
+    registryDependencies: ["https://originui.com/r/switch.json"],
     files: [
       {
         path: "compositions/comp-182.tsx",
@@ -2529,8 +2529,8 @@ export const components: Registry = [
     name: "comp-183",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/switch.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/switch.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2544,8 +2544,8 @@ export const components: Registry = [
     name: "comp-184",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/switch.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/switch.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2559,8 +2559,8 @@ export const components: Registry = [
     name: "comp-186",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/switch.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/switch.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2574,8 +2574,8 @@ export const components: Registry = [
     name: "comp-187",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/switch.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/switch.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2589,8 +2589,8 @@ export const components: Registry = [
     name: "comp-188",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/switch.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/switch.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2604,8 +2604,8 @@ export const components: Registry = [
     name: "comp-189",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select-native.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select-native.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2619,8 +2619,8 @@ export const components: Registry = [
     name: "comp-190",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select-native.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select-native.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2634,8 +2634,8 @@ export const components: Registry = [
     name: "comp-191",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select-native.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select-native.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2649,8 +2649,8 @@ export const components: Registry = [
     name: "comp-192",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select-native.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select-native.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2664,8 +2664,8 @@ export const components: Registry = [
     name: "comp-193",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select-native.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select-native.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2679,8 +2679,8 @@ export const components: Registry = [
     name: "comp-194",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select-native.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select-native.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2694,8 +2694,8 @@ export const components: Registry = [
     name: "comp-195",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select-native.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select-native.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2709,8 +2709,8 @@ export const components: Registry = [
     name: "comp-196",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select-native.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select-native.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2724,8 +2724,8 @@ export const components: Registry = [
     name: "comp-197",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select-native.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select-native.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2739,8 +2739,8 @@ export const components: Registry = [
     name: "comp-198",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select-native.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select-native.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2754,8 +2754,8 @@ export const components: Registry = [
     name: "comp-199",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select-native.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select-native.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2769,8 +2769,8 @@ export const components: Registry = [
     name: "comp-200",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select-native.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select-native.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2783,7 +2783,7 @@ export const components: Registry = [
   {
     name: "comp-201",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/select-native.json"],
+    registryDependencies: ["https://originui.com/r/select-native.json"],
     files: [
       {
         path: "compositions/comp-201.tsx",
@@ -2795,7 +2795,7 @@ export const components: Registry = [
   {
     name: "comp-202",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/select-native.json"],
+    registryDependencies: ["https://originui.com/r/select-native.json"],
     files: [
       {
         path: "compositions/comp-202.tsx",
@@ -2808,8 +2808,8 @@ export const components: Registry = [
     name: "comp-203",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2823,8 +2823,8 @@ export const components: Registry = [
     name: "comp-204",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2838,8 +2838,8 @@ export const components: Registry = [
     name: "comp-205",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2853,8 +2853,8 @@ export const components: Registry = [
     name: "comp-206",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2868,8 +2868,8 @@ export const components: Registry = [
     name: "comp-207",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2883,8 +2883,8 @@ export const components: Registry = [
     name: "comp-208",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2898,8 +2898,8 @@ export const components: Registry = [
     name: "comp-209",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2913,8 +2913,8 @@ export const components: Registry = [
     name: "comp-210",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2928,8 +2928,8 @@ export const components: Registry = [
     name: "comp-211",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2943,8 +2943,8 @@ export const components: Registry = [
     name: "comp-212",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2958,8 +2958,8 @@ export const components: Registry = [
     name: "comp-213",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2973,8 +2973,8 @@ export const components: Registry = [
     name: "comp-214",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -2988,8 +2988,8 @@ export const components: Registry = [
     name: "comp-215",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -3002,7 +3002,7 @@ export const components: Registry = [
   {
     name: "comp-216",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/select.json"],
+    registryDependencies: ["https://originui.com/r/select.json"],
     files: [
       {
         path: "compositions/comp-216.tsx",
@@ -3014,7 +3014,7 @@ export const components: Registry = [
   {
     name: "comp-217",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/select.json"],
+    registryDependencies: ["https://originui.com/r/select.json"],
     files: [
       {
         path: "compositions/comp-217.tsx",
@@ -3027,8 +3027,8 @@ export const components: Registry = [
     name: "comp-218",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -3042,8 +3042,8 @@ export const components: Registry = [
     name: "comp-219",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -3057,8 +3057,8 @@ export const components: Registry = [
     name: "comp-220",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -3072,8 +3072,8 @@ export const components: Registry = [
     name: "comp-221",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -3087,8 +3087,8 @@ export const components: Registry = [
     name: "comp-222",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     dependencies: ["@remixicon/react"],
     files: [
@@ -3103,8 +3103,8 @@ export const components: Registry = [
     name: "comp-223",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     dependencies: ["@remixicon/react"],
     files: [
@@ -3119,8 +3119,8 @@ export const components: Registry = [
     name: "comp-224",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -3134,8 +3134,8 @@ export const components: Registry = [
     name: "comp-225",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -3149,8 +3149,8 @@ export const components: Registry = [
     name: "comp-226",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -3164,8 +3164,8 @@ export const components: Registry = [
     name: "comp-227",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -3179,8 +3179,8 @@ export const components: Registry = [
     name: "comp-228",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/select.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -3194,10 +3194,10 @@ export const components: Registry = [
     name: "comp-229",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/command.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/popover.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/command.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/popover.json",
     ],
     files: [
       {
@@ -3211,10 +3211,10 @@ export const components: Registry = [
     name: "comp-230",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/command.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/popover.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/command.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/popover.json",
     ],
     files: [
       {
@@ -3228,10 +3228,10 @@ export const components: Registry = [
     name: "comp-231",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/command.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/popover.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/command.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/popover.json",
     ],
     files: [
       {
@@ -3245,10 +3245,10 @@ export const components: Registry = [
     name: "comp-232",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/command.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/popover.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/command.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/popover.json",
     ],
     files: [
       {
@@ -3262,10 +3262,10 @@ export const components: Registry = [
     name: "comp-233",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/command.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/popover.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/command.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/popover.json",
     ],
     files: [
       {
@@ -3279,8 +3279,8 @@ export const components: Registry = [
     name: "comp-234",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/multiselect.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/multiselect.json",
     ],
     files: [
       {
@@ -3294,8 +3294,8 @@ export const components: Registry = [
     name: "comp-235",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/multiselect.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/multiselect.json",
     ],
     files: [
       {
@@ -3309,8 +3309,8 @@ export const components: Registry = [
     name: "comp-236",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/select-native.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/select-native.json",
     ],
     files: [
       {
@@ -3323,7 +3323,7 @@ export const components: Registry = [
   {
     name: "comp-237",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/label.json"],
+    registryDependencies: ["https://originui.com/r/label.json"],
     dependencies: ["react-aria-components"],
     files: [
       {
@@ -3336,7 +3336,7 @@ export const components: Registry = [
   {
     name: "comp-238",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/label.json"],
+    registryDependencies: ["https://originui.com/r/label.json"],
     dependencies: ["react-aria-components"],
     files: [
       {
@@ -3349,7 +3349,7 @@ export const components: Registry = [
   {
     name: "comp-239",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/label.json"],
+    registryDependencies: ["https://originui.com/r/label.json"],
     dependencies: ["react-aria-components"],
     files: [
       {
@@ -3363,8 +3363,8 @@ export const components: Registry = [
     name: "comp-240",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3378,8 +3378,8 @@ export const components: Registry = [
     name: "comp-241",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3393,8 +3393,8 @@ export const components: Registry = [
     name: "comp-242",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3408,8 +3408,8 @@ export const components: Registry = [
     name: "comp-243",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3423,8 +3423,8 @@ export const components: Registry = [
     name: "comp-244",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3438,8 +3438,8 @@ export const components: Registry = [
     name: "comp-245",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3453,8 +3453,8 @@ export const components: Registry = [
     name: "comp-246",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3468,8 +3468,8 @@ export const components: Registry = [
     name: "comp-247",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3483,8 +3483,8 @@ export const components: Registry = [
     name: "comp-248",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3498,8 +3498,8 @@ export const components: Registry = [
     name: "comp-249",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3513,8 +3513,8 @@ export const components: Registry = [
     name: "comp-250",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3528,8 +3528,8 @@ export const components: Registry = [
     name: "comp-251",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3543,8 +3543,8 @@ export const components: Registry = [
     name: "comp-252",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3558,8 +3558,8 @@ export const components: Registry = [
     name: "comp-253",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3573,11 +3573,11 @@ export const components: Registry = [
     name: "comp-254",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
-      "http://localhost:3000/r/tooltip.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
+      "https://originui.com/r/tooltip.json",
     ],
     files: [
       {
@@ -3595,9 +3595,9 @@ export const components: Registry = [
     name: "comp-255",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3615,8 +3615,8 @@ export const components: Registry = [
     name: "comp-256",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3630,8 +3630,8 @@ export const components: Registry = [
     name: "comp-257",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3645,9 +3645,9 @@ export const components: Registry = [
     name: "comp-258",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3665,9 +3665,9 @@ export const components: Registry = [
     name: "comp-259",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3681,9 +3681,9 @@ export const components: Registry = [
     name: "comp-260",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3697,8 +3697,8 @@ export const components: Registry = [
     name: "comp-261",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3712,9 +3712,9 @@ export const components: Registry = [
     name: "comp-262",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
-      "http://localhost:3000/r/input.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
+      "https://originui.com/r/input.json",
     ],
     files: [
       {
@@ -3732,8 +3732,8 @@ export const components: Registry = [
     name: "comp-263",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3747,10 +3747,10 @@ export const components: Registry = [
     name: "comp-264",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/button.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/button.json",
     ],
     files: [
       {
@@ -3768,10 +3768,10 @@ export const components: Registry = [
     name: "comp-265",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/button.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/button.json",
     ],
     files: [
       {
@@ -3789,8 +3789,8 @@ export const components: Registry = [
     name: "comp-266",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/slider.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/slider.json",
     ],
     files: [
       {
@@ -3935,7 +3935,7 @@ export const components: Registry = [
   {
     name: "comp-279",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-279.tsx",
@@ -3947,7 +3947,7 @@ export const components: Registry = [
   {
     name: "comp-280",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-280.tsx",
@@ -3959,7 +3959,7 @@ export const components: Registry = [
   {
     name: "comp-281",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-281.tsx",
@@ -3971,7 +3971,7 @@ export const components: Registry = [
   {
     name: "comp-282",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-282.tsx",
@@ -3983,7 +3983,7 @@ export const components: Registry = [
   {
     name: "comp-283",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-283.tsx",
@@ -3995,7 +3995,7 @@ export const components: Registry = [
   {
     name: "comp-284",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-284.tsx",
@@ -4007,7 +4007,7 @@ export const components: Registry = [
   {
     name: "comp-285",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-285.tsx",
@@ -4019,7 +4019,7 @@ export const components: Registry = [
   {
     name: "comp-286",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-286.tsx",
@@ -4031,7 +4031,7 @@ export const components: Registry = [
   {
     name: "comp-287",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-287.tsx",
@@ -4043,7 +4043,7 @@ export const components: Registry = [
   {
     name: "comp-288",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-288.tsx",
@@ -4055,7 +4055,7 @@ export const components: Registry = [
   {
     name: "comp-289",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-289.tsx",
@@ -4067,7 +4067,7 @@ export const components: Registry = [
   {
     name: "comp-290",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-290.tsx",
@@ -4079,7 +4079,7 @@ export const components: Registry = [
   {
     name: "comp-291",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-291.tsx",
@@ -4091,7 +4091,7 @@ export const components: Registry = [
   {
     name: "comp-292",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-292.tsx",
@@ -4103,7 +4103,7 @@ export const components: Registry = [
   {
     name: "comp-293",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-293.tsx",
@@ -4115,7 +4115,7 @@ export const components: Registry = [
   {
     name: "comp-294",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-294.tsx",
@@ -4127,7 +4127,7 @@ export const components: Registry = [
   {
     name: "comp-295",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-295.tsx",
@@ -4139,7 +4139,7 @@ export const components: Registry = [
   {
     name: "comp-296",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-296.tsx",
@@ -4152,8 +4152,8 @@ export const components: Registry = [
     name: "comp-297",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/toast.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/toast.json",
     ],
     files: [
       {
@@ -4171,8 +4171,8 @@ export const components: Registry = [
     name: "comp-298",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/toast.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/toast.json",
     ],
     files: [
       {
@@ -4185,7 +4185,7 @@ export const components: Registry = [
   {
     name: "comp-299",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     dependencies: ["sonner"],
     files: [
       {
@@ -4198,7 +4198,7 @@ export const components: Registry = [
   {
     name: "comp-300",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     dependencies: ["sonner"],
     files: [
       {
@@ -4211,7 +4211,7 @@ export const components: Registry = [
   {
     name: "comp-301",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-301.tsx",
@@ -4256,7 +4256,7 @@ export const components: Registry = [
   {
     name: "comp-305",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-305.tsx",
@@ -4268,7 +4268,7 @@ export const components: Registry = [
   {
     name: "comp-306",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-306.tsx",
@@ -4280,7 +4280,7 @@ export const components: Registry = [
   {
     name: "comp-307",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-307.tsx",
@@ -4292,7 +4292,7 @@ export const components: Registry = [
   {
     name: "comp-308",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-308.tsx",
@@ -4304,7 +4304,7 @@ export const components: Registry = [
   {
     name: "comp-309",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-309.tsx",
@@ -4316,7 +4316,7 @@ export const components: Registry = [
   {
     name: "comp-310",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-310.tsx",
@@ -4339,7 +4339,7 @@ export const components: Registry = [
   {
     name: "comp-312",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-312.tsx",
@@ -4352,8 +4352,8 @@ export const components: Registry = [
     name: "comp-313",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/alert-dialog.json",
-      "http://localhost:3000/r/button.json",
+      "https://originui.com/r/alert-dialog.json",
+      "https://originui.com/r/button.json",
     ],
     files: [
       {
@@ -4367,8 +4367,8 @@ export const components: Registry = [
     name: "comp-314",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/alert-dialog.json",
-      "http://localhost:3000/r/button.json",
+      "https://originui.com/r/alert-dialog.json",
+      "https://originui.com/r/button.json",
     ],
     files: [
       {
@@ -4382,8 +4382,8 @@ export const components: Registry = [
     name: "comp-315",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dialog.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dialog.json",
     ],
     files: [
       {
@@ -4397,9 +4397,9 @@ export const components: Registry = [
     name: "comp-316",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dialog.json",
-      "http://localhost:3000/r/scroll-area.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dialog.json",
+      "https://originui.com/r/scroll-area.json",
     ],
     files: [
       {
@@ -4413,8 +4413,8 @@ export const components: Registry = [
     name: "comp-317",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dialog.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dialog.json",
     ],
     files: [
       {
@@ -4428,8 +4428,8 @@ export const components: Registry = [
     name: "comp-318",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dialog.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dialog.json",
     ],
     files: [
       {
@@ -4443,8 +4443,8 @@ export const components: Registry = [
     name: "comp-319",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dialog.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dialog.json",
     ],
     files: [
       {
@@ -4458,10 +4458,10 @@ export const components: Registry = [
     name: "comp-320",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dialog.json",
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dialog.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -4475,9 +4475,9 @@ export const components: Registry = [
     name: "comp-321",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dialog.json",
-      "http://localhost:3000/r/input.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dialog.json",
+      "https://originui.com/r/input.json",
     ],
     files: [
       {
@@ -4491,9 +4491,9 @@ export const components: Registry = [
     name: "comp-322",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dialog.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dialog.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -4507,11 +4507,11 @@ export const components: Registry = [
     name: "comp-323",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dialog.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/radio-group.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dialog.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/radio-group.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -4525,8 +4525,8 @@ export const components: Registry = [
     name: "comp-324",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dialog.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dialog.json",
     ],
     dependencies: ["input-otp"],
     files: [
@@ -4541,10 +4541,10 @@ export const components: Registry = [
     name: "comp-325",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dialog.json",
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dialog.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -4558,11 +4558,11 @@ export const components: Registry = [
     name: "comp-326",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/dialog.json",
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/dialog.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     files: [
       {
@@ -4576,11 +4576,11 @@ export const components: Registry = [
     name: "comp-327",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dialog.json",
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/tooltip.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dialog.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/tooltip.json",
     ],
     files: [
       {
@@ -4594,11 +4594,11 @@ export const components: Registry = [
     name: "comp-328",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/dialog.json",
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/dialog.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
     ],
     dependencies: ["react-payment-inputs", "@types/react-payment-inputs"],
     // devDependencies: ["@types/react-payment-inputs"],
@@ -4615,12 +4615,12 @@ export const components: Registry = [
     name: "comp-329",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/badge.json",
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dialog.json",
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/radio-group.json",
+      "https://originui.com/r/badge.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dialog.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/radio-group.json",
     ],
     dependencies: ["react-payment-inputs", "@types/react-payment-inputs"],
     // devDependencies: ["@types/react-payment-inputs"],
@@ -4637,10 +4637,10 @@ export const components: Registry = [
     name: "comp-330",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dialog.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/radio-group.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dialog.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/radio-group.json",
     ],
     files: [
       {
@@ -4654,11 +4654,11 @@ export const components: Registry = [
     name: "comp-331",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dialog.json",
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dialog.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -4680,8 +4680,8 @@ export const components: Registry = [
     name: "comp-332",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dialog.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dialog.json",
     ],
     files: [
       {
@@ -4694,7 +4694,7 @@ export const components: Registry = [
   {
     name: "comp-333",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/command.json"],
+    registryDependencies: ["https://originui.com/r/command.json"],
     files: [
       {
         path: "compositions/comp-333.tsx",
@@ -4706,7 +4706,7 @@ export const components: Registry = [
   {
     name: "comp-334",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/accordion.json"],
+    registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
         path: "compositions/comp-334.tsx",
@@ -4718,7 +4718,7 @@ export const components: Registry = [
   {
     name: "comp-335",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/accordion.json"],
+    registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
         path: "compositions/comp-335.tsx",
@@ -4730,7 +4730,7 @@ export const components: Registry = [
   {
     name: "comp-336",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/accordion.json"],
+    registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
         path: "compositions/comp-336.tsx",
@@ -4742,7 +4742,7 @@ export const components: Registry = [
   {
     name: "comp-337",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/accordion.json"],
+    registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
         path: "compositions/comp-337.tsx",
@@ -4754,7 +4754,7 @@ export const components: Registry = [
   {
     name: "comp-338",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/accordion.json"],
+    registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
         path: "compositions/comp-338.tsx",
@@ -4766,7 +4766,7 @@ export const components: Registry = [
   {
     name: "comp-339",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/accordion.json"],
+    registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
         path: "compositions/comp-339.tsx",
@@ -4778,7 +4778,7 @@ export const components: Registry = [
   {
     name: "comp-340",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/accordion.json"],
+    registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
         path: "compositions/comp-340.tsx",
@@ -4790,7 +4790,7 @@ export const components: Registry = [
   {
     name: "comp-341",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/accordion.json"],
+    registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
         path: "compositions/comp-341.tsx",
@@ -4802,7 +4802,7 @@ export const components: Registry = [
   {
     name: "comp-342",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/accordion.json"],
+    registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
         path: "compositions/comp-342.tsx",
@@ -4814,7 +4814,7 @@ export const components: Registry = [
   {
     name: "comp-343",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/accordion.json"],
+    registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
         path: "compositions/comp-343.tsx",
@@ -4826,7 +4826,7 @@ export const components: Registry = [
   {
     name: "comp-344",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/accordion.json"],
+    registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
         path: "compositions/comp-344.tsx",
@@ -4838,7 +4838,7 @@ export const components: Registry = [
   {
     name: "comp-345",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/accordion.json"],
+    registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
         path: "compositions/comp-345.tsx",
@@ -4850,7 +4850,7 @@ export const components: Registry = [
   {
     name: "comp-346",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/accordion.json"],
+    registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
         path: "compositions/comp-346.tsx",
@@ -4862,7 +4862,7 @@ export const components: Registry = [
   {
     name: "comp-347",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/accordion.json"],
+    registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
         path: "compositions/comp-347.tsx",
@@ -4874,7 +4874,7 @@ export const components: Registry = [
   {
     name: "comp-348",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/accordion.json"],
+    registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
         path: "compositions/comp-348.tsx",
@@ -4886,7 +4886,7 @@ export const components: Registry = [
   {
     name: "comp-349",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/accordion.json"],
+    registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
         path: "compositions/comp-349.tsx",
@@ -4898,7 +4898,7 @@ export const components: Registry = [
   {
     name: "comp-350",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/accordion.json"],
+    registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
         path: "compositions/comp-350.tsx",
@@ -4910,7 +4910,7 @@ export const components: Registry = [
   {
     name: "comp-351",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/accordion.json"],
+    registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
         path: "compositions/comp-351.tsx",
@@ -4923,8 +4923,8 @@ export const components: Registry = [
     name: "comp-352",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/accordion.json",
-      "http://localhost:3000/r/collapsible.json",
+      "https://originui.com/r/accordion.json",
+      "https://originui.com/r/collapsible.json",
     ],
     files: [
       {
@@ -4938,8 +4938,8 @@ export const components: Registry = [
     name: "comp-353",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/accordion.json",
-      "http://localhost:3000/r/collapsible.json",
+      "https://originui.com/r/accordion.json",
+      "https://originui.com/r/collapsible.json",
     ],
     files: [
       {
@@ -4953,8 +4953,8 @@ export const components: Registry = [
     name: "comp-354",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/tooltip.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/tooltip.json",
     ],
     files: [
       {
@@ -4968,8 +4968,8 @@ export const components: Registry = [
     name: "comp-355",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/tooltip.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/tooltip.json",
     ],
     files: [
       {
@@ -4983,8 +4983,8 @@ export const components: Registry = [
     name: "comp-356",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/tooltip.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/tooltip.json",
     ],
     files: [
       {
@@ -4998,8 +4998,8 @@ export const components: Registry = [
     name: "comp-357",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/tooltip.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/tooltip.json",
     ],
     files: [
       {
@@ -5013,8 +5013,8 @@ export const components: Registry = [
     name: "comp-358",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/tooltip.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/tooltip.json",
     ],
     files: [
       {
@@ -5028,8 +5028,8 @@ export const components: Registry = [
     name: "comp-359",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/tooltip.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/tooltip.json",
     ],
     files: [
       {
@@ -5043,8 +5043,8 @@ export const components: Registry = [
     name: "comp-360",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/tooltip.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/tooltip.json",
     ],
     files: [
       {
@@ -5058,8 +5058,8 @@ export const components: Registry = [
     name: "comp-361",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/tooltip.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/tooltip.json",
     ],
     files: [
       {
@@ -5073,8 +5073,8 @@ export const components: Registry = [
     name: "comp-362",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/tooltip.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/tooltip.json",
     ],
     files: [
       {
@@ -5088,8 +5088,8 @@ export const components: Registry = [
     name: "comp-363",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/hover-card.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/hover-card.json",
     ],
     files: [
       {
@@ -5102,7 +5102,7 @@ export const components: Registry = [
   {
     name: "comp-364",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/hover-card.json"],
+    registryDependencies: ["https://originui.com/r/hover-card.json"],
     files: [
       {
         path: "compositions/comp-364.tsx",
@@ -5114,7 +5114,7 @@ export const components: Registry = [
   {
     name: "comp-365",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/hover-card.json"],
+    registryDependencies: ["https://originui.com/r/hover-card.json"],
     files: [
       {
         path: "compositions/comp-365.tsx",
@@ -5127,8 +5127,8 @@ export const components: Registry = [
     name: "comp-366",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dropdown-menu.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dropdown-menu.json",
     ],
     files: [
       {
@@ -5142,8 +5142,8 @@ export const components: Registry = [
     name: "comp-367",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dropdown-menu.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dropdown-menu.json",
     ],
     files: [
       {
@@ -5157,8 +5157,8 @@ export const components: Registry = [
     name: "comp-368",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dropdown-menu.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dropdown-menu.json",
     ],
     files: [
       {
@@ -5172,8 +5172,8 @@ export const components: Registry = [
     name: "comp-369",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dropdown-menu.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dropdown-menu.json",
     ],
     files: [
       {
@@ -5187,8 +5187,8 @@ export const components: Registry = [
     name: "comp-370",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dropdown-menu.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dropdown-menu.json",
     ],
     files: [
       {
@@ -5202,8 +5202,8 @@ export const components: Registry = [
     name: "comp-371",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dropdown-menu.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dropdown-menu.json",
     ],
     files: [
       {
@@ -5217,8 +5217,8 @@ export const components: Registry = [
     name: "comp-372",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dropdown-menu.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dropdown-menu.json",
     ],
     files: [
       {
@@ -5232,8 +5232,8 @@ export const components: Registry = [
     name: "comp-373",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dropdown-menu.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dropdown-menu.json",
     ],
     files: [
       {
@@ -5247,8 +5247,8 @@ export const components: Registry = [
     name: "comp-374",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dropdown-menu.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dropdown-menu.json",
     ],
     files: [
       {
@@ -5262,8 +5262,8 @@ export const components: Registry = [
     name: "comp-375",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dropdown-menu.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dropdown-menu.json",
     ],
     files: [
       {
@@ -5277,8 +5277,8 @@ export const components: Registry = [
     name: "comp-376",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dropdown-menu.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dropdown-menu.json",
     ],
     files: [
       {
@@ -5292,9 +5292,9 @@ export const components: Registry = [
     name: "comp-377",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dropdown-menu.json",
-      "http://localhost:3000/r/avatar.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dropdown-menu.json",
+      "https://originui.com/r/avatar.json",
     ],
     files: [
       {
@@ -5308,8 +5308,8 @@ export const components: Registry = [
     name: "comp-378",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dropdown-menu.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dropdown-menu.json",
     ],
     files: [
       {
@@ -5323,8 +5323,8 @@ export const components: Registry = [
     name: "comp-379",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dropdown-menu.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dropdown-menu.json",
     ],
     files: [
       {
@@ -5338,8 +5338,8 @@ export const components: Registry = [
     name: "comp-380",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/dropdown-menu.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dropdown-menu.json",
     ],
     files: [
       {
@@ -5353,10 +5353,10 @@ export const components: Registry = [
     name: "comp-381",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/checkbox.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/popover.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/popover.json",
     ],
     files: [
       {
@@ -5370,9 +5370,9 @@ export const components: Registry = [
     name: "comp-382",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/badge.json",
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/popover.json",
+      "https://originui.com/r/badge.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/popover.json",
     ],
     files: [
       {
@@ -5386,9 +5386,9 @@ export const components: Registry = [
     name: "comp-383",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/badge.json",
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/popover.json",
+      "https://originui.com/r/badge.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/popover.json",
     ],
     files: [
       {
@@ -5402,8 +5402,8 @@ export const components: Registry = [
     name: "comp-384",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/popover.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/popover.json",
     ],
     files: [
       {
@@ -5417,8 +5417,8 @@ export const components: Registry = [
     name: "comp-385",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/popover.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/popover.json",
     ],
     files: [
       {
@@ -5432,8 +5432,8 @@ export const components: Registry = [
     name: "comp-386",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/popover.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/popover.json",
     ],
     files: [
       {
@@ -5447,10 +5447,10 @@ export const components: Registry = [
     name: "comp-387",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/popover.json",
-      "http://localhost:3000/r/tooltip.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/popover.json",
+      "https://originui.com/r/tooltip.json",
     ],
     files: [
       {
@@ -5464,9 +5464,9 @@ export const components: Registry = [
     name: "comp-388",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/popover.json",
-      "http://localhost:3000/r/textarea.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/popover.json",
+      "https://originui.com/r/textarea.json",
     ],
     files: [
       {
@@ -5480,8 +5480,8 @@ export const components: Registry = [
     name: "comp-389",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/popover.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/popover.json",
     ],
     files: [
       {
@@ -5494,7 +5494,7 @@ export const components: Registry = [
   {
     name: "comp-390",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/avatar.json"],
+    registryDependencies: ["https://originui.com/r/avatar.json"],
     files: [
       {
         path: "compositions/comp-390.tsx",
@@ -5506,7 +5506,7 @@ export const components: Registry = [
   {
     name: "comp-391",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/avatar.json"],
+    registryDependencies: ["https://originui.com/r/avatar.json"],
     files: [
       {
         path: "compositions/comp-391.tsx",
@@ -5518,7 +5518,7 @@ export const components: Registry = [
   {
     name: "comp-392",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/avatar.json"],
+    registryDependencies: ["https://originui.com/r/avatar.json"],
     files: [
       {
         path: "compositions/comp-392.tsx",
@@ -5530,7 +5530,7 @@ export const components: Registry = [
   {
     name: "comp-393",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/avatar.json"],
+    registryDependencies: ["https://originui.com/r/avatar.json"],
     files: [
       {
         path: "compositions/comp-393.tsx",
@@ -5542,7 +5542,7 @@ export const components: Registry = [
   {
     name: "comp-394",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/avatar.json"],
+    registryDependencies: ["https://originui.com/r/avatar.json"],
     files: [
       {
         path: "compositions/comp-394.tsx",
@@ -5554,7 +5554,7 @@ export const components: Registry = [
   {
     name: "comp-395",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/avatar.json"],
+    registryDependencies: ["https://originui.com/r/avatar.json"],
     files: [
       {
         path: "compositions/comp-395.tsx",
@@ -5566,7 +5566,7 @@ export const components: Registry = [
   {
     name: "comp-396",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/avatar.json"],
+    registryDependencies: ["https://originui.com/r/avatar.json"],
     files: [
       {
         path: "compositions/comp-396.tsx",
@@ -5578,7 +5578,7 @@ export const components: Registry = [
   {
     name: "comp-397",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/avatar.json"],
+    registryDependencies: ["https://originui.com/r/avatar.json"],
     files: [
       {
         path: "compositions/comp-397.tsx",
@@ -5591,8 +5591,8 @@ export const components: Registry = [
     name: "comp-398",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/avatar.json",
-      "http://localhost:3000/r/badge.json",
+      "https://originui.com/r/avatar.json",
+      "https://originui.com/r/badge.json",
     ],
     files: [
       {
@@ -5606,8 +5606,8 @@ export const components: Registry = [
     name: "comp-399",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/avatar.json",
-      "http://localhost:3000/r/badge.json",
+      "https://originui.com/r/avatar.json",
+      "https://originui.com/r/badge.json",
     ],
     files: [
       {
@@ -5719,7 +5719,7 @@ export const components: Registry = [
   {
     name: "comp-409",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-409.tsx",
@@ -5731,7 +5731,7 @@ export const components: Registry = [
   {
     name: "comp-410",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-410.tsx",
@@ -5743,7 +5743,7 @@ export const components: Registry = [
   {
     name: "comp-411",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "compositions/comp-411.tsx",
@@ -5766,7 +5766,7 @@ export const components: Registry = [
   {
     name: "comp-413",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/badge.json"],
+    registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
         path: "compositions/comp-413.tsx",
@@ -5778,7 +5778,7 @@ export const components: Registry = [
   {
     name: "comp-414",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/badge.json"],
+    registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
         path: "compositions/comp-414.tsx",
@@ -5790,7 +5790,7 @@ export const components: Registry = [
   {
     name: "comp-415",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/badge.json"],
+    registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
         path: "compositions/comp-415.tsx",
@@ -5802,7 +5802,7 @@ export const components: Registry = [
   {
     name: "comp-416",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/badge.json"],
+    registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
         path: "compositions/comp-416.tsx",
@@ -5814,7 +5814,7 @@ export const components: Registry = [
   {
     name: "comp-417",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/badge.json"],
+    registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
         path: "compositions/comp-417.tsx",
@@ -5826,7 +5826,7 @@ export const components: Registry = [
   {
     name: "comp-418",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/badge.json"],
+    registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
         path: "compositions/comp-418.tsx",
@@ -5838,7 +5838,7 @@ export const components: Registry = [
   {
     name: "comp-419",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/badge.json"],
+    registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
         path: "compositions/comp-419.tsx",
@@ -5850,7 +5850,7 @@ export const components: Registry = [
   {
     name: "comp-420",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/badge.json"],
+    registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
         path: "compositions/comp-420.tsx",
@@ -5862,7 +5862,7 @@ export const components: Registry = [
   {
     name: "comp-421",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/badge.json"],
+    registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
         path: "compositions/comp-421.tsx",
@@ -5874,7 +5874,7 @@ export const components: Registry = [
   {
     name: "comp-422",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/badge.json"],
+    registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
         path: "compositions/comp-422.tsx",
@@ -5886,7 +5886,7 @@ export const components: Registry = [
   {
     name: "comp-423",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/badge.json"],
+    registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
         path: "compositions/comp-423.tsx",
@@ -5909,7 +5909,7 @@ export const components: Registry = [
   {
     name: "comp-425",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/badge.json"],
+    registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
         path: "compositions/comp-425.tsx",
@@ -5921,7 +5921,7 @@ export const components: Registry = [
   {
     name: "comp-426",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/tabs.json"],
+    registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
         path: "compositions/comp-426.tsx",
@@ -5933,7 +5933,7 @@ export const components: Registry = [
   {
     name: "comp-427",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/tabs.json"],
+    registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
         path: "compositions/comp-427.tsx",
@@ -5945,7 +5945,7 @@ export const components: Registry = [
   {
     name: "comp-428",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/tabs.json"],
+    registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
         path: "compositions/comp-428.tsx",
@@ -5957,7 +5957,7 @@ export const components: Registry = [
   {
     name: "comp-429",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/tabs.json"],
+    registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
         path: "compositions/comp-429.tsx",
@@ -5969,7 +5969,7 @@ export const components: Registry = [
   {
     name: "comp-430",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/tabs.json"],
+    registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
         path: "compositions/comp-430.tsx",
@@ -5981,7 +5981,7 @@ export const components: Registry = [
   {
     name: "comp-431",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/tabs.json"],
+    registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
         path: "compositions/comp-431.tsx",
@@ -5993,7 +5993,7 @@ export const components: Registry = [
   {
     name: "comp-432",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/tabs.json"],
+    registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
         path: "compositions/comp-432.tsx",
@@ -6006,8 +6006,8 @@ export const components: Registry = [
     name: "comp-433",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/scroll-area.json",
-      "http://localhost:3000/r/tabs.json",
+      "https://originui.com/r/scroll-area.json",
+      "https://originui.com/r/tabs.json",
     ],
     files: [
       {
@@ -6021,8 +6021,8 @@ export const components: Registry = [
     name: "comp-434",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/scroll-area.json",
-      "http://localhost:3000/r/tabs.json",
+      "https://originui.com/r/scroll-area.json",
+      "https://originui.com/r/tabs.json",
     ],
     files: [
       {
@@ -6036,8 +6036,8 @@ export const components: Registry = [
     name: "comp-435",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/scroll-area.json",
-      "http://localhost:3000/r/tabs.json",
+      "https://originui.com/r/scroll-area.json",
+      "https://originui.com/r/tabs.json",
     ],
     files: [
       {
@@ -6051,8 +6051,8 @@ export const components: Registry = [
     name: "comp-436",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/scroll-area.json",
-      "http://localhost:3000/r/tabs.json",
+      "https://originui.com/r/scroll-area.json",
+      "https://originui.com/r/tabs.json",
     ],
     files: [
       {
@@ -6066,9 +6066,9 @@ export const components: Registry = [
     name: "comp-437",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/badge.json",
-      "http://localhost:3000/r/scroll-area.json",
-      "http://localhost:3000/r/tabs.json",
+      "https://originui.com/r/badge.json",
+      "https://originui.com/r/scroll-area.json",
+      "https://originui.com/r/tabs.json",
     ],
     files: [
       {
@@ -6081,7 +6081,7 @@ export const components: Registry = [
   {
     name: "comp-438",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/tabs.json"],
+    registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
         path: "compositions/comp-438.tsx",
@@ -6093,7 +6093,7 @@ export const components: Registry = [
   {
     name: "comp-439",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/tabs.json"],
+    registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
         path: "compositions/comp-439.tsx",
@@ -6106,8 +6106,8 @@ export const components: Registry = [
     name: "comp-440",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/tabs.json",
-      "http://localhost:3000/r/tooltip.json",
+      "https://originui.com/r/tabs.json",
+      "https://originui.com/r/tooltip.json",
     ],
     files: [
       {
@@ -6121,8 +6121,8 @@ export const components: Registry = [
     name: "comp-441",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/tabs.json",
-      "http://localhost:3000/r/tooltip.json",
+      "https://originui.com/r/tabs.json",
+      "https://originui.com/r/tooltip.json",
     ],
     files: [
       {
@@ -6136,8 +6136,8 @@ export const components: Registry = [
     name: "comp-441",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/tabs.json",
-      "http://localhost:3000/r/tooltip.json",
+      "https://originui.com/r/tabs.json",
+      "https://originui.com/r/tooltip.json",
     ],
     files: [
       {
@@ -6150,7 +6150,7 @@ export const components: Registry = [
   {
     name: "comp-442",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/tabs.json"],
+    registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
         path: "compositions/comp-442.tsx",
@@ -6162,7 +6162,7 @@ export const components: Registry = [
   {
     name: "comp-443",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/tabs.json"],
+    registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
         path: "compositions/comp-443.tsx",
@@ -6174,7 +6174,7 @@ export const components: Registry = [
   {
     name: "comp-444",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/tabs.json"],
+    registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
         path: "compositions/comp-444.tsx",
@@ -6186,7 +6186,7 @@ export const components: Registry = [
   {
     name: "comp-445",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/tabs.json"],
+    registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
         path: "compositions/comp-445.tsx",
@@ -6199,8 +6199,8 @@ export const components: Registry = [
     name: "comp-446",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/breadcrumb.json",
-      "http://localhost:3000/r/dropdown-menu.json",
+      "https://originui.com/r/breadcrumb.json",
+      "https://originui.com/r/dropdown-menu.json",
     ],
     files: [
       {
@@ -6214,8 +6214,8 @@ export const components: Registry = [
     name: "comp-447",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/breadcrumb.json",
-      "http://localhost:3000/r/dropdown-menu.json",
+      "https://originui.com/r/breadcrumb.json",
+      "https://originui.com/r/dropdown-menu.json",
     ],
     files: [
       {
@@ -6228,7 +6228,7 @@ export const components: Registry = [
   {
     name: "comp-448",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/breadcrumb.json"],
+    registryDependencies: ["https://originui.com/r/breadcrumb.json"],
     files: [
       {
         path: "compositions/comp-448.tsx",
@@ -6240,7 +6240,7 @@ export const components: Registry = [
   {
     name: "comp-449",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/breadcrumb.json"],
+    registryDependencies: ["https://originui.com/r/breadcrumb.json"],
     files: [
       {
         path: "compositions/comp-449.tsx",
@@ -6252,7 +6252,7 @@ export const components: Registry = [
   {
     name: "comp-450",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/breadcrumb.json"],
+    registryDependencies: ["https://originui.com/r/breadcrumb.json"],
     files: [
       {
         path: "compositions/comp-450.tsx",
@@ -6264,7 +6264,7 @@ export const components: Registry = [
   {
     name: "comp-451",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/breadcrumb.json"],
+    registryDependencies: ["https://originui.com/r/breadcrumb.json"],
     files: [
       {
         path: "compositions/comp-451.tsx",
@@ -6276,7 +6276,7 @@ export const components: Registry = [
   {
     name: "comp-452",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/breadcrumb.json"],
+    registryDependencies: ["https://originui.com/r/breadcrumb.json"],
     files: [
       {
         path: "compositions/comp-452.tsx",
@@ -6288,7 +6288,7 @@ export const components: Registry = [
   {
     name: "comp-453",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/breadcrumb.json"],
+    registryDependencies: ["https://originui.com/r/breadcrumb.json"],
     files: [
       {
         path: "compositions/comp-453.tsx",
@@ -6301,8 +6301,8 @@ export const components: Registry = [
     name: "comp-454",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/pagination.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/pagination.json",
     ],
     files: [
       {
@@ -6316,8 +6316,8 @@ export const components: Registry = [
     name: "comp-455",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/pagination.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/pagination.json",
     ],
     files: [
       {
@@ -6331,8 +6331,8 @@ export const components: Registry = [
     name: "comp-456",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/pagination.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/pagination.json",
     ],
     files: [
       {
@@ -6345,7 +6345,7 @@ export const components: Registry = [
   {
     name: "comp-457",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/pagination.json"],
+    registryDependencies: ["https://originui.com/r/pagination.json"],
     files: [
       {
         path: "compositions/comp-457.tsx",
@@ -6358,8 +6358,8 @@ export const components: Registry = [
     name: "comp-458",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/pagination.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/pagination.json",
     ],
     files: [
       {
@@ -6372,7 +6372,7 @@ export const components: Registry = [
   {
     name: "comp-459",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/pagination.json"],
+    registryDependencies: ["https://originui.com/r/pagination.json"],
     files: [
       {
         path: "compositions/comp-459.tsx",
@@ -6388,7 +6388,7 @@ export const components: Registry = [
   {
     name: "comp-460",
     type: "registry:component",
-    registryDependencies: ["http://localhost:3000/r/pagination.json"],
+    registryDependencies: ["https://originui.com/r/pagination.json"],
     files: [
       {
         path: "compositions/comp-460.tsx",
@@ -6405,8 +6405,8 @@ export const components: Registry = [
     name: "comp-461",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/button.json",
-      "http://localhost:3000/r/pagination.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/pagination.json",
     ],
     files: [
       {
@@ -6424,8 +6424,8 @@ export const components: Registry = [
     name: "comp-462",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/pagination.json",
-      "http://localhost:3000/r/select.json",
+      "https://originui.com/r/pagination.json",
+      "https://originui.com/r/select.json",
     ],
     files: [
       {
@@ -6443,9 +6443,9 @@ export const components: Registry = [
     name: "comp-463",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/pagination.json",
-      "http://localhost:3000/r/select.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/pagination.json",
+      "https://originui.com/r/select.json",
     ],
     files: [
       {
@@ -6463,8 +6463,8 @@ export const components: Registry = [
     name: "comp-464",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/pagination.json",
-      "http://localhost:3000/r/select.json",
+      "https://originui.com/r/pagination.json",
+      "https://originui.com/r/select.json",
     ],
     files: [
       {
@@ -6482,9 +6482,9 @@ export const components: Registry = [
     name: "comp-465",
     type: "registry:component",
     registryDependencies: [
-      "http://localhost:3000/r/input.json",
-      "http://localhost:3000/r/label.json",
-      "http://localhost:3000/r/pagination.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/pagination.json",
     ],
     files: [
       {

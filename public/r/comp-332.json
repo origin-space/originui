@@ -2,8 +2,8 @@
   "name": "comp-332",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/button.json",
-    "http://localhost:3000/r/dialog.json"
+    "https://originui.com/r/button.json",
+    "https://originui.com/r/dialog.json"
   ],
   "files": [
     {

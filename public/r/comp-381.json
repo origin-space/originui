@@ -2,10 +2,10 @@
   "name": "comp-381",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/button.json",
-    "http://localhost:3000/r/checkbox.json",
-    "http://localhost:3000/r/label.json",
-    "http://localhost:3000/r/popover.json"
+    "https://originui.com/r/button.json",
+    "https://originui.com/r/checkbox.json",
+    "https://originui.com/r/label.json",
+    "https://originui.com/r/popover.json"
   ],
   "files": [
     {

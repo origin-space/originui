@@ -2,7 +2,7 @@
   "name": "comp-395",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/avatar.json"
+    "https://originui.com/r/avatar.json"
   ],
   "files": [
     {

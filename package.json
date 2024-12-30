@@ -25,7 +25,7 @@
   "scripts": {
     "format": "prettier --write .",
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "pnpm build:registry && next build",
     "build:registry": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts && prettier --log-level silent --write \"registry/**/*.{ts,tsx,mdx}\" --cache",
     "start": "next start",
     "lint": "next lint"

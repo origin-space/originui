@@ -2,8 +2,8 @@
   "name": "comp-25",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/input.json",
-    "http://localhost:3000/r/label.json"
+    "https://originui.com/r/input.json",
+    "https://originui.com/r/label.json"
   ],
   "files": [
     {

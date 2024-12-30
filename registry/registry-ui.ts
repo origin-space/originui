@@ -38,7 +38,7 @@ export const ui: Registry = [
     name: "alert-dialog",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-alert-dialog"],
-    registryDependencies: ["http://localhost:3000/r/button.json"],
+    registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
         path: "ui/alert-dialog.tsx",
@@ -190,7 +190,7 @@ export const ui: Registry = [
   {
     name: "multiselect",
     type: "registry:ui",
-    registryDependencies: ["http://localhost:3000/r/command.json"],
+    registryDependencies: ["https://originui.com/r/command.json"],
     files: [
       {
         path: "ui/multiselect.tsx",
@@ -267,7 +267,7 @@ export const ui: Registry = [
     name: "slider",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-slider"],
-    registryDependencies: ["http://localhost:3000/r/tooltip.json"],
+    registryDependencies: ["https://originui.com/r/tooltip.json"],
     files: [
       {
         path: "ui/slider.tsx",

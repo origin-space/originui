@@ -2,8 +2,8 @@
   "name": "comp-155",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/label.json",
-    "http://localhost:3000/r/radio-group.json"
+    "https://originui.com/r/label.json",
+    "https://originui.com/r/radio-group.json"
   ],
   "files": [
     {

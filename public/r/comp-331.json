@@ -2,11 +2,11 @@
   "name": "comp-331",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/button.json",
-    "http://localhost:3000/r/dialog.json",
-    "http://localhost:3000/r/input.json",
-    "http://localhost:3000/r/label.json",
-    "http://localhost:3000/r/textarea.json"
+    "https://originui.com/r/button.json",
+    "https://originui.com/r/dialog.json",
+    "https://originui.com/r/input.json",
+    "https://originui.com/r/label.json",
+    "https://originui.com/r/textarea.json"
   ],
   "files": [
     {

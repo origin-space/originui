@@ -2,11 +2,11 @@
   "name": "comp-326",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/button.json",
-    "http://localhost:3000/r/checkbox.json",
-    "http://localhost:3000/r/dialog.json",
-    "http://localhost:3000/r/input.json",
-    "http://localhost:3000/r/label.json"
+    "https://originui.com/r/button.json",
+    "https://originui.com/r/checkbox.json",
+    "https://originui.com/r/dialog.json",
+    "https://originui.com/r/input.json",
+    "https://originui.com/r/label.json"
   ],
   "files": [
     {

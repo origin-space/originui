@@ -2,7 +2,7 @@
   "name": "comp-130",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/toggle.json"
+    "https://originui.com/r/toggle.json"
   ],
   "files": [
     {

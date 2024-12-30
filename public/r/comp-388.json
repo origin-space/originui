@@ -2,9 +2,9 @@
   "name": "comp-388",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/button.json",
-    "http://localhost:3000/r/popover.json",
-    "http://localhost:3000/r/textarea.json"
+    "https://originui.com/r/button.json",
+    "https://originui.com/r/popover.json",
+    "https://originui.com/r/textarea.json"
   ],
   "files": [
     {

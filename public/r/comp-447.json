@@ -2,8 +2,8 @@
   "name": "comp-447",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/breadcrumb.json",
-    "http://localhost:3000/r/dropdown-menu.json"
+    "https://originui.com/r/breadcrumb.json",
+    "https://originui.com/r/dropdown-menu.json"
   ],
   "files": [
     {

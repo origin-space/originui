@@ -2,7 +2,7 @@
   "name": "comp-333",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/command.json"
+    "https://originui.com/r/command.json"
   ],
   "files": [
     {

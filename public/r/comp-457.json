@@ -2,7 +2,7 @@
   "name": "comp-457",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/pagination.json"
+    "https://originui.com/r/pagination.json"
   ],
   "files": [
     {

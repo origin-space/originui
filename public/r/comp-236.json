@@ -2,8 +2,8 @@
   "name": "comp-236",
   "type": "registry:component",
   "registryDependencies": [
-    "http://localhost:3000/r/label.json",
-    "http://localhost:3000/r/select-native.json"
+    "https://originui.com/r/label.json",
+    "https://originui.com/r/select-native.json"
   ],
   "files": [
     {
