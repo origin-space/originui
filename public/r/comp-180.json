@@ -1,7 +1,9 @@
 {
   "name": "comp-180",
   "type": "registry:component",
-  "registryDependencies": ["http://localhost:3000/r/switch.json"],
+  "registryDependencies": [
+    "http://localhost:3000/r/switch.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-180.tsx",

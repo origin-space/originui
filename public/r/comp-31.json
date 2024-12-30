@@ -1,7 +1,9 @@
 {
   "name": "comp-31",
   "type": "registry:component",
-  "registryDependencies": ["http://localhost:3000/r/input.json"],
+  "registryDependencies": [
+    "http://localhost:3000/r/input.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-31.tsx",

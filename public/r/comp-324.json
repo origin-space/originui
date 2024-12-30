@@ -1,7 +1,9 @@
 {
   "name": "comp-324",
   "type": "registry:component",
-  "dependencies": ["input-otp"],
+  "dependencies": [
+    "input-otp"
+  ],
   "registryDependencies": [
     "http://localhost:3000/r/button.json",
     "http://localhost:3000/r/dialog.json"

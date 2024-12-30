@@ -1,7 +1,10 @@
 {
   "name": "comp-46",
   "type": "registry:component",
-  "dependencies": ["react-phone-number-input", "react-phone-number-input/flags"],
+  "dependencies": [
+    "react-phone-number-input",
+    "react-phone-number-input/flags"
+  ],
   "registryDependencies": [
     "http://localhost:3000/r/input.json",
     "http://localhost:3000/r/label.json"

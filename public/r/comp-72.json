@@ -1,7 +1,9 @@
 {
   "name": "comp-72",
   "type": "registry:component",
-  "registryDependencies": ["http://localhost:3000/r/textarea.json"],
+  "registryDependencies": [
+    "http://localhost:3000/r/textarea.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-72.tsx",

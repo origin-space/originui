@@ -1,8 +1,12 @@
 {
   "name": "command",
   "type": "registry:ui",
-  "dependencies": ["cmdk@1.0.0"],
-  "registryDependencies": ["dialog"],
+  "dependencies": [
+    "cmdk@1.0.0"
+  ],
+  "registryDependencies": [
+    "dialog"
+  ],
   "files": [
     {
       "path": "ui/command.tsx",

@@ -1,7 +1,10 @@
 {
   "name": "comp-42",
   "type": "registry:component",
-  "dependencies": ["react-aria-components", "@internationalized/date"],
+  "dependencies": [
+    "react-aria-components",
+    "@internationalized/date"
+  ],
   "files": [
     {
       "path": "compositions/comp-42.tsx",

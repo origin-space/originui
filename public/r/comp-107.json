@@ -1,7 +1,9 @@
 {
   "name": "comp-107",
   "type": "registry:component",
-  "registryDependencies": ["http://localhost:3000/r/toggle-group.json"],
+  "registryDependencies": [
+    "http://localhost:3000/r/toggle-group.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-107.tsx",

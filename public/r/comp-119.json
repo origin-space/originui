@@ -1,8 +1,12 @@
 {
   "name": "comp-119",
   "type": "registry:component",
-  "dependencies": ["@remixicon/react"],
-  "registryDependencies": ["http://localhost:3000/r/button.json"],
+  "dependencies": [
+    "@remixicon/react"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/button.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-119.tsx",

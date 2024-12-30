@@ -1,8 +1,12 @@
 {
   "name": "slider",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-slider"],
-  "registryDependencies": ["http://localhost:3000/r/tooltip.json"],
+  "dependencies": [
+    "@radix-ui/react-slider"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/tooltip.json"
+  ],
   "files": [
     {
       "path": "ui/slider.tsx",

@@ -1,8 +1,12 @@
 {
   "name": "comp-56",
   "type": "registry:component",
-  "dependencies": ["emblor"],
-  "registryDependencies": ["http://localhost:3000/r/label.json"],
+  "dependencies": [
+    "emblor"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/label.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-56.tsx",

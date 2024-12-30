@@ -1,8 +1,12 @@
 {
   "name": "comp-299",
   "type": "registry:component",
-  "dependencies": ["sonner"],
-  "registryDependencies": ["http://localhost:3000/r/button.json"],
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/button.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-299.tsx",

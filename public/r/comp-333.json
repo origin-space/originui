@@ -1,7 +1,9 @@
 {
   "name": "comp-333",
   "type": "registry:component",
-  "registryDependencies": ["http://localhost:3000/r/command.json"],
+  "registryDependencies": [
+    "http://localhost:3000/r/command.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-333.tsx",

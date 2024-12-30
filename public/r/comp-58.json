@@ -1,8 +1,12 @@
 {
   "name": "comp-58",
   "type": "registry:component",
-  "dependencies": ["input-otp"],
-  "registryDependencies": ["http://localhost:3000/r/label.json"],
+  "dependencies": [
+    "input-otp"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/label.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-58.tsx",

@@ -1,7 +1,11 @@
 {
   "name": "comp-43",
   "type": "registry:component",
-  "dependencies": ["react-aria-components", "react-aria", "@internationalized/date"],
+  "dependencies": [
+    "react-aria-components",
+    "react-aria",
+    "@internationalized/date"
+  ],
   "files": [
     {
       "path": "compositions/comp-43.tsx",

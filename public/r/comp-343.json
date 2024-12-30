@@ -1,7 +1,9 @@
 {
   "name": "comp-343",
   "type": "registry:component",
-  "registryDependencies": ["http://localhost:3000/r/accordion.json"],
+  "registryDependencies": [
+    "http://localhost:3000/r/accordion.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-343.tsx",

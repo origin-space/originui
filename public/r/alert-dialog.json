@@ -1,8 +1,12 @@
 {
   "name": "alert-dialog",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-alert-dialog"],
-  "registryDependencies": ["http://localhost:3000/r/button.json"],
+  "dependencies": [
+    "@radix-ui/react-alert-dialog"
+  ],
+  "registryDependencies": [
+    "http://localhost:3000/r/button.json"
+  ],
   "files": [
     {
       "path": "ui/alert-dialog.tsx",

@@ -1,7 +1,9 @@
 {
   "name": "comp-202",
   "type": "registry:component",
-  "registryDependencies": ["http://localhost:3000/r/select-native.json"],
+  "registryDependencies": [
+    "http://localhost:3000/r/select-native.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-202.tsx",

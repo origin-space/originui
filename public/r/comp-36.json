@@ -1,7 +1,9 @@
 {
   "name": "comp-36",
   "type": "registry:component",
-  "dependencies": ["react-aria-components"],
+  "dependencies": [
+    "react-aria-components"
+  ],
   "files": [
     {
       "path": "compositions/comp-36.tsx",

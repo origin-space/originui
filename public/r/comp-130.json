@@ -1,7 +1,9 @@
 {
   "name": "comp-130",
   "type": "registry:component",
-  "registryDependencies": ["http://localhost:3000/r/toggle.json"],
+  "registryDependencies": [
+    "http://localhost:3000/r/toggle.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-130.tsx",

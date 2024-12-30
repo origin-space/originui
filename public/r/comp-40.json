@@ -1,7 +1,9 @@
 {
   "name": "comp-40",
   "type": "registry:component",
-  "dependencies": ["react-aria-components"],
+  "dependencies": [
+    "react-aria-components"
+  ],
   "files": [
     {
       "path": "compositions/comp-40.tsx",

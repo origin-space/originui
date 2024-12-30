@@ -1,7 +1,9 @@
 {
   "name": "comp-164",
   "type": "registry:component",
-  "registryDependencies": ["http://localhost:3000/r/radio-group.json"],
+  "registryDependencies": [
+    "http://localhost:3000/r/radio-group.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-164.tsx",

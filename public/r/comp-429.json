@@ -1,7 +1,9 @@
 {
   "name": "comp-429",
   "type": "registry:component",
-  "registryDependencies": ["http://localhost:3000/r/tabs.json"],
+  "registryDependencies": [
+    "http://localhost:3000/r/tabs.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-429.tsx",

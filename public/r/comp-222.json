@@ -1,7 +1,9 @@
 {
   "name": "comp-222",
   "type": "registry:component",
-  "dependencies": ["@remixicon/react"],
+  "dependencies": [
+    "@remixicon/react"
+  ],
   "registryDependencies": [
     "http://localhost:3000/r/select.json",
     "http://localhost:3000/r/label.json"

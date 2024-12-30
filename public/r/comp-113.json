@@ -1,7 +1,9 @@
 {
   "name": "comp-113",
   "type": "registry:component",
-  "registryDependencies": ["http://localhost:3000/r/button.json"],
+  "registryDependencies": [
+    "http://localhost:3000/r/button.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-113.tsx",

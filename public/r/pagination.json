@@ -1,7 +1,9 @@
 {
   "name": "pagination",
   "type": "registry:ui",
-  "registryDependencies": ["button"],
+  "registryDependencies": [
+    "button"
+  ],
   "files": [
     {
       "path": "ui/pagination.tsx",

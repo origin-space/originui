@@ -1,7 +1,10 @@
 {
   "name": "comp-328",
   "type": "registry:component",
-  "dependencies": ["react-payment-inputs", "@types/react-payment-inputs"],
+  "dependencies": [
+    "react-payment-inputs",
+    "@types/react-payment-inputs"
+  ],
   "registryDependencies": [
     "http://localhost:3000/r/button.json",
     "http://localhost:3000/r/checkbox.json",

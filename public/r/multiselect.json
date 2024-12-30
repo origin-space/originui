@@ -1,7 +1,9 @@
 {
   "name": "multiselect",
   "type": "registry:ui",
-  "registryDependencies": ["http://localhost:3000/r/command.json"],
+  "registryDependencies": [
+    "http://localhost:3000/r/command.json"
+  ],
   "files": [
     {
       "path": "ui/multiselect.tsx",

@@ -1,7 +1,9 @@
 {
   "name": "comp-397",
   "type": "registry:component",
-  "registryDependencies": ["http://localhost:3000/r/avatar.json"],
+  "registryDependencies": [
+    "http://localhost:3000/r/avatar.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-397.tsx",

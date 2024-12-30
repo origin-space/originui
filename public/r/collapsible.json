@@ -1,7 +1,9 @@
 {
   "name": "collapsible",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-collapsible"],
+  "dependencies": [
+    "@radix-ui/react-collapsible"
+  ],
   "files": [
     {
       "path": "ui/collapsible.tsx",

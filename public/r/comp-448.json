@@ -1,7 +1,9 @@
 {
   "name": "comp-448",
   "type": "registry:component",
-  "registryDependencies": ["http://localhost:3000/r/breadcrumb.json"],
+  "registryDependencies": [
+    "http://localhost:3000/r/breadcrumb.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-448.tsx",

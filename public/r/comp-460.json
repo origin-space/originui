@@ -1,7 +1,9 @@
 {
   "name": "comp-460",
   "type": "registry:component",
-  "registryDependencies": ["http://localhost:3000/r/pagination.json"],
+  "registryDependencies": [
+    "http://localhost:3000/r/pagination.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-460.tsx",
