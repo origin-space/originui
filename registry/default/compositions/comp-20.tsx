@@ -1,16 +1,16 @@
-// Dependencies: pnpm install lucide-react
-
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
 import { Download } from "lucide-react";
+import { useId } from "react";
 
 export default function Component() {
+  const id = useId();
   return (
     <div className="space-y-2">
-      <Label htmlFor="input-20">Input with end icon button</Label>
+      <Label htmlFor={id}>Input with end icon button</Label>
       <div className="flex rounded-lg shadow-sm shadow-black/5">
         <Input
-          id="input-20"
+          id={id}
           className="-me-px flex-1 rounded-e-none shadow-none focus-visible:z-10"
           placeholder="Email"
           type="email"

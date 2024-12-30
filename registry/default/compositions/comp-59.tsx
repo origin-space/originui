@@ -1,11 +1,13 @@
 import { Label } from "@/registry/default/ui/label";
 import { Textarea } from "@/registry/default/ui/textarea";
+import { useId } from "react";
 
 export default function Component() {
+  const id = useId();
   return (
     <div className="space-y-2">
-      <Label htmlFor="textarea-01">Simple textarea</Label>
-      <Textarea id="textarea-01" placeholder="Leave a comment" />
+      <Label htmlFor={id}>Simple textarea</Label>
+      <Textarea id={id} placeholder="Leave a comment" />
     </div>
   );
 }

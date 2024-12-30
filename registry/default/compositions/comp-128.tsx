@@ -1,9 +1,7 @@
-// Dependencies: pnpm install lucide-react
-
 import { Button } from "@/registry/default/ui/button";
 import { ChevronRight } from "lucide-react";
 
-export default function ButtonDemo() {
+export default function Component() {
   return (
     <Button className="group h-auto gap-4 py-3 text-left" variant="outline">
       <div className="space-y-1">

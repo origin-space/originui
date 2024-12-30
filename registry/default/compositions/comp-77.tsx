@@ -2,9 +2,10 @@
 
 import { Label } from "@/registry/default/ui/label";
 import { Textarea } from "@/registry/default/ui/textarea";
-import { ChangeEvent, useRef } from "react";
+import { ChangeEvent, useId, useRef } from "react";
 
 export default function Component() {
+  const id = useId();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const defaultRows = 1;
   const maxRows = undefined; // You can set a max number of rows
@@ -27,9 +28,9 @@ export default function Component() {
 
   return (
     <div className="space-y-2">
-      <Label htmlFor="textarea-19">Autogrowing textarea</Label>
+      <Label htmlFor={id}>Autogrowing textarea</Label>
       <Textarea
-        id="textarea-19"
+        id={id}
         placeholder="Leave a comment"
         ref={textareaRef}
         onChange={handleInput}

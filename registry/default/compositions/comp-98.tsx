@@ -1,12 +1,10 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
 import { Button } from "@/registry/default/ui/button";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 
-export default function ButtonDemo() {
+export default function Component() {
   const [open, setOpen] = useState<boolean>(false);
 
   return (

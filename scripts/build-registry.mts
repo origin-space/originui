@@ -69,7 +69,7 @@ async function buildStyles(registry: Registry) {
       continue;
     }
 
-    let files;        
+    let files;
     if (item.files) {
       files = await Promise.all(
         item.files.map(async (_file) => {
@@ -87,8 +87,8 @@ async function buildStyles(registry: Registry) {
           try {
             content = await fs.readFile(
               path.join(process.cwd(), "registry", "default", file.path),
-              "utf8"
-            )            
+              "utf8",
+            );
           } catch (error) {
             console.error(`Build styles error: ${error}`);
             return;

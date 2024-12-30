@@ -1,18 +1,18 @@
-// Dependencies: pnpm install react-payment-inputs
-
 "use client";
 
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
+import { useId } from "react";
 import { usePaymentInputs } from "react-payment-inputs";
 
 export default function Component() {
+  const id = useId();
   const { getCVCProps } = usePaymentInputs();
 
   return (
     <div className="space-y-2">
-      <Label htmlFor="cvc">Code</Label>
-      <Input {...getCVCProps()} className="[direction:inherit]" />
+      <Label htmlFor={`cvc-${id}`}>Code</Label>
+      <Input {...getCVCProps()} id={`cvc-${id}`} className="[direction:inherit]" />
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
         Built with{" "}
         <a

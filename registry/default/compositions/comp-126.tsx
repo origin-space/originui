@@ -1,5 +1,3 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
 import { useImageUpload } from "@/registry/default/hooks/use-image-upload";
@@ -7,7 +5,7 @@ import { Button } from "@/registry/default/ui/button";
 import { CircleUserRound, X } from "lucide-react";
 import Image from "next/image";
 
-export default function ButtonDemo() {
+export default function Component() {
   const {
     previewUrl,
     fileInputRef,

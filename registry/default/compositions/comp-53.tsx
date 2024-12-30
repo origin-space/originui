@@ -1,5 +1,3 @@
-// Dependencies: pnpm install lucide-react @radix-ui/react-tooltip
-
 "use client";
 
 import { cn } from "@/registry/default/lib/utils";
@@ -12,9 +10,10 @@ import {
   TooltipTrigger,
 } from "@/registry/default/ui/tooltip";
 import { Check, Copy } from "lucide-react";
-import { useRef, useState } from "react";
+import { useId, useRef, useState } from "react";
 
 export default function Component() {
+  const id = useId();
   const [copied, setCopied] = useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -28,11 +27,11 @@ export default function Component() {
 
   return (
     <div className="space-y-2">
-      <Label htmlFor="input-53">Copy to clipboard</Label>
+      <Label htmlFor={id}>Copy to clipboard</Label>
       <div className="relative">
         <Input
           ref={inputRef}
-          id="input-53"
+          id={id}
           className="pe-9"
           type="text"
           defaultValue="pnpm install origin-ui"

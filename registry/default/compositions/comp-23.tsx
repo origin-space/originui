@@ -1,23 +1,22 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
 import { Eye, EyeOff } from "lucide-react";
-import { useState } from "react";
+import { useId, useState } from "react";
 
 export default function Component() {
+  const id = useId();
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   const toggleVisibility = () => setIsVisible((prevState) => !prevState);
 
   return (
     <div className="space-y-2">
-      <Label htmlFor="input-23">Show/hide password input</Label>
+      <Label htmlFor={id}>Show/hide password input</Label>
       <div className="relative">
         <Input
-          id="input-23"
+          id={id}
           className="pe-9"
           placeholder="Password"
           type={isVisible ? "text" : "password"}

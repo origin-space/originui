@@ -1,13 +1,15 @@
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
+import { useId } from "react";
 
 export default function Component() {
+  const id = useId();
   return (
     <div className="space-y-2">
-      <Label htmlFor="input-21">Input with end button</Label>
+      <Label htmlFor={id}>Input with end button</Label>
       <div className="flex rounded-lg shadow-sm shadow-black/5">
         <Input
-          id="input-21"
+          id={id}
           className="-me-px flex-1 rounded-e-none shadow-none focus-visible:z-10"
           placeholder="Email"
           type="email"

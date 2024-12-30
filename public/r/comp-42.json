@@ -1,13 +1,7 @@
 {
   "name": "comp-42",
   "type": "registry:component",
-  "dependencies": [
-    "lucide-react",
-    "react-aria-components"
-  ],
-  "registryDependencies": [
-    "utils"
-  ],
+  "dependencies": ["react-aria-components", "@internationalized/date"],
   "files": [
     {
       "path": "compositions/comp-42.tsx",
@@ -16,7 +10,5 @@
       "target": ""
     }
   ],
-  "tags": [
-    "React Aria"
-  ]
+  "tags": []
 }

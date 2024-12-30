@@ -3,7 +3,7 @@
 import { Button } from "@/registry/default/ui/button";
 import { useState } from "react";
 
-export default function ButtonDemo() {
+export default function Component() {
   const [open, setOpen] = useState<boolean>(false);
 
   return (

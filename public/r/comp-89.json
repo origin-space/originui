@@ -1,0 +1,14 @@
+{
+  "name": "comp-89",
+  "type": "registry:component",
+  "registryDependencies": ["http://localhost:3000/r/button.json"],
+  "files": [
+    {
+      "path": "compositions/comp-89.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\n\nexport default function Component() {\n  return (\n    <div className=\"inline-flex items-center gap-2\">\n      <Button variant=\"ghost\">Cancel</Button>\n      <Button>Save</Button>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "tags": []
+}

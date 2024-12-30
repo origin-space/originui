@@ -1,28 +1,27 @@
-// Dependencies: pnpm install react-phone-number-input lucide-react
-
 "use client";
 
 import { cn } from "@/registry/default/lib/utils";
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
 import { ChevronDown, Phone } from "lucide-react";
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef, useId, useState } from "react";
 import * as RPNInput from "react-phone-number-input";
 import flags from "react-phone-number-input/flags";
 
 export default function Component() {
+  const id = useId();
   const [value, setValue] = useState("");
 
   return (
     <div className="space-y-2" dir="ltr">
-      <Label htmlFor="input-46">Phone number input</Label>
+      <Label htmlFor={id}>Phone number input</Label>
       <RPNInput.default
         className="flex rounded-lg shadow-sm shadow-black/5"
         international
         flagComponent={FlagComponent}
         countrySelectComponent={CountrySelect}
         inputComponent={PhoneInput}
-        id="input-46"
+        id={id}
         placeholder="Enter phone number"
         value={value}
         onChange={(newValue) => setValue(newValue ?? "")}

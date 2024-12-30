@@ -22,6 +22,16 @@ export const hooks: Registry = [
     ],
   },
   {
+    name: "use-pagination",
+    type: "registry:hook",
+    files: [
+      {
+        path: "hooks/use-pagination.ts",
+        type: "registry:hook",
+      },
+    ],
+  },
+  {
     name: "use-slider-with-input",
     type: "registry:hook",
     files: [

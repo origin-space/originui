@@ -1,17 +1,17 @@
-// Dependencies: pnpm install use-mask-input
-
 "use client";
 
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
+import { useId } from "react";
 import { withMask } from "use-mask-input";
 
 export default function Component() {
+  const id = useId();
   return (
     <div className="space-y-2">
-      <Label htmlFor="input-55">Timestamp</Label>
+      <Label htmlFor={id}>Timestamp</Label>
       <Input
-        id="input-55"
+        id={id}
         placeholder="00:00:00"
         type="text"
         ref={withMask("99:99:99", {

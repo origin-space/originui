@@ -1,0 +1,17 @@
+{
+  "name": "comp-226",
+  "type": "registry:component",
+  "registryDependencies": [
+    "http://localhost:3000/r/select.json",
+    "http://localhost:3000/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "compositions/comp-226.tsx",
+      "content": "import Avatar01 from \"@/public/avatar-20-01.jpg\";\nimport Avatar02 from \"@/public/avatar-20-02.jpg\";\nimport Avatar03 from \"@/public/avatar-20-03.jpg\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport {\n  Select,\n  SelectContent,\n  SelectGroup,\n  SelectItem,\n  SelectLabel,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\nimport Image from \"next/image\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor={id}>Options with avatar</Label>\n      <Select defaultValue=\"1\">\n        <SelectTrigger\n          id={id}\n          className=\"ps-2 [&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_img]:shrink-0\"\n        >\n          <SelectValue placeholder=\"Select framework\" />\n        </SelectTrigger>\n        <SelectContent className=\"[&_*[role=option]>span]:end-2 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:flex [&_*[role=option]>span]:items-center [&_*[role=option]>span]:gap-2 [&_*[role=option]]:pe-8 [&_*[role=option]]:ps-2\">\n          <SelectGroup>\n            <SelectLabel className=\"ps-2\">Impersonate user</SelectLabel>\n            <SelectItem value=\"1\">\n              <Image\n                className=\"size-5 rounded\"\n                src={Avatar01}\n                alt=\"Frank Allison\"\n                width={20}\n                height={20}\n              />\n              <span className=\"truncate\">Jenny Hamilton</span>\n            </SelectItem>\n            <SelectItem value=\"2\">\n              <Image\n                className=\"size-5 rounded\"\n                src={Avatar02}\n                alt=\"Xavier Guerra\"\n                width={20}\n                height={20}\n              />\n              <span className=\"truncate\">Paul Smith</span>\n            </SelectItem>\n            <SelectItem value=\"3\">\n              <Image\n                className=\"size-5 rounded\"\n                src={Avatar03}\n                alt=\"Anne Kelley\"\n                width={20}\n                height={20}\n              />\n              <span className=\"truncate\">Luna Wyen</span>\n            </SelectItem>\n          </SelectGroup>\n        </SelectContent>\n      </Select>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "tags": []
+}

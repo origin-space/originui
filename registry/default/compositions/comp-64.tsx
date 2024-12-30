@@ -1,12 +1,14 @@
 import { Label } from "@/registry/default/ui/label";
 import { Textarea } from "@/registry/default/ui/textarea";
+import { useId } from "react";
 
 export default function Component() {
+  const id = useId();
   return (
     <div className="space-y-2">
-      <Label htmlFor="textarea-06">Textarea with error</Label>
+      <Label htmlFor={id}>Textarea with error</Label>
       <Textarea
-        id="textarea-06"
+        id={id}
         className="border-destructive/80 text-destructive focus-visible:border-destructive/80 focus-visible:ring-destructive/20"
         placeholder="Leave a comment"
         defaultValue="Hello!"

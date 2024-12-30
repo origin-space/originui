@@ -1,5 +1,3 @@
-// Dependencies: pnpm install lucide-react @radix-ui/react-tooltip
-
 "use client";
 
 import { Button } from "@/registry/default/ui/button";
@@ -11,7 +9,7 @@ import {
 } from "@/registry/default/ui/tooltip";
 import { Plus } from "lucide-react";
 
-export default function ButtonDemo() {
+export default function Component() {
   return (
     <TooltipProvider delayDuration={0}>
       <Tooltip>

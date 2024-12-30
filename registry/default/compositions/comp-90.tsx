@@ -1,9 +1,7 @@
-// Dependencies: pnpm install lucide-react
-
 import { Button } from "@/registry/default/ui/button";
 import { LoaderCircle } from "lucide-react";
 
-export default function ButtonDemo() {
+export default function Component() {
   return (
     <Button disabled>
       <LoaderCircle

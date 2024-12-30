@@ -1,5 +1,3 @@
-// Dependencies: pnpm install @radix-ui/react-tooltip
-
 "use client";
 
 import { cn } from "@/registry/default/lib/utils";
@@ -13,7 +11,7 @@ import {
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
 
-export default function ButtonDemo() {
+export default function Component() {
   const [copied, setCopied] = useState<boolean>(false);
 
   const handleCopy = async () => {

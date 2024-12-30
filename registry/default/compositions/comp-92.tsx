@@ -1,6 +1,6 @@
 import { Button } from "@/registry/default/ui/button";
 
-export default function ButtonDemo() {
+export default function Component() {
   return (
     <Button variant="outline">
       Messages

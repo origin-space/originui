@@ -1,5 +1,3 @@
-// Dependencies: pnpm install lucide-react react-aria-components
-
 "use client";
 
 import { ChevronDown, ChevronUp } from "lucide-react";

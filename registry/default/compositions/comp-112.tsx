@@ -1,9 +1,7 @@
-// Dependencies: pnpm install lucide-react
-
 import { Button } from "@/registry/default/ui/button";
 import { SquareArrowOutUpRight } from "lucide-react";
 
-export default function ButtonDemo() {
+export default function Component() {
   return (
     <div className="inline-flex -space-x-px rounded-lg shadow-sm shadow-black/5 rtl:space-x-reverse">
       <Button

@@ -1,12 +1,10 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
 import { Button } from "@/registry/default/ui/button";
 import { Minus, Plus, Volume, Volume1, Volume2, VolumeX } from "lucide-react";
 import { useState } from "react";
 
-export default function ButtonDemo() {
+export default function Component() {
   const [volume, setVolume] = useState(3); // Initialize volume state (0-9)
 
   const decreaseVolume = () => setVolume((prev) => Math.max(0, prev - 1));

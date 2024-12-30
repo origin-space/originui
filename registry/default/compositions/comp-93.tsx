@@ -1,9 +1,7 @@
-// Dependencies: pnpm install lucide-react
-
 import { Button } from "@/registry/default/ui/button";
 import { Printer } from "lucide-react";
 
-export default function ButtonDemo() {
+export default function Component() {
   return (
     <Button variant="outline">
       <Printer className="-ms-1 me-2 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />

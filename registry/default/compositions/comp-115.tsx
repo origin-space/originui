@@ -1,9 +1,7 @@
-// Dependencies: pnpm install lucide-react
-
 import { Button } from "@/registry/default/ui/button";
 import { ChevronLeft } from "lucide-react";
 
-export default function ButtonDemo() {
+export default function Component() {
   return (
     <Button className="relative ps-12">
       Previous

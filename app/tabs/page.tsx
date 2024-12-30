@@ -1,6 +1,6 @@
-import Cta from "@/demo/cta";
-import DemoComponent from "@/demo/demo-component";
-import PageHeader from "@/demo/page-header";
+import Cta from "@/components/cta";
+import DemoComponent from "@/components/demo-component";
+import PageHeader from "@/components/page-header";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,28 +9,33 @@ export const metadata: Metadata = {
     "A collection of beautiful and accessible tab components built with Tailwind CSS and Next.js.",
 };
 
-const directory = "tabs";
-const files = [
-  "tab-01",
-  "tab-02",
-  "tab-03",
-  "tab-04",
-  "tab-05",
-  "tab-06",
-  "tab-07",
-  "tab-08",
-  "tab-09",
-  "tab-10",
-  "tab-11",
-  "tab-12",
-  "tab-13",
-  "tab-14",
-  "tab-15",
-  "tab-16",
-  "tab-17",
-  "tab-18",
-  "tab-19",
-  "tab-20",
+type Component = {
+  name: string;
+  className?: string;
+};
+
+const center = "text-center";
+const components: Component[] = [
+  { name: "comp-426", className: center },
+  { name: "comp-427", className: center },
+  { name: "comp-428", className: center },
+  { name: "comp-429", className: center },
+  { name: "comp-430", className: center },
+  { name: "comp-431", className: center },
+  { name: "comp-432", className: center },
+  { name: "comp-433", className: center },
+  { name: "comp-434", className: center },
+  { name: "comp-435", className: center },
+  { name: "comp-436", className: center },
+  { name: "comp-437", className: center },
+  { name: "comp-438", className: center },
+  { name: "comp-439", className: center },
+  { name: "comp-440", className: center },
+  { name: "comp-441", className: center },
+  { name: "comp-442", className: center },
+  { name: "comp-443", className: center },
+  { name: "comp-444", className: center },
+  { name: "comp-445", className: center },
 ];
 
 export default function Page() {
@@ -39,18 +44,17 @@ export default function Page() {
       <div className="px-4 sm:px-6">
         <div className="mx-auto w-full max-w-6xl">
           <PageHeader title="Tab">
-            A growing collection of {files.length} tab components built with Next.js and
+            A growing collection of {components.length} tab components built with Next.js and
             TailwindCSS.
           </PageHeader>
 
           <div className="grid max-w-6xl grid-cols-1 overflow-hidden sm:grid-cols-2 [&>*]:relative [&>*]:px-1 [&>*]:py-12 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-8 xl:[&>*]:px-12">
-            {files.map((componentName) => {
+            {components.map((component) => {
               return (
                 <DemoComponent
-                  key={componentName}
-                  directory={directory}
-                  componentName={componentName}
-                  className="text-center"
+                  key={component.name}
+                  componentName={component.name}
+                  className={component.className}
                 />
               );
             })}

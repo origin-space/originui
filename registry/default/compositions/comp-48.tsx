@@ -1,18 +1,18 @@
-// Dependencies: pnpm install react-payment-inputs
-
 "use client";
 
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
+import { useId } from "react";
 import { usePaymentInputs } from "react-payment-inputs";
 
 export default function Component() {
+  const id = useId();
   const { getExpiryDateProps } = usePaymentInputs();
 
   return (
     <div className="space-y-2">
-      <Label htmlFor="expiryDate">Expiry date</Label>
-      <Input {...getExpiryDateProps()} className="[direction:inherit]" />
+      <Label htmlFor={`expiry-${id}`}>Expiry date</Label>
+      <Input {...getExpiryDateProps()} id={`expiry-${id}`} className="[direction:inherit]" />
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
         Built with{" "}
         <a

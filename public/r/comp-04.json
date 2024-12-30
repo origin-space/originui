@@ -1,10 +1,14 @@
 {
   "name": "comp-04",
   "type": "registry:component",
+  "registryDependencies": [
+    "http://localhost:3000/r/input.json",
+    "http://localhost:3000/r/label.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-04.tsx",
-      "content": "import { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function Component() {\n  return (\n    <>\n      <div className=\"mb-2 flex items-center justify-between gap-1\">\n        <Label htmlFor=\"input-04\" className=\"leading-6\">\n          Input with hint\n        </Label>\n        <span className=\"text-sm text-muted-foreground\">Optional</span>\n      </div>\n      <Input id=\"input-04\" placeholder=\"Email\" type=\"email\" />\n    </>\n  );\n}\n",
+      "content": "import { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <>\n      <div className=\"mb-2 flex items-center justify-between gap-1\">\n        <Label htmlFor={id} className=\"leading-6\">\n          Input with hint\n        </Label>\n        <span className=\"text-sm text-muted-foreground\">Optional</span>\n      </div>\n      <Input id={id} placeholder=\"Email\" type=\"email\" />\n    </>\n  );\n}\n",
       "type": "registry:component",
       "target": ""
     }

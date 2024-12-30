@@ -1,13 +1,12 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
 import { CircleX } from "lucide-react";
-import { useRef, useState } from "react";
+import { useId, useRef, useState } from "react";
 
 export default function Component() {
+  const id = useId();
   const [inputValue, setInputValue] = useState("Click to clear");
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -20,10 +19,10 @@ export default function Component() {
 
   return (
     <div className="space-y-2">
-      <Label htmlFor="input-24">Input with clear button</Label>
+      <Label htmlFor={id}>Input with clear button</Label>
       <div className="relative">
         <Input
-          id="input-24"
+          id={id}
           ref={inputRef}
           className="pe-9"
           placeholder="Type something..."

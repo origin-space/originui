@@ -1,13 +1,12 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
 import { LoaderCircle, Mic, Search } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 
 export default function Component() {
+  const id = useId();
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -24,10 +23,10 @@ export default function Component() {
 
   return (
     <div className="space-y-2">
-      <Label htmlFor="input-27">Search input with loader</Label>
+      <Label htmlFor={id}>Search input with loader</Label>
       <div className="relative">
         <Input
-          id="input-27"
+          id={id}
           className="peer pe-9 ps-9"
           placeholder="Search..."
           type="search"

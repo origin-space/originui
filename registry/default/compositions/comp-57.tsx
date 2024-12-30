@@ -1,11 +1,9 @@
-// Dependencies: pnpm install emblor
-// Add the following to tailwind.config.ts: "./node_modules/emblor/dist/index.mjs",
-
 "use client";
+// Add the following to tailwind.config.ts: "./node_modules/emblor/dist/index.mjs",
 
 import { Label } from "@/registry/default/ui/label";
 import { Tag, TagInput } from "emblor";
-import { useState } from "react";
+import { useId, useState } from "react";
 
 const tags = [
   {
@@ -15,14 +13,15 @@ const tags = [
 ];
 
 export default function Component() {
+  const id = useId();
   const [exampleTags, setExampleTags] = useState<Tag[]>(tags);
   const [activeTagIndex, setActiveTagIndex] = useState<number | null>(null);
 
   return (
     <div className="space-y-2">
-      <Label htmlFor="input-57">Input with inner tags</Label>
+      <Label htmlFor={id}>Input with inner tags</Label>
       <TagInput
-        id="input-57"
+        id={id}
         tags={exampleTags}
         setTags={(newTags) => {
           setExampleTags(newTags);

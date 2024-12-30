@@ -1,5 +1,3 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
 import { Button } from "@/registry/default/ui/button";
@@ -30,7 +28,7 @@ const options = [
   },
 ];
 
-export default function ButtonDemo() {
+export default function Component() {
   const [selectedIndex, setSelectedIndex] = useState("0");
 
   return (

@@ -1,13 +1,13 @@
-// Dependencies: pnpm install lucide-react
-
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
 import { ChevronDown } from "lucide-react";
+import { useId } from "react";
 
 export default function Component() {
+  const id = useId();
   return (
     <div className="space-y-2">
-      <Label htmlFor="input-17">Input with start select</Label>
+      <Label htmlFor={id}>Input with start select</Label>
       <div className="flex rounded-lg shadow-sm shadow-black/5">
         <div className="relative">
           <select
@@ -26,7 +26,7 @@ export default function Component() {
           </span>
         </div>
         <Input
-          id="input-17"
+          id={id}
           className="-ms-px rounded-s-none shadow-none focus-visible:z-10"
           placeholder="192.168.1.1"
           type="text"

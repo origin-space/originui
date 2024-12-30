@@ -1,9 +1,7 @@
-// Dependencies: pnpm install lucide-react
-
 import { Button } from "@/registry/default/ui/button";
 import { ThumbsUp } from "lucide-react";
 
-export default function ButtonDemo() {
+export default function Component() {
   return (
     <Button className="py-0 pe-0" variant="outline">
       <ThumbsUp className="me-2 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />

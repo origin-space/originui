@@ -1,11 +1,9 @@
-// Dependencies: pnpm install @radix-ui/react-toggle-group
-
 "use client";
 
 import { ToggleGroup, ToggleGroupItem } from "@/registry/default/ui/toggle-group";
 import { useState } from "react";
 
-export default function ButtonDemo() {
+export default function Component() {
   const [value, setValue] = useState<string>("left");
 
   return (

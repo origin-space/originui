@@ -5,7 +5,7 @@ import { Button } from "@/registry/default/ui/button";
 import { CircleUserRound } from "lucide-react";
 import Image from "next/image";
 
-export default function ButtonDemo() {
+export default function Component() {
   const {
     previewUrl,
     fileInputRef,

@@ -1,5 +1,3 @@
-// Dependencies: pnpm install lucide-react react-aria-components
-
 "use client";
 
 import { cn } from "@/registry/default/lib/utils";

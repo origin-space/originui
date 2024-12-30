@@ -1,13 +1,12 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
 import { Check, Eye, EyeOff, X } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useId, useMemo, useState } from "react";
 
 export default function Component() {
+  const id = useId();
   const [password, setPassword] = useState("");
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
@@ -52,17 +51,17 @@ export default function Component() {
     <div>
       {/* Password input field with toggle visibility button */}
       <div className="space-y-2">
-        <Label htmlFor="input-51">Input with password strength indicator</Label>
+        <Label htmlFor={id}>Input with password strength indicator</Label>
         <div className="relative">
           <Input
-            id="input-51"
+            id={id}
             className="pe-9"
             placeholder="Password"
             type={isVisible ? "text" : "password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             aria-invalid={strengthScore < 4}
-            aria-describedby="password-strength"
+            aria-describedby={`${id}-description`}
           />
           <button
             className="absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg text-muted-foreground/80 outline-offset-2 transition-colors hover:text-foreground focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
@@ -97,7 +96,7 @@ export default function Component() {
       </div>
 
       {/* Password strength description */}
-      <p id="password-strength" className="mb-2 text-sm font-medium text-foreground">
+      <p id={`${id}-description`} className="mb-2 text-sm font-medium text-foreground">
         {getStrengthText(strengthScore)}. Must contain:
       </p>
 

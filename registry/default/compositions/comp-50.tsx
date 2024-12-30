@@ -1,13 +1,13 @@
-// Dependencies: pnpm install react-payment-inputs lucide-react
-
 "use client";
 
 import { Input } from "@/registry/default/ui/input";
 import { CreditCard } from "lucide-react";
+import { useId } from "react";
 import { usePaymentInputs } from "react-payment-inputs";
 import images, { type CardImages } from "react-payment-inputs/images";
 
 export default function Component() {
+  const id = useId();
   const { meta, getCardNumberProps, getExpiryDateProps, getCVCProps, getCardImageProps } =
     usePaymentInputs();
 
@@ -19,6 +19,7 @@ export default function Component() {
           <Input
             className="peer rounded-b-none pe-9 shadow-none [direction:inherit]"
             {...getCardNumberProps()}
+            id={`number-${id}`}
           />
           <div className="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground/80 peer-disabled:opacity-50">
             {meta.cardType ? (
@@ -37,12 +38,14 @@ export default function Component() {
             <Input
               className="rounded-e-none rounded-t-none shadow-none [direction:inherit]"
               {...getExpiryDateProps()}
+              id={`expiry-${id}`}
             />
           </div>
           <div className="-ms-px min-w-0 flex-1 focus-within:z-10">
             <Input
               className="rounded-s-none rounded-t-none shadow-none [direction:inherit]"
               {...getCVCProps()}
+              id={`cvc-${id}`}
             />
           </div>
         </div>

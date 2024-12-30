@@ -1,18 +1,18 @@
-// Dependencies: pnpm install input-otp lucide-react
-
 "use client";
 
 import { cn } from "@/registry/default/lib/utils";
 import { Label } from "@/registry/default/ui/label";
 import { OTPInput, SlotProps } from "input-otp";
 import { Minus } from "lucide-react";
+import { useId } from "react";
 
 export default function Component() {
+  const id = useId();
   return (
     <div className="space-y-2">
-      <Label htmlFor="input-45">OTP input double</Label>
+      <Label htmlFor={id}>OTP input double</Label>
       <OTPInput
-        id="input-45"
+        id={id}
         containerClassName="flex items-center gap-3 has-[:disabled]:opacity-50"
         maxLength={6}
         render={({ slots }) => (

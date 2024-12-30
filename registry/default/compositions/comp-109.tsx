@@ -1,8 +1,6 @@
-// Dependencies: pnpm install @radix-ui/react-toggle-group
-
 import { ToggleGroup, ToggleGroupItem } from "@/registry/default/ui/toggle-group";
 
-export default function ButtonDemo() {
+export default function Component() {
   return (
     <ToggleGroup
       variant="outline"

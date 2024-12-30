@@ -1,12 +1,10 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
 import { Button } from "@/registry/default/ui/button";
 import { LoaderCircle } from "lucide-react";
 import { useState } from "react";
 
-export default function ButtonDemo() {
+export default function Component() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleClick = () => {

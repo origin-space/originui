@@ -1,19 +1,17 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
 import { Toggle } from "@/registry/default/ui/toggle";
 import { Moon, Sun } from "lucide-react";
 import { useState } from "react";
 
-export default function ButtonDemo() {
+export default function Component() {
   const [theme, setTheme] = useState<string>("light");
 
   return (
     <div>
       <Toggle
         variant="outline"
-        className="group size-9"
+        className="group size-9 data-[state=on]:bg-transparent data-[state=on]:hover:bg-muted"
         pressed={theme === "dark"}
         onPressedChange={() => setTheme((prev) => (prev === "dark" ? "light" : "dark"))}
         aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}

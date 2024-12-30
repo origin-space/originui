@@ -1,10 +1,7 @@
 {
   "name": "utils",
   "type": "registry:lib",
-  "dependencies": [
-    "clsx",
-    "tailwind-merge"
-  ],
+  "dependencies": ["clsx", "tailwind-merge"],
   "files": [
     {
       "path": "lib/utils.ts",

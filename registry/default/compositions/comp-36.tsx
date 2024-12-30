@@ -1,5 +1,3 @@
-// Dependencies: pnpm install react-aria-components
-
 "use client";
 
 import { DateField, DateInput, DateSegment, Label } from "react-aria-components";

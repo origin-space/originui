@@ -3,8 +3,10 @@
 import { useCharacterLimit } from "@/registry/default/hooks/use-character-limit";
 import { Label } from "@/registry/default/ui/label";
 import { Textarea } from "@/registry/default/ui/textarea";
+import { useId } from "react";
 
 export default function Component() {
+  const id = useId();
   const maxLength = 180;
   const {
     value,
@@ -15,16 +17,16 @@ export default function Component() {
 
   return (
     <div className="space-y-2">
-      <Label htmlFor="textarea-16">Textarea with characters left</Label>
+      <Label htmlFor={id}>Textarea with characters left</Label>
       <Textarea
-        id="textarea-16"
+        id={id}
         value={value}
         maxLength={maxLength}
         onChange={handleChange}
-        aria-describedby="characters-left-textarea"
+        aria-describedby={`${id}-description`}
       />
       <p
-        id="characters-left-textarea"
+        id={`${id}-description`}
         className="mt-2 text-right text-xs text-muted-foreground"
         role="status"
         aria-live="polite"

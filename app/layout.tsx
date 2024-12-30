@@ -1,7 +1,7 @@
+import Header from "@/components/header";
+import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster as Sonner } from "@/registry/default/ui/sonner";
 import { Toaster } from "@/registry/default/ui/toaster";
-import Header from "@/demo/header";
-import { ThemeProvider } from "@/demo/theme-provider";
 import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono as FontMono, Inter as FontSans } from "next/font/google";
 import Script from "next/script";

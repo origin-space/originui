@@ -1,5 +1,3 @@
-// Dependencies: pnpm install lucide-react @radix-ui/react-tooltip @radix-ui/react-toggle
-
 "use client";
 
 import { Toggle } from "@/registry/default/ui/toggle";
@@ -12,7 +10,7 @@ import {
 import { Bookmark } from "lucide-react";
 import { useState } from "react";
 
-export default function ButtonDemo() {
+export default function Component() {
   const [bookmarked, setBookmarked] = useState<boolean>(false);
   return (
     <TooltipProvider>

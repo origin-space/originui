@@ -1,13 +1,15 @@
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
+import { useId } from "react";
 
 export default function Component() {
+  const id = useId();
   return (
     <div className="space-y-2">
-      <Label htmlFor="input-15">Input with end add-on</Label>
+      <Label htmlFor={id}>Input with end add-on</Label>
       <div className="flex rounded-lg shadow-sm shadow-black/5">
         <Input
-          id="input-15"
+          id={id}
           className="-me-px rounded-e-none shadow-none"
           placeholder="google"
           type="text"

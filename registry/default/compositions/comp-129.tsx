@@ -1,5 +1,3 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
 import { Badge } from "@/registry/default/ui/badge";
@@ -7,7 +5,7 @@ import { Button } from "@/registry/default/ui/button";
 import { Bell } from "lucide-react";
 import { useState } from "react";
 
-export default function ButtonDemo() {
+export default function Component() {
   const [count, setCount] = useState(3);
 
   const handleClick = () => {

@@ -1,9 +1,7 @@
-// Dependencies: pnpm install @remixicon/react
-
 import { Button } from "@/registry/default/ui/button";
 import { RiFacebookFill, RiGithubFill, RiGoogleFill, RiTwitterXFill } from "@remixicon/react";
 
-export default function ButtonDemo() {
+export default function Component() {
   return (
     <div className="flex flex-col gap-2">
       <Button variant="outline">

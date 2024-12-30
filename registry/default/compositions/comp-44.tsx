@@ -1,17 +1,17 @@
-// Dependencies: pnpm install input-otp
-
 "use client";
 
 import { cn } from "@/registry/default/lib/utils";
 import { Label } from "@/registry/default/ui/label";
 import { OTPInput, SlotProps } from "input-otp";
+import { useId } from "react";
 
 export default function Component() {
+  const id = useId();
   return (
     <div className="space-y-2">
-      <Label htmlFor="input-44">OTP input single</Label>
+      <Label htmlFor={id}>OTP input single</Label>
       <OTPInput
-        id="input-44"
+        id={id}
         containerClassName="flex items-center gap-3 has-[:disabled]:opacity-50"
         maxLength={4}
         render={({ slots }) => (

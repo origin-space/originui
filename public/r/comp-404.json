@@ -1,0 +1,13 @@
+{
+  "name": "comp-404",
+  "type": "registry:component",
+  "files": [
+    {
+      "path": "compositions/comp-404.tsx",
+      "content": "import AvatarImg03 from \"@/public/avatar-80-03.jpg\";\nimport AvatarImg02 from \"@/public/avatar-80-05.jpg\";\nimport AvatarImg01 from \"@/public/avatar-80-06.jpg\";\nimport AvatarImg04 from \"@/public/avatar-80-07.jpg\";\nimport Image from \"next/image\";\n\nexport default function Component() {\n  return (\n    <div className=\"flex -space-x-[0.675rem]\">\n      <Image\n        className=\"rounded-full ring-2 ring-background\"\n        src={AvatarImg01}\n        width={36}\n        height={36}\n        alt=\"Avatar 01\"\n      />\n      <Image\n        className=\"rounded-full ring-2 ring-background\"\n        src={AvatarImg02}\n        width={36}\n        height={36}\n        alt=\"Avatar 02\"\n      />\n      <Image\n        className=\"rounded-full ring-2 ring-background\"\n        src={AvatarImg03}\n        width={36}\n        height={36}\n        alt=\"Avatar 03\"\n      />\n      <Image\n        className=\"rounded-full ring-2 ring-background\"\n        src={AvatarImg04}\n        width={36}\n        height={36}\n        alt=\"Avatar 04\"\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "tags": []
+}

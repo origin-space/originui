@@ -1,12 +1,10 @@
-// Dependencies: pnpm install lucide-react
-
 "use client";
 
 import { Button } from "@/registry/default/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 
-export default function ButtonDemo() {
+export default function Component() {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   const toggleExpand = () => {

@@ -1,10 +1,14 @@
 {
   "name": "comp-03",
   "type": "registry:component",
+  "registryDependencies": [
+    "http://localhost:3000/r/input.json",
+    "http://localhost:3000/r/label.json"
+  ],
   "files": [
     {
       "path": "compositions/comp-03.tsx",
-      "content": "import { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nexport default function Component() {\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor=\"input-03\">Input with helper text</Label>\n      <Input id=\"input-03\" placeholder=\"Email\" type=\"email\" />\n      <p className=\"mt-2 text-xs text-muted-foreground\" role=\"region\" aria-live=\"polite\">\n        We won&lsquo;t share your email with anyone\n      </p>\n    </div>\n  );\n}\n",
+      "content": "import { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor={id}>Input with helper text</Label>\n      <Input id={id} placeholder=\"Email\" type=\"email\" />\n      <p className=\"mt-2 text-xs text-muted-foreground\" role=\"region\" aria-live=\"polite\">\n        We won&lsquo;t share your email with anyone\n      </p>\n    </div>\n  );\n}\n",
       "type": "registry:component",
       "target": ""
     }

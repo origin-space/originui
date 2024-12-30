@@ -1,0 +1,14 @@
+{
+  "name": "comp-95",
+  "type": "registry:component",
+  "registryDependencies": ["http://localhost:3000/r/button.json"],
+  "files": [
+    {
+      "path": "compositions/comp-95.tsx",
+      "content": "import AvatarImg from \"@/public/avatar.jpg\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { ChevronDown } from \"lucide-react\";\nimport Image from \"next/image\";\n\nexport default function Component() {\n  return (\n    <Button variant=\"ghost\" className=\"h-auto p-0 hover:bg-transparent\">\n      <Image\n        className=\"rounded-full\"\n        src={AvatarImg}\n        alt=\"Profile image\"\n        width={40}\n        height={40}\n        aria-hidden=\"true\"\n      />\n      <ChevronDown size={16} strokeWidth={2} className=\"ms-2 opacity-60\" aria-hidden=\"true\" />\n    </Button>\n  );\n}\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "tags": []
+}

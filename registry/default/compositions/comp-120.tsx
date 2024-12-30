@@ -1,9 +1,7 @@
-// Dependencies: pnpm install @remixicon/react
-
 import { Button } from "@/registry/default/ui/button";
 import { RiFacebookFill, RiGithubFill, RiGoogleFill, RiTwitterXFill } from "@remixicon/react";
 
-export default function ButtonDemo() {
+export default function Component() {
   return (
     <div className="flex flex-wrap gap-2">
       <Button className="flex-1" variant="outline" aria-label="Login with Google" size="icon">

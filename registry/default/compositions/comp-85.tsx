@@ -1,9 +1,7 @@
-// Dependencies: pnpm install lucide-react
-
 import { Button } from "@/registry/default/ui/button";
 import { ArrowLeft } from "lucide-react";
 
-export default function ButtonDemo() {
+export default function Component() {
   return (
     <Button className="group" variant="ghost">
       <ArrowLeft
