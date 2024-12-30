@@ -1,18 +1,14 @@
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/registry/default/ui/hover-card";
 
-import Image from "next/image";
-
-import ContentImg from "@/public/dialog-content.png";
-
 export default function HoverCardDemo() {
   return (
     <div className="max-w-md text-sm">
       <HoverCard>
         <HoverCardTrigger asChild>
           <a className="flex size-16 overflow-hidden rounded-lg" href="#">
-            <Image
+            <img
               className="h-full w-full object-cover"
-              src={ContentImg}
+              src="/dialog-content.png"
               width={382}
               height={216}
               alt="Content image"

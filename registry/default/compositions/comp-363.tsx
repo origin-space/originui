@@ -1,9 +1,5 @@
-import Image from "next/image";
-
 import { Button } from "@/registry/default/ui/button";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/registry/default/ui/hover-card";
-
-import AvatarImg from "@/public/avatar-40-04.jpg";
 
 export default function HoverCardDemo() {
   return (
@@ -15,15 +11,15 @@ export default function HoverCardDemo() {
           asChild
         >
           <a href="#">
-            <Image src={AvatarImg} width={40} height={40} alt="Avatar" />
+            <img src="/avatar-40-04.jpg" width={40} height={40} alt="Avatar" />
           </a>
         </Button>
       </HoverCardTrigger>
       <HoverCardContent className="w-[340px]">
         <div className="flex items-start gap-3">
-          <Image
+          <img
             className="shrink-0 rounded-full"
-            src={AvatarImg}
+            src="/avatar-40-04.jpg"
             width={40}
             height={40}
             alt="Avatar"

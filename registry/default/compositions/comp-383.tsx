@@ -4,20 +4,12 @@ import { Badge } from "@/registry/default/ui/badge";
 import { Button } from "@/registry/default/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
 import { Bell } from "lucide-react";
-import Image from "next/image";
 import { useState } from "react";
-
-import UserImg01 from "@/public/avatar-80-01.jpg";
-import UserImg02 from "@/public/avatar-80-02.jpg";
-import UserImg03 from "@/public/avatar-80-03.jpg";
-import UserImg04 from "@/public/avatar-80-04.jpg";
-import UserImg05 from "@/public/avatar-80-05.jpg";
-import UserImg06 from "@/public/avatar-80-06.jpg";
 
 const initialNotifications = [
   {
     id: 1,
-    image: UserImg01,
+    image: "/avatar-80-01.jpg",
     user: "Chris Tompson",
     action: "requested review on",
     target: "PR #42: Feature implementation",
@@ -26,7 +18,7 @@ const initialNotifications = [
   },
   {
     id: 2,
-    image: UserImg02,
+    image: "/avatar-80-02.jpg",
     user: "Emma Davis",
     action: "shared",
     target: "New component library",
@@ -35,7 +27,7 @@ const initialNotifications = [
   },
   {
     id: 3,
-    image: UserImg03,
+    image: "/avatar-80-03.jpg",
     user: "James Wilson",
     action: "assigned you to",
     target: "API integration task",
@@ -44,7 +36,7 @@ const initialNotifications = [
   },
   {
     id: 4,
-    image: UserImg04,
+    image: "/avatar-80-04.jpg",
     user: "Alex Morgan",
     action: "replied to your comment in",
     target: "Authentication flow",
@@ -53,7 +45,7 @@ const initialNotifications = [
   },
   {
     id: 5,
-    image: UserImg05,
+    image: "/avatar-80-05.jpg",
     user: "Sarah Chen",
     action: "commented on",
     target: "Dashboard redesign",
@@ -62,7 +54,7 @@ const initialNotifications = [
   },
   {
     id: 6,
-    image: UserImg06,
+    image: "/avatar-80-06.jpg",
     user: "Miky Derya",
     action: "mentioned you in",
     target: "Origin UI open graph image",
@@ -140,7 +132,7 @@ export default function Component() {
             className="rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent"
           >
             <div className="relative flex items-start gap-3 pe-3">
-              <Image
+              <img
                 className="size-9 rounded-md"
                 src={notification.image}
                 width={32}

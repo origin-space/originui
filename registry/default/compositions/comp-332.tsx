@@ -1,6 +1,5 @@
 "use client";
 
-import DialogImg from "@/public/dialog-content.png";
 import { cn } from "@/registry/default/lib/utils";
 import { Button } from "@/registry/default/ui/button";
 import {
@@ -14,7 +13,6 @@ import {
   DialogTrigger,
 } from "@/registry/default/ui/dialog";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 import { useState } from "react";
 
 export default function Component() {
@@ -61,9 +59,9 @@ export default function Component() {
       </DialogTrigger>
       <DialogContent className="gap-0 p-0 [&>button:last-child]:text-white">
         <div className="p-2">
-          <Image
+          <img
             className="w-full rounded-lg"
-            src={DialogImg}
+            src="/dialog-content.png"
             width={382}
             height={216}
             alt="dialog"

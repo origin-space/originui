@@ -1,15 +1,11 @@
-import UiDark from "@/public/ui-dark.png";
-import UiLight from "@/public/ui-light.png";
-import UiSystem from "@/public/ui-system.png";
 import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 import { Check, Minus } from "lucide-react";
-import Image from "next/image";
 import { useId } from "react";
 
 const items = [
-  { value: "1", label: "Light", image: UiLight },
-  { value: "2", label: "Dark", image: UiDark },
-  { value: "3", label: "System", image: UiSystem },
+  { value: "1", label: "Light", image: "/ui-light.png" },
+  { value: "2", label: "Dark", image: "/ui-dark.png" },
+  { value: "3", label: "System", image: "/ui-system.png" },
 ];
 
 export default function Component() {
@@ -25,7 +21,7 @@ export default function Component() {
               value={item.value}
               className="peer sr-only after:absolute after:inset-0"
             />
-            <Image
+            <img
               src={item.image}
               alt={item.label}
               width={88}

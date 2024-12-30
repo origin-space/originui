@@ -1,7 +1,5 @@
 "use client";
 
-import AvatarImg from "@/public/avatar-72-01.jpg";
-import ProfileBgImg from "@/public/profile-bg.jpg";
 import { useCharacterLimit } from "@/registry/default/hooks/use-character-limit";
 import { useImageUpload } from "@/registry/default/hooks/use-image-upload";
 import { Button } from "@/registry/default/ui/button";
@@ -19,7 +17,6 @@ import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
 import { Textarea } from "@/registry/default/ui/textarea";
 import { Check, ImagePlus, X } from "lucide-react";
-import Image, { StaticImageData } from "next/image";
 import { useId, useState } from "react";
 
 export default function Component() {
@@ -52,8 +49,8 @@ export default function Component() {
           Make changes to your profile here. You can change your photo and set a username.
         </DialogDescription>
         <div className="overflow-y-auto">
-          <ProfileBg defaultImage={ProfileBgImg} />
-          <Avatar defaultImage={AvatarImg} />
+          <ProfileBg defaultImage="/profile-bg.jpg" />
+          <Avatar defaultImage="/avatar-72-01.jpg" />
           <div className="px-6 pb-6 pt-4">
             <form className="space-y-4">
               <div className="flex flex-col gap-4 sm:flex-row">
@@ -151,7 +148,7 @@ export default function Component() {
   );
 }
 
-function ProfileBg({ defaultImage }: { defaultImage?: StaticImageData }) {
+function ProfileBg({ defaultImage }: { defaultImage?: string }) {
   const [hideDefault, setHideDefault] = useState(false);
   const { previewUrl, fileInputRef, handleThumbnailClick, handleFileChange, handleRemove } =
     useImageUpload();
@@ -167,7 +164,7 @@ function ProfileBg({ defaultImage }: { defaultImage?: StaticImageData }) {
     <div className="h-32">
       <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-muted">
         {currentImage && (
-          <Image
+          <img
             className="h-full w-full object-cover"
             src={currentImage}
             alt={previewUrl ? "Preview of uploaded image" : "Default profile background"}
@@ -208,7 +205,7 @@ function ProfileBg({ defaultImage }: { defaultImage?: StaticImageData }) {
   );
 }
 
-function Avatar({ defaultImage }: { defaultImage?: StaticImageData }) {
+function Avatar({ defaultImage }: { defaultImage?: string }) {
   const { previewUrl, fileInputRef, handleThumbnailClick, handleFileChange } = useImageUpload();
 
   const currentImage = previewUrl || defaultImage;
@@ -217,7 +214,7 @@ function Avatar({ defaultImage }: { defaultImage?: StaticImageData }) {
     <div className="-mt-10 px-6">
       <div className="relative flex size-20 items-center justify-center overflow-hidden rounded-full border-4 border-background bg-muted shadow-sm shadow-black/10">
         {currentImage && (
-          <Image
+          <img
             src={currentImage}
             className="h-full w-full object-cover"
             width={80}

@@ -5,9 +5,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/registry/default/ui/tooltip";
-import Image from "next/image";
-
-import ContentImg from "@/public/dialog-content.png";
 
 export default function Component() {
   return (
@@ -20,9 +17,9 @@ export default function Component() {
         </TooltipTrigger>
         <TooltipContent className="py-3">
           <div className="space-y-2">
-            <Image
+            <img
               className="w-full rounded"
-              src={ContentImg}
+              src="/dialog-content.png"
               width={382}
               height={216}
               alt="Content image"

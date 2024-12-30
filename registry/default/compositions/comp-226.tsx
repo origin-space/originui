@@ -1,6 +1,3 @@
-import Avatar01 from "@/public/avatar-20-01.jpg";
-import Avatar02 from "@/public/avatar-20-02.jpg";
-import Avatar03 from "@/public/avatar-20-03.jpg";
 import { Label } from "@/registry/default/ui/label";
 import {
   Select,
@@ -11,7 +8,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/registry/default/ui/select";
-import Image from "next/image";
 import { useId } from "react";
 
 export default function Component() {
@@ -30,9 +26,9 @@ export default function Component() {
           <SelectGroup>
             <SelectLabel className="ps-2">Impersonate user</SelectLabel>
             <SelectItem value="1">
-              <Image
+              <img
                 className="size-5 rounded"
-                src={Avatar01}
+                src="/avatar-20-01.jpg"
                 alt="Frank Allison"
                 width={20}
                 height={20}
@@ -40,9 +36,9 @@ export default function Component() {
               <span className="truncate">Jenny Hamilton</span>
             </SelectItem>
             <SelectItem value="2">
-              <Image
+              <img
                 className="size-5 rounded"
-                src={Avatar02}
+                src="/avatar-20-02.jpg"
                 alt="Xavier Guerra"
                 width={20}
                 height={20}
@@ -50,9 +46,9 @@ export default function Component() {
               <span className="truncate">Paul Smith</span>
             </SelectItem>
             <SelectItem value="3">
-              <Image
+              <img
                 className="size-5 rounded"
-                src={Avatar03}
+                src="/avatar-20-03.jpg"
                 alt="Anne Kelley"
                 width={20}
                 height={20}

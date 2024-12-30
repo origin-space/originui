@@ -1,6 +1,3 @@
-import Avatar01 from "@/public/avatar-40-01.jpg";
-import Avatar02 from "@/public/avatar-40-02.jpg";
-import Avatar03 from "@/public/avatar-40-03.jpg";
 import { Label } from "@/registry/default/ui/label";
 import {
   Select,
@@ -9,7 +6,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/registry/default/ui/select";
-import Image from "next/image";
 import { useId } from "react";
 
 export default function Component() {
@@ -27,9 +23,9 @@ export default function Component() {
         <SelectContent className="[&_*[role=option]>span]:end-2 [&_*[role=option]>span]:start-auto [&_*[role=option]]:pe-8 [&_*[role=option]]:ps-2">
           <SelectItem value="1">
             <span className="flex items-center gap-2">
-              <Image
+              <img
                 className="size-10 rounded-full"
-                src={Avatar01}
+                src="/avatar-40-01.jpg"
                 alt="Jenny Hamilton"
                 width={40}
                 height={40}
@@ -42,9 +38,9 @@ export default function Component() {
           </SelectItem>
           <SelectItem value="2">
             <span className="flex items-center gap-2">
-              <Image
+              <img
                 className="size-10 rounded-full"
-                src={Avatar02}
+                src="/avatar-40-02.jpg"
                 alt="Paul Smith"
                 width={40}
                 height={40}
@@ -57,9 +53,9 @@ export default function Component() {
           </SelectItem>
           <SelectItem value="3">
             <span className="flex items-center gap-2">
-              <Image
+              <img
                 className="size-10 rounded-full"
-                src={Avatar03}
+                src="/avatar-40-03.jpg"
                 alt="Luna Wyen"
                 width={40}
                 height={40}

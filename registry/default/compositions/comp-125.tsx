@@ -3,7 +3,6 @@
 import { useImageUpload } from "@/registry/default/hooks/use-image-upload";
 import { Button } from "@/registry/default/ui/button";
 import { CircleUserRound } from "lucide-react";
-import Image from "next/image";
 
 export default function Component() {
   const {
@@ -23,7 +22,7 @@ export default function Component() {
           aria-label={previewUrl ? "Preview of uploaded image" : "Default user avatar"}
         >
           {previewUrl ? (
-            <Image
+            <img
               className="h-full w-full object-cover"
               src={previewUrl}
               alt="Preview of uploaded image"

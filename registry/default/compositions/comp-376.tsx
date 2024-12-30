@@ -1,4 +1,3 @@
-import AvatarImg from "@/public/avatar.jpg";
 import { Button } from "@/registry/default/ui/button";
 import {
   DropdownMenu,
@@ -9,7 +8,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu";
-import Image from "next/image";
 
 import { Bolt, BookOpen, CircleUserRound, Layers2, LogOut, Pin, UserPen } from "lucide-react";
 
@@ -23,8 +21,8 @@ export default function Component() {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="max-w-64">
         <DropdownMenuLabel className="flex items-start gap-3">
-          <Image
-            src={AvatarImg}
+          <img
+            src="avatar.jpg"
             alt="Avatar"
             width={32}
             height={32}
