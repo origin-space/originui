@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useCharacterLimit } from "@/hooks/use-character-limit";
 
-export default function InputDemo() {
+export default function InputWithCharactersLeft() {
   const maxLength = 8;
   const {
     value,

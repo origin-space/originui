@@ -2,12 +2,12 @@
 
 "use client";
 
-import { DateField, DateInput, DateSegment, Label } from "react-aria-components";
+import { DateInput, DateSegment, Label, TimeField } from "react-aria-components";
 
-export default function InputDemo() {
+export default function TimeInput() {
   return (
-    <DateField className="space-y-2" granularity="minute" hourCycle={24}>
-      <Label className="text-sm font-medium text-foreground">Date and time input</Label>
+    <TimeField className="space-y-2">
+      <Label className="text-sm font-medium text-foreground">Time input</Label>
       <DateInput className="relative inline-flex h-9 w-full items-center overflow-hidden whitespace-nowrap rounded-lg border border-input bg-background px-3 py-2 text-sm shadow-sm shadow-black/5 transition-shadow data-[focus-within]:border-ring data-[disabled]:opacity-50 data-[focus-within]:outline-none data-[focus-within]:ring-[3px] data-[focus-within]:ring-ring/20">
         {(segment) => (
           <DateSegment
@@ -27,6 +27,6 @@ export default function InputDemo() {
           React Aria
         </a>
       </p>
-    </DateField>
+    </TimeField>
   );
 }

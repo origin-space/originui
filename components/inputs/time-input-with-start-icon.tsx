@@ -5,12 +5,15 @@
 import { Clock } from "lucide-react";
 import { DateInput, DateSegment, Label, TimeField } from "react-aria-components";
 
-export default function InputDemo() {
+export default function TimeInputWithStartIcon() {
   return (
     <TimeField className="space-y-2">
-      <Label className="text-sm font-medium text-foreground">Time input with end icon</Label>
+      <Label className="text-sm font-medium text-foreground">Time input with start icon</Label>
       <div className="relative">
-        <DateInput className="relative inline-flex h-9 w-full items-center overflow-hidden whitespace-nowrap rounded-lg border border-input bg-background px-3 py-2 pe-9 text-sm shadow-sm shadow-black/5 transition-shadow data-[focus-within]:border-ring data-[disabled]:opacity-50 data-[focus-within]:outline-none data-[focus-within]:ring-[3px] data-[focus-within]:ring-ring/20">
+        <div className="pointer-events-none absolute inset-y-0 start-0 z-10 flex items-center justify-center ps-3 text-muted-foreground/80">
+          <Clock size={16} strokeWidth={2} aria-hidden="true" />
+        </div>
+        <DateInput className="relative inline-flex h-9 w-full items-center overflow-hidden whitespace-nowrap rounded-lg border border-input bg-background px-3 py-2 ps-9 text-sm shadow-sm shadow-black/5 transition-shadow data-[focus-within]:border-ring data-[disabled]:opacity-50 data-[focus-within]:outline-none data-[focus-within]:ring-[3px] data-[focus-within]:ring-ring/20">
           {(segment) => (
             <DateSegment
               segment={segment}
@@ -18,9 +21,6 @@ export default function InputDemo() {
             />
           )}
         </DateInput>
-        <div className="pointer-events-none absolute inset-y-0 end-0 z-10 flex items-center justify-center pe-3 text-muted-foreground/80">
-          <Clock size={16} strokeWidth={2} aria-hidden="true" />
-        </div>
       </div>
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
         Built with{" "}

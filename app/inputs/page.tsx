@@ -31,26 +31,26 @@ const inputFiles = [
   "input-with-end-select", //input-18
   "input-with-end-inline-button", //input-19
   "input-with-end-icon-button", //input-20
-  "input-21",
-  "input-22",
-  "input-23",
-  "input-24",
-  "input-25",
-  "input-26",
-  "input-27",
-  "input-28",
-  "input-29",
-  "input-30",
-  "input-31",
-  "input-32",
-  "input-33",
-  "input-34",
-  "input-35",
-  "input-36",
-  "input-37",
-  "input-38",
-  "input-39",
-  "input-40",
+  "input-with-end-button", //input-21
+  "input-with-button", //input-22
+  "show-hide-password-input", //input-23
+  "input-with-clear-button", //input-24
+  "search-input-with-kbd", //input-25
+  "search-input-with-icon-and-button", //input-26
+  "search-input-with-loader", //input-27
+  "number-input-with-plus-minus-buttons", //input-28
+  "number-input-with-chevrons", //input-29
+  "file-input", //input-30",
+  "input-with-overlapping-label", // input-31
+  "input-with-label-animation", // input-32
+  "input-with-inset-label", // input-33
+  "input-with-character-limit", //input-34
+  "input-with-characters-left", //input-35
+  "date-input", //input-36
+  "time-input", //input-37
+  "time-input-with-start-icon", //input-38
+  "time-input-with-end-icon", //input-39
+  "date-and-time-input", //input-40",
   "input-41",
   "input-42",
   "input-43",
