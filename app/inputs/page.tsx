@@ -17,20 +17,20 @@ const inputFiles = [
   "input-with-hint", //input-04
   "input-with-ring", //input-05
   "input-with-error", //input-06
-  "input-grayed-out", //input-07
+  "input-with-gray-background", //input-07
   "input-disabled", //input-08
   "input-with-start-icon", //input-09
   "input-with-end-icon", //input-10
   "input-with-start-inline-addon", //"input-11",
-  "input-with-end-inline-addons", //"input-12",
+  "input-with-end-inline-addon", //"input-12",
   "input-with-inline-addons", //"input-13",
-  "input-with-start-add-on", //"input-14",
-  "input-with-end-add-on", //"input-15",
-  "input-16",
-  "input-17",
-  "input-18",
-  "input-19",
-  "input-20",
+  "input-with-start-addon", //"input-14",
+  "input-with-end-addon", //"input-15",
+  "input-with-inline-start-and-end-add-on", //input-16
+  "input-with-start-select", //input-17
+  "input-with-end-select", //input-18
+  "input-with-end-inline-button", //input-19
+  "input-with-end-icon-button", //input-20
   "input-21",
   "input-22",
   "input-23",
