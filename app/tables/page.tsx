@@ -16,6 +16,7 @@ type Component = {
 
 const components: Component[] = [
   { name: "comp-466" },
+  { name: "comp-467" },
 ];
 
 export default function Page() {
@@ -23,8 +24,8 @@ export default function Page() {
     <main>
       <div className="px-4 sm:px-6">
         <div className="mx-auto w-full max-w-6xl">
-          <PageHeader title="Button">
-            A growing collection of {components.length} button components built with Next.js and
+          <PageHeader title="Table">
+            A growing collection of {components.length} table components built with Next.js and
             TailwindCSS.
           </PageHeader>
 

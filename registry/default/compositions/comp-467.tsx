@@ -1,20 +1,21 @@
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableFooter,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-
+import { Checkbox } from "@/registry/default/ui/checkbox"
+import { Badge } from "@/registry/default/ui/badge"
 const items = [
   {
     id: "1",
     name: "Alex Thompson",
     email: "alex.t@company.com",
     location: "San Francisco, US",
+    flag: "🇺🇸",
     status: "Active",
     balance: "$1,250.00",
   },
@@ -23,6 +24,7 @@ const items = [
     name: "Sarah Chen",
     email: "sarah.c@company.com",
     location: "Singapore",
+    flag: "🇸🇬",
     status: "Active",
     balance: "$600.00",
   },
@@ -31,6 +33,7 @@ const items = [
     name: "James Wilson",
     email: "j.wilson@company.com",
     location: "London, UK",
+    flag: "🇬🇧",
     status: "Inactive",
     balance: "$650.00",
   },
@@ -39,6 +42,7 @@ const items = [
     name: "Maria Garcia",
     email: "m.garcia@company.com",
     location: "Madrid, Spain",
+    flag: "🇪🇸",
     status: "Active",
     balance: "$0.00",
   },
@@ -47,6 +51,7 @@ const items = [
     name: "David Kim",
     email: "d.kim@company.com",
     location: "Seoul, KR",
+    flag: "🇰🇷",
     status: "Active",
     balance: "-$1,000.00",
   }
@@ -55,9 +60,11 @@ const items = [
 export default function Component() {
   return (
     <Table>
-      <TableCaption>A list of all users with a caption.</TableCaption>
       <TableHeader>
         <TableRow>
+          <TableHead className="w-px">
+            <Checkbox id="table-checkbox" />
+          </TableHead>
           <TableHead>Name</TableHead>
           <TableHead>Email</TableHead>
           <TableHead>Location</TableHead>
@@ -68,17 +75,20 @@ export default function Component() {
       <TableBody>
         {items.map((item) => (
           <TableRow key={item.id}>
+            <TableCell>
+              <Checkbox id={`table-checkbox-${item.id}`} />
+            </TableCell>
             <TableCell className="font-medium">{item.name}</TableCell>
             <TableCell>{item.email}</TableCell>
-            <TableCell>{item.location}</TableCell>
-            <TableCell>{item.status}</TableCell>
+            <TableCell><span className="text-lg leading-none">{item.flag}</span> {item.location}</TableCell>
+            <TableCell><Badge>{item.status}</Badge></TableCell>
             <TableCell className="text-right">{item.balance}</TableCell>
           </TableRow>
         ))}
       </TableBody>
       <TableFooter>
         <TableRow>
-          <TableCell colSpan={4}>Total</TableCell>
+          <TableCell colSpan={5}>Total</TableCell>
           <TableCell className="text-right">$2,500.00</TableCell>
         </TableRow>
       </TableFooter>
