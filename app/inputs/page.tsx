@@ -11,16 +11,16 @@ export const metadata: Metadata = {
 
 const inputDir = "inputs";
 const inputFiles = [
-  "SimpleInput", //input-01
-  "RequiredInput", //input-02
-  "InputWithHelperText", //input-03
-  "InputWithHint", //input-04
-  "InputWithRing", //input-05
-  "InputWithError", //input-06
-  "InputGrayedOut", //input-07
-  "InputDisabled", //input-08
-  "InputWithStartIcon", //input-09
-  "InputWithEndIcon", //input-10
+  "input-simple", //input-01
+  "input-required", //input-02
+  "input-with-helper-text", //input-03
+  "input-with-hint", //input-04
+  "input-with-ring", //input-05
+  "input-with-error", //input-06
+  "input-grayed-out", //input-07
+  "input-disabled", //input-08
+  "input-with-start-icon", //input-09
+  "input-with-end-icon", //input-10
   "input-with-start-inline-addon", //"input-11",
   "input-with-end-inline-addons", //"input-12",
   "input-with-inline-addons", //"input-13",

@@ -1,7 +1,7 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export default function SimpleInput() {
+export default function InputSimple() {
   return (
     <div className="space-y-2">
       <Label htmlFor="input-01">Simple input</Label>
