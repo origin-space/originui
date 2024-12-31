@@ -10,7 +10,7 @@ import React, { forwardRef, useState } from "react";
 import * as RPNInput from "react-phone-number-input";
 import flags from "react-phone-number-input/flags";
 
-export default function InputDemo() {
+export default function PhoneNumberInput() {
   const [value, setValue] = useState("");
 
   return (

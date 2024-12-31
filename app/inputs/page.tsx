@@ -50,25 +50,17 @@ const inputFiles = [
   "time-input", //input-37
   "time-input-with-start-icon", //input-38
   "time-input-with-end-icon", //input-39
-  "date-and-time-input", //input-40",
-  "input-41",
-  "input-42",
-  "input-43",
-  "input-44",
-  "input-45",
-  "input-58",
-  "input-46",
-  "input-47",
-  "input-48",
-  "input-49",
-  "input-50",
-  "input-51",
-  "input-52",
-  "input-53",
-  "input-54",
-  "input-55",
-  "input-56",
-  "input-57",
+  "date-and-time-input", //input-40
+  "date-picker", //input-41
+  "date-range-picker", //input-42
+  "date-range-picker-unavailable", // input-43
+  "otp-input-single", //input-44
+  "otp-input-double", //input-45
+  "phone-number-input", //input-46
+  "card-number", //input-47
+  "expiry-date", //input-48
+  "cvv-code-input", //input-49
+  "input-card-detail", //input-50
 ];
 
 const textareaDir = "textareas";

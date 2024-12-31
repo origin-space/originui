@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { CreditCard } from "lucide-react";
 import { usePaymentInputs } from "react-payment-inputs";
 
-export default function InputDemo() {
+export default function CardNumber() {
   const { getCardNumberProps } = usePaymentInputs();
 
   return (

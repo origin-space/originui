@@ -1,38 +1,25 @@
-// Dependencies: pnpm install input-otp lucide-react
+// Dependencies: pnpm install input-otp
 
 "use client";
 
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import { OTPInput, SlotProps } from "input-otp";
-import { Minus } from "lucide-react";
 
-export default function InputDemo() {
+export default function OtpInputSingle() {
   return (
     <div className="space-y-2">
-      <Label htmlFor="input-45">OTP input double</Label>
+      <Label htmlFor="input-44">OTP input single</Label>
       <OTPInput
-        id="input-45"
+        id="input-44"
         containerClassName="flex items-center gap-3 has-[:disabled]:opacity-50"
-        maxLength={6}
+        maxLength={4}
         render={({ slots }) => (
-          <>
-            <div className="flex">
-              {slots.slice(0, 3).map((slot, idx) => (
-                <Slot key={idx} {...slot} />
-              ))}
-            </div>
-
-            <div className="text-muted-foreground/80">
-              <Minus size={16} strokeWidth={2} aria-hidden="true" />
-            </div>
-
-            <div className="flex">
-              {slots.slice(3).map((slot, idx) => (
-                <Slot key={idx} {...slot} />
-              ))}
-            </div>
-          </>
+          <div className="flex">
+            {slots.map((slot, idx) => (
+              <Slot key={idx} {...slot} />
+            ))}
+          </div>
         )}
       />
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">

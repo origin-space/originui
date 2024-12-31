@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { getLocalTimeZone, today } from "@internationalized/date";
 import { CalendarIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import {
+  DateRangePicker as AriaDateRangePicker,
   Button,
   CalendarCell,
   CalendarGrid,
@@ -13,7 +14,6 @@ import {
   CalendarGridHeader,
   CalendarHeaderCell,
   DateInput,
-  DateRangePicker,
   DateSegment,
   Dialog,
   Group,
@@ -23,10 +23,10 @@ import {
   RangeCalendar,
 } from "react-aria-components";
 
-export default function InputDemo() {
+export default function DateRangePicker() {
   const now = today(getLocalTimeZone());
   return (
-    <DateRangePicker className="space-y-2">
+    <AriaDateRangePicker className="space-y-2">
       <Label className="text-sm font-medium text-foreground">Date range picker</Label>
       <div className="flex">
         <Group className="inline-flex h-9 w-full items-center overflow-hidden whitespace-nowrap rounded-lg border border-input bg-background px-3 py-2 pe-9 text-sm shadow-sm shadow-black/5 transition-shadow data-[focus-within]:border-ring data-[disabled]:opacity-50 data-[focus-within]:outline-none data-[focus-within]:ring-[3px] data-[focus-within]:ring-ring/20">
@@ -110,6 +110,6 @@ export default function InputDemo() {
           React Aria
         </a>
       </p>
-    </DateRangePicker>
+    </AriaDateRangePicker>
   );
 }

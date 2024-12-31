@@ -6,13 +6,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { usePaymentInputs } from "react-payment-inputs";
 
-export default function InputDemo() {
-  const { getCVCProps } = usePaymentInputs();
+export default function ExpiryDate() {
+  const { getExpiryDateProps } = usePaymentInputs();
 
   return (
     <div className="space-y-2">
-      <Label htmlFor="cvc">Code</Label>
-      <Input {...getCVCProps()} className="[direction:inherit]" />
+      <Label htmlFor="expiryDate">Expiry date</Label>
+      <Input {...getExpiryDateProps()} className="[direction:inherit]" />
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
         Built with{" "}
         <a
