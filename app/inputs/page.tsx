@@ -21,11 +21,11 @@ const inputFiles = [
   "InputDisabled", //input-08
   "InputWithStartIcon", //input-09
   "InputWithEndIcon", //input-10
-  "input-11",
-  "input-12",
-  "input-13",
-  "input-14",
-  "input-15",
+  "input-with-start-inline-addon", //"input-11",
+  "input-with-end-inline-addons", //"input-12",
+  "input-with-inline-addons", //"input-13",
+  "input-with-start-add-on", //"input-14",
+  "input-with-end-add-on", //"input-15",
   "input-16",
   "input-17",
   "input-18",
