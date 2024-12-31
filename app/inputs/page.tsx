@@ -11,16 +11,16 @@ export const metadata: Metadata = {
 
 const inputDir = "inputs";
 const inputFiles = [
-  "input-01",
-  "input-02",
-  "input-03",
-  "input-04",
-  "input-05",
-  "input-06",
-  "input-07",
-  "input-08",
-  "input-09",
-  "input-10",
+  "SimpleInput", //input-01
+  "RequiredInput", //input-02
+  "InputWithHelperText", //input-03
+  "InputWithHint", //input-04
+  "InputWithRing", //input-05
+  "InputWithError", //input-06
+  "InputGrayedOut", //input-07
+  "InputDisabled", //input-08
+  "InputWithStartIcon", //input-09
+  "InputWithEndIcon", //input-10
   "input-11",
   "input-12",
   "input-13",
@@ -112,6 +112,7 @@ export default function Page() {
                 <DemoComponent
                   key={componentName}
                   directory={inputDir}
+                  withCli={true}
                   componentName={componentName}
                 />
               );
