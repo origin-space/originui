@@ -26,7 +26,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build-registry": "tsx ./scripts/sync-registry-components.ts && tsx ./scripts/registry-builds.ts"
   },
   "dependencies": {
     "@internationalized/date": "^3.6.0",
