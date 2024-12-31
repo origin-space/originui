@@ -1,0 +1,22 @@
+{
+  "name": "file-input",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "dependencies": [],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "file-input.tsx",
+      "content": "import { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nexport default function FileInput() {\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor=\"input-30\">File input</Label>\n      <Input id=\"input-30\" className=\"p-0 pe-3 file:me-3 file:border-0 file:border-e\" type=\"file\" />\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

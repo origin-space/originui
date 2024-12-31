@@ -1,0 +1,22 @@
+{
+  "name": "input-required",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "dependencies": [],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "input-required.tsx",
+      "content": "import { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nexport default function InputRequired() {\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor=\"input-02\">\n        Required input <span className=\"text-destructive\">*</span>\n      </Label>\n      <Input id=\"input-02\" placeholder=\"Email\" type=\"email\" required />\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

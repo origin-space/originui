@@ -1,0 +1,22 @@
+{
+  "name": "input-with-start-inline-addon",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "dependencies": [],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "input-with-start-inline-addon.tsx",
+      "content": "import { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nexport default function InputWithStartInlineAddon() {\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor=\"input-11\">Input with start inline add-on</Label>\n      <div className=\"relative\">\n        <Input id=\"input-11\" className=\"peer ps-16\" placeholder=\"google.com\" type=\"text\" />\n        <span className=\"pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-sm text-muted-foreground peer-disabled:opacity-50\">\n          https://\n        </span>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "input-with-character-limit",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "dependencies": [],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "input-with-character-limit.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\nimport { useCharacterLimit } from \"@/hooks/use-character-limit\";\n\nexport default function InputWithCharacterLimit() {\n  const maxLength = 50;\n  const {\n    value,\n    characterCount,\n    handleChange,\n    maxLength: limit,\n  } = useCharacterLimit({ maxLength });\n\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor=\"input-34\">Input with character limit</Label>\n      <div className=\"relative\">\n        <Input\n          id=\"input-34\"\n          className=\"peer pe-14\"\n          type=\"text\"\n          value={value}\n          maxLength={maxLength}\n          onChange={handleChange}\n          aria-describedby=\"character-count\"\n        />\n        <div\n          id=\"character-count\"\n          className=\"pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-xs tabular-nums text-muted-foreground peer-disabled:opacity-50\"\n          aria-live=\"polite\"\n          role=\"status\"\n        >\n          {characterCount}/{limit}\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

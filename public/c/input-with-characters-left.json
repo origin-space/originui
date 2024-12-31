@@ -1,0 +1,22 @@
+{
+  "name": "input-with-characters-left",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "dependencies": [],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "input-with-characters-left.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\nimport { useCharacterLimit } from \"@/hooks/use-character-limit\";\n\nexport default function InputWithCharactersLeft() {\n  const maxLength = 8;\n  const {\n    value,\n    characterCount,\n    handleChange,\n    maxLength: limit,\n  } = useCharacterLimit({ maxLength });\n\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor=\"input-35\">Input with characters left</Label>\n      <Input\n        id=\"input-35\"\n        type=\"text\"\n        value={value}\n        maxLength={maxLength}\n        onChange={handleChange}\n        aria-describedby=\"characters-left\"\n      />\n      <p\n        id=\"characters-left\"\n        className=\"mt-2 text-xs text-muted-foreground\"\n        role=\"status\"\n        aria-live=\"polite\"\n      >\n        <span className=\"tabular-nums\">{limit - characterCount}</span> characters left\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

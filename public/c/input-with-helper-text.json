@@ -1,0 +1,22 @@
+{
+  "name": "input-with-helper-text",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "dependencies": [],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "input-with-helper-text.tsx",
+      "content": "import { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nexport default function InputWithHelperText() {\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor=\"input-03\">Input with helper text</Label>\n      <Input id=\"input-03\" placeholder=\"Email\" type=\"email\" />\n      <p className=\"mt-2 text-xs text-muted-foreground\" role=\"region\" aria-live=\"polite\">\n        We won&lsquo;t share your email with anyone\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

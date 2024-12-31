@@ -1,0 +1,23 @@
+{
+  "name": "input-with-button",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "button",
+    "input",
+    "label"
+  ],
+  "dependencies": [],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "input-with-button.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nexport default function InputWithButton() {\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor=\"input-22\">Input with button</Label>\n      <div className=\"flex gap-2\">\n        <Input id=\"input-22\" className=\"flex-1\" placeholder=\"Email\" type=\"email\" />\n        <Button variant=\"outline\">Send</Button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

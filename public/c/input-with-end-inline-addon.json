@@ -1,0 +1,22 @@
+{
+  "name": "input-with-end-inline-addon",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "dependencies": [],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "input-with-end-inline-addon.tsx",
+      "content": "import { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nexport default function InputWithEndInlineAddon() {\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor=\"input-12\">Input with end inline add-on</Label>\n      <div className=\"relative\">\n        <Input id=\"input-12\" className=\"peer pe-12\" placeholder=\"google\" type=\"text\" />\n        <span className=\"pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-sm text-muted-foreground peer-disabled:opacity-50\">\n          .com\n        </span>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

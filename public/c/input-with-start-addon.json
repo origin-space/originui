@@ -1,0 +1,22 @@
+{
+  "name": "input-with-start-addon",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "dependencies": [],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "input-with-start-addon.tsx",
+      "content": "import { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nexport default function InputWithStartAddOn() {\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor=\"input-14\">Input with start add-on</Label>\n      <div className=\"flex rounded-lg shadow-sm shadow-black/5\">\n        <span className=\"-z-10 inline-flex items-center rounded-s-lg border border-input bg-background px-3 text-sm text-muted-foreground\">\n          https://\n        </span>\n        <Input\n          id=\"input-14\"\n          className=\"-ms-px rounded-s-none shadow-none\"\n          placeholder=\"google.com\"\n          type=\"text\"\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

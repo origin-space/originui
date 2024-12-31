@@ -1,0 +1,23 @@
+{
+  "name": "otp-input-spaced",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "label"
+  ],
+  "dependencies": [
+    "input-otp"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "otp-input-spaced.tsx",
+      "content": "// Dependencies: pnpm install input-otp\n\n\"use client\";\n\nimport { Label } from \"@/components/ui/label\";\nimport { cn } from \"@/lib/utils\";\nimport { OTPInput, SlotProps } from \"input-otp\";\n\nexport default function OtpInputSpaced() {\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor=\"input-58\">OTP input (spaced)</Label>\n      <OTPInput\n        id=\"input-58\"\n        containerClassName=\"flex items-center gap-3 has-[:disabled]:opacity-50\"\n        maxLength={4}\n        render={({ slots }) => (\n          <div className=\"flex gap-2\">\n            {slots.map((slot, idx) => (\n              <Slot key={idx} {...slot} />\n            ))}\n          </div>\n        )}\n      />\n      <p className=\"mt-2 text-xs text-muted-foreground\" role=\"region\" aria-live=\"polite\">\n        Built with{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://github.com/guilhermerodz/input-otp\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          Input OTP\n        </a>\n      </p>\n    </div>\n  );\n}\n\nfunction Slot(props: SlotProps) {\n  return (\n    <div\n      className={cn(\n        \"flex size-9 items-center justify-center rounded-lg border border-input bg-background font-medium text-foreground shadow-sm shadow-black/5 transition-shadow\",\n        { \"z-10 border border-ring ring-[3px] ring-ring/20\": props.isActive },\n      )}\n    >\n      {props.char !== null && <div>{props.char}</div>}\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "input-with-hint",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "dependencies": [],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "input-with-hint.tsx",
+      "content": "import { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nexport default function InputWithHint() {\n  return (\n    <>\n      <div className=\"mb-2 flex items-center justify-between gap-1\">\n        <Label htmlFor=\"input-04\" className=\"leading-6\">\n          Input with hint\n        </Label>\n        <span className=\"text-sm text-muted-foreground\">Optional</span>\n      </div>\n      <Input id=\"input-04\" placeholder=\"Email\" type=\"email\" />\n    </>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

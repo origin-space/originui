@@ -1,0 +1,24 @@
+{
+  "name": "timestamp",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "dependencies": [
+    "use-mask-input"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "timestamp.tsx",
+      "content": "// Dependencies: pnpm install use-mask-input\n\n\"use client\";\n\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\nimport { withMask } from \"use-mask-input\";\n\nexport default function Timestamp() {\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor=\"input-55\">Timestamp</Label>\n      <Input\n        id=\"input-55\"\n        placeholder=\"00:00:00\"\n        type=\"text\"\n        ref={withMask(\"99:99:99\", {\n          placeholder: \"-\",\n          showMaskOnHover: false,\n        })}\n      />\n      <p className=\"mt-2 text-xs text-muted-foreground\" role=\"region\" aria-live=\"polite\">\n        Built with{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://github.com/eduardoborges/use-mask-input\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          use-mask-input\n        </a>\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "input-disabled",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "dependencies": [],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "input-disabled.tsx",
+      "content": "import { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nexport default function InputDisabled() {\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor=\"input-08\">Disabled input</Label>\n      <Input id=\"input-08\" placeholder=\"Email\" type=\"email\" disabled />\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "input-simple",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "dependencies": [],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "input-simple.tsx",
+      "content": "import { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nexport default function InputSimple() {\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor=\"input-01\">Simple input</Label>\n      <Input id=\"input-01\" placeholder=\"Email\" type=\"email\" />\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

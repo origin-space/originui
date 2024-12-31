@@ -1,0 +1,24 @@
+{
+  "name": "expiry-date",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "dependencies": [
+    "react-payment-inputs"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "expiry-date.tsx",
+      "content": "// Dependencies: pnpm install react-payment-inputs\n\n\"use client\";\n\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\nimport { usePaymentInputs } from \"react-payment-inputs\";\n\nexport default function ExpiryDate() {\n  const { getExpiryDateProps } = usePaymentInputs();\n\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor=\"expiryDate\">Expiry date</Label>\n      <Input {...getExpiryDateProps()} className=\"[direction:inherit]\" />\n      <p className=\"mt-2 text-xs text-muted-foreground\" role=\"region\" aria-live=\"polite\">\n        Built with{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://github.com/medipass/react-payment-inputs\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          React Payment Inputs\n        </a>\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

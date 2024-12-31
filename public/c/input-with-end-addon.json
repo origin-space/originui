@@ -1,0 +1,22 @@
+{
+  "name": "input-with-end-addon",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "dependencies": [],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "input-with-end-addon.tsx",
+      "content": "import { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nexport default function InputWithEndAddOn() {\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor=\"input-15\">Input with end add-on</Label>\n      <div className=\"flex rounded-lg shadow-sm shadow-black/5\">\n        <Input\n          id=\"input-15\"\n          className=\"-me-px rounded-e-none shadow-none\"\n          placeholder=\"google\"\n          type=\"text\"\n        />\n        <span className=\"-z-10 inline-flex items-center rounded-e-lg border border-input bg-background px-3 text-sm text-muted-foreground\">\n          .com\n        </span>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "input-with-gray-background",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "dependencies": [],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "input-with-gray-background.tsx",
+      "content": "import { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nexport default function InputGrayedOut() {\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor=\"input-07\">Input with gray background</Label>\n      <Input\n        id=\"input-07\"\n        className=\"border-transparent bg-muted shadow-none\"\n        placeholder=\"Email\"\n        type=\"email\"\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}
