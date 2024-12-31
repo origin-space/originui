@@ -5,12 +5,15 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 
-const CopyButton = ({ componentSource }: { componentSource: string }) => {
+const base_path = "https://originui.com";
+
+const CliButton = ({ componentName }: { componentName: string }) => {
   const [copied, setCopied] = useState<boolean>(false);
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(componentSource);
+      const commnad = `npx shadcn@latest add ${base_path}/c/${componentName}.json`;
+      await navigator.clipboard.writeText(commnad);
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     } catch (err) {
@@ -24,9 +27,9 @@ const CopyButton = ({ componentSource }: { componentSource: string }) => {
         <Button
           variant="ghost"
           size="icon"
-          className="flex items-center justify-center text-muted-foreground/80 hover:bg-transparent hover:text-foreground disabled:opacity-100"
+          className="text-muted-foreground/80 hover:bg-transparent hover:text-foreground disabled:opacity-100"
           onClick={handleCopy}
-          aria-label={copied ? "Copied" : "Copy component source"}
+          aria-label={copied ? "Copied" : "Copy Cli Command"}
           disabled={copied}
         >
           <div
@@ -52,23 +55,29 @@ const CopyButton = ({ componentSource }: { componentSource: string }) => {
             )}
           >
             <svg
-              className="fill-current"
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
               fill="none"
-              aria-hidden="true"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-square-terminal"
             >
-              <path d="M3 2.5h7a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5ZM10 1H3a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm3 5.5h1a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5H7a.5.5 0 0 1-.5-.5v-1H5v1a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1v1.5Z" />
+              <path d="m7 11 2-2-2-2" />
+              <path d="M11 13h4" />
+              <rect width="16" height="16" x="3" y="3" rx="2" ry="2" />
             </svg>
           </div>
         </Button>
       </TooltipTrigger>
       <TooltipContent className="px-2 py-1 text-xs text-muted-foreground">
-        Copy Content
+        Copy command
       </TooltipContent>
     </Tooltip>
   );
 };
 
-export default CopyButton;
+export default CliButton;
