@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { CircleX } from "lucide-react";
 import { useRef, useState } from "react";
 
-export default function InputDemo() {
+export default function InputWithClearButton() {
   const [inputValue, setInputValue] = useState("Click to clear");
   const inputRef = useRef<HTMLInputElement>(null);
 

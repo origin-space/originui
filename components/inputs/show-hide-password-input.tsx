@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 
-export default function InputDemo() {
+export default function ShowHidePasswordInput() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   const toggleVisibility = () => setIsVisible((prevState) => !prevState);
