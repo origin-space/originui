@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 import { Check, Copy } from "lucide-react";
 import { useRef, useState } from "react";
 
-export default function InputDemo() {
+export default function CopyToClipboard() {
   const [copied, setCopied] = useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement>(null);
 

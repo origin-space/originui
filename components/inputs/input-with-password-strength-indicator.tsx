@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Check, Eye, EyeOff, X } from "lucide-react";
 import { useMemo, useState } from "react";
 
-export default function InputDemo() {
+export default function InputWithPasswordStrengthIndicator() {
   const [password, setPassword] = useState("");
   const [isVisible, setIsVisible] = useState<boolean>(false);
 

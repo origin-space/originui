@@ -40,7 +40,7 @@ const inputFiles = [
   "search-input-with-loader", //input-27
   "number-input-with-plus-minus-buttons", //input-28
   "number-input-with-chevrons", //input-29
-  "file-input", //input-30",
+  "file-input", //input-30
   "input-with-overlapping-label", // input-31
   "input-with-label-animation", // input-32
   "input-with-inset-label", // input-33
@@ -61,6 +61,14 @@ const inputFiles = [
   "expiry-date", //input-48
   "cvv-code-input", //input-49
   "input-card-detail", //input-50
+  "input-with-password-strength-indicator", //input-51
+  "read-only-input", //input-52
+  "copy-to-clipboard", //input-53
+  "input-with-mask", //input-54
+  "timestamp", //input-55
+  "input-with-tags", //input-56
+  "input-with-inner-tags", //input-57
+  "otp-input-spaced", //input-58
 ];
 
 const textareaDir = "textareas";

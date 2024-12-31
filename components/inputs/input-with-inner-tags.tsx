@@ -14,7 +14,7 @@ const tags = [
   },
 ];
 
-export default function InputDemo() {
+export default function InputWithInnerTags() {
   const [exampleTags, setExampleTags] = useState<Tag[]>(tags);
   const [activeTagIndex, setActiveTagIndex] = useState<number | null>(null);
 
