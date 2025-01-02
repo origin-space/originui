@@ -21,7 +21,7 @@ const CopyButton = ({ componentSource }: { componentSource: string }) => {
   return (
     <div
       className={cn(
-        "absolute right-2 top-2 transition-opacity",
+        "transition-opacity",
         !copied &&
           "lg:opacity-0 lg:group-focus-within/item:opacity-100 lg:group-hover/item:opacity-100",
       )}
