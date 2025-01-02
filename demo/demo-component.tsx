@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import CopyButton from "./copy-button";
+import DemoComponentLinkButton from "./demo-component-link-button";
 import { readComponentSource } from "./read-component-source";
 
 export default async function DemoComponent({
@@ -17,9 +18,12 @@ export default async function DemoComponent({
   const source = await readComponentSource(directory, componentName);
 
   return (
-    <div className={cn("group/item relative", className)}>
+    <div className={cn("group/item relative", className)} id={componentName}>
       <Component {...props} />
-      <CopyButton componentSource={source || ""} />
+      <div className="absolute right-2 top-2 flex items-center gap-1">
+        <DemoComponentLinkButton componentName={componentName || ""} />
+        <CopyButton componentSource={source || ""} />
+      </div>
     </div>
   );
 }
