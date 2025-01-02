@@ -3,14 +3,25 @@
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import { Link } from "lucide-react";
 import { useState } from "react";
 
-const CopyButton = ({ componentSource }: { componentSource: string }) => {
+/**
+ * Allows you to copy the reference to the current component and share it with others.
+ */
+const DemoComponentLinkButton = ({ componentName }: { componentName: string }) => {
   const [copied, setCopied] = useState<boolean>(false);
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(componentSource);
+      // when trying to copy another link from a page that has the hash on it replace the hash
+      const textToCopy =
+        window.location.hash.length > 0
+          ? window.location.href.replace(window.location.hash, `#${componentName}`)
+          : `${window.location.href}#${componentName}`;
+
+      await navigator.clipboard.writeText(textToCopy);
+
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     } catch (err) {
@@ -62,16 +73,7 @@ const CopyButton = ({ componentSource }: { componentSource: string }) => {
                   copied ? "scale-0 opacity-0" : "scale-100 opacity-100",
                 )}
               >
-                <svg
-                  className="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path d="M3 2.5h7a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5ZM10 1H3a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm3 5.5h1a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5H7a.5.5 0 0 1-.5-.5v-1H5v1a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1v1.5Z" />
-                </svg>
+                <Link size={16} />
               </div>
             </Button>
           </TooltipTrigger>
@@ -82,4 +84,4 @@ const CopyButton = ({ componentSource }: { componentSource: string }) => {
   );
 };
 
-export default CopyButton;
+export default DemoComponentLinkButton;
