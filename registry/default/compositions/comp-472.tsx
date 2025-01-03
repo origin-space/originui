@@ -55,9 +55,9 @@ const items = [
 export default function Component() {
   return (
     <Table>
-      <TableCaption>Simple table</TableCaption>
-      <TableHeader>
-        <TableRow className="hover:bg-transparent">
+      <TableCaption>Table with vertical lines</TableCaption>
+      <TableHeader className="bg-transparent">
+        <TableRow className="hover:bg-transparent [&>:not(:last-child)]:border-r">
           <TableHead>Name</TableHead>
           <TableHead>Email</TableHead>
           <TableHead>Location</TableHead>
@@ -65,9 +65,9 @@ export default function Component() {
           <TableHead className="text-right">Balance</TableHead>
         </TableRow>
       </TableHeader>
-      <TableBody>
+      <TableBody className="[&_td:first-child]:rounded-l-lg [&_td:last-child]:rounded-r-lg">
         {items.map((item) => (
-          <TableRow key={item.id}>
+          <TableRow key={item.id} className="hover:bg-transparent [&>:not(:last-child)]:border-r">
             <TableCell className="font-medium">{item.name}</TableCell>
             <TableCell>{item.email}</TableCell>
             <TableCell>{item.location}</TableCell>
@@ -76,12 +76,6 @@ export default function Component() {
           </TableRow>
         ))}
       </TableBody>
-      <TableFooter className="bg-transparent">
-        <TableRow className="hover:bg-transparent">
-          <TableCell colSpan={4}>Total</TableCell>
-          <TableCell className="text-right">$2,500.00</TableCell>
-        </TableRow>
-      </TableFooter>
     </Table>
   )
 }

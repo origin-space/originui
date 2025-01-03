@@ -16,7 +16,16 @@ type Component = {
 
 const components: Component[] = [
   { name: "comp-466" },
+  { name: "comp-470" },
+  { name: "comp-471" },
+  { name: "comp-472" },
+  { name: "comp-469" },
+  { name: "comp-473" },
   { name: "comp-467" },
+  { name: "comp-474" },
+  { name: "comp-475" },
+  { name: "comp-476" },
+  { name: "comp-468" },
 ];
 
 export default function Page() {
@@ -29,7 +38,7 @@ export default function Page() {
             TailwindCSS.
           </PageHeader>
 
-          <div className="grid max-w-6xl grid-cols-1 overflow-hidden [&>*]:relative [&>*]:px-1 [&>*]:py-12 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-8 xl:[&>*]:px-12">
+          <div className="grid max-w-6xl grid-cols-1 overflow-hidden [&>*]:relative [&>*]:px-1 [&>*]:py-20 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-8 xl:[&>*]:px-12">
             {components.map((component) => {
               return (
                 <DemoComponent

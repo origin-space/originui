@@ -55,7 +55,7 @@ const items = [
 export default function Component() {
   return (
     <Table>
-      <TableCaption>Simple table</TableCaption>
+      <TableCaption>Table without horizontal dividers</TableCaption>
       <TableHeader>
         <TableRow className="hover:bg-transparent">
           <TableHead>Name</TableHead>
@@ -65,17 +65,19 @@ export default function Component() {
           <TableHead className="text-right">Balance</TableHead>
         </TableRow>
       </TableHeader>
-      <TableBody>
+      <tbody aria-hidden="true" className="table-row h-2"></tbody>
+      <TableBody className="[&_td:first-child]:rounded-l-lg [&_td:last-child]:rounded-r-lg">
         {items.map((item) => (
-          <TableRow key={item.id}>
-            <TableCell className="font-medium">{item.name}</TableCell>
-            <TableCell>{item.email}</TableCell>
-            <TableCell>{item.location}</TableCell>
-            <TableCell>{item.status}</TableCell>
-            <TableCell className="text-right">{item.balance}</TableCell>
+          <TableRow key={item.id} className="border-none">
+            <TableCell className="py-2 font-medium">{item.name}</TableCell>
+            <TableCell className="py-2">{item.email}</TableCell>
+            <TableCell className="py-2">{item.location}</TableCell>
+            <TableCell className="py-2">{item.status}</TableCell>
+            <TableCell className="py-2 text-right">{item.balance}</TableCell>
           </TableRow>
         ))}
       </TableBody>
+      <tbody aria-hidden="true" className="table-row h-2"></tbody>
       <TableFooter className="bg-transparent">
         <TableRow className="hover:bg-transparent">
           <TableCell colSpan={4}>Total</TableCell>

@@ -8,6 +8,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import { Checkbox } from "@/registry/default/ui/checkbox"
+import { useId } from "react"
 
 const items = [
   {
@@ -53,11 +55,15 @@ const items = [
 ]
 
 export default function Component() {
+  const id = useId();
   return (
     <Table>
-      <TableCaption>Simple table</TableCaption>
+      <TableCaption>Table with row selection</TableCaption>
       <TableHeader>
         <TableRow className="hover:bg-transparent">
+          <TableHead className="w-px">
+            <Checkbox id={id} />
+          </TableHead>          
           <TableHead>Name</TableHead>
           <TableHead>Email</TableHead>
           <TableHead>Location</TableHead>
@@ -67,7 +73,10 @@ export default function Component() {
       </TableHeader>
       <TableBody>
         {items.map((item) => (
-          <TableRow key={item.id}>
+          <TableRow key={item.id} className="has-[[data-state=checked]]:bg-muted/50">
+            <TableCell>
+              <Checkbox id={`table-checkbox-${item.id}`} />
+            </TableCell>            
             <TableCell className="font-medium">{item.name}</TableCell>
             <TableCell>{item.email}</TableCell>
             <TableCell>{item.location}</TableCell>
@@ -78,7 +87,7 @@ export default function Component() {
       </TableBody>
       <TableFooter className="bg-transparent">
         <TableRow className="hover:bg-transparent">
-          <TableCell colSpan={4}>Total</TableCell>
+          <TableCell colSpan={5}>Total</TableCell>
           <TableCell className="text-right">$2,500.00</TableCell>
         </TableRow>
       </TableFooter>

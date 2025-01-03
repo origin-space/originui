@@ -1,14 +1,13 @@
-import { useId } from "react"
 import {
   Table,
   TableBody,
+  TableCaption,
   TableCell,
   TableFooter,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { Checkbox } from "@/registry/default/ui/checkbox"
 
 const items = [
   {
@@ -50,20 +49,96 @@ const items = [
     location: "Seoul, KR",
     status: "Active",
     balance: "-$1,000.00",
+  },
+  {
+    id: "6",
+    name: "John Brown",
+    email: "john.brown@company.com",
+    location: "New York, US",
+    status: "Active",
+    balance: "$1,500.00",
+  },
+  {
+    id: "7",
+    name: "Jane Doe",
+    email: "jane.doe@company.com",
+    location: "Paris, FR",
+    status: "Inactive",
+    balance: "$200.00",
+  },
+  {
+    id: "8",
+    name: "Peter Smith",
+    email: "peter.smith@company.com",
+    location: "Berlin, DE",
+    status: "Active",
+    balance: "$1,000.00",
+  },
+  {
+    id: "9",
+    name: "Olivia Lee",
+    email: "olivia.lee@company.com",
+    location: "Tokyo, JP",
+    status: "Active",
+    balance: "$500.00",
+  },
+  {
+    id: "10",
+    name: "Liam Chen",
+    email: "liam.chen@company.com",
+    location: "Shanghai, CN",
+    status: "Inactive",
+    balance: "$300.00",
+  },
+  {
+    id: "11",
+    name: "Ethan Kim",
+    email: "ethan.kim@company.com",
+    location: "Busan, KR",
+    status: "Active",
+    balance: "$800.00",
+  },
+  {
+    id: "12",
+    name: "Ava Brown",
+    email: "ava.brown@company.com",
+    location: "London, UK",
+    status: "Active",
+    balance: "$1,200.00",
+  },
+  {
+    id: "13",
+    name: "Lily Lee",
+    email: "lily.lee@company.com",
+    location: "Seoul, KR",
+    status: "Active",
+    balance: "$400.00",
+  },
+  {
+    id: "14",
+    name: "Noah Smith",
+    email: "noah.smith@company.com",
+    location: "New York, US",
+    status: "Inactive",
+    balance: "$600.00",
+  },
+  {
+    id: "15",
+    name: "Eve Chen",
+    email: "eve.chen@company.com",
+    location: "Taipei, TW",
+    status: "Active",
+    balance: "$1,800.00",
   }
 ]
 
 export default function Component() {
-  const id = useId();
   return (
     <div>
-      <div className="border border-border bg-background rounded-lg">
-        <Table>
-          <TableHeader>
+      <div className="max-h-96 overflow-y-auto">
+        <Table className="border-separate border-spacing-0 [&_tr]:border-none [&_th]:border-b [&_th]:border-border [&_tr:not(:last-child)_td]:border-b [&_td]:border-border [&_tfoot_td]:border-t">
+          <TableHeader className="sticky top-0 z-10 bg-background/90 backdrop-blur-sm">
             <TableRow className="hover:bg-transparent">
-              <TableHead className="w-px">
-                <Checkbox id={id} />
-              </TableHead>
               <TableHead>Name</TableHead>
               <TableHead>Email</TableHead>
               <TableHead>Location</TableHead>
@@ -74,9 +149,6 @@ export default function Component() {
           <TableBody>
             {items.map((item) => (
               <TableRow key={item.id}>
-                <TableCell>
-                  <Checkbox id={`table-checkbox-${item.id}`} />
-                </TableCell>
                 <TableCell className="font-medium">{item.name}</TableCell>
                 <TableCell>{item.email}</TableCell>
                 <TableCell>{item.location}</TableCell>
@@ -87,13 +159,13 @@ export default function Component() {
           </TableBody>
           <TableFooter className="bg-transparent">
             <TableRow className="hover:bg-transparent">
-              <TableCell colSpan={5}>Total</TableCell>
+              <TableCell colSpan={4}>Total</TableCell>
               <TableCell className="text-right">$2,500.00</TableCell>
             </TableRow>
           </TableFooter>
         </Table>
       </div>
-      <p className="mt-4 text-sm text-muted-foreground text-center">Card Table</p>
+      <p className="mt-8 text-sm text-muted-foreground text-center">Table with sticky header</p>
     </div>
   )
 }
