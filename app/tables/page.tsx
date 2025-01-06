@@ -16,6 +16,7 @@ type Component = {
 
 const components: Component[] = [
   { name: "comp-466" },
+  { name: "comp-477" },
   { name: "comp-470" },
   { name: "comp-471" },
   { name: "comp-472" },
@@ -26,6 +27,10 @@ const components: Component[] = [
   { name: "comp-475" },
   { name: "comp-476" },
   { name: "comp-468" },
+  { name: "comp-478" },
+  { name: "comp-479" },
+  { name: "comp-480" },
+  { name: "comp-481" },
 ];
 
 export default function Page() {

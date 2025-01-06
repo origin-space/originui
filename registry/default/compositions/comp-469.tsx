@@ -6,7 +6,7 @@ import {
   TableHeader,
   TableRow,
   TableCaption,
-} from "@/components/ui/table"
+} from "@/registry/default/ui/table"
 
 const programmingLanguages = [
   {

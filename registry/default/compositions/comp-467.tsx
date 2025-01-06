@@ -7,7 +7,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from "@/registry/default/ui/table"
 import { Checkbox } from "@/registry/default/ui/checkbox"
 
 const items = [
@@ -61,7 +61,7 @@ export default function Component() {
         <Table>
           <TableHeader>
             <TableRow className="hover:bg-transparent">
-              <TableHead className="w-px">
+              <TableHead>
                 <Checkbox id={id} />
               </TableHead>
               <TableHead>Name</TableHead>

@@ -7,7 +7,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from "@/registry/default/ui/table"
 
 const items = [
   {
@@ -135,7 +135,7 @@ const items = [
 export default function Component() {
   return (
     <div>
-      <div className="max-h-96 overflow-y-auto">
+      <div className="[&>div]:max-h-96">
         <Table className="border-separate border-spacing-0 [&_tr]:border-none [&_th]:border-b [&_th]:border-border [&_tr:not(:last-child)_td]:border-b [&_td]:border-border [&_tfoot_td]:border-t">
           <TableHeader className="sticky top-0 z-10 bg-background/90 backdrop-blur-sm">
             <TableRow className="hover:bg-transparent">

@@ -7,7 +7,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from "@/registry/default/ui/table"
 
 const items = [
   {
@@ -57,7 +57,7 @@ export default function Component() {
     <Table>
       <TableCaption>Table with vertical lines</TableCaption>
       <TableHeader className="bg-transparent">
-        <TableRow className="hover:bg-transparent [&>:not(:last-child)]:border-r">
+        <TableRow className="hover:bg-transparent [&>:not(:last-child)]:border-r *:border-border">
           <TableHead>Name</TableHead>
           <TableHead>Email</TableHead>
           <TableHead>Location</TableHead>
@@ -67,7 +67,7 @@ export default function Component() {
       </TableHeader>
       <TableBody className="[&_td:first-child]:rounded-l-lg [&_td:last-child]:rounded-r-lg">
         {items.map((item) => (
-          <TableRow key={item.id} className="hover:bg-transparent [&>:not(:last-child)]:border-r">
+          <TableRow key={item.id} className="hover:bg-transparent [&>:not(:last-child)]:border-r *:border-border">
             <TableCell className="font-medium">{item.name}</TableCell>
             <TableCell>{item.email}</TableCell>
             <TableCell>{item.location}</TableCell>

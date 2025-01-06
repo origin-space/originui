@@ -5,7 +5,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from "@/registry/default/ui/table"
 import { Monitor, Smartphone, Check, X } from "lucide-react"
 
 const items = [
@@ -66,7 +66,7 @@ export default function Component() {
   return (
     <Table>
       <TableHeader>
-        <TableRow className="hover:bg-transparent border-y-0 [&>:not(:last-child)]:border-r">
+        <TableRow className="hover:bg-transparent border-y-0 [&>:not(:last-child)]:border-r *:border-border">
           <TableCell></TableCell>
           <TableHead className="text-center border-b border-border" colSpan={5}>
             <Monitor className="inline-flex" size={16} strokeWidth={2} aria-hidden="true" />
@@ -79,7 +79,7 @@ export default function Component() {
         </TableRow>
       </TableHeader>      
       <TableHeader>
-        <TableRow className="hover:bg-transparent [&>:not(:last-child)]:border-r">
+        <TableRow className="hover:bg-transparent [&>:not(:last-child)]:border-r *:border-border">
           <TableCell></TableCell>
           {items[0].desktop.map((browser) => (
             <TableHead key={browser.name} className="text-foreground h-auto rotate-180 py-3 [writing-mode:vertical-lr]">
@@ -95,7 +95,7 @@ export default function Component() {
       </TableHeader>
       <TableBody>
         {items.map((item) => (
-          <TableRow key={item.feature} className="[&>:not(:last-child)]:border-r">
+          <TableRow key={item.feature} className="[&>:not(:last-child)]:border-r *:border-border">
             <TableHead className="font-medium text-foreground">{item.feature}</TableHead>
             {[...item.desktop, ...item.mobile].map((browser, index) => (
               <TableCell key={`${browser.name}-${index}`} className="text-center space-y-1">

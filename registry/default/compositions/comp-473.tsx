@@ -7,7 +7,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from "@/registry/default/ui/table"
 import { Checkbox } from "@/registry/default/ui/checkbox"
 import { useId } from "react"
 
@@ -61,7 +61,7 @@ export default function Component() {
       <TableCaption>Table with row selection</TableCaption>
       <TableHeader>
         <TableRow className="hover:bg-transparent">
-          <TableHead className="w-px">
+          <TableHead>
             <Checkbox id={id} />
           </TableHead>          
           <TableHead>Name</TableHead>
