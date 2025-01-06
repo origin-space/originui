@@ -8,7 +8,7 @@ import { readComponentSource } from "./read-component-source";
 const convertRegistryPaths = (content: string): string => {
   return content
     .replace(/@\/registry\/default\/ui/g, "@/components/ui")
-    .replace(/@\/registry\/default\/compositions/g, "@/components")
+    .replace(/@\/registry\/default\/components/g, "@/components")
     .replace(/@\/registry\/default\/hooks/g, "@/hooks")
     .replace(/@\/registry\/default\/lib/g, "@/lib");
 };
@@ -23,7 +23,7 @@ export default async function DemoComponent<TProps extends object>({
   className,
   ...props
 }: DemoComponentBaseProps & TProps) {
-  const Component = (await import(`@/registry/default/compositions/${componentName}`))
+  const Component = (await import(`@/registry/default/components/${componentName}`))
     .default as ComponentType<TProps>;
   const source = convertRegistryPaths((await readComponentSource(componentName)) || "");
 

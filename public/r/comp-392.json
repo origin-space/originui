@@ -6,7 +6,7 @@
   ],
   "files": [
     {
-      "path": "compositions/comp-392.tsx",
+      "path": "components/comp-392.tsx",
       "content": "import { Avatar, AvatarFallback } from \"@/registry/default/ui/avatar\";\nimport { UserRound } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Avatar>\n      <AvatarFallback>\n        <UserRound size={16} strokeWidth={2} className=\"opacity-60\" aria-hidden=\"true\" />\n      </AvatarFallback>\n    </Avatar>\n  );\n}\n",
       "type": "registry:component",
       "target": ""

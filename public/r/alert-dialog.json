@@ -5,7 +5,7 @@
     "@radix-ui/react-alert-dialog"
   ],
   "registryDependencies": [
-    "https://originui.com/r/button.json"
+    "http://localhost:3000/r/button.json"
   ],
   "files": [
     {

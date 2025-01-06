@@ -6,7 +6,7 @@ export async function readComponentSource(componentName: string) {
     process.cwd(),
     "registry",
     "default",
-    "compositions",
+    "components",
     `${componentName}.tsx`,
   );
   try {

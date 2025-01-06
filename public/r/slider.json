@@ -5,7 +5,7 @@
     "@radix-ui/react-slider"
   ],
   "registryDependencies": [
-    "https://originui.com/r/tooltip.json"
+    "http://localhost:3000/r/tooltip.json"
   ],
   "files": [
     {

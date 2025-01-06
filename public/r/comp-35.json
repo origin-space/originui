@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "compositions/comp-35.tsx",
+      "path": "components/comp-35.tsx",
       "content": "\"use client\";\n\nimport { useCharacterLimit } from \"@/registry/default/hooks/use-character-limit\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  const maxLength = 8;\n  const {\n    value,\n    characterCount,\n    handleChange,\n    maxLength: limit,\n  } = useCharacterLimit({ maxLength });\n\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor={id}>Input with characters left</Label>\n      <Input\n        id={id}\n        type=\"text\"\n        value={value}\n        maxLength={maxLength}\n        onChange={handleChange}\n        aria-describedby={`${id}-description`}\n      />\n      <p\n        id={`${id}-description`}\n        className=\"mt-2 text-xs text-muted-foreground\"\n        role=\"status\"\n        aria-live=\"polite\"\n      >\n        <span className=\"tabular-nums\">{limit - characterCount}</span> characters left\n      </p>\n    </div>\n  );\n}\n",
       "type": "registry:component",
       "target": ""

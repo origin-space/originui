@@ -2,7 +2,7 @@
   "name": "multiselect",
   "type": "registry:ui",
   "registryDependencies": [
-    "https://originui.com/r/command.json"
+    "http://localhost:3000/r/command.json"
   ],
   "files": [
     {
