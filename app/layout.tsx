@@ -3,18 +3,13 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster as Sonner } from "@/registry/default/ui/sonner";
 import { Toaster } from "@/registry/default/ui/toaster";
 import type { Metadata, Viewport } from "next";
-import { JetBrains_Mono as FontMono, Inter as FontSans } from "next/font/google";
+import { Inter as FontSans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
-});
-
-const fontMono = FontMono({
-  subsets: ["latin"],
-  variable: "--font-mono",
 });
 
 export const viewport: Viewport = {
@@ -39,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${fontSans.variable} ${fontMono.variable} bg-background font-sans antialiased`}
+        className={`${fontSans.variable} bg-background font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"
