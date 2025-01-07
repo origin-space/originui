@@ -71,6 +71,7 @@ const components: Component[] = [
   { name: "comp-53" },
   { name: "comp-54" },
   { name: "comp-55" },
+  { name: "comp-500" },
   { name: "comp-56" },
   { name: "comp-57" },
   { name: "comp-59" },

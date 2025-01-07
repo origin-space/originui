@@ -136,98 +136,6 @@ const items: Item[] = [
   }
 ]
 
-const DraggableTableHeader = ({
-  header,
-}: {
-  header: Header<Item, unknown>
-}) => {
-  const { attributes, isDragging, listeners, setNodeRef, transform, transition } =
-    useSortable({
-      id: header.column.id,
-    })
-
-  const style: CSSProperties = {
-    opacity: isDragging ? 0.8 : 1,
-    position: 'relative',
-    transform: CSS.Translate.toString(transform),
-    transition,
-    whiteSpace: 'nowrap',
-    width: header.column.getSize(),
-    zIndex: isDragging ? 1 : 0,
-  }
-
-  return (
-    <TableHead
-      ref={setNodeRef}
-      className="relative h-10 border-t before:absolute before:inset-y-0 before:start-0 before:w-px before:bg-border first:before:bg-transparent"
-      style={style}
-      aria-sort={
-        header.column.getIsSorted() === "asc"
-          ? "ascending"
-          : header.column.getIsSorted() === "desc"
-          ? "descending"
-          : "none"
-      }
-    >                  
-      <div className="flex items-center justify-start gap-0.5">
-        <Button
-          size="icon"
-          variant="ghost"
-          className="size-7 shadow-none -ml-1"
-          {...attributes}
-          {...listeners}
-          aria-label="Drag to reorder"
-        >
-          <GripVertical size={16} strokeWidth={2} aria-hidden="true" />
-        </Button>        
-        <span className="grow truncate">
-          {header.isPlaceholder
-            ? null
-            : flexRender(header.column.columnDef.header, header.getContext())}
-        </span>
-        <Button
-          size="icon"
-          variant="ghost"
-          className="size-7 shadow-none -mr-1 group"
-          onClick={header.column.getToggleSortingHandler()}
-          onKeyDown={(e) => {
-            if (header.column.getCanSort() && (e.key === "Enter" || e.key === " ")) {
-              e.preventDefault();
-              header.column.getToggleSortingHandler()?.(e);
-            }
-          }}
-        >
-          {{
-            asc: <ChevronUp className="opacity-60 shrink-0" size={16} strokeWidth={2} aria-hidden="true" />,
-            desc: <ChevronDown className="opacity-60 shrink-0" size={16} strokeWidth={2} aria-hidden="true" />,
-          }[header.column.getIsSorted() as string] ?? <ChevronUp className="opacity-0 group-hover:opacity-60 shrink-0" size={16} strokeWidth={2} aria-hidden="true" />}
-        </Button>         
-      </div>
-    </TableHead>
-  )
-}
-
-const DragAlongCell = ({ cell }: { cell: Cell<Item, unknown> }) => {
-  const { isDragging, setNodeRef, transform, transition } = useSortable({
-    id: cell.column.id,
-  })
-
-  const style: CSSProperties = {
-    opacity: isDragging ? 0.8 : 1,
-    position: 'relative',
-    transform: CSS.Translate.toString(transform),
-    transition,
-    width: cell.column.getSize(),
-    zIndex: isDragging ? 1 : 0,
-  }
-
-  return (
-    <TableCell ref={setNodeRef} className="truncate" style={style}>
-      {flexRender(cell.column.columnDef.cell, cell.getContext())}
-    </TableCell>    
-  )
-}
-
 export default function Component() {
   const id = useId()
   const [sorting, setSorting] = useState<SortingState>([])
@@ -320,5 +228,97 @@ export default function Component() {
       </Table>
       <p className="mt-4 text-sm text-muted-foreground text-center">Draggable columns made with <a className="underline hover:text-foreground" href="https://tanstack.com/table" target="_blank" rel="noopener noreferrer">TanStack Table</a> and <a href="https://dndkit.com/" target="_blank" rel="noopener noreferrer">dnd kit</a></p>
     </DndContext>
+  )
+}
+
+const DraggableTableHeader = ({
+  header,
+}: {
+  header: Header<Item, unknown>
+}) => {
+  const { attributes, isDragging, listeners, setNodeRef, transform, transition } =
+    useSortable({
+      id: header.column.id,
+    })
+
+  const style: CSSProperties = {
+    opacity: isDragging ? 0.8 : 1,
+    position: 'relative',
+    transform: CSS.Translate.toString(transform),
+    transition,
+    whiteSpace: 'nowrap',
+    width: header.column.getSize(),
+    zIndex: isDragging ? 1 : 0,
+  }
+
+  return (
+    <TableHead
+      ref={setNodeRef}
+      className="relative h-10 border-t before:absolute before:inset-y-0 before:start-0 before:w-px before:bg-border first:before:bg-transparent"
+      style={style}
+      aria-sort={
+        header.column.getIsSorted() === "asc"
+          ? "ascending"
+          : header.column.getIsSorted() === "desc"
+          ? "descending"
+          : "none"
+      }
+    >                  
+      <div className="flex items-center justify-start gap-0.5">
+        <Button
+          size="icon"
+          variant="ghost"
+          className="size-7 shadow-none -ml-2"
+          {...attributes}
+          {...listeners}
+          aria-label="Drag to reorder"
+        >
+          <GripVertical size={16} strokeWidth={2} aria-hidden="true" />
+        </Button>        
+        <span className="grow truncate">
+          {header.isPlaceholder
+            ? null
+            : flexRender(header.column.columnDef.header, header.getContext())}
+        </span>
+        <Button
+          size="icon"
+          variant="ghost"
+          className="size-7 shadow-none -mr-1 group"
+          onClick={header.column.getToggleSortingHandler()}
+          onKeyDown={(e) => {
+            if (header.column.getCanSort() && (e.key === "Enter" || e.key === " ")) {
+              e.preventDefault();
+              header.column.getToggleSortingHandler()?.(e);
+            }
+          }}
+        >
+          {{
+            asc: <ChevronUp className="opacity-60 shrink-0" size={16} strokeWidth={2} aria-hidden="true" />,
+            desc: <ChevronDown className="opacity-60 shrink-0" size={16} strokeWidth={2} aria-hidden="true" />,
+          }[header.column.getIsSorted() as string] ?? <ChevronUp className="opacity-0 group-hover:opacity-60 shrink-0" size={16} strokeWidth={2} aria-hidden="true" />}
+        </Button>         
+      </div>
+    </TableHead>
+  )
+}
+
+const DragAlongCell = ({ cell }: { cell: Cell<Item, unknown> }) => {
+  const { isDragging, setNodeRef, transform, transition } = useSortable({
+    id: cell.column.id,
+  })
+
+  const style: CSSProperties = {
+    opacity: isDragging ? 0.8 : 1,
+    position: 'relative',
+    transform: CSS.Translate.toString(transform),
+    transition,
+    width: cell.column.getSize(),
+    zIndex: isDragging ? 1 : 0,
+  }
+
+  return (
+    <TableCell ref={setNodeRef} className="truncate" style={style}>
+      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+    </TableCell>    
   )
 }

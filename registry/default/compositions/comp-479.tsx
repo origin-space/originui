@@ -111,7 +111,12 @@ const items: Item[] = [
 ]
 
 export default function Component() {
-  const [sorting, setSorting] = useState<SortingState>([])
+  const [sorting, setSorting] = useState<SortingState>([
+    {
+      id: "name",
+      desc: false,
+    },    
+  ])
 
   const table = useReactTable({
     data: items,
@@ -127,7 +132,7 @@ export default function Component() {
   })
 
   return (
-    <div className="[&>div]:overflow-y-hidden max-w-3xl mx-auto">
+    <div className="max-w-3xl mx-auto">
       <Table
         className="table-fixed"
         style={{
@@ -141,7 +146,7 @@ export default function Component() {
                 return (
                   <TableHead
                     key={header.id}
-                    className="relative select-none [&>div:last-child]:last:opacity-0 h-10 border-t"
+                    className="relative select-none [&>.cursor-col-resize]:last:opacity-0 h-10 border-t"
                     aria-sort={
                       header.column.getIsSorted() === "asc"
                         ? "ascending"
@@ -160,7 +165,7 @@ export default function Component() {
                       <div
                         className={cn(
                           header.column.getCanSort()
-                            && 'cursor-pointer select-none flex items-center justify-between gap-2'
+                            && 'cursor-pointer select-none flex items-center justify-between gap-2 h-full'
                         )}
                         onClick={header.column.getToggleSortingHandler()}
                         onKeyDown={(e) => {
