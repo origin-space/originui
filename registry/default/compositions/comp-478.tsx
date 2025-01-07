@@ -1,11 +1,10 @@
 "use client";
 
-import { useState, useId, useEffect, useMemo } from "react"
+import { useState, useId, useMemo } from "react"
 import { cn } from "@/registry/default/lib/utils"
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
