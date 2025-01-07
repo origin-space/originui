@@ -1,0 +1,16 @@
+{
+  "name": "comp-415",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/badge.json"
+  ],
+  "files": [
+    {
+      "path": "components/comp-415.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\nimport { Zap } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Badge className=\"gap-1\">\n      <Zap className=\"-ms-0.5 opacity-60\" size={12} strokeWidth={2} aria-hidden=\"true\" />\n      Badge\n    </Badge>\n  );\n}\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "tags": []
+}

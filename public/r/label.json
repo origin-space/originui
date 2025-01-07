@@ -1,0 +1,15 @@
+{
+  "name": "label",
+  "type": "registry:ui",
+  "dependencies": [
+    "@radix-ui/react-label"
+  ],
+  "files": [
+    {
+      "path": "ui/label.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { cn } from \"@/registry/default/lib/utils\";\n\nconst Label = React.forwardRef<HTMLLabelElement, React.LabelHTMLAttributes<HTMLLabelElement>>(\n  ({ className, ...props }, ref) => (\n    <label\n      ref={ref}\n      className={cn(\n        \"text-sm font-medium leading-4 text-foreground peer-disabled:cursor-not-allowed peer-disabled:opacity-70\",\n        className,\n      )}\n      {...props}\n    />\n  ),\n);\nLabel.displayName = \"Label\";\n\nexport { Label };\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

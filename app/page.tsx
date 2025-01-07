@@ -1,6 +1,6 @@
-import Illustration from "@/demo/illustration";
-import Newsletter from "@/demo/subscribe-form";
-import XLinks from "@/demo/x-links";
+import Illustration from "@/components/illustration";
+import Newsletter from "@/components/subscribe-form";
+import XLinks from "@/components/x-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 

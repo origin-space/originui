@@ -1,6 +1,6 @@
-import Cta from "@/demo/cta";
-import DemoComponent from "@/demo/demo-component";
-import PageHeader from "@/demo/page-header";
+import Cta from "@/components/cta";
+import DemoComponent from "@/components/demo-component";
+import PageHeader from "@/components/page-header";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,62 +9,67 @@ export const metadata: Metadata = {
     "A collection of beautiful and accessible button components built with Tailwind CSS and Next.js.",
 };
 
-const directory = "buttons";
-const files = [
-  "button-01",
-  "button-02",
-  "button-03",
-  "button-04",
-  "button-05",
-  "button-06",
-  "button-07",
-  "button-08",
-  "button-09",
-  "button-10",
-  "button-11",
-  "button-12",
-  "button-13",
-  "button-14",
-  "button-15",
-  "button-16",
-  "button-17",
-  "button-18",
-  "button-19",
-  "button-20",
-  "button-21",
-  "button-22",
-  "button-23",
-  "button-24",
-  "button-52",
-  "button-53",
-  "button-25",
-  "button-26",
-  "button-27",
-  "button-28",
-  "button-29",
-  "button-30",
-  "button-31",
-  "button-32",
-  "button-33",
-  "button-34",
-  "button-35",
-  "button-36",
-  "button-37",
-  "button-54",
-  "button-38",
-  "button-39",
-  "button-40",
-  "button-41",
-  "button-42",
-  "button-43",
-  "button-44",
-  "button-45",
-  "button-46",
-  "button-47",
-  "button-48",
-  "button-49",
-  "button-50",
-  "button-51",
+type Component = {
+  name: string;
+  className?: string;
+};
+
+const center = "text-center";
+const components: Component[] = [
+  { name: "comp-78", className: center },
+  { name: "comp-79", className: center },
+  { name: "comp-80", className: center },
+  { name: "comp-81", className: center },
+  { name: "comp-82", className: center },
+  { name: "comp-83", className: center },
+  { name: "comp-84", className: center },
+  { name: "comp-85", className: center },
+  { name: "comp-86", className: center },
+  { name: "comp-87", className: center },
+  { name: "comp-88", className: center },
+  { name: "comp-89", className: center },
+  { name: "comp-90", className: center },
+  { name: "comp-91", className: center },
+  { name: "comp-92", className: center },
+  { name: "comp-93", className: center },
+  { name: "comp-94", className: center },
+  { name: "comp-95", className: center },
+  { name: "comp-96", className: center },
+  { name: "comp-97", className: center },
+  { name: "comp-98", className: center },
+  { name: "comp-99", className: center },
+  { name: "comp-100", className: center },
+  { name: "comp-101", className: center },
+  { name: "comp-129", className: center },
+  { name: "comp-130", className: center },
+  { name: "comp-102", className: center },
+  { name: "comp-103", className: center },
+  { name: "comp-104", className: center },
+  { name: "comp-105", className: center },
+  { name: "comp-106", className: center },
+  { name: "comp-107", className: center },
+  { name: "comp-108", className: center },
+  { name: "comp-109", className: center },
+  { name: "comp-110", className: center },
+  { name: "comp-111", className: center },
+  { name: "comp-112", className: center },
+  { name: "comp-113", className: center },
+  { name: "comp-114", className: center },
+  { name: "comp-131", className: center },
+  { name: "comp-115", className: center },
+  { name: "comp-116", className: center },
+  { name: "comp-117", className: center },
+  { name: "comp-118", className: center },
+  { name: "comp-119", className: center },
+  { name: "comp-120", className: center },
+  { name: "comp-121", className: center },
+  { name: "comp-122", className: center },
+  { name: "comp-123", className: center },
+  { name: "comp-124", className: center },
+  { name: "comp-125", className: center },
+  { name: "comp-126", className: center },
+  { name: "comp-127", className: center },
+  { name: "comp-128", className: center },
 ];
 
 export default function Page() {
@@ -73,18 +78,17 @@ export default function Page() {
       <div className="px-4 sm:px-6">
         <div className="mx-auto w-full max-w-6xl">
           <PageHeader title="Button">
-            A growing collection of {files.length} button components built with Next.js and
+            A growing collection of {components.length} button components built with Next.js and
             TailwindCSS.
           </PageHeader>
 
           <div className="grid max-w-6xl grid-cols-1 overflow-hidden sm:grid-cols-2 lg:grid-cols-3 [&>*]:relative [&>*]:px-1 [&>*]:py-12 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-8 xl:[&>*]:px-12">
-            {files.map((componentName) => {
+            {components.map((component) => {
               return (
                 <DemoComponent
-                  key={componentName}
-                  directory={directory}
-                  componentName={componentName}
-                  className="text-center"
+                  key={component.name}
+                  componentName={component.name}
+                  className={component.className}
                 />
               );
             })}

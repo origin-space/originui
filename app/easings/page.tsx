@@ -1,5 +1,5 @@
-import PageHeader from "@/demo/page-header";
-import XLinks from "@/demo/x-links";
+import PageHeader from "@/components/page-header";
+import XLinks from "@/components/x-links";
 import type { Metadata } from "next";
 import Easings from "./easings";
 

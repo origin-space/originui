@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { cn } from "@/registry/default/lib/utils";
+import { Button } from "@/registry/default/ui/button";
 import { useState } from "react";
 
 const CopyClass = ({ value }: { value: string }) => {
