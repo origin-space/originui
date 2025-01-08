@@ -390,7 +390,6 @@ const items: Item[] = [
 ]
 
 export default function Component() {
-  const id = useId();
   const pageSize = 5;
 
   const [pagination, setPagination] = useState<PaginationState>({
