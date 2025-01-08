@@ -279,7 +279,7 @@ export default function Component() {
     <div>
 
       {/* Filters */}
-      <div className="flex flex-wrap gap-3 mb-8">
+      <div className="flex flex-wrap gap-3 mb-6">
         {/* Search input */}
         <div className="w-44">
           <Filter column={table.getColumn("keyword")!} />
