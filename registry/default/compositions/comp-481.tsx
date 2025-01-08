@@ -48,7 +48,7 @@ type Item = {
   location: string
   flag: string
   status: "Active" | "Inactive" | "Pending"
-  balance: string
+  balance: number
 }
 
 const columns: ColumnDef<Item>[] = [
@@ -85,6 +85,14 @@ const columns: ColumnDef<Item>[] = [
     id: "balance",
     header: "Balance",
     accessorKey: "balance",
+    cell: ({ row }) => {
+      const amount = parseFloat(row.getValue("balance"))
+      const formatted = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(amount)
+      return formatted
+    },      
   },
 ]
 
@@ -96,7 +104,7 @@ const items: Item[] = [
     location: "San Francisco, US",
     flag: "🇺🇸",
     status: "Active",
-    balance: "$1,250.00",
+    balance: 1250,
   },
   {
     id: "2",
@@ -105,7 +113,7 @@ const items: Item[] = [
     location: "Singapore",
     flag: "🇸🇬",
     status: "Active",
-    balance: "$600.00",
+    balance: 600,
   },
   {
     id: "3",
@@ -114,7 +122,7 @@ const items: Item[] = [
     location: "London, UK",
     flag: "🇬🇧",
     status: "Inactive",
-    balance: "$650.00",
+    balance: 650,
   },
   {
     id: "4",
@@ -123,7 +131,7 @@ const items: Item[] = [
     location: "Madrid, Spain",
     flag: "🇪🇸",
     status: "Active",
-    balance: "$0.00",
+    balance: 0,
   },
   {
     id: "5",
@@ -132,7 +140,7 @@ const items: Item[] = [
     location: "Seoul, KR",
     flag: "🇰🇷",
     status: "Active",
-    balance: "-$1,000.00",
+    balance: -1000,
   }
 ]
 

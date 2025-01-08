@@ -34,7 +34,7 @@ type Item = {
   location: string
   flag: string
   status: "Active" | "Inactive" | "Pending"
-  balance: string
+  balance: number
   department: string
   role: string
   joinDate: string
@@ -80,6 +80,14 @@ const columns: ColumnDef<Item>[] = [
   {
     header: "Balance",
     accessorKey: "balance",
+    cell: ({ row }) => {
+      const amount = parseFloat(row.getValue("balance"))
+      const formatted = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(amount)
+      return formatted
+    },     
   },
   {
     header: "Department",
@@ -111,7 +119,7 @@ const items: Item[] = [
     location: "San Francisco, US",
     flag: "🇺🇸",
     status: "Active",
-    balance: "$1,250.00",
+    balance: 1250,
     department: "Engineering",
     role: "Senior Developer",
     joinDate: "2023-03-15",
@@ -125,7 +133,7 @@ const items: Item[] = [
     location: "Singapore",
     flag: "🇸🇬",
     status: "Active",
-    balance: "$600.00",
+    balance: 600,
     department: "Marketing",
     role: "Marketing Manager",
     joinDate: "2022-01-01",
@@ -139,7 +147,7 @@ const items: Item[] = [
     location: "London, UK",
     flag: "🇬🇧",
     status: "Inactive",
-    balance: "$650.00",
+    balance: 650,
     department: "Sales",
     role: "Sales Representative",
     joinDate: "2021-06-01",
@@ -153,7 +161,7 @@ const items: Item[] = [
     location: "Madrid, Spain",
     flag: "🇪🇸",
     status: "Active",
-    balance: "$0.00",
+    balance: 0,
     department: "HR",
     role: "HR Manager",
     joinDate: "2020-01-01",
@@ -167,7 +175,7 @@ const items: Item[] = [
     location: "Seoul, KR",
     flag: "🇰🇷",
     status: "Active",
-    balance: "-$1,000.00",
+    balance: -1000,
     department: "Finance",
     role: "Financial Analyst",
     joinDate: "2022-07-01",

@@ -8,7 +8,7 @@ import {
 export default function Component() {
   return (
     <div className="max-w-lg mx-auto">
-      <div className="border border-border bg-background rounded-lg">
+      <div className="border border-border bg-background rounded-lg overflow-hidden">
         <Table>
           <TableBody>
             <TableRow className="hover:bg-transparent [&>:not(:last-child)]:border-r *:border-border">

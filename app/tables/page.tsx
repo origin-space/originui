@@ -32,6 +32,8 @@ const components: Component[] = [
   { name: "comp-480" },
   { name: "comp-481" },
   { name: "comp-482" },
+  { name: "comp-483" },
+  { name: "comp-484" },
 ];
 
 export default function Page() {

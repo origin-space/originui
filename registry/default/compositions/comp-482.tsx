@@ -30,7 +30,7 @@ type Item = {
   location: string
   flag: string
   status: "Active" | "Inactive" | "Pending"
-  balance: string
+  balance: number
   note?: string
 }
 
@@ -108,9 +108,14 @@ const columns: ColumnDef<Item>[] = [
   {
     header: () => <div className="text-right">Balance</div>,
     accessorKey: "balance",
-    cell: ({ row }) => (
-      <div className="text-right">{row.getValue("balance")}</div>
-    ),
+    cell: ({ row }) => {
+      const amount = parseFloat(row.getValue("balance"))
+      const formatted = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(amount)
+      return <div className="text-right">{formatted}</div>
+    },  
   },
 ]
 
@@ -122,7 +127,7 @@ const items: Item[] = [
     location: "San Francisco, US",
     flag: "🇺🇸",
     status: "Active",
-    balance: "$1,250.00",
+    balance: 1250,
     note: "Key team member in our San Francisco office, leading several major client projects. Consistently exceeds performance targets and maintains excellent client relationships. Recently completed advanced certification in project management. Scheduled for quarterly performance review on January 15, 2025.",
   },
   {
@@ -132,7 +137,7 @@ const items: Item[] = [
     location: "Singapore",
     flag: "🇸🇬",
     status: "Active",
-    balance: "$600.00",
+    balance: 600,
     note: "Regional coordinator for APAC markets, demonstrating strong leadership in cross-cultural team management. Successfully launched three new product lines in Q4 2024. Currently working on expanding our presence in emerging Southeast Asian markets. Next strategy meeting scheduled for January 20, 2025.",
   },
   {
@@ -142,7 +147,7 @@ const items: Item[] = [
     location: "London, UK",
     flag: "🇬🇧",
     status: "Inactive",
-    balance: "$650.00",
+    balance: 650,
   },
   {
     id: "4",
@@ -151,7 +156,7 @@ const items: Item[] = [
     location: "Madrid, Spain",
     flag: "🇪🇸",
     status: "Active",
-    balance: "$0.00",
+    balance: 0,
     note: "New hire as of December 2024, showing promising results in initial assignments. Currently completing onboarding process and training modules. Assigned mentor: Alex Thompson. First project deliverable expected by end of January 2025. Demonstrates strong analytical skills.",
   },
   {
@@ -161,7 +166,7 @@ const items: Item[] = [
     location: "Seoul, KR",
     flag: "🇰🇷",
     status: "Active",
-    balance: "-$1,000.00",
+    balance: -1000,
     note: "Technical lead for APAC innovation hub, spearheading new technology initiatives. Currently managing budget overrun issues from Q4 2024 project. Scheduled to present recovery plan in next board meeting. Despite challenges, team morale remains high with strong focus on project completion.",
   }
 ]
