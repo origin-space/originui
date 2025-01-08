@@ -17,8 +17,8 @@ Origin UI is designed to integrate seamlessly with Next.js projects, but the com
 
 **1. Set up the required files:**
 
-- Copy all `.tsx` files from Origin UI's `components/ui` folder to your project's `components/ui` folder.
-- Copy `utils.ts` from Origin UI's `lib` folder to your project's `lib` folder.
+- Copy all `.tsx` files from Origin UI's `registry/default/ui` folder to your project's `components/ui` folder.
+- Copy `utils.ts` from Origin UI's `registry/default/lib` folder to your project's `lib` folder.
 
 Note: If you're using shadcn, you may likely already have these files - however, I would recommend using our components over shadcn's for a consistent styling experience.
 
