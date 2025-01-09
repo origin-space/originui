@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useId } from "react"
+import { useState, useEffect } from "react"
 import { usePagination } from "@/registry/default/hooks/use-pagination";
 import { cn } from "@/registry/default/lib/utils"
 import {
@@ -37,7 +37,7 @@ import {
 } from "@tanstack/react-table"
 import { Checkbox } from "@/registry/default/ui/checkbox"
 import { Badge } from "@/registry/default/ui/badge"
-import { ChevronFirst, ChevronLast, ChevronLeft, ChevronRight, ChevronUp, ChevronDown } from "lucide-react";
+import { ChevronLeft, ChevronRight, ChevronUp, ChevronDown } from "lucide-react";
 import { Button } from "@/registry/default/ui/button"
 
 type Item = {
@@ -116,279 +116,6 @@ const columns: ColumnDef<Item>[] = [
   },
 ]
 
-const items: Item[] = [
-  {
-    id: "1",
-    name: "Samuel Carteron",
-    email: "sa.carteron@company.com",
-    location: "San Francisco, US",
-    flag: "🇺🇸",
-    status: "Inactive",
-    balance: 1250,
-  },
-  {
-    id: "2",
-    name: "Sarah Chen",
-    email: "s.chen@company.com",
-    location: "Tokyo, JP",
-    flag: "🇯🇵",
-    status: "Active",
-    balance: 600,
-  },
-  {
-    id: "3",
-    name: "David Kim",
-    email: "d.kim@company.com",
-    location: "Paris, FR",
-    flag: "🇫🇷",
-    status: "Active",
-    balance: 890,
-  },
-  {
-    id: "4",
-    name: "Ana Silva",
-    email: "a.silva@company.com",
-    location: "Rome, IT",
-    flag: "🇮🇹",
-    status: "Active",
-    balance: 0,
-  },
-  {
-    id: "5",
-    name: "Lars Nielsen",
-    email: "l.nielsen@company.com",
-    location: "Dubai, AE",
-    flag: "🇦🇪",
-    status: "Active",
-    balance: 1000,
-  },
-  {
-    id: "6",
-    name: "Eva Kowalski",
-    email: "e.kowalski@company.com",
-    location: "Seoul, KR",
-    flag: "🇰🇷",
-    status: "Active",
-    balance: 920,    
-  },
-  {
-    id: "7",
-    name: "Emma Laurent",
-    email: "e.laurent@company.com",
-    location: "Berlin, DE",
-    flag: "🇩🇪",
-    status: "Active",
-    balance: 1200,
-  },
-  {
-    id: "8",
-    name: "Marco Rossi",
-    email: "m.rossi@company.com",
-    location: "Madrid, Spain",
-    flag: "🇪🇸",
-    status: "Active",
-    balance: 2100,
-  },
-  {
-    id: "9",
-    name: "Yuki Tanaka",
-    email: "y.tanaka@company.com",
-    location: "Warsaw, PL",
-    flag: "🇵🇱",
-    status: "Active",
-    balance: 450,
-  },
-  {
-    id: "10",
-    name: "Mike Allison",
-    email: "m.allison@company.com",
-    location: "San Francisco, US",
-    flag: "🇺🇸",
-    status: "Inactive",
-    balance: 1250,    
-  },
-  {
-    id: "11",
-    name: "Maria Garcia",
-    email: "m.garcia@company.com",
-    location: "London, UK",
-    flag: "🇬🇧",
-    status: "Active",
-    balance: 780,
-  },
-  {
-    id: "12",
-    name: "James Wilson",
-    email: "j.wilson@company.com",
-    location: "Singapore",
-    flag: "🇸🇬",
-    status: "Active",
-    balance: 650,
-  },
-  {
-    id: "13",
-    name: "Lucia Sorna",
-    email: "lucia.sorna@company.com",
-    location: "Copenhagen, DK",
-    flag: "🇩🇰",
-    status: "Inactive",
-    balance: 1890,    
-  },
-  {
-    id: "14",
-    name: "Alex Thompson",
-    email: "a.tompson@company.com",
-    location: "San Francisco, US",
-    flag: "🇺🇸",
-    status: "Inactive",
-    balance: 1750,
-  },
-  {
-    id: "15",
-    name: "Ahmed Hassan",
-    email: "a.hassan@company.com",
-    location: "São Paulo, BR",
-    flag: "🇧🇷",
-    status: "Active",
-    balance: 2100,
-  },
-  {
-    id: "16",
-    name: "Olivia Brown",
-    email: "o.brown@company.com",
-    location: "Sydney, AU",
-    flag: "🇦🇺",
-    status: "Active",
-    balance: 1600,
-  },
-  {
-    id: "17",
-    name: "Hiroshi Yamamoto",
-    email: "h.yamamoto@company.com",
-    location: "Osaka, JP",
-    flag: "🇯🇵",
-    status: "Active",
-    balance: 2200,
-  },
-  {
-    id: "18",
-    name: "Sophie Dubois",
-    email: "s.dubois@company.com",
-    location: "Montreal, CA",
-    flag: "🇨🇦",
-    status: "Inactive",
-    balance: 950,
-  },
-  {
-    id: "19",
-    name: "Carlos Mendoza",
-    email: "c.mendoza@company.com",
-    location: "Mexico City, MX",
-    flag: "🇲🇽",
-    status: "Active",
-    balance: 1800,
-  },
-  {
-    id: "20",
-    name: "Lena Müller",
-    email: "l.mueller@company.com",
-    location: "Vienna, AT",
-    flag: "🇦🇹",
-    status: "Active",
-    balance: 1350,
-  },
-  {
-    id: "21",
-    name: "Raj Patel",
-    email: "r.patel@company.com",
-    location: "Mumbai, IN",
-    flag: "🇮🇳",
-    status: "Active",
-    balance: 2500,
-  },
-  {
-    id: "22",
-    name: "Astrid Andersen",
-    email: "a.andersen@company.com",
-    location: "Oslo, NO",
-    flag: "🇳🇴",
-    status: "Inactive",
-    balance: 1100,
-  },
-  {
-    id: "23",
-    name: "Fatima Al-Sayed",
-    email: "f.alsayed@company.com",
-    location: "Cairo, EG",
-    flag: "🇪🇬",
-    status: "Active",
-    balance: 1950,
-  },
-  {
-    id: "24",
-    name: "Javier Fernández",
-    email: "j.fernandez@company.com",
-    location: "Buenos Aires, AR",
-    flag: "🇦🇷",
-    status: "Active",
-    balance: 1700,
-  },
-  {
-    id: "25",
-    name: "Zoe Williams",
-    email: "z.williams@company.com",
-    location: "Auckland, NZ",
-    flag: "🇳🇿",
-    status: "Active",
-    balance: 2300,
-  },
-  {
-    id: "26",
-    name: "Nikolai Petrov",
-    email: "n.petrov@company.com",
-    location: "Moscow, RU",
-    flag: "🇷🇺",
-    status: "Active",
-    balance: 3100,
-  },
-  {
-    id: "27",
-    name: "Isabella Rossi",
-    email: "i.rossi@company.com",
-    location: "Milan, IT",
-    flag: "🇮🇹",
-    status: "Inactive",
-    balance: 1850,
-  },
-  {
-    id: "28",
-    name: "Cheng Wei",
-    email: "c.wei@company.com",
-    location: "Shanghai, CN",
-    flag: "🇨🇳",
-    status: "Active",
-    balance: 2700,
-  },
-  {
-    id: "29",
-    name: "Aisha Patel",
-    email: "a.patel@company.com",
-    location: "Nairobi, KE",
-    flag: "🇰🇪",
-    status: "Active",
-    balance: 1400,
-  },
-  {
-    id: "30",
-    name: "Mateo Gonzalez",
-    email: "m.gonzalez@company.com",
-    location: "Bogotá, CO",
-    flag: "🇨🇴",
-    status: "Active",
-    balance: 2050,
-  }
-]
-
 export default function Component() {
   const pageSize = 5;
 
@@ -404,8 +131,18 @@ export default function Component() {
     },    
   ])  
 
+  const [data, setData] = useState([])
+  useEffect(() => {
+    async function fetchPosts() {
+      const res = await fetch('https://res.cloudinary.com/dlzlfasou/raw/upload/v1736358529/users-01_fertyx.json')
+      const data = await res.json()
+      setData(data)
+    }
+    fetchPosts()
+  }, [])  
+
   const table = useReactTable({
-    data: items,
+    data,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),

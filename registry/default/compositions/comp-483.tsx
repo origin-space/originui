@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useId } from "react"
+import { useState, useId, useEffect } from "react"
 import { cn } from "@/registry/default/lib/utils"
 import {
   Table,
@@ -114,144 +114,6 @@ const columns: ColumnDef<Item>[] = [
   },
 ]
 
-const items: Item[] = [
-  {
-    id: "1",
-    name: "Samuel Carteron",
-    email: "sa.carteron@company.com",
-    location: "San Francisco, US",
-    flag: "🇺🇸",
-    status: "Inactive",
-    balance: 1250,
-  },
-  {
-    id: "2",
-    name: "Sarah Chen",
-    email: "s.chen@company.com",
-    location: "Tokyo, JP",
-    flag: "🇯🇵",
-    status: "Active",
-    balance: 600,
-  },
-  {
-    id: "3",
-    name: "David Kim",
-    email: "d.kim@company.com",
-    location: "Paris, FR",
-    flag: "🇫🇷",
-    status: "Active",
-    balance: 890,
-  },
-  {
-    id: "4",
-    name: "Ana Silva",
-    email: "a.silva@company.com",
-    location: "Rome, IT",
-    flag: "🇮🇹",
-    status: "Active",
-    balance: 0,
-  },
-  {
-    id: "5",
-    name: "Lars Nielsen",
-    email: "l.nielsen@company.com",
-    location: "Dubai, AE",
-    flag: "🇦🇪",
-    status: "Active",
-    balance: 1000,
-  },
-  {
-    id: "6",
-    name: "Eva Kowalski",
-    email: "e.kowalski@company.com",
-    location: "Seoul, KR",
-    flag: "🇰🇷",
-    status: "Active",
-    balance: 920,    
-  },
-  {
-    id: "7",
-    name: "Emma Laurent",
-    email: "e.laurent@company.com",
-    location: "Berlin, DE",
-    flag: "🇩🇪",
-    status: "Active",
-    balance: 1200,
-  },
-  {
-    id: "8",
-    name: "Marco Rossi",
-    email: "m.rossi@company.com",
-    location: "Madrid, Spain",
-    flag: "🇪🇸",
-    status: "Active",
-    balance: 2100,
-  },
-  {
-    id: "9",
-    name: "Yuki Tanaka",
-    email: "y.tanaka@company.com",
-    location: "Warsaw, PL",
-    flag: "🇵🇱",
-    status: "Active",
-    balance: 450,
-  },
-  {
-    id: "10",
-    name: "Mike Allison",
-    email: "m.allison@company.com",
-    location: "San Francisco, US",
-    flag: "🇺🇸",
-    status: "Inactive",
-    balance: 1250,    
-  },
-  {
-    id: "11",
-    name: "Maria Garcia",
-    email: "m.garcia@company.com",
-    location: "London, UK",
-    flag: "🇬🇧",
-    status: "Active",
-    balance: 780,
-  },
-  {
-    id: "12",
-    name: "James Wilson",
-    email: "j.wilson@company.com",
-    location: "Singapore",
-    flag: "🇸🇬",
-    status: "Active",
-    balance: 650,
-  },
-  {
-    id: "13",
-    name: "Lucia Sorna",
-    email: "lucia.sorna@company.com",
-    location: "Copenhagen, DK",
-    flag: "🇩🇰",
-    status: "Inactive",
-    balance: 1890,    
-  },
-  {
-    id: "14",
-    name: "Alex Thompson",
-    email: "a.tompson@company.com",
-    location: "San Francisco, US",
-    flag: "🇺🇸",
-    status: "Inactive",
-    balance: 1750,
-  },
-  {
-    id: "15",
-    name: "Ahmed Hassan",
-    email: "a.hassan@company.com",
-    location: "São Paulo, BR",
-    flag: "🇧🇷",
-    status: "Active",
-    balance: 2100,
-  }
-]
-
 export default function Component() {
   const id = useId();
   const [pagination, setPagination] = useState<PaginationState>({
@@ -266,8 +128,18 @@ export default function Component() {
     },    
   ])  
 
+  const [data, setData] = useState([])
+  useEffect(() => {
+    async function fetchPosts() {
+      const res = await fetch('https://res.cloudinary.com/dlzlfasou/raw/upload/v1736358529/users-01_fertyx.json')
+      const data = await res.json()
+      setData(data)
+    }
+    fetchPosts()
+  }, [])  
+
   const table = useReactTable({
-    data: items,
+    data,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
