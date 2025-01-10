@@ -95,7 +95,7 @@ const columns: ColumnDef<Item>[] = [
     header: "Status",
     accessorKey: "status",
     cell: ({ row }) => <Badge className={cn(
-      row.getValue("status") === 'Inactive' && "bg-muted text-muted-foreground"
+      row.getValue("status") === 'Inactive' && "bg-muted-foreground/60 text-primary-foreground"
     )}>{row.getValue("status")}</Badge>,
     size: 120,
   },
@@ -162,7 +162,7 @@ export default function Component() {
               <TableRow key={headerGroup.id} className="hover:bg-transparent">
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id} style={{ width: `${header.getSize()}px` }}>
+                    <TableHead key={header.id} style={{ width: `${header.getSize()}px` }} className="h-11">
                     {header.isPlaceholder ? null : (
                       header.column.getCanSort() ? (
                       <div

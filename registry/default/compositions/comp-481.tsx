@@ -281,7 +281,7 @@ const DraggableTableHeader = ({
           {...listeners}
           aria-label="Drag to reorder"
         >
-          <GripVertical size={16} strokeWidth={2} aria-hidden="true" />
+          <GripVertical className="opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
         </Button>        
         <span className="grow truncate">
           {header.isPlaceholder

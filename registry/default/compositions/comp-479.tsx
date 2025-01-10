@@ -28,6 +28,11 @@ type Item = {
   flag: string
   status: "Active" | "Inactive" | "Pending"
   balance: number
+  department: string
+  role: string
+  joinDate: string
+  lastActive: string
+  performance: "Excellent" | "Good" | "Average" | "Poor"
 }
 
 const columns: ColumnDef<Item>[] = [
@@ -68,6 +73,26 @@ const columns: ColumnDef<Item>[] = [
       return formatted
     },     
   },
+  {
+    header: "Department",
+    accessorKey: "department",
+  },
+  {
+    header: "Role",
+    accessorKey: "role",
+  },
+  {
+    header: "Join Date",
+    accessorKey: "joinDate",
+  },
+  {
+    header: "Last Active",
+    accessorKey: "lastActive",
+  },
+  {
+    header: "Performance",
+    accessorKey: "performance",
+  },  
 ]
 
 const items: Item[] = [
@@ -79,6 +104,11 @@ const items: Item[] = [
     flag: "🇺🇸",
     status: "Active",
     balance: 1250,
+    department: "Engineering",
+    role: "Senior Developer",
+    joinDate: "2023-03-15",
+    lastActive: "2025-01-06",
+    performance: "Excellent",
   },
   {
     id: "2",
@@ -88,6 +118,11 @@ const items: Item[] = [
     flag: "🇸🇬",
     status: "Active",
     balance: 600,
+    department: "Marketing",
+    role: "Marketing Manager",
+    joinDate: "2022-01-01",
+    lastActive: "2024-12-31",
+    performance: "Good",
   },
   {
     id: "3",
@@ -97,6 +132,11 @@ const items: Item[] = [
     flag: "🇬🇧",
     status: "Inactive",
     balance: 650,
+    department: "Sales",
+    role: "Sales Representative",
+    joinDate: "2021-06-01",
+    lastActive: "2023-12-31",
+    performance: "Average",
   },
   {
     id: "4",
@@ -106,6 +146,11 @@ const items: Item[] = [
     flag: "🇪🇸",
     status: "Active",
     balance: 0,
+    department: "HR",
+    role: "HR Manager",
+    joinDate: "2020-01-01",
+    lastActive: "2024-06-30",
+    performance: "Excellent",
   },
   {
     id: "5",
@@ -115,6 +160,11 @@ const items: Item[] = [
     flag: "🇰🇷",
     status: "Active",
     balance: -1000,
+    department: "Finance",
+    role: "Financial Analyst",
+    joinDate: "2022-07-01",
+    lastActive: "2024-12-31",
+    performance: "Poor",
   }
 ]
 
@@ -140,7 +190,7 @@ export default function Component() {
   })
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div>
       <Table
         className="table-fixed"
         style={{

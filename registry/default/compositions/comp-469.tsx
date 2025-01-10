@@ -5,7 +5,6 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-  TableCaption,
 } from "@/registry/default/ui/table"
 
 const programmingLanguages = [
@@ -68,34 +67,38 @@ const programmingLanguages = [
 
 export default function Component() {
   return (
-      <Table>
-        <TableCaption>Dense table</TableCaption>
-        <TableHeader>
-          <TableRow className="hover:bg-transparent">
-            <TableHead className="h-10 py-2">Name</TableHead>
-            <TableHead className="h-10 py-2">Release Year</TableHead>
-            <TableHead className="h-10 py-2">Developer</TableHead>
-            <TableHead className="h-10 py-2">Typing</TableHead>
-            <TableHead className="h-10 py-2">Paradigm</TableHead>
-            <TableHead className="h-10 py-2">Extension</TableHead>
-            <TableHead className="h-10 py-2">Latest Version</TableHead>
-            <TableHead className="h-10 py-2">Popularity</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {programmingLanguages.map((language) => (
-            <TableRow key={language.id}>
-              <TableCell className="py-2 font-medium">{language.name}</TableCell>
-              <TableCell className="py-2">{language.releaseYear}</TableCell>
-              <TableCell className="py-2">{language.developer}</TableCell>
-              <TableCell className="py-2">{language.typing}</TableCell>
-              <TableCell className="py-2">{language.paradigm}</TableCell>
-              <TableCell className="py-2">{language.extension}</TableCell>
-              <TableCell className="py-2">{language.latestVersion}</TableCell>
-              <TableCell className="py-2">{language.popularity}</TableCell>
+    <div>
+      <div className="border border-border bg-background rounded-lg overflow-hidden">
+        <Table>
+          <TableHeader>
+            <TableRow className="bg-muted/50">
+              <TableHead className="h-9 py-2">Name</TableHead>
+              <TableHead className="h-9 py-2">Release Year</TableHead>
+              <TableHead className="h-9 py-2">Developer</TableHead>
+              <TableHead className="h-9 py-2">Typing</TableHead>
+              <TableHead className="h-9 py-2">Paradigm</TableHead>
+              <TableHead className="h-9 py-2">Extension</TableHead>
+              <TableHead className="h-9 py-2">Latest Version</TableHead>
+              <TableHead className="h-9 py-2">Popularity</TableHead>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+          </TableHeader>
+          <TableBody>
+            {programmingLanguages.map((language) => (
+              <TableRow key={language.id}>
+                <TableCell className="py-2 font-medium">{language.name}</TableCell>
+                <TableCell className="py-2">{language.releaseYear}</TableCell>
+                <TableCell className="py-2">{language.developer}</TableCell>
+                <TableCell className="py-2">{language.typing}</TableCell>
+                <TableCell className="py-2">{language.paradigm}</TableCell>
+                <TableCell className="py-2">{language.extension}</TableCell>
+                <TableCell className="py-2">{language.latestVersion}</TableCell>
+                <TableCell className="py-2">{language.popularity}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
+      <p className="mt-4 text-sm text-muted-foreground text-center">Dense table</p>
+    </div>
   )
 }

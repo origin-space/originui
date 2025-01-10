@@ -1,7 +1,6 @@
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -53,36 +52,38 @@ const items = [
 
 export default function Component() {
   return (
-    <Table>
-      <TableCaption>Table with images</TableCaption>
-      <TableHeader>
-        <TableRow className="hover:bg-transparent">
-          <TableHead>Name</TableHead>
-          <TableHead>Email</TableHead>
-          <TableHead>Location</TableHead>
-          <TableHead>Status</TableHead>
-          <TableHead className="text-right">Balance</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {items.map((item) => (
-          <TableRow key={item.id}>
-            <TableCell>
-              <div className="flex items-center gap-3">
-                <img className="rounded-full" src={item.image} width={40} height={40} alt={item.name} />
-                <div>
-                  <div className="font-medium">{item.name}</div>
-                  <span className="mt-0.5 text-xs text-muted-foreground">{item.username}</span>
-                </div>
-              </div>
-            </TableCell>
-            <TableCell>{item.email}</TableCell>
-            <TableCell>{item.location}</TableCell>
-            <TableCell>{item.status}</TableCell>
-            <TableCell className="text-right">{item.balance}</TableCell>
+    <div>
+      <Table>
+        <TableHeader>
+          <TableRow className="hover:bg-transparent">
+            <TableHead>Name</TableHead>
+            <TableHead>Email</TableHead>
+            <TableHead>Location</TableHead>
+            <TableHead>Status</TableHead>
+            <TableHead className="text-right">Balance</TableHead>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHeader>
+        <TableBody>
+          {items.map((item) => (
+            <TableRow key={item.id}>
+              <TableCell>
+                <div className="flex items-center gap-3">
+                  <img className="rounded-full" src={item.image} width={40} height={40} alt={item.name} />
+                  <div>
+                    <div className="font-medium">{item.name}</div>
+                    <span className="mt-0.5 text-xs text-muted-foreground">{item.username}</span>
+                  </div>
+                </div>
+              </TableCell>
+              <TableCell>{item.email}</TableCell>
+              <TableCell>{item.location}</TableCell>
+              <TableCell>{item.status}</TableCell>
+              <TableCell className="text-right">{item.balance}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+      <p className="mt-4 text-sm text-muted-foreground text-center">Table with images</p>
+    </div>
   )
 }

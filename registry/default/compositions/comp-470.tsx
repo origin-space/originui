@@ -1,7 +1,6 @@
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableFooter,
   TableHead,
@@ -54,36 +53,38 @@ const items = [
 
 export default function Component() {
   return (
-    <Table>
-      <TableCaption>Table without horizontal dividers</TableCaption>
-      <TableHeader>
-        <TableRow className="hover:bg-transparent">
-          <TableHead>Name</TableHead>
-          <TableHead>Email</TableHead>
-          <TableHead>Location</TableHead>
-          <TableHead>Status</TableHead>
-          <TableHead className="text-right">Balance</TableHead>
-        </TableRow>
-      </TableHeader>
-      <tbody aria-hidden="true" className="table-row h-2"></tbody>
-      <TableBody className="[&_td:first-child]:rounded-l-lg [&_td:last-child]:rounded-r-lg">
-        {items.map((item) => (
-          <TableRow key={item.id} className="border-none">
-            <TableCell className="py-2 font-medium">{item.name}</TableCell>
-            <TableCell className="py-2">{item.email}</TableCell>
-            <TableCell className="py-2">{item.location}</TableCell>
-            <TableCell className="py-2">{item.status}</TableCell>
-            <TableCell className="py-2 text-right">{item.balance}</TableCell>
+    <div>
+      <Table>
+        <TableHeader>
+          <TableRow className="hover:bg-transparent">
+            <TableHead>Name</TableHead>
+            <TableHead>Email</TableHead>
+            <TableHead>Location</TableHead>
+            <TableHead>Status</TableHead>
+            <TableHead className="text-right">Balance</TableHead>
           </TableRow>
-        ))}
-      </TableBody>
-      <tbody aria-hidden="true" className="table-row h-2"></tbody>
-      <TableFooter className="bg-transparent">
-        <TableRow className="hover:bg-transparent">
-          <TableCell colSpan={4}>Total</TableCell>
-          <TableCell className="text-right">$2,500.00</TableCell>
-        </TableRow>
-      </TableFooter>
-    </Table>
+        </TableHeader>
+        <tbody aria-hidden="true" className="table-row h-2"></tbody>
+        <TableBody className="[&_td:first-child]:rounded-l-lg [&_td:last-child]:rounded-r-lg">
+          {items.map((item) => (
+            <TableRow key={item.id} className="border-none">
+              <TableCell className="py-2.5 font-medium">{item.name}</TableCell>
+              <TableCell className="py-2.5">{item.email}</TableCell>
+              <TableCell className="py-2.5">{item.location}</TableCell>
+              <TableCell className="py-2.5">{item.status}</TableCell>
+              <TableCell className="py-2.5 text-right">{item.balance}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+        <tbody aria-hidden="true" className="table-row h-2"></tbody>
+        <TableFooter className="bg-transparent">
+          <TableRow className="hover:bg-transparent">
+            <TableCell colSpan={4}>Total</TableCell>
+            <TableCell className="text-right">$2,500.00</TableCell>
+          </TableRow>
+        </TableFooter>
+      </Table>
+      <p className="mt-4 text-sm text-muted-foreground text-center">Table without horizontal dividers</p>
+    </div>
   )
 }

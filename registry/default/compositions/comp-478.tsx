@@ -47,7 +47,6 @@ type Item = {
   volume: number
   cpc: number
   traffic: number
-  position: number
   link: string
 }
 
@@ -151,13 +150,6 @@ const columns: ColumnDef<Item>[] = [
     }
   },
   {
-    header: "Position",
-    accessorKey: "position",
-    meta: {
-      filterVariant: 'range',
-    }
-  },
-  {
     header: "Link",
     accessorKey: "link",
     cell: ({ row }) => <a className="inline-flex items-center gap-1 hover:underline" href={row.getValue("link")} target="_blank">{row.getValue("link")} <ExternalLink size={12} strokeWidth={2} aria-hidden="true" /></a>,
@@ -173,7 +165,6 @@ const items: Item[] = [
     volume: 2507,
     cpc: 2.50,
     traffic: 88,
-    position: 1,
     link: "https://www.originui.com",
   },
   {
@@ -183,7 +174,6 @@ const items: Item[] = [
     volume: 1850,
     cpc: 4.75,
     traffic: 65,
-    position: 3,
     link: "https://www.originui.com/templates",
   },
   {
@@ -193,7 +183,6 @@ const items: Item[] = [
     volume: 3200,
     cpc: 3.25,
     traffic: 112,
-    position: 2,
     link: "https://www.originui.com/docs",
   },
   {
@@ -203,7 +192,6 @@ const items: Item[] = [
     volume: 890,
     cpc: 1.95,
     traffic: 45,
-    position: 5,
     link: "https://www.originui.com/download",
   },
   {
@@ -213,7 +201,6 @@ const items: Item[] = [
     volume: 4100,
     cpc: 5.50,
     traffic: 156,
-    position: 4,
     link: "https://www.originui.com/templates/dashboard",
   },
   {
@@ -223,7 +210,6 @@ const items: Item[] = [
     volume: 1200,
     cpc: 1.25,
     traffic: 42,
-    position: 8,
     link: "https://www.originui.com/tutorials",
   },
   {
@@ -233,7 +219,6 @@ const items: Item[] = [
     volume: 760,
     cpc: 6.80,
     traffic: 28,
-    position: 6,
     link: "https://www.originui.com/pricing",
   },
   {
@@ -243,7 +228,6 @@ const items: Item[] = [
     volume: 950,
     cpc: 1.80,
     traffic: 35,
-    position: 7,
     link: "https://www.originui.com/docs/components",
   }
 ]
@@ -252,7 +236,7 @@ export default function Component() {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
   const [sorting, setSorting] = useState<SortingState>([
     {
-      id: "position",
+      id: "traffic",
       desc: false,
     },    
   ])  
@@ -299,10 +283,6 @@ export default function Component() {
         {/* Traffic inputs */}
         <div className="w-36">
           <Filter column={table.getColumn("traffic")!} />
-        </div>
-        {/* Position inputs */}
-        <div className="w-36">
-          <Filter column={table.getColumn("position")!} />
         </div>
       </div>
 

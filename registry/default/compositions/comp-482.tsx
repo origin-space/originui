@@ -5,7 +5,6 @@ import { cn } from "@/registry/default/lib/utils"
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -53,9 +52,9 @@ const columns: ColumnDef<Item>[] = [
           }}
         >
           {row.getIsExpanded() ? 
-            <ChevronUp size={16} strokeWidth={2} aria-hidden="true" />
+            <ChevronUp className="opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
           : 
-            <ChevronDown size={16} strokeWidth={2} aria-hidden="true" />
+            <ChevronDown className="opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
           }
         </Button>
       ) : undefined
@@ -102,7 +101,7 @@ const columns: ColumnDef<Item>[] = [
     header: "Status",
     accessorKey: "status",
     cell: ({ row }) => <Badge className={cn(
-      row.getValue("status") === 'Inactive' && "bg-muted text-muted-foreground"
+      row.getValue("status") === 'Inactive' && "bg-muted-foreground/60 text-primary-foreground"
     )}>{row.getValue("status")}</Badge>,
   },
   {
@@ -181,62 +180,64 @@ export default function Component() {
   })
 
   return (
-    <Table>
-      <TableCaption>Expanding sub-row made with <a className="underline hover:text-foreground" href="https://tanstack.com/table" target="_blank" rel="noopener noreferrer">TanStack Table</a></TableCaption>
-      <TableHeader>
-        {table.getHeaderGroups().map((headerGroup) => (
-          <TableRow key={headerGroup.id} className="hover:bg-transparent">
-            {headerGroup.headers.map((header) => {
-              return (
-                <TableHead key={header.id}>
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                      header.column.columnDef.header,
-                      header.getContext()
-                    )}
-                </TableHead>
-              )
-            })}
-          </TableRow>
-        ))}
-      </TableHeader>
-      <TableBody>
-        {table.getRowModel().rows?.length ? (
-          table.getRowModel().rows.map((row) => (
-            <Fragment key={row.id}>
-              <TableRow
-                key={row.id}
-                data-state={row.getIsSelected() && "selected"}
-              >
-                {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="whitespace-nowrap [&:has([aria-expanded])]:py-0 [&:has([aria-expanded])]:pr-0 [&:has([aria-expanded])]:w-px">
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </TableCell>
-                ))}
-              </TableRow>
-              {row.getIsExpanded() && (
-                <TableRow>
-                  <TableCell colSpan={row.getVisibleCells().length}>
-                    <div className="py-2 flex items-start text-muted-foreground">
-                      <span className="w-7 flex justify-center shrink-0 me-3 mt-0.5" aria-hidden="true">
-                        <Info className="opacity-60" size={16} strokeWidth={2} />
-                      </span>
-                      <p className="text-sm">{row.original.note}</p>
-                    </div>
-                  </TableCell>
+    <div>
+      <Table>
+        <TableHeader>
+          {table.getHeaderGroups().map((headerGroup) => (
+            <TableRow key={headerGroup.id} className="hover:bg-transparent">
+              {headerGroup.headers.map((header) => {
+                return (
+                  <TableHead key={header.id}>
+                    {header.isPlaceholder
+                      ? null
+                      : flexRender(
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
+                  </TableHead>
+                )
+              })}
+            </TableRow>
+          ))}
+        </TableHeader>
+        <TableBody>
+          {table.getRowModel().rows?.length ? (
+            table.getRowModel().rows.map((row) => (
+              <Fragment key={row.id}>
+                <TableRow
+                  key={row.id}
+                  data-state={row.getIsSelected() && "selected"}
+                >
+                  {row.getVisibleCells().map((cell) => (
+                    <TableCell key={cell.id} className="whitespace-nowrap [&:has([aria-expanded])]:py-0 [&:has([aria-expanded])]:pr-0 [&:has([aria-expanded])]:w-px">
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    </TableCell>
+                  ))}
                 </TableRow>
-              )}
-            </Fragment>
-          ))
-        ) : (
-          <TableRow>
-            <TableCell colSpan={columns.length} className="h-24 text-center">
-              No results.
-            </TableCell>
-          </TableRow>
-        )}
-      </TableBody>
-    </Table>
+                {row.getIsExpanded() && (
+                  <TableRow>
+                    <TableCell colSpan={row.getVisibleCells().length}>
+                      <div className="py-2 flex items-start text-primary/80">
+                        <span className="w-7 flex justify-center shrink-0 me-3 mt-0.5" aria-hidden="true">
+                          <Info className="opacity-60" size={16} strokeWidth={2} />
+                        </span>
+                        <p className="text-sm">{row.original.note}</p>
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                )}
+              </Fragment>
+            ))
+          ) : (
+            <TableRow>
+              <TableCell colSpan={columns.length} className="h-24 text-center">
+                No results.
+              </TableCell>
+            </TableRow>
+          )}
+        </TableBody>
+      </Table>
+      <p className="mt-4 text-sm text-muted-foreground text-center">Expanding sub-row made with <a className="underline hover:text-foreground" href="https://tanstack.com/table" target="_blank" rel="noopener noreferrer">TanStack Table</a></p>
+    </div>
   )
 }

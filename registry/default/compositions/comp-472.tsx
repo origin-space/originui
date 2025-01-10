@@ -1,9 +1,7 @@
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
@@ -54,28 +52,30 @@ const items = [
 
 export default function Component() {
   return (
-    <Table>
-      <TableCaption>Table with vertical lines</TableCaption>
-      <TableHeader className="bg-transparent">
-        <TableRow className="hover:bg-transparent [&>:not(:last-child)]:border-r *:border-border">
-          <TableHead>Name</TableHead>
-          <TableHead>Email</TableHead>
-          <TableHead>Location</TableHead>
-          <TableHead>Status</TableHead>
-          <TableHead className="text-right">Balance</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody className="[&_td:first-child]:rounded-l-lg [&_td:last-child]:rounded-r-lg">
-        {items.map((item) => (
-          <TableRow key={item.id} className="hover:bg-transparent [&>:not(:last-child)]:border-r *:border-border">
-            <TableCell className="font-medium">{item.name}</TableCell>
-            <TableCell>{item.email}</TableCell>
-            <TableCell>{item.location}</TableCell>
-            <TableCell>{item.status}</TableCell>
-            <TableCell className="text-right">{item.balance}</TableCell>
+    <div>
+      <Table>
+        <TableHeader className="bg-transparent">
+          <TableRow className="hover:bg-transparent [&>:not(:last-child)]:border-r *:border-border">
+            <TableHead>Name</TableHead>
+            <TableHead>Email</TableHead>
+            <TableHead>Location</TableHead>
+            <TableHead>Status</TableHead>
+            <TableHead className="text-right">Balance</TableHead>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHeader>
+        <TableBody className="[&_td:first-child]:rounded-l-lg [&_td:last-child]:rounded-r-lg">
+          {items.map((item) => (
+            <TableRow key={item.id} className="hover:bg-transparent [&>:not(:last-child)]:border-r *:border-border">
+              <TableCell className="font-medium">{item.name}</TableCell>
+              <TableCell>{item.email}</TableCell>
+              <TableCell>{item.location}</TableCell>
+              <TableCell>{item.status}</TableCell>
+              <TableCell className="text-right">{item.balance}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+      <p className="mt-4 text-sm text-muted-foreground text-center">Table with vertical lines</p>
+    </div>
   )
 }

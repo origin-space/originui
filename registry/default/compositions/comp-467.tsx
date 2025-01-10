@@ -61,14 +61,14 @@ export default function Component() {
         <Table>
           <TableHeader>
             <TableRow className="hover:bg-transparent">
-              <TableHead>
+              <TableHead className="h-11">
                 <Checkbox id={id} />
               </TableHead>
-              <TableHead>Name</TableHead>
-              <TableHead>Email</TableHead>
-              <TableHead>Location</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead className="text-right">Balance</TableHead>
+              <TableHead className="h-11">Name</TableHead>
+              <TableHead className="h-11">Email</TableHead>
+              <TableHead className="h-11">Location</TableHead>
+              <TableHead className="h-11">Status</TableHead>
+              <TableHead className="h-11 text-right">Balance</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>

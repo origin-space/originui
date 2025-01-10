@@ -244,7 +244,7 @@ export default function Component() {
                             onClick={() => header.column.pin(false)}
                             aria-label="Unstick column"
                           >
-                            <PinOff size={16} strokeWidth={2} aria-hidden="true" />
+                            <PinOff className="opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
                           </Button>
                         ) : (
                           <DropdownMenu>
@@ -255,7 +255,7 @@ export default function Component() {
                                 className="size-7 shadow-none -mr-1"
                                 aria-label="Pin column"
                               >
-                                <Ellipsis size={16} strokeWidth={2} aria-hidden="true" />
+                                <Ellipsis className="opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
                               </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">
