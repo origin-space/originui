@@ -18,6 +18,7 @@ import {
 } from "@tanstack/react-table"
 import { Checkbox } from "@/registry/default/ui/checkbox"
 import { Badge } from "@/registry/default/ui/badge"
+import { useEffect, useState } from "react"
 
 type Item = {
   id: string
@@ -88,57 +89,20 @@ const columns: ColumnDef<Item>[] = [
   },
 ]
 
-const items: Item[] = [
-  {
-    id: "1",
-    name: "Alex Thompson",
-    email: "alex.t@company.com",
-    location: "San Francisco, US",
-    flag: "🇺🇸",
-    status: "Active",
-    balance: 1250,
-  },
-  {
-    id: "2",
-    name: "Sarah Chen",
-    email: "sarah.c@company.com",
-    location: "Singapore",
-    flag: "🇸🇬",
-    status: "Active",
-    balance: 600,
-  },
-  {
-    id: "3",
-    name: "James Wilson",
-    email: "j.wilson@company.com",
-    location: "London, UK",
-    flag: "🇬🇧",
-    status: "Inactive",
-    balance: 650,
-  },
-  {
-    id: "4",
-    name: "Maria Garcia",
-    email: "m.garcia@company.com",
-    location: "Madrid, Spain",
-    flag: "🇪🇸",
-    status: "Active",
-    balance: 0,
-  },
-  {
-    id: "5",
-    name: "David Kim",
-    email: "d.kim@company.com",
-    location: "Seoul, KR",
-    flag: "🇰🇷",
-    status: "Active",
-    balance: -1000,
-  }
-]
-
 export default function Component() {
+  const [data, setData] = useState<Item[]>([])
+  
+  useEffect(() => {
+    async function fetchPosts() {
+      const res = await fetch('https://res.cloudinary.com/dlzlfasou/raw/upload/v1736617477/users-01_fertyx.json')
+      const data = await res.json()
+      setData(data.slice(0, 5)) // Limit to 5 items
+    }
+    fetchPosts()
+  }, [])
+
   const table = useReactTable({
-    data: items,
+    data,
     columns,
     getCoreRowModel: getCoreRowModel(),
   })
@@ -151,14 +115,14 @@ export default function Component() {
             <TableRow key={headerGroup.id} className="hover:bg-transparent">
               {headerGroup.headers.map((header) => {
                 return (
-                  <TableHead key={header.id}>
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                  </TableHead>
+                <TableHead key={header.id}>
+                  {header.isPlaceholder
+                    ? null
+                    : flexRender(
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
+                </TableHead>
                 )
               })}
             </TableRow>
@@ -189,7 +153,12 @@ export default function Component() {
         <TableFooter className="bg-transparent">
           <TableRow className="hover:bg-transparent">
             <TableCell colSpan={5}>Total</TableCell>
-            <TableCell className="text-right">$2,500.00</TableCell>
+            <TableCell className="text-right">
+              {new Intl.NumberFormat("en-US", {
+                style: "currency",
+                currency: "USD",
+              }).format(data.reduce((total, item) => total + item.balance, 0))}              
+            </TableCell>
           </TableRow>
         </TableFooter>
       </Table>

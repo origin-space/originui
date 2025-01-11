@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState, CSSProperties } from "react"
+import { useId, useState, useEffect, CSSProperties } from "react"
 import {
   Table,
   TableBody,
@@ -96,63 +96,24 @@ const columns: ColumnDef<Item>[] = [
   },
 ]
 
-const items: Item[] = [
-  {
-    id: "1",
-    name: "Alex Thompson",
-    email: "alex.t@company.com",
-    location: "San Francisco, US",
-    flag: "🇺🇸",
-    status: "Active",
-    balance: 1250,
-  },
-  {
-    id: "2",
-    name: "Sarah Chen",
-    email: "sarah.c@company.com",
-    location: "Singapore",
-    flag: "🇸🇬",
-    status: "Active",
-    balance: 600,
-  },
-  {
-    id: "3",
-    name: "James Wilson",
-    email: "j.wilson@company.com",
-    location: "London, UK",
-    flag: "🇬🇧",
-    status: "Inactive",
-    balance: 650,
-  },
-  {
-    id: "4",
-    name: "Maria Garcia",
-    email: "m.garcia@company.com",
-    location: "Madrid, Spain",
-    flag: "🇪🇸",
-    status: "Active",
-    balance: 0,
-  },
-  {
-    id: "5",
-    name: "David Kim",
-    email: "d.kim@company.com",
-    location: "Seoul, KR",
-    flag: "🇰🇷",
-    status: "Active",
-    balance: -1000,
-  }
-]
-
 export default function Component() {
-  const id = useId()
+  const [data, setData] = useState<Item[]>([])
   const [sorting, setSorting] = useState<SortingState>([])
-  const [columnOrder, setColumnOrder] = useState<string[]>(() =>
-    columns.map(c => c.id!)
+  const [columnOrder, setColumnOrder] = useState<string[]>(
+    columns.map(column => column.id as string)
   )
 
+  useEffect(() => {
+    async function fetchPosts() {
+      const res = await fetch('https://res.cloudinary.com/dlzlfasou/raw/upload/v1736617477/users-01_fertyx.json')
+      const data = await res.json()
+      setData(data.slice(0, 5)) // Limit to 5 items
+    }
+    fetchPosts()
+  }, [])
+
   const table = useReactTable({
-    data: items,
+    data,
     columns,
     columnResizeMode: 'onChange',
     getCoreRowModel: getCoreRowModel(),
@@ -186,7 +147,7 @@ export default function Component() {
 
   return (
     <DndContext
-      id={id}
+      id={useId()}
       collisionDetection={closestCenter}
       modifiers={[restrictToHorizontalAxis]}
       onDragEnd={handleDragEnd}

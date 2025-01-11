@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment } from "react"
+import { Fragment, useState, useEffect } from "react"
 import { cn } from "@/registry/default/lib/utils"
 import {
   Table,
@@ -118,61 +118,20 @@ const columns: ColumnDef<Item>[] = [
   },
 ]
 
-const items: Item[] = [
-  {
-    id: "1",
-    name: "Alex Thompson",
-    email: "alex.t@company.com",
-    location: "San Francisco, US",
-    flag: "🇺🇸",
-    status: "Active",
-    balance: 1250,
-    note: "Key team member in our San Francisco office, leading several major client projects. Consistently exceeds performance targets and maintains excellent client relationships. Recently completed advanced certification in project management. Scheduled for quarterly performance review on January 15, 2025.",
-  },
-  {
-    id: "2",
-    name: "Sarah Chen",
-    email: "sarah.c@company.com",
-    location: "Singapore",
-    flag: "🇸🇬",
-    status: "Active",
-    balance: 600,
-    note: "Regional coordinator for APAC markets, demonstrating strong leadership in cross-cultural team management. Successfully launched three new product lines in Q4 2024. Currently working on expanding our presence in emerging Southeast Asian markets. Next strategy meeting scheduled for January 20, 2025.",
-  },
-  {
-    id: "3",
-    name: "James Wilson",
-    email: "j.wilson@company.com",
-    location: "London, UK",
-    flag: "🇬🇧",
-    status: "Inactive",
-    balance: 650,
-  },
-  {
-    id: "4",
-    name: "Maria Garcia",
-    email: "m.garcia@company.com",
-    location: "Madrid, Spain",
-    flag: "🇪🇸",
-    status: "Active",
-    balance: 0,
-    note: "New hire as of December 2024, showing promising results in initial assignments. Currently completing onboarding process and training modules. Assigned mentor: Alex Thompson. First project deliverable expected by end of January 2025. Demonstrates strong analytical skills.",
-  },
-  {
-    id: "5",
-    name: "David Kim",
-    email: "d.kim@company.com",
-    location: "Seoul, KR",
-    flag: "🇰🇷",
-    status: "Active",
-    balance: -1000,
-    note: "Technical lead for APAC innovation hub, spearheading new technology initiatives. Currently managing budget overrun issues from Q4 2024 project. Scheduled to present recovery plan in next board meeting. Despite challenges, team morale remains high with strong focus on project completion.",
-  }
-]
-
 export default function Component() {
+  const [data, setData] = useState<Item[]>([])
+
+  useEffect(() => {
+    async function fetchPosts() {
+      const res = await fetch('https://res.cloudinary.com/dlzlfasou/raw/upload/v1736617477/users-01_fertyx.json')
+      const data = await res.json()
+      setData(data.slice(0, 5)) // Limit to 5 items
+    }
+    fetchPosts()
+  }, [])
+
   const table = useReactTable({
-    data: items,
+    data,
     columns,
     getRowCanExpand: (row) => Boolean(row.original.note),
     getCoreRowModel: getCoreRowModel(),

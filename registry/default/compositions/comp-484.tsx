@@ -134,7 +134,7 @@ export default function Component() {
   const [data, setData] = useState<Item[]>([])
   useEffect(() => {
     async function fetchPosts() {
-      const res = await fetch('https://res.cloudinary.com/dlzlfasou/raw/upload/v1736358529/users-01_fertyx.json')
+      const res = await fetch('https://res.cloudinary.com/dlzlfasou/raw/upload/v1736617477/users-01_fertyx.json')
       const data = await res.json()
       setData(data)
     }

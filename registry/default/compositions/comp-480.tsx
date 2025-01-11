@@ -1,6 +1,6 @@
 "use client"
 
-import { CSSProperties, useState } from 'react'
+import { CSSProperties, useState, useEffect } from 'react'
 import {
   Table,
   TableBody,
@@ -111,84 +111,21 @@ const columns: ColumnDef<Item>[] = [
   },
 ]
 
-const items: Item[] = [
-  {
-    id: "1",
-    name: "Alex Thompson",
-    email: "alex.t@company.com",
-    location: "San Francisco, US",
-    flag: "🇺🇸",
-    status: "Active",
-    balance: 1250,
-    department: "Engineering",
-    role: "Senior Developer",
-    joinDate: "2023-03-15",
-    lastActive: "2025-01-06",
-    performance: "Excellent",
-  },
-  {
-    id: "2",
-    name: "Sarah Chen",
-    email: "sarah.c@company.com",
-    location: "Singapore",
-    flag: "🇸🇬",
-    status: "Active",
-    balance: 600,
-    department: "Marketing",
-    role: "Marketing Manager",
-    joinDate: "2022-01-01",
-    lastActive: "2024-12-31",
-    performance: "Good",
-  },
-  {
-    id: "3",
-    name: "James Wilson",
-    email: "j.wilson@company.com",
-    location: "London, UK",
-    flag: "🇬🇧",
-    status: "Inactive",
-    balance: 650,
-    department: "Sales",
-    role: "Sales Representative",
-    joinDate: "2021-06-01",
-    lastActive: "2023-12-31",
-    performance: "Average",
-  },
-  {
-    id: "4",
-    name: "Maria Garcia",
-    email: "m.garcia@company.com",
-    location: "Madrid, Spain",
-    flag: "🇪🇸",
-    status: "Active",
-    balance: 0,
-    department: "HR",
-    role: "HR Manager",
-    joinDate: "2020-01-01",
-    lastActive: "2024-06-30",
-    performance: "Excellent",
-  },
-  {
-    id: "5",
-    name: "David Kim",
-    email: "d.kim@company.com",
-    location: "Seoul, KR",
-    flag: "🇰🇷",
-    status: "Active",
-    balance: -1000,
-    department: "Finance",
-    role: "Financial Analyst",
-    joinDate: "2022-07-01",
-    lastActive: "2024-12-31",
-    performance: "Poor",
-  }
-]
-
 export default function Component() {
+  const [data, setData] = useState<Item[]>([])
   const [sorting, setSorting] = useState<SortingState>([])
 
+  useEffect(() => {
+    async function fetchPosts() {
+      const res = await fetch('https://res.cloudinary.com/dlzlfasou/raw/upload/v1736617477/users-01_fertyx.json')
+      const data = await res.json()
+      setData(data.slice(0, 5)) // Limit to 5 items
+    }
+    fetchPosts()
+  }, [])
+
   const table = useReactTable({
-    data: items,
+    data,
     columns,
     columnResizeMode: 'onChange',
     getCoreRowModel: getCoreRowModel(),
