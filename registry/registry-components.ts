@@ -10,7 +10,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-01.tsx",
+        path: "components/comp-01.tsx",
         type: "registry:component",
       },
     ],
@@ -25,7 +25,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-02.tsx",
+        path: "components/comp-02.tsx",
         type: "registry:component",
       },
     ],
@@ -40,7 +40,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-03.tsx",
+        path: "components/comp-03.tsx",
         type: "registry:component",
       },
     ],
@@ -55,7 +55,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-04.tsx",
+        path: "components/comp-04.tsx",
         type: "registry:component",
       },
     ],
@@ -70,7 +70,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-05.tsx",
+        path: "components/comp-05.tsx",
         type: "registry:component",
       },
     ],
@@ -85,7 +85,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-06.tsx",
+        path: "components/comp-06.tsx",
         type: "registry:component",
       },
     ],
@@ -100,7 +100,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-07.tsx",
+        path: "components/comp-07.tsx",
         type: "registry:component",
       },
     ],
@@ -115,7 +115,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-08.tsx",
+        path: "components/comp-08.tsx",
         type: "registry:component",
       },
     ],
@@ -130,7 +130,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-09.tsx",
+        path: "components/comp-09.tsx",
         type: "registry:component",
       },
     ],
@@ -145,7 +145,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-10.tsx",
+        path: "components/comp-10.tsx",
         type: "registry:component",
       },
     ],
@@ -160,7 +160,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-11.tsx",
+        path: "components/comp-11.tsx",
         type: "registry:component",
       },
     ],
@@ -175,7 +175,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-12.tsx",
+        path: "components/comp-12.tsx",
         type: "registry:component",
       },
     ],
@@ -190,7 +190,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-13.tsx",
+        path: "components/comp-13.tsx",
         type: "registry:component",
       },
     ],
@@ -205,7 +205,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-14.tsx",
+        path: "components/comp-14.tsx",
         type: "registry:component",
       },
     ],
@@ -220,7 +220,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-15.tsx",
+        path: "components/comp-15.tsx",
         type: "registry:component",
       },
     ],
@@ -235,7 +235,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-16.tsx",
+        path: "components/comp-16.tsx",
         type: "registry:component",
       },
     ],
@@ -250,7 +250,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-17.tsx",
+        path: "components/comp-17.tsx",
         type: "registry:component",
       },
     ],
@@ -265,7 +265,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-18.tsx",
+        path: "components/comp-18.tsx",
         type: "registry:component",
       },
     ],
@@ -280,7 +280,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-19.tsx",
+        path: "components/comp-19.tsx",
         type: "registry:component",
       },
     ],
@@ -295,7 +295,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-20.tsx",
+        path: "components/comp-20.tsx",
         type: "registry:component",
       },
     ],
@@ -310,7 +310,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-21.tsx",
+        path: "components/comp-21.tsx",
         type: "registry:component",
       },
     ],
@@ -325,7 +325,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-22.tsx",
+        path: "components/comp-22.tsx",
         type: "registry:component",
       },
     ],
@@ -340,7 +340,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-23.tsx",
+        path: "components/comp-23.tsx",
         type: "registry:component",
       },
     ],
@@ -355,7 +355,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-24.tsx",
+        path: "components/comp-24.tsx",
         type: "registry:component",
       },
     ],
@@ -370,7 +370,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-25.tsx",
+        path: "components/comp-25.tsx",
         type: "registry:component",
       },
     ],
@@ -385,7 +385,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-26.tsx",
+        path: "components/comp-26.tsx",
         type: "registry:component",
       },
     ],
@@ -400,7 +400,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-27.tsx",
+        path: "components/comp-27.tsx",
         type: "registry:component",
       },
     ],
@@ -412,7 +412,7 @@ export const components: Registry = [
     dependencies: ["react-aria-components"],
     files: [
       {
-        path: "compositions/comp-28.tsx",
+        path: "components/comp-28.tsx",
         type: "registry:component",
       },
     ],
@@ -424,7 +424,7 @@ export const components: Registry = [
     dependencies: ["react-aria-components"],
     files: [
       {
-        path: "compositions/comp-29.tsx",
+        path: "components/comp-29.tsx",
         type: "registry:component",
       },
     ],
@@ -439,7 +439,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-30.tsx",
+        path: "components/comp-30.tsx",
         type: "registry:component",
       },
     ],
@@ -451,7 +451,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/input.json"],
     files: [
       {
-        path: "compositions/comp-31.tsx",
+        path: "components/comp-31.tsx",
         type: "registry:component",
       },
     ],
@@ -463,7 +463,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/input.json"],
     files: [
       {
-        path: "compositions/comp-32.tsx",
+        path: "components/comp-32.tsx",
         type: "registry:component",
       },
     ],
@@ -474,7 +474,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-33.tsx",
+        path: "components/comp-33.tsx",
         type: "registry:component",
       },
     ],
@@ -489,7 +489,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-34.tsx",
+        path: "components/comp-34.tsx",
         type: "registry:component",
       },
       {
@@ -508,7 +508,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-35.tsx",
+        path: "components/comp-35.tsx",
         type: "registry:component",
       },
       {
@@ -524,7 +524,7 @@ export const components: Registry = [
     dependencies: ["react-aria-components"],
     files: [
       {
-        path: "compositions/comp-36.tsx",
+        path: "components/comp-36.tsx",
         type: "registry:component",
       },
     ],
@@ -536,7 +536,7 @@ export const components: Registry = [
     dependencies: ["react-aria-components"],
     files: [
       {
-        path: "compositions/comp-37.tsx",
+        path: "components/comp-37.tsx",
         type: "registry:component",
       },
     ],
@@ -548,7 +548,7 @@ export const components: Registry = [
     dependencies: ["react-aria-components"],
     files: [
       {
-        path: "compositions/comp-38.tsx",
+        path: "components/comp-38.tsx",
         type: "registry:component",
       },
     ],
@@ -560,7 +560,7 @@ export const components: Registry = [
     dependencies: ["react-aria-components"],
     files: [
       {
-        path: "compositions/comp-39.tsx",
+        path: "components/comp-39.tsx",
         type: "registry:component",
       },
     ],
@@ -572,7 +572,7 @@ export const components: Registry = [
     dependencies: ["react-aria-components"],
     files: [
       {
-        path: "compositions/comp-40.tsx",
+        path: "components/comp-40.tsx",
         type: "registry:component",
       },
     ],
@@ -584,7 +584,7 @@ export const components: Registry = [
     dependencies: ["react-aria-components", "@internationalized/date"],
     files: [
       {
-        path: "compositions/comp-41.tsx",
+        path: "components/comp-41.tsx",
         type: "registry:component",
       },
     ],
@@ -596,7 +596,7 @@ export const components: Registry = [
     dependencies: ["react-aria-components", "@internationalized/date"],
     files: [
       {
-        path: "compositions/comp-42.tsx",
+        path: "components/comp-42.tsx",
         type: "registry:component",
       },
     ],
@@ -608,7 +608,7 @@ export const components: Registry = [
     dependencies: ["react-aria-components", "react-aria", "@internationalized/date"],
     files: [
       {
-        path: "compositions/comp-43.tsx",
+        path: "components/comp-43.tsx",
         type: "registry:component",
       },
     ],
@@ -621,7 +621,7 @@ export const components: Registry = [
     dependencies: ["input-otp"],
     files: [
       {
-        path: "compositions/comp-44.tsx",
+        path: "components/comp-44.tsx",
         type: "registry:component",
       },
     ],
@@ -634,7 +634,7 @@ export const components: Registry = [
     dependencies: ["input-otp"],
     files: [
       {
-        path: "compositions/comp-45.tsx",
+        path: "components/comp-45.tsx",
         type: "registry:component",
       },
     ],
@@ -650,7 +650,7 @@ export const components: Registry = [
     dependencies: ["react-phone-number-input", "react-phone-number-input/flags"],
     files: [
       {
-        path: "compositions/comp-46.tsx",
+        path: "components/comp-46.tsx",
         type: "registry:component",
       },
     ],
@@ -668,7 +668,7 @@ export const components: Registry = [
     // doesn't work: https://github.com/shadcn-ui/ui/issues/5270
     files: [
       {
-        path: "compositions/comp-47.tsx",
+        path: "components/comp-47.tsx",
         type: "registry:component",
       },
     ],
@@ -686,7 +686,7 @@ export const components: Registry = [
     // doesn't work: https://github.com/shadcn-ui/ui/issues/5270
     files: [
       {
-        path: "compositions/comp-48.tsx",
+        path: "components/comp-48.tsx",
         type: "registry:component",
       },
     ],
@@ -704,7 +704,7 @@ export const components: Registry = [
     // doesn't work: https://github.com/shadcn-ui/ui/issues/5270
     files: [
       {
-        path: "compositions/comp-49.tsx",
+        path: "components/comp-49.tsx",
         type: "registry:component",
       },
     ],
@@ -722,7 +722,7 @@ export const components: Registry = [
     // doesn't work: https://github.com/shadcn-ui/ui/issues/5270
     files: [
       {
-        path: "compositions/comp-50.tsx",
+        path: "components/comp-50.tsx",
         type: "registry:component",
       },
     ],
@@ -737,7 +737,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-51.tsx",
+        path: "components/comp-51.tsx",
         type: "registry:component",
       },
     ],
@@ -752,7 +752,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-52.tsx",
+        path: "components/comp-52.tsx",
         type: "registry:component",
       },
     ],
@@ -768,7 +768,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-53.tsx",
+        path: "components/comp-53.tsx",
         type: "registry:component",
       },
     ],
@@ -784,7 +784,7 @@ export const components: Registry = [
     dependencies: ["use-mask-input"],
     files: [
       {
-        path: "compositions/comp-54.tsx",
+        path: "components/comp-54.tsx",
         type: "registry:component",
       },
     ],
@@ -800,7 +800,7 @@ export const components: Registry = [
     dependencies: ["use-mask-input"],
     files: [
       {
-        path: "compositions/comp-55.tsx",
+        path: "components/comp-55.tsx",
         type: "registry:component",
       },
     ],
@@ -813,7 +813,7 @@ export const components: Registry = [
     dependencies: ["emblor"],
     files: [
       {
-        path: "compositions/comp-56.tsx",
+        path: "components/comp-56.tsx",
         type: "registry:component",
       },
     ],
@@ -826,7 +826,7 @@ export const components: Registry = [
     dependencies: ["emblor"],
     files: [
       {
-        path: "compositions/comp-57.tsx",
+        path: "components/comp-57.tsx",
         type: "registry:component",
       },
     ],
@@ -839,7 +839,7 @@ export const components: Registry = [
     dependencies: ["input-otp"],
     files: [
       {
-        path: "compositions/comp-58.tsx",
+        path: "components/comp-58.tsx",
         type: "registry:component",
       },
     ],
@@ -854,7 +854,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-59.tsx",
+        path: "components/comp-59.tsx",
         type: "registry:component",
       },
     ],
@@ -869,7 +869,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-60.tsx",
+        path: "components/comp-60.tsx",
         type: "registry:component",
       },
     ],
@@ -884,7 +884,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-61.tsx",
+        path: "components/comp-61.tsx",
         type: "registry:component",
       },
     ],
@@ -899,7 +899,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-63.tsx",
+        path: "components/comp-63.tsx",
         type: "registry:component",
       },
     ],
@@ -914,7 +914,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-63.tsx",
+        path: "components/comp-63.tsx",
         type: "registry:component",
       },
     ],
@@ -929,7 +929,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-64.tsx",
+        path: "components/comp-64.tsx",
         type: "registry:component",
       },
     ],
@@ -944,7 +944,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-65.tsx",
+        path: "components/comp-65.tsx",
         type: "registry:component",
       },
     ],
@@ -959,7 +959,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-67.tsx",
+        path: "components/comp-67.tsx",
         type: "registry:component",
       },
     ],
@@ -975,7 +975,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-68.tsx",
+        path: "components/comp-68.tsx",
         type: "registry:component",
       },
     ],
@@ -991,7 +991,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-69.tsx",
+        path: "components/comp-69.tsx",
         type: "registry:component",
       },
     ],
@@ -1007,7 +1007,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-70.tsx",
+        path: "components/comp-70.tsx",
         type: "registry:component",
       },
     ],
@@ -1022,7 +1022,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-71.tsx",
+        path: "components/comp-71.tsx",
         type: "registry:component",
       },
     ],
@@ -1034,7 +1034,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/textarea.json"],
     files: [
       {
-        path: "compositions/comp-72.tsx",
+        path: "components/comp-72.tsx",
         type: "registry:component",
       },
     ],
@@ -1045,7 +1045,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-73.tsx",
+        path: "components/comp-73.tsx",
         type: "registry:component",
       },
     ],
@@ -1060,7 +1060,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-74.tsx",
+        path: "components/comp-74.tsx",
         type: "registry:component",
       },
       {
@@ -1079,7 +1079,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-75.tsx",
+        path: "components/comp-75.tsx",
         type: "registry:component",
       },
     ],
@@ -1094,7 +1094,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-76.tsx",
+        path: "components/comp-76.tsx",
         type: "registry:component",
       },
     ],
@@ -1109,7 +1109,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-77.tsx",
+        path: "components/comp-77.tsx",
         type: "registry:component",
       },
     ],
@@ -1121,7 +1121,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-78.tsx",
+        path: "components/comp-78.tsx",
         type: "registry:component",
       },
     ],
@@ -1133,7 +1133,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-79.tsx",
+        path: "components/comp-79.tsx",
         type: "registry:component",
       },
     ],
@@ -1145,7 +1145,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-80.tsx",
+        path: "components/comp-80.tsx",
         type: "registry:component",
       },
     ],
@@ -1157,7 +1157,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-81.tsx",
+        path: "components/comp-81.tsx",
         type: "registry:component",
       },
     ],
@@ -1169,7 +1169,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-82.tsx",
+        path: "components/comp-82.tsx",
         type: "registry:component",
       },
     ],
@@ -1181,7 +1181,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-83.tsx",
+        path: "components/comp-83.tsx",
         type: "registry:component",
       },
     ],
@@ -1193,7 +1193,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-84.tsx",
+        path: "components/comp-84.tsx",
         type: "registry:component",
       },
     ],
@@ -1205,7 +1205,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-85.tsx",
+        path: "components/comp-85.tsx",
         type: "registry:component",
       },
     ],
@@ -1217,7 +1217,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-86.tsx",
+        path: "components/comp-86.tsx",
         type: "registry:component",
       },
     ],
@@ -1229,7 +1229,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-87.tsx",
+        path: "components/comp-87.tsx",
         type: "registry:component",
       },
     ],
@@ -1241,7 +1241,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-88.tsx",
+        path: "components/comp-88.tsx",
         type: "registry:component",
       },
     ],
@@ -1253,7 +1253,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-89.tsx",
+        path: "components/comp-89.tsx",
         type: "registry:component",
       },
     ],
@@ -1265,7 +1265,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-90.tsx",
+        path: "components/comp-90.tsx",
         type: "registry:component",
       },
     ],
@@ -1277,7 +1277,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-91.tsx",
+        path: "components/comp-91.tsx",
         type: "registry:component",
       },
     ],
@@ -1289,7 +1289,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-92.tsx",
+        path: "components/comp-92.tsx",
         type: "registry:component",
       },
     ],
@@ -1301,7 +1301,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-93.tsx",
+        path: "components/comp-93.tsx",
         type: "registry:component",
       },
     ],
@@ -1313,7 +1313,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-94.tsx",
+        path: "components/comp-94.tsx",
         type: "registry:component",
       },
     ],
@@ -1325,7 +1325,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-95.tsx",
+        path: "components/comp-95.tsx",
         type: "registry:component",
       },
     ],
@@ -1337,7 +1337,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-96.tsx",
+        path: "components/comp-96.tsx",
         type: "registry:component",
       },
     ],
@@ -1349,7 +1349,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-97.tsx",
+        path: "components/comp-97.tsx",
         type: "registry:component",
       },
     ],
@@ -1361,7 +1361,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-98.tsx",
+        path: "components/comp-98.tsx",
         type: "registry:component",
       },
     ],
@@ -1376,7 +1376,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-99.tsx",
+        path: "components/comp-99.tsx",
         type: "registry:component",
       },
     ],
@@ -1388,7 +1388,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-100.tsx",
+        path: "components/comp-100.tsx",
         type: "registry:component",
       },
     ],
@@ -1403,7 +1403,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-101.tsx",
+        path: "components/comp-101.tsx",
         type: "registry:component",
       },
     ],
@@ -1415,7 +1415,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-102.tsx",
+        path: "components/comp-102.tsx",
         type: "registry:component",
       },
     ],
@@ -1427,7 +1427,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-103.tsx",
+        path: "components/comp-103.tsx",
         type: "registry:component",
       },
     ],
@@ -1439,7 +1439,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-104.tsx",
+        path: "components/comp-104.tsx",
         type: "registry:component",
       },
     ],
@@ -1454,7 +1454,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-105.tsx",
+        path: "components/comp-105.tsx",
         type: "registry:component",
       },
     ],
@@ -1466,7 +1466,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-106.tsx",
+        path: "components/comp-106.tsx",
         type: "registry:component",
       },
     ],
@@ -1478,7 +1478,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/toggle-group.json"],
     files: [
       {
-        path: "compositions/comp-107.tsx",
+        path: "components/comp-107.tsx",
         type: "registry:component",
       },
     ],
@@ -1490,7 +1490,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-108.tsx",
+        path: "components/comp-108.tsx",
         type: "registry:component",
       },
     ],
@@ -1502,7 +1502,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/toggle-group.json"],
     files: [
       {
-        path: "compositions/comp-109.tsx",
+        path: "components/comp-109.tsx",
         type: "registry:component",
       },
     ],
@@ -1514,7 +1514,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/toggle-group.json"],
     files: [
       {
-        path: "compositions/comp-110.tsx",
+        path: "components/comp-110.tsx",
         type: "registry:component",
       },
     ],
@@ -1526,7 +1526,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-111.tsx",
+        path: "components/comp-111.tsx",
         type: "registry:component",
       },
     ],
@@ -1538,7 +1538,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-112.tsx",
+        path: "components/comp-112.tsx",
         type: "registry:component",
       },
     ],
@@ -1550,7 +1550,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-113.tsx",
+        path: "components/comp-113.tsx",
         type: "registry:component",
       },
     ],
@@ -1562,7 +1562,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-114.tsx",
+        path: "components/comp-114.tsx",
         type: "registry:component",
       },
     ],
@@ -1574,7 +1574,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-115.tsx",
+        path: "components/comp-115.tsx",
         type: "registry:component",
       },
     ],
@@ -1586,7 +1586,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-116.tsx",
+        path: "components/comp-116.tsx",
         type: "registry:component",
       },
     ],
@@ -1598,7 +1598,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-117.tsx",
+        path: "components/comp-117.tsx",
         type: "registry:component",
       },
     ],
@@ -1610,7 +1610,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-118.tsx",
+        path: "components/comp-118.tsx",
         type: "registry:component",
       },
     ],
@@ -1623,7 +1623,7 @@ export const components: Registry = [
     dependencies: ["@remixicon/react"],
     files: [
       {
-        path: "compositions/comp-119.tsx",
+        path: "components/comp-119.tsx",
         type: "registry:component",
       },
     ],
@@ -1636,7 +1636,7 @@ export const components: Registry = [
     dependencies: ["@remixicon/react"],
     files: [
       {
-        path: "compositions/comp-120.tsx",
+        path: "components/comp-120.tsx",
         type: "registry:component",
       },
     ],
@@ -1649,7 +1649,7 @@ export const components: Registry = [
     dependencies: ["@remixicon/react"],
     files: [
       {
-        path: "compositions/comp-121.tsx",
+        path: "components/comp-121.tsx",
         type: "registry:component",
       },
     ],
@@ -1662,7 +1662,7 @@ export const components: Registry = [
     dependencies: ["@remixicon/react"],
     files: [
       {
-        path: "compositions/comp-122.tsx",
+        path: "components/comp-122.tsx",
         type: "registry:component",
       },
     ],
@@ -1674,7 +1674,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-123.tsx",
+        path: "components/comp-123.tsx",
         type: "registry:component",
       },
     ],
@@ -1686,7 +1686,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-124.tsx",
+        path: "components/comp-124.tsx",
         type: "registry:component",
       },
     ],
@@ -1698,7 +1698,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-125.tsx",
+        path: "components/comp-125.tsx",
         type: "registry:component",
       },
       {
@@ -1714,7 +1714,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-126.tsx",
+        path: "components/comp-126.tsx",
         type: "registry:component",
       },
       {
@@ -1730,7 +1730,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-127.tsx",
+        path: "components/comp-127.tsx",
         type: "registry:component",
       },
     ],
@@ -1742,7 +1742,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-128.tsx",
+        path: "components/comp-128.tsx",
         type: "registry:component",
       },
     ],
@@ -1757,7 +1757,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-129.tsx",
+        path: "components/comp-129.tsx",
         type: "registry:component",
       },
     ],
@@ -1769,7 +1769,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/toggle.json"],
     files: [
       {
-        path: "compositions/comp-130.tsx",
+        path: "components/comp-130.tsx",
         type: "registry:component",
       },
     ],
@@ -1784,7 +1784,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-131.tsx",
+        path: "components/comp-131.tsx",
         type: "registry:component",
       },
     ],
@@ -1799,7 +1799,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-132.tsx",
+        path: "components/comp-132.tsx",
         type: "registry:component",
       },
     ],
@@ -1814,7 +1814,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-133.tsx",
+        path: "components/comp-133.tsx",
         type: "registry:component",
       },
     ],
@@ -1829,7 +1829,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-134.tsx",
+        path: "components/comp-134.tsx",
         type: "registry:component",
       },
     ],
@@ -1844,7 +1844,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-135.tsx",
+        path: "components/comp-135.tsx",
         type: "registry:component",
       },
     ],
@@ -1859,7 +1859,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-136.tsx",
+        path: "components/comp-136.tsx",
         type: "registry:component",
       },
     ],
@@ -1874,7 +1874,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-137.tsx",
+        path: "components/comp-137.tsx",
         type: "registry:component",
       },
     ],
@@ -1889,7 +1889,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-138.tsx",
+        path: "components/comp-138.tsx",
         type: "registry:component",
       },
     ],
@@ -1904,7 +1904,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-139.tsx",
+        path: "components/comp-139.tsx",
         type: "registry:component",
       },
     ],
@@ -1919,7 +1919,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-140.tsx",
+        path: "components/comp-140.tsx",
         type: "registry:component",
       },
     ],
@@ -1934,7 +1934,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-141.tsx",
+        path: "components/comp-141.tsx",
         type: "registry:component",
       },
     ],
@@ -1950,7 +1950,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-142.tsx",
+        path: "components/comp-142.tsx",
         type: "registry:component",
       },
     ],
@@ -1965,7 +1965,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-143.tsx",
+        path: "components/comp-143.tsx",
         type: "registry:component",
       },
     ],
@@ -1980,7 +1980,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-144.tsx",
+        path: "components/comp-144.tsx",
         type: "registry:component",
       },
     ],
@@ -1995,7 +1995,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-145.tsx",
+        path: "components/comp-145.tsx",
         type: "registry:component",
       },
     ],
@@ -2010,7 +2010,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-146.tsx",
+        path: "components/comp-146.tsx",
         type: "registry:component",
       },
     ],
@@ -2025,7 +2025,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-147.tsx",
+        path: "components/comp-147.tsx",
         type: "registry:component",
       },
     ],
@@ -2041,7 +2041,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-148.tsx",
+        path: "components/comp-148.tsx",
         type: "registry:component",
       },
     ],
@@ -2053,7 +2053,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/checkbox.json"],
     files: [
       {
-        path: "compositions/comp-149.tsx",
+        path: "components/comp-149.tsx",
         type: "registry:component",
       },
     ],
@@ -2064,7 +2064,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-150.tsx",
+        path: "components/comp-150.tsx",
         type: "registry:component",
       },
     ],
@@ -2079,7 +2079,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-151.tsx",
+        path: "components/comp-151.tsx",
         type: "registry:component",
       },
     ],
@@ -2094,7 +2094,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-152.tsx",
+        path: "components/comp-152.tsx",
         type: "registry:component",
       },
     ],
@@ -2109,7 +2109,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-153.tsx",
+        path: "components/comp-153.tsx",
         type: "registry:component",
       },
     ],
@@ -2124,7 +2124,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-154.tsx",
+        path: "components/comp-154.tsx",
         type: "registry:component",
       },
     ],
@@ -2139,7 +2139,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-155.tsx",
+        path: "components/comp-155.tsx",
         type: "registry:component",
       },
     ],
@@ -2155,7 +2155,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-156.tsx",
+        path: "components/comp-156.tsx",
         type: "registry:component",
       },
     ],
@@ -2171,7 +2171,7 @@ export const components: Registry = [
     dependencies: ["@remixicon/react"],
     files: [
       {
-        path: "compositions/comp-157.tsx",
+        path: "components/comp-157.tsx",
         type: "registry:component",
       },
     ],
@@ -2183,7 +2183,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/radio-group.json"],
     files: [
       {
-        path: "compositions/comp-158.tsx",
+        path: "components/comp-158.tsx",
         type: "registry:component",
       },
     ],
@@ -2198,7 +2198,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-159.tsx",
+        path: "components/comp-159.tsx",
         type: "registry:component",
       },
     ],
@@ -2213,7 +2213,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-160.tsx",
+        path: "components/comp-160.tsx",
         type: "registry:component",
       },
     ],
@@ -2228,7 +2228,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-161.tsx",
+        path: "components/comp-161.tsx",
         type: "registry:component",
       },
     ],
@@ -2243,7 +2243,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-162.tsx",
+        path: "components/comp-162.tsx",
         type: "registry:component",
       },
     ],
@@ -2256,7 +2256,7 @@ export const components: Registry = [
     dependencies: ["@remixicon/react"],
     files: [
       {
-        path: "compositions/comp-163.tsx",
+        path: "components/comp-163.tsx",
         type: "registry:component",
       },
     ],
@@ -2268,7 +2268,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/radio-group.json"],
     files: [
       {
-        path: "compositions/comp-164.tsx",
+        path: "components/comp-164.tsx",
         type: "registry:component",
       },
     ],
@@ -2283,7 +2283,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-165.tsx",
+        path: "components/comp-165.tsx",
         type: "registry:component",
       },
     ],
@@ -2299,7 +2299,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-166.tsx",
+        path: "components/comp-166.tsx",
         type: "registry:component",
       },
     ],
@@ -2311,7 +2311,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/radio-group.json"],
     files: [
       {
-        path: "compositions/comp-167.tsx",
+        path: "components/comp-167.tsx",
         type: "registry:component",
       },
     ],
@@ -2323,7 +2323,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/radio-group.json"],
     files: [
       {
-        path: "compositions/comp-168.tsx",
+        path: "components/comp-168.tsx",
         type: "registry:component",
       },
     ],
@@ -2335,7 +2335,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/radio-group.json"],
     files: [
       {
-        path: "compositions/comp-169.tsx",
+        path: "components/comp-169.tsx",
         type: "registry:component",
       },
     ],
@@ -2347,7 +2347,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/radio-group.json"],
     files: [
       {
-        path: "compositions/comp-170.tsx",
+        path: "components/comp-170.tsx",
         type: "registry:component",
       },
     ],
@@ -2360,7 +2360,7 @@ export const components: Registry = [
     dependencies: ["@remixicon/react"],
     files: [
       {
-        path: "compositions/comp-171.tsx",
+        path: "components/comp-171.tsx",
         type: "registry:component",
       },
     ],
@@ -2375,7 +2375,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-172.tsx",
+        path: "components/comp-172.tsx",
         type: "registry:component",
       },
     ],
@@ -2390,7 +2390,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-173.tsx",
+        path: "components/comp-173.tsx",
         type: "registry:component",
       },
     ],
@@ -2405,7 +2405,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-174.tsx",
+        path: "components/comp-174.tsx",
         type: "registry:component",
       },
     ],
@@ -2420,7 +2420,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-175.tsx",
+        path: "components/comp-175.tsx",
         type: "registry:component",
       },
     ],
@@ -2435,7 +2435,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-176.tsx",
+        path: "components/comp-176.tsx",
         type: "registry:component",
       },
     ],
@@ -2450,7 +2450,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-177.tsx",
+        path: "components/comp-177.tsx",
         type: "registry:component",
       },
     ],
@@ -2465,7 +2465,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-178.tsx",
+        path: "components/comp-178.tsx",
         type: "registry:component",
       },
     ],
@@ -2480,7 +2480,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-179.tsx",
+        path: "components/comp-179.tsx",
         type: "registry:component",
       },
     ],
@@ -2492,7 +2492,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/switch.json"],
     files: [
       {
-        path: "compositions/comp-180.tsx",
+        path: "components/comp-180.tsx",
         type: "registry:component",
       },
     ],
@@ -2507,7 +2507,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-181.tsx",
+        path: "components/comp-181.tsx",
         type: "registry:component",
       },
     ],
@@ -2519,7 +2519,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/switch.json"],
     files: [
       {
-        path: "compositions/comp-182.tsx",
+        path: "components/comp-182.tsx",
         type: "registry:component",
       },
     ],
@@ -2534,7 +2534,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-183.tsx",
+        path: "components/comp-183.tsx",
         type: "registry:component",
       },
     ],
@@ -2549,7 +2549,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-184.tsx",
+        path: "components/comp-184.tsx",
         type: "registry:component",
       },
     ],
@@ -2564,7 +2564,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-186.tsx",
+        path: "components/comp-186.tsx",
         type: "registry:component",
       },
     ],
@@ -2579,7 +2579,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-187.tsx",
+        path: "components/comp-187.tsx",
         type: "registry:component",
       },
     ],
@@ -2594,7 +2594,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-188.tsx",
+        path: "components/comp-188.tsx",
         type: "registry:component",
       },
     ],
@@ -2609,7 +2609,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-189.tsx",
+        path: "components/comp-189.tsx",
         type: "registry:component",
       },
     ],
@@ -2624,7 +2624,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-190.tsx",
+        path: "components/comp-190.tsx",
         type: "registry:component",
       },
     ],
@@ -2639,7 +2639,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-191.tsx",
+        path: "components/comp-191.tsx",
         type: "registry:component",
       },
     ],
@@ -2654,7 +2654,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-192.tsx",
+        path: "components/comp-192.tsx",
         type: "registry:component",
       },
     ],
@@ -2669,7 +2669,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-193.tsx",
+        path: "components/comp-193.tsx",
         type: "registry:component",
       },
     ],
@@ -2684,7 +2684,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-194.tsx",
+        path: "components/comp-194.tsx",
         type: "registry:component",
       },
     ],
@@ -2699,7 +2699,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-195.tsx",
+        path: "components/comp-195.tsx",
         type: "registry:component",
       },
     ],
@@ -2714,7 +2714,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-196.tsx",
+        path: "components/comp-196.tsx",
         type: "registry:component",
       },
     ],
@@ -2729,7 +2729,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-197.tsx",
+        path: "components/comp-197.tsx",
         type: "registry:component",
       },
     ],
@@ -2744,7 +2744,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-198.tsx",
+        path: "components/comp-198.tsx",
         type: "registry:component",
       },
     ],
@@ -2759,7 +2759,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-199.tsx",
+        path: "components/comp-199.tsx",
         type: "registry:component",
       },
     ],
@@ -2774,7 +2774,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-200.tsx",
+        path: "components/comp-200.tsx",
         type: "registry:component",
       },
     ],
@@ -2786,7 +2786,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/select-native.json"],
     files: [
       {
-        path: "compositions/comp-201.tsx",
+        path: "components/comp-201.tsx",
         type: "registry:component",
       },
     ],
@@ -2798,7 +2798,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/select-native.json"],
     files: [
       {
-        path: "compositions/comp-202.tsx",
+        path: "components/comp-202.tsx",
         type: "registry:component",
       },
     ],
@@ -2813,7 +2813,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-203.tsx",
+        path: "components/comp-203.tsx",
         type: "registry:component",
       },
     ],
@@ -2828,7 +2828,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-204.tsx",
+        path: "components/comp-204.tsx",
         type: "registry:component",
       },
     ],
@@ -2843,7 +2843,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-205.tsx",
+        path: "components/comp-205.tsx",
         type: "registry:component",
       },
     ],
@@ -2858,7 +2858,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-206.tsx",
+        path: "components/comp-206.tsx",
         type: "registry:component",
       },
     ],
@@ -2873,7 +2873,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-207.tsx",
+        path: "components/comp-207.tsx",
         type: "registry:component",
       },
     ],
@@ -2888,7 +2888,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-208.tsx",
+        path: "components/comp-208.tsx",
         type: "registry:component",
       },
     ],
@@ -2903,7 +2903,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-209.tsx",
+        path: "components/comp-209.tsx",
         type: "registry:component",
       },
     ],
@@ -2918,7 +2918,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-210.tsx",
+        path: "components/comp-210.tsx",
         type: "registry:component",
       },
     ],
@@ -2933,7 +2933,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-211.tsx",
+        path: "components/comp-211.tsx",
         type: "registry:component",
       },
     ],
@@ -2948,7 +2948,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-212.tsx",
+        path: "components/comp-212.tsx",
         type: "registry:component",
       },
     ],
@@ -2963,7 +2963,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-213.tsx",
+        path: "components/comp-213.tsx",
         type: "registry:component",
       },
     ],
@@ -2978,7 +2978,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-214.tsx",
+        path: "components/comp-214.tsx",
         type: "registry:component",
       },
     ],
@@ -2993,7 +2993,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-215.tsx",
+        path: "components/comp-215.tsx",
         type: "registry:component",
       },
     ],
@@ -3005,7 +3005,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/select.json"],
     files: [
       {
-        path: "compositions/comp-216.tsx",
+        path: "components/comp-216.tsx",
         type: "registry:component",
       },
     ],
@@ -3017,7 +3017,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/select.json"],
     files: [
       {
-        path: "compositions/comp-217.tsx",
+        path: "components/comp-217.tsx",
         type: "registry:component",
       },
     ],
@@ -3032,7 +3032,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-218.tsx",
+        path: "components/comp-218.tsx",
         type: "registry:component",
       },
     ],
@@ -3047,7 +3047,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-219.tsx",
+        path: "components/comp-219.tsx",
         type: "registry:component",
       },
     ],
@@ -3062,7 +3062,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-220.tsx",
+        path: "components/comp-220.tsx",
         type: "registry:component",
       },
     ],
@@ -3077,7 +3077,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-221.tsx",
+        path: "components/comp-221.tsx",
         type: "registry:component",
       },
     ],
@@ -3093,7 +3093,7 @@ export const components: Registry = [
     dependencies: ["@remixicon/react"],
     files: [
       {
-        path: "compositions/comp-222.tsx",
+        path: "components/comp-222.tsx",
         type: "registry:component",
       },
     ],
@@ -3109,7 +3109,7 @@ export const components: Registry = [
     dependencies: ["@remixicon/react"],
     files: [
       {
-        path: "compositions/comp-223.tsx",
+        path: "components/comp-223.tsx",
         type: "registry:component",
       },
     ],
@@ -3124,7 +3124,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-224.tsx",
+        path: "components/comp-224.tsx",
         type: "registry:component",
       },
     ],
@@ -3139,7 +3139,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-225.tsx",
+        path: "components/comp-225.tsx",
         type: "registry:component",
       },
     ],
@@ -3154,7 +3154,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-226.tsx",
+        path: "components/comp-226.tsx",
         type: "registry:component",
       },
     ],
@@ -3169,7 +3169,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-227.tsx",
+        path: "components/comp-227.tsx",
         type: "registry:component",
       },
     ],
@@ -3184,7 +3184,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-228.tsx",
+        path: "components/comp-228.tsx",
         type: "registry:component",
       },
     ],
@@ -3201,7 +3201,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-229.tsx",
+        path: "components/comp-229.tsx",
         type: "registry:component",
       },
     ],
@@ -3218,7 +3218,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-230.tsx",
+        path: "components/comp-230.tsx",
         type: "registry:component",
       },
     ],
@@ -3235,7 +3235,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-231.tsx",
+        path: "components/comp-231.tsx",
         type: "registry:component",
       },
     ],
@@ -3252,7 +3252,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-232.tsx",
+        path: "components/comp-232.tsx",
         type: "registry:component",
       },
     ],
@@ -3269,7 +3269,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-233.tsx",
+        path: "components/comp-233.tsx",
         type: "registry:component",
       },
     ],
@@ -3284,7 +3284,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-234.tsx",
+        path: "components/comp-234.tsx",
         type: "registry:component",
       },
     ],
@@ -3299,7 +3299,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-235.tsx",
+        path: "components/comp-235.tsx",
         type: "registry:component",
       },
     ],
@@ -3314,7 +3314,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-236.tsx",
+        path: "components/comp-236.tsx",
         type: "registry:component",
       },
     ],
@@ -3327,7 +3327,7 @@ export const components: Registry = [
     dependencies: ["react-aria-components"],
     files: [
       {
-        path: "compositions/comp-237.tsx",
+        path: "components/comp-237.tsx",
         type: "registry:component",
       },
     ],
@@ -3340,7 +3340,7 @@ export const components: Registry = [
     dependencies: ["react-aria-components"],
     files: [
       {
-        path: "compositions/comp-238.tsx",
+        path: "components/comp-238.tsx",
         type: "registry:component",
       },
     ],
@@ -3353,7 +3353,7 @@ export const components: Registry = [
     dependencies: ["react-aria-components"],
     files: [
       {
-        path: "compositions/comp-239.tsx",
+        path: "components/comp-239.tsx",
         type: "registry:component",
       },
     ],
@@ -3368,7 +3368,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-240.tsx",
+        path: "components/comp-240.tsx",
         type: "registry:component",
       },
     ],
@@ -3383,7 +3383,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-241.tsx",
+        path: "components/comp-241.tsx",
         type: "registry:component",
       },
     ],
@@ -3398,7 +3398,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-242.tsx",
+        path: "components/comp-242.tsx",
         type: "registry:component",
       },
     ],
@@ -3413,7 +3413,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-243.tsx",
+        path: "components/comp-243.tsx",
         type: "registry:component",
       },
     ],
@@ -3428,7 +3428,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-244.tsx",
+        path: "components/comp-244.tsx",
         type: "registry:component",
       },
     ],
@@ -3443,7 +3443,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-245.tsx",
+        path: "components/comp-245.tsx",
         type: "registry:component",
       },
     ],
@@ -3458,7 +3458,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-246.tsx",
+        path: "components/comp-246.tsx",
         type: "registry:component",
       },
     ],
@@ -3473,7 +3473,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-247.tsx",
+        path: "components/comp-247.tsx",
         type: "registry:component",
       },
     ],
@@ -3488,7 +3488,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-248.tsx",
+        path: "components/comp-248.tsx",
         type: "registry:component",
       },
     ],
@@ -3503,7 +3503,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-249.tsx",
+        path: "components/comp-249.tsx",
         type: "registry:component",
       },
     ],
@@ -3518,7 +3518,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-250.tsx",
+        path: "components/comp-250.tsx",
         type: "registry:component",
       },
     ],
@@ -3533,7 +3533,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-251.tsx",
+        path: "components/comp-251.tsx",
         type: "registry:component",
       },
     ],
@@ -3548,7 +3548,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-252.tsx",
+        path: "components/comp-252.tsx",
         type: "registry:component",
       },
     ],
@@ -3563,7 +3563,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-253.tsx",
+        path: "components/comp-253.tsx",
         type: "registry:component",
       },
     ],
@@ -3581,7 +3581,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-254.tsx",
+        path: "components/comp-254.tsx",
         type: "registry:component",
       },
       {
@@ -3601,7 +3601,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-255.tsx",
+        path: "components/comp-255.tsx",
         type: "registry:component",
       },
       {
@@ -3620,7 +3620,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-256.tsx",
+        path: "components/comp-256.tsx",
         type: "registry:component",
       },
     ],
@@ -3635,7 +3635,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-257.tsx",
+        path: "components/comp-257.tsx",
         type: "registry:component",
       },
     ],
@@ -3651,7 +3651,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-258.tsx",
+        path: "components/comp-258.tsx",
         type: "registry:component",
       },
       {
@@ -3671,7 +3671,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-259.tsx",
+        path: "components/comp-259.tsx",
         type: "registry:component",
       },
     ],
@@ -3687,7 +3687,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-260.tsx",
+        path: "components/comp-260.tsx",
         type: "registry:component",
       },
     ],
@@ -3702,7 +3702,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-261.tsx",
+        path: "components/comp-261.tsx",
         type: "registry:component",
       },
     ],
@@ -3718,7 +3718,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-262.tsx",
+        path: "components/comp-262.tsx",
         type: "registry:component",
       },
       {
@@ -3737,7 +3737,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-263.tsx",
+        path: "components/comp-263.tsx",
         type: "registry:component",
       },
     ],
@@ -3754,7 +3754,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-264.tsx",
+        path: "components/comp-264.tsx",
         type: "registry:component",
       },
       {
@@ -3775,7 +3775,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-265.tsx",
+        path: "components/comp-265.tsx",
         type: "registry:component",
       },
       {
@@ -3794,7 +3794,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-266.tsx",
+        path: "components/comp-266.tsx",
         type: "registry:component",
       },
     ],
@@ -3805,7 +3805,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-267.tsx",
+        path: "components/comp-267.tsx",
         type: "registry:component",
       },
     ],
@@ -3816,7 +3816,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-268.tsx",
+        path: "components/comp-268.tsx",
         type: "registry:component",
       },
     ],
@@ -3827,7 +3827,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-269.tsx",
+        path: "components/comp-269.tsx",
         type: "registry:component",
       },
     ],
@@ -3838,7 +3838,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-270.tsx",
+        path: "components/comp-270.tsx",
         type: "registry:component",
       },
     ],
@@ -3849,7 +3849,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-271.tsx",
+        path: "components/comp-271.tsx",
         type: "registry:component",
       },
     ],
@@ -3860,7 +3860,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-272.tsx",
+        path: "components/comp-272.tsx",
         type: "registry:component",
       },
     ],
@@ -3871,7 +3871,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-273.tsx",
+        path: "components/comp-273.tsx",
         type: "registry:component",
       },
     ],
@@ -3882,7 +3882,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-274.tsx",
+        path: "components/comp-274.tsx",
         type: "registry:component",
       },
     ],
@@ -3893,7 +3893,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-275.tsx",
+        path: "components/comp-275.tsx",
         type: "registry:component",
       },
     ],
@@ -3904,7 +3904,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-276.tsx",
+        path: "components/comp-276.tsx",
         type: "registry:component",
       },
     ],
@@ -3915,7 +3915,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-277.tsx",
+        path: "components/comp-277.tsx",
         type: "registry:component",
       },
     ],
@@ -3926,7 +3926,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-278.tsx",
+        path: "components/comp-278.tsx",
         type: "registry:component",
       },
     ],
@@ -3938,7 +3938,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-279.tsx",
+        path: "components/comp-279.tsx",
         type: "registry:component",
       },
     ],
@@ -3950,7 +3950,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-280.tsx",
+        path: "components/comp-280.tsx",
         type: "registry:component",
       },
     ],
@@ -3962,7 +3962,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-281.tsx",
+        path: "components/comp-281.tsx",
         type: "registry:component",
       },
     ],
@@ -3974,7 +3974,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-282.tsx",
+        path: "components/comp-282.tsx",
         type: "registry:component",
       },
     ],
@@ -3986,7 +3986,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-283.tsx",
+        path: "components/comp-283.tsx",
         type: "registry:component",
       },
     ],
@@ -3998,7 +3998,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-284.tsx",
+        path: "components/comp-284.tsx",
         type: "registry:component",
       },
     ],
@@ -4010,7 +4010,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-285.tsx",
+        path: "components/comp-285.tsx",
         type: "registry:component",
       },
     ],
@@ -4022,7 +4022,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-286.tsx",
+        path: "components/comp-286.tsx",
         type: "registry:component",
       },
     ],
@@ -4034,7 +4034,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-287.tsx",
+        path: "components/comp-287.tsx",
         type: "registry:component",
       },
     ],
@@ -4046,7 +4046,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-288.tsx",
+        path: "components/comp-288.tsx",
         type: "registry:component",
       },
     ],
@@ -4058,7 +4058,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-289.tsx",
+        path: "components/comp-289.tsx",
         type: "registry:component",
       },
     ],
@@ -4070,7 +4070,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-290.tsx",
+        path: "components/comp-290.tsx",
         type: "registry:component",
       },
     ],
@@ -4082,7 +4082,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-291.tsx",
+        path: "components/comp-291.tsx",
         type: "registry:component",
       },
     ],
@@ -4094,7 +4094,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-292.tsx",
+        path: "components/comp-292.tsx",
         type: "registry:component",
       },
     ],
@@ -4106,7 +4106,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-293.tsx",
+        path: "components/comp-293.tsx",
         type: "registry:component",
       },
     ],
@@ -4118,7 +4118,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-294.tsx",
+        path: "components/comp-294.tsx",
         type: "registry:component",
       },
     ],
@@ -4130,7 +4130,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-295.tsx",
+        path: "components/comp-295.tsx",
         type: "registry:component",
       },
     ],
@@ -4142,7 +4142,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-296.tsx",
+        path: "components/comp-296.tsx",
         type: "registry:component",
       },
     ],
@@ -4157,7 +4157,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-297.tsx",
+        path: "components/comp-297.tsx",
         type: "registry:component",
       },
       {
@@ -4176,7 +4176,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-298.tsx",
+        path: "components/comp-298.tsx",
         type: "registry:component",
       },
     ],
@@ -4189,7 +4189,7 @@ export const components: Registry = [
     dependencies: ["sonner"],
     files: [
       {
-        path: "compositions/comp-299.tsx",
+        path: "components/comp-299.tsx",
         type: "registry:component",
       },
     ],
@@ -4202,7 +4202,7 @@ export const components: Registry = [
     dependencies: ["sonner"],
     files: [
       {
-        path: "compositions/comp-300.tsx",
+        path: "components/comp-300.tsx",
         type: "registry:component",
       },
     ],
@@ -4214,7 +4214,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-301.tsx",
+        path: "components/comp-301.tsx",
         type: "registry:component",
       },
     ],
@@ -4225,7 +4225,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-302.tsx",
+        path: "components/comp-302.tsx",
         type: "registry:component",
       },
     ],
@@ -4236,7 +4236,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-303.tsx",
+        path: "components/comp-303.tsx",
         type: "registry:component",
       },
     ],
@@ -4247,7 +4247,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-304.tsx",
+        path: "components/comp-304.tsx",
         type: "registry:component",
       },
     ],
@@ -4259,7 +4259,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-305.tsx",
+        path: "components/comp-305.tsx",
         type: "registry:component",
       },
     ],
@@ -4271,7 +4271,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-306.tsx",
+        path: "components/comp-306.tsx",
         type: "registry:component",
       },
     ],
@@ -4283,7 +4283,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-307.tsx",
+        path: "components/comp-307.tsx",
         type: "registry:component",
       },
     ],
@@ -4295,7 +4295,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-308.tsx",
+        path: "components/comp-308.tsx",
         type: "registry:component",
       },
     ],
@@ -4307,7 +4307,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-309.tsx",
+        path: "components/comp-309.tsx",
         type: "registry:component",
       },
     ],
@@ -4319,7 +4319,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-310.tsx",
+        path: "components/comp-310.tsx",
         type: "registry:component",
       },
     ],
@@ -4330,7 +4330,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-311.tsx",
+        path: "components/comp-311.tsx",
         type: "registry:component",
       },
     ],
@@ -4342,7 +4342,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-312.tsx",
+        path: "components/comp-312.tsx",
         type: "registry:component",
       },
     ],
@@ -4357,7 +4357,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-313.tsx",
+        path: "components/comp-313.tsx",
         type: "registry:component",
       },
     ],
@@ -4372,7 +4372,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-314.tsx",
+        path: "components/comp-314.tsx",
         type: "registry:component",
       },
     ],
@@ -4387,7 +4387,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-315.tsx",
+        path: "components/comp-315.tsx",
         type: "registry:component",
       },
     ],
@@ -4403,7 +4403,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-316.tsx",
+        path: "components/comp-316.tsx",
         type: "registry:component",
       },
     ],
@@ -4418,7 +4418,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-317.tsx",
+        path: "components/comp-317.tsx",
         type: "registry:component",
       },
     ],
@@ -4433,7 +4433,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-318.tsx",
+        path: "components/comp-318.tsx",
         type: "registry:component",
       },
     ],
@@ -4448,7 +4448,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-319.tsx",
+        path: "components/comp-319.tsx",
         type: "registry:component",
       },
     ],
@@ -4465,7 +4465,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-320.tsx",
+        path: "components/comp-320.tsx",
         type: "registry:component",
       },
     ],
@@ -4481,7 +4481,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-321.tsx",
+        path: "components/comp-321.tsx",
         type: "registry:component",
       },
     ],
@@ -4497,7 +4497,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-322.tsx",
+        path: "components/comp-322.tsx",
         type: "registry:component",
       },
     ],
@@ -4515,7 +4515,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-323.tsx",
+        path: "components/comp-323.tsx",
         type: "registry:component",
       },
     ],
@@ -4531,7 +4531,7 @@ export const components: Registry = [
     dependencies: ["input-otp"],
     files: [
       {
-        path: "compositions/comp-324.tsx",
+        path: "components/comp-324.tsx",
         type: "registry:component",
       },
     ],
@@ -4548,7 +4548,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-325.tsx",
+        path: "components/comp-325.tsx",
         type: "registry:component",
       },
     ],
@@ -4566,7 +4566,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-326.tsx",
+        path: "components/comp-326.tsx",
         type: "registry:component",
       },
     ],
@@ -4584,7 +4584,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-327.tsx",
+        path: "components/comp-327.tsx",
         type: "registry:component",
       },
     ],
@@ -4605,7 +4605,7 @@ export const components: Registry = [
     // doesn't work: https://github.com/shadcn-ui/ui/issues/5270
     files: [
       {
-        path: "compositions/comp-328.tsx",
+        path: "components/comp-328.tsx",
         type: "registry:component",
       },
     ],
@@ -4627,7 +4627,7 @@ export const components: Registry = [
     // doesn't work: https://github.com/shadcn-ui/ui/issues/5270
     files: [
       {
-        path: "compositions/comp-329.tsx",
+        path: "components/comp-329.tsx",
         type: "registry:component",
       },
     ],
@@ -4644,7 +4644,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-330.tsx",
+        path: "components/comp-330.tsx",
         type: "registry:component",
       },
     ],
@@ -4662,7 +4662,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-331.tsx",
+        path: "components/comp-331.tsx",
         type: "registry:component",
       },
       {
@@ -4685,7 +4685,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-332.tsx",
+        path: "components/comp-332.tsx",
         type: "registry:component",
       },
     ],
@@ -4697,7 +4697,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/command.json"],
     files: [
       {
-        path: "compositions/comp-333.tsx",
+        path: "components/comp-333.tsx",
         type: "registry:component",
       },
     ],
@@ -4709,7 +4709,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
-        path: "compositions/comp-334.tsx",
+        path: "components/comp-334.tsx",
         type: "registry:component",
       },
     ],
@@ -4721,7 +4721,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
-        path: "compositions/comp-335.tsx",
+        path: "components/comp-335.tsx",
         type: "registry:component",
       },
     ],
@@ -4733,7 +4733,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
-        path: "compositions/comp-336.tsx",
+        path: "components/comp-336.tsx",
         type: "registry:component",
       },
     ],
@@ -4745,7 +4745,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
-        path: "compositions/comp-337.tsx",
+        path: "components/comp-337.tsx",
         type: "registry:component",
       },
     ],
@@ -4757,7 +4757,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
-        path: "compositions/comp-338.tsx",
+        path: "components/comp-338.tsx",
         type: "registry:component",
       },
     ],
@@ -4769,7 +4769,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
-        path: "compositions/comp-339.tsx",
+        path: "components/comp-339.tsx",
         type: "registry:component",
       },
     ],
@@ -4781,7 +4781,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
-        path: "compositions/comp-340.tsx",
+        path: "components/comp-340.tsx",
         type: "registry:component",
       },
     ],
@@ -4793,7 +4793,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
-        path: "compositions/comp-341.tsx",
+        path: "components/comp-341.tsx",
         type: "registry:component",
       },
     ],
@@ -4805,7 +4805,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
-        path: "compositions/comp-342.tsx",
+        path: "components/comp-342.tsx",
         type: "registry:component",
       },
     ],
@@ -4817,7 +4817,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
-        path: "compositions/comp-343.tsx",
+        path: "components/comp-343.tsx",
         type: "registry:component",
       },
     ],
@@ -4829,7 +4829,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
-        path: "compositions/comp-344.tsx",
+        path: "components/comp-344.tsx",
         type: "registry:component",
       },
     ],
@@ -4841,7 +4841,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
-        path: "compositions/comp-345.tsx",
+        path: "components/comp-345.tsx",
         type: "registry:component",
       },
     ],
@@ -4853,7 +4853,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
-        path: "compositions/comp-346.tsx",
+        path: "components/comp-346.tsx",
         type: "registry:component",
       },
     ],
@@ -4865,7 +4865,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
-        path: "compositions/comp-347.tsx",
+        path: "components/comp-347.tsx",
         type: "registry:component",
       },
     ],
@@ -4877,7 +4877,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
-        path: "compositions/comp-348.tsx",
+        path: "components/comp-348.tsx",
         type: "registry:component",
       },
     ],
@@ -4889,7 +4889,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
-        path: "compositions/comp-349.tsx",
+        path: "components/comp-349.tsx",
         type: "registry:component",
       },
     ],
@@ -4901,7 +4901,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
-        path: "compositions/comp-350.tsx",
+        path: "components/comp-350.tsx",
         type: "registry:component",
       },
     ],
@@ -4913,7 +4913,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/accordion.json"],
     files: [
       {
-        path: "compositions/comp-351.tsx",
+        path: "components/comp-351.tsx",
         type: "registry:component",
       },
     ],
@@ -4928,7 +4928,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-352.tsx",
+        path: "components/comp-352.tsx",
         type: "registry:component",
       },
     ],
@@ -4943,7 +4943,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-353.tsx",
+        path: "components/comp-353.tsx",
         type: "registry:component",
       },
     ],
@@ -4958,7 +4958,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-354.tsx",
+        path: "components/comp-354.tsx",
         type: "registry:component",
       },
     ],
@@ -4973,7 +4973,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-355.tsx",
+        path: "components/comp-355.tsx",
         type: "registry:component",
       },
     ],
@@ -4988,7 +4988,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-356.tsx",
+        path: "components/comp-356.tsx",
         type: "registry:component",
       },
     ],
@@ -5003,7 +5003,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-357.tsx",
+        path: "components/comp-357.tsx",
         type: "registry:component",
       },
     ],
@@ -5018,7 +5018,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-358.tsx",
+        path: "components/comp-358.tsx",
         type: "registry:component",
       },
     ],
@@ -5033,7 +5033,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-359.tsx",
+        path: "components/comp-359.tsx",
         type: "registry:component",
       },
     ],
@@ -5048,7 +5048,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-360.tsx",
+        path: "components/comp-360.tsx",
         type: "registry:component",
       },
     ],
@@ -5063,7 +5063,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-361.tsx",
+        path: "components/comp-361.tsx",
         type: "registry:component",
       },
     ],
@@ -5078,7 +5078,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-362.tsx",
+        path: "components/comp-362.tsx",
         type: "registry:component",
       },
     ],
@@ -5093,7 +5093,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-363.tsx",
+        path: "components/comp-363.tsx",
         type: "registry:component",
       },
     ],
@@ -5105,7 +5105,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/hover-card.json"],
     files: [
       {
-        path: "compositions/comp-364.tsx",
+        path: "components/comp-364.tsx",
         type: "registry:component",
       },
     ],
@@ -5117,7 +5117,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/hover-card.json"],
     files: [
       {
-        path: "compositions/comp-365.tsx",
+        path: "components/comp-365.tsx",
         type: "registry:component",
       },
     ],
@@ -5132,7 +5132,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-366.tsx",
+        path: "components/comp-366.tsx",
         type: "registry:component",
       },
     ],
@@ -5147,7 +5147,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-367.tsx",
+        path: "components/comp-367.tsx",
         type: "registry:component",
       },
     ],
@@ -5162,7 +5162,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-368.tsx",
+        path: "components/comp-368.tsx",
         type: "registry:component",
       },
     ],
@@ -5177,7 +5177,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-369.tsx",
+        path: "components/comp-369.tsx",
         type: "registry:component",
       },
     ],
@@ -5192,7 +5192,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-370.tsx",
+        path: "components/comp-370.tsx",
         type: "registry:component",
       },
     ],
@@ -5207,7 +5207,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-371.tsx",
+        path: "components/comp-371.tsx",
         type: "registry:component",
       },
     ],
@@ -5222,7 +5222,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-372.tsx",
+        path: "components/comp-372.tsx",
         type: "registry:component",
       },
     ],
@@ -5237,7 +5237,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-373.tsx",
+        path: "components/comp-373.tsx",
         type: "registry:component",
       },
     ],
@@ -5252,7 +5252,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-374.tsx",
+        path: "components/comp-374.tsx",
         type: "registry:component",
       },
     ],
@@ -5267,7 +5267,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-375.tsx",
+        path: "components/comp-375.tsx",
         type: "registry:component",
       },
     ],
@@ -5282,7 +5282,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-376.tsx",
+        path: "components/comp-376.tsx",
         type: "registry:component",
       },
     ],
@@ -5298,7 +5298,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-377.tsx",
+        path: "components/comp-377.tsx",
         type: "registry:component",
       },
     ],
@@ -5313,7 +5313,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-378.tsx",
+        path: "components/comp-378.tsx",
         type: "registry:component",
       },
     ],
@@ -5328,7 +5328,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-379.tsx",
+        path: "components/comp-379.tsx",
         type: "registry:component",
       },
     ],
@@ -5343,7 +5343,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-380.tsx",
+        path: "components/comp-380.tsx",
         type: "registry:component",
       },
     ],
@@ -5360,7 +5360,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-381.tsx",
+        path: "components/comp-381.tsx",
         type: "registry:component",
       },
     ],
@@ -5376,7 +5376,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-382.tsx",
+        path: "components/comp-382.tsx",
         type: "registry:component",
       },
     ],
@@ -5392,7 +5392,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-383.tsx",
+        path: "components/comp-383.tsx",
         type: "registry:component",
       },
     ],
@@ -5407,7 +5407,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-384.tsx",
+        path: "components/comp-384.tsx",
         type: "registry:component",
       },
     ],
@@ -5422,7 +5422,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-385.tsx",
+        path: "components/comp-385.tsx",
         type: "registry:component",
       },
     ],
@@ -5437,7 +5437,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-386.tsx",
+        path: "components/comp-386.tsx",
         type: "registry:component",
       },
     ],
@@ -5454,7 +5454,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-387.tsx",
+        path: "components/comp-387.tsx",
         type: "registry:component",
       },
     ],
@@ -5470,7 +5470,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-388.tsx",
+        path: "components/comp-388.tsx",
         type: "registry:component",
       },
     ],
@@ -5485,7 +5485,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-389.tsx",
+        path: "components/comp-389.tsx",
         type: "registry:component",
       },
     ],
@@ -5497,7 +5497,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/avatar.json"],
     files: [
       {
-        path: "compositions/comp-390.tsx",
+        path: "components/comp-390.tsx",
         type: "registry:component",
       },
     ],
@@ -5509,7 +5509,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/avatar.json"],
     files: [
       {
-        path: "compositions/comp-391.tsx",
+        path: "components/comp-391.tsx",
         type: "registry:component",
       },
     ],
@@ -5521,7 +5521,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/avatar.json"],
     files: [
       {
-        path: "compositions/comp-392.tsx",
+        path: "components/comp-392.tsx",
         type: "registry:component",
       },
     ],
@@ -5533,7 +5533,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/avatar.json"],
     files: [
       {
-        path: "compositions/comp-393.tsx",
+        path: "components/comp-393.tsx",
         type: "registry:component",
       },
     ],
@@ -5545,7 +5545,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/avatar.json"],
     files: [
       {
-        path: "compositions/comp-394.tsx",
+        path: "components/comp-394.tsx",
         type: "registry:component",
       },
     ],
@@ -5557,7 +5557,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/avatar.json"],
     files: [
       {
-        path: "compositions/comp-395.tsx",
+        path: "components/comp-395.tsx",
         type: "registry:component",
       },
     ],
@@ -5569,7 +5569,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/avatar.json"],
     files: [
       {
-        path: "compositions/comp-396.tsx",
+        path: "components/comp-396.tsx",
         type: "registry:component",
       },
     ],
@@ -5581,7 +5581,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/avatar.json"],
     files: [
       {
-        path: "compositions/comp-397.tsx",
+        path: "components/comp-397.tsx",
         type: "registry:component",
       },
     ],
@@ -5596,7 +5596,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-398.tsx",
+        path: "components/comp-398.tsx",
         type: "registry:component",
       },
     ],
@@ -5611,7 +5611,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-399.tsx",
+        path: "components/comp-399.tsx",
         type: "registry:component",
       },
     ],
@@ -5622,7 +5622,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-400.tsx",
+        path: "components/comp-400.tsx",
         type: "registry:component",
       },
     ],
@@ -5633,7 +5633,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-401.tsx",
+        path: "components/comp-401.tsx",
         type: "registry:component",
       },
     ],
@@ -5644,7 +5644,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-402.tsx",
+        path: "components/comp-402.tsx",
         type: "registry:component",
       },
     ],
@@ -5655,7 +5655,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-403.tsx",
+        path: "components/comp-403.tsx",
         type: "registry:component",
       },
     ],
@@ -5666,7 +5666,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-404.tsx",
+        path: "components/comp-404.tsx",
         type: "registry:component",
       },
     ],
@@ -5677,7 +5677,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-405.tsx",
+        path: "components/comp-405.tsx",
         type: "registry:component",
       },
     ],
@@ -5688,7 +5688,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-406.tsx",
+        path: "components/comp-406.tsx",
         type: "registry:component",
       },
     ],
@@ -5699,7 +5699,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-407.tsx",
+        path: "components/comp-407.tsx",
         type: "registry:component",
       },
     ],
@@ -5710,7 +5710,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-408.tsx",
+        path: "components/comp-408.tsx",
         type: "registry:component",
       },
     ],
@@ -5722,7 +5722,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-409.tsx",
+        path: "components/comp-409.tsx",
         type: "registry:component",
       },
     ],
@@ -5734,7 +5734,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-410.tsx",
+        path: "components/comp-410.tsx",
         type: "registry:component",
       },
     ],
@@ -5746,7 +5746,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/button.json"],
     files: [
       {
-        path: "compositions/comp-411.tsx",
+        path: "components/comp-411.tsx",
         type: "registry:component",
       },
     ],
@@ -5757,7 +5757,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-412.tsx",
+        path: "components/comp-412.tsx",
         type: "registry:component",
       },
     ],
@@ -5769,7 +5769,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
-        path: "compositions/comp-413.tsx",
+        path: "components/comp-413.tsx",
         type: "registry:component",
       },
     ],
@@ -5781,7 +5781,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
-        path: "compositions/comp-414.tsx",
+        path: "components/comp-414.tsx",
         type: "registry:component",
       },
     ],
@@ -5793,7 +5793,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
-        path: "compositions/comp-415.tsx",
+        path: "components/comp-415.tsx",
         type: "registry:component",
       },
     ],
@@ -5805,7 +5805,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
-        path: "compositions/comp-416.tsx",
+        path: "components/comp-416.tsx",
         type: "registry:component",
       },
     ],
@@ -5817,7 +5817,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
-        path: "compositions/comp-417.tsx",
+        path: "components/comp-417.tsx",
         type: "registry:component",
       },
     ],
@@ -5829,7 +5829,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
-        path: "compositions/comp-418.tsx",
+        path: "components/comp-418.tsx",
         type: "registry:component",
       },
     ],
@@ -5841,7 +5841,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
-        path: "compositions/comp-419.tsx",
+        path: "components/comp-419.tsx",
         type: "registry:component",
       },
     ],
@@ -5853,7 +5853,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
-        path: "compositions/comp-420.tsx",
+        path: "components/comp-420.tsx",
         type: "registry:component",
       },
     ],
@@ -5865,7 +5865,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
-        path: "compositions/comp-421.tsx",
+        path: "components/comp-421.tsx",
         type: "registry:component",
       },
     ],
@@ -5877,7 +5877,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
-        path: "compositions/comp-422.tsx",
+        path: "components/comp-422.tsx",
         type: "registry:component",
       },
     ],
@@ -5889,7 +5889,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
-        path: "compositions/comp-423.tsx",
+        path: "components/comp-423.tsx",
         type: "registry:component",
       },
     ],
@@ -5900,7 +5900,7 @@ export const components: Registry = [
     type: "registry:component",
     files: [
       {
-        path: "compositions/comp-424.tsx",
+        path: "components/comp-424.tsx",
         type: "registry:component",
       },
     ],
@@ -5912,7 +5912,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/badge.json"],
     files: [
       {
-        path: "compositions/comp-425.tsx",
+        path: "components/comp-425.tsx",
         type: "registry:component",
       },
     ],
@@ -5924,7 +5924,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
-        path: "compositions/comp-426.tsx",
+        path: "components/comp-426.tsx",
         type: "registry:component",
       },
     ],
@@ -5936,7 +5936,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
-        path: "compositions/comp-427.tsx",
+        path: "components/comp-427.tsx",
         type: "registry:component",
       },
     ],
@@ -5948,7 +5948,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
-        path: "compositions/comp-428.tsx",
+        path: "components/comp-428.tsx",
         type: "registry:component",
       },
     ],
@@ -5960,7 +5960,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
-        path: "compositions/comp-429.tsx",
+        path: "components/comp-429.tsx",
         type: "registry:component",
       },
     ],
@@ -5972,7 +5972,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
-        path: "compositions/comp-430.tsx",
+        path: "components/comp-430.tsx",
         type: "registry:component",
       },
     ],
@@ -5984,7 +5984,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
-        path: "compositions/comp-431.tsx",
+        path: "components/comp-431.tsx",
         type: "registry:component",
       },
     ],
@@ -5996,7 +5996,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
-        path: "compositions/comp-432.tsx",
+        path: "components/comp-432.tsx",
         type: "registry:component",
       },
     ],
@@ -6011,7 +6011,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-433.tsx",
+        path: "components/comp-433.tsx",
         type: "registry:component",
       },
     ],
@@ -6026,7 +6026,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-434.tsx",
+        path: "components/comp-434.tsx",
         type: "registry:component",
       },
     ],
@@ -6041,7 +6041,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-435.tsx",
+        path: "components/comp-435.tsx",
         type: "registry:component",
       },
     ],
@@ -6056,7 +6056,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-436.tsx",
+        path: "components/comp-436.tsx",
         type: "registry:component",
       },
     ],
@@ -6072,7 +6072,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-437.tsx",
+        path: "components/comp-437.tsx",
         type: "registry:component",
       },
     ],
@@ -6084,7 +6084,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
-        path: "compositions/comp-438.tsx",
+        path: "components/comp-438.tsx",
         type: "registry:component",
       },
     ],
@@ -6096,7 +6096,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
-        path: "compositions/comp-439.tsx",
+        path: "components/comp-439.tsx",
         type: "registry:component",
       },
     ],
@@ -6111,7 +6111,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-440.tsx",
+        path: "components/comp-440.tsx",
         type: "registry:component",
       },
     ],
@@ -6126,7 +6126,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-441.tsx",
+        path: "components/comp-441.tsx",
         type: "registry:component",
       },
     ],
@@ -6141,7 +6141,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-441.tsx",
+        path: "components/comp-441.tsx",
         type: "registry:component",
       },
     ],
@@ -6153,7 +6153,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
-        path: "compositions/comp-442.tsx",
+        path: "components/comp-442.tsx",
         type: "registry:component",
       },
     ],
@@ -6165,7 +6165,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
-        path: "compositions/comp-443.tsx",
+        path: "components/comp-443.tsx",
         type: "registry:component",
       },
     ],
@@ -6177,7 +6177,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
-        path: "compositions/comp-444.tsx",
+        path: "components/comp-444.tsx",
         type: "registry:component",
       },
     ],
@@ -6189,7 +6189,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/tabs.json"],
     files: [
       {
-        path: "compositions/comp-445.tsx",
+        path: "components/comp-445.tsx",
         type: "registry:component",
       },
     ],
@@ -6204,7 +6204,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-446.tsx",
+        path: "components/comp-446.tsx",
         type: "registry:component",
       },
     ],
@@ -6219,7 +6219,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-447.tsx",
+        path: "components/comp-447.tsx",
         type: "registry:component",
       },
     ],
@@ -6231,7 +6231,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/breadcrumb.json"],
     files: [
       {
-        path: "compositions/comp-448.tsx",
+        path: "components/comp-448.tsx",
         type: "registry:component",
       },
     ],
@@ -6243,7 +6243,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/breadcrumb.json"],
     files: [
       {
-        path: "compositions/comp-449.tsx",
+        path: "components/comp-449.tsx",
         type: "registry:component",
       },
     ],
@@ -6255,7 +6255,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/breadcrumb.json"],
     files: [
       {
-        path: "compositions/comp-450.tsx",
+        path: "components/comp-450.tsx",
         type: "registry:component",
       },
     ],
@@ -6267,7 +6267,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/breadcrumb.json"],
     files: [
       {
-        path: "compositions/comp-451.tsx",
+        path: "components/comp-451.tsx",
         type: "registry:component",
       },
     ],
@@ -6279,7 +6279,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/breadcrumb.json"],
     files: [
       {
-        path: "compositions/comp-452.tsx",
+        path: "components/comp-452.tsx",
         type: "registry:component",
       },
     ],
@@ -6291,7 +6291,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/breadcrumb.json"],
     files: [
       {
-        path: "compositions/comp-453.tsx",
+        path: "components/comp-453.tsx",
         type: "registry:component",
       },
     ],
@@ -6306,7 +6306,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-454.tsx",
+        path: "components/comp-454.tsx",
         type: "registry:component",
       },
     ],
@@ -6321,7 +6321,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-455.tsx",
+        path: "components/comp-455.tsx",
         type: "registry:component",
       },
     ],
@@ -6336,7 +6336,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-456.tsx",
+        path: "components/comp-456.tsx",
         type: "registry:component",
       },
     ],
@@ -6348,7 +6348,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/pagination.json"],
     files: [
       {
-        path: "compositions/comp-457.tsx",
+        path: "components/comp-457.tsx",
         type: "registry:component",
       },
     ],
@@ -6363,7 +6363,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-458.tsx",
+        path: "components/comp-458.tsx",
         type: "registry:component",
       },
     ],
@@ -6375,7 +6375,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/pagination.json"],
     files: [
       {
-        path: "compositions/comp-459.tsx",
+        path: "components/comp-459.tsx",
         type: "registry:component",
       },
       {
@@ -6391,7 +6391,7 @@ export const components: Registry = [
     registryDependencies: ["https://originui.com/r/pagination.json"],
     files: [
       {
-        path: "compositions/comp-460.tsx",
+        path: "components/comp-460.tsx",
         type: "registry:component",
       },
       {
@@ -6410,7 +6410,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-461.tsx",
+        path: "components/comp-461.tsx",
         type: "registry:component",
       },
       {
@@ -6429,7 +6429,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-462.tsx",
+        path: "components/comp-462.tsx",
         type: "registry:component",
       },
       {
@@ -6449,7 +6449,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-463.tsx",
+        path: "components/comp-463.tsx",
         type: "registry:component",
       },
       {
@@ -6468,7 +6468,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-464.tsx",
+        path: "components/comp-464.tsx",
         type: "registry:component",
       },
       {
@@ -6488,7 +6488,7 @@ export const components: Registry = [
     ],
     files: [
       {
-        path: "compositions/comp-465.tsx",
+        path: "components/comp-465.tsx",
         type: "registry:component",
       },
       {
