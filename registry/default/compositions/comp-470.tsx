@@ -5,7 +5,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table"
+} from "@/registry/default/ui/table";
 
 const items = [
   {
@@ -47,15 +47,15 @@ const items = [
     location: "Seoul, KR",
     status: "Active",
     balance: "-$1,000.00",
-  }
-]
+  },
+];
 
 export default function Component() {
   return (
     <div>
       <Table>
         <TableHeader className="bg-transparent">
-          <TableRow className="hover:bg-transparent [&>:not(:last-child)]:border-r *:border-border">
+          <TableRow className="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r">
             <TableHead>Name</TableHead>
             <TableHead>Email</TableHead>
             <TableHead>Location</TableHead>
@@ -65,7 +65,10 @@ export default function Component() {
         </TableHeader>
         <TableBody className="[&_td:first-child]:rounded-l-lg [&_td:last-child]:rounded-r-lg">
           {items.map((item) => (
-            <TableRow key={item.id} className="hover:bg-transparent [&>:not(:last-child)]:border-r *:border-border">
+            <TableRow
+              key={item.id}
+              className="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r"
+            >
               <TableCell className="font-medium">{item.name}</TableCell>
               <TableCell>{item.email}</TableCell>
               <TableCell>{item.location}</TableCell>
@@ -75,7 +78,7 @@ export default function Component() {
           ))}
         </TableBody>
       </Table>
-      <p className="mt-4 text-sm text-muted-foreground text-center">Table with vertical lines</p>
+      <p className="mt-4 text-center text-sm text-muted-foreground">Table with vertical lines</p>
     </div>
-  )
+  );
 }

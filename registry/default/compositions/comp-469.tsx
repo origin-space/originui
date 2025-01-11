@@ -6,7 +6,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table"
+} from "@/registry/default/ui/table";
 
 const items = [
   {
@@ -48,8 +48,8 @@ const items = [
     location: "Seoul, KR",
     status: "Active",
     balance: "-$1,000.00",
-  }
-]
+  },
+];
 
 export default function Component() {
   return (
@@ -67,7 +67,10 @@ export default function Component() {
         <tbody aria-hidden="true" className="table-row h-2"></tbody>
         <TableBody className="[&_td:first-child]:rounded-l-lg [&_td:last-child]:rounded-r-lg">
           {items.map((item) => (
-            <TableRow key={item.id} className="border-none hover:bg-transparent odd:bg-muted/50 odd:hover:bg-muted/50">
+            <TableRow
+              key={item.id}
+              className="border-none odd:bg-muted/50 hover:bg-transparent odd:hover:bg-muted/50"
+            >
               <TableCell className="py-2.5 font-medium">{item.name}</TableCell>
               <TableCell className="py-2.5">{item.email}</TableCell>
               <TableCell className="py-2.5">{item.location}</TableCell>
@@ -84,7 +87,7 @@ export default function Component() {
           </TableRow>
         </TableFooter>
       </Table>
-      <p className="mt-4 text-sm text-muted-foreground text-center">Striped table</p>
+      <p className="mt-4 text-center text-sm text-muted-foreground">Striped table</p>
     </div>
-  )
+  );
 }

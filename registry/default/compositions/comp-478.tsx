@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useId, useMemo } from "react"
-import { cn } from "@/registry/default/lib/utils"
+import { cn } from "@/registry/default/lib/utils";
 import {
   Table,
   TableBody,
@@ -9,13 +8,23 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table"
+} from "@/registry/default/ui/table";
+import { useId, useMemo, useState } from "react";
 
+import { Checkbox } from "@/registry/default/ui/checkbox";
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/registry/default/ui/select";
 import {
   Column,
   ColumnDef,
   ColumnFiltersState,
-  RowData,
   flexRender,
   getCoreRowModel,
   getFacetedMinMaxValues,
@@ -23,32 +32,28 @@ import {
   getFacetedUniqueValues,
   getFilteredRowModel,
   getSortedRowModel,
-  SortingState, 
+  RowData,
+  SortingState,
   useReactTable,
-} from '@tanstack/react-table'
-import { Checkbox } from "@/registry/default/ui/checkbox"
-import { ExternalLink } from "lucide-react"
-import { Label } from "@/registry/default/ui/label"
-import { Input } from "@/registry/default/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/registry/default/ui/select"
-import { Search, ChevronDown, ChevronUp } from "lucide-react"
+} from "@tanstack/react-table";
+import { ChevronDown, ChevronUp, ExternalLink, Search } from "lucide-react";
 
-declare module '@tanstack/react-table' {
+declare module "@tanstack/react-table" {
   //allows us to define custom properties for our columns
   interface ColumnMeta<TData extends RowData, TValue> {
-    filterVariant?: 'text' | 'range' | 'select'
+    filterVariant?: "text" | "range" | "select";
   }
 }
 
 type Item = {
-  id: string
-  keyword: string
-  intents: Array<"Informational" | "Navigational" | "Commercial" | "Transactional">
-  volume: number
-  cpc: number
-  traffic: number
-  link: string
-}
+  id: string;
+  keyword: string;
+  intents: Array<"Informational" | "Navigational" | "Commercial" | "Transactional">;
+  volume: number;
+  cpc: number;
+  traffic: number;
+  link: string;
+};
 
 const columns: ColumnDef<Item>[] = [
   {
@@ -56,18 +61,19 @@ const columns: ColumnDef<Item>[] = [
     header: ({ table }) => (
       <Checkbox
         checked={
-          table.getIsAllPageRowsSelected() ||
-          (table.getIsSomePageRowsSelected() && "indeterminate")
+          table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && "indeterminate")
         }
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all"
       />
     ),
-    cell: ({ row }) => <Checkbox
-      checked={row.getIsSelected()}
-      onCheckedChange={(value) => row.toggleSelected(!!value)}
-      aria-label="Select row"
-    />,
+    cell: ({ row }) => (
+      <Checkbox
+        checked={row.getIsSelected()}
+        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        aria-label="Select row"
+      />
+    ),
   },
   {
     header: "Keyword",
@@ -78,7 +84,7 @@ const columns: ColumnDef<Item>[] = [
     header: "Intents",
     accessorKey: "intents",
     cell: ({ row }) => {
-      const intents = row.getValue("intents") as string[]
+      const intents = row.getValue("intents") as string[];
       return (
         <div className="flex gap-1">
           {intents.map((intent) => {
@@ -86,76 +92,84 @@ const columns: ColumnDef<Item>[] = [
               Informational: "bg-indigo-400/20 text-indigo-500",
               Navigational: "bg-emerald-400/20 text-emerald-500",
               Commercial: "bg-amber-400/20 text-amber-500",
-              Transactional: "bg-rose-400/20 text-rose-500"
-            }[intent]
+              Transactional: "bg-rose-400/20 text-rose-500",
+            }[intent];
 
             return (
               <div
                 key={intent}
                 className={cn(
-                  "size-5 flex items-center justify-center text-xs font-medium rounded",
+                  "flex size-5 items-center justify-center rounded text-xs font-medium",
                   styles,
                 )}
               >
                 {intent.charAt(0)}
               </div>
-            )
+            );
           })}
         </div>
-      )
+      );
     },
     enableSorting: false,
     meta: {
-      filterVariant: 'select',
+      filterVariant: "select",
     },
     filterFn: (row, id, filterValue) => {
-      const rowValue = row.getValue(id)
-      return Array.isArray(rowValue) && rowValue.includes(filterValue)
-    }
+      const rowValue = row.getValue(id);
+      return Array.isArray(rowValue) && rowValue.includes(filterValue);
+    },
   },
   {
     header: "Volume",
     accessorKey: "volume",
     cell: ({ row }) => {
-      const volume = parseInt(row.getValue("volume"))
+      const volume = parseInt(row.getValue("volume"));
       return new Intl.NumberFormat("en-US", {
         notation: "compact",
-        maximumFractionDigits: 1
-      }).format(volume)
+        maximumFractionDigits: 1,
+      }).format(volume);
     },
     meta: {
-      filterVariant: 'range',
-    }
+      filterVariant: "range",
+    },
   },
   {
     header: "CPC",
     accessorKey: "cpc",
     cell: ({ row }) => <div>${row.getValue("cpc")}</div>,
     meta: {
-      filterVariant: 'range',
-    }
+      filterVariant: "range",
+    },
   },
   {
     header: "Traffic",
     accessorKey: "traffic",
     cell: ({ row }) => {
-      const traffic = parseInt(row.getValue("traffic"))
+      const traffic = parseInt(row.getValue("traffic"));
       return new Intl.NumberFormat("en-US", {
         notation: "compact",
-        maximumFractionDigits: 1
-      }).format(traffic)
+        maximumFractionDigits: 1,
+      }).format(traffic);
     },
     meta: {
-      filterVariant: 'range',
-    }
+      filterVariant: "range",
+    },
   },
   {
     header: "Link",
     accessorKey: "link",
-    cell: ({ row }) => <a className="inline-flex items-center gap-1 hover:underline" href={row.getValue("link")} target="_blank">{row.getValue("link")} <ExternalLink size={12} strokeWidth={2} aria-hidden="true" /></a>,
+    cell: ({ row }) => (
+      <a
+        className="inline-flex items-center gap-1 hover:underline"
+        href={row.getValue("link")}
+        target="_blank"
+      >
+        {row.getValue("link")} <ExternalLink size={12} strokeWidth={2} aria-hidden="true" />
+      </a>
+    ),
     enableSorting: false,
   },
-]
+];
 
 const items: Item[] = [
   {
@@ -163,7 +177,7 @@ const items: Item[] = [
     keyword: "react components",
     intents: ["Informational", "Navigational"],
     volume: 2507,
-    cpc: 2.50,
+    cpc: 2.5,
     traffic: 88,
     link: "https://www.originui.com",
   },
@@ -199,7 +213,7 @@ const items: Item[] = [
     keyword: "react dashboard template free",
     intents: ["Commercial", "Transactional"],
     volume: 4100,
-    cpc: 5.50,
+    cpc: 5.5,
     traffic: 156,
     link: "https://www.originui.com/templates/dashboard",
   },
@@ -217,7 +231,7 @@ const items: Item[] = [
     keyword: "react ui kit premium",
     intents: ["Commercial", "Transactional"],
     volume: 760,
-    cpc: 6.80,
+    cpc: 6.8,
     traffic: 28,
     link: "https://www.originui.com/pricing",
   },
@@ -226,20 +240,20 @@ const items: Item[] = [
     keyword: "react component documentation",
     intents: ["Informational", "Navigational"],
     volume: 950,
-    cpc: 1.80,
+    cpc: 1.8,
     traffic: 35,
     link: "https://www.originui.com/docs/components",
-  }
-]
+  },
+];
 
 export default function Component() {
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [sorting, setSorting] = useState<SortingState>([
     {
       id: "traffic",
       desc: false,
-    },    
-  ])  
+    },
+  ]);
 
   const table = useReactTable({
     data: items,
@@ -255,13 +269,12 @@ export default function Component() {
     getFacetedRowModel: getFacetedRowModel(), // client-side faceting
     getFacetedUniqueValues: getFacetedUniqueValues(), // generate unique values for select filter/autocomplete
     getFacetedMinMaxValues: getFacetedMinMaxValues(), // generate min/max values for range filter
-    onSortingChange: setSorting,    
-    enableSortingRemoval: false  
-  })
+    onSortingChange: setSorting,
+    enableSortingRemoval: false,
+  });
 
   return (
     <div className="space-y-6">
-
       {/* Filters */}
       <div className="flex flex-wrap gap-3">
         {/* Search input */}
@@ -294,49 +307,58 @@ export default function Component() {
                 return (
                   <TableHead
                     key={header.id}
-                    className="relative select-none h-10 border-t"
+                    className="relative h-10 select-none border-t"
                     aria-sort={
                       header.column.getIsSorted() === "asc"
                         ? "ascending"
                         : header.column.getIsSorted() === "desc"
-                        ? "descending"
-                        : "none"
+                          ? "descending"
+                          : "none"
                     }
                   >
-                    {header.isPlaceholder ? null : (
-                      header.column.getCanSort() ? (
-                        <div
-                          className={cn(
-                            header.column.getCanSort()
-                              && 'cursor-pointer select-none flex items-center justify-between gap-2 h-full'
-                          )}
-                          onClick={header.column.getToggleSortingHandler()}
-                          onKeyDown={(e) => {
-                            if (header.column.getCanSort() && (e.key === "Enter" || e.key === " ")) {
-                              e.preventDefault();
-                              header.column.getToggleSortingHandler()?.(e);
-                            }
-                          }}
-                          tabIndex={header.column.getCanSort() ? 0 : undefined}
-                        >
-                          {flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-                          {{
-                            asc: <ChevronUp className="opacity-60 shrink-0" size={16} strokeWidth={2} aria-hidden="true" />,
-                            desc: <ChevronDown className="opacity-60 shrink-0" size={16} strokeWidth={2} aria-hidden="true" />,
-                          }[header.column.getIsSorted() as string] ?? <span className="size-4" aria-hidden="true" />}
-                        </div>
-                      ) : (
-                        flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )
-                      )
+                    {header.isPlaceholder ? null : header.column.getCanSort() ? (
+                      <div
+                        className={cn(
+                          header.column.getCanSort() &&
+                            "flex h-full cursor-pointer select-none items-center justify-between gap-2",
+                        )}
+                        onClick={header.column.getToggleSortingHandler()}
+                        onKeyDown={(e) => {
+                          // Enhanced keyboard handling for sorting
+                          if (header.column.getCanSort() && (e.key === "Enter" || e.key === " ")) {
+                            e.preventDefault();
+                            header.column.getToggleSortingHandler()?.(e);
+                          }
+                        }}
+                        tabIndex={header.column.getCanSort() ? 0 : undefined}
+                      >
+                        {flexRender(header.column.columnDef.header, header.getContext())}
+                        {{
+                          asc: (
+                            <ChevronUp
+                              className="shrink-0 opacity-60"
+                              size={16}
+                              strokeWidth={2}
+                              aria-hidden="true"
+                            />
+                          ),
+                          desc: (
+                            <ChevronDown
+                              className="shrink-0 opacity-60"
+                              size={16}
+                              strokeWidth={2}
+                              aria-hidden="true"
+                            />
+                          ),
+                        }[header.column.getIsSorted() as string] ?? (
+                          <span className="size-4" aria-hidden="true" />
+                        )}
+                      </div>
+                    ) : (
+                      flexRender(header.column.columnDef.header, header.getContext())
                     )}
                   </TableHead>
-                )
+                );
               })}
             </TableRow>
           ))}
@@ -344,10 +366,7 @@ export default function Component() {
         <TableBody>
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
-              <TableRow
-                key={row.id}
-                data-state={row.getIsSelected() && "selected"}
-              >
+              <TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
                 {row.getVisibleCells().map((cell) => (
                   <TableCell key={cell.id}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -364,55 +383,57 @@ export default function Component() {
           )}
         </TableBody>
       </Table>
-      <p className="mt-4 text-sm text-muted-foreground text-center">Data table with filters made with <a className="underline hover:text-foreground" href="https://tanstack.com/table" target="_blank" rel="noopener noreferrer">TanStack Table</a></p>
+      <p className="mt-4 text-center text-sm text-muted-foreground">
+        Data table with filters made with{" "}
+        <a
+          className="underline hover:text-foreground"
+          href="https://tanstack.com/table"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          TanStack Table
+        </a>
+      </p>
     </div>
-  )
+  );
 }
 
 function Filter({ column }: { column: Column<any, unknown> }) {
   const id = useId();
-  const columnFilterValue = column.getFilterValue()
-  const { filterVariant } = column.columnDef.meta ?? {}
-  const columnHeader = typeof column.columnDef.header === 'string'
-    ? column.columnDef.header
-    : ''
-  const sortedUniqueValues = useMemo(
-    () => {
-      if (filterVariant === 'range') return []
+  const columnFilterValue = column.getFilterValue();
+  const { filterVariant } = column.columnDef.meta ?? {};
+  const columnHeader = typeof column.columnDef.header === "string" ? column.columnDef.header : "";
+  const sortedUniqueValues = useMemo(() => {
+    if (filterVariant === "range") return [];
 
-      // Get all unique values from the column
-      const values = Array.from(column.getFacetedUniqueValues().keys())
+    // Get all unique values from the column
+    const values = Array.from(column.getFacetedUniqueValues().keys());
 
-      // If the values are arrays, flatten them and get unique items
-      const flattenedValues = values.reduce((acc: string[], curr) => {
-        if (Array.isArray(curr)) {
-          return [...acc, ...curr]
-        }
-        return [...acc, curr]
-      }, [])
+    // If the values are arrays, flatten them and get unique items
+    const flattenedValues = values.reduce((acc: string[], curr) => {
+      if (Array.isArray(curr)) {
+        return [...acc, ...curr];
+      }
+      return [...acc, curr];
+    }, []);
 
-      // Get unique values and sort them
-      return Array.from(new Set(flattenedValues))
-        .sort()
-    },
-    [column.getFacetedUniqueValues(), filterVariant]
-  )
+    // Get unique values and sort them
+    return Array.from(new Set(flattenedValues)).sort();
+  }, [column.getFacetedUniqueValues(), filterVariant]);
 
-  if (filterVariant === 'range') {
+  if (filterVariant === "range") {
     return (
       <div className="space-y-2">
-        <Label>
-          {columnHeader}
-        </Label>
+        <Label>{columnHeader}</Label>
         <div className="flex">
           <Input
             id={`${id}-range-1`}
-            className="flex-1 rounded-e-none focus:z-10 [-moz-appearance:_textfield] [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
-            value={(columnFilterValue as [number, number])?.[0] ?? ''}
-            onChange={e =>
+            className="flex-1 rounded-e-none [-moz-appearance:_textfield] focus:z-10 [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
+            value={(columnFilterValue as [number, number])?.[0] ?? ""}
+            onChange={(e) =>
               column.setFilterValue((old: [number, number]) => [
                 e.target.value ? Number(e.target.value) : undefined,
-                old?.[1]
+                old?.[1],
               ])
             }
             placeholder="Min"
@@ -421,12 +442,12 @@ function Filter({ column }: { column: Column<any, unknown> }) {
           />
           <Input
             id={`${id}-range-2`}
-            className="flex-1 rounded-s-none focus:z-10 [-moz-appearance:_textfield] [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none -ms-px"
-            value={(columnFilterValue as [number, number])?.[1] ?? ''}
-            onChange={e =>
+            className="-ms-px flex-1 rounded-s-none [-moz-appearance:_textfield] focus:z-10 [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
+            value={(columnFilterValue as [number, number])?.[1] ?? ""}
+            onChange={(e) =>
               column.setFilterValue((old: [number, number]) => [
                 old?.[0],
-                e.target.value ? Number(e.target.value) : undefined
+                e.target.value ? Number(e.target.value) : undefined,
               ])
             }
             placeholder="Max"
@@ -435,17 +456,17 @@ function Filter({ column }: { column: Column<any, unknown> }) {
           />
         </div>
       </div>
-    )
+    );
   }
 
-  if (filterVariant === 'select') {
+  if (filterVariant === "select") {
     return (
       <div className="space-y-2">
         <Label htmlFor={`${id}-select`}>{columnHeader}</Label>
         <Select
           value={columnFilterValue?.toString() ?? "all"}
           onValueChange={(value) => {
-            column.setFilterValue(value === "all" ? undefined : value)
+            column.setFilterValue(value === "all" ? undefined : value);
           }}
         >
           <SelectTrigger id={`${id}-select`}>
@@ -453,7 +474,7 @@ function Filter({ column }: { column: Column<any, unknown> }) {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All</SelectItem>
-            {sortedUniqueValues.map(value => (
+            {sortedUniqueValues.map((value) => (
               <SelectItem key={String(value)} value={String(value)}>
                 {String(value)}
               </SelectItem>
@@ -461,7 +482,7 @@ function Filter({ column }: { column: Column<any, unknown> }) {
           </SelectContent>
         </Select>
       </div>
-    )
+    );
   }
 
   return (
@@ -471,8 +492,8 @@ function Filter({ column }: { column: Column<any, unknown> }) {
         <Input
           id={`${id}-input`}
           className="peer ps-9"
-          value={(columnFilterValue ?? '') as string}
-          onChange={e => column.setFilterValue(e.target.value)}
+          value={(columnFilterValue ?? "") as string}
+          onChange={(e) => column.setFilterValue(e.target.value)}
           placeholder={`Search ${columnHeader.toLowerCase()}`}
           type="text"
         />
@@ -481,5 +502,5 @@ function Filter({ column }: { column: Column<any, unknown> }) {
         </div>
       </div>
     </div>
-  )
+  );
 }

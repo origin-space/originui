@@ -6,7 +6,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table"
+} from "@/registry/default/ui/table";
 
 const items = [
   {
@@ -128,14 +128,14 @@ const items = [
     location: "Taipei, TW",
     status: "Active",
     balance: "$1,800.00",
-  }
-]
+  },
+];
 
 export default function Component() {
   return (
     <div>
       <div className="[&>div]:max-h-96">
-        <Table className="border-separate border-spacing-0 [&_tr]:border-none [&_th]:border-b [&_th]:border-border [&_tr:not(:last-child)_td]:border-b [&_td]:border-border [&_tfoot_td]:border-t">
+        <Table className="border-separate border-spacing-0 [&_td]:border-border [&_tfoot_td]:border-t [&_th]:border-b [&_th]:border-border [&_tr:not(:last-child)_td]:border-b [&_tr]:border-none">
           <TableHeader className="sticky top-0 z-10 bg-background/90 backdrop-blur-sm">
             <TableRow className="hover:bg-transparent">
               <TableHead>Name</TableHead>
@@ -164,7 +164,7 @@ export default function Component() {
           </TableFooter>
         </Table>
       </div>
-      <p className="mt-8 text-sm text-muted-foreground text-center">Table with sticky header</p>
+      <p className="mt-8 text-center text-sm text-muted-foreground">Table with sticky header</p>
     </div>
-  )
+  );
 }

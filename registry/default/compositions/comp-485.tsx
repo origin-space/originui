@@ -1,28 +1,20 @@
 "use client";
 
-import { useState, useId, useEffect, useRef, useMemo } from "react"
-import { cn } from "@/registry/default/lib/utils"
+import { cn } from "@/registry/default/lib/utils";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/registry/default/ui/table"
-import { Label } from "@/registry/default/ui/label";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-} from "@/registry/default/ui/pagination";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/registry/default/ui/select";
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/registry/default/ui/alert-dialog";
+import { Badge } from "@/registry/default/ui/badge";
+import { Button } from "@/registry/default/ui/button";
+import { Checkbox } from "@/registry/default/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -37,55 +29,74 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu"
+} from "@/registry/default/ui/dropdown-menu";
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
+import { Pagination, PaginationContent, PaginationItem } from "@/registry/default/ui/pagination";
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
 import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/registry/default/ui/alert-dialog";
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/registry/default/ui/select";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/registry/default/ui/table";
 import {
   ColumnDef,
   ColumnFiltersState,
+  FilterFn,
   PaginationState,
-  flexRender,
-  getCoreRowModel,
-  getFilteredRowModel,
-  getFacetedUniqueValues,
-  getSortedRowModel,
+  Row,
   SortingState,
   VisibilityState,
+  flexRender,
+  getCoreRowModel,
+  getFacetedUniqueValues,
+  getFilteredRowModel,
   getPaginationRowModel,
+  getSortedRowModel,
   useReactTable,
-  FilterFn,
-  Row,
-} from "@tanstack/react-table"
-import { Input } from "@/registry/default/ui/input"
-import { Checkbox } from "@/registry/default/ui/checkbox"
-import { Badge } from "@/registry/default/ui/badge"
-import { ChevronFirst, ChevronLast, ChevronLeft, ChevronRight, ChevronUp, ChevronDown, CircleX, Filter, Columns3, Trash, CircleAlert, ListFilter, Plus, Ellipsis } from "lucide-react";
-import { Button } from "@/registry/default/ui/button"
+} from "@tanstack/react-table";
+import {
+  ChevronDown,
+  ChevronFirst,
+  ChevronLast,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
+  CircleAlert,
+  CircleX,
+  Columns3,
+  Ellipsis,
+  Filter,
+  ListFilter,
+  Plus,
+  Trash,
+} from "lucide-react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 
 type Item = {
-  id: string
-  name: string
-  email: string
-  location: string
-  flag: string
-  status: "Active" | "Inactive" | "Pending"
-  balance: number
-}
+  id: string;
+  name: string;
+  email: string;
+  location: string;
+  flag: string;
+  status: "Active" | "Inactive" | "Pending";
+  balance: number;
+};
 
 // Custom filter function for multi-column searching
 const multiColumnFilterFn: FilterFn<Item> = (row, columnId, filterValue) => {
   const searchableRowContent = `${row.original.name} ${row.original.email}`.toLowerCase();
-  const searchTerm = (filterValue ?? '').toLowerCase();
+  const searchTerm = (filterValue ?? "").toLowerCase();
   return searchableRowContent.includes(searchTerm);
 };
 
@@ -101,18 +112,19 @@ const columns: ColumnDef<Item>[] = [
     header: ({ table }) => (
       <Checkbox
         checked={
-          table.getIsAllPageRowsSelected() ||
-          (table.getIsSomePageRowsSelected() && "indeterminate")
+          table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && "indeterminate")
         }
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all"
       />
     ),
-    cell: ({ row }) => <Checkbox
-      checked={row.getIsSelected()}
-      onCheckedChange={(value) => row.toggleSelected(!!value)}
-      aria-label="Select row"
-    />,
+    cell: ({ row }) => (
+      <Checkbox
+        checked={row.getIsSelected()}
+        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        aria-label="Select row"
+      />
+    ),
     size: 28,
     enableSorting: false,
     enableHiding: false,
@@ -135,8 +147,7 @@ const columns: ColumnDef<Item>[] = [
     accessorKey: "location",
     cell: ({ row }) => (
       <div>
-        <span className="text-lg leading-none">{row.original.flag}</span>{" "}
-        {row.getValue("location")}
+        <span className="text-lg leading-none">{row.original.flag}</span> {row.getValue("location")}
       </div>
     ),
     size: 180,
@@ -144,9 +155,15 @@ const columns: ColumnDef<Item>[] = [
   {
     header: "Status",
     accessorKey: "status",
-    cell: ({ row }) => <Badge className={cn(
-      row.getValue("status") === 'Inactive' && "bg-muted-foreground/60 text-primary-foreground"
-    )}>{row.getValue("status")}</Badge>,
+    cell: ({ row }) => (
+      <Badge
+        className={cn(
+          row.getValue("status") === "Inactive" && "bg-muted-foreground/60 text-primary-foreground",
+        )}
+      >
+        {row.getValue("status")}
+      </Badge>
+    ),
     size: 120,
     filterFn: statusFilterFn,
   },
@@ -154,34 +171,32 @@ const columns: ColumnDef<Item>[] = [
     header: "Balance",
     accessorKey: "balance",
     cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("balance"))
+      const amount = parseFloat(row.getValue("balance"));
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
-      }).format(amount)
-      return formatted
+      }).format(amount);
+      return formatted;
     },
     size: 120,
   },
   {
     id: "actions",
     header: () => <span className="sr-only">Actions</span>,
-    cell: ({ row }) => <RowActions
-      row={row}
-    />,
+    cell: ({ row }) => <RowActions row={row} />,
     size: 48,
     enableHiding: false,
   },
-]
+];
 
 export default function Component() {
   const id = useId();
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
-  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({})
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
     pageSize: 10,
-  })
+  });
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [sorting, setSorting] = useState<SortingState>([
@@ -189,24 +204,28 @@ export default function Component() {
       id: "name",
       desc: false,
     },
-  ])
+  ]);
 
-  const [data, setData] = useState<Item[]>([])
+  const [data, setData] = useState<Item[]>([]);
   useEffect(() => {
     async function fetchPosts() {
-      const res = await fetch('https://res.cloudinary.com/dlzlfasou/raw/upload/users-01_fertyx.json')
-      const data = await res.json()
-      setData(data)
+      const res = await fetch(
+        "https://res.cloudinary.com/dlzlfasou/raw/upload/users-01_fertyx.json",
+      );
+      const data = await res.json();
+      setData(data);
     }
-    fetchPosts()
-  }, [])
+    fetchPosts();
+  }, []);
 
   const handleDeleteRows = () => {
-    const selectedRows = table.getSelectedRowModel().rows
-    const updatedData = data.filter(item => !selectedRows.some(row => row.original.id === item.id))
-    setData(updatedData)
-    table.resetRowSelection()
-  }
+    const selectedRows = table.getSelectedRowModel().rows;
+    const updatedData = data.filter(
+      (item) => !selectedRows.some((row) => row.original.id === item.id),
+    );
+    setData(updatedData);
+    table.resetRowSelection();
+  };
 
   const table = useReactTable({
     data,
@@ -227,21 +246,18 @@ export default function Component() {
       columnFilters,
       columnVisibility,
     },
-  })
+  });
 
   // Get unique status values
-  const uniqueStatusValues = useMemo(
-    () => {
-      const statusColumn = table.getColumn("status");
+  const uniqueStatusValues = useMemo(() => {
+    const statusColumn = table.getColumn("status");
 
-      if (!statusColumn) return [];
+    if (!statusColumn) return [];
 
-      const values = Array.from(statusColumn.getFacetedUniqueValues().keys());
+    const values = Array.from(statusColumn.getFacetedUniqueValues().keys());
 
-      return values.sort();
-    },
-    [table.getColumn("status")?.getFacetedUniqueValues()]
-  );
+    return values.sort();
+  }, [table.getColumn("status")?.getFacetedUniqueValues()]);
 
   // Get counts for each status
   const statusCounts = useMemo(() => {
@@ -273,7 +289,6 @@ export default function Component() {
 
   return (
     <div className="space-y-4">
-
       {/* Filters */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
@@ -284,17 +299,17 @@ export default function Component() {
               ref={inputRef}
               className={cn(
                 "peer ps-9",
-                Boolean(table.getColumn("name")?.getFilterValue()) && "pe-9"
+                Boolean(table.getColumn("name")?.getFilterValue()) && "pe-9",
               )}
-              value={(table.getColumn("name")?.getFilterValue() ?? '') as string}
-              onChange={e => table.getColumn("name")?.setFilterValue(e.target.value)}
+              value={(table.getColumn("name")?.getFilterValue() ?? "") as string}
+              onChange={(e) => table.getColumn("name")?.setFilterValue(e.target.value)}
               placeholder="Filter by name or email..."
               type="text"
               aria-label="Filter by name or email"
             />
             <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 peer-disabled:opacity-50">
               <ListFilter size={16} strokeWidth={2} aria-hidden="true" />
-            </div>          
+            </div>
             {Boolean(table.getColumn("name")?.getFilterValue()) && (
               <button
                 className="absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg text-muted-foreground/80 outline-offset-2 transition-colors hover:text-foreground focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
@@ -334,9 +349,19 @@ export default function Component() {
                 <div className="space-y-3">
                   {uniqueStatusValues.map((value, i) => (
                     <div key={value} className="flex items-center gap-2">
-                      <Checkbox id={`${id}-${i}`} checked={selectedStatuses.includes(value)} onCheckedChange={(checked: boolean) => handleStatusChange(checked, value)} />
-                      <Label htmlFor={`${id}-${i}`} className="font-normal grow flex justify-between gap-2">
-                        {value} <span className="ms-2 text-muted-foreground text-xs">{statusCounts.get(value)}</span>
+                      <Checkbox
+                        id={`${id}-${i}`}
+                        checked={selectedStatuses.includes(value)}
+                        onCheckedChange={(checked: boolean) => handleStatusChange(checked, value)}
+                      />
+                      <Label
+                        htmlFor={`${id}-${i}`}
+                        className="flex grow justify-between gap-2 font-normal"
+                      >
+                        {value}{" "}
+                        <span className="ms-2 text-xs text-muted-foreground">
+                          {statusCounts.get(value)}
+                        </span>
                       </Label>
                     </div>
                   ))}
@@ -361,23 +386,19 @@ export default function Component() {
               <DropdownMenuLabel>Toggle columns</DropdownMenuLabel>
               {table
                 .getAllColumns()
-                .filter(
-                  (column) => column.getCanHide()
-                )
+                .filter((column) => column.getCanHide())
                 .map((column) => {
                   return (
                     <DropdownMenuCheckboxItem
                       key={column.id}
                       className="capitalize"
                       checked={column.getIsVisible()}
-                      onCheckedChange={(value) =>
-                        column.toggleVisibility(!!value)
-                      }
-                      onSelect={event => event.preventDefault()}
+                      onCheckedChange={(value) => column.toggleVisibility(!!value)}
+                      onSelect={(event) => event.preventDefault()}
                     >
                       {column.id}
                     </DropdownMenuCheckboxItem>
-                  )
+                  );
                 })}
             </DropdownMenuContent>
           </DropdownMenu>
@@ -387,10 +408,7 @@ export default function Component() {
           {table.getSelectedRowModel().rows.length > 0 && (
             <AlertDialog>
               <AlertDialogTrigger asChild>
-                <Button
-                  className="ml-auto"
-                  variant="outline"
-                >
+                <Button className="ml-auto" variant="outline">
                   <Trash
                     className="-ms-1 me-2 opacity-60"
                     size={16}
@@ -414,7 +432,9 @@ export default function Component() {
                   <AlertDialogHeader>
                     <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
                     <AlertDialogDescription>
-                      This action cannot be undone. This will permanently delete {table.getSelectedRowModel().rows.length} selected {table.getSelectedRowModel().rows.length === 1 ? 'row' : 'rows'}.
+                      This action cannot be undone. This will permanently delete{" "}
+                      {table.getSelectedRowModel().rows.length} selected{" "}
+                      {table.getSelectedRowModel().rows.length === 1 ? "row" : "rows"}.
                     </AlertDialogDescription>
                   </AlertDialogHeader>
                 </div>
@@ -426,64 +446,70 @@ export default function Component() {
             </AlertDialog>
           )}
           {/* Add user button */}
-          <Button
-            className="ml-auto"
-            variant="outline"
-          >
-            <Plus
-              className="-ms-1 me-2 opacity-60"
-              size={16}
-              strokeWidth={2}
-              aria-hidden="true"
-            />
+          <Button className="ml-auto" variant="outline">
+            <Plus className="-ms-1 me-2 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
             Add user
           </Button>
         </div>
       </div>
 
       {/* Table */}
-      <div className="border border-border bg-background rounded-lg overflow-hidden">
+      <div className="overflow-hidden rounded-lg border border-border bg-background">
         <Table className="table-fixed">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id} className="hover:bg-transparent">
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id} style={{ width: `${header.getSize()}px` }} className="h-11">
-                      {header.isPlaceholder ? null : (
-                        header.column.getCanSort() ? (
-                          <div
-                            className={cn(
-                              header.column.getCanSort()
-                              && 'cursor-pointer select-none flex items-center justify-between gap-2 h-full'
-                            )}
-                            onClick={header.column.getToggleSortingHandler()}
-                            onKeyDown={(e) => {
-                              if (header.column.getCanSort() && (e.key === "Enter" || e.key === " ")) {
-                                e.preventDefault();
-                                header.column.getToggleSortingHandler()?.(e);
-                              }
-                            }}
-                            tabIndex={header.column.getCanSort() ? 0 : undefined}
-                          >
-                            {flexRender(
-                              header.column.columnDef.header,
-                              header.getContext()
-                            )}
-                            {{
-                              asc: <ChevronUp className="opacity-60 shrink-0" size={16} strokeWidth={2} aria-hidden="true" />,
-                              desc: <ChevronDown className="opacity-60 shrink-0" size={16} strokeWidth={2} aria-hidden="true" />,
-                            }[header.column.getIsSorted() as string] ?? null}
-                          </div>
-                        ) : (
-                          flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )
-                        )
+                    <TableHead
+                      key={header.id}
+                      style={{ width: `${header.getSize()}px` }}
+                      className="h-11"
+                    >
+                      {header.isPlaceholder ? null : header.column.getCanSort() ? (
+                        <div
+                          className={cn(
+                            header.column.getCanSort() &&
+                              "flex h-full cursor-pointer select-none items-center justify-between gap-2",
+                          )}
+                          onClick={header.column.getToggleSortingHandler()}
+                          onKeyDown={(e) => {
+                            // Enhanced keyboard handling for sorting
+                            if (
+                              header.column.getCanSort() &&
+                              (e.key === "Enter" || e.key === " ")
+                            ) {
+                              e.preventDefault();
+                              header.column.getToggleSortingHandler()?.(e);
+                            }
+                          }}
+                          tabIndex={header.column.getCanSort() ? 0 : undefined}
+                        >
+                          {flexRender(header.column.columnDef.header, header.getContext())}
+                          {{
+                            asc: (
+                              <ChevronUp
+                                className="shrink-0 opacity-60"
+                                size={16}
+                                strokeWidth={2}
+                                aria-hidden="true"
+                              />
+                            ),
+                            desc: (
+                              <ChevronDown
+                                className="shrink-0 opacity-60"
+                                size={16}
+                                strokeWidth={2}
+                                aria-hidden="true"
+                              />
+                            ),
+                          }[header.column.getIsSorted() as string] ?? null}
+                        </div>
+                      ) : (
+                        flexRender(header.column.columnDef.header, header.getContext())
                       )}
                     </TableHead>
-                  )
+                  );
                 })}
               </TableRow>
             ))}
@@ -491,10 +517,7 @@ export default function Component() {
           <TableBody>
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
-                <TableRow
-                  key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
-                >
+                <TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -517,18 +540,20 @@ export default function Component() {
       <div className="flex items-center justify-between gap-8">
         {/* Results per page */}
         <div className="flex items-center gap-3">
-          <Label htmlFor={id} className="max-sm:sr-only">Rows per page</Label>
+          <Label htmlFor={id} className="max-sm:sr-only">
+            Rows per page
+          </Label>
           <Select
             value={table.getState().pagination.pageSize.toString()}
             onValueChange={(value) => {
-              table.setPageSize(Number(value))
+              table.setPageSize(Number(value));
             }}
           >
             <SelectTrigger id={id} className="w-fit whitespace-nowrap">
               <SelectValue placeholder="Select number of results" />
             </SelectTrigger>
             <SelectContent className="[&_*[role=option]>span]:end-2 [&_*[role=option]>span]:start-auto [&_*[role=option]]:pe-8 [&_*[role=option]]:ps-2">
-              {[5, 10, 25, 50].map(pageSize => (
+              {[5, 10, 25, 50].map((pageSize) => (
                 <SelectItem key={pageSize} value={pageSize.toString()}>
                   {pageSize}
                 </SelectItem>
@@ -540,8 +565,12 @@ export default function Component() {
         {/* Page number information */}
         <div className="flex grow justify-end whitespace-nowrap text-sm text-muted-foreground">
           <p className="whitespace-nowrap text-sm text-muted-foreground" aria-live="polite">
-            <span className="text-foreground">{table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1}-{table.getState().pagination.pageIndex * table.getState().pagination.pageSize + table.getState().pagination.pageSize}</span> of{" "}
-            <span className="text-foreground">{table.getRowCount().toString()}</span>
+            <span className="text-foreground">
+              {table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1}-
+              {table.getState().pagination.pageIndex * table.getState().pagination.pageSize +
+                table.getState().pagination.pageSize}
+            </span>{" "}
+            of <span className="text-foreground">{table.getRowCount().toString()}</span>
           </p>
         </div>
 
@@ -601,14 +630,23 @@ export default function Component() {
                   <ChevronLast size={16} strokeWidth={2} aria-hidden="true" />
                 </Button>
               </PaginationItem>
-
             </PaginationContent>
           </Pagination>
         </div>
       </div>
-      <p className="mt-4 text-sm text-muted-foreground text-center">Example of a more complex table made with <a className="underline hover:text-foreground" href="https://tanstack.com/table" target="_blank" rel="noopener noreferrer">TanStack Table</a></p>
+      <p className="mt-4 text-center text-sm text-muted-foreground">
+        Example of a more complex table made with{" "}
+        <a
+          className="underline hover:text-foreground"
+          href="https://tanstack.com/table"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          TanStack Table
+        </a>
+      </p>
     </div>
-  )
+  );
 }
 
 function RowActions({ row }: { row: Row<Item> }) {
@@ -616,12 +654,7 @@ function RowActions({ row }: { row: Row<Item> }) {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <div className="flex justify-end">
-          <Button
-            size="icon"
-            variant="ghost"
-            className="shadow-none"
-            aria-label="Edit item"
-          >
+          <Button size="icon" variant="ghost" className="shadow-none" aria-label="Edit item">
             <Ellipsis size={16} strokeWidth={2} aria-hidden="true" />
           </Button>
         </div>

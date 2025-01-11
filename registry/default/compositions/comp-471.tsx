@@ -5,7 +5,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table"
+} from "@/registry/default/ui/table";
 
 const programmingLanguages = [
   {
@@ -62,13 +62,13 @@ const programmingLanguages = [
     extension: ".rb",
     latestVersion: "3.0",
     popularity: "Low",
-  }
-]
+  },
+];
 
 export default function Component() {
   return (
     <div>
-      <div className="border border-border bg-background rounded-lg overflow-hidden">
+      <div className="overflow-hidden rounded-lg border border-border bg-background">
         <Table>
           <TableHeader>
             <TableRow className="bg-muted/50">
@@ -98,7 +98,7 @@ export default function Component() {
           </TableBody>
         </Table>
       </div>
-      <p className="mt-4 text-sm text-muted-foreground text-center">Dense table</p>
+      <p className="mt-4 text-center text-sm text-muted-foreground">Dense table</p>
     </div>
-  )
+  );
 }

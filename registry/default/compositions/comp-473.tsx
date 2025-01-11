@@ -1,4 +1,4 @@
-import { useId } from "react"
+import { Checkbox } from "@/registry/default/ui/checkbox";
 import {
   Table,
   TableBody,
@@ -7,8 +7,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table"
-import { Checkbox } from "@/registry/default/ui/checkbox"
+} from "@/registry/default/ui/table";
+import { useId } from "react";
 
 const items = [
   {
@@ -50,14 +50,14 @@ const items = [
     location: "Seoul, KR",
     status: "Active",
     balance: "-$1,000.00",
-  }
-]
+  },
+];
 
 export default function Component() {
   const id = useId();
   return (
     <div>
-      <div className="border border-border bg-background rounded-lg overflow-hidden">
+      <div className="overflow-hidden rounded-lg border border-border bg-background">
         <Table>
           <TableHeader>
             <TableRow className="hover:bg-transparent">
@@ -93,7 +93,7 @@ export default function Component() {
           </TableFooter>
         </Table>
       </div>
-      <p className="mt-4 text-sm text-muted-foreground text-center">Card Table</p>
+      <p className="mt-4 text-center text-sm text-muted-foreground">Card Table</p>
     </div>
-  )
+  );
 }

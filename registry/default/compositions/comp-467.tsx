@@ -5,7 +5,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table"
+} from "@/registry/default/ui/table";
 
 const items = [
   {
@@ -47,8 +47,8 @@ const items = [
     location: "Seoul, KR",
     status: "Active",
     balance: "-$1,000.00",
-  }
-]
+  },
+];
 
 export default function Component() {
   return (
@@ -68,7 +68,13 @@ export default function Component() {
             <TableRow key={item.id}>
               <TableCell>
                 <div className="flex items-center gap-3">
-                  <img className="rounded-full" src={item.image} width={40} height={40} alt={item.name} />
+                  <img
+                    className="rounded-full"
+                    src={item.image}
+                    width={40}
+                    height={40}
+                    alt={item.name}
+                  />
                   <div>
                     <div className="font-medium">{item.name}</div>
                     <span className="mt-0.5 text-xs text-muted-foreground">{item.username}</span>
@@ -83,7 +89,7 @@ export default function Component() {
           ))}
         </TableBody>
       </Table>
-      <p className="mt-4 text-sm text-muted-foreground text-center">Table with images</p>
+      <p className="mt-4 text-center text-sm text-muted-foreground">Table with images</p>
     </div>
-  )
+  );
 }

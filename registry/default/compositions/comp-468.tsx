@@ -6,7 +6,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table"
+} from "@/registry/default/ui/table";
 
 const items = [
   {
@@ -48,8 +48,8 @@ const items = [
     location: "Seoul, KR",
     status: "Active",
     balance: "-$1,000.00",
-  }
-]
+  },
+];
 
 export default function Component() {
   return (
@@ -84,7 +84,9 @@ export default function Component() {
           </TableRow>
         </TableFooter>
       </Table>
-      <p className="mt-4 text-sm text-muted-foreground text-center">Table without horizontal dividers</p>
+      <p className="mt-4 text-center text-sm text-muted-foreground">
+        Table without horizontal dividers
+      </p>
     </div>
-  )
+  );
 }

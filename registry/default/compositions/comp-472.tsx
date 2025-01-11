@@ -1,3 +1,4 @@
+import { Checkbox } from "@/registry/default/ui/checkbox";
 import {
   Table,
   TableBody,
@@ -6,9 +7,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table"
-import { Checkbox } from "@/registry/default/ui/checkbox"
-import { useId } from "react"
+} from "@/registry/default/ui/table";
+import { useId } from "react";
 
 const items = [
   {
@@ -50,8 +50,8 @@ const items = [
     location: "Seoul, KR",
     status: "Active",
     balance: "-$1,000.00",
-  }
-]
+  },
+];
 
 export default function Component() {
   const id = useId();
@@ -62,7 +62,7 @@ export default function Component() {
           <TableRow className="hover:bg-transparent">
             <TableHead>
               <Checkbox id={id} />
-            </TableHead>          
+            </TableHead>
             <TableHead>Name</TableHead>
             <TableHead>Email</TableHead>
             <TableHead>Location</TableHead>
@@ -75,7 +75,7 @@ export default function Component() {
             <TableRow key={item.id} className="has-[[data-state=checked]]:bg-muted/50">
               <TableCell>
                 <Checkbox id={`table-checkbox-${item.id}`} />
-              </TableCell>            
+              </TableCell>
               <TableCell className="font-medium">{item.name}</TableCell>
               <TableCell>{item.email}</TableCell>
               <TableCell>{item.location}</TableCell>
@@ -91,7 +91,7 @@ export default function Component() {
           </TableRow>
         </TableFooter>
       </Table>
-      <p className="mt-4 text-sm text-muted-foreground text-center">Table with row selection</p>
+      <p className="mt-4 text-center text-sm text-muted-foreground">Table with row selection</p>
     </div>
-  )
+  );
 }
