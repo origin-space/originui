@@ -162,7 +162,7 @@ export default function Component() {
           </TableRow>
         </TableFooter>
       </Table>
-      <p className="mt-4 text-sm text-muted-foreground text-center">Data table made with <a className="underline hover:text-foreground" href="https://tanstack.com/table" target="_blank" rel="noopener noreferrer">TanStack Table</a></p>
+      <p className="mt-4 text-sm text-muted-foreground text-center">Basic data table made with <a className="underline hover:text-foreground" href="https://tanstack.com/table" target="_blank" rel="noopener noreferrer">TanStack Table</a></p>
     </div>
   )
 }
