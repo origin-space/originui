@@ -6498,4 +6498,334 @@ export const components: Registry = [
     ],
     tags: [],
   },
+  {
+    name: "comp-466",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/table.json"],
+    files: [
+      {
+        path: "components/comp-466.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-467",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/table.json"],
+    files: [
+      {
+        path: "components/comp-467.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-468",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/table.json"],
+    files: [
+      {
+        path: "components/comp-468.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-469",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/table.json"],
+    files: [
+      {
+        path: "components/comp-469.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-470",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/table.json"],
+    files: [
+      {
+        path: "components/comp-470.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-471",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/table.json"],
+    files: [
+      {
+        path: "components/comp-471.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-472",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/table.json"],
+    files: [
+      {
+        path: "components/comp-472.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-472",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/table.json",
+    ],
+    files: [
+      {
+        path: "components/comp-472.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-473",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/table.json",
+    ],
+    files: [
+      {
+        path: "components/comp-473.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-474",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/table.json"],
+    files: [
+      {
+        path: "components/comp-474.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-476",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/table.json"],
+    files: [
+      {
+        path: "components/comp-476.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-477",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/badge.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/table.json",
+    ],
+    dependencies: ["@tanstack/react-table"],
+    files: [
+      {
+        path: "components/comp-477.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-478",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/table.json",
+    ],
+    dependencies: ["@tanstack/react-table"],
+    files: [
+      {
+        path: "components/comp-478.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-479",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/table.json"],
+    dependencies: ["@tanstack/react-table"],
+    files: [
+      {
+        path: "components/comp-479.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-480",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dropdown-menu.json",
+      "https://originui.com/r/table.json",
+    ],
+    dependencies: ["@tanstack/react-table"],
+    files: [
+      {
+        path: "components/comp-480.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-481",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/dropdown-menu.json",
+      "https://originui.com/r/table.json",
+    ],
+    dependencies: [
+      "@dnd-kit/core",
+      "@dnd-kit/modifiers",
+      "@dnd-kit/sortable",
+      "@dnd-kit/utilities",
+      "@tanstack/react-table",
+    ],
+    files: [
+      {
+        path: "components/comp-481.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-482",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/badge.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/table.json",
+    ],
+    dependencies: ["@tanstack/react-table"],
+    files: [
+      {
+        path: "components/comp-482.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-483",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/badge.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/pagination.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/table.json",
+    ],
+    dependencies: ["@tanstack/react-table"],
+    files: [
+      {
+        path: "components/comp-483.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-484",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/badge.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/pagination.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/table.json",
+    ],
+    dependencies: ["@tanstack/react-table"],
+    files: [
+      {
+        path: "components/comp-484.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "hooks/use-pagination.ts",
+        type: "registry:hook",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-485",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/alert-dialog.json",
+      "https://originui.com/r/badge.json",
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/checkbox.json",
+      "https://originui.com/r/dropdown-menu.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/pagination.json",
+      "https://originui.com/r/popover.json",
+      "https://originui.com/r/select.json",
+      "https://originui.com/r/table.json",
+    ],
+    dependencies: ["@tanstack/react-table"],
+    files: [
+      {
+        path: "components/comp-485.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-486",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
+    ],
+    files: [
+      {
+        path: "components/comp-486.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
 ];
