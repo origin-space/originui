@@ -2,7 +2,6 @@ import {
   Table,
   TableBody,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
@@ -55,8 +54,8 @@ export default function Component() {
   return (
     <div>
       <Table>
-        <TableHeader>
-          <TableRow className="hover:bg-transparent">
+        <TableHeader className="bg-transparent">
+          <TableRow className="hover:bg-transparent [&>:not(:last-child)]:border-r *:border-border">
             <TableHead>Name</TableHead>
             <TableHead>Email</TableHead>
             <TableHead>Location</TableHead>
@@ -64,27 +63,19 @@ export default function Component() {
             <TableHead className="text-right">Balance</TableHead>
           </TableRow>
         </TableHeader>
-        <tbody aria-hidden="true" className="table-row h-2"></tbody>
         <TableBody className="[&_td:first-child]:rounded-l-lg [&_td:last-child]:rounded-r-lg">
           {items.map((item) => (
-            <TableRow key={item.id} className="border-none">
-              <TableCell className="py-2.5 font-medium">{item.name}</TableCell>
-              <TableCell className="py-2.5">{item.email}</TableCell>
-              <TableCell className="py-2.5">{item.location}</TableCell>
-              <TableCell className="py-2.5">{item.status}</TableCell>
-              <TableCell className="py-2.5 text-right">{item.balance}</TableCell>
+            <TableRow key={item.id} className="hover:bg-transparent [&>:not(:last-child)]:border-r *:border-border">
+              <TableCell className="font-medium">{item.name}</TableCell>
+              <TableCell>{item.email}</TableCell>
+              <TableCell>{item.location}</TableCell>
+              <TableCell>{item.status}</TableCell>
+              <TableCell className="text-right">{item.balance}</TableCell>
             </TableRow>
           ))}
         </TableBody>
-        <tbody aria-hidden="true" className="table-row h-2"></tbody>
-        <TableFooter className="bg-transparent">
-          <TableRow className="hover:bg-transparent">
-            <TableCell colSpan={4}>Total</TableCell>
-            <TableCell className="text-right">$2,500.00</TableCell>
-          </TableRow>
-        </TableFooter>
       </Table>
-      <p className="mt-4 text-sm text-muted-foreground text-center">Table without horizontal dividers</p>
+      <p className="mt-4 text-sm text-muted-foreground text-center">Table with vertical lines</p>
     </div>
   )
 }

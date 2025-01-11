@@ -1,3 +1,4 @@
+import { useId } from "react"
 import {
   Table,
   TableBody,
@@ -8,7 +9,6 @@ import {
   TableRow,
 } from "@/registry/default/ui/table"
 import { Checkbox } from "@/registry/default/ui/checkbox"
-import { useId } from "react"
 
 const items = [
   {
@@ -57,41 +57,43 @@ export default function Component() {
   const id = useId();
   return (
     <div>
-      <Table>
-        <TableHeader>
-          <TableRow className="hover:bg-transparent">
-            <TableHead>
-              <Checkbox id={id} />
-            </TableHead>          
-            <TableHead>Name</TableHead>
-            <TableHead>Email</TableHead>
-            <TableHead>Location</TableHead>
-            <TableHead>Status</TableHead>
-            <TableHead className="text-right">Balance</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {items.map((item) => (
-            <TableRow key={item.id} className="has-[[data-state=checked]]:bg-muted/50">
-              <TableCell>
-                <Checkbox id={`table-checkbox-${item.id}`} />
-              </TableCell>            
-              <TableCell className="font-medium">{item.name}</TableCell>
-              <TableCell>{item.email}</TableCell>
-              <TableCell>{item.location}</TableCell>
-              <TableCell>{item.status}</TableCell>
-              <TableCell className="text-right">{item.balance}</TableCell>
+      <div className="border border-border bg-background rounded-lg overflow-hidden">
+        <Table>
+          <TableHeader>
+            <TableRow className="hover:bg-transparent">
+              <TableHead className="h-11">
+                <Checkbox id={id} />
+              </TableHead>
+              <TableHead className="h-11">Name</TableHead>
+              <TableHead className="h-11">Email</TableHead>
+              <TableHead className="h-11">Location</TableHead>
+              <TableHead className="h-11">Status</TableHead>
+              <TableHead className="h-11 text-right">Balance</TableHead>
             </TableRow>
-          ))}
-        </TableBody>
-        <TableFooter className="bg-transparent">
-          <TableRow className="hover:bg-transparent">
-            <TableCell colSpan={5}>Total</TableCell>
-            <TableCell className="text-right">$2,500.00</TableCell>
-          </TableRow>
-        </TableFooter>
-      </Table>
-      <p className="mt-4 text-sm text-muted-foreground text-center">Table with row selection</p>
+          </TableHeader>
+          <TableBody>
+            {items.map((item) => (
+              <TableRow key={item.id}>
+                <TableCell>
+                  <Checkbox id={`table-checkbox-${item.id}`} />
+                </TableCell>
+                <TableCell className="font-medium">{item.name}</TableCell>
+                <TableCell>{item.email}</TableCell>
+                <TableCell>{item.location}</TableCell>
+                <TableCell>{item.status}</TableCell>
+                <TableCell className="text-right">{item.balance}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+          <TableFooter className="bg-transparent">
+            <TableRow className="hover:bg-transparent">
+              <TableCell colSpan={5}>Total</TableCell>
+              <TableCell className="text-right">$2,500.00</TableCell>
+            </TableRow>
+          </TableFooter>
+        </Table>
+      </div>
+      <p className="mt-4 text-sm text-muted-foreground text-center">Card Table</p>
     </div>
   )
 }

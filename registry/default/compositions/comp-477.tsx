@@ -1,89 +1,168 @@
+"use client";
+
+import { cn } from "@/registry/default/lib/utils"
 import {
   Table,
   TableBody,
   TableCell,
+  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/registry/default/ui/table"
+import {
+  ColumnDef,
+  flexRender,
+  getCoreRowModel,
+  useReactTable,
+} from "@tanstack/react-table"
+import { Checkbox } from "@/registry/default/ui/checkbox"
+import { Badge } from "@/registry/default/ui/badge"
+import { useEffect, useState } from "react"
 
-const items = [
+type Item = {
+  id: string
+  name: string
+  email: string
+  location: string
+  flag: string
+  status: "Active" | "Inactive" | "Pending"
+  balance: number
+}
+
+const columns: ColumnDef<Item>[] = [
   {
-    id: "1",
-    name: "Alex Thompson",
-    username: "@alexthompson",
-    image: "https://res.cloudinary.com/dlzlfasou/image/upload/v1736358071/avatar-40-02_upqrxi.jpg",
-    email: "alex.t@company.com",
-    location: "San Francisco, US",
-    status: "Active",
-    balance: "$1,250.00",
+    id: "select",
+    header: ({ table }) => (
+      <Checkbox
+        checked={
+          table.getIsAllPageRowsSelected() ||
+          (table.getIsSomePageRowsSelected() && "indeterminate")
+        }
+        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        aria-label="Select all"
+      />
+    ),    
+    cell: ({ row }) => <Checkbox
+      checked={row.getIsSelected()}
+      onCheckedChange={(value) => row.toggleSelected(!!value)}
+      aria-label="Select row"    
+    />,
   },
   {
-    id: "2",
-    name: "Sarah Chen",
-    username: "@sarahchen",
-    image: "https://res.cloudinary.com/dlzlfasou/image/upload/v1736358073/avatar-40-01_ij9v7j.jpg",
-    email: "sarah.c@company.com",
-    location: "Singapore",
-    status: "Active",
-    balance: "$600.00",
+    header: "Name",
+    accessorKey: "name",
+    cell: ({ row }) => <div className="font-medium">{row.getValue("name")}</div>,
   },
   {
-    id: "4",
-    name: "Maria Garcia",
-    username: "@mariagarcia",
-    image: "https://res.cloudinary.com/dlzlfasou/image/upload/v1736358072/avatar-40-03_dkeufx.jpg",
-    email: "m.garcia@company.com",
-    location: "Madrid, Spain",
-    status: "Active",
-    balance: "$0.00",
+    header: "Email",
+    accessorKey: "email",
   },
   {
-    id: "5",
-    name: "David Kim",
-    username: "@davidkim",
-    image: "https://res.cloudinary.com/dlzlfasou/image/upload/v1736358070/avatar-40-05_cmz0mg.jpg",
-    email: "d.kim@company.com",
-    location: "Seoul, KR",
-    status: "Active",
-    balance: "-$1,000.00",
-  }
+    header: "Location",
+    accessorKey: "location",
+    cell: ({ row }) => (
+      <div>
+        <span className="text-lg leading-none">{row.original.flag}</span>{" "}
+        {row.getValue("location")}
+      </div>
+    ),
+  },
+  {
+    header: "Status",
+    accessorKey: "status",
+    cell: ({ row }) => <Badge className={cn(
+        row.getValue("status") === 'Inactive' && "bg-muted-foreground/60 text-primary-foreground"
+      )}>{row.getValue("status")}</Badge>,
+  },
+  {
+    header: () => <div className="text-right">Balance</div>,
+    accessorKey: "balance",
+    cell: ({ row }) => {
+      const amount = parseFloat(row.getValue("balance"))
+      const formatted = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(amount)
+      return <div className="text-right">{formatted}</div>
+    }
+  },
 ]
 
 export default function Component() {
+  const [data, setData] = useState<Item[]>([])
+  
+  useEffect(() => {
+    async function fetchPosts() {
+      const res = await fetch('https://res.cloudinary.com/dlzlfasou/raw/upload/users-01_fertyx.json')
+      const data = await res.json()
+      setData(data.slice(0, 5)) // Limit to 5 items
+    }
+    fetchPosts()
+  }, [])
+
+  const table = useReactTable({
+    data,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+  })
+
   return (
     <div>
       <Table>
         <TableHeader>
-          <TableRow className="hover:bg-transparent">
-            <TableHead>Name</TableHead>
-            <TableHead>Email</TableHead>
-            <TableHead>Location</TableHead>
-            <TableHead>Status</TableHead>
-            <TableHead className="text-right">Balance</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {items.map((item) => (
-            <TableRow key={item.id}>
-              <TableCell>
-                <div className="flex items-center gap-3">
-                  <img className="rounded-full" src={item.image} width={40} height={40} alt={item.name} />
-                  <div>
-                    <div className="font-medium">{item.name}</div>
-                    <span className="mt-0.5 text-xs text-muted-foreground">{item.username}</span>
-                  </div>
-                </div>
-              </TableCell>
-              <TableCell>{item.email}</TableCell>
-              <TableCell>{item.location}</TableCell>
-              <TableCell>{item.status}</TableCell>
-              <TableCell className="text-right">{item.balance}</TableCell>
+          {table.getHeaderGroups().map((headerGroup) => (
+            <TableRow key={headerGroup.id} className="hover:bg-transparent">
+              {headerGroup.headers.map((header) => {
+                return (
+                <TableHead key={header.id}>
+                  {header.isPlaceholder
+                    ? null
+                    : flexRender(
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
+                </TableHead>
+                )
+              })}
             </TableRow>
           ))}
+        </TableHeader>
+        <TableBody>
+          {table.getRowModel().rows?.length ? (
+            table.getRowModel().rows.map((row) => (
+              <TableRow
+                key={row.id}
+                data-state={row.getIsSelected() && "selected"}
+              >
+                {row.getVisibleCells().map((cell) => (
+                  <TableCell key={cell.id}>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </TableCell>
+                ))}
+              </TableRow>
+            ))
+          ) : (
+            <TableRow>
+              <TableCell colSpan={columns.length} className="h-24 text-center">
+                No results.
+              </TableCell>
+            </TableRow>
+          )}
         </TableBody>
+        <TableFooter className="bg-transparent">
+          <TableRow className="hover:bg-transparent">
+            <TableCell colSpan={5}>Total</TableCell>
+            <TableCell className="text-right">
+              {new Intl.NumberFormat("en-US", {
+                style: "currency",
+                currency: "USD",
+              }).format(data.reduce((total, item) => total + item.balance, 0))}              
+            </TableCell>
+          </TableRow>
+        </TableFooter>
       </Table>
-      <p className="mt-4 text-sm text-muted-foreground text-center">Table with images</p>
+      <p className="mt-4 text-sm text-muted-foreground text-center">Data table made with <a className="underline hover:text-foreground" href="https://tanstack.com/table" target="_blank" rel="noopener noreferrer">TanStack Table</a></p>
     </div>
   )
 }
