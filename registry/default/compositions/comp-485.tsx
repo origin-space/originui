@@ -27,10 +27,29 @@ import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
   DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu"
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/registry/default/ui/alert-dialog";
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -45,11 +64,12 @@ import {
   getPaginationRowModel,
   useReactTable,
   FilterFn,
+  Row,
 } from "@tanstack/react-table"
 import { Input } from "@/registry/default/ui/input"
 import { Checkbox } from "@/registry/default/ui/checkbox"
 import { Badge } from "@/registry/default/ui/badge"
-import { ChevronFirst, ChevronLast, ChevronLeft, ChevronRight, ChevronUp, ChevronDown, CircleX, Filter, Columns3 } from "lucide-react";
+import { ChevronFirst, ChevronLast, ChevronLeft, ChevronRight, ChevronUp, ChevronDown, CircleX, Filter, Columns3, Trash, CircleAlert, ListFilter, Plus, Ellipsis } from "lucide-react";
 import { Button } from "@/registry/default/ui/button"
 
 type Item = {
@@ -143,6 +163,15 @@ const columns: ColumnDef<Item>[] = [
     },
     size: 120,
   },
+  {
+    id: "actions",
+    header: () => <span className="sr-only">Actions</span>,
+    cell: ({ row }) => <RowActions
+      row={row}
+    />,
+    size: 48,
+    enableHiding: false,
+  },
 ]
 
 export default function Component() {
@@ -151,7 +180,7 @@ export default function Component() {
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({})
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
-    pageSize: 5,
+    pageSize: 10,
   })
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -162,7 +191,7 @@ export default function Component() {
     },
   ])
 
-  const [data, setData] = useState([])
+  const [data, setData] = useState<Item[]>([])
   useEffect(() => {
     async function fetchPosts() {
       const res = await fetch('https://res.cloudinary.com/dlzlfasou/raw/upload/v1736358529/users-01_fertyx.json')
@@ -171,6 +200,13 @@ export default function Component() {
     }
     fetchPosts()
   }, [])
+
+  const handleDeleteRows = () => {
+    const selectedRows = table.getSelectedRowModel().rows
+    const updatedData = data.filter(item => !selectedRows.some(row => row.original.id === item.id))
+    setData(updatedData)
+    table.resetRowSelection()
+  }
 
   const table = useReactTable({
     data,
@@ -239,105 +275,170 @@ export default function Component() {
     <div className="space-y-4">
 
       {/* Filters */}
-      <div className="flex items-center gap-3">
-        {/* Filter by name or email */}
-        <div className="relative">
-          <Input
-            id={`${id}-input`}
-            ref={inputRef}
-            className="pe-9"
-            value={(table.getColumn("name")?.getFilterValue() ?? '') as string}
-            onChange={e => table.getColumn("name")?.setFilterValue(e.target.value)}
-            placeholder="Filter by name or email..."
-            type="text"
-            aria-label="Filter by name or email"
-          />
-          {Boolean(table.getColumn("name")?.getFilterValue()) && (
-            <button
-              className="absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg text-muted-foreground/80 outline-offset-2 transition-colors hover:text-foreground focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
-              aria-label="Clear filter"
-              onClick={() => {
-                table.getColumn("name")?.setFilterValue("");
-                if (inputRef.current) {
-                  inputRef.current.focus();
-                }
-              }}
-            >
-              <CircleX size={16} strokeWidth={2} aria-hidden="true" />
-            </button>
-          )}
-        </div>
-        {/* Filter by status */}
-        <Popover>
-          <PopoverTrigger asChild>
-            <Button variant="outline">
-              <Filter
-                className="-ms-1 me-2 opacity-60"
-                size={16}
-                strokeWidth={2}
-                aria-hidden="true"
-              />
-              Status
-              {selectedStatuses.length > 0 && (
-                <span className="-me-1 ms-3 inline-flex h-5 max-h-full items-center rounded border border-border bg-background px-1 font-[inherit] text-[0.625rem] font-medium text-muted-foreground/70">
-                  {selectedStatuses.length}
-                </span>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="flex items-center gap-3">
+          {/* Filter by name or email */}
+          <div className="relative">
+            <Input
+              id={`${id}-input`}
+              ref={inputRef}
+              className={cn(
+                "peer ps-9",
+                Boolean(table.getColumn("name")?.getFilterValue()) && "pe-9"
               )}
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent className="min-w-36 p-3" align="start">
-            <div className="space-y-3">
-              <div className="text-xs font-medium text-muted-foreground">Filters</div>
+              value={(table.getColumn("name")?.getFilterValue() ?? '') as string}
+              onChange={e => table.getColumn("name")?.setFilterValue(e.target.value)}
+              placeholder="Filter by name or email..."
+              type="text"
+              aria-label="Filter by name or email"
+            />
+            <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 peer-disabled:opacity-50">
+              <ListFilter size={16} strokeWidth={2} aria-hidden="true" />
+            </div>          
+            {Boolean(table.getColumn("name")?.getFilterValue()) && (
+              <button
+                className="absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg text-muted-foreground/80 outline-offset-2 transition-colors hover:text-foreground focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+                aria-label="Clear filter"
+                onClick={() => {
+                  table.getColumn("name")?.setFilterValue("");
+                  if (inputRef.current) {
+                    inputRef.current.focus();
+                  }
+                }}
+              >
+                <CircleX size={16} strokeWidth={2} aria-hidden="true" />
+              </button>
+            )}
+          </div>
+          {/* Filter by status */}
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button variant="outline">
+                <Filter
+                  className="-ms-1 me-2 opacity-60"
+                  size={16}
+                  strokeWidth={2}
+                  aria-hidden="true"
+                />
+                Status
+                {selectedStatuses.length > 0 && (
+                  <span className="-me-1 ms-3 inline-flex h-5 max-h-full items-center rounded border border-border bg-background px-1 font-[inherit] text-[0.625rem] font-medium text-muted-foreground/70">
+                    {selectedStatuses.length}
+                  </span>
+                )}
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="min-w-36 p-3" align="start">
               <div className="space-y-3">
-                {uniqueStatusValues.map((value, i) => (
-                  <div key={value} className="flex items-center gap-2">
-                    <Checkbox id={`${id}-${i}`} checked={selectedStatuses.includes(value)} onCheckedChange={(checked: boolean) => handleStatusChange(checked, value)} />
-                    <Label htmlFor={`${id}-${i}`} className="font-normal grow flex justify-between gap-2">
-                      {value} <span className="ms-2 text-muted-foreground text-xs">{statusCounts.get(value)}</span>
-                    </Label>
-                  </div>
-                ))}
+                <div className="text-xs font-medium text-muted-foreground">Filters</div>
+                <div className="space-y-3">
+                  {uniqueStatusValues.map((value, i) => (
+                    <div key={value} className="flex items-center gap-2">
+                      <Checkbox id={`${id}-${i}`} checked={selectedStatuses.includes(value)} onCheckedChange={(checked: boolean) => handleStatusChange(checked, value)} />
+                      <Label htmlFor={`${id}-${i}`} className="font-normal grow flex justify-between gap-2">
+                        {value} <span className="ms-2 text-muted-foreground text-xs">{statusCounts.get(value)}</span>
+                      </Label>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          </PopoverContent>
-        </Popover>
-        {/* Toggle columns visibility */}
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline">
-              <Columns3
-                className="-ms-1 me-2 opacity-60"
-                size={16}
-                strokeWidth={2}
-                aria-hidden="true"
-              />
-              View
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Toggle columns</DropdownMenuLabel>
-            {table
-              .getAllColumns()
-              .filter(
-                (column) => column.getCanHide()
-              )
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                    onSelect={event => event.preventDefault()}
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
+            </PopoverContent>
+          </Popover>
+          {/* Toggle columns visibility */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline">
+                <Columns3
+                  className="-ms-1 me-2 opacity-60"
+                  size={16}
+                  strokeWidth={2}
+                  aria-hidden="true"
+                />
+                View
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuLabel>Toggle columns</DropdownMenuLabel>
+              {table
+                .getAllColumns()
+                .filter(
+                  (column) => column.getCanHide()
                 )
-              })}
-          </DropdownMenuContent>
-        </DropdownMenu>
+                .map((column) => {
+                  return (
+                    <DropdownMenuCheckboxItem
+                      key={column.id}
+                      className="capitalize"
+                      checked={column.getIsVisible()}
+                      onCheckedChange={(value) =>
+                        column.toggleVisibility(!!value)
+                      }
+                      onSelect={event => event.preventDefault()}
+                    >
+                      {column.id}
+                    </DropdownMenuCheckboxItem>
+                  )
+                })}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+        <div className="flex items-center gap-3">
+          {/* Delete button */}
+          {table.getSelectedRowModel().rows.length > 0 && (
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button
+                  className="ml-auto"
+                  variant="outline"
+                >
+                  <Trash
+                    className="-ms-1 me-2 opacity-60"
+                    size={16}
+                    strokeWidth={2}
+                    aria-hidden="true"
+                  />
+                  Delete
+                  <span className="-me-1 ms-3 inline-flex h-5 max-h-full items-center rounded border border-border bg-background px-1 font-[inherit] text-[0.625rem] font-medium text-muted-foreground/70">
+                    {table.getSelectedRowModel().rows.length}
+                  </span>
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <div className="flex flex-col gap-2 max-sm:items-center sm:flex-row sm:gap-4">
+                  <div
+                    className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border"
+                    aria-hidden="true"
+                  >
+                    <CircleAlert className="opacity-80" size={16} strokeWidth={2} />
+                  </div>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                    <AlertDialogDescription>
+                      This action cannot be undone. This will permanently delete {table.getSelectedRowModel().rows.length} selected {table.getSelectedRowModel().rows.length === 1 ? 'row' : 'rows'}.
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                </div>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction onClick={handleDeleteRows}>Delete</AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+          )}
+          {/* Add user button */}
+          <Button
+            className="ml-auto"
+            variant="outline"
+          >
+            <Plus
+              className="-ms-1 me-2 opacity-60"
+              size={16}
+              strokeWidth={2}
+              aria-hidden="true"
+            />
+            Add user
+          </Button>
+        </div>
       </div>
 
       {/* Table */}
@@ -416,7 +517,7 @@ export default function Component() {
       <div className="flex items-center justify-between gap-8">
         {/* Results per page */}
         <div className="flex items-center gap-3">
-          <Label htmlFor={id}>Rows per page</Label>
+          <Label htmlFor={id} className="max-sm:sr-only">Rows per page</Label>
           <Select
             value={table.getState().pagination.pageSize.toString()}
             onValueChange={(value) => {
@@ -508,4 +609,63 @@ export default function Component() {
       <p className="mt-4 text-sm text-muted-foreground text-center">Example of a more complex table made with <a className="underline hover:text-foreground" href="https://tanstack.com/table" target="_blank" rel="noopener noreferrer">TanStack Table</a></p>
     </div>
   )
+}
+
+function RowActions({ row }: { row: Row<Item> }) {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <div className="flex justify-end">
+          <Button
+            size="icon"
+            variant="ghost"
+            className="shadow-none"
+            aria-label="Edit item"
+          >
+            <Ellipsis size={16} strokeWidth={2} aria-hidden="true" />
+          </Button>
+        </div>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuGroup>
+          <DropdownMenuItem>
+            <span>Edit</span>
+            <DropdownMenuShortcut>⌘E</DropdownMenuShortcut>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <span>Duplicate</span>
+            <DropdownMenuShortcut>⌘D</DropdownMenuShortcut>
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuGroup>
+          <DropdownMenuItem>
+            <span>Archive</span>
+            <DropdownMenuShortcut>⌘A</DropdownMenuShortcut>
+          </DropdownMenuItem>
+          <DropdownMenuSub>
+            <DropdownMenuSubTrigger>More</DropdownMenuSubTrigger>
+            <DropdownMenuPortal>
+              <DropdownMenuSubContent>
+                <DropdownMenuItem>Move to project</DropdownMenuItem>
+                <DropdownMenuItem>Move to folder</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>Advanced options</DropdownMenuItem>
+              </DropdownMenuSubContent>
+            </DropdownMenuPortal>
+          </DropdownMenuSub>
+        </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuGroup>
+          <DropdownMenuItem>Share</DropdownMenuItem>
+          <DropdownMenuItem>Add to favorites</DropdownMenuItem>
+        </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem className="text-destructive focus:text-destructive">
+          <span>Delete</span>
+          <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
 }

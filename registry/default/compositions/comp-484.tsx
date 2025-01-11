@@ -131,7 +131,7 @@ export default function Component() {
     },    
   ])  
 
-  const [data, setData] = useState([])
+  const [data, setData] = useState<Item[]>([])
   useEffect(() => {
     async function fetchPosts() {
       const res = await fetch('https://res.cloudinary.com/dlzlfasou/raw/upload/v1736358529/users-01_fertyx.json')
@@ -236,7 +236,7 @@ export default function Component() {
       </div>
 
       {/* Pagination */}
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex max-sm:flex-col items-center justify-between gap-3">
         {/* Page number information */}
         <p className="flex-1 whitespace-nowrap text-sm text-muted-foreground" aria-live="polite">
           Page <span className="text-foreground">{table.getState().pagination.pageIndex + 1}</span> of{" "}

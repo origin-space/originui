@@ -128,7 +128,7 @@ export default function Component() {
     },    
   ])  
 
-  const [data, setData] = useState([])
+  const [data, setData] = useState<Item[]>([])
   useEffect(() => {
     async function fetchPosts() {
       const res = await fetch('https://res.cloudinary.com/dlzlfasou/raw/upload/v1736358529/users-01_fertyx.json')
@@ -230,7 +230,7 @@ export default function Component() {
       <div className="flex items-center justify-between gap-8">
         {/* Results per page */}
         <div className="flex items-center gap-3">
-          <Label htmlFor={id}>Rows per page</Label>
+          <Label htmlFor={id} className="max-sm:sr-only">Rows per page</Label>
           <Select
             value={table.getState().pagination.pageSize.toString()}
             onValueChange={(value) => {
