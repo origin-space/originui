@@ -14,7 +14,11 @@ type Component = {
   className?: string;
 };
 
-const components: Component[] = [{ name: "comp-41" }];
+const components: Component[] = [
+  { name: "comp-487" },
+  { name: "comp-488" },
+  { name: "comp-489" },
+];
 
 export default function Page() {
   return (
