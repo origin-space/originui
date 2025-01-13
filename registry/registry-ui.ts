@@ -90,6 +90,17 @@ export const ui: Registry = [
     ],
   },
   {
+    name: "calendar-rac",
+    type: "registry:ui",
+    dependencies: ["react-aria-components", "@internationalized/date"],
+    files: [
+      {
+        path: "ui/calendar-rac.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "checkbox",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-checkbox"],
@@ -129,6 +140,17 @@ export const ui: Registry = [
     files: [
       {
         path: "ui/command.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "datefield-rac",
+    type: "registry:ui",
+    dependencies: ["react-aria-components"],
+    files: [
+      {
+        path: "ui/datefield-rac.tsx",
         type: "registry:ui",
       },
     ],

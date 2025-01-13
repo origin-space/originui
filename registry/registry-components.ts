@@ -521,6 +521,7 @@ export const components: Registry = [
   {
     name: "comp-36",
     type: "registry:component",
+    registryDependencies: ["https://originui.com/r/datefield-rac.json"],
     dependencies: ["react-aria-components"],
     files: [
       {
@@ -533,7 +534,7 @@ export const components: Registry = [
   {
     name: "comp-37",
     type: "registry:component",
-    dependencies: ["react-aria-components"],
+    registryDependencies: ["https://originui.com/r/datefield-rac.json"],
     files: [
       {
         path: "components/comp-37.tsx",
@@ -545,7 +546,7 @@ export const components: Registry = [
   {
     name: "comp-38",
     type: "registry:component",
-    dependencies: ["react-aria-components"],
+    registryDependencies: ["https://originui.com/r/datefield-rac.json"],
     files: [
       {
         path: "components/comp-38.tsx",
@@ -557,7 +558,7 @@ export const components: Registry = [
   {
     name: "comp-39",
     type: "registry:component",
-    dependencies: ["react-aria-components"],
+    registryDependencies: ["https://originui.com/r/datefield-rac.json"],
     files: [
       {
         path: "components/comp-39.tsx",
@@ -569,7 +570,7 @@ export const components: Registry = [
   {
     name: "comp-40",
     type: "registry:component",
-    dependencies: ["react-aria-components"],
+    registryDependencies: ["https://originui.com/r/datefield-rac.json"],
     files: [
       {
         path: "components/comp-40.tsx",
@@ -581,7 +582,11 @@ export const components: Registry = [
   {
     name: "comp-41",
     type: "registry:component",
-    dependencies: ["react-aria-components", "@internationalized/date"],
+    registryDependencies: [
+      "https://originui.com/r/calendar-rac.json",
+      "https://originui.com/r/datefield-rac.json",
+    ],
+    dependencies: ["react-aria-components"],
     files: [
       {
         path: "components/comp-41.tsx",
@@ -593,7 +598,11 @@ export const components: Registry = [
   {
     name: "comp-42",
     type: "registry:component",
-    dependencies: ["react-aria-components", "@internationalized/date"],
+    registryDependencies: [
+      "https://originui.com/r/calendar-rac.json",
+      "https://originui.com/r/datefield-rac.json",
+    ],
+    dependencies: ["react-aria-components"],
     files: [
       {
         path: "components/comp-42.tsx",
@@ -605,6 +614,10 @@ export const components: Registry = [
   {
     name: "comp-43",
     type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/calendar-rac.json",
+      "https://originui.com/r/datefield-rac.json",
+    ],
     dependencies: ["react-aria-components", "react-aria", "@internationalized/date"],
     files: [
       {
