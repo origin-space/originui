@@ -140,7 +140,7 @@ const columns: ColumnDef<Item>[] = [
   {
     header: "Email",
     accessorKey: "email",
-    size: 200,
+    size: 220,
   },
   {
     header: "Location",
@@ -168,6 +168,10 @@ const columns: ColumnDef<Item>[] = [
     filterFn: statusFilterFn,
   },
   {
+    header: "Performance",
+    accessorKey: "performance",
+  },
+  {
     header: "Balance",
     accessorKey: "balance",
     cell: ({ row }) => {
@@ -184,7 +188,7 @@ const columns: ColumnDef<Item>[] = [
     id: "actions",
     header: () => <span className="sr-only">Actions</span>,
     cell: ({ row }) => <RowActions row={row} />,
-    size: 48,
+    size: 60,
     enableHiding: false,
   },
 ];
