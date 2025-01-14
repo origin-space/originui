@@ -302,7 +302,7 @@ export default function Component() {
               id={`${id}-input`}
               ref={inputRef}
               className={cn(
-                "peer ps-9 min-w-60",
+                "peer min-w-60 ps-9",
                 Boolean(table.getColumn("name")?.getFilterValue()) && "pe-9",
               )}
               value={(table.getColumn("name")?.getFilterValue() ?? "") as string}
