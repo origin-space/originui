@@ -164,7 +164,7 @@ const columns: ColumnDef<Item>[] = [
         {row.getValue("status")}
       </Badge>
     ),
-    size: 120,
+    size: 100,
     filterFn: statusFilterFn,
   },
   {
@@ -302,7 +302,7 @@ export default function Component() {
               id={`${id}-input`}
               ref={inputRef}
               className={cn(
-                "peer ps-9",
+                "peer min-w-60 ps-9",
                 Boolean(table.getColumn("name")?.getFilterValue()) && "pe-9",
               )}
               value={(table.getColumn("name")?.getFilterValue() ?? "") as string}
@@ -523,7 +523,7 @@ export default function Component() {
               table.getRowModel().rows.map((row) => (
                 <TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
+                    <TableCell key={cell.id} className="last:py-0">
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </TableCell>
                   ))}
