@@ -14,10 +14,12 @@ type Component = {
   className?: string;
 };
 
+const center = "flex justify-center";
 const components: Component[] = [
-  { name: "comp-487" },
-  { name: "comp-488" },
-  { name: "comp-489" },
+  { name: "comp-487", className: center },
+  { name: "comp-490", className: center },
+  { name: "comp-488", className: center },
+  { name: "comp-489", className: center },
 ];
 
 export default function Page() {

@@ -9,9 +9,12 @@ export default function Component() {
   return (
     <Calendar
       mode="range"
+      // formatters={{
+      //   formatWeekdayName: (day) => day?.toLocaleDateString('en-US', { weekday: 'narrow' })
+      // }}
       // selected={date}
       // onSelect={setDate}
-      className="rounded-md border"
+      className="rounded-lg border border-border p-2"
     />
   );
 }
