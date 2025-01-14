@@ -4,14 +4,18 @@ import { cn } from "@/registry/default/lib/utils";
 import { Button } from "@/registry/default/ui/button";
 import { Input } from "@/registry/default/ui/input";
 import { LoaderCircle } from "lucide-react";
-import { useState } from "react";
+import { useState, useId } from "react";
 import { subscribe } from "./subscribe-action";
 
 // Add type for form state
 type FormStatus = "idle" | "loading" | "success" | "error";
 
-export default function SubscribeForm() {
-  // Combine related state into a single object
+function Form({
+  position = "bottom"
+} : {
+  position?: "top" | "bottom";
+}) {
+  const id = useId();
   const [formState, setFormState] = useState({
     email: "",
     status: "idle" as FormStatus,
@@ -40,6 +44,73 @@ export default function SubscribeForm() {
     }
   };
 
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="space-y-2">
+        <div className="inline-flex gap-2">
+          <Input
+            id={id}
+            className={cn(
+              "flex-1 md:min-w-64 [&:-webkit-autofill]:bg-background [&:-webkit-autofill]:[transition:background-color_5000000s_ease-in-out_0s]",
+              position === "bottom" && "border-zinc-600/65 bg-zinc-700/30 text-zinc-100 placeholder:text-zinc-500 [&:-webkit-autofill]:bg-zinc-700/30 [&:-webkit-autofill]:[-webkit-text-fill-color:#fff]",
+              position === "top" && "h-10",
+            )}
+            placeholder={position === "top" ? "Never miss a release" : "Your email"}
+            type="email"
+            value={formState.email}
+            onChange={(e) => setFormState((prev) => ({ ...prev, email: e.target.value }))}
+            disabled={isLoading}
+            aria-label="Subscribe to the newsletter"
+            required
+          />
+          <Button
+            type="submit"
+            className={cn(
+              "group relative",
+              position === "top" && "h-10",
+            )}
+            disabled={isLoading}
+            data-loading={isLoading}
+          >
+            <span className="group-data-[loading=true]:text-transparent">
+              Subscribe <span className="-mr-1 tracking-normal opacity-50">-&gt;</span>
+            </span>
+            {isLoading && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <LoaderCircle
+                  className="animate-spin"
+                  size={16}
+                  strokeWidth={2}
+                  aria-hidden="true"
+                />
+              </div>
+            )}
+          </Button>
+        </div>
+        {formState.message && (
+          <p
+            className={cn(
+              "mt-2 text-xs",
+              formState.status === "error" ? "text-destructive" : "text-muted-foreground",
+            )}
+            role="alert"
+            aria-live="polite"
+          >
+            {formState.message}
+          </p>
+        )}
+      </div>
+    </form>
+  );
+}
+
+export function SubscribeTop() {
+  return (
+    <Form position="top" />
+  );
+}
+
+export function SubscribeBottom() {
   return (
     <div className="dark relative overflow-hidden rounded-xl bg-zinc-900 px-4 py-10 sm:px-8">
       <div className="pointer-events-none absolute -right-64 -top-48" aria-hidden="true">
@@ -115,55 +186,7 @@ export default function SubscribeForm() {
       <h2 className="mb-6 text-xl/[1.1] font-extrabold tracking-tight text-foreground md:text-2xl/[1.1]">
         Get notified when new stuff drops.
       </h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="space-y-2">
-          <div className="inline-flex gap-2">
-            <Input
-              id="subscribe-form"
-              className="flex-1 border-zinc-600/65 bg-zinc-700/30 text-zinc-100 placeholder:text-zinc-500 md:min-w-64 [&:-webkit-autofill]:bg-zinc-700/30 [&:-webkit-autofill]:[-webkit-text-fill-color:#fff] [&:-webkit-autofill]:[transition:background-color_5000000s_ease-in-out_0s]"
-              placeholder="Your email"
-              type="email"
-              value={formState.email}
-              onChange={(e) => setFormState((prev) => ({ ...prev, email: e.target.value }))}
-              disabled={isLoading}
-              aria-label="Subscribe to the newsletter"
-              required
-            />
-            <Button
-              type="submit"
-              className="group relative"
-              disabled={isLoading}
-              data-loading={isLoading}
-            >
-              <span className="group-data-[loading=true]:text-transparent">
-                Subscribe <span className="-mr-1 tracking-normal opacity-50">-&gt;</span>
-              </span>
-              {isLoading && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <LoaderCircle
-                    className="animate-spin"
-                    size={16}
-                    strokeWidth={2}
-                    aria-hidden="true"
-                  />
-                </div>
-              )}
-            </Button>
-          </div>
-          {formState.message && (
-            <p
-              className={cn(
-                "mt-2 text-xs",
-                formState.status === "error" ? "text-destructive" : "text-muted-foreground",
-              )}
-              role="alert"
-              aria-live="polite"
-            >
-              {formState.message}
-            </p>
-          )}
-        </div>
-      </form>
+      <Form />
     </div>
   );
 }
