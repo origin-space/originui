@@ -24,7 +24,7 @@ export default function Component() {
           <SelectItem value="1">
             <span className="flex items-center gap-2">
               <img
-                className="size-10 rounded-full"
+                className="rounded-full"
                 src="/avatar-40-01.jpg"
                 alt="Jenny Hamilton"
                 width={40}
@@ -39,7 +39,7 @@ export default function Component() {
           <SelectItem value="2">
             <span className="flex items-center gap-2">
               <img
-                className="size-10 rounded-full"
+                className="rounded-full"
                 src="/avatar-40-02.jpg"
                 alt="Paul Smith"
                 width={40}
@@ -54,7 +54,7 @@ export default function Component() {
           <SelectItem value="3">
             <span className="flex items-center gap-2">
               <img
-                className="size-10 rounded-full"
+                className="rounded-full"
                 src="/avatar-40-03.jpg"
                 alt="Luna Wyen"
                 width={40}

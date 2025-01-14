@@ -41,7 +41,7 @@ export default function Component({
       </p>
 
       {/* Pagination */}
-      <div>
+      <div className="grow">
         <Pagination>
           <PaginationContent>
             {/* Previous page button */}
