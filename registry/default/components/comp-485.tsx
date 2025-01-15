@@ -1,5 +1,6 @@
 "use client";
 
+import { clamp } from "@/registry/default/lib/clamp";
 import { cn } from "@/registry/default/lib/utils";
 import {
   AlertDialog,
@@ -571,8 +572,12 @@ export default function Component() {
           <p className="whitespace-nowrap text-sm text-muted-foreground" aria-live="polite">
             <span className="text-foreground">
               {table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1}-
-              {table.getState().pagination.pageIndex * table.getState().pagination.pageSize +
-                table.getState().pagination.pageSize}
+              {clamp(
+                table.getState().pagination.pageIndex * table.getState().pagination.pageSize +
+                  table.getState().pagination.pageSize,
+                0,
+                table.getRowCount(),
+              )}
             </span>{" "}
             of <span className="text-foreground">{table.getRowCount().toString()}</span>
           </p>

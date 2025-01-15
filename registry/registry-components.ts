@@ -6761,6 +6761,10 @@ export const components: Registry = [
         path: "components/comp-483.tsx",
         type: "registry:component",
       },
+      {
+        path: "lib/clamp.ts",
+        type: "registry:lib",
+      },
     ],
     tags: [],
   },
@@ -6809,6 +6813,10 @@ export const components: Registry = [
       {
         path: "components/comp-485.tsx",
         type: "registry:component",
+      },
+      {
+        path: "lib/clamp.ts",
+        type: "registry:lib",
       },
     ],
     tags: [],

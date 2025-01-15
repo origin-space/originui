@@ -1,5 +1,6 @@
 "use client";
 
+import { clamp } from "@/registry/default/lib/clamp";
 import { cn } from "@/registry/default/lib/utils";
 import { Badge } from "@/registry/default/ui/badge";
 import { Button } from "@/registry/default/ui/button";
@@ -144,7 +145,7 @@ export default function Component() {
         "https://res.cloudinary.com/dlzlfasou/raw/upload/users-01_fertyx.json",
       );
       const data = await res.json();
-      setData(data);
+      setData([...data, ...data]);
     }
     fetchPosts();
   }, []);
@@ -279,8 +280,12 @@ export default function Component() {
           <p className="whitespace-nowrap text-sm text-muted-foreground" aria-live="polite">
             <span className="text-foreground">
               {table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1}-
-              {table.getState().pagination.pageIndex * table.getState().pagination.pageSize +
-                table.getState().pagination.pageSize}
+              {clamp(
+                table.getState().pagination.pageIndex * table.getState().pagination.pageSize +
+                  table.getState().pagination.pageSize,
+                0,
+                table.getRowCount(),
+              )}
             </span>{" "}
             of <span className="text-foreground">{table.getRowCount().toString()}</span>
           </p>

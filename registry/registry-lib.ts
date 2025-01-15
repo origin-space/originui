@@ -10,6 +10,21 @@ export const lib: Registry = [
         path: "lib/utils.ts",
         type: "registry:lib",
       },
+      {
+        path: "lib/clamp.ts",
+        type: "registry:lib",
+      },
+    ],
+  },
+  {
+    name: "clamp",
+    type: "registry:lib",
+    dependencies: [],
+    files: [
+      {
+        path: "lib/clamp.ts",
+        type: "registry:lib",
+      },
     ],
   },
 ];
