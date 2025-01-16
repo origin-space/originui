@@ -320,6 +320,16 @@ export const ui: Registry = [
     ],
   },
   {
+    name: "table",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/table.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "tabs",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-tabs"],
