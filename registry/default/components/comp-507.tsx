@@ -21,7 +21,7 @@ export default function Component() {
         />
         <div className="border-t border-border p-3">
           <div className="flex items-center gap-3">
-            <Label htmlFor={id}>Enter time</Label>
+            <Label htmlFor={id} className="text-xs">Enter time</Label>
             <div className="relative grow">
               <Input
                 id={id}
