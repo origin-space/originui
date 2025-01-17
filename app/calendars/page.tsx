@@ -39,6 +39,8 @@ const components: Component[] = [
 
 const fullWidthcomponents: Component[] = [
   { name: "comp-509", className: center },
+  { name: "comp-510", className: center },
+  { name: "comp-511", className: center },
   { name: "comp-505", className: center },
   { name: "comp-506", className: center },
   { name: "comp-508", className: center },  

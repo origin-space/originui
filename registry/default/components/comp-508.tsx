@@ -9,12 +9,13 @@ import { cn } from "@/registry/default/lib/utils";
 const GOOD_PRICE_THRESHOLD = 100;
 
 export default function Component() {
-  const [date, setDate] = useState<Date | undefined>(new Date())
-  const [mockPriceData, setMockPriceData] = useState<Record<string, number>>({});
+  const today = new Date();
+  const [date, setDate] = useState<Date | undefined>(today)
 
+  // Mock price data
+  const [mockPriceData, setMockPriceData] = useState<Record<string, number>>({});
   useEffect(() => {
     const generateMockPriceData = () => {
-      const today = new Date();
       const data: Record<string, number> = {};
 
       for (let i = 0; i < 60; i++) {
