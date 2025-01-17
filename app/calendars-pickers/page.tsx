@@ -15,10 +15,7 @@ type Component = {
 };
 
 const center = "flex justify-center items-start";
-const components: Component[] = [
-  { name: "comp-41" },
-  { name: "comp-42" },
-  { name: "comp-43" },    
+const components: Component[] = [ 
   { name: "comp-487", className: center },
   { name: "comp-490", className: center },
   { name: "comp-491", className: center },
@@ -26,7 +23,6 @@ const components: Component[] = [
   { name: "comp-489", className: center },
   { name: "comp-492", className: center },
   { name: "comp-493", className: center },
-  { name: "comp-495", className: center },
   { name: "comp-494", className: center },
   { name: "comp-496", className: center },
   { name: "comp-497", className: center },
@@ -49,13 +45,21 @@ const fullWidthcomponents: Component[] = [
   { name: "comp-508", className: center },  
 ];
 
+const maxWidth = "*:max-w-72 *:mx-auto";
+const pickers: Component[] = [
+  { name: "comp-41", className: maxWidth },
+  { name: "comp-42", className: maxWidth },
+  { name: "comp-512", className: maxWidth },
+  { name: "comp-513", className: maxWidth },
+];
+
 export default function Page() {
   return (
     <main>
       <div className="px-4 sm:px-6">
         <div className="mx-auto w-full max-w-6xl">
           <PageHeader title="Calendar and Picker">
-            A growing collection of {components.length + fullWidthcomponents.length} calendar and picker components built with Next.js and
+            A growing collection of {components.length + fullWidthcomponents.length + pickers.length} calendar and picker components built with Next.js and
             TailwindCSS.
           </PageHeader>
 
@@ -71,7 +75,7 @@ export default function Page() {
             })}
           </div>
 
-          <div className="grid max-w-6xl grid-cols-1 overflow-hidden [&>*]:relative [&>*]:px-1 [&>*]:py-12 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-8 xl:[&>*]:px-12">
+          <div className="grid max-w-6xl grid-cols-1 overflow-hidden border-b border-border/70 [&>*]:relative [&>*]:px-1 [&>*]:py-12 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-8 xl:[&>*]:px-12">
             {fullWidthcomponents.map((component) => {
               return (
                 <DemoComponent
@@ -81,7 +85,19 @@ export default function Page() {
                 />
               );
             })}
-          </div>          
+          </div>   
+
+          <div className="grid max-w-6xl grid-cols-1 overflow-hidden sm:grid-cols-2 lg:grid-cols-2 [&>*]:relative [&>*]:px-1 [&>*]:py-12 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-8 xl:[&>*]:px-12">
+            {pickers.map((component) => {
+              return (
+                <DemoComponent
+                  key={component.name}
+                  componentName={component.name}
+                  className={component.className}
+                />
+              );
+            })}
+          </div>                 
 
           <Cta />
         </div>

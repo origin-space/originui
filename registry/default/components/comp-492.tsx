@@ -1,23 +1,13 @@
-"use client";
-
-import { useState } from "react";
 import { Calendar } from "@/registry/default/ui/calendar";
-import { DateRange } from "react-day-picker"
 import { addDays } from "date-fns";
 
 export default function Component() {    
   const today = new Date();
-  const [date, setDate] = useState<DateRange | undefined>({
-    from: addDays(today, 6),
-    to: addDays(today, 8)
-  })
 
   return (
     <div>
       <Calendar
-        mode="range"
-        selected={date}
-        onSelect={setDate}           
+        mode="range"           
         disabled={[
           { before: new Date() }, // Dates before today
           new Date(), // Today
