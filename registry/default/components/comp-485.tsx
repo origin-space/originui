@@ -565,14 +565,19 @@ export default function Component() {
             </SelectContent>
           </Select>
         </div>
-
         {/* Page number information */}
         <div className="flex grow justify-end whitespace-nowrap text-sm text-muted-foreground">
           <p className="whitespace-nowrap text-sm text-muted-foreground" aria-live="polite">
             <span className="text-foreground">
               {table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1}-
-              {table.getState().pagination.pageIndex * table.getState().pagination.pageSize +
-                table.getState().pagination.pageSize}
+              {Math.min(
+                Math.max(
+                  table.getState().pagination.pageIndex * table.getState().pagination.pageSize +
+                    table.getState().pagination.pageSize,
+                  0,
+                ),
+                table.getRowCount(),
+              )}
             </span>{" "}
             of <span className="text-foreground">{table.getRowCount().toString()}</span>
           </p>
