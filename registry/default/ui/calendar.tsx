@@ -17,7 +17,7 @@ function Calendar({
   ...props
 }: CalendarProps) {
   const defaultClassNames = {
-    months: "relative flex",
+    months: "relative flex flex-col sm:flex-row gap-2 sm:gap-4",
     month: "w-full",
     month_caption: "relative mx-10 mb-1 flex h-9 items-center justify-center",
     caption_label: "text-sm font-medium",

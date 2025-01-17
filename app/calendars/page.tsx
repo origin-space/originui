@@ -34,7 +34,14 @@ const components: Component[] = [
   { name: "comp-502", className: center },
   { name: "comp-503", className: center },
   { name: "comp-504", className: center },
-  // multiple mode
+  { name: "comp-507", className: center },
+];
+
+const fullWidthcomponents: Component[] = [
+  { name: "comp-509", className: center },
+  { name: "comp-505", className: center },
+  { name: "comp-506", className: center },
+  { name: "comp-508", className: center },  
 ];
 
 export default function Page() {
@@ -43,11 +50,11 @@ export default function Page() {
       <div className="px-4 sm:px-6">
         <div className="mx-auto w-full max-w-6xl">
           <PageHeader title="Calendar">
-            A growing collection of {components.length} calendar components built with Next.js and
+            A growing collection of {components.length + fullWidthcomponents.length} calendar components built with Next.js and
             TailwindCSS.
           </PageHeader>
 
-          <div className="grid max-w-6xl grid-cols-1 overflow-hidden sm:grid-cols-2 lg:grid-cols-3 [&>*]:relative [&>*]:px-1 [&>*]:py-12 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-0">
+          <div className="grid max-w-6xl grid-cols-1 overflow-hidden sm:grid-cols-2 lg:grid-cols-3 border-b border-border/70 [&>*]:relative [&>*]:px-1 [&>*]:py-12 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-8 xl:[&>*]:px-12">
             {components.map((component) => {
               return (
                 <DemoComponent
@@ -58,6 +65,18 @@ export default function Page() {
               );
             })}
           </div>
+
+          <div className="grid max-w-6xl grid-cols-1 overflow-hidden [&>*]:relative [&>*]:px-1 [&>*]:py-12 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-8 xl:[&>*]:px-12">
+            {fullWidthcomponents.map((component) => {
+              return (
+                <DemoComponent
+                  key={component.name}
+                  componentName={component.name}
+                  className={component.className}
+                />
+              );
+            })}
+          </div>          
 
           <Cta />
         </div>
