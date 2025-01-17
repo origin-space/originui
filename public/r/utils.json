@@ -11,12 +11,6 @@
       "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
       "type": "registry:lib",
       "target": ""
-    },
-    {
-      "path": "lib/clamp.ts",
-      "content": "export function clamp(value: number, min: number, max: number) {\n  return Math.min(Math.max(value, min), max);\n}\n",
-      "type": "registry:lib",
-      "target": ""
     }
   ]
 }
