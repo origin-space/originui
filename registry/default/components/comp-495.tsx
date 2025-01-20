@@ -9,7 +9,7 @@ export default function Component() {
   const today = new Date();
   const [date, setDate] = useState<DateRange | undefined>({
     from: today,
-    to: addDays(today, 48),
+    to: addDays(today, 3),
   });
 
   return (
@@ -18,14 +18,11 @@ export default function Component() {
         mode="range"
         selected={date}
         onSelect={setDate}
-        numberOfMonths={3}
-        pagedNavigation
-        showOutsideDays={false}
         className="rounded-lg border border-border p-2"
         classNames={{
-          months: "sm:flex-col md:flex-row gap-8",
-          month:
-            "relative first-of-type:before:hidden before:absolute max-md:before:inset-x-2 max-md:before:h-px max-md:before:-top-4 md:before:inset-y-2 md:before:w-px before:bg-border md:before:-left-4",
+          day: "[&.range-start:not(.range-end)]:bg-gradient-to-r [&.range-start:not(.range-end)]:from-transparent [&.range-start:not(.range-end)]:from-50% [&.range-start:not(.range-end)]:to-accent to-50% [&.range-end:not(.range-start)]:bg-gradient-to-r [&.range-end:not(.range-start)]:from-accent [&.range-end:not(.range-start)]:from-50% [&.range-end:not(.range-start)]:to-transparent to-50%",
+          day_button:
+            "rounded-full group-[.range-start:not(.range-end)]:rounded-e-full group-[.range-end:not(.range-start)]:rounded-s-full",
         }}
       />
       <p
@@ -33,7 +30,7 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Three visible months -{" "}
+        Custom select day style -{" "}
         <a
           className="underline hover:text-foreground"
           href="https://daypicker.dev/"

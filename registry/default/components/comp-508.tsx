@@ -1,90 +1,48 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { Calendar } from "@/registry/default/ui/calendar";
-import { DayButtonProps } from "react-day-picker";
-import { format } from "date-fns";
-import { cn } from "@/registry/default/lib/utils";
-
-const GOOD_PRICE_THRESHOLD = 100;
+import { addDays } from "date-fns";
+import { useState } from "react";
+import { DateRange } from "react-day-picker";
 
 export default function Component() {
   const today = new Date();
-  const [date, setDate] = useState<Date | undefined>(today)
-
-  // Mock price data
-  const [mockPriceData, setMockPriceData] = useState<Record<string, number>>({});
-  useEffect(() => {
-    const generateMockPriceData = () => {
-      const data: Record<string, number> = {};
-
-      for (let i = 0; i < 180; i++) {
-        const date = new Date(today);
-        date.setDate(today.getDate() + i);
-        const dateKey = format(date, 'yyyy-MM-dd');
-        const randomPrice = Math.floor(Math.random() * (200 - 80 + 1)) + 80;
-        data[dateKey] = randomPrice;
-      }      
-      return data;
-    };
-    setMockPriceData(generateMockPriceData());
-  }, []); 
-
-  const isDateDisabled = (date: Date) => {
-    return !mockPriceData[format(date, 'yyyy-MM-dd')];
-  };
+  const [date, setDate] = useState<DateRange | undefined>({
+    from: today,
+    to: addDays(today, 25),
+  });
 
   return (
     <div>
       <Calendar
-        mode="single"
+        mode="range"
         selected={date}
-        onSelect={setDate}   
-        numberOfMonths={2}  
-        pagedNavigation  
-        showOutsideDays={false}      
+        onSelect={setDate}
+        numberOfMonths={2}
+        pagedNavigation
+        showOutsideDays={false}
         className="rounded-lg border border-border p-2"
         classNames={{
-          months: "sm:flex-col md:flex-row gap-8",
-          month: "relative first-of-type:before:hidden before:absolute max-md:before:inset-x-2 max-md:before:h-px max-md:before:-top-4 md:before:inset-y-2 md:before:w-px before:bg-border md:before:-left-4",          
-          weekday: "w-12",
-          day_button: "size-12",
-          today: "*:after:hidden",          
+          months: "gap-8",
+          month:
+            "relative first-of-type:before:hidden before:absolute max-sm:before:inset-x-2 max-sm:before:h-px max-sm:before:-top-2 sm:before:inset-y-2 sm:before:w-px before:bg-border sm:before:-left-4",
         }}
-        components={{
-          DayButton: (props: DayButtonProps) => <DayButton {...props} prices={mockPriceData} />,
-        }}
-        disabled={isDateDisabled}
       />
-      <p className="mt-4 text-xs text-muted-foreground text-center" role="region" aria-live="polite">Calendar with prices - <a className="underline hover:text-foreground" href="https://daypicker.dev/" target="_blank" rel="noopener nofollow">React DayPicker</a></p>
+      <p
+        className="mt-4 text-center text-xs text-muted-foreground"
+        role="region"
+        aria-live="polite"
+      >
+        Two visible months -{" "}
+        <a
+          className="underline hover:text-foreground"
+          href="https://daypicker.dev/"
+          target="_blank"
+          rel="noopener nofollow"
+        >
+          React DayPicker
+        </a>
+      </p>
     </div>
-  );
-}
-
-function DayButton(props: DayButtonProps & { prices: Record<string, number> }) {
-  const { day, modifiers, prices, ...buttonProps } = props;
-  const price = prices[format(day.date, 'yyyy-MM-dd')];
-  const isGoodPrice = price < GOOD_PRICE_THRESHOLD;
-  
-  return (
-    <button
-      {...buttonProps}
-    >
-      <span className="flex flex-col">
-        {props.children}
-        {price && (
-          <span 
-            className={cn(
-              "text-[10px] font-medium",
-              isGoodPrice 
-                ? 'text-emerald-500' 
-                : 'text-muted-foreground group-data-[selected]:text-primary-foreground/70'
-            )}
-          >
-            ${price}
-          </span>
-        )}
-      </span>
-    </button>
   );
 }

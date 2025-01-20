@@ -1,33 +1,116 @@
 "use client";
 
-import { useState } from "react";
+import { Button } from "@/registry/default/ui/button";
 import { Calendar } from "@/registry/default/ui/calendar";
-import { DateRange } from "react-day-picker"
-import { addDays } from "date-fns";
+import { subDays, subMonths, subYears } from "date-fns";
+import { useState } from "react";
 
 export default function Component() {
   const today = new Date();
-  const [date, setDate] = useState<DateRange | undefined>({
-    from: today,
-    to: addDays(today, 48)
-  })
+  const yesterday = subDays(today, 1);
+  const lastWeek = subDays(today, 7);
+  const lastMonth = subMonths(today, 1);
+  const lastYear = subYears(today, 1);
+  const [month, setMonth] = useState(today);
+  const [date, setDate] = useState<Date>(today);
 
   return (
     <div>
-      <Calendar
-        mode="range"
-        selected={date}
-        onSelect={setDate} 
-        numberOfMonths={3}  
-        pagedNavigation
-        showOutsideDays={false}   
-        className="rounded-lg border border-border p-2"
-        classNames={{
-          months: "sm:flex-col md:flex-row gap-8",
-          month: "relative first-of-type:before:hidden before:absolute max-md:before:inset-x-2 max-md:before:h-px max-md:before:-top-4 md:before:inset-y-2 md:before:w-px before:bg-border md:before:-left-4",
-        }}
-      />
-      <p className="mt-4 text-xs text-muted-foreground text-center" role="region" aria-live="polite">Three visible months - <a className="underline hover:text-foreground" href="https://daypicker.dev/" target="_blank" rel="noopener nofollow">React DayPicker</a></p>
+      <div className="rounded-lg border border-border">
+        <div className="flex max-sm:flex-col">
+          <div className="relative border-border py-4 max-sm:order-1 max-sm:border-t sm:w-32">
+            <div className="h-full border-border sm:border-e">
+              <div className="flex flex-col px-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="w-full justify-start"
+                  onClick={() => {
+                    setDate(today);
+                    setMonth(today);
+                  }}
+                >
+                  Today
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="w-full justify-start"
+                  onClick={() => {
+                    setDate(yesterday);
+                    setMonth(yesterday);
+                  }}
+                >
+                  Yesterday
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="w-full justify-start"
+                  onClick={() => {
+                    setDate(lastWeek);
+                    setMonth(lastWeek);
+                  }}
+                >
+                  Last week
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="w-full justify-start"
+                  onClick={() => {
+                    setDate(lastMonth);
+                    setMonth(lastMonth);
+                  }}
+                >
+                  Last month
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="w-full justify-start"
+                  onClick={() => {
+                    setDate(lastYear);
+                    setMonth(lastYear);
+                  }}
+                >
+                  Last year
+                </Button>
+              </div>
+            </div>
+          </div>
+          <Calendar
+            mode="single"
+            selected={date}
+            onSelect={(newDate) => {
+              if (newDate) {
+                setDate(newDate);
+              }
+            }}
+            month={month}
+            onMonthChange={setMonth}
+            className="p-2"
+            disabled={[
+              { after: today }, // Dates before today
+            ]}
+          />
+        </div>
+      </div>
+      <p
+        className="mt-4 text-center text-xs text-muted-foreground"
+        role="region"
+        aria-live="polite"
+      >
+        Calendar with presets -{" "}
+        <a
+          className="underline hover:text-foreground"
+          href="https://daypicker.dev/"
+          target="_blank"
+          rel="noopener nofollow"
+        >
+          React DayPicker
+        </a>
+      </p>
     </div>
   );
 }
