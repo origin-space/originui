@@ -84,17 +84,17 @@ export default function Component() {
           {items[0].desktop.map((browser) => (
             <TableHead
               key={browser.name}
-              className="h-auto rotate-180 py-3 text-foreground [writing-mode:vertical-lr]"
+              className="h-auto py-3 text-foreground align-bottom"
             >
-              {browser.name}
+              <span className="block relative whitespace-nowrap leading-4 left-[calc(50%-.5rem)] rotate-180 [text-orientation:sideways] [writing-mode:vertical-rl]">{browser.name}</span>
             </TableHead>
           ))}
           {items[0].mobile.map((browser) => (
             <TableHead
               key={browser.name}
-              className="h-auto rotate-180 py-3 text-foreground [writing-mode:vertical-lr]"
+              className="h-auto py-3 text-foreground align-bottom"
             >
-              {browser.name}
+              <span className="block relative whitespace-nowrap leading-4 left-[calc(50%-.5rem)] rotate-180 [text-orientation:sideways] [writing-mode:vertical-rl]">{browser.name}</span>
             </TableHead>
           ))}
         </TableRow>
