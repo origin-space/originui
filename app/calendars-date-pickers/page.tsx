@@ -4,9 +4,9 @@ import PageHeader from "@/components/page-header";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Calendar and Picker Components - Origin UI",
+  title: "Calendar and Date picker Components - Origin UI",
   description:
-    "A collection of beautiful and accessible calendar and picker components built with Tailwind CSS and Next.js.",
+    "A collection of beautiful and accessible calendar and date picker components built with Tailwind CSS and Next.js.",
 };
 
 type Component = {
@@ -58,8 +58,8 @@ export default function Page() {
     <main>
       <div className="px-4 sm:px-6">
         <div className="mx-auto w-full max-w-6xl">
-          <PageHeader title="Calendar and Picker">
-            A growing collection of {components.length + fullWidthcomponents.length + pickers.length} calendar and picker components built with Next.js and
+          <PageHeader title="Calendar and Date picker">
+            A growing collection of {components.length + fullWidthcomponents.length + pickers.length} calendar and date picker components built with Next.js and
             TailwindCSS.
           </PageHeader>
 

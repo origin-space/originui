@@ -48,7 +48,7 @@ export default function Component() {
                   }
                 }}
               >
-                <SelectTrigger className="first:grow w-fit font-medium">
+                <SelectTrigger className="first:grow w-fit font-medium h-8">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="max-h-[min(26rem,var(--radix-select-content-available-height))]">

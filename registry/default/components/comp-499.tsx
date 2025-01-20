@@ -21,7 +21,7 @@ export default function Component() {
           month={month}
           onMonthChange={setMonth}    
         />
-        <Button variant="ghost" size="sm" onClick={() => setMonth(today)}>Go to Today</Button>
+        <Button variant="outline" size="sm" className="my-1" onClick={() => setMonth(today)}>Go to Today</Button>
       </div>
       <p className="mt-4 text-xs text-muted-foreground text-center" role="region" aria-live="polite">Go to today button - <a className="underline hover:text-foreground" href="https://daypicker.dev/" target="_blank" rel="noopener nofollow">React DayPicker</a></p>
     </div>

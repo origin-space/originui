@@ -9,7 +9,7 @@ export default function Component() {
   const today = new Date();
   const [date, setDate] = useState<DateRange | undefined>({
     from: today,
-    to: addDays(today, 13)
+    to: addDays(today, 3)
   })
 
   return (

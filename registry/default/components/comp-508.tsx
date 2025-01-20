@@ -18,7 +18,7 @@ export default function Component() {
     const generateMockPriceData = () => {
       const data: Record<string, number> = {};
 
-      for (let i = 0; i < 60; i++) {
+      for (let i = 0; i < 180; i++) {
         const date = new Date(today);
         date.setDate(today.getDate() + i);
         const dateKey = format(date, 'yyyy-MM-dd');
@@ -45,6 +45,8 @@ export default function Component() {
         showOutsideDays={false}      
         className="rounded-lg border border-border p-2"
         classNames={{
+          months: "sm:flex-col md:flex-row gap-8",
+          month: "relative first-of-type:before:hidden before:absolute max-md:before:inset-x-2 max-md:before:h-px max-md:before:-top-4 md:before:inset-y-2 md:before:w-px before:bg-border md:before:-left-4",          
           weekday: "w-12",
           day_button: "size-12",
           today: "*:after:hidden",          

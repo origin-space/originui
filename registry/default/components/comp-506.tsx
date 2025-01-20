@@ -23,7 +23,8 @@ export default function Component() {
         showOutsideDays={false}   
         className="rounded-lg border border-border p-2"
         classNames={{
-          months: "sm:flex-col md:flex-row",
+          months: "sm:flex-col md:flex-row gap-8",
+          month: "relative first-of-type:before:hidden before:absolute max-md:before:inset-x-2 max-md:before:h-px max-md:before:-top-4 md:before:inset-y-2 md:before:w-px before:bg-border md:before:-left-4",
         }}
       />
       <p className="mt-4 text-xs text-muted-foreground text-center" role="region" aria-live="polite">Three visible months - <a className="underline hover:text-foreground" href="https://daypicker.dev/" target="_blank" rel="noopener nofollow">React DayPicker</a></p>
