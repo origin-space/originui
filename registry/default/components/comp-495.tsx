@@ -20,7 +20,7 @@ export default function Component() {
         onSelect={setDate}
         className="rounded-lg border border-border p-2"
         classNames={{
-          day: "[&.range-start:not(.range-end)]:bg-gradient-to-r [&.range-start:not(.range-end)]:from-transparent [&.range-start:not(.range-end)]:from-50% [&.range-start:not(.range-end)]:to-accent to-50% [&.range-end:not(.range-start)]:bg-gradient-to-r [&.range-end:not(.range-start)]:from-accent [&.range-end:not(.range-start)]:from-50% [&.range-end:not(.range-start)]:to-transparent to-50%",
+          day: "relative before:absolute before:inset-y-px before:inset-x-0 [&.range-start:before]:bg-gradient-to-r before:from-transparent before:from-50% before:to-accent before:to-50% [&.range-end:before]:bg-gradient-to-l",
           day_button:
             "rounded-full group-[.range-start:not(.range-end)]:rounded-e-full group-[.range-end:not(.range-start)]:rounded-s-full",
         }}
@@ -30,7 +30,7 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Custom select day style -{" "}
+        Custom select range style -{" "}
         <a
           className="underline hover:text-foreground"
           href="https://daypicker.dev/"
