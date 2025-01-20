@@ -1,44 +1,33 @@
 "use client";
 
-import { Button } from "@/registry/default/ui/button";
 import { Calendar } from "@/registry/default/ui/calendar";
-import { addDays } from "date-fns";
 import { useState } from "react";
+import type { WeekNumberProps } from "react-day-picker";
 
 export default function Component() {
-  const today = new Date();
-  const selectedDay = addDays(today, -28);
-  const [month, setMonth] = useState(selectedDay);
-  const [date, setDate] = useState<Date | undefined>(selectedDay);
+  const [date, setDate] = useState<Date | undefined>(new Date());
 
   return (
     <div>
-      <div className="rounded-lg border border-border p-2">
-        <Calendar
-          mode="single"
-          selected={date}
-          onSelect={setDate}
-          month={month}
-          onMonthChange={setMonth}
-        />
-        <Button
-          variant="outline"
-          size="sm"
-          className="my-1"
-          onClick={() => {
-            setDate(today);
-            setMonth(today);
-          }}
-        >
-          Set Today
-        </Button>
-      </div>
+      <Calendar
+        mode="single"
+        selected={date}
+        onSelect={setDate}
+        className="rounded-lg border border-border p-2"
+        fixedWeeks
+        showWeekNumber
+        components={{
+          WeekNumber: ({ week, ...props }: WeekNumberProps) => {
+            return <th {...props}>{week.weekNumber}</th>;
+          },
+        }}
+      />
       <p
         className="mt-4 text-center text-xs text-muted-foreground"
         role="region"
         aria-live="polite"
       >
-        Set today button -{" "}
+        Calendar with week number -{" "}
         <a
           className="underline hover:text-foreground"
           href="https://daypicker.dev/"

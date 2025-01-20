@@ -1,33 +1,32 @@
 "use client";
 
 import { Calendar } from "@/registry/default/ui/calendar";
+import { addDays, subDays } from "date-fns";
 import { useState } from "react";
-import type { WeekNumberProps } from "react-day-picker";
 
 export default function Component() {
-  const [date, setDate] = useState<Date | undefined>(new Date());
+  const today = new Date();
+  const [date, setDate] = useState<Date[] | undefined>([
+    subDays(today, 17),
+    addDays(today, 2),
+    addDays(today, 6),
+    addDays(today, 8),
+  ]);
 
   return (
     <div>
       <Calendar
-        mode="single"
+        mode="multiple"
         selected={date}
         onSelect={setDate}
         className="rounded-lg border border-border p-2"
-        fixedWeeks
-        showWeekNumber
-        components={{
-          WeekNumber: ({ week, ...props }: WeekNumberProps) => {
-            return <th {...props}>{week.weekNumber}</th>;
-          },
-        }}
       />
       <p
         className="mt-4 text-center text-xs text-muted-foreground"
         role="region"
         aria-live="polite"
       >
-        Calendar with week number -{" "}
+        Multiple date selection -{" "}
         <a
           className="underline hover:text-foreground"
           href="https://daypicker.dev/"

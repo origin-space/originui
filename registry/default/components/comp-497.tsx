@@ -34,20 +34,17 @@ export default function Component() {
         onSelect={setDate}
         className="rounded-lg border border-border p-2"
         classNames={{
-          day_button: "rounded-full",
+          month_caption: "mx-0",
         }}
-        captionLayout="dropdown-years"
+        captionLayout="dropdown"
         defaultMonth={new Date()}
         startMonth={new Date(1980, 6)}
+        hideNavigation
         components={{
           DropdownNav: (props: DropdownNavProps) => {
-            return (
-              <div className="flex w-full items-center justify-center gap-3 [&>span]:text-sm [&>span]:font-medium">
-                {props.children}
-              </div>
-            );
+            return <div className="flex w-full items-center gap-2">{props.children}</div>;
           },
-          YearsDropdown: (props: DropdownProps) => {
+          Dropdown: (props: DropdownProps) => {
             return (
               <Select
                 value={String(props.value)}
@@ -57,7 +54,7 @@ export default function Component() {
                   }
                 }}
               >
-                <SelectTrigger className="h-8 w-fit font-medium">
+                <SelectTrigger className="h-8 w-fit font-medium first:grow">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="max-h-[min(26rem,var(--radix-select-content-available-height))]">
@@ -81,7 +78,7 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Years dropdown -{" "}
+        Custom dropdowns -{" "}
         <a
           className="underline hover:text-foreground"
           href="https://daypicker.dev/"
