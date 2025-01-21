@@ -90,6 +90,18 @@ export const ui: Registry = [
     ],
   },
   {
+    name: "calendar",
+    type: "registry:ui",
+    dependencies: ["react-day-picker", "date-fns"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "ui/calendar.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "calendar-rac",
     type: "registry:ui",
     dependencies: ["react-aria-components", "@internationalized/date"],

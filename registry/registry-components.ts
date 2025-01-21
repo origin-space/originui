@@ -6841,4 +6841,364 @@ export const components: Registry = [
     ],
     tags: [],
   },
+  {
+    name: "comp-487",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/calendar-rac.json"],
+    dependencies: ["react-aria-components"],
+    files: [
+      {
+        path: "components/comp-487.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-488",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/calendar-rac.json"],
+    dependencies: ["react-aria-components"],
+    files: [
+      {
+        path: "components/comp-488.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-489",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/calendar-rac.json"],
+    dependencies: ["react-aria-components"],
+    files: [
+      {
+        path: "components/comp-489.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-490",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/calendar.json"],
+    files: [
+      {
+        path: "components/comp-490.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-491",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/calendar.json"],
+    files: [
+      {
+        path: "components/comp-491.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-492",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/calendar.json"],
+    files: [
+      {
+        path: "components/comp-492.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-493",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/calendar.json"],
+    files: [
+      {
+        path: "components/comp-493.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-494",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/calendar.json"],
+    files: [
+      {
+        path: "components/comp-494.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-495",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/calendar.json"],
+    files: [
+      {
+        path: "components/comp-495.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-496",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/calendar.json"],
+    files: [
+      {
+        path: "components/comp-496.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-497",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/calendar.json",
+      "https://originui.com/r/select.json",
+    ],
+    files: [
+      {
+        path: "components/comp-497.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-498",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/calendar.json",
+      "https://originui.com/r/select.json",
+    ],
+    files: [
+      {
+        path: "components/comp-498.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-499",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/calendar.json"],
+    files: [
+      {
+        path: "components/comp-499.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-500",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/calendar.json",
+    ],
+    files: [
+      {
+        path: "components/comp-500.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-501",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/calendar.json",
+    ],
+    files: [
+      {
+        path: "components/comp-501.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-502",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/calendar.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
+    ],
+    files: [
+      {
+        path: "components/comp-502.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-503",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/calendar.json",
+      "https://originui.com/r/input.json",
+      "https://originui.com/r/label.json",
+    ],
+    files: [
+      {
+        path: "components/comp-503.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-504",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/calendar.json",
+      "https://originui.com/r/collapsible.json",
+      "https://originui.com/r/scroll-area.json",
+    ],
+    files: [
+      {
+        path: "components/comp-504.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-505",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/calendar.json",
+      "https://originui.com/r/scroll-area.json",
+    ],
+    files: [
+      {
+        path: "components/comp-505.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-506",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/calendar.json",
+    ],
+    files: [
+      {
+        path: "components/comp-506.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-507",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/calendar.json",
+    ],
+    files: [
+      {
+        path: "components/comp-507.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-508",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/calendar.json"],
+    files: [
+      {
+        path: "components/comp-508.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-509",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/calendar.json"],
+    files: [
+      {
+        path: "components/comp-509.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-510",
+    type: "registry:component",
+    registryDependencies: ["https://originui.com/r/calendar.json"],
+    files: [
+      {
+        path: "components/comp-510.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-511",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/calendar.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/popover.json",
+    ],
+    files: [
+      {
+        path: "components/comp-511.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
+    name: "comp-512",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/button.json",
+      "https://originui.com/r/calendar.json",
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/popover.json",
+    ],
+    files: [
+      {
+        path: "components/comp-512.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
 ];
