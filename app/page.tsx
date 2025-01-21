@@ -1,5 +1,5 @@
 import Illustration from "@/components/illustration";
-import { SubscribeTop, SubscribeBottom } from "@/components/subscribe-form";
+import { SubscribeBottom, SubscribeTop } from "@/components/subscribe-form";
 import XLinks from "@/components/x-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -29,7 +29,7 @@ export default function Page() {
               <h1 className="mx-auto mb-4 max-w-3xl text-4xl/[1.1] font-extrabold tracking-tight text-foreground md:text-5xl/[1.1]">
                 Beautiful UI components built with Tailwind CSS and Next.js.
               </h1>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="mb-8 text-lg text-muted-foreground">
                 Origin UI is an extensive collection of copy-and-paste components for quickly
                 building app UIs. It&lsquo;s free, open-source, and ready to drop into your
                 projects.
@@ -224,8 +224,21 @@ export default function Page() {
                     </Link>
                   </li>
                   <li>
+                    <Link
+                      href="/calendars-date-pickers"
+                      className="inline-flex w-full items-center justify-between whitespace-nowrap rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 outline-offset-2 transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:opacity-50 sm:h-14"
+                    >
+                      <span className="truncate">Calendar and Date picker</span>
+                      <ArrowRight
+                        size={16}
+                        strokeWidth={2}
+                        className="-mr-1 ml-2 shrink-0 opacity-60"
+                      />
+                    </Link>
+                  </li>
+                  <li>
                     <span className="inline-flex w-full flex-col justify-between gap-2 rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 sm:h-14 sm:flex-row sm:items-center">
-                      Calendar
+                      Stepper and Timeline
                       <span className="text-xs font-medium uppercase text-zinc-400 dark:text-zinc-600">
                         Coming soon
                       </span>

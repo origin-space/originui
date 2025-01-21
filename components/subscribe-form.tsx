@@ -4,17 +4,13 @@ import { cn } from "@/registry/default/lib/utils";
 import { Button } from "@/registry/default/ui/button";
 import { Input } from "@/registry/default/ui/input";
 import { LoaderCircle } from "lucide-react";
-import { useState, useId } from "react";
+import { useId, useState } from "react";
 import { subscribe } from "./subscribe-action";
 
 // Add type for form state
 type FormStatus = "idle" | "loading" | "success" | "error";
 
-function Form({
-  position = "bottom"
-} : {
-  position?: "top" | "bottom";
-}) {
+function Form({ position = "bottom" }: { position?: "top" | "bottom" }) {
   const id = useId();
   const [formState, setFormState] = useState({
     email: "",
@@ -52,7 +48,8 @@ function Form({
             id={id}
             className={cn(
               "flex-1 md:min-w-64 [&:-webkit-autofill]:bg-background [&:-webkit-autofill]:[transition:background-color_5000000s_ease-in-out_0s]",
-              position === "bottom" && "border-zinc-600/65 bg-zinc-700/30 text-zinc-100 placeholder:text-zinc-500 [&:-webkit-autofill]:bg-zinc-700/30 [&:-webkit-autofill]:[-webkit-text-fill-color:#fff]",
+              position === "bottom" &&
+                "border-zinc-600/65 bg-zinc-700/30 text-zinc-100 placeholder:text-zinc-500 [&:-webkit-autofill]:bg-zinc-700/30 [&:-webkit-autofill]:[-webkit-text-fill-color:#fff]",
               position === "top" && "h-10",
             )}
             placeholder={position === "top" ? "Never miss a release" : "Your email"}
@@ -65,10 +62,7 @@ function Form({
           />
           <Button
             type="submit"
-            className={cn(
-              "group relative",
-              position === "top" && "h-10",
-            )}
+            className={cn("group relative", position === "top" && "h-10")}
             disabled={isLoading}
             data-loading={isLoading}
           >
@@ -105,9 +99,7 @@ function Form({
 }
 
 export function SubscribeTop() {
-  return (
-    <Form position="top" />
-  );
+  return <Form position="top" />;
 }
 
 export function SubscribeBottom() {
