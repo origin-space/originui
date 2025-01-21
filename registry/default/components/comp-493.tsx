@@ -26,7 +26,7 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Multiple date selection -{" "}
+        Multiple day selection -{" "}
         <a
           className="underline hover:text-foreground"
           href="https://daypicker.dev/"

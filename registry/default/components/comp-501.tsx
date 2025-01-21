@@ -30,7 +30,7 @@ export default function Component() {
             setMonth(today);
           }}
         >
-          Set Today
+          Today
         </Button>
       </div>
       <p
@@ -38,7 +38,7 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Set today button -{" "}
+        With button -{" "}
         <a
           className="underline hover:text-foreground"
           href="https://daypicker.dev/"

@@ -78,7 +78,7 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Years dropdown -{" "}
+        Yearly select + nav -{" "}
         <a
           className="underline hover:text-foreground"
           href="https://daypicker.dev/"

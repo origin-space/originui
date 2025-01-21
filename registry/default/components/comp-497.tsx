@@ -78,7 +78,7 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Custom dropdowns -{" "}
+        Monthly / yearly selects -{" "}
         <a
           className="underline hover:text-foreground"
           href="https://daypicker.dev/"

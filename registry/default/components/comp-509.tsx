@@ -33,7 +33,7 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Three visible months -{" "}
+        Three months calendar -{" "}
         <a
           className="underline hover:text-foreground"
           href="https://daypicker.dev/"

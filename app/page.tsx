@@ -235,7 +235,7 @@ export default function Page() {
                         className="-mr-1 ml-2 shrink-0 opacity-60"
                       />
                     </Link>
-                  </li>                  
+                  </li>
                   <li>
                     <span className="inline-flex w-full flex-col justify-between gap-2 rounded-lg border border-border bg-background p-4 font-bold shadow-sm shadow-black/5 sm:h-14 sm:flex-row sm:items-center">
                       Stepper and Timeline

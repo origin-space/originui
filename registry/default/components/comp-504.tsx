@@ -81,7 +81,7 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Calendar -{" "}
+        Advanced selection -{" "}
         <a
           className="underline hover:text-foreground"
           href="https://daypicker.dev/"

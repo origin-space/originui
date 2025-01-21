@@ -62,7 +62,7 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Calendar with prices -{" "}
+        Pricing calendar -{" "}
         <a
           className="underline hover:text-foreground"
           href="https://daypicker.dev/"

@@ -22,7 +22,7 @@ export default function Component() {
           onMonthChange={setMonth}
         />
         <Button variant="outline" size="sm" className="my-1" onClick={() => setMonth(today)}>
-          Go to Today
+          Current month
         </Button>
       </div>
       <p
@@ -30,7 +30,7 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Go to today button -{" "}
+        With button -{" "}
         <a
           className="underline hover:text-foreground"
           href="https://daypicker.dev/"

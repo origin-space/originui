@@ -79,7 +79,7 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Calendar -{" "}
+        Date input -{" "}
         <a
           className="underline hover:text-foreground"
           href="https://daypicker.dev/"

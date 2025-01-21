@@ -27,7 +27,7 @@ export default function Component() {
         role="region"
         aria-live="polite"
       >
-        Calendar with week number -{" "}
+        Weekly numbers -{" "}
         <a
           className="underline hover:text-foreground"
           href="https://daypicker.dev/"
