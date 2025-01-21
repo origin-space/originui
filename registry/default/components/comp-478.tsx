@@ -179,7 +179,7 @@ const items: Item[] = [
     volume: 2507,
     cpc: 2.5,
     traffic: 88,
-    link: "https://www.originui.com",
+    link: "#",
   },
   {
     id: "2",
@@ -188,7 +188,7 @@ const items: Item[] = [
     volume: 1850,
     cpc: 4.75,
     traffic: 65,
-    link: "https://www.originui.com/templates",
+    link: "#",
   },
   {
     id: "3",
@@ -197,7 +197,7 @@ const items: Item[] = [
     volume: 3200,
     cpc: 3.25,
     traffic: 112,
-    link: "https://www.originui.com/docs",
+    link: "#",
   },
   {
     id: "4",
@@ -206,7 +206,7 @@ const items: Item[] = [
     volume: 890,
     cpc: 1.95,
     traffic: 45,
-    link: "https://www.originui.com/download",
+    link: "#",
   },
   {
     id: "5",
@@ -215,7 +215,7 @@ const items: Item[] = [
     volume: 4100,
     cpc: 5.5,
     traffic: 156,
-    link: "https://www.originui.com/templates/dashboard",
+    link: "#",
   },
   {
     id: "6",
@@ -224,7 +224,7 @@ const items: Item[] = [
     volume: 1200,
     cpc: 1.25,
     traffic: 42,
-    link: "https://www.originui.com/tutorials",
+    link: "#",
   },
   {
     id: "7",
@@ -233,7 +233,7 @@ const items: Item[] = [
     volume: 760,
     cpc: 6.8,
     traffic: 28,
-    link: "https://www.originui.com/pricing",
+    link: "#",
   },
   {
     id: "8",
@@ -242,7 +242,7 @@ const items: Item[] = [
     volume: 950,
     cpc: 1.8,
     traffic: 35,
-    link: "https://www.originui.com/docs/components",
+    link: "#",
   },
 ];
 
