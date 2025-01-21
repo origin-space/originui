@@ -6146,21 +6146,6 @@ export const components: Registry = [
     tags: [],
   },
   {
-    name: "comp-441",
-    type: "registry:component",
-    registryDependencies: [
-      "https://originui.com/r/tabs.json",
-      "https://originui.com/r/tooltip.json",
-    ],
-    files: [
-      {
-        path: "components/comp-441.tsx",
-        type: "registry:component",
-      },
-    ],
-    tags: [],
-  },
-  {
     name: "comp-442",
     type: "registry:component",
     registryDependencies: ["https://originui.com/r/tabs.json"],
@@ -6578,18 +6563,6 @@ export const components: Registry = [
     files: [
       {
         path: "components/comp-471.tsx",
-        type: "registry:component",
-      },
-    ],
-    tags: [],
-  },
-  {
-    name: "comp-472",
-    type: "registry:component",
-    registryDependencies: ["https://originui.com/r/table.json"],
-    files: [
-      {
-        path: "components/comp-472.tsx",
         type: "registry:component",
       },
     ],
