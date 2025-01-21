@@ -12,7 +12,6 @@ import { DateRange } from "react-day-picker";
 
 export default function Component() {
   const id = useId();
-  const today = new Date();
   const [date, setDate] = useState<DateRange | undefined>();
 
   return (
