@@ -82,19 +82,17 @@ export default function Component() {
         <TableRow className="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r">
           <TableCell></TableCell>
           {items[0].desktop.map((browser) => (
-            <TableHead
-              key={browser.name}
-              className="h-auto py-3 text-foreground align-bottom"
-            >
-              <span className="block relative whitespace-nowrap leading-4 left-[calc(50%-.5rem)] rotate-180 [text-orientation:sideways] [writing-mode:vertical-rl]">{browser.name}</span>
+            <TableHead key={browser.name} className="h-auto py-3 align-bottom text-foreground">
+              <span className="relative left-[calc(50%-.5rem)] block rotate-180 whitespace-nowrap leading-4 [text-orientation:sideways] [writing-mode:vertical-rl]">
+                {browser.name}
+              </span>
             </TableHead>
           ))}
           {items[0].mobile.map((browser) => (
-            <TableHead
-              key={browser.name}
-              className="h-auto py-3 text-foreground align-bottom"
-            >
-              <span className="block relative whitespace-nowrap leading-4 left-[calc(50%-.5rem)] rotate-180 [text-orientation:sideways] [writing-mode:vertical-rl]">{browser.name}</span>
+            <TableHead key={browser.name} className="h-auto py-3 align-bottom text-foreground">
+              <span className="relative left-[calc(50%-.5rem)] block rotate-180 whitespace-nowrap leading-4 [text-orientation:sideways] [writing-mode:vertical-rl]">
+                {browser.name}
+              </span>
             </TableHead>
           ))}
         </TableRow>
