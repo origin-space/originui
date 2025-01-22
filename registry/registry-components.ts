@@ -964,6 +964,21 @@ export const components: Registry = [
     tags: [],
   },
   {
+    name: "comp-66",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/label.json",
+      "https://originui.com/r/textarea.json",
+    ],
+    files: [
+      {
+        path: "components/comp-66.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
     name: "comp-67",
     type: "registry:component",
     registryDependencies: [
