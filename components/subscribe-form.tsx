@@ -175,7 +175,7 @@ export function SubscribeBottom() {
           </defs>
         </svg>
       </div>
-      <h2 className="mb-6 text-xl/[1.1] font-extrabold tracking-tight text-foreground md:text-2xl/[1.1]">
+      <h2 className="mb-6 text-xl/[1.1] font-heading font-bold tracking-tight text-foreground md:text-2xl/[1.1]">
         Get notified when new stuff drops.
       </h2>
       <Form />

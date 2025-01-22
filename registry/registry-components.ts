@@ -2578,6 +2578,21 @@ export const components: Registry = [
     tags: [],
   },
   {
+    name: "comp-185",
+    type: "registry:component",
+    registryDependencies: [
+      "https://originui.com/r/switch.json",
+      "https://originui.com/r/label.json",
+    ],
+    files: [
+      {
+        path: "components/comp-185.tsx",
+        type: "registry:component",
+      },
+    ],
+    tags: [],
+  },
+  {
     name: "comp-186",
     type: "registry:component",
     registryDependencies: [
@@ -3832,6 +3847,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-268",
@@ -3843,6 +3861,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-269",
@@ -3854,6 +3875,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-270",
@@ -3865,6 +3889,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-271",
@@ -3876,6 +3903,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-272",
@@ -3887,6 +3917,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-273",
@@ -3898,6 +3931,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-274",
@@ -3909,6 +3945,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-275",
@@ -3920,6 +3959,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-276",
@@ -3931,6 +3973,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-277",
@@ -3942,6 +3987,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-278",
@@ -3953,6 +4001,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-279",
@@ -3965,6 +4016,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-280",
@@ -3977,6 +4031,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-281",
@@ -3989,6 +4046,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-282",
@@ -4001,6 +4061,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-283",
@@ -4013,6 +4076,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-284",
@@ -4025,6 +4091,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-285",
@@ -4037,6 +4106,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-286",
@@ -4049,6 +4121,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-287",
@@ -4061,6 +4136,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-288",
@@ -4073,6 +4151,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-289",
@@ -4085,6 +4166,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-290",
@@ -4097,6 +4181,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-291",
@@ -4109,6 +4196,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-292",
@@ -4121,6 +4211,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-293",
@@ -4133,6 +4226,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-294",
@@ -4145,6 +4241,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-295",
@@ -4157,6 +4256,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-296",
@@ -4169,6 +4271,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-297",
@@ -4188,6 +4293,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-298",
@@ -4203,6 +4311,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-299",
@@ -4216,6 +4327,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-300",
@@ -4229,6 +4343,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-301",
@@ -4241,6 +4358,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 3,
+    },
   },
   {
     name: "comp-302",
@@ -4252,6 +4372,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 3,
+    },
   },
   {
     name: "comp-303",
@@ -4263,6 +4386,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 3,
+    },
   },
   {
     name: "comp-304",
@@ -4274,6 +4400,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 3,
+    },
   },
   {
     name: "comp-305",
@@ -4286,6 +4415,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 3,
+    },
   },
   {
     name: "comp-306",
@@ -4298,6 +4430,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 3,
+    },
   },
   {
     name: "comp-307",
@@ -4310,6 +4445,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 3,
+    },
   },
   {
     name: "comp-308",
@@ -4322,6 +4460,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 3,
+    },
   },
   {
     name: "comp-309",
@@ -4334,6 +4475,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 3,
+    },
   },
   {
     name: "comp-310",
@@ -4346,6 +4490,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 3,
+    },
   },
   {
     name: "comp-311",
@@ -4357,6 +4504,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 3,
+    },
   },
   {
     name: "comp-312",
@@ -4369,6 +4519,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 3,
+    },
   },
   {
     name: "comp-313",
@@ -4736,6 +4889,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-335",
@@ -4748,6 +4904,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-336",
@@ -4760,6 +4919,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-337",
@@ -4772,6 +4934,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-338",
@@ -4784,6 +4949,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-339",
@@ -4796,6 +4964,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-340",
@@ -4808,6 +4979,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-341",
@@ -4820,6 +4994,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-342",
@@ -4832,6 +5009,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-343",
@@ -4844,6 +5024,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-344",
@@ -4856,6 +5039,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-345",
@@ -4868,6 +5054,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-346",
@@ -4880,6 +5069,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-347",
@@ -4892,6 +5084,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-348",
@@ -4904,6 +5099,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-349",
@@ -4916,6 +5114,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-350",
@@ -4928,6 +5129,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-351",
@@ -4940,6 +5144,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-352",
@@ -4955,6 +5162,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-353",
@@ -4970,6 +5180,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-354",
@@ -5951,6 +6164,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-427",
@@ -5963,6 +6179,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-428",
@@ -5975,6 +6194,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-429",
@@ -5987,6 +6209,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-430",
@@ -5999,6 +6224,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-431",
@@ -6011,6 +6239,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-432",
@@ -6023,6 +6254,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-433",
@@ -6038,6 +6272,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-434",
@@ -6053,6 +6290,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-435",
@@ -6068,6 +6308,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-436",
@@ -6083,6 +6326,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-437",
@@ -6099,6 +6345,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-438",
@@ -6111,6 +6360,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-439",
@@ -6123,6 +6375,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-440",
@@ -6138,6 +6393,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-441",
@@ -6153,6 +6411,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-442",
@@ -6165,6 +6426,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-443",
@@ -6177,6 +6441,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-444",
@@ -6189,6 +6456,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-445",
@@ -6201,6 +6471,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-446",
@@ -6216,6 +6489,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-447",
@@ -6231,6 +6507,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-448",
@@ -6243,6 +6522,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-449",
@@ -6255,6 +6537,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-450",
@@ -6267,6 +6552,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-451",
@@ -6279,6 +6567,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-452",
@@ -6291,6 +6582,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-453",
@@ -6303,6 +6597,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-454",
@@ -6318,6 +6615,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-455",
@@ -6333,6 +6633,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-456",
@@ -6348,6 +6651,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-457",
@@ -6360,6 +6666,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-458",
@@ -6375,6 +6684,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-459",
@@ -6391,6 +6703,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-460",
@@ -6407,6 +6722,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-461",
@@ -6426,6 +6744,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-462",
@@ -6445,6 +6766,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-463",
@@ -6465,6 +6789,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-464",
@@ -6484,6 +6811,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-465",
@@ -6504,6 +6834,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-466",
@@ -7082,6 +7415,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 3,
+    },
   },
   {
     name: "comp-506",
@@ -7097,6 +7433,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 3,
+    },
   },
   {
     name: "comp-507",
@@ -7112,6 +7451,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 3,
+    },
   },
   {
     name: "comp-508",
@@ -7124,6 +7466,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 3,
+    },
   },
   {
     name: "comp-509",
@@ -7136,6 +7481,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 3,
+    },
   },
   {
     name: "comp-510",
@@ -7148,6 +7496,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 3,
+    },
   },
   {
     name: "comp-511",

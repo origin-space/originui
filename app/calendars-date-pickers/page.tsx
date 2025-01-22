@@ -1,6 +1,7 @@
 import Cta from "@/components/cta";
 import DemoComponent from "@/components/demo-component";
 import PageHeader from "@/components/page-header";
+import PageGrid from "@/components/page-grid";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -34,23 +35,16 @@ const components: Component[] = [
   { name: "comp-502", className: center },
   { name: "comp-503", className: center },
   { name: "comp-504", className: center },
-];
-
-const fullWidthcomponents: Component[] = [
   { name: "comp-505", className: center },
   { name: "comp-506", className: center },
   { name: "comp-507", className: center },
   { name: "comp-508", className: center },
   { name: "comp-509", className: center },
-  { name: "comp-510", className: center },
-];
-
-const maxWidth = "*:max-w-72 *:mx-auto";
-const pickers: Component[] = [
-  { name: "comp-41", className: maxWidth },
-  { name: "comp-42", className: maxWidth },
-  { name: "comp-511", className: maxWidth },
-  { name: "comp-512", className: maxWidth },
+  { name: "comp-510", className: center },  
+  { name: "comp-41" },
+  { name: "comp-42" },
+  { name: "comp-511" },
+  { name: "comp-512" },  
 ];
 
 export default function Page() {
@@ -60,11 +54,11 @@ export default function Page() {
         <div className="mx-auto w-full max-w-6xl">
           <PageHeader title="Calendar and Date picker">
             A growing collection of{" "}
-            {components.length + fullWidthcomponents.length + pickers.length} calendar and date
+            {components.length} calendar and date
             picker components built with Next.js and TailwindCSS.
           </PageHeader>
 
-          <div className="grid max-w-6xl grid-cols-1 overflow-hidden border-b border-border/70 sm:grid-cols-2 lg:grid-cols-3 [&>*]:relative [&>*]:px-1 [&>*]:py-12 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-8 xl:[&>*]:px-12">
+          <PageGrid>
             {components.map((component) => {
               return (
                 <DemoComponent
@@ -74,31 +68,7 @@ export default function Page() {
                 />
               );
             })}
-          </div>
-
-          <div className="grid max-w-6xl grid-cols-1 overflow-hidden border-b border-border/70 [&>*]:relative [&>*]:px-1 [&>*]:py-12 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-8 xl:[&>*]:px-12">
-            {fullWidthcomponents.map((component) => {
-              return (
-                <DemoComponent
-                  key={component.name}
-                  componentName={component.name}
-                  className={component.className}
-                />
-              );
-            })}
-          </div>
-
-          <div className="grid max-w-6xl grid-cols-1 overflow-hidden sm:grid-cols-2 lg:grid-cols-2 [&>*]:relative [&>*]:px-1 [&>*]:py-12 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-8 xl:[&>*]:px-12">
-            {pickers.map((component) => {
-              return (
-                <DemoComponent
-                  key={component.name}
-                  componentName={component.name}
-                  className={component.className}
-                />
-              );
-            })}
-          </div>
+          </PageGrid>
 
           <Cta />
         </div>

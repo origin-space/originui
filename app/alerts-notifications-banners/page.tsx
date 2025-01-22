@@ -1,6 +1,7 @@
 import Cta from "@/components/cta";
 import DemoComponent from "@/components/demo-component";
 import PageHeader from "@/components/page-header";
+import PageGrid from "@/components/page-grid";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -50,9 +51,6 @@ const components: Component[] = [
   { name: "comp-298", className: center },
   { name: "comp-299", className: center },
   { name: "comp-300", className: center },
-];
-
-const bannerComponents: Component[] = [
   { name: "comp-301" },
   { name: "comp-302" },
   { name: "comp-303" },
@@ -64,7 +62,7 @@ const bannerComponents: Component[] = [
   { name: "comp-309" },
   { name: "comp-310" },
   { name: "comp-311" },
-  { name: "comp-312" },
+  { name: "comp-312" },  
 ];
 
 export default function Page() {
@@ -73,11 +71,11 @@ export default function Page() {
       <div className="px-4 sm:px-6">
         <div className="mx-auto w-full max-w-6xl">
           <PageHeader title="Alert, Notification, and Banner">
-            A growing collection of {components.length + bannerComponents.length} alert,
+            A growing collection of {components.length} alert,
             notification, and banner components built with Next.js and TailwindCSS.
           </PageHeader>
 
-          <div className="grid max-w-6xl grid-cols-1 overflow-hidden border-b border-border/70 sm:grid-cols-2 [&>*]:relative [&>*]:px-1 [&>*]:py-12 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-8 xl:[&>*]:px-12">
+          <PageGrid>
             {components.map((component) => {
               return (
                 <DemoComponent
@@ -87,19 +85,7 @@ export default function Page() {
                 />
               );
             })}
-          </div>
-
-          <div className="grid max-w-6xl grid-cols-1 overflow-hidden [&>*]:relative [&>*]:px-1 [&>*]:py-12 [&>*]:before:absolute [&>*]:before:bg-border/70 [&>*]:before:[block-size:100vh] [&>*]:before:[inline-size:1px] [&>*]:before:[inset-block-start:0] [&>*]:before:[inset-inline-start:-1px] [&>*]:after:absolute [&>*]:after:bg-border/70 [&>*]:after:[block-size:1px] [&>*]:after:[inline-size:100vw] [&>*]:after:[inset-block-start:-1px] [&>*]:after:[inset-inline-start:0] sm:[&>*]:px-8 xl:[&>*]:px-12">
-            {bannerComponents.map((component) => {
-              return (
-                <DemoComponent
-                  key={component.name}
-                  componentName={component.name}
-                  className={component.className}
-                />
-              );
-            })}
-          </div>
+          </PageGrid>
 
           <Cta />
         </div>

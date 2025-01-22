@@ -14,6 +14,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-sans)"],
+        heading: ["var(--font-heading)"],
       },
       borderRadius: {
         lg: "var(--radius)",

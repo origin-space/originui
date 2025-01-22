@@ -30,9 +30,9 @@ export default async function DemoComponent<TProps extends object>({
 
   return (
     <div className={cn(
-      "group/item relative",
-      source.meta?.cols === 2 && "col-span-2",
-      source.meta?.cols === 3 && "col-span-3",    
+      "group/item relative border border-border -space-x-px",
+      source.meta?.cols === 2 ? "sm:col-span-3 lg:col-span-3" :
+      source.meta?.cols === 3 ? "sm:col-span-6 lg:col-span-6" : "col-span-6 sm:col-span-3 lg:col-span-2",
       className
     )}>
       <Component {...(props as TProps)} />

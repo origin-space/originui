@@ -9,5 +9,8 @@
       "target": ""
     }
   ],
+  "meta": {
+    "cols": 2
+  },
   "tags": []
 }
