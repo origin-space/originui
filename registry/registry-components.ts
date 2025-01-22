@@ -15,6 +15,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 1,
+    },
   },
   {
     name: "comp-02",
@@ -30,6 +33,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 2,
+    },
   },
   {
     name: "comp-03",
@@ -45,6 +51,9 @@ export const components: Registry = [
       },
     ],
     tags: [],
+    meta: {
+      cols: 3,
+    },
   },
   {
     name: "comp-04",
@@ -1958,8 +1967,8 @@ export const components: Registry = [
     type: "registry:component",
     registryDependencies: [
       "https://originui.com/r/checkbox.json",
-      "https://originui.com/r/input.json",
       "https://originui.com/r/label.json",
+      "https://originui.com/r/input.json",
     ],
     files: [
       {

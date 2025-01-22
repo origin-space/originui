@@ -25,16 +25,22 @@ export default async function DemoComponent<TProps extends object>({
 }: DemoComponentBaseProps & TProps) {
   const Component = (await import(`@/registry/default/components/${componentName}`))
     .default as ComponentType<TProps>;
-  const source = convertRegistryPaths((await readComponentSource(componentName)) || "");
+  const source = await readComponentSource(componentName); 
+  const code = convertRegistryPaths(source.files[0].content);
 
   return (
-    <div className={cn("group/item relative", className)}>
+    <div className={cn(
+      "group/item relative",
+      source.meta?.cols === 2 && "col-span-2",
+      source.meta?.cols === 3 && "col-span-3",    
+      className
+    )}>
       <Component {...(props as TProps)} />
       <div className="absolute right-2 top-2 flex gap-2">
         <ComponentDetails name={componentName}>
           <div className="relative">
-            <CodeBlock lang="tsx">{source}</CodeBlock>
-            <CopyButton componentSource={source} />
+            <CodeBlock lang="tsx">{code}</CodeBlock>
+            <CopyButton componentSource={code} />
           </div>
         </ComponentDetails>
       </div>
