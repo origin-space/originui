@@ -1,3 +1,4 @@
+import SearchButton from "@/components/search-button";
 import { SubscribeBottom, SubscribeTop } from "@/components/subscribe-form";
 import XLinks from "@/components/x-links";
 import { ArrowRight } from "lucide-react";
@@ -16,7 +17,8 @@ export default function Page() {
             building app UIs. It&lsquo;s free, open-source, and ready to drop into your
             projects.
           </p>
-          <SubscribeTop />
+          {/* <SubscribeTop /> */}
+          <SearchButton />
         </div>
 
         <div className="mb-12">
