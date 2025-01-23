@@ -13,5 +13,10 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "Input",
+    "Label",
+    "Button",
+    "search"
+  ]
 }

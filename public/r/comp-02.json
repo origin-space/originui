@@ -16,5 +16,8 @@
   "meta": {
     "cols": 2
   },
-  "tags": []
+  "tags": [
+    "Input",
+    "Label"
+  ]
 }

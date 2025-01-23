@@ -14,10 +14,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
-    meta: {
-      cols: 1,
-    },
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-02",
@@ -32,7 +29,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
     meta: {
       cols: 2,
     },
@@ -50,7 +47,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
     meta: {
       cols: 3,
     },
@@ -68,7 +65,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-05",
@@ -83,7 +80,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-06",
@@ -98,7 +95,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-07",
@@ -113,7 +110,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-08",
@@ -128,7 +125,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-09",
@@ -143,7 +140,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-10",
@@ -158,7 +155,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-11",
@@ -173,7 +170,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-12",
@@ -188,7 +185,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-13",
@@ -203,7 +200,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-14",
@@ -218,7 +215,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-15",
@@ -233,7 +230,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-16",
@@ -248,7 +245,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-17",
@@ -263,7 +260,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "Select"],
   },
   {
     name: "comp-18",
@@ -278,7 +275,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "Select"],
   },
   {
     name: "comp-19",
@@ -293,7 +290,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "Button"],
   },
   {
     name: "comp-20",
@@ -308,7 +305,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "Button"],
   },
   {
     name: "comp-21",
@@ -323,7 +320,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "Button"],
   },
   {
     name: "comp-22",
@@ -338,7 +335,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "Button"],
   },
   {
     name: "comp-23",
@@ -353,7 +350,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "Button", "password"],
   },
   {
     name: "comp-24",
@@ -368,7 +365,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "Button"],
   },
   {
     name: "comp-25",
@@ -383,7 +380,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-26",
@@ -398,7 +395,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "Button", "search"],
   },
   {
     name: "comp-27",
@@ -413,7 +410,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "Button", "search"],
   },
   {
     name: "comp-28",
@@ -425,7 +422,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "Button", "number", "React Aria"],
   },
   {
     name: "comp-29",
@@ -437,7 +434,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "Button", "number", "React Aria"],
   },
   {
     name: "comp-30",
@@ -452,7 +449,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "file"],
   },
   {
     name: "comp-31",
@@ -464,7 +461,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-32",
@@ -476,7 +473,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-33",
@@ -487,7 +484,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-34",
@@ -506,7 +503,7 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "file"],
   },
   {
     name: "comp-35",
@@ -525,7 +522,7 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "file"],
   },
   {
     name: "comp-36",
@@ -538,7 +535,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "date", "React Aria"],
   },
   {
     name: "comp-37",
@@ -550,7 +547,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "date", "React Aria"],
   },
   {
     name: "comp-38",
@@ -562,7 +559,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "date", "React Aria"],
   },
   {
     name: "comp-39",
@@ -574,7 +571,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "date", "React Aria"],
   },
   {
     name: "comp-40",
@@ -586,7 +583,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "date", "React Aria"],
   },
   {
     name: "comp-41",
@@ -602,7 +599,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "date", "calendar", "picker", "React Aria"],
   },
   {
     name: "comp-42",
@@ -618,7 +615,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "date", "calendar", "picker", "React Aria"],
   },
   {
     name: "comp-43",
@@ -634,7 +631,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "date", "calendar", "picker", "React Aria"],
   },
   {
     name: "comp-44",
@@ -647,7 +644,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "otp"],
   },
   {
     name: "comp-45",
@@ -660,7 +657,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "otp"],
   },
   {
     name: "comp-46",
@@ -676,7 +673,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "phone"],
   },
   {
     name: "comp-47",
@@ -694,7 +691,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "checkout", "payments", "credit card", "form"],
   },
   {
     name: "comp-48",
@@ -712,7 +709,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "checkout", "payments", "credit card", "form"],
   },
   {
     name: "comp-49",
@@ -730,7 +727,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "checkout", "payments", "credit card", "form"],
   },
   {
     name: "comp-50",
@@ -748,7 +745,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "checkout", "payments", "credit card", "form"],
   },
   {
     name: "comp-51",
@@ -763,7 +760,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "password"],
   },
   {
     name: "comp-52",
@@ -778,7 +775,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-53",
@@ -794,7 +791,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "copy"],
   },
   {
     name: "comp-54",
@@ -810,7 +807,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "mask"],
   },
   {
     name: "comp-55",
@@ -826,7 +823,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [],
+    tags: ["Input", "Label", "mask", "time"],
   },
   {
     name: "comp-56",

@@ -13,8 +13,8 @@
       "target": ""
     }
   ],
-  "meta": {
-    "cols": 1
-  },
-  "tags": []
+  "tags": [
+    "Input",
+    "Label"
+  ]
 }

@@ -13,5 +13,9 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "Input",
+    "Label",
+    "password"
+  ]
 }

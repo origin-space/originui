@@ -16,5 +16,10 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "Input",
+    "Label",
+    "mask",
+    "time"
+  ]
 }

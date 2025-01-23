@@ -14,5 +14,9 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "Input",
+    "Label",
+    "copy"
+  ]
 }

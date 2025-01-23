@@ -15,5 +15,10 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "Input",
+    "Label",
+    "date",
+    "React Aria"
+  ]
 }

@@ -19,5 +19,9 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "Input",
+    "Label",
+    "file"
+  ]
 }

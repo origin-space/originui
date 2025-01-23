@@ -17,5 +17,9 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "Input",
+    "Label",
+    "phone"
+  ]
 }

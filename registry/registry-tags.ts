@@ -1,3 +1,26 @@
-export const registryTags = ["React Aria", "Radix", "Input", "Label"] as const;
+export const registryTags = [
+  "Input",
+  "Label",
+  "Select",
+  "Button",
+  "password",
+  "search",
+  "number",
+  "file",
+  "date",
+  "calendar",
+  "picker",
+  "otp",
+  "phone",
+  "checkout",
+  "payments",
+  "credit card",
+  "form",
+  "copy",
+  "mask",
+  "time",
+  "React Aria",
+  "Radix",
+] as const;
 
 export type RegistryTag = (typeof registryTags)[number];

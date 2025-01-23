@@ -12,5 +12,11 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "Input",
+    "Label",
+    "Button",
+    "number",
+    "React Aria"
+  ]
 }

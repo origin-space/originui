@@ -14,7 +14,7 @@ const CopyButton = ({
   componentSource,
   className,
 }: {
-  componentSource: string;
+  componentSource: string | null;
   className?: string;
 }) => {
   const { copied, copy } = useCopy();
@@ -28,7 +28,7 @@ const CopyButton = ({
               variant="ghost"
               size="icon"
               className="text-muted-foreground transition-none hover:bg-transparent hover:text-foreground disabled:opacity-100"
-              onClick={() => copy(componentSource)}
+              onClick={() => copy(componentSource || "")}
               aria-label={copied ? "Copied" : "Copy component source"}
               disabled={copied}
             >

@@ -1,17 +1,10 @@
 import { cn } from "@/registry/default/lib/utils";
 import { ComponentType } from "react";
-import { CodeBlock } from "./code-block";
+import CodeBlock from "./code-block";
 import ComponentDetails from "./component-details";
 import CopyButton from "./copy-button";
 import { readComponentSource } from "./read-component-source";
-
-const convertRegistryPaths = (content: string): string => {
-  return content
-    .replace(/@\/registry\/default\/ui/g, "@/components/ui")
-    .replace(/@\/registry\/default\/components/g, "@/components")
-    .replace(/@\/registry\/default\/hooks/g, "@/hooks")
-    .replace(/@\/registry\/default\/lib/g, "@/lib");
-};
+import { convertRegistryPaths } from '@/lib/utils';
 
 interface DemoComponentBaseProps {
   componentName: string;

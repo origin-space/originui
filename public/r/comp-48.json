@@ -17,5 +17,12 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "Input",
+    "Label",
+    "checkout",
+    "payments",
+    "credit card",
+    "form"
+  ]
 }

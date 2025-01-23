@@ -18,5 +18,12 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "Input",
+    "Label",
+    "date",
+    "calendar",
+    "picker",
+    "React Aria"
+  ]
 }

@@ -36,13 +36,13 @@ export const registryItemSchema = z.object({
   dependencies: z.array(z.string()).optional(),
   devDependencies: z.array(z.string()).optional(),
   registryDependencies: z.array(z.string()).optional(),
-  files: z.array(registryItemFileSchema).optional(),
+  files: z.array(registryItemFileSchema),
   tailwind: registryItemTailwindSchema.optional(),
   cssVars: registryItemCssVarsSchema.optional(),
   meta: z.record(z.string(), z.any()).optional(),
   docs: z.string().optional(),
   categories: z.array(z.string()).optional(),
-  tags: z.array(z.enum(registryTags)).optional(),
+  tags: z.array(z.enum(registryTags)),
 });
 
 export const registrySchema = z.array(registryItemSchema);
