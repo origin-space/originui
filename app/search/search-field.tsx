@@ -1,6 +1,6 @@
 "use client";
 
-import MultipleSelector, { Option } from "@/registry/default/ui/multiselect";
+import MultipleSelector, { Option } from "./multiselect";
 import type { RegistryTag } from "@/registry/registry-tags";
 import { registryTags } from "@/registry/registry-tags";
 import { Search } from "lucide-react";
@@ -21,6 +21,10 @@ export default function SearchField({ selectedTags, onTagChange }: SearchFieldPr
     onTagChange(newTags);
   };
 
+  const selectedOptions = selectedTags
+    .map((tag) => options.find((option) => option.value === tag))
+    .filter((option): option is Option => !!option);
+
   return (
     <div className="mx-auto max-w-2xl">
       <div className="relative">
@@ -29,11 +33,9 @@ export default function SearchField({ selectedTags, onTagChange }: SearchFieldPr
             label: "Search components",
           }}
           defaultOptions={options}
-          value={options.filter((option) => selectedTags.includes(option.value as RegistryTag))}
-          //placeholder="Filter by tags"
-          hideClearAllButton
+          value={selectedOptions}
           hidePlaceholderWhenSelected
-          emptyIndicator={<p className="text-center text-sm">No results found</p>}
+          emptyIndicator={<p className="text-center text-sm">No tags found</p>}
           onChange={handleMultipleSelectorChange}
           className="w-full ps-9"
         />

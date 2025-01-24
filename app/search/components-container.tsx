@@ -48,6 +48,11 @@ export default function ComponentsContainer() {
               <ComponentDetails component={component} />
             </ComponentCard>
           ))}
+          {tags.length > 0 && filtered.length === 0 && (
+            <div className="col-span-full text-center py-8">
+              <p className="text-muted-foreground">No components found for the selected tags.</p>
+            </div>
+          )}
         </PageGrid>
       </div>
     </main>
