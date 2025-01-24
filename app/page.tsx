@@ -1,5 +1,5 @@
 import SearchButton from "@/components/search-button";
-import { SubscribeBottom, SubscribeTop } from "@/components/subscribe-form";
+import { SubscribeBottom } from "@/components/subscribe-form";
 import XLinks from "@/components/x-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -9,13 +9,12 @@ export default function Page() {
     <>
       <main>
         <div className="mb-16 max-w-3xl">
-          <h1 className="mb-4 text-4xl/[1.1] font-heading font-bold tracking-tight text-foreground md:text-5xl/[1.1]">
+          <h1 className="mb-4 font-heading text-4xl/[1.1] font-bold tracking-tight text-foreground md:text-5xl/[1.1]">
             Beautiful UI components built with Tailwind CSS and React.
           </h1>
           <p className="mb-8 text-lg text-muted-foreground">
-            Origin UI is an extensive collection of copy-and-paste components for quickly
-            building app UIs. It&lsquo;s free, open-source, and ready to drop into your
-            projects.
+            Origin UI is an extensive collection of copy-and-paste components for quickly building
+            app UIs. It&lsquo;s free, open-source, and ready to drop into your projects.
           </p>
           {/* <SubscribeTop /> */}
           <SearchButton />

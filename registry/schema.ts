@@ -42,7 +42,7 @@ export const registryItemSchema = z.object({
   meta: z.record(z.string(), z.any()).optional(),
   docs: z.string().optional(),
   categories: z.array(z.string()).optional(),
-  tags: z.array(z.enum(registryTags)),
+  tags: z.array(z.enum(registryTags)).optional(),
 });
 
 export const registrySchema = z.array(registryItemSchema);

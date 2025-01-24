@@ -1,7 +1,9 @@
 "use client";
 
-import { JSX, useState, useEffect } from "react";
 import ComponentCli from "@/components/cli-commands";
+import CodeBlock, { highlight } from "@/components/code-block";
+import CopyButton from "@/components/copy-button";
+import { convertRegistryPaths } from "@/lib/utils";
 import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,
@@ -16,16 +18,12 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/registry/default/ui/tooltip";
+import type { RegistryItem } from "@/registry/schema";
 import { DialogDescription } from "@radix-ui/react-dialog";
 import { Code } from "lucide-react";
-import type { RegistryItem } from '@/registry/schema';
-import CopyButton from "@/components/copy-button";
-import CodeBlock, { highlight } from "@/components/code-block";
-import { convertRegistryPaths } from '@/lib/utils';
+import { JSX, useEffect, useState } from "react";
 
-export default function ComponentDetails({
-  component,
-}: { component: RegistryItem }) {
+export default function ComponentDetails({ component }: { component: RegistryItem }) {
   const [code, setCode] = useState<string | null>(null);
   const [highlightedCode, setHighlightedCode] = useState<JSX.Element | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -34,20 +32,25 @@ export default function ComponentDetails({
     const loadCode = async () => {
       try {
         const response = await fetch(`/r/${component.name}.json`);
-        const data = await response.json();        
-        const codeContent = convertRegistryPaths(data.files[0].content) || '';
+        const data = await response.json();
+        const codeContent = convertRegistryPaths(data.files[0].content) || "";
         setCode(codeContent);
-        
+
         // Pre-highlight the code
-        const highlighted = await highlight(codeContent, 'ts');
+        const highlighted = await highlight(codeContent, "ts");
         setHighlightedCode(highlighted);
-      } catch (err) {
-        setError('Failed to load code');
+        // Clear any previous errors
+        setError(null);
+      } catch (error) {
+        console.error("Failed to load code:", error);
+        setError("Failed to load code");
+        setCode(null);
+        setHighlightedCode(null);
       }
     };
 
     loadCode();
-  }, [component.name]);  
+  }, [component.name]);
 
   return (
     <div className="absolute right-2 top-2 flex gap-2">
@@ -84,12 +87,14 @@ export default function ComponentDetails({
             <div className="space-y-4">
               <p className="text-lg font-semibold tracking-tight">Code</p>
               <div className="relative">
-                <CodeBlock
-                  code={code}
-                  lang="ts"
-                  preHighlighted={highlightedCode}
-                />
-                <CopyButton componentSource={code} />
+                {error ? (
+                  <p className="text-destructive">{error}</p>
+                ) : (
+                  <>
+                    <CodeBlock code={code} lang="ts" preHighlighted={highlightedCode} />
+                    <CopyButton componentSource={code} />
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -97,4 +102,4 @@ export default function ComponentDetails({
       </Dialog>
     </div>
   );
-};
+}

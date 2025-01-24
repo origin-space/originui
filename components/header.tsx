@@ -1,7 +1,7 @@
-import Link from "next/link";
 import GithubButton from "@/components/github-button";
 import SocialDropdown from "@/components/social-dropdown";
 import ThemeToggle from "@/components/theme-toggle";
+import Link from "next/link";
 
 export default function Header() {
   return (

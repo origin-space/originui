@@ -98,10 +98,6 @@ function Form({ position = "bottom" }: { position?: "top" | "bottom" }) {
   );
 }
 
-export function SubscribeTop() {
-  return <Form position="top" />;
-}
-
 export function SubscribeBottom() {
   return (
     <div className="dark relative overflow-hidden rounded-xl bg-zinc-900 px-4 py-10 sm:px-8">
@@ -175,7 +171,7 @@ export function SubscribeBottom() {
           </defs>
         </svg>
       </div>
-      <h2 className="mb-6 text-xl/[1.1] font-heading font-bold tracking-tight text-foreground md:text-2xl/[1.1]">
+      <h2 className="mb-6 font-heading text-xl/[1.1] font-bold tracking-tight text-foreground md:text-2xl/[1.1]">
         Get notified when new stuff drops.
       </h2>
       <Form />

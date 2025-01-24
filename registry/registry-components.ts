@@ -503,7 +503,7 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["Input", "Label", "file"],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-35",
@@ -522,7 +522,7 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["Input", "Label", "file"],
+    tags: ["Input", "Label"],
   },
   {
     name: "comp-36",

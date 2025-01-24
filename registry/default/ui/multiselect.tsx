@@ -512,7 +512,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 "flex-1 bg-transparent outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed",
                 {
                   "w-full": hidePlaceholderWhenSelected,
-                  "pe-3 py-2": selected.length === 0,
+                  "py-2 pe-3": selected.length === 0,
                   "ml-1": selected.length !== 0,
                 },
                 inputProps?.className,

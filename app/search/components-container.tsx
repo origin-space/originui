@@ -1,38 +1,41 @@
-'use client';
+"use client";
 
-import SearchField from './search-field';
-import { useCallback, useMemo } from 'react';
-import { useSearchParams } from 'next/navigation';
-import type { RegistryTag } from "@/registry/registry-tags";
-import { getComponents } from '@/lib/utils';
-import type { RegistryItem } from '@/registry/schema';
-import PageGrid from "@/components/page-grid";
-import ComponentCard from '@/components/component-card';
-import ComponentLoader from '@/components/component-loader-client';
+import ComponentCard from "@/components/component-card";
 import ComponentDetails from "@/components/component-details";
+import ComponentLoader from "@/components/component-loader-client";
+import PageGrid from "@/components/page-grid";
+import { getComponents } from "@/lib/utils";
+import type { RegistryTag } from "@/registry/registry-tags";
+import type { RegistryItem } from "@/registry/schema";
+import { useSearchParams } from "next/navigation";
+import { useCallback, useMemo } from "react";
+import SearchField from "./search-field";
 
 export default function ComponentsContainer() {
   const searchParams = useSearchParams();
-  const tags = (searchParams?.get('tags')?.split(',').filter(Boolean).map(tag => tag.replace(/\+/g, ' ')) || []) as RegistryTag[];
+  const tags = useMemo(() => {
+    return (searchParams
+      ?.get("tags")
+      ?.split(",")
+      .filter(Boolean)
+      .map((tag) => tag.replace(/\+/g, " ")) || []) as RegistryTag[];
+  }, [searchParams]);
 
   const filtered = useMemo(() => {
     if (!tags.length) return [];
     return getComponents(tags);
   }, [tags]);
 
-  const updateTags = useCallback(
-    (newTags: string[]) => {
-      const url = new URL(window.location.href);
-      if (newTags.length > 0) {        
-        const formattedTags = newTags.map(tag => tag.replace(/\s+/g, '+')).join(',');
-        url.searchParams.set("tags", formattedTags);
-      } else {
-        url.searchParams.delete("tags");
-      }
-      window.history.replaceState({}, '', url.toString());
-    },
-    []
-  );
+  const updateTags = useCallback((newTags: string[]) => {
+    const url = new URL(window.location.href);
+    if (newTags.length > 0) {
+      const formattedTags = newTags.map((tag) => tag.replace(/\s+/g, "+")).join(",");
+      url.searchParams.set("tags", formattedTags);
+    } else {
+      url.searchParams.delete("tags");
+    }
+    window.history.replaceState({}, "", url.toString());
+  }, []);
 
   return (
     <main>
