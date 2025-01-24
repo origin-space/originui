@@ -14,8 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  const registryComponents = getComponents(1, ["Input"]);    
-  const components = registryComponents.components;  
+  const components = getComponents(["Input"]);    
 
   return (
     <main>

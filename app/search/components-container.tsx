@@ -1,15 +1,24 @@
 'use client';
 
-import ComponentsList from './components-list';
-//import TagFilter from './tag-filter';
 import SearchField from './search-field';
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { getAllTags } from '@/lib/utils';
+import type { RegistryTag } from "@/registry/registry-tags";
+import { getComponents } from '@/lib/utils';
+import type { RegistryItem } from '@/registry/schema';
+import PageGrid from "@/components/page-grid";
+import ComponentCard from '@/components/component-card';
+import ComponentLoader from '@/components/component-loader-client';
+import ComponentDetails from "@/components/component-details";
 
 export default function ComponentsContainer() {
   const searchParams = useSearchParams();
-  const tags = searchParams?.get('tags')?.split(',').filter(Boolean).map(tag => tag.replace(/\+/g, ' ')) || [];
+  const tags = (searchParams?.get('tags')?.split(',').filter(Boolean).map(tag => tag.replace(/\+/g, ' ')) || []) as RegistryTag[];
+
+  const filtered = useMemo(() => {
+    if (!tags.length) return [];
+    return getComponents(tags);
+  }, [tags]);
 
   const updateTags = useCallback(
     (newTags: string[]) => {
@@ -25,21 +34,18 @@ export default function ComponentsContainer() {
     []
   );
 
-  // Validate URL params on mount
-  // useEffect(() => {
-  //   const validTags = getAllTags();
-  //   const validatedTags = tags.filter(tag => validTags.includes(tag));
-    
-  //   if (validatedTags.length !== tags.length) {
-  //     updateTags(validatedTags);
-  //   }
-  // }, [tags, updateTags]);
-
   return (
     <main>
       <div className="space-y-4">
         <SearchField selectedTags={tags} onTagChange={updateTags} />
-        <ComponentsList selectedTags={tags} />
+        <PageGrid>
+          {filtered.map((component: RegistryItem) => (
+            <ComponentCard key={component.name} component={component}>
+              <ComponentLoader component={component} />
+              <ComponentDetails component={component} />
+            </ComponentCard>
+          ))}
+        </PageGrid>
       </div>
     </main>
   );

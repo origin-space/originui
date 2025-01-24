@@ -1,34 +1,22 @@
-import { Suspense } from 'react';
 import ComponentsContainer from "./components-container";
-import { Input } from "@/registry/default/ui/input";
-import { Search } from "lucide-react";
 import PageHeader from "@/components/page-header";
-import Providers from './providers';
+import type { Metadata } from "next";
 
-export default async function Page() {
+export const metadata: Metadata = {
+  title: "Search Origin UI",
+  description:
+    "Use this page to quickly find a component (e.g., multiselect, vertical slider, etc.)",
+};
+
+export default function Page() {
   return (
-    <Providers>
-        <main>
-          <PageHeader title="Search">
-            This is the search page
-          </PageHeader>
+    <main>
+      <PageHeader title="Search Origin UI">
+        Use this page to quickly find a component (e.g., multiselect, vertical slider, etc.)
+      </PageHeader>
 
-          <div className="max-w-2xl mx-auto">
-            <div className="space-y-2">
-              <div className="relative">
-                <Input className="peer ps-9" placeholder="Search component..." type="search" autoFocus />
-                <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 peer-disabled:opacity-50" aria-label="Search component">
-                  <Search size={16} strokeWidth={2} />
-                </div>
-              </div>
-            </div>            
-          </div>
+      <ComponentsContainer />
 
-          <Suspense fallback={<div>Loading...</div>}>
-            <ComponentsContainer />
-          </Suspense>
-
-        </main>
-    </Providers>
+    </main>
   );
 }
