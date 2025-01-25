@@ -12,7 +12,7 @@ export interface Option {
   value: string;
   label: string;
   disable?: boolean;
-  /** fixed option that can&lsquo;t be removed. */
+  /** fixed option that can't be removed. */
   fixed?: boolean;
   /** Group the options by providing key. */
   [key: string]: string | boolean | undefined;
@@ -512,12 +512,11 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 "flex-1 bg-transparent outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed",
                 {
                   "w-full": hidePlaceholderWhenSelected,
-                  "py-2 pe-3": selected.length === 0,
+                  "px-3 py-2": selected.length === 0,
                   "ml-1": selected.length !== 0,
                 },
                 inputProps?.className,
               )}
-              autoFocus
             />
             <button
               type="button"

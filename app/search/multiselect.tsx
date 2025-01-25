@@ -12,7 +12,7 @@ export interface Option {
   value: string;
   label: string;
   disable?: boolean;
-  /** fixed option that can&lsquo;t be removed. */
+  /** fixed option that can't be removed. */
   fixed?: boolean;
   /** Group the options by providing key. */
   [key: string]: string | boolean | undefined;
@@ -198,7 +198,14 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
     const [open, setOpen] = React.useState(false);
     const [onScrollbar, setOnScrollbar] = React.useState(false);
     const [isLoading, setIsLoading] = React.useState(false);
-    const dropdownRef = React.useRef<HTMLDivElement>(null); // Added this
+    const dropdownRef = React.useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+      if (inputProps?.autoFocus) {
+        inputRef.current?.focus();
+        setOpen(true);
+      }
+    }, [inputProps?.autoFocus]);
 
     const [selected, setSelected] = React.useState<Option[]>(value || []);
     const [options, setOptions] = React.useState<GroupOption>(
@@ -235,7 +242,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
         const newOptions = selected.filter((s) => s.value !== option.value);
         setSelected(newOptions);
         onChange?.(newOptions);
-        
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         if (newOptions.length > 0) {
           setOpen(false);
           inputRef.current?.blur();
@@ -531,7 +538,6 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 },
                 inputProps?.className,
               )}
-              autoFocus
             />
             <button
               type="button"
@@ -606,8 +612,6 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                   onChange?.(newOptions);
                                   setOpen(false);
                                   inputRef.current?.blur();
-    onChange?.(newOptions);
-                                  setOpen(false);
                                 }}
                                 className={cn(
                                   "cursor-pointer",

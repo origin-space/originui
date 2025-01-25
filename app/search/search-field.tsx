@@ -4,13 +4,14 @@ import MultipleSelector, { Option } from "./multiselect";
 import type { RegistryTag } from "@/registry/registry-tags";
 import { registryTags } from "@/registry/registry-tags";
 import { Search } from "lucide-react";
+import { getAvailableTags, getTagCounts } from "@/lib/utils";
 
 interface SearchFieldProps {
   selectedTags: string[];
   onTagChange: (tags: string[]) => void;
 }
 
-const options: Option[] = registryTags.map((tag) => ({
+const baseOptions: Option[] = registryTags.map((tag) => ({
   value: tag,
   label: tag,
 }));
@@ -22,8 +23,41 @@ export default function SearchField({ selectedTags, onTagChange }: SearchFieldPr
   };
 
   const selectedOptions = selectedTags
-    .map((tag) => options.find((option) => option.value === tag))
+    .map((tag) => baseOptions.find((option) => option.value === tag))
     .filter((option): option is Option => !!option);
+
+  const getFilteredOptions = () => {
+    const counts = getTagCounts();
+    
+    if (selectedTags.length === 0) {
+      return baseOptions.map(option => ({
+        ...option,
+        label: `${option.value} (${counts[option.value as RegistryTag]})`,
+      }));
+    }
+    
+    const availableTags = getAvailableTags(selectedTags as RegistryTag[]);
+    
+    return baseOptions.map((option) => ({
+      ...option,
+      label: `${option.value} (${counts[option.value as RegistryTag]})`,
+      disable: !selectedTags.includes(option.value) && !availableTags.includes(option.value as RegistryTag),
+    }))
+    .sort((a, b) => {
+      // Selected tags first
+      if (selectedTags.includes(a.value) && !selectedTags.includes(b.value)) return -1;
+      if (!selectedTags.includes(a.value) && selectedTags.includes(b.value)) return 1;
+      
+      // Then available tags
+      const aAvailable = !a.disable;
+      const bAvailable = !b.disable;
+      if (aAvailable && !bAvailable) return -1;
+      if (!aAvailable && bAvailable) return 1;
+      
+      // Keep original order
+      return 0;
+    });
+  };
 
   return (
     <div className="mx-auto max-w-2xl">
@@ -32,11 +66,13 @@ export default function SearchField({ selectedTags, onTagChange }: SearchFieldPr
           commandProps={{
             label: "Search components",
           }}
-          defaultOptions={options}
+          defaultOptions={baseOptions}
+          options={getFilteredOptions()}
           value={selectedOptions}
           hidePlaceholderWhenSelected
           emptyIndicator={<p className="text-center text-sm">No tags found</p>}
           onChange={handleMultipleSelectorChange}
+          inputProps={{ autoFocus: selectedTags.length === 0 }}
           className="w-full ps-9"
         />
         <div
