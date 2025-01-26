@@ -12,5 +12,14 @@
       "target": ""
     }
   ],
-  "tags": []
+  "meta": {
+    "style": 2
+  },
+  "tags": [
+    "button",
+    "user",
+    "avatar",
+    "profile",
+    "dropdown"
+  ]
 }

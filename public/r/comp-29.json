@@ -13,10 +13,10 @@
     }
   ],
   "tags": [
-    "Input",
-    "Label",
-    "Button",
+    "input",
+    "label",
+    "button",
     "number",
-    "React Aria"
+    "react aria"
   ]
 }

@@ -12,5 +12,12 @@
       "target": ""
     }
   ],
-  "tags": []
+  "meta": {
+    "style": 1
+  },
+  "tags": [
+    "avatar",
+    "user",
+    "profile"
+  ]
 }

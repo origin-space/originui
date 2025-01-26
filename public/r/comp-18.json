@@ -14,8 +14,9 @@
     }
   ],
   "tags": [
-    "Input",
-    "Label",
-    "Select"
+    "input",
+    "label",
+    "select",
+    "native select"
   ]
 }

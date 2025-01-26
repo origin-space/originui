@@ -15,5 +15,11 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "calendar",
+    "date",
+    "button",
+    "picker",
+    "react daypicker"
+  ]
 }

@@ -20,7 +20,12 @@
     }
   ],
   "meta": {
-    "cols": 2
+    "colSpan": 2,
+    "style": 1
   },
-  "tags": []
+  "tags": [
+    "notification",
+    "toast",
+    "radix"
+  ]
 }

@@ -15,5 +15,12 @@
       "target": ""
     }
   ],
-  "tags": []
+  "meta": {
+    "style": 1
+  },
+  "tags": [
+    "calendar",
+    "date",
+    "react aria"
+  ]
 }

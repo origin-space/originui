@@ -15,5 +15,14 @@
       "target": ""
     }
   ],
-  "tags": []
+  "meta": {
+    "style": 1
+  },
+  "tags": [
+    "radio",
+    "label",
+    "rating",
+    "vote",
+    "radix"
+  ]
 }

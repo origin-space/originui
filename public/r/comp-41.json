@@ -17,11 +17,11 @@
     }
   ],
   "tags": [
-    "Input",
-    "Label",
+    "input",
+    "label",
     "date",
     "calendar",
     "picker",
-    "React Aria"
+    "react aria"
   ]
 }

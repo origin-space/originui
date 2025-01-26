@@ -15,5 +15,13 @@
       "target": ""
     }
   ],
-  "tags": []
+  "meta": {
+    "style": 2
+  },
+  "tags": [
+    "button",
+    "social",
+    "login",
+    "authentication"
+  ]
 }

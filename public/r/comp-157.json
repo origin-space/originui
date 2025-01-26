@@ -16,5 +16,10 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "radio",
+    "label",
+    "rating",
+    "radix"
+  ]
 }

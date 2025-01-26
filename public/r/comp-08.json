@@ -14,7 +14,8 @@
     }
   ],
   "tags": [
-    "Input",
-    "Label"
+    "input",
+    "label",
+    "disabled"
   ]
 }

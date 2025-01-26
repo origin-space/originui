@@ -12,5 +12,17 @@
       "target": ""
     }
   ],
-  "tags": []
+  "meta": {
+    "style": 1
+  },
+  "tags": [
+    "dialog",
+    "command",
+    "combobox",
+    "popover",
+    "search",
+    "radix",
+    "autocomplete",
+    "radix"
+  ]
 }

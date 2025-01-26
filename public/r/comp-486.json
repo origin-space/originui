@@ -13,5 +13,9 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "input",
+    "label",
+    "range"
+  ]
 }

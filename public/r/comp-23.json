@@ -14,9 +14,9 @@
     }
   ],
   "tags": [
-    "Input",
-    "Label",
-    "Button",
+    "input",
+    "label",
+    "button",
     "password"
   ]
 }

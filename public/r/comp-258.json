@@ -20,5 +20,12 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "slider",
+    "range slider",
+    "label",
+    "input",
+    "range",
+    "radix"
+  ]
 }

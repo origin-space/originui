@@ -14,5 +14,11 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "slider",
+    "label",
+    "button",
+    "pricing",
+    "radix"
+  ]
 }

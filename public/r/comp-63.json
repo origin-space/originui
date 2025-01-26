@@ -13,5 +13,8 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "label",
+    "textarea"
+  ]
 }

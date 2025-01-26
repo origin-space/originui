@@ -13,7 +13,13 @@
     }
   ],
   "meta": {
-    "cols": 3
+    "colSpan": 3,
+    "style": 1
   },
-  "tags": []
+  "tags": [
+    "calendar",
+    "range calendar",
+    "date",
+    "react daypicker"
+  ]
 }

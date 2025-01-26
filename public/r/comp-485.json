@@ -25,5 +25,18 @@
       "target": ""
     }
   ],
-  "tags": []
+  "meta": {
+    "colSpan": 3
+  },
+  "tags": [
+    "table",
+    "tanstack",
+    "checkbox",
+    "sort",
+    "flag",
+    "badge",
+    "pagination",
+    "filter",
+    "select"
+  ]
 }

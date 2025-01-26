@@ -12,5 +12,11 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "radio",
+    "label",
+    "color",
+    "picker",
+    "radix"
+  ]
 }

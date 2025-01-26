@@ -21,5 +21,11 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "slider",
+    "label",
+    "input",
+    "button",
+    "radix"
+  ]
 }

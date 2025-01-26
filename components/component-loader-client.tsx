@@ -2,6 +2,7 @@
 
 import type { RegistryItem } from "@/registry/schema";
 import dynamic from "next/dynamic";
+import { ComponentType } from "react";
 
 interface ComponentLoaderProps {
   component: RegistryItem;
@@ -17,7 +18,7 @@ export default function ComponentLoader<TProps extends object>({
       loading: () => <div>Loading component...</div>,
       ssr: false,
     },
-  );
+  ) as ComponentType<TProps>;
 
-  return <Component {...props} />;
+  return <Component {...(props as TProps)} currentPage={1} totalPages={10} />;
 }

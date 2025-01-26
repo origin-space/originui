@@ -16,5 +16,9 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "label",
+    "select",
+    "radix"
+  ]
 }

@@ -12,5 +12,10 @@
       "target": ""
     }
   ],
-  "tags": []
+  "meta": {
+    "colSpan": 3
+  },
+  "tags": [
+    "table"
+  ]
 }

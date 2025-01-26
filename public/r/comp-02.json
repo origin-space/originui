@@ -13,11 +13,9 @@
       "target": ""
     }
   ],
-  "meta": {
-    "cols": 2
-  },
   "tags": [
-    "Input",
-    "Label"
+    "input",
+    "label",
+    "required"
   ]
 }

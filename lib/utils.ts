@@ -11,6 +11,11 @@ export const getComponents = (selectedTags: RegistryTag[] = []): RegistryItem[] 
     : components;
 };
 
+export const getComponentsByNames = (names: string[]): RegistryItem[] => {
+  const componentsMap = new Map(components.map(comp => [comp.name, comp]));
+  return names.map(name => componentsMap.get(name)).filter((comp): comp is RegistryItem => comp !== undefined);
+};
+
 export const getTagCounts = (selectedTags: RegistryTag[] = []): Record<RegistryTag, number> => {
   const counts: Record<RegistryTag, number> = Object.fromEntries(
     registryTags.map((tag) => [tag, 0])

@@ -13,9 +13,9 @@
     }
   ],
   "tags": [
-    "Input",
-    "Label",
+    "input",
+    "label",
     "date",
-    "React Aria"
+    "react aria"
   ]
 }

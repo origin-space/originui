@@ -28,5 +28,16 @@
       "target": ""
     }
   ],
-  "tags": []
+  "meta": {
+    "style": 1
+  },
+  "tags": [
+    "dialog",
+    "user",
+    "profile",
+    "image",
+    "avatar",
+    "form",
+    "radix"
+  ]
 }

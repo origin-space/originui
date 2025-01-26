@@ -13,5 +13,9 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "label",
+    "select",
+    "native select"
+  ]
 }

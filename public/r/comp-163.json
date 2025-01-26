@@ -15,5 +15,12 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "radio",
+    "label",
+    "card",
+    "checkout",
+    "payment",
+    "radix"
+  ]
 }

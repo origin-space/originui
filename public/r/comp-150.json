@@ -9,5 +9,11 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "checkbox",
+    "label",
+    "toggle",
+    "darkmode",
+    "radix"
+  ]
 }

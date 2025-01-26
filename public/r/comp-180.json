@@ -12,5 +12,9 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "switch",
+    "label",
+    "radix"
+  ]
 }

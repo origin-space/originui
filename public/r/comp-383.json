@@ -14,5 +14,13 @@
       "target": ""
     }
   ],
-  "tags": []
+  "meta": {
+    "style": 1
+  },
+  "tags": [
+    "popover",
+    "notification",
+    "user",
+    "radix"
+  ]
 }

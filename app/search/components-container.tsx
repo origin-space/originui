@@ -38,23 +38,21 @@ export default function ComponentsContainer() {
   }, []);
 
   return (
-    <main>
-      <div className="space-y-4">
-        <SearchField selectedTags={tags} onTagChange={updateTags} />
-        <PageGrid>
-          {filtered.map((component: RegistryItem) => (
-            <ComponentCard key={component.name} component={component}>
-              <ComponentLoader component={component} />
-              <ComponentDetails component={component} />
-            </ComponentCard>
-          ))}
-          {tags.length > 0 && filtered.length === 0 && (
-            <div className="col-span-full text-center py-8">
-              <p className="text-muted-foreground">No components found for the selected tags.</p>
-            </div>
-          )}
-        </PageGrid>
-      </div>
-    </main>
+    <div className="space-y-4">
+      <SearchField selectedTags={tags} onTagChange={updateTags} />
+      <PageGrid>
+        {filtered.map((component: RegistryItem) => (
+          <ComponentCard key={component.name} component={component}>
+            <ComponentLoader component={component} />
+            <ComponentDetails component={component} />
+          </ComponentCard>
+        ))}
+        {tags.length > 0 && filtered.length === 0 && (
+          <div className="col-span-full text-center py-8">
+            <p className="text-muted-foreground">No components found for the selected tags.</p>
+          </div>
+        )}
+      </PageGrid>
+    </div>
   );
 }

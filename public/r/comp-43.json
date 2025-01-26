@@ -19,11 +19,12 @@
     }
   ],
   "tags": [
-    "Input",
-    "Label",
+    "input",
+    "label",
     "date",
     "calendar",
+    "range calendar",
     "picker",
-    "React Aria"
+    "react aria"
   ]
 }

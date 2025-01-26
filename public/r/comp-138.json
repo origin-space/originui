@@ -13,5 +13,11 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "checkbox",
+    "label",
+    "login",
+    "authentication",
+    "radix"
+  ]
 }

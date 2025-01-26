@@ -12,5 +12,10 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "switch",
+    "label",
+    "darkmode",
+    "radix"
+  ]
 }

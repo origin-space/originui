@@ -14,5 +14,11 @@
       "target": ""
     }
   ],
-  "tags": []
+  "meta": {
+    "style": 1
+  },
+  "tags": [
+    "dialog",
+    "radix"
+  ]
 }

@@ -18,5 +18,15 @@
       "target": ""
     }
   ],
-  "tags": []
+  "meta": {
+    "colSpan": 3
+  },
+  "tags": [
+    "table",
+    "tanstack",
+    "checkbox",
+    "collapsible",
+    "flag",
+    "badge"
+  ]
 }

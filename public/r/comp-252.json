@@ -13,5 +13,11 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "slider",
+    "label",
+    "volume",
+    "controls",
+    "radix"
+  ]
 }

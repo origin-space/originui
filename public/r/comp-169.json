@@ -12,5 +12,10 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "radio",
+    "label",
+    "darkmode",
+    "radix"
+  ]
 }

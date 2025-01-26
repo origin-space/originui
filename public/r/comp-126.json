@@ -18,5 +18,15 @@
       "target": ""
     }
   ],
-  "tags": []
+  "meta": {
+    "style": 2
+  },
+  "tags": [
+    "button",
+    "upload",
+    "user",
+    "avatar",
+    "profile",
+    "image"
+  ]
 }

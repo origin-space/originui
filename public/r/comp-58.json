@@ -15,5 +15,9 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "input",
+    "label",
+    "otp"
+  ]
 }

@@ -12,5 +12,15 @@
       "target": ""
     }
   ],
-  "tags": []
+  "meta": {
+    "style": 1
+  },
+  "tags": [
+    "tooltip",
+    "hover card",
+    "user",
+    "avatar",
+    "profile",
+    "radix"
+  ]
 }

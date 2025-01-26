@@ -20,5 +20,15 @@
       "target": ""
     }
   ],
-  "tags": []
+  "meta": {
+    "style": 1
+  },
+  "tags": [
+    "dialog",
+    "checkout",
+    "payment",
+    "credit card",
+    "form",
+    "radix"
+  ]
 }

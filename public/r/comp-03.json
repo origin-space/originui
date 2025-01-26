@@ -13,11 +13,9 @@
       "target": ""
     }
   ],
-  "meta": {
-    "cols": 3
-  },
   "tags": [
-    "Input",
-    "Label"
+    "input",
+    "label",
+    "helper"
   ]
 }

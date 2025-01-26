@@ -15,5 +15,15 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "label",
+    "select",
+    "command",
+    "combobox",
+    "popover",
+    "search",
+    "autocomplete",
+    "flag",
+    "radix"
+  ]
 }

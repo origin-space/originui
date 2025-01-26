@@ -14,7 +14,11 @@
     }
   ],
   "meta": {
-    "cols": 2
+    "colSpan": 2,
+    "style": 2
   },
-  "tags": []
+  "tags": [
+    "tabs",
+    "radix"
+  ]
 }

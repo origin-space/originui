@@ -13,5 +13,12 @@
       "target": ""
     }
   ],
-  "tags": []
+  "tags": [
+    "label",
+    "select",
+    "user",
+    "avatar",
+    "profile",
+    "radix"
+  ]
 }
