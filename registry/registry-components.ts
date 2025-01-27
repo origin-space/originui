@@ -6226,7 +6226,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "user", "profile", "badge"],
+    tags: ["avatar", "user", "profile", "badge", "chip"],
     meta: {
       style: 1,
     },
@@ -6244,7 +6244,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "user", "profile", "badge"],
+    tags: ["avatar", "user", "profile", "badge", "chip"],
     meta: {
       style: 1,
     },
@@ -6262,7 +6262,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "user", "profile", "badge"],
+    tags: ["avatar", "user", "profile", "badge", "chip"],
     meta: {
       style: 1,
     },
@@ -6462,7 +6462,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge"],
+    tags: ["badge", "chip"],
     meta: {
       style: 1,
     },
@@ -6477,7 +6477,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge"],
+    tags: ["badge", "chip"],
     meta: {
       style: 1,
     },
@@ -6492,7 +6492,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge"],
+    tags: ["badge", "chip"],
     meta: {
       style: 1,
     },
@@ -6507,7 +6507,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "counter"],
+    tags: ["badge", "chip", "counter"],
     meta: {
       style: 1,
     },
@@ -6522,7 +6522,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge"],
+    tags: ["badge", "chip"],
     meta: {
       style: 1,
     },
@@ -6537,7 +6537,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "counter"],
+    tags: ["badge", "chip", "counter"],
     meta: {
       style: 1,
     },
@@ -6552,7 +6552,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "status"],
+    tags: ["badge", "chip", "status"],
     meta: {
       style: 1,
     },
@@ -6567,7 +6567,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "status"],
+    tags: ["badge", "chip", "status"],
     meta: {
       style: 1,
     },
@@ -6582,7 +6582,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "status"],
+    tags: ["badge", "chip", "status"],
     meta: {
       style: 1,
     },
@@ -6597,7 +6597,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "status"],
+    tags: ["badge", "chip", "status"],
     meta: {
       style: 1,
     },
@@ -6612,7 +6612,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "checkbox"],
+    tags: ["badge", "chip", "checkbox"],
     meta: {
       style: 1,
     },
@@ -6626,7 +6626,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge"],
+    tags: ["badge", "chip"],
     meta: {
       style: 1,
     },
@@ -6641,7 +6641,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "tag"],
+    tags: ["badge", "chip", "tag"],
     meta: {
       style: 1,
     },
@@ -7545,7 +7545,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table", "tanstack", "checkbox", "badge", "flag"],
+    tags: ["table", "tanstack", "checkbox", "badge", "chip", "flag"],
     meta: {
       colSpan: 3,
     },
@@ -7650,7 +7650,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table", "tanstack", "checkbox", "collapsible", "flag", "badge"],
+    tags: ["table", "tanstack", "checkbox", "collapsible", "flag", "badge", "chip"],
     meta: {
       colSpan: 3,
     },
@@ -7674,7 +7674,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table", "tanstack", "checkbox", "sort", "flag", "badge", "pagination"],
+    tags: ["table", "tanstack", "checkbox", "sort", "flag", "badge", "chip", "pagination"],
     meta: {
       colSpan: 3,
     },
@@ -7701,7 +7701,7 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["table", "tanstack", "checkbox", "sort", "flag", "badge", "pagination"],
+    tags: ["table", "tanstack", "checkbox", "sort", "flag", "badge", "chip", "pagination"],
     meta: {
       colSpan: 3,
     },
@@ -7735,7 +7735,7 @@ export const components: Registry = [
       "checkbox",
       "sort",
       "flag",
-      "badge",
+      "badge", "chip",
       "pagination",
       "filter",
       "select",

@@ -38,6 +38,7 @@ export const registryTags = [
   "card",
   "chart",
   "checkout",
+  "chip",
   "color",
   "controls",
   "cookies",
