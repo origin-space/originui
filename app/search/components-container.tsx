@@ -42,7 +42,7 @@ export default function ComponentsContainer() {
       <SearchField selectedTags={tags} onTagChange={updateTags} />
       <PageGrid>
         {filtered.map((component: RegistryItem) => (
-          <ComponentCard key={component.name} component={component}>
+          <ComponentCard key={component.name} component={component} isSearchPage>
             <ComponentLoader component={component} />
             <ComponentDetails component={component} />
           </ComponentCard>

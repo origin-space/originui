@@ -2542,6 +2542,9 @@ export const components: Registry = [
       },
     ],
     tags: ["radio", "label", "pricing", "switch", "radix"],
+    meta: {
+      style: 1,
+    },    
   },
   {
     name: "comp-171",
@@ -2573,6 +2576,9 @@ export const components: Registry = [
       },
     ],
     tags: ["switch", "radix"],
+    meta: {
+      style: 1,
+    },
   },
   {
     name: "comp-173",
@@ -2588,6 +2594,9 @@ export const components: Registry = [
       },
     ],
     tags: ["switch", "radix"],
+    meta: {
+      style: 1,
+    },
   },
   {
     name: "comp-174",
@@ -2603,6 +2612,9 @@ export const components: Registry = [
       },
     ],
     tags: ["switch", "radix"],
+    meta: {
+      style: 1,
+    },
   },
   {
     name: "comp-175",
@@ -2618,6 +2630,9 @@ export const components: Registry = [
       },
     ],
     tags: ["switch", "radix"],
+    meta: {
+      style: 1,
+    },
   },
   {
     name: "comp-176",
@@ -2633,6 +2648,9 @@ export const components: Registry = [
       },
     ],
     tags: ["switch", "radix"],
+    meta: {
+      style: 1,
+    },
   },
   {
     name: "comp-177",
@@ -2648,6 +2666,9 @@ export const components: Registry = [
       },
     ],
     tags: ["switch", "radix"],
+    meta: {
+      style: 1,
+    },
   },
   {
     name: "comp-178",
@@ -2663,6 +2684,9 @@ export const components: Registry = [
       },
     ],
     tags: ["switch", "radix"],
+    meta: {
+      style: 1,
+    },
   },
   {
     name: "comp-179",
@@ -2678,6 +2702,9 @@ export const components: Registry = [
       },
     ],
     tags: ["switch", "label", "radix"],
+    meta: {
+      style: 1,
+    },
   },
   {
     name: "comp-180",
@@ -2690,6 +2717,9 @@ export const components: Registry = [
       },
     ],
     tags: ["switch", "label", "radix"],
+    meta: {
+      style: 1,
+    },
   },
   {
     name: "comp-181",
@@ -2705,6 +2735,9 @@ export const components: Registry = [
       },
     ],
     tags: ["switch", "label", "darkmode", "radix"],
+    meta: {
+      style: 1,
+    },
   },
   {
     name: "comp-182",
@@ -2717,6 +2750,9 @@ export const components: Registry = [
       },
     ],
     tags: ["switch", "label", "darkmode", "radix"],
+    meta: {
+      style: 1,
+    },
   },
   {
     name: "comp-183",
@@ -2732,6 +2768,9 @@ export const components: Registry = [
       },
     ],
     tags: ["switch", "label", "darkmode", "radix"],
+    meta: {
+      style: 1,
+    },
   },
   {
     name: "comp-184",
@@ -2747,6 +2786,9 @@ export const components: Registry = [
       },
     ],
     tags: ["switch", "label", "darkmode", "radix"],
+    meta: {
+      style: 1,
+    },
   },
   {
     name: "comp-185",
@@ -2762,6 +2804,9 @@ export const components: Registry = [
       },
     ],
     tags: ["switch", "label", "radix"],
+    meta: {
+      style: 1,
+    },
   },
   {
     name: "comp-186",
@@ -2777,6 +2822,9 @@ export const components: Registry = [
       },
     ],
     tags: ["switch", "label", "card", "radix"],
+    meta: {
+      style: 1,
+    },
   },
   {
     name: "comp-187",
@@ -2792,6 +2840,9 @@ export const components: Registry = [
       },
     ],
     tags: ["switch", "label", "card", "radix"],
+    meta: {
+      style: 1,
+    },
   },
   {
     name: "comp-188",
@@ -2807,6 +2858,9 @@ export const components: Registry = [
       },
     ],
     tags: ["switch", "label", "card", "radix"],
+    meta: {
+      style: 1,
+    },
   },
   {
     name: "comp-189",
