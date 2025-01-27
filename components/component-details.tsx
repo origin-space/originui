@@ -53,7 +53,7 @@ export default function ComponentDetails({ component }: { component: RegistryIte
   }, [component.name]);
 
   return (
-    <div className="absolute right-2 top-2 flex gap-2">
+    <div className="absolute right-2 top-2 flex gap-2 peer-data-[loading=true]:hidden">
       <Dialog>
         <TooltipProvider delayDuration={0}>
           <Tooltip>
