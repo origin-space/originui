@@ -3,7 +3,7 @@
 import MultipleSelector, { Option } from "./multiselect";
 import type { RegistryTag } from "@/registry/registry-tags";
 import { registryTags } from "@/registry/registry-tags";
-import { Search } from "lucide-react";
+import { RiSearch2Line } from "@remixicon/react";
 import { getAvailableTags } from "@/lib/utils";
 
 interface SearchFieldProps {
@@ -71,13 +71,13 @@ export default function SearchField({ selectedTags, onTagChange }: SearchFieldPr
           emptyIndicator={<p className="text-center text-sm">No tags found</p>}
           onChange={handleMultipleSelectorChange}
           inputProps={{ autoFocus: selectedTags.length === 0 }}
-          className="w-full ps-9"
+          className="w-full rounded-xl ps-[52px] bg-zinc-200/40 dark:bg-zinc-900 border-border"
         />
         <div
-          className="pointer-events-none absolute inset-y-0 start-0 flex items-start justify-center ps-3 pt-2.5 text-muted-foreground/80"
+          className="pointer-events-none absolute inset-y-0 start-0 flex items-start justify-center ps-4 pt-2.5 text-muted-foreground"
           aria-label="Search component"
         >
-          <Search size={16} strokeWidth={2} />
+          <RiSearch2Line size={24} aria-hidden="true" />
         </div>
       </div>
     </div>

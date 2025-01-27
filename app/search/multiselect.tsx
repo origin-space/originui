@@ -1,12 +1,13 @@
 "use client";
 
 import { Command as CommandPrimitive, useCommandState } from "cmdk";
-import { X } from "lucide-react";
+import { RiCloseCircleFill, RiCloseLine } from "@remixicon/react";
 import * as React from "react";
 import { forwardRef, useEffect } from "react";
 
 import { cn } from "@/registry/default/lib/utils";
 import { Command, CommandGroup, CommandItem, CommandList } from "@/registry/default/ui/command";
+import { ScrollArea } from "@/registry/default/ui/scroll-area";
 
 export interface Option {
   value: string;
@@ -456,12 +457,12 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
       >
         <div
           className={cn(
-            "relative min-h-[38px] rounded-lg border border-input text-sm transition-shadow focus-within:border-ring focus-within:outline-none focus-within:ring-[3px] focus-within:ring-ring/20 has-[:disabled]:cursor-not-allowed has-[:disabled]:opacity-50",
+            "relative min-h-[46px] rounded-lg border border-input text-sm transition-shadow focus-within:border-ring focus-within:outline-none focus-within:ring-[3px] focus-within:ring-ring/20 has-[:disabled]:cursor-not-allowed has-[:disabled]:opacity-50",
             {
-              "p-1": selected.length !== 0,
+              "p-2": selected.length !== 0,
               "cursor-text": !disabled && selected.length !== 0,
             },
-            !hideClearAllButton && "pe-9",
+            !hideClearAllButton && "pe-10",
             className,
           )}
           onClick={() => {
@@ -475,7 +476,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 <div
                   key={option.value}
                   className={cn(
-                    "animate-fadeIn relative inline-flex h-7 cursor-default items-center rounded-md border border-solid bg-background pe-7 pl-2 ps-2 text-xs font-medium text-secondary-foreground transition-all hover:bg-background disabled:cursor-not-allowed disabled:opacity-50 data-[fixed]:pe-2",
+                    "animate-fadeIn relative inline-flex h-7 dark:bg-zinc-700/50 cursor-default items-center rounded-lg border border-border dark:border-zinc-700 bg-background pe-7 pl-2 ps-2 text-xs font-medium text-secondary-foreground transition-all hover:bg-background disabled:cursor-not-allowed disabled:opacity-50 data-[fixed]:pe-2",
                     badgeClassName,
                   )}
                   data-fixed={option.fixed}
@@ -500,7 +501,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                     }}
                     aria-label="Remove"
                   >
-                    <X size={14} strokeWidth={2} aria-hidden="true" />
+                    <RiCloseLine size={16} strokeWidth={2} aria-hidden="true" />
                   </button>
                 </div>
               );
@@ -533,7 +534,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 "flex-1 bg-transparent outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed",
                 {
                   "w-full": hidePlaceholderWhenSelected,
-                  "py-2 pe-3": selected.length === 0,
+                  "py-3 pe-3": selected.length === 0,
                   "ml-1": selected.length !== 0,
                 },
                 inputProps?.className,
@@ -546,23 +547,23 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 onChange?.(selected.filter((s) => s.fixed));
               }}
               className={cn(
-                "absolute end-0 top-0 flex size-9 items-center justify-center rounded-lg border border-transparent text-muted-foreground/80 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70",
+                "absolute end-0 top-0.5 flex size-10 items-center justify-center rounded-lg border border-transparent text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70",
                 (hideClearAllButton ||
                   disabled ||
                   selected.length < 1 ||
                   selected.filter((s) => s.fixed).length === selected.length) &&
-                  "hidden",
+                "hidden",
               )}
               aria-label="Clear all"
             >
-              <X size={16} strokeWidth={2} aria-hidden="true" />
+              <RiCloseCircleFill size={20} aria-hidden="true" />
             </button>
           </div>
         </div>
         <div className="relative">
           <div
             className={cn(
-              "absolute top-2 z-[9999] w-full overflow-hidden rounded-lg border border-input",
+              "absolute top-2 z-[9999] w-full shadow-lg shadow-black/5 overflow-hidden rounded-lg border border-input",
               "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
               !open && "hidden",
             )}
@@ -570,7 +571,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
           >
             {open && (
               <CommandList
-                className="bg-popover text-popover-foreground shadow-lg shadow-black/5 outline-none"
+                className="bg-popover text-popover-foreground outline-none max-h-none overflow-visible"
                 onMouseLeave={() => {
                   setOnScrollbar(false);
                 }}
@@ -589,8 +590,8 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                     {CreatableItem()}
                     {!selectFirstItem && <CommandItem value="-" className="hidden" />}
                     {Object.entries(selectables).map(([key, dropdowns]) => (
-                      <CommandGroup key={key} heading={key} className="h-full overflow-auto">
-                        <>
+                      <ScrollArea key={key} className="*:max-h-48 sm:*:max-h-80">
+                        <CommandGroup heading={key} className="px-0 py-1 dark:bg-zinc-900">
                           {dropdowns.map((option) => {
                             return (
                               <CommandItem
@@ -614,7 +615,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                   inputRef.current?.blur();
                                 }}
                                 className={cn(
-                                  "cursor-pointer",
+                                  "cursor-pointer py-2 px-4 rounded-none data-[selected=true]:bg-zinc-50 dark:data-[selected=true]:bg-zinc-800/50",
                                   option.disable && "cursor-not-allowed opacity-50",
                                 )}
                               >
@@ -622,8 +623,8 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                               </CommandItem>
                             );
                           })}
-                        </>
-                      </CommandGroup>
+                        </CommandGroup>
+                      </ScrollArea>
                     ))}
                   </>
                 )}
