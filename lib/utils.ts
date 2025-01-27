@@ -1,6 +1,5 @@
 import { components } from "@/registry/registry-components";
 import type { RegistryTag } from "@/registry/registry-tags";
-import { registryTags } from "@/registry/registry-tags";
 import type { RegistryItem } from "@/registry/schema";
 
 export const getComponents = (selectedTags: RegistryTag[] = []): RegistryItem[] => {
@@ -14,28 +13,6 @@ export const getComponents = (selectedTags: RegistryTag[] = []): RegistryItem[] 
 export const getComponentsByNames = (names: string[]): RegistryItem[] => {
   const componentsMap = new Map(components.map(comp => [comp.name, comp]));
   return names.map(name => componentsMap.get(name)).filter((comp): comp is RegistryItem => comp !== undefined);
-};
-
-export const getTagCounts = (selectedTags: RegistryTag[] = []): Record<RegistryTag, number> => {
-  const counts: Record<RegistryTag, number> = Object.fromEntries(
-    registryTags.map((tag) => [tag, 0])
-  ) as Record<RegistryTag, number>;
-  
-  // Get components that match current selection
-  const matchingComponents = selectedTags.length
-    ? components.filter((component) =>
-        selectedTags.every((tag) => component.tags?.includes(tag) ?? false)
-      )
-    : components;
-
-  // Count components for each tag
-  matchingComponents.forEach((component) => {
-    component.tags?.forEach((tag) => {
-      counts[tag] = (counts[tag] || 0) + 1;
-    });
-  });
-
-  return counts;
 };
 
 export const getAvailableTags = (selectedTags: RegistryTag[]): RegistryTag[] => {

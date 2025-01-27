@@ -4,7 +4,7 @@ import MultipleSelector, { Option } from "./multiselect";
 import type { RegistryTag } from "@/registry/registry-tags";
 import { registryTags } from "@/registry/registry-tags";
 import { Search } from "lucide-react";
-import { getAvailableTags, getTagCounts } from "@/lib/utils";
+import { getAvailableTags } from "@/lib/utils";
 
 interface SearchFieldProps {
   selectedTags: string[];
@@ -26,13 +26,11 @@ export default function SearchField({ selectedTags, onTagChange }: SearchFieldPr
     .map((tag) => baseOptions.find((option) => option.value === tag))
     .filter((option): option is Option => !!option);
 
-  const getFilteredOptions = () => {
-    const counts = getTagCounts();
-    
+  const getFilteredOptions = () => {    
     if (selectedTags.length === 0) {
       return baseOptions.map(option => ({
         ...option,
-        label: `${option.value} (${counts[option.value as RegistryTag]})`,
+        label: `${option.value}`,
       }));
     }
     
@@ -40,7 +38,7 @@ export default function SearchField({ selectedTags, onTagChange }: SearchFieldPr
     
     return baseOptions.map((option) => ({
       ...option,
-      label: `${option.value} (${counts[option.value as RegistryTag]})`,
+      label: `${option.value}`,
       disable: !selectedTags.includes(option.value) && !availableTags.includes(option.value as RegistryTag),
     }))
     .sort((a, b) => {
