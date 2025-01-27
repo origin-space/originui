@@ -30,7 +30,7 @@ export default async function DemoComponent<TProps extends object>({
   return (
     <div className={cn("group/item relative", className)}>
       <Component {...(props as TProps)} />
-      <div className="absolute right-2 top-2 flex gap-2">
+      <div className="absolute right-2 top-2 flex">
         <ComponentDetails name={componentName}>
           <div className="relative">
             <CodeBlock lang="tsx">{source}</CodeBlock>
