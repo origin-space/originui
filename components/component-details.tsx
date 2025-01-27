@@ -1,5 +1,5 @@
 import ComponentCli from "@/components/cli-commands";
-import EditInV0 from "@/components/edit-in-v0";
+import OpenInV0 from "@/components/open-in-v0";
 import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,
@@ -20,7 +20,7 @@ import { Code } from "lucide-react";
 const ComponentDetails = ({ name, children }: { name: string; children: React.ReactNode }) => {
   return (
     <>
-      <EditInV0 componentSource={`https://originui.com/r/${name}.json`} />
+      <OpenInV0 componentSource={`https://originui.com/r/${name}.json`} />
       <Dialog>
         <TooltipProvider delayDuration={0}>
           <Tooltip>

@@ -10,7 +10,7 @@ import {
 } from "@/registry/default/ui/tooltip";
 import Link from "next/link";
 
-const EditInV0 = ({
+const OpenInV0 = ({
   componentSource,
   className,
 }: {
@@ -30,7 +30,7 @@ const EditInV0 = ({
                 variant="ghost"
                 size="icon"
                 className="text-muted-foreground/80 transition-none hover:bg-transparent hover:text-background disabled:opacity-100 lg:opacity-0 lg:group-focus-within/item:opacity-100 lg:group-hover/item:opacity-100"
-                aria-label="Edit in v0"
+                aria-label="Open in v0"
               >
                 <svg
                   height="16"
@@ -51,11 +51,11 @@ const EditInV0 = ({
           </div>
         </TooltipTrigger>
         <TooltipContent className="px-2 py-1 text-xs text-muted-foreground">
-          Edit in v0
+          Open in v0
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
   );
 };
 
-export default EditInV0;
+export default OpenInV0;
