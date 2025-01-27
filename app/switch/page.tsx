@@ -37,7 +37,7 @@ export default function Page() {
   const components = getComponentsByNames(componentsList.map(item => item.name));
 
   return (
-    <main>
+    <>
       <PageHeader title="Switch">
         A growing collection of {components.length} toggle switch components built with Tailwind CSS and React.
       </PageHeader>
@@ -54,6 +54,6 @@ export default function Page() {
       </PageGrid>
 
       <Cta />
-    </main>
+    </>
   );
 }

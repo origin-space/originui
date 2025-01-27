@@ -39,7 +39,7 @@ export default function Page() {
   const components = getComponentsByNames(componentsList.map(item => item.name));
 
   return (
-    <main>
+    <>
       <PageHeader title="Textarea">
         A growing collection of {components.length} textarea components built with Tailwind CSS and React.
       </PageHeader>
@@ -56,6 +56,6 @@ export default function Page() {
       </PageGrid>
 
       <Cta />
-    </main>
+    </>
   );
 }

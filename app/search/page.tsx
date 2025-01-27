@@ -10,13 +10,13 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main>
-      <PageHeader title="Search Origin UI">
+    <>
+      <PageHeader title="Search Origin UI" className="mb-10">
         Use this page to quickly find a component (e.g., multiselect, vertical slider, etc.)
       </PageHeader>
       <Suspense>
         <ComponentsContainer />
       </Suspense>
-    </main>
+    </>
   );
 }

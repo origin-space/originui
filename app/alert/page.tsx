@@ -32,7 +32,7 @@ export default function Page() {
   const components = getComponentsByNames(componentsList.map(item => item.name));
 
   return (
-    <main>
+    <>
       <PageHeader title="Alert">
         A growing collection of {components.length} alert components built with Tailwind CSS and React.
       </PageHeader>
@@ -49,6 +49,6 @@ export default function Page() {
       </PageGrid>
 
       <Cta />
-    </main>
+    </>
   );
 }

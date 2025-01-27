@@ -1,33 +1,43 @@
-import GithubButton from "@/components/github-button";
-import SocialDropdown from "@/components/social-dropdown";
+import GithubLink from "@/components/github-link";
 import ThemeToggle from "@/components/theme-toggle";
 import Link from "next/link";
+import Image from "next/image";
+import Logo from "@/public/logo.svg";
+import LogoDark from "@/public/logo-dark.svg";
 
 export default function Header() {
   return (
-    <header>
-      <div className="mx-auto mb-16 flex h-[72px] w-full max-w-6xl items-center justify-between gap-3">
+    <header className="relative before:absolute before:-inset-x-32 before:bottom-0 before:h-px before:bg-[linear-gradient(to_right,theme(colors.border/.3),theme(colors.border)_200px,theme(colors.border)_calc(100%-200px),theme(colors.border/.3))] mb-14">
+      <div
+        className="before:absolute before:-left-12 before:-ml-px before:-bottom-px before:size-[3px] before:bg-ring before:z-10 after:absolute after:-right-12 after:-mr-px after:-bottom-px after:size-[3px] after:bg-ring after:z-10"
+        aria-hidden="true"
+      ></div>            
+      <div className="mx-auto flex h-[72px] w-full max-w-6xl items-center justify-between gap-3">
         <Link
           href="/"
           aria-label="Home"
           className="rounded-full outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
         >
           <span className="sr-only">Origin UI</span>
-          <svg
-            className="stroke-zinc-800 dark:stroke-zinc-100"
-            xmlns="http://www.w3.org/2000/svg"
-            width="28"
-            height="28"
-            viewBox="0 0 32 32"
-            aria-hidden="true"
-          >
-            <circle cx="16" cy="16" r="12" fill="none" strokeWidth="8" />
-          </svg>
+          <Image
+            src={Logo}
+            alt="Origin UI logo"
+            width={117}
+            height={24}
+            className="dark:hidden"
+            priority
+          />
+          <Image
+            src={LogoDark}
+            alt="Origin UI logo"
+            width={117}
+            height={24}
+            className="hidden dark:block"
+          />
         </Link>
-        <div className="flex items-center gap-2">
-          <GithubButton />
+        <div className="flex items-center gap-4">
+          <GithubLink />
           <ThemeToggle />
-          <SocialDropdown />
         </div>
       </div>
     </header>

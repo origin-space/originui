@@ -28,7 +28,7 @@ export default function Page() {
   const components = getComponentsByNames(componentsList.map(item => item.name));
 
   return (
-    <main>
+    <>
       <PageHeader title="Breadcrumb">
         A growing collection of {components.length} breadcrumb components built with Tailwind CSS and React.
       </PageHeader>
@@ -45,6 +45,6 @@ export default function Page() {
       </PageGrid>
 
       <Cta />
-    </main>
+    </>
   );
 }
