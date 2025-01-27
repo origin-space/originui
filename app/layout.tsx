@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${fontSans.variable} ${fontHeading.variable} bg-background font-sans antialiased`}
+        className={`${fontSans.variable} ${fontHeading.variable} has-[[data-home]]:bg-zinc-50 dark:has-[[data-home]]:bg-zinc-950 before:[&:has(:not([data-home]))]:absolute before:[&:has(:not([data-home]))]:inset-x-0 before:[&:has(:not([data-home]))]:h-[400px] before:[&:has(:not([data-home]))]:bg-gradient-to-b before:[&:has(:not([data-home]))]:from-zinc-100 dark:before:[&:has(:not([data-home]))]:content-[] font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"

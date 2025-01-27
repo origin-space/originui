@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <>
+    <div data-home>
       <div className="mb-16 max-w-3xl">
         <h1 className="mb-4 font-heading text-4xl/[1.1] font-bold tracking-tight text-foreground md:text-5xl/[1.1]">
           Beautiful UI components built with Tailwind CSS and React.
@@ -250,6 +250,6 @@ export default function Page() {
       </div>
 
       <SubscribeBottom />
-    </>
+    </div>
   );
 }
