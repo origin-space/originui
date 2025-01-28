@@ -55,7 +55,7 @@ export default function ComponentDetails({ component }: { component: RegistryIte
 
   return (
     <div className="absolute right-2 top-2 flex gap-2 peer-data-[loading=true]:hidden">
-      <OpenInV0 componentSource={`https://originui.com/r/${name}.json`} />
+      <OpenInV0 componentSource={`https://originui.com/r/${component.name}.json`} />
       <Dialog>
         <TooltipProvider delayDuration={0}>
           <Tooltip>
