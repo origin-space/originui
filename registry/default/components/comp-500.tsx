@@ -21,7 +21,7 @@ export default function Component() {
           month={month}
           onMonthChange={setMonth}
         />
-        <Button variant="outline" size="sm" className="my-1" onClick={() => setMonth(today)}>
+        <Button variant="outline" size="sm" className="mb-1 mt-2" onClick={() => setMonth(today)}>
           Current month
         </Button>
       </div>
