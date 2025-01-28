@@ -25,7 +25,6 @@ export default function Header() {
             width={117}
             height={24}
             className="dark:hidden"
-            priority
           />
           <Image
             src={LogoDark}

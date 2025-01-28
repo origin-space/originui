@@ -4804,7 +4804,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "alert", "alert dialog", "radix"],
+    tags: ["dialog", "modal", "alert", "alert dialog", "radix"],
     meta: {
       style: 1,
     },
@@ -4822,7 +4822,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "alert", "alert dialog", "radix"],
+    tags: ["dialog", "modal", "alert", "alert dialog", "radix"],
     meta: {
       style: 1,
     },
@@ -4840,7 +4840,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "radix"],
+    tags: ["dialog", "modal", "radix"],
     meta: {
       style: 1,
     },
@@ -4859,7 +4859,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "radix"],
+    tags: ["dialog", "modal", "radix"],
     meta: {
       style: 1,
     },
@@ -4877,7 +4877,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "radix"],
+    tags: ["dialog", "modal", "radix"],
     meta: {
       style: 1,
     },
@@ -4895,7 +4895,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "radix"],
+    tags: ["dialog", "modal", "radix"],
     meta: {
       style: 1,
     },
@@ -4913,7 +4913,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "radix"],
+    tags: ["dialog", "modal", "radix"],
     meta: {
       style: 1,
     },
@@ -4933,7 +4933,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "delete", "radix"],
+    tags: ["dialog", "modal", "delete", "radix"],
     meta: {
       style: 1,
     },
@@ -4952,7 +4952,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "newsletter", "subscribe", "form", "radix"],
+    tags: ["dialog", "modal", "newsletter", "subscribe", "form", "radix"],
     meta: {
       style: 1,
     },
@@ -4971,7 +4971,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "feedback", "form", "radix"],
+    tags: ["dialog", "modal", "feedback", "form", "radix"],
     meta: {
       style: 1,
     },
@@ -4992,7 +4992,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "rating", "feedback", "form", "radix"],
+    tags: ["dialog", "modal", "rating", "feedback", "form", "radix"],
     meta: {
       style: 1,
     },
@@ -5011,7 +5011,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "otp", "radix"],
+    tags: ["dialog", "modal", "otp", "radix"],
     meta: {
       style: 1,
     },
@@ -5031,7 +5031,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "signup", "authentication", "form", "radix"],
+    tags: ["dialog", "modal", "signup", "authentication", "form", "radix"],
     meta: {
       style: 1,
     },
@@ -5052,7 +5052,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "login", "authentication", "form", "radix"],
+    tags: ["dialog", "modal", "login", "authentication", "form", "radix"],
     meta: {
       style: 1,
     },
@@ -5073,7 +5073,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "form", "user", "team", "radix"],
+    tags: ["dialog", "modal", "form", "user", "team", "radix"],
     meta: {
       style: 1,
     },
@@ -5097,7 +5097,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "checkout", "payment", "credit card", "form", "radix"],
+    tags: ["dialog", "modal", "checkout", "payment", "credit card", "form", "radix"],
     meta: {
       style: 1,
     },
@@ -5122,7 +5122,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "checkout", "payment", "credit card", "form", "radix"],
+    tags: ["dialog", "modal", "checkout", "payment", "credit card", "form", "radix"],
     meta: {
       style: 1,
     },
@@ -5142,7 +5142,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "user", "radix"],
+    tags: ["dialog", "modal", "user", "radix"],
     meta: {
       style: 1,
     },
@@ -5171,7 +5171,7 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["dialog", "user", "profile", "image", "avatar", "form", "radix"],
+    tags: ["dialog", "modal", "user", "profile", "image", "avatar", "form", "radix"],
     meta: {
       style: 1,
     },
@@ -5189,7 +5189,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "onboarding", "radix"],
+    tags: ["dialog", "modal", "onboarding", "radix"],
     meta: {
       style: 1,
     },
@@ -5204,7 +5204,7 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "command", "combobox", "popover", "search", "radix", "autocomplete", "radix"],
+    tags: ["dialog", "modal", "command", "combobox", "popover", "search", "radix", "autocomplete", "radix"],
     meta: {
       style: 1,
     },

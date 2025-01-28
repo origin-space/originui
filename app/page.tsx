@@ -7,31 +7,36 @@ import { categories } from "@/config/components";
 export default function Page() {
   return (
     <div data-home>
-      <div className="mb-16 max-w-3xl">
+      <div className="max-w-3xl">
         <h1 className="mb-4 font-heading text-4xl/[1.1] font-bold tracking-tight text-foreground md:text-5xl/[1.1]">
           Beautiful UI components built with Tailwind CSS and React.
         </h1>
         <p className="mb-8 text-lg text-muted-foreground">
-          Origin UI is an extensive collection of copy-and-paste components for quickly building
-          app UIs. It&lsquo;s free, open-source, and ready to drop into your projects.
+          A collection of copy-and-paste components for quickly build application UIs.
         </p>
         <SearchButton />
       </div>
 
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-12 gap-x-6 my-16 md:my-20">
-        {categories.map((category) => (
+      <div className="mt-14 pt-14 mb-16 md:mb-20 relative before:absolute before:-inset-x-32 before:top-0 before:h-px before:bg-[linear-gradient(to_right,theme(colors.border/.3),theme(colors.border)_200px,theme(colors.border)_calc(100%-200px),theme(colors.border/.3))]">
+        <div
+          className="before:absolute before:-left-12 before:-ml-px before:-top-px before:size-[3px] before:bg-ring before:z-10 after:absolute after:-right-12 after:-mr-px after:-top-px after:size-[3px] after:bg-ring after:z-10"
+          aria-hidden="true"
+        ></div>   
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-12 gap-x-6">
+          {categories.map((category) => (
+            <CategoryCard
+              key={category.slug}
+              slug={category.slug}
+              name={category.name}
+              componentsCount={category.components.length}
+            />
+          ))}
           <CategoryCard
-            key={category.slug}
-            slug={category.slug}
-            name={category.name}
-            componentsCount={category.components.length}
+            slug="easings"
+            name="Easing Classes"
+            isEasing={true}
           />
-        ))}
-        <CategoryCard
-          slug="easings"
-          name="Easing Classes"
-          isEasing={true}
-        />
+        </div>
       </div>
 
       <SubscribeBottom />
@@ -53,7 +58,7 @@ function CategoryCard({ slug, name, componentsCount, isEasing = false }: Categor
 
   return (
     <div className="space-y-3 text-center">
-      <Link href={href} className="inline-flex sm:flex rounded-xl border border-border dark:border-zinc-700/80 overflow-hidden" tabIndex={-1}>
+      <Link href={href} className="inline-flex sm:flex rounded-xl border border-border dark:border-zinc-700/80 overflow-hidden peer" tabIndex={-1}>
         <Image 
           className="w-full dark:hidden" 
           src={`${imageBasePath}.png`} 
@@ -69,7 +74,7 @@ function CategoryCard({ slug, name, componentsCount, isEasing = false }: Categor
           height={198} 
         />
       </Link>
-      <div className="mb-0.5">
+      <div className="mb-0.5 peer-hover:[&_a]:underline">
         <h2>
           <Link href={href} className="text-sm font-medium hover:underline">
             {name}

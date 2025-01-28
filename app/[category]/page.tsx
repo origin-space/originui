@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${category.name} components - Origin UI`,
-    description: `A collection of beautiful and accessible ${category.name.toLowerCase()} components built with Tailwind CSS and React.`
+    description: `A collection of beautiful and accessible ${category.name.toLowerCase()} components built with React and Tailwind CSS.`
   }
 }
 
@@ -40,7 +40,7 @@ export default async function Page({
   return (
     <>
       <PageHeader title={category.name}>
-        A growing collection of {components.length} {category.name.toLowerCase()} components built with Tailwind CSS and React.
+        A growing collection of {components.length} {category.name.toLowerCase()} components built with React and Tailwind CSS.
       </PageHeader>
       <PageGrid>
         {components.map((component) => (

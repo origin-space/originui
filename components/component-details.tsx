@@ -1,6 +1,7 @@
 "use client";
 
 import ComponentCli from "@/components/cli-commands";
+import OpenInV0 from "@/components/open-in-v0";
 import CodeBlock, { highlight } from "@/components/code-block";
 import CopyButton from "@/components/copy-button";
 import { convertRegistryPaths } from "@/lib/utils";
@@ -54,6 +55,7 @@ export default function ComponentDetails({ component }: { component: RegistryIte
 
   return (
     <div className="absolute right-2 top-2 flex gap-2 peer-data-[loading=true]:hidden">
+      <OpenInV0 componentSource={`https://originui.com/r/${name}.json`} />
       <Dialog>
         <TooltipProvider delayDuration={0}>
           <Tooltip>
