@@ -72,6 +72,7 @@ export const registryTags = [
   "login",
   "mask",
   "menu",
+  "modal",
   "multiselect",
   "native select",
   "newsletter",

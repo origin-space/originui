@@ -17,6 +17,7 @@
   },
   "tags": [
     "dialog",
+    "modal",
     "command",
     "combobox",
     "popover",
