@@ -13,7 +13,7 @@ export default function ComponentCard({
   const getColSpanClasses = (includeStart = false) => {
     const baseClasses =
       component.meta?.colSpan === 2
-        ? "sm:col-span-6 lg:col-span-6"
+        ? "col-span-12 sm:col-span-6 lg:col-span-6"
         : component.meta?.colSpan === 3
           ? "sm:col-span-12 lg:col-span-12"
           : "col-span-12 sm:col-span-6 lg:col-span-4";
