@@ -27,7 +27,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://originui.com"),
-  title: "Origin UI - Beautiful UI components built with Tailwind CSS and Next.js",
+  title: "Origin UI - Beautiful UI components built with Tailwind CSS and React",
   description:
     "An extensive collection of copy-and-paste components for quickly building app UIs. Free, open-source, and ready to drop into your projects.",
 };

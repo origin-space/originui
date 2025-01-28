@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${category.name} components - Origin UI`,
+    title: `${category.name} components built with React and Tailwind CSS - Origin UI`,
     description: `A collection of beautiful and accessible ${category.name.toLowerCase()} components built with React and Tailwind CSS.`,
   };
 }
