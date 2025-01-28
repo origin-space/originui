@@ -312,7 +312,7 @@ export default function Easings({ easings }: EasingsProps) {
 
   return (
     <div className="mb-12 space-y-6">
-      <div className="top-0 z-10 bg-background/95 py-4 backdrop-blur-lg md:sticky">
+      <div className="py-4">
         <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
           <div className="flex flex-col gap-2">
             <Label>Duration</Label>

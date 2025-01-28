@@ -2,7 +2,7 @@ import SearchButton from "@/components/search-button";
 import { SubscribeBottom } from "@/components/subscribe-form";
 import Link from "next/link";
 import Image from "next/image";
-import { categories } from "@/config/components"
+import { categories } from "@/config/components";
 
 export default function Page() {
   return (
@@ -18,26 +18,67 @@ export default function Page() {
         <SearchButton />
       </div>
 
-      <div className="grid grid-cols-4 gap-6 my-16 md:my-20">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-12 gap-x-6 my-16 md:my-20">
         {categories.map((category) => (
-          <div key={category.slug} className="space-y-3">
-            <Link href={`/${category.slug}`} className="block rounded-xl border border-border overflow-hidden" tabIndex={-1}>
-              <Image className="dark:hidden" src={`/thumbs/${category.slug}.png`} alt={`${category.name} components`} width={268} height={198} />
-              <Image className="hidden dark:block" src={`/thumbs/${category.slug}-dark.png`} alt={`${category.name} components dark`} width={268} height={198} />
-            </Link>
-            <div className="text-center mb-0.5">
-              <h2>
-                <Link href={`/${category.slug}`} className="text-sm font-medium hover:underline">
-                  {category.name}
-                </Link>
-              </h2>
-              <p className="text-[13px] text-muted-foreground">{category.components.length} Components</p>
-            </div>
-          </div>
+          <CategoryCard
+            key={category.slug}
+            slug={category.slug}
+            name={category.name}
+            componentsCount={category.components.length}
+          />
         ))}
+        <CategoryCard
+          slug="easings"
+          name="Easing Classes"
+          isEasing={true}
+        />
       </div>
 
       <SubscribeBottom />
+    </div>
+  );
+}
+
+type CategoryCardProps = {
+  slug: string;
+  name: string;
+  componentsCount?: number;
+  isEasing?: boolean;
+}
+
+function CategoryCard({ slug, name, componentsCount, isEasing = false }: CategoryCardProps) {
+  const href = `/${slug}`;
+  const imageBasePath = `/thumbs/${slug}`;
+  const alt = isEasing ? "Tailwind CSS easing classes" : `${name} components`;
+
+  return (
+    <div className="space-y-3 text-center">
+      <Link href={href} className="inline-flex sm:flex rounded-xl border border-border dark:border-zinc-700/80 overflow-hidden" tabIndex={-1}>
+        <Image 
+          className="w-full dark:hidden" 
+          src={`${imageBasePath}.png`} 
+          alt={alt} 
+          width={268} 
+          height={198} 
+        />
+        <Image 
+          className="w-full hidden dark:block" 
+          src={`${imageBasePath}-dark.png`} 
+          alt={`${alt} dark`} 
+          width={268} 
+          height={198} 
+        />
+      </Link>
+      <div className="mb-0.5">
+        <h2>
+          <Link href={href} className="text-sm font-medium hover:underline">
+            {name}
+          </Link>
+        </h2>
+        <p className="text-[13px] text-muted-foreground">
+          {isEasing ? "29 Examples" : `${componentsCount} Components`}
+        </p>
+      </div>
     </div>
   );
 }
