@@ -24,7 +24,7 @@ export default function Component() {
         <Button
           variant="outline"
           size="sm"
-          className="my-1"
+          className="mt-2 mb-1"
           onClick={() => {
             setDate(today);
             setMonth(today);
