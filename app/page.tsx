@@ -17,7 +17,7 @@ export default function Page() {
         <SearchButton />
       </div>
 
-      <div className="relative mb-16 mt-14">
+      <div className="relative my-16">
         <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {categories.map((category) => (
             <CategoryCard

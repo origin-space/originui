@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import ComponentsContainer from "./components-container";
 
 export const metadata: Metadata = {
-  title: "Search Origin UI",
+  title: "Search a Origin UI component",
   description: "Search for components in the Origin UI library.",
 };
 

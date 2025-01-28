@@ -6,14 +6,7 @@ export default function Footer() {
         aria-hidden="true"
       ></div>
       <div className="flex justify-between gap-2 max-sm:flex-col max-sm:text-center">
-        <p className="text-sm text-muted-foreground">
-        <a
-            className="font-medium text-foreground underline decoration-border underline-offset-4 hover:no-underline"
-            href="https://x.com/intent/follow?screen_name=pacovitiello"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Origin UI</a>
-        </p>
+        <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} Origin UI</p>
         <p className="text-sm text-muted-foreground">
           A project by{" "}
           <a
