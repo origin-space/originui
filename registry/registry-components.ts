@@ -5204,7 +5204,17 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "command", "combobox", "popover", "search", "radix", "autocomplete", "radix"],
+    tags: [
+      "dialog",
+      "modal",
+      "command",
+      "combobox",
+      "popover",
+      "search",
+      "radix",
+      "autocomplete",
+      "radix",
+    ],
     meta: {
       style: 1,
     },

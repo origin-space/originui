@@ -1,25 +1,25 @@
-"use client"
+"use client";
 
-import { useRouter } from 'next/navigation';
 import { RiSearch2Line } from "@remixicon/react";
 import Link from "next/link";
-import { useEffect } from 'react';
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function SearchButton() {
   const router = useRouter();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
-        router.push('/search');
+        router.push("/search");
       }
     };
 
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
   }, [router]);
-  
+
   return (
     <Link
       href="/search"

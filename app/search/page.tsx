@@ -1,7 +1,7 @@
 import PageHeader from "@/components/page-header";
 import type { Metadata } from "next";
-import ComponentsContainer from "./components-container";
 import { Suspense } from "react";
+import ComponentsContainer from "./components-container";
 
 export const metadata: Metadata = {
   title: "Search Origin UI",

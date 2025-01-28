@@ -1,9 +1,9 @@
 "use client";
 
 import ComponentCli from "@/components/cli-commands";
-import OpenInV0 from "@/components/open-in-v0";
 import CodeBlock, { highlight } from "@/components/code-block";
 import CopyButton from "@/components/copy-button";
+import OpenInV0 from "@/components/open-in-v0";
 import { convertRegistryPaths } from "@/lib/utils";
 import { Button } from "@/registry/default/ui/button";
 import {

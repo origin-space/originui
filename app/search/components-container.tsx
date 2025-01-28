@@ -48,7 +48,7 @@ export default function ComponentsContainer() {
           </ComponentCard>
         ))}
         {tags.length > 0 && filtered.length === 0 && (
-          <div className="col-span-full text-center py-8">
+          <div className="col-span-full py-8 text-center">
             <p className="text-muted-foreground">No components found for the selected tags.</p>
           </div>
         )}

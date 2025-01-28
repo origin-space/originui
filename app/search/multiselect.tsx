@@ -1,7 +1,7 @@
 "use client";
 
-import { Command as CommandPrimitive, useCommandState } from "cmdk";
 import { RiCloseCircleFill, RiCloseLine } from "@remixicon/react";
+import { Command as CommandPrimitive, useCommandState } from "cmdk";
 import * as React from "react";
 import { forwardRef, useEffect } from "react";
 
@@ -476,7 +476,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 <div
                   key={option.value}
                   className={cn(
-                    "animate-fadeIn relative inline-flex h-7 dark:bg-zinc-700/50 cursor-default items-center rounded-lg border border-border dark:border-zinc-700 bg-background pe-7 pl-2 ps-2 text-xs font-medium text-secondary-foreground transition-all hover:bg-background disabled:cursor-not-allowed disabled:opacity-50 data-[fixed]:pe-2",
+                    "animate-fadeIn relative inline-flex h-7 cursor-default items-center rounded-lg border border-border bg-background pe-7 pl-2 ps-2 text-xs font-medium text-secondary-foreground transition-all hover:bg-background disabled:cursor-not-allowed disabled:opacity-50 data-[fixed]:pe-2 dark:border-zinc-700 dark:bg-zinc-700/50",
                     badgeClassName,
                   )}
                   data-fixed={option.fixed}
@@ -552,7 +552,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                   disabled ||
                   selected.length < 1 ||
                   selected.filter((s) => s.fixed).length === selected.length) &&
-                "hidden",
+                  "hidden",
               )}
               aria-label="Clear all"
             >
@@ -563,7 +563,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
         <div className="relative">
           <div
             className={cn(
-              "absolute top-2 z-[9999] w-full shadow-lg shadow-black/5 overflow-hidden rounded-lg border border-input",
+              "absolute top-2 z-[9999] w-full overflow-hidden rounded-lg border border-input shadow-lg shadow-black/5",
               "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
               !open && "hidden",
             )}
@@ -571,7 +571,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
           >
             {open && (
               <CommandList
-                className="bg-popover text-popover-foreground outline-none max-h-none overflow-visible"
+                className="max-h-none overflow-visible bg-popover text-popover-foreground outline-none"
                 onMouseLeave={() => {
                   setOnScrollbar(false);
                 }}
@@ -615,7 +615,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                   inputRef.current?.blur();
                                 }}
                                 className={cn(
-                                  "cursor-pointer py-2 px-4 rounded-none data-[selected=true]:bg-zinc-50 dark:data-[selected=true]:bg-zinc-800/50",
+                                  "cursor-pointer rounded-none px-4 py-2 data-[selected=true]:bg-zinc-50 dark:data-[selected=true]:bg-zinc-800/50",
                                   option.disable && "cursor-not-allowed opacity-50",
                                 )}
                               >

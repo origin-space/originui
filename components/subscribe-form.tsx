@@ -3,7 +3,7 @@
 import { cn } from "@/registry/default/lib/utils";
 import { Button } from "@/registry/default/ui/button";
 import { Input } from "@/registry/default/ui/input";
-import { RiNavigationLine, RiLoader3Line } from "@remixicon/react";
+import { RiLoader3Line, RiNavigationLine } from "@remixicon/react";
 import { useId, useState } from "react";
 import { subscribe } from "./subscribe-action";
 
@@ -50,7 +50,7 @@ function Form() {
             </div>
             <Input
               id={id}
-              className="ps-9 h-10 flex-1 md:min-w-64 [&:-webkit-autofill]:[transition:background-color_5000000s_ease-in-out_0s] border-zinc-600/65 bg-zinc-700/30 text-zinc-100 placeholder:text-zinc-500 [&:-webkit-autofill]:bg-zinc-700/30 [&:-webkit-autofill]:[-webkit-text-fill-color:#fff] rounded-full"
+              className="h-10 flex-1 rounded-full border-zinc-600/65 bg-zinc-700/30 ps-9 text-zinc-100 placeholder:text-zinc-500 md:min-w-64 [&:-webkit-autofill]:bg-zinc-700/30 [&:-webkit-autofill]:[-webkit-text-fill-color:#fff] [&:-webkit-autofill]:[transition:background-color_5000000s_ease-in-out_0s]"
               placeholder="Enter your email..."
               type="email"
               value={formState.email}
@@ -62,20 +62,14 @@ function Form() {
           </div>
           <Button
             type="submit"
-            className="group relative rounded-full h-10"
+            className="group relative h-10 rounded-full"
             disabled={isLoading}
             data-loading={isLoading}
           >
-            <span className="group-data-[loading=true]:text-transparent">
-              Subscribe
-            </span>
+            <span className="group-data-[loading=true]:text-transparent">Subscribe</span>
             {isLoading && (
               <div className="absolute inset-0 flex items-center justify-center">
-                <RiLoader3Line
-                  className="animate-spin"
-                  size={16}
-                  aria-hidden="true"
-                />
+                <RiLoader3Line className="animate-spin" size={16} aria-hidden="true" />
               </div>
             )}
           </Button>
@@ -83,7 +77,7 @@ function Form() {
         {formState.message && (
           <p
             className={cn(
-              "mt-2 text-xs absolute",
+              "absolute mt-2 text-xs",
               formState.status === "error" ? "text-destructive" : "text-muted-foreground",
             )}
             role="alert"
@@ -100,9 +94,9 @@ function Form() {
 export function SubscribeBottom() {
   return (
     <div className="dark relative overflow-hidden rounded-xl bg-zinc-900 px-4 py-14 sm:px-8">
-      <Illustration className="absolute top-0 left-0 -translate-x-1/2" aria-hidden="true" />
-      <Illustration className="absolute right-0 bottom-0 translate-x-1/4" aria-hidden="true" />
-      <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
+      <Illustration className="absolute left-0 top-0 -translate-x-1/2" aria-hidden="true" />
+      <Illustration className="absolute bottom-0 right-0 translate-x-1/4" aria-hidden="true" />
+      <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
         <h2 className="font-heading text-2xl/[1.1] font-bold tracking-tight text-foreground md:text-3xl/[1.1]">
           Get notified when new stuff drops.
         </h2>
@@ -112,11 +106,7 @@ export function SubscribeBottom() {
   );
 }
 
-function Illustration({
-  className,
-}: {
-  className?: string;
-}) {
+function Illustration({ className }: { className?: string }) {
   const id = useId();
   return (
     <svg

@@ -11,8 +11,10 @@ export const getComponents = (selectedTags: RegistryTag[] = []): RegistryItem[] 
 };
 
 export const getComponentsByNames = (names: string[]): RegistryItem[] => {
-  const componentsMap = new Map(components.map(comp => [comp.name, comp]));
-  return names.map(name => componentsMap.get(name)).filter((comp): comp is RegistryItem => comp !== undefined);
+  const componentsMap = new Map(components.map((comp) => [comp.name, comp]));
+  return names
+    .map((name) => componentsMap.get(name))
+    .filter((comp): comp is RegistryItem => comp !== undefined);
 };
 
 export const getAvailableTags = (selectedTags: RegistryTag[]): RegistryTag[] => {
@@ -20,7 +22,7 @@ export const getAvailableTags = (selectedTags: RegistryTag[]): RegistryTag[] => 
 
   // Get all components that have all the selected tags
   const matchingComponents = components.filter((component) =>
-    selectedTags.every((tag) => component.tags?.includes(tag) ?? false)
+    selectedTags.every((tag) => component.tags?.includes(tag) ?? false),
   );
 
   // Get all unique tags from the matching components

@@ -1,10 +1,10 @@
 "use client";
 
-import MultipleSelector, { Option } from "./multiselect";
+import { getAvailableTags } from "@/lib/utils";
 import type { RegistryTag } from "@/registry/registry-tags";
 import { registryTags } from "@/registry/registry-tags";
 import { RiSearch2Line } from "@remixicon/react";
-import { getAvailableTags } from "@/lib/utils";
+import MultipleSelector, { Option } from "./multiselect";
 
 interface SearchFieldProps {
   selectedTags: string[];
@@ -26,35 +26,38 @@ export default function SearchField({ selectedTags, onTagChange }: SearchFieldPr
     .map((tag) => baseOptions.find((option) => option.value === tag))
     .filter((option): option is Option => !!option);
 
-  const getFilteredOptions = () => {    
+  const getFilteredOptions = () => {
     if (selectedTags.length === 0) {
-      return baseOptions.map(option => ({
+      return baseOptions.map((option) => ({
         ...option,
         label: `${option.value}`,
       }));
     }
-    
+
     const availableTags = getAvailableTags(selectedTags as RegistryTag[]);
-    
-    return baseOptions.map((option) => ({
-      ...option,
-      label: `${option.value}`,
-      disable: !selectedTags.includes(option.value) && !availableTags.includes(option.value as RegistryTag),
-    }))
-    .sort((a, b) => {
-      // Selected tags first
-      if (selectedTags.includes(a.value) && !selectedTags.includes(b.value)) return -1;
-      if (!selectedTags.includes(a.value) && selectedTags.includes(b.value)) return 1;
-      
-      // Then available tags
-      const aAvailable = !a.disable;
-      const bAvailable = !b.disable;
-      if (aAvailable && !bAvailable) return -1;
-      if (!aAvailable && bAvailable) return 1;
-      
-      // Keep original order
-      return 0;
-    });
+
+    return baseOptions
+      .map((option) => ({
+        ...option,
+        label: `${option.value}`,
+        disable:
+          !selectedTags.includes(option.value) &&
+          !availableTags.includes(option.value as RegistryTag),
+      }))
+      .sort((a, b) => {
+        // Selected tags first
+        if (selectedTags.includes(a.value) && !selectedTags.includes(b.value)) return -1;
+        if (!selectedTags.includes(a.value) && selectedTags.includes(b.value)) return 1;
+
+        // Then available tags
+        const aAvailable = !a.disable;
+        const bAvailable = !b.disable;
+        if (aAvailable && !bAvailable) return -1;
+        if (!aAvailable && bAvailable) return 1;
+
+        // Keep original order
+        return 0;
+      });
   };
 
   return (
@@ -71,7 +74,7 @@ export default function SearchField({ selectedTags, onTagChange }: SearchFieldPr
           emptyIndicator={<p className="text-center text-sm">No tags found</p>}
           onChange={handleMultipleSelectorChange}
           inputProps={{ autoFocus: selectedTags.length === 0 }}
-          className="w-full rounded-xl ps-[52px] bg-zinc-200/40 dark:bg-zinc-900 border-border"
+          className="w-full rounded-xl border-border bg-zinc-200/40 ps-[52px] dark:bg-zinc-900"
         />
         <div
           className="pointer-events-none absolute inset-y-0 start-0 flex items-start justify-center ps-4 pt-2.5 text-muted-foreground"

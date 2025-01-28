@@ -1,8 +1,8 @@
 "use client";
 
+import { RiMoonClearLine, RiSunLine } from "@remixicon/react";
 import { useTheme } from "next-themes";
 import { useId } from "react";
-import { RiSunLine, RiMoonClearLine } from "@remixicon/react";
 
 export default function ThemeToggle() {
   const id = useId();
@@ -20,7 +20,7 @@ export default function ThemeToggle() {
         aria-label="Toggle dark mode"
       />
       <label
-        className="relative inline-flex text-muted-foreground size-9 cursor-pointer items-center justify-center rounded-full transition-colors peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-ring/70"
+        className="relative inline-flex size-9 cursor-pointer items-center justify-center rounded-full text-muted-foreground transition-colors peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-ring/70"
         htmlFor={id}
         aria-hidden="true"
       >
