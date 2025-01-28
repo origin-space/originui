@@ -13,12 +13,12 @@
     }
   ],
   "meta": {
+    "tags": [
+      "tooltip",
+      "hover card",
+      "image",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "tooltip",
-    "hover card",
-    "image",
-    "radix"
-  ]
+  }
 }

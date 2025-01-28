@@ -13,11 +13,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "badge",
+      "chip",
+      "checkbox"
+    ],
     "style": 1
-  },
-  "tags": [
-    "badge",
-    "chip",
-    "checkbox"
-  ]
+  }
 }

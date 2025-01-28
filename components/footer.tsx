@@ -11,7 +11,7 @@ export default function Footer() {
           A project by{" "}
           <a
             className="font-medium text-foreground underline decoration-border underline-offset-4 hover:no-underline"
-            href="https://x.com/intent/follow?screen_name=pacovitiello"
+            href="https://x.com/pacovitiello"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -20,7 +20,7 @@ export default function Footer() {
           and{" "}
           <a
             className="font-medium text-foreground underline decoration-border underline-offset-4 hover:no-underline"
-            href="https://x.com/intent/follow?screen_name=DavidePacilio"
+            href="https://x.com/DavidePacilio"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -13,11 +13,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "button",
+      "volume",
+      "controls"
+    ],
     "style": 2
-  },
-  "tags": [
-    "button",
-    "volume",
-    "controls"
-  ]
+  }
 }

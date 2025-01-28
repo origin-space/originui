@@ -14,11 +14,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "dropdown",
+      "darkmode",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "dropdown",
-    "darkmode",
-    "radix"
-  ]
+  }
 }

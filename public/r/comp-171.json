@@ -16,13 +16,13 @@
     }
   ],
   "meta": {
+    "tags": [
+      "radio",
+      "label",
+      "rating",
+      "vote",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "radio",
-    "label",
-    "rating",
-    "vote",
-    "radix"
-  ]
+  }
 }

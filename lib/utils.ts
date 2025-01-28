@@ -5,7 +5,7 @@ import type { RegistryItem } from "@/registry/schema";
 export const getComponents = (selectedTags: RegistryTag[] = []): RegistryItem[] => {
   return selectedTags.length
     ? components.filter((component) =>
-        selectedTags.every((tag) => component.tags?.includes(tag) ?? false),
+        selectedTags.every((tag) => component.meta?.tags?.includes(tag) ?? false),
       )
     : components;
 };
@@ -22,13 +22,13 @@ export const getAvailableTags = (selectedTags: RegistryTag[]): RegistryTag[] => 
 
   // Get all components that have all the selected tags
   const matchingComponents = components.filter((component) =>
-    selectedTags.every((tag) => component.tags?.includes(tag) ?? false),
+    selectedTags.every((tag) => component.meta?.tags?.includes(tag) ?? false),
   );
 
   // Get all unique tags from the matching components
   const availableTags = new Set<RegistryTag>();
   matchingComponents.forEach((component) => {
-    component.tags?.forEach((tag) => {
+    component.meta?.tags?.forEach((tag: RegistryTag) => {
       if (!selectedTags.includes(tag)) {
         availableTags.add(tag);
       }

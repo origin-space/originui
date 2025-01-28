@@ -14,12 +14,12 @@
     }
   ],
   "meta": {
+    "tags": [
+      "dropdown",
+      "kbd",
+      "delete",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "dropdown",
-    "kbd",
-    "delete",
-    "radix"
-  ]
+  }
 }

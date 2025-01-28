@@ -13,9 +13,11 @@
       "target": ""
     }
   ],
-  "tags": [
-    "input",
-    "label",
-    "required"
-  ]
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "required"
+    ]
+  }
 }

@@ -13,11 +13,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "switch",
+      "label",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "switch",
-    "label",
-    "radix"
-  ]
+  }
 }

@@ -14,10 +14,10 @@
     }
   ],
   "meta": {
+    "tags": [
+      "button",
+      "toggle"
+    ],
     "style": 2
-  },
-  "tags": [
-    "button",
-    "toggle"
-  ]
+  }
 }

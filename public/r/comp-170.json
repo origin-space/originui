@@ -13,13 +13,13 @@
     }
   ],
   "meta": {
+    "tags": [
+      "radio",
+      "label",
+      "pricing",
+      "switch",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "radio",
-    "label",
-    "pricing",
-    "switch",
-    "radix"
-  ]
+  }
 }

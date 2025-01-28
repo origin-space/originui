@@ -13,11 +13,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "table",
+      "user",
+      "avatar"
+    ],
     "colSpan": 3
-  },
-  "tags": [
-    "table",
-    "user",
-    "avatar"
-  ]
+  }
 }

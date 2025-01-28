@@ -13,9 +13,9 @@
     }
   ],
   "meta": {
+    "tags": [
+      "button"
+    ],
     "style": 2
-  },
-  "tags": [
-    "button"
-  ]
+  }
 }

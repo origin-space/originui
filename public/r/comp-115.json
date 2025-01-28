@@ -13,10 +13,10 @@
     }
   ],
   "meta": {
+    "tags": [
+      "button",
+      "previous"
+    ],
     "style": 2
-  },
-  "tags": [
-    "button",
-    "previous"
-  ]
+  }
 }

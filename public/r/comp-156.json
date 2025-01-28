@@ -14,10 +14,12 @@
       "target": ""
     }
   ],
-  "tags": [
-    "radio",
-    "label",
-    "collapsible",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "radio",
+      "label",
+      "collapsible",
+      "radix"
+    ]
+  }
 }

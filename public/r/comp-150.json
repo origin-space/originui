@@ -9,11 +9,13 @@
       "target": ""
     }
   ],
-  "tags": [
-    "checkbox",
-    "label",
-    "toggle",
-    "darkmode",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "checkbox",
+      "label",
+      "toggle",
+      "darkmode",
+      "radix"
+    ]
+  }
 }

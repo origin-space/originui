@@ -15,10 +15,12 @@
       "target": ""
     }
   ],
-  "tags": [
-    "input",
-    "label",
-    "tag",
-    "emblor"
-  ]
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "tag",
+      "emblor"
+    ]
+  }
 }

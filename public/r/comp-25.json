@@ -13,10 +13,12 @@
       "target": ""
     }
   ],
-  "tags": [
-    "input",
-    "label",
-    "search",
-    "kbd"
-  ]
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "search",
+      "kbd"
+    ]
+  }
 }

@@ -15,10 +15,12 @@
       "target": ""
     }
   ],
-  "tags": [
-    "input",
-    "label",
-    "date",
-    "react aria"
-  ]
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "date",
+      "react aria"
+    ]
+  }
 }

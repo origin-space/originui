@@ -17,9 +17,11 @@
       "target": ""
     }
   ],
-  "tags": [
-    "input",
-    "label",
-    "phone"
-  ]
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "phone"
+    ]
+  }
 }

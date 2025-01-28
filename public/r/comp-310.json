@@ -13,11 +13,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "banner",
+      "countdown",
+      "sale"
+    ],
     "colSpan": 3
-  },
-  "tags": [
-    "banner",
-    "countdown",
-    "sale"
-  ]
+  }
 }

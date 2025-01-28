@@ -13,10 +13,10 @@
     }
   ],
   "meta": {
+    "tags": [
+      "button",
+      "toggle group"
+    ],
     "style": 2
-  },
-  "tags": [
-    "button",
-    "toggle group"
-  ]
+  }
 }

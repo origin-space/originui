@@ -17,12 +17,14 @@
       "target": ""
     }
   ],
-  "tags": [
-    "input",
-    "label",
-    "checkout",
-    "payment",
-    "credit card",
-    "form"
-  ]
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "checkout",
+      "payment",
+      "credit card",
+      "form"
+    ]
+  }
 }

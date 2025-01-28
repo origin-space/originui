@@ -15,14 +15,16 @@
       "target": ""
     }
   ],
-  "tags": [
-    "label",
-    "select",
-    "command",
-    "combobox",
-    "popover",
-    "search",
-    "autocomplete",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "label",
+      "select",
+      "command",
+      "combobox",
+      "popover",
+      "search",
+      "autocomplete",
+      "radix"
+    ]
+  }
 }

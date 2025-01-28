@@ -13,14 +13,14 @@
     }
   ],
   "meta": {
+    "tags": [
+      "tooltip",
+      "hover card",
+      "user",
+      "avatar",
+      "profile",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "tooltip",
-    "hover card",
-    "user",
-    "avatar",
-    "profile",
-    "radix"
-  ]
+  }
 }

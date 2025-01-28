@@ -13,12 +13,12 @@
     }
   ],
   "meta": {
+    "tags": [
+      "button",
+      "user",
+      "avatar",
+      "profile"
+    ],
     "style": 2
-  },
-  "tags": [
-    "button",
-    "user",
-    "avatar",
-    "profile"
-  ]
+  }
 }

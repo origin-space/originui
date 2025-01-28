@@ -13,10 +13,10 @@
     }
   ],
   "meta": {
+    "tags": [
+      "button",
+      "dropdown"
+    ],
     "style": 2
-  },
-  "tags": [
-    "button",
-    "dropdown"
-  ]
+  }
 }

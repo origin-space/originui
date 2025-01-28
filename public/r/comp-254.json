@@ -22,13 +22,15 @@
       "target": ""
     }
   ],
-  "tags": [
-    "slider",
-    "label",
-    "button",
-    "input",
-    "tooltip",
-    "reset",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "slider",
+      "label",
+      "button",
+      "input",
+      "tooltip",
+      "reset",
+      "radix"
+    ]
+  }
 }

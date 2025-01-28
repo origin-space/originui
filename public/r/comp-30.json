@@ -13,9 +13,11 @@
       "target": ""
     }
   ],
-  "tags": [
-    "input",
-    "label",
-    "file"
-  ]
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "file"
+    ]
+  }
 }

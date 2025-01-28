@@ -13,12 +13,14 @@
       "target": ""
     }
   ],
-  "tags": [
-    "label",
-    "select",
-    "user",
-    "avatar",
-    "profile",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "label",
+      "select",
+      "user",
+      "avatar",
+      "profile",
+      "radix"
+    ]
+  }
 }

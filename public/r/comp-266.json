@@ -13,10 +13,12 @@
       "target": ""
     }
   ],
-  "tags": [
-    "slider",
-    "label",
-    "equalizer",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "slider",
+      "label",
+      "equalizer",
+      "radix"
+    ]
+  }
 }

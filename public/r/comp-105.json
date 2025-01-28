@@ -14,10 +14,10 @@
     }
   ],
   "meta": {
+    "tags": [
+      "button",
+      "copy"
+    ],
     "style": 2
-  },
-  "tags": [
-    "button",
-    "copy"
-  ]
+  }
 }

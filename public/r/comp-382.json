@@ -15,11 +15,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "popover",
+      "notification",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "popover",
-    "notification",
-    "radix"
-  ]
+  }
 }

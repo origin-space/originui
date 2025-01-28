@@ -13,11 +13,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "button",
+      "toggle group",
+      "dropdown"
+    ],
     "style": 2
-  },
-  "tags": [
-    "button",
-    "toggle group",
-    "dropdown"
-  ]
+  }
 }

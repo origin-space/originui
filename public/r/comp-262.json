@@ -20,11 +20,13 @@
       "target": ""
     }
   ],
-  "tags": [
-    "slider",
-    "vertical slider",
-    "label",
-    "input",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "slider",
+      "vertical slider",
+      "label",
+      "input",
+      "radix"
+    ]
+  }
 }

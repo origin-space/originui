@@ -13,10 +13,10 @@
     }
   ],
   "meta": {
+    "tags": [
+      "button",
+      "counter"
+    ],
     "style": 2
-  },
-  "tags": [
-    "button",
-    "counter"
-  ]
+  }
 }

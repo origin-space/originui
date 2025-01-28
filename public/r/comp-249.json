@@ -13,10 +13,12 @@
       "target": ""
     }
   ],
-  "tags": [
-    "slider",
-    "label",
-    "tooltip",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "slider",
+      "label",
+      "tooltip",
+      "radix"
+    ]
+  }
 }

@@ -12,11 +12,13 @@
       "target": ""
     }
   ],
-  "tags": [
-    "input",
-    "label",
-    "button",
-    "number",
-    "react aria"
-  ]
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "button",
+      "number",
+      "react aria"
+    ]
+  }
 }

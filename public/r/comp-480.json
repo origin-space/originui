@@ -18,13 +18,13 @@
     }
   ],
   "meta": {
+    "tags": [
+      "table",
+      "tanstack",
+      "flag",
+      "sticky",
+      "resize"
+    ],
     "colSpan": 3
-  },
-  "tags": [
-    "table",
-    "tanstack",
-    "flag",
-    "sticky",
-    "resize"
-  ]
+  }
 }

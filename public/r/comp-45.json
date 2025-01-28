@@ -15,9 +15,11 @@
       "target": ""
     }
   ],
-  "tags": [
-    "input",
-    "label",
-    "otp"
-  ]
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "otp"
+    ]
+  }
 }

@@ -19,15 +19,15 @@
     }
   ],
   "meta": {
+    "tags": [
+      "table",
+      "tanstack",
+      "checkbox",
+      "collapsible",
+      "flag",
+      "badge",
+      "chip"
+    ],
     "colSpan": 3
-  },
-  "tags": [
-    "table",
-    "tanstack",
-    "checkbox",
-    "collapsible",
-    "flag",
-    "badge",
-    "chip"
-  ]
+  }
 }

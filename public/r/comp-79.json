@@ -13,10 +13,10 @@
     }
   ],
   "meta": {
+    "tags": [
+      "button",
+      "disabled"
+    ],
     "style": 2
-  },
-  "tags": [
-    "button",
-    "disabled"
-  ]
+  }
 }

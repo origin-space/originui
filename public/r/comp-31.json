@@ -12,8 +12,10 @@
       "target": ""
     }
   ],
-  "tags": [
-    "input",
-    "label"
-  ]
+  "meta": {
+    "tags": [
+      "input",
+      "label"
+    ]
+  }
 }

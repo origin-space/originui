@@ -14,11 +14,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "accordion",
+      "collapsible",
+      "radix"
+    ],
     "colSpan": 2
-  },
-  "tags": [
-    "accordion",
-    "collapsible",
-    "radix"
-  ]
+  }
 }

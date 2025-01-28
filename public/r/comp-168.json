@@ -12,11 +12,13 @@
       "target": ""
     }
   ],
-  "tags": [
-    "radio",
-    "label",
-    "rating",
-    "vote",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "radio",
+      "label",
+      "rating",
+      "vote",
+      "radix"
+    ]
+  }
 }

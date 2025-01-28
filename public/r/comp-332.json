@@ -14,12 +14,12 @@
     }
   ],
   "meta": {
+    "tags": [
+      "dialog",
+      "modal",
+      "onboarding",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "dialog",
-    "modal",
-    "onboarding",
-    "radix"
-  ]
+  }
 }

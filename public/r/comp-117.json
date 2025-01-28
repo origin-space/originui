@@ -13,11 +13,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "button",
+      "like",
+      "counter"
+    ],
     "style": 2
-  },
-  "tags": [
-    "button",
-    "like",
-    "counter"
-  ]
+  }
 }

@@ -14,11 +14,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "tooltip",
+      "chart",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "tooltip",
-    "chart",
-    "radix"
-  ]
+  }
 }

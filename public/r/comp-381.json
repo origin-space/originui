@@ -16,11 +16,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "popover",
+      "filter",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "popover",
-    "filter",
-    "radix"
-  ]
+  }
 }

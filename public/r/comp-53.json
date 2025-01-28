@@ -14,9 +14,11 @@
       "target": ""
     }
   ],
-  "tags": [
-    "input",
-    "label",
-    "copy"
-  ]
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "copy"
+    ]
+  }
 }

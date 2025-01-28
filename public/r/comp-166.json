@@ -14,10 +14,12 @@
       "target": ""
     }
   ],
-  "tags": [
-    "radio",
-    "label",
-    "pricing",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "radio",
+      "label",
+      "pricing",
+      "radix"
+    ]
+  }
 }

@@ -13,11 +13,13 @@
       "target": ""
     }
   ],
-  "tags": [
-    "label",
-    "select",
-    "timezone",
-    "time",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "label",
+      "select",
+      "timezone",
+      "time",
+      "radix"
+    ]
+  }
 }

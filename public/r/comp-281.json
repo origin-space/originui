@@ -13,11 +13,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "notification",
+      "success"
+    ],
     "colSpan": 2,
     "style": 1
-  },
-  "tags": [
-    "notification",
-    "success"
-  ]
+  }
 }

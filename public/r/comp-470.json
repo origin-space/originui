@@ -13,9 +13,9 @@
     }
   ],
   "meta": {
+    "tags": [
+      "table"
+    ],
     "colSpan": 3
-  },
-  "tags": [
-    "table"
-  ]
+  }
 }

@@ -13,12 +13,12 @@
     }
   ],
   "meta": {
+    "tags": [
+      "banner",
+      "cookies",
+      "gdpr",
+      "privacy"
+    ],
     "colSpan": 3
-  },
-  "tags": [
-    "banner",
-    "cookies",
-    "gdpr",
-    "privacy"
-  ]
+  }
 }

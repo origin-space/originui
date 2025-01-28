@@ -13,17 +13,18 @@
     }
   ],
   "meta": {
+    "tags": [
+      "dialog",
+      "modal",
+      "command",
+      "combobox",
+      "popover",
+      "search",
+      "radix",
+      "autocomplete",
+      "radix",
+      null
+    ],
     "style": 1
-  },
-  "tags": [
-    "dialog",
-    "modal",
-    "command",
-    "combobox",
-    "popover",
-    "search",
-    "radix",
-    "autocomplete",
-    "radix"
-  ]
+  }
 }

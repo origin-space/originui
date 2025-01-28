@@ -13,10 +13,12 @@
       "target": ""
     }
   ],
-  "tags": [
-    "input",
-    "label",
-    "button",
-    "password"
-  ]
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "button",
+      "password"
+    ]
+  }
 }

@@ -13,11 +13,13 @@
       "target": ""
     }
   ],
-  "tags": [
-    "label",
-    "select",
-    "native select",
-    "timezone",
-    "time"
-  ]
+  "meta": {
+    "tags": [
+      "label",
+      "select",
+      "native select",
+      "timezone",
+      "time"
+    ]
+  }
 }

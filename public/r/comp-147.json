@@ -13,10 +13,12 @@
       "target": ""
     }
   ],
-  "tags": [
-    "checkbox",
-    "label",
-    "card",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "checkbox",
+      "label",
+      "card",
+      "radix"
+    ]
+  }
 }

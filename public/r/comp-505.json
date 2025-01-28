@@ -15,14 +15,14 @@
     }
   ],
   "meta": {
+    "tags": [
+      "calendar",
+      "date",
+      "time",
+      "button",
+      "react daypicker"
+    ],
     "colSpan": 3,
     "style": 1
-  },
-  "tags": [
-    "calendar",
-    "date",
-    "time",
-    "button",
-    "react daypicker"
-  ]
+  }
 }

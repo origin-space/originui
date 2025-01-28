@@ -14,11 +14,13 @@
       "target": ""
     }
   ],
-  "tags": [
-    "slider",
-    "range slider",
-    "label",
-    "button",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "slider",
+      "range slider",
+      "label",
+      "button",
+      "radix"
+    ]
+  }
 }

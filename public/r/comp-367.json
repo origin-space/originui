@@ -14,10 +14,10 @@
     }
   ],
   "meta": {
+    "tags": [
+      "dropdown",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "dropdown",
-    "radix"
-  ]
+  }
 }

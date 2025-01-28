@@ -16,12 +16,12 @@
     }
   ],
   "meta": {
+    "tags": [
+      "dialog",
+      "modal",
+      "user",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "dialog",
-    "modal",
-    "user",
-    "radix"
-  ]
+  }
 }

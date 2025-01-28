@@ -13,12 +13,12 @@
     }
   ],
   "meta": {
+    "tags": [
+      "breadcrumb",
+      "select",
+      "radix"
+    ],
     "colSpan": 2,
     "style": 1
-  },
-  "tags": [
-    "breadcrumb",
-    "select",
-    "radix"
-  ]
+  }
 }

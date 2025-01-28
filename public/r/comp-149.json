@@ -12,11 +12,13 @@
       "target": ""
     }
   ],
-  "tags": [
-    "checkbox",
-    "label",
-    "week",
-    "calendar",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "checkbox",
+      "label",
+      "week",
+      "calendar",
+      "radix"
+    ]
+  }
 }

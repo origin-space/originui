@@ -21,11 +21,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "pagination",
+      "select",
+      "radix"
+    ],
     "colSpan": 2
-  },
-  "tags": [
-    "pagination",
-    "select",
-    "radix"
-  ]
+  }
 }

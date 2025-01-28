@@ -13,9 +13,11 @@
       "target": ""
     }
   ],
-  "tags": [
-    "label",
-    "select",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "label",
+      "select",
+      "radix"
+    ]
+  }
 }

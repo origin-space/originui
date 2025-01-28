@@ -16,10 +16,12 @@
       "target": ""
     }
   ],
-  "tags": [
-    "input",
-    "label",
-    "mask",
-    "time"
-  ]
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "mask",
+      "time"
+    ]
+  }
 }

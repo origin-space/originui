@@ -14,10 +14,12 @@
       "target": ""
     }
   ],
-  "tags": [
-    "checkbox",
-    "label",
-    "tree",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "checkbox",
+      "label",
+      "tree",
+      "radix"
+    ]
+  }
 }

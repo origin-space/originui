@@ -14,10 +14,12 @@
       "target": ""
     }
   ],
-  "tags": [
-    "checkbox",
-    "label",
-    "collapsible",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "checkbox",
+      "label",
+      "collapsible",
+      "radix"
+    ]
+  }
 }

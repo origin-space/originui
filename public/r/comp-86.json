@@ -13,10 +13,10 @@
     }
   ],
   "meta": {
+    "tags": [
+      "button",
+      "next"
+    ],
     "style": 2
-  },
-  "tags": [
-    "button",
-    "next"
-  ]
+  }
 }

@@ -19,8 +19,10 @@
       "target": ""
     }
   ],
-  "tags": [
-    "label",
-    "textarea"
-  ]
+  "meta": {
+    "tags": [
+      "label",
+      "textarea"
+    ]
+  }
 }

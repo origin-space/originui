@@ -13,11 +13,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "badge",
+      "chip",
+      "tag"
+    ],
     "style": 1
-  },
-  "tags": [
-    "badge",
-    "chip",
-    "tag"
-  ]
+  }
 }

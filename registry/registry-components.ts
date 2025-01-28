@@ -14,7 +14,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label"],
+    meta: {
+      tags: ["input", "label"],
+    },
   },
   {
     name: "comp-02",
@@ -29,7 +31,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "required"],
+    meta: {
+      tags: ["input", "label", "required"],
+    },
   },
   {
     name: "comp-03",
@@ -44,7 +48,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "helper"],
+    meta: {
+      tags: ["input", "label", "helper"],
+    },
   },
   {
     name: "comp-04",
@@ -59,7 +65,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "hint"],
+    meta: {
+      tags: ["input", "label", "hint"],
+    },
   },
   {
     name: "comp-05",
@@ -74,7 +82,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label"],
+    meta: {
+      tags: ["input", "label"],
+    },
   },
   {
     name: "comp-06",
@@ -89,7 +99,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "error"],
+    meta: {
+      tags: ["input", "label", "error"],
+    },
   },
   {
     name: "comp-07",
@@ -104,7 +116,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label"],
+    meta: {
+      tags: ["input", "label"],
+    },
   },
   {
     name: "comp-08",
@@ -119,7 +133,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "disabled"],
+    meta: {
+      tags: ["input", "label", "disabled"],
+    },
   },
   {
     name: "comp-09",
@@ -134,7 +150,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label"],
+    meta: {
+      tags: ["input", "label"],
+    },
   },
   {
     name: "comp-10",
@@ -149,7 +167,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label"],
+    meta: {
+      tags: ["input", "label"],
+    },
   },
   {
     name: "comp-11",
@@ -164,7 +184,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label"],
+    meta: {
+      tags: ["input", "label"],
+    },
   },
   {
     name: "comp-12",
@@ -179,7 +201,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label"],
+    meta: {
+      tags: ["input", "label"],
+    },
   },
   {
     name: "comp-13",
@@ -194,7 +218,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label"],
+    meta: {
+      tags: ["input", "label"],
+    },
   },
   {
     name: "comp-14",
@@ -209,7 +235,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label"],
+    meta: {
+      tags: ["input", "label"],
+    },
   },
   {
     name: "comp-15",
@@ -224,7 +252,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label"],
+    meta: {
+      tags: ["input", "label"],
+    },
   },
   {
     name: "comp-16",
@@ -239,7 +269,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label"],
+    meta: {
+      tags: ["input", "label"],
+    },
   },
   {
     name: "comp-17",
@@ -254,7 +286,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "select", "native select"],
+    meta: {
+      tags: ["input", "label", "select", "native select"],
+    },
   },
   {
     name: "comp-18",
@@ -269,7 +303,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "select", "native select"],
+    meta: {
+      tags: ["input", "label", "select", "native select"],
+    },
   },
   {
     name: "comp-19",
@@ -284,7 +320,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "button"],
+    meta: {
+      tags: ["input", "label", "button"],
+    },
   },
   {
     name: "comp-20",
@@ -299,7 +337,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "button"],
+    meta: {
+      tags: ["input", "label", "button"],
+    },
   },
   {
     name: "comp-21",
@@ -314,7 +354,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "button"],
+    meta: {
+      tags: ["input", "label", "button"],
+    },
   },
   {
     name: "comp-22",
@@ -329,7 +371,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "button"],
+    meta: {
+      tags: ["input", "label", "button"],
+    },
   },
   {
     name: "comp-23",
@@ -344,7 +388,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "button", "password"],
+    meta: {
+      tags: ["input", "label", "button", "password"],
+    },
   },
   {
     name: "comp-24",
@@ -359,7 +405,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "button"],
+    meta: {
+      tags: ["input", "label", "button"],
+    },
   },
   {
     name: "comp-25",
@@ -374,7 +422,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "search", "kbd"],
+    meta: {
+      tags: ["input", "label", "search", "kbd"],
+    },
   },
   {
     name: "comp-26",
@@ -389,7 +439,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "button", "search"],
+    meta: {
+      tags: ["input", "label", "button", "search"],
+    },
   },
   {
     name: "comp-27",
@@ -404,7 +456,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "button", "search"],
+    meta: {
+      tags: ["input", "label", "button", "search"],
+    },
   },
   {
     name: "comp-28",
@@ -416,7 +470,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "button", "number", "react aria"],
+    meta: {
+      tags: ["input", "label", "button", "number", "react aria"],
+    },
   },
   {
     name: "comp-29",
@@ -428,7 +484,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "button", "number", "react aria"],
+    meta: {
+      tags: ["input", "label", "button", "number", "react aria"],
+    },
   },
   {
     name: "comp-30",
@@ -443,7 +501,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "file"],
+    meta: {
+      tags: ["input", "label", "file"],
+    },
   },
   {
     name: "comp-31",
@@ -455,7 +515,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label"],
+    meta: {
+      tags: ["input", "label"],
+    },
   },
   {
     name: "comp-32",
@@ -467,7 +529,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label"],
+    meta: {
+      tags: ["input", "label"],
+    },
   },
   {
     name: "comp-33",
@@ -478,7 +542,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label"],
+    meta: {
+      tags: ["input", "label"],
+    },
   },
   {
     name: "comp-34",
@@ -497,7 +563,9 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["input", "label"],
+    meta: {
+      tags: ["input", "label"],
+    },
   },
   {
     name: "comp-35",
@@ -516,7 +584,9 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["input", "label"],
+    meta: {
+      tags: ["input", "label"],
+    },
   },
   {
     name: "comp-36",
@@ -529,7 +599,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "date", "react aria"],
+    meta: {
+      tags: ["input", "label", "date", "react aria"],
+    },
   },
   {
     name: "comp-37",
@@ -541,7 +613,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "date", "react aria"],
+    meta: {
+      tags: ["input", "label", "date", "react aria"],
+    },
   },
   {
     name: "comp-38",
@@ -553,7 +627,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "date", "react aria"],
+    meta: {
+      tags: ["input", "label", "date", "react aria"],
+    },
   },
   {
     name: "comp-39",
@@ -565,7 +641,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "date", "react aria"],
+    meta: {
+      tags: ["input", "label", "date", "react aria"],
+    },
   },
   {
     name: "comp-40",
@@ -577,7 +655,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "date", "react aria"],
+    meta: {
+      tags: ["input", "label", "date", "react aria"],
+    },
   },
   {
     name: "comp-41",
@@ -593,7 +673,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "date", "calendar", "picker", "react aria"],
+    meta: {
+      tags: ["input", "label", "date", "calendar", "picker", "react aria"],
+    },
   },
   {
     name: "comp-42",
@@ -609,7 +691,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "date", "calendar", "range calendar", "picker", "react aria"],
+    meta: {
+      tags: ["input", "label", "date", "calendar", "range calendar", "picker", "react aria"],
+    },
   },
   {
     name: "comp-43",
@@ -625,7 +709,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "date", "calendar", "range calendar", "picker", "react aria"],
+    meta: {
+      tags: ["input", "label", "date", "calendar", "range calendar", "picker", "react aria"],
+    },
   },
   {
     name: "comp-44",
@@ -638,7 +724,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "otp"],
+    meta: {
+      tags: ["input", "label", "otp"],
+    },
   },
   {
     name: "comp-45",
@@ -651,7 +739,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "otp"],
+    meta: {
+      tags: ["input", "label", "otp"],
+    },
   },
   {
     name: "comp-46",
@@ -667,7 +757,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "phone"],
+    meta: {
+      tags: ["input", "label", "phone"],
+    },
   },
   {
     name: "comp-47",
@@ -685,7 +777,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "checkout", "payment", "credit card", "form"],
+    meta: {
+      tags: ["input", "label", "checkout", "payment", "credit card", "form"],
+    },
   },
   {
     name: "comp-48",
@@ -703,7 +797,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "checkout", "payment", "credit card", "form"],
+    meta: {
+      tags: ["input", "label", "checkout", "payment", "credit card", "form"],
+    },
   },
   {
     name: "comp-49",
@@ -721,7 +817,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "checkout", "payment", "credit card", "form"],
+    meta: {
+      tags: ["input", "label", "checkout", "payment", "credit card", "form"],
+    },
   },
   {
     name: "comp-50",
@@ -739,7 +837,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "checkout", "payment", "credit card", "form"],
+    meta: {
+      tags: ["input", "label", "checkout", "payment", "credit card", "form"],
+    },
   },
   {
     name: "comp-51",
@@ -754,7 +854,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "password"],
+    meta: {
+      tags: ["input", "label", "password"],
+    },
   },
   {
     name: "comp-52",
@@ -769,7 +871,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "read-only"],
+    meta: {
+      tags: ["input", "label", "read-only"],
+    },
   },
   {
     name: "comp-53",
@@ -785,7 +889,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "copy"],
+    meta: {
+      tags: ["input", "label", "copy"],
+    },
   },
   {
     name: "comp-54",
@@ -801,7 +907,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "mask"],
+    meta: {
+      tags: ["input", "label", "mask"],
+    },
   },
   {
     name: "comp-55",
@@ -817,7 +925,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "mask", "time"],
+    meta: {
+      tags: ["input", "label", "mask", "time"],
+    },
   },
   {
     name: "comp-56",
@@ -830,7 +940,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "tag", "emblor"],
+    meta: {
+      tags: ["input", "label", "tag", "emblor"],
+    },
   },
   {
     name: "comp-57",
@@ -843,7 +955,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "tag", "emblor"],
+    meta: {
+      tags: ["input", "label", "tag", "emblor"],
+    },
   },
   {
     name: "comp-58",
@@ -856,7 +970,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "otp"],
+    meta: {
+      tags: ["input", "label", "otp"],
+    },
   },
   {
     name: "comp-59",
@@ -871,7 +987,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "textarea"],
+    meta: {
+      tags: ["label", "textarea"],
+    },
   },
   {
     name: "comp-60",
@@ -886,7 +1004,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "textarea", "required"],
+    meta: {
+      tags: ["label", "textarea", "required"],
+    },
   },
   {
     name: "comp-61",
@@ -901,7 +1021,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "textarea", "helper"],
+    meta: {
+      tags: ["label", "textarea", "helper"],
+    },
   },
   {
     name: "comp-62",
@@ -916,7 +1038,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "textarea", "hint"],
+    meta: {
+      tags: ["label", "textarea", "hint"],
+    },
   },
   {
     name: "comp-63",
@@ -931,7 +1055,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "textarea"],
+    meta: {
+      tags: ["label", "textarea"],
+    },
   },
   {
     name: "comp-64",
@@ -946,7 +1072,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "textarea", "error"],
+    meta: {
+      tags: ["label", "textarea", "error"],
+    },
   },
   {
     name: "comp-65",
@@ -961,7 +1089,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "textarea"],
+    meta: {
+      tags: ["label", "textarea"],
+    },
   },
   {
     name: "comp-66",
@@ -976,7 +1106,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "textarea"],
+    meta: {
+      tags: ["label", "textarea"],
+    },
   },
   {
     name: "comp-67",
@@ -991,7 +1123,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "textarea", "disabled"],
+    meta: {
+      tags: ["label", "textarea", "disabled"],
+    },
   },
   {
     name: "comp-68",
@@ -1007,7 +1141,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "textarea", "button"],
+    meta: {
+      tags: ["label", "textarea", "button"],
+    },
   },
   {
     name: "comp-69",
@@ -1023,7 +1159,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "textarea", "button"],
+    meta: {
+      tags: ["label", "textarea", "button"],
+    },
   },
   {
     name: "comp-70",
@@ -1039,7 +1177,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "textarea", "button"],
+    meta: {
+      tags: ["label", "textarea", "button"],
+    },
   },
   {
     name: "comp-71",
@@ -1054,7 +1194,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "textarea"],
+    meta: {
+      tags: ["label", "textarea"],
+    },
   },
   {
     name: "comp-72",
@@ -1066,7 +1208,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "textarea"],
+    meta: {
+      tags: ["label", "textarea"],
+    },
   },
   {
     name: "comp-73",
@@ -1077,7 +1221,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "textarea"],
+    meta: {
+      tags: ["label", "textarea"],
+    },
   },
   {
     name: "comp-74",
@@ -1096,7 +1242,9 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["label", "textarea"],
+    meta: {
+      tags: ["label", "textarea"],
+    },
   },
   {
     name: "comp-75",
@@ -1111,7 +1259,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "textarea"],
+    meta: {
+      tags: ["label", "textarea"],
+    },
   },
   {
     name: "comp-76",
@@ -1126,7 +1276,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "textarea", "read-only"],
+    meta: {
+      tags: ["label", "textarea", "read-only"],
+    },
   },
   {
     name: "comp-77",
@@ -1141,7 +1293,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "textarea"],
+    meta: {
+      tags: ["label", "textarea"],
+    },
   },
   {
     name: "comp-78",
@@ -1153,8 +1307,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button"],
     meta: {
+      tags: ["button"],
       style: 2,
     },
   },
@@ -1168,8 +1322,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "disabled"],
     meta: {
+      tags: ["button", "disabled"],
       style: 2,
     },
   },
@@ -1183,8 +1337,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button"],
     meta: {
+      tags: ["button"],
       style: 2,
     },
   },
@@ -1198,8 +1352,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button"],
     meta: {
+      tags: ["button"],
       style: 2,
     },
   },
@@ -1213,8 +1367,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "delete"],
     meta: {
+      tags: ["button", "delete"],
       style: 2,
     },
   },
@@ -1228,8 +1382,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button"],
     meta: {
+      tags: ["button"],
       style: 2,
     },
   },
@@ -1243,8 +1397,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button"],
     meta: {
+      tags: ["button"],
       style: 2,
     },
   },
@@ -1258,8 +1412,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "back"],
     meta: {
+      tags: ["button", "back"],
       style: 2,
     },
   },
@@ -1273,8 +1427,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "next"],
     meta: {
+      tags: ["button", "next"],
       style: 2,
     },
   },
@@ -1288,8 +1442,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button"],
     meta: {
+      tags: ["button"],
       style: 2,
     },
   },
@@ -1303,8 +1457,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "dropdown"],
     meta: {
+      tags: ["button", "dropdown"],
       style: 2,
     },
   },
@@ -1318,8 +1472,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button"],
     meta: {
+      tags: ["button"],
       style: 2,
     },
   },
@@ -1333,8 +1487,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "loading"],
     meta: {
+      tags: ["button", "loading"],
       style: 2,
     },
   },
@@ -1348,8 +1502,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "loading"],
     meta: {
+      tags: ["button", "loading"],
       style: 2,
     },
   },
@@ -1363,8 +1517,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "counter"],
     meta: {
+      tags: ["button", "counter"],
       style: 2,
     },
   },
@@ -1378,8 +1532,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "kbd"],
     meta: {
+      tags: ["button", "kbd"],
       style: 2,
     },
   },
@@ -1393,8 +1547,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "user", "avatar", "profile"],
     meta: {
+      tags: ["button", "user", "avatar", "profile"],
       style: 2,
     },
   },
@@ -1408,8 +1562,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "user", "avatar", "profile", "dropdown"],
     meta: {
+      tags: ["button", "user", "avatar", "profile", "dropdown"],
       style: 2,
     },
   },
@@ -1423,8 +1577,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button"],
     meta: {
+      tags: ["button"],
       style: 2,
     },
   },
@@ -1438,8 +1592,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button"],
     meta: {
+      tags: ["button"],
       style: 2,
     },
   },
@@ -1453,8 +1607,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "menu"],
     meta: {
+      tags: ["button", "menu"],
       style: 2,
     },
   },
@@ -1471,8 +1625,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "tooltip"],
     meta: {
+      tags: ["button", "tooltip"],
       style: 2,
     },
   },
@@ -1486,8 +1640,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "menu", "hamburger"],
     meta: {
+      tags: ["button", "menu", "hamburger"],
       style: 2,
     },
   },
@@ -1504,8 +1658,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "toggle"],
     meta: {
+      tags: ["button", "toggle"],
       style: 2,
     },
   },
@@ -1519,8 +1673,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "vote", "counter"],
     meta: {
+      tags: ["button", "vote", "counter"],
       style: 2,
     },
   },
@@ -1534,8 +1688,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "vote", "counter"],
     meta: {
+      tags: ["button", "vote", "counter"],
       style: 2,
     },
   },
@@ -1549,8 +1703,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "volume", "controls"],
     meta: {
+      tags: ["button", "volume", "controls"],
       style: 2,
     },
   },
@@ -1567,8 +1721,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "copy"],
     meta: {
+      tags: ["button", "copy"],
       style: 2,
     },
   },
@@ -1582,8 +1736,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "toggle group"],
     meta: {
+      tags: ["button", "toggle group"],
       style: 2,
     },
   },
@@ -1597,8 +1751,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "toggle group"],
     meta: {
+      tags: ["button", "toggle group"],
       style: 2,
     },
   },
@@ -1612,8 +1766,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "toggle group", "dropdown"],
     meta: {
+      tags: ["button", "toggle group", "dropdown"],
       style: 2,
     },
   },
@@ -1627,8 +1781,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "toggle group"],
     meta: {
+      tags: ["button", "toggle group"],
       style: 2,
     },
   },
@@ -1642,8 +1796,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "toggle group"],
     meta: {
+      tags: ["button", "toggle group"],
       style: 2,
     },
   },
@@ -1657,8 +1811,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button"],
     meta: {
+      tags: ["button"],
       style: 2,
     },
   },
@@ -1672,8 +1826,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button"],
     meta: {
+      tags: ["button"],
       style: 2,
     },
   },
@@ -1687,8 +1841,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "dropdown"],
     meta: {
+      tags: ["button", "dropdown"],
       style: 2,
     },
   },
@@ -1702,8 +1856,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "dropdown", "counter"],
     meta: {
+      tags: ["button", "dropdown", "counter"],
       style: 2,
     },
   },
@@ -1717,8 +1871,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "previous"],
     meta: {
+      tags: ["button", "previous"],
       style: 2,
     },
   },
@@ -1732,8 +1886,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "next"],
     meta: {
+      tags: ["button", "next"],
       style: 2,
     },
   },
@@ -1747,8 +1901,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "like", "counter"],
     meta: {
+      tags: ["button", "like", "counter"],
       style: 2,
     },
   },
@@ -1762,8 +1916,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "like", "counter"],
     meta: {
+      tags: ["button", "like", "counter"],
       style: 2,
     },
   },
@@ -1778,8 +1932,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "social", "login", "authentication"],
     meta: {
+      tags: ["button", "social", "login", "authentication"],
       style: 2,
     },
   },
@@ -1794,8 +1948,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "social", "login", "authentication"],
     meta: {
+      tags: ["button", "social", "login", "authentication"],
       style: 2,
     },
   },
@@ -1810,8 +1964,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "social", "login", "authentication"],
     meta: {
+      tags: ["button", "social", "login", "authentication"],
       style: 2,
     },
   },
@@ -1826,8 +1980,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "social", "login", "authentication"],
     meta: {
+      tags: ["button", "social", "login", "authentication"],
       style: 2,
     },
   },
@@ -1841,8 +1995,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "collapsible"],
     meta: {
+      tags: ["button", "collapsible"],
       style: 2,
     },
   },
@@ -1856,8 +2010,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "back"],
     meta: {
+      tags: ["button", "back"],
       style: 2,
     },
   },
@@ -1875,8 +2029,8 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["button", "upload", "user", "avatar", "profile", "image"],
     meta: {
+      tags: ["button", "upload", "user", "avatar", "profile", "image"],
       style: 2,
     },
   },
@@ -1894,8 +2048,8 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["button", "upload", "user", "avatar", "profile", "image"],
     meta: {
+      tags: ["button", "upload", "user", "avatar", "profile", "image"],
       style: 2,
     },
   },
@@ -1909,8 +2063,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button"],
     meta: {
+      tags: ["button"],
       style: 2,
     },
   },
@@ -1924,8 +2078,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button"],
     meta: {
+      tags: ["button"],
       style: 2,
     },
   },
@@ -1942,8 +2096,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "dropdown", "notification"],
     meta: {
+      tags: ["button", "dropdown", "notification"],
       style: 2,
     },
   },
@@ -1957,8 +2111,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "toggle", "darkmode"],
     meta: {
+      tags: ["button", "toggle", "darkmode"],
       style: 2,
     },
   },
@@ -1975,8 +2129,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["button", "dropdown"],
     meta: {
+      tags: ["button", "dropdown"],
       style: 2,
     },
   },
@@ -1993,7 +2147,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "radix"],
+    },
   },
   {
     name: "comp-133",
@@ -2008,7 +2164,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "radix"],
+    },
   },
   {
     name: "comp-134",
@@ -2023,7 +2181,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "radix"],
+    },
   },
   {
     name: "comp-135",
@@ -2038,7 +2198,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "disabled", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "disabled", "radix"],
+    },
   },
   {
     name: "comp-136",
@@ -2053,7 +2215,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "radix"],
+    },
   },
   {
     name: "comp-137",
@@ -2068,7 +2232,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "radix"],
+    },
   },
   {
     name: "comp-138",
@@ -2083,7 +2249,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "login", "authentication", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "login", "authentication", "radix"],
+    },
   },
   {
     name: "comp-139",
@@ -2098,7 +2266,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "radix"],
+    },
   },
   {
     name: "comp-140",
@@ -2113,7 +2283,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "radix"],
+    },
   },
   {
     name: "comp-141",
@@ -2128,7 +2300,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "radix"],
+    },
   },
   {
     name: "comp-142",
@@ -2144,7 +2318,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "collapsible", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "collapsible", "radix"],
+    },
   },
   {
     name: "comp-143",
@@ -2159,7 +2335,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "radix"],
+    },
   },
   {
     name: "comp-144",
@@ -2174,7 +2352,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "card", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "card", "radix"],
+    },
   },
   {
     name: "comp-145",
@@ -2189,7 +2369,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "card", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "card", "radix"],
+    },
   },
   {
     name: "comp-146",
@@ -2204,7 +2386,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "card", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "card", "radix"],
+    },
   },
   {
     name: "comp-147",
@@ -2219,7 +2403,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "card", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "card", "radix"],
+    },
   },
   {
     name: "comp-148",
@@ -2235,7 +2421,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "tree", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "tree", "radix"],
+    },
   },
   {
     name: "comp-149",
@@ -2247,7 +2435,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "week", "calendar", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "week", "calendar", "radix"],
+    },
   },
   {
     name: "comp-150",
@@ -2258,7 +2448,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "toggle", "darkmode", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "toggle", "darkmode", "radix"],
+    },
   },
   {
     name: "comp-151",
@@ -2273,7 +2465,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["checkbox", "label", "radix"],
+    meta: {
+      tags: ["checkbox", "label", "radix"],
+    },
   },
   {
     name: "comp-152",
@@ -2288,7 +2482,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "radix"],
+    meta: {
+      tags: ["radio", "label", "radix"],
+    },
   },
   {
     name: "comp-153",
@@ -2303,7 +2499,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "radix"],
+    meta: {
+      tags: ["radio", "label", "radix"],
+    },
   },
   {
     name: "comp-154",
@@ -2318,7 +2516,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "radix"],
+    meta: {
+      tags: ["radio", "label", "radix"],
+    },
   },
   {
     name: "comp-155",
@@ -2333,7 +2533,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "radix"],
+    meta: {
+      tags: ["radio", "label", "radix"],
+    },
   },
   {
     name: "comp-156",
@@ -2349,7 +2551,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "collapsible", "radix"],
+    meta: {
+      tags: ["radio", "label", "collapsible", "radix"],
+    },
   },
   {
     name: "comp-157",
@@ -2365,7 +2569,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "rating", "radix"],
+    meta: {
+      tags: ["radio", "label", "rating", "radix"],
+    },
   },
   {
     name: "comp-158",
@@ -2377,7 +2583,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "color", "picker", "radix"],
+    meta: {
+      tags: ["radio", "label", "color", "picker", "radix"],
+    },
   },
   {
     name: "comp-159",
@@ -2392,7 +2600,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "card", "radix"],
+    meta: {
+      tags: ["radio", "label", "card", "radix"],
+    },
   },
   {
     name: "comp-160",
@@ -2407,7 +2617,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "card", "radix"],
+    meta: {
+      tags: ["radio", "label", "card", "radix"],
+    },
   },
   {
     name: "comp-161",
@@ -2422,7 +2634,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "card", "radix"],
+    meta: {
+      tags: ["radio", "label", "card", "radix"],
+    },
   },
   {
     name: "comp-162",
@@ -2437,7 +2651,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "card", "radix"],
+    meta: {
+      tags: ["radio", "label", "card", "radix"],
+    },
   },
   {
     name: "comp-163",
@@ -2450,7 +2666,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "card", "checkout", "payment", "radix"],
+    meta: {
+      tags: ["radio", "label", "card", "checkout", "payment", "radix"],
+    },
   },
   {
     name: "comp-164",
@@ -2462,7 +2680,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "card", "pricing", "radix"],
+    meta: {
+      tags: ["radio", "label", "card", "pricing", "radix"],
+    },
   },
   {
     name: "comp-165",
@@ -2477,7 +2697,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "card", "radix"],
+    meta: {
+      tags: ["radio", "label", "card", "radix"],
+    },
   },
   {
     name: "comp-166",
@@ -2493,7 +2715,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "pricing", "radix"],
+    meta: {
+      tags: ["radio", "label", "pricing", "radix"],
+    },
   },
   {
     name: "comp-167",
@@ -2505,7 +2729,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "rating", "vote", "radix"],
+    meta: {
+      tags: ["radio", "label", "rating", "vote", "radix"],
+    },
   },
   {
     name: "comp-168",
@@ -2517,7 +2743,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "rating", "vote", "radix"],
+    meta: {
+      tags: ["radio", "label", "rating", "vote", "radix"],
+    },
   },
   {
     name: "comp-169",
@@ -2529,7 +2757,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "darkmode", "radix"],
+    meta: {
+      tags: ["radio", "label", "darkmode", "radix"],
+    },
   },
   {
     name: "comp-170",
@@ -2541,8 +2771,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "pricing", "switch", "radix"],
     meta: {
+      tags: ["radio", "label", "pricing", "switch", "radix"],
       style: 1,
     },
   },
@@ -2557,8 +2787,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["radio", "label", "rating", "vote", "radix"],
     meta: {
+      tags: ["radio", "label", "rating", "vote", "radix"],
       style: 1,
     },
   },
@@ -2575,8 +2805,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["switch", "radix"],
     meta: {
+      tags: ["switch", "radix"],
       style: 1,
     },
   },
@@ -2593,8 +2823,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["switch", "radix"],
     meta: {
+      tags: ["switch", "radix"],
       style: 1,
     },
   },
@@ -2611,8 +2841,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["switch", "radix"],
     meta: {
+      tags: ["switch", "radix"],
       style: 1,
     },
   },
@@ -2629,8 +2859,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["switch", "radix"],
     meta: {
+      tags: ["switch", "radix"],
       style: 1,
     },
   },
@@ -2647,8 +2877,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["switch", "radix"],
     meta: {
+      tags: ["switch", "radix"],
       style: 1,
     },
   },
@@ -2665,8 +2895,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["switch", "radix"],
     meta: {
+      tags: ["switch", "radix"],
       style: 1,
     },
   },
@@ -2683,8 +2913,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["switch", "radix"],
     meta: {
+      tags: ["switch", "radix"],
       style: 1,
     },
   },
@@ -2701,8 +2931,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["switch", "label", "radix"],
     meta: {
+      tags: ["switch", "label", "radix"],
       style: 1,
     },
   },
@@ -2716,8 +2946,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["switch", "label", "radix"],
     meta: {
+      tags: ["switch", "label", "radix"],
       style: 1,
     },
   },
@@ -2734,8 +2964,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["switch", "label", "darkmode", "radix"],
     meta: {
+      tags: ["switch", "label", "darkmode", "radix"],
       style: 1,
     },
   },
@@ -2749,8 +2979,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["switch", "label", "darkmode", "radix"],
     meta: {
+      tags: ["switch", "label", "darkmode", "radix"],
       style: 1,
     },
   },
@@ -2767,8 +2997,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["switch", "label", "darkmode", "radix"],
     meta: {
+      tags: ["switch", "label", "darkmode", "radix"],
       style: 1,
     },
   },
@@ -2785,8 +3015,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["switch", "label", "darkmode", "radix"],
     meta: {
+      tags: ["switch", "label", "darkmode", "radix"],
       style: 1,
     },
   },
@@ -2803,8 +3033,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["switch", "label", "radix"],
     meta: {
+      tags: ["switch", "label", "radix"],
       style: 1,
     },
   },
@@ -2821,8 +3051,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["switch", "label", "card", "radix"],
     meta: {
+      tags: ["switch", "label", "card", "radix"],
       style: 1,
     },
   },
@@ -2839,8 +3069,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["switch", "label", "card", "radix"],
     meta: {
+      tags: ["switch", "label", "card", "radix"],
       style: 1,
     },
   },
@@ -2857,8 +3087,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["switch", "label", "card", "radix"],
     meta: {
+      tags: ["switch", "label", "card", "radix"],
       style: 1,
     },
   },
@@ -2875,7 +3105,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "native select"],
+    meta: {
+      tags: ["label", "select", "native select"],
+    },
   },
   {
     name: "comp-190",
@@ -2890,7 +3122,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "native select"],
+    meta: {
+      tags: ["label", "select", "native select"],
+    },
   },
   {
     name: "comp-191",
@@ -2905,7 +3139,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "native select", "time"],
+    meta: {
+      tags: ["label", "select", "native select", "time"],
+    },
   },
   {
     name: "comp-192",
@@ -2920,7 +3156,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "native select"],
+    meta: {
+      tags: ["label", "select", "native select"],
+    },
   },
   {
     name: "comp-193",
@@ -2935,7 +3173,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "native select"],
+    meta: {
+      tags: ["label", "select", "native select"],
+    },
   },
   {
     name: "comp-194",
@@ -2950,7 +3190,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "native select", "error"],
+    meta: {
+      tags: ["label", "select", "native select", "error"],
+    },
   },
   {
     name: "comp-195",
@@ -2965,7 +3207,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "native select"],
+    meta: {
+      tags: ["label", "select", "native select"],
+    },
   },
   {
     name: "comp-196",
@@ -2980,7 +3224,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "native select", "disabled"],
+    meta: {
+      tags: ["label", "select", "native select", "disabled"],
+    },
   },
   {
     name: "comp-197",
@@ -2995,7 +3241,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "native select"],
+    meta: {
+      tags: ["label", "select", "native select"],
+    },
   },
   {
     name: "comp-198",
@@ -3010,7 +3258,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "native select"],
+    meta: {
+      tags: ["label", "select", "native select"],
+    },
   },
   {
     name: "comp-199",
@@ -3025,7 +3275,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "native select"],
+    meta: {
+      tags: ["label", "select", "native select"],
+    },
   },
   {
     name: "comp-200",
@@ -3040,7 +3292,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "native select", "timezone", "time"],
+    meta: {
+      tags: ["label", "select", "native select", "timezone", "time"],
+    },
   },
   {
     name: "comp-201",
@@ -3052,7 +3306,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "native select"],
+    meta: {
+      tags: ["label", "select", "native select"],
+    },
   },
   {
     name: "comp-202",
@@ -3064,7 +3320,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "native select"],
+    meta: {
+      tags: ["label", "select", "native select"],
+    },
   },
   {
     name: "comp-203",
@@ -3079,7 +3337,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "radix"],
+    meta: {
+      tags: ["label", "select", "radix"],
+    },
   },
   {
     name: "comp-204",
@@ -3094,7 +3354,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "radix"],
+    meta: {
+      tags: ["label", "select", "radix"],
+    },
   },
   {
     name: "comp-205",
@@ -3109,7 +3371,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "radix"],
+    meta: {
+      tags: ["label", "select", "radix"],
+    },
   },
   {
     name: "comp-206",
@@ -3124,7 +3388,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "helper", "radix"],
+    meta: {
+      tags: ["label", "select", "helper", "radix"],
+    },
   },
   {
     name: "comp-207",
@@ -3139,7 +3405,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "radix"],
+    meta: {
+      tags: ["label", "select", "radix"],
+    },
   },
   {
     name: "comp-208",
@@ -3154,7 +3422,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "radix"],
+    meta: {
+      tags: ["label", "select", "radix"],
+    },
   },
   {
     name: "comp-209",
@@ -3169,7 +3439,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "radix"],
+    meta: {
+      tags: ["label", "select", "radix"],
+    },
   },
   {
     name: "comp-210",
@@ -3184,7 +3456,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "disabled", "radix"],
+    meta: {
+      tags: ["label", "select", "disabled", "radix"],
+    },
   },
   {
     name: "comp-211",
@@ -3199,7 +3473,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "required", "radix"],
+    meta: {
+      tags: ["label", "select", "required", "radix"],
+    },
   },
   {
     name: "comp-212",
@@ -3214,7 +3490,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "radix"],
+    meta: {
+      tags: ["label", "select", "radix"],
+    },
   },
   {
     name: "comp-213",
@@ -3229,7 +3507,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "radix"],
+    meta: {
+      tags: ["label", "select", "radix"],
+    },
   },
   {
     name: "comp-214",
@@ -3244,7 +3524,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "radix"],
+    meta: {
+      tags: ["label", "select", "radix"],
+    },
   },
   {
     name: "comp-215",
@@ -3259,7 +3541,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "disabled", "radix"],
+    meta: {
+      tags: ["label", "select", "disabled", "radix"],
+    },
   },
   {
     name: "comp-216",
@@ -3271,7 +3555,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "radix"],
+    meta: {
+      tags: ["label", "select", "radix"],
+    },
   },
   {
     name: "comp-217",
@@ -3283,7 +3569,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "radix"],
+    meta: {
+      tags: ["label", "select", "radix"],
+    },
   },
   {
     name: "comp-218",
@@ -3298,7 +3586,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "timezone", "time", "radix"],
+    meta: {
+      tags: ["label", "select", "timezone", "time", "radix"],
+    },
   },
   {
     name: "comp-219",
@@ -3313,7 +3603,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "radix"],
+    meta: {
+      tags: ["label", "select", "radix"],
+    },
   },
   {
     name: "comp-220",
@@ -3328,7 +3620,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "status", "radix"],
+    meta: {
+      tags: ["label", "select", "status", "radix"],
+    },
   },
   {
     name: "comp-221",
@@ -3343,7 +3637,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "radix"],
+    meta: {
+      tags: ["label", "select", "radix"],
+    },
   },
   {
     name: "comp-222",
@@ -3359,7 +3655,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "radix"],
+    meta: {
+      tags: ["label", "select", "radix"],
+    },
   },
   {
     name: "comp-223",
@@ -3375,7 +3673,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "radix"],
+    meta: {
+      tags: ["label", "select", "radix"],
+    },
   },
   {
     name: "comp-224",
@@ -3390,7 +3690,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "radix"],
+    meta: {
+      tags: ["label", "select", "radix"],
+    },
   },
   {
     name: "comp-225",
@@ -3405,7 +3707,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "flag", "radix"],
+    meta: {
+      tags: ["label", "select", "flag", "radix"],
+    },
   },
   {
     name: "comp-226",
@@ -3420,7 +3724,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "user", "avatar", "profile", "radix"],
+    meta: {
+      tags: ["label", "select", "user", "avatar", "profile", "radix"],
+    },
   },
   {
     name: "comp-227",
@@ -3435,7 +3741,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "user", "avatar", "profile", "radix"],
+    meta: {
+      tags: ["label", "select", "user", "avatar", "profile", "radix"],
+    },
   },
   {
     name: "comp-228",
@@ -3450,7 +3758,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "user", "avatar", "profile", "radix"],
+    meta: {
+      tags: ["label", "select", "user", "avatar", "profile", "radix"],
+    },
   },
   {
     name: "comp-229",
@@ -3467,7 +3777,18 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "command", "combobox", "popover", "search", "autocomplete", "radix"],
+    meta: {
+      tags: [
+        "label",
+        "select",
+        "command",
+        "combobox",
+        "popover",
+        "search",
+        "autocomplete",
+        "radix",
+      ],
+    },
   },
   {
     name: "comp-230",
@@ -3484,7 +3805,18 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "command", "combobox", "popover", "search", "autocomplete", "radix"],
+    meta: {
+      tags: [
+        "label",
+        "select",
+        "command",
+        "combobox",
+        "popover",
+        "search",
+        "autocomplete",
+        "radix",
+      ],
+    },
   },
   {
     name: "comp-231",
@@ -3501,18 +3833,20 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [
-      "label",
-      "select",
-      "command",
-      "combobox",
-      "popover",
-      "search",
-      "autocomplete",
-      "timezone",
-      "time",
-      "radix",
-    ],
+    meta: {
+      tags: [
+        "label",
+        "select",
+        "command",
+        "combobox",
+        "popover",
+        "search",
+        "autocomplete",
+        "timezone",
+        "time",
+        "radix",
+      ],
+    },
   },
   {
     name: "comp-232",
@@ -3529,17 +3863,19 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [
-      "label",
-      "select",
-      "command",
-      "combobox",
-      "popover",
-      "search",
-      "autocomplete",
-      "flag",
-      "radix",
-    ],
+    meta: {
+      tags: [
+        "label",
+        "select",
+        "command",
+        "combobox",
+        "popover",
+        "search",
+        "autocomplete",
+        "flag",
+        "radix",
+      ],
+    },
   },
   {
     name: "comp-233",
@@ -3556,7 +3892,18 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "command", "combobox", "popover", "search", "autocomplete", "radix"],
+    meta: {
+      tags: [
+        "label",
+        "select",
+        "command",
+        "combobox",
+        "popover",
+        "search",
+        "autocomplete",
+        "radix",
+      ],
+    },
   },
   {
     name: "comp-234",
@@ -3571,7 +3918,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "multiselect", "tag", "input", "search", "autocomplete", "radix"],
+    meta: {
+      tags: ["label", "select", "multiselect", "tag", "input", "search", "autocomplete", "radix"],
+    },
   },
   {
     name: "comp-235",
@@ -3586,7 +3935,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "multiselect", "tag", "input", "search", "autocomplete", "radix"],
+    meta: {
+      tags: ["label", "select", "multiselect", "tag", "input", "search", "autocomplete", "radix"],
+    },
   },
   {
     name: "comp-236",
@@ -3601,7 +3952,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "multiselect", "native select"],
+    meta: {
+      tags: ["label", "select", "multiselect", "native select"],
+    },
   },
   {
     name: "comp-237",
@@ -3614,7 +3967,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "multiselect", "react aria"],
+    meta: {
+      tags: ["label", "select", "multiselect", "react aria"],
+    },
   },
   {
     name: "comp-238",
@@ -3627,7 +3982,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "multiselect", "react aria"],
+    meta: {
+      tags: ["label", "select", "multiselect", "react aria"],
+    },
   },
   {
     name: "comp-239",
@@ -3640,7 +3997,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["label", "select", "multiselect", "react aria"],
+    meta: {
+      tags: ["label", "select", "multiselect", "react aria"],
+    },
   },
   {
     name: "comp-240",
@@ -3655,7 +4014,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "label", "radix"],
+    meta: {
+      tags: ["slider", "label", "radix"],
+    },
   },
   {
     name: "comp-241",
@@ -3670,7 +4031,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "label", "disabled", "radix"],
+    meta: {
+      tags: ["slider", "label", "disabled", "radix"],
+    },
   },
   {
     name: "comp-242",
@@ -3685,7 +4048,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "label", "radix"],
+    meta: {
+      tags: ["slider", "label", "radix"],
+    },
   },
   {
     name: "comp-243",
@@ -3700,7 +4065,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "label", "radix"],
+    meta: {
+      tags: ["slider", "label", "radix"],
+    },
   },
   {
     name: "comp-244",
@@ -3715,7 +4082,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "label", "radix"],
+    meta: {
+      tags: ["slider", "label", "radix"],
+    },
   },
   {
     name: "comp-245",
@@ -3730,7 +4099,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "label", "radix"],
+    meta: {
+      tags: ["slider", "label", "radix"],
+    },
   },
   {
     name: "comp-246",
@@ -3745,7 +4116,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "label", "radix"],
+    meta: {
+      tags: ["slider", "label", "radix"],
+    },
   },
   {
     name: "comp-247",
@@ -3760,7 +4133,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "label", "radix"],
+    meta: {
+      tags: ["slider", "label", "radix"],
+    },
   },
   {
     name: "comp-248",
@@ -3775,7 +4150,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "label", "radix"],
+    meta: {
+      tags: ["slider", "label", "radix"],
+    },
   },
   {
     name: "comp-249",
@@ -3790,7 +4167,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "label", "tooltip", "radix"],
+    meta: {
+      tags: ["slider", "label", "tooltip", "radix"],
+    },
   },
   {
     name: "comp-250",
@@ -3805,7 +4184,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "range slider", "label", "range", "radix"],
+    meta: {
+      tags: ["slider", "range slider", "label", "range", "radix"],
+    },
   },
   {
     name: "comp-251",
@@ -3820,7 +4201,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "range slider", "label", "range", "radix"],
+    meta: {
+      tags: ["slider", "range slider", "label", "range", "radix"],
+    },
   },
   {
     name: "comp-252",
@@ -3835,7 +4218,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "label", "volume", "controls", "radix"],
+    meta: {
+      tags: ["slider", "label", "volume", "controls", "radix"],
+    },
   },
   {
     name: "comp-253",
@@ -3850,7 +4235,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "range slider", "label", "range", "radix"],
+    meta: {
+      tags: ["slider", "range slider", "label", "range", "radix"],
+    },
   },
   {
     name: "comp-254",
@@ -3872,7 +4259,9 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["slider", "label", "button", "input", "tooltip", "reset", "radix"],
+    meta: {
+      tags: ["slider", "label", "button", "input", "tooltip", "reset", "radix"],
+    },
   },
   {
     name: "comp-255",
@@ -3892,7 +4281,9 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["slider", "label", "input", "radix"],
+    meta: {
+      tags: ["slider", "label", "input", "radix"],
+    },
   },
   {
     name: "comp-256",
@@ -3907,7 +4298,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "label", "vote", "rating", "radix"],
+    meta: {
+      tags: ["slider", "label", "vote", "rating", "radix"],
+    },
   },
   {
     name: "comp-257",
@@ -3922,7 +4315,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "label", "vote", "rating", "radix"],
+    meta: {
+      tags: ["slider", "label", "vote", "rating", "radix"],
+    },
   },
   {
     name: "comp-258",
@@ -3942,7 +4337,9 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["slider", "range slider", "label", "input", "range", "radix"],
+    meta: {
+      tags: ["slider", "range slider", "label", "input", "range", "radix"],
+    },
   },
   {
     name: "comp-259",
@@ -3958,7 +4355,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "label", "button", "pricing", "radix"],
+    meta: {
+      tags: ["slider", "label", "button", "pricing", "radix"],
+    },
   },
   {
     name: "comp-260",
@@ -3974,7 +4373,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "range slider", "label", "button", "radix"],
+    meta: {
+      tags: ["slider", "range slider", "label", "button", "radix"],
+    },
   },
   {
     name: "comp-261",
@@ -3989,7 +4390,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "vertical slider", "label", "radix"],
+    meta: {
+      tags: ["slider", "vertical slider", "label", "radix"],
+    },
   },
   {
     name: "comp-262",
@@ -4009,7 +4412,9 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["slider", "vertical slider", "label", "input", "radix"],
+    meta: {
+      tags: ["slider", "vertical slider", "label", "input", "radix"],
+    },
   },
   {
     name: "comp-263",
@@ -4024,7 +4429,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "vertical slider", "range slider", "label", "radix"],
+    meta: {
+      tags: ["slider", "vertical slider", "range slider", "label", "radix"],
+    },
   },
   {
     name: "comp-264",
@@ -4045,7 +4452,9 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["slider", "label", "input", "button", "reset", "radix"],
+    meta: {
+      tags: ["slider", "label", "input", "button", "reset", "radix"],
+    },
   },
   {
     name: "comp-265",
@@ -4066,7 +4475,9 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["slider", "label", "input", "button", "radix"],
+    meta: {
+      tags: ["slider", "label", "input", "button", "radix"],
+    },
   },
   {
     name: "comp-266",
@@ -4081,7 +4492,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["slider", "label", "equalizer", "radix"],
+    meta: {
+      tags: ["slider", "label", "equalizer", "radix"],
+    },
   },
   {
     name: "comp-267",
@@ -4092,8 +4505,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["alert", "warning"],
     meta: {
+      tags: ["alert", "warning"],
       colSpan: 2,
     },
   },
@@ -4106,8 +4519,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["alert", "warning"],
     meta: {
+      tags: ["alert", "warning"],
       colSpan: 2,
     },
   },
@@ -4120,8 +4533,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["alert", "error"],
     meta: {
+      tags: ["alert", "error"],
       colSpan: 2,
     },
   },
@@ -4134,8 +4547,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["alert", "error"],
     meta: {
+      tags: ["alert", "error"],
       colSpan: 2,
     },
   },
@@ -4148,8 +4561,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["alert", "success"],
     meta: {
+      tags: ["alert", "success"],
       colSpan: 2,
     },
   },
@@ -4162,8 +4575,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["alert", "success"],
     meta: {
+      tags: ["alert", "success"],
       colSpan: 2,
     },
   },
@@ -4176,8 +4589,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["alert", "info"],
     meta: {
+      tags: ["alert", "info"],
       colSpan: 2,
     },
   },
@@ -4190,8 +4603,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["alert", "info"],
     meta: {
+      tags: ["alert", "info"],
       colSpan: 2,
     },
   },
@@ -4204,8 +4617,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["alert", "warning"],
     meta: {
+      tags: ["alert", "warning"],
       colSpan: 2,
     },
   },
@@ -4218,8 +4631,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["alert", "warning"],
     meta: {
+      tags: ["alert", "warning"],
       colSpan: 2,
     },
   },
@@ -4232,8 +4645,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["alert", "error", "signup", "authentication"],
     meta: {
+      tags: ["alert", "error", "signup", "authentication"],
       colSpan: 2,
     },
   },
@@ -4246,8 +4659,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["alert", "error", "signup", "authentication"],
     meta: {
+      tags: ["alert", "error", "signup", "authentication"],
       colSpan: 2,
     },
   },
@@ -4261,8 +4674,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "warning"],
     meta: {
+      tags: ["notification", "warning"],
       colSpan: 2,
       style: 1,
     },
@@ -4277,8 +4690,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "error"],
     meta: {
+      tags: ["notification", "error"],
       colSpan: 2,
       style: 1,
     },
@@ -4293,8 +4706,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "success"],
     meta: {
+      tags: ["notification", "success"],
       colSpan: 2,
       style: 1,
     },
@@ -4309,8 +4722,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "info"],
     meta: {
+      tags: ["notification", "info"],
       colSpan: 2,
       style: 1,
     },
@@ -4325,8 +4738,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "warning"],
     meta: {
+      tags: ["notification", "warning"],
       colSpan: 2,
       style: 1,
     },
@@ -4341,8 +4754,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "error"],
     meta: {
+      tags: ["notification", "error"],
       colSpan: 2,
       style: 1,
     },
@@ -4357,8 +4770,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "success"],
     meta: {
+      tags: ["notification", "success"],
       colSpan: 2,
       style: 1,
     },
@@ -4373,8 +4786,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "info"],
     meta: {
+      tags: ["notification", "info"],
       colSpan: 2,
       style: 1,
     },
@@ -4389,8 +4802,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "button", "success"],
     meta: {
+      tags: ["notification", "button", "success"],
       colSpan: 2,
       style: 1,
     },
@@ -4405,8 +4818,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "success"],
     meta: {
+      tags: ["notification", "success"],
       colSpan: 2,
       style: 1,
     },
@@ -4421,8 +4834,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "button", "warning"],
     meta: {
+      tags: ["notification", "button", "warning"],
       colSpan: 2,
       style: 1,
     },
@@ -4437,8 +4850,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "button", "error"],
     meta: {
+      tags: ["notification", "button", "error"],
       colSpan: 2,
       style: 1,
     },
@@ -4453,8 +4866,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "button", "success"],
     meta: {
+      tags: ["notification", "button", "success"],
       colSpan: 2,
       style: 1,
     },
@@ -4469,8 +4882,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "button", "info"],
     meta: {
+      tags: ["notification", "button", "info"],
       colSpan: 2,
       style: 1,
     },
@@ -4485,8 +4898,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "button", "cookies", "gdpr", "privacy"],
     meta: {
+      tags: ["notification", "button", "cookies", "gdpr", "privacy"],
       colSpan: 2,
       style: 1,
     },
@@ -4501,8 +4914,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "button", "info"],
     meta: {
+      tags: ["notification", "button", "info"],
       colSpan: 2,
       style: 1,
     },
@@ -4517,8 +4930,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "button"],
     meta: {
+      tags: ["notification", "button"],
       colSpan: 2,
       style: 1,
     },
@@ -4533,8 +4946,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "button"],
     meta: {
+      tags: ["notification", "button"],
       colSpan: 2,
       style: 1,
     },
@@ -4556,8 +4969,8 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["notification", "toast", "radix"],
     meta: {
+      tags: ["notification", "toast", "radix"],
       colSpan: 2,
       style: 1,
     },
@@ -4575,8 +4988,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "toast", "success", "radix"],
     meta: {
+      tags: ["notification", "toast", "success", "radix"],
       colSpan: 2,
       style: 1,
     },
@@ -4592,8 +5005,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "toast", "radix"],
     meta: {
+      tags: ["notification", "toast", "radix"],
       colSpan: 2,
       style: 1,
     },
@@ -4609,8 +5022,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["notification", "toast", "success", "radix"],
     meta: {
+      tags: ["notification", "toast", "success", "radix"],
       colSpan: 2,
       style: 1,
     },
@@ -4625,8 +5038,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["banner", "cookies", "gdpr", "privacy"],
     meta: {
+      tags: ["banner", "cookies", "gdpr", "privacy"],
       colSpan: 3,
     },
   },
@@ -4639,8 +5052,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["banner"],
     meta: {
+      tags: ["banner"],
       colSpan: 3,
     },
   },
@@ -4653,8 +5066,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["banner"],
     meta: {
+      tags: ["banner"],
       colSpan: 3,
     },
   },
@@ -4667,8 +5080,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["banner"],
     meta: {
+      tags: ["banner"],
       colSpan: 3,
     },
   },
@@ -4682,8 +5095,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["banner"],
     meta: {
+      tags: ["banner"],
       colSpan: 3,
     },
   },
@@ -4697,8 +5110,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["banner"],
     meta: {
+      tags: ["banner"],
       colSpan: 3,
     },
   },
@@ -4712,8 +5125,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["banner"],
     meta: {
+      tags: ["banner"],
       colSpan: 3,
     },
   },
@@ -4727,8 +5140,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["banner"],
     meta: {
+      tags: ["banner"],
       colSpan: 3,
     },
   },
@@ -4742,8 +5155,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["banner"],
     meta: {
+      tags: ["banner"],
       colSpan: 3,
     },
   },
@@ -4757,8 +5170,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["banner", "countdown", "sale"],
     meta: {
+      tags: ["banner", "countdown", "sale"],
       colSpan: 3,
     },
   },
@@ -4771,8 +5184,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["banner", "newsletter", "subscribe"],
     meta: {
+      tags: ["banner", "newsletter", "subscribe"],
       colSpan: 3,
     },
   },
@@ -4786,8 +5199,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["banner"],
     meta: {
+      tags: ["banner"],
       colSpan: 3,
     },
   },
@@ -4804,8 +5217,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "alert", "alert dialog", "radix"],
     meta: {
+      tags: ["dialog", "modal", "alert", "alert dialog", "radix"],
       style: 1,
     },
   },
@@ -4822,8 +5235,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "alert", "alert dialog", "radix"],
     meta: {
+      tags: ["dialog", "modal", "alert", "alert dialog", "radix"],
       style: 1,
     },
   },
@@ -4840,8 +5253,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "radix"],
     meta: {
+      tags: ["dialog", "modal", "radix"],
       style: 1,
     },
   },
@@ -4859,8 +5272,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "radix"],
     meta: {
+      tags: ["dialog", "modal", "radix"],
       style: 1,
     },
   },
@@ -4877,8 +5290,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "radix"],
     meta: {
+      tags: ["dialog", "modal", "radix"],
       style: 1,
     },
   },
@@ -4895,8 +5308,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "radix"],
     meta: {
+      tags: ["dialog", "modal", "radix"],
       style: 1,
     },
   },
@@ -4913,8 +5326,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "radix"],
     meta: {
+      tags: ["dialog", "modal", "radix"],
       style: 1,
     },
   },
@@ -4933,8 +5346,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "delete", "radix"],
     meta: {
+      tags: ["dialog", "modal", "delete", "radix"],
       style: 1,
     },
   },
@@ -4952,8 +5365,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "newsletter", "subscribe", "form", "radix"],
     meta: {
+      tags: ["dialog", "modal", "newsletter", "subscribe", "form", "radix"],
       style: 1,
     },
   },
@@ -4971,8 +5384,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "feedback", "form", "radix"],
     meta: {
+      tags: ["dialog", "modal", "feedback", "form", "radix"],
       style: 1,
     },
   },
@@ -4992,8 +5405,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "rating", "feedback", "form", "radix"],
     meta: {
+      tags: ["dialog", "modal", "rating", "feedback", "form", "radix"],
       style: 1,
     },
   },
@@ -5011,8 +5424,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "otp", "radix"],
     meta: {
+      tags: ["dialog", "modal", "otp", "radix"],
       style: 1,
     },
   },
@@ -5031,8 +5444,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "signup", "authentication", "form", "radix"],
     meta: {
+      tags: ["dialog", "modal", "signup", "authentication", "form", "radix"],
       style: 1,
     },
   },
@@ -5052,8 +5465,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "login", "authentication", "form", "radix"],
     meta: {
+      tags: ["dialog", "modal", "login", "authentication", "form", "radix"],
       style: 1,
     },
   },
@@ -5073,8 +5486,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "form", "user", "team", "radix"],
     meta: {
+      tags: ["dialog", "modal", "form", "user", "team", "radix"],
       style: 1,
     },
   },
@@ -5097,8 +5510,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "checkout", "payment", "credit card", "form", "radix"],
     meta: {
+      tags: ["dialog", "modal", "checkout", "payment", "credit card", "form", "radix"],
       style: 1,
     },
   },
@@ -5122,8 +5535,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "checkout", "payment", "credit card", "form", "radix"],
     meta: {
+      tags: ["dialog", "modal", "checkout", "payment", "credit card", "form", "radix"],
       style: 1,
     },
   },
@@ -5142,8 +5555,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "user", "radix"],
     meta: {
+      tags: ["dialog", "modal", "user", "radix"],
       style: 1,
     },
   },
@@ -5171,8 +5584,8 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["dialog", "modal", "user", "profile", "image", "avatar", "form", "radix"],
     meta: {
+      tags: ["dialog", "modal", "user", "profile", "image", "avatar", "form", "radix"],
       style: 1,
     },
   },
@@ -5189,8 +5602,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dialog", "modal", "onboarding", "radix"],
     meta: {
+      tags: ["dialog", "modal", "onboarding", "radix"],
       style: 1,
     },
   },
@@ -5204,18 +5617,19 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [
-      "dialog",
-      "modal",
-      "command",
-      "combobox",
-      "popover",
-      "search",
-      "radix",
-      "autocomplete",
-      "radix",
-    ],
     meta: {
+      tags: [
+        "dialog",
+        "modal",
+        "command",
+        "combobox",
+        "popover",
+        "search",
+        "radix",
+        "autocomplete",
+        "radix",
+        ,
+      ],
       style: 1,
     },
   },
@@ -5229,8 +5643,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "radix"],
     meta: {
+      tags: ["accordion", "radix"],
       colSpan: 2,
     },
   },
@@ -5244,8 +5658,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "radix"],
     meta: {
+      tags: ["accordion", "radix"],
       colSpan: 2,
     },
   },
@@ -5259,8 +5673,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "radix"],
     meta: {
+      tags: ["accordion", "radix"],
       colSpan: 2,
     },
   },
@@ -5274,8 +5688,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "radix"],
     meta: {
+      tags: ["accordion", "radix"],
       colSpan: 2,
     },
   },
@@ -5289,8 +5703,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "radix"],
     meta: {
+      tags: ["accordion", "radix"],
       colSpan: 2,
     },
   },
@@ -5304,8 +5718,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "radix"],
     meta: {
+      tags: ["accordion", "radix"],
       colSpan: 2,
     },
   },
@@ -5319,8 +5733,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "radix"],
     meta: {
+      tags: ["accordion", "radix"],
       colSpan: 2,
     },
   },
@@ -5334,8 +5748,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "radix"],
     meta: {
+      tags: ["accordion", "radix"],
       colSpan: 2,
     },
   },
@@ -5349,8 +5763,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "radix"],
     meta: {
+      tags: ["accordion", "radix"],
       colSpan: 2,
     },
   },
@@ -5364,8 +5778,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "radix"],
     meta: {
+      tags: ["accordion", "radix"],
       colSpan: 2,
     },
   },
@@ -5379,8 +5793,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "radix"],
     meta: {
+      tags: ["accordion", "radix"],
       colSpan: 2,
     },
   },
@@ -5394,8 +5808,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "radix"],
     meta: {
+      tags: ["accordion", "radix"],
       colSpan: 2,
     },
   },
@@ -5409,8 +5823,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "radix"],
     meta: {
+      tags: ["accordion", "radix"],
       colSpan: 2,
     },
   },
@@ -5424,8 +5838,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "radix"],
     meta: {
+      tags: ["accordion", "radix"],
       colSpan: 2,
     },
   },
@@ -5439,8 +5853,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "radix"],
     meta: {
+      tags: ["accordion", "radix"],
       colSpan: 2,
     },
   },
@@ -5454,8 +5868,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "radix"],
     meta: {
+      tags: ["accordion", "radix"],
       colSpan: 2,
     },
   },
@@ -5469,8 +5883,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "radix"],
     meta: {
+      tags: ["accordion", "radix"],
       colSpan: 2,
     },
   },
@@ -5484,8 +5898,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "radix"],
     meta: {
+      tags: ["accordion", "radix"],
       colSpan: 2,
     },
   },
@@ -5502,8 +5916,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "collapsible", "radix"],
     meta: {
+      tags: ["accordion", "collapsible", "radix"],
       colSpan: 2,
     },
   },
@@ -5520,8 +5934,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["accordion", "collapsible", "radix"],
     meta: {
+      tags: ["accordion", "collapsible", "radix"],
       colSpan: 2,
     },
   },
@@ -5538,8 +5952,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tooltip", "radix"],
     meta: {
+      tags: ["tooltip", "radix"],
       style: 1,
     },
   },
@@ -5556,8 +5970,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tooltip", "radix"],
     meta: {
+      tags: ["tooltip", "radix"],
       style: 1,
     },
   },
@@ -5574,8 +5988,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tooltip", "radix"],
     meta: {
+      tags: ["tooltip", "radix"],
       style: 1,
     },
   },
@@ -5592,8 +6006,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tooltip", "radix"],
     meta: {
+      tags: ["tooltip", "radix"],
       style: 1,
     },
   },
@@ -5610,8 +6024,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tooltip", "radix"],
     meta: {
+      tags: ["tooltip", "radix"],
       style: 1,
     },
   },
@@ -5628,8 +6042,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tooltip", "image", "radix"],
     meta: {
+      tags: ["tooltip", "image", "radix"],
       style: 1,
     },
   },
@@ -5646,8 +6060,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tooltip", "button", "kbd", "radix"],
     meta: {
+      tags: ["tooltip", "button", "kbd", "radix"],
       style: 1,
     },
   },
@@ -5664,8 +6078,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tooltip", "radix"],
     meta: {
+      tags: ["tooltip", "radix"],
       style: 1,
     },
   },
@@ -5682,8 +6096,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tooltip", "chart", "radix"],
     meta: {
+      tags: ["tooltip", "chart", "radix"],
       style: 1,
     },
   },
@@ -5700,8 +6114,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tooltip", "hover card", "user", "avatar", "profile", "radix"],
     meta: {
+      tags: ["tooltip", "hover card", "user", "avatar", "profile", "radix"],
       style: 1,
     },
   },
@@ -5715,8 +6129,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tooltip", "hover card", "user", "avatar", "profile", "radix"],
     meta: {
+      tags: ["tooltip", "hover card", "user", "avatar", "profile", "radix"],
       style: 1,
     },
   },
@@ -5730,8 +6144,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tooltip", "hover card", "image", "radix"],
     meta: {
+      tags: ["tooltip", "hover card", "image", "radix"],
       style: 1,
     },
   },
@@ -5748,8 +6162,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dropdown", "radix"],
     meta: {
+      tags: ["dropdown", "radix"],
       style: 1,
     },
   },
@@ -5766,8 +6180,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dropdown", "radix"],
     meta: {
+      tags: ["dropdown", "radix"],
       style: 1,
     },
   },
@@ -5784,8 +6198,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dropdown", "radix"],
     meta: {
+      tags: ["dropdown", "radix"],
       style: 1,
     },
   },
@@ -5802,8 +6216,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dropdown", "radix"],
     meta: {
+      tags: ["dropdown", "radix"],
       style: 1,
     },
   },
@@ -5820,8 +6234,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dropdown", "radix"],
     meta: {
+      tags: ["dropdown", "radix"],
       style: 1,
     },
   },
@@ -5838,8 +6252,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dropdown", "checkbox", "radix"],
     meta: {
+      tags: ["dropdown", "checkbox", "radix"],
       style: 1,
     },
   },
@@ -5856,8 +6270,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dropdown", "radio", "radix"],
     meta: {
+      tags: ["dropdown", "radio", "radix"],
       style: 1,
     },
   },
@@ -5874,8 +6288,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dropdown", "kbd", "delete", "radix"],
     meta: {
+      tags: ["dropdown", "kbd", "delete", "radix"],
       style: 1,
     },
   },
@@ -5892,8 +6306,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dropdown", "checkbox", "radio", "delete", "radix"],
     meta: {
+      tags: ["dropdown", "checkbox", "radio", "delete", "radix"],
       style: 1,
     },
   },
@@ -5910,8 +6324,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dropdown", "user", "profile", "radix"],
     meta: {
+      tags: ["dropdown", "user", "profile", "radix"],
       style: 1,
     },
   },
@@ -5928,8 +6342,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dropdown", "user", "profile", "avatar", "radix"],
     meta: {
+      tags: ["dropdown", "user", "profile", "avatar", "radix"],
       style: 1,
     },
   },
@@ -5947,8 +6361,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dropdown", "user", "avatar", "profile", "radix"],
     meta: {
+      tags: ["dropdown", "user", "avatar", "profile", "radix"],
       style: 1,
     },
   },
@@ -5965,8 +6379,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dropdown", "info", "radix"],
     meta: {
+      tags: ["dropdown", "info", "radix"],
       style: 1,
     },
   },
@@ -5983,8 +6397,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dropdown", "text editor", "radix"],
     meta: {
+      tags: ["dropdown", "text editor", "radix"],
       style: 1,
     },
   },
@@ -6001,8 +6415,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["dropdown", "darkmode", "radix"],
     meta: {
+      tags: ["dropdown", "darkmode", "radix"],
       style: 1,
     },
   },
@@ -6021,8 +6435,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["popover", "filter", "radix"],
     meta: {
+      tags: ["popover", "filter", "radix"],
       style: 1,
     },
   },
@@ -6040,8 +6454,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["popover", "notification", "radix"],
     meta: {
+      tags: ["popover", "notification", "radix"],
       style: 1,
     },
   },
@@ -6059,8 +6473,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["popover", "notification", "user", "radix"],
     meta: {
+      tags: ["popover", "notification", "user", "radix"],
       style: 1,
     },
   },
@@ -6077,8 +6491,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["popover", "tooltip", "radix"],
     meta: {
+      tags: ["popover", "tooltip", "radix"],
       style: 1,
     },
   },
@@ -6095,8 +6509,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["popover", "tooltip", "radix"],
     meta: {
+      tags: ["popover", "tooltip", "radix"],
       style: 1,
     },
   },
@@ -6113,8 +6527,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["popover", "tooltip", "radix"],
     meta: {
+      tags: ["popover", "tooltip", "radix"],
       style: 1,
     },
   },
@@ -6133,8 +6547,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["popover", "share", "social", "copy", "radix"],
     meta: {
+      tags: ["popover", "share", "social", "copy", "radix"],
       style: 1,
     },
   },
@@ -6152,8 +6566,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["popover", "feedback", "form", "radix"],
     meta: {
+      tags: ["popover", "feedback", "form", "radix"],
       style: 1,
     },
   },
@@ -6170,8 +6584,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["popover", "tour", "radix"],
     meta: {
+      tags: ["popover", "tour", "radix"],
       style: 1,
     },
   },
@@ -6185,8 +6599,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "user", "profile"],
     meta: {
+      tags: ["avatar", "user", "profile"],
       style: 1,
     },
   },
@@ -6200,8 +6614,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "user", "profile"],
     meta: {
+      tags: ["avatar", "user", "profile"],
       style: 1,
     },
   },
@@ -6215,8 +6629,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "user", "profile"],
     meta: {
+      tags: ["avatar", "user", "profile"],
       style: 1,
     },
   },
@@ -6230,8 +6644,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "user", "profile"],
     meta: {
+      tags: ["avatar", "user", "profile"],
       style: 1,
     },
   },
@@ -6245,8 +6659,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "user", "profile", "status"],
     meta: {
+      tags: ["avatar", "user", "profile", "status"],
       style: 1,
     },
   },
@@ -6260,8 +6674,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "user", "profile", "status"],
     meta: {
+      tags: ["avatar", "user", "profile", "status"],
       style: 1,
     },
   },
@@ -6275,8 +6689,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "user", "profile", "status"],
     meta: {
+      tags: ["avatar", "user", "profile", "status"],
       style: 1,
     },
   },
@@ -6290,8 +6704,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "user", "profile", "badge", "chip"],
     meta: {
+      tags: ["avatar", "user", "profile", "badge", "chip"],
       style: 1,
     },
   },
@@ -6308,8 +6722,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "user", "profile", "badge", "chip"],
     meta: {
+      tags: ["avatar", "user", "profile", "badge", "chip"],
       style: 1,
     },
   },
@@ -6326,8 +6740,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "user", "profile", "badge", "chip"],
     meta: {
+      tags: ["avatar", "user", "profile", "badge", "chip"],
       style: 1,
     },
   },
@@ -6340,8 +6754,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "user", "profile"],
     meta: {
+      tags: ["avatar", "user", "profile"],
       style: 1,
     },
   },
@@ -6354,8 +6768,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "avatar group"],
     meta: {
+      tags: ["avatar", "avatar group"],
       style: 1,
     },
   },
@@ -6368,8 +6782,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "avatar group"],
     meta: {
+      tags: ["avatar", "avatar group"],
       style: 1,
     },
   },
@@ -6382,8 +6796,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "avatar group"],
     meta: {
+      tags: ["avatar", "avatar group"],
       style: 1,
     },
   },
@@ -6396,8 +6810,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "avatar group"],
     meta: {
+      tags: ["avatar", "avatar group"],
       style: 1,
     },
   },
@@ -6410,8 +6824,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "avatar group"],
     meta: {
+      tags: ["avatar", "avatar group"],
       style: 1,
     },
   },
@@ -6424,8 +6838,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "avatar group"],
     meta: {
+      tags: ["avatar", "avatar group"],
       style: 1,
     },
   },
@@ -6438,8 +6852,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "avatar group"],
     meta: {
+      tags: ["avatar", "avatar group"],
       style: 1,
     },
   },
@@ -6452,8 +6866,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "avatar group"],
     meta: {
+      tags: ["avatar", "avatar group"],
       style: 1,
     },
   },
@@ -6467,8 +6881,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "avatar group"],
     meta: {
+      tags: ["avatar", "avatar group"],
       style: 1,
     },
   },
@@ -6482,8 +6896,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "avatar group"],
     meta: {
+      tags: ["avatar", "avatar group"],
       style: 1,
     },
   },
@@ -6497,8 +6911,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "avatar group"],
     meta: {
+      tags: ["avatar", "avatar group"],
       style: 1,
     },
   },
@@ -6511,8 +6925,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["avatar", "avatar group"],
     meta: {
+      tags: ["avatar", "avatar group"],
       style: 1,
     },
   },
@@ -6526,8 +6940,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "chip"],
     meta: {
+      tags: ["badge", "chip"],
       style: 1,
     },
   },
@@ -6541,8 +6955,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "chip"],
     meta: {
+      tags: ["badge", "chip"],
       style: 1,
     },
   },
@@ -6556,8 +6970,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "chip"],
     meta: {
+      tags: ["badge", "chip"],
       style: 1,
     },
   },
@@ -6571,8 +6985,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "chip", "counter"],
     meta: {
+      tags: ["badge", "chip", "counter"],
       style: 1,
     },
   },
@@ -6586,8 +7000,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "chip"],
     meta: {
+      tags: ["badge", "chip"],
       style: 1,
     },
   },
@@ -6601,8 +7015,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "chip", "counter"],
     meta: {
+      tags: ["badge", "chip", "counter"],
       style: 1,
     },
   },
@@ -6616,8 +7030,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "chip", "status"],
     meta: {
+      tags: ["badge", "chip", "status"],
       style: 1,
     },
   },
@@ -6631,8 +7045,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "chip", "status"],
     meta: {
+      tags: ["badge", "chip", "status"],
       style: 1,
     },
   },
@@ -6646,8 +7060,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "chip", "status"],
     meta: {
+      tags: ["badge", "chip", "status"],
       style: 1,
     },
   },
@@ -6661,8 +7075,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "chip", "status"],
     meta: {
+      tags: ["badge", "chip", "status"],
       style: 1,
     },
   },
@@ -6676,8 +7090,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "chip", "checkbox"],
     meta: {
+      tags: ["badge", "chip", "checkbox"],
       style: 1,
     },
   },
@@ -6690,8 +7104,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "chip"],
     meta: {
+      tags: ["badge", "chip"],
       style: 1,
     },
   },
@@ -6705,8 +7119,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["badge", "chip", "tag"],
     meta: {
+      tags: ["badge", "chip", "tag"],
       style: 1,
     },
   },
@@ -6720,8 +7134,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "radix"],
     meta: {
+      tags: ["tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -6736,8 +7150,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "radix"],
     meta: {
+      tags: ["tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -6752,8 +7166,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "radix"],
     meta: {
+      tags: ["tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -6768,8 +7182,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "radix"],
     meta: {
+      tags: ["tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -6784,8 +7198,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "radix"],
     meta: {
+      tags: ["tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -6800,8 +7214,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "radix"],
     meta: {
+      tags: ["tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -6816,8 +7230,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "radix"],
     meta: {
+      tags: ["tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -6835,8 +7249,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "radix"],
     meta: {
+      tags: ["tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -6854,8 +7268,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "radix"],
     meta: {
+      tags: ["tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -6873,8 +7287,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "radix"],
     meta: {
+      tags: ["tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -6892,8 +7306,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "radix"],
     meta: {
+      tags: ["tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -6912,8 +7326,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "radix"],
     meta: {
+      tags: ["tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -6928,8 +7342,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "radix"],
     meta: {
+      tags: ["tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -6944,8 +7358,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "radix"],
     meta: {
+      tags: ["tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -6963,8 +7377,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "radix"],
     meta: {
+      tags: ["tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -6982,8 +7396,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "radix"],
     meta: {
+      tags: ["tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -6998,8 +7412,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "vertical tabs", "radix"],
     meta: {
+      tags: ["tabs", "vertical tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -7014,8 +7428,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "vertical tabs", "radix"],
     meta: {
+      tags: ["tabs", "vertical tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -7030,8 +7444,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "vertical tabs", "radix"],
     meta: {
+      tags: ["tabs", "vertical tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -7046,8 +7460,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["tabs", "vertical tabs", "radix"],
     meta: {
+      tags: ["tabs", "vertical tabs", "radix"],
       colSpan: 2,
       style: 2,
     },
@@ -7065,8 +7479,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["breadcrumb", "radix"],
     meta: {
+      tags: ["breadcrumb", "radix"],
       colSpan: 2,
       style: 1,
     },
@@ -7084,8 +7498,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["breadcrumb", "dropdown", "radix"],
     meta: {
+      tags: ["breadcrumb", "dropdown", "radix"],
       colSpan: 2,
       style: 1,
     },
@@ -7100,8 +7514,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["breadcrumb", "radix"],
     meta: {
+      tags: ["breadcrumb", "radix"],
       colSpan: 2,
       style: 1,
     },
@@ -7116,8 +7530,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["breadcrumb", "radix"],
     meta: {
+      tags: ["breadcrumb", "radix"],
       colSpan: 2,
       style: 1,
     },
@@ -7132,8 +7546,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["breadcrumb", "radix"],
     meta: {
+      tags: ["breadcrumb", "radix"],
       colSpan: 2,
       style: 1,
     },
@@ -7148,8 +7562,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["breadcrumb", "radix"],
     meta: {
+      tags: ["breadcrumb", "radix"],
       colSpan: 2,
       style: 1,
     },
@@ -7164,8 +7578,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["breadcrumb", "radix"],
     meta: {
+      tags: ["breadcrumb", "radix"],
       colSpan: 2,
       style: 1,
     },
@@ -7180,8 +7594,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["breadcrumb", "select", "radix"],
     meta: {
+      tags: ["breadcrumb", "select", "radix"],
       colSpan: 2,
       style: 1,
     },
@@ -7199,8 +7613,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["pagination"],
     meta: {
+      tags: ["pagination"],
       colSpan: 2,
     },
   },
@@ -7217,8 +7631,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["pagination"],
     meta: {
+      tags: ["pagination"],
       colSpan: 2,
     },
   },
@@ -7235,8 +7649,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["pagination"],
     meta: {
+      tags: ["pagination"],
       colSpan: 2,
     },
   },
@@ -7250,8 +7664,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["pagination"],
     meta: {
+      tags: ["pagination"],
       colSpan: 2,
     },
   },
@@ -7268,8 +7682,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["pagination"],
     meta: {
+      tags: ["pagination"],
       colSpan: 2,
     },
   },
@@ -7287,8 +7701,8 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["pagination"],
     meta: {
+      tags: ["pagination"],
       colSpan: 2,
     },
   },
@@ -7306,8 +7720,8 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["pagination"],
     meta: {
+      tags: ["pagination"],
       colSpan: 2,
     },
   },
@@ -7328,8 +7742,8 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["pagination"],
     meta: {
+      tags: ["pagination"],
       colSpan: 2,
     },
   },
@@ -7350,8 +7764,8 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["pagination"],
     meta: {
+      tags: ["pagination"],
       colSpan: 2,
     },
   },
@@ -7373,8 +7787,8 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["pagination", "select", "radix"],
     meta: {
+      tags: ["pagination", "select", "radix"],
       colSpan: 2,
     },
   },
@@ -7395,8 +7809,8 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["pagination", "select", "radix"],
     meta: {
+      tags: ["pagination", "select", "radix"],
       colSpan: 2,
     },
   },
@@ -7418,8 +7832,8 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["pagination", "input"],
     meta: {
+      tags: ["pagination", "input"],
       colSpan: 2,
     },
   },
@@ -7433,8 +7847,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table"],
     meta: {
+      tags: ["table"],
       colSpan: 3,
     },
   },
@@ -7448,8 +7862,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table", "user", "avatar"],
     meta: {
+      tags: ["table", "user", "avatar"],
       colSpan: 3,
     },
   },
@@ -7463,8 +7877,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table"],
     meta: {
+      tags: ["table"],
       colSpan: 3,
     },
   },
@@ -7478,8 +7892,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table"],
     meta: {
+      tags: ["table"],
       colSpan: 3,
     },
   },
@@ -7493,8 +7907,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table"],
     meta: {
+      tags: ["table"],
       colSpan: 3,
     },
   },
@@ -7508,8 +7922,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table"],
     meta: {
+      tags: ["table"],
       colSpan: 3,
     },
   },
@@ -7526,8 +7940,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table", "checkbox"],
     meta: {
+      tags: ["table", "checkbox"],
       colSpan: 3,
     },
   },
@@ -7544,8 +7958,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table", "checkbox", "card"],
     meta: {
+      tags: ["table", "checkbox", "card"],
       colSpan: 3,
     },
   },
@@ -7559,8 +7973,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table", "vertical table"],
     meta: {
+      tags: ["table", "vertical table"],
       colSpan: 3,
     },
   },
@@ -7574,8 +7988,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table", "sticky"],
     meta: {
+      tags: ["table", "sticky"],
       colSpan: 3,
     },
   },
@@ -7589,8 +8003,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table"],
     meta: {
+      tags: ["table"],
       colSpan: 3,
     },
   },
@@ -7609,8 +8023,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table", "tanstack", "checkbox", "badge", "chip", "flag"],
     meta: {
+      tags: ["table", "tanstack", "checkbox", "badge", "chip", "flag"],
       colSpan: 3,
     },
   },
@@ -7631,8 +8045,18 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table", "tanstack", "checkbox", "search", "select", "range", "input", "filter", "sort"],
     meta: {
+      tags: [
+        "table",
+        "tanstack",
+        "checkbox",
+        "search",
+        "select",
+        "range",
+        "input",
+        "filter",
+        "sort",
+      ],
       colSpan: 3,
     },
   },
@@ -7647,8 +8071,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table", "tanstack", "flag", "sort", "resize"],
     meta: {
+      tags: ["table", "tanstack", "flag", "sort", "resize"],
       colSpan: 3,
     },
   },
@@ -7667,8 +8091,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table", "tanstack", "flag", "sticky", "resize"],
     meta: {
+      tags: ["table", "tanstack", "flag", "sticky", "resize"],
       colSpan: 3,
     },
   },
@@ -7693,8 +8117,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table", "tanstack", "flag", "sort", "drag and drop"],
     meta: {
+      tags: ["table", "tanstack", "flag", "sort", "drag and drop"],
       colSpan: 3,
     },
   },
@@ -7714,8 +8138,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table", "tanstack", "checkbox", "collapsible", "flag", "badge", "chip"],
     meta: {
+      tags: ["table", "tanstack", "checkbox", "collapsible", "flag", "badge", "chip"],
       colSpan: 3,
     },
   },
@@ -7738,8 +8162,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["table", "tanstack", "checkbox", "sort", "flag", "badge", "chip", "pagination"],
     meta: {
+      tags: ["table", "tanstack", "checkbox", "sort", "flag", "badge", "chip", "pagination"],
       colSpan: 3,
     },
   },
@@ -7765,8 +8189,8 @@ export const components: Registry = [
         type: "registry:hook",
       },
     ],
-    tags: ["table", "tanstack", "checkbox", "sort", "flag", "badge", "chip", "pagination"],
     meta: {
+      tags: ["table", "tanstack", "checkbox", "sort", "flag", "badge", "chip", "pagination"],
       colSpan: 3,
     },
   },
@@ -7793,19 +8217,20 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: [
-      "table",
-      "tanstack",
-      "checkbox",
-      "sort",
-      "flag",
-      "badge",
-      "chip",
-      "pagination",
-      "filter",
-      "select",
-    ],
     meta: {
+      tags: [
+        "table",
+        "tanstack",
+        "checkbox",
+        "sort",
+        "flag",
+        "badge",
+        "chip",
+        "pagination",
+        "filter",
+        "select",
+        ,
+      ],
       colSpan: 3,
     },
   },
@@ -7822,7 +8247,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["input", "label", "range"],
+    meta: {
+      tags: ["input", "label", "range"],
+    },
   },
   {
     name: "comp-487",
@@ -7835,8 +8262,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "date", "react aria"],
     meta: {
+      tags: ["calendar", "date", "react aria"],
       style: 1,
     },
   },
@@ -7851,8 +8278,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "range calendar", "date", "react aria"],
     meta: {
+      tags: ["calendar", "range calendar", "date", "react aria"],
       style: 1,
     },
   },
@@ -7867,8 +8294,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "range calendar", "date", "disabled", "react aria"],
     meta: {
+      tags: ["calendar", "range calendar", "date", "disabled", "react aria"],
       style: 1,
     },
   },
@@ -7882,8 +8309,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "date", "react daypicker"],
     meta: {
+      tags: ["calendar", "date", "react daypicker"],
       style: 1,
     },
   },
@@ -7897,8 +8324,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "range calendar", "date", "react daypicker"],
     meta: {
+      tags: ["calendar", "range calendar", "date", "react daypicker"],
       style: 1,
     },
   },
@@ -7912,8 +8339,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "range calendar", "date", "disabled", "react daypicker"],
     meta: {
+      tags: ["calendar", "range calendar", "date", "disabled", "react daypicker"],
       style: 1,
     },
   },
@@ -7927,8 +8354,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "date", "react daypicker"],
     meta: {
+      tags: ["calendar", "date", "react daypicker"],
       style: 1,
     },
   },
@@ -7942,8 +8369,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "date", "react daypicker"],
     meta: {
+      tags: ["calendar", "date", "react daypicker"],
       style: 1,
     },
   },
@@ -7957,8 +8384,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "range calendar", "date", "react daypicker"],
     meta: {
+      tags: ["calendar", "range calendar", "date", "react daypicker"],
       style: 1,
     },
   },
@@ -7972,8 +8399,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "date", "react daypicker"],
     meta: {
+      tags: ["calendar", "date", "react daypicker"],
       style: 1,
     },
   },
@@ -7990,8 +8417,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "date", "react daypicker"],
     meta: {
+      tags: ["calendar", "date", "react daypicker"],
       style: 1,
     },
   },
@@ -8008,8 +8435,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "date", "react daypicker"],
     meta: {
+      tags: ["calendar", "date", "react daypicker"],
       style: 1,
     },
   },
@@ -8023,8 +8450,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "date", "week", "react daypicker"],
     meta: {
+      tags: ["calendar", "date", "week", "react daypicker"],
       style: 1,
     },
   },
@@ -8041,8 +8468,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "date", "button", "react daypicker"],
     meta: {
+      tags: ["calendar", "date", "button", "react daypicker"],
       style: 1,
     },
   },
@@ -8059,8 +8486,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "date", "button", "react daypicker"],
     meta: {
+      tags: ["calendar", "date", "button", "react daypicker"],
       style: 1,
     },
   },
@@ -8078,8 +8505,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "date", "input", "react daypicker"],
     meta: {
+      tags: ["calendar", "date", "input", "react daypicker"],
       style: 1,
     },
   },
@@ -8097,8 +8524,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "date", "input", "time", "react daypicker"],
     meta: {
+      tags: ["calendar", "date", "input", "time", "react daypicker"],
       style: 1,
     },
   },
@@ -8117,8 +8544,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "date", "collapsible", "react daypicker", "radix"],
     meta: {
+      tags: ["calendar", "date", "collapsible", "react daypicker", "radix"],
       style: 1,
     },
   },
@@ -8136,8 +8563,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "date", "time", "button", "react daypicker"],
     meta: {
+      tags: ["calendar", "date", "time", "button", "react daypicker"],
       colSpan: 3,
       style: 1,
     },
@@ -8155,8 +8582,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "date", "button", "react daypicker"],
     meta: {
+      tags: ["calendar", "date", "button", "react daypicker"],
       colSpan: 3,
       style: 1,
     },
@@ -8174,8 +8601,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "range calendar", "date", "button", "react daypicker"],
     meta: {
+      tags: ["calendar", "range calendar", "date", "button", "react daypicker"],
       colSpan: 3,
       style: 1,
     },
@@ -8190,8 +8617,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "range calendar", "date", "react daypicker"],
     meta: {
+      tags: ["calendar", "range calendar", "date", "react daypicker"],
       colSpan: 3,
       style: 1,
     },
@@ -8206,8 +8633,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "range calendar", "date", "react daypicker"],
     meta: {
+      tags: ["calendar", "range calendar", "date", "react daypicker"],
       colSpan: 3,
       style: 1,
     },
@@ -8222,8 +8649,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "date", "react daypicker"],
     meta: {
+      tags: ["calendar", "date", "react daypicker"],
       colSpan: 3,
       style: 1,
     },
@@ -8243,7 +8670,9 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "date", "button", "picker", "react daypicker"],
+    meta: {
+      tags: ["calendar", "date", "button", "picker", "react daypicker"],
+    },
   },
   {
     name: "comp-512",
@@ -8260,6 +8689,8 @@ export const components: Registry = [
         type: "registry:component",
       },
     ],
-    tags: ["calendar", "date", "button", "picker", "react daypicker"],
+    meta: {
+      tags: ["calendar", "date", "button", "picker", "react daypicker"],
+    },
   },
 ];

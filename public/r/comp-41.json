@@ -16,12 +16,14 @@
       "target": ""
     }
   ],
-  "tags": [
-    "input",
-    "label",
-    "date",
-    "calendar",
-    "picker",
-    "react aria"
-  ]
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "date",
+      "calendar",
+      "picker",
+      "react aria"
+    ]
+  }
 }

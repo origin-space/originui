@@ -14,9 +14,9 @@
     }
   ],
   "meta": {
+    "tags": [
+      "pagination"
+    ],
     "colSpan": 2
-  },
-  "tags": [
-    "pagination"
-  ]
+  }
 }

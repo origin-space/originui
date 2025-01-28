@@ -17,12 +17,12 @@
     }
   ],
   "meta": {
+    "tags": [
+      "dialog",
+      "modal",
+      "otp",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "dialog",
-    "modal",
-    "otp",
-    "radix"
-  ]
+  }
 }

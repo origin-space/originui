@@ -15,13 +15,13 @@
     }
   ],
   "meta": {
+    "tags": [
+      "dialog",
+      "modal",
+      "feedback",
+      "form",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "dialog",
-    "modal",
-    "feedback",
-    "form",
-    "radix"
-  ]
+  }
 }

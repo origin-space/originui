@@ -13,10 +13,10 @@
     }
   ],
   "meta": {
+    "tags": [
+      "table",
+      "vertical table"
+    ],
     "colSpan": 3
-  },
-  "tags": [
-    "table",
-    "vertical table"
-  ]
+  }
 }

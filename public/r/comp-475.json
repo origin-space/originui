@@ -13,10 +13,10 @@
     }
   ],
   "meta": {
+    "tags": [
+      "table",
+      "sticky"
+    ],
     "colSpan": 3
-  },
-  "tags": [
-    "table",
-    "sticky"
-  ]
+  }
 }

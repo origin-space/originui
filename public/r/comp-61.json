@@ -13,9 +13,11 @@
       "target": ""
     }
   ],
-  "tags": [
-    "label",
-    "textarea",
-    "helper"
-  ]
+  "meta": {
+    "tags": [
+      "label",
+      "textarea",
+      "helper"
+    ]
+  }
 }

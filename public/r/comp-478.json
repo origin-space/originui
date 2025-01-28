@@ -20,17 +20,17 @@
     }
   ],
   "meta": {
+    "tags": [
+      "table",
+      "tanstack",
+      "checkbox",
+      "search",
+      "select",
+      "range",
+      "input",
+      "filter",
+      "sort"
+    ],
     "colSpan": 3
-  },
-  "tags": [
-    "table",
-    "tanstack",
-    "checkbox",
-    "search",
-    "select",
-    "range",
-    "input",
-    "filter",
-    "sort"
-  ]
+  }
 }

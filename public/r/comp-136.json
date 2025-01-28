@@ -13,9 +13,11 @@
       "target": ""
     }
   ],
-  "tags": [
-    "checkbox",
-    "label",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "checkbox",
+      "label",
+      "radix"
+    ]
+  }
 }

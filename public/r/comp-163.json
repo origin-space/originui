@@ -15,12 +15,14 @@
       "target": ""
     }
   ],
-  "tags": [
-    "radio",
-    "label",
-    "card",
-    "checkout",
-    "payment",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "radio",
+      "label",
+      "card",
+      "checkout",
+      "payment",
+      "radix"
+    ]
+  }
 }

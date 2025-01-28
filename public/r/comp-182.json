@@ -13,12 +13,12 @@
     }
   ],
   "meta": {
+    "tags": [
+      "switch",
+      "label",
+      "darkmode",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "switch",
-    "label",
-    "darkmode",
-    "radix"
-  ]
+  }
 }

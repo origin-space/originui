@@ -14,13 +14,13 @@
     }
   ],
   "meta": {
+    "tags": [
+      "notification",
+      "toast",
+      "success",
+      "radix"
+    ],
     "colSpan": 2,
     "style": 1
-  },
-  "tags": [
-    "notification",
-    "toast",
-    "success",
-    "radix"
-  ]
+  }
 }

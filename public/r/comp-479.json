@@ -16,13 +16,13 @@
     }
   ],
   "meta": {
+    "tags": [
+      "table",
+      "tanstack",
+      "flag",
+      "sort",
+      "resize"
+    ],
     "colSpan": 3
-  },
-  "tags": [
-    "table",
-    "tanstack",
-    "flag",
-    "sort",
-    "resize"
-  ]
+  }
 }

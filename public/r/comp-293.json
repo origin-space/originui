@@ -13,14 +13,14 @@
     }
   ],
   "meta": {
+    "tags": [
+      "notification",
+      "button",
+      "cookies",
+      "gdpr",
+      "privacy"
+    ],
     "colSpan": 2,
     "style": 1
-  },
-  "tags": [
-    "notification",
-    "button",
-    "cookies",
-    "gdpr",
-    "privacy"
-  ]
+  }
 }

@@ -16,12 +16,12 @@
     }
   ],
   "meta": {
+    "tags": [
+      "calendar",
+      "range calendar",
+      "date",
+      "react aria"
+    ],
     "style": 1
-  },
-  "tags": [
-    "calendar",
-    "range calendar",
-    "date",
-    "react aria"
-  ]
+  }
 }

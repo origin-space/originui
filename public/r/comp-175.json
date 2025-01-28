@@ -14,10 +14,10 @@
     }
   ],
   "meta": {
+    "tags": [
+      "switch",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "switch",
-    "radix"
-  ]
+  }
 }

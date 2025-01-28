@@ -26,18 +26,19 @@
     }
   ],
   "meta": {
+    "tags": [
+      "table",
+      "tanstack",
+      "checkbox",
+      "sort",
+      "flag",
+      "badge",
+      "chip",
+      "pagination",
+      "filter",
+      "select",
+      null
+    ],
     "colSpan": 3
-  },
-  "tags": [
-    "table",
-    "tanstack",
-    "checkbox",
-    "sort",
-    "flag",
-    "badge",
-    "chip",
-    "pagination",
-    "filter",
-    "select"
-  ]
+  }
 }

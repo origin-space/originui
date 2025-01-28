@@ -16,11 +16,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "calendar",
+      "date",
+      "react aria"
+    ],
     "style": 1
-  },
-  "tags": [
-    "calendar",
-    "date",
-    "react aria"
-  ]
+  }
 }

@@ -13,10 +13,10 @@
     }
   ],
   "meta": {
+    "tags": [
+      "button",
+      "kbd"
+    ],
     "style": 2
-  },
-  "tags": [
-    "button",
-    "kbd"
-  ]
+  }
 }

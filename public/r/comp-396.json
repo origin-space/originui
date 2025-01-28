@@ -13,12 +13,12 @@
     }
   ],
   "meta": {
+    "tags": [
+      "avatar",
+      "user",
+      "profile",
+      "status"
+    ],
     "style": 1
-  },
-  "tags": [
-    "avatar",
-    "user",
-    "profile",
-    "status"
-  ]
+  }
 }

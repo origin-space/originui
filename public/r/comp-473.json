@@ -14,11 +14,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "table",
+      "checkbox",
+      "card"
+    ],
     "colSpan": 3
-  },
-  "tags": [
-    "table",
-    "checkbox",
-    "card"
-  ]
+  }
 }

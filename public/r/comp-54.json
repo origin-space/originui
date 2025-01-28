@@ -16,9 +16,11 @@
       "target": ""
     }
   ],
-  "tags": [
-    "input",
-    "label",
-    "mask"
-  ]
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "mask"
+    ]
+  }
 }

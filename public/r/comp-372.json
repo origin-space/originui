@@ -14,11 +14,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "dropdown",
+      "radio",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "dropdown",
-    "radio",
-    "radix"
-  ]
+  }
 }

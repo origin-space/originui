@@ -13,9 +13,9 @@
     }
   ],
   "meta": {
+    "tags": [
+      "banner"
+    ],
     "colSpan": 3
-  },
-  "tags": [
-    "banner"
-  ]
+  }
 }

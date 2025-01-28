@@ -13,10 +13,12 @@
       "target": ""
     }
   ],
-  "tags": [
-    "label",
-    "select",
-    "native select",
-    "time"
-  ]
+  "meta": {
+    "tags": [
+      "label",
+      "select",
+      "native select",
+      "time"
+    ]
+  }
 }

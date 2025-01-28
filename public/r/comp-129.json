@@ -14,11 +14,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "button",
+      "dropdown",
+      "notification"
+    ],
     "style": 2
-  },
-  "tags": [
-    "button",
-    "dropdown",
-    "notification"
-  ]
+  }
 }

@@ -13,11 +13,11 @@
     }
   ],
   "meta": {
+    "tags": [
+      "notification",
+      "info"
+    ],
     "colSpan": 2,
     "style": 1
-  },
-  "tags": [
-    "notification",
-    "info"
-  ]
+  }
 }

@@ -16,13 +16,13 @@
     }
   ],
   "meta": {
+    "tags": [
+      "popover",
+      "share",
+      "social",
+      "copy",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "popover",
-    "share",
-    "social",
-    "copy",
-    "radix"
-  ]
+  }
 }

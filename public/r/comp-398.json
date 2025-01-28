@@ -14,13 +14,13 @@
     }
   ],
   "meta": {
+    "tags": [
+      "avatar",
+      "user",
+      "profile",
+      "badge",
+      "chip"
+    ],
     "style": 1
-  },
-  "tags": [
-    "avatar",
-    "user",
-    "profile",
-    "badge",
-    "chip"
-  ]
+  }
 }

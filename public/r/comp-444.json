@@ -13,12 +13,12 @@
     }
   ],
   "meta": {
+    "tags": [
+      "tabs",
+      "vertical tabs",
+      "radix"
+    ],
     "colSpan": 2,
     "style": 2
-  },
-  "tags": [
-    "tabs",
-    "vertical tabs",
-    "radix"
-  ]
+  }
 }

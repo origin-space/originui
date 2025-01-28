@@ -15,12 +15,12 @@
     }
   ],
   "meta": {
+    "tags": [
+      "popover",
+      "feedback",
+      "form",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "popover",
-    "feedback",
-    "form",
-    "radix"
-  ]
+  }
 }

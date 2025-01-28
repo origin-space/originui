@@ -21,12 +21,14 @@
       "target": ""
     }
   ],
-  "tags": [
-    "slider",
-    "label",
-    "input",
-    "button",
-    "reset",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "slider",
+      "label",
+      "input",
+      "button",
+      "reset",
+      "radix"
+    ]
+  }
 }

@@ -13,13 +13,13 @@
     }
   ],
   "meta": {
+    "tags": [
+      "calendar",
+      "range calendar",
+      "date",
+      "disabled",
+      "react daypicker"
+    ],
     "style": 1
-  },
-  "tags": [
-    "calendar",
-    "range calendar",
-    "date",
-    "disabled",
-    "react daypicker"
-  ]
+  }
 }

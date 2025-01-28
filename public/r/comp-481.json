@@ -22,13 +22,13 @@
     }
   ],
   "meta": {
+    "tags": [
+      "table",
+      "tanstack",
+      "flag",
+      "sort",
+      "drag and drop"
+    ],
     "colSpan": 3
-  },
-  "tags": [
-    "table",
-    "tanstack",
-    "flag",
-    "sort",
-    "drag and drop"
-  ]
+  }
 }

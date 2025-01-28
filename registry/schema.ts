@@ -1,5 +1,3 @@
-import type { RegistryTag } from "@/registry/registry-tags";
-import { registryTags } from "@/registry/registry-tags";
 import { z } from "zod";
 
 export const registryItemTypeSchema = z.enum([
@@ -42,15 +40,13 @@ export const registryItemSchema = z.object({
   meta: z.record(z.string(), z.any()).optional(),
   docs: z.string().optional(),
   categories: z.array(z.string()).optional(),
-  tags: z.array(z.enum(registryTags)).optional(),
 });
 
 export const registrySchema = z.array(registryItemSchema);
 
-export type RegistryItem = z.infer<typeof registryItemSchema> & {
-  tags?: RegistryTag[];
-};
-export type Registry = RegistryItem[];
+export type RegistryItem = z.infer<typeof registryItemSchema>;
+
+export type Registry = z.infer<typeof registrySchema>;
 
 export const blockSchema = registryItemSchema.extend({
   type: z.literal("registry:block"),

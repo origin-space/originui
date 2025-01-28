@@ -19,14 +19,14 @@
     }
   ],
   "meta": {
+    "tags": [
+      "button",
+      "upload",
+      "user",
+      "avatar",
+      "profile",
+      "image"
+    ],
     "style": 2
-  },
-  "tags": [
-    "button",
-    "upload",
-    "user",
-    "avatar",
-    "profile",
-    "image"
-  ]
+  }
 }

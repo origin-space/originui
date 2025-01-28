@@ -13,10 +13,10 @@
     }
   ],
   "meta": {
+    "tags": [
+      "accordion",
+      "radix"
+    ],
     "colSpan": 2
-  },
-  "tags": [
-    "accordion",
-    "radix"
-  ]
+  }
 }

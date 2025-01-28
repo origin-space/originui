@@ -21,10 +21,10 @@
     }
   ],
   "meta": {
+    "tags": [
+      "pagination",
+      "input"
+    ],
     "colSpan": 2
-  },
-  "tags": [
-    "pagination",
-    "input"
-  ]
+  }
 }

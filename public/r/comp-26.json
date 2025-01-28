@@ -13,10 +13,12 @@
       "target": ""
     }
   ],
-  "tags": [
-    "input",
-    "label",
-    "button",
-    "search"
-  ]
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "button",
+      "search"
+    ]
+  }
 }

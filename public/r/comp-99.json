@@ -14,10 +14,10 @@
     }
   ],
   "meta": {
+    "tags": [
+      "button",
+      "tooltip"
+    ],
     "style": 2
-  },
-  "tags": [
-    "button",
-    "tooltip"
-  ]
+  }
 }

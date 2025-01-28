@@ -15,10 +15,12 @@
       "target": ""
     }
   ],
-  "tags": [
-    "label",
-    "select",
-    "multiselect",
-    "react aria"
-  ]
+  "meta": {
+    "tags": [
+      "label",
+      "select",
+      "multiselect",
+      "react aria"
+    ]
+  }
 }

@@ -15,13 +15,13 @@
     }
   ],
   "meta": {
+    "tags": [
+      "dropdown",
+      "user",
+      "avatar",
+      "profile",
+      "radix"
+    ],
     "style": 1
-  },
-  "tags": [
-    "dropdown",
-    "user",
-    "avatar",
-    "profile",
-    "radix"
-  ]
+  }
 }

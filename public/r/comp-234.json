@@ -13,14 +13,16 @@
       "target": ""
     }
   ],
-  "tags": [
-    "label",
-    "select",
-    "multiselect",
-    "tag",
-    "input",
-    "search",
-    "autocomplete",
-    "radix"
-  ]
+  "meta": {
+    "tags": [
+      "label",
+      "select",
+      "multiselect",
+      "tag",
+      "input",
+      "search",
+      "autocomplete",
+      "radix"
+    ]
+  }
 }
