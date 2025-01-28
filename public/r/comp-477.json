@@ -25,6 +25,7 @@
     "tanstack",
     "checkbox",
     "badge",
+    "chip",
     "flag"
   ]
 }

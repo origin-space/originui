@@ -9,16 +9,12 @@ import { getComponentsByNames } from "@/lib/utils";
 import { getCategory } from "@/config/components";
 import type { Metadata } from "next";
 
-interface Props {
-  params: {
-    category: string;
-  };
+type Props = {
+  params: Promise<{ category: string }>
 }
 
-export async function generateMetadata({
-  params
-}: Props): Promise<Metadata> {
-  const category = getCategory(params.category);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const category = getCategory((await params).category);
 
   if (!category) {
     return {};
@@ -32,10 +28,8 @@ export async function generateMetadata({
 
 export default async function Page({
   params,
-}: {
-  params: { category: string }
-}) {
-  const category = getCategory(params.category);
+}: Props) {
+  const category = getCategory((await params).category);
 
   if (!category) {
     notFound()

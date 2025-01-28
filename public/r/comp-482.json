@@ -27,6 +27,7 @@
     "checkbox",
     "collapsible",
     "flag",
-    "badge"
+    "badge",
+    "chip"
   ]
 }

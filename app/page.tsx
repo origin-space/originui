@@ -20,7 +20,7 @@ export default function Page() {
 
       <div className="grid grid-cols-4 gap-6 my-16 md:my-20">
         {categories.map((category) => (
-          <div className="space-y-3">
+          <div key={category.slug} className="space-y-3">
             <Link href={`/${category.slug}`} className="block rounded-xl border border-border overflow-hidden" tabIndex={-1}>
               <Image className="dark:hidden" src={`/thumbs/${category.slug}.png`} alt={`${category.name} components`} width={268} height={198} />
               <Image className="hidden dark:block" src={`/thumbs/${category.slug}-dark.png`} alt={`${category.name} components dark`} width={268} height={198} />

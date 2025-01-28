@@ -13,6 +13,9 @@
       "target": ""
     }
   ],
+  "meta": {
+    "style": 1
+  },
   "tags": [
     "switch",
     "radix"

@@ -2544,7 +2544,7 @@ export const components: Registry = [
     tags: ["radio", "label", "pricing", "switch", "radix"],
     meta: {
       style: 1,
-    },    
+    },
   },
   {
     name: "comp-171",
@@ -7789,7 +7789,8 @@ export const components: Registry = [
       "checkbox",
       "sort",
       "flag",
-      "badge", "chip",
+      "badge",
+      "chip",
       "pagination",
       "filter",
       "select",
