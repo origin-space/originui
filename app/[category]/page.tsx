@@ -1,11 +1,10 @@
-import { categories } from "@/config/components";
 import ComponentCard from "@/components/component-card";
 import ComponentDetails from "@/components/component-details";
 import ComponentLoader from "@/components/component-loader-server";
 import Cta from "@/components/cta";
 import PageGrid from "@/components/page-grid";
 import PageHeader from "@/components/page-header";
-import { getCategory } from "@/config/components";
+import { categories, getCategory } from "@/config/components";
 import { getComponentsByNames } from "@/lib/utils";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -27,10 +26,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export async function generateStaticParams() {  
+export async function generateStaticParams() {
   return categories.map((category) => ({
-    category: category.slug
-  }))
+    category: category.slug,
+  }));
 }
 
 export default async function Page({ params }: Props) {

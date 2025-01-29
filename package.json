@@ -25,8 +25,8 @@
   "scripts": {
     "format": "prettier --write .",
     "dev": "next dev --turbopack",
-    "build": "pnpm build:registry && next build",
-    "build:registry": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts && prettier --log-level silent --write \"registry/**/*.{ts,tsx,mdx}\" --cache",
+    "build": "pnpm registry:build && pnpm format && next build",
+    "registry:build": "shadcn build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -80,6 +80,7 @@
     "react-payment-inputs": "^1.2.0",
     "react-phone-number-input": "^3.4.10",
     "react-resizable-panels": "^2.1.7",
+    "shadcn": "^2.3.0",
     "sonner": "^1.7.1",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",

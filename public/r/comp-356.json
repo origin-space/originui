@@ -1,4 +1,5 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-356",
   "type": "registry:component",
   "registryDependencies": [
@@ -7,10 +8,9 @@
   ],
   "files": [
     {
-      "path": "components/comp-356.tsx",
-      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/registry/default/ui/tooltip\";\n\nexport default function Component() {\n  return (\n    <TooltipProvider delayDuration={0}>\n      <Tooltip>\n        <TooltipTrigger asChild>\n          <Button variant=\"outline\" size=\"sm\">\n            W/ arrow\n          </Button>\n        </TooltipTrigger>\n        <TooltipContent className=\"dark px-2 py-1 text-xs\" showArrow={true}>\n          This tooltip has an arrow\n        </TooltipContent>\n      </Tooltip>\n    </TooltipProvider>\n  );\n}\n",
-      "type": "registry:component",
-      "target": ""
+      "path": "registry/default/components/comp-356.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from \"@/registry/default/ui/tooltip\";\n\nexport default function Component() {\n  return (\n    <TooltipProvider delayDuration={0}>\n      <Tooltip>\n        <TooltipTrigger asChild>\n          <Button variant=\"outline\" size=\"sm\">\n            W/ arrow\n          </Button>\n        </TooltipTrigger>\n        <TooltipContent className=\"dark px-2 py-1 text-xs\" showArrow={true}>\n          This tooltip has an arrow\n        </TooltipContent>\n      </Tooltip>\n    </TooltipProvider>\n  );\n}\n",
+      "type": "registry:component"
     }
   ],
   "meta": {

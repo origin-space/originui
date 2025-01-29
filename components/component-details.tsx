@@ -19,10 +19,10 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/registry/default/ui/tooltip";
-import type { RegistryItem } from "@/registry/schema";
 import { DialogDescription } from "@radix-ui/react-dialog";
 import { Code } from "lucide-react";
 import { JSX, useEffect, useState } from "react";
+import type { RegistryItem } from "shadcn/registry";
 
 export default function ComponentDetails({ component }: { component: RegistryItem }) {
   const [code, setCode] = useState<string | null>(null);

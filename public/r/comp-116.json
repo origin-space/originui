@@ -1,4 +1,5 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-116",
   "type": "registry:component",
   "registryDependencies": [
@@ -6,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "components/comp-116.tsx",
+      "path": "registry/default/components/comp-116.tsx",
       "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { ChevronRight } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Button className=\"relative pe-12\">\n      Next\n      <span className=\"pointer-events-none absolute inset-y-0 end-0 flex w-9 items-center justify-center bg-primary-foreground/15\">\n        <ChevronRight className=\"opacity-60\" size={16} strokeWidth={2} aria-hidden=\"true\" />\n      </span>\n    </Button>\n  );\n}\n",
-      "type": "registry:component",
-      "target": ""
+      "type": "registry:component"
     }
   ],
   "meta": {

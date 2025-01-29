@@ -1,5 +1,5 @@
 import { cn } from "@/registry/default/lib/utils";
-import type { RegistryItem } from "@/registry/schema";
+import type { RegistryItem } from "shadcn/registry";
 
 export default function ComponentCard({
   isSearchPage = false,

@@ -1,5 +1,5 @@
-import type { RegistryItem } from "@/registry/schema";
 import { ComponentType } from "react";
+import type { RegistryItem } from "shadcn/registry";
 
 interface ComponentLoaderProps {
   component: RegistryItem;
@@ -10,7 +10,6 @@ export default async function ComponentLoader<TProps extends object>({
   ...props
 }: ComponentLoaderProps & TProps) {
   if (!component?.name) {
-    console.error('Component name is undefined');
     return null;
   }
 

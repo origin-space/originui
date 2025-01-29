@@ -1,4 +1,5 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-76",
   "type": "registry:component",
   "registryDependencies": [
@@ -7,10 +8,9 @@
   ],
   "files": [
     {
-      "path": "components/comp-76.tsx",
+      "path": "registry/default/components/comp-76.tsx",
       "content": "import { Label } from \"@/registry/default/ui/label\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor={id}>Read-only textarea</Label>\n      <Textarea\n        id={id}\n        className=\"read-only:bg-muted\"\n        defaultValue=\"This is a read-only textarea\"\n        readOnly\n        placeholder=\"Leave a comment\"\n      />\n    </div>\n  );\n}\n",
-      "type": "registry:component",
-      "target": ""
+      "type": "registry:component"
     }
   ],
   "meta": {

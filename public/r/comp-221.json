@@ -1,4 +1,5 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-221",
   "type": "registry:component",
   "registryDependencies": [
@@ -7,10 +8,9 @@
   ],
   "files": [
     {
-      "path": "components/comp-221.tsx",
+      "path": "registry/default/components/comp-221.tsx",
       "content": "import { Label } from \"@/registry/default/ui/label\";\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor={id}>Select with left text</Label>\n      <Select defaultValue=\"1\">\n        <SelectTrigger id={id}>\n          <span>\n            Language: <SelectValue placeholder=\"Select a language\" />\n          </span>\n        </SelectTrigger>\n        <SelectContent>\n          <SelectItem value=\"1\">Javascript</SelectItem>\n          <SelectItem value=\"2\">Bash</SelectItem>\n        </SelectContent>\n      </Select>\n    </div>\n  );\n}\n",
-      "type": "registry:component",
-      "target": ""
+      "type": "registry:component"
     }
   ],
   "meta": {

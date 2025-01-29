@@ -1,6 +1,8 @@
-import { components } from "@/registry/registry-components";
+import registry from "@/registry.json";
 import type { RegistryTag } from "@/registry/registry-tags";
-import type { RegistryItem } from "@/registry/schema";
+import type { RegistryItem } from "shadcn/registry";
+
+const components = registry.items as unknown as RegistryItem[];
 
 export const getComponents = (selectedTags: RegistryTag[] = []): RegistryItem[] => {
   return selectedTags.length
@@ -12,6 +14,7 @@ export const getComponents = (selectedTags: RegistryTag[] = []): RegistryItem[] 
 
 export const getComponentsByNames = (names: string[]): RegistryItem[] => {
   const componentsMap = new Map(components.map((comp) => [comp.name, comp]));
+
   return names
     .map((name) => componentsMap.get(name))
     .filter((comp): comp is RegistryItem => comp !== undefined);

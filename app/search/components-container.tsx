@@ -6,9 +6,9 @@ import ComponentLoader from "@/components/component-loader-client";
 import PageGrid from "@/components/page-grid";
 import { getComponents } from "@/lib/utils";
 import type { RegistryTag } from "@/registry/registry-tags";
-import type { RegistryItem } from "@/registry/schema";
 import { useSearchParams } from "next/navigation";
 import { useCallback, useMemo } from "react";
+import type { RegistryItem } from "shadcn/registry";
 import SearchField from "./search-field";
 
 export default function ComponentsContainer() {
