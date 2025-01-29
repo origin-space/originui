@@ -28,12 +28,12 @@
       "statusCode": 301
     },
     {
-      "source": "/alerts",
+      "source": "/alerts-notifications-banners",
       "destination": "https://originui.com/alert",
       "statusCode": 301
     },
     {
-      "source": "/avatars",
+      "source": "/avatars-badges",
       "destination": "https://originui.com/avatar",
       "statusCode": 301
     },
@@ -48,7 +48,7 @@
       "statusCode": 301
     },
     {
-      "source": "/breadcrumbs",
+      "source": "/breadcrumbs-paginations",
       "destination": "https://originui.com/breadcrumb",
       "statusCode": 301
     },
