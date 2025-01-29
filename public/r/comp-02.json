@@ -1,4 +1,5 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-02",
   "type": "registry:component",
   "registryDependencies": [
@@ -7,11 +8,16 @@
   ],
   "files": [
     {
-      "path": "components/comp-02.tsx",
+      "path": "registry/default/components/comp-02.tsx",
       "content": "import { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor={id}>\n        Required input <span className=\"text-destructive\">*</span>\n      </Label>\n      <Input id={id} placeholder=\"Email\" type=\"email\" required />\n    </div>\n  );\n}\n",
-      "type": "registry:component",
-      "target": ""
+      "type": "registry:component"
     }
   ],
-  "tags": []
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "required"
+    ]
+  }
 }

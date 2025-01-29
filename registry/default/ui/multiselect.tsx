@@ -12,7 +12,7 @@ export interface Option {
   value: string;
   label: string;
   disable?: boolean;
-  /** fixed option that can&lsquo;t be removed. */
+  /** fixed option that can't be removed. */
   fixed?: boolean;
   /** Group the options by providing key. */
   [key: string]: string | boolean | undefined;
@@ -458,7 +458,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 <div
                   key={option.value}
                   className={cn(
-                    "animate-fadeIn relative inline-flex h-7 cursor-default items-center rounded-md border border-solid bg-background pe-7 pl-2 ps-2 text-xs font-medium text-secondary-foreground transition-all hover:bg-background disabled:cursor-not-allowed disabled:opacity-50 data-[fixed]:pe-2",
+                    "animate-fadeIn relative inline-flex h-7 cursor-default items-center rounded-md border border-border bg-background pe-7 pl-2 ps-2 text-xs font-medium text-secondary-foreground transition-all hover:bg-background disabled:cursor-not-allowed disabled:opacity-50 data-[fixed]:pe-2",
                     badgeClassName,
                   )}
                   data-fixed={option.fixed}

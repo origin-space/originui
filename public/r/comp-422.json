@@ -1,4 +1,5 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-422",
   "type": "registry:component",
   "registryDependencies": [
@@ -6,11 +7,17 @@
   ],
   "files": [
     {
-      "path": "components/comp-422.tsx",
+      "path": "registry/default/components/comp-422.tsx",
       "content": "import { Badge } from \"@/registry/default/ui/badge\";\n\nexport default function Component() {\n  return (\n    <Badge variant=\"outline\" className=\"gap-1.5\">\n      <span className=\"size-1.5 rounded-full bg-red-500\" aria-hidden=\"true\"></span>\n      Badge\n    </Badge>\n  );\n}\n",
-      "type": "registry:component",
-      "target": ""
+      "type": "registry:component"
     }
   ],
-  "tags": []
+  "meta": {
+    "tags": [
+      "badge",
+      "chip",
+      "status"
+    ],
+    "style": 1
+  }
 }

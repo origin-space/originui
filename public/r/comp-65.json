@@ -1,4 +1,5 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-65",
   "type": "registry:component",
   "registryDependencies": [
@@ -7,11 +8,15 @@
   ],
   "files": [
     {
-      "path": "components/comp-65.tsx",
+      "path": "registry/default/components/comp-65.tsx",
       "content": "import { Label } from \"@/registry/default/ui/label\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor={id}>Textarea with gray background</Label>\n      <Textarea\n        id={id}\n        className=\"border-transparent bg-muted shadow-none\"\n        placeholder=\"Leave a comment\"\n      />\n    </div>\n  );\n}\n",
-      "type": "registry:component",
-      "target": ""
+      "type": "registry:component"
     }
   ],
-  "tags": []
+  "meta": {
+    "tags": [
+      "label",
+      "textarea"
+    ]
+  }
 }

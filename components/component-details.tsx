@@ -1,5 +1,10 @@
+"use client";
+
 import ComponentCli from "@/components/cli-commands";
+import CodeBlock, { highlight } from "@/components/code-block";
+import CopyButton from "@/components/copy-button";
 import OpenInV0 from "@/components/open-in-v0";
+import { convertRegistryPaths } from "@/lib/utils";
 import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,
@@ -16,11 +21,41 @@ import {
 } from "@/registry/default/ui/tooltip";
 import { DialogDescription } from "@radix-ui/react-dialog";
 import { Code } from "lucide-react";
+import { JSX, useEffect, useState } from "react";
+import type { RegistryItem } from "shadcn/registry";
 
-const ComponentDetails = ({ name, children }: { name: string; children: React.ReactNode }) => {
+export default function ComponentDetails({ component }: { component: RegistryItem }) {
+  const [code, setCode] = useState<string | null>(null);
+  const [highlightedCode, setHighlightedCode] = useState<JSX.Element | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const loadCode = async () => {
+      try {
+        const response = await fetch(`/r/${component.name}.json`);
+        const data = await response.json();
+        const codeContent = convertRegistryPaths(data.files[0].content) || "";
+        setCode(codeContent);
+
+        // Pre-highlight the code
+        const highlighted = await highlight(codeContent, "ts");
+        setHighlightedCode(highlighted);
+        // Clear any previous errors
+        setError(null);
+      } catch (error) {
+        console.error("Failed to load code:", error);
+        setError("Failed to load code");
+        setCode(null);
+        setHighlightedCode(null);
+      }
+    };
+
+    loadCode();
+  }, [component.name]);
+
   return (
-    <>
-      <OpenInV0 componentSource={`https://originui.com/r/${name}.json`} />
+    <div className="absolute right-2 top-2 flex gap-2 peer-data-[loading=true]:hidden">
+      <OpenInV0 componentSource={`https://originui.com/r/${component.name}.json`} />
       <Dialog>
         <TooltipProvider delayDuration={0}>
           <Tooltip>
@@ -50,16 +85,23 @@ const ComponentDetails = ({ name, children }: { name: string; children: React.Re
             </DialogDescription>
           </DialogHeader>
           <div className="min-w-0 space-y-5">
-            <ComponentCli name={name} />
+            <ComponentCli name={component.name} />
             <div className="space-y-4">
               <p className="text-lg font-semibold tracking-tight">Code</p>
-              {children}
+              <div className="relative">
+                {error ? (
+                  <p className="text-destructive">{error}</p>
+                ) : (
+                  <>
+                    <CodeBlock code={code} lang="ts" preHighlighted={highlightedCode} />
+                    <CopyButton componentSource={code} />
+                  </>
+                )}
+              </div>
             </div>
           </div>
         </DialogContent>
       </Dialog>
-    </>
+    </div>
   );
-};
-
-export default ComponentDetails;
+}

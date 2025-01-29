@@ -1,4 +1,5 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-416",
   "type": "registry:component",
   "registryDependencies": [
@@ -6,11 +7,17 @@
   ],
   "files": [
     {
-      "path": "components/comp-416.tsx",
+      "path": "registry/default/components/comp-416.tsx",
       "content": "import { Badge } from \"@/registry/default/ui/badge\";\n\nexport default function Component() {\n  return <Badge className=\"min-w-5 px-1\">6</Badge>;\n}\n",
-      "type": "registry:component",
-      "target": ""
+      "type": "registry:component"
     }
   ],
-  "tags": []
+  "meta": {
+    "tags": [
+      "badge",
+      "chip",
+      "counter"
+    ],
+    "style": 1
+  }
 }

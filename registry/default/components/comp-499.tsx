@@ -18,7 +18,13 @@ export default function Component() {
         showWeekNumber
         components={{
           WeekNumber: ({ week, ...props }: WeekNumberProps) => {
-            return <th {...props}>{week.weekNumber}</th>;
+            return (
+              <th {...props}>
+                <span className="inline-flex size-9 items-center justify-center">
+                  {week.weekNumber}
+                </span>
+              </th>
+            );
           },
         }}
       />

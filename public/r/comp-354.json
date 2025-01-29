@@ -1,4 +1,5 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-354",
   "type": "registry:component",
   "registryDependencies": [
@@ -7,11 +8,16 @@
   ],
   "files": [
     {
-      "path": "components/comp-354.tsx",
+      "path": "registry/default/components/comp-354.tsx",
       "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/registry/default/ui/tooltip\";\n\nexport default function Component() {\n  return (\n    <TooltipProvider delayDuration={0}>\n      <Tooltip>\n        <TooltipTrigger asChild>\n          <Button variant=\"outline\" size=\"sm\">\n            Tiny\n          </Button>\n        </TooltipTrigger>\n        <TooltipContent className=\"px-2 py-1 text-xs\">This is a simple tooltip</TooltipContent>\n      </Tooltip>\n    </TooltipProvider>\n  );\n}\n",
-      "type": "registry:component",
-      "target": ""
+      "type": "registry:component"
     }
   ],
-  "tags": []
+  "meta": {
+    "tags": [
+      "tooltip",
+      "radix"
+    ],
+    "style": 1
+  }
 }

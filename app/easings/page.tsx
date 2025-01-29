@@ -1,5 +1,4 @@
 import PageHeader from "@/components/page-header";
-import XLinks from "@/components/x-links";
 import type { Metadata } from "next";
 import Easings from "./easings";
 
@@ -130,18 +129,12 @@ const easings = [
 
 export default function Page() {
   return (
-    <main>
-      <div className="px-4 sm:px-6">
-        <div className="mx-auto w-full max-w-6xl">
-          <PageHeader title="Tailwind CSS easing classes">
-            A set of easing functions ready to copy and paste into your Tailwind CSS project.
-          </PageHeader>
+    <>
+      <PageHeader title="Tailwind CSS easing classes">
+        A set of easing functions ready to copy and paste into your Tailwind CSS project.
+      </PageHeader>
 
-          <Easings easings={easings} />
-
-          <XLinks />
-        </div>
-      </div>
-    </main>
+      <Easings easings={easings} />
+    </>
   );
 }

@@ -27,7 +27,6 @@ export default function Component() {
           aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
         >
           {/* Note: After dark mode implementation, rely on dark: prefix rather than peer-checked:group-[]: */}
-          <span className="group-[]:hidden">Light</span>
           <Moon
             size={16}
             strokeWidth={2}
