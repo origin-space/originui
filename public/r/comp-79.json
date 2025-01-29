@@ -9,7 +9,8 @@
     {
       "path": "registry/default/components/comp-79.tsx",
       "content": "import { Button } from \"@/registry/default/ui/button\";\n\nexport default function Component() {\n  return <Button disabled>Button</Button>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": ""
     }
   ],
   "meta": {
