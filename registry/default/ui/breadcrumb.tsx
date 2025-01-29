@@ -56,7 +56,6 @@ const BreadcrumbPage = React.forwardRef<HTMLSpanElement, React.ComponentPropsWit
     <span
       ref={ref}
       role="link"
-      aria-disabled="true"
       aria-current="page"
       className={cn("text-foreground", className)}
       {...props}
