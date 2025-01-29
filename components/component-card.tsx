@@ -15,7 +15,7 @@ export default function ComponentCard({
       component.meta?.colSpan === 2
         ? "col-span-12 sm:col-span-6 lg:col-span-6"
         : component.meta?.colSpan === 3
-          ? "sm:col-span-12 lg:col-span-12"
+          ? "col-span-12 sm:col-span-12 lg:col-span-12"
           : "col-span-12 sm:col-span-6 lg:col-span-4";
 
     const startClasses =
