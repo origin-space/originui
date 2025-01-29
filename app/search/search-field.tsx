@@ -4,8 +4,8 @@ import { getAvailableTags } from "@/lib/utils";
 import type { RegistryTag } from "@/registry/registry-tags";
 import { registryTags } from "@/registry/registry-tags";
 import { RiSearch2Line } from "@remixicon/react";
-import MultipleSelector, { Option } from "./multiselect";
 import { useState } from "react";
+import MultipleSelector, { Option } from "./multiselect";
 
 interface SearchFieldProps {
   selectedTags: string[];
@@ -19,7 +19,7 @@ const baseOptions: Option[] = registryTags.map((tag) => ({
 
 export default function SearchField({ selectedTags, onTagChange }: SearchFieldProps) {
   const [inputValue, setInputValue] = useState("");
-  const handleMultipleSelectorChange = (selected: Option[]) => {    
+  const handleMultipleSelectorChange = (selected: Option[]) => {
     const newTags = selected.map((tag) => tag.value as RegistryTag);
     onTagChange(newTags);
     setInputValue(""); // Reset the search input after selection
@@ -76,13 +76,14 @@ export default function SearchField({ selectedTags, onTagChange }: SearchFieldPr
               setInputValue(v);
               return v;
             },
-            autoFocus: selectedTags.length === 0
+            autoFocus: selectedTags.length === 0,
           }}
           defaultOptions={baseOptions}
-          options={getFilteredOptions().filter(option => 
-            !inputValue || option.value.toLowerCase().includes(inputValue.toLowerCase())
+          options={getFilteredOptions().filter(
+            (option) =>
+              !inputValue || option.value.toLowerCase().includes(inputValue.toLowerCase()),
           )}
-          value={selectedOptions}         
+          value={selectedOptions}
           hidePlaceholderWhenSelected
           emptyIndicator={<p className="text-center text-sm">No tags found</p>}
           onChange={handleMultipleSelectorChange}
