@@ -13,7 +13,7 @@
     },
     {
       "source": "/",
-      "destination": "https://originui.com/inputs",
+      "destination": "https://originui.com/input",
       "statusCode": 301,
       "has": [
         {
@@ -21,6 +21,86 @@
           "value": "origin-ui-alpha.vercel.app"
         }
       ]
+    },
+    {
+      "source": "/accordions",
+      "destination": "https://originui.com/accordion",
+      "statusCode": 301
+    },
+    {
+      "source": "/alerts",
+      "destination": "https://originui.com/alert",
+      "statusCode": 301
+    },
+    {
+      "source": "/avatars",
+      "destination": "https://originui.com/avatar",
+      "statusCode": 301
+    },
+    {
+      "source": "/badges",
+      "destination": "https://originui.com/badge",
+      "statusCode": 301
+    },
+    {
+      "source": "/banners",
+      "destination": "https://originui.com/banner",
+      "statusCode": 301
+    },
+    {
+      "source": "/breadcrumbs",
+      "destination": "https://originui.com/breadcrumb",
+      "statusCode": 301
+    },
+    {
+      "source": "/buttons",
+      "destination": "https://originui.com/button",
+      "statusCode": 301
+    },
+    {
+      "source": "/calendars-date-pickers",
+      "destination": "https://originui.com/calendar-date-picker",
+      "statusCode": 301
+    },
+    {
+      "source": "/checks-radios-switches",
+      "destination": "https://originui.com/checkbox",
+      "statusCode": 301
+    },
+    {
+      "source": "/dialogs",
+      "destination": "https://originui.com/dialog",
+      "statusCode": 301
+    },
+    {
+      "source": "/dropdowns-popovers",
+      "destination": "https://originui.com/dropdown",
+      "statusCode": 301
+    },
+    {
+      "source": "/inputs",
+      "destination": "https://originui.com/input",
+      "statusCode": 301
+    },
+    {
+      "source": "/selects",
+      "destination": "https://originui.com/select",
+      "statusCode": 301
+    },
+    {
+      "source": "/sliders",
+      "destination": "https://originui.com/slider",
+      "statusCode": 301
+    },
+    {
+      "source": "/tables",
+      "destination": "https://originui.com/table",
+      "statusCode": 301
+    },
+    {
+      "source": "/tooltips",
+      "destination": "https://originui.com/tooltip",
+      "statusCode": 301
     }
   ]
 }
