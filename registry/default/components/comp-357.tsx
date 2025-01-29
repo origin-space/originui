@@ -19,9 +19,8 @@ export default function Component() {
           <div className="space-y-1">
             <p className="text-[13px] font-medium">Tooltip with title</p>
             <p className="text-xs text-muted-foreground">
-              Tooltips are made to be highly customizable, with features like dynamic placement,
-              rich content, and a robust API. You can even use them as a full-featured dropdown menu
-              by setting the <code>trigger</code> prop to <code>click</code>.
+              Tooltips can&lsquo;t be focused by keyboard. So don&lsquo;t use them for content that
+              is important.
             </p>
           </div>
         </TooltipContent>
