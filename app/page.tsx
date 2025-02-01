@@ -71,11 +71,10 @@ function CategoryCard({ slug, name, componentsCount, isEasing = false }: Categor
         />
       </Link>
       <div className="mb-0.5 peer-hover:[&_a]:underline">
-        <h2>
-          <Link href={href} className="text-sm font-medium hover:underline">
-            {name}
-          </Link>
-        </h2>
+        <Link href={href} className="text-sm font-medium hover:underline">
+          {name}
+        </Link>
+
         <p className="text-[13px] text-muted-foreground">
           {isEasing ? "29 Examples" : `${componentsCount} Components`}
         </p>
