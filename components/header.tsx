@@ -1,4 +1,4 @@
-import GithubLink from "@/components/github-link";
+import ExternalLink from "@/components/external-link";
 import ThemeToggle from "@/components/theme-toggle";
 import LogoDark from "@/public/logo-dark.svg";
 import Logo from "@/public/logo.svg";
@@ -29,7 +29,8 @@ export default function Header() {
           />
         </Link>
         <div className="flex items-center gap-4">
-          <GithubLink />
+          <ExternalLink text="GitHub" href="https://github.com/origin-space/originui" />
+          <ExternalLink text="Follow us" href="https://x.com/origin_ui" />
           <ThemeToggle />
         </div>
       </div>
