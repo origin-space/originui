@@ -27,7 +27,7 @@ export default function Page() {
               componentsCount={category.components.length}
             />
           ))}
-          <CategoryCard slug="stepper" name="Stepper & Timeline" />
+          <CategoryCard slug="stepper" name="Stepper" />
           <CategoryCard slug="easings" name="Easing Classes" isEasing={true} />
         </div>
       </div>
