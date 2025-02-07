@@ -540,6 +540,22 @@ export const categories: ComponentCategory[] = [
     ],
   },
   {
+    slug: "stepper",
+    name: "Stepper",
+    components: [
+      { name: "comp-513" },
+      { name: "comp-515" },
+      { name: "comp-519" },
+      { name: "comp-520" },
+      { name: "comp-521" },
+      { name: "comp-516" },
+      { name: "comp-517" },
+      { name: "comp-514" },
+      { name: "comp-518" },
+      { name: "comp-522" },
+    ],
+  },
+  {
     slug: "switch",
     name: "Switch",
     components: [

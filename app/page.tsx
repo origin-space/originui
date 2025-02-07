@@ -27,7 +27,7 @@ export default function Page() {
               componentsCount={category.components.length}
             />
           ))}
-          <CategoryCard slug="stepper" name="Stepper" />
+          <CategoryCard slug="timeline" name="Timeline" />
           <CategoryCard slug="easings" name="Easing Classes" isEasing={true} />
         </div>
       </div>
@@ -77,7 +77,7 @@ function CategoryCard({ slug, name, componentsCount, isEasing = false }: Categor
           )}
         </h2>
         <p className="text-[13px] text-muted-foreground">
-          {isEasing ? "29 Examples" : !isComingSoon ? `${componentsCount} Components` : "-"}
+          {isEasing ? "29 Examples" : !isComingSoon ? `${componentsCount} ${componentsCount === 1 ? "Component" : "Components"}` : "-"}
         </p>
       </div>
     </div>

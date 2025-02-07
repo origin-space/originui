@@ -9765,6 +9765,156 @@
       "meta": {
         "tags": ["calendar", "date", "button", "picker", "react daypicker"]
       }
+    },
+    {
+      "name": "comp-513",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-513.tsx",
+          "type": "registry:component",
+          "target": ""
+        }
+      ],
+      "meta": {
+        "tags": ["stepper"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-514",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-514.tsx",
+          "type": "registry:component",
+          "target": ""
+        }
+      ],
+      "meta": {
+        "tags": ["stepper"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-515",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-515.tsx",
+          "type": "registry:component",
+          "target": ""
+        }
+      ],
+      "meta": {
+        "tags": ["stepper"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-516",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-516.tsx",
+          "type": "registry:component",
+          "target": ""
+        }
+      ],
+      "meta": {
+        "tags": ["stepper"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-517",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-517.tsx",
+          "type": "registry:component",
+          "target": ""
+        }
+      ],
+      "meta": {
+        "tags": ["stepper"],
+        "colSpan": 3
+      }      
+    },
+    {
+      "name": "comp-518",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-518.tsx",
+          "type": "registry:component",
+          "target": ""
+        }
+      ],
+      "meta": {
+        "tags": ["stepper"],
+        "colSpan": 3
+      }      
+    },
+    {
+      "name": "comp-519",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-519.tsx",
+          "type": "registry:component",
+          "target": ""
+        }
+      ],
+      "meta": {
+        "tags": ["stepper"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-520",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-520.tsx",
+          "type": "registry:component",
+          "target": ""
+        }
+      ],
+      "meta": {
+        "tags": ["stepper"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-521",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-521.tsx",
+          "type": "registry:component",
+          "target": ""
+        }
+      ],
+      "meta": {
+        "tags": ["stepper"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-522",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-522.tsx",
+          "type": "registry:component",
+          "target": ""
+        }
+      ],
+      "meta": {
+        "tags": ["stepper"],
+        "colSpan": 2
+      }
     }
   ]
 }

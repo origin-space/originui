@@ -20,7 +20,7 @@ export default function ComponentLoader<TProps extends object>({
   const newPath = path.replace("registry/", "");
   const Component = dynamic(() => import(`@/registry/${newPath}`).catch(() => () => null), {
     loading: () => (
-      <div data-loading="true" className="peer flex min-h-20 items-center justify-center">
+      <div data-comp-loading="true" className="peer flex min-h-20 items-center justify-center">
         <span className="sr-only">Loading component...</span>
         <LoaderCircle
           className="-ms-1 me-2 animate-spin text-input"

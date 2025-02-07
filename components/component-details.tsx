@@ -27,29 +27,40 @@ import type { RegistryItem } from "shadcn/registry";
 export default function ComponentDetails({ component }: { component: RegistryItem }) {
   const [code, setCode] = useState<string | null>(null);
   const [highlightedCode, setHighlightedCode] = useState<JSX.Element | null>(null);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    const handleEmptyCode = () => {
+      setCode("");
+      setHighlightedCode(null);
+    };
+  
     const loadCode = async () => {
       try {
         const response = await fetch(`/r/${component.name}.json`);
+        if (!response.ok) {
+          handleEmptyCode();
+          return;
+        }
+  
+        const contentType = response.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) {
+          handleEmptyCode();
+          return;
+        }
+  
         const data = await response.json();
         const codeContent = convertRegistryPaths(data.files[0].content) || "";
         setCode(codeContent);
-
+  
         // Pre-highlight the code
         const highlighted = await highlight(codeContent, "ts");
         setHighlightedCode(highlighted);
-        // Clear any previous errors
-        setError(null);
       } catch (error) {
         console.error("Failed to load code:", error);
-        setError("Failed to load code");
-        setCode(null);
-        setHighlightedCode(null);
+        handleEmptyCode();
       }
     };
-
+  
     loadCode();
   }, [component.name]);
 
@@ -89,8 +100,18 @@ export default function ComponentDetails({ component }: { component: RegistryIte
             <div className="space-y-4">
               <p className="text-lg font-semibold tracking-tight">Code</p>
               <div className="relative">
-                {error ? (
-                  <p className="text-destructive">{error}</p>
+                {code === "" ? (
+                  <p className="text-sm text-muted-foreground">
+                    No code available. If you think this is an error, please{" "}
+                    <a
+                      href="https://github.com/origin-space/originui/issues"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-foreground font-medium underline hover:no-underline"
+                    >
+                      open an issue
+                    </a>.
+                  </p>
                 ) : (
                   <>
                     <CodeBlock code={code} lang="ts" preHighlighted={highlightedCode} />
