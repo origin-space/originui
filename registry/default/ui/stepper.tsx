@@ -10,8 +10,6 @@ type StepperContextValue = {
   activeStep: number;
   setActiveStep: (step: number) => void;
   orientation: "horizontal" | "vertical";
-  disablePrevious: boolean;
-  disableNext: boolean;
 };
 
 type StepItemContextValue = {
@@ -19,6 +17,7 @@ type StepItemContextValue = {
   state: StepState;
   isDisabled: boolean;
   isLoading: boolean;
+  
 };
 
 type StepState = "active" | "completed" | "inactive" | "loading";
@@ -49,8 +48,6 @@ interface StepperProps extends React.HTMLAttributes<HTMLDivElement> {
   value?: number;
   onValueChange?: (value: number) => void;
   orientation?: "horizontal" | "vertical";
-  disablePrevious?: boolean;
-  disableNext?: boolean;
 }
 
 const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
@@ -60,8 +57,6 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
       value,
       onValueChange,
       orientation = "horizontal",
-      disablePrevious = false,
-      disableNext = false,
       className,
       ...props
     },
@@ -87,8 +82,6 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
           activeStep: currentStep,
           setActiveStep,
           orientation,
-          disablePrevious,
-          disableNext,
         }}
       >
         <div
@@ -119,28 +112,22 @@ const StepperItem = React.forwardRef<HTMLDivElement, StepperItemProps>(
     { step, completed = false, disabled = false, loading = false, className, children, ...props },
     ref,
   ) => {
-    const { activeStep, disablePrevious, disableNext } = useStepper();
+    const { activeStep } = useStepper();
 
     const state: StepState =
       completed || step < activeStep ? "completed" : activeStep === step ? "active" : "inactive";
 
-    // Calculate if this step should be disabled based on navigation rules
-    const isDisabled =
-      disabled || (step < activeStep && disablePrevious) || (step > activeStep && disableNext);
-
     const isLoading = loading && step === activeStep;
 
     return (
-      <StepItemContext.Provider value={{ step, state, isDisabled, isLoading }}>
+      <StepItemContext.Provider value={{ step, state, isDisabled: disabled, isLoading }}>
         <div
           ref={ref}
           className={cn(
             "group/step flex items-center group-data-[orientation=horizontal]/stepper:flex-row group-data-[orientation=vertical]/stepper:flex-col",
-            isDisabled && "pointer-events-none opacity-50",
             className,
           )}
           data-state={state}
-          {...(isDisabled ? { "data-disabled": true } : {})}
           {...(isLoading ? { "data-loading": true } : {})}
           {...props}
         >
@@ -169,7 +156,7 @@ const StepperTrigger = React.forwardRef<HTMLButtonElement, StepperTriggerProps>(
     return (
       <button
         ref={ref}
-        className={cn("inline-flex items-center gap-3", className)}
+        className={cn("inline-flex items-center gap-3 disabled:pointer-events-none disabled:opacity-50", className)}
         onClick={() => setActiveStep(step)}
         disabled={isDisabled}
         {...props}
