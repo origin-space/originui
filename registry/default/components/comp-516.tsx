@@ -1,11 +1,11 @@
 import {
   Stepper,
-  StepperItem,
-  StepperTrigger,
-  StepperIndicator,
-  StepperTitle,  
   StepperDescription,
+  StepperIndicator,
+  StepperItem,
   StepperSeparator,
+  StepperTitle,
+  StepperTrigger,
 } from "@/registry/default/ui/stepper";
 
 const steps = [
@@ -26,21 +26,20 @@ const steps = [
   },
 ];
 
-
-export default function StepperDemo() {
+export default function Component() {
   return (
     <Stepper defaultValue={1}>
       {steps.map(({ step, title, description }) => (
-        <StepperItem key={step} step={step} className="flex-1 !flex-col">
+        <StepperItem key={step} step={step} className="relative flex-1 !flex-col">
           <StepperTrigger className="flex-col gap-3">
-            <StepperIndicator>{step}</StepperIndicator>
+            <StepperIndicator />
             <div className="space-y-0.5 px-2">
               <StepperTitle>{title}</StepperTitle>
               <StepperDescription className="max-sm:hidden">{description}</StepperDescription>
             </div>
           </StepperTrigger>
           {step < steps.length && (
-            <StepperSeparator className="group-data-[state=completed]/step:bg-primary relative group-data-[orientation=horizontal]/stepper:w-[calc(100%-2rem)] left-1/2 top-4 group-data-[orientation=horizontal]/stepper:flex-none -order-1" />
+            <StepperSeparator className="absolute inset-x-0 left-[calc(50%+0.75rem+0.125rem)] top-3 -order-1 m-0 -translate-y-1/2 group-data-[orientation=horizontal]/stepper:w-[calc(100%-1.5rem-0.25rem)] group-data-[orientation=horizontal]/stepper:flex-none" />
           )}
         </StepperItem>
       ))}

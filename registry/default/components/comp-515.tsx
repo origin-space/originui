@@ -1,34 +1,29 @@
 "use client";
 
+import { Button } from "@/registry/default/ui/button";
 import {
   Stepper,
-  StepperItem,
-  StepperTrigger,
   StepperIndicator,
+  StepperItem,
   StepperSeparator,
+  StepperTrigger,
 } from "@/registry/default/ui/stepper";
-import { Button } from "@/registry/default/ui/button";
 import { useState } from "react";
 
 const steps = [1, 2, 3, 4];
 
-export default function StepperDemo() {
+export default function Component() {
   const [currentStep, setCurrentStep] = useState(1);
 
   return (
-    <div className="space-y-8 max-w-xl mx-auto text-center">
-      <Stepper
-        value={currentStep}
-        onValueChange={setCurrentStep}
-      >
+    <div className="mx-auto max-w-xl space-y-8 text-center">
+      <Stepper value={currentStep} onValueChange={setCurrentStep}>
         {steps.map((step) => (
           <StepperItem key={step} step={step} className="[&:not(:last-child)]:flex-1">
-            <StepperTrigger asChild>
-              <StepperIndicator>{step}</StepperIndicator>
+            <StepperTrigger>
+              <StepperIndicator />
             </StepperTrigger>
-            {step < steps.length && (
-              <StepperSeparator className="group-data-[state=completed]/step:bg-primary" />
-            )}
+            {step < steps.length && <StepperSeparator />}
           </StepperItem>
         ))}
       </Stepper>
@@ -40,19 +35,19 @@ export default function StepperDemo() {
           disabled={currentStep === 1}
         >
           Prev step
-        </Button>        
+        </Button>
         <Button
           variant="outline"
           className="w-32"
           onClick={() => setCurrentStep((prev) => prev + 1)}
           disabled={currentStep > steps.length}
         >
-          Next step          
+          Next step
         </Button>
       </div>
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
         Controlled stepper
-      </p>       
+      </p>
     </div>
   );
 }

@@ -33,7 +33,7 @@ export default function ComponentDetails({ component }: { component: RegistryIte
       setCode("");
       setHighlightedCode(null);
     };
-  
+
     const loadCode = async () => {
       try {
         const response = await fetch(`/r/${component.name}.json`);
@@ -41,17 +41,17 @@ export default function ComponentDetails({ component }: { component: RegistryIte
           handleEmptyCode();
           return;
         }
-  
+
         const contentType = response.headers.get("content-type");
         if (!contentType || !contentType.includes("application/json")) {
           handleEmptyCode();
           return;
         }
-  
+
         const data = await response.json();
         const codeContent = convertRegistryPaths(data.files[0].content) || "";
         setCode(codeContent);
-  
+
         // Pre-highlight the code
         const highlighted = await highlight(codeContent, "ts");
         setHighlightedCode(highlighted);
@@ -60,7 +60,7 @@ export default function ComponentDetails({ component }: { component: RegistryIte
         handleEmptyCode();
       }
     };
-  
+
     loadCode();
   }, [component.name]);
 
@@ -107,10 +107,11 @@ export default function ComponentDetails({ component }: { component: RegistryIte
                       href="https://github.com/origin-space/originui/issues"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-foreground font-medium underline hover:no-underline"
+                      className="font-medium text-foreground underline hover:no-underline"
                     >
                       open an issue
-                    </a>.
+                    </a>
+                    .
                   </p>
                 ) : (
                   <>

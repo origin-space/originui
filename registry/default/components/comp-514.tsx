@@ -1,11 +1,11 @@
 import {
   Stepper,
-  StepperItem,
-  StepperTrigger,
-  StepperIndicator,
-  StepperTitle,
   StepperDescription,
+  StepperIndicator,
+  StepperItem,
   StepperSeparator,
+  StepperTitle,
+  StepperTrigger,
 } from "@/registry/default/ui/stepper";
 
 const steps = [
@@ -26,23 +26,23 @@ const steps = [
   },
 ];
 
-export default function StepperDemo() {
+export default function Component() {
   return (
     <Stepper defaultValue={1}>
       {steps.map(({ step, title, description }) => (
-        <StepperItem key={step} step={step} className="[&:not(:last-child)]:flex-1 max-md:items-start">
+        <StepperItem
+          key={step}
+          step={step}
+          className="max-md:items-start [&:not(:last-child)]:flex-1"
+        >
           <StepperTrigger className="max-md:flex-col">
-            <StepperIndicator>{step}</StepperIndicator>
+            <StepperIndicator />
             <div className="text-center md:text-left">
               <StepperTitle>{title}</StepperTitle>
-              <StepperDescription className="max-sm:hidden">
-                {description}
-              </StepperDescription>
+              <StepperDescription className="max-sm:hidden">{description}</StepperDescription>
             </div>
           </StepperTrigger>
-          {step < steps.length && (
-            <StepperSeparator className="max-md:mt-3.5 md:mx-4" />
-          )}
+          {step < steps.length && <StepperSeparator className="max-md:mt-3.5 md:mx-4" />}
         </StepperItem>
       ))}
     </Stepper>

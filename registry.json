@@ -9839,7 +9839,7 @@
       "meta": {
         "tags": ["stepper"],
         "colSpan": 3
-      }      
+      }
     },
     {
       "name": "comp-518",
@@ -9854,7 +9854,7 @@
       "meta": {
         "tags": ["stepper"],
         "colSpan": 3
-      }      
+      }
     },
     {
       "name": "comp-519",
@@ -9930,6 +9930,6 @@
         "tags": ["stepper"],
         "colSpan": 2
       }
-    }    
+    }
   ]
 }

@@ -39,7 +39,7 @@ export default async function Page({ params }: Props) {
     notFound();
   }
 
-  const components = getComponentsByNames(category.components.map((item) => item.name));  
+  const components = getComponentsByNames(category.components.map((item) => item.name));
 
   return (
     <>
