@@ -40,7 +40,7 @@ export default function StepperDemo() {
             </div>
           </StepperTrigger>
           {step < steps.length && (
-            <StepperSeparator className="group-data-[state=completed]/step:bg-primary relative w-[calc(100%-2rem)] left-1/2 top-4 flex-none -order-1" />
+            <StepperSeparator className="group-data-[state=completed]/step:bg-primary relative group-data-[orientation=horizontal]/stepper:w-[calc(100%-2rem)] left-1/2 top-4 group-data-[orientation=horizontal]/stepper:flex-none -order-1" />
           )}
         </StepperItem>
       ))}

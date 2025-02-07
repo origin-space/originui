@@ -9915,6 +9915,21 @@
         "tags": ["stepper"],
         "colSpan": 2
       }
-    }
+    },
+    {
+      "name": "comp-523",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-523.tsx",
+          "type": "registry:component",
+          "target": ""
+        }
+      ],
+      "meta": {
+        "tags": ["stepper"],
+        "colSpan": 2
+      }
+    }    
   ]
 }

@@ -84,7 +84,7 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
         <div 
           ref={ref}
           className={cn(
-            "group/stepper flex data-[orientation=horizontal]:flex-row data-[orientation=horizontal]:w-full data-[orientation=vertical]:flex-col",
+            "group/stepper inline-flex data-[orientation=horizontal]:flex-row data-[orientation=horizontal]:w-full data-[orientation=vertical]:flex-col",
             className
           )}
           data-orientation={orientation}
@@ -124,7 +124,7 @@ const StepperItem = React.forwardRef<HTMLDivElement, StepperItemProps>(
         <div
           ref={ref}
           className={cn(
-            "group/step flex items-center group-data-[orientation=horizontal]/stepper:flex-row group-data-[orientation=vertical]/stepper:flex-col",
+            "group/step flex group-data-[orientation=horizontal]/stepper:flex-row items-center group-data-[orientation=vertical]/stepper:flex-col",
             isDisabled && "opacity-50 pointer-events-none",
             className
           )}
@@ -239,7 +239,7 @@ const StepperSeparator = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        "h-0.5 w-full bg-muted flex-1 transition-colors",
+        "group-data-[orientation=horizontal]/stepper:h-0.5 group-data-[orientation=vertical]/stepper:h-12 group-data-[orientation=horizontal]/stepper:w-full group-data-[orientation=vertical]/stepper:w-0.5 bg-muted group-data-[orientation=horizontal]/stepper:flex-1 transition-colors",
         className
       )}
       {...props}

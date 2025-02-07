@@ -15,7 +15,7 @@ export default function StepperDemo() {
           <StepperTrigger>
             <StepperIndicator>
               <img
-                className="rounded-full p-px"
+                className="rounded-full"
                 src="/avatar-40-05.jpg"
                 width={32}
                 height={32}
@@ -23,7 +23,7 @@ export default function StepperDemo() {
               />              
             </StepperIndicator>
           </StepperTrigger>
-          <StepperSeparator className="group-data-[state=completed]/step:bg-primary" />
+          <StepperSeparator className="group-data-[state=completed]/step:bg-primary mx-3" />
         </StepperItem>
         <StepperItem step={2} className="[&:not(:last-child)]:flex-1" loading>
           <StepperTrigger>
@@ -34,7 +34,7 @@ export default function StepperDemo() {
               </span>              
             </StepperIndicator>
           </StepperTrigger>
-          <StepperSeparator className="group-data-[state=completed]/step:bg-primary" />
+          <StepperSeparator className="group-data-[state=completed]/step:bg-primary mx-3" />
         </StepperItem>        
         <StepperItem step={3} className="[&:not(:last-child)]:flex-1">
           <StepperTrigger>
@@ -43,7 +43,6 @@ export default function StepperDemo() {
               <span className="sr-only">Shuffle</span>
             </StepperIndicator>
           </StepperTrigger>
-          <StepperSeparator className="group-data-[state=completed]/step:bg-primary" />
         </StepperItem>
       </Stepper>
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">

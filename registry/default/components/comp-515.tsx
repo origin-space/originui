@@ -8,7 +8,6 @@ import {
   StepperSeparator,
 } from "@/registry/default/ui/stepper";
 import { Button } from "@/registry/default/ui/button";
-import { ArrowRight, RotateCcw } from "lucide-react";
 import { useState } from "react";
 
 const steps = [1, 2, 3, 4];
@@ -37,9 +36,10 @@ export default function StepperDemo() {
         <Button
           variant="outline"
           className="w-32"
-          onClick={() => setCurrentStep(1)}
+          onClick={() => setCurrentStep((prev) => prev - 1)}
+          disabled={currentStep === 1}
         >
-          Reset
+          Prev step
         </Button>        
         <Button
           variant="outline"
