@@ -175,7 +175,7 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
         <div className="absolute inset-0 flex items-center justify-center gap-2">
           <button
             type="button"
-            className="z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-offset-2 transition-colors hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
+            className="z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-offset-2 transition-colors hover:bg-black/80 focus-visible:outline-2 focus-visible:outline-ring/70"
             onClick={handleThumbnailClick}
             aria-label={currentImage ? "Change image" : "Upload image"}
           >
@@ -184,7 +184,7 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
           {currentImage && (
             <button
               type="button"
-              className="z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-offset-2 transition-colors hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
+              className="z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-offset-2 transition-colors hover:bg-black/80 focus-visible:outline-2 focus-visible:outline-ring/70"
               onClick={handleImageRemove}
               aria-label="Remove image"
             >
@@ -224,7 +224,7 @@ function Avatar({ defaultImage }: { defaultImage?: string }) {
         )}
         <button
           type="button"
-          className="absolute flex size-8 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-offset-2 transition-colors hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
+          className="absolute flex size-8 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-offset-2 transition-colors hover:bg-black/80 focus-visible:outline-2 focus-visible:outline-ring/70"
           onClick={handleThumbnailClick}
           aria-label="Change profile picture"
         >

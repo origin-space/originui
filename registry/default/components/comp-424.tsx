@@ -13,7 +13,7 @@ export default function Component() {
     <Badge>
       Removable
       <button
-        className="-my-px -me-1.5 -ms-px inline-flex size-5 shrink-0 items-center justify-center rounded-[inherit] p-0 opacity-60 transition-opacity hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
+        className="-my-px -me-1.5 -ms-px inline-flex size-5 shrink-0 items-center justify-center rounded-[inherit] p-0 opacity-60 transition-opacity hover:opacity-100 focus-visible:outline-2 focus-visible:outline-ring/70"
         onClick={() => setIsActive(false)}
       >
         <X size={12} strokeWidth={2} aria-hidden="true" />

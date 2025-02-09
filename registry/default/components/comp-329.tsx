@@ -58,7 +58,7 @@ export default function Component() {
           <div className="space-y-4">
             <RadioGroup className="grid-cols-2" defaultValue="yearly">
               {/* Monthly */}
-              <label className="relative flex cursor-pointer flex-col gap-1 rounded-lg border border-input px-4 py-3 shadow-xs shadow-black/5 outline-offset-2 transition-colors has-data-[state=checked]:border-ring has-data-[state=checked]:bg-accent has-focus-visible:outline has-focus-visible:outline-2 has-focus-visible:outline-ring/70">
+              <label className="relative flex cursor-pointer flex-col gap-1 rounded-lg border border-input px-4 py-3 shadow-xs shadow-black/5 outline-offset-2 transition-colors has-data-[state=checked]:border-ring has-data-[state=checked]:bg-accent has-focus-visible:outline-2 has-focus-visible:outline-ring/70">
                 <RadioGroupItem
                   id="radio-monthly"
                   value="monthly"
@@ -68,7 +68,7 @@ export default function Component() {
                 <p className="text-sm text-muted-foreground">$32/month</p>
               </label>
               {/* Yearly */}
-              <label className="relative flex cursor-pointer flex-col gap-1 rounded-lg border border-input px-4 py-3 shadow-xs shadow-black/5 outline-offset-2 transition-colors has-data-[state=checked]:border-ring has-data-[state=checked]:bg-accent has-focus-visible:outline has-focus-visible:outline-2 has-focus-visible:outline-ring/70">
+              <label className="relative flex cursor-pointer flex-col gap-1 rounded-lg border border-input px-4 py-3 shadow-xs shadow-black/5 outline-offset-2 transition-colors has-data-[state=checked]:border-ring has-data-[state=checked]:bg-accent has-focus-visible:outline-2 has-focus-visible:outline-ring/70">
                 <RadioGroupItem
                   id="radio-yearly"
                   value="yearly"
