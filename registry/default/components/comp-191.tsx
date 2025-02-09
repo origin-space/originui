@@ -15,7 +15,7 @@ export default function Component() {
           <option value="3">02:00 AM - 01:59 PM</option>
           <option value="4">03:00 AM - 02:59 PM</option>
         </SelectNative>
-        <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 group-has-[[disabled]]:opacity-50">
+        <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 group-has-[select[disabled]]:opacity-50">
           <Clock size={16} strokeWidth={2} aria-hidden="true" />
         </div>
       </div>
