@@ -136,7 +136,7 @@ export default function Component() {
     <div>
       <div className="[&>div]:max-h-96">
         <Table className="border-separate border-spacing-0 [&_td]:border-border [&_tfoot_td]:border-t [&_th]:border-b [&_th]:border-border [&_tr:not(:last-child)_td]:border-b [&_tr]:border-none">
-          <TableHeader className="sticky top-0 z-10 bg-background/90 backdrop-blur-sm">
+          <TableHeader className="sticky top-0 z-10 bg-background/90 backdrop-blur-xs">
             <TableRow className="hover:bg-transparent">
               <TableHead>Name</TableHead>
               <TableHead>Email</TableHead>

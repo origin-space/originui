@@ -8,7 +8,7 @@ export default function Component() {
   return (
     <div className="space-y-2">
       <Label htmlFor={id}>Input with end select</Label>
-      <div className="flex rounded-lg shadow-sm shadow-black/5">
+      <div className="flex rounded-lg shadow-xs shadow-black/5">
         <Input
           id={id}
           className="-me-px rounded-e-none shadow-none focus-visible:z-10"
@@ -17,7 +17,7 @@ export default function Component() {
         />
         <div className="relative inline-flex">
           <select
-            className="peer inline-flex h-full appearance-none items-center rounded-none rounded-e-lg border border-input bg-background pe-8 ps-3 text-sm text-muted-foreground transition-shadow hover:bg-accent hover:text-accent-foreground focus:z-10 focus-visible:border-ring focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/20 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+            className="peer inline-flex h-full appearance-none items-center rounded-none rounded-e-lg border border-input bg-background pe-8 ps-3 text-sm text-muted-foreground transition-shadow hover:bg-accent hover:text-accent-foreground focus:z-10 focus-visible:border-ring focus-visible:text-foreground focus-visible:outline-hidden focus-visible:ring-[3px] focus-visible:ring-ring/20 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
             aria-label="Domain suffix"
           >
             <option>.com</option>

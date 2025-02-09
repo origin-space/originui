@@ -98,7 +98,7 @@ export default function Component() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor={`${id}-website`}>Website</Label>
-                <div className="flex rounded-lg shadow-sm shadow-black/5">
+                <div className="flex rounded-lg shadow-xs shadow-black/5">
                   <span className="-z-10 inline-flex items-center rounded-s-lg border border-input bg-background px-3 text-sm text-muted-foreground">
                     https://
                   </span>
@@ -212,7 +212,7 @@ function Avatar({ defaultImage }: { defaultImage?: string }) {
 
   return (
     <div className="-mt-10 px-6">
-      <div className="relative flex size-20 items-center justify-center overflow-hidden rounded-full border-4 border-background bg-muted shadow-sm shadow-black/10">
+      <div className="relative flex size-20 items-center justify-center overflow-hidden rounded-full border-4 border-background bg-muted shadow-xs shadow-black/10">
         {currentImage && (
           <img
             src={currentImage}

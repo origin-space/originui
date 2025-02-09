@@ -21,7 +21,7 @@ export default function Component() {
           />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="min-w-[--radix-dropdown-menu-trigger-width]">
+      <DropdownMenuContent className="min-w-(--radix-dropdown-menu-trigger-width)">
         <DropdownMenuItem>Option 1</DropdownMenuItem>
         <DropdownMenuItem>Option 2</DropdownMenuItem>
         <DropdownMenuItem>Option 3</DropdownMenuItem>

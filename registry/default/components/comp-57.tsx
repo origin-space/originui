@@ -29,8 +29,8 @@ export default function Component() {
         placeholder="Add a tag"
         styleClasses={{
           inlineTagsContainer:
-            "border-input rounded-lg bg-background shadow-sm shadow-black/5 transition-shadow focus-within:border-ring focus-within:outline-none focus-within:ring-[3px] focus-within:ring-ring/20 p-1 gap-1",
-          input: "w-full min-w-[80px] focus-visible:outline-none shadow-none px-2 h-7",
+            "border-input rounded-lg bg-background shadow-xs shadow-black/5 transition-shadow focus-within:border-ring focus-within:outline-hidden focus-within:ring-[3px] focus-within:ring-ring/20 p-1 gap-1",
+          input: "w-full min-w-[80px] focus-visible:outline-hidden shadow-none px-2 h-7",
           tag: {
             body: "h-7 relative bg-background border border-input hover:bg-background rounded-md font-medium text-xs ps-2 pe-7",
             closeButton:

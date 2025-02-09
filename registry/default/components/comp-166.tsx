@@ -17,13 +17,13 @@ export default function Component() {
     <fieldset className="space-y-4">
       <legend className="text-sm font-medium leading-none text-foreground">Choose plan</legend>
       <RadioGroup
-        className="gap-0 -space-y-px rounded-lg shadow-sm shadow-black/5"
+        className="gap-0 -space-y-px rounded-lg shadow-xs shadow-black/5"
         defaultValue="2"
       >
         {items.map((item) => (
           <div
             key={`${id}-${item.value}`}
-            className="relative flex flex-col gap-4 border border-input p-4 first:rounded-t-lg last:rounded-b-lg has-[[data-state=checked]]:z-10 has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent"
+            className="relative flex flex-col gap-4 border border-input p-4 first:rounded-t-lg last:rounded-b-lg has-data-[state=checked]:z-10 has-data-[state=checked]:border-ring has-data-[state=checked]:bg-accent"
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">

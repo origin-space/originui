@@ -66,7 +66,7 @@ function CategoryCard({ slug, name, componentsCount, isEasing = false }: Categor
           <ImageComponent imageBasePath={imageBasePath} alt={alt} />
         </div>
       )}
-      <div className="mb-0.5 peer-hover:[&_a]:underline">
+      <div className="mb-0.5 [&_a]:peer-hover:underline">
         <h2>
           {!isComingSoon ? (
             <Link href={href} className="text-sm font-medium hover:underline">

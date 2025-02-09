@@ -16,7 +16,7 @@ export default function Component() {
     <div className="space-y-2" dir="ltr">
       <Label htmlFor={id}>Phone number input</Label>
       <RPNInput.default
-        className="flex rounded-lg shadow-sm shadow-black/5"
+        className="flex rounded-lg shadow-xs shadow-black/5"
         international
         flagComponent={FlagComponent}
         countrySelectComponent={CountrySelect}
@@ -68,7 +68,7 @@ const CountrySelect = ({ disabled, value, onChange, options }: CountrySelectProp
   };
 
   return (
-    <div className="relative inline-flex items-center self-stretch rounded-s-lg border border-input bg-background py-2 pe-2 ps-3 text-muted-foreground transition-shadow focus-within:z-10 focus-within:border-ring focus-within:outline-none focus-within:ring-[3px] focus-within:ring-ring/20 hover:bg-accent hover:text-foreground has-[:disabled]:pointer-events-none has-[:disabled]:opacity-50">
+    <div className="relative inline-flex items-center self-stretch rounded-s-lg border border-input bg-background py-2 pe-2 ps-3 text-muted-foreground transition-shadow focus-within:z-10 focus-within:border-ring focus-within:outline-hidden focus-within:ring-[3px] focus-within:ring-ring/20 hover:bg-accent hover:text-foreground has-disabled:pointer-events-none has-disabled:opacity-50">
       <div className="inline-flex items-center gap-1" aria-hidden="true">
         <FlagComponent country={value} countryName={value} aria-hidden="true" />
         <span className="text-muted-foreground/80">

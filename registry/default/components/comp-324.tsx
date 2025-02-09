@@ -92,7 +92,7 @@ export default function Component() {
                 ref={inputRef}
                 value={value}
                 onChange={setValue}
-                containerClassName="flex items-center gap-3 has-[:disabled]:opacity-50"
+                containerClassName="flex items-center gap-3 has-disabled:opacity-50"
                 maxLength={4}
                 onFocus={() => setHasGuessed(undefined)}
                 render={({ slots }) => (
@@ -130,7 +130,7 @@ function Slot(props: SlotProps) {
   return (
     <div
       className={cn(
-        "flex size-9 items-center justify-center rounded-lg border border-input bg-background font-medium text-foreground shadow-sm shadow-black/5 transition-shadow",
+        "flex size-9 items-center justify-center rounded-lg border border-input bg-background font-medium text-foreground shadow-xs shadow-black/5 transition-shadow",
         { "z-10 border border-ring ring-[3px] ring-ring/20": props.isActive },
       )}
     >

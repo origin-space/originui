@@ -8,7 +8,7 @@ export default function Component() {
   return (
     <div className="space-y-2">
       <Label htmlFor={id}>Input with end icon button</Label>
-      <div className="flex rounded-lg shadow-sm shadow-black/5">
+      <div className="flex rounded-lg shadow-xs shadow-black/5">
         <Input
           id={id}
           className="-me-px flex-1 rounded-e-none shadow-none focus-visible:z-10"

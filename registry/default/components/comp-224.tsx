@@ -14,7 +14,7 @@ export default function Component() {
     <div className="space-y-2">
       <Label htmlFor={id}>Select with description and right indicator</Label>
       <Select defaultValue="2">
-        <SelectTrigger id={id} className="[&_[data-desc]]:hidden">
+        <SelectTrigger id={id} className="**:data-desc:hidden">
           <SelectValue placeholder="Choose a plan" />
         </SelectTrigger>
         <SelectContent className="[&_*[role=option]>span]:end-2 [&_*[role=option]>span]:start-auto [&_*[role=option]]:pe-8 [&_*[role=option]]:ps-2">

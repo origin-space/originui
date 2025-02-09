@@ -457,7 +457,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
       >
         <div
           className={cn(
-            "relative min-h-[46px] rounded-lg border border-input text-sm transition-shadow focus-within:border-ring focus-within:outline-none focus-within:ring-[3px] focus-within:ring-ring/20 has-[:disabled]:cursor-not-allowed has-[:disabled]:opacity-50",
+            "relative min-h-[46px] rounded-lg border border-input text-sm transition-shadow focus-within:border-ring focus-within:outline-hidden focus-within:ring-[3px] focus-within:ring-ring/20 has-disabled:cursor-not-allowed has-disabled:opacity-50",
             {
               "p-2": selected.length !== 0,
               "cursor-text": !disabled && selected.length !== 0,
@@ -476,7 +476,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 <div
                   key={option.value}
                   className={cn(
-                    "animate-fadeIn relative inline-flex h-7 cursor-default items-center rounded-lg border border-border bg-background pe-7 pl-2 ps-2 text-xs font-medium text-secondary-foreground transition-all hover:bg-background disabled:cursor-not-allowed disabled:opacity-50 data-[fixed]:pe-2 dark:border-zinc-700 dark:bg-zinc-700/50",
+                    "animate-fadeIn relative inline-flex h-7 cursor-default items-center rounded-lg border border-border bg-background pe-7 pl-2 ps-2 text-xs font-medium text-secondary-foreground transition-all hover:bg-background disabled:cursor-not-allowed disabled:opacity-50 data-fixed:pe-2 dark:border-zinc-700 dark:bg-zinc-700/50",
                     badgeClassName,
                   )}
                   data-fixed={option.fixed}
@@ -484,7 +484,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 >
                   {option.label}
                   <button
-                    className="absolute -inset-y-px -end-px flex size-7 items-center justify-center rounded-e-lg border border-transparent p-0 text-muted-foreground/80 outline-0 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
+                    className="absolute -inset-y-px -end-px flex size-7 items-center justify-center rounded-e-lg border border-transparent p-0 text-muted-foreground/80 outline-0 transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-ring/70"
                     onKeyDown={(e) => {
                       if (e.key === "Enter") {
                         handleUnselect(option);
@@ -531,7 +531,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
               }}
               placeholder={hidePlaceholderWhenSelected && selected.length !== 0 ? "" : placeholder}
               className={cn(
-                "flex-1 bg-transparent outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed",
+                "flex-1 bg-transparent outline-hidden placeholder:text-muted-foreground disabled:cursor-not-allowed",
                 {
                   "w-full": hidePlaceholderWhenSelected,
                   "py-3 pe-3": selected.length === 0,
@@ -547,7 +547,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 onChange?.(selected.filter((s) => s.fixed));
               }}
               className={cn(
-                "absolute end-0 top-0.5 flex size-10 items-center justify-center rounded-lg border border-transparent text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70",
+                "absolute end-0 top-0.5 flex size-10 items-center justify-center rounded-lg border border-transparent text-muted-foreground/70 transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-ring/70",
                 (hideClearAllButton ||
                   disabled ||
                   selected.length < 1 ||
@@ -563,7 +563,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
         <div className="relative">
           <div
             className={cn(
-              "absolute top-2 z-[9999] w-full overflow-hidden rounded-lg border border-input shadow-lg shadow-black/5",
+              "absolute top-2 z-9999 w-full overflow-hidden rounded-lg border border-input shadow-lg shadow-black/5",
               "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
               !open && "hidden",
             )}
@@ -571,7 +571,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
           >
             {open && (
               <CommandList
-                className="max-h-none overflow-visible bg-popover text-popover-foreground outline-none"
+                className="max-h-none overflow-visible bg-popover text-popover-foreground outline-hidden"
                 onMouseLeave={() => {
                   setOnScrollbar(false);
                 }}

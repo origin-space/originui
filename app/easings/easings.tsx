@@ -229,7 +229,7 @@ const AnimatedSquare = ({
       style={animationType === "translate" ? animationStyle : undefined}
     >
       <div
-        className="animated-square h-10 w-10 rounded-lg bg-gradient-to-tr from-primary to-primary/80 shadow-lg shadow-primary/10"
+        className="animated-square h-10 w-10 rounded-lg bg-linear-to-tr from-primary to-primary/80 shadow-lg shadow-primary/10"
         style={animationType !== "translate" ? animationStyle : undefined}
       />
       <style jsx>{`
@@ -379,7 +379,7 @@ export default function Easings({ easings }: EasingsProps) {
 
       <div
         id="grid"
-        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 [&>*:last-child:nth-child(2n-1)]:sm:col-span-2 [&>*:last-child:nth-child(3n-1)]:lg:col-start-2 [&>*:last-child:nth-child(3n-2)]:lg:col-span-3"
+        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:[&>*:last-child:nth-child(2n-1)]:col-span-2 lg:[&>*:last-child:nth-child(3n-1)]:col-start-2 lg:[&>*:last-child:nth-child(3n-2)]:col-span-3"
       >
         {getFilteredEasings().map((easing) => (
           <div

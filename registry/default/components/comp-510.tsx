@@ -91,7 +91,7 @@ function DayButton(props: DayButtonProps & { prices: Record<string, number> }) {
               "text-[10px] font-medium",
               isGoodPrice
                 ? "text-emerald-500"
-                : "text-muted-foreground group-data-[selected]:text-primary-foreground/70",
+                : "text-muted-foreground group-data-selected:text-primary-foreground/70",
             )}
           >
             ${price}

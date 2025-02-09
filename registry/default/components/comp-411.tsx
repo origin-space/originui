@@ -2,7 +2,7 @@ import { Button } from "@/registry/default/ui/button";
 
 export default function Component() {
   return (
-    <div className="flex items-center rounded-full border border-border bg-background p-1 shadow shadow-black/5">
+    <div className="flex items-center rounded-full border border-border bg-background p-1 shadow-sm shadow-black/5">
       <div className="flex -space-x-3">
         <img
           className="rounded-full ring-2 ring-background"

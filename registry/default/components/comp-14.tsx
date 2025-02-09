@@ -7,7 +7,7 @@ export default function Component() {
   return (
     <div className="space-y-2">
       <Label htmlFor={id}>Input with start add-on</Label>
-      <div className="flex rounded-lg shadow-sm shadow-black/5">
+      <div className="flex rounded-lg shadow-xs shadow-black/5">
         <span className="-z-10 inline-flex items-center rounded-s-lg border border-input bg-background px-3 text-sm text-muted-foreground">
           https://
         </span>

@@ -18,7 +18,7 @@ export default function Component() {
         {items.map((item) => (
           <div
             key={`${id}-${item.value}`}
-            className="relative flex flex-col items-start gap-4 rounded-lg border border-input p-3 shadow-sm shadow-black/5 has-[[data-state=checked]]:border-ring"
+            className="relative flex flex-col items-start gap-4 rounded-lg border border-input p-3 shadow-xs shadow-black/5 has-data-[state=checked]:border-ring"
           >
             <div className="flex items-center gap-2">
               <RadioGroupItem

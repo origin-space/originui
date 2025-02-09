@@ -21,7 +21,7 @@ export default function Component() {
         {items.map((item) => (
           <label
             key={`${id}-${item.value}`}
-            className="relative flex size-9 cursor-pointer flex-col items-center justify-center gap-3 rounded-full border border-input text-center shadow-sm shadow-black/5 outline-offset-2 transition-colors has-[[data-disabled]]:cursor-not-allowed has-[[data-state=checked]]:border-primary has-[[data-state=checked]]:bg-primary has-[[data-state=checked]]:text-primary-foreground has-[[data-disabled]]:opacity-50 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70"
+            className="relative flex size-9 cursor-pointer flex-col items-center justify-center gap-3 rounded-full border border-input text-center shadow-xs shadow-black/5 outline-offset-2 transition-colors has-data-disabled:cursor-not-allowed has-data-[state=checked]:border-primary has-data-[state=checked]:bg-primary has-data-[state=checked]:text-primary-foreground has-data-disabled:opacity-50 has-focus-visible:outline has-focus-visible:outline-2 has-focus-visible:outline-ring/70"
           >
             <Checkbox
               id={`${id}-${item.value}`}

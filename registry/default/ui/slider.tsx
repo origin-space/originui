@@ -58,7 +58,7 @@ const Slider = React.forwardRef<
   const renderThumb = (value: number) => {
     const thumb = (
       <SliderPrimitive.Thumb
-        className="block h-5 w-5 rounded-full border-2 border-primary bg-background transition-colors focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-ring/40 data-[disabled]:cursor-not-allowed"
+        className="block h-5 w-5 rounded-full border-2 border-primary bg-background transition-colors focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-ring/40 data-disabled:cursor-not-allowed"
         onPointerDown={handlePointerDown}
       />
     );
@@ -85,7 +85,7 @@ const Slider = React.forwardRef<
     <SliderPrimitive.Root
       ref={ref}
       className={cn(
-        "relative flex w-full touch-none select-none items-center data-[orientation=vertical]:h-full data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col data-[disabled]:opacity-50",
+        "relative flex w-full touch-none select-none items-center data-[orientation=vertical]:h-full data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col data-disabled:opacity-50",
         className,
       )}
       onValueChange={handleValueChange}

@@ -4,7 +4,7 @@ import { useId } from "react";
 export default function Component() {
   const id = useId();
   return (
-    <div className="relative rounded-lg border border-input bg-background shadow-sm shadow-black/5 transition-shadow focus-within:border-ring focus-within:outline-none focus-within:ring-[3px] focus-within:ring-ring/20 has-[select:disabled]:cursor-not-allowed has-[select:disabled]:opacity-50 [&:has(select:is(:disabled))_*]:pointer-events-none">
+    <div className="relative rounded-lg border border-input bg-background shadow-xs shadow-black/5 transition-shadow focus-within:border-ring focus-within:outline-hidden focus-within:ring-[3px] focus-within:ring-ring/20 has-[select:disabled]:cursor-not-allowed has-[select:disabled]:opacity-50 [&:has(select:is(:disabled))_*]:pointer-events-none">
       <label htmlFor={id} className="block px-3 pt-2 text-xs font-medium text-foreground">
         Select with inset label (native)
       </label>

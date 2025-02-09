@@ -58,7 +58,7 @@ export default function Component() {
           <div className="space-y-4">
             <RadioGroup className="grid-cols-2" defaultValue="yearly">
               {/* Monthly */}
-              <label className="relative flex cursor-pointer flex-col gap-1 rounded-lg border border-input px-4 py-3 shadow-sm shadow-black/5 outline-offset-2 transition-colors has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70">
+              <label className="relative flex cursor-pointer flex-col gap-1 rounded-lg border border-input px-4 py-3 shadow-xs shadow-black/5 outline-offset-2 transition-colors has-data-[state=checked]:border-ring has-data-[state=checked]:bg-accent has-focus-visible:outline has-focus-visible:outline-2 has-focus-visible:outline-ring/70">
                 <RadioGroupItem
                   id="radio-monthly"
                   value="monthly"
@@ -68,7 +68,7 @@ export default function Component() {
                 <p className="text-sm text-muted-foreground">$32/month</p>
               </label>
               {/* Yearly */}
-              <label className="relative flex cursor-pointer flex-col gap-1 rounded-lg border border-input px-4 py-3 shadow-sm shadow-black/5 outline-offset-2 transition-colors has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70">
+              <label className="relative flex cursor-pointer flex-col gap-1 rounded-lg border border-input px-4 py-3 shadow-xs shadow-black/5 outline-offset-2 transition-colors has-data-[state=checked]:border-ring has-data-[state=checked]:bg-accent has-focus-visible:outline has-focus-visible:outline-2 has-focus-visible:outline-ring/70">
                 <RadioGroupItem
                   id="radio-yearly"
                   value="yearly"
@@ -87,7 +87,7 @@ export default function Component() {
             </div>
             <div className="space-y-2">
               <legend className="text-sm font-medium text-foreground">Card Details</legend>
-              <div className="rounded-lg shadow-sm shadow-black/5">
+              <div className="rounded-lg shadow-xs shadow-black/5">
                 <div className="relative focus-within:z-10">
                   <Input
                     className="peer rounded-b-none pe-9 shadow-none [direction:inherit]"

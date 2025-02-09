@@ -30,11 +30,11 @@ export default function Component() {
                   <legend className="text-lg font-semibold leading-none text-foreground">
                     How hard was it to set up your account?
                   </legend>
-                  <RadioGroup className="flex gap-0 -space-x-px rounded-lg shadow-sm shadow-black/5">
+                  <RadioGroup className="flex gap-0 -space-x-px rounded-lg shadow-xs shadow-black/5">
                     {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((number) => (
                       <label
                         key={number}
-                        className="relative flex size-9 flex-1 cursor-pointer flex-col items-center justify-center gap-3 border border-input text-center text-sm outline-offset-2 transition-colors first:rounded-s-lg last:rounded-e-lg has-[[data-state=checked]]:z-10 has-[[data-disabled]]:cursor-not-allowed has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent has-[[data-disabled]]:opacity-50 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70"
+                        className="relative flex size-9 flex-1 cursor-pointer flex-col items-center justify-center gap-3 border border-input text-center text-sm outline-offset-2 transition-colors first:rounded-s-lg last:rounded-e-lg has-data-[state=checked]:z-10 has-data-disabled:cursor-not-allowed has-data-[state=checked]:border-ring has-data-[state=checked]:bg-accent has-data-disabled:opacity-50 has-focus-visible:outline has-focus-visible:outline-2 has-focus-visible:outline-ring/70"
                       >
                         <RadioGroupItem
                           id={`radio-17-r${number}`}

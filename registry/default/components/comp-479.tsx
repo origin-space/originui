@@ -142,7 +142,7 @@ export default function Component() {
                 return (
                   <TableHead
                     key={header.id}
-                    className="relative h-10 select-none border-t [&>.cursor-col-resize]:last:opacity-0"
+                    className="relative h-10 select-none border-t last:[&>.cursor-col-resize]:opacity-0"
                     aria-sort={
                       header.column.getIsSorted() === "asc"
                         ? "ascending"
