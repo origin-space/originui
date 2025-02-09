@@ -74,7 +74,7 @@ const frameworks: Option[] = [
 export default function Component() {
   const id = useId();
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label>Multiselect</Label>
       <MultipleSelector
         commandProps={{

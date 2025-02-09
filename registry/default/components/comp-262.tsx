@@ -19,7 +19,7 @@ export default function Component() {
   } = useSliderWithInput({ minValue, maxValue, initialValue });
 
   return (
-    <div className="space-y-4">
+    <div className="*:not-first:mt-4">
       <Label>Vertical slider with input</Label>
       <div className="flex h-40 flex-col items-center justify-center gap-4">
         <Slider

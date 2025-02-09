@@ -10,7 +10,7 @@ export default function Component() {
   const { getExpiryDateProps } = usePaymentInputs();
 
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={`expiry-${id}`}>Expiry date</Label>
       <Input {...getExpiryDateProps()} id={`expiry-${id}`} className="[direction:inherit]" />
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">

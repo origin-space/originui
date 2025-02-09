@@ -7,7 +7,7 @@ import { Button, DatePicker, Dialog, Group, Label, Popover } from "react-aria-co
 
 export default function Component() {
   return (
-    <DatePicker className="space-y-2">
+    <DatePicker className="*:not-first:mt-2">
       <Label className="text-sm font-medium text-foreground">Date picker</Label>
       <div className="flex">
         <Group className="w-full">

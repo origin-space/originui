@@ -16,7 +16,7 @@ export default function Component() {
   } = useCharacterLimit({ maxLength });
 
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Textarea with characters left</Label>
       <Textarea
         id={id}

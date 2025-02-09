@@ -45,11 +45,11 @@ export default function Component() {
 
         <form className="space-y-5">
           <div className="space-y-4">
-            <div className="space-y-2">
+            <div className="*:not-first:mt-2">
               <Label htmlFor={`name-${id}`}>Name on card</Label>
               <Input id={`name-${id}`} type="text" required />
             </div>
-            <div className="space-y-2">
+            <div className="*:not-first:mt-2">
               <Label htmlFor={`number-${id}`}>Card Number</Label>
               <div className="relative">
                 <Input

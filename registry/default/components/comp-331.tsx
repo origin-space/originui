@@ -75,7 +75,7 @@ export default function Component() {
                   />
                 </div>
               </div>
-              <div className="space-y-2">
+              <div className="*:not-first:mt-2">
                 <Label htmlFor={`${id}-username`}>Username</Label>
                 <div className="relative">
                   <Input
@@ -96,7 +96,7 @@ export default function Component() {
                   </div>
                 </div>
               </div>
-              <div className="space-y-2">
+              <div className="*:not-first:mt-2">
                 <Label htmlFor={`${id}-website`}>Website</Label>
                 <div className="flex rounded-lg shadow-xs shadow-black/5">
                   <span className="-z-10 inline-flex items-center rounded-s-lg border border-input bg-background px-3 text-sm text-muted-foreground">
@@ -111,7 +111,7 @@ export default function Component() {
                   />
                 </div>
               </div>
-              <div className="space-y-2">
+              <div className="*:not-first:mt-2">
                 <Label htmlFor={`${id}-bio`}>Biography</Label>
                 <Textarea
                   id={`${id}-bio`}

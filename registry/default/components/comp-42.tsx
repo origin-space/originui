@@ -8,7 +8,7 @@ import { Button, DateRangePicker, Dialog, Group, Label, Popover } from "react-ar
 
 export default function Component() {
   return (
-    <DateRangePicker className="space-y-2">
+    <DateRangePicker className="*:not-first:mt-2">
       <Label className="text-sm font-medium text-foreground">Date range picker</Label>
       <div className="flex">
         <Group className={cn(dateInputStyle, "pe-9")}>

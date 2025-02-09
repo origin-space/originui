@@ -5,7 +5,7 @@ import { useId } from "react";
 export default function Component() {
   const id = useId();
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Input with end inline add-on</Label>
       <div className="relative">
         <Input id={id} className="peer pe-12" placeholder="google" type="text" />

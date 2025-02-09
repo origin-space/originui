@@ -13,7 +13,7 @@ export default function Component() {
   const [value, setValue] = useState("");
 
   return (
-    <div className="space-y-2" dir="ltr">
+    <div className="*:not-first:mt-2" dir="ltr">
       <Label htmlFor={id}>Phone number input</Label>
       <RPNInput.default
         className="flex rounded-lg shadow-xs shadow-black/5"

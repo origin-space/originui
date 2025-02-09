@@ -15,7 +15,7 @@ export default function Component() {
 
   return (
     <div>
-      <div className="space-y-2">
+      <div className="*:not-first:mt-2">
         <Label htmlFor={id}>Date picker</Label>
         <Popover>
           <PopoverTrigger asChild>

@@ -5,7 +5,7 @@ import { useId } from "react";
 export default function Component() {
   const id = useId();
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Textarea with helper text</Label>
       <Textarea id={id} placeholder="Leave a comment" />
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">

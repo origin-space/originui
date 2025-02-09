@@ -12,7 +12,7 @@ export default function Component() {
     usePaymentInputs();
 
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <legend className="text-sm font-medium text-foreground">Card Details</legend>
       <div className="rounded-lg shadow-xs shadow-black/5">
         <div className="relative focus-within:z-10">

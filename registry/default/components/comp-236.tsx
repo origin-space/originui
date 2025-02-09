@@ -5,7 +5,7 @@ import { useId } from "react";
 export default function Component() {
   const id = useId();
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Multiple select (native)</Label>
       <div className="overflow-hidden rounded-lg border border-input">
         <SelectNative id={id} multiple className="rounded-none border-none">

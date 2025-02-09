@@ -52,7 +52,7 @@ export default function Component() {
                 </div>
               </div>
 
-              <div className="space-y-2">
+              <div className="*:not-first:mt-2">
                 <Label>Why did you give this rating?</Label>
                 <Textarea
                   id="feedback"

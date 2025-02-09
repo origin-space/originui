@@ -74,7 +74,7 @@ export default function Component() {
 
         <form className="space-y-5">
           <div className="space-y-4">
-            <div className="space-y-2">
+            <div className="*:not-first:mt-2">
               <Label>Invite via email</Label>
               <div className="space-y-3">
                 {emails.map((email, index) => (
@@ -105,7 +105,7 @@ export default function Component() {
 
         <hr className="my-1 border-t border-border" />
 
-        <div className="space-y-2">
+        <div className="*:not-first:mt-2">
           <Label htmlFor={id}>Invite via magic link</Label>
           <div className="relative">
             <Input

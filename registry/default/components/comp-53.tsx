@@ -26,7 +26,7 @@ export default function Component() {
   };
 
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Copy to clipboard</Label>
       <div className="relative">
         <Input

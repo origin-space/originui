@@ -70,7 +70,7 @@ const frameworks: Option[] = [
 
 export default function Component() {
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label>Multiselect with placeholder and clear</Label>
       <MultipleSelector
         commandProps={{

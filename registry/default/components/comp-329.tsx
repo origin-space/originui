@@ -81,11 +81,11 @@ export default function Component() {
                 <p className="text-sm text-muted-foreground">$320/month</p>
               </label>
             </RadioGroup>
-            <div className="space-y-2">
+            <div className="*:not-first:mt-2">
               <Label htmlFor={`name-${id}`}>Name on card</Label>
               <Input id={`name-${id}`} type="text" required />
             </div>
-            <div className="space-y-2">
+            <div className="*:not-first:mt-2">
               <legend className="text-sm font-medium text-foreground">Card Details</legend>
               <div className="rounded-lg shadow-xs shadow-black/5">
                 <div className="relative focus-within:z-10">
@@ -130,7 +130,7 @@ export default function Component() {
                 + Add coupon
               </button>
             ) : (
-              <div className="space-y-2">
+              <div className="*:not-first:mt-2">
                 <Label htmlFor={`coupon-${id}`}>Coupon code</Label>
                 <Input
                   id={`coupon-${id}`}

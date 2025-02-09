@@ -5,7 +5,7 @@ import { ListBox, ListBoxItem } from "react-aria-components";
 
 export default function Component() {
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label>Listbox with multiple options</Label>
       <div className="overflow-hidden rounded-lg border border-input">
         <ListBox

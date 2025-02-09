@@ -43,7 +43,7 @@ export default function Component() {
   }, [timezones]);
 
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Timezone select with search</Label>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>

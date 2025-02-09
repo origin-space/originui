@@ -6,7 +6,7 @@ import { Button, Group, Input, Label, NumberField } from "react-aria-components"
 export default function Component() {
   return (
     <NumberField defaultValue={2048} minValue={0}>
-      <div className="space-y-2">
+      <div className="*:not-first:mt-2">
         <Label className="text-sm font-medium text-foreground">
           Number input with plus/minus buttons
         </Label>

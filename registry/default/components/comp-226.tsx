@@ -13,7 +13,7 @@ import { useId } from "react";
 export default function Component() {
   const id = useId();
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Options with avatar</Label>
       <Select defaultValue="1">
         <SelectTrigger

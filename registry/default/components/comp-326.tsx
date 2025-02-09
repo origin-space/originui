@@ -46,11 +46,11 @@ export default function Component() {
 
         <form className="space-y-5">
           <div className="space-y-4">
-            <div className="space-y-2">
+            <div className="*:not-first:mt-2">
               <Label htmlFor={`${id}-email`}>Email</Label>
               <Input id={`${id}-email`} placeholder="hi@yourcompany.com" type="email" required />
             </div>
-            <div className="space-y-2">
+            <div className="*:not-first:mt-2">
               <Label htmlFor={`${id}-password`}>Password</Label>
               <Input
                 id={`${id}-password`}

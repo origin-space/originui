@@ -33,7 +33,7 @@ export default function Component() {
 
   return (
     <DateRangePicker
-      className="space-y-2"
+      className="*:not-first:mt-2"
       isDateUnavailable={isDateUnavailable}
       validate={validate}
     >

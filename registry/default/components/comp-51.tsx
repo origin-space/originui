@@ -50,7 +50,7 @@ export default function Component() {
   return (
     <div>
       {/* Password input field with toggle visibility button */}
-      <div className="space-y-2">
+      <div className="*:not-first:mt-2">
         <Label htmlFor={id}>Input with password strength indicator</Label>
         <div className="relative">
           <Input

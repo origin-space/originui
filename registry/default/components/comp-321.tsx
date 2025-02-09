@@ -42,7 +42,7 @@ export default function Component() {
         </div>
 
         <form className="space-y-5">
-          <div className="space-y-2">
+          <div className="*:not-first:mt-2">
             <div className="relative">
               <Input
                 id="dialog-subscribe"

@@ -45,7 +45,7 @@ export default function Component() {
         </div>
 
         <form className="space-y-5">
-          <div className="space-y-2">
+          <div className="*:not-first:mt-2">
             <Label htmlFor={id}>Project name</Label>
             <Input
               id={id}

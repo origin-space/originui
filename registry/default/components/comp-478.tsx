@@ -419,7 +419,7 @@ function Filter({ column }: { column: Column<any, unknown> }) {
 
   if (filterVariant === "range") {
     return (
-      <div className="space-y-2">
+      <div className="*:not-first:mt-2">
         <Label>{columnHeader}</Label>
         <div className="flex">
           <Input
@@ -457,7 +457,7 @@ function Filter({ column }: { column: Column<any, unknown> }) {
 
   if (filterVariant === "select") {
     return (
-      <div className="space-y-2">
+      <div className="*:not-first:mt-2">
         <Label htmlFor={`${id}-select`}>{columnHeader}</Label>
         <Select
           value={columnFilterValue?.toString() ?? "all"}
@@ -482,7 +482,7 @@ function Filter({ column }: { column: Column<any, unknown> }) {
   }
 
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={`${id}-input`}>{columnHeader}</Label>
       <div className="relative">
         <Input

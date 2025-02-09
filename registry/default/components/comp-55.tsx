@@ -8,7 +8,7 @@ import { withMask } from "use-mask-input";
 export default function Component() {
   const id = useId();
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Timestamp</Label>
       <Input
         id={id}

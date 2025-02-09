@@ -22,7 +22,7 @@ export default function Component() {
   }, [inputValue]);
 
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Search input with loader</Label>
       <div className="relative">
         <Input

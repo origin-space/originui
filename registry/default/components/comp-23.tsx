@@ -12,7 +12,7 @@ export default function Component() {
   const toggleVisibility = () => setIsVisible((prevState) => !prevState);
 
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Show/hide password input</Label>
       <div className="relative">
         <Input

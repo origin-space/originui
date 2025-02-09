@@ -11,7 +11,7 @@ export default function Component() {
   const labels = ["Awful", "Poor", "Okay", "Good", "Amazing"];
 
   return (
-    <div className="space-y-3">
+    <div className="*:not-first:mt-3">
       <Label>Rate your experience</Label>
       <div className="flex items-center gap-2">
         <Slider

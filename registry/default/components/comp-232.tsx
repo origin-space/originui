@@ -62,7 +62,7 @@ export default function Component() {
   const [value, setValue] = useState<string>("");
 
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Options with flag and search</Label>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>

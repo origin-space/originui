@@ -187,7 +187,7 @@ export default function Component() {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="*:not-first:mt-4">
       <Label>Price slider</Label>
       <div>
         {/* Histogram bars */}

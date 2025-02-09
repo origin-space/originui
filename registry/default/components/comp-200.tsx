@@ -28,7 +28,7 @@ export default function Component() {
   }, [timezones]);
 
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Timezone select (native)</Label>
       <SelectNative id={id} defaultValue="Europe/London">
         {formattedTimezones.map(({ value, label }) => (

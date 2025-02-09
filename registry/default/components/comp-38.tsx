@@ -6,7 +6,7 @@ import { Label } from "react-aria-components";
 
 export default function Component() {
   return (
-    <TimeField className="space-y-2">
+    <TimeField className="*:not-first:mt-2">
       <Label className="text-sm font-medium text-foreground">Time input with start icon</Label>
       <div className="relative">
         <div className="pointer-events-none absolute inset-y-0 start-0 z-10 flex items-center justify-center ps-3 text-muted-foreground/80">

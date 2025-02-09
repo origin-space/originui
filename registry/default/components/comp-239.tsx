@@ -5,7 +5,7 @@ import { Header, ListBox, ListBoxItem, ListBoxSection, Separator } from "react-a
 
 export default function Component() {
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label>Listbox with option groups</Label>
       <div className="overflow-hidden rounded-lg border border-input">
         <ListBox

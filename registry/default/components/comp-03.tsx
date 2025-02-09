@@ -5,7 +5,7 @@ import { useId } from "react";
 export default function Component() {
   const id = useId();
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Input with helper text</Label>
       <Input id={id} placeholder="Email" type="email" />
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">

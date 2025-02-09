@@ -26,7 +26,7 @@ export default function Component() {
   const [activeTagIndex, setActiveTagIndex] = useState<number | null>(null);
 
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Input with tags</Label>
       <TagInput
         id={id}
