@@ -1,56 +1,56 @@
-"use client";
-
 import {
   Stepper,
+  StepperDescription,
   StepperIndicator,
   StepperItem,
+  StepperSeparator,
+  StepperTitle,
   StepperTrigger,
 } from "@/registry/default/ui/stepper";
-import { Button } from "@/registry/default/ui/button";
-import { useState } from "react";
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-const steps = [1, 2, 3, 4];
+
+const steps = [
+  {
+    step: 1,
+    title: "Step One",
+    description: "Desc for step one",
+  },
+  {
+    step: 2,
+    title: "Step Two",
+    description: "Desc for step two",
+  },
+  {
+    step: 3,
+    title: "Step Three",
+    description: "Desc for step three",
+  },
+];
 
 export default function Component() {
-  const [currentStep, setCurrentStep] = useState(2);
-
   return (
-    <div className="mx-auto max-w-xl space-y-8 text-center">
-      <div className="flex items-center gap-2">
-        <Button
-          className="shrink-0"
-          variant="ghost"
-          size="icon"
-          onClick={() => setCurrentStep((prev) => prev - 1)}
-          disabled={currentStep === 1}
-          aria-label="Prev step"
-        >
-          <ChevronLeftIcon size={16} strokeWidth={2} aria-hidden="true" />
-        </Button>        
-        <Stepper value={currentStep} onValueChange={setCurrentStep} className="gap-1">
-          {steps.map((step) => (
-            <StepperItem key={step} step={step} className="flex-1">
-              <StepperTrigger className="w-full flex-col items-start gap-2" asChild>
-                <StepperIndicator asChild className="h-1 w-full bg-border">
-                  <span className="sr-only">{step}</span>
-                </StepperIndicator>        
-              </StepperTrigger>
-            </StepperItem>
-          ))}
-        </Stepper>
-        <Button
-          className="shrink-0"
-          variant="ghost"
-          size="icon"
-          onClick={() => setCurrentStep((prev) => prev + 1)}
-          disabled={currentStep === steps.length}
-          aria-label="Next step"
-        >
-          <ChevronRightIcon size={16} strokeWidth={2} aria-hidden="true" />
-        </Button>
-      </div>
+    <div className="space-y-8 text-center">
+      <Stepper defaultValue={2} orientation="vertical">
+        {steps.map(({ step, title, description }) => (
+          <StepperItem
+            key={step}
+            step={step}
+            className="relative items-start [&:not(:last-child)]:flex-1"
+          >
+            <StepperTrigger className="items-start pb-12 last:pb-0">
+              <StepperIndicator />
+              <div className="mt-0.5 space-y-0.5 px-2 text-left">
+                <StepperTitle>{title}</StepperTitle>
+                <StepperDescription>{description}</StepperDescription>
+              </div>
+            </StepperTrigger>
+            {step < steps.length && (
+              <StepperSeparator className="absolute inset-y-0 left-3 top-[calc(1.5rem+0.125rem)] -order-1 m-0 -translate-x-1/2 group-data-[orientation=vertical]/stepper:h-[calc(100%-1.5rem-0.25rem)] group-data-[orientation=horizontal]/stepper:w-[calc(100%-1.5rem-0.25rem)] group-data-[orientation=horizontal]/stepper:flex-none" />
+            )}
+          </StepperItem>
+        ))}
+      </Stepper>
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
-        Stepper with numbers only
+        Vertical stepper with inline titles and descriptions
       </p>
     </div>
   );

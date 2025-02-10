@@ -5,62 +5,52 @@ import {
   Stepper,
   StepperIndicator,
   StepperItem,
-  StepperSeparator,
   StepperTrigger,
 } from "@/registry/default/ui/stepper";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { useState } from "react";
-
 const steps = [1, 2, 3, 4];
 
 export default function Component() {
   const [currentStep, setCurrentStep] = useState(2);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleNextStep = () => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setCurrentStep((prev) => prev + 1);
-      setIsLoading(false);
-    }, 1000);
-  };
 
   return (
     <div className="mx-auto max-w-xl space-y-8 text-center">
-      <Stepper value={currentStep} onValueChange={setCurrentStep}>
-        {steps.map((step) => (
-          <StepperItem
-            key={step}
-            step={step}
-            className="[&:not(:last-child)]:flex-1"
-            loading={isLoading}
-          >
-            <StepperTrigger asChild>
-              <StepperIndicator />
-            </StepperTrigger>
-            {step < steps.length && <StepperSeparator />}
-          </StepperItem>
-        ))}
-      </Stepper>
-      <div className="flex justify-center space-x-4">
+      <div className="flex items-center gap-2">
         <Button
-          variant="outline"
-          className="w-32"
+          className="shrink-0"
+          variant="ghost"
+          size="icon"
           onClick={() => setCurrentStep((prev) => prev - 1)}
           disabled={currentStep === 1}
+          aria-label="Prev step"
         >
-          Prev step
+          <ChevronLeftIcon size={16} strokeWidth={2} aria-hidden="true" />
         </Button>
+        <Stepper value={currentStep} onValueChange={setCurrentStep} className="gap-1">
+          {steps.map((step) => (
+            <StepperItem key={step} step={step} className="flex-1">
+              <StepperTrigger className="w-full flex-col items-start gap-2" asChild>
+                <StepperIndicator asChild className="h-1 w-full bg-border">
+                  <span className="sr-only">{step}</span>
+                </StepperIndicator>
+              </StepperTrigger>
+            </StepperItem>
+          ))}
+        </Stepper>
         <Button
-          variant="outline"
-          className="w-32"
-          onClick={handleNextStep}
-          disabled={currentStep > steps.length}
+          className="shrink-0"
+          variant="ghost"
+          size="icon"
+          onClick={() => setCurrentStep((prev) => prev + 1)}
+          disabled={currentStep === steps.length}
+          aria-label="Next step"
         >
-          Next step
+          <ChevronRightIcon size={16} strokeWidth={2} aria-hidden="true" />
         </Button>
       </div>
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
-        Controlled stepper with checkmarks and loading state
+        Paginated stepper
       </p>
     </div>
   );

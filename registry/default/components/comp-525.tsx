@@ -29,24 +29,26 @@ const steps = [
 export default function Component() {
   return (
     <div className="space-y-8 text-center">
-      <Stepper defaultValue={1} orientation="vertical">
+      <Stepper defaultValue={2}>
         {steps.map(({ step, title, description }) => (
-          <StepperItem key={step} step={step} className="relative items-start [&:not(:last-child)]:flex-1">
-            <StepperTrigger className="items-start pb-12 last:pb-0">
+          <StepperItem
+            key={step}
+            step={step}
+            className="max-md:items-start [&:not(:last-child)]:flex-1"
+          >
+            <StepperTrigger className="gap-4 max-md:flex-col">
               <StepperIndicator />
-              <div className="space-y-0.5 text-left px-2 mt-0.5">
+              <div className="text-center md:-order-1 md:text-left">
                 <StepperTitle>{title}</StepperTitle>
-                <StepperDescription>{description}</StepperDescription>
-              </div>              
+                <StepperDescription className="max-sm:hidden">{description}</StepperDescription>
+              </div>
             </StepperTrigger>
-            {step < steps.length && (
-              <StepperSeparator className="absolute inset-y-0 top-[calc(1.5rem+0.125rem)] left-3 -order-1 m-0 -translate-x-1/2 group-data-[orientation=horizontal]/stepper:w-[calc(100%-1.5rem-0.25rem)] group-data-[orientation=vertical]/stepper:h-[calc(100%-1.5rem-0.25rem)] group-data-[orientation=horizontal]/stepper:flex-none" />
-            )}
+            {step < steps.length && <StepperSeparator className="max-md:mt-3.5 md:mx-4" />}
           </StepperItem>
         ))}
       </Stepper>
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
-        Uncontrolled stepper with buttons
+        Stepper with inline titles and descriptions
       </p>
     </div>
   );

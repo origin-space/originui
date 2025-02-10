@@ -17,7 +17,6 @@ type StepItemContextValue = {
   state: StepState;
   isDisabled: boolean;
   isLoading: boolean;
-  
 };
 
 type StepState = "active" | "completed" | "inactive" | "loading";
@@ -52,14 +51,7 @@ interface StepperProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
   (
-    {
-      defaultValue = 0,
-      value,
-      onValueChange,
-      orientation = "horizontal",
-      className,
-      ...props
-    },
+    { defaultValue = 0, value, onValueChange, orientation = "horizontal", className, ...props },
     ref,
   ) => {
     const [activeStep, setInternalStep] = React.useState(defaultValue);
@@ -156,7 +148,10 @@ const StepperTrigger = React.forwardRef<HTMLButtonElement, StepperTriggerProps>(
     return (
       <button
         ref={ref}
-        className={cn("inline-flex items-center gap-3 disabled:pointer-events-none disabled:opacity-50", className)}
+        className={cn(
+          "inline-flex items-center gap-3 disabled:pointer-events-none disabled:opacity-50",
+          className,
+        )}
         onClick={() => setActiveStep(step)}
         disabled={isDisabled}
         {...props}

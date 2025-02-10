@@ -358,6 +358,17 @@
       ]
     },
     {
+      "name": "stepper",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/default/ui/stepper.tsx",
+          "type": "registry:ui",
+          "target": ""
+        }
+      ]
+    },
+    {
       "name": "switch",
       "type": "registry:ui",
       "dependencies": ["@radix-ui/react-switch"],
@@ -9769,6 +9780,7 @@
     {
       "name": "comp-513",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/stepper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-513.tsx",
@@ -9784,6 +9796,7 @@
     {
       "name": "comp-514",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/stepper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-514.tsx",
@@ -9797,8 +9810,25 @@
       }
     },
     {
+      "name": "comp-515",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/stepper.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-515.tsx",
+          "type": "registry:component",
+          "target": ""
+        }
+      ],
+      "meta": {
+        "tags": ["stepper"],
+        "colSpan": 3
+      }
+    },
+    {
       "name": "comp-516",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/stepper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-516.tsx",
@@ -9814,6 +9844,7 @@
     {
       "name": "comp-517",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/stepper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-517.tsx",
@@ -9829,6 +9860,7 @@
     {
       "name": "comp-518",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/stepper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-518.tsx",
@@ -9844,6 +9876,7 @@
     {
       "name": "comp-519",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/stepper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-519.tsx",
@@ -9859,6 +9892,7 @@
     {
       "name": "comp-520",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/stepper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-520.tsx",
@@ -9874,6 +9908,7 @@
     {
       "name": "comp-521",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/stepper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-521.tsx",
@@ -9889,6 +9924,7 @@
     {
       "name": "comp-522",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/stepper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-522.tsx",
@@ -9898,12 +9934,13 @@
       ],
       "meta": {
         "tags": ["stepper"],
-        "colSpan": 2
+        "colSpan": 3
       }
     },
     {
       "name": "comp-523",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/stepper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-523.tsx",
@@ -9913,12 +9950,13 @@
       ],
       "meta": {
         "tags": ["stepper"],
-        "colSpan": 2
+        "colSpan": 3
       }
     },
     {
       "name": "comp-524",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/stepper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-524.tsx",
@@ -9928,12 +9966,13 @@
       ],
       "meta": {
         "tags": ["stepper"],
-        "colSpan": 2
+        "colSpan": 3
       }
     },
     {
       "name": "comp-525",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/stepper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-525.tsx",
@@ -9943,12 +9982,13 @@
       ],
       "meta": {
         "tags": ["stepper"],
-        "colSpan": 2
+        "colSpan": 3
       }
     },
     {
       "name": "comp-526",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/stepper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-526.tsx",
@@ -9957,13 +9997,14 @@
         }
       ],
       "meta": {
-        "tags": ["stepper"],
-        "colSpan": 3
+        "tags": ["stepper", "vertical stepper"],
+        "colSpan": 2
       }
     },
     {
       "name": "comp-527",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/stepper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-527.tsx",
@@ -9972,13 +10013,14 @@
         }
       ],
       "meta": {
-        "tags": ["stepper"],
-        "colSpan": 3
+        "tags": ["stepper", "vertical stepper"],
+        "colSpan": 2
       }
     },
     {
       "name": "comp-528",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/stepper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-528.tsx",
@@ -9987,13 +10029,14 @@
         }
       ],
       "meta": {
-        "tags": ["stepper"],
-        "colSpan": 3
+        "tags": ["stepper", "vertical stepper"],
+        "colSpan": 2
       }
     },
     {
       "name": "comp-529",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/stepper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-529.tsx",
@@ -10002,23 +10045,8 @@
         }
       ],
       "meta": {
-        "tags": ["stepper"],
-        "colSpan": 3
-      }
-    },
-    {
-      "name": "comp-530",
-      "type": "registry:component",
-      "files": [
-        {
-          "path": "registry/default/components/comp-530.tsx",
-          "type": "registry:component",
-          "target": ""
-        }
-      ],
-      "meta": {
-        "tags": ["stepper"],
-        "colSpan": 3
+        "tags": ["stepper", "vertical stepper"],
+        "colSpan": 2
       }
     }
   ]

@@ -1,50 +1,48 @@
 import {
   Stepper,
-  StepperDescription,
   StepperIndicator,
   StepperItem,
   StepperSeparator,
-  StepperTitle,
   StepperTrigger,
 } from "@/registry/default/ui/stepper";
-
-const steps = [
-  {
-    step: 1,
-    title: "Step One",
-    description: "Desc for step one",
-  },
-  {
-    step: 2,
-    title: "Step Two",
-    description: "Desc for step two",
-  },
-  {
-    step: 3,
-    title: "Step Three",
-    description: "Desc for step three",
-  },
-];
+import { Shuffle } from "lucide-react";
 
 export default function Component() {
   return (
-    <Stepper defaultValue={1}>
-      {steps.map(({ step, title, description }) => (
-        <StepperItem
-          key={step}
-          step={step}
-          className="max-md:items-start [&:not(:last-child)]:flex-1"
-        >
-          <StepperTrigger className="gap-4 max-md:flex-col">
-            <StepperIndicator />
-            <div className="text-center md:-order-1 md:text-left">
-              <StepperTitle>{title}</StepperTitle>
-              <StepperDescription className="max-sm:hidden">{description}</StepperDescription>
-            </div>
+    <div className="mx-auto max-w-xl space-y-8 text-center">
+      <Stepper defaultValue={2}>
+        <StepperItem step={1} className="[&:not(:last-child)]:flex-1">
+          <StepperTrigger>
+            <StepperIndicator asChild>
+              <img
+                className="rounded-full"
+                src="/avatar-40-05.jpg"
+                width={32}
+                height={32}
+                alt="Mike Palmer"
+              />
+            </StepperIndicator>
           </StepperTrigger>
-          {step < steps.length && <StepperSeparator className="max-md:mt-3.5 md:mx-4" />}
+          <StepperSeparator />
         </StepperItem>
-      ))}
-    </Stepper>
+        <StepperItem step={2} className="[&:not(:last-child)]:flex-1" loading>
+          <StepperTrigger>
+            <StepperIndicator />
+          </StepperTrigger>
+          <StepperSeparator />
+        </StepperItem>
+        <StepperItem step={3} className="[&:not(:last-child)]:flex-1">
+          <StepperTrigger>
+            <StepperIndicator asChild>
+              <Shuffle size={14} strokeWidth={2} aria-hidden="true" />
+              <span className="sr-only">Shuffle</span>
+            </StepperIndicator>
+          </StepperTrigger>
+        </StepperItem>
+      </Stepper>
+      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+        Stepper with mixed elements
+      </p>
+    </div>
   );
 }

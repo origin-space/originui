@@ -1,52 +1,49 @@
-"use client";
-
-import { Button } from "@/registry/default/ui/button";
 import {
   Stepper,
   StepperIndicator,
   StepperItem,
-  StepperSeparator,
+  StepperTitle,
   StepperTrigger,
 } from "@/registry/default/ui/stepper";
-import { useState } from "react";
 
-const steps = [1, 2, 3, 4];
+const steps = [
+  {
+    step: 1,
+    title: "Step One",
+  },
+  {
+    step: 2,
+    title: "Step Two",
+  },
+  {
+    step: 3,
+    title: "Step Three",
+  },
+  {
+    step: 4,
+    title: "Step Four",
+  },
+];
 
 export default function Component() {
-  const [currentStep, setCurrentStep] = useState(2);
-
   return (
     <div className="mx-auto max-w-xl space-y-8 text-center">
-      <Stepper value={currentStep} onValueChange={setCurrentStep}>
-        {steps.map((step) => (
-          <StepperItem key={step} step={step} className="[&:not(:last-child)]:flex-1">
-            <StepperTrigger asChild>
-              <StepperIndicator />
+      <Stepper defaultValue={2} className="items-start gap-4">
+        {steps.map(({ step, title }) => (
+          <StepperItem key={step} step={step} className="flex-1">
+            <StepperTrigger className="w-full flex-col items-start gap-2">
+              <StepperIndicator asChild className="h-1 w-full bg-border">
+                <span className="sr-only">{step}</span>
+              </StepperIndicator>
+              <div className="space-y-0.5">
+                <StepperTitle>{title}</StepperTitle>
+              </div>
             </StepperTrigger>
-            {step < steps.length && <StepperSeparator />}
           </StepperItem>
         ))}
       </Stepper>
-      <div className="flex justify-center space-x-4">
-        <Button
-          variant="outline"
-          className="w-32"
-          onClick={() => setCurrentStep((prev) => prev - 1)}
-          disabled={currentStep === 1}
-        >
-          Prev step
-        </Button>
-        <Button
-          variant="outline"
-          className="w-32"
-          onClick={() => setCurrentStep((prev) => prev + 1)}
-          disabled={currentStep > steps.length}
-        >
-          Next step
-        </Button>
-      </div>
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
-        Controlled stepper with checkmarks
+        Stepper with labels
       </p>
     </div>
   );

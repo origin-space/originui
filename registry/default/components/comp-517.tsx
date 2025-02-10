@@ -1,45 +1,67 @@
+"use client";
+
+import { Button } from "@/registry/default/ui/button";
 import {
   Stepper,
   StepperIndicator,
   StepperItem,
   StepperSeparator,
-  StepperTitle,
   StepperTrigger,
 } from "@/registry/default/ui/stepper";
+import { useState } from "react";
 
-const steps = [
-  {
-    step: 1,
-    title: "Step One",
-  },
-  {
-    step: 2,
-    title: "Step Two",
-  },
-  {
-    step: 3,
-    title: "Step Three",
-  },
-];
+const steps = [1, 2, 3, 4];
 
 export default function Component() {
+  const [currentStep, setCurrentStep] = useState(2);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleNextStep = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setCurrentStep((prev) => prev + 1);
+      setIsLoading(false);
+    }, 1000);
+  };
+
   return (
-    <Stepper defaultValue={1}>
-      {steps.map(({ step, title }) => (
-        <StepperItem
-          key={step}
-          step={step}
-          className="max-md:items-start [&:not(:last-child)]:flex-1"
+    <div className="mx-auto max-w-xl space-y-8 text-center">
+      <Stepper value={currentStep} onValueChange={setCurrentStep}>
+        {steps.map((step) => (
+          <StepperItem
+            key={step}
+            step={step}
+            className="[&:not(:last-child)]:flex-1"
+            loading={isLoading}
+          >
+            <StepperTrigger asChild>
+              <StepperIndicator />
+            </StepperTrigger>
+            {step < steps.length && <StepperSeparator />}
+          </StepperItem>
+        ))}
+      </Stepper>
+      <div className="flex justify-center space-x-4">
+        <Button
+          variant="outline"
+          className="w-32"
+          onClick={() => setCurrentStep((prev) => prev - 1)}
+          disabled={currentStep === 1}
         >
-          <StepperTrigger className="max-md:flex-col">
-            <StepperIndicator />
-            <div className="text-center md:text-left">
-              <StepperTitle>{title}</StepperTitle>
-            </div>
-          </StepperTrigger>
-          {step < steps.length && <StepperSeparator className="max-md:mt-3.5 md:mx-4" />}
-        </StepperItem>
-      ))}
-    </Stepper>
+          Prev step
+        </Button>
+        <Button
+          variant="outline"
+          className="w-32"
+          onClick={handleNextStep}
+          disabled={currentStep > steps.length}
+        >
+          Next step
+        </Button>
+      </div>
+      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+        Controlled stepper with checkmarks and loading state
+      </p>
+    </div>
   );
 }

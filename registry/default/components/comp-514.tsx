@@ -1,50 +1,29 @@
 import {
   Stepper,
-  StepperDescription,
   StepperIndicator,
   StepperItem,
   StepperSeparator,
-  StepperTitle,
   StepperTrigger,
 } from "@/registry/default/ui/stepper";
 
-const steps = [
-  {
-    step: 1,
-    title: "Step One",
-    description: "Desc for step one",
-  },
-  {
-    step: 2,
-    title: "Step Two",
-    description: "Desc for step two",
-  },
-  {
-    step: 3,
-    title: "Step Three",
-    description: "Desc for step three",
-  },
-];
+const steps = [1, 2, 3, 4];
 
 export default function Component() {
   return (
-    <Stepper defaultValue={1}>
-      {steps.map(({ step, title, description }) => (
-        <StepperItem
-          key={step}
-          step={step}
-          className="max-md:items-start [&:not(:last-child)]:flex-1"
-        >
-          <StepperTrigger className="max-md:flex-col">
-            <StepperIndicator />
-            <div className="text-center md:text-left">
-              <StepperTitle>{title}</StepperTitle>
-              <StepperDescription className="max-sm:hidden">{description}</StepperDescription>
-            </div>
-          </StepperTrigger>
-          {step < steps.length && <StepperSeparator className="max-md:mt-3.5 md:mx-4" />}
-        </StepperItem>
-      ))}
-    </Stepper>
+    <div className="mx-auto max-w-xl space-y-8 text-center">
+      <Stepper defaultValue={2}>
+        {steps.map((step) => (
+          <StepperItem key={step} step={step} className="[&:not(:last-child)]:flex-1">
+            <StepperTrigger>
+              <StepperIndicator />
+            </StepperTrigger>
+            {step < steps.length && <StepperSeparator />}
+          </StepperItem>
+        ))}
+      </Stepper>
+      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+        Stepper with numbers and checkmarks
+      </p>
+    </div>
   );
 }
