@@ -15,14 +15,14 @@ export default function Component() {
         {steps.map((step) => (
           <StepperItem key={step} step={step} className="[&:not(:last-child)]:flex-1">
             <StepperTrigger>
-              <StepperIndicator asChild>{step}</StepperIndicator>
+              <StepperIndicator />
             </StepperTrigger>
             {step < steps.length && <StepperSeparator />}
           </StepperItem>
         ))}
       </Stepper>
       <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
-        Stepper with numbers only
+        Stepper with numbers and checkmarks for completed steps
       </p>
     </div>
   );

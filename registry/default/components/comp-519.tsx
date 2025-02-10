@@ -13,7 +13,7 @@ import { useState } from "react";
 const steps = [1, 2, 3, 4];
 
 export default function Component() {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(2);
 
   return (
     <div className="mx-auto max-w-xl space-y-8 text-center">

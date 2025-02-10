@@ -9797,21 +9797,6 @@
       }
     },
     {
-      "name": "comp-515",
-      "type": "registry:component",
-      "files": [
-        {
-          "path": "registry/default/components/comp-515.tsx",
-          "type": "registry:component",
-          "target": ""
-        }
-      ],
-      "meta": {
-        "tags": ["stepper"],
-        "colSpan": 3
-      }
-    },
-    {
       "name": "comp-516",
       "type": "registry:component",
       "files": [
@@ -9929,6 +9914,111 @@
       "meta": {
         "tags": ["stepper"],
         "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-524",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-524.tsx",
+          "type": "registry:component",
+          "target": ""
+        }
+      ],
+      "meta": {
+        "tags": ["stepper"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-525",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-525.tsx",
+          "type": "registry:component",
+          "target": ""
+        }
+      ],
+      "meta": {
+        "tags": ["stepper"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-526",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-526.tsx",
+          "type": "registry:component",
+          "target": ""
+        }
+      ],
+      "meta": {
+        "tags": ["stepper"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-527",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-527.tsx",
+          "type": "registry:component",
+          "target": ""
+        }
+      ],
+      "meta": {
+        "tags": ["stepper"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-528",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-528.tsx",
+          "type": "registry:component",
+          "target": ""
+        }
+      ],
+      "meta": {
+        "tags": ["stepper"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-529",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-529.tsx",
+          "type": "registry:component",
+          "target": ""
+        }
+      ],
+      "meta": {
+        "tags": ["stepper"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-530",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-530.tsx",
+          "type": "registry:component",
+          "target": ""
+        }
+      ],
+      "meta": {
+        "tags": ["stepper"],
+        "colSpan": 3
       }
     }
   ]
