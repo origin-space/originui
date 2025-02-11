@@ -1,0 +1,57 @@
+"use client";
+
+import { Button } from "@/registry/default/ui/button";
+import {
+  Stepper,
+  StepperIndicator,
+  StepperItem,
+  StepperTrigger,
+} from "@/registry/default/ui/stepper";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
+import { useState } from "react";
+const steps = [1, 2, 3, 4];
+
+export default function Component() {
+  const [currentStep, setCurrentStep] = useState(2);
+
+  return (
+    <div className="mx-auto max-w-xl space-y-8 text-center">
+      <div className="flex items-center gap-2">
+        <Button
+          className="shrink-0"
+          variant="ghost"
+          size="icon"
+          onClick={() => setCurrentStep((prev) => prev - 1)}
+          disabled={currentStep === 1}
+          aria-label="Prev step"
+        >
+          <ChevronLeftIcon size={16} strokeWidth={2} aria-hidden="true" />
+        </Button>
+        <Stepper value={currentStep} onValueChange={setCurrentStep} className="gap-1">
+          {steps.map((step) => (
+            <StepperItem key={step} step={step} className="flex-1">
+              <StepperTrigger className="w-full flex-col items-start gap-2" asChild>
+                <StepperIndicator asChild className="h-1 w-full bg-border">
+                  <span className="sr-only">{step}</span>
+                </StepperIndicator>
+              </StepperTrigger>
+            </StepperItem>
+          ))}
+        </Stepper>
+        <Button
+          className="shrink-0"
+          variant="ghost"
+          size="icon"
+          onClick={() => setCurrentStep((prev) => prev + 1)}
+          disabled={currentStep === steps.length}
+          aria-label="Next step"
+        >
+          <ChevronRightIcon size={16} strokeWidth={2} aria-hidden="true" />
+        </Button>
+      </div>
+      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+        Paginated stepper
+      </p>
+    </div>
+  );
+}
