@@ -15,7 +15,7 @@ import { RotateCcw } from "lucide-react";
 import { cn } from "@/registry/default/lib/utils";
 
 export default function Component() {
-  const minValue = 0.0;
+  const minValue = 0;
   const maxValue = 2;
   const initialValue = [1.25];
   const defaultValue = [1];
