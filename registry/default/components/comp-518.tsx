@@ -11,7 +11,7 @@ export default function Component() {
   return (
     <div className="mx-auto max-w-xl space-y-8 text-center">
       <Stepper defaultValue={2}>
-        <StepperItem step={1} className="[&:not(:last-child)]:flex-1">
+        <StepperItem step={1} className="not-last:flex-1">
           <StepperTrigger>
             <StepperIndicator asChild>
               <img
@@ -25,13 +25,13 @@ export default function Component() {
           </StepperTrigger>
           <StepperSeparator />
         </StepperItem>
-        <StepperItem step={2} className="[&:not(:last-child)]:flex-1" loading>
+        <StepperItem step={2} className="not-last:flex-1" loading>
           <StepperTrigger>
             <StepperIndicator />
           </StepperTrigger>
           <StepperSeparator />
         </StepperItem>
-        <StepperItem step={3} className="[&:not(:last-child)]:flex-1">
+        <StepperItem step={3} className="not-last:flex-1">
           <StepperTrigger>
             <StepperIndicator asChild>
               <Shuffle size={14} strokeWidth={2} aria-hidden="true" />

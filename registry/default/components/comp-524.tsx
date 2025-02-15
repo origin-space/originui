@@ -34,7 +34,7 @@ export default function Component() {
           <StepperItem
             key={step}
             step={step}
-            className="max-md:items-start [&:not(:last-child)]:flex-1"
+            className="max-md:items-start not-last:flex-1"
           >
             <StepperTrigger className="max-md:flex-col">
               <StepperIndicator />

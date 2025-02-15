@@ -31,7 +31,7 @@ export default function Component() {
           <StepperItem
             key={step}
             step={step}
-            className="[&:not(:last-child)]:flex-1"
+            className="not-last:flex-1"
             loading={isLoading}
           >
             <StepperTrigger asChild>

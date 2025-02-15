@@ -19,7 +19,7 @@ export default function Component() {
     <div className="space-y-8 text-center">
       <Stepper value={currentStep} onValueChange={setCurrentStep} orientation="vertical">
         {steps.map((step) => (
-          <StepperItem key={step} step={step} className="[&:not(:last-child)]:flex-1">
+          <StepperItem key={step} step={step} className="not-last:flex-1">
             <StepperTrigger asChild>
               <StepperIndicator>
                 <span className="transition-all group-data-[loading=true]/step:scale-50 group-data-[state=completed]/step:scale-50 group-data-[loading=true]/step:opacity-0 group-data-[state=completed]/step:opacity-0">

@@ -34,7 +34,7 @@ export default function Component() {
           <StepperItem
             key={step}
             step={step}
-            className="relative items-start [&:not(:last-child)]:flex-1"
+            className="relative items-start not-last:flex-1"
           >
             <StepperTrigger className="items-start pb-12 last:pb-0">
               <StepperIndicator />

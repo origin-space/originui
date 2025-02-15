@@ -13,7 +13,7 @@ export default function Component() {
     <div className="mx-auto max-w-xl space-y-8 text-center">
       <Stepper defaultValue={2}>
         {steps.map((step) => (
-          <StepperItem key={step} step={step} className="[&:not(:last-child)]:flex-1">
+          <StepperItem key={step} step={step} className="not-last:flex-1">
             <StepperTrigger>
               <StepperIndicator />
             </StepperTrigger>
