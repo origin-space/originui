@@ -12,9 +12,10 @@ import {
   TooltipTrigger,
 } from "@/registry/default/ui/tooltip";
 import { RotateCcw } from "lucide-react";
+import { cn } from "@/registry/default/lib/utils";
 
 export default function Component() {
-  const minValue = 0.0;
+  const minValue = 0;
   const maxValue = 2;
   const initialValue = [1.25];
   const defaultValue = [1];
@@ -26,6 +27,7 @@ export default function Component() {
     handleInputChange,
     handleSliderChange,
     resetToDefault,
+    showReset,
   } = useSliderWithInput({ minValue, maxValue, initialValue, defaultValue });
 
   return (
@@ -39,7 +41,10 @@ export default function Component() {
                 <Button
                   size="icon"
                   variant="ghost"
-                  className="size-7"
+                  className={cn(
+                    "size-7 transition-opacity",
+                    showReset ? "opacity-100" : "opacity-0"
+                  )}
                   aria-label="Reset"
                   onClick={resetToDefault}
                 >
@@ -55,10 +60,10 @@ export default function Component() {
             inputMode="decimal"
             value={inputValues[0]}
             onChange={(e) => handleInputChange(e, 0)}
-            onBlur={() => validateAndUpdateValue(inputValues[0], 0)}
+            onBlur={() => validateAndUpdateValue(inputValues[0] ?? '', 0)}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
-                validateAndUpdateValue(inputValues[0], 0);
+                validateAndUpdateValue(inputValues[0] ?? '', 0);
               }
             }}
             aria-label="Enter value"

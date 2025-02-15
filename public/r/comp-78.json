@@ -9,8 +9,7 @@
     {
       "path": "registry/default/components/comp-78.tsx",
       "content": "import { Button } from \"@/registry/default/ui/button\";\n\nexport default function Component() {\n  return <Button>Button</Button>;\n}\n",
-      "type": "registry:component",
-      "target": ""
+      "type": "registry:component"
     }
   ],
   "meta": {

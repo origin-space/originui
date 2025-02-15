@@ -28,7 +28,7 @@ export default function Header() {
             className="hidden dark:block"
           />
         </Link>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 sm:gap-8">
           <ExternalLink text="GitHub" href="https://github.com/origin-space/originui" />
           <ExternalLink text="Follow us" href="https://x.com/origin_ui" />
           <ThemeToggle />
