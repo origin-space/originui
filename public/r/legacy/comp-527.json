@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-527",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/stepper.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-527.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Stepper,\n  StepperIndicator,\n  StepperItem,\n  StepperSeparator,\n  StepperTrigger,\n} from \"@/registry/default/ui/stepper\";\nimport { Check, LoaderCircle } from \"lucide-react\";\nimport { useState } from \"react\";\n\nconst steps = [1, 2, 3, 4];\n\nexport default function Component() {\n  const [currentStep, setCurrentStep] = useState(1);\n  return (\n    <div className=\"space-y-8 text-center\">\n      <Stepper value={currentStep} onValueChange={setCurrentStep} orientation=\"vertical\">\n        {steps.map((step) => (\n          <StepperItem key={step} step={step} className=\"[&:not(:last-child)]:flex-1\">\n            <StepperTrigger asChild>\n              <StepperIndicator>\n                <span className=\"transition-all group-data-[loading=true]/step:scale-50 group-data-[state=completed]/step:scale-50 group-data-[loading=true]/step:opacity-0 group-data-[state=completed]/step:opacity-0\">\n                  {step}\n                </span>\n                <Check\n                  className=\"absolute scale-50 opacity-0 transition-all group-data-[state=completed]/step:scale-100 group-data-[state=completed]/step:opacity-100\"\n                  size={16}\n                  strokeWidth={2}\n                  aria-hidden=\"true\"\n                />\n                <span className=\"absolute scale-50 opacity-0 transition-all group-data-[loading=true]/step:scale-100 group-data-[loading=true]/step:opacity-100\">\n                  <LoaderCircle\n                    className=\"animate-spin\"\n                    size={16}\n                    strokeWidth={2}\n                    aria-hidden=\"true\"\n                  />\n                </span>\n              </StepperIndicator>\n            </StepperTrigger>\n            {step < steps.length && <StepperSeparator />}\n          </StepperItem>\n        ))}\n      </Stepper>\n      <div className=\"flex justify-center space-x-4\">\n        <Button\n          variant=\"outline\"\n          className=\"w-32\"\n          onClick={() => setCurrentStep((prev) => prev - 1)}\n          disabled={currentStep === 1}\n        >\n          Prev step\n        </Button>\n        <Button\n          variant=\"outline\"\n          className=\"w-32\"\n          onClick={() => setCurrentStep((prev) => prev + 1)}\n          disabled={currentStep > steps.length}\n        >\n          Next step\n        </Button>\n      </div>\n      <p className=\"mt-2 text-xs text-muted-foreground\" role=\"region\" aria-live=\"polite\">\n        Controlled vertical stepper with checkmarks\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "stepper",
+      "vertical stepper"
+    ],
+    "colSpan": 2
+  }
+}
