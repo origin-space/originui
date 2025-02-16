@@ -439,7 +439,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
       >
         <div
           className={cn(
-            "relative min-h-[38px] rounded-lg border border-input text-sm transition-shadow focus-within:border-ring focus-within:outline-hidden focus-within:ring-[3px] focus-within:ring-ring/20 has-disabled:cursor-not-allowed has-disabled:opacity-50",
+            "relative min-h-[38px] rounded-lg border border-input text-sm transition-shadow focus-within:border-ring/40 focus-within:outline-hidden focus-within:ring-[3px] ring-ring/8 dark:ring-ring/12 has-disabled:cursor-not-allowed has-disabled:opacity-50 has-disabled:pointer-events-none has-aria-invalid:border-destructive/60 has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/25",
             {
               "p-1": selected.length !== 0,
               "cursor-text": !disabled && selected.length !== 0,
@@ -458,7 +458,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 <div
                   key={option.value}
                   className={cn(
-                    "animate-fadeIn relative inline-flex h-7 cursor-default items-center rounded-md border border-border bg-background pe-7 pl-2 ps-2 text-xs font-medium text-secondary-foreground transition-all hover:bg-background disabled:cursor-not-allowed disabled:opacity-50 data-fixed:pe-2",
+                    "animate-fadeIn relative inline-flex h-7 cursor-default items-center rounded-md border border-border bg-background pe-7 pl-2 ps-2 text-xs font-medium text-secondary-foreground transition-all hover:bg-background disabled:cursor-not-allowed disabled:opacity-50 disabled:pointer-events-none data-fixed:pe-2",
                     badgeClassName,
                   )}
                   data-fixed={option.fixed}
@@ -466,7 +466,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 >
                   {option.label}
                   <button
-                    className="absolute -inset-y-px -end-px flex size-7 items-center justify-center rounded-e-lg border border-transparent p-0 text-muted-foreground/80 outline-0 transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-ring/70"
+                    className="absolute -inset-y-px -end-px flex size-7 items-center justify-center rounded-e-lg border border-transparent p-0 text-muted-foreground/80 outline-hidden transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-ring/70"
                     onKeyDown={(e) => {
                       if (e.key === "Enter") {
                         handleUnselect(option);
@@ -549,7 +549,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
           >
             {open && (
               <CommandList
-                className="bg-popover text-popover-foreground shadow-lg shadow-black/5 outline-hidden"
+                className="bg-popover text-popover-foreground shadow-lg outline-hidden"
                 onMouseLeave={() => {
                   setOnScrollbar(false);
                 }}
@@ -592,7 +592,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                 }}
                                 className={cn(
                                   "cursor-pointer",
-                                  option.disable && "cursor-not-allowed opacity-50",
+                                  option.disable && "cursor-not-allowed opacity-50 pointer-events-none",
                                 )}
                               >
                                 {option.label}

@@ -9,9 +9,9 @@ export default function Component() {
       <Label htmlFor={id}>Textarea with error</Label>
       <Textarea
         id={id}
-        className="border-destructive/80 text-destructive focus-visible:border-destructive/80 focus-visible:ring-destructive/20"
         placeholder="Leave a comment"
         defaultValue="Hello!"
+        aria-invalid
       />
       <p className="mt-2 text-xs text-destructive" role="alert" aria-live="polite">
         Message should be at least 10 characters

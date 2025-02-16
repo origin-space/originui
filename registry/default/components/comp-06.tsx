@@ -9,12 +9,13 @@ export default function Component() {
       <Label htmlFor={id}>Input with error</Label>
       <Input
         id={id}
-        className="border-destructive/80 text-destructive focus-visible:border-destructive/80 focus-visible:ring-destructive/20"
+        className="peer"
         placeholder="Email"
         type="email"
         defaultValue="invalid@email.com"
+        aria-invalid
       />
-      <p className="mt-2 text-xs text-destructive" role="alert" aria-live="polite">
+      <p className="mt-2 text-xs peer-aria-invalid:text-destructive" role="alert" aria-live="polite">
         Email is invalid
       </p>
     </div>

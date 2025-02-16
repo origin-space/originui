@@ -457,7 +457,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
       >
         <div
           className={cn(
-            "relative min-h-[46px] rounded-lg border border-input text-sm transition-shadow focus-within:border-ring focus-within:outline-hidden focus-within:ring-[3px] focus-within:ring-ring/20 has-disabled:cursor-not-allowed has-disabled:opacity-50",
+            "relative min-h-[46px] rounded-lg border border-input text-sm transition-shadow focus-within:border-ring/40 focus-within:outline-hidden focus-within:ring-[3px] ring-ring/8 dark:ring-ring/12 has-disabled:cursor-not-allowed has-disabled:opacity-50 has-disabled:pointer-events-none has-aria-invalid:border-destructive/60 has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/25",
             {
               "p-2": selected.length !== 0,
               "cursor-text": !disabled && selected.length !== 0,
@@ -476,7 +476,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 <div
                   key={option.value}
                   className={cn(
-                    "animate-fadeIn relative inline-flex h-7 cursor-default items-center rounded-lg border border-border bg-background pe-7 pl-2 ps-2 text-xs font-medium text-secondary-foreground transition-all hover:bg-background disabled:cursor-not-allowed disabled:opacity-50 data-fixed:pe-2 dark:border-zinc-700 dark:bg-zinc-700/50",
+                    "animate-fadeIn relative inline-flex h-7 cursor-default items-center rounded-lg border border-border bg-background pe-7 pl-2 ps-2 text-xs font-medium text-secondary-foreground transition-all hover:bg-background disabled:cursor-not-allowed disabled:opacity-50 disabled:pointer-events-none data-fixed:pe-2 dark:border-zinc-700 dark:bg-zinc-700/50",
                     badgeClassName,
                   )}
                   data-fixed={option.fixed}
@@ -484,7 +484,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 >
                   {option.label}
                   <button
-                    className="absolute -inset-y-px -end-px flex size-7 items-center justify-center rounded-e-lg border border-transparent p-0 text-muted-foreground/80 outline-0 transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-ring/70"
+                    className="absolute -inset-y-px -end-px flex size-7 items-center justify-center rounded-e-lg border border-transparent p-0 text-muted-foreground/80 outline-hidden transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-ring/70"
                     onKeyDown={(e) => {
                       if (e.key === "Enter") {
                         handleUnselect(option);
@@ -563,7 +563,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
         <div className="relative">
           <div
             className={cn(
-              "absolute top-2 z-9999 w-full overflow-hidden rounded-lg border border-input shadow-lg shadow-black/5",
+              "absolute top-2 z-9999 w-full overflow-hidden rounded-lg border border-input shadow-lg",
               "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
               !open && "hidden",
             )}
@@ -616,7 +616,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                 }}
                                 className={cn(
                                   "cursor-pointer rounded-none px-4 py-2 data-[selected=true]:bg-zinc-50 dark:data-[selected=true]:bg-zinc-800/50",
-                                  option.disable && "cursor-not-allowed opacity-50",
+                                  option.disable && "cursor-not-allowed opacity-50 pointer-events-none",
                                 )}
                               >
                                 {option.label}

@@ -32,7 +32,7 @@ export default function Component() {
   return (
     <>
       <button
-        className="inline-flex h-9 w-fit rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground shadow-xs shadow-black/5 transition-shadow placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:outline-hidden focus-visible:ring-[3px] focus-visible:ring-ring/20"
+        className="inline-flex h-9 w-fit rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground shadow-xs transition-shadow placeholder:text-muted-foreground/70 focus-visible:border-ring/40 focus-visible:outline-hidden focus-visible:ring-[3px] ring-ring/8 dark:ring-ring/12"
         onClick={() => setOpen(true)}
       >
         <span className="flex grow items-center">

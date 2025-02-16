@@ -29,12 +29,12 @@ export default function Component() {
         placeholder="Add a tag"
         styleClasses={{
           inlineTagsContainer:
-            "border-input rounded-lg bg-background shadow-xs shadow-black/5 transition-shadow focus-within:border-ring focus-within:outline-hidden focus-within:ring-[3px] focus-within:ring-ring/20 p-1 gap-1",
+            "border-input rounded-lg bg-background shadow-xs transition-shadow focus-within:border-ring/40 focus-within:outline-hidden focus-within:ring-[3px] ring-ring/8 dark:ring-ring/12 p-1 gap-1",
           input: "w-full min-w-[80px] focus-visible:outline-hidden shadow-none px-2 h-7",
           tag: {
             body: "h-7 relative bg-background border border-input hover:bg-background rounded-md font-medium text-xs ps-2 pe-7",
             closeButton:
-              "absolute -inset-y-px -end-px p-0 rounded-e-lg flex size-7 transition-colors outline-0 focus-visible:outline-2 focus-visible:outline-ring/70 text-muted-foreground/80 hover:text-foreground",
+              "absolute -inset-y-px -end-px p-0 rounded-e-lg flex size-7 transition-colors outline-hidden focus-visible:outline-2 focus-visible:outline-ring/70 text-muted-foreground/80 hover:text-foreground",
           },
         }}
         activeTagIndex={activeTagIndex}

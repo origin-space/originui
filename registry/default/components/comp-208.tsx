@@ -11,12 +11,12 @@ import { useId } from "react";
 export default function Component() {
   const id = useId();
   return (
-    <div className="space-y-2 [&_svg]:text-destructive/80">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Select with error</Label>
       <Select defaultValue="1">
         <SelectTrigger
           id={id}
-          className="border-destructive/80 text-destructive focus:border-destructive/80 focus:ring-destructive/20"
+          aria-invalid
         >
           <SelectValue />
         </SelectTrigger>

@@ -5,11 +5,11 @@ import { useId } from "react";
 export default function Component() {
   const id = useId();
   return (
-    <div className="space-y-2 [&_svg]:text-destructive/80">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Select with error (native)</Label>
       <SelectNative
         id={id}
-        className="border-destructive/80 text-destructive focus-visible:border-destructive/80 focus-visible:ring-destructive/20"
+        aria-invalid
       >
         <option value="1">React</option>
         <option value="2">Next.js</option>

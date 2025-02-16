@@ -11,7 +11,7 @@ export default function Component() {
       >
         <span className="inline-flex bg-background px-2">Input with label animation</span>
       </label>
-      <Input id={id} type="email" placeholder="" />
+      <Input id={id} type="email" placeholder="" aria-invalid={true} />
     </div>
   );
 }

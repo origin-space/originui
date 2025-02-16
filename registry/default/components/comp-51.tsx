@@ -60,7 +60,6 @@ export default function Component() {
             type={isVisible ? "text" : "password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            aria-invalid={strengthScore < 4}
             aria-describedby={`${id}-description`}
           />
           <button

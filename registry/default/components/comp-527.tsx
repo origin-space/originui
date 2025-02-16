@@ -8,7 +8,6 @@ import {
   StepperSeparator,
   StepperTrigger,
 } from "@/registry/default/ui/stepper";
-import { Check, LoaderCircle } from "lucide-react";
 import { useState } from "react";
 
 const steps = [1, 2, 3, 4];
@@ -21,25 +20,7 @@ export default function Component() {
         {steps.map((step) => (
           <StepperItem key={step} step={step} className="not-last:flex-1">
             <StepperTrigger asChild>
-              <StepperIndicator>
-                <span className="transition-all group-data-[loading=true]/step:scale-50 group-data-[state=completed]/step:scale-50 group-data-[loading=true]/step:opacity-0 group-data-[state=completed]/step:opacity-0">
-                  {step}
-                </span>
-                <Check
-                  className="absolute scale-50 opacity-0 transition-all group-data-[state=completed]/step:scale-100 group-data-[state=completed]/step:opacity-100"
-                  size={16}
-                  strokeWidth={2}
-                  aria-hidden="true"
-                />
-                <span className="absolute scale-50 opacity-0 transition-all group-data-[loading=true]/step:scale-100 group-data-[loading=true]/step:opacity-100">
-                  <LoaderCircle
-                    className="animate-spin"
-                    size={16}
-                    strokeWidth={2}
-                    aria-hidden="true"
-                  />
-                </span>
-              </StepperIndicator>
+              <StepperIndicator />
             </StepperTrigger>
             {step < steps.length && <StepperSeparator />}
           </StepperItem>

@@ -15,12 +15,12 @@ export default function Component() {
     >
       <div className="*:not-first:mt-2">
         <Label className="text-sm font-medium text-foreground">Number input with chevrons</Label>
-        <Group className="relative inline-flex h-9 w-full items-center overflow-hidden whitespace-nowrap rounded-lg border border-input text-sm shadow-xs shadow-black/5 transition-shadow data-focus-within:border-ring data-disabled:opacity-50 data-focus-within:outline-hidden data-focus-within:ring-[3px] data-focus-within:ring-ring/20">
+        <Group className="relative inline-flex h-9 w-full items-center overflow-hidden whitespace-nowrap rounded-lg border border-input text-sm shadow-xs transition-shadow data-focus-within:border-ring/40 data-disabled:opacity-50 data-focus-within:outline-hidden data-focus-within:ring-[3px] data-focus-within:ring-ring/8 dark:data-focus-within:ring-ring/12 data-focus-within:has-data-invalid:border-destructive/60 data-focus-within:has-data-invalid:ring-destructive/20 dark:data-focus-within:has-data-invalid:ring-destructive/25">
           <Input className="flex-1 bg-background px-3 py-2 tabular-nums text-foreground focus:outline-hidden" />
           <div className="flex h-[calc(100%+2px)] flex-col">
             <Button
               slot="increment"
-              className="-me-px flex h-1/2 w-6 flex-1 items-center justify-center border border-input bg-background text-sm text-muted-foreground/80 transition-shadow hover:bg-accent hover:text-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+              className="-me-px flex h-1/2 w-6 flex-1 items-center justify-center border border-input bg-background text-sm text-muted-foreground/80 transition-shadow hover:bg-accent hover:text-foreground disabled:cursor-not-allowed disabled:opacity-50 disabled:pointer-events-none"
             >
               <ChevronUp size={12} strokeWidth={2} aria-hidden="true" />
             </Button>

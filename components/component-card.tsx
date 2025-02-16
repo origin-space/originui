@@ -38,7 +38,7 @@ export default function ComponentCard({
   return (
     <div
       className={cn(
-        "group/item relative -space-x-px border border-border has-[[data-comp-loading=true]]:border-none",
+        "group/item relative border border-border has-[[data-comp-loading=true]]:border-none",
         isSearchPage ? "col-span-12 grid grid-cols-12" : cn(getColSpanClasses(), styleClasses),
       )}
     >

@@ -186,7 +186,7 @@ const StepperIndicator = React.forwardRef<HTMLDivElement, StepperIndicatorProps>
           children
         ) : (
           <>
-            <span className="transition-all group-data-[loading=true]/step:scale-0 group-data-[state=completed]/step:scale-0 group-data-[loading=true]/step:opacity-0 group-data-[state=completed]/step:opacity-0 group-data-[loading=true]/step:transition-none">
+            <span className="transition-all group-data-loading/step:scale-0 group-data-[state=completed]/step:scale-0 group-data-loading/step:opacity-0 group-data-[state=completed]/step:opacity-0 group-data-loading/step:transition-none">
               {step}
             </span>
             <Check

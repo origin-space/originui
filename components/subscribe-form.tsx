@@ -55,7 +55,7 @@ function Form() {
               type="email"
               value={formState.email}
               onChange={(e) => setFormState((prev) => ({ ...prev, email: e.target.value }))}
-              disabled={isLoading}
+              disabled={isLoading || undefined}
               aria-label="Subscribe to the newsletter"
               required
             />
@@ -66,7 +66,7 @@ function Form() {
             disabled={isLoading}
             data-loading={isLoading}
           >
-            <span className="group-data-[loading=true]:text-transparent">Subscribe</span>
+            <span className="group-data-loading:text-transparent">Subscribe</span>
             {isLoading && (
               <div className="absolute inset-0 flex items-center justify-center">
                 <RiLoader3Line className="animate-spin" size={16} aria-hidden="true" />
