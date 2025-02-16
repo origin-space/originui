@@ -29,7 +29,7 @@ export default function Component({
 
   return (
     <Pagination>
-      <PaginationContent className="inline-flex gap-0 -space-x-px rounded-lg shadow-xs shadow-black/5 rtl:space-x-reverse">
+      <PaginationContent className="inline-flex gap-0 -space-x-px rounded-lg shadow-xs rtl:space-x-reverse">
         {/* Previous page button */}
         <PaginationItem className="[&:first-child>a]:rounded-s-lg [&:last-child>a]:rounded-e-lg">
           <PaginationLink

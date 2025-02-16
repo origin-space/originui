@@ -11,7 +11,7 @@ import { Home } from "lucide-react";
 export default function Component() {
   return (
     <Breadcrumb>
-      <BreadcrumbList className="border-border bg-background rounded-lg border px-3 py-2 shadow-xs shadow-black/5">
+      <BreadcrumbList className="border-border bg-background rounded-lg border px-3 py-2 shadow-xs">
         <BreadcrumbItem>
           <BreadcrumbLink href="#">
             <Home size={16} aria-hidden="true" />

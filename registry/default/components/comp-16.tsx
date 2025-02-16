@@ -7,7 +7,7 @@ export default function Component() {
   return (
     <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Input with inline start and end add-on</Label>
-      <div className="relative flex rounded-lg shadow-xs shadow-black/5">
+      <div className="relative flex rounded-lg shadow-xs">
         <span className="text-muted-foreground pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-sm">
           €
         </span>

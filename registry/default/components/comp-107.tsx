@@ -9,7 +9,7 @@ export default function Component() {
 
   return (
     <ToggleGroup
-      className="divide-background inline-flex gap-0 -space-x-px divide-x rounded-lg shadow-xs shadow-black/5 rtl:space-x-reverse"
+      className="divide-background inline-flex gap-0 -space-x-px divide-x rounded-lg shadow-xs rtl:space-x-reverse"
       type="single"
       value={value}
       onValueChange={(value) => {

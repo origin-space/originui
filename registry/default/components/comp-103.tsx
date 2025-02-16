@@ -3,7 +3,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 
 export default function Component() {
   return (
-    <div className="inline-flex -space-x-px rounded-full shadow-xs shadow-black/5 rtl:space-x-reverse">
+    <div className="inline-flex -space-x-px rounded-full shadow-xs rtl:space-x-reverse">
       <Button
         className="rounded-none shadow-none first:rounded-s-full last:rounded-e-full focus-visible:z-10"
         size="icon"

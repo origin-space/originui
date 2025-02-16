@@ -32,7 +32,7 @@ export default function Component() {
   const [selectedIndex, setSelectedIndex] = useState("0");
 
   return (
-    <div className="divide-primary-foreground/30 inline-flex -space-x-px divide-x rounded-lg shadow-xs shadow-black/5 rtl:space-x-reverse">
+    <div className="divide-primary-foreground/30 inline-flex -space-x-px divide-x rounded-lg shadow-xs rtl:space-x-reverse">
       <Button className="rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10">
         {options[Number(selectedIndex)].label}
       </Button>

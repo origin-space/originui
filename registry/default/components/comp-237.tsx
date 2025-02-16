@@ -9,7 +9,7 @@ export default function Component() {
       <Label>Listbox with single option</Label>
       <div className="border-input overflow-hidden rounded-lg border">
         <ListBox
-          className="bg-background space-y-1 p-1 text-sm shadow-xs shadow-black/5 transition-shadow"
+          className="bg-background space-y-1 p-1 text-sm shadow-xs transition-shadow"
           aria-label="Select framework"
           selectionMode="single"
           defaultSelectedKeys={["svelte"]}

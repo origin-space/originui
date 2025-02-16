@@ -5,7 +5,7 @@ import { useId } from "react";
 export default function Component() {
   const id = useId();
   return (
-    <div className="border-input has-data-[state=checked]:border-ring relative flex w-full items-start gap-2 rounded-lg border p-4 shadow-xs shadow-black/5">
+    <div className="border-input has-data-[state=checked]:border-ring relative flex w-full items-start gap-2 rounded-lg border p-4 shadow-xs">
       <Checkbox
         id={id}
         className="order-1 after:absolute after:inset-0"

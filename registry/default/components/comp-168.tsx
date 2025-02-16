@@ -9,7 +9,7 @@ export default function Component() {
         <legend className="text-foreground text-sm leading-none font-medium">
           How likely are you to recommend us?
         </legend>
-        <RadioGroup className="flex gap-0 -space-x-px rounded-lg shadow-xs shadow-black/5">
+        <RadioGroup className="flex gap-0 -space-x-px rounded-lg shadow-xs">
           {["0", "1", "2", "3", "4", "5"].map((value) => (
             <label
               key={value}

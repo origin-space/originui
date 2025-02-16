@@ -3,7 +3,7 @@ import { ChevronDown, GitFork } from "lucide-react";
 
 export default function Component() {
   return (
-    <div className="divide-primary-foreground/30 inline-flex -space-x-px divide-x rounded-lg shadow-xs shadow-black/5 rtl:space-x-reverse">
+    <div className="divide-primary-foreground/30 inline-flex -space-x-px divide-x rounded-lg shadow-xs rtl:space-x-reverse">
       <Button className="rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10">
         <GitFork className="me-2 opacity-60" size={16} aria-hidden="true" />
         Fork

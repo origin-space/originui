@@ -9,7 +9,7 @@ export default function Component() {
       <Label>Listbox with option groups</Label>
       <div className="border-input overflow-hidden rounded-lg border">
         <ListBox
-          className="bg-background max-h-72 min-h-20 space-y-2 overflow-auto p-1 text-sm shadow-xs shadow-black/5 transition-shadow"
+          className="bg-background max-h-72 min-h-20 space-y-2 overflow-auto p-1 text-sm shadow-xs transition-shadow"
           aria-label="Select some foods"
           selectionMode="multiple"
           defaultSelectedKeys={["lettuce", "tuna"]}

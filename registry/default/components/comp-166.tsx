@@ -17,7 +17,7 @@ export default function Component() {
     <fieldset className="space-y-4">
       <legend className="text-foreground text-sm leading-none font-medium">Choose plan</legend>
       <RadioGroup
-        className="gap-0 -space-y-px rounded-lg shadow-xs shadow-black/5"
+        className="gap-0 -space-y-px rounded-lg shadow-xs"
         defaultValue="2"
       >
         {items.map((item) => (

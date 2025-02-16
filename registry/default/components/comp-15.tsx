@@ -7,7 +7,7 @@ export default function Component() {
   return (
     <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Input with end add-on</Label>
-      <div className="flex rounded-lg shadow-xs shadow-black/5">
+      <div className="flex rounded-lg shadow-xs">
         <Input
           id={id}
           className="-me-px rounded-e-none shadow-none"

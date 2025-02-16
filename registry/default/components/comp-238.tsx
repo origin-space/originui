@@ -9,7 +9,7 @@ export default function Component() {
       <Label>Listbox with multiple options</Label>
       <div className="border-input overflow-hidden rounded-lg border">
         <ListBox
-          className="bg-background max-h-72 min-h-20 space-y-1 overflow-auto p-1 text-sm shadow-xs shadow-black/5 transition-shadow"
+          className="bg-background max-h-72 min-h-20 space-y-1 overflow-auto p-1 text-sm shadow-xs transition-shadow"
           aria-label="Select framework"
           selectionMode="multiple"
           defaultSelectedKeys={["react", "vue"]}
