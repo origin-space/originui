@@ -22,12 +22,7 @@ export default function ComponentLoader<TProps extends object>({
     loading: () => (
       <div data-comp-loading="true" className="peer flex min-h-20 items-center justify-center">
         <span className="sr-only">Loading component...</span>
-        <LoaderCircle
-          className="-ms-1 me-2 animate-spin text-input"
-          size={24}
-          strokeWidth={2}
-          aria-hidden="true"
-        />
+        <LoaderCircle className="text-input -ms-1 me-2 animate-spin" size={24} aria-hidden="true" />
       </div>
     ),
     ssr: false,

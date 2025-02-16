@@ -52,9 +52,9 @@ const columns: ColumnDef<Item>[] = [
           }}
         >
           {row.getIsExpanded() ? (
-            <ChevronUp className="opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
+            <ChevronUp className="opacity-60" size={16} aria-hidden="true" />
           ) : (
-            <ChevronDown className="opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
+            <ChevronDown className="opacity-60" size={16} aria-hidden="true" />
           )}
         </Button>
       ) : undefined;
@@ -181,12 +181,12 @@ export default function Component() {
                 {row.getIsExpanded() && (
                   <TableRow>
                     <TableCell colSpan={row.getVisibleCells().length}>
-                      <div className="flex items-start py-2 text-primary/80">
+                      <div className="text-primary/80 flex items-start py-2">
                         <span
                           className="me-3 mt-0.5 flex w-7 shrink-0 justify-center"
                           aria-hidden="true"
                         >
-                          <Info className="opacity-60" size={16} strokeWidth={2} />
+                          <Info className="opacity-60" size={16} />
                         </span>
                         <p className="text-sm">{row.original.note}</p>
                       </div>
@@ -204,10 +204,10 @@ export default function Component() {
           )}
         </TableBody>
       </Table>
-      <p className="mt-4 text-center text-sm text-muted-foreground">
+      <p className="text-muted-foreground mt-4 text-center text-sm">
         Expanding sub-row made with{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://tanstack.com/table"
           target="_blank"
           rel="noopener noreferrer"

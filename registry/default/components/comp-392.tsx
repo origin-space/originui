@@ -5,7 +5,7 @@ export default function Component() {
   return (
     <Avatar>
       <AvatarFallback>
-        <UserRound size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+        <UserRound size={16} className="opacity-60" aria-hidden="true" />
       </AvatarFallback>
     </Avatar>
   );

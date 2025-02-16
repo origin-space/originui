@@ -41,10 +41,10 @@ export default function Component() {
       <DialogContent>
         <div className="mb-2 flex flex-col gap-2">
           <div
-            className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
+            className="border-border flex size-11 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
-            <Store className="opacity-80" size={16} strokeWidth={2} />
+            <Store className="opacity-80" size={16} />
           </div>
           <DialogHeader>
             <DialogTitle className="text-left">Confirm and pay</DialogTitle>
@@ -58,27 +58,27 @@ export default function Component() {
           <div className="space-y-4">
             <RadioGroup className="grid-cols-2" defaultValue="yearly">
               {/* Monthly */}
-              <label className="relative flex cursor-pointer flex-col gap-1 rounded-lg border border-input px-4 py-3 shadow-xs shadow-black/5 outline-offset-2 transition-colors has-data-[state=checked]:border-ring has-data-[state=checked]:bg-accent has-focus-visible:outline-2 has-focus-visible:outline-ring/70">
+              <label className="border-input has-data-[state=checked]:border-ring has-data-[state=checked]:bg-accent has-focus-visible:outline-ring/70 relative flex cursor-pointer flex-col gap-1 rounded-lg border px-4 py-3 shadow-xs shadow-black/5 outline-offset-2 transition-colors has-focus-visible:outline-2">
                 <RadioGroupItem
                   id="radio-monthly"
                   value="monthly"
                   className="sr-only after:absolute after:inset-0"
                 />
-                <p className="text-sm font-medium text-foreground">Monthly</p>
-                <p className="text-sm text-muted-foreground">$32/month</p>
+                <p className="text-foreground text-sm font-medium">Monthly</p>
+                <p className="text-muted-foreground text-sm">$32/month</p>
               </label>
               {/* Yearly */}
-              <label className="relative flex cursor-pointer flex-col gap-1 rounded-lg border border-input px-4 py-3 shadow-xs shadow-black/5 outline-offset-2 transition-colors has-data-[state=checked]:border-ring has-data-[state=checked]:bg-accent has-focus-visible:outline-2 has-focus-visible:outline-ring/70">
+              <label className="border-input has-data-[state=checked]:border-ring has-data-[state=checked]:bg-accent has-focus-visible:outline-ring/70 relative flex cursor-pointer flex-col gap-1 rounded-lg border px-4 py-3 shadow-xs shadow-black/5 outline-offset-2 transition-colors has-focus-visible:outline-2">
                 <RadioGroupItem
                   id="radio-yearly"
                   value="yearly"
                   className="sr-only after:absolute after:inset-0"
                 />
                 <div className="inline-flex items-start justify-between gap-2">
-                  <p className="text-sm font-medium text-foreground">Yearly</p>
+                  <p className="text-foreground text-sm font-medium">Yearly</p>
                   <Badge>Popular</Badge>
                 </div>
-                <p className="text-sm text-muted-foreground">$320/month</p>
+                <p className="text-muted-foreground text-sm">$320/month</p>
               </label>
             </RadioGroup>
             <div className="*:not-first:mt-2">
@@ -86,14 +86,14 @@ export default function Component() {
               <Input id={`name-${id}`} type="text" required />
             </div>
             <div className="*:not-first:mt-2">
-              <legend className="text-sm font-medium text-foreground">Card Details</legend>
+              <legend className="text-foreground text-sm font-medium">Card Details</legend>
               <div className="rounded-lg shadow-xs shadow-black/5">
                 <div className="relative focus-within:z-10">
                   <Input
                     className="peer rounded-b-none pe-9 shadow-none [direction:inherit]"
                     {...getCardNumberProps()}
                   />
-                  <div className="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground/80 peer-disabled:opacity-50">
+                  <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 peer-disabled:opacity-50">
                     {meta.cardType ? (
                       <svg
                         className="overflow-hidden rounded-sm"
@@ -101,7 +101,7 @@ export default function Component() {
                         width={20}
                       />
                     ) : (
-                      <CreditCard size={16} strokeWidth={2} aria-hidden="true" />
+                      <CreditCard size={16} aria-hidden="true" />
                     )}
                   </div>
                 </div>
@@ -147,7 +147,7 @@ export default function Component() {
           </Button>
         </form>
 
-        <p className="text-center text-xs text-muted-foreground">
+        <p className="text-muted-foreground text-center text-xs">
           Payments are non-refundable. Cancel anytime.
         </p>
       </DialogContent>

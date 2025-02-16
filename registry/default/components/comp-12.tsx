@@ -9,7 +9,7 @@ export default function Component() {
       <Label htmlFor={id}>Input with end inline add-on</Label>
       <div className="relative">
         <Input id={id} className="peer pe-12" placeholder="google" type="text" />
-        <span className="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-sm text-muted-foreground peer-disabled:opacity-50">
+        <span className="text-muted-foreground pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-sm peer-disabled:opacity-50">
           .com
         </span>
       </div>

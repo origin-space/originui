@@ -49,10 +49,10 @@ export default function Component() {
 
   return (
     <div>
-      <div className="rounded-lg border border-border">
+      <div className="border-border rounded-lg border">
         <div className="flex max-sm:flex-col">
-          <div className="relative border-border py-4 max-sm:order-1 max-sm:border-t sm:w-32">
-            <div className="h-full border-border sm:border-e">
+          <div className="border-border relative py-4 max-sm:order-1 max-sm:border-t sm:w-32">
+            <div className="border-border h-full sm:border-e">
               <div className="flex flex-col px-2">
                 <Button
                   variant="ghost"
@@ -166,13 +166,13 @@ export default function Component() {
         </div>
       </div>
       <p
-        className="mt-4 text-center text-xs text-muted-foreground"
+        className="text-muted-foreground mt-4 text-center text-xs"
         role="region"
         aria-live="polite"
       >
         Range calendar with presets -{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://daypicker.dev/"
           target="_blank"
           rel="noopener nofollow"

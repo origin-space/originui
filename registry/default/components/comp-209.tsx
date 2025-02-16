@@ -14,7 +14,7 @@ export default function Component() {
     <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Select with gray background</Label>
       <Select defaultValue="2">
-        <SelectTrigger id={id} className="border-transparent bg-muted shadow-none">
+        <SelectTrigger id={id} className="bg-muted border-transparent shadow-none">
           <SelectValue placeholder="Select framework" />
         </SelectTrigger>
         <SelectContent>

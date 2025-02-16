@@ -11,7 +11,10 @@ export default function Component() {
       style={{ "--ring": "oklch(0.59 0.20 277)" } as React.CSSProperties}
     >
       <Label htmlFor={id}>Select with colored border (native)</Label>
-      <SelectNative id={id} className="focus-visible:border-ring/60 focus-visible:ring-ring/20 dark:focus-visible:ring-ring/25">
+      <SelectNative
+        id={id}
+        className="focus-visible:border-ring/60 focus-visible:ring-ring/20 dark:focus-visible:ring-ring/25"
+      >
         <option value="1">React</option>
         <option value="2">Next.js</option>
         <option value="3">Astro</option>

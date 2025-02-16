@@ -7,7 +7,6 @@ export default function Component() {
       <ArrowLeft
         className="-ms-1 me-2 opacity-60 transition-transform group-hover:-translate-x-0.5"
         size={16}
-        strokeWidth={2}
         aria-hidden="true"
       />
       Button

@@ -32,7 +32,7 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
             aria-disabled={currentPage === 1 ? true : undefined}
             role={currentPage === 1 ? "link" : undefined}
           >
-            <ChevronFirst size={16} strokeWidth={2} aria-hidden="true" />
+            <ChevronFirst size={16} aria-hidden="true" />
           </PaginationLink>
         </PaginationItem>
 
@@ -45,7 +45,7 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
             aria-disabled={currentPage === 1 ? true : undefined}
             role={currentPage === 1 ? "link" : undefined}
           >
-            <ChevronLeft size={16} strokeWidth={2} aria-hidden="true" />
+            <ChevronLeft size={16} aria-hidden="true" />
           </PaginationLink>
         </PaginationItem>
 
@@ -74,7 +74,7 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
             aria-disabled={currentPage === totalPages ? true : undefined}
             role={currentPage === totalPages ? "link" : undefined}
           >
-            <ChevronRight size={16} strokeWidth={2} aria-hidden="true" />
+            <ChevronRight size={16} aria-hidden="true" />
           </PaginationLink>
         </PaginationItem>
 
@@ -87,7 +87,7 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
             aria-disabled={currentPage === totalPages ? true : undefined}
             role={currentPage === totalPages ? "link" : undefined}
           >
-            <ChevronLast size={16} strokeWidth={2} aria-hidden="true" />
+            <ChevronLast size={16} aria-hidden="true" />
           </PaginationLink>
         </PaginationItem>
       </PaginationContent>

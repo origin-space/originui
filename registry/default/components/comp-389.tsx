@@ -51,7 +51,7 @@ interface CardProps {
 
 function Card({ number, isActive }: CardProps) {
   const content = (
-    <div className="flex size-10 items-center justify-center rounded-lg bg-secondary text-sm font-medium text-muted-foreground">
+    <div className="bg-secondary text-muted-foreground flex size-10 items-center justify-center rounded-lg text-sm font-medium">
       {number + 1}
     </div>
   );
@@ -95,10 +95,10 @@ export default function Component() {
           <div className="space-y-3">
             <div className="space-y-1">
               <p className="text-[13px] font-medium">{tourSteps[currentTip].title}</p>
-              <p className="text-xs text-muted-foreground">{tourSteps[currentTip].description}</p>
+              <p className="text-muted-foreground text-xs">{tourSteps[currentTip].description}</p>
             </div>
             <div className="flex items-center justify-between gap-2">
-              <span className="text-xs text-muted-foreground">
+              <span className="text-muted-foreground text-xs">
                 {currentTip + 1}/{tourSteps.length}
               </span>
               <button className="text-xs font-medium hover:underline" onClick={handleNavigation}>

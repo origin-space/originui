@@ -17,7 +17,7 @@ export default function Component() {
         <SelectTrigger id={id}>
           <SelectValue placeholder="Select framework" />
         </SelectTrigger>
-        <SelectContent className="[&_*[role=option]>span]:end-2 [&_*[role=option]>span]:start-auto [&_*[role=option]]:pe-8 [&_*[role=option]]:ps-2">
+        <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
           <SelectItem value="1">React</SelectItem>
           <SelectItem value="2">Next.js</SelectItem>
           <SelectItem value="3">Astro</SelectItem>

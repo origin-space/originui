@@ -20,14 +20,14 @@ export default function Component() {
           {steps.map((step) => (
             <StepperItem key={step} step={step} className="flex-1">
               <StepperTrigger className="w-full flex-col items-start gap-2" asChild>
-                <StepperIndicator asChild className="h-2 w-full rounded-none bg-border">
+                <StepperIndicator asChild className="bg-border h-2 w-full rounded-none">
                   <span className="sr-only">{step}</span>
                 </StepperIndicator>
               </StepperTrigger>
             </StepperItem>
           ))}
         </Stepper>
-        <div className="text-sm font-medium tabular-nums text-muted-foreground">
+        <div className="text-muted-foreground text-sm font-medium tabular-nums">
           Step {currentStep} of {steps.length}
         </div>
       </div>
@@ -49,7 +49,7 @@ export default function Component() {
           Next step
         </Button>
       </div>
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Progress stepper
       </p>
     </div>

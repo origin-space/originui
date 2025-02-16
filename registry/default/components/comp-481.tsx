@@ -189,10 +189,10 @@ export default function Component() {
           )}
         </TableBody>
       </Table>
-      <p className="mt-4 text-center text-sm text-muted-foreground">
+      <p className="text-muted-foreground mt-4 text-center text-sm">
         Draggable columns made with{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://tanstack.com/table"
           target="_blank"
           rel="noopener noreferrer"
@@ -226,7 +226,7 @@ const DraggableTableHeader = ({ header }: { header: Header<Item, unknown> }) => 
   return (
     <TableHead
       ref={setNodeRef}
-      className="relative h-10 border-t before:absolute before:inset-y-0 before:start-0 before:w-px before:bg-border first:before:bg-transparent"
+      className="before:bg-border relative h-10 border-t before:absolute before:inset-y-0 before:start-0 before:w-px first:before:bg-transparent"
       style={style}
       aria-sort={
         header.column.getIsSorted() === "asc"
@@ -245,7 +245,7 @@ const DraggableTableHeader = ({ header }: { header: Header<Item, unknown> }) => 
           {...listeners}
           aria-label="Drag to reorder"
         >
-          <GripVertical className="opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
+          <GripVertical className="opacity-60" size={16} aria-hidden="true" />
         </Button>
         <span className="grow truncate">
           {header.isPlaceholder
@@ -266,27 +266,12 @@ const DraggableTableHeader = ({ header }: { header: Header<Item, unknown> }) => 
           }}
         >
           {{
-            asc: (
-              <ChevronUp
-                className="shrink-0 opacity-60"
-                size={16}
-                strokeWidth={2}
-                aria-hidden="true"
-              />
-            ),
-            desc: (
-              <ChevronDown
-                className="shrink-0 opacity-60"
-                size={16}
-                strokeWidth={2}
-                aria-hidden="true"
-              />
-            ),
+            asc: <ChevronUp className="shrink-0 opacity-60" size={16} aria-hidden="true" />,
+            desc: <ChevronDown className="shrink-0 opacity-60" size={16} aria-hidden="true" />,
           }[header.column.getIsSorted() as string] ?? (
             <ChevronUp
               className="shrink-0 opacity-0 group-hover:opacity-60"
               size={16}
-              strokeWidth={2}
               aria-hidden="true"
             />
           )}

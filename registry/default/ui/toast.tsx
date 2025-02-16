@@ -16,7 +16,7 @@ const ToastViewport = React.forwardRef<
   <ToastPrimitives.Viewport
     ref={ref}
     className={cn(
-      "fixed right-0 top-0 z-100 flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:top-auto sm:flex-col md:max-w-[400px]",
+      "fixed top-0 right-0 z-100 flex max-h-screen w-full flex-col-reverse p-4 sm:top-auto sm:bottom-0 sm:flex-col md:max-w-[400px]",
       className,
     )}
     {...props}
@@ -62,7 +62,7 @@ const ToastAction = React.forwardRef<
     ref={ref}
     className={cn(
       !asChild &&
-        "inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium ring-offset-background transition-colors hover:bg-secondary focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group-[.destructive]:border-muted/40 hover:group-[.destructive]:border-destructive/30 hover:group-[.destructive]:bg-destructive hover:group-[.destructive]:text-destructive-foreground focus:group-[.destructive]:ring-destructive",
+        "ring-offset-background hover:bg-secondary focus:ring-ring group-[.destructive]:border-muted/40 hover:group-[.destructive]:border-destructive/30 hover:group-[.destructive]:bg-destructive hover:group-[.destructive]:text-destructive-foreground focus:group-[.destructive]:ring-destructive inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none disabled:opacity-50",
       className,
     )}
     asChild={asChild}
@@ -81,7 +81,7 @@ const ToastClose = React.forwardRef<
     ref={ref}
     className={cn(
       !asChild &&
-        "group -my-1.5 -me-2 inline-flex size-8 shrink-0 items-center justify-center whitespace-nowrap rounded-lg p-0 text-sm font-medium ring-offset-background transition-colors hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group-[.destructive]:text-red-300 hover:group-[.destructive]:text-red-50 focus:group-[.destructive]:ring-red-400 focus:group-[.destructive]:ring-offset-red-600 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "group ring-offset-background hover:text-accent-foreground focus-visible:ring-ring/70 -my-1.5 -me-2 inline-flex size-8 shrink-0 items-center justify-center rounded-lg p-0 text-sm font-medium whitespace-nowrap transition-colors group-[.destructive]:text-red-300 hover:group-[.destructive]:text-red-50 focus:group-[.destructive]:ring-red-400 focus:group-[.destructive]:ring-offset-red-600 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
       className,
     )}
     toast-close=""
@@ -93,7 +93,6 @@ const ToastClose = React.forwardRef<
     ) : (
       <X
         size={16}
-        strokeWidth={2}
         className="opacity-60 transition-opacity group-hover:opacity-100"
         aria-hidden="true"
       />
@@ -116,7 +115,7 @@ const ToastDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Description
     ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
+    className={cn("text-muted-foreground text-sm", className)}
     {...props}
   />
 ));

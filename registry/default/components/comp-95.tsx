@@ -12,7 +12,7 @@ export default function Component() {
         height={40}
         aria-hidden="true"
       />
-      <ChevronDown size={16} strokeWidth={2} className="ms-2 opacity-60" aria-hidden="true" />
+      <ChevronDown size={16} className="ms-2 opacity-60" aria-hidden="true" />
     </Button>
   );
 }

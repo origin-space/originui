@@ -16,7 +16,7 @@ export default function Component() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button size="icon" variant="outline" aria-label="Open account menu">
-          <CircleUserRound size={16} strokeWidth={2} aria-hidden="true" />
+          <CircleUserRound size={16} aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="max-w-64">
@@ -29,8 +29,8 @@ export default function Component() {
             className="shrink-0 rounded-full"
           />
           <div className="flex min-w-0 flex-col">
-            <span className="truncate text-sm font-medium text-foreground">Keith Kennedy</span>
-            <span className="truncate text-xs font-normal text-muted-foreground">
+            <span className="text-foreground truncate text-sm font-medium">Keith Kennedy</span>
+            <span className="text-muted-foreground truncate text-xs font-normal">
               k.kennedy@originui.com
             </span>
           </div>
@@ -38,32 +38,32 @@ export default function Component() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <Bolt size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            <Bolt size={16} className="opacity-60" aria-hidden="true" />
             <span>Option 1</span>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Layers2 size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            <Layers2 size={16} className="opacity-60" aria-hidden="true" />
             <span>Option 2</span>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <BookOpen size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            <BookOpen size={16} className="opacity-60" aria-hidden="true" />
             <span>Option 3</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <Pin size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            <Pin size={16} className="opacity-60" aria-hidden="true" />
             <span>Option 4</span>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <UserPen size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            <UserPen size={16} className="opacity-60" aria-hidden="true" />
             <span>Option 5</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <LogOut size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+          <LogOut size={16} className="opacity-60" aria-hidden="true" />
           <span>Logout</span>
         </DropdownMenuItem>
       </DropdownMenuContent>

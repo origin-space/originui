@@ -71,7 +71,7 @@ export default function Component() {
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="w-full justify-between bg-background px-3 font-normal outline-offset-0 hover:bg-background focus-visible:border-ring focus-visible:outline-[3px] focus-visible:outline-ring/20"
+            className="bg-background hover:bg-background focus-visible:border-ring focus-visible:outline-ring/20 w-full justify-between px-3 font-normal outline-offset-0 focus-visible:outline-[3px]"
           >
             {value ? (
               <span className="flex min-w-0 items-center gap-2">
@@ -89,14 +89,13 @@ export default function Component() {
             )}
             <ChevronDown
               size={16}
-              strokeWidth={2}
-              className="shrink-0 text-muted-foreground/80"
+              className="text-muted-foreground/80 shrink-0"
               aria-hidden="true"
             />
           </Button>
         </PopoverTrigger>
         <PopoverContent
-          className="w-full min-w-[var(--radix-popper-anchor-width)] border-input p-0"
+          className="border-input w-full min-w-[var(--radix-popper-anchor-width)] p-0"
           align="start"
         >
           <Command>
@@ -116,9 +115,7 @@ export default function Component() {
                         }}
                       >
                         <span className="text-lg leading-none">{country.flag}</span> {country.value}
-                        {value === country.value && (
-                          <Check size={16} strokeWidth={2} className="ml-auto" />
-                        )}
+                        {value === country.value && <Check size={16} className="ml-auto" />}
                       </CommandItem>
                     ))}
                   </CommandGroup>

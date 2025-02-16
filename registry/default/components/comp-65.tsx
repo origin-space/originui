@@ -9,7 +9,7 @@ export default function Component() {
       <Label htmlFor={id}>Textarea with gray background</Label>
       <Textarea
         id={id}
-        className="border-transparent bg-muted shadow-none"
+        className="bg-muted border-transparent shadow-none"
         placeholder="Leave a comment"
       />
     </div>

@@ -17,7 +17,7 @@ export default function Component() {
             <TooltipTrigger asChild>
               <span>
                 <TabsTrigger value="tab-1" className="py-3">
-                  <House size={16} strokeWidth={2} aria-hidden="true" />
+                  <House size={16} aria-hidden="true" />
                 </TabsTrigger>
               </span>
             </TooltipTrigger>
@@ -30,8 +30,8 @@ export default function Component() {
               <span>
                 <TabsTrigger value="tab-2" className="group py-3">
                   <span className="relative">
-                    <PanelsTopLeft size={16} strokeWidth={2} aria-hidden="true" />
-                    <Badge className="absolute -top-2.5 left-full min-w-4 -translate-x-1.5 border-background px-0.5 text-[10px]/[.875rem] transition-opacity group-data-[state=inactive]:opacity-50">
+                    <PanelsTopLeft size={16} aria-hidden="true" />
+                    <Badge className="border-background absolute -top-2.5 left-full min-w-4 -translate-x-1.5 px-0.5 text-[10px]/[.875rem] transition-opacity group-data-[state=inactive]:opacity-50">
                       3
                     </Badge>
                   </span>
@@ -46,7 +46,7 @@ export default function Component() {
             <TooltipTrigger asChild>
               <span>
                 <TabsTrigger value="tab-3" className="py-3">
-                  <Box size={16} strokeWidth={2} aria-hidden="true" />
+                  <Box size={16} aria-hidden="true" />
                 </TabsTrigger>
               </span>
             </TooltipTrigger>
@@ -55,13 +55,13 @@ export default function Component() {
         </TooltipProvider>
       </TabsList>
       <TabsContent value="tab-1">
-        <p className="p-4 text-center text-xs text-muted-foreground">Content for Tab 1</p>
+        <p className="text-muted-foreground p-4 text-center text-xs">Content for Tab 1</p>
       </TabsContent>
       <TabsContent value="tab-2">
-        <p className="p-4 text-center text-xs text-muted-foreground">Content for Tab 2</p>
+        <p className="text-muted-foreground p-4 text-center text-xs">Content for Tab 2</p>
       </TabsContent>
       <TabsContent value="tab-3">
-        <p className="p-4 text-center text-xs text-muted-foreground">Content for Tab 3</p>
+        <p className="text-muted-foreground p-4 text-center text-xs">Content for Tab 3</p>
       </TabsContent>
     </Tabs>
   );

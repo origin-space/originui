@@ -11,10 +11,10 @@ export default function Component() {
       <div className="relative">
         <Input id={id} className="pe-9" placeholder="Email" type="email" />
         <button
-          className="absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg border border-transparent text-muted-foreground/80 outline-offset-2 transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+          className="text-muted-foreground/80 hover:text-foreground focus-visible:outline-ring/70 absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg border border-transparent outline-offset-2 transition-colors focus-visible:outline-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
           aria-label="Subscribe"
         >
-          <Send size={16} strokeWidth={2} aria-hidden="true" />
+          <Send size={16} aria-hidden="true" />
         </button>
       </div>
     </div>

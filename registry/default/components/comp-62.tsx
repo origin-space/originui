@@ -10,7 +10,7 @@ export default function Component() {
         <Label htmlFor={id} className="leading-6">
           Textarea with hint
         </Label>
-        <span className="text-sm text-muted-foreground">Optional</span>
+        <span className="text-muted-foreground text-sm">Optional</span>
       </div>
       <Textarea id={id} placeholder="Leave a comment" />
     </div>

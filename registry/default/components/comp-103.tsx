@@ -9,9 +9,9 @@ export default function Component() {
         size="icon"
         aria-label="Upvote"
       >
-        <ChevronUp size={16} strokeWidth={2} aria-hidden="true" />
+        <ChevronUp size={16} aria-hidden="true" />
       </Button>
-      <span className="flex items-center bg-primary px-1 text-sm font-medium text-primary-foreground">
+      <span className="bg-primary text-primary-foreground flex items-center px-1 text-sm font-medium">
         235
       </span>
       <Button
@@ -19,7 +19,7 @@ export default function Component() {
         size="icon"
         aria-label="Downvote"
       >
-        <ChevronDown size={16} strokeWidth={2} aria-hidden="true" />
+        <ChevronDown size={16} aria-hidden="true" />
       </Button>
     </div>
   );

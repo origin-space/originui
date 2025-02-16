@@ -16,7 +16,7 @@ export default function Component() {
         size="icon"
         aria-label="Open link"
       >
-        <SquareArrowOutUpRight size={16} strokeWidth={2} aria-hidden="true" />
+        <SquareArrowOutUpRight size={16} aria-hidden="true" />
       </Button>
     </div>
   );

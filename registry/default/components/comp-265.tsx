@@ -202,7 +202,7 @@ export default function Component() {
             >
               <span
                 data-selected={isBarInSelectedRange(i, minValue, priceStep, sliderValue)}
-                className="h-full w-full bg-primary/20"
+                className="bg-primary/20 h-full w-full"
               ></span>
             </div>
           ))}
@@ -236,7 +236,7 @@ export default function Component() {
               }}
               aria-label="Enter minimum price"
             />
-            <span className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-sm text-muted-foreground peer-disabled:opacity-50">
+            <span className="text-muted-foreground pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-sm peer-disabled:opacity-50">
               $
             </span>
           </div>
@@ -259,7 +259,7 @@ export default function Component() {
               }}
               aria-label="Enter maximum price"
             />
-            <span className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-sm text-muted-foreground peer-disabled:opacity-50">
+            <span className="text-muted-foreground pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-sm peer-disabled:opacity-50">
               $
             </span>
           </div>

@@ -13,7 +13,7 @@ export default function Component() {
         <option value="3">Astro</option>
         <option value="4">Gatsby</option>
       </SelectNative>
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Tell us what&lsquo;s your favorite Select framework
       </p>
     </div>

@@ -18,7 +18,7 @@ export default function Component() {
         <TooltipContent className="py-3">
           <div className="space-y-1">
             <p className="text-[13px] font-medium">Tooltip with title</p>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-muted-foreground text-xs">
               Tooltips are made to be highly customizable, with features like dynamic placement,
               rich content, and a robust API. You can even use them as a full-featured dropdown menu
               by setting the <code>trigger</code> prop to <code>click</code>.

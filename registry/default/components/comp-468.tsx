@@ -84,7 +84,7 @@ export default function Component() {
           </TableRow>
         </TableFooter>
       </Table>
-      <p className="mt-4 text-center text-sm text-muted-foreground">
+      <p className="text-muted-foreground mt-4 text-center text-sm">
         Table without horizontal dividers
       </p>
     </div>

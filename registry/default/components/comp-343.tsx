@@ -45,13 +45,13 @@ export default function Component() {
         {items.map((item) => (
           <AccordionItem value={item.id} key={item.id} className="py-2">
             <AccordionPrimitive.Header className="flex">
-              <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between py-2 text-left text-[15px] font-semibold leading-6 transition-all [&>svg>path:last-child]:origin-center [&>svg>path:last-child]:transition-all [&>svg>path:last-child]:duration-200 [&[data-state=open]>svg>path:last-child]:rotate-90 [&[data-state=open]>svg>path:last-child]:opacity-0 [&[data-state=open]>svg]:rotate-180">
+              <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between py-2 text-left text-[15px] leading-6 font-semibold transition-all [&>svg>path:last-child]:origin-center [&>svg>path:last-child]:transition-all [&>svg>path:last-child]:duration-200 [&[data-state=open]>svg]:rotate-180 [&[data-state=open]>svg>path:last-child]:rotate-90 [&[data-state=open]>svg>path:last-child]:opacity-0">
                 <span className="flex items-center gap-3">
                   <span
-                    className="flex size-10 shrink-0 items-center justify-center rounded-full border border-border"
+                    className="border-border flex size-10 shrink-0 items-center justify-center rounded-full border"
                     aria-hidden="true"
                   >
-                    <item.icon size={16} strokeWidth={2} className="opacity-60" />
+                    <item.icon size={16} className="opacity-60" />
                   </span>
                   <span className="flex flex-col space-y-1">
                     <span>{item.title}</span>
@@ -60,13 +60,12 @@ export default function Component() {
                 </span>
                 <Plus
                   size={16}
-                  strokeWidth={2}
                   className="shrink-0 opacity-60 transition-transform duration-200"
                   aria-hidden="true"
                 />
               </AccordionPrimitive.Trigger>
             </AccordionPrimitive.Header>
-            <AccordionContent className="ms-3 pb-2 ps-10 text-muted-foreground">
+            <AccordionContent className="text-muted-foreground ms-3 ps-10 pb-2">
               {item.content}
             </AccordionContent>
           </AccordionItem>

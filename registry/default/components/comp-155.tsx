@@ -11,11 +11,11 @@ export default function Component() {
         <div className="grid grow gap-2">
           <Label htmlFor={`${id}-1`}>
             Small{" "}
-            <span className="text-xs font-normal leading-[inherit] text-muted-foreground">
+            <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
               (Sublabel)
             </span>
           </Label>
-          <p id={`${id}-1-description`} className="text-xs text-muted-foreground">
+          <p id={`${id}-1-description`} className="text-muted-foreground text-xs">
             You can use this card with a label and a description.
           </p>
         </div>
@@ -25,11 +25,11 @@ export default function Component() {
         <div className="grid grow gap-2">
           <Label htmlFor={`${id}-2`}>
             Large{" "}
-            <span className="text-xs font-normal leading-[inherit] text-muted-foreground">
+            <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
               (Sublabel)
             </span>
           </Label>
-          <p id={`${id}-2-description`} className="text-xs text-muted-foreground">
+          <p id={`${id}-2-description`} className="text-muted-foreground text-xs">
             You can use this card with a label and a description.
           </p>
         </div>

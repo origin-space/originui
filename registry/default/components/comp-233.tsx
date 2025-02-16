@@ -104,7 +104,7 @@ export default function Component() {
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="w-full justify-between bg-background px-3 font-normal outline-offset-0 hover:bg-background focus-visible:border-ring focus-visible:outline-[3px] focus-visible:outline-ring/20"
+            className="bg-background hover:bg-background focus-visible:border-ring focus-visible:outline-ring/20 w-full justify-between px-3 font-normal outline-offset-0 focus-visible:outline-[3px]"
           >
             {value ? (
               <span className="flex min-w-0 items-center gap-2">
@@ -112,7 +112,7 @@ export default function Component() {
                   const selectedItem = items.find((item) => item.value === value);
                   if (selectedItem) {
                     const Icon = selectedItem.icon;
-                    return <Icon className="h-4 w-4 text-muted-foreground" />;
+                    return <Icon className="text-muted-foreground h-4 w-4" />;
                   }
                   return null;
                 })()}
@@ -125,14 +125,13 @@ export default function Component() {
             )}
             <ChevronDown
               size={16}
-              strokeWidth={2}
-              className="shrink-0 text-muted-foreground/80"
+              className="text-muted-foreground/80 shrink-0"
               aria-hidden="true"
             />
           </Button>
         </PopoverTrigger>
         <PopoverContent
-          className="w-full min-w-[var(--radix-popper-anchor-width)] border-input p-0"
+          className="border-input w-full min-w-[var(--radix-popper-anchor-width)] p-0"
           align="start"
         >
           <Command>
@@ -151,10 +150,10 @@ export default function Component() {
                     className="flex items-center justify-between"
                   >
                     <div className="flex items-center gap-2">
-                      <item.icon className="h-4 w-4 text-muted-foreground" />
+                      <item.icon className="text-muted-foreground h-4 w-4" />
                       {item.label}
                     </div>
-                    <span className="text-xs text-muted-foreground">
+                    <span className="text-muted-foreground text-xs">
                       {item.number.toLocaleString()}
                     </span>
                   </CommandItem>

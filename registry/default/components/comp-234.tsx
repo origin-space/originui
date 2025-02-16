@@ -87,10 +87,10 @@ export default function Component() {
         hidePlaceholderWhenSelected
         emptyIndicator={<p className="text-center text-sm">No results found</p>}
       />
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Inspired by{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://shadcnui-expansions.typeart.cc/docs/multiple-selector"
           target="_blank"
           rel="noopener nofollow"

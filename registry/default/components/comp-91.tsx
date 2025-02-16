@@ -25,7 +25,7 @@ export default function Component() {
       <span className="group-data-loading:text-transparent">Click me</span>
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <LoaderCircle className="animate-spin" size={16} strokeWidth={2} aria-hidden="true" />
+          <LoaderCircle className="animate-spin" size={16} aria-hidden="true" />
         </div>
       )}
     </Button>

@@ -52,10 +52,10 @@ export default function Component() {
         inlineTags={false}
         inputFieldPosition="top"
       />
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Built with{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://github.com/JaleelB/emblor"
           target="_blank"
           rel="noopener nofollow"

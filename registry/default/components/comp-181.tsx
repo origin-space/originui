@@ -14,11 +14,7 @@ export default function Component() {
       <Switch id={id} checked={checked} onCheckedChange={setChecked} aria-label="Toggle switch" />
       <Label htmlFor={id}>
         <span className="sr-only">Toggle switch</span>
-        {checked ? (
-          <Sun size={16} strokeWidth={2} aria-hidden="true" />
-        ) : (
-          <Moon size={16} strokeWidth={2} aria-hidden="true" />
-        )}
+        {checked ? <Sun size={16} aria-hidden="true" /> : <Moon size={16} aria-hidden="true" />}
       </Label>
     </div>
   );

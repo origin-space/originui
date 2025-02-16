@@ -30,7 +30,7 @@ export default function Component() {
         <div className="grow">
           <div className="grid gap-2">
             <Label htmlFor={checkboxId}>Checkbox with expansion</Label>
-            <p id={`${checkboxId}-description`} className="text-xs text-muted-foreground">
+            <p id={`${checkboxId}-description`} className="text-muted-foreground text-xs">
               You can use this checkbox with a label and a description.
             </p>
           </div>
@@ -39,7 +39,7 @@ export default function Component() {
             role="region"
             id={inputId}
             aria-labelledby={checkboxId}
-            className="grid transition-all ease-in-out data-[state=collapsed]:grid-rows-[0fr] data-[state=expanded]:grid-rows-[1fr] data-[state=collapsed]:opacity-0 data-[state=expanded]:opacity-100"
+            className="grid transition-all ease-in-out data-[state=collapsed]:grid-rows-[0fr] data-[state=collapsed]:opacity-0 data-[state=expanded]:grid-rows-[1fr] data-[state=expanded]:opacity-100"
             data-state={checked ? "expanded" : "collapsed"}
           >
             <div className="pointer-events-none -m-2 overflow-hidden p-2">

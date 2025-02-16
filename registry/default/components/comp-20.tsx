@@ -16,10 +16,10 @@ export default function Component() {
           type="email"
         />
         <button
-          className="inline-flex w-9 items-center justify-center rounded-e-lg border border-input bg-background text-sm text-muted-foreground/80 outline-offset-2 transition-colors hover:bg-accent hover:text-accent-foreground focus:z-10 focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+          className="border-input bg-background text-muted-foreground/80 hover:bg-accent hover:text-accent-foreground focus-visible:outline-ring/70 inline-flex w-9 items-center justify-center rounded-e-lg border text-sm outline-offset-2 transition-colors focus:z-10 focus-visible:outline-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
           aria-label="Subscribe"
         >
-          <Download size={16} strokeWidth={2} aria-hidden="true" />
+          <Download size={16} aria-hidden="true" />
         </button>
       </div>
     </div>

@@ -45,7 +45,7 @@ export default function Component() {
           Next step
         </Button>
       </div>
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Controlled stepper with checkmarks
       </p>
     </div>

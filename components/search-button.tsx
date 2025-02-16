@@ -23,13 +23,13 @@ export default function SearchButton() {
   return (
     <Link
       href="/search"
-      className="inline-flex h-10 w-fit min-w-72 cursor-text rounded-full border border-border bg-background px-4 py-2 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-ring/40 focus:outline-hidden focus:ring-[3px] ring-ring/8 dark:ring-ring/12"
+      className="border-border bg-background text-foreground placeholder:text-muted-foreground/70 focus:border-ring/40 ring-ring/8 dark:ring-ring/12 inline-flex h-10 w-fit min-w-72 cursor-text rounded-full border px-4 py-2 text-sm focus:ring-[3px] focus:outline-hidden"
     >
       <span className="flex grow items-center">
-        <RiSearch2Line className="-ms-1 me-2 text-muted-foreground" size={20} aria-hidden="true" />
-        <span className="font-normal text-ring">Quick search...</span>
-        <div className="pointer-events-none ml-auto flex items-center justify-center text-muted-foreground/80">
-          <kbd className="inline-flex font-[inherit] text-xs font-medium text-muted-foreground">
+        <RiSearch2Line className="text-muted-foreground -ms-1 me-2" size={20} aria-hidden="true" />
+        <span className="text-ring font-normal">Quick search...</span>
+        <div className="text-muted-foreground/80 pointer-events-none ml-auto flex items-center justify-center">
+          <kbd className="text-muted-foreground inline-flex font-[inherit] text-xs font-medium">
             <span className="opacity-70">⌘</span>K
           </kbd>
         </div>

@@ -18,7 +18,10 @@ export default function Component() {
     >
       <Label htmlFor={id}>Select with colored border and ring</Label>
       <Select defaultValue="1">
-        <SelectTrigger id={id} className="focus:border-ring/60 focus:ring-ring/20 dark:focus:ring-ring/25">
+        <SelectTrigger
+          id={id}
+          className="focus:border-ring/60 focus:ring-ring/20 dark:focus:ring-ring/25"
+        >
           <SelectValue placeholder="Select framework" />
         </SelectTrigger>
         <SelectContent>

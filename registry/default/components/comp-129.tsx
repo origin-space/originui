@@ -20,7 +20,7 @@ export default function Component() {
       onClick={handleClick}
       aria-label="Notifications"
     >
-      <Bell size={16} strokeWidth={2} aria-hidden="true" />
+      <Bell size={16} aria-hidden="true" />
       {count > 0 && (
         <Badge className="absolute -top-2 left-full min-w-5 -translate-x-1/2 px-1">
           {count > 99 ? "99+" : count}

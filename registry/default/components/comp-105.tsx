@@ -42,7 +42,7 @@ export default function Component() {
                 copied ? "scale-100 opacity-100" : "scale-0 opacity-0",
               )}
             >
-              <Check className="stroke-emerald-500" size={16} strokeWidth={2} aria-hidden="true" />
+              <Check className="stroke-emerald-500" size={16} aria-hidden="true" />
             </div>
             <div
               className={cn(
@@ -50,7 +50,7 @@ export default function Component() {
                 copied ? "scale-0 opacity-0" : "scale-100 opacity-100",
               )}
             >
-              <Copy size={16} strokeWidth={2} aria-hidden="true" />
+              <Copy size={16} aria-hidden="true" />
             </div>
           </Button>
         </TooltipTrigger>

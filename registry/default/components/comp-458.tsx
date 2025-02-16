@@ -9,7 +9,7 @@ type PaginationProps = {
 export default function Component({ currentPage, totalPages }: PaginationProps) {
   return (
     <div className="flex items-center justify-between gap-3">
-      <p className="grow text-sm text-muted-foreground" aria-live="polite">
+      <p className="text-muted-foreground grow text-sm" aria-live="polite">
         Page <span className="text-foreground">{currentPage}</span> of{" "}
         <span className="text-foreground">{totalPages}</span>
       </p>

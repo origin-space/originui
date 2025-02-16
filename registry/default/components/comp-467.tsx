@@ -77,7 +77,7 @@ export default function Component() {
                   />
                   <div>
                     <div className="font-medium">{item.name}</div>
-                    <span className="mt-0.5 text-xs text-muted-foreground">{item.username}</span>
+                    <span className="text-muted-foreground mt-0.5 text-xs">{item.username}</span>
                   </div>
                 </div>
               </TableCell>
@@ -89,7 +89,7 @@ export default function Component() {
           ))}
         </TableBody>
       </Table>
-      <p className="mt-4 text-center text-sm text-muted-foreground">Table with images</p>
+      <p className="text-muted-foreground mt-4 text-center text-sm">Table with images</p>
     </div>
   );
 }

@@ -11,7 +11,11 @@ export default function Component() {
       style={{ "--ring": "oklch(0.59 0.20 277)" } as React.CSSProperties}
     >
       <Label htmlFor={id}>Textarea with colored border and ring</Label>
-      <Textarea id={id} className="focus-visible:border-ring/60 focus-visible:ring-ring/20 dark:focus-visible:ring-ring/25" placeholder="Leave a comment" />
+      <Textarea
+        id={id}
+        className="focus-visible:border-ring/60 focus-visible:ring-ring/20 dark:focus-visible:ring-ring/25"
+        placeholder="Leave a comment"
+      />
     </div>
   );
 }

@@ -87,10 +87,10 @@ export default function SearchField({ selectedTags, onTagChange }: SearchFieldPr
           hidePlaceholderWhenSelected
           emptyIndicator={<p className="text-center text-sm">No tags found</p>}
           onChange={handleMultipleSelectorChange}
-          className="w-full rounded-xl border-border bg-zinc-200/40 ps-[52px] dark:bg-zinc-900"
+          className="border-border w-full rounded-xl bg-zinc-200/40 ps-[52px] dark:bg-zinc-900"
         />
         <div
-          className="pointer-events-none absolute inset-y-0 start-0 flex items-start justify-center ps-4 pt-2.5 text-muted-foreground"
+          className="text-muted-foreground pointer-events-none absolute inset-y-0 start-0 flex items-start justify-center ps-4 pt-2.5"
           aria-label="Search component"
         >
           <RiSearch2Line size={24} aria-hidden="true" />

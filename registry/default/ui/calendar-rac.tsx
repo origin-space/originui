@@ -28,16 +28,16 @@ const CalendarHeader = () => (
   <header className="flex w-full items-center gap-1 pb-1">
     <Button
       slot="previous"
-      className="flex size-9 items-center justify-center rounded-lg text-muted-foreground/80 outline-offset-2 transition-colors hover:bg-accent hover:text-foreground focus:outline-hidden data-focus-visible:outline-2 data-focus-visible:outline-ring/70"
+      className="text-muted-foreground/80 hover:bg-accent hover:text-foreground data-focus-visible:outline-ring/70 flex size-9 items-center justify-center rounded-lg outline-offset-2 transition-colors focus:outline-hidden data-focus-visible:outline-2"
     >
-      <ChevronLeft size={16} strokeWidth={2} />
+      <ChevronLeft size={16} />
     </Button>
     <HeadingRac className="grow text-center text-sm font-medium" />
     <Button
       slot="next"
-      className="flex size-9 items-center justify-center rounded-lg text-muted-foreground/80 outline-offset-2 transition-colors hover:bg-accent hover:text-foreground focus:outline-hidden data-focus-visible:outline-2 data-focus-visible:outline-ring/70"
+      className="text-muted-foreground/80 hover:bg-accent hover:text-foreground data-focus-visible:outline-ring/70 flex size-9 items-center justify-center rounded-lg outline-offset-2 transition-colors focus:outline-hidden data-focus-visible:outline-2"
     >
-      <ChevronRight size={16} strokeWidth={2} />
+      <ChevronRight size={16} />
     </Button>
   </header>
 );
@@ -49,7 +49,7 @@ const CalendarGridComponent = ({ isRange = false }: { isRange?: boolean }) => {
     <CalendarGridRac>
       <CalendarGridHeaderRac>
         {(day) => (
-          <CalendarHeaderCellRac className="size-9 rounded-lg p-0 text-xs font-medium text-muted-foreground/80">
+          <CalendarHeaderCellRac className="text-muted-foreground/80 size-9 rounded-lg p-0 text-xs font-medium">
             {day}
           </CalendarHeaderCellRac>
         )}
@@ -59,14 +59,14 @@ const CalendarGridComponent = ({ isRange = false }: { isRange?: boolean }) => {
           <CalendarCellRac
             date={date}
             className={cn(
-              "relative flex size-9 items-center justify-center whitespace-nowrap rounded-lg border border-transparent p-0 text-sm font-normal text-foreground outline-offset-2 duration-150 [transition-property:color,background-color,border-radius,box-shadow] focus:outline-hidden data-disabled:pointer-events-none data-unavailable:pointer-events-none data-focus-visible:z-10 data-hovered:bg-accent data-selected:bg-primary data-hovered:text-foreground data-selected:text-primary-foreground data-unavailable:line-through data-disabled:opacity-30 data-unavailable:opacity-30 data-focus-visible:outline-2 data-focus-visible:outline-ring/70",
+              "text-foreground data-hovered:bg-accent data-selected:bg-primary data-hovered:text-foreground data-selected:text-primary-foreground data-focus-visible:outline-ring/70 relative flex size-9 items-center justify-center rounded-lg border border-transparent p-0 text-sm font-normal whitespace-nowrap outline-offset-2 [transition-property:color,background-color,border-radius,box-shadow] duration-150 focus:outline-hidden data-disabled:pointer-events-none data-disabled:opacity-30 data-focus-visible:z-10 data-focus-visible:outline-2 data-unavailable:pointer-events-none data-unavailable:line-through data-unavailable:opacity-30",
               // Range-specific styles
               isRange &&
-                "data-selected:rounded-none data-selection-end:rounded-e-lg data-selection-start:rounded-s-lg data-invalid:bg-red-100 data-selected:bg-accent data-selected:text-foreground data-invalid:data-selection-end:[&:not([data-hover])]:bg-destructive data-invalid:data-selection-start:[&:not([data-hover])]:bg-destructive data-selection-end:[&:not([data-hover])]:bg-primary data-selection-start:[&:not([data-hover])]:bg-primary data-invalid:data-selection-end:[&:not([data-hover])]:text-destructive-foreground data-invalid:data-selection-start:[&:not([data-hover])]:text-destructive-foreground data-selection-end:[&:not([data-hover])]:text-primary-foreground data-selection-start:[&:not([data-hover])]:text-primary-foreground",
+                "data-selected:bg-accent data-selected:text-foreground data-invalid:data-selection-end:[&:not([data-hover])]:bg-destructive data-invalid:data-selection-start:[&:not([data-hover])]:bg-destructive data-selection-end:[&:not([data-hover])]:bg-primary data-selection-start:[&:not([data-hover])]:bg-primary data-invalid:data-selection-end:[&:not([data-hover])]:text-destructive-foreground data-invalid:data-selection-start:[&:not([data-hover])]:text-destructive-foreground data-selection-end:[&:not([data-hover])]:text-primary-foreground data-selection-start:[&:not([data-hover])]:text-primary-foreground data-invalid:bg-red-100 data-selected:rounded-none data-selection-end:rounded-e-lg data-selection-start:rounded-s-lg",
               // Today indicator styles
               date.compare(now) === 0 &&
                 cn(
-                  "after:pointer-events-none after:absolute after:bottom-1 after:start-1/2 after:z-10 after:size-[3px] after:-translate-x-1/2 after:rounded-full after:bg-primary",
+                  "after:bg-primary after:pointer-events-none after:absolute after:start-1/2 after:bottom-1 after:z-10 after:size-[3px] after:-translate-x-1/2 after:rounded-full",
                   isRange
                     ? "data-selection-end:[&:not([data-hover])]:after:bg-background data-selection-start:[&:not([data-hover])]:after:bg-background"
                     : "data-selected:after:bg-background",

@@ -46,16 +46,11 @@ export default function Component() {
           <AccordionItem value={item.id} key={item.id} className="py-2">
             <AccordionTrigger className="py-2 text-[15px] leading-6 hover:no-underline">
               <span className="flex items-center gap-3">
-                <item.icon
-                  size={16}
-                  strokeWidth={2}
-                  className="shrink-0 opacity-60"
-                  aria-hidden="true"
-                />
+                <item.icon size={16} className="shrink-0 opacity-60" aria-hidden="true" />
                 <span>{item.title}</span>
               </span>
             </AccordionTrigger>
-            <AccordionContent className="pb-2 ps-7 text-muted-foreground">
+            <AccordionContent className="text-muted-foreground ps-7 pb-2">
               {item.content}
             </AccordionContent>
           </AccordionItem>

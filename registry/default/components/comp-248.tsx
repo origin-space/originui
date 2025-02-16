@@ -7,7 +7,7 @@ export default function Component() {
       <Label>Slider with labels</Label>
       <div>
         <span
-          className="mb-3 flex w-full items-center justify-between gap-2 text-xs font-medium text-muted-foreground"
+          className="text-muted-foreground mb-3 flex w-full items-center justify-between gap-2 text-xs font-medium"
           aria-hidden="true"
         >
           <span>Low</span>

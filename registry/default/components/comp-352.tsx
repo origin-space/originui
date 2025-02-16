@@ -84,7 +84,7 @@ export default function Component() {
           <AccordionItem
             value={item.id}
             key={item.id}
-            className="overflow-hidden border bg-background first:rounded-t-lg last:rounded-b-lg"
+            className="bg-background overflow-hidden border first:rounded-t-lg last:rounded-b-lg"
           >
             <AccordionTrigger className="px-4 py-3 text-[15px] leading-6 hover:no-underline">
               {item.title}
@@ -117,19 +117,18 @@ function CollapsibleDemo({
 }) {
   return (
     <Collapsible
-      className="space-y-1 border-t border-border bg-accent px-4 py-3"
+      className="border-border bg-accent space-y-1 border-t px-4 py-3"
       defaultOpen={open}
     >
-      <CollapsibleTrigger className="flex gap-2 text-[15px] font-semibold leading-6 [&[data-state=open]>svg]:rotate-180">
+      <CollapsibleTrigger className="flex gap-2 text-[15px] leading-6 font-semibold [&[data-state=open]>svg]:rotate-180">
         <ChevronDown
           size={16}
-          strokeWidth={2}
           className="mt-1 shrink-0 opacity-60 transition-transform duration-200"
           aria-hidden="true"
         />
         {title}
       </CollapsibleTrigger>
-      <CollapsibleContent className="overflow-hidden ps-6 text-sm text-muted-foreground transition-all data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
+      <CollapsibleContent className="text-muted-foreground data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down overflow-hidden ps-6 text-sm transition-all">
         {content}
       </CollapsibleContent>
     </Collapsible>

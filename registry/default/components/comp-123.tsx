@@ -20,9 +20,9 @@ export default function Component() {
     >
       {isExpanded ? "Show less" : "Show more"}
       {isExpanded ? (
-        <ChevronUp className="-me-1 ms-1" size={16} strokeWidth={2} aria-hidden="true" />
+        <ChevronUp className="ms-1 -me-1" size={16} aria-hidden="true" />
       ) : (
-        <ChevronDown className="-me-1 ms-1" size={16} strokeWidth={2} aria-hidden="true" />
+        <ChevronDown className="ms-1 -me-1" size={16} aria-hidden="true" />
       )}
     </Button>
   );

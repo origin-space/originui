@@ -142,7 +142,7 @@ export default function Component() {
                 return (
                   <TableHead
                     key={header.id}
-                    className="relative h-10 select-none border-t last:[&>.cursor-col-resize]:opacity-0"
+                    className="relative h-10 border-t select-none last:[&>.cursor-col-resize]:opacity-0"
                     aria-sort={
                       header.column.getIsSorted() === "asc"
                         ? "ascending"
@@ -161,7 +161,7 @@ export default function Component() {
                       <div
                         className={cn(
                           header.column.getCanSort() &&
-                            "flex h-full cursor-pointer select-none items-center justify-between gap-2",
+                            "flex h-full cursor-pointer items-center justify-between gap-2 select-none",
                         )}
                         onClick={header.column.getToggleSortingHandler()}
                         onKeyDown={(e) => {
@@ -181,7 +181,6 @@ export default function Component() {
                             <ChevronUp
                               className="shrink-0 opacity-60"
                               size={16}
-                              strokeWidth={2}
                               aria-hidden="true"
                             />
                           ),
@@ -189,7 +188,6 @@ export default function Component() {
                             <ChevronDown
                               className="shrink-0 opacity-60"
                               size={16}
-                              strokeWidth={2}
                               aria-hidden="true"
                             />
                           ),
@@ -233,10 +231,10 @@ export default function Component() {
           )}
         </TableBody>
       </Table>
-      <p className="mt-4 text-center text-sm text-muted-foreground">
+      <p className="text-muted-foreground mt-4 text-center text-sm">
         Resizable and sortable columns made with{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://tanstack.com/table"
           target="_blank"
           rel="noopener noreferrer"

@@ -17,7 +17,7 @@ export default function Component() {
           className="rounded-full shadow-none"
           aria-label="Open edit menu"
         >
-          <Ellipsis size={16} strokeWidth={2} aria-hidden="true" />
+          <Ellipsis size={16} aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

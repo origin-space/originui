@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
@@ -16,7 +14,7 @@ const AccordionItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AccordionPrimitive.Item
     ref={ref}
-    className={cn("border-b border-border", className)}
+    className={cn("border-border border-b", className)}
     {...props}
   />
 ));
@@ -38,7 +36,6 @@ const AccordionTrigger = React.forwardRef<
       {children}
       <ChevronDown
         size={16}
-        strokeWidth={2}
         className="shrink-0 opacity-60 transition-transform duration-200"
         aria-hidden="true"
       />
@@ -53,10 +50,10 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm transition-all"
     {...props}
   >
-    <div className={cn("pb-4 pt-0", className)}>{children}</div>
+    <div className={cn("pt-0 pb-4", className)}>{children}</div>
   </AccordionPrimitive.Content>
 ));
 

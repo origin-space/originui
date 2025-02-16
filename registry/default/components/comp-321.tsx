@@ -19,7 +19,7 @@ export default function Component() {
       <DialogContent>
         <div className="mb-2 flex flex-col items-center gap-2">
           <div
-            className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
+            className="border-border flex size-11 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
             <svg
@@ -51,8 +51,8 @@ export default function Component() {
                 type="email"
                 aria-label="Email"
               />
-              <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 peer-disabled:opacity-50">
-                <Mail size={16} strokeWidth={2} aria-hidden="true" />
+              <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 peer-disabled:opacity-50">
+                <Mail size={16} aria-hidden="true" />
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@ export default function Component() {
           </Button>
         </form>
 
-        <p className="text-center text-xs text-muted-foreground">
+        <p className="text-muted-foreground text-center text-xs">
           By subscribing you agree to our{" "}
           <a className="underline hover:no-underline" href="#">
             Privacy Policy

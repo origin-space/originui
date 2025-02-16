@@ -8,7 +8,7 @@ export default function Component() {
       <div>
         <Slider defaultValue={[15]} min={5} max={35} aria-label="Slider with reference labels" />
         <span
-          className="mt-4 flex w-full items-center justify-between gap-1 text-xs font-medium text-muted-foreground"
+          className="text-muted-foreground mt-4 flex w-full items-center justify-between gap-1 text-xs font-medium"
           aria-hidden="true"
         >
           <span>5 GB</span>

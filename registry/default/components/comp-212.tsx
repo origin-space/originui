@@ -15,7 +15,7 @@ export default function Component() {
       <Label htmlFor={id}>Select with auto-width</Label>
       <Select defaultValue="1">
         {/* Adjust the min-width to fit the longest option */}
-        <SelectTrigger id={id} className="w-auto min-w-48 max-w-full">
+        <SelectTrigger id={id} className="w-auto max-w-full min-w-48">
           <SelectValue placeholder="Select framework" />
         </SelectTrigger>
         <SelectContent>

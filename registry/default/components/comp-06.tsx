@@ -15,7 +15,11 @@ export default function Component() {
         defaultValue="invalid@email.com"
         aria-invalid
       />
-      <p className="mt-2 text-xs peer-aria-invalid:text-destructive" role="alert" aria-live="polite">
+      <p
+        className="peer-aria-invalid:text-destructive mt-2 text-xs"
+        role="alert"
+        aria-live="polite"
+      >
         Email is invalid
       </p>
     </div>

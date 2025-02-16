@@ -17,11 +17,11 @@ export default function Component() {
     >
       <span
         id={`${id}-off`}
-        className="flex-1 cursor-pointer text-right text-sm font-medium group-data-[state=checked]:text-muted-foreground/70"
+        className="group-data-[state=checked]:text-muted-foreground/70 flex-1 cursor-pointer text-right text-sm font-medium"
         aria-controls={id}
         onClick={() => setChecked(false)}
       >
-        <Moon size={16} strokeWidth={2} aria-hidden="true" />
+        <Moon size={16} aria-hidden="true" />
       </span>
       <Switch
         id={id}
@@ -32,11 +32,11 @@ export default function Component() {
       />
       <span
         id={`${id}-on`}
-        className="flex-1 cursor-pointer text-left text-sm font-medium group-data-[state=unchecked]:text-muted-foreground/70"
+        className="group-data-[state=unchecked]:text-muted-foreground/70 flex-1 cursor-pointer text-left text-sm font-medium"
         aria-controls={id}
         onClick={() => setChecked(true)}
       >
-        <Sun size={16} strokeWidth={2} aria-hidden="true" />
+        <Sun size={16} aria-hidden="true" />
       </span>
     </div>
   );

@@ -24,7 +24,7 @@ export default function Component() {
           <SelectItem value="4">Gatsby</SelectItem>
         </SelectContent>
       </Select>
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Tell us what&lsquo;s your favorite Select framework
       </p>
     </div>

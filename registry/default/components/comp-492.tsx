@@ -22,16 +22,16 @@ export default function Component() {
           },
         ]}
         excludeDisabled
-        className="rounded-lg border border-border p-2"
+        className="border-border rounded-lg border p-2"
       />
       <p
-        className="mt-4 text-center text-xs text-muted-foreground"
+        className="text-muted-foreground mt-4 text-center text-xs"
         role="region"
         aria-live="polite"
       >
         Disabled dates -{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://daypicker.dev/"
           target="_blank"
           rel="noopener nofollow"

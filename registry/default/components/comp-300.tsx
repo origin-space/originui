@@ -10,20 +10,19 @@ export default function Component() {
       variant="outline"
       onClick={() => {
         toast.custom((t) => (
-          <div className="w-[var(--width)] rounded-lg border border-border bg-background px-4 py-3">
+          <div className="border-border bg-background w-[var(--width)] rounded-lg border px-4 py-3">
             <div className="flex gap-2">
               <div className="flex grow gap-3">
                 <CircleCheck
                   className="mt-0.5 shrink-0 text-emerald-500"
                   size={16}
-                  strokeWidth={2}
                   aria-hidden="true"
                 />
                 <div className="flex grow justify-between gap-12">
                   <p className="text-sm">Message sent</p>
-                  <div className="whitespace-nowrap text-sm">
+                  <div className="text-sm whitespace-nowrap">
                     <button className="text-sm font-medium hover:underline">View</button>{" "}
-                    <span className="mx-1 text-muted-foreground">·</span>{" "}
+                    <span className="text-muted-foreground mx-1">·</span>{" "}
                     <button
                       className="text-sm font-medium hover:underline"
                       onClick={() => toast.dismiss(t)}
@@ -41,7 +40,6 @@ export default function Component() {
               >
                 <X
                   size={16}
-                  strokeWidth={2}
                   className="opacity-60 transition-opacity group-hover:opacity-100"
                   aria-hidden="true"
                 />

@@ -23,7 +23,7 @@ export default function Component() {
               pressed={bookmarked}
               onPressedChange={setBookmarked}
             >
-              <Bookmark size={16} strokeWidth={2} aria-hidden="true" />
+              <Bookmark size={16} aria-hidden="true" />
             </Toggle>
           </div>
         </TooltipTrigger>

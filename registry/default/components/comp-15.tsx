@@ -14,7 +14,7 @@ export default function Component() {
           placeholder="google"
           type="text"
         />
-        <span className="-z-10 inline-flex items-center rounded-e-lg border border-input bg-background px-3 text-sm text-muted-foreground">
+        <span className="border-input bg-background text-muted-foreground -z-10 inline-flex items-center rounded-e-lg border px-3 text-sm">
           .com
         </span>
       </div>

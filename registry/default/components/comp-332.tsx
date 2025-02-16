@@ -67,7 +67,7 @@ export default function Component() {
             alt="dialog"
           />
         </div>
-        <div className="space-y-6 px-6 pb-6 pt-3">
+        <div className="space-y-6 px-6 pt-3 pb-6">
           <DialogHeader>
             <DialogTitle>{stepContent[step - 1].title}</DialogTitle>
             <DialogDescription>{stepContent[step - 1].description}</DialogDescription>
@@ -78,7 +78,7 @@ export default function Component() {
                 <div
                   key={index}
                   className={cn(
-                    "h-1.5 w-1.5 rounded-full bg-primary",
+                    "bg-primary h-1.5 w-1.5 rounded-full",
                     index + 1 === step ? "bg-primary" : "opacity-20",
                   )}
                 />
@@ -94,9 +94,8 @@ export default function Component() {
                 <Button className="group" type="button" onClick={handleContinue}>
                   Next
                   <ArrowRight
-                    className="-me-1 ms-2 opacity-60 transition-transform group-hover:translate-x-0.5"
+                    className="ms-2 -me-1 opacity-60 transition-transform group-hover:translate-x-0.5"
                     size={16}
-                    strokeWidth={2}
                     aria-hidden="true"
                   />
                 </Button>

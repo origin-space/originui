@@ -12,7 +12,7 @@ export default function Component() {
       <Textarea
         id={id}
         placeholder="Leave a comment"
-        className="min-h-[none] resize-none field-sizing-content max-h-29.5 py-1.75"
+        className="field-sizing-content max-h-29.5 min-h-[none] resize-none py-1.75"
       />
     </div>
   );

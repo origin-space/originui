@@ -30,7 +30,7 @@ export default function Component() {
                 aria-hidden="true"
                 className="flex size-5 items-center justify-center"
               >
-                <Folders size={16} strokeWidth={2} />
+                <Folders size={16} />
               </span>
               <span className="sr-only">Toggle menu</span>
             </DropdownMenuTrigger>

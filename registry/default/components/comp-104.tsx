@@ -26,10 +26,10 @@ export default function Component() {
         onClick={decreaseVolume}
         disabled={volume === 0}
       >
-        <Minus size={16} strokeWidth={2} aria-hidden="true" />
+        <Minus size={16} aria-hidden="true" />
       </Button>
       <div className="flex items-center px-3 text-sm font-medium tabular-nums" aria-live="polite">
-        <VolumeIcon className="opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
+        <VolumeIcon className="opacity-60" size={16} aria-hidden="true" />
         <span className="ms-2" aria-label={`Current volume is ${volume}`}>
           {volume}
         </span>
@@ -42,7 +42,7 @@ export default function Component() {
         onClick={increaseVolume}
         disabled={volume === 6}
       >
-        <Plus size={16} strokeWidth={2} aria-hidden="true" />
+        <Plus size={16} aria-hidden="true" />
       </Button>
     </div>
   );

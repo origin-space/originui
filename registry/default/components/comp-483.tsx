@@ -165,7 +165,7 @@ export default function Component() {
 
   return (
     <div className="space-y-4">
-      <div className="overflow-hidden rounded-lg border border-border bg-background">
+      <div className="border-border bg-background overflow-hidden rounded-lg border">
         <Table className="table-fixed">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -181,7 +181,7 @@ export default function Component() {
                         <div
                           className={cn(
                             header.column.getCanSort() &&
-                              "flex h-full cursor-pointer select-none items-center justify-between gap-2",
+                              "flex h-full cursor-pointer items-center justify-between gap-2 select-none",
                           )}
                           onClick={header.column.getToggleSortingHandler()}
                           onKeyDown={(e) => {
@@ -202,7 +202,6 @@ export default function Component() {
                               <ChevronUp
                                 className="shrink-0 opacity-60"
                                 size={16}
-                                strokeWidth={2}
                                 aria-hidden="true"
                               />
                             ),
@@ -210,7 +209,6 @@ export default function Component() {
                               <ChevronDown
                                 className="shrink-0 opacity-60"
                                 size={16}
-                                strokeWidth={2}
                                 aria-hidden="true"
                               />
                             ),
@@ -263,7 +261,7 @@ export default function Component() {
             <SelectTrigger id={id} className="w-fit whitespace-nowrap">
               <SelectValue placeholder="Select number of results" />
             </SelectTrigger>
-            <SelectContent className="[&_*[role=option]>span]:end-2 [&_*[role=option]>span]:start-auto [&_*[role=option]]:pe-8 [&_*[role=option]]:ps-2">
+            <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
               {[5, 10, 25, 50].map((pageSize) => (
                 <SelectItem key={pageSize} value={pageSize.toString()}>
                   {pageSize}
@@ -273,8 +271,8 @@ export default function Component() {
           </Select>
         </div>
         {/* Page number information */}
-        <div className="flex grow justify-end whitespace-nowrap text-sm text-muted-foreground">
-          <p className="whitespace-nowrap text-sm text-muted-foreground" aria-live="polite">
+        <div className="text-muted-foreground flex grow justify-end text-sm whitespace-nowrap">
+          <p className="text-muted-foreground text-sm whitespace-nowrap" aria-live="polite">
             <span className="text-foreground">
               {table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1}-
               {Math.min(
@@ -303,7 +301,7 @@ export default function Component() {
                   disabled={!table.getCanPreviousPage()}
                   aria-label="Go to first page"
                 >
-                  <ChevronFirst size={16} strokeWidth={2} aria-hidden="true" />
+                  <ChevronFirst size={16} aria-hidden="true" />
                 </Button>
               </PaginationItem>
               {/* Previous page button */}
@@ -316,7 +314,7 @@ export default function Component() {
                   disabled={!table.getCanPreviousPage()}
                   aria-label="Go to previous page"
                 >
-                  <ChevronLeft size={16} strokeWidth={2} aria-hidden="true" />
+                  <ChevronLeft size={16} aria-hidden="true" />
                 </Button>
               </PaginationItem>
               {/* Next page button */}
@@ -329,7 +327,7 @@ export default function Component() {
                   disabled={!table.getCanNextPage()}
                   aria-label="Go to next page"
                 >
-                  <ChevronRight size={16} strokeWidth={2} aria-hidden="true" />
+                  <ChevronRight size={16} aria-hidden="true" />
                 </Button>
               </PaginationItem>
               {/* Last page button */}
@@ -342,17 +340,17 @@ export default function Component() {
                   disabled={!table.getCanNextPage()}
                   aria-label="Go to last page"
                 >
-                  <ChevronLast size={16} strokeWidth={2} aria-hidden="true" />
+                  <ChevronLast size={16} aria-hidden="true" />
                 </Button>
               </PaginationItem>
             </PaginationContent>
           </Pagination>
         </div>
       </div>
-      <p className="mt-4 text-center text-sm text-muted-foreground">
+      <p className="text-muted-foreground mt-4 text-center text-sm">
         Paginated table made with{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://tanstack.com/table"
           target="_blank"
           rel="noopener noreferrer"

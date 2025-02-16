@@ -21,7 +21,7 @@ export default function Component() {
       <DialogContent>
         <div className="flex flex-col items-center gap-2">
           <div
-            className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
+            className="border-border flex size-11 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
             <svg
@@ -68,13 +68,13 @@ export default function Component() {
           </Button>
         </form>
 
-        <div className="flex items-center gap-3 before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border">
-          <span className="text-xs text-muted-foreground">Or</span>
+        <div className="before:bg-border after:bg-border flex items-center gap-3 before:h-px before:flex-1 after:h-px after:flex-1">
+          <span className="text-muted-foreground text-xs">Or</span>
         </div>
 
         <Button variant="outline">Continue with Google</Button>
 
-        <p className="text-center text-xs text-muted-foreground">
+        <p className="text-muted-foreground text-center text-xs">
           By signing up you agree to our{" "}
           <a className="underline hover:no-underline" href="#">
             Terms

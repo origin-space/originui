@@ -28,7 +28,7 @@ export default function Component() {
       />
       <p
         id={`${id}-description`}
-        className="mt-2 text-xs text-muted-foreground"
+        className="text-muted-foreground mt-2 text-xs"
         role="status"
         aria-live="polite"
       >

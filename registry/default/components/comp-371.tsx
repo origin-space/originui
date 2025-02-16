@@ -24,12 +24,7 @@ export default function Component() {
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
           Checkbox items
-          <ChevronDown
-            className="-me-1 ms-2 opacity-60"
-            size={16}
-            strokeWidth={2}
-            aria-hidden="true"
-          />
+          <ChevronDown className="ms-2 -me-1 opacity-60" size={16} aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

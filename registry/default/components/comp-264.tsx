@@ -24,7 +24,7 @@ export default function Component() {
 
   return (
     <div className="space-y-4">
-      <legend className="text-sm font-medium text-foreground">Object position</legend>
+      <legend className="text-foreground text-sm font-medium">Object position</legend>
       <div className="*:not-first:mt-2">
         <SliderWithInput
           minValue={-10}
@@ -52,7 +52,7 @@ export default function Component() {
         />
       </div>
       <Button className="w-full" variant="outline" onClick={resetAll}>
-        <RotateCcw className="-ms-1 me-2 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
+        <RotateCcw className="-ms-1 me-2 opacity-60" size={16} aria-hidden="true" />
         Reset
       </Button>
     </div>
@@ -90,7 +90,7 @@ function SliderWithInput({
 
   return (
     <div className="flex items-center gap-2">
-      <Label className="text-xs text-muted-foreground">{label}</Label>
+      <Label className="text-muted-foreground text-xs">{label}</Label>
       <Slider
         className="grow [&>:last-child>span]:rounded"
         value={sliderValue}

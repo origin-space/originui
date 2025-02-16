@@ -20,7 +20,7 @@ export default function Component() {
           className="rounded-full shadow-none"
           aria-label="Open edit menu"
         >
-          <Info size={16} strokeWidth={2} aria-hidden="true" />
+          <Info size={16} aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="pb-2">
@@ -30,7 +30,7 @@ export default function Component() {
           asChild
         >
           <a href="#">
-            <Book size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            <Book size={16} className="opacity-60" aria-hidden="true" />
             Documentation
           </a>
         </DropdownMenuItem>
@@ -39,7 +39,7 @@ export default function Component() {
           asChild
         >
           <a href="#">
-            <LifeBuoy size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            <LifeBuoy size={16} className="opacity-60" aria-hidden="true" />
             Support
           </a>
         </DropdownMenuItem>
@@ -48,12 +48,7 @@ export default function Component() {
           asChild
         >
           <a href="#">
-            <MessageCircleMore
-              size={16}
-              strokeWidth={2}
-              className="opacity-60"
-              aria-hidden="true"
-            />
+            <MessageCircleMore size={16} className="opacity-60" aria-hidden="true" />
             Contact us
           </a>
         </DropdownMenuItem>

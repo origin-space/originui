@@ -16,8 +16,8 @@ export default function Component() {
       <Label htmlFor={id}>Select with icon</Label>
       <Select defaultValue="1">
         <SelectTrigger id={id} className="relative ps-9">
-          <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 group-has-[select[disabled]]:opacity-50">
-            <Clock size={16} strokeWidth={2} aria-hidden="true" />
+          <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 group-has-[select[disabled]]:opacity-50">
+            <Clock size={16} aria-hidden="true" />
           </div>
           <SelectValue placeholder="Select time" />
         </SelectTrigger>

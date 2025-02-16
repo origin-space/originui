@@ -63,7 +63,7 @@ export default function Component() {
             aria-describedby={`${id}-description`}
           />
           <button
-            className="absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg text-muted-foreground/80 outline-offset-2 transition-colors hover:text-foreground focus:z-10 focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+            className="text-muted-foreground/80 hover:text-foreground focus-visible:outline-ring/70 absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg outline-offset-2 transition-colors focus:z-10 focus-visible:outline-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
             type="button"
             onClick={toggleVisibility}
             aria-label={isVisible ? "Hide password" : "Show password"}
@@ -71,9 +71,9 @@ export default function Component() {
             aria-controls="password"
           >
             {isVisible ? (
-              <EyeOff size={16} strokeWidth={2} aria-hidden="true" />
+              <EyeOff size={16} aria-hidden="true" />
             ) : (
-              <Eye size={16} strokeWidth={2} aria-hidden="true" />
+              <Eye size={16} aria-hidden="true" />
             )}
           </button>
         </div>
@@ -81,7 +81,7 @@ export default function Component() {
 
       {/* Password strength indicator */}
       <div
-        className="mb-4 mt-3 h-1 w-full overflow-hidden rounded-full bg-border"
+        className="bg-border mt-3 mb-4 h-1 w-full overflow-hidden rounded-full"
         role="progressbar"
         aria-valuenow={strengthScore}
         aria-valuemin={0}
@@ -95,7 +95,7 @@ export default function Component() {
       </div>
 
       {/* Password strength description */}
-      <p id={`${id}-description`} className="mb-2 text-sm font-medium text-foreground">
+      <p id={`${id}-description`} className="text-foreground mb-2 text-sm font-medium">
         {getStrengthText(strengthScore)}. Must contain:
       </p>
 

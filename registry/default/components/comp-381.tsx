@@ -13,12 +13,12 @@ export default function Component() {
       <Popover>
         <PopoverTrigger asChild>
           <Button variant="outline" size="icon" aria-label="Filters">
-            <ListFilter size={16} strokeWidth={2} aria-hidden="true" />
+            <ListFilter size={16} aria-hidden="true" />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-36 p-3">
           <div className="space-y-3">
-            <div className="text-xs font-medium text-muted-foreground">Filters</div>
+            <div className="text-muted-foreground text-xs font-medium">Filters</div>
             <form className="space-y-3">
               <div className="flex items-center gap-2">
                 <Checkbox id={`${id}-1`} />
@@ -47,7 +47,7 @@ export default function Component() {
               <div
                 role="separator"
                 aria-orientation="horizontal"
-                className="-mx-3 my-1 h-px bg-border"
+                className="bg-border -mx-3 my-1 h-px"
               ></div>
               <div className="flex justify-between gap-2">
                 <Button size="sm" variant="outline" className="h-7 px-2">

@@ -21,7 +21,7 @@ export default function Component() {
         numberOfMonths={2}
         pagedNavigation
         showOutsideDays={false}
-        className="rounded-lg border border-border p-2"
+        className="border-border rounded-lg border p-2"
         classNames={{
           months: "gap-8",
           month:
@@ -29,13 +29,13 @@ export default function Component() {
         }}
       />
       <p
-        className="mt-4 text-center text-xs text-muted-foreground"
+        className="text-muted-foreground mt-4 text-center text-xs"
         role="region"
         aria-live="polite"
       >
         Two months calendar -{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://daypicker.dev/"
           target="_blank"
           rel="noopener nofollow"

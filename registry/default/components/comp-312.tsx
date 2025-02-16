@@ -20,7 +20,7 @@ export default function Component() {
       <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
         <p className="text-sm">
           <span className="font-medium">v2.1.0</span>
-          <span className="mx-2 text-muted-foreground">•</span>
+          <span className="text-muted-foreground mx-2">•</span>
           New features and improvements available
         </p>
         <Button
@@ -32,12 +32,7 @@ export default function Component() {
         >
           {isDownloading ? (
             <>
-              <LoaderCircle
-                className="-ms-0.5 me-2 animate-spin"
-                size={16}
-                strokeWidth={2}
-                aria-hidden="true"
-              />
+              <LoaderCircle className="-ms-0.5 me-2 animate-spin" size={16} aria-hidden="true" />
               Updating...
             </>
           ) : (

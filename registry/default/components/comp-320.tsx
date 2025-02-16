@@ -30,10 +30,10 @@ export default function Component() {
       <DialogContent>
         <div className="flex flex-col items-center gap-2">
           <div
-            className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border"
+            className="border-border flex size-9 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
-            <CircleAlert className="opacity-80" size={16} strokeWidth={2} />
+            <CircleAlert className="opacity-80" size={16} />
           </div>
           <DialogHeader>
             <DialogTitle className="sm:text-center">Final confirmation</DialogTitle>

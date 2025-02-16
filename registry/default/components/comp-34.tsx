@@ -30,7 +30,7 @@ export default function Component() {
         />
         <div
           id={`${id}-description`}
-          className="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-xs tabular-nums text-muted-foreground peer-disabled:opacity-50"
+          className="text-muted-foreground pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-xs tabular-nums peer-disabled:opacity-50"
           aria-live="polite"
           role="status"
         >

@@ -42,7 +42,7 @@ export default function Component() {
             <AccordionTrigger className="justify-start gap-3 py-2 text-[15px] leading-6 hover:no-underline [&>svg]:-order-1">
               {item.title}
             </AccordionTrigger>
-            <AccordionContent className="pb-2 ps-7 text-muted-foreground">
+            <AccordionContent className="text-muted-foreground ps-7 pb-2">
               {item.content}
             </AccordionContent>
           </AccordionItem>

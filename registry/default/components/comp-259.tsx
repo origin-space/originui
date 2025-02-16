@@ -28,7 +28,7 @@ export default function Component() {
             onClick={decreaseValue}
             disabled={value[0] === 0}
           >
-            <Minus size={16} strokeWidth={2} aria-hidden="true" />
+            <Minus size={16} aria-hidden="true" />
           </Button>
         </div>
         <Slider
@@ -49,7 +49,7 @@ export default function Component() {
             onClick={increaseValue}
             disabled={value[0] === 200}
           >
-            <Plus size={16} strokeWidth={2} aria-hidden="true" />
+            <Plus size={16} aria-hidden="true" />
           </Button>
         </div>
       </div>

@@ -142,7 +142,7 @@ export default function Component() {
   return (
     <div>
       <Table
-        className="table-fixed border-separate border-spacing-0 [&_td]:border-border [&_tfoot_td]:border-t [&_th]:border-b [&_th]:border-border [&_tr:not(:last-child)_td]:border-b [&_tr]:border-none"
+        className="[&_td]:border-border [&_th]:border-border table-fixed border-separate border-spacing-0 [&_tfoot_td]:border-t [&_th]:border-b [&_tr]:border-none [&_tr:not(:last-child)_td]:border-b"
         style={{
           width: table.getTotalSize(),
         }}
@@ -159,7 +159,7 @@ export default function Component() {
                 return (
                   <TableHead
                     key={header.id}
-                    className="relative h-10 truncate border-t [&:not([data-pinned]):has(+[data-pinned])_div.cursor-col-resize:last-child]:opacity-0 [&[data-last-col=left]_div.cursor-col-resize:last-child]:opacity-0 [&[data-pinned=left][data-last-col=left]]:border-r [&[data-pinned=right]:last-child_div.cursor-col-resize:last-child]:opacity-0 [&[data-pinned=right][data-last-col=right]]:border-l [&[data-pinned][data-last-col]]:border-border data-pinned:bg-muted/90 data-pinned:backdrop-blur-xs"
+                    className="[&[data-pinned][data-last-col]]:border-border data-pinned:bg-muted/90 relative h-10 truncate border-t data-pinned:backdrop-blur-xs [&:not([data-pinned]):has(+[data-pinned])_div.cursor-col-resize:last-child]:opacity-0 [&[data-last-col=left]_div.cursor-col-resize:last-child]:opacity-0 [&[data-pinned=left][data-last-col=left]]:border-r [&[data-pinned=right]:last-child_div.cursor-col-resize:last-child]:opacity-0 [&[data-pinned=right][data-last-col=right]]:border-l"
                     colSpan={header.colSpan}
                     style={{ ...getPinningStyles(column) }}
                     data-pinned={isPinned || undefined}
@@ -185,12 +185,7 @@ export default function Component() {
                             aria-label={`Unpin ${header.column.columnDef.header as string} column`}
                             title={`Unpin ${header.column.columnDef.header as string} column`}
                           >
-                            <PinOff
-                              className="opacity-60"
-                              size={16}
-                              strokeWidth={2}
-                              aria-hidden="true"
-                            />
+                            <PinOff className="opacity-60" size={16} aria-hidden="true" />
                           </Button>
                         ) : (
                           <DropdownMenu>
@@ -202,19 +197,13 @@ export default function Component() {
                                 aria-label={`Pin options for ${header.column.columnDef.header as string} column`}
                                 title={`Pin options for ${header.column.columnDef.header as string} column`}
                               >
-                                <Ellipsis
-                                  className="opacity-60"
-                                  size={16}
-                                  strokeWidth={2}
-                                  aria-hidden="true"
-                                />
+                                <Ellipsis className="opacity-60" size={16} aria-hidden="true" />
                               </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">
                               <DropdownMenuItem onClick={() => header.column.pin("left")}>
                                 <ArrowLeftToLine
                                   size={16}
-                                  strokeWidth={2}
                                   className="opacity-60"
                                   aria-hidden="true"
                                 />
@@ -223,7 +212,6 @@ export default function Component() {
                               <DropdownMenuItem onClick={() => header.column.pin("right")}>
                                 <ArrowRightToLine
                                   size={16}
-                                  strokeWidth={2}
                                   className="opacity-60"
                                   aria-hidden="true"
                                 />
@@ -264,7 +252,7 @@ export default function Component() {
                   return (
                     <TableCell
                       key={cell.id}
-                      className="truncate [&[data-pinned=left][data-last-col=left]]:border-r [&[data-pinned=right][data-last-col=right]]:border-l [&[data-pinned][data-last-col]]:border-border data-pinned:bg-background/90 data-pinned:backdrop-blur-xs"
+                      className="[&[data-pinned][data-last-col]]:border-border data-pinned:bg-background/90 truncate data-pinned:backdrop-blur-xs [&[data-pinned=left][data-last-col=left]]:border-r [&[data-pinned=right][data-last-col=right]]:border-l"
                       style={{ ...getPinningStyles(column) }}
                       data-pinned={isPinned || undefined}
                       data-last-col={
@@ -286,10 +274,10 @@ export default function Component() {
           )}
         </TableBody>
       </Table>
-      <p className="mt-4 text-center text-sm text-muted-foreground">
+      <p className="text-muted-foreground mt-4 text-center text-sm">
         Pinnable columns made with{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://tanstack.com/table"
           target="_blank"
           rel="noopener noreferrer"

@@ -21,7 +21,7 @@ export default function Component() {
           </StepperItem>
         ))}
       </Stepper>
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Stepper with numbers and checkmarks
       </p>
     </div>

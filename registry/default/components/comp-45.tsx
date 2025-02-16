@@ -24,7 +24,7 @@ export default function Component() {
             </div>
 
             <div className="text-muted-foreground/80">
-              <Minus size={16} strokeWidth={2} aria-hidden="true" />
+              <Minus size={16} aria-hidden="true" />
             </div>
 
             <div className="flex">
@@ -35,10 +35,10 @@ export default function Component() {
           </>
         )}
       />
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Built with{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://github.com/guilhermerodz/input-otp"
           target="_blank"
           rel="noopener nofollow"
@@ -54,8 +54,8 @@ function Slot(props: SlotProps) {
   return (
     <div
       className={cn(
-        "relative -ms-px flex size-9 items-center justify-center border border-input bg-background font-medium text-foreground shadow-xs shadow-black/5 transition-shadow first:ms-0 first:rounded-s-lg last:rounded-e-lg",
-        { "z-10 border border-ring ring-[3px] ring-ring/20": props.isActive },
+        "border-input bg-background text-foreground relative -ms-px flex size-9 items-center justify-center border font-medium shadow-xs shadow-black/5 transition-shadow first:ms-0 first:rounded-s-lg last:rounded-e-lg",
+        { "border-ring ring-ring/20 z-10 border ring-[3px]": props.isActive },
       )}
     >
       {props.char !== null && <div>{props.char}</div>}

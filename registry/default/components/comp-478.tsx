@@ -160,7 +160,7 @@ const columns: ColumnDef<Item>[] = [
     accessorKey: "link",
     cell: ({ row }) => (
       <a className="inline-flex items-center gap-1 hover:underline" href="#">
-        {row.getValue("link")} <ExternalLink size={12} strokeWidth={2} aria-hidden="true" />
+        {row.getValue("link")} <ExternalLink size={12} aria-hidden="true" />
       </a>
     ),
     enableSorting: false,
@@ -303,7 +303,7 @@ export default function Component() {
                 return (
                   <TableHead
                     key={header.id}
-                    className="relative h-10 select-none border-t"
+                    className="relative h-10 border-t select-none"
                     aria-sort={
                       header.column.getIsSorted() === "asc"
                         ? "ascending"
@@ -316,7 +316,7 @@ export default function Component() {
                       <div
                         className={cn(
                           header.column.getCanSort() &&
-                            "flex h-full cursor-pointer select-none items-center justify-between gap-2",
+                            "flex h-full cursor-pointer items-center justify-between gap-2 select-none",
                         )}
                         onClick={header.column.getToggleSortingHandler()}
                         onKeyDown={(e) => {
@@ -334,7 +334,6 @@ export default function Component() {
                             <ChevronUp
                               className="shrink-0 opacity-60"
                               size={16}
-                              strokeWidth={2}
                               aria-hidden="true"
                             />
                           ),
@@ -342,7 +341,6 @@ export default function Component() {
                             <ChevronDown
                               className="shrink-0 opacity-60"
                               size={16}
-                              strokeWidth={2}
                               aria-hidden="true"
                             />
                           ),
@@ -379,10 +377,10 @@ export default function Component() {
           )}
         </TableBody>
       </Table>
-      <p className="mt-4 text-center text-sm text-muted-foreground">
+      <p className="text-muted-foreground mt-4 text-center text-sm">
         Data table with filters made with{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://tanstack.com/table"
           target="_blank"
           rel="noopener noreferrer"
@@ -493,8 +491,8 @@ function Filter({ column }: { column: Column<any, unknown> }) {
           placeholder={`Search ${columnHeader.toLowerCase()}`}
           type="text"
         />
-        <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 peer-disabled:opacity-50">
-          <Search size={16} strokeWidth={2} />
+        <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 peer-disabled:opacity-50">
+          <Search size={16} />
         </div>
       </div>
     </div>

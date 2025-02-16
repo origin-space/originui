@@ -17,22 +17,22 @@ export default function Component() {
         <SelectTrigger id={id} className="**:data-desc:hidden">
           <SelectValue placeholder="Choose a plan" />
         </SelectTrigger>
-        <SelectContent className="[&_*[role=option]>span]:end-2 [&_*[role=option]>span]:start-auto [&_*[role=option]]:pe-8 [&_*[role=option]]:ps-2">
+        <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
           <SelectItem value="1">
             Standard Plan
-            <span className="mt-1 block text-xs text-muted-foreground" data-desc>
+            <span className="text-muted-foreground mt-1 block text-xs" data-desc>
               Ideal for individuals
             </span>
           </SelectItem>
           <SelectItem value="2">
             Pro Plan
-            <span className="mt-1 block text-xs text-muted-foreground" data-desc>
+            <span className="text-muted-foreground mt-1 block text-xs" data-desc>
               For professional users
             </span>
           </SelectItem>
           <SelectItem value="3">
             Enterprise Plan
-            <span className="mt-1 block text-xs text-muted-foreground" data-desc>
+            <span className="text-muted-foreground mt-1 block text-xs" data-desc>
               Built for large teams
             </span>
           </SelectItem>
