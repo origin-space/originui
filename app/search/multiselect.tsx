@@ -484,7 +484,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 >
                   {option.label}
                   <button
-                    className="text-muted-foreground/80 hover:text-foreground focus-visible:outline-ring/70 absolute -inset-y-px -end-px flex size-7 items-center justify-center rounded-e-lg border border-transparent p-0 outline-hidden transition-colors focus-visible:outline-2"
+                    className="text-muted-foreground/80 hover:text-foreground outline-ring/30 dark:outline-ring/40 absolute -inset-y-px -end-px flex size-7 items-center justify-center rounded-e-lg border border-transparent p-0 outline-hidden transition-colors focus-visible:outline-2"
                     onKeyDown={(e) => {
                       if (e.key === "Enter") {
                         handleUnselect(option);
@@ -547,7 +547,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 onChange?.(selected.filter((s) => s.fixed));
               }}
               className={cn(
-                "text-muted-foreground/70 hover:text-foreground focus-visible:outline-ring/70 absolute end-0 top-0.5 flex size-10 items-center justify-center rounded-lg border border-transparent transition-colors focus-visible:outline-2",
+                "text-muted-foreground/70 hover:text-foreground outline-ring/30 dark:outline-ring/40 absolute end-0 top-0.5 flex size-10 items-center justify-center rounded-lg border border-transparent transition-colors focus-visible:outline-2",
                 (hideClearAllButton ||
                   disabled ||
                   selected.length < 1 ||

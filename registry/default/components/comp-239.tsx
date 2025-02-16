@@ -20,19 +20,19 @@ export default function Component() {
             </Header>
             <ListBoxItem
               id="lettuce"
-              className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-focus-visible:outline-ring/70 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
+              className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground outline-ring/30 dark:outline-ring/40 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
             >
               Lettuce
             </ListBoxItem>
             <ListBoxItem
               id="tomato"
-              className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-focus-visible:outline-ring/70 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
+              className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground outline-ring/30 dark:outline-ring/40 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
             >
               Tomato
             </ListBoxItem>
             <ListBoxItem
               id="onion"
-              className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-focus-visible:outline-ring/70 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
+              className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground outline-ring/30 dark:outline-ring/40 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
             >
               Onion
             </ListBoxItem>
@@ -44,19 +44,19 @@ export default function Component() {
             </Header>
             <ListBoxItem
               id="ham"
-              className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-focus-visible:outline-ring/70 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
+              className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground outline-ring/30 dark:outline-ring/40 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
             >
               Ham
             </ListBoxItem>
             <ListBoxItem
               id="tuna"
-              className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-focus-visible:outline-ring/70 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
+              className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground outline-ring/30 dark:outline-ring/40 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
             >
               Tuna
             </ListBoxItem>
             <ListBoxItem
               id="tofu"
-              className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-focus-visible:outline-ring/70 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
+              className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground outline-ring/30 dark:outline-ring/40 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
             >
               Tofu
             </ListBoxItem>
@@ -68,19 +68,19 @@ export default function Component() {
             </Header>
             <ListBoxItem
               id="mayo"
-              className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-focus-visible:outline-ring/70 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
+              className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground outline-ring/30 dark:outline-ring/40 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
             >
               Mayonaise
             </ListBoxItem>
             <ListBoxItem
               id="mustard"
-              className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-focus-visible:outline-ring/70 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
+              className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground outline-ring/30 dark:outline-ring/40 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
             >
               Mustard
             </ListBoxItem>
             <ListBoxItem
               id="ranch"
-              className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-focus-visible:outline-ring/70 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
+              className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground outline-ring/30 dark:outline-ring/40 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
             >
               Ranch
             </ListBoxItem>

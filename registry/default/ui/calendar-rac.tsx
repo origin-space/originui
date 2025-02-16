@@ -28,14 +28,14 @@ const CalendarHeader = () => (
   <header className="flex w-full items-center gap-1 pb-1">
     <Button
       slot="previous"
-      className="text-muted-foreground/80 hover:bg-accent hover:text-foreground data-focus-visible:outline-ring/70 flex size-9 items-center justify-center rounded-lg outline-offset-2 transition-colors focus:outline-hidden data-focus-visible:outline-2"
+      className="text-muted-foreground/80 hover:bg-accent hover:text-foreground outline-ring/30 dark:outline-ring/40 flex size-9 items-center justify-center rounded-lg outline-offset-2 transition-colors focus:outline-hidden data-focus-visible:outline-2"
     >
       <ChevronLeft size={16} />
     </Button>
     <HeadingRac className="grow text-center text-sm font-medium" />
     <Button
       slot="next"
-      className="text-muted-foreground/80 hover:bg-accent hover:text-foreground data-focus-visible:outline-ring/70 flex size-9 items-center justify-center rounded-lg outline-offset-2 transition-colors focus:outline-hidden data-focus-visible:outline-2"
+      className="text-muted-foreground/80 hover:bg-accent hover:text-foreground outline-ring/30 dark:outline-ring/40 flex size-9 items-center justify-center rounded-lg outline-offset-2 transition-colors focus:outline-hidden data-focus-visible:outline-2"
     >
       <ChevronRight size={16} />
     </Button>
@@ -59,7 +59,7 @@ const CalendarGridComponent = ({ isRange = false }: { isRange?: boolean }) => {
           <CalendarCellRac
             date={date}
             className={cn(
-              "text-foreground data-hovered:bg-accent data-selected:bg-primary data-hovered:text-foreground data-selected:text-primary-foreground data-focus-visible:outline-ring/70 relative flex size-9 items-center justify-center rounded-lg border border-transparent p-0 text-sm font-normal whitespace-nowrap outline-offset-2 [transition-property:color,background-color,border-radius,box-shadow] duration-150 focus:outline-hidden data-disabled:pointer-events-none data-disabled:opacity-30 data-focus-visible:z-10 data-focus-visible:outline-2 data-unavailable:pointer-events-none data-unavailable:line-through data-unavailable:opacity-30",
+              "text-foreground data-hovered:bg-accent data-selected:bg-primary data-hovered:text-foreground data-selected:text-primary-foreground outline-ring/30 dark:outline-ring/40 relative flex size-9 items-center justify-center rounded-lg border border-transparent p-0 text-sm font-normal whitespace-nowrap outline-offset-2 [transition-property:color,background-color,border-radius,box-shadow] duration-150 focus:outline-hidden data-disabled:pointer-events-none data-disabled:opacity-30 data-focus-visible:z-10 data-focus-visible:outline-2 data-unavailable:pointer-events-none data-unavailable:line-through data-unavailable:opacity-30",
               // Range-specific styles
               isRange &&
                 "data-selected:bg-accent data-selected:text-foreground data-invalid:data-selection-end:[&:not([data-hover])]:bg-destructive data-invalid:data-selection-start:[&:not([data-hover])]:bg-destructive data-selection-end:[&:not([data-hover])]:bg-primary data-selection-start:[&:not([data-hover])]:bg-primary data-invalid:data-selection-end:[&:not([data-hover])]:text-destructive-foreground data-invalid:data-selection-start:[&:not([data-hover])]:text-destructive-foreground data-selection-end:[&:not([data-hover])]:text-primary-foreground data-selection-start:[&:not([data-hover])]:text-primary-foreground data-invalid:bg-red-100 data-selected:rounded-none data-selection-end:rounded-e-lg data-selection-start:rounded-s-lg",

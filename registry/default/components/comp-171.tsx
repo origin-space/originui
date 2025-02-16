@@ -18,7 +18,7 @@ export default function Component() {
         {["1", "2", "3", "4", "5"].map((value) => (
           <label
             key={value}
-            className="group has-focus-visible:outline-ring/70 relative cursor-pointer rounded-lg p-0.5 has-focus-visible:outline-2"
+            className="group outline-ring/30 dark:outline-ring/40 relative cursor-pointer rounded-lg p-0.5 has-focus-visible:outline-2"
             onMouseEnter={() => setHoverRating(value)}
             onMouseLeave={() => setHoverRating("")}
           >

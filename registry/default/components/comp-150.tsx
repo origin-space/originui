@@ -22,19 +22,19 @@ export default function Component() {
           onChange={() => setTheme((prev) => (prev === "dark" ? "light" : "dark"))}
         />
         <label
-          className="group border-input bg-background text-foreground hover:bg-accent hover:text-accent-foreground peer-focus-visible:outline-ring/70 relative inline-flex size-9 cursor-pointer items-center justify-center rounded-lg border shadow-xs transition-colors peer-focus-visible:outline-2"
+          className="group border-input bg-background text-foreground hover:bg-accent hover:text-accent-foreground outline-ring/30 dark:outline-ring/40 relative inline-flex size-9 cursor-pointer items-center justify-center rounded-lg border shadow-xs transition-colors outline-offset-2 peer-focus-visible:outline-2"
           htmlFor={id}
           aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
         >
           {/* Note: After dark mode implementation, rely on dark: prefix rather than peer-checked:group-[]: */}
           <Moon
             size={16}
-            className="shrink-0 scale-0 opacity-0 transition-all in-[.group]:peer-checked:scale-100 in-[.group]:peer-checked:opacity-100"
+            className="shrink-0 scale-0 opacity-0 transition-all group-peer-checked:scale-100 group-peer-checked:opacity-100"
             aria-hidden="true"
           />
           <Sun
             size={16}
-            className="absolute shrink-0 scale-100 opacity-100 transition-all in-[.group]:peer-checked:scale-0 in-[.group]:peer-checked:opacity-0"
+            className="absolute shrink-0 scale-100 opacity-100 transition-all group-peer-checked:scale-0 group-peer-checked:opacity-0"
             aria-hidden="true"
           />
         </label>

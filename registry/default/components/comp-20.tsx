@@ -16,7 +16,7 @@ export default function Component() {
           type="email"
         />
         <button
-          className="border-input bg-background text-muted-foreground/80 hover:bg-accent hover:text-accent-foreground focus-visible:outline-ring/70 inline-flex w-9 items-center justify-center rounded-e-lg border text-sm outline-offset-2 transition-colors focus:z-10 focus-visible:outline-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+          className="border-input bg-background text-muted-foreground/80 hover:bg-accent hover:text-accent-foreground outline-ring/30 dark:outline-ring/40 inline-flex w-9 items-center justify-center rounded-e-lg border text-sm outline-offset-2 transition-colors focus:z-10 focus-visible:outline-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
           aria-label="Subscribe"
         >
           <Download size={16} aria-hidden="true" />

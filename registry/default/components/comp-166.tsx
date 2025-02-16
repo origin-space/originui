@@ -23,7 +23,7 @@ export default function Component() {
         {items.map((item) => (
           <div
             key={`${id}-${item.value}`}
-            className="border-input has-data-[state=checked]:border-ring has-data-[state=checked]:bg-accent relative flex flex-col gap-4 border p-4 first:rounded-t-lg last:rounded-b-lg has-data-[state=checked]:z-10"
+            className="border-input has-data-[state=checked]:border-ring/40 has-data-[state=checked]:bg-accent relative flex flex-col gap-4 border p-4 first:rounded-t-lg last:rounded-b-lg has-data-[state=checked]:z-10"
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">

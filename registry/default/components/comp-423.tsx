@@ -8,7 +8,7 @@ export default function Component() {
     <label
       className={cn(
         badgeVariants({ variant: "default" }),
-        "hover:bg-primary/80 has-data-[state=unchecked]:bg-muted has-data-[state=unchecked]:text-muted-foreground has-focus-visible:outline-ring/70 cursor-pointer has-focus-visible:outline-2",
+        "hover:bg-primary/80 has-data-[state=unchecked]:bg-muted has-data-[state=unchecked]:text-muted-foreground outline-ring/30 dark:outline-ring/40 cursor-pointer has-focus-visible:outline-2",
       )}
     >
       <div className="flex items-center gap-1">
