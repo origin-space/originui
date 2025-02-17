@@ -42,7 +42,7 @@ function Slot(props: SlotProps) {
     <div
       className={cn(
         "border-input bg-background text-foreground flex size-9 items-center justify-center rounded-lg border font-medium shadow-xs transition-shadow",
-        { "border-ring ring-ring/20 z-10 border ring-[3px]": props.isActive },
+        { "border-ring/40 ring-ring/10 z-10 ring-[3px]": props.isActive },
       )}
     >
       {props.char !== null && <div>{props.char}</div>}
