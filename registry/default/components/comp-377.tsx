@@ -21,7 +21,7 @@ export default function Component() {
             <AvatarImage src="./avatar.jpg" alt="Profile image" />
             <AvatarFallback>KK</AvatarFallback>
           </Avatar>
-          <ChevronDown size={16} className="ms-2 opacity-60" aria-hidden="true" />
+          <ChevronDown size={16} className="opacity-60" aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="max-w-64">

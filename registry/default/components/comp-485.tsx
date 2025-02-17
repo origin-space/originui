@@ -333,10 +333,10 @@ export default function Component() {
           <Popover>
             <PopoverTrigger asChild>
               <Button variant="outline">
-                <Filter className="-ms-1 me-2 opacity-60" size={16} aria-hidden="true" />
+                <Filter className="-ms-1 opacity-60" size={16} aria-hidden="true" />
                 Status
                 {selectedStatuses.length > 0 && (
-                  <span className="border-border bg-background text-muted-foreground/70 ms-3 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
+                  <span className="border-border bg-background text-muted-foreground/70 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
                     {selectedStatuses.length}
                   </span>
                 )}
@@ -372,7 +372,7 @@ export default function Component() {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline">
-                <Columns3 className="-ms-1 me-2 opacity-60" size={16} aria-hidden="true" />
+                <Columns3 className="-ms-1 opacity-60" size={16} aria-hidden="true" />
                 View
               </Button>
             </DropdownMenuTrigger>
@@ -403,9 +403,9 @@ export default function Component() {
             <AlertDialog>
               <AlertDialogTrigger asChild>
                 <Button className="ml-auto" variant="outline">
-                  <Trash className="-ms-1 me-2 opacity-60" size={16} aria-hidden="true" />
+                  <Trash className="-ms-1 opacity-60" size={16} aria-hidden="true" />
                   Delete
-                  <span className="border-border bg-background text-muted-foreground/70 ms-3 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
+                  <span className="border-border bg-background text-muted-foreground/70 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
                     {table.getSelectedRowModel().rows.length}
                   </span>
                 </Button>
@@ -436,7 +436,7 @@ export default function Component() {
           )}
           {/* Add user button */}
           <Button className="ml-auto" variant="outline">
-            <Plus className="-ms-1 me-2 opacity-60" size={16} aria-hidden="true" />
+            <Plus className="-ms-1 opacity-60" size={16} aria-hidden="true" />
             Add user
           </Button>
         </div>

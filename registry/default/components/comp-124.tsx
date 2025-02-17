@@ -3,8 +3,8 @@ import { ChevronLeft } from "lucide-react";
 
 export default function Component() {
   return (
-    <Button variant="link">
-      <ChevronLeft className="me-1 opacity-60" size={16} aria-hidden="true" />
+    <Button variant="link" className="gap-1">
+      <ChevronLeft className="opacity-60" size={16} aria-hidden="true" />
       Go back
     </Button>
   );

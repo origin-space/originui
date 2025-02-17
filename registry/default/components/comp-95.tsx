@@ -1,18 +1,15 @@
 import { Button } from "@/registry/default/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/registry/default/ui/avatar";
 import { ChevronDown } from "lucide-react";
 
 export default function Component() {
   return (
     <Button variant="ghost" className="h-auto p-0 hover:bg-transparent">
-      <img
-        className="rounded-full"
-        src="avatar.jpg"
-        alt="Profile image"
-        width={40}
-        height={40}
-        aria-hidden="true"
-      />
-      <ChevronDown size={16} className="ms-2 opacity-60" aria-hidden="true" />
+      <Avatar>
+        <AvatarImage src="./avatar.jpg" alt="Profile image" />
+        <AvatarFallback>KK</AvatarFallback>
+      </Avatar>
+      <ChevronDown size={16} className="opacity-60" aria-hidden="true" />
     </Button>
   );
 }

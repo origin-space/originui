@@ -20,7 +20,7 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
             asChild
           >
             <a href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}>
-              <ChevronLeft className="-ms-1 me-2 opacity-60" size={16} aria-hidden="true" />
+              <ChevronLeft className="-ms-1 opacity-60" size={16} aria-hidden="true" />
               Previous
             </a>
           </Button>
@@ -35,7 +35,7 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
           >
             <a href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}>
               Next
-              <ChevronRight className="ms-2 -me-1 opacity-60" size={16} aria-hidden="true" />
+              <ChevronRight className="-me-1 opacity-60" size={16} aria-hidden="true" />
             </a>
           </Button>
         </PaginationItem>

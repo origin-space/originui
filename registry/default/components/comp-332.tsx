@@ -94,7 +94,7 @@ export default function Component() {
                 <Button className="group" type="button" onClick={handleContinue}>
                   Next
                   <ArrowRight
-                    className="ms-2 -me-1 opacity-60 transition-transform group-hover:translate-x-0.5"
+                    className="-me-1 opacity-60 transition-transform group-hover:translate-x-0.5"
                     size={16}
                     aria-hidden="true"
                   />

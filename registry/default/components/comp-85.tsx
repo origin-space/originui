@@ -5,7 +5,7 @@ export default function Component() {
   return (
     <Button className="group" variant="ghost">
       <ArrowLeft
-        className="-ms-1 me-2 opacity-60 transition-transform group-hover:-translate-x-0.5"
+        className="-ms-1 opacity-60 transition-transform group-hover:-translate-x-0.5"
         size={16}
         aria-hidden="true"
       />

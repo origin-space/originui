@@ -13,7 +13,7 @@ export default function Component() {
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
           Same width of trigger
-          <ChevronDown className="ms-2 -me-1 opacity-60" size={16} aria-hidden="true" />
+          <ChevronDown className="-me-1 opacity-60" size={16} aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="min-w-(--radix-dropdown-menu-trigger-width)">

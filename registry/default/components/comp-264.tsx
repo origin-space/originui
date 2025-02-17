@@ -52,7 +52,7 @@ export default function Component() {
         />
       </div>
       <Button className="w-full" variant="outline" onClick={resetAll}>
-        <RotateCcw className="-ms-1 me-2 opacity-60" size={16} aria-hidden="true" />
+        <RotateCcw className="-ms-1 opacity-60" size={16} aria-hidden="true" />
         Reset
       </Button>
     </div>

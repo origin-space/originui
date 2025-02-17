@@ -82,7 +82,7 @@ export default function Component() {
               <CommandSeparator />
               <CommandGroup>
                 <Button variant="ghost" className="w-full justify-start font-normal">
-                  <Plus size={16} className="-ms-2 me-2 opacity-60" aria-hidden="true" />
+                  <Plus size={16} className="-ms-2 opacity-60" aria-hidden="true" />
                   New organization
                 </Button>
               </CommandGroup>

@@ -13,6 +13,7 @@ export default function Component() {
 
   return (
     <Button
+      className="gap-1"
       variant="ghost"
       onClick={toggleExpand}
       aria-expanded={isExpanded}
@@ -20,9 +21,9 @@ export default function Component() {
     >
       {isExpanded ? "Show less" : "Show more"}
       {isExpanded ? (
-        <ChevronUp className="ms-1 -me-1" size={16} aria-hidden="true" />
+        <ChevronUp className="-me-1" size={16} aria-hidden="true" />
       ) : (
-        <ChevronDown className="ms-1 -me-1" size={16} aria-hidden="true" />
+        <ChevronDown className="-me-1" size={16} aria-hidden="true" />
       )}
     </Button>
   );

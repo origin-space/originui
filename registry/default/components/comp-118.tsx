@@ -4,7 +4,7 @@ import { Star } from "lucide-react";
 export default function Component() {
   return (
     <Button>
-      <Star className="-ms-1 me-2 opacity-60" size={16} aria-hidden="true" />
+      <Star className="-ms-1 opacity-60" size={16} aria-hidden="true" />
       <span className="flex items-baseline gap-2">
         Star
         <span className="text-primary-foreground/60 text-xs">729</span>
