@@ -1,25 +1,19 @@
-import { cn } from "@/registry/default/lib/utils";
-import { badgeVariants } from "@/registry/default/ui/badge";
+import { useId } from "react";
+import { Badge } from "@/registry/default/ui/badge";
 import { Checkbox } from "@/registry/default/ui/checkbox";
 import { Check } from "lucide-react";
 
 export default function Component() {
+  const id = useId();
   return (
-    <label
-      className={cn(
-        badgeVariants({ variant: "default" }),
-        "hover:bg-primary/80 has-data-[state=unchecked]:bg-muted has-data-[state=unchecked]:text-muted-foreground outline-ring/30 dark:outline-ring/40 cursor-pointer has-focus-visible:outline-2",
-      )}
-    >
-      <div className="flex items-center gap-1">
-        <Checkbox
-          id="badge-selectable"
-          className="peer sr-only after:absolute after:inset-0"
-          defaultChecked
-        />
-        <Check size={12} className="hidden peer-data-[state=checked]:block" aria-hidden="true" />
-        <span className="select-none">Selectable</span>
-      </div>
-    </label>
+    <Badge className="has-data-[state=unchecked]:bg-muted has-data-[state=unchecked]:text-muted-foreground outline-ring/30 dark:outline-ring/40 has-focus-visible:outline-2">
+      <Checkbox
+        id={id}
+        className="peer sr-only after:absolute after:inset-0"
+        defaultChecked
+      />
+      <Check size={12} className="hidden peer-data-[state=checked]:block" aria-hidden="true" />
+      <label htmlFor={id} className="select-none cursor-pointer after:absolute after:inset-0">Selectable</label>
+    </Badge>
   );
 }
