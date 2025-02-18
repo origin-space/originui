@@ -25,9 +25,9 @@ export default function SearchButton() {
       href="/search"
       className="border-border bg-background text-foreground placeholder:text-muted-foreground/70 focus:border-ring/40 ring-ring/8 dark:ring-ring/12 inline-flex h-10 w-fit min-w-72 cursor-text rounded-full border px-4 py-2 text-sm focus:ring-[3px] focus:outline-hidden"
     >
-      <span className="flex grow items-center">
+      <span className="flex grow items-center gap-2">
         <RiSearch2Line className="text-muted-foreground -ms-1" size={20} aria-hidden="true" />
-        <span className="text-ring font-normal">Quick search...</span>
+        <span className="text-zinc-400 dark:text-zinc-500 font-normal">Quick search...</span>
         <div className="text-muted-foreground/80 pointer-events-none ml-auto flex items-center justify-center">
           <kbd className="text-muted-foreground inline-flex font-[inherit] text-xs font-medium">
             <span className="opacity-70">⌘</span>K
