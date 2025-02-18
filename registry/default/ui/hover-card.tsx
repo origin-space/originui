@@ -5,18 +5,32 @@ import * as React from "react";
 
 import { cn } from "@/registry/default/lib/utils";
 
-const HoverCard = HoverCardPrimitive.Root;
+function HoverCard({
+  ...props
+}: React.ComponentProps<typeof HoverCardPrimitive.Root>) {
+  return <HoverCardPrimitive.Root data-slot="hover-card" {...props} />
+}
 
-const HoverCardTrigger = HoverCardPrimitive.Trigger;
+function HoverCardTrigger({
+  ...props
+}: React.ComponentProps<typeof HoverCardPrimitive.Trigger>) {
+  return (
+    <HoverCardPrimitive.Trigger data-slot="hover-card-trigger" {...props} />
+  )
+}
 
-const HoverCardContent = React.forwardRef<
-  React.ElementRef<typeof HoverCardPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof HoverCardPrimitive.Content> & {
-    showArrow?: boolean;
-  }
->(({ className, align = "center", sideOffset = 4, showArrow = false, ...props }, ref) => (
+function HoverCardContent({
+  className,
+  align = "center",
+  sideOffset = 4,
+  showArrow = false,
+  ...props
+}: React.ComponentProps<typeof HoverCardPrimitive.Content> & {
+  showArrow?: boolean;
+}) {
+  return (
   <HoverCardPrimitive.Content
-    ref={ref}
+    data-slot="hover-card-content"
     align={align}
     sideOffset={sideOffset}
     className={cn(
@@ -30,7 +44,7 @@ const HoverCardContent = React.forwardRef<
       <HoverCardPrimitive.Arrow className="fill-popover -my-px drop-shadow-[0_1px_0_hsl(var(--border))]" />
     )}
   </HoverCardPrimitive.Content>
-));
-HoverCardContent.displayName = HoverCardPrimitive.Content.displayName;
+  )
+}
 
-export { HoverCard, HoverCardContent, HoverCardTrigger };
+export { HoverCard, HoverCardTrigger, HoverCardContent }

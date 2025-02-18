@@ -13,9 +13,11 @@ export default function HoverCardDemo() {
         />
         <div className="space-y-0.5">
           <HoverCardTrigger asChild>
-            <a className="text-sm font-medium hover:underline" href="#">
-              Keith Kennedy
-            </a>
+            <p>
+              <a className="text-sm font-medium hover:underline" href="#">
+                Keith Kennedy
+              </a>
+            </p>
           </HoverCardTrigger>
           <p className="text-muted-foreground text-xs">@k.kennedy</p>
         </div>
