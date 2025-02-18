@@ -2,11 +2,23 @@
 
 import { RiMoonClearLine, RiSunLine } from "@remixicon/react";
 import { useTheme } from "next-themes";
-import { useId } from "react";
+import { useEffect, useId, useState } from "react";
 
 export default function ThemeToggle() {
   const id = useId();
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+
+    if (theme === "system") {
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      setTheme(mediaQuery.matches ? "dark" : "light");
+    }
+  }, [theme, setTheme]);
+
+  if (!mounted) return null;
 
   return (
     <div className="flex flex-col justify-center">
