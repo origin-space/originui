@@ -112,7 +112,7 @@ export default function Component() {
                   const selectedItem = items.find((item) => item.value === value);
                   if (selectedItem) {
                     const Icon = selectedItem.icon;
-                    return <Icon className="text-muted-foreground h-4 w-4" />;
+                    return <Icon className="text-muted-foreground size-4" />;
                   }
                   return null;
                 })()}
@@ -150,7 +150,7 @@ export default function Component() {
                     className="flex items-center justify-between"
                   >
                     <div className="flex items-center gap-2">
-                      <item.icon className="text-muted-foreground h-4 w-4" />
+                      <item.icon className="text-muted-foreground size-4" />
                       {item.label}
                     </div>
                     <span className="text-muted-foreground text-xs">

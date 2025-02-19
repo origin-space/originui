@@ -78,7 +78,7 @@ export default function Component() {
                 <div
                   key={index}
                   className={cn(
-                    "bg-primary h-1.5 w-1.5 rounded-full",
+                    "bg-primary size-1.5 rounded-full",
                     index + 1 === step ? "bg-primary" : "opacity-20",
                   )}
                 />
