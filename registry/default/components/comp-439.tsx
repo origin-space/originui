@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/default/ui/
 export default function Component() {
   return (
     <Tabs defaultValue="tab-1">
-      <TabsList className="mx-auto flex max-w-xs bg-transparent w-full">
+      <TabsList className="mx-auto flex w-full max-w-xs bg-transparent">
         <TabsTrigger
           value="tab-1"
           className="group data-[state=active]:bg-muted flex-1 flex-col p-3 text-xs data-[state=active]:shadow-none"

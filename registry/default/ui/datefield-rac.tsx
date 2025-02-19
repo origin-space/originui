@@ -15,11 +15,7 @@ import {
   composeRenderProps,
 } from "react-aria-components";
 
-function DateField<T extends DateValueRac>({
-  className,
-  children,
-  ...props
-}: DateFieldProps<T>) {
+function DateField<T extends DateValueRac>({ className, children, ...props }: DateFieldProps<T>) {
   return (
     <DateFieldRac
       className={composeRenderProps(className, (className) => cn(className))}
@@ -30,11 +26,7 @@ function DateField<T extends DateValueRac>({
   );
 }
 
-function TimeField<T extends TimeValueRac>({
-  className,
-  children,
-  ...props
-}: TimeFieldProps<T>) {
+function TimeField<T extends TimeValueRac>({ className, children, ...props }: TimeFieldProps<T>) {
   return (
     <TimeFieldRac
       className={composeRenderProps(className, (className) => cn(className))}

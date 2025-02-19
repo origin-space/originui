@@ -5,10 +5,7 @@ import * as React from "react";
 
 import { cn } from "@/registry/default/lib/utils";
 
-function Avatar({
-  className,
-  ...props
-}: React.ComponentProps<typeof AvatarPrimitive.Root>) {
+function Avatar({ className, ...props }: React.ComponentProps<typeof AvatarPrimitive.Root>) {
   return (
     <AvatarPrimitive.Root
       data-slot="avatar"
@@ -18,10 +15,7 @@ function Avatar({
   );
 }
 
-function AvatarImage({
-  className,
-  ...props
-}: React.ComponentProps<typeof AvatarPrimitive.Image>) {
+function AvatarImage({ className, ...props }: React.ComponentProps<typeof AvatarPrimitive.Image>) {
   return (
     <AvatarPrimitive.Image
       data-slot="avatar-image"
@@ -39,9 +33,9 @@ function AvatarFallback({
     <AvatarPrimitive.Fallback
       data-slot="avatar-fallback"
       className={cn(
-      "bg-secondary flex size-full items-center justify-center rounded-[inherit] text-xs",
-      className,
-    )}
+        "bg-secondary flex size-full items-center justify-center rounded-[inherit] text-xs",
+        className,
+      )}
       {...props}
     />
   );

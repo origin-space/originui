@@ -1,5 +1,5 @@
-import { Button } from "@/registry/default/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/registry/default/ui/avatar";
+import { Button } from "@/registry/default/ui/button";
 import { ChevronDown } from "lucide-react";
 
 export default function Component() {

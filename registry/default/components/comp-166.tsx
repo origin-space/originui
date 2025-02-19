@@ -16,10 +16,7 @@ export default function Component() {
   return (
     <fieldset className="space-y-4">
       <legend className="text-foreground text-sm leading-none font-medium">Choose plan</legend>
-      <RadioGroup
-        className="gap-0 -space-y-px rounded-lg shadow-xs"
-        defaultValue="2"
-      >
+      <RadioGroup className="gap-0 -space-y-px rounded-lg shadow-xs" defaultValue="2">
         {items.map((item) => (
           <div
             key={`${id}-${item.value}`}

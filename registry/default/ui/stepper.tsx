@@ -1,9 +1,9 @@
 "use client";
 
 import { cn } from "@/registry/default/lib/utils";
+import { Slot } from "@radix-ui/react-slot";
 import { Check, LoaderCircle } from "lucide-react";
 import * as React from "react";
-import { Slot } from "@radix-ui/react-slot"
 import { createContext, useContext } from "react";
 
 // Types
@@ -140,25 +140,24 @@ interface StepperTriggerProps extends React.ButtonHTMLAttributes<HTMLButtonEleme
   asChild?: boolean;
 }
 
-function StepperTrigger({
-  asChild = false,
-  className,
-  children,
-  ...props
-}: StepperTriggerProps) {
+function StepperTrigger({ asChild = false, className, children, ...props }: StepperTriggerProps) {
   const { setActiveStep } = useStepper();
   const { step, isDisabled } = useStepItem();
 
   if (asChild) {
-    const Comp = asChild ? Slot : "span"
-    return <Comp data-slot="stepper-trigger" className={className}>{children}</Comp>;
+    const Comp = asChild ? Slot : "span";
+    return (
+      <Comp data-slot="stepper-trigger" className={className}>
+        {children}
+      </Comp>
+    );
   }
 
   return (
     <button
       data-slot="stepper-trigger"
       className={cn(
-        "inline-flex items-center gap-3 disabled:pointer-events-none disabled:opacity-50 cursor-pointer",
+        "inline-flex cursor-pointer items-center gap-3 disabled:pointer-events-none disabled:opacity-50",
         className,
       )}
       onClick={() => setActiveStep(step)}
@@ -218,12 +217,20 @@ function StepperIndicator({
 
 // StepperTitle
 function StepperTitle({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
-  return <h3 data-slot="stepper-title" className={cn("text-sm font-medium", className)} {...props} />;
+  return (
+    <h3 data-slot="stepper-title" className={cn("text-sm font-medium", className)} {...props} />
+  );
 }
 
 // StepperDescription
 function StepperDescription({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) {
-  return <p data-slot="stepper-description" className={cn("text-muted-foreground text-sm", className)} {...props} />;
+  return (
+    <p
+      data-slot="stepper-description"
+      className={cn("text-muted-foreground text-sm", className)}
+      {...props}
+    />
+  );
 }
 
 // StepperSeparator

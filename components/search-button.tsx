@@ -27,7 +27,7 @@ export default function SearchButton() {
     >
       <span className="flex grow items-center gap-2">
         <RiSearch2Line className="text-muted-foreground -ms-1" size={20} aria-hidden="true" />
-        <span className="text-zinc-400 dark:text-zinc-500 font-normal">Quick search...</span>
+        <span className="font-normal text-zinc-400 dark:text-zinc-500">Quick search...</span>
         <div className="text-muted-foreground/80 pointer-events-none ml-auto flex items-center justify-center">
           <kbd className="text-muted-foreground inline-flex font-[inherit] text-xs font-medium">
             <span className="opacity-70">⌘</span>K

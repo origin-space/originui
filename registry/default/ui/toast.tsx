@@ -9,7 +9,10 @@ import { cn } from "@/registry/default/lib/utils";
 
 const ToastProvider = ToastPrimitives.Provider;
 
-function ToastViewport({ className, ...props }: React.ComponentPropsWithoutRef<typeof ToastPrimitives.Viewport>) {
+function ToastViewport({
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof ToastPrimitives.Viewport>) {
   return (
     <ToastPrimitives.Viewport
       className={cn(
@@ -37,23 +40,19 @@ const toastVariants = cva(
   },
 );
 
-function Toast({ 
-  className, 
-  variant, 
-  ...props 
-}: React.ComponentPropsWithoutRef<typeof ToastPrimitives.Root> & VariantProps<typeof toastVariants>) {
-  return (
-    <ToastPrimitives.Root
-      className={cn(toastVariants({ variant }), className)}
-      {...props}
-    />
-  );
+function Toast({
+  className,
+  variant,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof ToastPrimitives.Root> &
+  VariantProps<typeof toastVariants>) {
+  return <ToastPrimitives.Root className={cn(toastVariants({ variant }), className)} {...props} />;
 }
 
-function ToastAction({ 
-  className, 
-  asChild = false, 
-  ...props 
+function ToastAction({
+  className,
+  asChild = false,
+  ...props
 }: React.ComponentPropsWithoutRef<typeof ToastPrimitives.Action>) {
   return (
     <ToastPrimitives.Action
@@ -70,10 +69,10 @@ function ToastAction({
   );
 }
 
-function ToastClose({ 
-  className, 
-  asChild = false, 
-  ...props 
+function ToastClose({
+  className,
+  asChild = false,
+  ...props
 }: React.ComponentPropsWithoutRef<typeof ToastPrimitives.Close>) {
   return (
     <ToastPrimitives.Close
@@ -99,21 +98,16 @@ function ToastClose({
   );
 }
 
-function ToastTitle({ 
-  className, 
-  ...props 
+function ToastTitle({
+  className,
+  ...props
 }: React.ComponentPropsWithoutRef<typeof ToastPrimitives.Title>) {
-  return (
-    <ToastPrimitives.Title 
-      className={cn("text-sm font-medium", className)} 
-      {...props} 
-    />
-  );
+  return <ToastPrimitives.Title className={cn("text-sm font-medium", className)} {...props} />;
 }
 
-function ToastDescription({ 
-  className, 
-  ...props 
+function ToastDescription({
+  className,
+  ...props
 }: React.ComponentPropsWithoutRef<typeof ToastPrimitives.Description>) {
   return (
     <ToastPrimitives.Description
