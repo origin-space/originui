@@ -1,5 +1,4 @@
 "use client";
-// Add the following to tailwind.config.ts: "./node_modules/emblor/dist/index.mjs",
 
 import { Label } from "@/registry/default/ui/label";
 import { Tag, TagInput } from "emblor";
@@ -40,11 +39,11 @@ export default function Component() {
             container: "gap-1",
           },
           input:
-            "rounded-lg transition-shadow placeholder:text-muted-foreground/70 focus-visible:border-ring/40 focus-visible:outline-hidden focus-visible:ring-[3px] ring-ring/8 dark:ring-ring/12",
+            "rounded-lg transition-shadow placeholder:text-muted-foreground/70 focus-visible:border-ring/40 focus-visible:outline-hidden focus-visible:ring-[3px] focus-visible:ring-ring/8 dark:focus-visible:ring-ring/12",
           tag: {
             body: "relative h-7 bg-background border border-input hover:bg-background rounded-md font-medium text-xs ps-2 pe-7",
             closeButton:
-              "absolute -inset-y-px -end-px p-0 rounded-s-none rounded-e-lg flex size-7 transition-colors outline-hidden focus-visible:outline-2 outline-ring/30 dark:outline-ring/40 text-muted-foreground/80 hover:text-foreground",
+              "absolute -inset-y-px -end-px p-0 rounded-s-none rounded-e-lg flex size-7 transition-colors outline-hidden focus-visible:ring-2 focus-visible:ring-ring/30 dark:focus-visible:ring-ring/40 text-muted-foreground/80 hover:text-foreground",
           },
         }}
         activeTagIndex={activeTagIndex}
