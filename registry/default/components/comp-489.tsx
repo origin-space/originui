@@ -23,7 +23,7 @@ export default function Component() {
   return (
     <div>
       <RangeCalendar
-        className="border-border rounded-lg border p-2"
+        className="rounded-lg border p-2"
         isDateUnavailable={isDateUnavailable}
         minValue={today(getLocalTimeZone())}
       />

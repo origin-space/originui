@@ -13,7 +13,7 @@ export default function Component() {
         mode="single"
         selected={date}
         onSelect={setDate}
-        className="border-border rounded-lg border p-2"
+        className="rounded-lg border p-2"
         fixedWeeks
         showWeekNumber
         components={{

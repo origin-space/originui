@@ -132,7 +132,7 @@ export default function Component() {
             </DialogDescription>
           </DialogHeader>
         </div>
-        <DialogFooter className="border-border border-t px-6 py-4">
+        <DialogFooter className="border-t px-6 py-4">
           <DialogClose asChild>
             <Button type="button" variant="outline">
               Cancel

@@ -59,7 +59,7 @@ export default function Component() {
       >
         <div className="flex flex-col gap-2">
           <div
-            className="border-border flex size-11 shrink-0 items-center justify-center rounded-full border"
+            className="flex size-11 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
             <UserRoundPlusIcon className="opacity-80" size={16} />
@@ -103,7 +103,7 @@ export default function Component() {
           </Button>
         </form>
 
-        <hr className="border-border my-1 border-t" />
+        <hr className="my-1 border-t" />
 
         <div className="*:not-first:mt-2">
           <Label htmlFor={id}>Invite via magic link</Label>

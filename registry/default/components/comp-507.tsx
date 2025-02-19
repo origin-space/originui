@@ -49,10 +49,10 @@ export default function Component() {
 
   return (
     <div>
-      <div className="border-border rounded-lg border">
+      <div className="rounded-lg border">
         <div className="flex max-sm:flex-col">
-          <div className="border-border relative py-4 max-sm:order-1 max-sm:border-t sm:w-32">
-            <div className="border-border h-full sm:border-e">
+          <div className="relative py-4 max-sm:order-1 max-sm:border-t sm:w-32">
+            <div className="h-full sm:border-e">
               <div className="flex flex-col px-2">
                 <Button
                   variant="ghost"

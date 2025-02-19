@@ -44,7 +44,7 @@ export default function Component() {
 
   return (
     <div>
-      <div className="border-border rounded-lg border">
+      <div className="rounded-lg border">
         <Calendar
           mode="single"
           className="p-2"
@@ -53,7 +53,7 @@ export default function Component() {
           month={month}
           onMonthChange={setMonth}
         />
-        <div className="border-border border-t p-3">
+        <div className="border-t p-3">
           <div className="flex items-center gap-3">
             <Label htmlFor={id} className="text-xs">
               Enter date

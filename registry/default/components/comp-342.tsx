@@ -48,7 +48,7 @@ export default function Component() {
               <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between py-2 text-left text-[15px] leading-6 font-semibold transition-all [&[data-state=open]>svg]:rotate-180">
                 <span className="flex items-center gap-3">
                   <span
-                    className="border-border flex size-10 shrink-0 items-center justify-center rounded-full border"
+                    className="flex size-10 shrink-0 items-center justify-center rounded-full border"
                     aria-hidden="true"
                   >
                     <item.icon size={16} className="opacity-60" />

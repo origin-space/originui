@@ -21,7 +21,7 @@ export default function AlertComponent() {
       <AlertDialogContent>
         <div className="flex flex-col gap-2 max-sm:items-center sm:flex-row sm:gap-4">
           <div
-            className="border-border flex size-9 shrink-0 items-center justify-center rounded-full border"
+            className="flex size-9 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
             <CircleAlertIcon className="opacity-80" size={16} />

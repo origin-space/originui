@@ -3,7 +3,7 @@ import { Table, TableBody, TableCell, TableRow } from "@/registry/default/ui/tab
 export default function Component() {
   return (
     <div className="mx-auto max-w-lg">
-      <div className="border-border bg-background overflow-hidden rounded-lg border">
+      <div className="bg-background overflow-hidden rounded-lg border">
         <Table>
           <TableBody>
             <TableRow className="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r">

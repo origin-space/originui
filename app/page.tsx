@@ -55,13 +55,13 @@ function CategoryCard({ slug, name, componentsCount, isEasing = false }: Categor
       {!isComingSoon ? (
         <Link
           href={href}
-          className="peer border-border inline-flex overflow-hidden rounded-xl border sm:flex dark:border-zinc-700/80"
+          className="peer inline-flex overflow-hidden rounded-xl border sm:flex dark:border-zinc-700/80"
           tabIndex={-1}
         >
           <ImageComponent imageBasePath={imageBasePath} alt={alt} />
         </Link>
       ) : (
-        <div className="border-border relative inline-flex overflow-hidden rounded-xl border sm:flex dark:border-zinc-700/80">
+        <div className="relative inline-flex overflow-hidden rounded-xl border sm:flex dark:border-zinc-700/80">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="absolute top-5 right-5 z-10 text-zinc-400 dark:text-zinc-500"

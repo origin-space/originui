@@ -32,7 +32,7 @@ export default function Component() {
         mode="single"
         selected={date}
         onSelect={setDate}
-        className="border-border rounded-lg border p-2"
+        className="rounded-lg border p-2"
         captionLayout="dropdown-years"
         defaultMonth={new Date()}
         startMonth={new Date(1980, 6)}

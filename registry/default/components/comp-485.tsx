@@ -336,7 +336,7 @@ export default function Component() {
                 <FilterIcon className="-ms-1 opacity-60" size={16} aria-hidden="true" />
                 Status
                 {selectedStatuses.length > 0 && (
-                  <span className="border-border bg-background text-muted-foreground/70 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
+                  <span className="bg-background text-muted-foreground/70 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
                     {selectedStatuses.length}
                   </span>
                 )}
@@ -405,7 +405,7 @@ export default function Component() {
                 <Button className="ml-auto" variant="outline">
                   <TrashIcon className="-ms-1 opacity-60" size={16} aria-hidden="true" />
                   Delete
-                  <span className="border-border bg-background text-muted-foreground/70 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
+                  <span className="bg-background text-muted-foreground/70 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
                     {table.getSelectedRowModel().rows.length}
                   </span>
                 </Button>
@@ -413,7 +413,7 @@ export default function Component() {
               <AlertDialogContent>
                 <div className="flex flex-col gap-2 max-sm:items-center sm:flex-row sm:gap-4">
                   <div
-                    className="border-border flex size-9 shrink-0 items-center justify-center rounded-full border"
+                    className="flex size-9 shrink-0 items-center justify-center rounded-full border"
                     aria-hidden="true"
                   >
                     <CircleAlertIcon className="opacity-80" size={16} />
@@ -443,7 +443,7 @@ export default function Component() {
       </div>
 
       {/* Table */}
-      <div className="border-border bg-background overflow-hidden rounded-lg border">
+      <div className="bg-background overflow-hidden rounded-lg border">
         <Table className="table-fixed">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (

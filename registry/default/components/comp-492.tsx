@@ -22,7 +22,7 @@ export default function Component() {
           },
         ]}
         excludeDisabled
-        className="border-border rounded-lg border p-2"
+        className="rounded-lg border p-2"
       />
       <p
         className="text-muted-foreground mt-4 text-center text-xs"

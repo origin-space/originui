@@ -12,7 +12,7 @@ export default function Component() {
         mode="single"
         selected={date}
         onSelect={setDate}
-        className="border-border rounded-lg border p-2"
+        className="rounded-lg border p-2"
       />
       <p
         className="text-muted-foreground mt-4 text-center text-xs"

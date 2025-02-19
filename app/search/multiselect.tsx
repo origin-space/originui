@@ -476,7 +476,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 <div
                   key={option.value}
                   className={cn(
-                    "animate-fadeIn border-border bg-background text-secondary-foreground hover:bg-background relative inline-flex h-7 cursor-default items-center rounded-lg border ps-2 pe-7 pl-2 text-xs font-medium transition-all disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-fixed:pe-2 dark:border-zinc-700 dark:bg-zinc-700/50",
+                    "animate-fadeIn bg-background text-secondary-foreground hover:bg-background relative inline-flex h-7 cursor-default items-center rounded-lg border ps-2 pe-7 pl-2 text-xs font-medium transition-all disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-fixed:pe-2 dark:border-zinc-700 dark:bg-zinc-700/50",
                     badgeClassName,
                   )}
                   data-fixed={option.fixed}

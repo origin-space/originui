@@ -19,7 +19,7 @@ export default function Component() {
       <DialogContent>
         <div className="mb-2 flex flex-col items-center gap-2">
           <div
-            className="border-border flex size-11 shrink-0 items-center justify-center rounded-full border"
+            className="flex size-11 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
             <svg

@@ -45,7 +45,7 @@ export default function Component() {
         defaultMonth={new Date()}
         startMonth={startDate}
         endMonth={endDate}
-        className="border-border overflow-hidden rounded-lg border p-2"
+        className="overflow-hidden rounded-lg border p-2"
         classNames={{
           month_caption: "ms-2.5 me-20 justify-start",
           nav: "justify-end",
@@ -220,7 +220,7 @@ function CollapsibleYear({
   open?: boolean;
 }) {
   return (
-    <Collapsible className="border-border border-t px-2 py-1.5" defaultOpen={open}>
+    <Collapsible className="border-t px-2 py-1.5" defaultOpen={open}>
       <CollapsibleTrigger asChild>
         <Button
           className="flex w-full justify-start gap-2 text-sm font-medium hover:bg-transparent [&[data-state=open]>svg]:rotate-180"

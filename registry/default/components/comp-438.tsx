@@ -4,7 +4,7 @@ import { BoxIcon, HouseIcon, PanelsTopLeftIcon } from "lucide-react";
 export default function Component() {
   return (
     <Tabs defaultValue="tab-1" className="items-center">
-      <TabsList className="border-border h-auto rounded-none border-b bg-transparent p-0">
+      <TabsList className="h-auto rounded-none border-b bg-transparent p-0">
         <TabsTrigger
           value="tab-1"
           className="data-[state=active]:after:bg-primary relative flex-col rounded-none px-4 py-2 text-xs after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"

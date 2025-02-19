@@ -1,6 +1,6 @@
 export default function Component() {
   return (
-    <div className="border-border bg-background flex items-center rounded-full border p-1 shadow-sm">
+    <div className="bg-background flex items-center rounded-full border p-1 shadow-sm">
       <div className="flex -space-x-1.5">
         <img
           className="ring-background rounded-full ring-1"

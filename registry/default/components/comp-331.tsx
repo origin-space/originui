@@ -41,7 +41,7 @@ export default function Component() {
       </DialogTrigger>
       <DialogContent className="flex flex-col gap-0 overflow-y-visible p-0 sm:max-w-lg [&>button:last-child]:top-3.5">
         <DialogHeader className="contents space-y-0 text-left">
-          <DialogTitle className="border-border border-b px-6 py-4 text-base">
+          <DialogTitle className="border-b px-6 py-4 text-base">
             Edit profile
           </DialogTitle>
         </DialogHeader>
@@ -128,7 +128,7 @@ export default function Component() {
             </form>
           </div>
         </div>
-        <DialogFooter className="border-border border-t px-6 py-4">
+        <DialogFooter className="border-t px-6 py-4">
           <DialogClose asChild>
             <Button type="button" variant="outline">
               Cancel

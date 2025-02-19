@@ -21,7 +21,7 @@ export default function Component() {
         numberOfMonths={2}
         pagedNavigation
         showOutsideDays={false}
-        className="border-border rounded-lg border p-2"
+        className="rounded-lg border p-2"
         classNames={{
           months: "gap-8",
           month:

@@ -68,11 +68,11 @@ export default function Component() {
       <TableHeader>
         <TableRow className="*:border-border border-y-0 hover:bg-transparent [&>:not(:last-child)]:border-r">
           <TableCell></TableCell>
-          <TableHead className="border-border border-b text-center" colSpan={5}>
+          <TableHead className="border-b text-center" colSpan={5}>
             <MonitorIcon className="inline-flex" size={16} aria-hidden="true" />
             <span className="sr-only">Desktop browsers</span>
           </TableHead>
-          <TableHead className="border-border border-b text-center" colSpan={5}>
+          <TableHead className="border-b text-center" colSpan={5}>
             <SmartphoneIcon className="inline-flex" size={16} aria-hidden="true" />
             <span className="sr-only">Mobile browsers</span>
           </TableHead>

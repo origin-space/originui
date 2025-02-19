@@ -117,7 +117,7 @@ function CollapsibleDemo({
 }) {
   return (
     <Collapsible
-      className="border-border bg-accent space-y-1 border-t px-4 py-3"
+      className="bg-accent space-y-1 border-t px-4 py-3"
       defaultOpen={open}
     >
       <CollapsibleTrigger className="flex gap-2 text-[15px] leading-6 font-semibold [&[data-state=open]>svg]:rotate-180">

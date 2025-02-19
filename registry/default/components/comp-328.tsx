@@ -30,7 +30,7 @@ export default function Component() {
       <DialogContent>
         <div className="flex flex-col gap-2">
           <div
-            className="border-border flex size-11 shrink-0 items-center justify-center rounded-full border"
+            className="flex size-11 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
             <WalletIcon className="opacity-80" size={16} />

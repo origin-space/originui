@@ -27,7 +27,7 @@ export default function CliCommands({ name }: { name: string }) {
         }}
         className="rounded-lg bg-zinc-950 dark:bg-zinc-900"
       >
-        <TabsList className="dark border-border h-auto w-full justify-start rounded-none border-b bg-transparent px-4 py-0">
+        <TabsList className="dark h-auto w-full justify-start rounded-none border-b bg-transparent px-4 py-0">
           <TabsTrigger
             className="data-[state=active]:after:bg-primary relative rounded-none py-3 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
             value="pnpm"

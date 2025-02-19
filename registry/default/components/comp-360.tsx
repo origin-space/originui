@@ -30,7 +30,7 @@ export default function Component() {
           </TooltipTrigger>
           <TooltipContent side="top" className="px-2 py-1 text-xs">
             Pan top
-            <kbd className="border-border bg-background text-muted-foreground/70 ms-2 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
+            <kbd className="bg-background text-muted-foreground/70 ms-2 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
               ⌘T
             </kbd>
           </TooltipContent>
@@ -50,7 +50,7 @@ export default function Component() {
           </TooltipTrigger>
           <TooltipContent side="left" className="px-2 py-1 text-xs">
             Pan left
-            <kbd className="border-border bg-background text-muted-foreground/70 ms-2 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
+            <kbd className="bg-background text-muted-foreground/70 ms-2 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
               ⌘L
             </kbd>
           </TooltipContent>
@@ -68,7 +68,7 @@ export default function Component() {
           </TooltipTrigger>
           <TooltipContent side="right" className="px-2 py-1 text-xs">
             Pan right
-            <kbd className="border-border bg-background text-muted-foreground/70 ms-2 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
+            <kbd className="bg-background text-muted-foreground/70 ms-2 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
               ⌘R
             </kbd>
           </TooltipContent>
@@ -88,7 +88,7 @@ export default function Component() {
           </TooltipTrigger>
           <TooltipContent side="bottom" className="px-2 py-1 text-xs">
             Pan bottom
-            <kbd className="border-border bg-background text-muted-foreground/70 ms-2 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
+            <kbd className="bg-background text-muted-foreground/70 ms-2 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
               ⌘B
             </kbd>
           </TooltipContent>

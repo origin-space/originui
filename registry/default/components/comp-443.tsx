@@ -3,7 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/default/ui/
 export default function Component() {
   return (
     <Tabs defaultValue="tab-1" orientation="vertical" className="w-full flex-row">
-      <TabsList className="border-border flex-col rounded-none border-l bg-transparent p-0">
+      <TabsList className="flex-col rounded-none border-l bg-transparent p-0">
         <TabsTrigger
           value="tab-1"
           className="data-[state=active]:after:bg-primary relative w-full justify-start rounded-none after:absolute after:inset-y-0 after:start-0 after:w-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
@@ -23,7 +23,7 @@ export default function Component() {
           Packages
         </TabsTrigger>
       </TabsList>
-      <div className="border-border grow rounded-lg border text-start">
+      <div className="grow rounded-lg border text-start">
         <TabsContent value="tab-1">
           <p className="text-muted-foreground px-4 py-1.5 text-xs">Content for Tab 1</p>
         </TabsContent>
