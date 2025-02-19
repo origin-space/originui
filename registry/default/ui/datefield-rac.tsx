@@ -15,11 +15,11 @@ import {
   composeRenderProps,
 } from "react-aria-components";
 
-const DateField = <T extends DateValueRac>({
+function DateField<T extends DateValueRac>({
   className,
   children,
   ...props
-}: DateFieldProps<T>) => {
+}: DateFieldProps<T>) {
   return (
     <DateFieldRac
       className={composeRenderProps(className, (className) => cn(className))}
@@ -28,13 +28,13 @@ const DateField = <T extends DateValueRac>({
       {children}
     </DateFieldRac>
   );
-};
+}
 
-const TimeField = <T extends TimeValueRac>({
+function TimeField<T extends TimeValueRac>({
   className,
   children,
   ...props
-}: TimeFieldProps<T>) => {
+}: TimeFieldProps<T>) {
   return (
     <TimeFieldRac
       className={composeRenderProps(className, (className) => cn(className))}
@@ -43,9 +43,9 @@ const TimeField = <T extends TimeValueRac>({
       {children}
     </TimeFieldRac>
   );
-};
+}
 
-const DateSegment = ({ className, ...props }: DateSegmentProps) => {
+function DateSegment({ className, ...props }: DateSegmentProps) {
   return (
     <DateSegmentRac
       className={composeRenderProps(className, (className) =>
@@ -57,7 +57,7 @@ const DateSegment = ({ className, ...props }: DateSegmentProps) => {
       {...props}
     />
   );
-};
+}
 
 const dateInputStyle =
   "relative inline-flex h-9 w-full items-center overflow-hidden whitespace-nowrap rounded-lg border border-input bg-background px-3 py-2 text-sm shadow-xs transition-shadow data-focus-within:border-ring/40 data-disabled:opacity-50 data-focus-within:outline-hidden data-focus-within:ring-[3px] data-focus-within:ring-ring/8 dark:data-focus-within:ring-ring/12 data-focus-within:has-aria-invalid:border-destructive/60 data-focus-within:has-aria-invalid:ring-destructive/20 dark:data-focus-within:has-aria-invalid:ring-destructive/25";
@@ -67,7 +67,7 @@ interface DateInputProps extends DateInputPropsRac {
   unstyled?: boolean;
 }
 
-const DateInput = ({ className, unstyled = false, ...props }: Omit<DateInputProps, "children">) => {
+function DateInput({ className, unstyled = false, ...props }: Omit<DateInputProps, "children">) {
   return (
     <DateInputRac
       className={composeRenderProps(className, (className) =>
@@ -78,7 +78,7 @@ const DateInput = ({ className, unstyled = false, ...props }: Omit<DateInputProp
       {(segment) => <DateSegment segment={segment} />}
     </DateInputRac>
   );
-};
+}
 
 export { DateField, DateInput, DateSegment, TimeField, dateInputStyle };
 export type { DateInputProps };
