@@ -2,7 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/default/ui/
 
 export default function Component() {
   return (
-    <Tabs defaultValue="tab-1">
+    <Tabs defaultValue="tab-1" className="items-center">
       <TabsList className="bg-background h-auto -space-x-px p-0 shadow-xs rtl:space-x-reverse">
         <TabsTrigger
           value="tab-1"

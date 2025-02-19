@@ -10,7 +10,7 @@ import { Box, House, PanelsTopLeft } from "lucide-react";
 
 export default function Component() {
   return (
-    <Tabs defaultValue="tab-1">
+    <Tabs defaultValue="tab-1" className="items-center">
       <TabsList>
         <TooltipProvider delayDuration={0}>
           <Tooltip>

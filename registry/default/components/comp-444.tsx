@@ -3,7 +3,7 @@ import { Box, House, PanelsTopLeft } from "lucide-react";
 
 export default function Component() {
   return (
-    <Tabs defaultValue="tab-1" orientation="vertical" className="flex w-full gap-2">
+    <Tabs defaultValue="tab-1" orientation="vertical" className="w-full flex-row">
       <TabsList className="text-foreground flex-col gap-1 rounded-none bg-transparent px-1 py-0">
         <TabsTrigger
           value="tab-1"

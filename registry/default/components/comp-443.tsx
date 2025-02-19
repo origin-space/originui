@@ -2,7 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/default/ui/
 
 export default function Component() {
   return (
-    <Tabs defaultValue="tab-1" orientation="vertical" className="flex w-full gap-2">
+    <Tabs defaultValue="tab-1" orientation="vertical" className="w-full flex-row">
       <TabsList className="border-border flex-col rounded-none border-l bg-transparent p-0">
         <TabsTrigger
           value="tab-1"
