@@ -4,7 +4,7 @@ import { X } from "lucide-react";
 export default function Component() {
   return (
     // To make the notification fixed, add classes like `fixed bottom-4 right-4` to the container element.
-    <div className="border-border bg-background z-100 max-w-[400px] rounded-lg border p-4 shadow-lg">
+    <div className="border-border bg-background z-50 max-w-[400px] rounded-lg border p-4 shadow-lg">
       <div className="flex gap-2">
         <div className="flex grow flex-col gap-3">
           <div className="space-y-1">
