@@ -12,7 +12,7 @@ import {
 } from "@/registry/default/ui/command";
 import { Label } from "@/registry/default/ui/label";
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
-import { Check, ChevronDown } from "lucide-react";
+import { CheckIcon, ChevronDownIcon } from "lucide-react";
 import { useId, useMemo, useState } from "react";
 
 export default function Component() {
@@ -59,7 +59,7 @@ export default function Component() {
                 ? formattedTimezones.find((timezone) => timezone.value === value)?.label
                 : "Select timezone"}
             </span>
-            <ChevronDown
+            <ChevronDownIcon
               size={16}
               className="text-muted-foreground/80 shrink-0"
               aria-hidden="true"
@@ -91,7 +91,7 @@ export default function Component() {
                     }}
                   >
                     {label}
-                    {value === itemValue && <Check size={16} className="ml-auto" />}
+                    {value === itemValue && <CheckIcon size={16} className="ml-auto" />}
                   </CommandItem>
                 ))}
               </CommandGroup>

@@ -8,14 +8,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu";
-import { CircleUserRound } from "lucide-react";
+import { CircleUserRoundIcon } from "lucide-react";
 
 export default function Component() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button size="icon" variant="outline" aria-label="Open account menu">
-          <CircleUserRound size={16} aria-hidden="true" />
+          <CircleUserRoundIcon size={16} aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="max-w-64">

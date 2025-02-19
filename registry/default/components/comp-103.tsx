@@ -1,5 +1,5 @@
 import { Button } from "@/registry/default/ui/button";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -9,7 +9,7 @@ export default function Component() {
         size="icon"
         aria-label="Upvote"
       >
-        <ChevronUp size={16} aria-hidden="true" />
+        <ChevronUpIcon size={16} aria-hidden="true" />
       </Button>
       <span className="bg-primary text-primary-foreground flex items-center px-1 text-sm font-medium">
         235
@@ -19,7 +19,7 @@ export default function Component() {
         size="icon"
         aria-label="Downvote"
       >
-        <ChevronDown size={16} aria-hidden="true" />
+        <ChevronDownIcon size={16} aria-hidden="true" />
       </Button>
     </div>
   );

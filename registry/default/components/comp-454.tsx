@@ -1,6 +1,6 @@
 import { Button } from "@/registry/default/ui/button";
 import { Pagination, PaginationContent, PaginationItem } from "@/registry/default/ui/pagination";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 type PaginationProps = {
   currentPage: number;
@@ -20,7 +20,7 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
             asChild
           >
             <a href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}>
-              <ChevronLeft className="-ms-1 opacity-60" size={16} aria-hidden="true" />
+              <ChevronLeftIcon className="-ms-1 opacity-60" size={16} aria-hidden="true" />
               Previous
             </a>
           </Button>
@@ -35,7 +35,7 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
           >
             <a href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}>
               Next
-              <ChevronRight className="-me-1 opacity-60" size={16} aria-hidden="true" />
+              <ChevronRightIcon className="-me-1 opacity-60" size={16} aria-hidden="true" />
             </a>
           </Button>
         </PaginationItem>

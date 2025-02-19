@@ -10,7 +10,7 @@ import {
   AlertDialogTrigger,
 } from "@/registry/default/ui/alert-dialog";
 import { Button } from "@/registry/default/ui/button";
-import { CircleAlert } from "lucide-react";
+import { CircleAlertIcon } from "lucide-react";
 
 export default function AlertComponent() {
   return (
@@ -24,7 +24,7 @@ export default function AlertComponent() {
             className="border-border flex size-9 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
-            <CircleAlert className="opacity-80" size={16} />
+            <CircleAlertIcon className="opacity-80" size={16} />
           </div>
           <AlertDialogHeader>
             <AlertDialogTitle>Are you sure?</AlertDialogTitle>

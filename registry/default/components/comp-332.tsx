@@ -12,7 +12,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/registry/default/ui/dialog";
-import { ArrowRight } from "lucide-react";
+import { ArrowRightIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function Component() {
@@ -93,7 +93,7 @@ export default function Component() {
               {step < totalSteps ? (
                 <Button className="group" type="button" onClick={handleContinue}>
                   Next
-                  <ArrowRight
+                  <ArrowRightIcon
                     className="-me-1 opacity-60 transition-transform group-hover:translate-x-0.5"
                     size={16}
                     aria-hidden="true"

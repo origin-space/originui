@@ -2,7 +2,7 @@
 
 import { useImageUpload } from "@/registry/default/hooks/use-image-upload";
 import { Button } from "@/registry/default/ui/button";
-import { CircleUserRound, X } from "lucide-react";
+import { CircleUserRoundIcon, XIcon } from "lucide-react";
 
 export default function Component() {
   const {
@@ -34,7 +34,7 @@ export default function Component() {
             />
           ) : (
             <div aria-hidden="true">
-              <CircleUserRound className="opacity-60" size={16} />
+              <CircleUserRoundIcon className="opacity-60" size={16} />
             </div>
           )}
         </Button>
@@ -46,7 +46,7 @@ export default function Component() {
             className="border-background absolute -top-2 -right-2 size-6 rounded-full border-2"
             aria-label="Remove image"
           >
-            <X size={16} />
+            <XIcon size={16} />
           </Button>
         )}
         <input

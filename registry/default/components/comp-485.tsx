@@ -66,20 +66,20 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import {
-  ChevronDown,
-  ChevronFirst,
-  ChevronLast,
-  ChevronLeft,
-  ChevronRight,
-  ChevronUp,
-  CircleAlert,
-  CircleX,
-  Columns3,
-  Ellipsis,
-  Filter,
-  ListFilter,
-  Plus,
-  Trash,
+  ChevronDownIcon,
+  ChevronFirstIcon,
+  ChevronLastIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ChevronUpIcon,
+  CircleAlertIcon,
+  CircleXIcon,
+  Columns3Icon,
+  EllipsisIcon,
+  FilterIcon,
+  ListFilterIcon,
+  PlusIcon,
+  TrashIcon,
 } from "lucide-react";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 
@@ -312,7 +312,7 @@ export default function Component() {
               aria-label="Filter by name or email"
             />
             <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 peer-disabled:opacity-50">
-              <ListFilter size={16} aria-hidden="true" />
+              <ListFilterIcon size={16} aria-hidden="true" />
             </div>
             {Boolean(table.getColumn("name")?.getFilterValue()) && (
               <button
@@ -325,7 +325,7 @@ export default function Component() {
                   }
                 }}
               >
-                <CircleX size={16} aria-hidden="true" />
+                <CircleXIcon size={16} aria-hidden="true" />
               </button>
             )}
           </div>
@@ -333,7 +333,7 @@ export default function Component() {
           <Popover>
             <PopoverTrigger asChild>
               <Button variant="outline">
-                <Filter className="-ms-1 opacity-60" size={16} aria-hidden="true" />
+                <FilterIcon className="-ms-1 opacity-60" size={16} aria-hidden="true" />
                 Status
                 {selectedStatuses.length > 0 && (
                   <span className="border-border bg-background text-muted-foreground/70 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
@@ -372,7 +372,7 @@ export default function Component() {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline">
-                <Columns3 className="-ms-1 opacity-60" size={16} aria-hidden="true" />
+                <Columns3Icon className="-ms-1 opacity-60" size={16} aria-hidden="true" />
                 View
               </Button>
             </DropdownMenuTrigger>
@@ -403,7 +403,7 @@ export default function Component() {
             <AlertDialog>
               <AlertDialogTrigger asChild>
                 <Button className="ml-auto" variant="outline">
-                  <Trash className="-ms-1 opacity-60" size={16} aria-hidden="true" />
+                  <TrashIcon className="-ms-1 opacity-60" size={16} aria-hidden="true" />
                   Delete
                   <span className="border-border bg-background text-muted-foreground/70 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
                     {table.getSelectedRowModel().rows.length}
@@ -416,7 +416,7 @@ export default function Component() {
                     className="border-border flex size-9 shrink-0 items-center justify-center rounded-full border"
                     aria-hidden="true"
                   >
-                    <CircleAlert className="opacity-80" size={16} />
+                    <CircleAlertIcon className="opacity-80" size={16} />
                   </div>
                   <AlertDialogHeader>
                     <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
@@ -436,7 +436,7 @@ export default function Component() {
           )}
           {/* Add user button */}
           <Button className="ml-auto" variant="outline">
-            <Plus className="-ms-1 opacity-60" size={16} aria-hidden="true" />
+            <PlusIcon className="-ms-1 opacity-60" size={16} aria-hidden="true" />
             Add user
           </Button>
         </div>
@@ -477,14 +477,14 @@ export default function Component() {
                           {flexRender(header.column.columnDef.header, header.getContext())}
                           {{
                             asc: (
-                              <ChevronUp
+                              <ChevronUpIcon
                                 className="shrink-0 opacity-60"
                                 size={16}
                                 aria-hidden="true"
                               />
                             ),
                             desc: (
-                              <ChevronDown
+                              <ChevronDownIcon
                                 className="shrink-0 opacity-60"
                                 size={16}
                                 aria-hidden="true"
@@ -580,7 +580,7 @@ export default function Component() {
                   disabled={!table.getCanPreviousPage()}
                   aria-label="Go to first page"
                 >
-                  <ChevronFirst size={16} aria-hidden="true" />
+                  <ChevronFirstIcon size={16} aria-hidden="true" />
                 </Button>
               </PaginationItem>
               {/* Previous page button */}
@@ -593,7 +593,7 @@ export default function Component() {
                   disabled={!table.getCanPreviousPage()}
                   aria-label="Go to previous page"
                 >
-                  <ChevronLeft size={16} aria-hidden="true" />
+                  <ChevronLeftIcon size={16} aria-hidden="true" />
                 </Button>
               </PaginationItem>
               {/* Next page button */}
@@ -606,7 +606,7 @@ export default function Component() {
                   disabled={!table.getCanNextPage()}
                   aria-label="Go to next page"
                 >
-                  <ChevronRight size={16} aria-hidden="true" />
+                  <ChevronRightIcon size={16} aria-hidden="true" />
                 </Button>
               </PaginationItem>
               {/* Last page button */}
@@ -619,7 +619,7 @@ export default function Component() {
                   disabled={!table.getCanNextPage()}
                   aria-label="Go to last page"
                 >
-                  <ChevronLast size={16} aria-hidden="true" />
+                  <ChevronLastIcon size={16} aria-hidden="true" />
                 </Button>
               </PaginationItem>
             </PaginationContent>
@@ -647,7 +647,7 @@ function RowActions({ row }: { row: Row<Item> }) {
       <DropdownMenuTrigger asChild>
         <div className="flex justify-end">
           <Button size="icon" variant="ghost" className="shadow-none" aria-label="Edit item">
-            <Ellipsis size={16} aria-hidden="true" />
+            <EllipsisIcon size={16} aria-hidden="true" />
           </Button>
         </div>
       </DropdownMenuTrigger>

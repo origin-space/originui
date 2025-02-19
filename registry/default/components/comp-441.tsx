@@ -6,7 +6,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/registry/default/ui/tooltip";
-import { Box, House, PanelsTopLeft } from "lucide-react";
+import { BoxIcon, HouseIcon, PanelsTopLeftIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -17,7 +17,7 @@ export default function Component() {
             <TooltipTrigger asChild>
               <span>
                 <TabsTrigger value="tab-1" className="py-3">
-                  <House size={16} aria-hidden="true" />
+                  <HouseIcon size={16} aria-hidden="true" />
                 </TabsTrigger>
               </span>
             </TooltipTrigger>
@@ -32,7 +32,7 @@ export default function Component() {
               <span>
                 <TabsTrigger value="tab-2" className="group py-3">
                   <span className="relative">
-                    <PanelsTopLeft size={16} aria-hidden="true" />
+                    <PanelsTopLeftIcon size={16} aria-hidden="true" />
                     <Badge className="border-background absolute -top-2.5 left-full min-w-4 -translate-x-1.5 px-0.5 text-[10px]/[.875rem] transition-opacity group-data-[state=inactive]:opacity-50">
                       3
                     </Badge>
@@ -50,7 +50,7 @@ export default function Component() {
             <TooltipTrigger asChild>
               <span>
                 <TabsTrigger value="tab-3" className="py-3">
-                  <Box size={16} aria-hidden="true" />
+                  <BoxIcon size={16} aria-hidden="true" />
                 </TabsTrigger>
               </span>
             </TooltipTrigger>

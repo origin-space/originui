@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/registry/default/ui/button";
-import { CircleCheck, X } from "lucide-react";
+import { CircleCheckIcon, XIcon } from "lucide-react";
 import { toast } from "sonner";
 
 export default function Component() {
@@ -13,7 +13,7 @@ export default function Component() {
           <div className="bg-background text-foreground w-full rounded-lg border px-4 py-3 shadow-lg sm:w-[var(--width)]">
             <div className="flex gap-2">
               <div className="flex grow gap-3">
-                <CircleCheck
+                <CircleCheckIcon
                   className="mt-0.5 shrink-0 text-emerald-500"
                   size={16}
                   aria-hidden="true"
@@ -38,7 +38,7 @@ export default function Component() {
                 onClick={() => toast.dismiss(t)}
                 aria-label="Close banner"
               >
-                <X
+                <XIcon
                   size={16}
                   className="opacity-60 transition-opacity group-hover:opacity-100"
                   aria-hidden="true"

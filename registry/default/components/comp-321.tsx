@@ -8,7 +8,7 @@ import {
   DialogTrigger,
 } from "@/registry/default/ui/dialog";
 import { Input } from "@/registry/default/ui/input";
-import { Mail } from "lucide-react";
+import { MailIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -52,7 +52,7 @@ export default function Component() {
                 aria-label="Email"
               />
               <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 peer-disabled:opacity-50">
-                <Mail size={16} aria-hidden="true" />
+                <MailIcon size={16} aria-hidden="true" />
               </div>
             </div>
           </div>

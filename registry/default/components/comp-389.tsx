@@ -9,7 +9,7 @@ import {
 } from "@/registry/default/ui/popover";
 import { useState } from "react";
 
-import { Club, Diamond, Heart, LucideIcon, Spade } from "lucide-react";
+import { ClubIcon, DiamondIcon, HeartIcon, LucideIcon, SpadeIcon } from "lucide-react";
 
 interface TourStep {
   icon: LucideIcon;
@@ -19,25 +19,25 @@ interface TourStep {
 
 const tourSteps: TourStep[] = [
   {
-    icon: Heart,
+    icon: HeartIcon,
     title: "Heart",
     description:
       "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more.",
   },
   {
-    icon: Diamond,
+    icon: DiamondIcon,
     title: "Diamond",
     description:
       "Use the toolbar above to create new projects, invite team members, or access settings.",
   },
   {
-    icon: Club,
+    icon: ClubIcon,
     title: "Club",
     description:
       "Click the support icon in the top right corner to access our help center and documentation.",
   },
   {
-    icon: Spade,
+    icon: SpadeIcon,
     title: "Spade",
     description:
       "Press ⌘K to open the command palette. Use arrow keys to navigate and Enter to select an action.",

@@ -1,11 +1,11 @@
 import { Accordion, AccordionContent, AccordionItem } from "@/registry/default/ui/accordion";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { Bell, LifeBuoy, Link2, Plus, ShieldCheck } from "lucide-react";
+import { BellIcon, LifeBuoyIcon, Link2Icon, PlusIcon, ShieldCheckIcon } from "lucide-react";
 
 const items = [
   {
     id: "1",
-    icon: Link2,
+    icon: Link2Icon,
     title: "Connected accounts",
     sub: "Manage your linked social and work accounts",
     content:
@@ -13,7 +13,7 @@ const items = [
   },
   {
     id: "2",
-    icon: Bell,
+    icon: BellIcon,
     title: "Notifications",
     sub: "Customize your notification preferences",
     content:
@@ -21,7 +21,7 @@ const items = [
   },
   {
     id: "3",
-    icon: ShieldCheck,
+    icon: ShieldCheckIcon,
     title: "2-step verification",
     sub: "Add an extra layer of security to your account",
     content:
@@ -29,11 +29,11 @@ const items = [
   },
   {
     id: "4",
-    icon: LifeBuoy,
+    icon: LifeBuoyIcon,
     title: "Contact support",
     sub: "We're here to help 24/7",
     content:
-      "Our support team is available around the clock to assist you. For billing inquiries, technical issues, or general questions, you can reach us through live chat, email at support@example.com, or schedule a call with our technical team. Premium support is available for enterprise customers.",
+      "Our support team is available around the ClockIcon to assist you. For billing inquiries, technical issues, or general questions, you can reach us through live chat, email at support@example.com, or schedule a call with our technical team. Premium support is available for enterprise customers.",
   },
 ];
 
@@ -58,7 +58,7 @@ export default function Component() {
                     {item.sub && <span className="text-sm font-normal">{item.sub}</span>}
                   </span>
                 </span>
-                <Plus
+                <PlusIcon
                   size={16}
                   className="shrink-0 opacity-60 transition-transform duration-200"
                   aria-hidden="true"

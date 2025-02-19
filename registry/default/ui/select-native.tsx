@@ -1,5 +1,5 @@
 import { cn } from "@/registry/default/lib/utils";
-import { ChevronDown } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 import * as React from "react";
 
 const SelectNative = ({ className, children, ...props }: React.ComponentProps<"select">) => {
@@ -18,7 +18,7 @@ const SelectNative = ({ className, children, ...props }: React.ComponentProps<"s
       </select>
       {!props.multiple && (
         <span className="text-muted-foreground/80 peer-aria-invalid:text-destructive/80 pointer-events-none absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center peer-disabled:opacity-50">
-          <ChevronDown size={16} aria-hidden="true" />
+          <ChevronDownIcon size={16} aria-hidden="true" />
         </span>
       )}
     </div>

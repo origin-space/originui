@@ -12,7 +12,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu";
-import { ChevronDown } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -20,7 +20,7 @@ export default function Component() {
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
           Rich menu
-          <ChevronDown className="-me-1 opacity-60" size={16} aria-hidden="true" />
+          <ChevronDownIcon className="-me-1 opacity-60" size={16} aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

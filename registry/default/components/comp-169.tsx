@@ -1,5 +1,5 @@
 import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
-import { Check, Minus } from "lucide-react";
+import { CheckIcon, MinusIcon } from "lucide-react";
 import { useId } from "react";
 
 const items = [
@@ -29,12 +29,12 @@ export default function Component() {
               className="border-input outline-ring/30 dark:outline-ring/40 peer-data-[state=checked]:border-ring/40 peer-data-[state=checked]:bg-accent relative cursor-pointer overflow-hidden rounded-lg border shadow-xs outline-offset-2 transition-colors peer-focus-visible:outline-2 peer-data-disabled:cursor-not-allowed peer-data-disabled:opacity-50"
             />
             <span className="group peer-data-[state=unchecked]:text-muted-foreground/70 mt-2 flex items-center gap-1">
-              <Check
+              <CheckIcon
                 size={16}
                 className="group-peer-data-[state=unchecked]:hidden"
                 aria-hidden="true"
               />
-              <Minus
+              <MinusIcon
                 size={16}
                 className="group-peer-data-[state=checked]:hidden"
                 aria-hidden="true"

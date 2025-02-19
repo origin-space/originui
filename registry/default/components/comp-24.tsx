@@ -2,7 +2,7 @@
 
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
-import { CircleX } from "lucide-react";
+import { CircleXIcon } from "lucide-react";
 import { useId, useRef, useState } from "react";
 
 export default function Component() {
@@ -36,7 +36,7 @@ export default function Component() {
             aria-label="Clear input"
             onClick={handleClearInput}
           >
-            <CircleX size={16} aria-hidden="true" />
+            <CircleXIcon size={16} aria-hidden="true" />
           </button>
         )}
       </div>

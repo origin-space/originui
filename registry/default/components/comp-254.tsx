@@ -12,7 +12,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/registry/default/ui/tooltip";
-import { RotateCcw } from "lucide-react";
+import { RotateCcwIcon } from "lucide-react";
 
 export default function Component() {
   const minValue = 0;
@@ -48,7 +48,7 @@ export default function Component() {
                   aria-label="Reset"
                   onClick={resetToDefault}
                 >
-                  <RotateCcw size={16} aria-hidden="true" />
+                  <RotateCcwIcon size={16} aria-hidden="true" />
                 </Button>
               </TooltipTrigger>
               <TooltipContent className="px-2 py-1 text-xs">Reset to default</TooltipContent>

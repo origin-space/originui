@@ -1,5 +1,5 @@
 import { Button } from "@/registry/default/ui/button";
-import { TriangleAlert, X } from "lucide-react";
+import { TriangleAlert, XIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -19,7 +19,7 @@ export default function Component() {
           className="group -my-1.5 -me-2 size-8 shrink-0 p-0 hover:bg-transparent"
           aria-label="Close notification"
         >
-          <X
+          <XIcon
             size={16}
             className="opacity-60 transition-opacity group-hover:opacity-100"
             aria-hidden="true"

@@ -2,7 +2,7 @@
 
 import { useImageUpload } from "@/registry/default/hooks/use-image-upload";
 import { Button } from "@/registry/default/ui/button";
-import { CircleUserRound } from "lucide-react";
+import { CircleUserRoundIcon } from "lucide-react";
 
 export default function Component() {
   const {
@@ -31,7 +31,7 @@ export default function Component() {
             />
           ) : (
             <div aria-hidden="true">
-              <CircleUserRound className="opacity-60" size={16} />
+              <CircleUserRoundIcon className="opacity-60" size={16} />
             </div>
           )}
         </div>

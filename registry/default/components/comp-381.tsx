@@ -4,7 +4,7 @@ import { Label } from "@/registry/default/ui/label";
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
 import { useId } from "react";
 
-import { ListFilter } from "lucide-react";
+import { ListFilterIcon } from "lucide-react";
 
 export default function Component() {
   const id = useId();
@@ -13,7 +13,7 @@ export default function Component() {
       <Popover>
         <PopoverTrigger asChild>
           <Button variant="outline" size="icon" aria-label="Filters">
-            <ListFilter size={16} aria-hidden="true" />
+            <ListFilterIcon size={16} aria-hidden="true" />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-36 p-3">

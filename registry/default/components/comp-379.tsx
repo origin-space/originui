@@ -6,9 +6,14 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu";
-import { Plus } from "lucide-react";
-
-import { Heading1, Heading2, Minus, TextQuote, Type } from "lucide-react";
+import {
+  Heading1Icon,
+  Heading2Icon,
+  MinusIcon,
+  PlusIcon,
+  TextQuoteIcon,
+  TypeIcon,
+} from "lucide-react";
 
 export default function Component() {
   return (
@@ -20,7 +25,7 @@ export default function Component() {
           className="rounded-full shadow-none"
           aria-label="Open edit menu"
         >
-          <Plus size={16} aria-hidden="true" />
+          <PlusIcon size={16} aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="pb-2">
@@ -30,7 +35,7 @@ export default function Component() {
             className="border-border bg-background flex size-8 items-center justify-center rounded-lg border"
             aria-hidden="true"
           >
-            <Type size={16} className="opacity-60" />
+            <TypeIcon size={16} className="opacity-60" />
           </div>
           <div>
             <div className="text-sm font-medium">Text</div>
@@ -42,7 +47,7 @@ export default function Component() {
             className="border-border bg-background flex size-8 items-center justify-center rounded-lg border"
             aria-hidden="true"
           >
-            <TextQuote size={16} className="opacity-60" />
+            <TextQuoteIcon size={16} className="opacity-60" />
           </div>
           <div>
             <div className="text-sm font-medium">Quote</div>
@@ -54,7 +59,7 @@ export default function Component() {
             className="border-border bg-background flex size-8 items-center justify-center rounded-lg border"
             aria-hidden="true"
           >
-            <Minus size={16} className="opacity-60" />
+            <MinusIcon size={16} className="opacity-60" />
           </div>
           <div>
             <div className="text-sm font-medium">Divider</div>
@@ -66,7 +71,7 @@ export default function Component() {
             className="border-border bg-background flex size-8 items-center justify-center rounded-lg border"
             aria-hidden="true"
           >
-            <Heading1 size={16} className="opacity-60" />
+            <Heading1Icon size={16} className="opacity-60" />
           </div>
           <div>
             <div className="text-sm font-medium">Heading 1</div>
@@ -78,7 +83,7 @@ export default function Component() {
             className="border-border bg-background flex size-8 items-center justify-center rounded-lg border"
             aria-hidden="true"
           >
-            <Heading2 size={16} className="opacity-60" />
+            <Heading2Icon size={16} className="opacity-60" />
           </div>
           <div>
             <div className="text-sm font-medium">Heading 2</div>

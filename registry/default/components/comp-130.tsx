@@ -1,7 +1,7 @@
 "use client";
 
 import { Toggle } from "@/registry/default/ui/toggle";
-import { Moon, Sun } from "lucide-react";
+import { MoonIcon, SunIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function Component() {
@@ -17,12 +17,12 @@ export default function Component() {
         aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
       >
         {/* Note: After dark mode implementation, rely on dark: prefix rather than group-data-[state=on]: */}
-        <Moon
+        <MoonIcon
           size={16}
           className="shrink-0 scale-0 opacity-0 transition-all group-data-[state=on]:scale-100 group-data-[state=on]:opacity-100"
           aria-hidden="true"
         />
-        <Sun
+        <SunIcon
           size={16}
           className="absolute shrink-0 scale-100 opacity-100 transition-all group-data-[state=on]:scale-0 group-data-[state=on]:opacity-0"
           aria-hidden="true"

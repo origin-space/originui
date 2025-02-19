@@ -20,7 +20,7 @@ import {
   TooltipTrigger,
 } from "@/registry/default/ui/tooltip";
 import { DialogDescription } from "@radix-ui/react-dialog";
-import { Code } from "lucide-react";
+import { CodeIcon } from "lucide-react";
 import { JSX, useEffect, useState } from "react";
 import type { RegistryItem } from "shadcn/registry";
 
@@ -78,7 +78,7 @@ export default function ComponentDetails({ component }: { component: RegistryIte
                     size="icon"
                     className="text-muted-foreground/80 hover:text-foreground transition-none hover:bg-transparent disabled:opacity-100 lg:opacity-0 lg:group-focus-within/item:opacity-100 lg:group-hover/item:opacity-100"
                   >
-                    <Code size={16} aria-hidden={true} />
+                    <CodeIcon size={16} aria-hidden={true} />
                   </Button>
                 </DialogTrigger>
               </span>

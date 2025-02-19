@@ -2,7 +2,7 @@
 
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
-import { Check, Eye, EyeOff, X } from "lucide-react";
+import { CheckIcon, EyeIcon, EyeOffIcon, XIcon } from "lucide-react";
 import { useId, useMemo, useState } from "react";
 
 export default function Component() {
@@ -71,9 +71,9 @@ export default function Component() {
             aria-controls="password"
           >
             {isVisible ? (
-              <EyeOff size={16} aria-hidden="true" />
+              <EyeOffIcon size={16} aria-hidden="true" />
             ) : (
-              <Eye size={16} aria-hidden="true" />
+              <EyeIcon size={16} aria-hidden="true" />
             )}
           </button>
         </div>
@@ -104,9 +104,9 @@ export default function Component() {
         {strength.map((req, index) => (
           <li key={index} className="flex items-center gap-2">
             {req.met ? (
-              <Check size={16} className="text-emerald-500" aria-hidden="true" />
+              <CheckIcon size={16} className="text-emerald-500" aria-hidden="true" />
             ) : (
-              <X size={16} className="text-muted-foreground/80" aria-hidden="true" />
+              <XIcon size={16} className="text-muted-foreground/80" aria-hidden="true" />
             )}
             <span className={`text-xs ${req.met ? "text-emerald-600" : "text-muted-foreground"}`}>
               {req.text}

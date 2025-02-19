@@ -37,7 +37,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ChevronDown, ChevronUp, GripVertical } from "lucide-react";
+import { ChevronDownIcon, ChevronUpIcon, GripVerticalIcon } from "lucide-react";
 import { CSSProperties, useEffect, useId, useState } from "react";
 
 type Item = {
@@ -245,7 +245,7 @@ const DraggableTableHeader = ({ header }: { header: Header<Item, unknown> }) => 
           {...listeners}
           aria-label="Drag to reorder"
         >
-          <GripVertical className="opacity-60" size={16} aria-hidden="true" />
+          <GripVerticalIcon className="opacity-60" size={16} aria-hidden="true" />
         </Button>
         <span className="grow truncate">
           {header.isPlaceholder
@@ -266,10 +266,10 @@ const DraggableTableHeader = ({ header }: { header: Header<Item, unknown> }) => 
           }}
         >
           {{
-            asc: <ChevronUp className="shrink-0 opacity-60" size={16} aria-hidden="true" />,
-            desc: <ChevronDown className="shrink-0 opacity-60" size={16} aria-hidden="true" />,
+            asc: <ChevronUpIcon className="shrink-0 opacity-60" size={16} aria-hidden="true" />,
+            desc: <ChevronDownIcon className="shrink-0 opacity-60" size={16} aria-hidden="true" />,
           }[header.column.getIsSorted() as string] ?? (
-            <ChevronUp
+            <ChevronUpIcon
               className="shrink-0 opacity-0 group-hover:opacity-60"
               size={16}
               aria-hidden="true"

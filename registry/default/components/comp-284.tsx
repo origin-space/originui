@@ -1,5 +1,5 @@
 import { Button } from "@/registry/default/ui/button";
-import { ArrowRight, CircleAlert, X } from "lucide-react";
+import { ArrowRightIcon, CircleAlert, XIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -12,7 +12,7 @@ export default function Component() {
             <p className="text-sm">An error occurred!</p>
             <a href="#" className="group text-sm font-medium whitespace-nowrap">
               Link
-              <ArrowRight
+              <ArrowRightIcon
                 className="ms-1 -mt-0.5 inline-flex opacity-60 transition-transform group-hover:translate-x-0.5"
                 size={16}
                 aria-hidden="true"
@@ -25,7 +25,7 @@ export default function Component() {
           className="group -my-1.5 -me-2 size-8 shrink-0 p-0 hover:bg-transparent"
           aria-label="Close banner"
         >
-          <X
+          <XIcon
             size={16}
             className="opacity-60 transition-opacity group-hover:opacity-100"
             aria-hidden="true"

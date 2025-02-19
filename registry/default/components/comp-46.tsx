@@ -3,7 +3,7 @@
 import { cn } from "@/registry/default/lib/utils";
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
-import { ChevronDown, Phone } from "lucide-react";
+import { ChevronDownIcon, PhoneIcon } from "lucide-react";
 import React, { forwardRef, useId, useState } from "react";
 import * as RPNInput from "react-phone-number-input";
 import flags from "react-phone-number-input/flags";
@@ -14,7 +14,7 @@ export default function Component() {
 
   return (
     <div className="*:not-first:mt-2" dir="ltr">
-      <Label htmlFor={id}>Phone number input</Label>
+      <Label htmlFor={id}>PhoneIcon number input</Label>
       <RPNInput.default
         className="flex rounded-lg shadow-xs"
         international
@@ -72,7 +72,7 @@ const CountrySelect = ({ disabled, value, onChange, options }: CountrySelectProp
       <div className="inline-flex items-center gap-1" aria-hidden="true">
         <FlagComponent country={value} countryName={value} aria-hidden="true" />
         <span className="text-muted-foreground/80">
-          <ChevronDown size={16} aria-hidden="true" />
+          <ChevronDownIcon size={16} aria-hidden="true" />
         </span>
       </div>
       <select
@@ -102,7 +102,7 @@ const FlagComponent = ({ country, countryName }: RPNInput.FlagProps) => {
 
   return (
     <span className="w-5 overflow-hidden rounded-sm">
-      {Flag ? <Flag title={countryName} /> : <Phone size={16} aria-hidden="true" />}
+      {Flag ? <Flag title={countryName} /> : <PhoneIcon size={16} aria-hidden="true" />}
     </span>
   );
 };

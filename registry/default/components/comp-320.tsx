@@ -13,7 +13,7 @@ import {
 } from "@/registry/default/ui/dialog";
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
-import { CircleAlert } from "lucide-react";
+import { CircleAlertIcon } from "lucide-react";
 import { useId, useState } from "react";
 
 const PROJECT_NAME = "Origin UI";
@@ -33,7 +33,7 @@ export default function Component() {
             className="border-border flex size-9 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
-            <CircleAlert className="opacity-80" size={16} />
+            <CircleAlertIcon className="opacity-80" size={16} />
           </div>
           <DialogHeader>
             <DialogTitle className="sm:text-center">Final confirmation</DialogTitle>

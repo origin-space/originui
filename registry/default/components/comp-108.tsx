@@ -1,5 +1,5 @@
 import { Button } from "@/registry/default/ui/button";
-import { Ellipsis, Files, Film } from "lucide-react";
+import { EllipsisIcon, FilesIcon, FilmIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -8,14 +8,14 @@ export default function Component() {
         className="rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10"
         variant="outline"
       >
-        <Files className="-ms-1 opacity-60" size={16} aria-hidden="true" />
-        Files
+        <FilesIcon className="-ms-1 opacity-60" size={16} aria-hidden="true" />
+        FilesIcon
       </Button>
       <Button
         className="rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10"
         variant="outline"
       >
-        <Film className="-ms-1 opacity-60" size={16} aria-hidden="true" />
+        <FilmIcon className="-ms-1 opacity-60" size={16} aria-hidden="true" />
         Media
       </Button>
       <Button
@@ -24,7 +24,7 @@ export default function Component() {
         size="icon"
         aria-label="Menu"
       >
-        <Ellipsis size={16} aria-hidden="true" />
+        <EllipsisIcon size={16} aria-hidden="true" />
       </Button>
     </div>
   );

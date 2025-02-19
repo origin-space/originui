@@ -9,7 +9,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/registry/default/ui/tooltip";
-import { Check, Copy } from "lucide-react";
+import { CheckIcon, CopyIcon } from "lucide-react";
 import { useId, useRef, useState } from "react";
 
 export default function Component() {
@@ -52,7 +52,7 @@ export default function Component() {
                     copied ? "scale-100 opacity-100" : "scale-0 opacity-0",
                   )}
                 >
-                  <Check className="stroke-emerald-500" size={16} aria-hidden="true" />
+                  <CheckIcon className="stroke-emerald-500" size={16} aria-hidden="true" />
                 </div>
                 <div
                   className={cn(
@@ -60,7 +60,7 @@ export default function Component() {
                     copied ? "scale-0 opacity-0" : "scale-100 opacity-100",
                   )}
                 >
-                  <Copy size={16} aria-hidden="true" />
+                  <CopyIcon size={16} aria-hidden="true" />
                 </div>
               </button>
             </TooltipTrigger>

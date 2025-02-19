@@ -3,7 +3,7 @@
 import { Button } from "@/registry/default/ui/button";
 import { Label } from "@/registry/default/ui/label";
 import { Slider } from "@/registry/default/ui/slider";
-import { Minus, Plus } from "lucide-react";
+import { MinusIcon, PlusIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function Component() {
@@ -28,7 +28,7 @@ export default function Component() {
             onClick={decreaseValue}
             disabled={value[0] === 0}
           >
-            <Minus size={16} aria-hidden="true" />
+            <MinusIcon size={16} aria-hidden="true" />
           </Button>
         </div>
         <Slider
@@ -49,7 +49,7 @@ export default function Component() {
             onClick={increaseValue}
             disabled={value[0] === 200}
           >
-            <Plus size={16} aria-hidden="true" />
+            <PlusIcon size={16} aria-hidden="true" />
           </Button>
         </div>
       </div>

@@ -6,7 +6,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/registry/default/ui/table";
-import { Check, Monitor, Smartphone, X } from "lucide-react";
+import { CheckIcon, MonitorIcon, SmartphoneIcon, XIcon } from "lucide-react";
 
 const items = [
   {
@@ -69,11 +69,11 @@ export default function Component() {
         <TableRow className="*:border-border border-y-0 hover:bg-transparent [&>:not(:last-child)]:border-r">
           <TableCell></TableCell>
           <TableHead className="border-border border-b text-center" colSpan={5}>
-            <Monitor className="inline-flex" size={16} aria-hidden="true" />
+            <MonitorIcon className="inline-flex" size={16} aria-hidden="true" />
             <span className="sr-only">Desktop browsers</span>
           </TableHead>
           <TableHead className="border-border border-b text-center" colSpan={5}>
-            <Smartphone className="inline-flex" size={16} aria-hidden="true" />
+            <SmartphoneIcon className="inline-flex" size={16} aria-hidden="true" />
             <span className="sr-only">Mobile browsers</span>
           </TableHead>
         </TableRow>
@@ -104,9 +104,13 @@ export default function Component() {
             {[...item.desktop, ...item.mobile].map((browser, index) => (
               <TableCell key={`${browser.name}-${index}`} className="space-y-1 text-center">
                 {browser.supported ? (
-                  <Check className="inline-flex stroke-emerald-600" size={16} aria-hidden="true" />
+                  <CheckIcon
+                    className="inline-flex stroke-emerald-600"
+                    size={16}
+                    aria-hidden="true"
+                  />
                 ) : (
-                  <X className="inline-flex stroke-red-600" size={16} aria-hidden="true" />
+                  <XIcon className="inline-flex stroke-red-600" size={16} aria-hidden="true" />
                 )}
                 <span className="sr-only">{browser.supported ? "Supported" : "Not supported"}</span>
                 <div className="text-muted-foreground text-xs font-medium">{browser.version}</div>

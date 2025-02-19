@@ -19,7 +19,7 @@ import {
   getExpandedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ChevronDown, ChevronUp, Info } from "lucide-react";
+import { ChevronDownIcon, ChevronUpIcon, InfoIcon } from "lucide-react";
 import { Fragment, useEffect, useState } from "react";
 
 type Item = {
@@ -52,9 +52,9 @@ const columns: ColumnDef<Item>[] = [
           }}
         >
           {row.getIsExpanded() ? (
-            <ChevronUp className="opacity-60" size={16} aria-hidden="true" />
+            <ChevronUpIcon className="opacity-60" size={16} aria-hidden="true" />
           ) : (
-            <ChevronDown className="opacity-60" size={16} aria-hidden="true" />
+            <ChevronDownIcon className="opacity-60" size={16} aria-hidden="true" />
           )}
         </Button>
       ) : undefined;
@@ -186,7 +186,7 @@ export default function Component() {
                           className="me-3 mt-0.5 flex w-7 shrink-0 justify-center"
                           aria-hidden="true"
                         >
-                          <Info className="opacity-60" size={16} />
+                          <InfoIcon className="opacity-60" size={16} />
                         </span>
                         <p className="text-sm">{row.original.note}</p>
                       </div>

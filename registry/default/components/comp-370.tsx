@@ -8,7 +8,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu";
-import { Bolt, ChevronDown, CopyPlus, Files, Layers2, Trash } from "lucide-react";
+import {
+  BoltIcon,
+  ChevronDownIcon,
+  CopyPlusIcon,
+  FilesIcon,
+  Layers2Icon,
+  TrashIcon,
+} from "lucide-react";
 
 export default function Component() {
   return (
@@ -16,18 +23,18 @@ export default function Component() {
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
           Labeled grouped items
-          <ChevronDown className="-me-1 opacity-60" size={16} aria-hidden="true" />
+          <ChevronDownIcon className="-me-1 opacity-60" size={16} aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>Label</DropdownMenuLabel>
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <CopyPlus size={16} className="opacity-60" aria-hidden="true" />
+            <CopyPlusIcon size={16} className="opacity-60" aria-hidden="true" />
             Copy
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Bolt size={16} className="opacity-60" aria-hidden="true" />
+            <BoltIcon size={16} className="opacity-60" aria-hidden="true" />
             Edit
           </DropdownMenuItem>
         </DropdownMenuGroup>
@@ -35,15 +42,15 @@ export default function Component() {
         <DropdownMenuLabel>Label</DropdownMenuLabel>
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <Layers2 size={16} className="opacity-60" aria-hidden="true" />
+            <Layers2Icon size={16} className="opacity-60" aria-hidden="true" />
             Group
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Files size={16} className="opacity-60" aria-hidden="true" />
+            <FilesIcon size={16} className="opacity-60" aria-hidden="true" />
             Clone
           </DropdownMenuItem>
           <DropdownMenuItem variant="destructive">
-            <Trash size={16} aria-hidden="true" />
+            <TrashIcon size={16} aria-hidden="true" />
             Delete
           </DropdownMenuItem>
         </DropdownMenuGroup>

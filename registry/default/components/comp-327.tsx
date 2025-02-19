@@ -18,7 +18,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/registry/default/ui/tooltip";
-import { Check, Copy, UserRoundPlus } from "lucide-react";
+import { CheckIcon, CopyIcon, UserRoundPlusIcon } from "lucide-react";
 import { useId, useRef, useState } from "react";
 
 export default function Component() {
@@ -62,7 +62,7 @@ export default function Component() {
             className="border-border flex size-11 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
-            <UserRoundPlus className="opacity-80" size={16} />
+            <UserRoundPlusIcon className="opacity-80" size={16} />
           </div>
           <DialogHeader>
             <DialogTitle className="text-left">Invite team members</DialogTitle>
@@ -99,7 +99,7 @@ export default function Component() {
             </button>
           </div>
           <Button type="button" className="w-full">
-            Send invites
+            SendIcon invites
           </Button>
         </form>
 
@@ -131,7 +131,7 @@ export default function Component() {
                         copied ? "scale-100 opacity-100" : "scale-0 opacity-0",
                       )}
                     >
-                      <Check className="stroke-emerald-500" size={16} aria-hidden="true" />
+                      <CheckIcon className="stroke-emerald-500" size={16} aria-hidden="true" />
                     </div>
                     <div
                       className={cn(
@@ -139,7 +139,7 @@ export default function Component() {
                         copied ? "scale-0 opacity-0" : "scale-100 opacity-100",
                       )}
                     >
-                      <Copy size={16} aria-hidden="true" />
+                      <CopyIcon size={16} aria-hidden="true" />
                     </div>
                   </button>
                 </TooltipTrigger>

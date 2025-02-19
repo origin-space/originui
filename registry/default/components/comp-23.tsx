@@ -2,7 +2,7 @@
 
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
-import { Eye, EyeOff } from "lucide-react";
+import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { useId, useState } from "react";
 
 export default function Component() {
@@ -30,9 +30,9 @@ export default function Component() {
           aria-controls="password"
         >
           {isVisible ? (
-            <EyeOff size={16} aria-hidden="true" />
+            <EyeOffIcon size={16} aria-hidden="true" />
           ) : (
-            <Eye size={16} aria-hidden="true" />
+            <EyeIcon size={16} aria-hidden="true" />
           )}
         </button>
       </div>

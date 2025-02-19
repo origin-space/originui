@@ -6,7 +6,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/registry/default/ui/breadcrumb";
-import { Home } from "lucide-react";
+import { HomeIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -14,7 +14,7 @@ export default function Component() {
       <BreadcrumbList className="border-border bg-background rounded-lg border px-3 py-2 shadow-xs">
         <BreadcrumbItem>
           <BreadcrumbLink href="#">
-            <Home size={16} aria-hidden="true" />
+            <HomeIcon size={16} aria-hidden="true" />
             <span className="sr-only">Home</span>
           </BreadcrumbLink>
         </BreadcrumbItem>

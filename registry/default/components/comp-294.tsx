@@ -1,5 +1,5 @@
 import { Button } from "@/registry/default/ui/button";
-import { RefreshCw, X } from "lucide-react";
+import { RefreshCwIcon, XIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -10,7 +10,7 @@ export default function Component() {
           className="border-border flex size-9 shrink-0 items-center justify-center rounded-full border"
           aria-hidden="true"
         >
-          <RefreshCw className="opacity-60" size={16} />
+          <RefreshCwIcon className="opacity-60" size={16} />
         </div>
         <div className="flex grow flex-col gap-3">
           <div className="space-y-1">
@@ -31,7 +31,7 @@ export default function Component() {
           className="group -my-1.5 -me-2 size-8 shrink-0 p-0 hover:bg-transparent"
           aria-label="Close notification"
         >
-          <X
+          <XIcon
             size={16}
             className="opacity-60 transition-opacity group-hover:opacity-100"
             aria-hidden="true"

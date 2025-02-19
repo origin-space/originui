@@ -2,7 +2,7 @@
 
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
-import { CreditCard } from "lucide-react";
+import { CreditCardIcon } from "lucide-react";
 import { useId } from "react";
 import { usePaymentInputs } from "react-payment-inputs";
 
@@ -20,7 +20,7 @@ export default function Component() {
           className="peer ps-9 [direction:inherit]"
         />
         <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 peer-disabled:opacity-50">
-          <CreditCard size={16} aria-hidden="true" />
+          <CreditCardIcon size={16} aria-hidden="true" />
         </div>
       </div>
       <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">

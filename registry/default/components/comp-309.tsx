@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/registry/default/ui/button";
-import { Rocket, X } from "lucide-react";
+import { RocketIcon, XIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function Component() {
@@ -17,7 +17,7 @@ export default function Component() {
             className="bg-primary/15 flex size-9 shrink-0 items-center justify-center rounded-full max-md:mt-0.5"
             aria-hidden="true"
           >
-            <Rocket className="opacity-80" size={16} />
+            <RocketIcon className="opacity-80" size={16} />
           </div>
           <div className="flex grow flex-col justify-between gap-3 md:flex-row md:items-center">
             <div className="space-y-0.5">
@@ -39,7 +39,7 @@ export default function Component() {
           onClick={() => setIsVisible(false)}
           aria-label="Close banner"
         >
-          <X
+          <XIcon
             size={16}
             className="opacity-60 transition-opacity group-hover:opacity-100"
             aria-hidden="true"

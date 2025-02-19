@@ -1,7 +1,7 @@
 "use client";
 
 import { Switch } from "@/registry/default/ui/switch";
-import { Moon, Sun } from "lucide-react";
+import { MoonIcon, SunIcon } from "lucide-react";
 import { useId, useState } from "react";
 
 export default function Component() {
@@ -21,7 +21,7 @@ export default function Component() {
         aria-controls={id}
         onClick={() => setChecked(false)}
       >
-        <Moon size={16} aria-hidden="true" />
+        <MoonIcon size={16} aria-hidden="true" />
       </span>
       <Switch
         id={id}
@@ -36,7 +36,7 @@ export default function Component() {
         aria-controls={id}
         onClick={() => setChecked(true)}
       >
-        <Sun size={16} aria-hidden="true" />
+        <SunIcon size={16} aria-hidden="true" />
       </span>
     </div>
   );

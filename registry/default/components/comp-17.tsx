@@ -1,6 +1,6 @@
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
-import { ChevronDown } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 import { useId } from "react";
 
 export default function Component() {
@@ -22,7 +22,7 @@ export default function Component() {
             <option value="wss://">wss://</option>
           </select>
           <span className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 end-0 z-10 flex h-full w-9 items-center justify-center peer-disabled:opacity-50">
-            <ChevronDown size={16} aria-hidden="true" role="img" />
+            <ChevronDownIcon size={16} aria-hidden="true" role="img" />
           </span>
         </div>
         <Input

@@ -36,7 +36,7 @@ import {
   SortingState,
   useReactTable,
 } from "@tanstack/react-table";
-import { ChevronDown, ChevronUp, ExternalLink, Search } from "lucide-react";
+import { ChevronDownIcon, ChevronUpIcon, ExternalLinkIcon, SearchIcon } from "lucide-react";
 
 declare module "@tanstack/react-table" {
   //allows us to define custom properties for our columns
@@ -160,7 +160,7 @@ const columns: ColumnDef<Item>[] = [
     accessorKey: "link",
     cell: ({ row }) => (
       <a className="inline-flex items-center gap-1 hover:underline" href="#">
-        {row.getValue("link")} <ExternalLink size={12} aria-hidden="true" />
+        {row.getValue("link")} <ExternalLinkIcon size={12} aria-hidden="true" />
       </a>
     ),
     enableSorting: false,
@@ -331,14 +331,14 @@ export default function Component() {
                         {flexRender(header.column.columnDef.header, header.getContext())}
                         {{
                           asc: (
-                            <ChevronUp
+                            <ChevronUpIcon
                               className="shrink-0 opacity-60"
                               size={16}
                               aria-hidden="true"
                             />
                           ),
                           desc: (
-                            <ChevronDown
+                            <ChevronDownIcon
                               className="shrink-0 opacity-60"
                               size={16}
                               aria-hidden="true"
@@ -492,7 +492,7 @@ function Filter({ column }: { column: Column<any, unknown> }) {
           type="text"
         />
         <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 peer-disabled:opacity-50">
-          <Search size={16} />
+          <SearchIcon size={16} />
         </div>
       </div>
     </div>

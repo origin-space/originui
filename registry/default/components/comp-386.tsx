@@ -2,7 +2,7 @@
 
 import { Button } from "@/registry/default/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import { useState } from "react";
 
 const tips = [
@@ -75,7 +75,7 @@ export default function Component() {
                 disabled={isFirstTip}
                 aria-label="Previous tip"
               >
-                <ArrowLeft size={14} aria-hidden="true" />
+                <ArrowLeftIcon size={14} aria-hidden="true" />
               </Button>
               <Button
                 size="icon"
@@ -85,7 +85,7 @@ export default function Component() {
                 disabled={isLastTip}
                 aria-label="Next tip"
               >
-                <ArrowRight size={14} aria-hidden="true" />
+                <ArrowRightIcon size={14} aria-hidden="true" />
               </Button>
             </div>
           </div>

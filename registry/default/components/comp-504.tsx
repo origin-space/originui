@@ -17,7 +17,7 @@ import {
   isBefore,
   startOfYear,
 } from "date-fns";
-import { ChevronDown } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { CaptionLabelProps, MonthGridProps } from "react-day-picker";
 
@@ -201,7 +201,7 @@ function CaptionLabel({
       data-state={isYearView ? "open" : "closed"}
     >
       {children}
-      <ChevronDown
+      <ChevronDownIcon
         size={16}
         className="text-muted-foreground/80 shrink-0 transition-transform duration-200"
         aria-hidden="true"
@@ -227,7 +227,7 @@ function CollapsibleYear({
           variant="ghost"
           size="sm"
         >
-          <ChevronDown
+          <ChevronDownIcon
             size={16}
             className="text-muted-foreground/80 shrink-0 transition-transform duration-200"
             aria-hidden="true"

@@ -24,7 +24,7 @@ import {
   SortingState,
   useReactTable,
 } from "@tanstack/react-table";
-import { ArrowLeftToLine, ArrowRightToLine, Ellipsis, PinOff } from "lucide-react";
+import { ArrowLeftToLineIcon, ArrowRightToLineIcon, EllipsisIcon, PinOffIcon } from "lucide-react";
 import { CSSProperties, useEffect, useState } from "react";
 
 type Item = {
@@ -185,7 +185,7 @@ export default function Component() {
                             aria-label={`Unpin ${header.column.columnDef.header as string} column`}
                             title={`Unpin ${header.column.columnDef.header as string} column`}
                           >
-                            <PinOff className="opacity-60" size={16} aria-hidden="true" />
+                            <PinOffIcon className="opacity-60" size={16} aria-hidden="true" />
                           </Button>
                         ) : (
                           <DropdownMenu>
@@ -197,12 +197,12 @@ export default function Component() {
                                 aria-label={`Pin options for ${header.column.columnDef.header as string} column`}
                                 title={`Pin options for ${header.column.columnDef.header as string} column`}
                               >
-                                <Ellipsis className="opacity-60" size={16} aria-hidden="true" />
+                                <EllipsisIcon className="opacity-60" size={16} aria-hidden="true" />
                               </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">
                               <DropdownMenuItem onClick={() => header.column.pin("left")}>
-                                <ArrowLeftToLine
+                                <ArrowLeftToLineIcon
                                   size={16}
                                   className="opacity-60"
                                   aria-hidden="true"
@@ -210,7 +210,7 @@ export default function Component() {
                                 Stick to left
                               </DropdownMenuItem>
                               <DropdownMenuItem onClick={() => header.column.pin("right")}>
-                                <ArrowRightToLine
+                                <ArrowRightToLineIcon
                                   size={16}
                                   className="opacity-60"
                                   aria-hidden="true"

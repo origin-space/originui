@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/registry/default/ui/button";
-import { ArrowRight, Eclipse, X } from "lucide-react";
+import { ArrowRightIcon, Eclipse, XIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function Component() {
@@ -20,7 +20,7 @@ export default function Component() {
             </p>
             <a href="#" className="group text-sm font-medium whitespace-nowrap">
               Learn more
-              <ArrowRight
+              <ArrowRightIcon
                 className="ms-1 -mt-0.5 inline-flex opacity-60 transition-transform group-hover:translate-x-0.5"
                 size={16}
                 aria-hidden="true"
@@ -34,7 +34,7 @@ export default function Component() {
           onClick={() => setIsVisible(false)}
           aria-label="Close banner"
         >
-          <X
+          <XIcon
             size={16}
             className="opacity-60 transition-opacity group-hover:opacity-100"
             aria-hidden="true"

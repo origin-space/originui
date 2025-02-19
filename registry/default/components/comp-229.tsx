@@ -12,7 +12,7 @@ import {
 } from "@/registry/default/ui/command";
 import { Label } from "@/registry/default/ui/label";
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
-import { Check, ChevronDown } from "lucide-react";
+import { CheckIcon, ChevronDownIcon } from "lucide-react";
 import { useId, useState } from "react";
 
 const frameworks = [
@@ -104,7 +104,7 @@ export default function Component() {
                 ? frameworks.find((framework) => framework.value === value)?.label
                 : "Select framework"}
             </span>
-            <ChevronDown
+            <ChevronDownIcon
               size={16}
               className="text-muted-foreground/80 shrink-0"
               aria-hidden="true"
@@ -130,7 +130,7 @@ export default function Component() {
                     }}
                   >
                     {framework.label}
-                    {value === framework.value && <Check size={16} className="ml-auto" />}
+                    {value === framework.value && <CheckIcon size={16} className="ml-auto" />}
                   </CommandItem>
                 ))}
               </CommandGroup>

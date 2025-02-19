@@ -57,12 +57,12 @@ export default function Component() {
                 <Textarea
                   id="feedback"
                   placeholder="How can we improve Origin UI?"
-                  aria-label="Send feedback"
+                  aria-label="SendIcon feedback"
                 />
               </div>
             </div>
             <Button type="button" className="w-full">
-              Send feedback
+              SendIcon feedback
             </Button>
           </form>
         </div>

@@ -1,7 +1,6 @@
 import { Accordion, AccordionContent, AccordionItem } from "@/registry/default/ui/accordion";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-
-import { Plus } from "lucide-react";
+import { PlusIcon } from "lucide-react";
 
 const items = [
   {
@@ -40,7 +39,7 @@ export default function Component() {
             <AccordionPrimitive.Header className="flex">
               <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between py-2 text-left text-[15px] leading-6 font-semibold transition-all [&>svg>path:last-child]:origin-center [&>svg>path:last-child]:transition-all [&>svg>path:last-child]:duration-200 [&[data-state=open]>svg]:rotate-180 [&[data-state=open]>svg>path:last-child]:rotate-90 [&[data-state=open]>svg>path:last-child]:opacity-0">
                 {item.title}
-                <Plus
+                <PlusIcon
                   size={16}
                   className="shrink-0 opacity-60 transition-transform duration-200"
                   aria-hidden="true"

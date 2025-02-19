@@ -1,7 +1,7 @@
 "use client";
 
 import { Badge } from "@/registry/default/ui/badge";
-import { X } from "lucide-react";
+import { XIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function Component() {
@@ -16,7 +16,7 @@ export default function Component() {
         className="outline-ring/30 dark:outline-ring/40 -my-px -ms-px -me-1.5 inline-flex size-5 shrink-0 cursor-pointer items-center justify-center rounded-[inherit] p-0 opacity-60 transition-opacity hover:opacity-100 focus-visible:outline-2"
         onClick={() => setIsActive(false)}
       >
-        <X size={12} aria-hidden="true" />
+        <XIcon size={12} aria-hidden="true" />
       </button>
     </Badge>
   );

@@ -10,15 +10,15 @@ export default function Component() {
           <Button variant="outline">Feedback</Button>
         </PopoverTrigger>
         <PopoverContent className="w-72">
-          <h2 className="mb-2 text-sm font-semibold">Send us feedback</h2>
+          <h2 className="mb-2 text-sm font-semibold">SendIcon us feedback</h2>
           <form className="space-y-3">
             <Textarea
               id="feedback"
               placeholder="How can we improve Origin UI?"
-              aria-label="Send feedback"
+              aria-label="SendIcon feedback"
             />
             <div className="flex flex-col sm:flex-row sm:justify-end">
-              <Button size="sm">Send feedback</Button>
+              <Button size="sm">SendIcon feedback</Button>
             </div>
           </form>
         </PopoverContent>

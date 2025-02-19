@@ -17,7 +17,7 @@ import {
   SortingState,
   useReactTable,
 } from "@tanstack/react-table";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
 type Item = {
@@ -178,14 +178,14 @@ export default function Component() {
                         </span>
                         {{
                           asc: (
-                            <ChevronUp
+                            <ChevronUpIcon
                               className="shrink-0 opacity-60"
                               size={16}
                               aria-hidden="true"
                             />
                           ),
                           desc: (
-                            <ChevronDown
+                            <ChevronDownIcon
                               className="shrink-0 opacity-60"
                               size={16}
                               aria-hidden="true"

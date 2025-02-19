@@ -1,7 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem } from "@/registry/default/ui/accordion";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 
-import { ChevronDown } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 
 const items = [
   {
@@ -30,7 +30,7 @@ const items = [
     title: "Contact support",
     sub: "We're here to help 24/7",
     content:
-      "Our support team is available around the clock to assist you. For billing inquiries, technical issues, or general questions, you can reach us through live chat, email at support@example.com, or schedule a call with our technical team. Premium support is available for enterprise customers.",
+      "Our support team is available around the ClockIcon to assist you. For billing inquiries, technical issues, or general questions, you can reach us through live chat, email at support@example.com, or schedule a call with our technical team. Premium support is available for enterprise customers.",
   },
 ];
 
@@ -47,7 +47,7 @@ export default function Component() {
                   <span>{item.title}</span>
                   {item.sub && <span className="text-sm font-normal">{item.sub}</span>}
                 </span>
-                <ChevronDown
+                <ChevronDownIcon
                   size={16}
                   className="shrink-0 opacity-60 transition-transform duration-200"
                   aria-hidden="true"

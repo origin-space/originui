@@ -1,5 +1,5 @@
 import { Button } from "@/registry/default/ui/button";
-import { SquareArrowOutUpRight } from "lucide-react";
+import { SquareArrowOutUpRightIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -16,7 +16,7 @@ export default function Component() {
         size="icon"
         aria-label="Open link"
       >
-        <SquareArrowOutUpRight size={16} aria-hidden="true" />
+        <SquareArrowOutUpRightIcon size={16} aria-hidden="true" />
       </Button>
     </div>
   );

@@ -71,7 +71,7 @@ export default function Component() {
             <DialogDescription className="sm:text-center">
               {hasGuessed
                 ? "Your code has been successfully verified."
-                : `Check your email and enter the code - Try ${CORRECT_CODE}`}
+                : `CheckIcon your email and enter the code - Try ${CORRECT_CODE}`}
             </DialogDescription>
           </DialogHeader>
         </div>

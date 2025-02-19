@@ -3,7 +3,7 @@
 import { cn } from "@/registry/default/lib/utils";
 import { Label } from "@/registry/default/ui/label";
 import { OTPInput, SlotProps } from "input-otp";
-import { Minus } from "lucide-react";
+import { MinusIcon } from "lucide-react";
 import { useId } from "react";
 
 export default function Component() {
@@ -24,7 +24,7 @@ export default function Component() {
             </div>
 
             <div className="text-muted-foreground/80">
-              <Minus size={16} aria-hidden="true" />
+              <MinusIcon size={16} aria-hidden="true" />
             </div>
 
             <div className="flex">

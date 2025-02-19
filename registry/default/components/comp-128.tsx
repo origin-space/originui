@@ -1,5 +1,5 @@
 import { Button } from "@/registry/default/ui/button";
-import { ChevronRight } from "lucide-react";
+import { ChevronRightIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -10,7 +10,7 @@ export default function Component() {
           Matches for your roster
         </p>
       </div>
-      <ChevronRight
+      <ChevronRightIcon
         className="opacity-60 transition-transform group-hover:translate-x-0.5"
         size={16}
         aria-hidden="true"

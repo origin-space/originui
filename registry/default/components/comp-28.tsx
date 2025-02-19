@@ -1,6 +1,6 @@
 "use client";
 
-import { Minus, Plus } from "lucide-react";
+import { MinusIcon, PlusIcon } from "lucide-react";
 import { Button, Group, Input, Label, NumberField } from "react-aria-components";
 
 export default function Component() {
@@ -15,14 +15,14 @@ export default function Component() {
             slot="decrement"
             className="border-input bg-background text-muted-foreground/80 hover:bg-accent hover:text-foreground -ms-px flex aspect-square h-[inherit] items-center justify-center rounded-s-lg border text-sm transition-shadow disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
           >
-            <Minus size={16} aria-hidden="true" />
+            <MinusIcon size={16} aria-hidden="true" />
           </Button>
           <Input className="bg-background text-foreground w-full grow px-3 py-2 text-center tabular-nums focus:outline-hidden" />
           <Button
             slot="increment"
             className="border-input bg-background text-muted-foreground/80 hover:bg-accent hover:text-foreground -me-px flex aspect-square h-[inherit] items-center justify-center rounded-e-lg border text-sm transition-shadow disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
           >
-            <Plus size={16} aria-hidden="true" />
+            <PlusIcon size={16} aria-hidden="true" />
           </Button>
         </Group>
       </div>

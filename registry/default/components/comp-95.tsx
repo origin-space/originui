@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/registry/default/ui/avatar";
 import { Button } from "@/registry/default/ui/button";
-import { ChevronDown } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -9,7 +9,7 @@ export default function Component() {
         <AvatarImage src="./avatar.jpg" alt="Profile image" />
         <AvatarFallback>KK</AvatarFallback>
       </Avatar>
-      <ChevronDown size={16} className="opacity-60" aria-hidden="true" />
+      <ChevronDownIcon size={16} className="opacity-60" aria-hidden="true" />
     </Button>
   );
 }

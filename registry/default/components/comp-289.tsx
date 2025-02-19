@@ -1,5 +1,5 @@
 import { Button } from "@/registry/default/ui/button";
-import { TriangleAlert, X } from "lucide-react";
+import { TriangleAlertIcon, XIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -7,7 +7,11 @@ export default function Component() {
     <div className="border-border bg-background z-50 max-w-[400px] rounded-lg border p-4 shadow-lg">
       <div className="flex gap-2">
         <div className="flex grow gap-3">
-          <TriangleAlert className="mt-0.5 shrink-0 text-amber-500" size={16} aria-hidden="true" />
+          <TriangleAlertIcon
+            className="mt-0.5 shrink-0 text-amber-500"
+            size={16}
+            aria-hidden="true"
+          />
           <div className="flex grow flex-col gap-3">
             <div className="space-y-1">
               <p className="text-sm font-medium">Something requires your action!</p>
@@ -25,7 +29,7 @@ export default function Component() {
           className="group -my-1.5 -me-2 size-8 shrink-0 p-0 hover:bg-transparent"
           aria-label="Close notification"
         >
-          <X
+          <XIcon
             size={16}
             className="opacity-60 transition-opacity group-hover:opacity-100"
             aria-hidden="true"

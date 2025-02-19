@@ -2,11 +2,10 @@
 
 import * as ToastPrimitives from "@radix-ui/react-toast";
 import { cva, type VariantProps } from "class-variance-authority";
-import { X } from "lucide-react";
+import { XIcon } from "lucide-react";
 import * as React from "react";
 
 import { cn } from "@/registry/default/lib/utils";
-
 const ToastProvider = ToastPrimitives.Provider;
 
 function ToastViewport({
@@ -88,7 +87,7 @@ function ToastClose({
       {asChild ? (
         props.children
       ) : (
-        <X
+        <XIcon
           size={16}
           className="opacity-60 transition-opacity group-hover:opacity-100"
           aria-hidden="true"

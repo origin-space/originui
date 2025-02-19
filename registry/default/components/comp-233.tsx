@@ -12,17 +12,17 @@ import {
 import { Label } from "@/registry/default/ui/label";
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
 import {
-  Blocks,
-  Brain,
-  ChevronDown,
-  Cpu,
-  Database,
-  Globe,
-  Layout,
-  LineChart,
-  Network,
-  Search,
-  Server,
+  BlocksIcon,
+  BrainIcon,
+  ChevronDownIcon,
+  CpuIcon,
+  DatabaseIcon,
+  GlobeIcon,
+  LayoutIcon,
+  LineChartIcon,
+  NetworkIcon,
+  SearchIcon,
+  ServerIcon,
 } from "lucide-react";
 import { useId, useState } from "react";
 
@@ -30,61 +30,61 @@ const items = [
   {
     value: "analytics platform",
     label: "Analytics Platform",
-    icon: LineChart,
+    icon: LineChartIcon,
     number: 2451,
   },
   {
     value: "ai services",
     label: "AI Services",
-    icon: Brain,
+    icon: BrainIcon,
     number: 1832,
   },
   {
     value: "database systems",
     label: "Database Systems",
-    icon: Database,
+    icon: DatabaseIcon,
     number: 1654,
   },
   {
     value: "compute resources",
     label: "Compute Resources",
-    icon: Cpu,
+    icon: CpuIcon,
     number: 943,
   },
   {
     value: "network services",
     label: "Network Services",
-    icon: Network,
+    icon: NetworkIcon,
     number: 832,
   },
   {
     value: "web services",
     label: "Web Services",
-    icon: Globe,
+    icon: GlobeIcon,
     number: 654,
   },
   {
     value: "monitoring tools",
     label: "Monitoring Tools",
-    icon: Search,
+    icon: SearchIcon,
     number: 432,
   },
   {
     value: "server management",
     label: "Server Management",
-    icon: Server,
+    icon: ServerIcon,
     number: 321,
   },
   {
     value: "infrastructure",
     label: "Infrastructure",
-    icon: Blocks,
+    icon: BlocksIcon,
     number: 234,
   },
   {
     value: "frontend services",
     label: "Frontend Services",
-    icon: Layout,
+    icon: LayoutIcon,
     number: 123,
   },
 ];
@@ -123,7 +123,7 @@ export default function Component() {
             ) : (
               <span className="text-muted-foreground">Select service category</span>
             )}
-            <ChevronDown
+            <ChevronDownIcon
               size={16}
               className="text-muted-foreground/80 shrink-0"
               aria-hidden="true"

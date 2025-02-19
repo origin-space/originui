@@ -2,7 +2,7 @@
 
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
-import { LoaderCircle, Mic, Search } from "lucide-react";
+import { LoaderCircleIcon, MicIcon, SearchIcon } from "lucide-react";
 import { useEffect, useId, useState } from "react";
 
 export default function Component() {
@@ -35,14 +35,14 @@ export default function Component() {
         />
         <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 peer-disabled:opacity-50">
           {isLoading ? (
-            <LoaderCircle
+            <LoaderCircleIcon
               className="animate-spin"
               size={16}
               role="status"
               aria-label="Loading..."
             />
           ) : (
-            <Search size={16} aria-hidden="true" />
+            <SearchIcon size={16} aria-hidden="true" />
           )}
         </div>
         <button
@@ -50,7 +50,7 @@ export default function Component() {
           aria-label="Press to speak"
           type="submit"
         >
-          <Mic size={16} aria-hidden="true" />
+          <MicIcon size={16} aria-hidden="true" />
         </button>
       </div>
     </div>

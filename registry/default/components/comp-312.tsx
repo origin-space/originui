@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/registry/default/ui/button";
-import { Download, LoaderCircle } from "lucide-react";
+import { DownloadIcon, LoaderCircleIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function Component() {
@@ -32,12 +32,16 @@ export default function Component() {
         >
           {isDownloading ? (
             <>
-              <LoaderCircle className="-ms-0.5 me-2 animate-spin" size={16} aria-hidden="true" />
+              <LoaderCircleIcon
+                className="-ms-0.5 me-2 animate-spin"
+                size={16}
+                aria-hidden="true"
+              />
               Updating...
             </>
           ) : (
             <>
-              <Download size={16} className="-ms-0.5 me-2" aria-hidden="true" />
+              <DownloadIcon size={16} className="-ms-0.5 me-2" aria-hidden="true" />
               Update now
             </>
           )}

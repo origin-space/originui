@@ -1,10 +1,10 @@
-import { CircleAlert } from "lucide-react";
+import { CircleAlertIcon } from "lucide-react";
 
 export default function Component() {
   return (
     <div className="border-border rounded-lg border px-4 py-3">
       <div className="flex gap-3">
-        <CircleAlert
+        <CircleAlertIcon
           className="mt-0.5 shrink-0 text-red-500 opacity-60"
           size={16}
           aria-hidden="true"

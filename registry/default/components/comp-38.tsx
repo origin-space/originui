@@ -1,7 +1,7 @@
 "use client";
 
 import { DateInput, TimeField } from "@/registry/default/ui/datefield-rac";
-import { Clock } from "lucide-react";
+import { ClockIcon } from "lucide-react";
 import { Label } from "react-aria-components";
 
 export default function Component() {
@@ -10,7 +10,7 @@ export default function Component() {
       <Label className="text-foreground text-sm font-medium">Time input with start icon</Label>
       <div className="relative">
         <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 z-10 flex items-center justify-center ps-3">
-          <Clock size={16} aria-hidden="true" />
+          <ClockIcon size={16} aria-hidden="true" />
         </div>
         <DateInput className="ps-9" />
       </div>

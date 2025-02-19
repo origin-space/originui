@@ -1,7 +1,7 @@
 "use client";
 
 import { Command as CommandPrimitive, useCommandState } from "cmdk";
-import { X } from "lucide-react";
+import { XIcon } from "lucide-react";
 import * as React from "react";
 import { forwardRef, useEffect } from "react";
 
@@ -479,7 +479,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                     onClick={() => handleUnselect(option)}
                     aria-label="Remove"
                   >
-                    <X size={14} aria-hidden="true" />
+                    <XIcon size={14} aria-hidden="true" />
                   </button>
                 </div>
               );
@@ -534,7 +534,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
               )}
               aria-label="Clear all"
             >
-              <X size={16} aria-hidden="true" />
+              <XIcon size={16} aria-hidden="true" />
             </button>
           </div>
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/registry/default/ui/button";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function Component() {
@@ -21,9 +21,9 @@ export default function Component() {
     >
       {isExpanded ? "Show less" : "Show more"}
       {isExpanded ? (
-        <ChevronUp className="-me-1" size={16} aria-hidden="true" />
+        <ChevronUpIcon className="-me-1" size={16} aria-hidden="true" />
       ) : (
-        <ChevronDown className="-me-1" size={16} aria-hidden="true" />
+        <ChevronDownIcon className="-me-1" size={16} aria-hidden="true" />
       )}
     </Button>
   );

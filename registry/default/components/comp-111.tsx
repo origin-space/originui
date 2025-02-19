@@ -1,5 +1,5 @@
 import { Button } from "@/registry/default/ui/button";
-import { QrCode } from "lucide-react";
+import { QrCodeIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -9,7 +9,7 @@ export default function Component() {
         size="icon"
         aria-label="QR code"
       >
-        <QrCode size={16} aria-hidden="true" />
+        <QrCodeIcon size={16} aria-hidden="true" />
       </Button>
       <Button className="rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10">
         Sign in

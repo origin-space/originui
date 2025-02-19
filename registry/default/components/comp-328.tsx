@@ -12,7 +12,7 @@ import {
 } from "@/registry/default/ui/dialog";
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
-import { CreditCard, Wallet } from "lucide-react";
+import { CreditCardIcon, WalletIcon } from "lucide-react";
 import { useId } from "react";
 import { usePaymentInputs } from "react-payment-inputs";
 import images, { type CardImages } from "react-payment-inputs/images";
@@ -33,7 +33,7 @@ export default function Component() {
             className="border-border flex size-11 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
-            <Wallet className="opacity-80" size={16} />
+            <WalletIcon className="opacity-80" size={16} />
           </div>
           <DialogHeader>
             <DialogTitle className="text-left">Update your card</DialogTitle>
@@ -65,7 +65,7 @@ export default function Component() {
                       width={20}
                     />
                   ) : (
-                    <CreditCard size={16} aria-hidden="true" />
+                    <CreditCardIcon size={16} aria-hidden="true" />
                   )}
                 </div>
               </div>

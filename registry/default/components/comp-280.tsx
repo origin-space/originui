@@ -1,5 +1,5 @@
 import { Button } from "@/registry/default/ui/button";
-import { CircleCheck, X } from "lucide-react";
+import { CircleCheckIcon, XIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -7,7 +7,7 @@ export default function Component() {
     <div className="border-border bg-background z-50 max-w-[400px] rounded-lg border px-4 py-3 shadow-lg">
       <div className="flex gap-2">
         <p className="grow text-sm">
-          <CircleCheck
+          <CircleCheckIcon
             className="me-3 -mt-0.5 inline-flex text-red-500"
             size={16}
             aria-hidden="true"
@@ -19,7 +19,7 @@ export default function Component() {
           className="group -my-1.5 -me-2 size-8 shrink-0 p-0 hover:bg-transparent"
           aria-label="Close notification"
         >
-          <X
+          <XIcon
             size={16}
             className="opacity-60 transition-opacity group-hover:opacity-100"
             aria-hidden="true"

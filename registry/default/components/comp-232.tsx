@@ -11,7 +11,7 @@ import {
 } from "@/registry/default/ui/command";
 import { Label } from "@/registry/default/ui/label";
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
-import { Check, ChevronDown } from "lucide-react";
+import { CheckIcon, ChevronDownIcon } from "lucide-react";
 import { Fragment, useId, useState } from "react";
 
 const countries = [
@@ -87,7 +87,7 @@ export default function Component() {
             ) : (
               <span className="text-muted-foreground">Select country</span>
             )}
-            <ChevronDown
+            <ChevronDownIcon
               size={16}
               className="text-muted-foreground/80 shrink-0"
               aria-hidden="true"
@@ -115,7 +115,7 @@ export default function Component() {
                         }}
                       >
                         <span className="text-lg leading-none">{country.flag}</span> {country.value}
-                        {value === country.value && <Check size={16} className="ml-auto" />}
+                        {value === country.value && <CheckIcon size={16} className="ml-auto" />}
                       </CommandItem>
                     ))}
                   </CommandGroup>

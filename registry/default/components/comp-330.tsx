@@ -10,7 +10,7 @@ import {
 } from "@/registry/default/ui/dialog";
 import { Label } from "@/registry/default/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
-import { Check, RefreshCcw } from "lucide-react";
+import { CheckIcon, RefreshCcwIcon } from "lucide-react";
 import { useId } from "react";
 
 export default function Component() {
@@ -26,7 +26,7 @@ export default function Component() {
             className="border-border flex size-11 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
-            <RefreshCcw className="opacity-80" size={16} />
+            <RefreshCcwIcon className="opacity-80" size={16} />
           </div>
           <DialogHeader>
             <DialogTitle className="text-left">Change your plan</DialogTitle>
@@ -91,27 +91,27 @@ export default function Component() {
             </p>
             <ul className="text-muted-foreground space-y-2 text-sm">
               <li className="flex gap-2">
-                <Check size={16} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
+                <CheckIcon size={16} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
                 Create unlimited projects.
               </li>
               <li className="flex gap-2">
-                <Check size={16} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
+                <CheckIcon size={16} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
                 Remove watermarks.
               </li>
               <li className="flex gap-2">
-                <Check size={16} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
+                <CheckIcon size={16} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
                 Add unlimited users and free viewers.
               </li>
               <li className="flex gap-2">
-                <Check size={16} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
+                <CheckIcon size={16} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
                 Upload unlimited files.
               </li>
               <li className="flex gap-2">
-                <Check size={16} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
+                <CheckIcon size={16} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
                 7-day money back guarantee.
               </li>
               <li className="flex gap-2">
-                <Check size={16} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
+                <CheckIcon size={16} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
                 Advanced permissions.
               </li>
             </ul>

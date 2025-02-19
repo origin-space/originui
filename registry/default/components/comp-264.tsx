@@ -5,7 +5,7 @@ import { Button } from "@/registry/default/ui/button";
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
 import { Slider } from "@/registry/default/ui/slider";
-import { RotateCcw } from "lucide-react";
+import { RotateCcwIcon } from "lucide-react";
 import React, { useRef } from "react";
 
 export default function Component() {
@@ -52,7 +52,7 @@ export default function Component() {
         />
       </div>
       <Button className="w-full" variant="outline" onClick={resetAll}>
-        <RotateCcw className="-ms-1 opacity-60" size={16} aria-hidden="true" />
+        <RotateCcwIcon className="-ms-1 opacity-60" size={16} aria-hidden="true" />
         Reset
       </Button>
     </div>

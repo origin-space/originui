@@ -1,7 +1,7 @@
 "use client";
 
 import { Input } from "@/registry/default/ui/input";
-import { CreditCard } from "lucide-react";
+import { CreditCardIcon } from "lucide-react";
 import { useId } from "react";
 import { usePaymentInputs } from "react-payment-inputs";
 import images, { type CardImages } from "react-payment-inputs/images";
@@ -29,7 +29,7 @@ export default function Component() {
                 width={20}
               />
             ) : (
-              <CreditCard size={16} aria-hidden="true" />
+              <CreditCardIcon size={16} aria-hidden="true" />
             )}
           </div>
         </div>

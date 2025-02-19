@@ -1,4 +1,4 @@
-import { ArrowRight, Eclipse } from "lucide-react";
+import { ArrowRightIcon, Eclipse } from "lucide-react";
 
 export default function Component() {
   return (
@@ -12,7 +12,7 @@ export default function Component() {
             </p>
             <a href="#" className="group text-sm font-medium whitespace-nowrap">
               Learn more
-              <ArrowRight
+              <ArrowRightIcon
                 className="ms-1 -mt-0.5 inline-flex opacity-60 transition-transform group-hover:translate-x-0.5"
                 size={16}
                 aria-hidden="true"

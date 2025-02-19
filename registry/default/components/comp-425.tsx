@@ -1,7 +1,7 @@
 "use client";
 
 import { Badge } from "@/registry/default/ui/badge";
-import { X } from "lucide-react";
+import { XIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function Component() {
@@ -17,7 +17,7 @@ export default function Component() {
         onClick={() => setIsActive(false)}
         aria-label="Delete"
       >
-        <X size={14} aria-hidden="true" />
+        <XIcon size={14} aria-hidden="true" />
       </button>
     </Badge>
   );

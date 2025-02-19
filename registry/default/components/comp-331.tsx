@@ -16,7 +16,7 @@ import {
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
 import { Textarea } from "@/registry/default/ui/textarea";
-import { Check, ImagePlus, X } from "lucide-react";
+import { CheckIcon, ImagePlusIcon, XIcon } from "lucide-react";
 import { useId, useState } from "react";
 
 export default function Component() {
@@ -87,7 +87,7 @@ export default function Component() {
                     required
                   />
                   <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 peer-disabled:opacity-50">
-                    <Check size={16} className="text-emerald-500" aria-hidden="true" />
+                    <CheckIcon size={16} className="text-emerald-500" aria-hidden="true" />
                   </div>
                 </div>
               </div>
@@ -174,7 +174,7 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
             onClick={handleThumbnailClick}
             aria-label={currentImage ? "Change image" : "Upload image"}
           >
-            <ImagePlus size={16} aria-hidden="true" />
+            <ImagePlusIcon size={16} aria-hidden="true" />
           </button>
           {currentImage && (
             <button
@@ -183,7 +183,7 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
               onClick={handleImageRemove}
               aria-label="Remove image"
             >
-              <X size={16} aria-hidden="true" />
+              <XIcon size={16} aria-hidden="true" />
             </button>
           )}
         </div>
@@ -223,7 +223,7 @@ function Avatar({ defaultImage }: { defaultImage?: string }) {
           onClick={handleThumbnailClick}
           aria-label="Change profile picture"
         >
-          <ImagePlus size={16} aria-hidden="true" />
+          <ImagePlusIcon size={16} aria-hidden="true" />
         </button>
         <input
           type="file"

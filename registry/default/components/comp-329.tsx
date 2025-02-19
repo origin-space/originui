@@ -13,7 +13,7 @@ import {
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
-import { CreditCard, Store } from "lucide-react";
+import { CreditCardIcon, StoreIcon } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 import { usePaymentInputs } from "react-payment-inputs";
 import images, { type CardImages } from "react-payment-inputs/images";
@@ -44,7 +44,7 @@ export default function Component() {
             className="border-border flex size-11 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
-            <Store className="opacity-80" size={16} />
+            <StoreIcon className="opacity-80" size={16} />
           </div>
           <DialogHeader>
             <DialogTitle className="text-left">Confirm and pay</DialogTitle>
@@ -101,7 +101,7 @@ export default function Component() {
                         width={20}
                       />
                     ) : (
-                      <CreditCard size={16} aria-hidden="true" />
+                      <CreditCardIcon size={16} aria-hidden="true" />
                     )}
                   </div>
                 </div>

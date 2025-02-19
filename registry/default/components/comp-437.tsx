@@ -1,7 +1,14 @@
 import { Badge } from "@/registry/default/ui/badge";
 import { ScrollArea, ScrollBar } from "@/registry/default/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/default/ui/tabs";
-import { Box, ChartLine, House, PanelsTopLeft, Settings, UsersRound } from "lucide-react";
+import {
+  BoxIcon,
+  ChartLine,
+  HouseIcon,
+  PanelsTopLeftIcon,
+  SettingsIcon,
+  UsersRoundIcon,
+} from "lucide-react";
 
 export default function Component() {
   return (
@@ -12,14 +19,14 @@ export default function Component() {
             value="tab-1"
             className="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
           >
-            <House className="-ms-0.5 me-1.5 opacity-60" size={16} aria-hidden="true" />
+            <HouseIcon className="-ms-0.5 me-1.5 opacity-60" size={16} aria-hidden="true" />
             Overview
           </TabsTrigger>
           <TabsTrigger
             value="tab-2"
             className="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
           >
-            <PanelsTopLeft className="-ms-0.5 me-1.5 opacity-60" size={16} aria-hidden="true" />
+            <PanelsTopLeftIcon className="-ms-0.5 me-1.5 opacity-60" size={16} aria-hidden="true" />
             Projects
             <Badge className="bg-primary/15 ms-1.5 min-w-5 px-1" variant="secondary">
               3
@@ -29,7 +36,7 @@ export default function Component() {
             value="tab-3"
             className="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
           >
-            <Box className="-ms-0.5 me-1.5 opacity-60" size={16} aria-hidden="true" />
+            <BoxIcon className="-ms-0.5 me-1.5 opacity-60" size={16} aria-hidden="true" />
             Packages
             <Badge className="ms-1.5">New</Badge>
           </TabsTrigger>
@@ -37,7 +44,7 @@ export default function Component() {
             value="tab-4"
             className="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
           >
-            <UsersRound className="-ms-0.5 me-1.5 opacity-60" size={16} aria-hidden="true" />
+            <UsersRoundIcon className="-ms-0.5 me-1.5 opacity-60" size={16} aria-hidden="true" />
             Team
           </TabsTrigger>
           <TabsTrigger
@@ -51,7 +58,7 @@ export default function Component() {
             value="tab-6"
             className="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
           >
-            <Settings className="-ms-0.5 me-1.5 opacity-60" size={16} aria-hidden="true" />
+            <SettingsIcon className="-ms-0.5 me-1.5 opacity-60" size={16} aria-hidden="true" />
             Settings
           </TabsTrigger>
         </TabsList>

@@ -31,12 +31,12 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import {
-  ChevronDown,
-  ChevronFirst,
-  ChevronLast,
-  ChevronLeft,
-  ChevronRight,
-  ChevronUp,
+  ChevronDownIcon,
+  ChevronFirstIcon,
+  ChevronLastIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ChevronUpIcon,
 } from "lucide-react";
 import { useEffect, useId, useState } from "react";
 
@@ -199,14 +199,14 @@ export default function Component() {
                           {flexRender(header.column.columnDef.header, header.getContext())}
                           {{
                             asc: (
-                              <ChevronUp
+                              <ChevronUpIcon
                                 className="shrink-0 opacity-60"
                                 size={16}
                                 aria-hidden="true"
                               />
                             ),
                             desc: (
-                              <ChevronDown
+                              <ChevronDownIcon
                                 className="shrink-0 opacity-60"
                                 size={16}
                                 aria-hidden="true"
@@ -301,7 +301,7 @@ export default function Component() {
                   disabled={!table.getCanPreviousPage()}
                   aria-label="Go to first page"
                 >
-                  <ChevronFirst size={16} aria-hidden="true" />
+                  <ChevronFirstIcon size={16} aria-hidden="true" />
                 </Button>
               </PaginationItem>
               {/* Previous page button */}
@@ -314,7 +314,7 @@ export default function Component() {
                   disabled={!table.getCanPreviousPage()}
                   aria-label="Go to previous page"
                 >
-                  <ChevronLeft size={16} aria-hidden="true" />
+                  <ChevronLeftIcon size={16} aria-hidden="true" />
                 </Button>
               </PaginationItem>
               {/* Next page button */}
@@ -327,7 +327,7 @@ export default function Component() {
                   disabled={!table.getCanNextPage()}
                   aria-label="Go to next page"
                 >
-                  <ChevronRight size={16} aria-hidden="true" />
+                  <ChevronRightIcon size={16} aria-hidden="true" />
                 </Button>
               </PaginationItem>
               {/* Last page button */}
@@ -340,7 +340,7 @@ export default function Component() {
                   disabled={!table.getCanNextPage()}
                   aria-label="Go to last page"
                 >
-                  <ChevronLast size={16} aria-hidden="true" />
+                  <ChevronLastIcon size={16} aria-hidden="true" />
                 </Button>
               </PaginationItem>
             </PaginationContent>

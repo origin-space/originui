@@ -13,7 +13,7 @@ import {
 } from "@/registry/default/ui/command";
 import { Label } from "@/registry/default/ui/label";
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
-import { Check, ChevronDown, Plus } from "lucide-react";
+import { CheckIcon, ChevronDownIcon, PlusIcon } from "lucide-react";
 import { useId, useState } from "react";
 
 const organizations = [
@@ -49,7 +49,7 @@ export default function Component() {
                 ? organizations.find((organization) => organization.value === value)?.label
                 : "Select organization"}
             </span>
-            <ChevronDown
+            <ChevronDownIcon
               size={16}
               className="text-muted-foreground/80 shrink-0"
               aria-hidden="true"
@@ -75,14 +75,14 @@ export default function Component() {
                     }}
                   >
                     {organization.label}
-                    {value === organization.value && <Check size={16} className="ml-auto" />}
+                    {value === organization.value && <CheckIcon size={16} className="ml-auto" />}
                   </CommandItem>
                 ))}
               </CommandGroup>
               <CommandSeparator />
               <CommandGroup>
                 <Button variant="ghost" className="w-full justify-start font-normal">
-                  <Plus size={16} className="-ms-2 opacity-60" aria-hidden="true" />
+                  <PlusIcon size={16} className="-ms-2 opacity-60" aria-hidden="true" />
                   New organization
                 </Button>
               </CommandGroup>

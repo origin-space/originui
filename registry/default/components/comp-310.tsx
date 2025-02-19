@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/registry/default/ui/button";
-import { TicketPercent, X } from "lucide-react";
+import { TicketPercent, XIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
 // Define the sale end date - eg: new Date('2024-12-31T23:59:59');
@@ -108,7 +108,7 @@ export default function Component() {
           onClick={() => setIsVisible(false)}
           aria-label="Close banner"
         >
-          <X
+          <XIcon
             size={16}
             className="opacity-60 transition-opacity group-hover:opacity-100"
             aria-hidden="true"

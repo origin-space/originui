@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/components/comp-93.tsx",
-      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { Printer } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Button variant=\"outline\">\n      <Printer className=\"-ms-1 me-2 opacity-60\" size={16} strokeWidth={2} aria-hidden=\"true\" />\n      Print\n      <kbd className=\"-me-1 ms-3 inline-flex h-5 max-h-full items-center rounded border border-border bg-background px-1 font-[inherit] text-[0.625rem] font-medium text-muted-foreground/70\">\n        ⌘P\n      </kbd>\n    </Button>\n  );\n}\n",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { PrinterIcon } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Button variant=\"outline\">\n      <PrinterIcon className=\"-ms-1 opacity-60\" size={16} aria-hidden=\"true\" />\n      Print\n      <kbd className=\"border-border bg-background text-muted-foreground/70 ms-1 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium\">\n        ⌘P\n      </kbd>\n    </Button>\n  );\n}\n",
       "type": "registry:component"
     }
   ],

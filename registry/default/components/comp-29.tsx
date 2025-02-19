@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 import { Button, Group, Input, Label, NumberField } from "react-aria-components";
 
 export default function Component() {
@@ -22,13 +22,13 @@ export default function Component() {
               slot="increment"
               className="border-input bg-background text-muted-foreground/80 hover:bg-accent hover:text-foreground -me-px flex h-1/2 w-6 flex-1 items-center justify-center border text-sm transition-shadow disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
             >
-              <ChevronUp size={12} aria-hidden="true" />
+              <ChevronUpIcon size={12} aria-hidden="true" />
             </Button>
             <Button
               slot="decrement"
               className="border-input bg-background text-muted-foreground/80 hover:bg-accent hover:text-foreground -me-px -mt-px flex h-1/2 w-6 flex-1 items-center justify-center border text-sm transition-shadow disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
             >
-              <ChevronDown size={12} aria-hidden="true" />
+              <ChevronDownIcon size={12} aria-hidden="true" />
             </Button>
           </div>
         </Group>

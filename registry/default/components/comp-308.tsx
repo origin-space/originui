@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/registry/default/ui/button";
-import { Eclipse, X } from "lucide-react";
+import { Eclipse, XIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function Component() {
@@ -31,7 +31,7 @@ export default function Component() {
           onClick={() => setIsVisible(false)}
           aria-label="Close banner"
         >
-          <X
+          <XIcon
             size={16}
             className="opacity-60 transition-opacity group-hover:opacity-100"
             aria-hidden="true"

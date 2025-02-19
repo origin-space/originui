@@ -1,5 +1,5 @@
 import { Button } from "@/registry/default/ui/button";
-import { FlipHorizontal, FlipVertical } from "lucide-react";
+import { FlipHorizontalIcon, FlipVerticalIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -10,7 +10,7 @@ export default function Component() {
         size="icon"
         aria-label="Flip Horizontal"
       >
-        <FlipHorizontal size={16} aria-hidden="true" />
+        <FlipHorizontalIcon size={16} aria-hidden="true" />
       </Button>
       <Button
         className="rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10"
@@ -18,7 +18,7 @@ export default function Component() {
         size="icon"
         aria-label="Flip Vertical"
       >
-        <FlipVertical size={16} aria-hidden="true" />
+        <FlipVerticalIcon size={16} aria-hidden="true" />
       </Button>
     </div>
   );

@@ -9,7 +9,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/registry/default/ui/collapsible";
-import { ChevronDown } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 
 const items = [
   {
@@ -121,7 +121,7 @@ function CollapsibleDemo({
       defaultOpen={open}
     >
       <CollapsibleTrigger className="flex gap-2 text-[15px] leading-6 font-semibold [&[data-state=open]>svg]:rotate-180">
-        <ChevronDown
+        <ChevronDownIcon
           size={16}
           className="mt-1 shrink-0 opacity-60 transition-transform duration-200"
           aria-hidden="true"

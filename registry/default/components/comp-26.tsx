@@ -1,6 +1,6 @@
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
-import { ArrowRight, Search } from "lucide-react";
+import { ArrowRightIcon, SearchIcon } from "lucide-react";
 import { useId } from "react";
 
 export default function Component() {
@@ -11,14 +11,14 @@ export default function Component() {
       <div className="relative">
         <Input id={id} className="peer ps-9 pe-9" placeholder="Search..." type="search" />
         <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 peer-disabled:opacity-50">
-          <Search size={16} />
+          <SearchIcon size={16} />
         </div>
         <button
           className="text-muted-foreground/80 hover:text-foreground outline-ring/30 dark:outline-ring/40 absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg outline-offset-2 transition-colors focus:z-10 focus-visible:outline-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
           aria-label="Submit search"
           type="submit"
         >
-          <ArrowRight size={16} aria-hidden="true" />
+          <ArrowRightIcon size={16} aria-hidden="true" />
         </button>
       </div>
     </div>

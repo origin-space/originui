@@ -1,6 +1,6 @@
 import { ScrollArea, ScrollBar } from "@/registry/default/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/default/ui/tabs";
-import { Box, House, PanelsTopLeft } from "lucide-react";
+import { BoxIcon, HouseIcon, PanelsTopLeftIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -11,21 +11,21 @@ export default function Component() {
             value="tab-1"
             className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-full data-[state=active]:shadow-none"
           >
-            <House className="-ms-0.5 me-1.5 opacity-60" size={16} aria-hidden="true" />
+            <HouseIcon className="-ms-0.5 me-1.5 opacity-60" size={16} aria-hidden="true" />
             Overview
           </TabsTrigger>
           <TabsTrigger
             value="tab-2"
             className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-full data-[state=active]:shadow-none"
           >
-            <PanelsTopLeft className="-ms-0.5 me-1.5 opacity-60" size={16} aria-hidden="true" />
+            <PanelsTopLeftIcon className="-ms-0.5 me-1.5 opacity-60" size={16} aria-hidden="true" />
             Projects
           </TabsTrigger>
           <TabsTrigger
             value="tab-3"
             className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-full data-[state=active]:shadow-none"
           >
-            <Box className="-ms-0.5 me-1.5 opacity-60" size={16} aria-hidden="true" />
+            <BoxIcon className="-ms-0.5 me-1.5 opacity-60" size={16} aria-hidden="true" />
             Packages
           </TabsTrigger>
         </TabsList>

@@ -3,7 +3,7 @@
 import { Badge } from "@/registry/default/ui/badge";
 import { Button } from "@/registry/default/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
-import { Bell } from "lucide-react";
+import { BellIcon } from "lucide-react";
 import { useState } from "react";
 
 const initialNotifications = [
@@ -98,7 +98,7 @@ export default function Component() {
     <Popover>
       <PopoverTrigger asChild>
         <Button size="icon" variant="outline" className="relative" aria-label="Open notifications">
-          <Bell size={16} aria-hidden="true" />
+          <BellIcon size={16} aria-hidden="true" />
           {unreadCount > 0 && (
             <Badge className="absolute -top-2 left-full min-w-5 -translate-x-1/2 px-1">
               {unreadCount > 99 ? "99+" : unreadCount}
