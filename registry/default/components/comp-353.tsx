@@ -139,7 +139,7 @@ function CollapsibleDemo({
   icon: LucideIcon;
 }) {
   return (
-    <Collapsible className="space-y-1 border-t py-3 ps-6 pe-4" defaultOpen={open}>
+    <Collapsible className="border-t py-3 ps-6 pe-4" defaultOpen={open}>
       <CollapsibleTrigger className="flex gap-2 text-[15px] leading-6 font-semibold [&[data-state=open]>svg]:rotate-180">
         <ChevronDownIcon
           size={16}
@@ -151,7 +151,7 @@ function CollapsibleDemo({
           <span>{title}</span>
         </span>
       </CollapsibleTrigger>
-      <CollapsibleContent className="text-muted-foreground data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down overflow-hidden ps-6 text-sm transition-all">
+      <CollapsibleContent className="mt-1 text-muted-foreground data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down overflow-hidden ps-6 text-sm transition-all">
         {content}
       </CollapsibleContent>
     </Collapsible>

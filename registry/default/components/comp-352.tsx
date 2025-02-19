@@ -117,7 +117,7 @@ function CollapsibleDemo({
 }) {
   return (
     <Collapsible
-      className="bg-accent space-y-1 border-t px-4 py-3"
+      className="bg-accent border-t px-4 py-3"
       defaultOpen={open}
     >
       <CollapsibleTrigger className="flex gap-2 text-[15px] leading-6 font-semibold [&[data-state=open]>svg]:rotate-180">
@@ -128,7 +128,7 @@ function CollapsibleDemo({
         />
         {title}
       </CollapsibleTrigger>
-      <CollapsibleContent className="text-muted-foreground data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down overflow-hidden ps-6 text-sm transition-all">
+      <CollapsibleContent className="mt-1 text-muted-foreground data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down overflow-hidden ps-6 text-sm transition-all">
         {content}
       </CollapsibleContent>
     </Collapsible>
