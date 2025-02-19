@@ -39,7 +39,7 @@ export default function Component() {
             <Files size={16} className="opacity-60" aria-hidden="true" />
             Clone
           </DropdownMenuItem>
-          <DropdownMenuItem className="text-destructive focus:text-destructive">
+          <DropdownMenuItem variant="destructive">
             <Trash size={16} aria-hidden="true" />
             Delete
           </DropdownMenuItem>
