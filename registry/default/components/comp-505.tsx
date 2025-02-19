@@ -52,8 +52,8 @@ export default function Component() {
             ]}
           />
           <div className="relative w-full max-sm:h-48 sm:w-40">
-            <div className="border-border absolute inset-0 py-4 max-sm:border-t">
-              <ScrollArea className="border-border h-full sm:border-s">
+            <div className="absolute inset-0 py-4 max-sm:border-t">
+              <ScrollArea className="h-full sm:border-s">
                 <div className="space-y-3">
                   <div className="flex h-5 shrink-0 items-center px-5">
                     <p className="text-sm font-medium">{format(date, "EEEE, d")}</p>
