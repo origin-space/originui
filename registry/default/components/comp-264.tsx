@@ -25,7 +25,7 @@ export default function Component() {
   return (
     <div className="space-y-4">
       <legend className="text-foreground text-sm font-medium">Object position</legend>
-      <div className="*:not-first:mt-2">
+      <div className="space-y-2">
         <SliderWithInput
           minValue={-10}
           maxValue={10}

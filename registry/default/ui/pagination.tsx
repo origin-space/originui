@@ -59,7 +59,7 @@ function PaginationPrevious({ className, ...props }: React.ComponentProps<typeof
     <PaginationLink
       aria-label="Go to previous page"
       size="default"
-      className={cn("gap-1 px-2.5 sm:ps-2.5", className)}
+      className={cn("gap-1 px-2.5 sm:pe-4", className)}
       {...props}
     >
       <ChevronLeftIcon size={16} />
@@ -73,7 +73,7 @@ function PaginationNext({ className, ...props }: React.ComponentProps<typeof Pag
     <PaginationLink
       aria-label="Go to next page"
       size="default"
-      className={cn("gap-1 px-2.5 sm:pe-2.5", className)}
+      className={cn("gap-1 px-2.5 sm:ps-4", className)}
       {...props}
     >
       <span>Next</span>

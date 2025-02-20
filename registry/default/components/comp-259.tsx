@@ -16,7 +16,7 @@ export default function Component() {
   const increaseValue = () => setValue((prev) => [Math.min(maxValue, prev[0] + steps)]);
 
   return (
-    <div className="space-y-3">
+    <div className="*:not-first:mt-3">
       <Label className="tabular-nums">{value[0]} credits/mo</Label>
       <div className="flex items-center gap-4">
         <div>

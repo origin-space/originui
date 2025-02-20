@@ -342,7 +342,7 @@ export default function Component() {
                 )}
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="min-w-36 p-3" align="start">
+            <PopoverContent className="min-w-36 w-auto p-3" align="start">
               <div className="space-y-3">
                 <div className="text-muted-foreground text-xs font-medium">Filters</div>
                 <div className="space-y-3">

@@ -37,7 +37,7 @@ export default function Component() {
               Onion
             </ListBoxItem>
           </ListBoxSection>
-          <Separator className="bg-border -mx-1 my-1 h-px" />
+          <Separator className="bg-border -mx-1 my-2 h-px" />
           <ListBoxSection className="space-y-1">
             <Header className="text-muted-foreground px-2 py-1.5 text-xs font-medium">
               Protein
@@ -61,7 +61,7 @@ export default function Component() {
               Tofu
             </ListBoxItem>
           </ListBoxSection>
-          <Separator className="bg-border -mx-1 my-1 h-px" />
+          <Separator className="bg-border -mx-1 my-2 h-px" />
           <ListBoxSection className="space-y-1">
             <Header className="text-muted-foreground px-2 py-1.5 text-xs font-medium">
               Condiments

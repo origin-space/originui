@@ -218,7 +218,7 @@ export default function Component() {
 
       {/* Inputs */}
       <div className="flex items-center justify-between gap-4">
-        <div className="space-y-1">
+        <div className="*:not-first:mt-1">
           <Label htmlFor={`${id}-min`}>Min price</Label>
           <div className="relative">
             <Input
@@ -241,7 +241,7 @@ export default function Component() {
             </span>
           </div>
         </div>
-        <div className="space-y-1">
+        <div className="*:not-first:mt-1">
           <Label htmlFor={`${id}-max`}>Max price</Label>
           <div className="relative">
             <Input

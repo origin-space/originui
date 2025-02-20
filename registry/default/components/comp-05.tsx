@@ -11,7 +11,7 @@ export default function Component() {
       style={{ "--ring": "oklch(0.59 0.20 277)" } as React.CSSProperties}
     >
       <Label htmlFor={id}>Input with colored border and ring</Label>
-      <Input id={id} placeholder="Email" type="email" />
+      <Input id={id} className="focus-visible:border-ring/60 ring-ring/20 dark:ring-ring/25" placeholder="Email" type="email" />
     </div>
   );
 }
