@@ -25,104 +25,64 @@ Note: If you're using shadcn, you may likely already have these files - however,
 **2. Add the following CSS variables to your stylesheet (you don't need to overwrite them if you already have them):**
 
 ```
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 240 5.9% 90%;
-    --input: 240 4.9% 83.9%;
-    --ring: 240 5% 64.9%;
-    --radius: 0.5rem;
-  }
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 5.9% 10%;
-    --muted-foreground: 240 4.4% 58%;
-    --accent: 240 5.9% 10%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 3.8% 46.1%;
-  }
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.14 0 286);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.14 0 286);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.14 0 286);
+  --primary: oklch(0.21 0.01 286);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.97 0 286);
+  --secondary-foreground: oklch(0.21 0.01 286);
+  --muted: oklch(0.97 0 286);
+  --muted-foreground: oklch(0.55 0.01 286);
+  --accent: oklch(0.97 0 286);
+  --accent-foreground: oklch(0.21 0.01 286);
+  --destructive: oklch(0.64 0.21 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.92 0 286);
+  --input: oklch(0.87 0.01 286);
+  --ring: oklch(0.14 0 286);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: oklch(0.14 0 286);
+  --foreground: oklch(0.99 0 0);
+  --card: oklch(0.14 0 286);
+  --card-foreground: oklch(0.99 0 0);
+  --popover: oklch(0.14 0 286);
+  --popover-foreground: oklch(0.99 0 0);
+  --primary: oklch(0.99 0 0);
+  --primary-foreground: oklch(0.21 0.01 286);
+  --secondary: oklch(0.27 0.01 286);
+  --secondary-foreground: oklch(0.99 0 0);
+  --muted: oklch(0.21 0.01 286);
+  --muted-foreground: oklch(0.65 0.01 286);
+  --accent: oklch(0.21 0.01 286);
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.64 0.21 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.27 0.01 286);
+  --input: oklch(0.27 0.01 286);
+  --ring: oklch(0.87 0.01 286);
 }
 ```
 
-**3. Include the previously defined variables in the extend section of your Tailwind config file:**
+After completing these steps, you can copy and use the components in your project. Note that some components (e.g., number inputs, date pickers, time pickers, phone number inputs) may require additional libraries.
 
-```
-    extend: {
-      fontFamily: {
-        sans: ["var(--font-sans)"],
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-      colors: {
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-      },
-    },
+## Tailwind v4 support
+
+Our UI library has been updated to Tailwind CSS v4 as of February 25, 2025. Legacy components built with v3 remain available by adding `/legacy/` to the component URL:
+
+```bash
+# v3 legacy component
+pnpm dlx shadcn@latest add https://originui.com/r/legacy/comp-01.json
 ```
 
-After completing these steps, you can copy and use the components in your project. Note that some components (e.g., number inputs, date pickers, time pickers, phone number inputs) may require additional libraries - refer to the code comments at the top of each file for specific requirements.
+Note: New components will only be developed for Tailwind v4.
 
 ## Contributing
 
