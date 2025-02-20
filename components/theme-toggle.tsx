@@ -1,33 +1,61 @@
 "use client";
 
-import { RiMoonClearLine, RiSunLine } from "@remixicon/react";
+import { Toggle } from "@/registry/default/ui/toggle";
+import { cx } from "class-variance-authority";
+import { MoonIcon, SunIcon, SunMoon } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useId } from "react";
+import { useEffect, useState } from "react";
+
+const classes = {
+  base: "absolute shrink-0 transition-all duration-200",
+  visible: "scale-100 opacity-100",
+  hidden: "scale-0 opacity-0",
+};
 
 export default function ThemeToggle() {
-  const id = useId();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const { theme, setTheme } = useTheme();
 
+  const changeTheme = () => {
+    setTheme((current) => {
+      if (current === "light") return "dark";
+      if (current === "dark") return "system";
+      return "light";
+    });
+  };
+
   return (
-    <div className="flex flex-col justify-center">
-      <input
-        type="checkbox"
-        name="theme-toggle"
-        id={id}
-        className="peer sr-only"
-        checked={theme === "dark"}
-        onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
-        aria-label="Toggle dark mode"
-      />
-      <label
-        className="text-muted-foreground outline-ring/30 dark:outline-ring/40 relative inline-flex size-9 cursor-pointer items-center justify-center rounded-full transition-colors peer-focus-visible:outline-2"
-        htmlFor={id}
-        aria-hidden="true"
-      >
-        <RiSunLine className="dark:hidden" size={20} aria-hidden="true" />
-        <RiMoonClearLine className="hidden dark:block" size={20} aria-hidden="true" />
-        <span className="sr-only">Switch to light / dark version</span>
-      </label>
-    </div>
+    <Toggle
+      variant="outline"
+      className="group size-9"
+      onPressedChange={changeTheme}
+      pressed={false}
+      aria-label="Toggle theme (default system)"
+    >
+      {isClient && (
+        <>
+          <SunMoon
+            size={18}
+            className={cx(classes.base, theme === "system" ? classes.visible : classes.hidden)}
+            aria-hidden="true"
+          />
+          <SunIcon
+            size={18}
+            className={cx(classes.base, theme === "light" ? classes.visible : classes.hidden)}
+            aria-hidden="true"
+          />
+          <MoonIcon
+            size={18}
+            className={cx(classes.base, theme === "dark" ? classes.visible : classes.hidden)}
+            aria-hidden="true"
+          />
+        </>
+      )}
+    </Toggle>
   );
 }
