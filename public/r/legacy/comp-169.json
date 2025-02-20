@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-169",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/radio-group.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-169.tsx",
+      "content": "import { RadioGroup, RadioGroupItem } from \"@/registry/default/ui/radio-group\";\nimport { Check, Minus } from \"lucide-react\";\nimport { useId } from \"react\";\n\nconst items = [\n  { value: \"1\", label: \"Light\", image: \"/ui-light.png\" },\n  { value: \"2\", label: \"Dark\", image: \"/ui-dark.png\" },\n  { value: \"3\", label: \"System\", image: \"/ui-system.png\" },\n];\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <fieldset className=\"space-y-4\">\n      <legend className=\"text-sm font-medium leading-none text-foreground\">Choose a theme</legend>\n      <RadioGroup className=\"flex gap-3\" defaultValue=\"1\">\n        {items.map((item) => (\n          <label key={`${id}-${item.value}`}>\n            <RadioGroupItem\n              id={`${id}-${item.value}`}\n              value={item.value}\n              className=\"peer sr-only after:absolute after:inset-0\"\n            />\n            <img\n              src={item.image}\n              alt={item.label}\n              width={88}\n              height={70}\n              className=\"relative cursor-pointer overflow-hidden rounded-lg border border-input shadow-sm shadow-black/5 outline-offset-2 transition-colors peer-[:focus-visible]:outline peer-[:focus-visible]:outline-2 peer-[:focus-visible]:outline-ring/70 peer-data-[disabled]:cursor-not-allowed peer-data-[state=checked]:border-ring peer-data-[state=checked]:bg-accent peer-data-[disabled]:opacity-50\"\n            />\n            <span className=\"group mt-2 flex items-center gap-1 peer-data-[state=unchecked]:text-muted-foreground/70\">\n              <Check\n                size={16}\n                strokeWidth={2}\n                className=\"peer-data-[state=unchecked]:group-[]:hidden\"\n                aria-hidden=\"true\"\n              />\n              <Minus\n                size={16}\n                strokeWidth={2}\n                className=\"peer-data-[state=checked]:group-[]:hidden\"\n                aria-hidden=\"true\"\n              />\n              <span className=\"text-xs font-medium\">{item.label}</span>\n            </span>\n          </label>\n        ))}\n      </RadioGroup>\n    </fieldset>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "radio",
+      "label",
+      "darkmode",
+      "radix"
+    ]
+  }
+}

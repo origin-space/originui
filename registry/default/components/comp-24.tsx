@@ -2,7 +2,7 @@
 
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
-import { CircleX } from "lucide-react";
+import { CircleXIcon } from "lucide-react";
 import { useId, useRef, useState } from "react";
 
 export default function Component() {
@@ -18,7 +18,7 @@ export default function Component() {
   };
 
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Input with clear button</Label>
       <div className="relative">
         <Input
@@ -32,11 +32,11 @@ export default function Component() {
         />
         {inputValue && (
           <button
-            className="absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg text-muted-foreground/80 outline-offset-2 transition-colors hover:text-foreground focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+            className="text-muted-foreground/80 hover:text-foreground outline-ring/30 dark:outline-ring/40 absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg outline-offset-2 transition-colors focus:z-10 focus-visible:outline-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
             aria-label="Clear input"
             onClick={handleClearInput}
           >
-            <CircleX size={16} strokeWidth={2} aria-hidden="true" />
+            <CircleXIcon size={16} aria-hidden="true" />
           </button>
         )}
       </div>

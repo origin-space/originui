@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-19",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/input.json",
+    "https://originui.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-19.tsx",
+      "content": "import { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Send } from \"lucide-react\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor={id}>Input with end inline button</Label>\n      <div className=\"relative\">\n        <Input id={id} className=\"pe-9\" placeholder=\"Email\" type=\"email\" />\n        <button\n          className=\"absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg border border-transparent text-muted-foreground/80 outline-offset-2 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50\"\n          aria-label=\"Subscribe\"\n        >\n          <Send size={16} strokeWidth={2} aria-hidden=\"true\" />\n        </button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "button"
+    ]
+  }
+}

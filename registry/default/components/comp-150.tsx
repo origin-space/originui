@@ -1,6 +1,6 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
+import { MoonIcon, SunIcon } from "lucide-react";
 import { useId, useState } from "react";
 
 export default function Component() {
@@ -9,7 +9,7 @@ export default function Component() {
 
   return (
     <div className="space-y-4">
-      <legend className="text-sm font-medium leading-none text-foreground">
+      <legend className="text-foreground text-sm leading-none font-medium">
         Dark mode toggle checkbox
       </legend>
       <div className="flex flex-col justify-center">
@@ -22,21 +22,19 @@ export default function Component() {
           onChange={() => setTheme((prev) => (prev === "dark" ? "light" : "dark"))}
         />
         <label
-          className="group relative inline-flex size-9 cursor-pointer items-center justify-center rounded-lg border border-input bg-background text-foreground shadow-sm shadow-black/5 transition-colors hover:bg-accent hover:text-accent-foreground peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-ring/70"
+          className="group border-input bg-background text-foreground hover:bg-accent hover:text-accent-foreground outline-ring/30 dark:outline-ring/40 relative inline-flex size-9 cursor-pointer items-center justify-center rounded-lg border shadow-xs outline-offset-2 transition-colors peer-focus-visible:outline-2"
           htmlFor={id}
           aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
         >
-          {/* Note: After dark mode implementation, rely on dark: prefix rather than peer-checked:group-[]: */}
-          <Moon
+          {/* Note: After dark mode implementation, rely on dark: prefix rather than group-peer-checked: */}
+          <MoonIcon
             size={16}
-            strokeWidth={2}
-            className="shrink-0 scale-0 opacity-0 transition-all peer-checked:group-[]:scale-100 peer-checked:group-[]:opacity-100"
+            className="shrink-0 scale-0 opacity-0 transition-all group-peer-checked:scale-100 group-peer-checked:opacity-100"
             aria-hidden="true"
           />
-          <Sun
+          <SunIcon
             size={16}
-            strokeWidth={2}
-            className="absolute shrink-0 scale-100 opacity-100 transition-all peer-checked:group-[]:scale-0 peer-checked:group-[]:opacity-0"
+            className="absolute shrink-0 scale-100 opacity-100 transition-all group-peer-checked:scale-0 group-peer-checked:opacity-0"
             aria-hidden="true"
           />
         </label>

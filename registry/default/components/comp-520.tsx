@@ -25,13 +25,13 @@ export default function Component() {
           disabled={currentStep === 1}
           aria-label="Prev step"
         >
-          <ChevronLeftIcon size={16} strokeWidth={2} aria-hidden="true" />
+          <ChevronLeftIcon size={16} aria-hidden="true" />
         </Button>
         <Stepper value={currentStep} onValueChange={setCurrentStep} className="gap-1">
           {steps.map((step) => (
             <StepperItem key={step} step={step} className="flex-1">
               <StepperTrigger className="w-full flex-col items-start gap-2" asChild>
-                <StepperIndicator asChild className="h-1 w-full bg-border">
+                <StepperIndicator asChild className="bg-border h-1 w-full">
                   <span className="sr-only">{step}</span>
                 </StepperIndicator>
               </StepperTrigger>
@@ -46,10 +46,10 @@ export default function Component() {
           disabled={currentStep === steps.length}
           aria-label="Next step"
         >
-          <ChevronRightIcon size={16} strokeWidth={2} aria-hidden="true" />
+          <ChevronRightIcon size={16} aria-hidden="true" />
         </Button>
       </div>
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Paginated stepper
       </p>
     </div>

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-363",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/button.json",
+    "https://originui.com/r/hover-card.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-363.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { HoverCard, HoverCardContent, HoverCardTrigger } from \"@/registry/default/ui/hover-card\";\n\nexport default function HoverCardDemo() {\n  return (\n    <HoverCard>\n      <HoverCardTrigger asChild>\n        <Button\n          className=\"size-auto overflow-hidden rounded-full bg-transparent p-0 hover:bg-transparent\"\n          aria-label=\"My profile\"\n          asChild\n        >\n          <a href=\"#\">\n            <img src=\"/avatar-40-04.jpg\" width={40} height={40} alt=\"Avatar\" />\n          </a>\n        </Button>\n      </HoverCardTrigger>\n      <HoverCardContent className=\"w-[340px]\">\n        <div className=\"flex items-start gap-3\">\n          <img\n            className=\"shrink-0 rounded-full\"\n            src=\"/avatar-40-04.jpg\"\n            width={40}\n            height={40}\n            alt=\"Avatar\"\n          />\n          <div className=\"space-y-1\">\n            <p className=\"text-sm font-medium\">@Origin_UI</p>\n            <p className=\"text-sm text-muted-foreground\">\n              Beautiful UI components built with Tailwind CSS and Next.js.\n            </p>\n          </div>\n        </div>\n      </HoverCardContent>\n    </HoverCard>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "tooltip",
+      "hover card",
+      "user",
+      "avatar",
+      "profile",
+      "radix"
+    ],
+    "style": 1
+  }
+}

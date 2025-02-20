@@ -1,9 +1,9 @@
 import { Button } from "@/registry/default/ui/button";
-import { SquareArrowOutUpRight } from "lucide-react";
+import { SquareArrowOutUpRightIcon } from "lucide-react";
 
 export default function Component() {
   return (
-    <div className="inline-flex -space-x-px rounded-lg shadow-sm shadow-black/5 rtl:space-x-reverse">
+    <div className="inline-flex -space-x-px rounded-lg shadow-xs rtl:space-x-reverse">
       <Button
         className="rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10"
         variant="outline"
@@ -16,7 +16,7 @@ export default function Component() {
         size="icon"
         aria-label="Open link"
       >
-        <SquareArrowOutUpRight size={16} strokeWidth={2} aria-hidden="true" />
+        <SquareArrowOutUpRightIcon size={16} aria-hidden="true" />
       </Button>
     </div>
   );

@@ -15,7 +15,7 @@ export default function Component() {
   };
 
   return (
-    <div className="space-y-3">
+    <div className="*:not-first:mt-3">
       <Label className="tabular-nums">
         From {formatPrice(value[0])} to {formatPrice(value[1])}
       </Label>

@@ -7,7 +7,7 @@ export default function Component() {
   return (
     <RadioGroup className="gap-2" defaultValue="1">
       {/* Radio card #1 */}
-      <div className="relative flex w-full items-start gap-2 rounded-lg border border-input p-4 shadow-sm shadow-black/5 has-[[data-state=checked]]:border-ring">
+      <div className="border-input has-data-[state=checked]:border-ring/40 relative flex w-full items-start gap-2 rounded-lg border p-4 shadow-xs">
         <RadioGroupItem
           value="1"
           id={`${id}-1`}
@@ -69,18 +69,18 @@ export default function Component() {
           <div className="grid grow gap-2">
             <Label htmlFor={`${id}-1`}>
               Label{" "}
-              <span className="text-xs font-normal leading-[inherit] text-muted-foreground">
+              <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
                 (Sublabel)
               </span>
             </Label>
-            <p id={`${id}-1-description`} className="text-xs text-muted-foreground">
+            <p id={`${id}-1-description`} className="text-muted-foreground text-xs">
               You can use this card with a label and a description.
             </p>
           </div>
         </div>
       </div>
       {/* Radio card #2 */}
-      <div className="relative flex items-center gap-2 rounded-lg border border-input p-4 shadow-sm shadow-black/5 has-[[data-state=checked]]:border-ring">
+      <div className="border-input has-data-[state=checked]:border-ring/40 relative flex items-center gap-2 rounded-lg border p-4 shadow-xs">
         <RadioGroupItem
           value="2"
           id={`${id}-2`}
@@ -106,11 +106,11 @@ export default function Component() {
           <div className="grid grow gap-2">
             <Label htmlFor={`${id}-2`}>
               Label{" "}
-              <span className="text-xs font-normal leading-[inherit] text-muted-foreground">
+              <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
                 (Sublabel)
               </span>
             </Label>
-            <p id={`${id}-2-description`} className="text-xs text-muted-foreground">
+            <p id={`${id}-2-description`} className="text-muted-foreground text-xs">
               You can use this card with a label and a description.
             </p>
           </div>

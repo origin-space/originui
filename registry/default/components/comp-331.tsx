@@ -16,7 +16,7 @@ import {
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
 import { Textarea } from "@/registry/default/ui/textarea";
-import { Check, ImagePlus, X } from "lucide-react";
+import { CheckIcon, ImagePlusIcon, XIcon } from "lucide-react";
 import { useId, useState } from "react";
 
 export default function Component() {
@@ -41,7 +41,7 @@ export default function Component() {
       </DialogTrigger>
       <DialogContent className="flex flex-col gap-0 overflow-y-visible p-0 sm:max-w-lg [&>button:last-child]:top-3.5">
         <DialogHeader className="contents space-y-0 text-left">
-          <DialogTitle className="border-b border-border px-6 py-4 text-base">
+          <DialogTitle className="border-b px-6 py-4 text-base">
             Edit profile
           </DialogTitle>
         </DialogHeader>
@@ -51,7 +51,7 @@ export default function Component() {
         <div className="overflow-y-auto">
           <ProfileBg defaultImage="/profile-bg.jpg" />
           <Avatar defaultImage="/avatar-72-01.jpg" />
-          <div className="px-6 pb-6 pt-4">
+          <div className="px-6 pt-4 pb-6">
             <form className="space-y-4">
               <div className="flex flex-col gap-4 sm:flex-row">
                 <div className="flex-1 space-y-2">
@@ -75,7 +75,7 @@ export default function Component() {
                   />
                 </div>
               </div>
-              <div className="space-y-2">
+              <div className="*:not-first:mt-2">
                 <Label htmlFor={`${id}-username`}>Username</Label>
                 <div className="relative">
                   <Input
@@ -86,20 +86,15 @@ export default function Component() {
                     type="text"
                     required
                   />
-                  <div className="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground/80 peer-disabled:opacity-50">
-                    <Check
-                      size={16}
-                      strokeWidth={2}
-                      className="text-emerald-500"
-                      aria-hidden="true"
-                    />
+                  <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 peer-disabled:opacity-50">
+                    <CheckIcon size={16} className="text-emerald-500" aria-hidden="true" />
                   </div>
                 </div>
               </div>
-              <div className="space-y-2">
+              <div className="*:not-first:mt-2">
                 <Label htmlFor={`${id}-website`}>Website</Label>
-                <div className="flex rounded-lg shadow-sm shadow-black/5">
-                  <span className="-z-10 inline-flex items-center rounded-s-lg border border-input bg-background px-3 text-sm text-muted-foreground">
+                <div className="flex rounded-lg shadow-xs">
+                  <span className="border-input bg-background text-muted-foreground -z-10 inline-flex items-center rounded-s-lg border px-3 text-sm">
                     https://
                   </span>
                   <Input
@@ -111,7 +106,7 @@ export default function Component() {
                   />
                 </div>
               </div>
-              <div className="space-y-2">
+              <div className="*:not-first:mt-2">
                 <Label htmlFor={`${id}-bio`}>Biography</Label>
                 <Textarea
                   id={`${id}-bio`}
@@ -123,7 +118,7 @@ export default function Component() {
                 />
                 <p
                   id={`${id}-description`}
-                  className="mt-2 text-right text-xs text-muted-foreground"
+                  className="text-muted-foreground mt-2 text-right text-xs"
                   role="status"
                   aria-live="polite"
                 >
@@ -133,7 +128,7 @@ export default function Component() {
             </form>
           </div>
         </div>
-        <DialogFooter className="border-t border-border px-6 py-4">
+        <DialogFooter className="border-t px-6 py-4">
           <DialogClose asChild>
             <Button type="button" variant="outline">
               Cancel
@@ -162,7 +157,7 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
 
   return (
     <div className="h-32">
-      <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-muted">
+      <div className="bg-muted relative flex h-full w-full items-center justify-center overflow-hidden">
         {currentImage && (
           <img
             className="h-full w-full object-cover"
@@ -175,20 +170,20 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
         <div className="absolute inset-0 flex items-center justify-center gap-2">
           <button
             type="button"
-            className="z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-offset-2 transition-colors hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
+            className="outline-ring/30 dark:outline-ring/40 z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-offset-2 transition-colors hover:bg-black/80 focus-visible:outline-2"
             onClick={handleThumbnailClick}
             aria-label={currentImage ? "Change image" : "Upload image"}
           >
-            <ImagePlus size={16} strokeWidth={2} aria-hidden="true" />
+            <ImagePlusIcon size={16} aria-hidden="true" />
           </button>
           {currentImage && (
             <button
               type="button"
-              className="z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-offset-2 transition-colors hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
+              className="outline-ring/30 dark:outline-ring/40 z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-offset-2 transition-colors hover:bg-black/80 focus-visible:outline-2"
               onClick={handleImageRemove}
               aria-label="Remove image"
             >
-              <X size={16} strokeWidth={2} aria-hidden="true" />
+              <XIcon size={16} aria-hidden="true" />
             </button>
           )}
         </div>
@@ -212,7 +207,7 @@ function Avatar({ defaultImage }: { defaultImage?: string }) {
 
   return (
     <div className="-mt-10 px-6">
-      <div className="relative flex size-20 items-center justify-center overflow-hidden rounded-full border-4 border-background bg-muted shadow-sm shadow-black/10">
+      <div className="border-background bg-muted relative flex size-20 items-center justify-center overflow-hidden rounded-full border-4 shadow-xs shadow-black/10">
         {currentImage && (
           <img
             src={currentImage}
@@ -224,11 +219,11 @@ function Avatar({ defaultImage }: { defaultImage?: string }) {
         )}
         <button
           type="button"
-          className="absolute flex size-8 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-offset-2 transition-colors hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
+          className="outline-ring/30 dark:outline-ring/40 absolute flex size-8 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-offset-2 transition-colors hover:bg-black/80 focus-visible:outline-2"
           onClick={handleThumbnailClick}
           aria-label="Change profile picture"
         >
-          <ImagePlus size={16} strokeWidth={2} aria-hidden="true" />
+          <ImagePlusIcon size={16} aria-hidden="true" />
         </button>
         <input
           type="file"

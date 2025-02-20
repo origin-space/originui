@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-38",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/datefield-rac.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-38.tsx",
+      "content": "\"use client\";\n\nimport { DateInput, TimeField } from \"@/registry/default/ui/datefield-rac\";\nimport { Clock } from \"lucide-react\";\nimport { Label } from \"react-aria-components\";\n\nexport default function Component() {\n  return (\n    <TimeField className=\"space-y-2\">\n      <Label className=\"text-sm font-medium text-foreground\">Time input with start icon</Label>\n      <div className=\"relative\">\n        <div className=\"pointer-events-none absolute inset-y-0 start-0 z-10 flex items-center justify-center ps-3 text-muted-foreground/80\">\n          <Clock size={16} strokeWidth={2} aria-hidden=\"true\" />\n        </div>\n        <DateInput className=\"ps-9\" />\n      </div>\n      <p className=\"mt-2 text-xs text-muted-foreground\" role=\"region\" aria-live=\"polite\">\n        Built with{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://react-spectrum.adobe.com/react-aria/DateField.html\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          React Aria\n        </a>\n      </p>\n    </TimeField>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "date",
+      "react aria"
+    ]
+  }
+}

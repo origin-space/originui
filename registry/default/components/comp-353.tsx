@@ -10,87 +10,87 @@ import {
   CollapsibleTrigger,
 } from "@/registry/default/ui/collapsible";
 import {
-  AtSign,
-  ChevronDown,
-  CircleDashed,
-  Command,
-  Eclipse,
-  Gauge,
+  AtSignIcon,
+  ChevronDownIcon,
+  CircleDashedIcon,
+  CommandIcon,
+  EclipseIcon,
+  GaugeIcon,
   LucideIcon,
-  Zap,
+  ZapIcon,
 } from "lucide-react";
 
 const items = [
   {
     id: "1",
     title: "What makes Origin UI different?",
-    icon: Command,
+    icon: CommandIcon,
     collapsibles: [
       {
         title: "What about performance?",
         content: "We optimize every component for maximum performance and minimal bundle size.",
-        icon: Gauge,
+        icon: GaugeIcon,
       },
       {
         title: "How is the documentation?",
         content:
           "Our documentation is comprehensive and includes live examples for every component.",
-        icon: CircleDashed,
+        icon: CircleDashedIcon,
       },
     ],
   },
   {
     id: "2",
     title: "How can I customize the components?",
-    icon: Eclipse,
+    icon: EclipseIcon,
     collapsibles: [
       {
         title: "Can I use custom themes?",
         content:
           "Yes, our theming system is fully customizable and supports both light and dark modes.",
-        icon: Gauge,
+        icon: GaugeIcon,
       },
       {
         title: "What about Tailwind support?",
         content: "We have first-class support for Tailwind CSS with custom utility classes.",
-        icon: CircleDashed,
+        icon: CircleDashedIcon,
       },
     ],
   },
   {
     id: "3",
     title: "Is Origin UI optimized for performance?",
-    icon: Zap,
+    icon: ZapIcon,
     collapsibles: [
       {
         title: "What's the bundle size impact?",
         content:
           "Our components are tree-shakeable and typically add minimal overhead to your bundle.",
         open: true,
-        icon: Gauge,
+        icon: GaugeIcon,
       },
       {
         title: "How is code splitting handled?",
         content: "We support automatic code splitting for optimal loading performance.",
-        icon: CircleDashed,
+        icon: CircleDashedIcon,
       },
     ],
   },
   {
     id: "4",
     title: "How accessible are the components?",
-    icon: AtSign,
+    icon: AtSignIcon,
     collapsibles: [
       {
         title: "Which screen readers are supported?",
         content: "We test with NVDA, VoiceOver, and JAWS to ensure broad compatibility.",
-        icon: Gauge,
+        icon: GaugeIcon,
       },
       {
         title: "What about keyboard navigation?",
         content:
           "Full keyboard navigation support is implemented following WAI-ARIA best practices.",
-        icon: CircleDashed,
+        icon: CircleDashedIcon,
       },
     ],
   },
@@ -105,12 +105,7 @@ export default function Component() {
           <AccordionItem value={item.id} key={item.id}>
             <AccordionTrigger className="justify-start gap-3 text-[15px] leading-6 hover:no-underline [&>svg]:-order-1">
               <span className="flex items-center gap-3">
-                <item.icon
-                  size={16}
-                  strokeWidth={2}
-                  className="shrink-0 opacity-60"
-                  aria-hidden="true"
-                />
+                <item.icon size={16} className="shrink-0 opacity-60" aria-hidden="true" />
                 <span>{item.title}</span>
               </span>
             </AccordionTrigger>
@@ -144,20 +139,19 @@ function CollapsibleDemo({
   icon: LucideIcon;
 }) {
   return (
-    <Collapsible className="space-y-1 border-t border-border py-3 pe-4 ps-6" defaultOpen={open}>
-      <CollapsibleTrigger className="flex gap-2 text-[15px] font-semibold leading-6 [&[data-state=open]>svg]:rotate-180">
-        <ChevronDown
+    <Collapsible className="border-t py-3 ps-6 pe-4" defaultOpen={open}>
+      <CollapsibleTrigger className="flex gap-2 text-[15px] leading-6 font-semibold [&[data-state=open]>svg]:rotate-180">
+        <ChevronDownIcon
           size={16}
-          strokeWidth={2}
           className="mt-1 shrink-0 opacity-60 transition-transform duration-200"
           aria-hidden="true"
         />
         <span className="flex items-center gap-3">
-          <Icon size={16} strokeWidth={2} className="shrink-0 opacity-60" aria-hidden="true" />
+          <Icon size={16} className="shrink-0 opacity-60" aria-hidden="true" />
           <span>{title}</span>
         </span>
       </CollapsibleTrigger>
-      <CollapsibleContent className="overflow-hidden ps-6 text-sm text-muted-foreground transition-all data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
+      <CollapsibleContent className="mt-1 text-muted-foreground data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down overflow-hidden ps-6 text-sm transition-all">
         {content}
       </CollapsibleContent>
     </Collapsible>

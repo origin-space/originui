@@ -9,7 +9,7 @@ import {
 } from "@/registry/default/ui/popover";
 import { useState } from "react";
 
-import { Club, Diamond, Heart, LucideIcon, Spade } from "lucide-react";
+import { ClubIcon, DiamondIcon, HeartIcon, LucideIcon, SpadeIcon } from "lucide-react";
 
 interface TourStep {
   icon: LucideIcon;
@@ -19,25 +19,25 @@ interface TourStep {
 
 const tourSteps: TourStep[] = [
   {
-    icon: Heart,
+    icon: HeartIcon,
     title: "Heart",
     description:
       "This is your new workspace. Here you'll find all your projects, recent activities, settings, and more.",
   },
   {
-    icon: Diamond,
+    icon: DiamondIcon,
     title: "Diamond",
     description:
       "Use the toolbar above to create new projects, invite team members, or access settings.",
   },
   {
-    icon: Club,
+    icon: ClubIcon,
     title: "Club",
     description:
       "Click the support icon in the top right corner to access our help center and documentation.",
   },
   {
-    icon: Spade,
+    icon: SpadeIcon,
     title: "Spade",
     description:
       "Press ⌘K to open the command palette. Use arrow keys to navigate and Enter to select an action.",
@@ -51,7 +51,7 @@ interface CardProps {
 
 function Card({ number, isActive }: CardProps) {
   const content = (
-    <div className="flex size-10 items-center justify-center rounded-lg bg-secondary text-sm font-medium text-muted-foreground">
+    <div className="bg-secondary text-muted-foreground flex size-10 items-center justify-center rounded-lg text-sm font-medium">
       {number + 1}
     </div>
   );
@@ -95,10 +95,10 @@ export default function Component() {
           <div className="space-y-3">
             <div className="space-y-1">
               <p className="text-[13px] font-medium">{tourSteps[currentTip].title}</p>
-              <p className="text-xs text-muted-foreground">{tourSteps[currentTip].description}</p>
+              <p className="text-muted-foreground text-xs">{tourSteps[currentTip].description}</p>
             </div>
             <div className="flex items-center justify-between gap-2">
-              <span className="text-xs text-muted-foreground">
+              <span className="text-muted-foreground text-xs">
                 {currentTip + 1}/{tourSteps.length}
               </span>
               <button className="text-xs font-medium hover:underline" onClick={handleNavigation}>

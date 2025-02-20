@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-94",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/button.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-94.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\n\nexport default function Component() {\n  return (\n    <Button className=\"rounded-full py-0 ps-0\">\n      <div className=\"me-0.5 flex aspect-square h-full p-1.5\">\n        <img\n          className=\"h-auto w-full rounded-full\"\n          src=\"avatar.jpg\"\n          alt=\"Profile image\"\n          width={24}\n          height={24}\n          aria-hidden=\"true\"\n        />\n      </div>\n      @georgelucas\n    </Button>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "button",
+      "user",
+      "avatar",
+      "profile"
+    ],
+    "style": 2
+  }
+}

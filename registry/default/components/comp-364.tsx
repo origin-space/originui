@@ -13,11 +13,13 @@ export default function HoverCardDemo() {
         />
         <div className="space-y-0.5">
           <HoverCardTrigger asChild>
-            <a className="text-sm font-medium hover:underline" href="#">
-              Keith Kennedy
-            </a>
+            <p>
+              <a className="text-sm font-medium hover:underline" href="#">
+                Keith Kennedy
+              </a>
+            </p>
           </HoverCardTrigger>
-          <p className="text-xs text-muted-foreground">@k.kennedy</p>
+          <p className="text-muted-foreground text-xs">@k.kennedy</p>
         </div>
       </div>
       <HoverCardContent>
@@ -32,38 +34,38 @@ export default function HoverCardDemo() {
             />
             <div className="space-y-0.5">
               <p className="text-sm font-medium">Keith Kennedy</p>
-              <p className="text-xs text-muted-foreground">@k.kennedy</p>
+              <p className="text-muted-foreground text-xs">@k.kennedy</p>
             </div>
           </div>
-          <p className="text-sm text-muted-foreground">
-            Designer at <strong className="font-medium text-foreground">@Origin UI</strong>.
+          <p className="text-muted-foreground text-sm">
+            Designer at <strong className="text-foreground font-medium">@Origin UI</strong>.
             Crafting web experiences with Tailwind CSS.
           </p>
           <div className="flex items-center gap-2">
             <div className="flex -space-x-1.5">
               <img
-                className="rounded-full ring-1 ring-background"
+                className="ring-background rounded-full ring-1"
                 src="/avatar-20-04.jpg"
                 width={20}
                 height={20}
                 alt="Friend 01"
               />
               <img
-                className="rounded-full ring-1 ring-background"
+                className="ring-background rounded-full ring-1"
                 src="/avatar-20-05.jpg"
                 width={20}
                 height={20}
                 alt="Friend 02"
               />
               <img
-                className="rounded-full ring-1 ring-background"
+                className="ring-background rounded-full ring-1"
                 src="/avatar-20-06.jpg"
                 width={20}
                 height={20}
                 alt="Friend 03"
               />
             </div>
-            <div className="text-xs text-muted-foreground">3 mutual friends</div>
+            <div className="text-muted-foreground text-xs">3 mutual friends</div>
           </div>
         </div>
       </HoverCardContent>

@@ -5,7 +5,7 @@ import { useId } from "react";
 export default function Component() {
   const id = useId();
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Select with option groups (native)</Label>
       <SelectNative id={id}>
         <optgroup label="Frontend">

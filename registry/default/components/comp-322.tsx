@@ -17,7 +17,7 @@ export default function Component() {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Send us feedback</DialogTitle>
+          <DialogTitle>SendIcon us feedback</DialogTitle>
           <DialogDescription>
             Watch{" "}
             <a className="text-foreground hover:underline" href="#">
@@ -38,10 +38,10 @@ export default function Component() {
           <Textarea
             id="feedback"
             placeholder="How can we improve Origin UI?"
-            aria-label="Send feedback"
+            aria-label="SendIcon feedback"
           />
           <div className="flex flex-col sm:flex-row sm:justify-end">
-            <Button type="button">Send feedback</Button>
+            <Button type="button">SendIcon feedback</Button>
           </div>
         </form>
       </DialogContent>

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-148",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/checkbox.json",
+    "https://originui.com/r/checkbox-tree.json",
+    "https://originui.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-148.tsx",
+      "content": "\"use client\";\n\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { CheckboxTree } from \"@/registry/default/ui/checkbox-tree\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Fragment, useId } from \"react\";\n\ninterface TreeNode {\n  id: string;\n  label: string;\n  defaultChecked?: boolean;\n  children?: TreeNode[];\n}\n\nconst initialTree: TreeNode = {\n  id: \"1\",\n  label: \"Natural Wonders\",\n  children: [\n    { id: \"2\", label: \"Mountains\", defaultChecked: true },\n    {\n      id: \"3\",\n      label: \"Waterfalls\",\n      children: [\n        { id: \"4\", label: \"Niagara Falls\" },\n        { id: \"5\", label: \"Angel Falls\", defaultChecked: true },\n      ],\n    },\n    { id: \"6\", label: \"Grand Canyon\" },\n  ],\n};\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"space-y-3\">\n      <CheckboxTree\n        tree={initialTree}\n        renderNode={({ node, isChecked, onCheckedChange, children }) => (\n          <Fragment key={`${id}-${node.id}`}>\n            <div className=\"flex items-center gap-2\">\n              <Checkbox\n                id={`${id}-${node.id}`}\n                checked={isChecked}\n                onCheckedChange={onCheckedChange}\n              />\n              <Label htmlFor={`${id}-${node.id}`}>{node.label}</Label>\n            </div>\n            {children && <div className=\"ms-6 space-y-3\">{children}</div>}\n          </Fragment>\n        )}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "checkbox",
+      "label",
+      "tree",
+      "radix"
+    ]
+  }
+}

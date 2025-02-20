@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-72",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/textarea.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-72.tsx",
+      "content": "import { Textarea } from \"@/registry/default/ui/textarea\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"group relative\">\n      <label\n        htmlFor={id}\n        className=\"origin-start absolute top-0 block translate-y-2 cursor-text px-1 text-sm text-muted-foreground/70 transition-all group-focus-within:pointer-events-none group-focus-within:-translate-y-1/2 group-focus-within:cursor-default group-focus-within:text-xs group-focus-within:font-medium group-focus-within:text-foreground has-[+textarea:not(:placeholder-shown)]:pointer-events-none has-[+textarea:not(:placeholder-shown)]:-translate-y-1/2 has-[+textarea:not(:placeholder-shown)]:cursor-default has-[+textarea:not(:placeholder-shown)]:text-xs has-[+textarea:not(:placeholder-shown)]:font-medium has-[+textarea:not(:placeholder-shown)]:text-foreground\"\n      >\n        <span className=\"inline-flex bg-background px-2\">Textarea with label animation</span>\n      </label>\n      <Textarea id={id} placeholder=\"\" />\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "label",
+      "textarea"
+    ]
+  }
+}

@@ -4,7 +4,7 @@ import {
   PaginationItem,
   PaginationLink,
 } from "@/registry/default/ui/pagination";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 type PaginationProps = {
   currentPage: number;
@@ -23,11 +23,11 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
             aria-disabled={currentPage === 1 ? true : undefined}
             role={currentPage === 1 ? "link" : undefined}
           >
-            <ChevronLeft size={16} strokeWidth={2} aria-hidden="true" />
+            <ChevronLeftIcon size={16} aria-hidden="true" />
           </PaginationLink>
         </PaginationItem>
         <PaginationItem>
-          <p className="text-sm text-muted-foreground" aria-live="polite">
+          <p className="text-muted-foreground text-sm" aria-live="polite">
             Page <span className="text-foreground">{currentPage}</span> of{" "}
             <span className="text-foreground">{totalPages}</span>
           </p>
@@ -40,7 +40,7 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
             aria-disabled={currentPage === totalPages ? true : undefined}
             role={currentPage === totalPages ? "link" : undefined}
           >
-            <ChevronRight size={16} strokeWidth={2} aria-hidden="true" />
+            <ChevronRightIcon size={16} aria-hidden="true" />
           </PaginationLink>
         </PaginationItem>
       </PaginationContent>

@@ -18,12 +18,12 @@ export default function Component() {
         <Button variant="outline">Scrollable (custom scrollbar)</Button>
       </DialogTrigger>
       <DialogContent className="flex flex-col gap-0 p-0 sm:max-h-[min(640px,80vh)] sm:max-w-lg [&>button:last-child]:hidden">
-        <ScrollArea className="flex max-h-full flex-col">
+        <ScrollArea className="flex max-h-full flex-col overflow-hidden">
           <DialogHeader className="contents space-y-0 text-left">
             <DialogTitle className="px-6 pt-6">Frequently Asked Questions (FAQ)</DialogTitle>
             <DialogDescription asChild>
               <div className="p-6">
-                <div className="space-y-4 [&_strong]:font-semibold [&_strong]:text-foreground">
+                <div className="[&_strong]:text-foreground space-y-4 [&_strong]:font-semibold">
                   <div className="space-y-1">
                     <p>
                       <strong>Account Management</strong>

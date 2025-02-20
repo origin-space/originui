@@ -11,14 +11,14 @@ export default function Component() {
 
   return (
     <fieldset className="space-y-4">
-      <legend className="text-sm font-medium leading-none text-foreground">
+      <legend className="text-foreground text-sm leading-none font-medium">
         Rate your experience
       </legend>
       <RadioGroup className="inline-flex gap-0" onValueChange={setCurrentRating}>
         {["1", "2", "3", "4", "5"].map((value) => (
           <label
             key={value}
-            className="group relative cursor-pointer rounded-lg p-0.5 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70"
+            className="group outline-ring/30 dark:outline-ring/40 relative cursor-pointer rounded-lg p-0.5 has-focus-visible:outline-2"
             onMouseEnter={() => setHoverRating(value)}
             onMouseLeave={() => setHoverRating("")}
           >

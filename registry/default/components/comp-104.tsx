@@ -1,7 +1,14 @@
 "use client";
 
 import { Button } from "@/registry/default/ui/button";
-import { Minus, Plus, Volume, Volume1, Volume2, VolumeX } from "lucide-react";
+import {
+  MinusIcon,
+  PlusIcon,
+  Volume1Icon,
+  Volume2Icon,
+  VolumeIcon,
+  VolumeXIcon,
+} from "lucide-react";
 import { useState } from "react";
 
 export default function Component() {
@@ -11,7 +18,8 @@ export default function Component() {
   const increaseVolume = () => setVolume((prev) => Math.min(6, prev + 1));
 
   // Optimized volume icon selection
-  const VolumeIcon = volume === 0 ? VolumeX : volume < 3 ? Volume : volume < 5 ? Volume1 : Volume2;
+  const Icon =
+    volume === 0 ? VolumeXIcon : volume < 3 ? VolumeIcon : volume < 5 ? Volume1Icon : Volume2Icon;
 
   return (
     <div className="inline-flex items-center" role="group" aria-labelledby="volume-control">
@@ -26,10 +34,10 @@ export default function Component() {
         onClick={decreaseVolume}
         disabled={volume === 0}
       >
-        <Minus size={16} strokeWidth={2} aria-hidden="true" />
+        <MinusIcon size={16} aria-hidden="true" />
       </Button>
       <div className="flex items-center px-3 text-sm font-medium tabular-nums" aria-live="polite">
-        <VolumeIcon className="opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
+        <Icon className="opacity-60" size={16} aria-hidden="true" />
         <span className="ms-2" aria-label={`Current volume is ${volume}`}>
           {volume}
         </span>
@@ -42,7 +50,7 @@ export default function Component() {
         onClick={increaseVolume}
         disabled={volume === 6}
       >
-        <Plus size={16} strokeWidth={2} aria-hidden="true" />
+        <PlusIcon size={16} aria-hidden="true" />
       </Button>
     </div>
   );

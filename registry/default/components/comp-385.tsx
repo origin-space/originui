@@ -42,10 +42,10 @@ export default function Component() {
         <div className="space-y-3">
           <div className="space-y-1">
             <p className="text-[13px] font-medium">{tips[currentTip].title}</p>
-            <p className="text-xs text-muted-foreground">{tips[currentTip].description}</p>
+            <p className="text-muted-foreground text-xs">{tips[currentTip].description}</p>
           </div>
           <div className="flex items-center justify-between gap-2">
-            <span className="text-xs text-muted-foreground">
+            <span className="text-muted-foreground text-xs">
               {currentTip + 1}/{tips.length}
             </span>
             <button className="text-xs font-medium hover:underline" onClick={handleNavigation}>

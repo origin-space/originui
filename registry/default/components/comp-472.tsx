@@ -72,7 +72,7 @@ export default function Component() {
         </TableHeader>
         <TableBody>
           {items.map((item) => (
-            <TableRow key={item.id} className="has-[[data-state=checked]]:bg-muted/50">
+            <TableRow key={item.id} className="has-data-[state=checked]:bg-muted/50">
               <TableCell>
                 <Checkbox id={`table-checkbox-${item.id}`} />
               </TableCell>
@@ -91,7 +91,7 @@ export default function Component() {
           </TableRow>
         </TableFooter>
       </Table>
-      <p className="mt-4 text-center text-sm text-muted-foreground">Table with row selection</p>
+      <p className="text-muted-foreground mt-4 text-center text-sm">Table with row selection</p>
     </div>
   );
 }

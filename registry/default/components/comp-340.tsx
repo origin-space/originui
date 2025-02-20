@@ -1,7 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem } from "@/registry/default/ui/accordion";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 
-import { ChevronDown } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 
 const items = [
   {
@@ -30,7 +30,7 @@ const items = [
     title: "Contact support",
     sub: "We're here to help 24/7",
     content:
-      "Our support team is available around the clock to assist you. For billing inquiries, technical issues, or general questions, you can reach us through live chat, email at support@example.com, or schedule a call with our technical team. Premium support is available for enterprise customers.",
+      "Our support team is available around the ClockIcon to assist you. For billing inquiries, technical issues, or general questions, you can reach us through live chat, email at support@example.com, or schedule a call with our technical team. Premium support is available for enterprise customers.",
   },
 ];
 
@@ -42,20 +42,19 @@ export default function Component() {
         {items.map((item) => (
           <AccordionItem value={item.id} key={item.id} className="py-2">
             <AccordionPrimitive.Header className="flex">
-              <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between py-2 text-left text-[15px] font-semibold leading-6 transition-all [&[data-state=open]>svg]:rotate-180">
+              <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between py-2 text-left text-[15px] leading-6 font-semibold transition-all [&[data-state=open]>svg]:rotate-180">
                 <span className="flex flex-col space-y-1">
                   <span>{item.title}</span>
                   {item.sub && <span className="text-sm font-normal">{item.sub}</span>}
                 </span>
-                <ChevronDown
+                <ChevronDownIcon
                   size={16}
-                  strokeWidth={2}
                   className="shrink-0 opacity-60 transition-transform duration-200"
                   aria-hidden="true"
                 />
               </AccordionPrimitive.Trigger>
             </AccordionPrimitive.Header>
-            <AccordionContent className="pb-2 text-muted-foreground">
+            <AccordionContent className="text-muted-foreground pb-2">
               {item.content}
             </AccordionContent>
           </AccordionItem>

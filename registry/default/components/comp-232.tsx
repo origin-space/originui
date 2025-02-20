@@ -11,7 +11,7 @@ import {
 } from "@/registry/default/ui/command";
 import { Label } from "@/registry/default/ui/label";
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
-import { Check, ChevronDown } from "lucide-react";
+import { CheckIcon, ChevronDownIcon } from "lucide-react";
 import { Fragment, useId, useState } from "react";
 
 const countries = [
@@ -62,7 +62,7 @@ export default function Component() {
   const [value, setValue] = useState<string>("");
 
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Options with flag and search</Label>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
@@ -71,7 +71,7 @@ export default function Component() {
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="w-full justify-between bg-background px-3 font-normal outline-offset-0 hover:bg-background focus-visible:border-ring focus-visible:outline-[3px] focus-visible:outline-ring/20"
+            className="bg-background hover:bg-background focus-visible:border-ring/40 outline-ring/8 dark:outline-ring/12 w-full justify-between px-3 font-normal outline-offset-0 focus-visible:outline-[3px]"
           >
             {value ? (
               <span className="flex min-w-0 items-center gap-2">
@@ -87,16 +87,15 @@ export default function Component() {
             ) : (
               <span className="text-muted-foreground">Select country</span>
             )}
-            <ChevronDown
+            <ChevronDownIcon
               size={16}
-              strokeWidth={2}
-              className="shrink-0 text-muted-foreground/80"
+              className="text-muted-foreground/80 shrink-0"
               aria-hidden="true"
             />
           </Button>
         </PopoverTrigger>
         <PopoverContent
-          className="w-full min-w-[var(--radix-popper-anchor-width)] border-input p-0"
+          className="border-input w-full min-w-[var(--radix-popper-anchor-width)] p-0"
           align="start"
         >
           <Command>
@@ -116,9 +115,7 @@ export default function Component() {
                         }}
                       >
                         <span className="text-lg leading-none">{country.flag}</span> {country.value}
-                        {value === country.value && (
-                          <Check size={16} strokeWidth={2} className="ml-auto" />
-                        )}
+                        {value === country.value && <CheckIcon size={16} className="ml-auto" />}
                       </CommandItem>
                     ))}
                   </CommandGroup>

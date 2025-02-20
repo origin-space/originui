@@ -36,7 +36,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp } from "lucide-react";
+import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon, ChevronUpIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
 type Item = {
@@ -171,7 +171,7 @@ export default function Component() {
 
   return (
     <div className="space-y-4">
-      <div className="overflow-hidden rounded-lg border border-border bg-background">
+      <div className="bg-background overflow-hidden rounded-lg border">
         <Table className="table-fixed">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -187,7 +187,7 @@ export default function Component() {
                         <div
                           className={cn(
                             header.column.getCanSort() &&
-                              "flex h-full cursor-pointer select-none items-center justify-between gap-2",
+                              "flex h-full cursor-pointer items-center justify-between gap-2 select-none",
                           )}
                           onClick={header.column.getToggleSortingHandler()}
                           onKeyDown={(e) => {
@@ -205,18 +205,16 @@ export default function Component() {
                           {flexRender(header.column.columnDef.header, header.getContext())}
                           {{
                             asc: (
-                              <ChevronUp
+                              <ChevronUpIcon
                                 className="shrink-0 opacity-60"
                                 size={16}
-                                strokeWidth={2}
                                 aria-hidden="true"
                               />
                             ),
                             desc: (
-                              <ChevronDown
+                              <ChevronDownIcon
                                 className="shrink-0 opacity-60"
                                 size={16}
-                                strokeWidth={2}
                                 aria-hidden="true"
                               />
                             ),
@@ -256,7 +254,7 @@ export default function Component() {
       {/* Pagination */}
       <div className="flex items-center justify-between gap-3 max-sm:flex-col">
         {/* Page number information */}
-        <p className="flex-1 whitespace-nowrap text-sm text-muted-foreground" aria-live="polite">
+        <p className="text-muted-foreground flex-1 text-sm whitespace-nowrap" aria-live="polite">
           Page <span className="text-foreground">{table.getState().pagination.pageIndex + 1}</span>{" "}
           of <span className="text-foreground">{table.getPageCount()}</span>
         </p>
@@ -275,7 +273,7 @@ export default function Component() {
                   disabled={!table.getCanPreviousPage()}
                   aria-label="Go to previous page"
                 >
-                  <ChevronLeft size={16} strokeWidth={2} aria-hidden="true" />
+                  <ChevronLeftIcon size={16} aria-hidden="true" />
                 </Button>
               </PaginationItem>
 
@@ -320,7 +318,7 @@ export default function Component() {
                   disabled={!table.getCanNextPage()}
                   aria-label="Go to next page"
                 >
-                  <ChevronRight size={16} strokeWidth={2} aria-hidden="true" />
+                  <ChevronRightIcon size={16} aria-hidden="true" />
                 </Button>
               </PaginationItem>
             </PaginationContent>
@@ -349,10 +347,10 @@ export default function Component() {
           </Select>
         </div>
       </div>
-      <p className="mt-4 text-center text-sm text-muted-foreground">
+      <p className="text-muted-foreground mt-4 text-center text-sm">
         Numeric pagination made with{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://tanstack.com/table"
           target="_blank"
           rel="noopener noreferrer"

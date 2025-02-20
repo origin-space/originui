@@ -2,7 +2,7 @@
 
 import { Label } from "@/registry/default/ui/label";
 import { Switch } from "@/registry/default/ui/switch";
-import { Moon, Sun } from "lucide-react";
+import { MoonIcon, SunIcon } from "lucide-react";
 import { useId, useState } from "react";
 
 export default function Component() {
@@ -15,9 +15,9 @@ export default function Component() {
       <Label htmlFor={id}>
         <span className="sr-only">Toggle switch</span>
         {checked ? (
-          <Sun size={16} strokeWidth={2} aria-hidden="true" />
+          <SunIcon size={16} aria-hidden="true" />
         ) : (
-          <Moon size={16} strokeWidth={2} aria-hidden="true" />
+          <MoonIcon size={16} aria-hidden="true" />
         )}
       </Label>
     </div>

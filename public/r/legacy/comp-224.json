@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-224",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/select.json",
+    "https://originui.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-224.tsx",
+      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor={id}>Select with description and right indicator</Label>\n      <Select defaultValue=\"2\">\n        <SelectTrigger id={id} className=\"[&_[data-desc]]:hidden\">\n          <SelectValue placeholder=\"Choose a plan\" />\n        </SelectTrigger>\n        <SelectContent className=\"[&_*[role=option]>span]:end-2 [&_*[role=option]>span]:start-auto [&_*[role=option]]:pe-8 [&_*[role=option]]:ps-2\">\n          <SelectItem value=\"1\">\n            Standard Plan\n            <span className=\"mt-1 block text-xs text-muted-foreground\" data-desc>\n              Ideal for individuals\n            </span>\n          </SelectItem>\n          <SelectItem value=\"2\">\n            Pro Plan\n            <span className=\"mt-1 block text-xs text-muted-foreground\" data-desc>\n              For professional users\n            </span>\n          </SelectItem>\n          <SelectItem value=\"3\">\n            Enterprise Plan\n            <span className=\"mt-1 block text-xs text-muted-foreground\" data-desc>\n              Built for large teams\n            </span>\n          </SelectItem>\n        </SelectContent>\n      </Select>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "label",
+      "select",
+      "radix"
+    ]
+  }
+}

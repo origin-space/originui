@@ -27,27 +27,27 @@ export default function CliCommands({ name }: { name: string }) {
         }}
         className="rounded-lg bg-zinc-950 dark:bg-zinc-900"
       >
-        <TabsList className="dark h-auto w-full justify-start rounded-none border-b border-border bg-transparent px-4 py-0">
+        <TabsList className="dark h-auto w-full justify-start rounded-none border-b bg-transparent px-4 py-0">
           <TabsTrigger
-            className="relative rounded-none py-3 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary"
+            className="data-[state=active]:after:bg-primary relative rounded-none py-3 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
             value="pnpm"
           >
             pnpm
           </TabsTrigger>
           <TabsTrigger
-            className="relative rounded-none py-3 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary"
+            className="data-[state=active]:after:bg-primary relative rounded-none py-3 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
             value="npm"
           >
             npm
           </TabsTrigger>
           <TabsTrigger
-            className="relative rounded-none py-3 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary"
+            className="data-[state=active]:after:bg-primary relative rounded-none py-3 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
             value="yarn"
           >
             yarn
           </TabsTrigger>
           <TabsTrigger
-            className="relative rounded-none py-3 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary"
+            className="data-[state=active]:after:bg-primary relative rounded-none py-3 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
             value="bun"
           >
             bun

@@ -12,13 +12,16 @@ export default function Component() {
   const id = useId();
   return (
     <div
-      className="space-y-2"
+      className="*:not-first:mt-2"
       // NOTE: This inline style is to show how to set the --ring variable in your CSS file in order to change the focus ring color.
-      style={{ "--ring": "234 89% 74%" } as React.CSSProperties}
+      style={{ "--ring": "oklch(0.59 0.20 277)" } as React.CSSProperties}
     >
       <Label htmlFor={id}>Select with colored border and ring</Label>
       <Select defaultValue="1">
-        <SelectTrigger id={id}>
+        <SelectTrigger
+          id={id}
+          className="focus:border-ring/60 focus:ring-ring/20 dark:focus:ring-ring/25"
+        >
           <SelectValue placeholder="Select framework" />
         </SelectTrigger>
         <SelectContent>

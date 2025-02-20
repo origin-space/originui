@@ -11,13 +11,10 @@ import { useId } from "react";
 export default function Component() {
   const id = useId();
   return (
-    <div className="space-y-2 [&_svg]:text-destructive/80">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Select with error</Label>
       <Select defaultValue="1">
-        <SelectTrigger
-          id={id}
-          className="border-destructive/80 text-destructive focus:border-destructive/80 focus:ring-destructive/20"
-        >
+        <SelectTrigger id={id} aria-invalid>
           <SelectValue />
         </SelectTrigger>
         <SelectContent>
@@ -27,7 +24,7 @@ export default function Component() {
           <SelectItem value="4">Gatsby</SelectItem>
         </SelectContent>
       </Select>
-      <p className="mt-2 text-xs text-destructive" role="alert" aria-live="polite">
+      <p className="text-destructive mt-2 text-xs" role="alert" aria-live="polite">
         Selected option is invalid
       </p>
     </div>

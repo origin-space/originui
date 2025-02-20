@@ -26,7 +26,7 @@ export default function HoverCardDemo() {
           />
           <div className="space-y-1">
             <p className="text-sm font-medium">@Origin_UI</p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-muted-foreground text-sm">
               Beautiful UI components built with Tailwind CSS and Next.js.
             </p>
           </div>

@@ -8,7 +8,10 @@ export default function Component() {
     <div
       className="flex items-center gap-2"
       style={
-        { "--primary": "238.7 83.5% 66.7%", "--ring": "238.7 83.5% 66.7%" } as React.CSSProperties
+        {
+          "--primary": "oklch(0.59 0.20 277)",
+          "--ring": "oklch(0.59 0.20 277)",
+        } as React.CSSProperties
       }
     >
       <Checkbox id={id} defaultChecked />

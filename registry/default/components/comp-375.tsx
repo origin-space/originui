@@ -8,20 +8,20 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu";
-import { CircleUserRound } from "lucide-react";
+import { CircleUserRoundIcon } from "lucide-react";
 
 export default function Component() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button size="icon" variant="outline" aria-label="Open account menu">
-          <CircleUserRound size={16} strokeWidth={2} aria-hidden="true" />
+          <CircleUserRoundIcon size={16} aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="max-w-64">
         <DropdownMenuLabel className="flex flex-col">
           <span>Signed in as</span>
-          <span className="text-xs font-normal text-foreground">k.kennedy@originui.com</span>
+          <span className="text-foreground text-xs font-normal">k.kennedy@originui.com</span>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>

@@ -1,11 +1,11 @@
 import { Accordion, AccordionContent, AccordionItem } from "@/registry/default/ui/accordion";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { Bell, ChevronDown, LifeBuoy, Link2, ShieldCheck } from "lucide-react";
+import { BellIcon, ChevronDownIcon, LifeBuoyIcon, Link2Icon, ShieldCheckIcon } from "lucide-react";
 
 const items = [
   {
     id: "1",
-    icon: Link2,
+    icon: Link2Icon,
     title: "Connected accounts",
     sub: "Manage your linked social and work accounts",
     content:
@@ -13,7 +13,7 @@ const items = [
   },
   {
     id: "2",
-    icon: Bell,
+    icon: BellIcon,
     title: "Notifications",
     sub: "Customize your notification preferences",
     content:
@@ -21,7 +21,7 @@ const items = [
   },
   {
     id: "3",
-    icon: ShieldCheck,
+    icon: ShieldCheckIcon,
     title: "2-step verification",
     sub: "Add an extra layer of security to your account",
     content:
@@ -29,11 +29,11 @@ const items = [
   },
   {
     id: "4",
-    icon: LifeBuoy,
+    icon: LifeBuoyIcon,
     title: "Contact support",
     sub: "We're here to help 24/7",
     content:
-      "Our support team is available around the clock to assist you. For billing inquiries, technical issues, or general questions, you can reach us through live chat, email at support@example.com, or schedule a call with our technical team. Premium support is available for enterprise customers.",
+      "Our support team is available around the ClockIcon to assist you. For billing inquiries, technical issues, or general questions, you can reach us through live chat, email at support@example.com, or schedule a call with our technical team. Premium support is available for enterprise customers.",
   },
 ];
 
@@ -45,28 +45,27 @@ export default function Component() {
         {items.map((item) => (
           <AccordionItem value={item.id} key={item.id} className="py-2">
             <AccordionPrimitive.Header className="flex">
-              <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between py-2 text-left text-[15px] font-semibold leading-6 transition-all [&[data-state=open]>svg]:rotate-180">
+              <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between py-2 text-left text-[15px] leading-6 font-semibold transition-all [&[data-state=open]>svg]:rotate-180">
                 <span className="flex items-center gap-3">
                   <span
-                    className="flex size-10 shrink-0 items-center justify-center rounded-full border border-border"
+                    className="flex size-10 shrink-0 items-center justify-center rounded-full border"
                     aria-hidden="true"
                   >
-                    <item.icon size={16} strokeWidth={2} className="opacity-60" />
+                    <item.icon size={16} className="opacity-60" />
                   </span>
                   <span className="flex flex-col space-y-1">
                     <span>{item.title}</span>
                     {item.sub && <span className="text-sm font-normal">{item.sub}</span>}
                   </span>
                 </span>
-                <ChevronDown
+                <ChevronDownIcon
                   size={16}
-                  strokeWidth={2}
                   className="shrink-0 opacity-60 transition-transform duration-200"
                   aria-hidden="true"
                 />
               </AccordionPrimitive.Trigger>
             </AccordionPrimitive.Header>
-            <AccordionContent className="ms-3 pb-2 ps-10 text-muted-foreground">
+            <AccordionContent className="text-muted-foreground ms-3 ps-10 pb-2">
               {item.content}
             </AccordionContent>
           </AccordionItem>

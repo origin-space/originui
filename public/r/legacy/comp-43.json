@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-43",
+  "type": "registry:component",
+  "dependencies": [
+    "react-aria-components",
+    "react-aria",
+    "@internationalized/date"
+  ],
+  "registryDependencies": [
+    "https://originui.com/r/calendar-rac.json",
+    "https://originui.com/r/datefield-rac.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-43.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/registry/default/lib/utils\";\nimport { RangeCalendar } from \"@/registry/default/ui/calendar-rac\";\nimport { DateInput, dateInputStyle } from \"@/registry/default/ui/datefield-rac\";\nimport { getLocalTimeZone, isWeekend, today } from \"@internationalized/date\";\nimport { CalendarIcon } from \"lucide-react\";\nimport { useLocale } from \"react-aria\";\nimport type { DateValue } from \"react-aria-components\";\nimport { Button, DateRangePicker, Dialog, Group, Label, Popover } from \"react-aria-components\";\n\nexport default function Component() {\n  const now = today(getLocalTimeZone());\n  const disabledRanges = [\n    [now, now.add({ days: 5 })],\n    [now.add({ days: 14 }), now.add({ days: 16 })],\n    [now.add({ days: 23 }), now.add({ days: 24 })],\n  ];\n\n  const { locale } = useLocale();\n  const isDateUnavailable = (date: DateValue) =>\n    isWeekend(date, locale) ||\n    disabledRanges.some(\n      (interval) => date.compare(interval[0]) >= 0 && date.compare(interval[1]) <= 0,\n    );\n  const validate = (value: { start: DateValue; end: DateValue } | null) =>\n    disabledRanges.some(\n      (interval) =>\n        value && value.end.compare(interval[0]) >= 0 && value.start.compare(interval[1]) <= 0,\n    )\n      ? \"Selected date range may not include unavailable dates.\"\n      : null;\n\n  return (\n    <DateRangePicker\n      className=\"space-y-2\"\n      isDateUnavailable={isDateUnavailable}\n      validate={validate}\n    >\n      <Label className=\"text-sm font-medium text-foreground\">\n        Date range picker (unavailable dates)\n      </Label>\n      <div className=\"flex\">\n        <Group className={cn(dateInputStyle, \"pe-9\")}>\n          <DateInput slot=\"start\" unstyled />\n          <span aria-hidden=\"true\" className=\"px-2 text-muted-foreground/70\">\n            -\n          </span>\n          <DateInput slot=\"end\" unstyled />\n        </Group>\n        <Button className=\"z-10 -me-px -ms-9 flex w-9 items-center justify-center rounded-e-lg text-muted-foreground/80 outline-offset-2 transition-colors hover:text-foreground focus-visible:outline-none data-[focus-visible]:outline data-[focus-visible]:outline-2 data-[focus-visible]:outline-ring/70\">\n          <CalendarIcon size={16} strokeWidth={2} />\n        </Button>\n      </div>\n      <Popover\n        className=\"z-50 rounded-lg border border-border bg-background text-popover-foreground shadow-lg shadow-black/5 outline-none data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0 data-[entering]:zoom-in-95 data-[exiting]:zoom-out-95 data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2\"\n        offset={4}\n      >\n        <Dialog className=\"max-h-[inherit] overflow-auto p-2\">\n          <RangeCalendar minValue={now} isDateUnavailable={isDateUnavailable} />\n        </Dialog>\n      </Popover>\n      <p className=\"mt-2 text-xs text-muted-foreground\" role=\"region\" aria-live=\"polite\">\n        Built with{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://react-spectrum.adobe.com/react-aria/DateRangePicker.html\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          React Aria\n        </a>\n      </p>\n    </DateRangePicker>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "date",
+      "calendar",
+      "range calendar",
+      "picker",
+      "react aria"
+    ]
+  }
+}

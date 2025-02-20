@@ -1,7 +1,7 @@
 "use client";
 
 import { Command as CommandPrimitive, useCommandState } from "cmdk";
-import { X } from "lucide-react";
+import { XIcon } from "lucide-react";
 import * as React from "react";
 import { forwardRef, useEffect } from "react";
 
@@ -439,7 +439,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
       >
         <div
           className={cn(
-            "relative min-h-[38px] rounded-lg border border-input text-sm transition-shadow focus-within:border-ring focus-within:outline-none focus-within:ring-[3px] focus-within:ring-ring/20 has-[:disabled]:cursor-not-allowed has-[:disabled]:opacity-50",
+            "border-input focus-within:border-ring/40 ring-ring/8 dark:ring-ring/12 has-aria-invalid:border-destructive/60 has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/25 relative min-h-[38px] rounded-lg border text-sm transition-shadow focus-within:ring-[3px] focus-within:outline-hidden has-disabled:pointer-events-none has-disabled:cursor-not-allowed has-disabled:opacity-50",
             {
               "p-1": selected.length !== 0,
               "cursor-text": !disabled && selected.length !== 0,
@@ -458,7 +458,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 <div
                   key={option.value}
                   className={cn(
-                    "animate-fadeIn relative inline-flex h-7 cursor-default items-center rounded-md border border-border bg-background pe-7 pl-2 ps-2 text-xs font-medium text-secondary-foreground transition-all hover:bg-background disabled:cursor-not-allowed disabled:opacity-50 data-[fixed]:pe-2",
+                    "animate-fadeIn bg-background text-secondary-foreground hover:bg-background relative inline-flex h-7 cursor-default items-center rounded-md border ps-2 pe-7 pl-2 text-xs font-medium transition-all disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-fixed:pe-2",
                     badgeClassName,
                   )}
                   data-fixed={option.fixed}
@@ -466,7 +466,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 >
                   {option.label}
                   <button
-                    className="absolute -inset-y-px -end-px flex size-7 items-center justify-center rounded-e-lg border border-transparent p-0 text-muted-foreground/80 outline-0 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
+                    className="text-muted-foreground/80 hover:text-foreground outline-ring/30 dark:outline-ring/40 absolute -inset-y-px -end-px flex size-7 items-center justify-center rounded-e-lg border border-transparent p-0 outline-hidden transition-colors focus-visible:outline-2"
                     onKeyDown={(e) => {
                       if (e.key === "Enter") {
                         handleUnselect(option);
@@ -479,7 +479,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                     onClick={() => handleUnselect(option)}
                     aria-label="Remove"
                   >
-                    <X size={14} strokeWidth={2} aria-hidden="true" />
+                    <XIcon size={14} aria-hidden="true" />
                   </button>
                 </div>
               );
@@ -509,7 +509,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
               }}
               placeholder={hidePlaceholderWhenSelected && selected.length !== 0 ? "" : placeholder}
               className={cn(
-                "flex-1 bg-transparent outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed",
+                "placeholder:text-muted-foreground flex-1 bg-transparent outline-hidden disabled:cursor-not-allowed",
                 {
                   "w-full": hidePlaceholderWhenSelected,
                   "px-3 py-2": selected.length === 0,
@@ -525,7 +525,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 onChange?.(selected.filter((s) => s.fixed));
               }}
               className={cn(
-                "absolute end-0 top-0 flex size-9 items-center justify-center rounded-lg border border-transparent text-muted-foreground/80 transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70",
+                "text-muted-foreground/80 hover:text-foreground outline-ring/30 dark:outline-ring/40 absolute end-0 top-0 flex size-9 items-center justify-center rounded-lg border border-transparent transition-colors focus-visible:outline-2",
                 (hideClearAllButton ||
                   disabled ||
                   selected.length < 1 ||
@@ -534,14 +534,14 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
               )}
               aria-label="Clear all"
             >
-              <X size={16} strokeWidth={2} aria-hidden="true" />
+              <XIcon size={16} aria-hidden="true" />
             </button>
           </div>
         </div>
         <div className="relative">
           <div
             className={cn(
-              "absolute top-2 z-10 w-full overflow-hidden rounded-lg border border-input",
+              "border-input absolute top-2 z-10 w-full overflow-hidden rounded-lg border",
               "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
               !open && "hidden",
             )}
@@ -549,7 +549,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
           >
             {open && (
               <CommandList
-                className="bg-popover text-popover-foreground shadow-lg shadow-black/5 outline-none"
+                className="bg-popover text-popover-foreground shadow-lg outline-hidden"
                 onMouseLeave={() => {
                   setOnScrollbar(false);
                 }}
@@ -592,7 +592,8 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                 }}
                                 className={cn(
                                   "cursor-pointer",
-                                  option.disable && "cursor-not-allowed opacity-50",
+                                  option.disable &&
+                                    "pointer-events-none cursor-not-allowed opacity-50",
                                 )}
                               >
                                 {option.label}

@@ -12,7 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/registry/default/ui/select";
-import { Database } from "lucide-react";
+import { DatabaseIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -29,8 +29,8 @@ export default function Component() {
               className="relative ps-9"
               aria-label="Select database"
             >
-              <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 group-has-[[disabled]]:opacity-50">
-                <Database size={16} strokeWidth={2} aria-hidden="true" />
+              <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 group-has-[select[disabled]]:opacity-50">
+                <DatabaseIcon size={16} aria-hidden="true" />
               </div>
               <SelectValue placeholder="Select time" />
             </SelectTrigger>

@@ -18,13 +18,13 @@ export default function Component() {
       </DialogTrigger>
       <DialogContent className="flex flex-col gap-0 p-0 sm:max-h-[min(640px,80vh)] sm:max-w-lg [&>button:last-child]:top-3.5">
         <DialogHeader className="contents space-y-0 text-left">
-          <DialogTitle className="border-b border-border px-6 py-4 text-base">
+          <DialogTitle className="border-b px-6 py-4 text-base">
             Frequently Asked Questions (FAQ)
           </DialogTitle>
           <div className="overflow-y-auto">
             <DialogDescription asChild>
               <div className="px-6 py-4">
-                <div className="space-y-4 [&_strong]:font-semibold [&_strong]:text-foreground">
+                <div className="[&_strong]:text-foreground space-y-4 [&_strong]:font-semibold">
                   <div className="space-y-1">
                     <p>
                       <strong>Account Management</strong>

@@ -7,28 +7,28 @@ import { Button, DatePicker, Dialog, Group, Label, Popover } from "react-aria-co
 
 export default function Component() {
   return (
-    <DatePicker className="space-y-2">
-      <Label className="text-sm font-medium text-foreground">Date picker</Label>
+    <DatePicker className="*:not-first:mt-2">
+      <Label className="text-foreground text-sm font-medium">Date picker</Label>
       <div className="flex">
         <Group className="w-full">
           <DateInput className="pe-9" />
         </Group>
-        <Button className="z-10 -me-px -ms-9 flex w-9 items-center justify-center rounded-e-lg text-muted-foreground/80 outline-offset-2 transition-colors hover:text-foreground focus-visible:outline-none data-[focus-visible]:outline data-[focus-visible]:outline-2 data-[focus-visible]:outline-ring/70">
-          <CalendarIcon size={16} strokeWidth={2} />
+        <Button className="text-muted-foreground/80 hover:text-foreground outline-ring/30 dark:outline-ring/40 z-10 -ms-9 -me-px flex w-9 items-center justify-center rounded-e-lg outline-offset-2 transition-colors focus-visible:outline-hidden data-focus-visible:outline-2">
+          <CalendarIcon size={16} />
         </Button>
       </div>
       <Popover
-        className="z-50 rounded-lg border border-border bg-background text-popover-foreground shadow-lg shadow-black/5 outline-none data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0 data-[entering]:zoom-in-95 data-[exiting]:zoom-out-95 data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2"
+        className="bg-background text-popover-foreground data-entering:animate-in data-exiting:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0 data-[entering]:zoom-in-95 data-[exiting]:zoom-out-95 data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2 z-50 rounded-lg border shadow-lg outline-hidden"
         offset={4}
       >
         <Dialog className="max-h-[inherit] overflow-auto p-2">
           <Calendar />
         </Dialog>
       </Popover>
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Built with{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://react-spectrum.adobe.com/react-aria/DatePicker.html"
           target="_blank"
           rel="noopener nofollow"

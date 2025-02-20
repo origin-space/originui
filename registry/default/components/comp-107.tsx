@@ -1,7 +1,7 @@
 "use client";
 
 import { ToggleGroup, ToggleGroupItem } from "@/registry/default/ui/toggle-group";
-import { AlignCenter, AlignJustify, AlignLeft, AlignRight } from "lucide-react";
+import { AlignCenterIcon, AlignJustifyIcon, AlignLeftIcon, AlignRightIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function Component() {
@@ -9,7 +9,7 @@ export default function Component() {
 
   return (
     <ToggleGroup
-      className="inline-flex gap-0 -space-x-px divide-x divide-background rounded-lg shadow-sm shadow-black/5 rtl:space-x-reverse"
+      className="divide-background inline-flex gap-0 divide-x rounded-lg shadow-xs"
       type="single"
       value={value}
       onValueChange={(value) => {
@@ -17,32 +17,32 @@ export default function Component() {
       }}
     >
       <ToggleGroupItem
-        className="rounded-none bg-primary/80 text-primary-foreground shadow-none first:rounded-s-lg last:rounded-e-lg hover:bg-primary focus-visible:z-10 data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
+        className="bg-primary/80 text-primary-foreground hover:bg-primary data-[state=on]:bg-primary data-[state=on]:text-primary-foreground w-10 rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10"
         aria-label="Align Left"
         value="left"
       >
-        <AlignLeft size={16} strokeWidth={2} aria-hidden="true" />
+        <AlignLeftIcon size={16} aria-hidden="true" />
       </ToggleGroupItem>
       <ToggleGroupItem
-        className="rounded-none bg-primary/80 text-primary-foreground shadow-none first:rounded-s-lg last:rounded-e-lg hover:bg-primary focus-visible:z-10 data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
+        className="bg-primary/80 text-primary-foreground hover:bg-primary data-[state=on]:bg-primary data-[state=on]:text-primary-foreground w-10 rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10"
         aria-label="Align Center"
         value="center"
       >
-        <AlignCenter size={16} strokeWidth={2} aria-hidden="true" />
+        <AlignCenterIcon size={16} aria-hidden="true" />
       </ToggleGroupItem>
       <ToggleGroupItem
-        className="rounded-none bg-primary/80 text-primary-foreground shadow-none first:rounded-s-lg last:rounded-e-lg hover:bg-primary focus-visible:z-10 data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
+        className="bg-primary/80 text-primary-foreground hover:bg-primary data-[state=on]:bg-primary data-[state=on]:text-primary-foreground w-10 rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10"
         aria-label="Align Right"
         value="right"
       >
-        <AlignRight size={16} strokeWidth={2} aria-hidden="true" />
+        <AlignRightIcon size={16} aria-hidden="true" />
       </ToggleGroupItem>
       <ToggleGroupItem
-        className="rounded-none bg-primary/80 text-primary-foreground shadow-none first:rounded-s-lg last:rounded-e-lg hover:bg-primary focus-visible:z-10 data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
+        className="bg-primary/80 text-primary-foreground hover:bg-primary data-[state=on]:bg-primary data-[state=on]:text-primary-foreground w-10 rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10"
         aria-label="Align Justify"
         value="justify"
       >
-        <AlignJustify size={16} strokeWidth={2} aria-hidden="true" />
+        <AlignJustifyIcon size={16} aria-hidden="true" />
       </ToggleGroupItem>
     </ToggleGroup>
   );

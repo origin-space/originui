@@ -3,7 +3,7 @@ import { Table, TableBody, TableCell, TableRow } from "@/registry/default/ui/tab
 export default function Component() {
   return (
     <div className="mx-auto max-w-lg">
-      <div className="overflow-hidden rounded-lg border border-border bg-background">
+      <div className="bg-background overflow-hidden rounded-lg border">
         <Table>
           <TableBody>
             <TableRow className="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r">
@@ -29,7 +29,7 @@ export default function Component() {
           </TableBody>
         </Table>
       </div>
-      <p className="mt-4 text-center text-sm text-muted-foreground">Vertical table</p>
+      <p className="text-muted-foreground mt-4 text-center text-sm">Vertical table</p>
     </div>
   );
 }

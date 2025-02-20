@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-302",
+  "type": "registry:component",
+  "files": [
+    {
+      "path": "registry/default/components/comp-302.tsx",
+      "content": "import { ArrowRight } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <div className=\"dark bg-muted px-4 py-3 text-foreground\">\n      <p className=\"flex justify-center text-sm\">\n        <a href=\"#\" className=\"group\">\n          <span className=\"me-1 text-base leading-none\">✨</span>\n          Introducing transactional and marketing emails\n          <ArrowRight\n            className=\"-mt-0.5 ms-2 inline-flex opacity-60 transition-transform group-hover:translate-x-0.5\"\n            size={16}\n            strokeWidth={2}\n            aria-hidden=\"true\"\n          />\n        </a>\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "banner"
+    ],
+    "colSpan": 3
+  }
+}

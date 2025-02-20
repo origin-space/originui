@@ -7,13 +7,13 @@ import * as React from "react";
 import { cn } from "@/registry/default/lib/utils";
 
 const toggleVariants = cva(
-  "inline-flex items-center justify-center rounded-lg text-sm font-medium transition-colors hover:bg-muted outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground",
+  "inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium transition-colors hover:bg-muted outline-offset-2 focus-visible:outline-2 outline-ring/30 dark:outline-ring/40 disabled:pointer-events-none disabled:opacity-50 [&_svg]:shrink-0 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground",
   {
     variants: {
       variant: {
         default: "bg-transparent",
         outline:
-          "border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground",
+          "border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground",
       },
       size: {
         default: "h-9 px-3",
@@ -28,17 +28,19 @@ const toggleVariants = cva(
   },
 );
 
-const Toggle = React.forwardRef<
-  React.ElementRef<typeof TogglePrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof TogglePrimitive.Root> & VariantProps<typeof toggleVariants>
->(({ className, variant, size, ...props }, ref) => (
-  <TogglePrimitive.Root
-    ref={ref}
-    className={cn(toggleVariants({ variant, size, className }))}
-    {...props}
-  />
-));
-
-Toggle.displayName = TogglePrimitive.Root.displayName;
+function Toggle({
+  className,
+  variant,
+  size,
+  ...props
+}: React.ComponentProps<typeof TogglePrimitive.Root> & VariantProps<typeof toggleVariants>) {
+  return (
+    <TogglePrimitive.Root
+      data-slot="toggle"
+      className={cn(toggleVariants({ variant, size, className }))}
+      {...props}
+    />
+  );
+}
 
 export { Toggle, toggleVariants };

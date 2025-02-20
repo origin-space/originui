@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-03",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/input.json",
+    "https://originui.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-03.tsx",
+      "content": "import { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor={id}>Input with helper text</Label>\n      <Input id={id} placeholder=\"Email\" type=\"email\" />\n      <p className=\"mt-2 text-xs text-muted-foreground\" role=\"region\" aria-live=\"polite\">\n        We won&lsquo;t share your email with anyone\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "helper"
+    ]
+  }
+}

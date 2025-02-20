@@ -7,7 +7,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/registry/default/ui/tooltip";
-import { Plus } from "lucide-react";
+import { PlusIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -15,7 +15,7 @@ export default function Component() {
       <Tooltip>
         <TooltipTrigger asChild>
           <Button variant="outline" size="icon" aria-label="Add new item">
-            <Plus size={16} strokeWidth={2} aria-hidden="true" />
+            <PlusIcon size={16} aria-hidden="true" />
           </Button>
         </TooltipTrigger>
         <TooltipContent className="px-2 py-1 text-xs">Tooltip</TooltipContent>

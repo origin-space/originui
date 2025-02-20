@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-417",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/badge.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-417.tsx",
+      "content": "import { cn } from \"@/registry/default/lib/utils\";\nimport { badgeVariants } from \"@/registry/default/ui/badge\";\n\nexport default function Component() {\n  return (\n    <a href=\"#\" className={cn(badgeVariants({ variant: \"default\" }), \"hover:bg-primary/80\")}>\n      Link\n    </a>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "badge",
+      "chip"
+    ],
+    "style": 1
+  }
+}

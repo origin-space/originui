@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-208",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/select.json",
+    "https://originui.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-208.tsx",
+      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"space-y-2 [&_svg]:text-destructive/80\">\n      <Label htmlFor={id}>Select with error</Label>\n      <Select defaultValue=\"1\">\n        <SelectTrigger\n          id={id}\n          className=\"border-destructive/80 text-destructive focus:border-destructive/80 focus:ring-destructive/20\"\n        >\n          <SelectValue />\n        </SelectTrigger>\n        <SelectContent>\n          <SelectItem value=\"1\">React</SelectItem>\n          <SelectItem value=\"2\">Next.js</SelectItem>\n          <SelectItem value=\"3\">Astro</SelectItem>\n          <SelectItem value=\"4\">Gatsby</SelectItem>\n        </SelectContent>\n      </Select>\n      <p className=\"mt-2 text-xs text-destructive\" role=\"alert\" aria-live=\"polite\">\n        Selected option is invalid\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "label",
+      "select",
+      "radix"
+    ]
+  }
+}

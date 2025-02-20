@@ -8,7 +8,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu";
-import { ChevronDown } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 import { useState } from "react";
 
 const options = [
@@ -32,7 +32,7 @@ export default function Component() {
   const [selectedIndex, setSelectedIndex] = useState("0");
 
   return (
-    <div className="inline-flex -space-x-px divide-x divide-primary-foreground/30 rounded-lg shadow-sm shadow-black/5 rtl:space-x-reverse">
+    <div className="divide-primary-foreground/30 inline-flex divide-x rounded-lg shadow-xs rtl:space-x-reverse">
       <Button className="rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10">
         {options[Number(selectedIndex)].label}
       </Button>
@@ -43,7 +43,7 @@ export default function Component() {
             size="icon"
             aria-label="Options"
           >
-            <ChevronDown size={16} strokeWidth={2} aria-hidden="true" />
+            <ChevronDownIcon size={16} aria-hidden="true" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent
@@ -61,7 +61,7 @@ export default function Component() {
               >
                 <div className="flex flex-col gap-1">
                   <span className="text-sm font-medium">{option.label}</span>
-                  <span className="text-xs text-muted-foreground">{option.description}</span>
+                  <span className="text-muted-foreground text-xs">{option.description}</span>
                 </div>
               </DropdownMenuRadioItem>
             ))}

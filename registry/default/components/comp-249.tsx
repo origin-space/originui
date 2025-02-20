@@ -3,11 +3,11 @@ import { Slider } from "@/registry/default/ui/slider";
 
 export default function Component() {
   return (
-    <div className="space-y-4">
+    <div className="*:not-first:mt-4">
       <Label>Slider with labels and tooltip</Label>
       <div>
         <span
-          className="mb-3 flex w-full items-center justify-between gap-2 text-xs font-medium text-muted-foreground"
+          className="text-muted-foreground mb-3 flex w-full items-center justify-between gap-2 text-xs font-medium"
           aria-hidden="true"
         >
           <span>Low</span>

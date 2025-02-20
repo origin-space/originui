@@ -2,7 +2,7 @@
 
 import { useImageUpload } from "@/registry/default/hooks/use-image-upload";
 import { Button } from "@/registry/default/ui/button";
-import { CircleUserRound } from "lucide-react";
+import { CircleUserRoundIcon } from "lucide-react";
 
 export default function Component() {
   const {
@@ -18,7 +18,7 @@ export default function Component() {
     <div>
       <div className="inline-flex items-center gap-2 align-top">
         <div
-          className="relative flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-input"
+          className="border-input relative flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-lg border"
           aria-label={previewUrl ? "Preview of uploaded image" : "Default user avatar"}
         >
           {previewUrl ? (
@@ -31,7 +31,7 @@ export default function Component() {
             />
           ) : (
             <div aria-hidden="true">
-              <CircleUserRound className="opacity-60" size={16} strokeWidth={2} />
+              <CircleUserRoundIcon className="opacity-60" size={16} />
             </div>
           )}
         </div>
@@ -52,7 +52,7 @@ export default function Component() {
       {fileName && (
         <div className="mt-2">
           <div className="inline-flex gap-2 text-xs">
-            <p className="truncate text-muted-foreground" aria-live="polite">
+            <p className="text-muted-foreground truncate" aria-live="polite">
               {fileName}
             </p>{" "}
             <button

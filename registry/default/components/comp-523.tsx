@@ -27,11 +27,7 @@ export default function Component() {
     <div className="space-y-8 text-center">
       <Stepper defaultValue={2}>
         {steps.map(({ step, title }) => (
-          <StepperItem
-            key={step}
-            step={step}
-            className="max-md:items-start [&:not(:last-child)]:flex-1"
-          >
+          <StepperItem key={step} step={step} className="not-last:flex-1 max-md:items-start">
             <StepperTrigger className="max-md:flex-col">
               <StepperIndicator />
               <div className="text-center md:text-left">
@@ -42,7 +38,7 @@ export default function Component() {
           </StepperItem>
         ))}
       </Stepper>
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Stepper with inline titles
       </p>
     </div>

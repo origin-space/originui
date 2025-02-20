@@ -18,7 +18,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/registry/default/ui/tooltip";
-import { Check, Copy, UserRoundPlus } from "lucide-react";
+import { CheckIcon, CopyIcon, UserRoundPlusIcon } from "lucide-react";
 import { useId, useRef, useState } from "react";
 
 export default function Component() {
@@ -59,10 +59,10 @@ export default function Component() {
       >
         <div className="flex flex-col gap-2">
           <div
-            className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
+            className="flex size-11 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
-            <UserRoundPlus className="opacity-80" size={16} strokeWidth={2} />
+            <UserRoundPlusIcon className="opacity-80" size={16} />
           </div>
           <DialogHeader>
             <DialogTitle className="text-left">Invite team members</DialogTitle>
@@ -74,7 +74,7 @@ export default function Component() {
 
         <form className="space-y-5">
           <div className="space-y-4">
-            <div className="space-y-2">
+            <div className="*:not-first:mt-2">
               <Label>Invite via email</Label>
               <div className="space-y-3">
                 {emails.map((email, index) => (
@@ -99,13 +99,13 @@ export default function Component() {
             </button>
           </div>
           <Button type="button" className="w-full">
-            Send invites
+            SendIcon invites
           </Button>
         </form>
 
-        <hr className="my-1 border-t border-border" />
+        <hr className="my-1 border-t" />
 
-        <div className="space-y-2">
+        <div className="*:not-first:mt-2">
           <Label htmlFor={id}>Invite via magic link</Label>
           <div className="relative">
             <Input
@@ -121,7 +121,7 @@ export default function Component() {
                 <TooltipTrigger asChild>
                   <button
                     onClick={handleCopy}
-                    className="absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg border border-transparent text-muted-foreground/80 outline-offset-2 transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:cursor-not-allowed"
+                    className="text-muted-foreground/80 hover:text-foreground focus-visible:text-foreground outline-ring/30 dark:outline-ring/40 absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg border border-transparent outline-offset-2 transition-colors focus-visible:outline-2 disabled:pointer-events-none disabled:cursor-not-allowed"
                     aria-label={copied ? "Copied" : "Copy to clipboard"}
                     disabled={copied}
                   >
@@ -131,12 +131,7 @@ export default function Component() {
                         copied ? "scale-100 opacity-100" : "scale-0 opacity-0",
                       )}
                     >
-                      <Check
-                        className="stroke-emerald-500"
-                        size={16}
-                        strokeWidth={2}
-                        aria-hidden="true"
-                      />
+                      <CheckIcon className="stroke-emerald-500" size={16} aria-hidden="true" />
                     </div>
                     <div
                       className={cn(
@@ -144,7 +139,7 @@ export default function Component() {
                         copied ? "scale-0 opacity-0" : "scale-100 opacity-100",
                       )}
                     >
-                      <Copy size={16} strokeWidth={2} aria-hidden="true" />
+                      <CopyIcon size={16} aria-hidden="true" />
                     </div>
                   </button>
                 </TooltipTrigger>

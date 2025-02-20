@@ -14,12 +14,12 @@ export default function Component() {
 
   return (
     <fieldset className="space-y-4">
-      <legend className="text-sm font-medium leading-none text-foreground">How did it go?</legend>
+      <legend className="text-foreground text-sm leading-none font-medium">How did it go?</legend>
       <RadioGroup className="flex gap-1.5" defaultValue="3">
         {items.map((item) => (
           <label
             key={`${id}-${item.value}`}
-            className="relative flex size-9 cursor-pointer flex-col items-center justify-center rounded-full border border-input text-center text-xl shadow-sm shadow-black/5 outline-offset-2 transition-colors has-[[data-disabled]]:cursor-not-allowed has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent has-[[data-disabled]]:opacity-50 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70"
+            className="border-input has-data-[state=checked]:border-ring/40 has-data-[state=checked]:bg-accent outline-ring/30 dark:outline-ring/40 relative flex size-9 cursor-pointer flex-col items-center justify-center rounded-full border text-center text-xl shadow-xs outline-offset-2 transition-colors has-focus-visible:outline-2 has-data-disabled:cursor-not-allowed has-data-disabled:opacity-50"
           >
             <RadioGroupItem
               id={`${id}-${item.value}`}

@@ -45,7 +45,7 @@ function Form() {
       <div className="space-y-2">
         <div className="inline-flex gap-2">
           <div className="relative">
-            <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground peer-disabled:opacity-50">
+            <div className="text-muted-foreground pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 peer-disabled:opacity-50">
               <RiNavigationLine size={16} className="-scale-x-100" aria-hidden="true" />
             </div>
             <Input
@@ -55,7 +55,7 @@ function Form() {
               type="email"
               value={formState.email}
               onChange={(e) => setFormState((prev) => ({ ...prev, email: e.target.value }))}
-              disabled={isLoading}
+              disabled={isLoading || undefined}
               aria-label="Subscribe to the newsletter"
               required
             />
@@ -94,10 +94,10 @@ function Form() {
 export function SubscribeBottom() {
   return (
     <div className="dark relative overflow-hidden rounded-xl bg-zinc-900 px-4 py-14 sm:px-8">
-      <Illustration className="absolute left-0 top-0 -translate-x-1/2" aria-hidden="true" />
-      <Illustration className="absolute bottom-0 right-0 translate-x-1/4" aria-hidden="true" />
+      <Illustration className="absolute top-0 left-0 -translate-x-1/2" aria-hidden="true" />
+      <Illustration className="absolute right-0 bottom-0 translate-x-1/4" aria-hidden="true" />
       <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
-        <h2 className="font-heading text-2xl/[1.1] font-bold tracking-tight text-foreground md:text-3xl/[1.1]">
+        <h2 className="font-heading text-foreground text-2xl/[1.1] font-bold tracking-tight md:text-3xl/[1.1]">
           Get notified when new stuff drops.
         </h2>
         <Form />

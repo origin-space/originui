@@ -11,7 +11,7 @@ export default function Component() {
         <RadioGroupItem value="all" id={`${id}-1`} />
         <Label htmlFor={`${id}-1`}>
           All reviews{" "}
-          <span className="text-xs font-normal leading-[inherit] text-muted-foreground">
+          <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
             (12,921)
           </span>
         </Label>
@@ -27,7 +27,7 @@ export default function Component() {
             <RiStarFill size={16} />
           </span>
           <span className="sr-only">5 stars</span>{" "}
-          <span className="text-xs font-normal leading-[inherit] text-muted-foreground">
+          <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
             (5,168)
           </span>
         </Label>
@@ -43,7 +43,7 @@ export default function Component() {
             <RiStarFill size={16} className="opacity-30" />
           </span>
           <span className="sr-only">4 stars</span>{" "}
-          <span className="text-xs font-normal leading-[inherit] text-muted-foreground">
+          <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
             (4,726)
           </span>
         </Label>
@@ -59,7 +59,7 @@ export default function Component() {
             <RiStarFill size={16} className="opacity-30" />
           </span>
           <span className="sr-only">3 stars</span>{" "}
-          <span className="text-xs font-normal leading-[inherit] text-muted-foreground">
+          <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
             (3,234)
           </span>
         </Label>
@@ -75,7 +75,7 @@ export default function Component() {
             <RiStarFill size={16} className="opacity-30" />
           </span>
           <span className="sr-only">2 stars</span>{" "}
-          <span className="text-xs font-normal leading-[inherit] text-muted-foreground">
+          <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
             (1,842)
           </span>
         </Label>
@@ -91,7 +91,7 @@ export default function Component() {
             <RiStarFill size={16} className="opacity-30" />
           </span>
           <span className="sr-only">1 star</span>{" "}
-          <span className="text-xs font-normal leading-[inherit] text-muted-foreground">(452)</span>
+          <span className="text-muted-foreground text-xs leading-[inherit] font-normal">(452)</span>
         </Label>
       </div>
     </RadioGroup>

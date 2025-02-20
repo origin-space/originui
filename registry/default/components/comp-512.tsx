@@ -16,7 +16,7 @@ export default function Component() {
 
   return (
     <div>
-      <div className="space-y-2">
+      <div className="*:not-first:mt-2">
         <Label htmlFor={id}>Date range picker</Label>
         <Popover>
           <PopoverTrigger asChild>
@@ -24,7 +24,7 @@ export default function Component() {
               id={id}
               variant={"outline"}
               className={cn(
-                "group w-full justify-between bg-background px-3 font-normal outline-offset-0 hover:bg-background focus-visible:border-ring focus-visible:outline-[3px] focus-visible:outline-ring/20",
+                "group bg-background hover:bg-background focus-visible:border-ring/40 outline-ring/8 dark:outline-ring/12 w-full justify-between px-3 font-normal outline-offset-0 focus-visible:outline-[3px]",
                 !date && "text-muted-foreground",
               )}
             >
@@ -43,8 +43,7 @@ export default function Component() {
               </span>
               <CalendarIcon
                 size={16}
-                strokeWidth={2}
-                className="shrink-0 text-muted-foreground/80 transition-colors group-hover:text-foreground"
+                className="text-muted-foreground/80 group-hover:text-foreground shrink-0 transition-colors"
                 aria-hidden="true"
               />
             </Button>
@@ -54,10 +53,10 @@ export default function Component() {
           </PopoverContent>
         </Popover>
       </div>
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Built with{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://daypicker.dev/"
           target="_blank"
           rel="noopener nofollow"

@@ -13,7 +13,7 @@ export default function Component() {
     <div className="space-y-8 text-center">
       <Stepper defaultValue={2} orientation="vertical">
         {steps.map((step) => (
-          <StepperItem key={step} step={step} className="[&:not(:last-child)]:flex-1">
+          <StepperItem key={step} step={step} className="not-last:flex-1">
             <StepperTrigger>
               <StepperIndicator />
             </StepperTrigger>
@@ -21,7 +21,7 @@ export default function Component() {
           </StepperItem>
         ))}
       </Stepper>
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Vertical stepper with numbers and checkmarks
       </p>
     </div>

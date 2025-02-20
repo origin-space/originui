@@ -187,7 +187,7 @@ export default function Component() {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="*:not-first:mt-4">
       <Label>Price slider</Label>
       <div>
         {/* Histogram bars */}
@@ -202,7 +202,7 @@ export default function Component() {
             >
               <span
                 data-selected={isBarInSelectedRange(i, minValue, priceStep, sliderValue)}
-                className="h-full w-full bg-primary/20"
+                className="bg-primary/20 h-full w-full"
               ></span>
             </div>
           ))}
@@ -218,7 +218,7 @@ export default function Component() {
 
       {/* Inputs */}
       <div className="flex items-center justify-between gap-4">
-        <div className="space-y-1">
+        <div className="*:not-first:mt-1">
           <Label htmlFor={`${id}-min`}>Min price</Label>
           <div className="relative">
             <Input
@@ -236,12 +236,12 @@ export default function Component() {
               }}
               aria-label="Enter minimum price"
             />
-            <span className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-sm text-muted-foreground peer-disabled:opacity-50">
+            <span className="text-muted-foreground pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-sm peer-disabled:opacity-50">
               $
             </span>
           </div>
         </div>
-        <div className="space-y-1">
+        <div className="*:not-first:mt-1">
           <Label htmlFor={`${id}-max`}>Max price</Label>
           <div className="relative">
             <Input
@@ -259,7 +259,7 @@ export default function Component() {
               }}
               aria-label="Enter maximum price"
             />
-            <span className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-sm text-muted-foreground peer-disabled:opacity-50">
+            <span className="text-muted-foreground pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-sm peer-disabled:opacity-50">
               $
             </span>
           </div>

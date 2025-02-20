@@ -22,7 +22,7 @@ export default function Component() {
             <DialogTitle className="px-6 pt-6">Frequently Asked Questions (FAQ)</DialogTitle>
             <DialogDescription asChild>
               <div className="p-6">
-                <div className="space-y-4 [&_strong]:font-semibold [&_strong]:text-foreground">
+                <div className="[&_strong]:text-foreground space-y-4 [&_strong]:font-semibold">
                   <div className="space-y-1">
                     <p>
                       <strong>Account Management</strong>

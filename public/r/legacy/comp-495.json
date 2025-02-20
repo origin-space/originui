@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-495",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/calendar.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-495.tsx",
+      "content": "\"use client\";\n\nimport { Calendar } from \"@/registry/default/ui/calendar\";\nimport { addDays } from \"date-fns\";\nimport { useState } from \"react\";\nimport { DateRange } from \"react-day-picker\";\n\nexport default function Component() {\n  const today = new Date();\n  const [date, setDate] = useState<DateRange | undefined>({\n    from: today,\n    to: addDays(today, 3),\n  });\n\n  return (\n    <div>\n      <Calendar\n        mode=\"range\"\n        selected={date}\n        onSelect={setDate}\n        className=\"rounded-lg border border-border p-2\"\n        classNames={{\n          day: \"relative before:absolute before:inset-y-px before:inset-x-0 [&.range-start:not(.range-end):before]:bg-gradient-to-r before:from-transparent before:from-50% before:to-accent before:to-50% [&.range-end:not(.range-start):before]:bg-gradient-to-l\",\n          day_button:\n            \"rounded-full group-[.range-start:not(.range-end)]:rounded-e-full group-[.range-end:not(.range-start)]:rounded-s-full\",\n        }}\n      />\n      <p\n        className=\"mt-4 text-center text-xs text-muted-foreground\"\n        role=\"region\"\n        aria-live=\"polite\"\n      >\n        Custom select range style -{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://daypicker.dev/\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          React DayPicker\n        </a>\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "calendar",
+      "range calendar",
+      "date",
+      "react daypicker"
+    ],
+    "style": 1
+  }
+}

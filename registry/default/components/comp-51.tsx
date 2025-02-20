@@ -2,7 +2,7 @@
 
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
-import { Check, Eye, EyeOff, X } from "lucide-react";
+import { CheckIcon, EyeIcon, EyeOffIcon, XIcon } from "lucide-react";
 import { useId, useMemo, useState } from "react";
 
 export default function Component() {
@@ -50,7 +50,7 @@ export default function Component() {
   return (
     <div>
       {/* Password input field with toggle visibility button */}
-      <div className="space-y-2">
+      <div className="*:not-first:mt-2">
         <Label htmlFor={id}>Input with password strength indicator</Label>
         <div className="relative">
           <Input
@@ -60,11 +60,10 @@ export default function Component() {
             type={isVisible ? "text" : "password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            aria-invalid={strengthScore < 4}
             aria-describedby={`${id}-description`}
           />
           <button
-            className="absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg text-muted-foreground/80 outline-offset-2 transition-colors hover:text-foreground focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+            className="text-muted-foreground/80 hover:text-foreground outline-ring/30 dark:outline-ring/40 absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg outline-offset-2 transition-colors focus:z-10 focus-visible:outline-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
             type="button"
             onClick={toggleVisibility}
             aria-label={isVisible ? "Hide password" : "Show password"}
@@ -72,9 +71,9 @@ export default function Component() {
             aria-controls="password"
           >
             {isVisible ? (
-              <EyeOff size={16} strokeWidth={2} aria-hidden="true" />
+              <EyeOffIcon size={16} aria-hidden="true" />
             ) : (
-              <Eye size={16} strokeWidth={2} aria-hidden="true" />
+              <EyeIcon size={16} aria-hidden="true" />
             )}
           </button>
         </div>
@@ -82,7 +81,7 @@ export default function Component() {
 
       {/* Password strength indicator */}
       <div
-        className="mb-4 mt-3 h-1 w-full overflow-hidden rounded-full bg-border"
+        className="bg-border mt-3 mb-4 h-1 w-full overflow-hidden rounded-full"
         role="progressbar"
         aria-valuenow={strengthScore}
         aria-valuemin={0}
@@ -96,7 +95,7 @@ export default function Component() {
       </div>
 
       {/* Password strength description */}
-      <p id={`${id}-description`} className="mb-2 text-sm font-medium text-foreground">
+      <p id={`${id}-description`} className="text-foreground mb-2 text-sm font-medium">
         {getStrengthText(strengthScore)}. Must contain:
       </p>
 
@@ -105,9 +104,9 @@ export default function Component() {
         {strength.map((req, index) => (
           <li key={index} className="flex items-center gap-2">
             {req.met ? (
-              <Check size={16} className="text-emerald-500" aria-hidden="true" />
+              <CheckIcon size={16} className="text-emerald-500" aria-hidden="true" />
             ) : (
-              <X size={16} className="text-muted-foreground/80" aria-hidden="true" />
+              <XIcon size={16} className="text-muted-foreground/80" aria-hidden="true" />
             )}
             <span className={`text-xs ${req.met ? "text-emerald-600" : "text-muted-foreground"}`}>
               {req.text}

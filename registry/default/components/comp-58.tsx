@@ -8,11 +8,11 @@ import { useId } from "react";
 export default function Component() {
   const id = useId();
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>OTP input (spaced)</Label>
       <OTPInput
         id={id}
-        containerClassName="flex items-center gap-3 has-[:disabled]:opacity-50"
+        containerClassName="flex items-center gap-3 has-disabled:opacity-50"
         maxLength={4}
         render={({ slots }) => (
           <div className="flex gap-2">
@@ -22,10 +22,10 @@ export default function Component() {
           </div>
         )}
       />
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Built with{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://github.com/guilhermerodz/input-otp"
           target="_blank"
           rel="noopener nofollow"
@@ -41,8 +41,8 @@ function Slot(props: SlotProps) {
   return (
     <div
       className={cn(
-        "flex size-9 items-center justify-center rounded-lg border border-input bg-background font-medium text-foreground shadow-sm shadow-black/5 transition-shadow",
-        { "z-10 border border-ring ring-[3px] ring-ring/20": props.isActive },
+        "border-input bg-background text-foreground flex size-9 items-center justify-center rounded-lg border font-medium shadow-xs transition-shadow",
+        { "border-ring/40 ring-ring/10 z-10 ring-[3px]": props.isActive },
       )}
     >
       {props.char !== null && <div>{props.char}</div>}

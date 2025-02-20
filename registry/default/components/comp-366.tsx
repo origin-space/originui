@@ -5,7 +5,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu";
-import { Ellipsis } from "lucide-react";
+import { EllipsisIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -17,7 +17,7 @@ export default function Component() {
           className="rounded-full shadow-none"
           aria-label="Open edit menu"
         >
-          <Ellipsis size={16} strokeWidth={2} aria-hidden="true" />
+          <EllipsisIcon size={16} aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

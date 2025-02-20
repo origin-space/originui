@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-502",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/calendar.json",
+    "https://originui.com/r/input.json",
+    "https://originui.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-502.tsx",
+      "content": "\"use client\";\n\nimport { Calendar } from \"@/registry/default/ui/calendar\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { format } from \"date-fns\";\nimport { CalendarIcon } from \"lucide-react\";\nimport { useEffect, useId, useState } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  const today = new Date();\n  const [month, setMonth] = useState(today);\n  const [date, setDate] = useState<Date | undefined>(today);\n  const [inputValue, setInputValue] = useState(\"\");\n\n  const handleDayPickerSelect = (date: Date | undefined) => {\n    if (!date) {\n      setInputValue(\"\");\n      setDate(undefined);\n    } else {\n      setDate(date);\n      setMonth(date);\n      setInputValue(format(date, \"yyyy-MM-dd\"));\n    }\n  };\n\n  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {\n    const value = e.target.value;\n    setInputValue(value);\n\n    if (value) {\n      const parsedDate = new Date(value);\n      setDate(parsedDate);\n      setMonth(parsedDate);\n    } else {\n      setDate(undefined);\n    }\n  };\n\n  useEffect(() => {\n    setInputValue(format(today, \"yyyy-MM-dd\"));\n  }, []);\n\n  return (\n    <div>\n      <div className=\"rounded-lg border border-border\">\n        <Calendar\n          mode=\"single\"\n          className=\"p-2\"\n          selected={date}\n          onSelect={handleDayPickerSelect}\n          month={month}\n          onMonthChange={setMonth}\n        />\n        <div className=\"border-t border-border p-3\">\n          <div className=\"flex items-center gap-3\">\n            <Label htmlFor={id} className=\"text-xs\">\n              Enter date\n            </Label>\n            <div className=\"relative grow\">\n              <Input\n                id={id}\n                type=\"date\"\n                value={inputValue}\n                onChange={handleInputChange}\n                className=\"peer appearance-none ps-9 [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none\"\n                aria-label=\"Select date\"\n              />\n              <div className=\"pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 peer-disabled:opacity-50\">\n                <CalendarIcon size={16} strokeWidth={2} aria-hidden=\"true\" />\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <p\n        className=\"mt-4 text-center text-xs text-muted-foreground\"\n        role=\"region\"\n        aria-live=\"polite\"\n      >\n        Date input -{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://daypicker.dev/\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          React DayPicker\n        </a>\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "calendar",
+      "date",
+      "input",
+      "react daypicker"
+    ],
+    "style": 1
+  }
+}

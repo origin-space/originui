@@ -78,7 +78,7 @@ export default function Component() {
           ))}
         </TableBody>
       </Table>
-      <p className="mt-4 text-center text-sm text-muted-foreground">Table with vertical lines</p>
+      <p className="text-muted-foreground mt-4 text-center text-sm">Table with vertical lines</p>
     </div>
   );
 }

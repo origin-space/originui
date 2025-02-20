@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-497",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/calendar.json",
+    "https://originui.com/r/select.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-497.tsx",
+      "content": "\"use client\";\n\nimport { Calendar } from \"@/registry/default/ui/calendar\";\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\nimport { useState } from \"react\";\nimport { DropdownNavProps, DropdownProps } from \"react-day-picker\";\n\nexport default function Component() {\n  const [date, setDate] = useState<Date | undefined>(new Date());\n\n  const handleCalendarChange = (\n    _value: string | number,\n    _e: React.ChangeEventHandler<HTMLSelectElement>,\n  ) => {\n    const _event = {\n      target: {\n        value: String(_value),\n      },\n    } as React.ChangeEvent<HTMLSelectElement>;\n    _e(_event);\n  };\n\n  return (\n    <div>\n      <Calendar\n        mode=\"single\"\n        selected={date}\n        onSelect={setDate}\n        className=\"rounded-lg border border-border p-2\"\n        classNames={{\n          month_caption: \"mx-0\",\n        }}\n        captionLayout=\"dropdown\"\n        defaultMonth={new Date()}\n        startMonth={new Date(1980, 6)}\n        hideNavigation\n        components={{\n          DropdownNav: (props: DropdownNavProps) => {\n            return <div className=\"flex w-full items-center gap-2\">{props.children}</div>;\n          },\n          Dropdown: (props: DropdownProps) => {\n            return (\n              <Select\n                value={String(props.value)}\n                onValueChange={(value) => {\n                  if (props.onChange) {\n                    handleCalendarChange(value, props.onChange);\n                  }\n                }}\n              >\n                <SelectTrigger className=\"h-8 w-fit font-medium first:grow\">\n                  <SelectValue />\n                </SelectTrigger>\n                <SelectContent className=\"max-h-[min(26rem,var(--radix-select-content-available-height))]\">\n                  {props.options?.map((option) => (\n                    <SelectItem\n                      key={option.value}\n                      value={String(option.value)}\n                      disabled={option.disabled}\n                    >\n                      {option.label}\n                    </SelectItem>\n                  ))}\n                </SelectContent>\n              </Select>\n            );\n          },\n        }}\n      />\n      <p\n        className=\"mt-4 text-center text-xs text-muted-foreground\"\n        role=\"region\"\n        aria-live=\"polite\"\n      >\n        Monthly / yearly selects -{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://daypicker.dev/\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          React DayPicker\n        </a>\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "calendar",
+      "date",
+      "react daypicker"
+    ],
+    "style": 1
+  }
+}

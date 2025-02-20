@@ -1,7 +1,7 @@
 "use client";
 
 import { Badge } from "@/registry/default/ui/badge";
-import { X } from "lucide-react";
+import { XIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function Component() {
@@ -10,14 +10,14 @@ export default function Component() {
   if (!isActive) return null;
 
   return (
-    <Badge variant="outline" className="rounded-md px-2 py-1">
+    <Badge variant="outline" className="gap-0 rounded-md px-2 py-1">
       Tag
       <button
-        className="-my-[5px] -me-2 -ms-0.5 inline-flex size-7 shrink-0 items-center justify-center rounded-[inherit] p-0 opacity-60 transition-opacity hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
+        className="outline-ring/30 dark:outline-ring/40 -my-[5px] -ms-0.5 -me-2 inline-flex size-7 shrink-0 cursor-pointer items-center justify-center rounded-[inherit] p-0 opacity-60 transition-opacity hover:opacity-100 focus-visible:outline-2"
         onClick={() => setIsActive(false)}
         aria-label="Delete"
       >
-        <X size={14} strokeWidth={2} aria-hidden="true" />
+        <XIcon size={14} aria-hidden="true" />
       </button>
     </Badge>
   );

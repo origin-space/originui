@@ -12,17 +12,17 @@ import {
 import { Label } from "@/registry/default/ui/label";
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
 import {
-  Blocks,
-  Brain,
-  ChevronDown,
-  Cpu,
-  Database,
-  Globe,
-  Layout,
-  LineChart,
-  Network,
-  Search,
-  Server,
+  BlocksIcon,
+  BrainIcon,
+  ChevronDownIcon,
+  CpuIcon,
+  DatabaseIcon,
+  GlobeIcon,
+  LayoutIcon,
+  LineChartIcon,
+  NetworkIcon,
+  SearchIcon,
+  ServerIcon,
 } from "lucide-react";
 import { useId, useState } from "react";
 
@@ -30,61 +30,61 @@ const items = [
   {
     value: "analytics platform",
     label: "Analytics Platform",
-    icon: LineChart,
+    icon: LineChartIcon,
     number: 2451,
   },
   {
     value: "ai services",
     label: "AI Services",
-    icon: Brain,
+    icon: BrainIcon,
     number: 1832,
   },
   {
     value: "database systems",
     label: "Database Systems",
-    icon: Database,
+    icon: DatabaseIcon,
     number: 1654,
   },
   {
     value: "compute resources",
     label: "Compute Resources",
-    icon: Cpu,
+    icon: CpuIcon,
     number: 943,
   },
   {
     value: "network services",
     label: "Network Services",
-    icon: Network,
+    icon: NetworkIcon,
     number: 832,
   },
   {
     value: "web services",
     label: "Web Services",
-    icon: Globe,
+    icon: GlobeIcon,
     number: 654,
   },
   {
     value: "monitoring tools",
     label: "Monitoring Tools",
-    icon: Search,
+    icon: SearchIcon,
     number: 432,
   },
   {
     value: "server management",
     label: "Server Management",
-    icon: Server,
+    icon: ServerIcon,
     number: 321,
   },
   {
     value: "infrastructure",
     label: "Infrastructure",
-    icon: Blocks,
+    icon: BlocksIcon,
     number: 234,
   },
   {
     value: "frontend services",
     label: "Frontend Services",
-    icon: Layout,
+    icon: LayoutIcon,
     number: 123,
   },
 ];
@@ -95,7 +95,7 @@ export default function Component() {
   const [value, setValue] = useState<string>("");
 
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Options with icon and number</Label>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
@@ -104,7 +104,7 @@ export default function Component() {
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="w-full justify-between bg-background px-3 font-normal outline-offset-0 hover:bg-background focus-visible:border-ring focus-visible:outline-[3px] focus-visible:outline-ring/20"
+            className="bg-background hover:bg-background focus-visible:border-ring/40 outline-ring/8 dark:outline-ring/12 w-full justify-between px-3 font-normal outline-offset-0 focus-visible:outline-[3px]"
           >
             {value ? (
               <span className="flex min-w-0 items-center gap-2">
@@ -112,7 +112,7 @@ export default function Component() {
                   const selectedItem = items.find((item) => item.value === value);
                   if (selectedItem) {
                     const Icon = selectedItem.icon;
-                    return <Icon className="h-4 w-4 text-muted-foreground" />;
+                    return <Icon className="text-muted-foreground size-4" />;
                   }
                   return null;
                 })()}
@@ -123,16 +123,15 @@ export default function Component() {
             ) : (
               <span className="text-muted-foreground">Select service category</span>
             )}
-            <ChevronDown
+            <ChevronDownIcon
               size={16}
-              strokeWidth={2}
-              className="shrink-0 text-muted-foreground/80"
+              className="text-muted-foreground/80 shrink-0"
               aria-hidden="true"
             />
           </Button>
         </PopoverTrigger>
         <PopoverContent
-          className="w-full min-w-[var(--radix-popper-anchor-width)] border-input p-0"
+          className="border-input w-full min-w-[var(--radix-popper-anchor-width)] p-0"
           align="start"
         >
           <Command>
@@ -151,10 +150,10 @@ export default function Component() {
                     className="flex items-center justify-between"
                   >
                     <div className="flex items-center gap-2">
-                      <item.icon className="h-4 w-4 text-muted-foreground" />
+                      <item.icon className="text-muted-foreground size-4" />
                       {item.label}
                     </div>
-                    <span className="text-xs text-muted-foreground">
+                    <span className="text-muted-foreground text-xs">
                       {item.number.toLocaleString()}
                     </span>
                   </CommandItem>

@@ -16,12 +16,12 @@ export default function Component() {
 
   return (
     <fieldset className="space-y-4">
-      <legend className="text-sm font-medium leading-none text-foreground">Days of the week</legend>
+      <legend className="text-foreground text-sm leading-none font-medium">Days of the week</legend>
       <div className="flex gap-1.5">
         {items.map((item) => (
           <label
             key={`${id}-${item.value}`}
-            className="relative flex size-9 cursor-pointer flex-col items-center justify-center gap-3 rounded-full border border-input text-center shadow-sm shadow-black/5 outline-offset-2 transition-colors has-[[data-disabled]]:cursor-not-allowed has-[[data-state=checked]]:border-primary has-[[data-state=checked]]:bg-primary has-[[data-state=checked]]:text-primary-foreground has-[[data-disabled]]:opacity-50 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70"
+            className="border-input has-data-[state=checked]:border-primary has-data-[state=checked]:bg-primary has-data-[state=checked]:text-primary-foreground outline-ring/30 dark:outline-ring/40 relative flex size-9 cursor-pointer flex-col items-center justify-center gap-3 rounded-full border text-center shadow-xs outline-offset-2 transition-colors has-focus-visible:outline-2 has-data-disabled:cursor-not-allowed has-data-disabled:opacity-50"
           >
             <Checkbox
               id={`${id}-${item.value}`}

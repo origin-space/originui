@@ -8,7 +8,7 @@ import {
   PaginationItem,
   PaginationLink,
 } from "@/registry/default/ui/pagination";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 type PaginationProps = {
   currentPage: number;
@@ -29,7 +29,7 @@ export default function Component({
 
   return (
     <Pagination>
-      <PaginationContent className="inline-flex gap-0 -space-x-px rounded-lg shadow-sm shadow-black/5 rtl:space-x-reverse">
+      <PaginationContent className="inline-flex gap-0 -space-x-px rounded-lg shadow-xs rtl:space-x-reverse">
         {/* Previous page button */}
         <PaginationItem className="[&:first-child>a]:rounded-s-lg [&:last-child>a]:rounded-e-lg">
           <PaginationLink
@@ -44,7 +44,7 @@ export default function Component({
             aria-disabled={currentPage === 1 ? true : undefined}
             role={currentPage === 1 ? "link" : undefined}
           >
-            <ChevronLeft size={16} strokeWidth={2} aria-hidden="true" />
+            <ChevronLeftIcon size={16} aria-hidden="true" />
           </PaginationLink>
         </PaginationItem>
 
@@ -102,7 +102,7 @@ export default function Component({
             aria-disabled={currentPage === totalPages ? true : undefined}
             role={currentPage === totalPages ? "link" : undefined}
           >
-            <ChevronRight size={16} strokeWidth={2} aria-hidden="true" />
+            <ChevronRightIcon size={16} aria-hidden="true" />
           </PaginationLink>
         </PaginationItem>
       </PaginationContent>

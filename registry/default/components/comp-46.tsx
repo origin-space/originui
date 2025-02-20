@@ -3,7 +3,7 @@
 import { cn } from "@/registry/default/lib/utils";
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
-import { ChevronDown, Phone } from "lucide-react";
+import { ChevronDownIcon, PhoneIcon } from "lucide-react";
 import React, { forwardRef, useId, useState } from "react";
 import * as RPNInput from "react-phone-number-input";
 import flags from "react-phone-number-input/flags";
@@ -13,10 +13,10 @@ export default function Component() {
   const [value, setValue] = useState("");
 
   return (
-    <div className="space-y-2" dir="ltr">
-      <Label htmlFor={id}>Phone number input</Label>
+    <div className="*:not-first:mt-2" dir="ltr">
+      <Label htmlFor={id}>PhoneIcon number input</Label>
       <RPNInput.default
-        className="flex rounded-lg shadow-sm shadow-black/5"
+        className="flex rounded-lg shadow-xs"
         international
         flagComponent={FlagComponent}
         countrySelectComponent={CountrySelect}
@@ -26,10 +26,10 @@ export default function Component() {
         value={value}
         onChange={(newValue) => setValue(newValue ?? "")}
       />
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Built with{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://gitlab.com/catamphetamine/react-phone-number-input"
           target="_blank"
           rel="noopener nofollow"
@@ -68,11 +68,11 @@ const CountrySelect = ({ disabled, value, onChange, options }: CountrySelectProp
   };
 
   return (
-    <div className="relative inline-flex items-center self-stretch rounded-s-lg border border-input bg-background py-2 pe-2 ps-3 text-muted-foreground transition-shadow focus-within:z-10 focus-within:border-ring focus-within:outline-none focus-within:ring-[3px] focus-within:ring-ring/20 hover:bg-accent hover:text-foreground has-[:disabled]:pointer-events-none has-[:disabled]:opacity-50">
+    <div className="border-input bg-background text-muted-foreground focus-within:border-ring/40 ring-ring/8 dark:ring-ring/12 hover:bg-accent hover:text-foreground has-aria-invalid:border-destructive/60 has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/25 relative inline-flex items-center self-stretch rounded-s-lg border py-2 ps-3 pe-2 transition-shadow focus-within:z-10 focus-within:ring-[3px] focus-within:outline-hidden has-disabled:pointer-events-none has-disabled:opacity-50">
       <div className="inline-flex items-center gap-1" aria-hidden="true">
         <FlagComponent country={value} countryName={value} aria-hidden="true" />
         <span className="text-muted-foreground/80">
-          <ChevronDown size={16} strokeWidth={2} aria-hidden="true" />
+          <ChevronDownIcon size={16} aria-hidden="true" />
         </span>
       </div>
       <select
@@ -102,7 +102,7 @@ const FlagComponent = ({ country, countryName }: RPNInput.FlagProps) => {
 
   return (
     <span className="w-5 overflow-hidden rounded-sm">
-      {Flag ? <Flag title={countryName} /> : <Phone size={16} aria-hidden="true" />}
+      {Flag ? <Flag title={countryName} /> : <PhoneIcon size={16} aria-hidden="true" />}
     </span>
   );
 };

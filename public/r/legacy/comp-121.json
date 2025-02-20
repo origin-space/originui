@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-121",
+  "type": "registry:component",
+  "dependencies": [
+    "@remixicon/react"
+  ],
+  "registryDependencies": [
+    "https://originui.com/r/button.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-121.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { RiFacebookFill, RiGithubFill, RiGoogleFill, RiTwitterXFill } from \"@remixicon/react\";\n\nexport default function Component() {\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <Button variant=\"outline\">\n        <RiGoogleFill\n          className=\"me-3 text-[#DB4437] dark:text-white/60\"\n          size={16}\n          aria-hidden=\"true\"\n        />\n        Login with Google\n      </Button>\n      <Button variant=\"outline\">\n        <RiTwitterXFill\n          className=\"me-3 text-[#14171a] dark:text-white/60\"\n          size={16}\n          aria-hidden=\"true\"\n        />\n        Login with X\n      </Button>\n      <Button variant=\"outline\">\n        <RiFacebookFill\n          className=\"me-3 text-[#1877f2] dark:text-white/60\"\n          size={16}\n          aria-hidden=\"true\"\n        />\n        Login with Facebook\n      </Button>\n      <Button variant=\"outline\">\n        <RiGithubFill\n          className=\"me-3 text-[#333333] dark:text-white/60\"\n          size={16}\n          aria-hidden=\"true\"\n        />\n        Login with GitHub\n      </Button>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "button",
+      "social",
+      "login",
+      "authentication"
+    ],
+    "style": 2
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-332",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/button.json",
+    "https://originui.com/r/dialog.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-332.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/registry/default/lib/utils\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Dialog,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/registry/default/ui/dialog\";\nimport { ArrowRight } from \"lucide-react\";\nimport { useState } from \"react\";\n\nexport default function Component() {\n  const [step, setStep] = useState(1);\n\n  const stepContent = [\n    {\n      title: \"Welcome to Origin UI\",\n      description:\n        \"Discover a powerful collection of components designed to enhance your development workflow.\",\n    },\n    {\n      title: \"Customizable Components\",\n      description:\n        \"Each component is fully customizable and built with modern web standards in mind.\",\n    },\n    {\n      title: \"Ready to Start?\",\n      description: \"Begin building amazing interfaces with our comprehensive component library.\",\n    },\n    {\n      title: \"Get Support\",\n      description:\n        \"Access our extensive documentation and community resources to make the most of Origin UI.\",\n    },\n  ];\n\n  const totalSteps = stepContent.length;\n\n  const handleContinue = () => {\n    if (step < totalSteps) {\n      setStep(step + 1);\n    }\n  };\n\n  return (\n    <Dialog\n      onOpenChange={(open) => {\n        if (open) setStep(1);\n      }}\n    >\n      <DialogTrigger asChild>\n        <Button variant=\"outline\">Onboarding</Button>\n      </DialogTrigger>\n      <DialogContent className=\"gap-0 p-0 [&>button:last-child]:text-white\">\n        <div className=\"p-2\">\n          <img\n            className=\"w-full rounded-lg\"\n            src=\"/dialog-content.png\"\n            width={382}\n            height={216}\n            alt=\"dialog\"\n          />\n        </div>\n        <div className=\"space-y-6 px-6 pb-6 pt-3\">\n          <DialogHeader>\n            <DialogTitle>{stepContent[step - 1].title}</DialogTitle>\n            <DialogDescription>{stepContent[step - 1].description}</DialogDescription>\n          </DialogHeader>\n          <div className=\"flex flex-col justify-between gap-4 sm:flex-row sm:items-center\">\n            <div className=\"flex justify-center space-x-1.5 max-sm:order-1\">\n              {[...Array(totalSteps)].map((_, index) => (\n                <div\n                  key={index}\n                  className={cn(\n                    \"h-1.5 w-1.5 rounded-full bg-primary\",\n                    index + 1 === step ? \"bg-primary\" : \"opacity-20\",\n                  )}\n                />\n              ))}\n            </div>\n            <DialogFooter>\n              <DialogClose asChild>\n                <Button type=\"button\" variant=\"ghost\">\n                  Skip\n                </Button>\n              </DialogClose>\n              {step < totalSteps ? (\n                <Button className=\"group\" type=\"button\" onClick={handleContinue}>\n                  Next\n                  <ArrowRight\n                    className=\"-me-1 ms-2 opacity-60 transition-transform group-hover:translate-x-0.5\"\n                    size={16}\n                    strokeWidth={2}\n                    aria-hidden=\"true\"\n                  />\n                </Button>\n              ) : (\n                <DialogClose asChild>\n                  <Button type=\"button\">Okay</Button>\n                </DialogClose>\n              )}\n            </DialogFooter>\n          </div>\n        </div>\n      </DialogContent>\n    </Dialog>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "dialog",
+      "modal",
+      "onboarding",
+      "radix"
+    ],
+    "style": 1
+  }
+}

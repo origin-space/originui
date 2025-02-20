@@ -2,7 +2,7 @@
 
 import { useImageUpload } from "@/registry/default/hooks/use-image-upload";
 import { Button } from "@/registry/default/ui/button";
-import { CircleUserRound, X } from "lucide-react";
+import { CircleUserRoundIcon, XIcon } from "lucide-react";
 
 export default function Component() {
   const {
@@ -34,7 +34,7 @@ export default function Component() {
             />
           ) : (
             <div aria-hidden="true">
-              <CircleUserRound className="opacity-60" size={16} strokeWidth={2} />
+              <CircleUserRoundIcon className="opacity-60" size={16} />
             </div>
           )}
         </Button>
@@ -43,10 +43,10 @@ export default function Component() {
             onClick={handleRemove}
             size="icon"
             variant="destructive"
-            className="absolute -right-2 -top-2 size-6 rounded-full border-2 border-background"
+            className="border-background absolute -top-2 -right-2 size-6 rounded-full border-2"
             aria-label="Remove image"
           >
-            <X size={16} />
+            <XIcon size={16} />
           </Button>
         )}
         <input
@@ -58,7 +58,7 @@ export default function Component() {
           aria-label="Upload image file"
         />
       </div>
-      {fileName && <p className="mt-2 text-xs text-muted-foreground">{fileName}</p>}
+      {fileName && <p className="text-muted-foreground mt-2 text-xs">{fileName}</p>}
       <div className="sr-only" aria-live="polite" role="status">
         {previewUrl ? "Image uploaded and preview available" : "No image uploaded"}
       </div>

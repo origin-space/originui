@@ -1,7 +1,7 @@
 "use client";
 
 import { Input } from "@/registry/default/ui/input";
-import { CreditCard } from "lucide-react";
+import { CreditCardIcon } from "lucide-react";
 import { useId } from "react";
 import { usePaymentInputs } from "react-payment-inputs";
 import images, { type CardImages } from "react-payment-inputs/images";
@@ -12,16 +12,16 @@ export default function Component() {
     usePaymentInputs();
 
   return (
-    <div className="space-y-2">
-      <legend className="text-sm font-medium text-foreground">Card Details</legend>
-      <div className="rounded-lg shadow-sm shadow-black/5">
+    <div className="*:not-first:mt-2">
+      <legend className="text-foreground text-sm font-medium">Card Details</legend>
+      <div className="rounded-lg shadow-xs">
         <div className="relative focus-within:z-10">
           <Input
             className="peer rounded-b-none pe-9 shadow-none [direction:inherit]"
             {...getCardNumberProps()}
             id={`number-${id}`}
           />
-          <div className="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground/80 peer-disabled:opacity-50">
+          <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 peer-disabled:opacity-50">
             {meta.cardType ? (
               <svg
                 className="overflow-hidden rounded-sm"
@@ -29,7 +29,7 @@ export default function Component() {
                 width={20}
               />
             ) : (
-              <CreditCard size={16} strokeWidth={2} aria-hidden="true" />
+              <CreditCardIcon size={16} aria-hidden="true" />
             )}
           </div>
         </div>
@@ -50,10 +50,10 @@ export default function Component() {
           </div>
         </div>
       </div>
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Built with{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://github.com/medipass/react-payment-inputs"
           target="_blank"
           rel="noopener nofollow"

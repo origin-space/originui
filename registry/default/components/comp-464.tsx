@@ -11,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/registry/default/ui/select";
-import { ChevronFirst, ChevronLast, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronFirstIcon, ChevronLastIcon, ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 type PaginationProps = {
   currentPage: number;
@@ -32,7 +32,7 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
             aria-disabled={currentPage === 1 ? true : undefined}
             role={currentPage === 1 ? "link" : undefined}
           >
-            <ChevronFirst size={16} strokeWidth={2} aria-hidden="true" />
+            <ChevronFirstIcon size={16} aria-hidden="true" />
           </PaginationLink>
         </PaginationItem>
 
@@ -45,7 +45,7 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
             aria-disabled={currentPage === 1 ? true : undefined}
             role={currentPage === 1 ? "link" : undefined}
           >
-            <ChevronLeft size={16} strokeWidth={2} aria-hidden="true" />
+            <ChevronLeftIcon size={16} aria-hidden="true" />
           </PaginationLink>
         </PaginationItem>
 
@@ -74,7 +74,7 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
             aria-disabled={currentPage === totalPages ? true : undefined}
             role={currentPage === totalPages ? "link" : undefined}
           >
-            <ChevronRight size={16} strokeWidth={2} aria-hidden="true" />
+            <ChevronRightIcon size={16} aria-hidden="true" />
           </PaginationLink>
         </PaginationItem>
 
@@ -87,7 +87,7 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
             aria-disabled={currentPage === totalPages ? true : undefined}
             role={currentPage === totalPages ? "link" : undefined}
           >
-            <ChevronLast size={16} strokeWidth={2} aria-hidden="true" />
+            <ChevronLastIcon size={16} aria-hidden="true" />
           </PaginationLink>
         </PaginationItem>
       </PaginationContent>

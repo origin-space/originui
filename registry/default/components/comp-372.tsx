@@ -8,7 +8,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu";
-import { ChevronDown } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function Component() {
@@ -19,12 +19,7 @@ export default function Component() {
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
           Radio items
-          <ChevronDown
-            className="-me-1 ms-2 opacity-60"
-            size={16}
-            strokeWidth={2}
-            aria-hidden="true"
-          />
+          <ChevronDownIcon className="-me-1 opacity-60" size={16} aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

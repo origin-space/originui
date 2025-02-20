@@ -13,12 +13,12 @@ export default function Component() {
 
   return (
     <fieldset className="space-y-4">
-      <legend className="text-sm font-medium leading-none text-foreground">Server location</legend>
+      <legend className="text-foreground text-sm leading-none font-medium">Server location</legend>
       <RadioGroup className="flex flex-wrap gap-2" defaultValue="1">
         {items.map((item) => (
           <div
             key={`${id}-${item.value}`}
-            className="relative flex flex-col items-start gap-4 rounded-lg border border-input p-3 shadow-sm shadow-black/5 has-[[data-state=checked]]:border-ring"
+            className="border-input has-data-[state=checked]:border-ring/40 relative flex flex-col items-start gap-4 rounded-lg border p-3 shadow-xs"
           >
             <div className="flex items-center gap-2">
               <RadioGroupItem

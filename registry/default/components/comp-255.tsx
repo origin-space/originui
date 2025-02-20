@@ -19,7 +19,7 @@ export default function Component() {
   } = useSliderWithInput({ minValue, maxValue, initialValue });
 
   return (
-    <div className="space-y-3">
+    <div className="*:not-first:mt-3">
       <Label>Slider with input</Label>
       <div className="flex items-center gap-4">
         <Slider

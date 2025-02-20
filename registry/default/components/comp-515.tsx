@@ -13,15 +13,15 @@ export default function Component() {
     <div className="mx-auto max-w-xl space-y-8 text-center">
       <Stepper defaultValue={2}>
         {steps.map((step) => (
-          <StepperItem key={step} step={step} className="[&:not(:last-child)]:flex-1">
+          <StepperItem key={step} step={step} className="not-last:flex-1">
             <StepperTrigger>
-              <StepperIndicator className="size-4 data-[state=active]:border-2 data-[state=active]:border-primary data-[state=active]:bg-transparent [&_span]:sr-only [&_svg]:size-3" />
+              <StepperIndicator className="data-[state=active]:border-primary size-4 data-[state=active]:border-2 data-[state=active]:bg-transparent [&_span]:sr-only [&_svg]:size-3" />
             </StepperTrigger>
             {step < steps.length && <StepperSeparator />}
           </StepperItem>
         ))}
       </Stepper>
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Stepper with tiny buttons and checkmarks
       </p>
     </div>

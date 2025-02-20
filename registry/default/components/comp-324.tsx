@@ -50,7 +50,7 @@ export default function Component() {
       <DialogContent>
         <div className="flex flex-col items-center gap-2">
           <div
-            className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
+            className="flex size-11 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
             <svg
@@ -71,7 +71,7 @@ export default function Component() {
             <DialogDescription className="sm:text-center">
               {hasGuessed
                 ? "Your code has been successfully verified."
-                : `Check your email and enter the code - Try ${CORRECT_CODE}`}
+                : `CheckIcon your email and enter the code - Try ${CORRECT_CODE}`}
             </DialogDescription>
           </DialogHeader>
         </div>
@@ -92,7 +92,7 @@ export default function Component() {
                 ref={inputRef}
                 value={value}
                 onChange={setValue}
-                containerClassName="flex items-center gap-3 has-[:disabled]:opacity-50"
+                containerClassName="flex items-center gap-3 has-disabled:opacity-50"
                 maxLength={4}
                 onFocus={() => setHasGuessed(undefined)}
                 render={({ slots }) => (
@@ -107,7 +107,7 @@ export default function Component() {
             </div>
             {hasGuessed === false && (
               <p
-                className="text-center text-xs text-muted-foreground"
+                className="text-muted-foreground text-center text-xs"
                 role="alert"
                 aria-live="polite"
               >
@@ -130,8 +130,8 @@ function Slot(props: SlotProps) {
   return (
     <div
       className={cn(
-        "flex size-9 items-center justify-center rounded-lg border border-input bg-background font-medium text-foreground shadow-sm shadow-black/5 transition-shadow",
-        { "z-10 border border-ring ring-[3px] ring-ring/20": props.isActive },
+        "border-input bg-background text-foreground flex size-9 items-center justify-center rounded-lg border font-medium shadow-xs transition-shadow",
+        { "border-ring/40 ring-ring/10 z-10 ring-[3px]": props.isActive },
       )}
     >
       {props.char !== null && <div>{props.char}</div>}

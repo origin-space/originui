@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-359",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/button.json",
+    "https://originui.com/r/tooltip.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-359.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/registry/default/ui/tooltip\";\n\nexport default function Component() {\n  return (\n    <TooltipProvider delayDuration={0}>\n      <Tooltip>\n        <TooltipTrigger asChild>\n          <Button variant=\"outline\" size=\"sm\">\n            W/ image\n          </Button>\n        </TooltipTrigger>\n        <TooltipContent className=\"py-3\">\n          <div className=\"space-y-2\">\n            <img\n              className=\"w-full rounded\"\n              src=\"/dialog-content.png\"\n              width={382}\n              height={216}\n              alt=\"Content image\"\n            />\n            <div className=\"space-y-1\">\n              <p className=\"text-[13px] font-medium\">Tooltip with title and icon</p>\n              <p className=\"text-xs text-muted-foreground\">\n                Tooltips are made to be highly customizable, with features like dynamic placement,\n                rich content, and a robust API.\n              </p>\n            </div>\n          </div>\n        </TooltipContent>\n      </Tooltip>\n    </TooltipProvider>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "tooltip",
+      "image",
+      "radix"
+    ],
+    "style": 1
+  }
+}

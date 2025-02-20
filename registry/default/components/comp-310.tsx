@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/registry/default/ui/button";
-import { TicketPercent, X } from "lucide-react";
+import { TicketPercent, XIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
 // Define the sale end date - eg: new Date('2024-12-31T23:59:59');
@@ -59,24 +59,24 @@ export default function Component() {
   if (!isVisible || timeLeft.isExpired) return null;
 
   return (
-    <div className="dark bg-muted px-4 py-3 text-foreground">
+    <div className="dark bg-muted text-foreground px-4 py-3">
       <div className="flex gap-2 md:items-center">
         <div className="flex grow gap-3 md:items-center">
           <div
-            className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/15 max-md:mt-0.5"
+            className="bg-primary/15 flex size-9 shrink-0 items-center justify-center rounded-full max-md:mt-0.5"
             aria-hidden="true"
           >
-            <TicketPercent className="opacity-80" size={16} strokeWidth={2} />
+            <TicketPercent className="opacity-80" size={16} />
           </div>
           <div className="flex grow flex-col justify-between gap-3 md:flex-row md:items-center">
             <div className="space-y-0.5">
               <p className="text-sm font-medium">Black Friday Sale!</p>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground text-sm">
                 It kicks off today and is available for just 24 hours—don&lsquo;t miss out!
               </p>
             </div>
             <div className="flex gap-3 max-md:flex-wrap">
-              <div className="flex items-center divide-x divide-primary-foreground rounded-lg bg-primary/15 text-sm tabular-nums">
+              <div className="divide-primary-foreground bg-primary/15 flex items-center divide-x rounded-lg text-sm tabular-nums">
                 {timeLeft.days > 0 && (
                   <span className="flex h-8 items-center justify-center p-2">
                     {timeLeft.days}
@@ -108,9 +108,8 @@ export default function Component() {
           onClick={() => setIsVisible(false)}
           aria-label="Close banner"
         >
-          <X
+          <XIcon
             size={16}
-            strokeWidth={2}
             className="opacity-60 transition-opacity group-hover:opacity-100"
             aria-hidden="true"
           />

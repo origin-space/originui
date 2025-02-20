@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-115",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/button.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-115.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { ChevronLeft } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Button className=\"relative ps-12\">\n      Previous\n      <span className=\"pointer-events-none absolute inset-y-0 start-0 flex w-9 items-center justify-center bg-primary-foreground/15\">\n        <ChevronLeft className=\"opacity-60\" size={16} strokeWidth={2} aria-hidden=\"true\" />\n      </span>\n    </Button>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "button",
+      "previous"
+    ],
+    "style": 2
+  }
+}
