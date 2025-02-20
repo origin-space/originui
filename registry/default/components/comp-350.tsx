@@ -41,7 +41,7 @@ export default function Component() {
           <AccordionItem
             value={item.id}
             key={item.id}
-            className="bg-background border px-4 py-1 first:rounded-t-lg last:rounded-b-lg"
+            className="bg-background border px-4 py-1 first:rounded-t-lg last:rounded-b-lg last:border-b"
           >
             <AccordionTrigger className="justify-start gap-3 py-2 text-[15px] leading-6 hover:no-underline [&>svg]:-order-1">
               {item.title}

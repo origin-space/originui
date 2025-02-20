@@ -84,7 +84,7 @@ export default function Component() {
           <AccordionItem
             value={item.id}
             key={item.id}
-            className="bg-background overflow-hidden border first:rounded-t-lg last:rounded-b-lg"
+            className="bg-background overflow-hidden border first:rounded-t-lg last:rounded-b-lg last:border-b"
           >
             <AccordionTrigger className="px-4 py-3 text-[15px] leading-6 hover:no-underline">
               {item.title}
