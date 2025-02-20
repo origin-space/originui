@@ -10,7 +10,7 @@ export default function Component() {
   if (!isActive) return null;
 
   return (
-    <Badge>
+    <Badge className="gap-0">
       Removable
       <button
         className="outline-ring/30 dark:outline-ring/40 -my-px -ms-px -me-1.5 inline-flex size-5 shrink-0 cursor-pointer items-center justify-center rounded-[inherit] p-0 opacity-60 transition-opacity hover:opacity-100 focus-visible:outline-2"

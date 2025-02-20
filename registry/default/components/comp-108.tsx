@@ -9,7 +9,7 @@ export default function Component() {
         variant="outline"
       >
         <FilesIcon className="-ms-1 opacity-60" size={16} aria-hidden="true" />
-        FilesIcon
+        Files
       </Button>
       <Button
         className="rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10"

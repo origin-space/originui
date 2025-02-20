@@ -10,7 +10,7 @@ export default function Component() {
   if (!isActive) return null;
 
   return (
-    <Badge variant="outline" className="rounded-md px-2 py-1">
+    <Badge variant="outline" className="gap-0 rounded-md px-2 py-1">
       Tag
       <button
         className="outline-ring/30 dark:outline-ring/40 -my-[5px] -ms-0.5 -me-2 inline-flex size-7 shrink-0 cursor-pointer items-center justify-center rounded-[inherit] p-0 opacity-60 transition-opacity hover:opacity-100 focus-visible:outline-2"

@@ -41,7 +41,7 @@ export default function Component() {
             </>
           ) : (
             <>
-              <DownloadIcon size={16} className="-ms-0.5 me-2" aria-hidden="true" />
+              <DownloadIcon size={16} className="-ms-0.5" aria-hidden="true" />
               Update now
             </>
           )}
