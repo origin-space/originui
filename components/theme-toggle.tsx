@@ -17,7 +17,7 @@ export default function ThemeToggle() {
       setSystem(false);
     } else {
       setTheme("system");
-      setSystem(!system);
+      setSystem(true);
     }
   };
 
@@ -28,7 +28,7 @@ export default function ThemeToggle() {
         name="theme-toggle"
         id={id}
         className="peer sr-only"
-        checked={theme === "dark" || system}
+        checked={system}
         onChange={smartToggle}
         aria-label="Toggle dark mode"
       />
