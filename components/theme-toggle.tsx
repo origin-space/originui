@@ -45,7 +45,7 @@ export default function ThemeToggle() {
             <RiMoonClearLine className="hidden dark:block" size={20} aria-hidden="true" />
           </>
         )}
-        <span className="sr-only">Switch to light / dark / system version</span>
+        <span className="sr-only">Switch to light / dark version</span>
       </label>
     </div>
   );
