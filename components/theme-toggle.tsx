@@ -1,19 +1,25 @@
 "use client";
 
-import { RiMoonClearLine, RiSunLine } from "@remixicon/react";
+import { RiContrast2Line, RiMoonClearLine, RiSunLine } from "@remixicon/react";
 import { useTheme } from "next-themes";
-import { useEffect, useId } from "react";
+import { useId, useState } from "react";
 
 export default function ThemeToggle() {
   const id = useId();
   const { theme, setTheme } = useTheme();
+  const [system, setSystem] = useState(false);
 
-  useEffect(() => {
+  const smartToggle = () => {
+    /* The smart toggle by @nrjdalal */
     if (theme === "system") {
-      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-      setTheme(mediaQuery.matches ? "dark" : "light");
+      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      setTheme(prefersDarkScheme ? "light" : "dark");
+      setSystem(false);
+    } else {
+      setTheme("system");
+      setSystem(!system);
     }
-  }, [theme, setTheme]);
+  };
 
   return (
     <div className="flex flex-col justify-center">
@@ -22,8 +28,8 @@ export default function ThemeToggle() {
         name="theme-toggle"
         id={id}
         className="peer sr-only"
-        checked={theme === "dark"}
-        onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
+        checked={theme === "dark" || system}
+        onChange={smartToggle}
         aria-label="Toggle dark mode"
       />
       <label
@@ -31,9 +37,15 @@ export default function ThemeToggle() {
         htmlFor={id}
         aria-hidden="true"
       >
-        <RiSunLine className="dark:hidden" size={20} aria-hidden="true" />
-        <RiMoonClearLine className="hidden dark:block" size={20} aria-hidden="true" />
-        <span className="sr-only">Switch to light / dark version</span>
+        {system ? (
+          <RiContrast2Line size={20} aria-hidden="true" />
+        ) : (
+          <>
+            <RiSunLine className="dark:hidden" size={20} aria-hidden="true" />
+            <RiMoonClearLine className="hidden dark:block" size={20} aria-hidden="true" />
+          </>
+        )}
+        <span className="sr-only">Switch to light / dark / system version</span>
       </label>
     </div>
   );
