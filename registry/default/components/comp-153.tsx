@@ -9,8 +9,8 @@ export default function Component() {
       defaultValue="1"
       style={
         {
-          "--primary": "oklch(0.59 0.20 277)",
-          "--ring": "oklch(0.59 0.20 277)",
+          "--primary": "var(--color-indigo-500)",
+          "--ring": "var(--color-indigo-500)",
         } as React.CSSProperties
       }
     >

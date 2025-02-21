@@ -157,7 +157,7 @@ function StepperTrigger({ asChild = false, className, children, ...props }: Step
     <button
       data-slot="stepper-trigger"
       className={cn(
-        "inline-flex cursor-pointer items-center gap-3 disabled:pointer-events-none disabled:opacity-50",
+        "inline-flex rounded-full items-center gap-3 disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] focus-visible:z-10",
         className,
       )}
       onClick={() => setActiveStep(step)}

@@ -39,14 +39,14 @@ export default function Component() {
           <AccordionItem
             value={item.id}
             key={item.id}
-            className="bg-background border px-4 py-1 first:rounded-t-lg last:rounded-b-lg last:border-b"
+            className="bg-background border px-4 py-1 first:rounded-t-lg last:rounded-b-lg last:border-b has-focus-visible:border-ring has-focus-visible:ring-ring/50 outline-none has-focus-visible:ring-[3px] has-focus-visible:z-10 relative"
           >
             <AccordionPrimitive.Header className="flex">
-              <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between py-2 text-left text-[15px] leading-6 font-semibold transition-all [&>svg>path:last-child]:origin-center [&>svg>path:last-child]:transition-all [&>svg>path:last-child]:duration-200 [&[data-state=open]>svg]:rotate-180 [&[data-state=open]>svg>path:last-child]:rotate-90 [&[data-state=open]>svg>path:last-child]:opacity-0">
+              <AccordionPrimitive.Trigger className="focus-visible:ring-0 outline-none rounded-md flex flex-1 items-center justify-between py-2 text-left text-sm font-semibold transition-all [&[data-state=open]>svg]:rotate-180 text-[15px] leading-6 [&>svg>path:last-child]:origin-center [&>svg>path:last-child]:transition-all [&>svg>path:last-child]:duration-200 [&[data-state=open]>svg>path:last-child]:rotate-90 [&[data-state=open]>svg>path:last-child]:opacity-0">
                 {item.title}
                 <PlusIcon
                   size={16}
-                  className="shrink-0 opacity-60 transition-transform duration-200"
+                  className="pointer-events-none shrink-0 opacity-60 transition-transform duration-200"
                   aria-hidden="true"
                 />
               </AccordionPrimitive.Trigger>

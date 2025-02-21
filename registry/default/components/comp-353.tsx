@@ -102,8 +102,8 @@ export default function Component() {
       <h2 className="text-xl font-bold">Multi-level w/ icon</h2>
       <Accordion type="single" collapsible className="w-full" defaultValue="3">
         {items.map((item) => (
-          <AccordionItem value={item.id} key={item.id}>
-            <AccordionTrigger className="justify-start gap-3 text-[15px] leading-6 hover:no-underline [&>svg]:-order-1">
+          <AccordionItem value={item.id} key={item.id} className="has-focus-visible:border-ring has-focus-visible:ring-ring/50 outline-none has-focus-visible:ring-[3px]">
+            <AccordionTrigger className="focus-visible:ring-0 outline-none rounded-md justify-start gap-3 text-[15px] leading-6 hover:no-underline [&>svg]:-order-1">
               <span className="flex items-center gap-3">
                 <item.icon size={16} className="shrink-0 opacity-60" aria-hidden="true" />
                 <span>{item.title}</span>

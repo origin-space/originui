@@ -31,7 +31,7 @@ export default function Component() {
       <Stepper defaultValue={2} className="items-start gap-4">
         {steps.map(({ step, title }) => (
           <StepperItem key={step} step={step} className="flex-1">
-            <StepperTrigger className="w-full flex-col items-start gap-2">
+            <StepperTrigger className="w-full flex-col items-start gap-2 rounded">
               <StepperIndicator asChild className="bg-border h-1 w-full">
                 <span className="sr-only">{step}</span>
               </StepperIndicator>

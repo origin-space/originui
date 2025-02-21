@@ -55,7 +55,7 @@ function Slider({
   const renderThumb = (value: number) => {
     const thumb = (
       <SliderPrimitive.Thumb
-        className="border-primary bg-background ring-ring/8 dark:ring-ring/12 block size-4 shrink-0 rounded-full border transition-shadow hover:ring-[3px] focus-visible:ring-[3px] focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+        className="border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
         onPointerDown={handlePointerDown}
       />
     );
