@@ -21,7 +21,7 @@ export default function Component() {
         numberOfMonths={3}
         pagedNavigation
         showOutsideDays={false}
-        className="rounded-lg border p-2"
+        className="rounded-md border p-2"
         classNames={{
           months: "sm:flex-col md:flex-row gap-8",
           month:

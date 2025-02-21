@@ -18,7 +18,7 @@ export default function Component() {
       {items.map((item) => (
         <div
           key={`${id}-${item.value}`}
-          className="border-input has-data-[state=checked]:border-ring/40 relative flex cursor-pointer flex-col gap-4 rounded-lg border p-4 shadow-xs"
+          className="border-input has-data-[state=checked]:border-ring relative flex cursor-pointer flex-col gap-4 rounded-md border p-4 shadow-xs outline-none"
         >
           <div className="flex justify-between gap-2">
             <Checkbox

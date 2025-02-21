@@ -32,7 +32,7 @@ export default function Component() {
       <Stepper defaultValue={2}>
         {steps.map(({ step, title, description }) => (
           <StepperItem key={step} step={step} className="not-last:flex-1 max-md:items-start">
-            <StepperTrigger className="gap-4 max-md:flex-col">
+            <StepperTrigger className="gap-4 rounded max-md:flex-col">
               <StepperIndicator />
               <div className="text-center md:-order-1 md:text-left">
                 <StepperTitle>{title}</StepperTitle>

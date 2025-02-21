@@ -2,7 +2,7 @@ import { ArrowRightIcon, TriangleAlert } from "lucide-react";
 
 export default function Component() {
   return (
-    <div className="rounded-lg border border-amber-500/50 px-4 py-3 text-amber-600">
+    <div className="rounded-md border border-amber-500/50 px-4 py-3 text-amber-600">
       <div className="flex gap-3">
         <TriangleAlert className="mt-0.5 shrink-0 opacity-60" size={16} aria-hidden="true" />
         <div className="flex grow justify-between gap-3">

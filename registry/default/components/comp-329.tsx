@@ -58,7 +58,7 @@ export default function Component() {
           <div className="space-y-4">
             <RadioGroup className="grid-cols-2" defaultValue="yearly">
               {/* Monthly */}
-              <label className="border-input has-data-[state=checked]:border-ring/40 has-data-[state=checked]:bg-accent outline-ring/30 dark:outline-ring/40 relative flex cursor-pointer flex-col gap-1 rounded-lg border px-4 py-3 shadow-xs outline-offset-2 transition-colors has-focus-visible:outline-2">
+              <label className="border-input has-data-[state=checked]:border-ring focus-within:border-ring focus-within:ring-ring/50 relative flex cursor-pointer flex-col gap-1 rounded-md border px-4 py-3 shadow-xs transition-[color,box-shadow] outline-none focus-within:ring-[3px]">
                 <RadioGroupItem
                   id="radio-monthly"
                   value="monthly"
@@ -68,7 +68,7 @@ export default function Component() {
                 <p className="text-muted-foreground text-sm">$32/month</p>
               </label>
               {/* Yearly */}
-              <label className="border-input has-data-[state=checked]:border-ring/40 has-data-[state=checked]:bg-accent outline-ring/30 dark:outline-ring/40 relative flex cursor-pointer flex-col gap-1 rounded-lg border px-4 py-3 shadow-xs outline-offset-2 transition-colors has-focus-visible:outline-2">
+              <label className="border-input has-data-[state=checked]:border-ring focus-within:border-ring focus-within:ring-ring/50 relative flex cursor-pointer flex-col gap-1 rounded-md border px-4 py-3 shadow-xs transition-[color,box-shadow] outline-none focus-within:ring-[3px]">
                 <RadioGroupItem
                   id="radio-yearly"
                   value="yearly"
@@ -87,7 +87,7 @@ export default function Component() {
             </div>
             <div className="*:not-first:mt-2">
               <legend className="text-foreground text-sm font-medium">Card Details</legend>
-              <div className="rounded-lg shadow-xs">
+              <div className="rounded-md shadow-xs">
                 <div className="relative focus-within:z-10">
                   <Input
                     className="peer rounded-b-none pe-9 shadow-none [direction:inherit]"

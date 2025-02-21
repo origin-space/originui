@@ -23,15 +23,15 @@ export default function Component() {
           Packages
         </TabsTrigger>
       </TabsList>
-      <div className="grow rounded-lg border text-start">
+      <div className="grow rounded-md border text-start">
         <TabsContent value="tab-1">
-          <p className="text-muted-foreground px-4 py-1.5 text-xs">Content for Tab 1</p>
+          <p className="text-muted-foreground px-4 py-3 text-xs">Content for Tab 1</p>
         </TabsContent>
         <TabsContent value="tab-2">
-          <p className="text-muted-foreground px-4 py-1.5 text-xs">Content for Tab 2</p>
+          <p className="text-muted-foreground px-4 py-3 text-xs">Content for Tab 2</p>
         </TabsContent>
         <TabsContent value="tab-3">
-          <p className="text-muted-foreground px-4 py-1.5 text-xs">Content for Tab 3</p>
+          <p className="text-muted-foreground px-4 py-3 text-xs">Content for Tab 3</p>
         </TabsContent>
       </div>
     </Tabs>

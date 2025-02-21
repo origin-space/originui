@@ -20,7 +20,7 @@ export default function Component() {
         {items.map((item) => (
           <label
             key={`${id}-${item.value}`}
-            className="border-input has-data-[state=checked]:border-ring/40 has-data-[state=checked]:bg-accent outline-ring/30 dark:outline-ring/40 relative flex cursor-pointer flex-col items-center gap-3 rounded-lg border px-2 py-3 text-center shadow-xs outline-offset-2 transition-colors has-focus-visible:outline-2 has-data-disabled:cursor-not-allowed has-data-disabled:opacity-50"
+            className="border-input has-data-[state=checked]:border-ring focus-within:border-ring focus-within:ring-ring/50 relative flex cursor-pointer flex-col items-center gap-3 rounded-md border px-2 py-3 text-center shadow-xs transition-[color,box-shadow] outline-none focus-within:ring-[3px] has-data-disabled:cursor-not-allowed has-data-disabled:opacity-50"
           >
             <RadioGroupItem
               id={`${id}-${item.value}`}

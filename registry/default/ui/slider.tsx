@@ -24,10 +24,20 @@ function Slider({
   showTooltip?: boolean;
   tooltipContent?: (value: number) => React.ReactNode;
 }) {
-  const _values = React.useMemo(
-    () => (Array.isArray(value) ? value : Array.isArray(defaultValue) ? defaultValue : [min, max]),
-    [value, defaultValue, min, max],
+  const [internalValues, setInternalValues] = React.useState<number[]>(
+    Array.isArray(value) ? value : Array.isArray(defaultValue) ? defaultValue : [min, max],
   );
+
+  React.useEffect(() => {
+    if (value !== undefined) {
+      setInternalValues(Array.isArray(value) ? value : [value]);
+    }
+  }, [value]);
+
+  const handleValueChange = (newValue: number[]) => {
+    setInternalValues(newValue);
+    props.onValueChange?.(newValue);
+  };
 
   const [showTooltipState, setShowTooltipState] = React.useState(false);
 
@@ -55,7 +65,8 @@ function Slider({
   const renderThumb = (value: number) => {
     const thumb = (
       <SliderPrimitive.Thumb
-        className="border-primary bg-background ring-ring/8 dark:ring-ring/12 block size-4 shrink-0 rounded-full border transition-shadow hover:ring-[3px] focus-visible:ring-[3px] focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+        data-slot="slider-thumb"
+        className="border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] outline-none hover:ring-4 focus-visible:ring-4 disabled:pointer-events-none disabled:opacity-50"
         onPointerDown={handlePointerDown}
       />
     );
@@ -89,6 +100,7 @@ function Slider({
         "relative flex w-full touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col",
         className,
       )}
+      onValueChange={handleValueChange}
       {...props}
     >
       <SliderPrimitive.Track
@@ -104,8 +116,8 @@ function Slider({
           )}
         />
       </SliderPrimitive.Track>
-      {Array.from({ length: _values.length }, (_, index) => (
-        <React.Fragment key={index}>{renderThumb(_values[index])}</React.Fragment>
+      {Array.from({ length: internalValues.length }, (_, index) => (
+        <React.Fragment key={index}>{renderThumb(internalValues[index])}</React.Fragment>
       ))}
     </SliderPrimitive.Root>
   );

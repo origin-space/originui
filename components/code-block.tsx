@@ -43,7 +43,7 @@ export default function CodeBlock({ code, lang, initial, preHighlighted }: Props
         if (isMounted) setContent(result);
       });
     } else {
-      setContent(<pre className="rounded-lg bg-zinc-950 p-4">No code available</pre>);
+      setContent(<pre className="rounded-md bg-zinc-950 p-4">No code available</pre>);
     }
 
     return () => {
@@ -52,10 +52,10 @@ export default function CodeBlock({ code, lang, initial, preHighlighted }: Props
   }, [code, lang, preHighlighted]);
 
   return content ? (
-    <div className="[&_code]:font-mono [&_code]:text-[13px] [&_pre]:max-h-[450px] [&_pre]:overflow-auto [&_pre]:rounded-lg [&_pre]:bg-zinc-950! [&_pre]:p-4 [&_pre]:leading-snug dark:[&_pre]:bg-zinc-900!">
+    <div className="[&_code]:font-mono [&_code]:text-[13px] [&_pre]:max-h-[450px] [&_pre]:overflow-auto [&_pre]:rounded-md [&_pre]:bg-zinc-950! [&_pre]:p-4 [&_pre]:leading-snug dark:[&_pre]:bg-zinc-900!">
       {content}
     </div>
   ) : (
-    <pre className="rounded-lg bg-zinc-950 p-4">Loading...</pre>
+    <pre className="rounded-md bg-zinc-950 p-4">Loading...</pre>
   );
 }

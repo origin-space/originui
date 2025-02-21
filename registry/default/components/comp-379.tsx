@@ -32,7 +32,7 @@ export default function Component() {
         <DropdownMenuLabel>Add block</DropdownMenuLabel>
         <DropdownMenuItem>
           <div
-            className="bg-background flex size-8 items-center justify-center rounded-lg border"
+            className="bg-background flex size-8 items-center justify-center rounded-md border"
             aria-hidden="true"
           >
             <TypeIcon size={16} className="opacity-60" />
@@ -44,7 +44,7 @@ export default function Component() {
         </DropdownMenuItem>
         <DropdownMenuItem>
           <div
-            className="bg-background flex size-8 items-center justify-center rounded-lg border"
+            className="bg-background flex size-8 items-center justify-center rounded-md border"
             aria-hidden="true"
           >
             <TextQuoteIcon size={16} className="opacity-60" />
@@ -56,7 +56,7 @@ export default function Component() {
         </DropdownMenuItem>
         <DropdownMenuItem>
           <div
-            className="bg-background flex size-8 items-center justify-center rounded-lg border"
+            className="bg-background flex size-8 items-center justify-center rounded-md border"
             aria-hidden="true"
           >
             <MinusIcon size={16} className="opacity-60" />
@@ -68,7 +68,7 @@ export default function Component() {
         </DropdownMenuItem>
         <DropdownMenuItem>
           <div
-            className="bg-background flex size-8 items-center justify-center rounded-lg border"
+            className="bg-background flex size-8 items-center justify-center rounded-md border"
             aria-hidden="true"
           >
             <Heading1Icon size={16} className="opacity-60" />
@@ -80,7 +80,7 @@ export default function Component() {
         </DropdownMenuItem>
         <DropdownMenuItem>
           <div
-            className="bg-background flex size-8 items-center justify-center rounded-lg border"
+            className="bg-background flex size-8 items-center justify-center rounded-md border"
             aria-hidden="true"
           >
             <Heading2Icon size={16} className="opacity-60" />

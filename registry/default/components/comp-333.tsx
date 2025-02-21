@@ -38,7 +38,7 @@ export default function Component() {
   return (
     <>
       <button
-        className="border-input bg-background text-foreground placeholder:text-muted-foreground/70 focus-visible:border-ring/40 ring-ring/8 dark:ring-ring/12 inline-flex h-9 w-fit rounded-lg border px-3 py-2 text-sm shadow-xs transition-shadow focus-visible:ring-[3px] focus-visible:outline-hidden"
+        className="border-input bg-background text-foreground placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:ring-ring/50 inline-flex h-9 w-fit rounded-md border px-3 py-2 text-sm shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px]"
         onClick={() => setOpen(true)}
       >
         <span className="flex grow items-center">

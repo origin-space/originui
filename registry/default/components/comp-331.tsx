@@ -41,9 +41,7 @@ export default function Component() {
       </DialogTrigger>
       <DialogContent className="flex flex-col gap-0 overflow-y-visible p-0 sm:max-w-lg [&>button:last-child]:top-3.5">
         <DialogHeader className="contents space-y-0 text-left">
-          <DialogTitle className="border-b px-6 py-4 text-base">
-            Edit profile
-          </DialogTitle>
+          <DialogTitle className="border-b px-6 py-4 text-base">Edit profile</DialogTitle>
         </DialogHeader>
         <DialogDescription className="sr-only">
           Make changes to your profile here. You can change your photo and set a username.
@@ -93,8 +91,8 @@ export default function Component() {
               </div>
               <div className="*:not-first:mt-2">
                 <Label htmlFor={`${id}-website`}>Website</Label>
-                <div className="flex rounded-lg shadow-xs">
-                  <span className="border-input bg-background text-muted-foreground -z-10 inline-flex items-center rounded-s-lg border px-3 text-sm">
+                <div className="flex rounded-md shadow-xs">
+                  <span className="border-input bg-background text-muted-foreground -z-10 inline-flex items-center rounded-s-md border px-3 text-sm">
                     https://
                   </span>
                   <Input
@@ -170,7 +168,7 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
         <div className="absolute inset-0 flex items-center justify-center gap-2">
           <button
             type="button"
-            className="outline-ring/30 dark:outline-ring/40 z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-offset-2 transition-colors hover:bg-black/80 focus-visible:outline-2"
+            className="focus-visible:border-ring focus-visible:ring-ring/50 z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white transition-[color,box-shadow] outline-none hover:bg-black/80 focus-visible:ring-[3px]"
             onClick={handleThumbnailClick}
             aria-label={currentImage ? "Change image" : "Upload image"}
           >
@@ -179,7 +177,7 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
           {currentImage && (
             <button
               type="button"
-              className="outline-ring/30 dark:outline-ring/40 z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-offset-2 transition-colors hover:bg-black/80 focus-visible:outline-2"
+              className="focus-visible:border-ring focus-visible:ring-ring/50 z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white transition-[color,box-shadow] outline-none hover:bg-black/80 focus-visible:ring-[3px]"
               onClick={handleImageRemove}
               aria-label="Remove image"
             >
@@ -219,7 +217,7 @@ function Avatar({ defaultImage }: { defaultImage?: string }) {
         )}
         <button
           type="button"
-          className="outline-ring/30 dark:outline-ring/40 absolute flex size-8 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white outline-offset-2 transition-colors hover:bg-black/80 focus-visible:outline-2"
+          className="focus-visible:border-ring focus-visible:ring-ring/50 absolute flex size-8 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white transition-[color,box-shadow] outline-none hover:bg-black/80 focus-visible:ring-[3px]"
           onClick={handleThumbnailClick}
           aria-label="Change profile picture"
         >

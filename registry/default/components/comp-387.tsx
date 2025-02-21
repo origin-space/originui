@@ -66,7 +66,7 @@ export default function Component() {
                     <TooltipTrigger asChild>
                       <button
                         onClick={handleCopy}
-                        className="text-muted-foreground/80 hover:text-foreground focus-visible:text-foreground outline-ring/30 dark:outline-ring/40 absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg border border-transparent outline-offset-2 transition-colors focus-visible:outline-2 disabled:pointer-events-none disabled:cursor-not-allowed"
+                        className="text-muted-foreground/80 hover:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-md transition-[color,box-shadow] outline-none focus:z-10 focus-visible:ring-[3px] disabled:pointer-events-none disabled:cursor-not-allowed"
                         aria-label={copied ? "Copied" : "Copy to clipboard"}
                         disabled={copied}
                       >

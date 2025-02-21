@@ -32,14 +32,14 @@ export default function Component() {
   const [selectedIndex, setSelectedIndex] = useState("0");
 
   return (
-    <div className="divide-primary-foreground/30 inline-flex divide-x rounded-lg shadow-xs rtl:space-x-reverse">
-      <Button className="rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10">
+    <div className="divide-primary-foreground/30 inline-flex divide-x rounded-md shadow-xs rtl:space-x-reverse">
+      <Button className="rounded-none shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10">
         {options[Number(selectedIndex)].label}
       </Button>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
-            className="rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10"
+            className="rounded-none shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10"
             size="icon"
             aria-label="Options"
           >

@@ -13,7 +13,7 @@ export default function Component() {
 
   return (
     <div>
-      <div className="rounded-lg border p-2">
+      <div className="rounded-md border p-2">
         <Calendar
           mode="single"
           selected={date}

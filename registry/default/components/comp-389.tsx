@@ -51,7 +51,7 @@ interface CardProps {
 
 function Card({ number, isActive }: CardProps) {
   const content = (
-    <div className="bg-secondary text-muted-foreground flex size-10 items-center justify-center rounded-lg text-sm font-medium">
+    <div className="bg-secondary text-muted-foreground flex size-10 items-center justify-center rounded-md text-sm font-medium">
       {number + 1}
     </div>
   );

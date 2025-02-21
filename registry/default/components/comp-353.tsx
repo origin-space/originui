@@ -102,8 +102,12 @@ export default function Component() {
       <h2 className="text-xl font-bold">Multi-level w/ icon</h2>
       <Accordion type="single" collapsible className="w-full" defaultValue="3">
         {items.map((item) => (
-          <AccordionItem value={item.id} key={item.id}>
-            <AccordionTrigger className="justify-start gap-3 text-[15px] leading-6 hover:no-underline [&>svg]:-order-1">
+          <AccordionItem
+            value={item.id}
+            key={item.id}
+            className="has-focus-visible:border-ring has-focus-visible:ring-ring/50 outline-none has-focus-visible:ring-[3px]"
+          >
+            <AccordionTrigger className="justify-start gap-3 rounded-md text-[15px] leading-6 outline-none hover:no-underline focus-visible:ring-0 [&>svg]:-order-1">
               <span className="flex items-center gap-3">
                 <item.icon size={16} className="shrink-0 opacity-60" aria-hidden="true" />
                 <span>{item.title}</span>
@@ -151,7 +155,7 @@ function CollapsibleDemo({
           <span>{title}</span>
         </span>
       </CollapsibleTrigger>
-      <CollapsibleContent className="mt-1 text-muted-foreground data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down overflow-hidden ps-6 text-sm transition-all">
+      <CollapsibleContent className="text-muted-foreground data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down mt-1 overflow-hidden ps-6 text-sm transition-all">
         {content}
       </CollapsibleContent>
     </Collapsible>

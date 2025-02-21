@@ -26,7 +26,7 @@ export default function Component() {
               alt={item.label}
               width={88}
               height={70}
-              className="border-input outline-ring/30 dark:outline-ring/40 peer-data-[state=checked]:border-ring/40 peer-data-[state=checked]:bg-accent relative cursor-pointer overflow-hidden rounded-lg border shadow-xs outline-offset-2 transition-colors peer-focus-visible:outline-2 peer-data-disabled:cursor-not-allowed peer-data-disabled:opacity-50"
+              className="border-input peer-focus-visible:ring-ring/50 peer-data-[state=checked]:border-ring peer-data-[state=checked]:bg-accent relative cursor-pointer overflow-hidden rounded-md border shadow-xs transition-[color,box-shadow] outline-none peer-focus-visible:ring-[3px] peer-data-disabled:cursor-not-allowed peer-data-disabled:opacity-50"
             />
             <span className="group peer-data-[state=unchecked]:text-muted-foreground/70 mt-2 flex items-center gap-1">
               <CheckIcon

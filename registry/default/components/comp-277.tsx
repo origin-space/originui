@@ -2,7 +2,7 @@ import { CircleAlertIcon } from "lucide-react";
 
 export default function Component() {
   return (
-    <div className="rounded-lg border px-4 py-3">
+    <div className="rounded-md border px-4 py-3">
       <div className="flex gap-3">
         <CircleAlertIcon
           className="mt-0.5 shrink-0 text-red-500 opacity-60"

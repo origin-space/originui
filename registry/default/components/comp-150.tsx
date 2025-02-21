@@ -22,7 +22,7 @@ export default function Component() {
           onChange={() => setTheme((prev) => (prev === "dark" ? "light" : "dark"))}
         />
         <label
-          className="group border-input bg-background text-foreground hover:bg-accent hover:text-accent-foreground outline-ring/30 dark:outline-ring/40 relative inline-flex size-9 cursor-pointer items-center justify-center rounded-lg border shadow-xs outline-offset-2 transition-colors peer-focus-visible:outline-2"
+          className="group border-input bg-background text-foreground hover:bg-accent hover:text-accent-foreground peer-focus-visible:border-ring peer-focus-visible:ring-ring/50 relative inline-flex size-9 items-center justify-center rounded-md border shadow-xs transition-[color,box-shadow] outline-none peer-focus-visible:ring-[3px]"
           htmlFor={id}
           aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
         >

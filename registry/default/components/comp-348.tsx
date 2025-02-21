@@ -41,9 +41,9 @@ export default function Component() {
           <AccordionItem
             value={item.id}
             key={item.id}
-            className="bg-background border px-4 py-1 first:rounded-t-lg last:rounded-b-lg last:border-b"
+            className="bg-background has-focus-visible:border-ring has-focus-visible:ring-ring/50 relative border px-4 py-1 outline-none first:rounded-t-md last:rounded-b-md last:border-b has-focus-visible:z-10 has-focus-visible:ring-[3px]"
           >
-            <AccordionTrigger className="py-2 text-[15px] leading-6 hover:no-underline">
+            <AccordionTrigger className="py-2 text-[15px] leading-6 hover:no-underline focus-visible:ring-0">
               {item.title}
             </AccordionTrigger>
             <AccordionContent className="text-muted-foreground pb-2">

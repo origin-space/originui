@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/components/comp-113.tsx",
-      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { ChevronDownIcon, PinIcon } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <div className=\"divide-primary-foreground/30 inline-flex divide-x rounded-lg shadow-xs rtl:space-x-reverse\">\n      <Button\n        className=\"rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10\"\n        size=\"icon\"\n        aria-label=\"Options\"\n      >\n        <ChevronDownIcon size={16} aria-hidden=\"true\" />\n      </Button>\n      <Button className=\"rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10\">\n        <PinIcon className=\"-ms-1 opacity-60\" size={16} aria-hidden=\"true\" />\n        Pinned\n      </Button>\n    </div>\n  );\n}\n",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { ChevronDownIcon, PinIcon } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <div className=\"divide-primary-foreground/30 inline-flex divide-x rounded-md shadow-xs rtl:space-x-reverse\">\n      <Button\n        className=\"rounded-none shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10\"\n        size=\"icon\"\n        aria-label=\"Options\"\n      >\n        <ChevronDownIcon size={16} aria-hidden=\"true\" />\n      </Button>\n      <Button className=\"rounded-none shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10\">\n        <PinIcon className=\"-ms-1 opacity-60\" size={16} aria-hidden=\"true\" />\n        Pinned\n      </Button>\n    </div>\n  );\n}\n",
       "type": "registry:component"
     }
   ],

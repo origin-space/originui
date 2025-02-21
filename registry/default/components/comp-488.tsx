@@ -14,11 +14,7 @@ export default function Component() {
 
   return (
     <div>
-      <RangeCalendar
-        className="rounded-lg border p-2"
-        value={date}
-        onChange={setDate}
-      />
+      <RangeCalendar className="rounded-md border p-2" value={date} onChange={setDate} />
       <p
         className="text-muted-foreground mt-4 text-center text-xs"
         role="region"

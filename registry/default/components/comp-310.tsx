@@ -76,7 +76,7 @@ export default function Component() {
               </p>
             </div>
             <div className="flex gap-3 max-md:flex-wrap">
-              <div className="divide-primary-foreground bg-primary/15 flex items-center divide-x rounded-lg text-sm tabular-nums">
+              <div className="divide-primary-foreground bg-primary/15 flex items-center divide-x rounded-md text-sm tabular-nums">
                 {timeLeft.days > 0 && (
                   <span className="flex h-8 items-center justify-center p-2">
                     {timeLeft.days}

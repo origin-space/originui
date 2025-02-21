@@ -42,14 +42,14 @@ export default function Component() {
         {items.map((item) => (
           <AccordionItem value={item.id} key={item.id} className="py-2">
             <AccordionPrimitive.Header className="flex">
-              <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between py-2 text-left text-[15px] leading-6 font-semibold transition-all [&[data-state=open]>svg]:rotate-180">
+              <AccordionPrimitive.Trigger className="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center justify-between rounded-md py-2 text-left text-[15px] leading-6 font-semibold transition-all outline-none focus-visible:ring-[3px] [&[data-state=open]>svg]:rotate-180">
                 <span className="flex flex-col space-y-1">
                   <span>{item.title}</span>
                   {item.sub && <span className="text-sm font-normal">{item.sub}</span>}
                 </span>
                 <ChevronDownIcon
                   size={16}
-                  className="shrink-0 opacity-60 transition-transform duration-200"
+                  className="pointer-events-none shrink-0 opacity-60 transition-transform duration-200"
                   aria-hidden="true"
                 />
               </AccordionPrimitive.Trigger>
