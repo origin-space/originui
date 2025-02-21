@@ -11,14 +11,10 @@ import { useId } from "react";
 export default function Component() {
   const id = useId();
   return (
-    <div
-      className="*:not-first:mt-2 [--ring:var(--color-indigo-300)] in-[.dark]:[--ring:var(--color-indigo-900)]"
-    >
+    <div className="[--ring:var(--color-indigo-300)] *:not-first:mt-2 in-[.dark]:[--ring:var(--color-indigo-900)]">
       <Label htmlFor={id}>Select with colored border and ring</Label>
       <Select defaultValue="1">
-        <SelectTrigger
-          id={id}
-        >
+        <SelectTrigger id={id}>
           <SelectValue placeholder="Select framework" />
         </SelectTrigger>
         <SelectContent>

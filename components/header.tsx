@@ -13,10 +13,7 @@ export default function Header() {
         aria-hidden="true"
       ></div>
       <div className="mx-auto flex h-[72px] w-full max-w-6xl items-center justify-between gap-3">
-        <Link
-          href="/"
-          aria-label="Home"
-        >
+        <Link href="/" aria-label="Home">
           <span className="sr-only">Origin UI</span>
           <Image src={Logo} alt="Origin UI logo" width={117} height={24} className="dark:hidden" />
           <Image

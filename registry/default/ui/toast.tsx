@@ -56,7 +56,7 @@ function ToastAction({
     <ToastPrimitives.Action
       className={cn(
         !asChild &&
-          "hover:bg-secondary focus:ring-ring group-[.destructive]:border-muted/40 hover:group-[.destructive]:border-destructive/30 hover:group-[.destructive]:bg-destructive focus:group-[.destructive]:ring-destructive inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium transition-[color,box-shadow] hover:group-[.destructive]:text-white focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none disabled:pointer-events-none disabled:opacity-50",
+          "hover:bg-secondary focus:ring-ring group-[.destructive]:border-muted/40 hover:group-[.destructive]:border-destructive/30 hover:group-[.destructive]:bg-destructive focus:group-[.destructive]:ring-destructive focus-visible:border-ring focus-visible:ring-ring/50 inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium transition-[color,box-shadow] outline-none hover:group-[.destructive]:text-white focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50",
         className,
       )}
       asChild={asChild}
@@ -76,7 +76,7 @@ function ToastClose({
     <ToastPrimitives.Close
       className={cn(
         !asChild &&
-          "group outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] absolute top-3 right-3 flex size-7 items-center justify-center rounded transition-[color,box-shadow] disabled:pointer-events-none",
+          "group focus-visible:border-ring focus-visible:ring-ring/50 absolute top-3 right-3 flex size-7 items-center justify-center rounded transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:pointer-events-none",
         className,
       )}
       toast-close=""

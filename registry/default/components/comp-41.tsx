@@ -13,7 +13,7 @@ export default function Component() {
         <Group className="w-full">
           <DateInput className="pe-9" />
         </Group>
-        <Button className="text-muted-foreground/80 hover:text-foreground outline-none data-focus-visible:border-ring data-focus-visible:ring-ring/50 data-focus-visible:ring-[3px] z-10 -ms-9 -me-px flex w-9 items-center justify-center rounded-e-md transition-[color,box-shadow]">
+        <Button className="text-muted-foreground/80 hover:text-foreground data-focus-visible:border-ring data-focus-visible:ring-ring/50 z-10 -ms-9 -me-px flex w-9 items-center justify-center rounded-e-md transition-[color,box-shadow] outline-none data-focus-visible:ring-[3px]">
           <CalendarIcon size={16} />
         </Button>
       </div>

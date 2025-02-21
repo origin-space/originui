@@ -58,7 +58,7 @@ export default function Component() {
           <div className="space-y-4">
             <RadioGroup className="grid-cols-2" defaultValue="yearly">
               {/* Monthly */}
-              <label className="border-input has-data-[state=checked]:border-ring focus-within:border-ring focus-within:ring-ring/50 focus-within:ring-[3px] relative flex cursor-pointer flex-col gap-1 rounded-md border px-4 py-3 shadow-xs transition-[color,box-shadow] outline-none">
+              <label className="border-input has-data-[state=checked]:border-ring focus-within:border-ring focus-within:ring-ring/50 relative flex cursor-pointer flex-col gap-1 rounded-md border px-4 py-3 shadow-xs transition-[color,box-shadow] outline-none focus-within:ring-[3px]">
                 <RadioGroupItem
                   id="radio-monthly"
                   value="monthly"
@@ -68,7 +68,7 @@ export default function Component() {
                 <p className="text-muted-foreground text-sm">$32/month</p>
               </label>
               {/* Yearly */}
-              <label className="border-input has-data-[state=checked]:border-ring focus-within:border-ring focus-within:ring-ring/50 focus-within:ring-[3px] relative flex cursor-pointer flex-col gap-1 rounded-md border px-4 py-3 shadow-xs transition-[color,box-shadow] outline-none">
+              <label className="border-input has-data-[state=checked]:border-ring focus-within:border-ring focus-within:ring-ring/50 relative flex cursor-pointer flex-col gap-1 rounded-md border px-4 py-3 shadow-xs transition-[color,box-shadow] outline-none focus-within:ring-[3px]">
                 <RadioGroupItem
                   id="radio-yearly"
                   value="yearly"
