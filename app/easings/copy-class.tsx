@@ -29,7 +29,7 @@ const CopyClass = ({ value }: { value: string }) => {
         <div className="flex-1">
           {copied ? "Copied" : <span className="transition-colors">Copy class</span>}
         </div>
-        <div className="relative ml-2">
+        <div className="relative">
           <div
             className={cn("transition-all", copied ? "scale-100 opacity-100" : "scale-0 opacity-0")}
           >
