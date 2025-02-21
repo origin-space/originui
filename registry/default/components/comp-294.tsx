@@ -4,7 +4,7 @@ import { RefreshCwIcon, XIcon } from "lucide-react";
 export default function Component() {
   return (
     // To make the notification fixed, add classes like `fixed bottom-4 right-4` to the container element.
-    <div className="bg-background z-50 max-w-[400px] rounded-lg border p-4 shadow-lg">
+    <div className="bg-background z-50 max-w-[400px] rounded-md border p-4 shadow-lg">
       <div className="flex gap-3">
         <div
           className="flex size-9 shrink-0 items-center justify-center rounded-full border"

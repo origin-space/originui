@@ -14,7 +14,7 @@ export default function Component() {
   return (
     <div className="*:not-first:mt-2">
       <legend className="text-foreground text-sm font-medium">Card Details</legend>
-      <div className="rounded-lg shadow-xs">
+      <div className="rounded-md shadow-xs">
         <div className="relative focus-within:z-10">
           <Input
             className="peer rounded-b-none pe-9 shadow-none [direction:inherit]"

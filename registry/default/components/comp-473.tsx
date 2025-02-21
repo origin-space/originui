@@ -57,7 +57,7 @@ export default function Component() {
   const id = useId();
   return (
     <div>
-      <div className="bg-background overflow-hidden rounded-lg border">
+      <div className="bg-background overflow-hidden rounded-md border">
         <Table>
           <TableHeader>
             <TableRow className="hover:bg-transparent">

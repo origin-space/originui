@@ -25,7 +25,7 @@ export default function CliCommands({ name }: { name: string }) {
             packageManager: value as "pnpm" | "npm" | "yarn" | "bun",
           });
         }}
-        className="rounded-lg bg-zinc-950 dark:bg-zinc-900"
+        className="rounded-md bg-zinc-950 dark:bg-zinc-900"
       >
         <TabsList className="dark h-auto w-full justify-start rounded-none border-b bg-transparent px-4 py-0">
           <TabsTrigger

@@ -23,7 +23,7 @@ export default function Component() {
               id={id}
               variant={"outline"}
               className={cn(
-                "group bg-background hover:bg-background focus-visible:border-ring/40 outline-ring/8 dark:outline-ring/12 w-full justify-between px-3 font-normal outline-offset-0 focus-visible:outline-[3px]",
+                "group bg-background hover:bg-background border-input w-full justify-between px-3 font-normal outline-offset-0 outline-none focus-visible:outline-[3px]",
                 !date && "text-muted-foreground",
               )}
             >

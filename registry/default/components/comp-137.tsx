@@ -7,9 +7,11 @@ export default function Component() {
   return (
     <div className="flex items-center gap-2">
       <Checkbox
-        style={{
-          "--primary": "var(--color-emerald-500)",
-        } as React.CSSProperties}
+        style={
+          {
+            "--primary": "var(--color-emerald-500)",
+          } as React.CSSProperties
+        }
         id={id}
         className="rounded-full"
         defaultChecked

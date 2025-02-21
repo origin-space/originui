@@ -7,34 +7,34 @@ export default function Component() {
   return (
     <div className="*:not-first:mt-2">
       <Label>Listbox with multiple options</Label>
-      <div className="border-input overflow-hidden rounded-lg border">
+      <div className="border-input overflow-hidden rounded-md border">
         <ListBox
-          className="bg-background max-h-72 min-h-20 space-y-1 overflow-auto p-1 text-sm shadow-xs transition-shadow"
+          className="bg-background max-h-72 min-h-20 space-y-1 overflow-auto p-1 text-sm shadow-xs transition-[color,box-shadow]"
           aria-label="Select framework"
           selectionMode="multiple"
           defaultSelectedKeys={["react", "vue"]}
         >
           <ListBoxItem
             id="react"
-            className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground outline-ring/30 dark:outline-ring/40 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
+            className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-focus-visible:border-ring data-focus-visible:ring-ring/50 relative rounded px-2 py-1.5 outline-none data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:ring-[3px]"
           >
             React
           </ListBoxItem>
           <ListBoxItem
             id="vue"
-            className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground outline-ring/30 dark:outline-ring/40 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
+            className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-focus-visible:border-ring data-focus-visible:ring-ring/50 relative rounded px-2 py-1.5 outline-none data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:ring-[3px]"
           >
             Vue
           </ListBoxItem>
           <ListBoxItem
             id="angular"
-            className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground outline-ring/30 dark:outline-ring/40 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
+            className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-focus-visible:border-ring data-focus-visible:ring-ring/50 relative rounded px-2 py-1.5 outline-none data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:ring-[3px]"
           >
             Angular
           </ListBoxItem>
           <ListBoxItem
             id="svelte"
-            className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground outline-ring/30 dark:outline-ring/40 relative rounded-md px-2 py-1.5 data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:outline-2"
+            className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-focus-visible:border-ring data-focus-visible:ring-ring/50 relative rounded px-2 py-1.5 outline-none data-disabled:cursor-not-allowed data-disabled:opacity-50 data-focus-visible:ring-[3px]"
           >
             Svelte
           </ListBoxItem>

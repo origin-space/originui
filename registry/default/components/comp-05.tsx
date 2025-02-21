@@ -11,7 +11,7 @@ export default function Component() {
       style={{ "--ring": "var(--color-indigo-500)" } as React.CSSProperties}
     >
       <Label htmlFor={id}>Input with colored border and ring</Label>
-      <Input id={id} className="focus-visible:border-ring/60 ring-ring/20 dark:ring-ring/25" placeholder="Email" type="email" />
+      <Input id={id} placeholder="Email" type="email" />
     </div>
   );
 }

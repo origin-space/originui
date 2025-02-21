@@ -5,7 +5,7 @@ export default function Cta() {
         Didn&apos;t find what you were looking for?
       </h2>
       <a
-        className="bg-primary text-primary-foreground hover:bg-primary/90 outline-ring/30 dark:outline-ring/40 inline-flex h-9 items-center justify-center rounded-full px-4 py-2 text-sm font-medium whitespace-nowrap shadow-xs outline-offset-2 transition-colors focus-visible:outline-2 disabled:pointer-events-none disabled:opacity-50"
+        className="bg-primary text-primary-foreground hover:bg-primary/90 outline-ring/30 dark:outline-ring/40 inline-flex h-9 items-center justify-center rounded-full px-4 py-2 text-sm font-medium whitespace-nowrap shadow-xs outline-offset-2 transition-colors disabled:pointer-events-none disabled:opacity-50"
         href="https://github.com/origin-space/originui/discussions/categories/suggestions"
         target="_blank"
       >

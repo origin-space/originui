@@ -16,7 +16,7 @@ export default function Header() {
         <Link
           href="/"
           aria-label="Home"
-          className="outline-ring/30 dark:outline-ring/40 rounded-full outline-offset-2 focus-visible:outline-2"
+          className="outline-ring/30 dark:outline-ring/40 rounded-full outline-offset-2"
         >
           <span className="sr-only">Origin UI</span>
           <Image src={Logo} alt="Origin UI logo" width={117} height={24} className="dark:hidden" />

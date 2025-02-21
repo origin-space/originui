@@ -12,7 +12,7 @@ export default function Component() {
         mode="single"
         selected={date}
         onSelect={setDate}
-        className="rounded-lg border p-2"
+        className="rounded-md border p-2"
         classNames={{
           month_caption: "ms-2.5 me-20 justify-start",
           nav: "justify-end",

@@ -16,7 +16,7 @@ export default function Component() {
     <div className="*:not-first:mt-2" dir="ltr">
       <Label htmlFor={id}>PhoneIcon number input</Label>
       <RPNInput.default
-        className="flex rounded-lg shadow-xs"
+        className="flex rounded-md shadow-xs"
         international
         flagComponent={FlagComponent}
         countrySelectComponent={CountrySelect}
@@ -68,7 +68,7 @@ const CountrySelect = ({ disabled, value, onChange, options }: CountrySelectProp
   };
 
   return (
-    <div className="border-input bg-background text-muted-foreground focus-within:border-ring/40 ring-ring/8 dark:ring-ring/12 hover:bg-accent hover:text-foreground has-aria-invalid:border-destructive/60 has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/25 relative inline-flex items-center self-stretch rounded-s-lg border py-2 ps-3 pe-2 transition-shadow focus-within:z-10 focus-within:ring-[3px] focus-within:outline-hidden has-disabled:pointer-events-none has-disabled:opacity-50">
+    <div className="border-input bg-background text-muted-foreground focus-within:border-ring focus-within:ring-ring/50 hover:bg-accent hover:text-foreground has-aria-invalid:border-destructive/60 has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40 relative inline-flex items-center self-stretch rounded-s-md border py-2 ps-3 pe-2 transition-[color,box-shadow] outline-none focus-within:z-10 focus-within:ring-[3px] has-disabled:pointer-events-none has-disabled:opacity-50">
       <div className="inline-flex items-center gap-1" aria-hidden="true">
         <FlagComponent country={value} countryName={value} aria-hidden="true" />
         <span className="text-muted-foreground/80">

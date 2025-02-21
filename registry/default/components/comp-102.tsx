@@ -3,9 +3,9 @@ import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 
 export default function Component() {
   return (
-    <div className="inline-flex -space-x-px rounded-lg shadow-xs rtl:space-x-reverse">
+    <div className="inline-flex -space-x-px rounded-md shadow-xs rtl:space-x-reverse">
       <Button
-        className="rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10"
+        className="rounded-none shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10"
         variant="outline"
         size="icon"
         aria-label="Upvote"
@@ -14,7 +14,7 @@ export default function Component() {
       </Button>
       <span className="border-input flex items-center border px-3 text-sm font-medium">235</span>
       <Button
-        className="rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10"
+        className="rounded-none shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10"
         variant="outline"
         size="icon"
         aria-label="Downvote"

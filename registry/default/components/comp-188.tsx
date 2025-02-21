@@ -5,7 +5,7 @@ import { useId } from "react";
 export default function Component() {
   const id = useId();
   return (
-    <div className="border-input has-data-[state=checked]:border-ring/40 relative flex w-full items-start gap-2 rounded-lg border p-4 shadow-xs">
+    <div className="border-input has-data-[state=checked]:border-ring relative flex w-full items-start gap-2 rounded-md border p-4 shadow-xs outline-none">
       <Switch
         id={id}
         className="order-1 h-4 w-6 after:absolute after:inset-0 [&_span]:size-3 data-[state=checked]:[&_span]:translate-x-2 data-[state=checked]:[&_span]:rtl:-translate-x-2"

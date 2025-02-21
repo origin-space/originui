@@ -60,7 +60,7 @@ export default function Component() {
       <DialogContent className="gap-0 p-0 [&>button:last-child]:text-white">
         <div className="p-2">
           <img
-            className="w-full rounded-lg"
+            className="w-full rounded-md"
             src="/dialog-content.png"
             width={382}
             height={216}

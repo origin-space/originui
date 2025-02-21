@@ -10,7 +10,7 @@ export default function Component() {
 
   return (
     <div>
-      <Calendar className="rounded-lg border p-2" value={date} onChange={setDate} />
+      <Calendar className="rounded-md border p-2" value={date} onChange={setDate} />
       <p
         className="text-muted-foreground mt-4 text-center text-xs"
         role="region"

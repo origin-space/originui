@@ -16,7 +16,7 @@ export default function Component() {
 
   return (
     <div>
-      <div className="rounded-lg border">
+      <div className="rounded-md border">
         <div className="flex max-sm:flex-col">
           <div className="relative py-4 max-sm:order-1 max-sm:border-t sm:w-32">
             <div className="h-full sm:border-e">

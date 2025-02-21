@@ -23,7 +23,7 @@ export default function Component() {
           Packages
         </TabsTrigger>
       </TabsList>
-      <div className="grow rounded-lg border text-start">
+      <div className="grow rounded-md border text-start">
         <TabsContent value="tab-1">
           <p className="text-muted-foreground px-4 py-1.5 text-xs">Content for Tab 1</p>
         </TabsContent>

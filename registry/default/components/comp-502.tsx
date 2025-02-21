@@ -44,7 +44,7 @@ export default function Component() {
 
   return (
     <div>
-      <div className="rounded-lg border">
+      <div className="rounded-md border">
         <Calendar
           mode="single"
           className="p-2"

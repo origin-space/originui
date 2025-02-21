@@ -39,7 +39,7 @@ export default function Component() {
         <form className="space-y-5">
           <RadioGroup className="gap-2" defaultValue="2">
             {/* Radio card #1 */}
-            <div className="border-input has-data-[state=checked]:border-ring/40 has-data-[state=checked]:bg-accent relative flex w-full items-center gap-2 rounded-lg border px-4 py-3 shadow-xs">
+            <div className="border-input has-data-[state=checked]:border-ring has-data-[state=checked]:bg-accent relative flex w-full items-center gap-2 rounded-md border px-4 py-3 shadow-xs outline-none">
               <RadioGroupItem
                 value="1"
                 id={`${id}-1`}
@@ -54,7 +54,7 @@ export default function Component() {
               </div>
             </div>
             {/* Radio card #2 */}
-            <div className="border-input has-data-[state=checked]:border-ring/40 has-data-[state=checked]:bg-accent relative flex w-full items-center gap-2 rounded-lg border px-4 py-3 shadow-xs">
+            <div className="border-input has-data-[state=checked]:border-ring has-data-[state=checked]:bg-accent relative flex w-full items-center gap-2 rounded-md border px-4 py-3 shadow-xs outline-none">
               <RadioGroupItem
                 value="2"
                 id={`${id}-2`}
@@ -69,7 +69,7 @@ export default function Component() {
               </div>
             </div>
             {/* Radio card #3 */}
-            <div className="border-input has-data-[state=checked]:border-ring/40 has-data-[state=checked]:bg-accent relative flex w-full items-center gap-2 rounded-lg border px-4 py-3 shadow-xs">
+            <div className="border-input has-data-[state=checked]:border-ring has-data-[state=checked]:bg-accent relative flex w-full items-center gap-2 rounded-md border px-4 py-3 shadow-xs outline-none">
               <RadioGroupItem
                 value="3"
                 id={`${id}-3`}

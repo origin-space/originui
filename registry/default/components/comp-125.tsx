@@ -18,7 +18,7 @@ export default function Component() {
     <div>
       <div className="inline-flex items-center gap-2 align-top">
         <div
-          className="border-input relative flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-lg border"
+          className="border-input relative flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-md border"
           aria-label={previewUrl ? "Preview of uploaded image" : "Default user avatar"}
         >
           {previewUrl ? (

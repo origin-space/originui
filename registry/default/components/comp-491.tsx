@@ -14,12 +14,7 @@ export default function Component() {
 
   return (
     <div>
-      <Calendar
-        mode="range"
-        selected={date}
-        onSelect={setDate}
-        className="rounded-lg border p-2"
-      />
+      <Calendar mode="range" selected={date} onSelect={setDate} className="rounded-md border p-2" />
       <p
         className="text-muted-foreground mt-4 text-center text-xs"
         role="region"

@@ -5,7 +5,7 @@ export default function HoverCardDemo() {
     <div className="max-w-md text-sm">
       <HoverCard>
         <HoverCardTrigger asChild>
-          <a className="flex size-16 overflow-hidden rounded-lg" href="#">
+          <a className="flex size-16 overflow-hidden rounded-md" href="#">
             <img
               className="h-full w-full object-cover"
               src="/dialog-content.png"

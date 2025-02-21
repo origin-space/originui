@@ -439,7 +439,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
       >
         <div
           className={cn(
-            "border-input focus-within:border-ring/40 ring-ring/8 dark:ring-ring/12 has-aria-invalid:border-destructive/60 has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/25 relative min-h-[38px] rounded-lg border text-sm transition-shadow focus-within:ring-[3px] focus-within:outline-hidden has-disabled:pointer-events-none has-disabled:cursor-not-allowed has-disabled:opacity-50",
+            "border-input focus-within:border-ring focus-within:ring-ring/50 has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40 has-aria-invalid:border-destructive relative min-h-[38px] rounded-md border text-sm transition-[color,box-shadow] outline-none focus-within:ring-[3px] has-disabled:pointer-events-none has-disabled:cursor-not-allowed has-disabled:opacity-50",
             {
               "p-1": selected.length !== 0,
               "cursor-text": !disabled && selected.length !== 0,
@@ -466,7 +466,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 >
                   {option.label}
                   <button
-                    className="text-muted-foreground/80 hover:text-foreground outline-ring/30 dark:outline-ring/40 absolute -inset-y-px -end-px flex size-7 items-center justify-center rounded-e-lg border border-transparent p-0 outline-hidden transition-colors focus-visible:outline-2"
+                    className="text-muted-foreground/80 hover:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 absolute -inset-y-px -end-px flex size-7 items-center justify-center rounded-e-md border border-transparent p-0 outline-hidden transition-[color,box-shadow] outline-none focus-visible:ring-[3px]"
                     onKeyDown={(e) => {
                       if (e.key === "Enter") {
                         handleUnselect(option);
@@ -525,7 +525,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 onChange?.(selected.filter((s) => s.fixed));
               }}
               className={cn(
-                "text-muted-foreground/80 hover:text-foreground outline-ring/30 dark:outline-ring/40 absolute end-0 top-0 flex size-9 items-center justify-center rounded-lg border border-transparent transition-colors focus-visible:outline-2",
+                "text-muted-foreground/80 hover:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 absolute end-0 top-0 flex size-9 items-center justify-center rounded-md border border-transparent transition-[color,box-shadow] outline-none focus-visible:ring-[3px]",
                 (hideClearAllButton ||
                   disabled ||
                   selected.length < 1 ||
@@ -541,7 +541,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
         <div className="relative">
           <div
             className={cn(
-              "border-input absolute top-2 z-10 w-full overflow-hidden rounded-lg border",
+              "border-input absolute top-2 z-10 w-full overflow-hidden rounded-md border",
               "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
               !open && "hidden",
             )}

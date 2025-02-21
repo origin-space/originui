@@ -11,9 +11,7 @@ export default function Component() {
       style={{ "--ring": "var(--color-indigo-500)" } as React.CSSProperties}
     >
       <Label htmlFor={id}>Select with colored border (native)</Label>
-      <SelectNative
-        id={id}
-      >
+      <SelectNative id={id}>
         <option value="1">React</option>
         <option value="2">Next.js</option>
         <option value="3">Astro</option>

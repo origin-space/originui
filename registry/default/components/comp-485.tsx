@@ -316,7 +316,7 @@ export default function Component() {
             </div>
             {Boolean(table.getColumn("name")?.getFilterValue()) && (
               <button
-                className="text-muted-foreground/80 hover:text-foreground outline-ring/30 dark:outline-ring/40 absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg outline-offset-2 transition-colors focus:z-10 focus-visible:outline-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+                className="text-muted-foreground/80 hover:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-md transition-[color,box-shadow] outline-none focus:z-10 focus-visible:ring-[3px] disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
                 aria-label="Clear filter"
                 onClick={() => {
                   table.getColumn("name")?.setFilterValue("");
@@ -342,7 +342,7 @@ export default function Component() {
                 )}
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="min-w-36 w-auto p-3" align="start">
+            <PopoverContent className="w-auto min-w-36 p-3" align="start">
               <div className="space-y-3">
                 <div className="text-muted-foreground text-xs font-medium">Filters</div>
                 <div className="space-y-3">
@@ -443,7 +443,7 @@ export default function Component() {
       </div>
 
       {/* Table */}
-      <div className="bg-background overflow-hidden rounded-lg border">
+      <div className="bg-background overflow-hidden rounded-md border">
         <Table className="table-fixed">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (

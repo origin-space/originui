@@ -11,7 +11,7 @@ import { HomeIcon } from "lucide-react";
 export default function Component() {
   return (
     <Breadcrumb>
-      <BreadcrumbList className="bg-background rounded-lg border px-3 py-2 shadow-xs">
+      <BreadcrumbList className="bg-background rounded-md border px-3 py-2 shadow-xs">
         <BreadcrumbItem>
           <BreadcrumbLink href="#">
             <HomeIcon size={16} aria-hidden="true" />

@@ -45,7 +45,7 @@ export default function Component() {
         defaultMonth={new Date()}
         startMonth={startDate}
         endMonth={endDate}
-        className="overflow-hidden rounded-lg border p-2"
+        className="overflow-hidden rounded-md border p-2"
         classNames={{
           month_caption: "ms-2.5 me-20 justify-start",
           nav: "justify-end",

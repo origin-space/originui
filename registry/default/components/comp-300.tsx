@@ -10,7 +10,7 @@ export default function Component() {
       variant="outline"
       onClick={() => {
         toast.custom((t) => (
-          <div className="bg-background text-foreground w-full rounded-lg border px-4 py-3 shadow-lg sm:w-[var(--width)]">
+          <div className="bg-background text-foreground w-full rounded-md border px-4 py-3 shadow-lg sm:w-[var(--width)]">
             <div className="flex gap-2">
               <div className="flex grow gap-3">
                 <CircleCheckIcon

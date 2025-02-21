@@ -12,7 +12,7 @@ export default function Component() {
 
   return (
     <div>
-      <div className="rounded-lg border">
+      <div className="rounded-md border">
         <Calendar mode="single" className="p-2" selected={date} onSelect={setDate} />
         <div className="border-t p-3">
           <div className="flex items-center gap-3">

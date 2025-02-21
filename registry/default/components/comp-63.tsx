@@ -11,10 +11,7 @@ export default function Component() {
       style={{ "--ring": "var(--color-indigo-500)" } as React.CSSProperties}
     >
       <Label htmlFor={id}>Textarea with colored border and ring</Label>
-      <Textarea
-        id={id}
-        placeholder="Leave a comment"
-      />
+      <Textarea id={id} placeholder="Leave a comment" />
     </div>
   );
 }

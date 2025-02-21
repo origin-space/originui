@@ -229,7 +229,7 @@ const AnimatedSquare = ({
       style={animationType === "translate" ? animationStyle : undefined}
     >
       <div
-        className="animated-square from-primary to-primary/80 shadow-primary/10 h-10 w-10 rounded-lg bg-linear-to-tr shadow-lg"
+        className="animated-square from-primary to-primary/80 shadow-primary/10 h-10 w-10 rounded-md bg-linear-to-tr shadow-lg"
         style={animationType !== "translate" ? animationStyle : undefined}
       />
       <style jsx>{`

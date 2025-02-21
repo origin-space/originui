@@ -35,7 +35,7 @@ export default function Component() {
 
   return (
     <div>
-      <div className="rounded-lg border">
+      <div className="rounded-md border">
         <div className="flex max-sm:flex-col">
           <Calendar
             mode="single"

@@ -171,7 +171,7 @@ export default function Component() {
 
   return (
     <div className="space-y-4">
-      <div className="bg-background overflow-hidden rounded-lg border">
+      <div className="bg-background overflow-hidden rounded-md border">
         <Table className="table-fixed">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
