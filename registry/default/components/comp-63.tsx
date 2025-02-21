@@ -6,9 +6,7 @@ export default function Component() {
   const id = useId();
   return (
     <div
-      className="*:not-first:mt-2"
-      // NOTE: This inline style is to show how to set the --ring variable in your CSS file in order to change the focus ring color.
-      style={{ "--ring": "var(--color-indigo-500)" } as React.CSSProperties}
+      className="*:not-first:mt-2 [--ring:var(--color-indigo-300)] in-[.dark]:[--ring:var(--color-indigo-900)]"
     >
       <Label htmlFor={id}>Textarea with colored border and ring</Label>
       <Textarea id={id} placeholder="Leave a comment" />

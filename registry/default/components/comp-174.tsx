@@ -6,13 +6,7 @@ export default function Component() {
   const id = useId();
   return (
     <div
-      className="inline-flex items-center gap-2"
-      style={
-        {
-          "--primary": "var(--color-indigo-500)",
-          "--ring": "var(--color-indigo-500)",
-        } as React.CSSProperties
-      }
+      className="inline-flex items-center gap-2 [--ring:var(--color-indigo-300)] [--primary:var(--color-indigo-500)] in-[.dark]:[--ring:var(--color-indigo-900)] in-[.dark]:[--primary:var(--color-indigo-500)]"
     >
       <Switch id={id} defaultChecked />
       <Label htmlFor={id} className="sr-only">
