@@ -19,13 +19,21 @@ export default function Header() {
           className="rounded-full outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70"
         >
           <span className="sr-only">Origin UI</span>
-          <Image src={Logo} alt="Origin UI logo" width={117} height={24} className="dark:hidden" />
+          <Image
+            src={Logo}
+            alt="Origin UI logo"
+            width={117}
+            height={24}
+            className="dark:hidden"
+            priority={true}
+          />
           <Image
             src={LogoDark}
             alt="Origin UI logo"
             width={117}
             height={24}
             className="hidden dark:block"
+            priority={true}
           />
         </Link>
         <div className="flex items-center gap-4 sm:gap-8">
