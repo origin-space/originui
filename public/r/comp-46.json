@@ -4,6 +4,7 @@
   "type": "registry:component",
   "dependencies": [
     "react-phone-number-input",
+    "react-phone-number-input/flags"
   ],
   "registryDependencies": [
     "https://originui.com/r/input.json",
