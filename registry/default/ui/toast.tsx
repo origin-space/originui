@@ -56,7 +56,7 @@ function ToastAction({
     <ToastPrimitives.Action
       className={cn(
         !asChild &&
-          "ring-offset-background hover:bg-secondary focus:ring-ring group-[.destructive]:border-muted/40 hover:group-[.destructive]:border-destructive/30 hover:group-[.destructive]:bg-destructive focus:group-[.destructive]:ring-destructive inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium transition-colors hover:group-[.destructive]:text-white focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+          "hover:bg-secondary focus:ring-ring group-[.destructive]:border-muted/40 hover:group-[.destructive]:border-destructive/30 hover:group-[.destructive]:bg-destructive focus:group-[.destructive]:ring-destructive inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium transition-[color,box-shadow] hover:group-[.destructive]:text-white focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none disabled:pointer-events-none disabled:opacity-50",
         className,
       )}
       asChild={asChild}
@@ -76,7 +76,7 @@ function ToastClose({
     <ToastPrimitives.Close
       className={cn(
         !asChild &&
-          "group ring-offset-background hover:text-accent-foreground focus-visible:ring-ring/70 -my-1.5 -me-2 inline-flex size-8 shrink-0 items-center justify-center rounded-md p-0 text-sm font-medium whitespace-nowrap transition-colors group-[.destructive]:text-red-300 hover:group-[.destructive]:text-red-50 focus:group-[.destructive]:ring-red-400 focus:group-[.destructive]:ring-offset-red-600 focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+          "group outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] absolute top-3 right-3 flex size-7 items-center justify-center rounded transition-[color,box-shadow] disabled:pointer-events-none",
         className,
       )}
       toast-close=""

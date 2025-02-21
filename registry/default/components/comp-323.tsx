@@ -32,7 +32,7 @@ export default function Component() {
                     {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((number) => (
                       <label
                         key={number}
-                        className="border-input has-data-[state=checked]:border-ring has-data-[state=checked]:bg-accent outline-ring/30 dark:outline-ring/40 relative flex size-9 flex-1 cursor-pointer flex-col items-center justify-center gap-3 border text-center text-sm outline-offset-2 transition-colors outline-none first:rounded-s-md last:rounded-e-md has-data-disabled:cursor-not-allowed has-data-disabled:opacity-50 has-data-[state=checked]:z-10"
+                        className="border-input has-data-[state=checked]:border-ring focus-within:border-ring focus-within:ring-ring/50 focus-within:ring-[3px] relative flex size-9 flex-1 cursor-pointer flex-col items-center justify-center gap-3 border text-center text-sm transition-[color,box-shadow] outline-none first:rounded-s-md last:rounded-e-md has-data-disabled:cursor-not-allowed has-data-disabled:opacity-50 has-data-[state=checked]:z-10"
                       >
                         <RadioGroupItem
                           id={`radio-17-r${number}`}
