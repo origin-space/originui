@@ -5,16 +5,21 @@ import { useId } from "react";
 export default function Component() {
   const id = useId();
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Input with error</Label>
       <Input
         id={id}
-        className="border-destructive/80 text-destructive focus-visible:border-destructive/80 focus-visible:ring-destructive/20"
+        className="peer"
         placeholder="Email"
         type="email"
         defaultValue="invalid@email.com"
+        aria-invalid
       />
-      <p className="mt-2 text-xs text-destructive" role="alert" aria-live="polite">
+      <p
+        className="peer-aria-invalid:text-destructive mt-2 text-xs"
+        role="alert"
+        aria-live="polite"
+      >
         Email is invalid
       </p>
     </div>

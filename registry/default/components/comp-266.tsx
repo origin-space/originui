@@ -4,7 +4,7 @@ import { Slider } from "@/registry/default/ui/slider";
 export default function Component() {
   return (
     <div className="space-y-4">
-      <legend className="text-sm font-medium text-foreground">Equalizer</legend>
+      <legend className="text-foreground text-sm font-medium">Equalizer</legend>
       <div className="flex h-48 justify-center gap-8">
         <div className="flex flex-col items-center gap-2">
           <Slider
@@ -16,7 +16,7 @@ export default function Component() {
             aria-label="60 Hz"
             showTooltip
           />
-          <Label className="flex w-0 justify-center text-xs text-muted-foreground">60</Label>
+          <Label className="text-muted-foreground flex w-0 justify-center text-xs">60</Label>
         </div>
         <div className="flex flex-col items-center gap-2">
           <Slider
@@ -28,7 +28,7 @@ export default function Component() {
             aria-label="250 Hz"
             showTooltip
           />
-          <Label className="flex w-0 justify-center text-xs text-muted-foreground">250</Label>
+          <Label className="text-muted-foreground flex w-0 justify-center text-xs">250</Label>
         </div>
         <div className="flex flex-col items-center gap-2">
           <Slider
@@ -40,7 +40,7 @@ export default function Component() {
             aria-label="1k"
             showTooltip
           />
-          <Label className="flex w-0 justify-center text-xs text-muted-foreground">1k</Label>
+          <Label className="text-muted-foreground flex w-0 justify-center text-xs">1k</Label>
         </div>
         <div className="flex flex-col items-center gap-2">
           <Slider
@@ -52,7 +52,7 @@ export default function Component() {
             aria-label="4k"
             showTooltip
           />
-          <Label className="flex w-0 justify-center text-xs text-muted-foreground">4k</Label>
+          <Label className="text-muted-foreground flex w-0 justify-center text-xs">4k</Label>
         </div>
         <div className="flex flex-col items-center gap-2">
           <Slider
@@ -64,7 +64,7 @@ export default function Component() {
             aria-label="16k"
             showTooltip
           />
-          <Label className="flex w-0 justify-center text-xs text-muted-foreground">16K</Label>
+          <Label className="text-muted-foreground flex w-0 justify-center text-xs">16K</Label>
         </div>
       </div>
     </div>

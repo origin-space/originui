@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-36",
+  "type": "registry:component",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "https://originui.com/r/datefield-rac.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-36.tsx",
+      "content": "\"use client\";\n\nimport { DateField, DateInput } from \"@/registry/default/ui/datefield-rac\";\nimport { Label } from \"react-aria-components\";\n\nexport default function Component() {\n  return (\n    <DateField className=\"space-y-2\">\n      <Label className=\"text-sm font-medium text-foreground\">Date input</Label>\n      <DateInput />\n      <p className=\"mt-2 text-xs text-muted-foreground\" role=\"region\" aria-live=\"polite\">\n        Built with{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://react-spectrum.adobe.com/react-aria/DateField.html\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          React Aria\n        </a>\n      </p>\n    </DateField>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "date",
+      "react aria"
+    ]
+  }
+}

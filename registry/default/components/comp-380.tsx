@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu";
-import { Monitor, Moon, Sun } from "lucide-react";
+import { MonitorIcon, MoonIcon, SunIcon } from "lucide-react";
 import { useState } from "react";
 
 type Theme = "light" | "dark" | "system";
@@ -24,21 +24,21 @@ export default function Component() {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button size="icon" variant="outline" aria-label="Select theme">
-            {displayTheme === "light" && <Sun size={16} strokeWidth={2} aria-hidden="true" />}
-            {displayTheme === "dark" && <Moon size={16} strokeWidth={2} aria-hidden="true" />}
+            {displayTheme === "light" && <SunIcon size={16} aria-hidden="true" />}
+            {displayTheme === "dark" && <MoonIcon size={16} aria-hidden="true" />}
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="min-w-32">
           <DropdownMenuItem onClick={() => setTheme("light")}>
-            <Sun size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            <SunIcon size={16} className="opacity-60" aria-hidden="true" />
             <span>Light</span>
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => setTheme("dark")}>
-            <Moon size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            <MoonIcon size={16} className="opacity-60" aria-hidden="true" />
             <span>Dark</span>
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => setTheme("system")}>
-            <Monitor size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            <MonitorIcon size={16} className="opacity-60" aria-hidden="true" />
             <span>System</span>
           </DropdownMenuItem>
         </DropdownMenuContent>

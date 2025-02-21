@@ -11,28 +11,35 @@ import {
   TooltipTrigger,
 } from "@/registry/default/ui/tooltip";
 
-const Slider = React.forwardRef<
-  React.ElementRef<typeof SliderPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> & {
-    showTooltip?: boolean;
-    tooltipContent?: (value: number) => React.ReactNode;
-  }
->(({ className, showTooltip = false, tooltipContent, ...props }, ref) => {
-  const [showTooltipState, setShowTooltipState] = React.useState(false);
-  const [internalValue, setInternalValue] = React.useState<number[]>(
-    (props.defaultValue as number[]) ?? (props.value as number[]) ?? [0],
+function Slider({
+  className,
+  defaultValue,
+  value,
+  min = 0,
+  max = 100,
+  showTooltip = false,
+  tooltipContent,
+  ...props
+}: React.ComponentProps<typeof SliderPrimitive.Root> & {
+  showTooltip?: boolean;
+  tooltipContent?: (value: number) => React.ReactNode;
+}) {
+  const [internalValues, setInternalValues] = React.useState<number[]>(
+    Array.isArray(value) ? value : Array.isArray(defaultValue) ? defaultValue : [min, max],
   );
 
   React.useEffect(() => {
-    if (props.value !== undefined) {
-      setInternalValue(props.value as number[]);
+    if (value !== undefined) {
+      setInternalValues(Array.isArray(value) ? value : [value]);
     }
-  }, [props.value]);
+  }, [value]);
 
   const handleValueChange = (newValue: number[]) => {
-    setInternalValue(newValue);
+    setInternalValues(newValue);
     props.onValueChange?.(newValue);
   };
+
+  const [showTooltipState, setShowTooltipState] = React.useState(false);
 
   const handlePointerDown = () => {
     if (showTooltip) {
@@ -58,7 +65,8 @@ const Slider = React.forwardRef<
   const renderThumb = (value: number) => {
     const thumb = (
       <SliderPrimitive.Thumb
-        className="block h-5 w-5 rounded-full border-2 border-primary bg-background transition-colors focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-ring/40 data-[disabled]:cursor-not-allowed"
+        data-slot="slider-thumb"
+        className="border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] outline-none hover:ring-4 focus-visible:ring-4 disabled:pointer-events-none disabled:opacity-50"
         onPointerDown={handlePointerDown}
       />
     );
@@ -83,23 +91,36 @@ const Slider = React.forwardRef<
 
   return (
     <SliderPrimitive.Root
-      ref={ref}
+      data-slot="slider"
+      defaultValue={defaultValue}
+      value={value}
+      min={min}
+      max={max}
       className={cn(
-        "relative flex w-full touch-none select-none items-center data-[orientation=vertical]:h-full data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col data-[disabled]:opacity-50",
+        "relative flex w-full touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col",
         className,
       )}
       onValueChange={handleValueChange}
       {...props}
     >
-      <SliderPrimitive.Track className="relative grow overflow-hidden rounded-full bg-secondary data-[orientation=horizontal]:h-2 data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-2">
-        <SliderPrimitive.Range className="absolute bg-primary data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full" />
+      <SliderPrimitive.Track
+        data-slot="slider-track"
+        className={cn(
+          "bg-muted relative grow overflow-hidden rounded-full data-[orientation=horizontal]:h-1.5 data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1.5",
+        )}
+      >
+        <SliderPrimitive.Range
+          data-slot="slider-range"
+          className={cn(
+            "bg-primary absolute data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full",
+          )}
+        />
       </SliderPrimitive.Track>
-      {internalValue?.map((value, index) => (
-        <React.Fragment key={index}>{renderThumb(value)}</React.Fragment>
+      {Array.from({ length: internalValues.length }, (_, index) => (
+        <React.Fragment key={index}>{renderThumb(internalValues[index])}</React.Fragment>
       ))}
     </SliderPrimitive.Root>
   );
-});
-Slider.displayName = SliderPrimitive.Root.displayName;
+}
 
 export { Slider };

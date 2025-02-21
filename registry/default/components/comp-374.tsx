@@ -17,7 +17,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu";
-import { ArchiveRestore, ChevronDown, Plus, Share2, Trash } from "lucide-react";
+import { ArchiveRestoreIcon, ChevronDownIcon, PlusIcon, Share2Icon, TrashIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function Component() {
@@ -30,18 +30,13 @@ export default function Component() {
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
           Rich menu with icons
-          <ChevronDown
-            className="-me-1 ms-2 opacity-60"
-            size={16}
-            strokeWidth={2}
-            aria-hidden="true"
-          />
+          <ChevronDownIcon className="-me-1 opacity-60" size={16} aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <Plus size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            <PlusIcon size={16} className="opacity-60" aria-hidden="true" />
             <span>New</span>
             <DropdownMenuShortcut>⌘N</DropdownMenuShortcut>
           </DropdownMenuItem>
@@ -86,17 +81,17 @@ export default function Component() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <Share2 size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            <Share2Icon size={16} className="opacity-60" aria-hidden="true" />
             <span>Share</span>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <ArchiveRestore size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+            <ArchiveRestoreIcon size={16} className="opacity-60" aria-hidden="true" />
             <span>Archive</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="text-destructive focus:text-destructive">
-          <Trash size={16} strokeWidth={2} aria-hidden="true" />
+        <DropdownMenuItem variant="destructive">
+          <TrashIcon size={16} aria-hidden="true" />
           <span>Delete</span>
           <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
         </DropdownMenuItem>

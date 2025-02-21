@@ -1,5 +1,4 @@
 "use client";
-// Add the following to tailwind.config.ts: "./node_modules/emblor/dist/index.mjs",
 
 import { Label } from "@/registry/default/ui/label";
 import { Tag, TagInput } from "emblor";
@@ -18,7 +17,7 @@ export default function Component() {
   const [activeTagIndex, setActiveTagIndex] = useState<number | null>(null);
 
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Input with inner tags</Label>
       <TagInput
         id={id}
@@ -29,21 +28,21 @@ export default function Component() {
         placeholder="Add a tag"
         styleClasses={{
           inlineTagsContainer:
-            "border-input rounded-lg bg-background shadow-sm shadow-black/5 transition-shadow focus-within:border-ring focus-within:outline-none focus-within:ring-[3px] focus-within:ring-ring/20 p-1 gap-1",
-          input: "w-full min-w-[80px] focus-visible:outline-none shadow-none px-2 h-7",
+            "border-input rounded-md bg-background shadow-xs transition-[color,box-shadow] focus-within:border-ring outline-none focus-within:ring-[3px] focus-within:ring-ring/50 p-1 gap-1",
+          input: "w-full min-w-[80px] shadow-none px-2 h-7",
           tag: {
             body: "h-7 relative bg-background border border-input hover:bg-background rounded-md font-medium text-xs ps-2 pe-7",
             closeButton:
-              "absolute -inset-y-px -end-px p-0 rounded-e-lg flex size-7 transition-colors outline-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 text-muted-foreground/80 hover:text-foreground",
+              "absolute -inset-y-px -end-px p-0 rounded-e-md flex size-7 transition-[color,box-shadow] outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] text-muted-foreground/80 hover:text-foreground",
           },
         }}
         activeTagIndex={activeTagIndex}
         setActiveTagIndex={setActiveTagIndex}
       />
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Built with{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://github.com/JaleelB/emblor"
           target="_blank"
           rel="noopener nofollow"

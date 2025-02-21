@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-443",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/tabs.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-443.tsx",
+      "content": "import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/registry/default/ui/tabs\";\n\nexport default function Component() {\n  return (\n    <Tabs defaultValue=\"tab-1\" orientation=\"vertical\" className=\"flex w-full gap-2\">\n      <TabsList className=\"flex-col rounded-none border-l border-border bg-transparent p-0\">\n        <TabsTrigger\n          value=\"tab-1\"\n          className=\"relative w-full justify-start rounded-none after:absolute after:inset-y-0 after:start-0 after:w-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary\"\n        >\n          Overview\n        </TabsTrigger>\n        <TabsTrigger\n          value=\"tab-2\"\n          className=\"relative w-full justify-start rounded-none after:absolute after:inset-y-0 after:start-0 after:w-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary\"\n        >\n          Projects\n        </TabsTrigger>\n        <TabsTrigger\n          value=\"tab-3\"\n          className=\"relative w-full justify-start rounded-none after:absolute after:inset-y-0 after:start-0 after:w-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary\"\n        >\n          Packages\n        </TabsTrigger>\n      </TabsList>\n      <div className=\"grow rounded-lg border border-border text-start\">\n        <TabsContent value=\"tab-1\">\n          <p className=\"px-4 py-1.5 text-xs text-muted-foreground\">Content for Tab 1</p>\n        </TabsContent>\n        <TabsContent value=\"tab-2\">\n          <p className=\"px-4 py-1.5 text-xs text-muted-foreground\">Content for Tab 2</p>\n        </TabsContent>\n        <TabsContent value=\"tab-3\">\n          <p className=\"px-4 py-1.5 text-xs text-muted-foreground\">Content for Tab 3</p>\n        </TabsContent>\n      </div>\n    </Tabs>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "tabs",
+      "vertical tabs",
+      "radix"
+    ],
+    "colSpan": 2,
+    "style": 2
+  }
+}

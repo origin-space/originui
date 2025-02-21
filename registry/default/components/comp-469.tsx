@@ -69,7 +69,7 @@ export default function Component() {
           {items.map((item) => (
             <TableRow
               key={item.id}
-              className="border-none odd:bg-muted/50 hover:bg-transparent odd:hover:bg-muted/50"
+              className="odd:bg-muted/50 odd:hover:bg-muted/50 border-none hover:bg-transparent"
             >
               <TableCell className="py-2.5 font-medium">{item.name}</TableCell>
               <TableCell className="py-2.5">{item.email}</TableCell>
@@ -87,7 +87,7 @@ export default function Component() {
           </TableRow>
         </TableFooter>
       </Table>
-      <p className="mt-4 text-center text-sm text-muted-foreground">Striped table</p>
+      <p className="text-muted-foreground mt-4 text-center text-sm">Striped table</p>
     </div>
   );
 }

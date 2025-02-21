@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-470",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/table.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-470.tsx",
+      "content": "import {\n  Table,\n  TableBody,\n  TableCell,\n  TableHead,\n  TableHeader,\n  TableRow,\n} from \"@/registry/default/ui/table\";\n\nconst items = [\n  {\n    id: \"1\",\n    name: \"Alex Thompson\",\n    email: \"alex.t@company.com\",\n    location: \"San Francisco, US\",\n    status: \"Active\",\n    balance: \"$1,250.00\",\n  },\n  {\n    id: \"2\",\n    name: \"Sarah Chen\",\n    email: \"sarah.c@company.com\",\n    location: \"Singapore\",\n    status: \"Active\",\n    balance: \"$600.00\",\n  },\n  {\n    id: \"3\",\n    name: \"James Wilson\",\n    email: \"j.wilson@company.com\",\n    location: \"London, UK\",\n    status: \"Inactive\",\n    balance: \"$650.00\",\n  },\n  {\n    id: \"4\",\n    name: \"Maria Garcia\",\n    email: \"m.garcia@company.com\",\n    location: \"Madrid, Spain\",\n    status: \"Active\",\n    balance: \"$0.00\",\n  },\n  {\n    id: \"5\",\n    name: \"David Kim\",\n    email: \"d.kim@company.com\",\n    location: \"Seoul, KR\",\n    status: \"Active\",\n    balance: \"-$1,000.00\",\n  },\n];\n\nexport default function Component() {\n  return (\n    <div>\n      <Table>\n        <TableHeader className=\"bg-transparent\">\n          <TableRow className=\"*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r\">\n            <TableHead>Name</TableHead>\n            <TableHead>Email</TableHead>\n            <TableHead>Location</TableHead>\n            <TableHead>Status</TableHead>\n            <TableHead className=\"text-right\">Balance</TableHead>\n          </TableRow>\n        </TableHeader>\n        <TableBody className=\"[&_td:first-child]:rounded-l-lg [&_td:last-child]:rounded-r-lg\">\n          {items.map((item) => (\n            <TableRow\n              key={item.id}\n              className=\"*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r\"\n            >\n              <TableCell className=\"font-medium\">{item.name}</TableCell>\n              <TableCell>{item.email}</TableCell>\n              <TableCell>{item.location}</TableCell>\n              <TableCell>{item.status}</TableCell>\n              <TableCell className=\"text-right\">{item.balance}</TableCell>\n            </TableRow>\n          ))}\n        </TableBody>\n      </Table>\n      <p className=\"mt-4 text-center text-sm text-muted-foreground\">Table with vertical lines</p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "table"
+    ],
+    "colSpan": 3
+  }
+}

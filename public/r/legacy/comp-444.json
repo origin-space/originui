@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-444",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/tabs.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-444.tsx",
+      "content": "import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/registry/default/ui/tabs\";\nimport { Box, House, PanelsTopLeft } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Tabs defaultValue=\"tab-1\" orientation=\"vertical\" className=\"flex w-full gap-2\">\n      <TabsList className=\"flex-col gap-1 rounded-none bg-transparent px-1 py-0 text-foreground\">\n        <TabsTrigger\n          value=\"tab-1\"\n          className=\"relative w-full justify-start after:absolute after:inset-y-0 after:start-0 after:-ms-1 after:w-0.5 hover:bg-accent hover:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent\"\n        >\n          <House\n            className=\"-ms-0.5 me-1.5 opacity-60\"\n            size={16}\n            strokeWidth={2}\n            aria-hidden=\"true\"\n          />\n          Overview\n        </TabsTrigger>\n        <TabsTrigger\n          value=\"tab-2\"\n          className=\"relative w-full justify-start after:absolute after:inset-y-0 after:start-0 after:-ms-1 after:w-0.5 hover:bg-accent hover:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent\"\n        >\n          <PanelsTopLeft\n            className=\"-ms-0.5 me-1.5 opacity-60\"\n            size={16}\n            strokeWidth={2}\n            aria-hidden=\"true\"\n          />\n          Projects\n        </TabsTrigger>\n        <TabsTrigger\n          value=\"tab-3\"\n          className=\"relative w-full justify-start after:absolute after:inset-y-0 after:start-0 after:-ms-1 after:w-0.5 hover:bg-accent hover:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent\"\n        >\n          <Box className=\"-ms-0.5 me-1.5 opacity-60\" size={16} strokeWidth={2} aria-hidden=\"true\" />\n          Packages\n        </TabsTrigger>\n      </TabsList>\n      <div className=\"grow rounded-lg border border-border text-start\">\n        <TabsContent value=\"tab-1\">\n          <p className=\"px-4 py-1.5 text-xs text-muted-foreground\">Content for Tab 1</p>\n        </TabsContent>\n        <TabsContent value=\"tab-2\">\n          <p className=\"px-4 py-1.5 text-xs text-muted-foreground\">Content for Tab 2</p>\n        </TabsContent>\n        <TabsContent value=\"tab-3\">\n          <p className=\"px-4 py-1.5 text-xs text-muted-foreground\">Content for Tab 3</p>\n        </TabsContent>\n      </div>\n    </Tabs>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "tabs",
+      "vertical tabs",
+      "radix"
+    ],
+    "colSpan": 2,
+    "style": 2
+  }
+}

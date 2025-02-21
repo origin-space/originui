@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-441",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/tabs.json",
+    "https://originui.com/r/tooltip.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-441.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/registry/default/ui/tabs\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/registry/default/ui/tooltip\";\nimport { Box, House, PanelsTopLeft } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Tabs defaultValue=\"tab-1\" orientation=\"vertical\" className=\"flex w-full gap-2\">\n      <TabsList className=\"flex-col\">\n        <TooltipProvider delayDuration={0}>\n          <Tooltip>\n            <TooltipTrigger asChild>\n              <span>\n                <TabsTrigger value=\"tab-1\" className=\"py-3\">\n                  <House size={16} strokeWidth={2} aria-hidden=\"true\" />\n                </TabsTrigger>\n              </span>\n            </TooltipTrigger>\n            <TooltipContent side=\"right\" className=\"px-2 py-1 text-xs\">\n              Overview\n            </TooltipContent>\n          </Tooltip>\n        </TooltipProvider>\n        <TooltipProvider delayDuration={0}>\n          <Tooltip>\n            <TooltipTrigger asChild>\n              <span>\n                <TabsTrigger value=\"tab-2\" className=\"group py-3\">\n                  <span className=\"relative\">\n                    <PanelsTopLeft size={16} strokeWidth={2} aria-hidden=\"true\" />\n                    <Badge className=\"absolute -top-2.5 left-full min-w-4 -translate-x-1.5 border-background px-0.5 text-[10px]/[.875rem] transition-opacity group-data-[state=inactive]:opacity-50\">\n                      3\n                    </Badge>\n                  </span>\n                </TabsTrigger>\n              </span>\n            </TooltipTrigger>\n            <TooltipContent side=\"right\" className=\"px-2 py-1 text-xs\">\n              Projects\n            </TooltipContent>\n          </Tooltip>\n        </TooltipProvider>\n        <TooltipProvider delayDuration={0}>\n          <Tooltip>\n            <TooltipTrigger asChild>\n              <span>\n                <TabsTrigger value=\"tab-3\" className=\"py-3\">\n                  <Box size={16} strokeWidth={2} aria-hidden=\"true\" />\n                </TabsTrigger>\n              </span>\n            </TooltipTrigger>\n            <TooltipContent side=\"right\" className=\"px-2 py-1 text-xs\">\n              Packages\n            </TooltipContent>\n          </Tooltip>\n        </TooltipProvider>\n      </TabsList>\n      <div className=\"grow rounded-lg border border-border text-start\">\n        <TabsContent value=\"tab-1\">\n          <p className=\"px-4 py-1.5 text-xs text-muted-foreground\">Content for Tab 1</p>\n        </TabsContent>\n        <TabsContent value=\"tab-2\">\n          <p className=\"px-4 py-1.5 text-xs text-muted-foreground\">Content for Tab 2</p>\n        </TabsContent>\n        <TabsContent value=\"tab-3\">\n          <p className=\"px-4 py-1.5 text-xs text-muted-foreground\">Content for Tab 3</p>\n        </TabsContent>\n      </div>\n    </Tabs>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "tabs",
+      "radix"
+    ],
+    "colSpan": 2,
+    "style": 2
+  }
+}

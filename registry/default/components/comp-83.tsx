@@ -1,10 +1,10 @@
 import { Button } from "@/registry/default/ui/button";
-import { X } from "lucide-react";
+import { XIcon } from "lucide-react";
 
 export default function Component() {
   return (
     <Button variant="secondary">
-      <X className="-ms-1 me-2 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
+      <XIcon className="-ms-1 opacity-60" size={16} aria-hidden="true" />
       Button
     </Button>
   );

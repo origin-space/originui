@@ -15,7 +15,7 @@ const Square = ({ className, children }: { className?: string; children: React.R
   <span
     data-square
     className={cn(
-      "flex size-5 items-center justify-center rounded bg-muted text-xs font-medium text-muted-foreground",
+      "bg-muted text-muted-foreground flex size-5 items-center justify-center rounded text-xs font-medium",
       className,
     )}
     aria-hidden="true"
@@ -27,7 +27,7 @@ const Square = ({ className, children }: { className?: string; children: React.R
 export default function Component() {
   const id = useId();
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Options with placeholder avatar</Label>
       <Select defaultValue="1">
         <SelectTrigger
@@ -36,7 +36,7 @@ export default function Component() {
         >
           <SelectValue placeholder="Select framework" />
         </SelectTrigger>
-        <SelectContent className="[&_*[role=option]>span]:end-2 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:flex [&_*[role=option]>span]:items-center [&_*[role=option]>span]:gap-2 [&_*[role=option]]:pe-8 [&_*[role=option]]:ps-2">
+        <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2 [&_*[role=option]>span]:flex [&_*[role=option]>span]:items-center [&_*[role=option]>span]:gap-2">
           <SelectGroup>
             <SelectLabel className="ps-2">Impersonate user</SelectLabel>
             <SelectItem value="1">

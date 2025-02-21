@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-06",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/input.json",
+    "https://originui.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-06.tsx",
+      "content": "import { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor={id}>Input with error</Label>\n      <Input\n        id={id}\n        className=\"border-destructive/80 text-destructive focus-visible:border-destructive/80 focus-visible:ring-destructive/20\"\n        placeholder=\"Email\"\n        type=\"email\"\n        defaultValue=\"invalid@email.com\"\n      />\n      <p className=\"mt-2 text-xs text-destructive\" role=\"alert\" aria-live=\"polite\">\n        Email is invalid\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "error"
+    ]
+  }
+}

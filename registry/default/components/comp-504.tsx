@@ -17,7 +17,7 @@ import {
   isBefore,
   startOfYear,
 } from "date-fns";
-import { ChevronDown } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { CaptionLabelProps, MonthGridProps } from "react-day-picker";
 
@@ -45,7 +45,7 @@ export default function Component() {
         defaultMonth={new Date()}
         startMonth={startDate}
         endMonth={endDate}
-        className="overflow-hidden rounded-lg border border-border p-2"
+        className="overflow-hidden rounded-md border p-2"
         classNames={{
           month_caption: "ms-2.5 me-20 justify-start",
           nav: "justify-end",
@@ -77,13 +77,13 @@ export default function Component() {
         }}
       />
       <p
-        className="mt-4 text-center text-xs text-muted-foreground"
+        className="text-muted-foreground mt-4 text-center text-xs"
         role="region"
         aria-live="polite"
       >
         Advanced selection -{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://daypicker.dev/"
           target="_blank"
           rel="noopener nofollow"
@@ -140,7 +140,7 @@ function MonthGrid({
     <div className="relative">
       <table className={className}>{children}</table>
       {isYearView && (
-        <div className="absolute inset-0 z-20 -mx-2 -mb-2 bg-background">
+        <div className="bg-background absolute inset-0 z-20 -mx-2 -mb-2">
           <ScrollArea ref={scrollAreaRef} className="h-full">
             {years.map((year) => {
               const months = eachMonthOfInterval({
@@ -194,17 +194,16 @@ function CaptionLabel({
 } & React.HTMLAttributes<HTMLSpanElement>) {
   return (
     <Button
-      className="-ms-2 flex items-center gap-2 text-sm font-medium hover:bg-transparent data-[state=open]:text-muted-foreground/80 [&[data-state=open]>svg]:rotate-180"
+      className="data-[state=open]:text-muted-foreground/80 -ms-2 flex items-center gap-2 text-sm font-medium hover:bg-transparent [&[data-state=open]>svg]:rotate-180"
       variant="ghost"
       size="sm"
       onClick={() => setIsYearView((prev) => !prev)}
       data-state={isYearView ? "open" : "closed"}
     >
       {children}
-      <ChevronDown
+      <ChevronDownIcon
         size={16}
-        strokeWidth={2}
-        className="shrink-0 text-muted-foreground/80 transition-transform duration-200"
+        className="text-muted-foreground/80 shrink-0 transition-transform duration-200"
         aria-hidden="true"
       />
     </Button>
@@ -221,23 +220,22 @@ function CollapsibleYear({
   open?: boolean;
 }) {
   return (
-    <Collapsible className="border-t border-border px-2 py-1.5" defaultOpen={open}>
+    <Collapsible className="border-t px-2 py-1.5" defaultOpen={open}>
       <CollapsibleTrigger asChild>
         <Button
           className="flex w-full justify-start gap-2 text-sm font-medium hover:bg-transparent [&[data-state=open]>svg]:rotate-180"
           variant="ghost"
           size="sm"
         >
-          <ChevronDown
+          <ChevronDownIcon
             size={16}
-            strokeWidth={2}
-            className="shrink-0 text-muted-foreground/80 transition-transform duration-200"
+            className="text-muted-foreground/80 shrink-0 transition-transform duration-200"
             aria-hidden="true"
           />
           {title}
         </Button>
       </CollapsibleTrigger>
-      <CollapsibleContent className="overflow-hidden px-3 py-1 text-sm transition-all data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
+      <CollapsibleContent className="data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down overflow-hidden px-3 py-1 text-sm transition-all">
         {children}
       </CollapsibleContent>
     </Collapsible>

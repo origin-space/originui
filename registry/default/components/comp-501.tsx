@@ -13,7 +13,7 @@ export default function Component() {
 
   return (
     <div>
-      <div className="rounded-lg border border-border p-2">
+      <div className="rounded-md border p-2">
         <Calendar
           mode="single"
           selected={date}
@@ -24,7 +24,7 @@ export default function Component() {
         <Button
           variant="outline"
           size="sm"
-          className="mb-1 mt-2"
+          className="mt-2 mb-1"
           onClick={() => {
             setDate(today);
             setMonth(today);
@@ -34,13 +34,13 @@ export default function Component() {
         </Button>
       </div>
       <p
-        className="mt-4 text-center text-xs text-muted-foreground"
+        className="text-muted-foreground mt-4 text-center text-xs"
         role="region"
         aria-live="polite"
       >
         With button -{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://daypicker.dev/"
           target="_blank"
           rel="noopener nofollow"

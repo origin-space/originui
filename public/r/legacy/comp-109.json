@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-109",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/toggle-group.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-109.tsx",
+      "content": "import { ToggleGroup, ToggleGroupItem } from \"@/registry/default/ui/toggle-group\";\n\nexport default function Component() {\n  return (\n    <ToggleGroup\n      variant=\"outline\"\n      className=\"inline-flex gap-0 -space-x-px rounded-lg shadow-sm shadow-black/5 rtl:space-x-reverse\"\n      type=\"single\"\n    >\n      <ToggleGroupItem\n        className=\"rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10\"\n        value=\"left\"\n      >\n        Left\n      </ToggleGroupItem>\n      <ToggleGroupItem\n        className=\"rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10\"\n        value=\"center\"\n      >\n        Center\n      </ToggleGroupItem>\n      <ToggleGroupItem\n        className=\"rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg focus-visible:z-10\"\n        value=\"right\"\n      >\n        Right\n      </ToggleGroupItem>\n    </ToggleGroup>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "button",
+      "toggle group"
+    ],
+    "style": 2
+  }
+}

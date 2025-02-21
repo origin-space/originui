@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-393",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/avatar.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-393.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/registry/default/ui/avatar\";\n\nexport default function Component() {\n  return (\n    <Avatar className=\"rounded-lg\">\n      <AvatarImage src=\"./avatar-80-07.jpg\" alt=\"Kelly King\" />\n      <AvatarFallback>KK</AvatarFallback>\n    </Avatar>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "avatar",
+      "user",
+      "profile"
+    ],
+    "style": 1
+  }
+}

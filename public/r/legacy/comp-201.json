@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-201",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/select-native.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-201.tsx",
+      "content": "import { SelectNative } from \"@/registry/default/ui/select-native\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"group relative\">\n      <label\n        htmlFor={id}\n        className=\"absolute start-1 top-0 z-10 block -translate-y-1/2 bg-background px-2 text-xs font-medium text-foreground group-has-[select:disabled]:opacity-50\"\n      >\n        Select with overlapping label (native)\n      </label>\n      <SelectNative id={id} defaultValue=\"\">\n        <option value=\"\" disabled>\n          Select framework\n        </option>\n        <option value=\"1\">React</option>\n        <option value=\"2\">Next.js</option>\n        <option value=\"3\">Astro</option>\n        <option value=\"4\">Gatsby</option>\n      </SelectNative>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "label",
+      "select",
+      "native select"
+    ]
+  }
+}

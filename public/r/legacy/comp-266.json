@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-266",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/label.json",
+    "https://originui.com/r/slider.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-266.tsx",
+      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function Component() {\n  return (\n    <div className=\"space-y-4\">\n      <legend className=\"text-sm font-medium text-foreground\">Equalizer</legend>\n      <div className=\"flex h-48 justify-center gap-8\">\n        <div className=\"flex flex-col items-center gap-2\">\n          <Slider\n            defaultValue={[2]}\n            min={-5}\n            max={5}\n            orientation=\"vertical\"\n            className=\"[&>:last-child>span]:h-6 [&>:last-child>span]:w-4 [&>:last-child>span]:rounded\"\n            aria-label=\"60 Hz\"\n            showTooltip\n          />\n          <Label className=\"flex w-0 justify-center text-xs text-muted-foreground\">60</Label>\n        </div>\n        <div className=\"flex flex-col items-center gap-2\">\n          <Slider\n            defaultValue={[1]}\n            min={-5}\n            max={5}\n            orientation=\"vertical\"\n            className=\"[&>:last-child>span]:h-6 [&>:last-child>span]:w-4 [&>:last-child>span]:rounded\"\n            aria-label=\"250 Hz\"\n            showTooltip\n          />\n          <Label className=\"flex w-0 justify-center text-xs text-muted-foreground\">250</Label>\n        </div>\n        <div className=\"flex flex-col items-center gap-2\">\n          <Slider\n            defaultValue={[-1]}\n            min={-5}\n            max={5}\n            orientation=\"vertical\"\n            className=\"[&>:last-child>span]:h-6 [&>:last-child>span]:w-4 [&>:last-child>span]:rounded\"\n            aria-label=\"1k\"\n            showTooltip\n          />\n          <Label className=\"flex w-0 justify-center text-xs text-muted-foreground\">1k</Label>\n        </div>\n        <div className=\"flex flex-col items-center gap-2\">\n          <Slider\n            defaultValue={[-3]}\n            min={-5}\n            max={5}\n            orientation=\"vertical\"\n            className=\"[&>:last-child>span]:h-6 [&>:last-child>span]:w-4 [&>:last-child>span]:rounded\"\n            aria-label=\"4k\"\n            showTooltip\n          />\n          <Label className=\"flex w-0 justify-center text-xs text-muted-foreground\">4k</Label>\n        </div>\n        <div className=\"flex flex-col items-center gap-2\">\n          <Slider\n            defaultValue={[2]}\n            min={-5}\n            max={5}\n            orientation=\"vertical\"\n            className=\"[&>:last-child>span]:h-6 [&>:last-child>span]:w-4 [&>:last-child>span]:rounded\"\n            aria-label=\"16k\"\n            showTooltip\n          />\n          <Label className=\"flex w-0 justify-center text-xs text-muted-foreground\">16K</Label>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "slider",
+      "label",
+      "equalizer",
+      "radix"
+    ]
+  }
+}

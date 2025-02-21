@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-457",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/pagination.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-457.tsx",
+      "content": "import {\n  Pagination,\n  PaginationContent,\n  PaginationItem,\n  PaginationLink,\n} from \"@/registry/default/ui/pagination\";\nimport { ChevronLeft, ChevronRight } from \"lucide-react\";\n\ntype PaginationProps = {\n  currentPage: number;\n  totalPages: number;\n};\n\nexport default function Component({ currentPage, totalPages }: PaginationProps) {\n  return (\n    <Pagination>\n      <PaginationContent className=\"gap-3\">\n        <PaginationItem>\n          <PaginationLink\n            className=\"aria-disabled:pointer-events-none aria-disabled:opacity-50\"\n            href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}\n            aria-label=\"Go to previous page\"\n            aria-disabled={currentPage === 1 ? true : undefined}\n            role={currentPage === 1 ? \"link\" : undefined}\n          >\n            <ChevronLeft size={16} strokeWidth={2} aria-hidden=\"true\" />\n          </PaginationLink>\n        </PaginationItem>\n        <PaginationItem>\n          <p className=\"text-sm text-muted-foreground\" aria-live=\"polite\">\n            Page <span className=\"text-foreground\">{currentPage}</span> of{\" \"}\n            <span className=\"text-foreground\">{totalPages}</span>\n          </p>\n        </PaginationItem>\n        <PaginationItem>\n          <PaginationLink\n            className=\"aria-disabled:pointer-events-none aria-disabled:opacity-50\"\n            href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}\n            aria-label=\"Go to next page\"\n            aria-disabled={currentPage === totalPages ? true : undefined}\n            role={currentPage === totalPages ? \"link\" : undefined}\n          >\n            <ChevronRight size={16} strokeWidth={2} aria-hidden=\"true\" />\n          </PaginationLink>\n        </PaginationItem>\n      </PaginationContent>\n    </Pagination>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "pagination"
+    ],
+    "colSpan": 2
+  }
+}

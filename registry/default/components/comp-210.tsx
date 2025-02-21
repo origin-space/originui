@@ -11,7 +11,7 @@ import { useId } from "react";
 export default function Component() {
   const id = useId();
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Disabled select</Label>
       <Select defaultValue="1" disabled>
         <SelectTrigger id={id}>

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-508",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/calendar.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-508.tsx",
+      "content": "\"use client\";\n\nimport { Calendar } from \"@/registry/default/ui/calendar\";\nimport { addDays } from \"date-fns\";\nimport { useState } from \"react\";\nimport { DateRange } from \"react-day-picker\";\n\nexport default function Component() {\n  const today = new Date();\n  const [date, setDate] = useState<DateRange | undefined>({\n    from: today,\n    to: addDays(today, 25),\n  });\n\n  return (\n    <div>\n      <Calendar\n        mode=\"range\"\n        selected={date}\n        onSelect={setDate}\n        numberOfMonths={2}\n        pagedNavigation\n        showOutsideDays={false}\n        className=\"rounded-lg border border-border p-2\"\n        classNames={{\n          months: \"gap-8\",\n          month:\n            \"relative first-of-type:before:hidden before:absolute max-sm:before:inset-x-2 max-sm:before:h-px max-sm:before:-top-2 sm:before:inset-y-2 sm:before:w-px before:bg-border sm:before:-left-4\",\n        }}\n      />\n      <p\n        className=\"mt-4 text-center text-xs text-muted-foreground\"\n        role=\"region\"\n        aria-live=\"polite\"\n      >\n        Two months calendar -{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://daypicker.dev/\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          React DayPicker\n        </a>\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "calendar",
+      "range calendar",
+      "date",
+      "react daypicker"
+    ],
+    "colSpan": 3,
+    "style": 1
+  }
+}

@@ -24,7 +24,7 @@ export default function Component() {
             </DialogTitle>
             <DialogDescription asChild>
               <div className="p-6">
-                <div className="space-y-4 [&_strong]:font-semibold [&_strong]:text-foreground">
+                <div className="[&_strong]:text-foreground space-y-4 [&_strong]:font-semibold">
                   <div className="space-y-1">
                     <p>
                       <strong>Account Management</strong>
@@ -132,7 +132,7 @@ export default function Component() {
             </DialogDescription>
           </DialogHeader>
         </div>
-        <DialogFooter className="border-t border-border px-6 py-4">
+        <DialogFooter className="border-t px-6 py-4">
           <DialogClose asChild>
             <Button type="button" variant="outline">
               Cancel

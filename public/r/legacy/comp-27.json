@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-27",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/input.json",
+    "https://originui.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-27.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { LoaderCircle, Mic, Search } from \"lucide-react\";\nimport { useEffect, useId, useState } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  const [inputValue, setInputValue] = useState(\"\");\n  const [isLoading, setIsLoading] = useState<boolean>(false);\n\n  useEffect(() => {\n    if (inputValue) {\n      setIsLoading(true);\n      const timer = setTimeout(() => {\n        setIsLoading(false);\n      }, 500);\n      return () => clearTimeout(timer);\n    }\n    setIsLoading(false);\n  }, [inputValue]);\n\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor={id}>Search input with loader</Label>\n      <div className=\"relative\">\n        <Input\n          id={id}\n          className=\"peer pe-9 ps-9\"\n          placeholder=\"Search...\"\n          type=\"search\"\n          value={inputValue}\n          onChange={(e) => setInputValue(e.target.value)}\n        />\n        <div className=\"pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 peer-disabled:opacity-50\">\n          {isLoading ? (\n            <LoaderCircle\n              className=\"animate-spin\"\n              size={16}\n              strokeWidth={2}\n              role=\"status\"\n              aria-label=\"Loading...\"\n            />\n          ) : (\n            <Search size={16} strokeWidth={2} aria-hidden=\"true\" />\n          )}\n        </div>\n        <button\n          className=\"absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-lg text-muted-foreground/80 outline-offset-2 transition-colors hover:text-foreground focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50\"\n          aria-label=\"Press to speak\"\n          type=\"submit\"\n        >\n          <Mic size={16} strokeWidth={2} aria-hidden=\"true\" />\n        </button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "button",
+      "search"
+    ]
+  }
+}

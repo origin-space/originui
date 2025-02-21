@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-438",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/tabs.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-438.tsx",
+      "content": "import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/registry/default/ui/tabs\";\nimport { Box, House, PanelsTopLeft } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Tabs defaultValue=\"tab-1\">\n      <TabsList className=\"h-auto rounded-none border-b border-border bg-transparent p-0\">\n        <TabsTrigger\n          value=\"tab-1\"\n          className=\"relative flex-col rounded-none px-4 py-2 text-xs after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary\"\n        >\n          <House className=\"mb-1.5 opacity-60\" size={16} strokeWidth={2} aria-hidden=\"true\" />\n          Overview\n        </TabsTrigger>\n        <TabsTrigger\n          value=\"tab-2\"\n          className=\"relative flex-col rounded-none px-4 py-2 text-xs after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary\"\n        >\n          <PanelsTopLeft\n            className=\"mb-1.5 opacity-60\"\n            size={16}\n            strokeWidth={2}\n            aria-hidden=\"true\"\n          />\n          Projects\n        </TabsTrigger>\n        <TabsTrigger\n          value=\"tab-3\"\n          className=\"relative flex-col rounded-none px-4 py-2 text-xs after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary\"\n        >\n          <Box className=\"mb-1.5 opacity-60\" size={16} strokeWidth={2} aria-hidden=\"true\" />\n          Packages\n        </TabsTrigger>\n      </TabsList>\n      <TabsContent value=\"tab-1\">\n        <p className=\"p-4 text-center text-xs text-muted-foreground\">Content for Tab 1</p>\n      </TabsContent>\n      <TabsContent value=\"tab-2\">\n        <p className=\"p-4 text-center text-xs text-muted-foreground\">Content for Tab 2</p>\n      </TabsContent>\n      <TabsContent value=\"tab-3\">\n        <p className=\"p-4 text-center text-xs text-muted-foreground\">Content for Tab 3</p>\n      </TabsContent>\n    </Tabs>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "tabs",
+      "radix"
+    ],
+    "colSpan": 2,
+    "style": 2
+  }
+}

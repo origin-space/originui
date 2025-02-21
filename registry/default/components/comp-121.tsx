@@ -6,7 +6,7 @@ export default function Component() {
     <div className="flex flex-col gap-2">
       <Button variant="outline">
         <RiGoogleFill
-          className="me-3 text-[#DB4437] dark:text-white/60"
+          className="me-1 text-[#DB4437] dark:text-white/60"
           size={16}
           aria-hidden="true"
         />
@@ -14,7 +14,7 @@ export default function Component() {
       </Button>
       <Button variant="outline">
         <RiTwitterXFill
-          className="me-3 text-[#14171a] dark:text-white/60"
+          className="me-1 text-[#14171a] dark:text-white/60"
           size={16}
           aria-hidden="true"
         />
@@ -22,7 +22,7 @@ export default function Component() {
       </Button>
       <Button variant="outline">
         <RiFacebookFill
-          className="me-3 text-[#1877f2] dark:text-white/60"
+          className="me-1 text-[#1877f2] dark:text-white/60"
           size={16}
           aria-hidden="true"
         />
@@ -30,7 +30,7 @@ export default function Component() {
       </Button>
       <Button variant="outline">
         <RiGithubFill
-          className="me-3 text-[#333333] dark:text-white/60"
+          className="me-1 text-[#333333] dark:text-white/60"
           size={16}
           aria-hidden="true"
         />

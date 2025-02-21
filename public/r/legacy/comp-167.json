@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-167",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/radio-group.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-167.tsx",
+      "content": "import { RadioGroup, RadioGroupItem } from \"@/registry/default/ui/radio-group\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n\n  const items = [\n    { value: \"1\", label: \"Angry\", icon: \"😠\" },\n    { value: \"2\", label: \"Sad\", icon: \"🙁\" },\n    { value: \"3\", label: \"Neutral\", icon: \"😐\" },\n    { value: \"4\", label: \"Happy\", icon: \"🙂\" },\n    { value: \"5\", label: \"Laughing\", icon: \"😀\" },\n  ];\n\n  return (\n    <fieldset className=\"space-y-4\">\n      <legend className=\"text-sm font-medium leading-none text-foreground\">How did it go?</legend>\n      <RadioGroup className=\"flex gap-1.5\" defaultValue=\"3\">\n        {items.map((item) => (\n          <label\n            key={`${id}-${item.value}`}\n            className=\"relative flex size-9 cursor-pointer flex-col items-center justify-center rounded-full border border-input text-center text-xl shadow-sm shadow-black/5 outline-offset-2 transition-colors has-[[data-disabled]]:cursor-not-allowed has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-accent has-[[data-disabled]]:opacity-50 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70\"\n          >\n            <RadioGroupItem\n              id={`${id}-${item.value}`}\n              value={item.value}\n              className=\"sr-only after:absolute after:inset-0\"\n            />\n            {item.icon}\n          </label>\n        ))}\n      </RadioGroup>\n    </fieldset>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "radio",
+      "label",
+      "rating",
+      "vote",
+      "radix"
+    ]
+  }
+}

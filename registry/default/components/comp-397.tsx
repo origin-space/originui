@@ -7,7 +7,7 @@ export default function Component() {
         <AvatarImage src="./avatar-80-07.jpg" alt="Kelly King" />
         <AvatarFallback>KK</AvatarFallback>
       </Avatar>
-      <span className="absolute -end-1 -top-1">
+      <span className="absolute -end-1.5 -top-1.5">
         <span className="sr-only">Verified</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -11,7 +11,7 @@ export default function Component() {
         <div className="space-y-3">
           <div className="space-y-1">
             <p className="text-[13px] font-medium">Popover with button</p>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-muted-foreground text-xs">
               I am a popover that would like to look like a tooltip. I can&lsquo;t be a tooltip
               because of the interactive element inside me.
             </p>

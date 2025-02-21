@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-283",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/button.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-283.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { ArrowRight, TriangleAlert, X } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    // To make the notification fixed, add classes like `fixed bottom-4 right-4` to the container element.\n    <div className=\"z-[100] max-w-[400px] rounded-lg border border-border bg-background px-4 py-3 shadow-lg shadow-black/5\">\n      <div className=\"flex gap-2\">\n        <div className=\"flex grow gap-3\">\n          <TriangleAlert\n            className=\"mt-0.5 shrink-0 text-amber-500\"\n            size={16}\n            strokeWidth={2}\n            aria-hidden=\"true\"\n          />\n          <div className=\"flex grow justify-between gap-12\">\n            <p className=\"text-sm\">Some information is missing!</p>\n            <a href=\"#\" className=\"group whitespace-nowrap text-sm font-medium\">\n              Link\n              <ArrowRight\n                className=\"-mt-0.5 ms-1 inline-flex opacity-60 transition-transform group-hover:translate-x-0.5\"\n                size={16}\n                strokeWidth={2}\n                aria-hidden=\"true\"\n              />\n            </a>\n          </div>\n        </div>\n        <Button\n          variant=\"ghost\"\n          className=\"group -my-1.5 -me-2 size-8 shrink-0 p-0 hover:bg-transparent\"\n          aria-label=\"Close banner\"\n        >\n          <X\n            size={16}\n            strokeWidth={2}\n            className=\"opacity-60 transition-opacity group-hover:opacity-100\"\n            aria-hidden=\"true\"\n          />\n        </Button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "notification",
+      "warning"
+    ],
+    "colSpan": 2,
+    "style": 1
+  }
+}

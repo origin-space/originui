@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-419",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/badge.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-419.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\nimport { Check } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Badge variant=\"outline\" className=\"gap-1.5\">\n      <Check className=\"text-emerald-500\" size={12} strokeWidth={2} aria-hidden=\"true\" />\n      Badge\n    </Badge>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "badge",
+      "chip",
+      "status"
+    ],
+    "style": 1
+  }
+}

@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/registry/default/ui/button";
-import { ArrowRight, Eclipse, X } from "lucide-react";
+import { ArrowRightIcon, Eclipse, XIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function Component() {
@@ -10,25 +10,19 @@ export default function Component() {
   if (!isVisible) return null;
 
   return (
-    <div className="dark bg-muted px-4 py-3 text-foreground">
+    <div className="dark bg-muted text-foreground px-4 py-3">
       <div className="flex gap-2">
         <div className="flex grow gap-3">
-          <Eclipse
-            className="mt-0.5 shrink-0 opacity-60"
-            size={16}
-            strokeWidth={2}
-            aria-hidden="true"
-          />
+          <Eclipse className="mt-0.5 shrink-0 opacity-60" size={16} aria-hidden="true" />
           <div className="flex grow flex-col justify-between gap-2 md:flex-row">
             <p className="text-sm">
               We just added something awesome to make your experience even better.
             </p>
-            <a href="#" className="group whitespace-nowrap text-sm font-medium">
+            <a href="#" className="group text-sm font-medium whitespace-nowrap">
               Learn more
-              <ArrowRight
-                className="-mt-0.5 ms-1 inline-flex opacity-60 transition-transform group-hover:translate-x-0.5"
+              <ArrowRightIcon
+                className="ms-1 -mt-0.5 inline-flex opacity-60 transition-transform group-hover:translate-x-0.5"
                 size={16}
-                strokeWidth={2}
                 aria-hidden="true"
               />
             </a>
@@ -40,9 +34,8 @@ export default function Component() {
           onClick={() => setIsVisible(false)}
           aria-label="Close banner"
         >
-          <X
+          <XIcon
             size={16}
-            strokeWidth={2}
             className="opacity-60 transition-opacity group-hover:opacity-100"
             aria-hidden="true"
           />

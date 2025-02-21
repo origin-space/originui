@@ -22,7 +22,7 @@ export default function Component() {
       <DialogContent>
         <div className="flex flex-col items-center gap-2">
           <div
-            className="flex size-11 shrink-0 items-center justify-center rounded-full border border-border"
+            className="flex size-11 shrink-0 items-center justify-center rounded-full border"
             aria-hidden="true"
           >
             <svg
@@ -46,11 +46,11 @@ export default function Component() {
 
         <form className="space-y-5">
           <div className="space-y-4">
-            <div className="space-y-2">
+            <div className="*:not-first:mt-2">
               <Label htmlFor={`${id}-email`}>Email</Label>
               <Input id={`${id}-email`} placeholder="hi@yourcompany.com" type="email" required />
             </div>
-            <div className="space-y-2">
+            <div className="*:not-first:mt-2">
               <Label htmlFor={`${id}-password`}>Password</Label>
               <Input
                 id={`${id}-password`}
@@ -63,7 +63,7 @@ export default function Component() {
           <div className="flex justify-between gap-2">
             <div className="flex items-center gap-2">
               <Checkbox id={`${id}-remember`} />
-              <Label htmlFor={`${id}-remember`} className="font-normal text-muted-foreground">
+              <Label htmlFor={`${id}-remember`} className="text-muted-foreground font-normal">
                 Remember me
               </Label>
             </div>
@@ -76,8 +76,8 @@ export default function Component() {
           </Button>
         </form>
 
-        <div className="flex items-center gap-3 before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border">
-          <span className="text-xs text-muted-foreground">Or</span>
+        <div className="before:bg-border after:bg-border flex items-center gap-3 before:h-px before:flex-1 after:h-px after:flex-1">
+          <span className="text-muted-foreground text-xs">Or</span>
         </div>
 
         <Button variant="outline">Login with Google</Button>

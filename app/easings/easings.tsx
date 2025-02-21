@@ -96,7 +96,7 @@ const EasingSVG = ({
         y={config.padding}
         width={config.plotSize}
         height={config.plotSize}
-        className="fill-none stroke-muted-foreground/20"
+        className="stroke-muted-foreground/20 fill-none"
         strokeWidth="1"
       />
 
@@ -229,7 +229,7 @@ const AnimatedSquare = ({
       style={animationType === "translate" ? animationStyle : undefined}
     >
       <div
-        className="animated-square h-10 w-10 rounded-lg bg-gradient-to-tr from-primary to-primary/80 shadow-lg shadow-primary/10"
+        className="animated-square from-primary to-primary/80 shadow-primary/10 h-10 w-10 rounded-md bg-linear-to-tr shadow-lg"
         style={animationType !== "translate" ? animationStyle : undefined}
       />
       <style jsx>{`
@@ -335,7 +335,7 @@ export default function Easings({ easings }: EasingsProps) {
                 min={0}
                 max={5000}
               />
-              <span className="text-sm text-muted-foreground">ms</span>
+              <span className="text-muted-foreground text-sm">ms</span>
             </div>
           </div>
 
@@ -379,12 +379,12 @@ export default function Easings({ easings }: EasingsProps) {
 
       <div
         id="grid"
-        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 [&>*:last-child:nth-child(2n-1)]:sm:col-span-2 [&>*:last-child:nth-child(3n-1)]:lg:col-start-2 [&>*:last-child:nth-child(3n-2)]:lg:col-span-3"
+        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:[&>*:last-child:nth-child(2n-1)]:col-span-2 lg:[&>*:last-child:nth-child(3n-1)]:col-start-2 lg:[&>*:last-child:nth-child(3n-2)]:col-span-3"
       >
         {getFilteredEasings().map((easing) => (
           <div
             key={`${easing.name}-${easingFilter}`}
-            className="group relative flex aspect-square flex-col items-center justify-center gap-4 rounded-xl bg-muted/65"
+            className="group bg-muted/65 relative flex aspect-square flex-col items-center justify-center gap-4 rounded-xl"
           >
             <div className="pt-6 text-center text-sm font-medium">{easing.name}</div>
 
@@ -417,17 +417,17 @@ export default function Easings({ easings }: EasingsProps) {
             </div>
           </div>
         ))}
-        <div className="relative rounded-xl bg-muted/65 p-6">
+        <div className="bg-muted/65 relative rounded-xl p-6">
           <p className="mb-4">
-            <strong className="block text-sm font-medium text-foreground">Note</strong>
+            <strong className="text-foreground block text-sm font-medium">Note</strong>
           </p>
-          <p className="text-sm leading-relaxed text-muted-foreground">
+          <p className="text-muted-foreground text-sm leading-relaxed">
             We use class names with arbitrary properties like{" "}
-            <code className="font-mono text-[13px] text-foreground">
+            <code className="text-foreground font-mono text-[13px]">
               &#91;transition-timing-function:cubic-bezier(...)&#93;
             </code>{" "}
             instead of{" "}
-            <code className="font-mono text-[13px] text-foreground">
+            <code className="text-foreground font-mono text-[13px]">
               ease-&#91;cubic-bezier(...)&#93;
             </code>{" "}
             as recommended in the Tailwind CSS documentation, because the latter won&lsquo;t work

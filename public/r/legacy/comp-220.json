@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-220",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/select.json",
+    "https://originui.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-220.tsx",
+      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\nimport { useId } from \"react\";\n\nfunction StatusDot({ className }: { className?: string }) {\n  return (\n    <svg\n      width=\"8\"\n      height=\"8\"\n      fill=\"currentColor\"\n      viewBox=\"0 0 8 8\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      className={className}\n      aria-hidden=\"true\"\n    >\n      <circle cx=\"4\" cy=\"4\" r=\"4\" />\n    </svg>\n  );\n}\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor={id}>Status select</Label>\n      <Select defaultValue=\"1\">\n        <SelectTrigger\n          id={id}\n          className=\"[&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_svg]:shrink-0\"\n        >\n          <SelectValue placeholder=\"Select status\" />\n        </SelectTrigger>\n        <SelectContent className=\"[&_*[role=option]>span>svg]:shrink-0 [&_*[role=option]>span>svg]:text-muted-foreground/80 [&_*[role=option]>span]:end-2 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:flex [&_*[role=option]>span]:items-center [&_*[role=option]>span]:gap-2 [&_*[role=option]]:pe-8 [&_*[role=option]]:ps-2\">\n          <SelectItem value=\"1\">\n            <span className=\"flex items-center gap-2\">\n              <StatusDot className=\"text-emerald-600\" />\n              <span className=\"truncate\">Completed</span>\n            </span>\n          </SelectItem>\n          <SelectItem value=\"2\">\n            <span className=\"flex items-center gap-2\">\n              <StatusDot className=\"text-blue-500\" />\n              <span className=\"truncate\">In Progress</span>\n            </span>\n          </SelectItem>\n          <SelectItem value=\"3\">\n            <span className=\"flex items-center gap-2\">\n              <StatusDot className=\"text-amber-500\" />\n              <span className=\"truncate\">Pending</span>\n            </span>\n          </SelectItem>\n          <SelectItem value=\"4\">\n            <span className=\"flex items-center gap-2\">\n              <StatusDot className=\"text-gray-500\" />\n              <span className=\"truncate\">Cancelled</span>\n            </span>\n          </SelectItem>\n          <SelectItem value=\"5\">\n            <span className=\"flex items-center gap-2\">\n              <StatusDot className=\"text-red-500\" />\n              <span className=\"truncate\">Failed</span>\n            </span>\n          </SelectItem>\n        </SelectContent>\n      </Select>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "label",
+      "select",
+      "status",
+      "radix"
+    ]
+  }
+}

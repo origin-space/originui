@@ -18,7 +18,8 @@ export function useSliderWithInput({
   const [sliderValue, setSliderValue] = useState(initialValue);
   const [inputValues, setInputValues] = useState(initialValue.map((v) => v.toString()));
 
-  const showReset = sliderValue.length === defaultValue.length && 
+  const showReset =
+    sliderValue.length === defaultValue.length &&
     !sliderValue.every((value, index) => value === defaultValue[index]);
 
   const validateAndUpdateValue = useCallback(

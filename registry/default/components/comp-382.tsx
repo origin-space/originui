@@ -3,7 +3,7 @@
 import { Badge } from "@/registry/default/ui/badge";
 import { Button } from "@/registry/default/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
-import { Bell } from "lucide-react";
+import { BellIcon } from "lucide-react";
 import { useState } from "react";
 
 const initialNotifications = [
@@ -98,7 +98,7 @@ export default function Component() {
     <Popover>
       <PopoverTrigger asChild>
         <Button size="icon" variant="outline" className="relative" aria-label="Open notifications">
-          <Bell size={16} strokeWidth={2} aria-hidden="true" />
+          <BellIcon size={16} aria-hidden="true" />
           {unreadCount > 0 && (
             <Badge className="absolute -top-2 left-full min-w-5 -translate-x-1/2 px-1">
               {unreadCount > 99 ? "99+" : unreadCount}
@@ -118,29 +118,29 @@ export default function Component() {
         <div
           role="separator"
           aria-orientation="horizontal"
-          className="-mx-1 my-1 h-px bg-border"
+          className="bg-border -mx-1 my-1 h-px"
         ></div>
         {notifications.map((notification) => (
           <div
             key={notification.id}
-            className="rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent"
+            className="hover:bg-accent rounded-md px-3 py-2 text-sm transition-colors"
           >
             <div className="relative flex items-start pe-3">
               <div className="flex-1 space-y-1">
                 <button
-                  className="text-left text-foreground/80 after:absolute after:inset-0"
+                  className="text-foreground/80 text-left after:absolute after:inset-0"
                   onClick={() => handleNotificationClick(notification.id)}
                 >
-                  <span className="font-medium text-foreground hover:underline">
+                  <span className="text-foreground font-medium hover:underline">
                     {notification.user}
                   </span>{" "}
                   {notification.action}{" "}
-                  <span className="font-medium text-foreground hover:underline">
+                  <span className="text-foreground font-medium hover:underline">
                     {notification.target}
                   </span>
                   .
                 </button>
-                <div className="text-xs text-muted-foreground">{notification.timestamp}</div>
+                <div className="text-muted-foreground text-xs">{notification.timestamp}</div>
               </div>
               {notification.unread && (
                 <div className="absolute end-0 self-center">

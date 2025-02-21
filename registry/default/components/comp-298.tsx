@@ -10,7 +10,7 @@ import {
   ToastTitle,
   ToastViewport,
 } from "@/registry/default/ui/toast";
-import { CircleCheck, X } from "lucide-react";
+import { CircleCheckIcon, XIcon } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 interface UseProgressTimerProps {
@@ -127,10 +127,9 @@ export default function Component() {
       </Button>
       <Toast open={open} onOpenChange={handleOpenChange} onPause={pause} onResume={resume}>
         <div className="flex w-full justify-between gap-3">
-          <CircleCheck
+          <CircleCheckIcon
             className="mt-0.5 shrink-0 text-emerald-500"
             size={16}
-            strokeWidth={2}
             aria-hidden="true"
           />
           <div className="flex grow flex-col gap-3">
@@ -152,9 +151,8 @@ export default function Component() {
               className="group -my-1.5 -me-2 size-8 shrink-0 p-0 hover:bg-transparent"
               aria-label="Close notification"
             >
-              <X
+              <XIcon
                 size={16}
-                strokeWidth={2}
                 className="opacity-60 transition-opacity group-hover:opacity-100"
                 aria-hidden="true"
               />
@@ -171,7 +169,7 @@ export default function Component() {
           />
         </div>
       </Toast>
-      <ToastViewport className="sm:left-0 sm:right-auto" />
+      <ToastViewport className="sm:right-auto sm:left-0" />
     </ToastProvider>
   );
 }

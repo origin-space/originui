@@ -12,7 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/registry/default/ui/select";
-import { ChevronFirst, ChevronLast, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronFirstIcon, ChevronLastIcon, ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { useId } from "react";
 
 type PaginationProps = {
@@ -31,7 +31,7 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
           <SelectTrigger id={id} className="w-fit whitespace-nowrap">
             <SelectValue placeholder="Select number of results" />
           </SelectTrigger>
-          <SelectContent className="[&_*[role=option]>span]:end-2 [&_*[role=option]>span]:start-auto [&_*[role=option]]:pe-8 [&_*[role=option]]:ps-2">
+          <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
             <SelectItem value="10">10</SelectItem>
             <SelectItem value="25">25</SelectItem>
             <SelectItem value="50">50</SelectItem>
@@ -41,8 +41,8 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
       </div>
 
       {/* Page number information */}
-      <div className="flex grow justify-end whitespace-nowrap text-sm text-muted-foreground">
-        <p className="whitespace-nowrap text-sm text-muted-foreground" aria-live="polite">
+      <div className="text-muted-foreground flex grow justify-end text-sm whitespace-nowrap">
+        <p className="text-muted-foreground text-sm whitespace-nowrap" aria-live="polite">
           <span className="text-foreground">1-25</span> of{" "}
           <span className="text-foreground">100</span>
         </p>
@@ -61,7 +61,7 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
                 aria-disabled={currentPage === 1 ? true : undefined}
                 role={currentPage === 1 ? "link" : undefined}
               >
-                <ChevronFirst size={16} strokeWidth={2} aria-hidden="true" />
+                <ChevronFirstIcon size={16} aria-hidden="true" />
               </PaginationLink>
             </PaginationItem>
 
@@ -74,7 +74,7 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
                 aria-disabled={currentPage === 1 ? true : undefined}
                 role={currentPage === 1 ? "link" : undefined}
               >
-                <ChevronLeft size={16} strokeWidth={2} aria-hidden="true" />
+                <ChevronLeftIcon size={16} aria-hidden="true" />
               </PaginationLink>
             </PaginationItem>
 
@@ -87,7 +87,7 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
                 aria-disabled={currentPage === totalPages ? true : undefined}
                 role={currentPage === totalPages ? "link" : undefined}
               >
-                <ChevronRight size={16} strokeWidth={2} aria-hidden="true" />
+                <ChevronRightIcon size={16} aria-hidden="true" />
               </PaginationLink>
             </PaginationItem>
 
@@ -100,7 +100,7 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
                 aria-disabled={currentPage === totalPages ? true : undefined}
                 role={currentPage === totalPages ? "link" : undefined}
               >
-                <ChevronLast size={16} strokeWidth={2} aria-hidden="true" />
+                <ChevronLastIcon size={16} aria-hidden="true" />
               </PaginationLink>
             </PaginationItem>
           </PaginationContent>

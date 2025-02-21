@@ -5,7 +5,7 @@ export default function HoverCardDemo() {
     <div className="max-w-md text-sm">
       <HoverCard>
         <HoverCardTrigger asChild>
-          <a className="flex size-16 overflow-hidden rounded-lg" href="#">
+          <a className="flex size-16 overflow-hidden rounded-md" href="#">
             <img
               className="h-full w-full object-cover"
               src="/dialog-content.png"
@@ -21,12 +21,12 @@ export default function HoverCardDemo() {
               <h2 className="font-semibold">
                 Building a Design System with Next.js and Tailwind CSS
               </h2>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground text-sm">
                 Learn how to build a comprehensive design system using Tailwind CSS, including
                 component architecture, and theme customization.
               </p>
             </div>
-            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+            <div className="text-muted-foreground flex items-center gap-2 text-xs">
               <span>8 min read</span>
               <span>·</span>
               <span>Updated 2 days ago</span>

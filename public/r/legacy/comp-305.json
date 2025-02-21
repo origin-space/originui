@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-305",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/button.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-305.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport { ArrowRight, Eclipse, X } from \"lucide-react\";\nimport { useState } from \"react\";\n\nexport default function Component() {\n  const [isVisible, setIsVisible] = useState(true);\n\n  if (!isVisible) return null;\n\n  return (\n    <div className=\"dark bg-muted px-4 py-3 text-foreground\">\n      <div className=\"flex gap-2\">\n        <div className=\"flex grow gap-3\">\n          <Eclipse\n            className=\"mt-0.5 shrink-0 opacity-60\"\n            size={16}\n            strokeWidth={2}\n            aria-hidden=\"true\"\n          />\n          <div className=\"flex grow flex-col justify-between gap-2 md:flex-row\">\n            <p className=\"text-sm\">\n              We just added something awesome to make your experience even better.\n            </p>\n            <a href=\"#\" className=\"group whitespace-nowrap text-sm font-medium\">\n              Learn more\n              <ArrowRight\n                className=\"-mt-0.5 ms-1 inline-flex opacity-60 transition-transform group-hover:translate-x-0.5\"\n                size={16}\n                strokeWidth={2}\n                aria-hidden=\"true\"\n              />\n            </a>\n          </div>\n        </div>\n        <Button\n          variant=\"ghost\"\n          className=\"group -my-1.5 -me-2 size-8 shrink-0 p-0 hover:bg-transparent\"\n          onClick={() => setIsVisible(false)}\n          aria-label=\"Close banner\"\n        >\n          <X\n            size={16}\n            strokeWidth={2}\n            className=\"opacity-60 transition-opacity group-hover:opacity-100\"\n            aria-hidden=\"true\"\n          />\n        </Button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "banner"
+    ],
+    "colSpan": 3
+  }
+}

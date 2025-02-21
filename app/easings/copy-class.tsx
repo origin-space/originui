@@ -21,7 +21,7 @@ const CopyClass = ({ value }: { value: string }) => {
     <div>
       <Button
         variant="ghost"
-        className="h-7 max-w-full whitespace-normal text-xs font-normal text-muted-foreground/80 hover:bg-transparent hover:text-foreground disabled:opacity-100"
+        className="text-muted-foreground/80 hover:text-foreground h-7 max-w-full text-xs font-normal whitespace-normal hover:bg-transparent disabled:opacity-100"
         onClick={handleCopy}
         aria-label={copied ? "Copied" : "Copy Tailwind class"}
         disabled={copied}
@@ -29,7 +29,7 @@ const CopyClass = ({ value }: { value: string }) => {
         <div className="flex-1">
           {copied ? "Copied" : <span className="transition-colors">Copy class</span>}
         </div>
-        <div className="relative ml-2">
+        <div className="relative">
           <div
             className={cn("transition-all", copied ? "scale-100 opacity-100" : "scale-0 opacity-0")}
           >

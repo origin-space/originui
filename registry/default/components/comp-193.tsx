@@ -5,11 +5,7 @@ import { useId } from "react";
 export default function Component() {
   const id = useId();
   return (
-    <div
-      className="space-y-2"
-      // NOTE: This inline style is to show how to set the --ring variable in your CSS file in order to change the focus ring color.
-      style={{ "--ring": "234 89% 74%" } as React.CSSProperties}
-    >
+    <div className="[--ring:var(--color-indigo-300)] *:not-first:mt-2 in-[.dark]:[--ring:var(--color-indigo-900)]">
       <Label htmlFor={id}>Select with colored border (native)</Label>
       <SelectNative id={id}>
         <option value="1">React</option>

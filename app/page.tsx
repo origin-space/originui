@@ -8,10 +8,10 @@ export default function Page() {
   return (
     <div data-home>
       <div className="max-w-3xl max-sm:text-center">
-        <h1 className="mb-4 font-heading text-4xl/[1.1] font-bold tracking-tight text-foreground md:text-5xl/[1.1]">
+        <h1 className="font-heading text-foreground mb-4 text-4xl/[1.1] font-bold tracking-tight md:text-5xl/[1.1]">
           Beautiful UI components built with Tailwind CSS and React.
         </h1>
-        <p className="mb-8 text-lg text-muted-foreground">
+        <p className="text-muted-foreground mb-8 text-lg">
           A collection of copy-and-paste components for quickly build application UIs.
         </p>
         <SearchButton />
@@ -55,16 +55,16 @@ function CategoryCard({ slug, name, componentsCount, isEasing = false }: Categor
       {!isComingSoon ? (
         <Link
           href={href}
-          className="peer inline-flex overflow-hidden rounded-xl border border-border dark:border-zinc-700/80 sm:flex"
+          className="peer inline-flex overflow-hidden rounded-xl border sm:flex dark:border-zinc-700/80"
           tabIndex={-1}
         >
           <ImageComponent imageBasePath={imageBasePath} alt={alt} />
         </Link>
       ) : (
-        <div className="relative inline-flex overflow-hidden rounded-xl border border-border dark:border-zinc-700/80 sm:flex">
+        <div className="relative inline-flex overflow-hidden rounded-xl border sm:flex dark:border-zinc-700/80">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute right-5 top-5 z-10 text-zinc-400 dark:text-zinc-500"
+            className="absolute top-5 right-5 z-10 text-zinc-400 dark:text-zinc-500"
             width="27"
             height="13"
             fill="currentColor"
@@ -74,7 +74,7 @@ function CategoryCard({ slug, name, componentsCount, isEasing = false }: Categor
           <ImageComponent imageBasePath={imageBasePath} alt={alt} />
         </div>
       )}
-      <div className="mb-0.5 peer-hover:[&_a]:underline">
+      <div className="[&_a]:peer-hover:underline">
         <h2>
           {!isComingSoon ? (
             <Link href={href} className="text-sm font-medium hover:underline">
@@ -84,7 +84,7 @@ function CategoryCard({ slug, name, componentsCount, isEasing = false }: Categor
             <span className="text-sm font-medium">{name}</span>
           )}
         </h2>
-        <p className="text-[13px] text-muted-foreground">
+        <p className="text-muted-foreground text-[13px]">
           {isEasing
             ? "29 Examples"
             : !isComingSoon

@@ -9,7 +9,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/registry/default/ui/collapsible";
-import { ChevronDown } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 
 const items = [
   {
@@ -84,9 +84,9 @@ export default function Component() {
           <AccordionItem
             value={item.id}
             key={item.id}
-            className="overflow-hidden border bg-background first:rounded-t-lg last:rounded-b-lg"
+            className="bg-background has-focus-visible:border-ring has-focus-visible:ring-ring/50 relative border outline-none first:rounded-t-md last:rounded-b-md last:border-b has-focus-visible:z-10 has-focus-visible:ring-[3px]"
           >
-            <AccordionTrigger className="px-4 py-3 text-[15px] leading-6 hover:no-underline">
+            <AccordionTrigger className="rounded-md px-4 py-3 text-[15px] leading-6 outline-none hover:no-underline focus-visible:ring-0">
               {item.title}
             </AccordionTrigger>
             <AccordionContent className="p-0">
@@ -116,20 +116,16 @@ function CollapsibleDemo({
   open?: boolean;
 }) {
   return (
-    <Collapsible
-      className="space-y-1 border-t border-border bg-accent px-4 py-3"
-      defaultOpen={open}
-    >
-      <CollapsibleTrigger className="flex gap-2 text-[15px] font-semibold leading-6 [&[data-state=open]>svg]:rotate-180">
-        <ChevronDown
+    <Collapsible className="bg-accent border-t px-4 py-3" defaultOpen={open}>
+      <CollapsibleTrigger className="flex gap-2 text-[15px] leading-6 font-semibold [&[data-state=open]>svg]:rotate-180">
+        <ChevronDownIcon
           size={16}
-          strokeWidth={2}
           className="mt-1 shrink-0 opacity-60 transition-transform duration-200"
           aria-hidden="true"
         />
         {title}
       </CollapsibleTrigger>
-      <CollapsibleContent className="overflow-hidden ps-6 text-sm text-muted-foreground transition-all data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
+      <CollapsibleContent className="text-muted-foreground data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down mt-1 overflow-hidden ps-6 text-sm transition-all">
         {content}
       </CollapsibleContent>
     </Collapsible>

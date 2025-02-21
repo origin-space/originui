@@ -11,7 +11,7 @@ import { useId } from "react";
 export default function Component() {
   const id = useId();
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Select with helper text</Label>
       <Select defaultValue="3">
         <SelectTrigger id={id}>
@@ -24,7 +24,7 @@ export default function Component() {
           <SelectItem value="4">Gatsby</SelectItem>
         </SelectContent>
       </Select>
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Tell us what&lsquo;s your favorite Select framework
       </p>
     </div>

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-489",
+  "type": "registry:component",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "https://originui.com/r/calendar-rac.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-489.tsx",
+      "content": "\"use client\";\n\nimport { RangeCalendar } from \"@/registry/default/ui/calendar-rac\";\nimport { getLocalTimeZone, isWeekend, today } from \"@internationalized/date\";\nimport { useLocale } from \"react-aria\";\nimport type { DateValue } from \"react-aria-components\";\n\nexport default function Component() {\n  const now = today(getLocalTimeZone());\n  const disabledRanges = [\n    [now, now], // Disables today\n    [now.add({ days: 14 }), now.add({ days: 14 })], // Disables only the 14th day from now\n    [now.add({ days: 23 }), now.add({ days: 23 })], // Disables only the 23rd day from now\n  ];\n\n  const { locale } = useLocale();\n  const isDateUnavailable = (date: DateValue) =>\n    isWeekend(date, locale) ||\n    disabledRanges.some(\n      (interval) => date.compare(interval[0]) >= 0 && date.compare(interval[1]) <= 0,\n    );\n\n  return (\n    <div>\n      <RangeCalendar\n        className=\"rounded-lg border border-border p-2\"\n        isDateUnavailable={isDateUnavailable}\n        minValue={today(getLocalTimeZone())}\n      />\n      <p\n        className=\"mt-4 text-center text-xs text-muted-foreground\"\n        role=\"region\"\n        aria-live=\"polite\"\n      >\n        Disabled dates -{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://react-spectrum.adobe.com/react-aria/DateRangePicker.html\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          React Aria\n        </a>\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "calendar",
+      "range calendar",
+      "date",
+      "disabled",
+      "react aria"
+    ],
+    "style": 1
+  }
+}

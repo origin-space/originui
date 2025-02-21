@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-521",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/stepper.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-521.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  Stepper,\n  StepperIndicator,\n  StepperItem,\n  StepperTrigger,\n} from \"@/registry/default/ui/stepper\";\nimport { useState } from \"react\";\nconst steps = [1, 2, 3, 4];\n\nexport default function Component() {\n  const [currentStep, setCurrentStep] = useState(1);\n\n  return (\n    <div className=\"mx-auto max-w-xl space-y-8 text-center\">\n      <div className=\"space-y-3\">\n        <Stepper value={currentStep} onValueChange={setCurrentStep}>\n          {steps.map((step) => (\n            <StepperItem key={step} step={step} className=\"flex-1\">\n              <StepperTrigger className=\"w-full flex-col items-start gap-2\" asChild>\n                <StepperIndicator asChild className=\"h-2 w-full rounded-none bg-border\">\n                  <span className=\"sr-only\">{step}</span>\n                </StepperIndicator>\n              </StepperTrigger>\n            </StepperItem>\n          ))}\n        </Stepper>\n        <div className=\"text-sm font-medium tabular-nums text-muted-foreground\">\n          Step {currentStep} of {steps.length}\n        </div>\n      </div>\n      <div className=\"flex justify-center space-x-4\">\n        <Button\n          variant=\"outline\"\n          className=\"w-32\"\n          onClick={() => setCurrentStep((prev) => prev - 1)}\n          disabled={currentStep === 1}\n        >\n          Prev step\n        </Button>\n        <Button\n          variant=\"outline\"\n          className=\"w-32\"\n          onClick={() => setCurrentStep((prev) => prev + 1)}\n          disabled={currentStep >= steps.length}\n        >\n          Next step\n        </Button>\n      </div>\n      <p className=\"mt-2 text-xs text-muted-foreground\" role=\"region\" aria-live=\"polite\">\n        Progress stepper\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "stepper"
+    ],
+    "colSpan": 3
+  }
+}

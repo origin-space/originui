@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-56",
+  "type": "registry:component",
+  "dependencies": [
+    "emblor"
+  ],
+  "registryDependencies": [
+    "https://originui.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-56.tsx",
+      "content": "\"use client\";\n// Add the following to tailwind.config.ts: \"./node_modules/emblor/dist/index.mjs\",\n\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Tag, TagInput } from \"emblor\";\nimport { useId, useState } from \"react\";\n\nconst tags = [\n  {\n    id: \"1\",\n    text: \"Sport\",\n  },\n  {\n    id: \"2\",\n    text: \"Coding\",\n  },\n  {\n    id: \"3\",\n    text: \"Travel\",\n  },\n];\n\nexport default function Component() {\n  const id = useId();\n  const [exampleTags, setExampleTags] = useState<Tag[]>(tags);\n  const [activeTagIndex, setActiveTagIndex] = useState<number | null>(null);\n\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor={id}>Input with tags</Label>\n      <TagInput\n        id={id}\n        tags={exampleTags}\n        setTags={(newTags) => {\n          setExampleTags(newTags);\n        }}\n        placeholder=\"Add a tag\"\n        styleClasses={{\n          tagList: {\n            container: \"gap-1\",\n          },\n          input:\n            \"rounded-lg transition-shadow placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/20\",\n          tag: {\n            body: \"relative h-7 bg-background border border-input hover:bg-background rounded-md font-medium text-xs ps-2 pe-7\",\n            closeButton:\n              \"absolute -inset-y-px -end-px p-0 rounded-s-none rounded-e-lg flex size-7 transition-colors outline-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 text-muted-foreground/80 hover:text-foreground\",\n          },\n        }}\n        activeTagIndex={activeTagIndex}\n        setActiveTagIndex={setActiveTagIndex}\n        inlineTags={false}\n        inputFieldPosition=\"top\"\n      />\n      <p className=\"mt-2 text-xs text-muted-foreground\" role=\"region\" aria-live=\"polite\">\n        Built with{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://github.com/JaleelB/emblor\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          emblor\n        </a>\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "tag",
+      "emblor"
+    ]
+  }
+}

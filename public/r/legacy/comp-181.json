@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-181",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/switch.json",
+    "https://originui.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-181.tsx",
+      "content": "\"use client\";\n\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Switch } from \"@/registry/default/ui/switch\";\nimport { Moon, Sun } from \"lucide-react\";\nimport { useId, useState } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  const [checked, setChecked] = useState<boolean>(true);\n\n  return (\n    <div className=\"inline-flex items-center gap-2\">\n      <Switch id={id} checked={checked} onCheckedChange={setChecked} aria-label=\"Toggle switch\" />\n      <Label htmlFor={id}>\n        <span className=\"sr-only\">Toggle switch</span>\n        {checked ? (\n          <Sun size={16} strokeWidth={2} aria-hidden=\"true\" />\n        ) : (\n          <Moon size={16} strokeWidth={2} aria-hidden=\"true\" />\n        )}\n      </Label>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "switch",
+      "label",
+      "darkmode",
+      "radix"
+    ],
+    "style": 1
+  }
+}

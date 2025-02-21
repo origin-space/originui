@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-338",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/accordion.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-338.tsx",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/registry/default/ui/accordion\";\nimport { AtSign, Command, Eclipse, Zap } from \"lucide-react\";\n\nconst items = [\n  {\n    id: \"1\",\n    icon: Command,\n    title: \"What makes Origin UI different?\",\n    content:\n      \"Origin UI focuses on developer experience and performance. Built with TypeScript, it offers excellent type safety, follows accessibility standards, and provides comprehensive documentation with regular updates.\",\n  },\n  {\n    id: \"2\",\n    icon: Eclipse,\n    title: \"How can I customize the components?\",\n    content:\n      \"Use our CSS variables for global styling, or className and style props for component-specific changes. We support CSS modules, Tailwind, and dark mode out of the box.\",\n  },\n  {\n    id: \"3\",\n    icon: Zap,\n    title: \"Is Origin UI optimized for performance?\",\n    content:\n      \"Yes, with tree-shaking, code splitting, and minimal runtime overhead. Most components are under 5KB gzipped.\",\n  },\n  {\n    id: \"4\",\n    icon: AtSign,\n    title: \"How accessible are the components?\",\n    content:\n      \"All components follow WAI-ARIA standards, featuring proper ARIA attributes, keyboard navigation, and screen reader support. Regular testing ensures compatibility with NVDA, VoiceOver, and JAWS.\",\n  },\n];\n\nexport default function Component() {\n  return (\n    <div className=\"space-y-4\">\n      <h2 className=\"text-xl font-bold\">W/ icon and chevron</h2>\n      <Accordion type=\"single\" collapsible className=\"w-full\" defaultValue=\"3\">\n        {items.map((item) => (\n          <AccordionItem value={item.id} key={item.id} className=\"py-2\">\n            <AccordionTrigger className=\"py-2 text-[15px] leading-6 hover:no-underline\">\n              <span className=\"flex items-center gap-3\">\n                <item.icon\n                  size={16}\n                  strokeWidth={2}\n                  className=\"shrink-0 opacity-60\"\n                  aria-hidden=\"true\"\n                />\n                <span>{item.title}</span>\n              </span>\n            </AccordionTrigger>\n            <AccordionContent className=\"pb-2 ps-7 text-muted-foreground\">\n              {item.content}\n            </AccordionContent>\n          </AccordionItem>\n        ))}\n      </Accordion>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "accordion",
+      "radix"
+    ],
+    "colSpan": 2
+  }
+}

@@ -12,7 +12,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu";
-import { Folders } from "lucide-react";
+import { FoldersIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -30,7 +30,7 @@ export default function Component() {
                 aria-hidden="true"
                 className="flex size-5 items-center justify-center"
               >
-                <Folders size={16} strokeWidth={2} />
+                <FoldersIcon size={16} />
               </span>
               <span className="sr-only">Toggle menu</span>
             </DropdownMenuTrigger>

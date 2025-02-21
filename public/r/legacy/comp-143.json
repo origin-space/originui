@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-143",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/checkbox.json",
+    "https://originui.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-143.tsx",
+      "content": "import { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"flex items-start gap-2\">\n      <Checkbox id={id} className=\"order-1\" aria-describedby={`${id}-description`} />\n      <div className=\"grid grow gap-2\">\n        <Label htmlFor={id}>\n          Label{\" \"}\n          <span className=\"text-xs font-normal leading-[inherit] text-muted-foreground\">\n            (Sublabel)\n          </span>\n        </Label>\n        <p id={`${id}-description`} className=\"text-xs text-muted-foreground\">\n          You can use this checkbox with a label and a description.\n        </p>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "checkbox",
+      "label",
+      "radix"
+    ]
+  }
+}

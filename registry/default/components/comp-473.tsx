@@ -57,7 +57,7 @@ export default function Component() {
   const id = useId();
   return (
     <div>
-      <div className="overflow-hidden rounded-lg border border-border bg-background">
+      <div className="bg-background overflow-hidden rounded-md border">
         <Table>
           <TableHeader>
             <TableRow className="hover:bg-transparent">
@@ -93,7 +93,7 @@ export default function Component() {
           </TableFooter>
         </Table>
       </div>
-      <p className="mt-4 text-center text-sm text-muted-foreground">Card Table</p>
+      <p className="text-muted-foreground mt-4 text-center text-sm">Card Table</p>
     </div>
   );
 }

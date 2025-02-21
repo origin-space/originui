@@ -8,7 +8,7 @@ export default function Component() {
     <div className="inline-flex items-center gap-2">
       <Switch
         id={id}
-        className="h-3 w-9 border-none outline-offset-[6px] [&_span]:border [&_span]:border-input"
+        className="[&_span]:border-input h-3 w-9 border-none outline-offset-[6px] [&_span]:border"
       />
       <Label htmlFor={id} className="sr-only">
         M2-style switch

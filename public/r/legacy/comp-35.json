@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-35",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/input.json",
+    "https://originui.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-35.tsx",
+      "content": "\"use client\";\n\nimport { useCharacterLimit } from \"@/registry/default/hooks/use-character-limit\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  const maxLength = 8;\n  const {\n    value,\n    characterCount,\n    handleChange,\n    maxLength: limit,\n  } = useCharacterLimit({ maxLength });\n\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor={id}>Input with characters left</Label>\n      <Input\n        id={id}\n        type=\"text\"\n        value={value}\n        maxLength={maxLength}\n        onChange={handleChange}\n        aria-describedby={`${id}-description`}\n      />\n      <p\n        id={`${id}-description`}\n        className=\"mt-2 text-xs text-muted-foreground\"\n        role=\"status\"\n        aria-live=\"polite\"\n      >\n        <span className=\"tabular-nums\">{limit - characterCount}</span> characters left\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/default/hooks/use-character-limit.ts",
+      "content": "\"use client\";\n\nimport { ChangeEvent, useState } from \"react\";\n\ntype UseCharacterLimitProps = {\n  maxLength: number;\n  initialValue?: string;\n};\n\nexport function useCharacterLimit({ maxLength, initialValue = \"\" }: UseCharacterLimitProps) {\n  const [value, setValue] = useState(initialValue);\n  const [characterCount, setCharacterCount] = useState(initialValue.length);\n\n  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {\n    const newValue = e.target.value;\n    if (newValue.length <= maxLength) {\n      setValue(newValue);\n      setCharacterCount(newValue.length);\n    }\n  };\n\n  return {\n    value,\n    characterCount,\n    handleChange,\n    maxLength,\n  };\n}\n",
+      "type": "registry:hook"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "input",
+      "label"
+    ]
+  }
+}

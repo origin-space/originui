@@ -7,9 +7,7 @@ export default function Component() {
   return (
     <RadioGroup
       defaultValue="1"
-      style={
-        { "--primary": "238.7 83.5% 66.7%", "--ring": "238.7 83.5% 66.7%" } as React.CSSProperties
-      }
+      className="[--primary:var(--color-indigo-500)] [--ring:var(--color-indigo-300)] in-[.dark]:[--primary:var(--color-indigo-500)] in-[.dark]:[--ring:var(--color-indigo-900)]"
     >
       <div className="flex items-center gap-2">
         <RadioGroupItem value="1" id={`${id}-1`} />

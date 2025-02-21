@@ -9,10 +9,10 @@ interface PageHeaderProps {
 export default function PageHeader({ title, className, children }: PageHeaderProps) {
   return (
     <div className={cn("mb-16 text-center", className)}>
-      <h1 className="mb-3 font-heading text-4xl/[1.1] font-bold tracking-tight text-foreground md:text-5xl/[1.1]">
+      <h1 className="font-heading text-foreground mb-3 text-4xl/[1.1] font-bold tracking-tight md:text-5xl/[1.1]">
         {title}
       </h1>
-      <p className="text-lg text-muted-foreground">{children}</p>
+      <p className="text-muted-foreground text-lg">{children}</p>
     </div>
   );
 }

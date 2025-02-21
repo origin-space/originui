@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-249",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/label.json",
+    "https://originui.com/r/slider.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-249.tsx",
+      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function Component() {\n  return (\n    <div className=\"space-y-4\">\n      <Label>Slider with labels and tooltip</Label>\n      <div>\n        <span\n          className=\"mb-3 flex w-full items-center justify-between gap-2 text-xs font-medium text-muted-foreground\"\n          aria-hidden=\"true\"\n        >\n          <span>Low</span>\n          <span>High</span>\n        </span>\n        <Slider\n          defaultValue={[50]}\n          step={10}\n          showTooltip={true}\n          aria-label=\"Slider with labels and tooltip\"\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "slider",
+      "label",
+      "tooltip",
+      "radix"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-127",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/button.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-127.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, Circle } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <div className=\"inline-grid w-fit grid-cols-3 gap-1\">\n      <Button className=\"col-start-2\" variant=\"outline\" size=\"icon\" aria-label=\"Pan camera up\">\n        <ChevronUp size={16} strokeWidth={2} aria-hidden=\"true\" />\n      </Button>\n      <Button className=\"col-start-1\" variant=\"outline\" size=\"icon\" aria-label=\"Pan camera left\">\n        <ChevronLeft size={16} strokeWidth={2} aria-hidden=\"true\" />\n      </Button>\n      <div className=\"flex items-center justify-center\" aria-hidden=\"true\">\n        <Circle className=\"opacity-60\" size={16} strokeWidth={2} />\n      </div>\n      <Button variant=\"outline\" size=\"icon\" aria-label=\"Pan camera right\">\n        <ChevronRight size={16} strokeWidth={2} aria-hidden=\"true\" />\n      </Button>\n      <Button className=\"col-start-2\" variant=\"outline\" size=\"icon\" aria-label=\"Pan camera down\">\n        <ChevronDown size={16} strokeWidth={2} aria-hidden=\"true\" />\n      </Button>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "button"
+    ],
+    "style": 2
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-202",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/select-native.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-202.tsx",
+      "content": "import { SelectNative } from \"@/registry/default/ui/select-native\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"relative rounded-lg border border-input bg-background shadow-sm shadow-black/5 transition-shadow focus-within:border-ring focus-within:outline-none focus-within:ring-[3px] focus-within:ring-ring/20 has-[select:disabled]:cursor-not-allowed has-[select:disabled]:opacity-50 [&:has(select:is(:disabled))_*]:pointer-events-none\">\n      <label htmlFor={id} className=\"block px-3 pt-2 text-xs font-medium text-foreground\">\n        Select with inset label (native)\n      </label>\n      <SelectNative\n        id={id}\n        defaultValue=\"\"\n        className=\"border-none bg-transparent shadow-none focus-visible:ring-0 focus-visible:ring-offset-0\"\n      >\n        <option value=\"\" disabled>\n          Select framework\n        </option>\n        <option value=\"1\">React</option>\n        <option value=\"2\">Next.js</option>\n        <option value=\"3\">Astro</option>\n        <option value=\"4\">Gatsby</option>\n      </SelectNative>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "label",
+      "select",
+      "native select"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-267",
+  "type": "registry:component",
+  "files": [
+    {
+      "path": "registry/default/components/comp-267.tsx",
+      "content": "import { TriangleAlert } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <div className=\"rounded-lg border border-border px-4 py-3\">\n      <p className=\"text-sm\">\n        <TriangleAlert\n          className=\"-mt-0.5 me-3 inline-flex text-amber-500\"\n          size={16}\n          strokeWidth={2}\n          aria-hidden=\"true\"\n        />\n        Some information is missing!\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "alert",
+      "warning"
+    ],
+    "colSpan": 2
+  }
+}

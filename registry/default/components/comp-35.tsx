@@ -16,7 +16,7 @@ export default function Component() {
   } = useCharacterLimit({ maxLength });
 
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Input with characters left</Label>
       <Input
         id={id}
@@ -28,7 +28,7 @@ export default function Component() {
       />
       <p
         id={`${id}-description`}
-        className="mt-2 text-xs text-muted-foreground"
+        className="text-muted-foreground mt-2 text-xs"
         role="status"
         aria-live="polite"
       >

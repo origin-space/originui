@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-97",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/button.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-97.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { Plus } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Button className=\"rounded-full\" variant=\"outline\" size=\"icon\" aria-label=\"Add new item\">\n      <Plus size={16} strokeWidth={2} aria-hidden=\"true\" />\n    </Button>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "button"
+    ],
+    "style": 2
+  }
+}

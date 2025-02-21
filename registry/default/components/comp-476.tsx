@@ -6,7 +6,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/registry/default/ui/table";
-import { Check, Monitor, Smartphone, X } from "lucide-react";
+import { CheckIcon, MonitorIcon, SmartphoneIcon, XIcon } from "lucide-react";
 
 const items = [
   {
@@ -66,14 +66,14 @@ export default function Component() {
   return (
     <Table>
       <TableHeader>
-        <TableRow className="border-y-0 *:border-border hover:bg-transparent [&>:not(:last-child)]:border-r">
+        <TableRow className="*:border-border border-y-0 hover:bg-transparent [&>:not(:last-child)]:border-r">
           <TableCell></TableCell>
-          <TableHead className="border-b border-border text-center" colSpan={5}>
-            <Monitor className="inline-flex" size={16} strokeWidth={2} aria-hidden="true" />
+          <TableHead className="border-b text-center" colSpan={5}>
+            <MonitorIcon className="inline-flex" size={16} aria-hidden="true" />
             <span className="sr-only">Desktop browsers</span>
           </TableHead>
-          <TableHead className="border-b border-border text-center" colSpan={5}>
-            <Smartphone className="inline-flex" size={16} strokeWidth={2} aria-hidden="true" />
+          <TableHead className="border-b text-center" colSpan={5}>
+            <SmartphoneIcon className="inline-flex" size={16} aria-hidden="true" />
             <span className="sr-only">Mobile browsers</span>
           </TableHead>
         </TableRow>
@@ -82,15 +82,15 @@ export default function Component() {
         <TableRow className="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r">
           <TableCell></TableCell>
           {items[0].desktop.map((browser) => (
-            <TableHead key={browser.name} className="h-auto py-3 align-bottom text-foreground">
-              <span className="relative left-[calc(50%-.5rem)] block rotate-180 whitespace-nowrap leading-4 [text-orientation:sideways] [writing-mode:vertical-rl]">
+            <TableHead key={browser.name} className="text-foreground h-auto py-3 align-bottom">
+              <span className="relative left-[calc(50%-.5rem)] block rotate-180 leading-4 whitespace-nowrap [text-orientation:sideways] [writing-mode:vertical-rl]">
                 {browser.name}
               </span>
             </TableHead>
           ))}
           {items[0].mobile.map((browser) => (
-            <TableHead key={browser.name} className="h-auto py-3 align-bottom text-foreground">
-              <span className="relative left-[calc(50%-.5rem)] block rotate-180 whitespace-nowrap leading-4 [text-orientation:sideways] [writing-mode:vertical-rl]">
+            <TableHead key={browser.name} className="text-foreground h-auto py-3 align-bottom">
+              <span className="relative left-[calc(50%-.5rem)] block rotate-180 leading-4 whitespace-nowrap [text-orientation:sideways] [writing-mode:vertical-rl]">
                 {browser.name}
               </span>
             </TableHead>
@@ -100,26 +100,20 @@ export default function Component() {
       <TableBody>
         {items.map((item) => (
           <TableRow key={item.feature} className="*:border-border [&>:not(:last-child)]:border-r">
-            <TableHead className="font-medium text-foreground">{item.feature}</TableHead>
+            <TableHead className="text-foreground font-medium">{item.feature}</TableHead>
             {[...item.desktop, ...item.mobile].map((browser, index) => (
               <TableCell key={`${browser.name}-${index}`} className="space-y-1 text-center">
                 {browser.supported ? (
-                  <Check
+                  <CheckIcon
                     className="inline-flex stroke-emerald-600"
                     size={16}
-                    strokeWidth={2}
                     aria-hidden="true"
                   />
                 ) : (
-                  <X
-                    className="inline-flex stroke-red-600"
-                    size={16}
-                    strokeWidth={2}
-                    aria-hidden="true"
-                  />
+                  <XIcon className="inline-flex stroke-red-600" size={16} aria-hidden="true" />
                 )}
                 <span className="sr-only">{browser.supported ? "Supported" : "Not supported"}</span>
-                <div className="text-xs font-medium text-muted-foreground">{browser.version}</div>
+                <div className="text-muted-foreground text-xs font-medium">{browser.version}</div>
               </TableCell>
             ))}
           </TableRow>

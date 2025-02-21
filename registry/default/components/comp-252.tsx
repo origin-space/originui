@@ -2,7 +2,7 @@
 
 import { Label } from "@/registry/default/ui/label";
 import { Slider } from "@/registry/default/ui/slider";
-import { Volume2, VolumeX } from "lucide-react";
+import { Volume2Icon, VolumeXIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function Component() {
@@ -15,9 +15,9 @@ export default function Component() {
         <output className="text-sm font-medium tabular-nums">{value[0]}</output>
       </div>
       <div className="flex items-center gap-2">
-        <VolumeX className="shrink-0 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
+        <VolumeXIcon className="shrink-0 opacity-60" size={16} aria-hidden="true" />
         <Slider value={value} onValueChange={setValue} aria-label="Volume slider" />
-        <Volume2 className="shrink-0 opacity-60" size={16} strokeWidth={2} aria-hidden="true" />
+        <Volume2Icon className="shrink-0 opacity-60" size={16} aria-hidden="true" />
       </div>
     </div>
   );

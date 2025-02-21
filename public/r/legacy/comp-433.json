@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-433",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/scroll-area.json",
+    "https://originui.com/r/tabs.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-433.tsx",
+      "content": "import { Badge } from \"@/registry/default/ui/badge\";\nimport { ScrollArea, ScrollBar } from \"@/registry/default/ui/scroll-area\";\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/registry/default/ui/tabs\";\nimport { Box, House, PanelsTopLeft } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Tabs defaultValue=\"tab-1\">\n      <ScrollArea>\n        <TabsList className=\"mb-3\">\n          <TabsTrigger value=\"tab-1\">\n            <House\n              className=\"-ms-0.5 me-1.5 opacity-60\"\n              size={16}\n              strokeWidth={2}\n              aria-hidden=\"true\"\n            />\n            Overview\n          </TabsTrigger>\n          <TabsTrigger value=\"tab-2\" className=\"group\">\n            <PanelsTopLeft\n              className=\"-ms-0.5 me-1.5 opacity-60\"\n              size={16}\n              strokeWidth={2}\n              aria-hidden=\"true\"\n            />\n            Projects\n            <Badge\n              className=\"ms-1.5 min-w-5 bg-primary/15 px-1 transition-opacity group-data-[state=inactive]:opacity-50\"\n              variant=\"secondary\"\n            >\n              3\n            </Badge>\n          </TabsTrigger>\n          <TabsTrigger value=\"tab-3\" className=\"group\">\n            <Box\n              className=\"-ms-0.5 me-1.5 opacity-60\"\n              size={16}\n              strokeWidth={2}\n              aria-hidden=\"true\"\n            />\n            Packages\n            <Badge className=\"ms-1.5 transition-opacity group-data-[state=inactive]:opacity-50\">\n              New\n            </Badge>\n          </TabsTrigger>\n        </TabsList>\n        <ScrollBar orientation=\"horizontal\" />\n      </ScrollArea>\n      <TabsContent value=\"tab-1\">\n        <p className=\"p-4 pt-1 text-center text-xs text-muted-foreground\">Content for Tab 1</p>\n      </TabsContent>\n      <TabsContent value=\"tab-2\">\n        <p className=\"p-4 pt-1 text-center text-xs text-muted-foreground\">Content for Tab 2</p>\n      </TabsContent>\n      <TabsContent value=\"tab-3\">\n        <p className=\"p-4 pt-1 text-center text-xs text-muted-foreground\">Content for Tab 3</p>\n      </TabsContent>\n    </Tabs>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "tabs",
+      "radix"
+    ],
+    "colSpan": 2,
+    "style": 2
+  }
+}

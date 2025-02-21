@@ -68,7 +68,7 @@ const programmingLanguages = [
 export default function Component() {
   return (
     <div>
-      <div className="overflow-hidden rounded-lg border border-border bg-background">
+      <div className="bg-background overflow-hidden rounded-md border">
         <Table>
           <TableHeader>
             <TableRow className="bg-muted/50">
@@ -98,7 +98,7 @@ export default function Component() {
           </TableBody>
         </Table>
       </div>
-      <p className="mt-4 text-center text-sm text-muted-foreground">Dense table</p>
+      <p className="text-muted-foreground mt-4 text-center text-sm">Dense table</p>
     </div>
   );
 }

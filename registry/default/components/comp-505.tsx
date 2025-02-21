@@ -35,7 +35,7 @@ export default function Component() {
 
   return (
     <div>
-      <div className="rounded-lg border border-border">
+      <div className="rounded-md border">
         <div className="flex max-sm:flex-col">
           <Calendar
             mode="single"
@@ -52,8 +52,8 @@ export default function Component() {
             ]}
           />
           <div className="relative w-full max-sm:h-48 sm:w-40">
-            <div className="absolute inset-0 border-border py-4 max-sm:border-t">
-              <ScrollArea className="h-full border-border sm:border-s">
+            <div className="absolute inset-0 py-4 max-sm:border-t">
+              <ScrollArea className="h-full sm:border-s">
                 <div className="space-y-3">
                   <div className="flex h-5 shrink-0 items-center px-5">
                     <p className="text-sm font-medium">{format(date, "EEEE, d")}</p>
@@ -79,13 +79,13 @@ export default function Component() {
         </div>
       </div>
       <p
-        className="mt-4 text-center text-xs text-muted-foreground"
+        className="text-muted-foreground mt-4 text-center text-xs"
         role="region"
         aria-live="polite"
       >
         Appointment picker -{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://daypicker.dev/"
           target="_blank"
           rel="noopener nofollow"

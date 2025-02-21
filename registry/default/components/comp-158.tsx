@@ -5,7 +5,7 @@ export default function Component() {
   const id = useId();
   return (
     <fieldset className="space-y-4">
-      <legend className="text-sm font-medium leading-none text-foreground">Choose a color</legend>
+      <legend className="text-foreground text-sm leading-none font-medium">Choose a color</legend>
       <RadioGroup className="flex gap-1.5" defaultValue="blue">
         <RadioGroupItem
           value="blue"

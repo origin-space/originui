@@ -10,13 +10,13 @@ export default function Component() {
   const { getExpiryDateProps } = usePaymentInputs();
 
   return (
-    <div className="space-y-2">
+    <div className="*:not-first:mt-2">
       <Label htmlFor={`expiry-${id}`}>Expiry date</Label>
       <Input {...getExpiryDateProps()} id={`expiry-${id}`} className="[direction:inherit]" />
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
+      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
         Built with{" "}
         <a
-          className="underline hover:text-foreground"
+          className="hover:text-foreground underline"
           href="https://github.com/medipass/react-payment-inputs"
           target="_blank"
           rel="noopener nofollow"
