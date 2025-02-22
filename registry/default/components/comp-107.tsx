@@ -9,7 +9,7 @@ export default function Component() {
 
   return (
     <ToggleGroup
-      className="divide-background inline-flex gap-0 divide-x rounded-md shadow-xs"
+      className="divide-background inline-flex divide-x"
       type="single"
       value={value}
       onValueChange={(value) => {
@@ -17,28 +17,28 @@ export default function Component() {
       }}
     >
       <ToggleGroupItem
-        className="bg-primary/80 text-primary-foreground hover:bg-primary data-[state=on]:bg-primary data-[state=on]:text-primary-foreground w-10 rounded-none shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10"
+        className="bg-primary/80 text-primary-foreground hover:bg-primary hover:text-primary-foreground data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
         aria-label="Align Left"
         value="left"
       >
         <AlignLeftIcon size={16} aria-hidden="true" />
       </ToggleGroupItem>
       <ToggleGroupItem
-        className="bg-primary/80 text-primary-foreground hover:bg-primary data-[state=on]:bg-primary data-[state=on]:text-primary-foreground w-10 rounded-none shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10"
+        className="bg-primary/80 text-primary-foreground hover:bg-primary hover:text-primary-foreground data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
         aria-label="Align Center"
         value="center"
       >
         <AlignCenterIcon size={16} aria-hidden="true" />
       </ToggleGroupItem>
       <ToggleGroupItem
-        className="bg-primary/80 text-primary-foreground hover:bg-primary data-[state=on]:bg-primary data-[state=on]:text-primary-foreground w-10 rounded-none shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10"
+        className="bg-primary/80 text-primary-foreground hover:bg-primary hover:text-primary-foreground data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
         aria-label="Align Right"
         value="right"
       >
         <AlignRightIcon size={16} aria-hidden="true" />
       </ToggleGroupItem>
       <ToggleGroupItem
-        className="bg-primary/80 text-primary-foreground hover:bg-primary data-[state=on]:bg-primary data-[state=on]:text-primary-foreground w-10 rounded-none shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10"
+        className="bg-primary/80 text-primary-foreground hover:bg-primary hover:text-primary-foreground data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
         aria-label="Align Justify"
         value="justify"
       >
