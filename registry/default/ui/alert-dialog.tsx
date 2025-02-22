@@ -36,8 +36,6 @@ function AlertDialogOverlay({
   );
 }
 
-AlertDialogOverlay.displayName = AlertDialogPrimitive.Overlay.displayName;
-
 function AlertDialogContent({
   className,
   ...props

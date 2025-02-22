@@ -4,7 +4,7 @@ import { cn } from "@/registry/default/lib/utils";
 import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
 import { ChevronDownIcon, PhoneIcon } from "lucide-react";
-import React, { forwardRef, useId, useState } from "react";
+import React, { useId, useState } from "react";
 import * as RPNInput from "react-phone-number-input";
 import flags from "react-phone-number-input/flags";
 
@@ -41,17 +41,15 @@ export default function Component() {
   );
 }
 
-const PhoneInput = forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
-  ({ className, ...props }, ref) => {
-    return (
-      <Input
-        className={cn("-ms-px rounded-s-none shadow-none focus-visible:z-10", className)}
-        ref={ref}
-        {...props}
-      />
-    );
-  },
-);
+const PhoneInput = ({ className, ...props }: React.ComponentProps<"input">) => {
+  return (
+    <Input
+      data-slot="phone-input"
+      className={cn("-ms-px rounded-s-none shadow-none focus-visible:z-10", className)}
+      {...props}
+    />
+  );
+};
 
 PhoneInput.displayName = "PhoneInput";
 

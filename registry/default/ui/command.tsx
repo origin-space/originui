@@ -131,8 +131,6 @@ function CommandItem({ className, ...props }: React.ComponentProps<typeof Comman
   );
 }
 
-CommandItem.displayName = CommandPrimitive.Item.displayName;
-
 function CommandShortcut({ className, ...props }: React.ComponentProps<"span">) {
   return (
     <kbd
