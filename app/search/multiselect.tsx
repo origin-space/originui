@@ -139,9 +139,9 @@ function isOptionsExist(groupOption: GroupOption, targetOption: Option[]) {
   return false;
 }
 
-const CommandEmpty = ({ 
-  className, 
-  ...props 
+const CommandEmpty = ({
+  className,
+  ...props
 }: React.ComponentProps<typeof CommandPrimitive.Empty>) => {
   const render = useCommandState((state) => state.filtered.count === 0);
 
