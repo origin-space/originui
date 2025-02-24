@@ -43,7 +43,7 @@ export default function Component() {
           <TimelineItem key={item.id} step={item.id}>
             <TimelineHeader>
               <TimelineSeparator />
-              <TimelineTitle className="sm:-mt-0.5">{item.title}</TimelineTitle>
+              <TimelineTitle className="-mt-0.5">{item.title}</TimelineTitle>
               <TimelineIndicator />
             </TimelineHeader>
             <TimelineContent>

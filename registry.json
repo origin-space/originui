@@ -9501,6 +9501,21 @@
       }
     },
     {
+      "name": "comp-535",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/timeline.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-535.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["timeline"],
+        "colSpan": 2
+      }
+    },
+    {
       "name": "comp-531",
       "type": "registry:component",
       "registryDependencies": ["https://originui.com/r/timeline.json"],
