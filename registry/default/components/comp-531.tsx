@@ -12,41 +12,37 @@ import {
 const items = [
   {
     id: 1,
-    date: "Dec 25, 2021",
-    title: "Step One",
-    description: "Desc for step one",
-    completed: true,
+    date: "Mar 15, 2024",
+    title: "Project Kickoff",
+    description: "Initial team meeting.",
   },
   {
     id: 2,
-    date: "Dec 25, 2021",
-    title: "Step Two",
-    description: "Desc for step two",
-    completed: true,
+    date: "Mar 22, 2024",
+    title: "Design Phase",
+    description: "Completed wireframes.",
   },
   {
     id: 3,
-    date: "Dec 25, 2021",
-    title: "Step Three",
-    description: "Desc for step three",
-    completed: true,
+    date: "Apr 5, 2024",
+    title: "Development Sprint",
+    description: "Backend development.",
   },
   {
     id: 4,
-    date: "Dec 25, 2021",
-    title: "Step Four",
-    description: "Desc for step four",
+    date: "Apr 19, 2024",
+    title: "Testing & Deployment",
+    description: "Performance optimization.",
   },
-  
 ];
 
 export default function Component() {
   return (
     <div className="space-y-8">
 
-      <Timeline orientation="horizontal">
+      <Timeline defaultValue={3} orientation="horizontal">
         {items.map((item) => (
-        <TimelineItem key={item.id} completed={item.completed}>
+        <TimelineItem key={item.id} step={item.id}>
           <TimelineHeader>
             <TimelineSeparator />
             <TimelineDate>{item.date}</TimelineDate>

@@ -15,21 +15,18 @@ const items = [
     date: "Mar 15, 2024",
     title: "Project Kickoff",
     description: "Initial team meeting and project scope definition. Established key milestones and resource allocation.",
-    completed: true,
   },
   {
     id: 2,
     date: "Mar 22, 2024",
     title: "Design Phase",
     description: "Completed wireframes and user interface mockups. Stakeholder review and feedback incorporated.",
-    completed: true,
   },
   {
     id: 3,
     date: "Apr 5, 2024",
     title: "Development Sprint",
     description: "Backend API implementation and frontend component development in progress.",
-    completed: true,
   },
   {
     id: 4,
@@ -42,9 +39,9 @@ const items = [
 export default function Component() {
   return (
     <div className="space-y-8">
-      <Timeline>
+      <Timeline defaultValue={3}>
         {items.map((item) => (
-        <TimelineItem key={item.id} completed={item.completed}>
+        <TimelineItem key={item.id} step={item.id}>
           <TimelineHeader>
             <TimelineSeparator />
             <TimelineDate>{item.date}</TimelineDate>
