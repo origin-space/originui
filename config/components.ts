@@ -667,7 +667,9 @@ export const categories: ComponentCategory[] = [
     name: "Timeline",
     components: [
       { name: "comp-530" },
+      { name: "comp-532" },
       { name: "comp-531" },
+      { name: "comp-533" },
     ],
   },
   {

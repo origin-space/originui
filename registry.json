@@ -9471,12 +9471,42 @@
       }
     },
     {
+      "name": "comp-532",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/timeline.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-532.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["timeline"],
+        "colSpan": 2
+      }
+    },    
+    {
       "name": "comp-531",
       "type": "registry:component",
       "registryDependencies": ["https://originui.com/r/timeline.json"],
       "files": [
         {
           "path": "registry/default/components/comp-531.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["timeline"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-533",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/timeline.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-533.tsx",
           "type": "registry:component"
         }
       ],

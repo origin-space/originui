@@ -91,7 +91,7 @@ function TimelineDate({ asChild = false, className, ...props }: TimelineDateProp
   return (
     <Comp
       data-slot="timeline-date"
-      className={cn("block text-xs font-medium text-muted-foreground group-data-[orientation=vertical]/timeline:sm:text-right group-data-[orientation=vertical]/timeline:sm:absolute group-data-[orientation=vertical]/timeline:sm:-left-32 group-data-[orientation=vertical]/timeline:sm:w-20 group-data-[orientation=vertical]/timeline:max-sm:h-4 group-data-[orientation=vertical]/timeline:max-sm:mb-2 group-data-[orientation=horizontal]/timeline:mb-2", className)}
+      className={cn("block text-xs font-medium text-muted-foreground group-data-[orientation=vertical]/timeline:max-sm:h-4 mb-2", className)}
       {...props}
     />
   );
@@ -145,7 +145,7 @@ function TimelineItem({
     <div
       data-slot="timeline-item"
       className={cn(
-        "flex-1 group/timeline-item relative group-data-[orientation=vertical]/timeline:ms-8 group-data-[orientation=horizontal]/timeline:mt-8 group-data-[orientation=vertical]/timeline:sm:ms-32 flex flex-col gap-0.5 group-data-[orientation=vertical]/timeline:not-last:pb-12 group-data-[orientation=horizontal]/timeline:not-last:pe-8 has-[+[data-completed]]:[&_[data-slot=timeline-separator]]:bg-primary",
+        "flex-1 group/timeline-item relative group-data-[orientation=vertical]/timeline:ms-8 group-data-[orientation=horizontal]/timeline:mt-8 flex flex-col gap-0.5 group-data-[orientation=vertical]/timeline:not-last:pb-12 group-data-[orientation=horizontal]/timeline:not-last:pe-8 has-[+[data-completed]]:[&_[data-slot=timeline-separator]]:bg-primary",
         className
       )}
       data-completed={step <= activeStep || undefined}
