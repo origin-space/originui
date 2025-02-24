@@ -663,6 +663,14 @@ export const categories: ComponentCategory[] = [
     ],
   },
   {
+    slug: "timeline",
+    name: "Timeline",
+    components: [
+      { name: "comp-530" },
+      { name: "comp-531" },
+    ],
+  },
+  {
     slug: "tooltip",
     name: "Tooltip",
     components: [
