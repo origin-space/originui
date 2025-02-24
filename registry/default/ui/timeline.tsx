@@ -6,12 +6,10 @@ import * as React from "react";
 
 // Components
 interface TimelineProps extends React.HTMLAttributes<HTMLDivElement> {
-  step?: number;
   orientation?: "horizontal" | "vertical";
 }
 
 function Timeline({
-  step = 1,
   orientation = "vertical",
   className,
   ...props
@@ -24,9 +22,6 @@ function Timeline({
         className
       )}
       data-orientation={orientation}
-      style={{
-        "--timeline-step": step,
-      } as React.CSSProperties}
       {...props}
     />
   );
