@@ -32,12 +32,12 @@ export default function ThemeToggle() {
   return (
     <Toggle
       variant="outline"
-      className="group size-9"
+      className="group size-9 p-0"
       onPressedChange={changeTheme}
       pressed={false}
       aria-label="Toggle theme (default system)"
     >
-      {isClient && (
+      {isClient ? (
         <>
           <SunMoon
             size={18}
@@ -55,6 +55,8 @@ export default function ThemeToggle() {
             aria-hidden="true"
           />
         </>
+      ) : (
+        <div className="h-[18px] w-[18px] animate-pulse rounded bg-gray-200 dark:bg-gray-700" />
       )}
     </Toggle>
   );
