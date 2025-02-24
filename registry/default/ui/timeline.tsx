@@ -91,7 +91,7 @@ function TimelineDate({ asChild = false, className, ...props }: TimelineDateProp
   return (
     <Comp
       data-slot="timeline-date"
-      className={cn("block text-xs font-medium text-muted-foreground group-data-[orientation=vertical]/timeline:max-sm:h-4 mb-2", className)}
+      className={cn("block text-xs font-medium text-muted-foreground group-data-[orientation=vertical]/timeline:max-sm:h-4 mb-1", className)}
       {...props}
     />
   );
@@ -173,7 +173,7 @@ function TimelineTitle({ className, ...props }: React.HTMLAttributes<HTMLHeading
   return (
     <h3
       data-slot="timeline-title"
-      className={cn("text-sm font-medium sm:-mt-0.5", className)}
+      className={cn("text-sm font-medium", className)}
       {...props}
     />
   );

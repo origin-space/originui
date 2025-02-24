@@ -45,7 +45,7 @@ export default function Component() {
           <TimelineHeader>
             <TimelineSeparator />
             <TimelineDate className="group-data-[orientation=vertical]/timeline:sm:absolute group-data-[orientation=vertical]/timeline:sm:w-20 group-data-[orientation=vertical]/timeline:sm:text-right group-data-[orientation=vertical]/timeline:sm:-left-32">{item.date}</TimelineDate>
-            <TimelineTitle>{item.title}</TimelineTitle>
+            <TimelineTitle className="sm:-mt-0.5">{item.title}</TimelineTitle>
             <TimelineIndicator />
           </TimelineHeader>
           <TimelineContent>

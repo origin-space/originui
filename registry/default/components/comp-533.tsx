@@ -42,12 +42,12 @@ export default function Component() {
 
       <Timeline defaultValue={3} orientation="horizontal">
         {items.map((item) => (
-        <TimelineItem key={item.id} step={item.id}>
+        <TimelineItem key={item.id} step={item.id} className="group-data-[orientation=horizontal]/timeline:mt-0">
           <TimelineHeader>
-            <TimelineSeparator />
-            <TimelineDate>{item.date}</TimelineDate>
+            <TimelineSeparator className="group-data-[orientation=horizontal]/timeline:top-8" />
+            <TimelineDate className="mb-10">{item.date}</TimelineDate>
             <TimelineTitle>{item.title}</TimelineTitle>
-            <TimelineIndicator />
+            <TimelineIndicator className="group-data-[orientation=horizontal]/timeline:top-8" />
           </TimelineHeader>
           <TimelineContent>
             {item.description}
