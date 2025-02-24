@@ -38,27 +38,20 @@ const items = [
 
 export default function Component() {
   return (
-    <div className="space-y-8">
-
-      <Timeline defaultValue={3} orientation="horizontal">
-        {items.map((item) => (
-        <TimelineItem key={item.id} step={item.id} className="group-data-[orientation=horizontal]/timeline:mt-0">
-          <TimelineHeader>
-            <TimelineSeparator className="group-data-[orientation=horizontal]/timeline:top-8" />
-            <TimelineDate className="mb-10">{item.date}</TimelineDate>
-            <TimelineTitle>{item.title}</TimelineTitle>
-            <TimelineIndicator className="group-data-[orientation=horizontal]/timeline:top-8" />
-          </TimelineHeader>
-          <TimelineContent>
-            {item.description}
-            </TimelineContent>
-          </TimelineItem>
-        ))}
-      </Timeline>
-
-      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
-        Vertical stepper with inline titles and descriptions
-      </p>
-    </div>
+    <Timeline defaultValue={3} orientation="horizontal">
+      {items.map((item) => (
+      <TimelineItem key={item.id} step={item.id} className="group-data-[orientation=horizontal]/timeline:mt-0">
+        <TimelineHeader>
+          <TimelineSeparator className="group-data-[orientation=horizontal]/timeline:top-8" />
+          <TimelineDate className="mb-10">{item.date}</TimelineDate>
+          <TimelineTitle>{item.title}</TimelineTitle>
+          <TimelineIndicator className="group-data-[orientation=horizontal]/timeline:top-8" />
+        </TimelineHeader>
+        <TimelineContent>
+          {item.description}
+          </TimelineContent>
+        </TimelineItem>
+      ))}
+    </Timeline>
   );
 }
