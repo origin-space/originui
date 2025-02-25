@@ -44,19 +44,17 @@ const items = [
 
 export default function Component() {
   return (
-    <div className="space-y-8">
-      <Timeline defaultValue={3}>
-        {items.map((item) => (
-          <TimelineItem key={item.id} step={item.id} className="w-[calc(50%-1.5rem)] odd:ms-auto even:group-data-[orientation=vertical]/timeline:ms-0 even:group-data-[orientation=vertical]/timeline:me-8 even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-indicator]]:-right-6 even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-indicator]]:left-auto even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-separator]]:-right-6 even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-separator]]:left-auto even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-indicator]]:translate-x-1/2 even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-separator]]:translate-x-1/2 even:text-right">
-            <TimelineHeader>
-              <TimelineSeparator />
-              <TimelineDate>{item.date}</TimelineDate>
-              <TimelineTitle>{item.title}</TimelineTitle>
-              <TimelineIndicator />
-            </TimelineHeader>
-          </TimelineItem>
-        ))}
-      </Timeline>
-    </div>
+    <Timeline defaultValue={3}>
+      {items.map((item) => (
+        <TimelineItem key={item.id} step={item.id} className="w-[calc(50%-1.5rem)] odd:ms-auto even:group-data-[orientation=vertical]/timeline:ms-0 even:group-data-[orientation=vertical]/timeline:me-8 even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-indicator]]:-right-6 even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-indicator]]:left-auto even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-separator]]:-right-6 even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-separator]]:left-auto even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-indicator]]:translate-x-1/2 even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-separator]]:translate-x-1/2 even:text-right">
+          <TimelineHeader>
+            <TimelineSeparator />
+            <TimelineDate>{item.date}</TimelineDate>
+            <TimelineTitle>{item.title}</TimelineTitle>
+            <TimelineIndicator />
+          </TimelineHeader>
+        </TimelineItem>
+      ))}
+    </Timeline>
   );
 }

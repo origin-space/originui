@@ -37,22 +37,20 @@ const items = [
 
 export default function Component() {
   return (
-    <div className="space-y-8">
-      <Timeline defaultValue={3}>
-        {items.map((item) => (
-          <TimelineItem key={item.id} step={item.id}>
-            <TimelineHeader>
-              <TimelineSeparator />
-              <TimelineTitle className="-mt-0.5">{item.title}</TimelineTitle>
-              <TimelineIndicator />
-            </TimelineHeader>
-            <TimelineContent>
-              {item.description}
-              <TimelineDate className="mt-2 mb-0">{item.date}</TimelineDate>
-            </TimelineContent>
-          </TimelineItem>
-        ))}
-      </Timeline>
-    </div>
+    <Timeline defaultValue={3}>
+      {items.map((item) => (
+        <TimelineItem key={item.id} step={item.id}>
+          <TimelineHeader>
+            <TimelineSeparator />
+            <TimelineTitle className="-mt-0.5">{item.title}</TimelineTitle>
+            <TimelineIndicator />
+          </TimelineHeader>
+          <TimelineContent>
+            {item.description}
+            <TimelineDate className="mt-2 mb-0">{item.date}</TimelineDate>
+          </TimelineContent>
+        </TimelineItem>
+      ))}
+    </Timeline>
   );
 }

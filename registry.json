@@ -9576,6 +9576,36 @@
       }
     },
     {
+      "name": "comp-540",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/timeline.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-540.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["timeline"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-541",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/timeline.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-541.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["timeline"],
+        "colSpan": 2
+      }
+    },
+    {
       "name": "comp-531",
       "type": "registry:component",
       "registryDependencies": ["https://originui.com/r/timeline.json"],

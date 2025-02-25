@@ -36,18 +36,16 @@ const items = [
 
 export default function Component() {
   return (
-    <div className="space-y-8">
-      <Timeline defaultValue={3}>
-        {items.map((item) => (
+    <Timeline defaultValue={3}>
+      {items.map((item) => (
         <TimelineItem key={item.id} step={item.id}>
           <TimelineHeader>
             <TimelineSeparator />
             <TimelineTitle className="-mt-0.5">{item.title}</TimelineTitle>
             <TimelineIndicator />
           </TimelineHeader>
-          </TimelineItem>
-        ))}
-      </Timeline>
-    </div>
+        </TimelineItem>
+      ))}
+    </Timeline>
   );
 }

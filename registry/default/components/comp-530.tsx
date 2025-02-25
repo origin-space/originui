@@ -38,9 +38,8 @@ const items = [
 
 export default function Component() {
   return (
-    <div className="space-y-8">
-      <Timeline defaultValue={3}>
-        {items.map((item) => (
+    <Timeline defaultValue={3}>
+      {items.map((item) => (
         <TimelineItem key={item.id} step={item.id}>
           <TimelineHeader>
             <TimelineSeparator />
@@ -50,10 +49,9 @@ export default function Component() {
           </TimelineHeader>
           <TimelineContent>
             {item.description}
-            </TimelineContent>
-          </TimelineItem>
-        ))}
-      </Timeline>
-    </div>
+          </TimelineContent>
+        </TimelineItem>
+      ))}
+    </Timeline>
   );
 }
