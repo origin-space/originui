@@ -2,6 +2,7 @@ export interface ComponentCategory {
   slug: string;
   name: string;
   components: { name: string }[];
+  isNew?: boolean;
 }
 
 export const categories: ComponentCategory[] = [
@@ -665,6 +666,7 @@ export const categories: ComponentCategory[] = [
   {
     slug: "timeline",
     name: "Timeline",
+    isNew: true,
     components: [
       { name: "comp-530" },
       { name: "comp-531" },

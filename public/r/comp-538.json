@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-538",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/timeline.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-538.tsx",
+      "content": "import {\n  Timeline,\n  TimelineContent,\n  TimelineDate,\n  TimelineItem,\n} from \"@/registry/default/ui/timeline\";\n\nconst items = [\n  {\n    id: 1,\n    date: new Date(\"2024-01-09T10:55:00\"),\n    description: \"System backup completed successfully.\",\n  },\n  {\n    id: 2,\n    date: new Date(\"2024-01-09T10:50:00\"),\n    description: \"User authentication service restarted due to configuration update.\",\n  },\n  {\n    id: 3,\n    date: new Date(\"2024-01-09T10:45:00\"),\n    description: \"Warning: High CPU usage detected on worker node-03.\",\n  },\n  {\n    id: 4,\n    date: new Date(\"2024-01-09T10:40:00\"),\n    description: \"New deployment initiated for api-service v2.1.0.\",\n  },\n];\n\nexport default function Component() {\n  return (\n    <Timeline className=\"divide-y rounded-lg border\">\n      {items.map((item) => (\n        <TimelineItem key={item.id} step={item.id} className=\"m-0! px-4! py-3!\">\n          <TimelineContent className=\"text-foreground\">\n            {item.description}\n            <TimelineDate className=\"mt-1\">\n              {item.date.toLocaleDateString(\"en-US\", {\n                year: \"numeric\",\n                month: \"long\",\n                day: \"numeric\",\n              })}{\" \"}\n              at{\" \"}\n              {item.date.toLocaleTimeString(\"en-US\", {\n                hour: \"numeric\",\n                minute: \"2-digit\",\n                hour12: true,\n              })}\n            </TimelineDate>\n          </TimelineContent>\n        </TimelineItem>\n      ))}\n    </Timeline>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "timeline",
+      "vertical timeline"
+    ],
+    "colSpan": 2
+  }
+}

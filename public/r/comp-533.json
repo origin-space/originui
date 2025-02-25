@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-533",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/timeline.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-533.tsx",
+      "content": "import {\n  Timeline,\n  TimelineContent,\n  TimelineDate,\n  TimelineHeader,\n  TimelineIndicator,\n  TimelineItem,\n  TimelineSeparator,\n  TimelineTitle,\n} from \"@/registry/default/ui/timeline\";\n\nconst items = [\n  {\n    id: 1,\n    date: \"15 minutes ago\",\n    title: \"Pull Request Submitted\",\n    description:\n      \"Submitted PR #342 with new feature implementation. Waiting for code review from team leads.\",\n  },\n  {\n    id: 2,\n    date: \"10 minutes ago\",\n    title: \"CI Pipeline Started\",\n    description:\n      \"Automated tests and build process initiated. Running unit tests and code quality checks.\",\n  },\n  {\n    id: 3,\n    date: \"5 minutes ago\",\n    title: \"Code Review Feedback\",\n    description:\n      \"Received comments on PR. Minor adjustments needed in error handling and documentation.\",\n  },\n  {\n    id: 4,\n    title: \"Changes Pushed\",\n    description:\n      \"Implemented requested changes and pushed updates to feature branch. Awaiting final approval.\",\n  },\n];\n\nexport default function Component() {\n  return (\n    <Timeline defaultValue={3}>\n      {items.map((item) => (\n        <TimelineItem key={item.id} step={item.id}>\n          <TimelineHeader>\n            <TimelineSeparator />\n            <TimelineTitle className=\"-mt-0.5\">{item.title}</TimelineTitle>\n            <TimelineIndicator />\n          </TimelineHeader>\n          <TimelineContent>\n            {item.description}\n            <TimelineDate className=\"mt-2 mb-0\">{item.date}</TimelineDate>\n          </TimelineContent>\n        </TimelineItem>\n      ))}\n    </Timeline>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "timeline",
+      "vertical timeline"
+    ],
+    "colSpan": 2
+  }
+}

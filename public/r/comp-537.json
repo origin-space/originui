@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-537",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/timeline.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-537.tsx",
+      "content": "import {\n  Timeline,\n  TimelineDate,\n  TimelineHeader,\n  TimelineIndicator,\n  TimelineItem,\n  TimelineSeparator,\n  TimelineTitle,\n} from \"@/registry/default/ui/timeline\";\n\nconst items = [\n  {\n    id: 1,\n    date: \"Mar 15, 2024\",\n    title: \"Project Kickoff\",\n  },\n  {\n    id: 2,\n    date: \"Mar 22, 2024\",\n    title: \"Design Phase\",\n  },\n  {\n    id: 3,\n    date: \"Apr 5, 2024\",\n    title: \"Development Sprint\",\n  },\n  {\n    id: 4,\n    date: \"Apr 19, 2024\",\n    title: \"Testing & Deployment\",\n  },\n  {\n    id: 5,\n    date: \"May 3, 2024\",\n    title: \"User Training\",\n  },\n  {\n    id: 6,\n    date: \"May 17, 2024\",\n    title: \"Project Handover\",\n  },\n];\n\nexport default function Component() {\n  return (\n    <Timeline defaultValue={3}>\n      {items.map((item) => (\n        <TimelineItem\n          key={item.id}\n          step={item.id}\n          className=\"w-[calc(50%-1.5rem)] odd:ms-auto even:text-right even:group-data-[orientation=vertical]/timeline:ms-0 even:group-data-[orientation=vertical]/timeline:me-8 even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-indicator]]:-right-6 even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-indicator]]:left-auto even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-indicator]]:translate-x-1/2 even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-separator]]:-right-6 even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-separator]]:left-auto even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-separator]]:translate-x-1/2\"\n        >\n          <TimelineHeader>\n            <TimelineSeparator />\n            <TimelineDate>{item.date}</TimelineDate>\n            <TimelineTitle>{item.title}</TimelineTitle>\n            <TimelineIndicator />\n          </TimelineHeader>\n        </TimelineItem>\n      ))}\n    </Timeline>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "timeline",
+      "vertical timeline"
+    ],
+    "colSpan": 2
+  }
+}

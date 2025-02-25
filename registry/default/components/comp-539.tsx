@@ -1,5 +1,5 @@
 import { Timeline, TimelineContent, TimelineItem } from "@/registry/default/ui/timeline";
-import { LucideIcon, MessageCircleIcon, PencilIcon, PenIcon, PlusIcon } from "lucide-react";
+import { BookOpenIcon, LucideIcon, MessageCircleIcon, PencilIcon, PlusIcon } from "lucide-react";
 
 const items: { id: number; user: string; image: string; action: ActionType; date: Date }[] = [
   {
@@ -36,7 +36,7 @@ type ActionType = "post" | "reply" | "edit" | "create";
 
 function getActionIcon(action: ActionType): LucideIcon {
   const icons: Record<ActionType, LucideIcon> = {
-    post: PenIcon,
+    post: BookOpenIcon,
     reply: MessageCircleIcon,
     edit: PencilIcon,
     create: PlusIcon,
