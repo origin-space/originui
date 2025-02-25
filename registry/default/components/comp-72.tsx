@@ -11,7 +11,7 @@ export default function Component() {
       >
         <span className="bg-background inline-flex px-2">Textarea with label animation</span>
       </label>
-      <Textarea id={id} placeholder="" />
+      <Textarea id={id} placeholder=" " />
     </div>
   );
 }
