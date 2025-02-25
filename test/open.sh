@@ -19,7 +19,7 @@ if lsof -i:4000 -t >/dev/null; then
   kill $(lsof -t -i:4000)
 fi
 
-# start the app on port 4000
+# start the deom app on port 4000 temporarily to open components every 5 seconds
 pnpm run dev -p 4000 &
 
 # open all components in browser
