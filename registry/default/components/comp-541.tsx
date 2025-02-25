@@ -1,10 +1,5 @@
-import {
-  Timeline,
-  TimelineContent,
-  TimelineItem,
-} from "@/registry/default/ui/timeline";
-import { PenIcon, MessageCircleIcon, PencilIcon, PlusIcon } from "lucide-react";
-import { LucideIcon } from "lucide-react";
+import { Timeline, TimelineContent, TimelineItem } from "@/registry/default/ui/timeline";
+import { LucideIcon, MessageCircleIcon, PencilIcon, PenIcon, PlusIcon } from "lucide-react";
 
 const items: { id: number; user: string; image: string; action: ActionType; date: Date }[] = [
   {
@@ -37,7 +32,7 @@ const items: { id: number; user: string; image: string; action: ActionType; date
   },
 ];
 
-type ActionType = 'post' | 'reply' | 'edit' | 'create';
+type ActionType = "post" | "reply" | "edit" | "create";
 
 function getActionIcon(action: ActionType): LucideIcon {
   const icons: Record<ActionType, LucideIcon> = {
@@ -67,32 +62,41 @@ function getRelativeTimeString(date: Date): string {
     return `${diffInSeconds} seconds ago`;
   } else if (diffInSeconds < 3600) {
     const minutes = Math.floor(diffInSeconds / 60);
-    return `${minutes} ${minutes === 1 ? 'minute' : 'minutes'} ago`;
+    return `${minutes} ${minutes === 1 ? "minute" : "minutes"} ago`;
   } else if (diffInSeconds < 86400) {
     const hours = Math.floor(diffInSeconds / 3600);
-    return `${hours} ${hours === 1 ? 'hour' : 'hours'} ago`;
+    return `${hours} ${hours === 1 ? "hour" : "hours"} ago`;
   } else {
     const days = Math.floor(diffInSeconds / 86400);
-    return `${days} ${days === 1 ? 'day' : 'days'} ago`;
+    return `${days} ${days === 1 ? "day" : "days"} ago`;
   }
 }
 
 export default function Component() {
   return (
     <div className="space-y-3">
-      <div className="text-xs text-muted-foreground font-medium">Activity</div>
+      <div className="text-muted-foreground text-xs font-medium">Activity</div>
       <Timeline>
         {items.map((item) => {
           const ActionIcon = getActionIcon(item.action);
           return (
-            <TimelineItem key={item.id} step={item.id} className="m-0! py-2.5! flex-row items-center gap-3">
+            <TimelineItem
+              key={item.id}
+              step={item.id}
+              className="m-0! flex-row items-center gap-3 py-2.5!"
+            >
               <ActionIcon className="text-muted-foreground/80" size={16} />
               <img src={item.image} alt={item.user} className="size-6 rounded-full" />
               <TimelineContent className="text-foreground">
-                <a className="font-medium hover:underline" href="#">{item.user}</a>
+                <a className="font-medium hover:underline" href="#">
+                  {item.user}
+                </a>
                 <span className="font-normal">
-                  {" "}{getActionText(item.action)}{" "}
-                  <a className="hover:underline" href="#">{getRelativeTimeString(item.date)}</a>
+                  {" "}
+                  {getActionText(item.action)}{" "}
+                  <a className="hover:underline" href="#">
+                    {getRelativeTimeString(item.date)}
+                  </a>
                 </span>
               </TimelineContent>
             </TimelineItem>

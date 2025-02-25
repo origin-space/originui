@@ -9514,7 +9514,7 @@
         "tags": ["timeline"],
         "colSpan": 2
       }
-    },  
+    },
     {
       "name": "comp-534",
       "type": "registry:component",

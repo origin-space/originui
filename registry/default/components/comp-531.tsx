@@ -40,16 +40,14 @@ export default function Component() {
   return (
     <Timeline defaultValue={3} orientation="horizontal">
       {items.map((item) => (
-      <TimelineItem key={item.id} step={item.id}>
-        <TimelineHeader>
-          <TimelineSeparator />
-          <TimelineDate>{item.date}</TimelineDate>
-          <TimelineTitle>{item.title}</TimelineTitle>
-          <TimelineIndicator />
-        </TimelineHeader>
-        <TimelineContent>
-          {item.description}
-          </TimelineContent>
+        <TimelineItem key={item.id} step={item.id}>
+          <TimelineHeader>
+            <TimelineSeparator />
+            <TimelineDate>{item.date}</TimelineDate>
+            <TimelineTitle>{item.title}</TimelineTitle>
+            <TimelineIndicator />
+          </TimelineHeader>
+          <TimelineContent>{item.description}</TimelineContent>
         </TimelineItem>
       ))}
     </Timeline>
