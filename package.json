@@ -28,7 +28,8 @@
     "build": "pnpm registry:build && pnpm format && next build",
     "registry:build": "shadcn build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:registry": "bash test/registry.sh"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
