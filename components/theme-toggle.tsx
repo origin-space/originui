@@ -2,11 +2,30 @@
 
 import { RiMoonClearLine, RiSunLine } from "@remixicon/react";
 import { useTheme } from "next-themes";
-import { useId } from "react";
+import { useId, useState } from "react";
 
 export default function ThemeToggle() {
   const id = useId();
   const { theme, setTheme } = useTheme();
+  const [system, setSystem] = useState(false);
+
+  const smartToggle = () => {
+    /* The smart toggle by @nrjdalal */
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (theme === "system") {
+      setTheme(prefersDarkScheme ? "light" : "dark");
+      setSystem(false);
+    } else if (
+      (theme === "light" && !prefersDarkScheme) ||
+      (theme === "dark" && prefersDarkScheme)
+    ) {
+      setTheme(theme === "light" ? "dark" : "light");
+      setSystem(false);
+    } else {
+      setTheme("system");
+      setSystem(true);
+    }
+  };
 
   return (
     <div className="flex flex-col justify-center">
@@ -15,8 +34,8 @@ export default function ThemeToggle() {
         name="theme-toggle"
         id={id}
         className="peer sr-only"
-        checked={theme === "dark"}
-        onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
+        checked={system}
+        onChange={smartToggle}
         aria-label="Toggle dark mode"
       />
       <label
@@ -26,7 +45,7 @@ export default function ThemeToggle() {
       >
         <RiSunLine className="dark:hidden" size={20} aria-hidden="true" />
         <RiMoonClearLine className="hidden dark:block" size={20} aria-hidden="true" />
-        <span className="sr-only">Switch to light / dark version</span>
+        <span className="sr-only">Switch to system/light/dark version</span>
       </label>
     </div>
   );
