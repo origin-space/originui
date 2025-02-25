@@ -8,11 +8,6 @@
 # remove out directory if it exists
 rm -rf out
 
-# check if the app is running on port 3000 else start the app temporarily
-if ! lsof -i:3000 -t >/dev/null; then
-  pnpm run dev &
-fi
-
 # clone bare shadcn-tailwind-v4 project from https://github.com/nrjdalal/awesome-templates to out directory without .git directory
 pnpx gitpick@latest nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-shadcn-taliwind-v4 out
 
@@ -25,7 +20,7 @@ for file in $(find registry/default/components -name '*.tsx' | sort -V); do
   filename=$(basename -- "$file" .tsx)
 
   # add component from registry-item to out directory
-  pnpx shadcn@latest add "http://localhost:3000/r/${filename}.json" -o -c "./out"
+  pnpx shadcn@latest add "https://originui.com/r/${filename}.json" -o -c "./out"
 
   # create directory for component
   mkdir -p "out/src/app/${filename}"
@@ -36,6 +31,3 @@ import Component from "@/components/${filename}";
 export default Component;
 EOF
 done
-
-# close the app
-kill $(lsof -t -i:3000)
