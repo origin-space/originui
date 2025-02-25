@@ -27,7 +27,6 @@ export default function Page() {
               componentsCount={category.components.length}
             />
           ))}
-          <CategoryCard slug="timeline" name="Timeline" />
           <CategoryCard slug="easings" name="Easing Classes" isEasing={true} />
         </div>
       </div>

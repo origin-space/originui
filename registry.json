@@ -9456,21 +9456,6 @@
       }
     },
     {
-      "name": "comp-538",
-      "type": "registry:component",
-      "registryDependencies": ["https://originui.com/r/timeline.json"],
-      "files": [
-        {
-          "path": "registry/default/components/comp-538.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "meta": {
-        "tags": ["timeline"],
-        "colSpan": 2
-      }
-    },
-    {
       "name": "comp-530",
       "type": "registry:component",
       "registryDependencies": ["https://originui.com/r/timeline.json"],
@@ -9481,22 +9466,22 @@
         }
       ],
       "meta": {
-        "tags": ["timeline"],
+        "tags": ["timeline", "vertical timeline"],
         "colSpan": 2
       }
     },
     {
-      "name": "comp-539",
+      "name": "comp-531",
       "type": "registry:component",
       "registryDependencies": ["https://originui.com/r/timeline.json"],
       "files": [
         {
-          "path": "registry/default/components/comp-539.tsx",
+          "path": "registry/default/components/comp-531.tsx",
           "type": "registry:component"
         }
       ],
       "meta": {
-        "tags": ["timeline"],
+        "tags": ["timeline", "vertical timeline"],
         "colSpan": 2
       }
     },
@@ -9511,7 +9496,22 @@
         }
       ],
       "meta": {
-        "tags": ["timeline"],
+        "tags": ["timeline", "vertical timeline"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-533",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/timeline.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-533.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["timeline", "vertical timeline"],
         "colSpan": 2
       }
     },
@@ -9526,7 +9526,7 @@
         }
       ],
       "meta": {
-        "tags": ["timeline"],
+        "tags": ["timeline", "vertical timeline"],
         "colSpan": 2
       }
     },
@@ -9541,7 +9541,7 @@
         }
       ],
       "meta": {
-        "tags": ["timeline"],
+        "tags": ["timeline", "vertical timeline"],
         "colSpan": 2
       }
     },
@@ -9556,7 +9556,7 @@
         }
       ],
       "meta": {
-        "tags": ["timeline"],
+        "tags": ["timeline", "vertical timeline"],
         "colSpan": 2
       }
     },
@@ -9571,7 +9571,37 @@
         }
       ],
       "meta": {
-        "tags": ["timeline"],
+        "tags": ["timeline", "vertical timeline"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-538",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/timeline.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-538.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["timeline", "vertical timeline"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-539",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/timeline.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-539.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["timeline", "vertical timeline"],
         "colSpan": 2
       }
     },
@@ -9587,7 +9617,7 @@
       ],
       "meta": {
         "tags": ["timeline"],
-        "colSpan": 2
+        "colSpan": 3
       }
     },
     {
@@ -9597,36 +9627,6 @@
       "files": [
         {
           "path": "registry/default/components/comp-541.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "meta": {
-        "tags": ["timeline"],
-        "colSpan": 2
-      }
-    },
-    {
-      "name": "comp-531",
-      "type": "registry:component",
-      "registryDependencies": ["https://originui.com/r/timeline.json"],
-      "files": [
-        {
-          "path": "registry/default/components/comp-531.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "meta": {
-        "tags": ["timeline"],
-        "colSpan": 3
-      }
-    },
-    {
-      "name": "comp-533",
-      "type": "registry:component",
-      "registryDependencies": ["https://originui.com/r/timeline.json"],
-      "files": [
-        {
-          "path": "registry/default/components/comp-533.tsx",
           "type": "registry:component"
         }
       ],

@@ -1,65 +1,108 @@
-import {
-  Timeline,
-  TimelineContent,
-  TimelineDate,
-  TimelineHeader,
-  TimelineIndicator,
-  TimelineItem,
-  TimelineSeparator,
-  TimelineTitle,
-} from "@/registry/default/ui/timeline";
-import { CheckIcon } from "lucide-react";
+import { Timeline, TimelineContent, TimelineItem } from "@/registry/default/ui/timeline";
+import { LucideIcon, MessageCircleIcon, PencilIcon, PenIcon, PlusIcon } from "lucide-react";
 
-const items = [
+const items: { id: number; user: string; image: string; action: ActionType; date: Date }[] = [
   {
     id: 1,
-    date: "Mar 15, 2024",
-    title: "Project Kickoff",
-    description:
-      "Initial team meeting and project scope definition. Established key milestones and resource allocation.",
+    user: "Matt",
+    image: "/avatar-40-02.jpg",
+    action: "post",
+    date: new Date(Date.now() - 59000), // 59 seconds ago
   },
   {
     id: 2,
-    date: "Mar 22, 2024",
-    title: "Design Phase",
-    description:
-      "Completed wireframes and user interface mockups. Stakeholder review and feedback incorporated.",
+    user: "Matt",
+    image: "/avatar-40-02.jpg",
+    action: "reply",
+    date: new Date(Date.now() - 180000), // 3 minutes ago
   },
   {
     id: 3,
-    date: "Apr 5, 2024",
-    title: "Development Sprint",
-    description: "Backend API implementation and frontend component development in progress.",
+    user: "Matt",
+    image: "/avatar-40-02.jpg",
+    action: "edit",
+    date: new Date(Date.now() - 300000), // 5 minutes ago
   },
   {
     id: 4,
-    date: "Apr 19, 2024",
-    title: "Testing & Deployment",
-    description:
-      "Quality assurance testing, performance optimization, and production deployment preparation.",
+    user: "Matt",
+    image: "/avatar-40-02.jpg",
+    action: "create",
+    date: new Date(Date.now() - 600000), // 10 minutes ago
   },
 ];
 
+type ActionType = "post" | "reply" | "edit" | "create";
+
+function getActionIcon(action: ActionType): LucideIcon {
+  const icons: Record<ActionType, LucideIcon> = {
+    post: PenIcon,
+    reply: MessageCircleIcon,
+    edit: PencilIcon,
+    create: PlusIcon,
+  };
+  return icons[action];
+}
+
+function getActionText(action: ActionType): string {
+  const texts: Record<ActionType, string> = {
+    post: "wrote a new post",
+    reply: "replied to a comment",
+    edit: "edited a post",
+    create: "created a new project",
+  };
+  return texts[action];
+}
+
+function getRelativeTimeString(date: Date): string {
+  const now = new Date();
+  const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000);
+
+  if (diffInSeconds < 60) {
+    return `${diffInSeconds} seconds ago`;
+  } else if (diffInSeconds < 3600) {
+    const minutes = Math.floor(diffInSeconds / 60);
+    return `${minutes} ${minutes === 1 ? "minute" : "minutes"} ago`;
+  } else if (diffInSeconds < 86400) {
+    const hours = Math.floor(diffInSeconds / 3600);
+    return `${hours} ${hours === 1 ? "hour" : "hours"} ago`;
+  } else {
+    const days = Math.floor(diffInSeconds / 86400);
+    return `${days} ${days === 1 ? "day" : "days"} ago`;
+  }
+}
+
 export default function Component() {
   return (
-    <Timeline defaultValue={3}>
-      {items.map((item) => (
-        <TimelineItem
-          key={item.id}
-          step={item.id}
-          className="group-data-[orientation=vertical]/timeline:ms-10"
-        >
-          <TimelineHeader>
-            <TimelineSeparator className="group-data-[orientation=vertical]/timeline:-left-7 group-data-[orientation=vertical]/timeline:h-[calc(100%-1.5rem-0.25rem)] group-data-[orientation=vertical]/timeline:translate-y-6.5" />
-            <TimelineDate>{item.date}</TimelineDate>
-            <TimelineTitle>{item.title}</TimelineTitle>
-            <TimelineIndicator className="group-data-completed/timeline-item:bg-primary group-data-completed/timeline-item:text-primary-foreground flex size-6 items-center justify-center group-data-completed/timeline-item:border-none group-data-[orientation=vertical]/timeline:-left-7">
-              <CheckIcon className="group-not-data-completed/timeline-item:hidden" size={16} />
-            </TimelineIndicator>
-          </TimelineHeader>
-          <TimelineContent>{item.description}</TimelineContent>
-        </TimelineItem>
-      ))}
-    </Timeline>
+    <div className="space-y-3">
+      <div className="text-muted-foreground text-xs font-medium">Activity</div>
+      <Timeline>
+        {items.map((item) => {
+          const ActionIcon = getActionIcon(item.action);
+          return (
+            <TimelineItem
+              key={item.id}
+              step={item.id}
+              className="m-0! flex-row items-center gap-3 py-2.5!"
+            >
+              <ActionIcon className="text-muted-foreground/80" size={16} />
+              <img src={item.image} alt={item.user} className="size-6 rounded-full" />
+              <TimelineContent className="text-foreground">
+                <a className="font-medium hover:underline" href="#">
+                  {item.user}
+                </a>
+                <span className="font-normal">
+                  {" "}
+                  {getActionText(item.action)}{" "}
+                  <a className="hover:underline" href="#">
+                    {getRelativeTimeString(item.date)}
+                  </a>
+                </span>
+              </TimelineContent>
+            </TimelineItem>
+          );
+        })}
+      </Timeline>
+    </div>
   );
 }

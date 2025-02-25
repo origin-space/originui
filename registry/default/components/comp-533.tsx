@@ -12,46 +12,47 @@ import {
 const items = [
   {
     id: 1,
-    date: "Mar 15, 2024",
-    title: "Project Kickoff",
-    description: "Initial team meeting.",
+    date: "15 minutes ago",
+    title: "Pull Request Submitted",
+    description:
+      "Submitted PR #342 with new feature implementation. Waiting for code review from team leads.",
   },
   {
     id: 2,
-    date: "Mar 22, 2024",
-    title: "Design Phase",
-    description: "Completed wireframes.",
+    date: "10 minutes ago",
+    title: "CI Pipeline Started",
+    description:
+      "Automated tests and build process initiated. Running unit tests and code quality checks.",
   },
   {
     id: 3,
-    date: "Apr 5, 2024",
-    title: "Development Sprint",
-    description: "Backend development.",
+    date: "5 minutes ago",
+    title: "Code Review Feedback",
+    description:
+      "Received comments on PR. Minor adjustments needed in error handling and documentation.",
   },
   {
     id: 4,
-    date: "Apr 19, 2024",
-    title: "Testing & Deployment",
-    description: "Performance optimization.",
+    title: "Changes Pushed",
+    description:
+      "Implemented requested changes and pushed updates to feature branch. Awaiting final approval.",
   },
 ];
 
 export default function Component() {
   return (
-    <Timeline defaultValue={3} orientation="horizontal">
+    <Timeline defaultValue={3}>
       {items.map((item) => (
-        <TimelineItem
-          key={item.id}
-          step={item.id}
-          className="group-data-[orientation=horizontal]/timeline:mt-0"
-        >
+        <TimelineItem key={item.id} step={item.id}>
           <TimelineHeader>
-            <TimelineSeparator className="group-data-[orientation=horizontal]/timeline:top-8" />
-            <TimelineDate className="mb-10">{item.date}</TimelineDate>
-            <TimelineTitle>{item.title}</TimelineTitle>
-            <TimelineIndicator className="group-data-[orientation=horizontal]/timeline:top-8" />
+            <TimelineSeparator />
+            <TimelineTitle className="-mt-0.5">{item.title}</TimelineTitle>
+            <TimelineIndicator />
           </TimelineHeader>
-          <TimelineContent>{item.description}</TimelineContent>
+          <TimelineContent>
+            {item.description}
+            <TimelineDate className="mt-2 mb-0">{item.date}</TimelineDate>
+          </TimelineContent>
         </TimelineItem>
       ))}
     </Timeline>

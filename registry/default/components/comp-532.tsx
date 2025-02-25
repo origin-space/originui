@@ -43,17 +43,11 @@ export default function Component() {
   return (
     <Timeline defaultValue={3}>
       {items.map((item) => (
-        <TimelineItem
-          key={item.id}
-          step={item.id}
-          className="group-data-[orientation=vertical]/timeline:sm:ms-32"
-        >
+        <TimelineItem key={item.id} step={item.id}>
           <TimelineHeader>
             <TimelineSeparator />
-            <TimelineDate className="group-data-[orientation=vertical]/timeline:sm:absolute group-data-[orientation=vertical]/timeline:sm:-left-32 group-data-[orientation=vertical]/timeline:sm:w-20 group-data-[orientation=vertical]/timeline:sm:text-right">
-              {item.date}
-            </TimelineDate>
-            <TimelineTitle className="sm:-mt-0.5">{item.title}</TimelineTitle>
+            <TimelineDate>{item.date}</TimelineDate>
+            <TimelineTitle>{item.title}</TimelineTitle>
             <TimelineIndicator />
           </TimelineHeader>
           <TimelineContent>{item.description}</TimelineContent>

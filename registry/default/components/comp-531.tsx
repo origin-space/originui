@@ -14,37 +14,46 @@ const items = [
     id: 1,
     date: "Mar 15, 2024",
     title: "Project Kickoff",
-    description: "Initial team meeting.",
+    description:
+      "Initial team meeting and project scope definition. Established key milestones and resource allocation.",
   },
   {
     id: 2,
     date: "Mar 22, 2024",
     title: "Design Phase",
-    description: "Completed wireframes.",
+    description:
+      "Completed wireframes and user interface mockups. Stakeholder review and feedback incorporated.",
   },
   {
     id: 3,
     date: "Apr 5, 2024",
     title: "Development Sprint",
-    description: "Backend development.",
+    description: "Backend API implementation and frontend component development in progress.",
   },
   {
     id: 4,
     date: "Apr 19, 2024",
     title: "Testing & Deployment",
-    description: "Performance optimization.",
+    description:
+      "Quality assurance testing, performance optimization, and production deployment preparation.",
   },
 ];
 
 export default function Component() {
   return (
-    <Timeline defaultValue={3} orientation="horizontal">
+    <Timeline defaultValue={3}>
       {items.map((item) => (
-        <TimelineItem key={item.id} step={item.id}>
+        <TimelineItem
+          key={item.id}
+          step={item.id}
+          className="group-data-[orientation=vertical]/timeline:sm:ms-32"
+        >
           <TimelineHeader>
             <TimelineSeparator />
-            <TimelineDate>{item.date}</TimelineDate>
-            <TimelineTitle>{item.title}</TimelineTitle>
+            <TimelineDate className="group-data-[orientation=vertical]/timeline:sm:absolute group-data-[orientation=vertical]/timeline:sm:-left-32 group-data-[orientation=vertical]/timeline:sm:w-20 group-data-[orientation=vertical]/timeline:sm:text-right">
+              {item.date}
+            </TimelineDate>
+            <TimelineTitle className="sm:-mt-0.5">{item.title}</TimelineTitle>
             <TimelineIndicator />
           </TimelineHeader>
           <TimelineContent>{item.description}</TimelineContent>

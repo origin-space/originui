@@ -1,52 +1,54 @@
 import {
   Timeline,
-  TimelineHeader,
-  TimelineIndicator,
+  TimelineContent,
+  TimelineDate,
   TimelineItem,
-  TimelineSeparator,
-  TimelineTitle,
 } from "@/registry/default/ui/timeline";
 
 const items = [
   {
     id: 1,
-    date: "Mar 15, 2024",
-    title: "Project Kickoff",
-    description:
-      "Initial team meeting and project scope definition. Established key milestones and resource allocation.",
+    date: new Date("2024-01-09T10:55:00"),
+    description: "System backup completed successfully.",
   },
   {
     id: 2,
-    date: "Mar 22, 2024",
-    title: "Design Phase",
-    description:
-      "Completed wireframes and user interface mockups. Stakeholder review and feedback incorporated.",
+    date: new Date("2024-01-09T10:50:00"),
+    description: "User authentication service restarted due to configuration update.",
   },
   {
     id: 3,
-    date: "Apr 5, 2024",
-    title: "Development Sprint",
-    description: "Backend API implementation and frontend component development in progress.",
+    date: new Date("2024-01-09T10:45:00"),
+    description: "Warning: High CPU usage detected on worker node-03.",
   },
   {
     id: 4,
-    date: "Apr 19, 2024",
-    title: "Testing & Deployment",
-    description:
-      "Quality assurance testing, performance optimization, and production deployment preparation.",
+    date: new Date("2024-01-09T10:40:00"),
+    description: "New deployment initiated for api-service v2.1.0.",
   },
 ];
 
 export default function Component() {
   return (
-    <Timeline defaultValue={3}>
+    <Timeline className="divide-y rounded-lg border">
       {items.map((item) => (
-        <TimelineItem key={item.id} step={item.id}>
-          <TimelineHeader>
-            <TimelineSeparator />
-            <TimelineTitle className="-mt-0.5">{item.title}</TimelineTitle>
-            <TimelineIndicator />
-          </TimelineHeader>
+        <TimelineItem key={item.id} step={item.id} className="m-0! px-4! py-3!">
+          <TimelineContent className="text-foreground">
+            {item.description}
+            <TimelineDate className="mt-1">
+              {item.date.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}{" "}
+              at{" "}
+              {item.date.toLocaleTimeString("en-US", {
+                hour: "numeric",
+                minute: "2-digit",
+                hour12: true,
+              })}
+            </TimelineDate>
+          </TimelineContent>
         </TimelineItem>
       ))}
     </Timeline>
