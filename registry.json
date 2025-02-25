@@ -9456,12 +9456,42 @@
       }
     },
     {
+      "name": "comp-538",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/timeline.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-538.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["timeline"],
+        "colSpan": 2
+      }
+    },
+    {
       "name": "comp-530",
       "type": "registry:component",
       "registryDependencies": ["https://originui.com/r/timeline.json"],
       "files": [
         {
           "path": "registry/default/components/comp-530.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["timeline"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-539",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/timeline.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-539.tsx",
           "type": "registry:component"
         }
       ],

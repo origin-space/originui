@@ -666,9 +666,11 @@ export const categories: ComponentCategory[] = [
     slug: "timeline",
     name: "Timeline",
     components: [
+      { name: "comp-538" },
       { name: "comp-530" },
       { name: "comp-532" },
       { name: "comp-534" },
+      { name: "comp-539" },
       { name: "comp-535" },
       { name: "comp-536" },
       { name: "comp-537" },

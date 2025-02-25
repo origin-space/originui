@@ -59,7 +59,7 @@ export default function Component() {
             </TimelineHeader>
             <TimelineContent className="px-4 py-3 rounded-lg border mt-2 text-foreground">
               {item.description}
-              <TimelineDate className="mt-2 mb-0">{item.date}</TimelineDate>
+              <TimelineDate className="mt-1 mb-0">{item.date}</TimelineDate>
             </TimelineContent>
           </TimelineItem>
         ))}
