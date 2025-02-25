@@ -13,7 +13,7 @@ if ! lsof -i:3000 -t >/dev/null; then
   pnpm run dev &
 fi
 
-# clone shadcn-tailwind-v4 project to out directory without .git directory
+# clone bare shadcn-tailwind-v4 project from https://github.com/nrjdalal/awesome-templates to out directory without .git directory
 pnpx gitpick@latest nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-shadcn-taliwind-v4 out
 
 # replace globals.css with originui globals.css
