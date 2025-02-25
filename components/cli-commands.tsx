@@ -11,7 +11,7 @@ export default function CliCommands({ name }: { name: string }) {
   const commands = {
     pnpm: `pnpm dlx shadcn@latest add https://originui.com/r/${name}.json`,
     npm: `npx shadcn@latest add https://originui.com/r/${name}.json`,
-    yarn: `npx dlx shadcn@latest add https://originui.com/r/${name}.json`,
+    yarn: `npx shadcn@latest add https://originui.com/r/${name}.json`,
     bun: `bunx --bun shadcn@latest add https://originui.com/r/${name}.json`,
   };
 
