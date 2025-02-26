@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-50",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "react",
+    "react-payment-inputs",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "target": "components/originui/comp-50.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/components/ui/input\";\nimport { CreditCardIcon } from \"lucide-react\";\nimport { useId } from \"react\";\nimport { usePaymentInputs } from \"react-payment-inputs\";\nimport images, { type CardImages } from \"react-payment-inputs/images\";\n\nexport default function Component() {\n  const id = useId();\n  const { meta, getCardNumberProps, getExpiryDateProps, getCVCProps, getCardImageProps } =\n    usePaymentInputs();\n\n  return (\n    <div className=\"*:not-first:mt-2\">\n      <legend className=\"text-foreground text-sm font-medium\">Card Details</legend>\n      <div className=\"rounded-md shadow-xs\">\n        <div className=\"relative focus-within:z-10\">\n          <Input\n            className=\"peer rounded-b-none pe-9 shadow-none [direction:inherit]\"\n            {...getCardNumberProps()}\n            id={`number-${id}`}\n          />\n          <div className=\"text-muted-foreground/80 pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 peer-disabled:opacity-50\">\n            {meta.cardType ? (\n              <svg\n                className=\"overflow-hidden rounded-sm\"\n                {...getCardImageProps({ images: images as unknown as CardImages })}\n                width={20}\n              />\n            ) : (\n              <CreditCardIcon size={16} aria-hidden=\"true\" />\n            )}\n          </div>\n        </div>\n        <div className=\"-mt-px flex\">\n          <div className=\"min-w-0 flex-1 focus-within:z-10\">\n            <Input\n              className=\"rounded-e-none rounded-t-none shadow-none [direction:inherit]\"\n              {...getExpiryDateProps()}\n              id={`expiry-${id}`}\n            />\n          </div>\n          <div className=\"-ms-px min-w-0 flex-1 focus-within:z-10\">\n            <Input\n              className=\"rounded-s-none rounded-t-none shadow-none [direction:inherit]\"\n              {...getCVCProps()}\n              id={`cvc-${id}`}\n            />\n          </div>\n        </div>\n      </div>\n      <p className=\"text-muted-foreground mt-2 text-xs\" role=\"region\" aria-live=\"polite\">\n        Built with{\" \"}\n        <a\n          className=\"hover:text-foreground underline\"\n          href=\"https://github.com/medipass/react-payment-inputs\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          React Payment Inputs\n        </a>\n      </p>\n    </div>\n  );\n}\n",
+      "path": "registry/default/components/comp-50.tsx"
+    },
+    {
+      "type": "registry:ui",
+      "target": "components/ui/input.tsx",
+      "content": "import { cn } from \"@/lib/utils\";\nimport * as React from \"react\";\n\nfunction Input({ className, type, ...props }: React.ComponentProps<\"input\">) {\n  return (\n    <input\n      type={type}\n      data-slot=\"input\"\n      className={cn(\n        \"border-input file:text-foreground placeholder:text-muted-foreground/70 flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-sm shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50\",\n        \"focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]\",\n        \"aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive\",\n        type === \"search\" &&\n          \"[&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none [&::-webkit-search-results-button]:appearance-none [&::-webkit-search-results-decoration]:appearance-none\",\n        type === \"file\" &&\n          \"text-muted-foreground/70 file:border-input file:text-foreground p-0 pr-3 italic file:me-3 file:h-full file:border-0 file:border-r file:border-solid file:bg-transparent file:px-3 file:text-sm file:font-medium file:not-italic\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { Input };\n",
+      "path": "registry/default/ui/input.tsx"
+    },
+    {
+      "type": "registry:lib",
+      "target": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "path": "registry/default/lib/utils.ts"
+    }
+  ]
+}

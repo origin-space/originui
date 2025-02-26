@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-340",
+  "type": "registry:component",
+  "dependencies": [
+    "@radix-ui/react-accordion",
+    "lucide-react",
+    "react",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "target": "components/originui/comp-340.tsx",
+      "content": "import { Accordion, AccordionContent, AccordionItem } from \"@/components/ui/accordion\";\nimport * as AccordionPrimitive from \"@radix-ui/react-accordion\";\n\nimport { ChevronDownIcon } from \"lucide-react\";\n\nconst items = [\n  {\n    id: \"1\",\n    title: \"Connected accounts\",\n    sub: \"Manage your linked social and work accounts\",\n    content:\n      \"Connect your accounts from Google, GitHub, or Microsoft to enable single sign-on and streamline your workflow. Connected accounts can be used for quick login and importing your preferences across platforms. You can revoke access to any connected account at any time.\",\n  },\n  {\n    id: \"2\",\n    title: \"Notifications\",\n    sub: \"Customize your notification preferences\",\n    content:\n      \"Choose which updates you want to receive. You can get notifications for: security alerts, billing updates, newsletter and product announcements, usage reports, and scheduled maintenance. Notifications can be delivered via email, SMS, or push notifications on your devices.\",\n  },\n  {\n    id: \"3\",\n    title: \"2-step verification\",\n    sub: \"Add an extra layer of security to your account\",\n    content:\n      \"Protect your account with two-factor authentication. You can use authenticator apps like Google Authenticator or Authy, receive SMS codes, or use security keys like YubiKey. We recommend using an authenticator app for the most secure experience.\",\n  },\n  {\n    id: \"4\",\n    title: \"Contact support\",\n    sub: \"We're here to help 24/7\",\n    content:\n      \"Our support team is available around the ClockIcon to assist you. For billing inquiries, technical issues, or general questions, you can reach us through live chat, email at support@example.com, or schedule a call with our technical team. Premium support is available for enterprise customers.\",\n  },\n];\n\nexport default function Component() {\n  return (\n    <div className=\"space-y-4\">\n      <h2 className=\"text-xl font-bold\">W/ sub-header and chevron</h2>\n      <Accordion type=\"single\" collapsible className=\"w-full\" defaultValue=\"3\">\n        {items.map((item) => (\n          <AccordionItem value={item.id} key={item.id} className=\"py-2\">\n            <AccordionPrimitive.Header className=\"flex\">\n              <AccordionPrimitive.Trigger className=\"focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center justify-between rounded-md py-2 text-left text-[15px] leading-6 font-semibold transition-all outline-none focus-visible:ring-[3px] [&[data-state=open]>svg]:rotate-180\">\n                <span className=\"flex flex-col space-y-1\">\n                  <span>{item.title}</span>\n                  {item.sub && <span className=\"text-sm font-normal\">{item.sub}</span>}\n                </span>\n                <ChevronDownIcon\n                  size={16}\n                  className=\"pointer-events-none shrink-0 opacity-60 transition-transform duration-200\"\n                  aria-hidden=\"true\"\n                />\n              </AccordionPrimitive.Trigger>\n            </AccordionPrimitive.Header>\n            <AccordionContent className=\"text-muted-foreground pb-2\">\n              {item.content}\n            </AccordionContent>\n          </AccordionItem>\n        ))}\n      </Accordion>\n    </div>\n  );\n}\n",
+      "path": "registry/default/components/comp-340.tsx"
+    },
+    {
+      "type": "registry:ui",
+      "target": "components/ui/accordion.tsx",
+      "content": "\"use client\";\n\nimport * as AccordionPrimitive from \"@radix-ui/react-accordion\";\nimport { ChevronDownIcon } from \"lucide-react\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nfunction Accordion({ ...props }: React.ComponentProps<typeof AccordionPrimitive.Root>) {\n  return <AccordionPrimitive.Root data-slot=\"accordion\" {...props} />;\n}\n\nfunction AccordionItem({\n  className,\n  ...props\n}: React.ComponentProps<typeof AccordionPrimitive.Item>) {\n  return (\n    <AccordionPrimitive.Item\n      data-slot=\"accordion-item\"\n      className={cn(\"border-b last:border-b-0\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction AccordionTrigger({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof AccordionPrimitive.Trigger>) {\n  return (\n    <AccordionPrimitive.Header className=\"flex\">\n      <AccordionPrimitive.Trigger\n        data-slot=\"accordion-trigger\"\n        className={cn(\n          \"focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center justify-between gap-4 rounded-md py-4 text-left text-sm font-semibold transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180\",\n          className,\n        )}\n        {...props}\n      >\n        {children}\n        <ChevronDownIcon\n          size={16}\n          className=\"pointer-events-none shrink-0 opacity-60 transition-transform duration-200\"\n          aria-hidden=\"true\"\n        />\n      </AccordionPrimitive.Trigger>\n    </AccordionPrimitive.Header>\n  );\n}\n\nfunction AccordionContent({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof AccordionPrimitive.Content>) {\n  return (\n    <AccordionPrimitive.Content\n      data-slot=\"accordion-content\"\n      className=\"data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm\"\n      {...props}\n    >\n      <div className={cn(\"pt-0 pb-4\", className)}>{children}</div>\n    </AccordionPrimitive.Content>\n  );\n}\n\nexport { Accordion, AccordionContent, AccordionItem, AccordionTrigger };\n",
+      "path": "registry/default/ui/accordion.tsx"
+    },
+    {
+      "type": "registry:lib",
+      "target": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "path": "registry/default/lib/utils.ts"
+    }
+  ]
+}
