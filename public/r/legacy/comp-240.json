@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-240",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/label.json",
+    "https://originui.com/r/slider.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-240.tsx",
+      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport { Slider } from \"@/registry/default/ui/slider\";\n\nexport default function Component() {\n  return (\n    <div className=\"space-y-4\">\n      <Label>Simple slider</Label>\n      <Slider defaultValue={[25]} aria-label=\"Simple slider\" />\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "slider",
+      "label",
+      "radix"
+    ]
+  }
+}

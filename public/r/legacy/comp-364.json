@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-364",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/hover-card.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-364.tsx",
+      "content": "import { HoverCard, HoverCardContent, HoverCardTrigger } from \"@/registry/default/ui/hover-card\";\n\nexport default function HoverCardDemo() {\n  return (\n    <HoverCard>\n      <div className=\"flex items-center gap-3\">\n        <img\n          className=\"shrink-0 rounded-full\"\n          src=\"avatar-40-05.jpg\"\n          width={40}\n          height={40}\n          alt=\"Avatar\"\n        />\n        <div className=\"space-y-0.5\">\n          <HoverCardTrigger asChild>\n            <a className=\"text-sm font-medium hover:underline\" href=\"#\">\n              Keith Kennedy\n            </a>\n          </HoverCardTrigger>\n          <p className=\"text-xs text-muted-foreground\">@k.kennedy</p>\n        </div>\n      </div>\n      <HoverCardContent>\n        <div className=\"space-y-3\">\n          <div className=\"flex items-center gap-3\">\n            <img\n              className=\"shrink-0 rounded-full\"\n              src=\"avatar-40-05.jpg\"\n              width={40}\n              height={40}\n              alt=\"Avatar\"\n            />\n            <div className=\"space-y-0.5\">\n              <p className=\"text-sm font-medium\">Keith Kennedy</p>\n              <p className=\"text-xs text-muted-foreground\">@k.kennedy</p>\n            </div>\n          </div>\n          <p className=\"text-sm text-muted-foreground\">\n            Designer at <strong className=\"font-medium text-foreground\">@Origin UI</strong>.\n            Crafting web experiences with Tailwind CSS.\n          </p>\n          <div className=\"flex items-center gap-2\">\n            <div className=\"flex -space-x-1.5\">\n              <img\n                className=\"rounded-full ring-1 ring-background\"\n                src=\"/avatar-20-04.jpg\"\n                width={20}\n                height={20}\n                alt=\"Friend 01\"\n              />\n              <img\n                className=\"rounded-full ring-1 ring-background\"\n                src=\"/avatar-20-05.jpg\"\n                width={20}\n                height={20}\n                alt=\"Friend 02\"\n              />\n              <img\n                className=\"rounded-full ring-1 ring-background\"\n                src=\"/avatar-20-06.jpg\"\n                width={20}\n                height={20}\n                alt=\"Friend 03\"\n              />\n            </div>\n            <div className=\"text-xs text-muted-foreground\">3 mutual friends</div>\n          </div>\n        </div>\n      </HoverCardContent>\n    </HoverCard>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "tooltip",
+      "hover card",
+      "user",
+      "avatar",
+      "profile",
+      "radix"
+    ],
+    "style": 1
+  }
+}

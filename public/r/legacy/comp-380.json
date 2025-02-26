@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-380",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/button.json",
+    "https://originui.com/r/dropdown-menu.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-380.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuTrigger,\n} from \"@/registry/default/ui/dropdown-menu\";\nimport { Monitor, Moon, Sun } from \"lucide-react\";\nimport { useState } from \"react\";\n\ntype Theme = \"light\" | \"dark\" | \"system\";\n\nexport default function Component() {\n  const [theme, setTheme] = useState<Theme>(\"system\");\n\n  // For demo purposes, we'll simulate system preference as \"light\"\n  const systemPreference = \"light\";\n  const displayTheme = theme === \"system\" ? systemPreference : theme;\n\n  return (\n    <div>\n      <DropdownMenu>\n        <DropdownMenuTrigger asChild>\n          <Button size=\"icon\" variant=\"outline\" aria-label=\"Select theme\">\n            {displayTheme === \"light\" && <Sun size={16} strokeWidth={2} aria-hidden=\"true\" />}\n            {displayTheme === \"dark\" && <Moon size={16} strokeWidth={2} aria-hidden=\"true\" />}\n          </Button>\n        </DropdownMenuTrigger>\n        <DropdownMenuContent className=\"min-w-32\">\n          <DropdownMenuItem onClick={() => setTheme(\"light\")}>\n            <Sun size={16} strokeWidth={2} className=\"opacity-60\" aria-hidden=\"true\" />\n            <span>Light</span>\n          </DropdownMenuItem>\n          <DropdownMenuItem onClick={() => setTheme(\"dark\")}>\n            <Moon size={16} strokeWidth={2} className=\"opacity-60\" aria-hidden=\"true\" />\n            <span>Dark</span>\n          </DropdownMenuItem>\n          <DropdownMenuItem onClick={() => setTheme(\"system\")}>\n            <Monitor size={16} strokeWidth={2} className=\"opacity-60\" aria-hidden=\"true\" />\n            <span>System</span>\n          </DropdownMenuItem>\n        </DropdownMenuContent>\n      </DropdownMenu>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "dropdown",
+      "darkmode",
+      "radix"
+    ],
+    "style": 1
+  }
+}

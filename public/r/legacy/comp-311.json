@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-311",
+  "type": "registry:component",
+  "files": [
+    {
+      "path": "registry/default/components/comp-311.tsx",
+      "content": "export default function Component() {\n  return (\n    <div className=\"border-b border-border px-4 py-3\">\n      <p className=\"text-center text-sm\">\n        <span className=\"mr-1 text-base leading-none\">📫</span> Subscribe to our newsletter and get\n        10% off your first order! <span className=\"mx-1 text-muted-foreground\">·</span>{\" \"}\n        <a href=\"#\" className=\"font-medium underline hover:no-underline\">\n          Subscribe\n        </a>\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "banner",
+      "newsletter",
+      "subscribe"
+    ],
+    "colSpan": 3
+  }
+}

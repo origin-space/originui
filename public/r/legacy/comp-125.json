@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-125",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/button.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-125.tsx",
+      "content": "\"use client\";\n\nimport { useImageUpload } from \"@/registry/default/hooks/use-image-upload\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { CircleUserRound } from \"lucide-react\";\n\nexport default function Component() {\n  const {\n    previewUrl,\n    fileInputRef,\n    handleThumbnailClick: handleButtonClick,\n    handleFileChange,\n    handleRemove,\n    fileName,\n  } = useImageUpload();\n\n  return (\n    <div>\n      <div className=\"inline-flex items-center gap-2 align-top\">\n        <div\n          className=\"relative flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-input\"\n          aria-label={previewUrl ? \"Preview of uploaded image\" : \"Default user avatar\"}\n        >\n          {previewUrl ? (\n            <img\n              className=\"h-full w-full object-cover\"\n              src={previewUrl}\n              alt=\"Preview of uploaded image\"\n              width={32}\n              height={32}\n            />\n          ) : (\n            <div aria-hidden=\"true\">\n              <CircleUserRound className=\"opacity-60\" size={16} strokeWidth={2} />\n            </div>\n          )}\n        </div>\n        <div className=\"relative inline-block\">\n          <Button onClick={handleButtonClick} aria-haspopup=\"dialog\">\n            {fileName ? \"Change image\" : \"Upload image\"}\n          </Button>\n          <input\n            type=\"file\"\n            ref={fileInputRef}\n            onChange={handleFileChange}\n            className=\"hidden\"\n            accept=\"image/*\"\n            aria-label=\"Upload image file\"\n          />\n        </div>\n      </div>\n      {fileName && (\n        <div className=\"mt-2\">\n          <div className=\"inline-flex gap-2 text-xs\">\n            <p className=\"truncate text-muted-foreground\" aria-live=\"polite\">\n              {fileName}\n            </p>{\" \"}\n            <button\n              onClick={handleRemove}\n              className=\"font-medium text-red-500 hover:underline\"\n              aria-label={`Remove ${fileName}`}\n            >\n              Remove\n            </button>\n          </div>\n        </div>\n      )}\n      <div className=\"sr-only\" aria-live=\"polite\" role=\"status\">\n        {previewUrl ? \"Image uploaded and preview available\" : \"No image uploaded\"}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/default/hooks/use-image-upload.ts",
+      "content": "\"use client\";\n\nimport { useCallback, useEffect, useRef, useState } from \"react\";\n\ninterface UseImageUploadProps {\n  onUpload?: (url: string) => void;\n}\n\nexport function useImageUpload({ onUpload }: UseImageUploadProps = {}) {\n  const previewRef = useRef<string | null>(null);\n  const fileInputRef = useRef<HTMLInputElement>(null);\n  const [previewUrl, setPreviewUrl] = useState<string | null>(null);\n  const [fileName, setFileName] = useState<string | null>(null);\n\n  const handleThumbnailClick = useCallback(() => {\n    fileInputRef.current?.click();\n  }, []);\n\n  const handleFileChange = useCallback(\n    (event: React.ChangeEvent<HTMLInputElement>) => {\n      const file = event.target.files?.[0];\n      if (file) {\n        setFileName(file.name);\n        const url = URL.createObjectURL(file);\n        setPreviewUrl(url);\n        previewRef.current = url;\n        onUpload?.(url);\n      }\n    },\n    [onUpload],\n  );\n\n  const handleRemove = useCallback(() => {\n    if (previewUrl) {\n      URL.revokeObjectURL(previewUrl);\n    }\n    setPreviewUrl(null);\n    setFileName(null);\n    previewRef.current = null;\n    if (fileInputRef.current) {\n      fileInputRef.current.value = \"\";\n    }\n  }, [previewUrl]);\n\n  useEffect(() => {\n    return () => {\n      if (previewRef.current) {\n        URL.revokeObjectURL(previewRef.current);\n      }\n    };\n  }, []);\n\n  return {\n    previewUrl,\n    fileName,\n    fileInputRef,\n    handleThumbnailClick,\n    handleFileChange,\n    handleRemove,\n  };\n}\n",
+      "type": "registry:hook"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "button",
+      "upload",
+      "user",
+      "avatar",
+      "profile",
+      "image"
+    ],
+    "style": 2
+  }
+}

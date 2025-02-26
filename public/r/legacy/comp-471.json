@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-471",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/table.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-471.tsx",
+      "content": "import {\n  Table,\n  TableBody,\n  TableCell,\n  TableHead,\n  TableHeader,\n  TableRow,\n} from \"@/registry/default/ui/table\";\n\nconst programmingLanguages = [\n  {\n    id: \"1\",\n    name: \"JavaScript\",\n    releaseYear: \"1995\",\n    developer: \"Brendan Eich\",\n    typing: \"Dynamic\",\n    paradigm: \"Multi-paradigm\",\n    extension: \".js\",\n    latestVersion: \"ES2021\",\n    popularity: \"High\",\n  },\n  {\n    id: \"2\",\n    name: \"Python\",\n    releaseYear: \"1991\",\n    developer: \"Guido van Rossum\",\n    typing: \"Dynamic\",\n    paradigm: \"Multi-paradigm\",\n    extension: \".py\",\n    latestVersion: \"3.10\",\n    popularity: \"High\",\n  },\n  {\n    id: \"3\",\n    name: \"Java\",\n    releaseYear: \"1995\",\n    developer: \"James Gosling\",\n    typing: \"Static\",\n    paradigm: \"Object-oriented\",\n    extension: \".java\",\n    latestVersion: \"17\",\n    popularity: \"High\",\n  },\n  {\n    id: \"4\",\n    name: \"C++\",\n    releaseYear: \"1985\",\n    developer: \"Bjarne Stroustrup\",\n    typing: \"Static\",\n    paradigm: \"Multi-paradigm\",\n    extension: \".cpp\",\n    latestVersion: \"C++20\",\n    popularity: \"High\",\n  },\n  {\n    id: \"5\",\n    name: \"Ruby\",\n    releaseYear: \"1995\",\n    developer: \"Yukihiro Matsumoto\",\n    typing: \"Dynamic\",\n    paradigm: \"Multi-paradigm\",\n    extension: \".rb\",\n    latestVersion: \"3.0\",\n    popularity: \"Low\",\n  },\n];\n\nexport default function Component() {\n  return (\n    <div>\n      <div className=\"overflow-hidden rounded-lg border border-border bg-background\">\n        <Table>\n          <TableHeader>\n            <TableRow className=\"bg-muted/50\">\n              <TableHead className=\"h-9 py-2\">Name</TableHead>\n              <TableHead className=\"h-9 py-2\">Release Year</TableHead>\n              <TableHead className=\"h-9 py-2\">Developer</TableHead>\n              <TableHead className=\"h-9 py-2\">Typing</TableHead>\n              <TableHead className=\"h-9 py-2\">Paradigm</TableHead>\n              <TableHead className=\"h-9 py-2\">Extension</TableHead>\n              <TableHead className=\"h-9 py-2\">Latest Version</TableHead>\n              <TableHead className=\"h-9 py-2\">Popularity</TableHead>\n            </TableRow>\n          </TableHeader>\n          <TableBody>\n            {programmingLanguages.map((language) => (\n              <TableRow key={language.id}>\n                <TableCell className=\"py-2 font-medium\">{language.name}</TableCell>\n                <TableCell className=\"py-2\">{language.releaseYear}</TableCell>\n                <TableCell className=\"py-2\">{language.developer}</TableCell>\n                <TableCell className=\"py-2\">{language.typing}</TableCell>\n                <TableCell className=\"py-2\">{language.paradigm}</TableCell>\n                <TableCell className=\"py-2\">{language.extension}</TableCell>\n                <TableCell className=\"py-2\">{language.latestVersion}</TableCell>\n                <TableCell className=\"py-2\">{language.popularity}</TableCell>\n              </TableRow>\n            ))}\n          </TableBody>\n        </Table>\n      </div>\n      <p className=\"mt-4 text-center text-sm text-muted-foreground\">Dense table</p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "table"
+    ],
+    "colSpan": 3
+  }
+}

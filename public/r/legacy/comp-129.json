@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-129",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/badge.json",
+    "https://originui.com/r/button.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-129.tsx",
+      "content": "\"use client\";\n\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Bell } from \"lucide-react\";\nimport { useState } from \"react\";\n\nexport default function Component() {\n  const [count, setCount] = useState(3);\n\n  const handleClick = () => {\n    setCount(0);\n  };\n\n  return (\n    <Button\n      variant=\"outline\"\n      size=\"icon\"\n      className=\"relative\"\n      onClick={handleClick}\n      aria-label=\"Notifications\"\n    >\n      <Bell size={16} strokeWidth={2} aria-hidden=\"true\" />\n      {count > 0 && (\n        <Badge className=\"absolute -top-2 left-full min-w-5 -translate-x-1/2 px-1\">\n          {count > 99 ? \"99+\" : count}\n        </Badge>\n      )}\n    </Button>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "button",
+      "dropdown",
+      "notification"
+    ],
+    "style": 2
+  }
+}

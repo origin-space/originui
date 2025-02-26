@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-425",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/badge.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-425.tsx",
+      "content": "\"use client\";\n\nimport { Badge } from \"@/registry/default/ui/badge\";\nimport { X } from \"lucide-react\";\nimport { useState } from \"react\";\n\nexport default function Component() {\n  const [isActive, setIsActive] = useState(true);\n\n  if (!isActive) return null;\n\n  return (\n    <Badge variant=\"outline\" className=\"rounded-md px-2 py-1\">\n      Tag\n      <button\n        className=\"-my-[5px] -me-2 -ms-0.5 inline-flex size-7 shrink-0 items-center justify-center rounded-[inherit] p-0 opacity-60 transition-opacity hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70\"\n        onClick={() => setIsActive(false)}\n        aria-label=\"Delete\"\n      >\n        <X size={14} strokeWidth={2} aria-hidden=\"true\" />\n      </button>\n    </Badge>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "badge",
+      "chip",
+      "tag"
+    ],
+    "style": 1
+  }
+}

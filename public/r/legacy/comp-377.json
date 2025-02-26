@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-377",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/button.json",
+    "https://originui.com/r/dropdown-menu.json",
+    "https://originui.com/r/avatar.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-377.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/registry/default/ui/avatar\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuGroup,\n  DropdownMenuItem,\n  DropdownMenuLabel,\n  DropdownMenuSeparator,\n  DropdownMenuTrigger,\n} from \"@/registry/default/ui/dropdown-menu\";\n\nimport { Bolt, BookOpen, ChevronDown, Layers2, LogOut, Pin, UserPen } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <DropdownMenu>\n      <DropdownMenuTrigger asChild>\n        <Button variant=\"ghost\" className=\"h-auto p-0 hover:bg-transparent\">\n          <Avatar>\n            <AvatarImage src=\"./avatar.jpg\" alt=\"Profile image\" />\n            <AvatarFallback>KK</AvatarFallback>\n          </Avatar>\n          <ChevronDown size={16} strokeWidth={2} className=\"ms-2 opacity-60\" aria-hidden=\"true\" />\n        </Button>\n      </DropdownMenuTrigger>\n      <DropdownMenuContent className=\"max-w-64\">\n        <DropdownMenuLabel className=\"flex min-w-0 flex-col\">\n          <span className=\"truncate text-sm font-medium text-foreground\">Keith Kennedy</span>\n          <span className=\"truncate text-xs font-normal text-muted-foreground\">\n            k.kennedy@originui.com\n          </span>\n        </DropdownMenuLabel>\n        <DropdownMenuSeparator />\n        <DropdownMenuGroup>\n          <DropdownMenuItem>\n            <Bolt size={16} strokeWidth={2} className=\"opacity-60\" aria-hidden=\"true\" />\n            <span>Option 1</span>\n          </DropdownMenuItem>\n          <DropdownMenuItem>\n            <Layers2 size={16} strokeWidth={2} className=\"opacity-60\" aria-hidden=\"true\" />\n            <span>Option 2</span>\n          </DropdownMenuItem>\n          <DropdownMenuItem>\n            <BookOpen size={16} strokeWidth={2} className=\"opacity-60\" aria-hidden=\"true\" />\n            <span>Option 3</span>\n          </DropdownMenuItem>\n        </DropdownMenuGroup>\n        <DropdownMenuSeparator />\n        <DropdownMenuGroup>\n          <DropdownMenuItem>\n            <Pin size={16} strokeWidth={2} className=\"opacity-60\" aria-hidden=\"true\" />\n            <span>Option 4</span>\n          </DropdownMenuItem>\n          <DropdownMenuItem>\n            <UserPen size={16} strokeWidth={2} className=\"opacity-60\" aria-hidden=\"true\" />\n            <span>Option 5</span>\n          </DropdownMenuItem>\n        </DropdownMenuGroup>\n        <DropdownMenuSeparator />\n        <DropdownMenuItem>\n          <LogOut size={16} strokeWidth={2} className=\"opacity-60\" aria-hidden=\"true\" />\n          <span>Logout</span>\n        </DropdownMenuItem>\n      </DropdownMenuContent>\n    </DropdownMenu>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "dropdown",
+      "user",
+      "avatar",
+      "profile",
+      "radix"
+    ],
+    "style": 1
+  }
+}

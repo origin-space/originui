@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-326",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/button.json",
+    "https://originui.com/r/checkbox.json",
+    "https://originui.com/r/dialog.json",
+    "https://originui.com/r/input.json",
+    "https://originui.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-326.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport {\n  Dialog,\n  DialogContent,\n  DialogDescription,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/registry/default/ui/dialog\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <Dialog>\n      <DialogTrigger asChild>\n        <Button variant=\"outline\">Sign in</Button>\n      </DialogTrigger>\n      <DialogContent>\n        <div className=\"flex flex-col items-center gap-2\">\n          <div\n            className=\"flex size-11 shrink-0 items-center justify-center rounded-full border border-border\"\n            aria-hidden=\"true\"\n          >\n            <svg\n              className=\"stroke-zinc-800 dark:stroke-zinc-100\"\n              xmlns=\"http://www.w3.org/2000/svg\"\n              width=\"20\"\n              height=\"20\"\n              viewBox=\"0 0 32 32\"\n              aria-hidden=\"true\"\n            >\n              <circle cx=\"16\" cy=\"16\" r=\"12\" fill=\"none\" strokeWidth=\"8\" />\n            </svg>\n          </div>\n          <DialogHeader>\n            <DialogTitle className=\"sm:text-center\">Welcome back</DialogTitle>\n            <DialogDescription className=\"sm:text-center\">\n              Enter your credentials to login to your account.\n            </DialogDescription>\n          </DialogHeader>\n        </div>\n\n        <form className=\"space-y-5\">\n          <div className=\"space-y-4\">\n            <div className=\"space-y-2\">\n              <Label htmlFor={`${id}-email`}>Email</Label>\n              <Input id={`${id}-email`} placeholder=\"hi@yourcompany.com\" type=\"email\" required />\n            </div>\n            <div className=\"space-y-2\">\n              <Label htmlFor={`${id}-password`}>Password</Label>\n              <Input\n                id={`${id}-password`}\n                placeholder=\"Enter your password\"\n                type=\"password\"\n                required\n              />\n            </div>\n          </div>\n          <div className=\"flex justify-between gap-2\">\n            <div className=\"flex items-center gap-2\">\n              <Checkbox id={`${id}-remember`} />\n              <Label htmlFor={`${id}-remember`} className=\"font-normal text-muted-foreground\">\n                Remember me\n              </Label>\n            </div>\n            <a className=\"text-sm underline hover:no-underline\" href=\"#\">\n              Forgot password?\n            </a>\n          </div>\n          <Button type=\"button\" className=\"w-full\">\n            Sign in\n          </Button>\n        </form>\n\n        <div className=\"flex items-center gap-3 before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border\">\n          <span className=\"text-xs text-muted-foreground\">Or</span>\n        </div>\n\n        <Button variant=\"outline\">Login with Google</Button>\n      </DialogContent>\n    </Dialog>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "dialog",
+      "modal",
+      "login",
+      "authentication",
+      "form",
+      "radix"
+    ],
+    "style": 1
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-29",
+  "type": "registry:component",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-29.tsx",
+      "content": "\"use client\";\n\nimport { ChevronDown, ChevronUp } from \"lucide-react\";\nimport { Button, Group, Input, Label, NumberField } from \"react-aria-components\";\n\nexport default function Component() {\n  return (\n    <NumberField\n      defaultValue={99}\n      formatOptions={{\n        style: \"currency\",\n        currency: \"EUR\",\n        currencySign: \"accounting\",\n      }}\n    >\n      <div className=\"space-y-2\">\n        <Label className=\"text-sm font-medium text-foreground\">Number input with chevrons</Label>\n        <Group className=\"relative inline-flex h-9 w-full items-center overflow-hidden whitespace-nowrap rounded-lg border border-input text-sm shadow-sm shadow-black/5 transition-shadow data-[focus-within]:border-ring data-[disabled]:opacity-50 data-[focus-within]:outline-none data-[focus-within]:ring-[3px] data-[focus-within]:ring-ring/20\">\n          <Input className=\"flex-1 bg-background px-3 py-2 tabular-nums text-foreground focus:outline-none\" />\n          <div className=\"flex h-[calc(100%+2px)] flex-col\">\n            <Button\n              slot=\"increment\"\n              className=\"-me-px flex h-1/2 w-6 flex-1 items-center justify-center border border-input bg-background text-sm text-muted-foreground/80 transition-shadow hover:bg-accent hover:text-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50\"\n            >\n              <ChevronUp size={12} strokeWidth={2} aria-hidden=\"true\" />\n            </Button>\n            <Button\n              slot=\"decrement\"\n              className=\"-me-px -mt-px flex h-1/2 w-6 flex-1 items-center justify-center border border-input bg-background text-sm text-muted-foreground/80 transition-shadow hover:bg-accent hover:text-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50\"\n            >\n              <ChevronDown size={12} strokeWidth={2} aria-hidden=\"true\" />\n            </Button>\n          </div>\n        </Group>\n      </div>\n      <p className=\"mt-2 text-xs text-muted-foreground\" role=\"region\" aria-live=\"polite\">\n        Built with{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://react-spectrum.adobe.com/react-aria/DateField.html\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          React Aria\n        </a>\n      </p>\n    </NumberField>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "button",
+      "number",
+      "react aria"
+    ]
+  }
+}

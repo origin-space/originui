@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-62",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/label.json",
+    "https://originui.com/r/textarea.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-63.tsx",
+      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div\n      className=\"space-y-2\"\n      // NOTE: This inline style is to show how to set the --ring variable in your CSS file in order to change the focus ring color.\n      style={{ \"--ring\": \"234 89% 74%\" } as React.CSSProperties}\n    >\n      <Label htmlFor={id}>Textarea with colored border and ring</Label>\n      <Textarea id={id} placeholder=\"Leave a comment\" />\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "label",
+      "textarea",
+      "hint"
+    ]
+  }
+}

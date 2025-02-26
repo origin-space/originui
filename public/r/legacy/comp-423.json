@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-423",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/badge.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-423.tsx",
+      "content": "import { cn } from \"@/registry/default/lib/utils\";\nimport { badgeVariants } from \"@/registry/default/ui/badge\";\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { Check } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <label\n      className={cn(\n        badgeVariants({ variant: \"default\" }),\n        \"cursor-pointer hover:bg-primary/80 has-[[data-state=unchecked]]:bg-muted has-[[data-state=unchecked]]:text-muted-foreground has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70\",\n      )}\n    >\n      <div className=\"flex items-center gap-1\">\n        <Checkbox\n          id=\"badge-selectable\"\n          className=\"peer sr-only after:absolute after:inset-0\"\n          defaultChecked\n        />\n        <Check\n          size={12}\n          strokeWidth={2}\n          className=\"hidden peer-data-[state=checked]:block\"\n          aria-hidden=\"true\"\n        />\n        <span className=\"select-none\">Selectable</span>\n      </div>\n    </label>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "badge",
+      "chip",
+      "checkbox"
+    ],
+    "style": 1
+  }
+}

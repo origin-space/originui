@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-321",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/button.json",
+    "https://originui.com/r/dialog.json",
+    "https://originui.com/r/input.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-321.tsx",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport {\n  Dialog,\n  DialogContent,\n  DialogDescription,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/registry/default/ui/dialog\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Mail } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Dialog>\n      <DialogTrigger asChild>\n        <Button variant=\"outline\">Newsletter</Button>\n      </DialogTrigger>\n      <DialogContent>\n        <div className=\"mb-2 flex flex-col items-center gap-2\">\n          <div\n            className=\"flex size-11 shrink-0 items-center justify-center rounded-full border border-border\"\n            aria-hidden=\"true\"\n          >\n            <svg\n              className=\"stroke-zinc-800 dark:stroke-zinc-100\"\n              xmlns=\"http://www.w3.org/2000/svg\"\n              width=\"20\"\n              height=\"20\"\n              viewBox=\"0 0 32 32\"\n              aria-hidden=\"true\"\n            >\n              <circle cx=\"16\" cy=\"16\" r=\"12\" fill=\"none\" strokeWidth=\"8\" />\n            </svg>\n          </div>\n          <DialogHeader>\n            <DialogTitle className=\"sm:text-center\">Never miss an update</DialogTitle>\n            <DialogDescription className=\"sm:text-center\">\n              Subscribe to receive news and special offers.\n            </DialogDescription>\n          </DialogHeader>\n        </div>\n\n        <form className=\"space-y-5\">\n          <div className=\"space-y-2\">\n            <div className=\"relative\">\n              <Input\n                id=\"dialog-subscribe\"\n                className=\"peer ps-9\"\n                placeholder=\"hi@yourcompany.com\"\n                type=\"email\"\n                aria-label=\"Email\"\n              />\n              <div className=\"pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 peer-disabled:opacity-50\">\n                <Mail size={16} strokeWidth={2} aria-hidden=\"true\" />\n              </div>\n            </div>\n          </div>\n          <Button type=\"button\" className=\"w-full\">\n            Subscribe\n          </Button>\n        </form>\n\n        <p className=\"text-center text-xs text-muted-foreground\">\n          By subscribing you agree to our{\" \"}\n          <a className=\"underline hover:no-underline\" href=\"#\">\n            Privacy Policy\n          </a>\n          .\n        </p>\n      </DialogContent>\n    </Dialog>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "dialog",
+      "modal",
+      "newsletter",
+      "subscribe",
+      "form",
+      "radix"
+    ],
+    "style": 1
+  }
+}

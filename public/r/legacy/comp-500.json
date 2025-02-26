@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-500",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/button.json",
+    "https://originui.com/r/calendar.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-500.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Calendar } from \"@/registry/default/ui/calendar\";\nimport { addDays } from \"date-fns\";\nimport { useState } from \"react\";\n\nexport default function Component() {\n  const today = new Date();\n  const selectedDay = addDays(today, -28);\n  const [month, setMonth] = useState(selectedDay);\n  const [date, setDate] = useState<Date | undefined>(selectedDay);\n\n  return (\n    <div>\n      <div className=\"rounded-lg border border-border p-2\">\n        <Calendar\n          mode=\"single\"\n          selected={date}\n          onSelect={setDate}\n          month={month}\n          onMonthChange={setMonth}\n        />\n        <Button variant=\"outline\" size=\"sm\" className=\"mb-1 mt-2\" onClick={() => setMonth(today)}>\n          Current month\n        </Button>\n      </div>\n      <p\n        className=\"mt-4 text-center text-xs text-muted-foreground\"\n        role=\"region\"\n        aria-live=\"polite\"\n      >\n        With button -{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://daypicker.dev/\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          React DayPicker\n        </a>\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "calendar",
+      "date",
+      "button",
+      "react daypicker"
+    ],
+    "style": 1
+  }
+}

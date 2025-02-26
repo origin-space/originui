@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-499",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/calendar.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-499.tsx",
+      "content": "\"use client\";\n\nimport { Calendar } from \"@/registry/default/ui/calendar\";\nimport { useState } from \"react\";\nimport type { WeekNumberProps } from \"react-day-picker\";\n\nexport default function Component() {\n  const [date, setDate] = useState<Date | undefined>(new Date());\n\n  return (\n    <div>\n      <Calendar\n        mode=\"single\"\n        selected={date}\n        onSelect={setDate}\n        className=\"rounded-lg border border-border p-2\"\n        fixedWeeks\n        showWeekNumber\n        components={{\n          WeekNumber: ({ week, ...props }: WeekNumberProps) => {\n            return (\n              <th {...props}>\n                <span className=\"inline-flex size-9 items-center justify-center\">\n                  {week.weekNumber}\n                </span>\n              </th>\n            );\n          },\n        }}\n      />\n      <p\n        className=\"mt-4 text-center text-xs text-muted-foreground\"\n        role=\"region\"\n        aria-live=\"polite\"\n      >\n        Weekly numbers -{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://daypicker.dev/\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          React DayPicker\n        </a>\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "calendar",
+      "date",
+      "week",
+      "react daypicker"
+    ],
+    "style": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-426",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/tabs.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-426.tsx",
+      "content": "import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/registry/default/ui/tabs\";\n\nexport default function Component() {\n  return (\n    <Tabs defaultValue=\"tab-1\">\n      <TabsList>\n        <TabsTrigger value=\"tab-1\">Tab 1</TabsTrigger>\n        <TabsTrigger value=\"tab-2\">Tab 2</TabsTrigger>\n        <TabsTrigger value=\"tab-3\">Tab 3</TabsTrigger>\n      </TabsList>\n      <TabsContent value=\"tab-1\">\n        <p className=\"p-4 text-center text-xs text-muted-foreground\">Content for Tab 1</p>\n      </TabsContent>\n      <TabsContent value=\"tab-2\">\n        <p className=\"p-4 text-center text-xs text-muted-foreground\">Content for Tab 2</p>\n      </TabsContent>\n      <TabsContent value=\"tab-3\">\n        <p className=\"p-4 text-center text-xs text-muted-foreground\">Content for Tab 3</p>\n      </TabsContent>\n    </Tabs>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "tabs",
+      "radix"
+    ],
+    "colSpan": 2,
+    "style": 2
+  }
+}

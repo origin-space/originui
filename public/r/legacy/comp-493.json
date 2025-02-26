@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-493",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/calendar.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-493.tsx",
+      "content": "\"use client\";\n\nimport { Calendar } from \"@/registry/default/ui/calendar\";\nimport { addDays, subDays } from \"date-fns\";\nimport { useState } from \"react\";\n\nexport default function Component() {\n  const today = new Date();\n  const [date, setDate] = useState<Date[] | undefined>([\n    subDays(today, 17),\n    addDays(today, 2),\n    addDays(today, 6),\n    addDays(today, 8),\n  ]);\n\n  return (\n    <div>\n      <Calendar\n        mode=\"multiple\"\n        selected={date}\n        onSelect={setDate}\n        className=\"rounded-lg border border-border p-2\"\n      />\n      <p\n        className=\"mt-4 text-center text-xs text-muted-foreground\"\n        role=\"region\"\n        aria-live=\"polite\"\n      >\n        Multiple day selection -{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://daypicker.dev/\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          React DayPicker\n        </a>\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "calendar",
+      "date",
+      "react daypicker"
+    ],
+    "style": 1
+  }
+}

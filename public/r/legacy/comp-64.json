@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-64",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/label.json",
+    "https://originui.com/r/textarea.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-64.tsx",
+      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor={id}>Textarea with error</Label>\n      <Textarea\n        id={id}\n        className=\"border-destructive/80 text-destructive focus-visible:border-destructive/80 focus-visible:ring-destructive/20\"\n        placeholder=\"Leave a comment\"\n        defaultValue=\"Hello!\"\n      />\n      <p className=\"mt-2 text-xs text-destructive\" role=\"alert\" aria-live=\"polite\">\n        Message should be at least 10 characters\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "label",
+      "textarea",
+      "error"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-48",
+  "type": "registry:component",
+  "dependencies": [
+    "react-payment-inputs"
+  ],
+  "devDependencies": [
+    "@types/react-payment-inputs"
+  ],
+  "registryDependencies": [
+    "https://originui.com/r/input.json",
+    "https://originui.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-48.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { useId } from \"react\";\nimport { usePaymentInputs } from \"react-payment-inputs\";\n\nexport default function Component() {\n  const id = useId();\n  const { getExpiryDateProps } = usePaymentInputs();\n\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor={`expiry-${id}`}>Expiry date</Label>\n      <Input {...getExpiryDateProps()} id={`expiry-${id}`} className=\"[direction:inherit]\" />\n      <p className=\"mt-2 text-xs text-muted-foreground\" role=\"region\" aria-live=\"polite\">\n        Built with{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://github.com/medipass/react-payment-inputs\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          React Payment Inputs\n        </a>\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "checkout",
+      "payment",
+      "credit card",
+      "form"
+    ]
+  }
+}

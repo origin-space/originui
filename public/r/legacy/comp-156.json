@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-156",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/input.json",
+    "https://originui.com/r/label.json",
+    "https://originui.com/r/radio-group.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-156.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { RadioGroup, RadioGroupItem } from \"@/registry/default/ui/radio-group\";\nimport { useEffect, useId, useRef, useState } from \"react\";\n\nexport default function Component() {\n  const radioId = useId();\n  const inputId = useId();\n  const [selectedValue, setSelectedValue] = useState(\"without-expansion\");\n  const inputRef = useRef<HTMLInputElement>(null);\n\n  useEffect(() => {\n    if (selectedValue === \"with-expansion\" && inputRef.current) {\n      inputRef.current.focus();\n    }\n  }, [selectedValue]);\n\n  return (\n    <RadioGroup className=\"gap-6\" value={selectedValue} onValueChange={setSelectedValue}>\n      <div>\n        <div className=\"flex items-start gap-2\">\n          <RadioGroupItem\n            value=\"with-expansion\"\n            id={`${radioId}-1`}\n            aria-describedby={`${radioId}-1-description`}\n            aria-controls={inputId}\n          />\n          <div className=\"grow\">\n            <div className=\"grid grow gap-2\">\n              <Label htmlFor={`${radioId}-1`}>Radio with expansion</Label>\n              <p id={`${radioId}-1-description`} className=\"text-xs text-muted-foreground\">\n                You can use this radio with a label and a description.\n              </p>\n            </div>\n            {/* Expandable field */}\n            <div\n              role=\"region\"\n              id={inputId}\n              aria-labelledby={`${radioId}-1`}\n              className=\"grid transition-all ease-in-out data-[state=collapsed]:grid-rows-[0fr] data-[state=expanded]:grid-rows-[1fr] data-[state=collapsed]:opacity-0 data-[state=expanded]:opacity-100\"\n              data-state={selectedValue === \"with-expansion\" ? \"expanded\" : \"collapsed\"}\n            >\n              <div className=\"pointer-events-none -m-2 overflow-hidden p-2\">\n                <div className=\"pointer-events-auto mt-3\">\n                  <Input\n                    ref={inputRef}\n                    type=\"text\"\n                    id=\"radio-05-additional-info\"\n                    placeholder=\"Enter details\"\n                    aria-label=\"Additional Information\"\n                    disabled={selectedValue !== \"with-expansion\"}\n                  />\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div className=\"flex items-start gap-2\">\n        <RadioGroupItem\n          value=\"without-expansion\"\n          id={`${radioId}-2`}\n          aria-describedby={`${radioId}-2-description`}\n        />\n        <div className=\"grid grow gap-2\">\n          <Label htmlFor={`${radioId}-2`}>Radio without expansion</Label>\n          <p id={`${radioId}-2-description`} className=\"text-xs text-muted-foreground\">\n            You can use this checkbox with a label and a description.\n          </p>\n        </div>\n      </div>\n    </RadioGroup>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "radio",
+      "label",
+      "collapsible",
+      "radix"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-228",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/select.json",
+    "https://originui.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-228.tsx",
+      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor={id}>Options with portrait</Label>\n      <Select defaultValue=\"1\">\n        <SelectTrigger\n          id={id}\n          className=\"h-auto ps-2 [&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_img]:shrink-0\"\n        >\n          <SelectValue placeholder=\"Choose a plan\" />\n        </SelectTrigger>\n        <SelectContent className=\"[&_*[role=option]>span]:end-2 [&_*[role=option]>span]:start-auto [&_*[role=option]]:pe-8 [&_*[role=option]]:ps-2\">\n          <SelectItem value=\"1\">\n            <span className=\"flex items-center gap-2\">\n              <img\n                className=\"rounded-full\"\n                src=\"/avatar-40-01.jpg\"\n                alt=\"Jenny Hamilton\"\n                width={40}\n                height={40}\n              />\n              <span>\n                <span className=\"block font-medium\">Jenny Hamilton</span>\n                <span className=\"mt-0.5 block text-xs text-muted-foreground\">@jennycodes</span>\n              </span>\n            </span>\n          </SelectItem>\n          <SelectItem value=\"2\">\n            <span className=\"flex items-center gap-2\">\n              <img\n                className=\"rounded-full\"\n                src=\"/avatar-40-02.jpg\"\n                alt=\"Paul Smith\"\n                width={40}\n                height={40}\n              />\n              <span>\n                <span className=\"block font-medium\">Paul Smith</span>\n                <span className=\"mt-0.5 block text-xs text-muted-foreground\">@paulsmith</span>\n              </span>\n            </span>\n          </SelectItem>\n          <SelectItem value=\"3\">\n            <span className=\"flex items-center gap-2\">\n              <img\n                className=\"rounded-full\"\n                src=\"/avatar-40-03.jpg\"\n                alt=\"Luna Wyen\"\n                width={40}\n                height={40}\n              />\n              <span>\n                <span className=\"block font-medium\">Luna Wyen</span>\n                <span className=\"mt-0.5 block text-xs text-muted-foreground\">@wyen.luna</span>\n              </span>\n            </span>\n          </SelectItem>\n        </SelectContent>\n      </Select>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "label",
+      "select",
+      "user",
+      "avatar",
+      "profile",
+      "radix"
+    ]
+  }
+}

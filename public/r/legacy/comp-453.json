@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-453",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/breadcrumb.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-453.tsx",
+      "content": "import {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbSeparator,\n} from \"@/registry/default/ui/breadcrumb\";\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/default/ui/select\";\nimport { Database } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList>\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"#\">Databases</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <Select defaultValue=\"1\">\n            <SelectTrigger\n              id=\"select-database\"\n              className=\"relative ps-9\"\n              aria-label=\"Select database\"\n            >\n              <div className=\"pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 group-has-[[disabled]]:opacity-50\">\n                <Database size={16} strokeWidth={2} aria-hidden=\"true\" />\n              </div>\n              <SelectValue placeholder=\"Select time\" />\n            </SelectTrigger>\n            <SelectContent>\n              <SelectItem value=\"1\">Orion</SelectItem>\n              <SelectItem value=\"2\">Sigma</SelectItem>\n              <SelectItem value=\"3\">Dorado</SelectItem>\n            </SelectContent>\n          </Select>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "breadcrumb",
+      "select",
+      "radix"
+    ],
+    "colSpan": 2,
+    "style": 1
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-45",
+  "type": "registry:component",
+  "dependencies": [
+    "input-otp"
+  ],
+  "registryDependencies": [
+    "https://originui.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-45.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/registry/default/lib/utils\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { OTPInput, SlotProps } from \"input-otp\";\nimport { Minus } from \"lucide-react\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"space-y-2\">\n      <Label htmlFor={id}>OTP input double</Label>\n      <OTPInput\n        id={id}\n        containerClassName=\"flex items-center gap-3 has-[:disabled]:opacity-50\"\n        maxLength={6}\n        render={({ slots }) => (\n          <>\n            <div className=\"flex\">\n              {slots.slice(0, 3).map((slot, idx) => (\n                <Slot key={idx} {...slot} />\n              ))}\n            </div>\n\n            <div className=\"text-muted-foreground/80\">\n              <Minus size={16} strokeWidth={2} aria-hidden=\"true\" />\n            </div>\n\n            <div className=\"flex\">\n              {slots.slice(3).map((slot, idx) => (\n                <Slot key={idx} {...slot} />\n              ))}\n            </div>\n          </>\n        )}\n      />\n      <p className=\"mt-2 text-xs text-muted-foreground\" role=\"region\" aria-live=\"polite\">\n        Built with{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://github.com/guilhermerodz/input-otp\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          Input OTP\n        </a>\n      </p>\n    </div>\n  );\n}\n\nfunction Slot(props: SlotProps) {\n  return (\n    <div\n      className={cn(\n        \"relative -ms-px flex size-9 items-center justify-center border border-input bg-background font-medium text-foreground shadow-sm shadow-black/5 transition-shadow first:ms-0 first:rounded-s-lg last:rounded-e-lg\",\n        { \"z-10 border border-ring ring-[3px] ring-ring/20\": props.isActive },\n      )}\n    >\n      {props.char !== null && <div>{props.char}</div>}\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "otp"
+    ]
+  }
+}

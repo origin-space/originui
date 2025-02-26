@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-50",
+  "type": "registry:component",
+  "dependencies": [
+    "react-payment-inputs"
+  ],
+  "devDependencies": [
+    "@types/react-payment-inputs"
+  ],
+  "registryDependencies": [
+    "https://originui.com/r/input.json",
+    "https://originui.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-50.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/registry/default/ui/input\";\nimport { CreditCard } from \"lucide-react\";\nimport { useId } from \"react\";\nimport { usePaymentInputs } from \"react-payment-inputs\";\nimport images, { type CardImages } from \"react-payment-inputs/images\";\n\nexport default function Component() {\n  const id = useId();\n  const { meta, getCardNumberProps, getExpiryDateProps, getCVCProps, getCardImageProps } =\n    usePaymentInputs();\n\n  return (\n    <div className=\"space-y-2\">\n      <legend className=\"text-sm font-medium text-foreground\">Card Details</legend>\n      <div className=\"rounded-lg shadow-sm shadow-black/5\">\n        <div className=\"relative focus-within:z-10\">\n          <Input\n            className=\"peer rounded-b-none pe-9 shadow-none [direction:inherit]\"\n            {...getCardNumberProps()}\n            id={`number-${id}`}\n          />\n          <div className=\"pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground/80 peer-disabled:opacity-50\">\n            {meta.cardType ? (\n              <svg\n                className=\"overflow-hidden rounded-sm\"\n                {...getCardImageProps({ images: images as unknown as CardImages })}\n                width={20}\n              />\n            ) : (\n              <CreditCard size={16} strokeWidth={2} aria-hidden=\"true\" />\n            )}\n          </div>\n        </div>\n        <div className=\"-mt-px flex\">\n          <div className=\"min-w-0 flex-1 focus-within:z-10\">\n            <Input\n              className=\"rounded-e-none rounded-t-none shadow-none [direction:inherit]\"\n              {...getExpiryDateProps()}\n              id={`expiry-${id}`}\n            />\n          </div>\n          <div className=\"-ms-px min-w-0 flex-1 focus-within:z-10\">\n            <Input\n              className=\"rounded-s-none rounded-t-none shadow-none [direction:inherit]\"\n              {...getCVCProps()}\n              id={`cvc-${id}`}\n            />\n          </div>\n        </div>\n      </div>\n      <p className=\"mt-2 text-xs text-muted-foreground\" role=\"region\" aria-live=\"polite\">\n        Built with{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://github.com/medipass/react-payment-inputs\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          React Payment Inputs\n        </a>\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "checkout",
+      "payment",
+      "credit card",
+      "form"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-259",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/button.json",
+    "https://originui.com/r/label.json",
+    "https://originui.com/r/slider.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-259.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Slider } from \"@/registry/default/ui/slider\";\nimport { Minus, Plus } from \"lucide-react\";\nimport { useState } from \"react\";\n\nexport default function Component() {\n  const minValue = 0;\n  const maxValue = 200;\n  const steps = 5;\n  const [value, setValue] = useState([100]);\n\n  const decreaseValue = () => setValue((prev) => [Math.max(minValue, prev[0] - steps)]);\n  const increaseValue = () => setValue((prev) => [Math.min(maxValue, prev[0] + steps)]);\n\n  return (\n    <div className=\"space-y-3\">\n      <Label className=\"tabular-nums\">{value[0]} credits/mo</Label>\n      <div className=\"flex items-center gap-4\">\n        <div>\n          <Button\n            variant=\"outline\"\n            size=\"icon\"\n            className=\"size-8\"\n            aria-label=\"Decrease value\"\n            onClick={decreaseValue}\n            disabled={value[0] === 0}\n          >\n            <Minus size={16} strokeWidth={2} aria-hidden=\"true\" />\n          </Button>\n        </div>\n        <Slider\n          className=\"grow\"\n          value={value}\n          onValueChange={setValue}\n          min={minValue}\n          max={maxValue}\n          step={steps}\n          aria-label=\"Dual range slider with buttons\"\n        />\n        <div>\n          <Button\n            variant=\"outline\"\n            size=\"icon\"\n            className=\"size-8\"\n            aria-label=\"Increase value\"\n            onClick={increaseValue}\n            disabled={value[0] === 200}\n          >\n            <Plus size={16} strokeWidth={2} aria-hidden=\"true\" />\n          </Button>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "slider",
+      "label",
+      "button",
+      "pricing",
+      "radix"
+    ]
+  }
+}

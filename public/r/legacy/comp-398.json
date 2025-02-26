@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-398",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/avatar.json",
+    "https://originui.com/r/badge.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-398.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/registry/default/ui/avatar\";\nimport { Badge } from \"@/registry/default/ui/badge\";\n\nexport default function Component() {\n  return (\n    <div className=\"relative\">\n      <Avatar>\n        <AvatarImage src=\"./avatar-80-07.jpg\" alt=\"Kelly King\" />\n        <AvatarFallback>KK</AvatarFallback>\n      </Avatar>\n      <Badge className=\"absolute -top-1 left-full min-w-5 -translate-x-4 border-background px-1\">\n        6\n      </Badge>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "avatar",
+      "user",
+      "profile",
+      "badge",
+      "chip"
+    ],
+    "style": 1
+  }
+}

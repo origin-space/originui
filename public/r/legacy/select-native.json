@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-native",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "registry/default/ui/select-native.tsx",
+      "content": "import { cn } from \"@/registry/default/lib/utils\";\nimport { ChevronDown } from \"lucide-react\";\nimport * as React from \"react\";\n\nexport interface SelectPropsNative extends React.SelectHTMLAttributes<HTMLSelectElement> {\n  children: React.ReactNode;\n}\n\nconst SelectNative = React.forwardRef<HTMLSelectElement, SelectPropsNative>(\n  ({ className, children, ...props }, ref) => {\n    return (\n      <div className=\"relative\">\n        <select\n          className={cn(\n            \"peer inline-flex w-full cursor-pointer appearance-none items-center rounded-lg border border-input bg-background text-sm text-foreground shadow-sm shadow-black/5 transition-shadow focus-visible:border-ring focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/20 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 has-[option[disabled]:checked]:text-muted-foreground\",\n            props.multiple\n              ? \"py-1 [&>*]:px-3 [&>*]:py-1 [&_option:checked]:bg-accent\"\n              : \"h-9 pe-8 ps-3\",\n            className,\n          )}\n          ref={ref}\n          {...props}\n        >\n          {children}\n        </select>\n        {!props.multiple && (\n          <span className=\"pointer-events-none absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center text-muted-foreground/80 peer-disabled:opacity-50\">\n            <ChevronDown size={16} strokeWidth={2} aria-hidden=\"true\" />\n          </span>\n        )}\n      </div>\n    );\n  },\n);\nSelectNative.displayName = \"SelectNative\";\n\nexport { SelectNative };\n",
+      "type": "registry:ui"
+    }
+  ]
+}
