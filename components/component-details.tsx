@@ -4,7 +4,6 @@ import ComponentCli from "@/components/cli-commands";
 import CodeBlock, { highlight } from "@/components/code-block";
 import CopyButton from "@/components/copy-button";
 import OpenInV0 from "@/components/open-in-v0";
-import { convertRegistryPaths } from "@/lib/utils";
 import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,
@@ -49,7 +48,7 @@ export default function ComponentDetails({ component }: { component: RegistryIte
         }
 
         const data = await response.json();
-        const codeContent = convertRegistryPaths(data.files[0].content) || "";
+        const codeContent = data.files[0].content || "";
         setCode(codeContent);
 
         // Pre-highlight the code
