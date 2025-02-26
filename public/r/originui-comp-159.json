@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "originui-comp-159",
+  "type": "registry:component",
+  "dependencies": [
+    "react",
+    "@radix-ui/react-label",
+    "clsx",
+    "tailwind-merge",
+    "@radix-ui/react-radio-group"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "target": "components/originui/comp-159.tsx",
+      "content": "import { Label } from \"@/components/ui/label\";\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <RadioGroup className=\"gap-2\" defaultValue=\"1\">\n      {/* Radio card #1 */}\n      <div className=\"border-input has-data-[state=checked]:border-ring relative flex w-full items-start gap-2 rounded-md border p-4 shadow-xs outline-none\">\n        <RadioGroupItem\n          value=\"1\"\n          id={`${id}-1`}\n          aria-describedby={`${id}-1-description`}\n          className=\"order-1 after:absolute after:inset-0\"\n        />\n        <div className=\"grid grow gap-2\">\n          <Label htmlFor={`${id}-1`}>\n            Label{\" \"}\n            <span className=\"text-muted-foreground text-xs leading-[inherit] font-normal\">\n              (Sublabel)\n            </span>\n          </Label>\n          <p id={`${id}-1-description`} className=\"text-muted-foreground text-xs\">\n            You can use this card with a label and a description.\n          </p>\n        </div>\n      </div>\n      {/* Radio card #2 */}\n      <div className=\"border-input has-data-[state=checked]:border-ring relative flex w-full items-start gap-2 rounded-md border p-4 shadow-xs outline-none\">\n        <RadioGroupItem\n          value=\"2\"\n          id={`${id}-2`}\n          aria-describedby={`${id}-2-description`}\n          className=\"order-1 after:absolute after:inset-0\"\n        />\n        <div className=\"grid grow gap-2\">\n          <Label htmlFor={`${id}-2`}>\n            Label{\" \"}\n            <span className=\"text-muted-foreground text-xs leading-[inherit] font-normal\">\n              (Sublabel)\n            </span>\n          </Label>\n          <p id={`${id}-2-description`} className=\"text-muted-foreground text-xs\">\n            You can use this card with a label and a description.\n          </p>\n        </div>\n      </div>\n    </RadioGroup>\n  );\n}\n",
+      "path": "registry/default/components/comp-159.tsx"
+    },
+    {
+      "type": "registry:ui",
+      "target": "components/ui/label.tsx",
+      "content": "\"use client\";\n\nimport * as LabelPrimitive from \"@radix-ui/react-label\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nfunction Label({ className, ...props }: React.ComponentProps<typeof LabelPrimitive.Root>) {\n  return (\n    <LabelPrimitive.Root\n      data-slot=\"label\"\n      className={cn(\n        \"text-foreground text-sm leading-4 font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { Label };\n",
+      "path": "registry/default/ui/label.tsx"
+    },
+    {
+      "type": "registry:ui",
+      "target": "components/ui/radio-group.tsx",
+      "content": "\"use client\";\n\nimport * as RadioGroupPrimitive from \"@radix-ui/react-radio-group\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nfunction RadioGroup({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Root>) {\n  return (\n    <RadioGroupPrimitive.Root\n      data-slot=\"radio-group\"\n      className={cn(\"grid gap-3\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction RadioGroupItem({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Item>) {\n  return (\n    <RadioGroupPrimitive.Item\n      data-slot=\"radio-group-item\"\n      className={cn(\n        \"border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground data-[state=checked]:border-primary focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive aspect-square size-4 shrink-0 rounded-full border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50\",\n        className,\n      )}\n      {...props}\n    >\n      <RadioGroupPrimitive.Indicator className=\"flex items-center justify-center text-current\">\n        <svg\n          width=\"6\"\n          height=\"6\"\n          viewBox=\"0 0 6 6\"\n          fill=\"currentcolor\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <circle cx=\"3\" cy=\"3\" r=\"3\" />\n        </svg>\n      </RadioGroupPrimitive.Indicator>\n    </RadioGroupPrimitive.Item>\n  );\n}\n\nexport { RadioGroup, RadioGroupItem };\n",
+      "path": "registry/default/ui/radio-group.tsx"
+    },
+    {
+      "type": "registry:lib",
+      "target": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "path": "registry/default/lib/utils.ts"
+    }
+  ]
+}

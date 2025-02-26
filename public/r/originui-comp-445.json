@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "originui-comp-445",
+  "type": "registry:component",
+  "dependencies": [
+    "@radix-ui/react-tabs",
+    "react",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "target": "components/originui/comp-445.tsx",
+      "content": "import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\";\n\nexport default function Component() {\n  return (\n    <Tabs defaultValue=\"tab-1\" orientation=\"vertical\" className=\"w-full flex-row\">\n      <TabsList className=\"flex-col gap-1 bg-transparent py-0\">\n        <TabsTrigger\n          value=\"tab-1\"\n          className=\"data-[state=active]:bg-muted w-full justify-start data-[state=active]:shadow-none\"\n        >\n          Overview\n        </TabsTrigger>\n        <TabsTrigger\n          value=\"tab-2\"\n          className=\"data-[state=active]:bg-muted w-full justify-start data-[state=active]:shadow-none\"\n        >\n          Projects\n        </TabsTrigger>\n        <TabsTrigger\n          value=\"tab-3\"\n          className=\"data-[state=active]:bg-muted w-full justify-start data-[state=active]:shadow-none\"\n        >\n          Packages\n        </TabsTrigger>\n      </TabsList>\n      <div className=\"grow rounded-md border text-start\">\n        <TabsContent value=\"tab-1\">\n          <p className=\"text-muted-foreground px-4 py-3 text-xs\">Content for Tab 1</p>\n        </TabsContent>\n        <TabsContent value=\"tab-2\">\n          <p className=\"text-muted-foreground px-4 py-3 text-xs\">Content for Tab 2</p>\n        </TabsContent>\n        <TabsContent value=\"tab-3\">\n          <p className=\"text-muted-foreground px-4 py-3 text-xs\">Content for Tab 3</p>\n        </TabsContent>\n      </div>\n    </Tabs>\n  );\n}\n",
+      "path": "registry/default/components/comp-445.tsx"
+    },
+    {
+      "type": "registry:ui",
+      "target": "components/ui/tabs.tsx",
+      "content": "\"use client\";\n\nimport * as TabsPrimitive from \"@radix-ui/react-tabs\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nfunction Tabs({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.Root>) {\n  return (\n    <TabsPrimitive.Root\n      data-slot=\"tabs\"\n      className={cn(\"flex flex-col gap-2\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction TabsList({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.List>) {\n  return (\n    <TabsPrimitive.List\n      data-slot=\"tabs-list\"\n      className={cn(\n        \"bg-muted text-muted-foreground/70 inline-flex w-fit items-center justify-center rounded-md p-0.5\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction TabsTrigger({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.Trigger>) {\n  return (\n    <TabsPrimitive.Trigger\n      data-slot=\"tabs-trigger\"\n      className={cn(\n        \"hover:text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 inline-flex items-center justify-center rounded-sm px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-xs [&_svg]:shrink-0\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction TabsContent({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.Content>) {\n  return (\n    <TabsPrimitive.Content\n      data-slot=\"tabs-content\"\n      className={cn(\"flex-1 outline-none\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Tabs, TabsContent, TabsList, TabsTrigger };\n",
+      "path": "registry/default/ui/tabs.tsx"
+    },
+    {
+      "type": "registry:lib",
+      "target": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "path": "registry/default/lib/utils.ts"
+    }
+  ]
+}

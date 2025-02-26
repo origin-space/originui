@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "originui-comp-158",
+  "type": "registry:component",
+  "dependencies": [
+    "react",
+    "@radix-ui/react-radio-group",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "target": "components/originui/comp-158.tsx",
+      "content": "import { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <fieldset className=\"space-y-4\">\n      <legend className=\"text-foreground text-sm leading-none font-medium\">Choose a color</legend>\n      <RadioGroup className=\"flex gap-1.5\" defaultValue=\"blue\">\n        <RadioGroupItem\n          value=\"blue\"\n          id={id}\n          aria-label=\"Blue\"\n          className=\"size-6 border-blue-500 bg-blue-500 shadow-none data-[state=checked]:border-blue-500 data-[state=checked]:bg-blue-500\"\n        />\n        <RadioGroupItem\n          value=\"indigo\"\n          id={id}\n          aria-label=\"Indigo\"\n          className=\"size-6 border-indigo-500 bg-indigo-500 shadow-none data-[state=checked]:border-indigo-500 data-[state=checked]:bg-indigo-500\"\n        />\n        <RadioGroupItem\n          value=\"pink\"\n          id={id}\n          aria-label=\"Pink\"\n          className=\"size-6 border-pink-500 bg-pink-500 shadow-none data-[state=checked]:border-pink-500 data-[state=checked]:bg-pink-500\"\n        />\n        <RadioGroupItem\n          value=\"red\"\n          id={id}\n          aria-label=\"red\"\n          className=\"size-6 border-red-500 bg-red-500 shadow-none data-[state=checked]:border-red-500 data-[state=checked]:bg-red-500\"\n        />\n        <RadioGroupItem\n          value=\"orange\"\n          id={id}\n          aria-label=\"orange\"\n          className=\"size-6 border-orange-500 bg-orange-500 shadow-none data-[state=checked]:border-orange-500 data-[state=checked]:bg-orange-500\"\n        />\n        <RadioGroupItem\n          value=\"amber\"\n          id={id}\n          aria-label=\"amber\"\n          className=\"size-6 border-amber-500 bg-amber-500 shadow-none data-[state=checked]:border-amber-500 data-[state=checked]:bg-amber-500\"\n        />\n        <RadioGroupItem\n          value=\"emerald\"\n          id={id}\n          aria-label=\"emerald\"\n          className=\"size-6 border-emerald-500 bg-emerald-500 shadow-none data-[state=checked]:border-emerald-500 data-[state=checked]:bg-emerald-500\"\n        />\n      </RadioGroup>\n    </fieldset>\n  );\n}\n",
+      "path": "registry/default/components/comp-158.tsx"
+    },
+    {
+      "type": "registry:ui",
+      "target": "components/ui/radio-group.tsx",
+      "content": "\"use client\";\n\nimport * as RadioGroupPrimitive from \"@radix-ui/react-radio-group\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nfunction RadioGroup({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Root>) {\n  return (\n    <RadioGroupPrimitive.Root\n      data-slot=\"radio-group\"\n      className={cn(\"grid gap-3\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction RadioGroupItem({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Item>) {\n  return (\n    <RadioGroupPrimitive.Item\n      data-slot=\"radio-group-item\"\n      className={cn(\n        \"border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground data-[state=checked]:border-primary focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive aspect-square size-4 shrink-0 rounded-full border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50\",\n        className,\n      )}\n      {...props}\n    >\n      <RadioGroupPrimitive.Indicator className=\"flex items-center justify-center text-current\">\n        <svg\n          width=\"6\"\n          height=\"6\"\n          viewBox=\"0 0 6 6\"\n          fill=\"currentcolor\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <circle cx=\"3\" cy=\"3\" r=\"3\" />\n        </svg>\n      </RadioGroupPrimitive.Indicator>\n    </RadioGroupPrimitive.Item>\n  );\n}\n\nexport { RadioGroup, RadioGroupItem };\n",
+      "path": "registry/default/ui/radio-group.tsx"
+    },
+    {
+      "type": "registry:lib",
+      "target": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "path": "registry/default/lib/utils.ts"
+    }
+  ]
+}

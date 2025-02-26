@@ -1,0 +1,39 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "originui-comp-126",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "react",
+    "@radix-ui/react-slot",
+    "class-variance-authority",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "target": "components/originui/comp-126.tsx",
+      "content": "\"use client\";\n\nimport { useImageUpload } from \"@/hooks/use-image-upload\";\nimport { Button } from \"@/components/ui/button\";\nimport { CircleUserRoundIcon, XIcon } from \"lucide-react\";\n\nexport default function Component() {\n  const {\n    previewUrl,\n    fileInputRef,\n    handleThumbnailClick,\n    handleFileChange,\n    handleRemove,\n    fileName,\n  } = useImageUpload();\n\n  return (\n    <div>\n      <div className=\"relative inline-flex\">\n        <Button\n          variant=\"outline\"\n          className=\"relative size-16 overflow-hidden\"\n          onClick={handleThumbnailClick}\n          aria-label={previewUrl ? \"Change image\" : \"Upload image\"}\n        >\n          {previewUrl ? (\n            <img\n              className=\"h-full w-full object-cover\"\n              src={previewUrl}\n              alt=\"Preview of uploaded image\"\n              width={40}\n              height={40}\n              style={{ objectFit: \"cover\" }}\n            />\n          ) : (\n            <div aria-hidden=\"true\">\n              <CircleUserRoundIcon className=\"opacity-60\" size={16} />\n            </div>\n          )}\n        </Button>\n        {previewUrl && (\n          <Button\n            onClick={handleRemove}\n            size=\"icon\"\n            variant=\"destructive\"\n            className=\"border-background absolute -top-2 -right-2 size-6 rounded-full border-2\"\n            aria-label=\"Remove image\"\n          >\n            <XIcon size={16} />\n          </Button>\n        )}\n        <input\n          type=\"file\"\n          ref={fileInputRef}\n          onChange={handleFileChange}\n          className=\"hidden\"\n          accept=\"image/*\"\n          aria-label=\"Upload image file\"\n        />\n      </div>\n      {fileName && <p className=\"text-muted-foreground mt-2 text-xs\">{fileName}</p>}\n      <div className=\"sr-only\" aria-live=\"polite\" role=\"status\">\n        {previewUrl ? \"Image uploaded and preview available\" : \"No image uploaded\"}\n      </div>\n    </div>\n  );\n}\n",
+      "path": "registry/default/components/comp-126.tsx"
+    },
+    {
+      "type": "registry:hook",
+      "target": "hooks/use-image-upload.ts",
+      "content": "\"use client\";\n\nimport { useCallback, useEffect, useRef, useState } from \"react\";\n\ninterface UseImageUploadProps {\n  onUpload?: (url: string) => void;\n}\n\nexport function useImageUpload({ onUpload }: UseImageUploadProps = {}) {\n  const previewRef = useRef<string | null>(null);\n  const fileInputRef = useRef<HTMLInputElement>(null);\n  const [previewUrl, setPreviewUrl] = useState<string | null>(null);\n  const [fileName, setFileName] = useState<string | null>(null);\n\n  const handleThumbnailClick = useCallback(() => {\n    fileInputRef.current?.click();\n  }, []);\n\n  const handleFileChange = useCallback(\n    (event: React.ChangeEvent<HTMLInputElement>) => {\n      const file = event.target.files?.[0];\n      if (file) {\n        setFileName(file.name);\n        const url = URL.createObjectURL(file);\n        setPreviewUrl(url);\n        previewRef.current = url;\n        onUpload?.(url);\n      }\n    },\n    [onUpload],\n  );\n\n  const handleRemove = useCallback(() => {\n    if (previewUrl) {\n      URL.revokeObjectURL(previewUrl);\n    }\n    setPreviewUrl(null);\n    setFileName(null);\n    previewRef.current = null;\n    if (fileInputRef.current) {\n      fileInputRef.current.value = \"\";\n    }\n  }, [previewUrl]);\n\n  useEffect(() => {\n    return () => {\n      if (previewRef.current) {\n        URL.revokeObjectURL(previewRef.current);\n      }\n    };\n  }, []);\n\n  return {\n    previewUrl,\n    fileName,\n    fileInputRef,\n    handleThumbnailClick,\n    handleFileChange,\n    handleRemove,\n  };\n}\n",
+      "path": "registry/default/hooks/use-image-upload.ts"
+    },
+    {
+      "type": "registry:ui",
+      "target": "components/ui/button.tsx",
+      "content": "import { Slot } from \"@radix-ui/react-slot\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst buttonVariants = cva(\n  \"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary text-primary-foreground shadow-sm hover:bg-primary/90\",\n        destructive:\n          \"bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40\",\n        outline:\n          \"border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground\",\n        secondary: \"bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80\",\n        ghost: \"hover:bg-accent hover:text-accent-foreground\",\n        link: \"text-primary underline-offset-4 hover:underline\",\n      },\n      size: {\n        default: \"h-9 px-4 py-2\",\n        sm: \"h-8 rounded-md px-3 text-xs\",\n        lg: \"h-10 rounded-md px-8\",\n        icon: \"size-9\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  },\n);\n\nfunction Button({\n  className,\n  variant,\n  size,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean;\n  }) {\n  const Comp = asChild ? Slot : \"button\";\n\n  return (\n    <Comp\n      data-slot=\"button\"\n      className={cn(buttonVariants({ variant, size, className }))}\n      {...props}\n    />\n  );\n}\n\nexport { Button, buttonVariants };\n",
+      "path": "registry/default/ui/button.tsx"
+    },
+    {
+      "type": "registry:lib",
+      "target": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "path": "registry/default/lib/utils.ts"
+    }
+  ]
+}

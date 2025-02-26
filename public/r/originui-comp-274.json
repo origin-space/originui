@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "originui-comp-274",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "target": "components/originui/comp-274.tsx",
+      "content": "import { InfoIcon } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <div className=\"rounded-md border border-blue-500/50 px-4 py-3 text-blue-600\">\n      <p className=\"text-sm\">\n        <InfoIcon className=\"me-3 -mt-0.5 inline-flex opacity-60\" size={16} aria-hidden=\"true\" />\n        Just a quick note!\n      </p>\n    </div>\n  );\n}\n",
+      "path": "registry/default/components/comp-274.tsx"
+    }
+  ]
+}
