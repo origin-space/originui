@@ -2,6 +2,7 @@ export interface ComponentCategory {
   slug: string;
   name: string;
   components: { name: string }[];
+  isNew?: boolean;
 }
 
 export const categories: ComponentCategory[] = [
@@ -660,6 +661,25 @@ export const categories: ComponentCategory[] = [
       { name: "comp-75" },
       { name: "comp-76" },
       { name: "comp-77" },
+    ],
+  },
+  {
+    slug: "timeline",
+    name: "Timeline",
+    isNew: true,
+    components: [
+      { name: "comp-530" },
+      { name: "comp-531" },
+      { name: "comp-532" },
+      { name: "comp-533" },
+      { name: "comp-534" },
+      { name: "comp-535" },
+      { name: "comp-536" },
+      { name: "comp-537" },
+      { name: "comp-538" },
+      { name: "comp-539" },
+      { name: "comp-540" },
+      { name: "comp-541" },
     ],
   },
   {

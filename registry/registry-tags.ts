@@ -28,6 +28,7 @@ export const registryTags = [
   "table",
   "tabs",
   "textarea",
+  "timeline",
   "switch",
   "tooltip",
   // Generic tags
@@ -126,6 +127,7 @@ export const registryTags = [
   "vertical stepper",
   "vertical table",
   "vertical tabs",
+  "vertical timeline",
   "volume",
   "vote",
   "warning",

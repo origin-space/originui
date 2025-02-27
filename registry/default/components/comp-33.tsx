@@ -12,6 +12,7 @@ export default function Component() {
         className="text-foreground placeholder:text-muted-foreground/70 flex h-10 w-full bg-transparent px-3 pb-2 text-sm focus-visible:outline-none"
         placeholder="Email"
         type="email"
+        disabled
       />
     </div>
   );

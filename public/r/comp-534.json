@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-534",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/timeline.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-534.tsx",
+      "content": "import {\n  Timeline,\n  TimelineContent,\n  TimelineDate,\n  TimelineHeader,\n  TimelineIndicator,\n  TimelineItem,\n  TimelineSeparator,\n  TimelineTitle,\n} from \"@/registry/default/ui/timeline\";\nimport { CheckIcon } from \"lucide-react\";\n\nconst items = [\n  {\n    id: 1,\n    date: \"Mar 15, 2024\",\n    title: \"Project Kickoff\",\n    description:\n      \"Initial team meeting and project scope definition. Established key milestones and resource allocation.\",\n  },\n  {\n    id: 2,\n    date: \"Mar 22, 2024\",\n    title: \"Design Phase\",\n    description:\n      \"Completed wireframes and user interface mockups. Stakeholder review and feedback incorporated.\",\n  },\n  {\n    id: 3,\n    date: \"Apr 5, 2024\",\n    title: \"Development Sprint\",\n    description: \"Backend API implementation and frontend component development in progress.\",\n  },\n  {\n    id: 4,\n    date: \"Apr 19, 2024\",\n    title: \"Testing & Deployment\",\n    description:\n      \"Quality assurance testing, performance optimization, and production deployment preparation.\",\n  },\n];\n\nexport default function Component() {\n  return (\n    <Timeline defaultValue={3}>\n      {items.map((item) => (\n        <TimelineItem\n          key={item.id}\n          step={item.id}\n          className=\"group-data-[orientation=vertical]/timeline:ms-10\"\n        >\n          <TimelineHeader>\n            <TimelineSeparator className=\"group-data-[orientation=vertical]/timeline:-left-7 group-data-[orientation=vertical]/timeline:h-[calc(100%-1.5rem-0.25rem)] group-data-[orientation=vertical]/timeline:translate-y-6.5\" />\n            <TimelineDate>{item.date}</TimelineDate>\n            <TimelineTitle>{item.title}</TimelineTitle>\n            <TimelineIndicator className=\"group-data-completed/timeline-item:bg-primary group-data-completed/timeline-item:text-primary-foreground flex size-6 items-center justify-center group-data-completed/timeline-item:border-none group-data-[orientation=vertical]/timeline:-left-7\">\n              <CheckIcon className=\"group-not-data-completed/timeline-item:hidden\" size={16} />\n            </TimelineIndicator>\n          </TimelineHeader>\n          <TimelineContent>{item.description}</TimelineContent>\n        </TimelineItem>\n      ))}\n    </Timeline>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "timeline",
+      "vertical timeline"
+    ],
+    "colSpan": 2
+  }
+}

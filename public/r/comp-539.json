@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-539",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/timeline.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-539.tsx",
+      "content": "import { Timeline, TimelineContent, TimelineItem } from \"@/registry/default/ui/timeline\";\nimport { BookOpenIcon, LucideIcon, MessageCircleIcon, PencilIcon, PlusIcon } from \"lucide-react\";\n\nconst items: { id: number; user: string; image: string; action: ActionType; date: Date }[] = [\n  {\n    id: 1,\n    user: \"Matt\",\n    image: \"/avatar-40-02.jpg\",\n    action: \"post\",\n    date: new Date(Date.now() - 59000), // 59 seconds ago\n  },\n  {\n    id: 2,\n    user: \"Matt\",\n    image: \"/avatar-40-02.jpg\",\n    action: \"reply\",\n    date: new Date(Date.now() - 180000), // 3 minutes ago\n  },\n  {\n    id: 3,\n    user: \"Matt\",\n    image: \"/avatar-40-02.jpg\",\n    action: \"edit\",\n    date: new Date(Date.now() - 300000), // 5 minutes ago\n  },\n  {\n    id: 4,\n    user: \"Matt\",\n    image: \"/avatar-40-02.jpg\",\n    action: \"create\",\n    date: new Date(Date.now() - 600000), // 10 minutes ago\n  },\n];\n\ntype ActionType = \"post\" | \"reply\" | \"edit\" | \"create\";\n\nfunction getActionIcon(action: ActionType): LucideIcon {\n  const icons: Record<ActionType, LucideIcon> = {\n    post: BookOpenIcon,\n    reply: MessageCircleIcon,\n    edit: PencilIcon,\n    create: PlusIcon,\n  };\n  return icons[action];\n}\n\nfunction getActionText(action: ActionType): string {\n  const texts: Record<ActionType, string> = {\n    post: \"wrote a new post\",\n    reply: \"replied to a comment\",\n    edit: \"edited a post\",\n    create: \"created a new project\",\n  };\n  return texts[action];\n}\n\nfunction getRelativeTimeString(date: Date): string {\n  const now = new Date();\n  const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000);\n\n  if (diffInSeconds < 60) {\n    return `${diffInSeconds} seconds ago`;\n  } else if (diffInSeconds < 3600) {\n    const minutes = Math.floor(diffInSeconds / 60);\n    return `${minutes} ${minutes === 1 ? \"minute\" : \"minutes\"} ago`;\n  } else if (diffInSeconds < 86400) {\n    const hours = Math.floor(diffInSeconds / 3600);\n    return `${hours} ${hours === 1 ? \"hour\" : \"hours\"} ago`;\n  } else {\n    const days = Math.floor(diffInSeconds / 86400);\n    return `${days} ${days === 1 ? \"day\" : \"days\"} ago`;\n  }\n}\n\nexport default function Component() {\n  return (\n    <div className=\"space-y-3\">\n      <div className=\"text-muted-foreground text-xs font-medium\">Activity</div>\n      <Timeline>\n        {items.map((item) => {\n          const ActionIcon = getActionIcon(item.action);\n          return (\n            <TimelineItem\n              key={item.id}\n              step={item.id}\n              className=\"m-0! flex-row items-center gap-3 py-2.5!\"\n            >\n              <ActionIcon className=\"text-muted-foreground/80\" size={16} />\n              <img src={item.image} alt={item.user} className=\"size-6 rounded-full\" />\n              <TimelineContent className=\"text-foreground\">\n                <a className=\"font-medium hover:underline\" href=\"#\">\n                  {item.user}\n                </a>\n                <span className=\"font-normal\">\n                  {\" \"}\n                  {getActionText(item.action)}{\" \"}\n                  <a className=\"hover:underline\" href=\"#\">\n                    {getRelativeTimeString(item.date)}\n                  </a>\n                </span>\n              </TimelineContent>\n            </TimelineItem>\n          );\n        })}\n      </Timeline>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "timeline",
+      "vertical timeline"
+    ],
+    "colSpan": 2
+  }
+}
