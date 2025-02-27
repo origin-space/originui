@@ -4,9 +4,10 @@
   "type": "registry:component",
   "files": [
     {
-      "path": "registry/default/components/comp-311.tsx",
+      "type": "registry:component",
+      "target": "components/originui/comp-311.tsx",
       "content": "export default function Component() {\n  return (\n    <div className=\"border-b px-4 py-3\">\n      <p className=\"text-center text-sm\">\n        <span className=\"mr-1 text-base leading-none\">📫</span> Subscribe to our newsletter and get\n        10% off your first order! <span className=\"text-muted-foreground mx-1\">·</span>{\" \"}\n        <a href=\"#\" className=\"font-medium underline hover:no-underline\">\n          Subscribe\n        </a>\n      </p>\n    </div>\n  );\n}\n",
-      "type": "registry:component"
+      "path": "registry/default/components/comp-311.tsx"
     }
   ],
   "meta": {

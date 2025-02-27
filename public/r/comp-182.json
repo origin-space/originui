@@ -2,14 +2,31 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-182",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/switch.json"
+  "dependencies": [
+    "@radix-ui/react-switch",
+    "clsx",
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {
-      "path": "registry/default/components/comp-182.tsx",
-      "content": "\"use client\";\n\nimport { Switch } from \"@/registry/default/ui/switch\";\nimport { MoonIcon, SunIcon } from \"lucide-react\";\nimport { useId, useState } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  const [checked, setChecked] = useState(false);\n\n  const toggleSwitch = () => setChecked((prev) => !prev);\n\n  return (\n    <div\n      className=\"group inline-flex items-center gap-2\"\n      data-state={checked ? \"checked\" : \"unchecked\"}\n    >\n      <span\n        id={`${id}-off`}\n        className=\"group-data-[state=checked]:text-muted-foreground/70 flex-1 cursor-pointer text-right text-sm font-medium\"\n        aria-controls={id}\n        onClick={() => setChecked(false)}\n      >\n        <MoonIcon size={16} aria-hidden=\"true\" />\n      </span>\n      <Switch\n        id={id}\n        checked={checked}\n        onCheckedChange={toggleSwitch}\n        aria-labelledby={`${id}-off ${id}-on`}\n        aria-label=\"Toggle between dark and light mode\"\n      />\n      <span\n        id={`${id}-on`}\n        className=\"group-data-[state=unchecked]:text-muted-foreground/70 flex-1 cursor-pointer text-left text-sm font-medium\"\n        aria-controls={id}\n        onClick={() => setChecked(true)}\n      >\n        <SunIcon size={16} aria-hidden=\"true\" />\n      </span>\n    </div>\n  );\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/originui/comp-182.tsx",
+      "content": "\"use client\";\n\nimport { Switch } from \"@/components/ui/switch\";\nimport { MoonIcon, SunIcon } from \"lucide-react\";\nimport { useId, useState } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  const [checked, setChecked] = useState(false);\n\n  const toggleSwitch = () => setChecked((prev) => !prev);\n\n  return (\n    <div\n      className=\"group inline-flex items-center gap-2\"\n      data-state={checked ? \"checked\" : \"unchecked\"}\n    >\n      <span\n        id={`${id}-off`}\n        className=\"group-data-[state=checked]:text-muted-foreground/70 flex-1 cursor-pointer text-right text-sm font-medium\"\n        aria-controls={id}\n        onClick={() => setChecked(false)}\n      >\n        <MoonIcon size={16} aria-hidden=\"true\" />\n      </span>\n      <Switch\n        id={id}\n        checked={checked}\n        onCheckedChange={toggleSwitch}\n        aria-labelledby={`${id}-off ${id}-on`}\n        aria-label=\"Toggle between dark and light mode\"\n      />\n      <span\n        id={`${id}-on`}\n        className=\"group-data-[state=unchecked]:text-muted-foreground/70 flex-1 cursor-pointer text-left text-sm font-medium\"\n        aria-controls={id}\n        onClick={() => setChecked(true)}\n      >\n        <SunIcon size={16} aria-hidden=\"true\" />\n      </span>\n    </div>\n  );\n}\n",
+      "path": "registry/default/components/comp-182.tsx"
+    },
+    {
+      "type": "registry:ui",
+      "target": "components/ui/switch.tsx",
+      "content": "\"use client\";\n\nimport * as SwitchPrimitive from \"@radix-ui/react-switch\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nfunction Switch({ className, ...props }: React.ComponentProps<typeof SwitchPrimitive.Root>) {\n  return (\n    <SwitchPrimitive.Root\n      data-slot=\"switch\"\n      className={cn(\n        \"peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input focus-visible:ring-ring/50 inline-flex h-6 w-10 shrink-0 items-center rounded-full border-2 border-transparent transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50\",\n        className,\n      )}\n      {...props}\n    >\n      <SwitchPrimitive.Thumb\n        data-slot=\"switch-thumb\"\n        className={cn(\n          \"bg-background pointer-events-none block size-5 rounded-full ring-0 shadow-xs transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0 data-[state=checked]:rtl:-translate-x-4\",\n        )}\n      />\n    </SwitchPrimitive.Root>\n  );\n}\n\nexport { Switch };\n",
+      "path": "registry/default/ui/switch.tsx"
+    },
+    {
+      "type": "registry:lib",
+      "target": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "path": "registry/default/lib/utils.ts"
     }
   ],
   "meta": {

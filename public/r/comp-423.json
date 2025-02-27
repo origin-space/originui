@@ -2,14 +2,39 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-423",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/badge.json"
+  "dependencies": [
+    "@radix-ui/react-checkbox",
+    "@radix-ui/react-slot",
+    "class-variance-authority",
+    "clsx",
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {
-      "path": "registry/default/components/comp-423.tsx",
-      "content": "import { Badge } from \"@/registry/default/ui/badge\";\nimport { Checkbox } from \"@/registry/default/ui/checkbox\";\nimport { CheckIcon } from \"lucide-react\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <Badge className=\"has-data-[state=unchecked]:bg-muted has-data-[state=unchecked]:text-muted-foreground has-focus-visible:border-ring has-focus-visible:ring-ring/50 relative outline-none has-focus-visible:ring-[3px]\">\n      <Checkbox id={id} className=\"peer sr-only after:absolute after:inset-0\" defaultChecked />\n      <CheckIcon size={12} className=\"hidden peer-data-[state=checked]:block\" aria-hidden=\"true\" />\n      <label htmlFor={id} className=\"cursor-pointer select-none after:absolute after:inset-0\">\n        Selectable\n      </label>\n    </Badge>\n  );\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/originui/comp-423.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\nimport { Checkbox } from \"@/components/ui/checkbox\";\nimport { CheckIcon } from \"lucide-react\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <Badge className=\"has-data-[state=unchecked]:bg-muted has-data-[state=unchecked]:text-muted-foreground has-focus-visible:border-ring has-focus-visible:ring-ring/50 relative outline-none has-focus-visible:ring-[3px]\">\n      <Checkbox id={id} className=\"peer sr-only after:absolute after:inset-0\" defaultChecked />\n      <CheckIcon size={12} className=\"hidden peer-data-[state=checked]:block\" aria-hidden=\"true\" />\n      <label htmlFor={id} className=\"cursor-pointer select-none after:absolute after:inset-0\">\n        Selectable\n      </label>\n    </Badge>\n  );\n}\n",
+      "path": "registry/default/components/comp-423.tsx"
+    },
+    {
+      "type": "registry:ui",
+      "target": "components/ui/badge.tsx",
+      "content": "import { Slot } from \"@radix-ui/react-slot\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst badgeVariants = cva(\n  \"inline-flex items-center justify-center rounded-full border px-1.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] transition-[color,box-shadow] [&>svg]:shrink-0 leading-normal\",\n  {\n    variants: {\n      variant: {\n        default: \"border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90\",\n        secondary:\n          \"border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90\",\n        destructive:\n          \"border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40\",\n        outline: \"text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  },\n);\n\nfunction Badge({\n  className,\n  variant,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"span\"> & VariantProps<typeof badgeVariants> & { asChild?: boolean }) {\n  const Comp = asChild ? Slot : \"span\";\n\n  return (\n    <Comp data-slot=\"badge\" className={cn(badgeVariants({ variant }), className)} {...props} />\n  );\n}\n\nexport { Badge, badgeVariants };\n",
+      "path": "registry/default/ui/badge.tsx"
+    },
+    {
+      "type": "registry:ui",
+      "target": "components/ui/checkbox.tsx",
+      "content": "\"use client\";\n\nimport * as CheckboxPrimitive from \"@radix-ui/react-checkbox\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nfunction Checkbox({ className, ...props }: React.ComponentProps<typeof CheckboxPrimitive.Root>) {\n  return (\n    <CheckboxPrimitive.Root\n      data-slot=\"checkbox\"\n      className={cn(\n        \"peer border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground data-[state=checked]:border-primary focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[4px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-500\",\n        className,\n      )}\n      {...props}\n    >\n      <CheckboxPrimitive.Indicator\n        data-slot=\"checkbox-indicator\"\n        className=\"grid place-content-center text-current\"\n      >\n        {props.checked === \"indeterminate\" ? (\n          <svg\n            width=\"9\"\n            height=\"9\"\n            viewBox=\"0 0 9 9\"\n            fill=\"currentcolor\"\n            xmlns=\"http://www.w3.org/2000/svg\"\n          >\n            <path\n              fillRule=\"evenodd\"\n              clipRule=\"evenodd\"\n              d=\"M0.75 4.5C0.75 4.08579 1.08579 3.75 1.5 3.75H7.5C7.91421 3.75 8.25 4.08579 8.25 4.5C8.25 4.91421 7.91421 5.25 7.5 5.25H1.5C1.08579 5.25 0.75 4.91421 0.75 4.5Z\"\n            />\n          </svg>\n        ) : (\n          <svg\n            width=\"9\"\n            height=\"9\"\n            viewBox=\"0 0 9 9\"\n            fill=\"currentcolor\"\n            xmlns=\"http://www.w3.org/2000/svg\"\n          >\n            <path\n              fillRule=\"evenodd\"\n              clipRule=\"evenodd\"\n              d=\"M8.53547 0.62293C8.88226 0.849446 8.97976 1.3142 8.75325 1.66099L4.5083 8.1599C4.38833 8.34356 4.19397 8.4655 3.9764 8.49358C3.75883 8.52167 3.53987 8.45309 3.3772 8.30591L0.616113 5.80777C0.308959 5.52987 0.285246 5.05559 0.563148 4.74844C0.84105 4.44128 1.31533 4.41757 1.62249 4.69547L3.73256 6.60459L7.49741 0.840706C7.72393 0.493916 8.18868 0.396414 8.53547 0.62293Z\"\n            />\n          </svg>\n        )}\n      </CheckboxPrimitive.Indicator>\n    </CheckboxPrimitive.Root>\n  );\n}\n\nexport { Checkbox };\n",
+      "path": "registry/default/ui/checkbox.tsx"
+    },
+    {
+      "type": "registry:lib",
+      "target": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "path": "registry/default/lib/utils.ts"
     }
   ],
   "meta": {
