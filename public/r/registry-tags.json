@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "registry-registry-tags",
+  "name": "registry-tags",
   "type": "registry:file",
   "files": [
     {
