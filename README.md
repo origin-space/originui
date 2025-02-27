@@ -1,19 +1,12 @@
-Origin UI is an extensive collection of copy-and-paste components for quickly building app UIs. It includes hundreds of components and is constantly updated with new stuff.
+Origin UI is an extensive collection of copy-and-paste components for quickly building app UIs. It includes hundreds of components and is constantly updated with new designs.
 
 **Demo** → [https://originui.com](https://originui.com)
 
-## Overview
-
-Origin UI streamlines UI development by providing:
-
-- Hundreds of customizable components
-- Consistent styling
-- Regular updates and new component additions
-- Dark mode support out of the box
+![Origin UI](https://github.com/user-attachments/assets/a6428743-1628-4498-8b45-7000e30bdc24)
 
 ## Getting Started
 
-Origin UI is designed to integrate seamlessly with Next.js projects, but the components are also compatible with any React-based project. The components follow shadcn conventions, so they’ll feel familiar to anyone who has used shadcn before.
+Origin UI is designed to integrate seamlessly with Next.js projects, but the components are also compatible with any React-based project. The components follow shadcn conventions, so they'll feel familiar to anyone who has used shadcn before.
 
 **1. Set up the required files:**
 
@@ -27,47 +20,73 @@ Note: If you're using shadcn, you may likely already have these files - however,
 ```
 :root {
   --background: oklch(1 0 0);
-  --foreground: oklch(0.14 0 286);
+  --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.14 0 286);
+  --card-foreground: oklch(0.141 0.005 285.823);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.14 0 286);
-  --primary: oklch(0.21 0.01 286);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.97 0 286);
-  --secondary-foreground: oklch(0.21 0.01 286);
-  --muted: oklch(0.97 0 286);
+  --popover-foreground: oklch(0.141 0.005 285.823);
+  --primary: oklch(0.21 0.006 285.885);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.967 0.001 286.375);
   --muted-foreground: oklch(0.55 0.01 286);
-  --accent: oklch(0.97 0 286);
-  --accent-foreground: oklch(0.21 0.01 286);
-  --destructive: oklch(0.64 0.21 25);
-  --destructive-foreground: oklch(0.99 0 0);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
+  --destructive: oklch(0.637 0.237 25.331);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
   --border: oklch(0.92 0 286);
-  --input: oklch(0.87 0.01 286);
-  --ring: oklch(0.14 0 286);
-  --radius: 0.5rem;
+  --input: oklch(0.871 0.006 286.286);
+  --ring: oklch(0.871 0.006 286.286);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.141 0.005 285.823);
+  --sidebar-primary: oklch(0.21 0.006 285.885);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.967 0.001 286.375);
+  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+  --sidebar-border: oklch(0.92 0.004 286.32);
+  --sidebar-ring: oklch(0.871 0.006 286.286);
 }
 
 .dark {
-  --background: oklch(0.14 0 286);
-  --foreground: oklch(0.99 0 0);
-  --card: oklch(0.14 0 286);
-  --card-foreground: oklch(0.99 0 0);
-  --popover: oklch(0.14 0 286);
-  --popover-foreground: oklch(0.99 0 0);
-  --primary: oklch(0.99 0 0);
-  --primary-foreground: oklch(0.21 0.01 286);
-  --secondary: oklch(0.27 0.01 286);
-  --secondary-foreground: oklch(0.99 0 0);
-  --muted: oklch(0.21 0.01 286);
+  --background: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.141 0.005 285.823);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.141 0.005 285.823);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.21 0.006 285.885);
+  --secondary: oklch(0.274 0.006 286.033);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.21 0.006 285.885);
   --muted-foreground: oklch(0.65 0.01 286);
-  --accent: oklch(0.21 0.01 286);
-  --accent-foreground: oklch(0.99 0 0);
-  --destructive: oklch(0.64 0.21 25);
-  --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.27 0.01 286);
-  --input: oklch(0.27 0.01 286);
-  --ring: oklch(0.87 0.01 286);
+  --accent: oklch(0.21 0.006 285.885);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.274 0.006 286.033);
+  --input: oklch(0.274 0.006 286.033);
+  --ring: oklch(0.442 0.017 285.786);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.274 0.006 286.033);
+  --sidebar-ring: oklch(0.442 0.017 285.786);
 }
 ```
 
@@ -88,12 +107,8 @@ Note: New components will only be developed for Tailwind v4.
 
 We welcome contributions to Origin UI! Please read our [contributing guidelines](CONTRIBUTING.md) on how to submit improvements and new components.
 
-## Terms of Use
+## License
 
-Feel free to use these components in personal and commercial projects. However, while the tutorials and demos are available for your use as-is, they cannot be redistributed or resold. Let’s keep things fair and respect each other’s work.
+Licensed under the [MIT License](https://github.com/origin-space/originui/blob/main/LICENSE.md).
 
 If you have any questions or just want to say hi, feel free to reach out to us on X 👉 [@pacovitiello](https://x.com/pacovitiello) & [@DavidePacilio](https://x.com/DavidePacilio).
-
-## Notes
-
-This project is a work in progress, and we’re continuously working to improve and expand this collection. We’d love to hear your feedback or see your contributions as the project evolves!
