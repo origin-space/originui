@@ -24,7 +24,7 @@
   "lint-staged": {
     "*": "prettier --write --ignore-unknown",
     "package.json": "sort-package-json",
-    "registry/default/**": "shadcn build"
+    "registry.json": "shadcn build"
   },
   "prettier": {
     "plugins": [
