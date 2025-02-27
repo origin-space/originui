@@ -1247,7 +1247,7 @@
         "https://originui.com/r/input.json",
         "https://originui.com/r/label.json"
       ],
-      "dependencies": ["react-phone-number-input", "react-phone-number-input/flags"],
+      "dependencies": ["react-phone-number-input"],
       "files": [
         {
           "path": "registry/default/components/comp-46.tsx",

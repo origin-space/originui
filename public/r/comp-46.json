@@ -3,8 +3,7 @@
   "name": "comp-46",
   "type": "registry:component",
   "dependencies": [
-    "react-phone-number-input",
-    "react-phone-number-input/flags"
+    "react-phone-number-input"
   ],
   "registryDependencies": [
     "https://originui.com/r/input.json",
