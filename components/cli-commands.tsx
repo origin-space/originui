@@ -8,11 +8,17 @@ export default function CliCommands({ name }: { name: string }) {
   const [config, setConfig] = useConfig();
   const packageManager = config.packageManager || "pnpm";
 
+  const siteUrl = process.env.VERCEL_URL
+    ? "https://" + process.env.VERCEL_URL
+    : process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : "https://originui.com";
+
   const commands = {
-    pnpm: `pnpm dlx shadcn@latest add https://originui.com/r/${name}.json`,
-    npm: `npx shadcn@latest add https://originui.com/r/${name}.json`,
-    yarn: `npx shadcn@latest add https://originui.com/r/${name}.json`,
-    bun: `bunx --bun shadcn@latest add https://originui.com/r/${name}.json`,
+    pnpm: `pnpm dlx shadcn@latest add ${siteUrl}/r/${name}.json`,
+    npm: `npx shadcn@latest add ${siteUrl}/r/${name}.json`,
+    yarn: `npx shadcn@latest add ${siteUrl}/r/${name}.json`,
+    bun: `bunx --bun shadcn@latest add ${siteUrl}/r/${name}.json`,
   };
 
   return (
