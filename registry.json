@@ -385,6 +385,7 @@
     {
       "name": "timeline",
       "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-slot"],
       "files": [
         {
           "path": "registry/default/ui/timeline.tsx",
