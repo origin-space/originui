@@ -14,7 +14,7 @@
     {
       "type": "registry:component",
       "target": "components/originui/comp-109.tsx",
-      "content": "import { ToggleGroup, ToggleGroupItem } from \"@/components/ui/toggle-group\";\n\nexport default function Component() {\n  return (\n    <ToggleGroup\n      variant=\"outline\"\n      className=\"inline-flex\"\n      type=\"single\"\n    >\n      <ToggleGroupItem value=\"left\">\n        Left\n      </ToggleGroupItem>\n      <ToggleGroupItem value=\"center\">\n        Center\n      </ToggleGroupItem>\n      <ToggleGroupItem value=\"right\">\n        Right\n      </ToggleGroupItem>\n    </ToggleGroup>\n  );\n}\n",
+      "content": "import { ToggleGroup, ToggleGroupItem } from \"@/components/ui/toggle-group\";\n\nexport default function Component() {\n  return (\n    <ToggleGroup variant=\"outline\" className=\"inline-flex\" type=\"single\">\n      <ToggleGroupItem value=\"left\">Left</ToggleGroupItem>\n      <ToggleGroupItem value=\"center\">Center</ToggleGroupItem>\n      <ToggleGroupItem value=\"right\">Right</ToggleGroupItem>\n    </ToggleGroup>\n  );\n}\n",
       "path": "registry/default/components/comp-109.tsx"
     },
     {
