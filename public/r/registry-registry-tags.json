@@ -2,7 +2,6 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "registry-registry-tags",
   "type": "registry:file",
-  "dependencies": [],
   "files": [
     {
       "type": "registry:file",
