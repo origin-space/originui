@@ -67,7 +67,7 @@ export default function ComponentDetails({ component }: { component: RegistryIte
     <div className="absolute top-2 right-2 flex gap-2 peer-data-comp-loading:hidden">
       <OpenInV0
         componentSource={`${
-          process.env.NODE_ENV === "production"
+          process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL
             ? `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}`
             : "https://originui.com"
         }/r/${component.name}.json`}
