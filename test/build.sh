@@ -9,7 +9,7 @@
 rm -rf out
 
 # clone bare shadcn-tailwind-v4 project from https://github.com/nrjdalal/awesome-templates to out directory without .git directory
-pnpx gitpick@latest nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-shadcn-taliwind-v4 out
+pnpx gitpick@latest nrjdalal/awesome-templates/tree/main/next.js-apps/next.js-shadcn out
 
 # replace globals.css with originui globals.css
 cp app/globals.css out/src/app/globals.css
