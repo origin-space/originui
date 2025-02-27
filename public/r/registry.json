@@ -1732,14 +1732,14 @@
           "path": "registry/default/components/comp-125.tsx"
         },
         {
-          "type": "registry:hook",
-          "target": "hooks/use-image-upload.ts",
-          "path": "registry/default/hooks/use-image-upload.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/button.tsx",
           "path": "registry/default/ui/button.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-image-upload.ts",
+          "path": "registry/default/hooks/use-image-upload.ts"
         },
         {
           "type": "registry:lib",
@@ -1777,14 +1777,14 @@
           "path": "registry/default/components/comp-126.tsx"
         },
         {
-          "type": "registry:hook",
-          "target": "hooks/use-image-upload.ts",
-          "path": "registry/default/hooks/use-image-upload.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/button.tsx",
           "path": "registry/default/ui/button.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-image-upload.ts",
+          "path": "registry/default/hooks/use-image-upload.ts"
         },
         {
           "type": "registry:lib",
@@ -7702,11 +7702,6 @@
           "path": "registry/default/components/comp-254.tsx"
         },
         {
-          "type": "registry:hook",
-          "target": "hooks/use-slider-with-input.ts",
-          "path": "registry/default/hooks/use-slider-with-input.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/button.tsx",
           "path": "registry/default/ui/button.tsx"
@@ -7730,6 +7725,11 @@
           "type": "registry:ui",
           "target": "components/ui/tooltip.tsx",
           "path": "registry/default/ui/tooltip.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-slider-with-input.ts",
+          "path": "registry/default/hooks/use-slider-with-input.ts"
         },
         {
           "type": "registry:lib",
@@ -7767,11 +7767,6 @@
           "path": "registry/default/components/comp-255.tsx"
         },
         {
-          "type": "registry:hook",
-          "target": "hooks/use-slider-with-input.ts",
-          "path": "registry/default/hooks/use-slider-with-input.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/input.tsx",
           "path": "registry/default/ui/input.tsx"
@@ -7790,6 +7785,11 @@
           "type": "registry:ui",
           "target": "components/ui/tooltip.tsx",
           "path": "registry/default/ui/tooltip.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-slider-with-input.ts",
+          "path": "registry/default/hooks/use-slider-with-input.ts"
         },
         {
           "type": "registry:lib",
@@ -7920,11 +7920,6 @@
           "path": "registry/default/components/comp-258.tsx"
         },
         {
-          "type": "registry:hook",
-          "target": "hooks/use-slider-with-input.ts",
-          "path": "registry/default/hooks/use-slider-with-input.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/input.tsx",
           "path": "registry/default/ui/input.tsx"
@@ -7943,6 +7938,11 @@
           "type": "registry:ui",
           "target": "components/ui/tooltip.tsx",
           "path": "registry/default/ui/tooltip.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-slider-with-input.ts",
+          "path": "registry/default/hooks/use-slider-with-input.ts"
         },
         {
           "type": "registry:lib",
@@ -8178,11 +8178,6 @@
           "path": "registry/default/components/comp-262.tsx"
         },
         {
-          "type": "registry:hook",
-          "target": "hooks/use-slider-with-input.ts",
-          "path": "registry/default/hooks/use-slider-with-input.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/input.tsx",
           "path": "registry/default/ui/input.tsx"
@@ -8201,6 +8196,11 @@
           "type": "registry:ui",
           "target": "components/ui/tooltip.tsx",
           "path": "registry/default/ui/tooltip.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-slider-with-input.ts",
+          "path": "registry/default/hooks/use-slider-with-input.ts"
         },
         {
           "type": "registry:lib",
@@ -8287,11 +8287,6 @@
           "path": "registry/default/components/comp-264.tsx"
         },
         {
-          "type": "registry:hook",
-          "target": "hooks/use-slider-with-input.ts",
-          "path": "registry/default/hooks/use-slider-with-input.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/button.tsx",
           "path": "registry/default/ui/button.tsx"
@@ -8315,6 +8310,11 @@
           "type": "registry:ui",
           "target": "components/ui/tooltip.tsx",
           "path": "registry/default/ui/tooltip.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-slider-with-input.ts",
+          "path": "registry/default/hooks/use-slider-with-input.ts"
         },
         {
           "type": "registry:lib",
@@ -8353,11 +8353,6 @@
           "path": "registry/default/components/comp-265.tsx"
         },
         {
-          "type": "registry:hook",
-          "target": "hooks/use-slider-with-input.ts",
-          "path": "registry/default/hooks/use-slider-with-input.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/button.tsx",
           "path": "registry/default/ui/button.tsx"
@@ -8381,6 +8376,11 @@
           "type": "registry:ui",
           "target": "components/ui/tooltip.tsx",
           "path": "registry/default/ui/tooltip.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-slider-with-input.ts",
+          "path": "registry/default/hooks/use-slider-with-input.ts"
         },
         {
           "type": "registry:lib",
@@ -9484,11 +9484,6 @@
           "path": "registry/default/components/comp-297.tsx"
         },
         {
-          "type": "registry:hook",
-          "target": "hooks/use-toast.ts",
-          "path": "registry/default/hooks/use-toast.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/button.tsx",
           "path": "registry/default/ui/button.tsx"
@@ -9497,6 +9492,11 @@
           "type": "registry:ui",
           "target": "components/ui/toast.tsx",
           "path": "registry/default/ui/toast.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-toast.ts",
+          "path": "registry/default/hooks/use-toast.ts"
         },
         {
           "type": "registry:lib",
@@ -11097,16 +11097,6 @@
           "path": "registry/default/components/comp-331.tsx"
         },
         {
-          "type": "registry:hook",
-          "target": "hooks/use-character-limit.ts",
-          "path": "registry/default/hooks/use-character-limit.ts"
-        },
-        {
-          "type": "registry:hook",
-          "target": "hooks/use-image-upload.ts",
-          "path": "registry/default/hooks/use-image-upload.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/button.tsx",
           "path": "registry/default/ui/button.tsx"
@@ -11130,6 +11120,16 @@
           "type": "registry:ui",
           "target": "components/ui/textarea.tsx",
           "path": "registry/default/ui/textarea.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-character-limit.ts",
+          "path": "registry/default/hooks/use-character-limit.ts"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-image-upload.ts",
+          "path": "registry/default/hooks/use-image-upload.ts"
         },
         {
           "type": "registry:lib",
@@ -11470,11 +11470,6 @@
           "path": "registry/default/components/comp-34.tsx"
         },
         {
-          "type": "registry:hook",
-          "target": "hooks/use-character-limit.ts",
-          "path": "registry/default/hooks/use-character-limit.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/input.tsx",
           "path": "registry/default/ui/input.tsx"
@@ -11483,6 +11478,11 @@
           "type": "registry:ui",
           "target": "components/ui/label.tsx",
           "path": "registry/default/ui/label.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-character-limit.ts",
+          "path": "registry/default/hooks/use-character-limit.ts"
         },
         {
           "type": "registry:lib",
@@ -11863,11 +11863,6 @@
           "path": "registry/default/components/comp-35.tsx"
         },
         {
-          "type": "registry:hook",
-          "target": "hooks/use-character-limit.ts",
-          "path": "registry/default/hooks/use-character-limit.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/input.tsx",
           "path": "registry/default/ui/input.tsx"
@@ -11876,6 +11871,11 @@
           "type": "registry:ui",
           "target": "components/ui/label.tsx",
           "path": "registry/default/ui/label.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-character-limit.ts",
+          "path": "registry/default/hooks/use-character-limit.ts"
         },
         {
           "type": "registry:lib",
@@ -16447,11 +16447,6 @@
           "path": "registry/default/components/comp-459.tsx"
         },
         {
-          "type": "registry:hook",
-          "target": "hooks/use-pagination.ts",
-          "path": "registry/default/hooks/use-pagination.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/button.tsx",
           "path": "registry/default/ui/button.tsx"
@@ -16460,6 +16455,11 @@
           "type": "registry:ui",
           "target": "components/ui/pagination.tsx",
           "path": "registry/default/ui/pagination.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-pagination.ts",
+          "path": "registry/default/hooks/use-pagination.ts"
         },
         {
           "type": "registry:lib",
@@ -16533,11 +16533,6 @@
           "path": "registry/default/components/comp-460.tsx"
         },
         {
-          "type": "registry:hook",
-          "target": "hooks/use-pagination.ts",
-          "path": "registry/default/hooks/use-pagination.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/button.tsx",
           "path": "registry/default/ui/button.tsx"
@@ -16546,6 +16541,11 @@
           "type": "registry:ui",
           "target": "components/ui/pagination.tsx",
           "path": "registry/default/ui/pagination.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-pagination.ts",
+          "path": "registry/default/hooks/use-pagination.ts"
         },
         {
           "type": "registry:lib",
@@ -16578,11 +16578,6 @@
           "path": "registry/default/components/comp-461.tsx"
         },
         {
-          "type": "registry:hook",
-          "target": "hooks/use-pagination.ts",
-          "path": "registry/default/hooks/use-pagination.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/button.tsx",
           "path": "registry/default/ui/button.tsx"
@@ -16591,6 +16586,11 @@
           "type": "registry:ui",
           "target": "components/ui/pagination.tsx",
           "path": "registry/default/ui/pagination.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-pagination.ts",
+          "path": "registry/default/hooks/use-pagination.ts"
         },
         {
           "type": "registry:lib",
@@ -16624,11 +16624,6 @@
           "path": "registry/default/components/comp-462.tsx"
         },
         {
-          "type": "registry:hook",
-          "target": "hooks/use-pagination.ts",
-          "path": "registry/default/hooks/use-pagination.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/button.tsx",
           "path": "registry/default/ui/button.tsx"
@@ -16642,6 +16637,11 @@
           "type": "registry:ui",
           "target": "components/ui/select.tsx",
           "path": "registry/default/ui/select.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-pagination.ts",
+          "path": "registry/default/hooks/use-pagination.ts"
         },
         {
           "type": "registry:lib",
@@ -16777,11 +16777,6 @@
           "path": "registry/default/components/comp-465.tsx"
         },
         {
-          "type": "registry:hook",
-          "target": "hooks/use-pagination.ts",
-          "path": "registry/default/hooks/use-pagination.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/button.tsx",
           "path": "registry/default/ui/button.tsx"
@@ -16800,6 +16795,11 @@
           "type": "registry:ui",
           "target": "components/ui/pagination.tsx",
           "path": "registry/default/ui/pagination.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-pagination.ts",
+          "path": "registry/default/hooks/use-pagination.ts"
         },
         {
           "type": "registry:lib",
@@ -17689,11 +17689,6 @@
           "path": "registry/default/components/comp-484.tsx"
         },
         {
-          "type": "registry:hook",
-          "target": "hooks/use-pagination.ts",
-          "path": "registry/default/hooks/use-pagination.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/badge.tsx",
           "path": "registry/default/ui/badge.tsx"
@@ -17722,6 +17717,11 @@
           "type": "registry:ui",
           "target": "components/ui/table.tsx",
           "path": "registry/default/ui/table.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-pagination.ts",
+          "path": "registry/default/hooks/use-pagination.ts"
         },
         {
           "type": "registry:lib",
@@ -20710,11 +20710,6 @@
           "path": "registry/default/components/comp-74.tsx"
         },
         {
-          "type": "registry:hook",
-          "target": "hooks/use-character-limit.ts",
-          "path": "registry/default/hooks/use-character-limit.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/label.tsx",
           "path": "registry/default/ui/label.tsx"
@@ -20723,6 +20718,11 @@
           "type": "registry:ui",
           "target": "components/ui/textarea.tsx",
           "path": "registry/default/ui/textarea.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-character-limit.ts",
+          "path": "registry/default/hooks/use-character-limit.ts"
         },
         {
           "type": "registry:lib",
@@ -22160,14 +22160,14 @@
           "path": "registry/default/ui/toaster.tsx"
         },
         {
-          "type": "registry:lib",
-          "target": "lib/utils.ts",
-          "path": "registry/default/lib/utils.ts"
-        },
-        {
           "type": "registry:hook",
           "target": "hooks/use-toast.ts",
           "path": "registry/default/hooks/use-toast.ts"
+        },
+        {
+          "type": "registry:lib",
+          "target": "lib/utils.ts",
+          "path": "registry/default/lib/utils.ts"
         }
       ]
     },
@@ -22185,6 +22185,11 @@
       "files": [
         {
           "type": "registry:ui",
+          "target": "components/ui/toast.tsx",
+          "path": "registry/default/ui/toast.tsx"
+        },
+        {
+          "type": "registry:ui",
           "target": "components/ui/toaster.tsx",
           "path": "registry/default/ui/toaster.tsx"
         },
@@ -22192,11 +22197,6 @@
           "type": "registry:hook",
           "target": "hooks/use-toast.ts",
           "path": "registry/default/hooks/use-toast.ts"
-        },
-        {
-          "type": "registry:ui",
-          "target": "components/ui/toast.tsx",
-          "path": "registry/default/ui/toast.tsx"
         },
         {
           "type": "registry:lib",
@@ -22345,14 +22345,14 @@
       ],
       "files": [
         {
-          "type": "registry:hook",
-          "target": "hooks/use-toast.ts",
-          "path": "registry/default/hooks/use-toast.ts"
-        },
-        {
           "type": "registry:ui",
           "target": "components/ui/toast.tsx",
           "path": "registry/default/ui/toast.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-toast.ts",
+          "path": "registry/default/hooks/use-toast.ts"
         },
         {
           "type": "registry:lib",
