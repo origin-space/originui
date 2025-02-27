@@ -3,11 +3,11 @@
   "name": "comp-122",
   "type": "registry:component",
   "dependencies": [
-    "@remixicon/react",
     "@radix-ui/react-slot",
+    "@remixicon/react",
     "class-variance-authority",
-    "react",
     "clsx",
+    "react",
     "tailwind-merge"
   ],
   "files": [

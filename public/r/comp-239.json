@@ -3,10 +3,10 @@
   "name": "comp-239",
   "type": "registry:component",
   "dependencies": [
-    "react-aria-components",
     "@radix-ui/react-label",
-    "react",
     "clsx",
+    "react",
+    "react-aria-components",
     "tailwind-merge"
   ],
   "files": [

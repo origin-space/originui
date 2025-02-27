@@ -7,12 +7,12 @@
     "@dnd-kit/modifiers",
     "@dnd-kit/sortable",
     "@dnd-kit/utilities",
-    "@tanstack/react-table",
-    "lucide-react",
-    "react",
     "@radix-ui/react-slot",
+    "@tanstack/react-table",
     "class-variance-authority",
     "clsx",
+    "lucide-react",
+    "react",
     "tailwind-merge"
   ],
   "files": [

@@ -3,11 +3,11 @@
   "name": "comp-165",
   "type": "registry:component",
   "dependencies": [
-    "react",
     "@radix-ui/react-label",
+    "@radix-ui/react-radio-group",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-radio-group"
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

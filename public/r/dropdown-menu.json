@@ -4,9 +4,9 @@
   "type": "registry:ui",
   "dependencies": [
     "@radix-ui/react-dropdown-menu",
+    "clsx",
     "lucide-react",
     "react",
-    "clsx",
     "tailwind-merge"
   ],
   "files": [

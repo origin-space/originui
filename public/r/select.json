@@ -4,9 +4,9 @@
   "type": "registry:ui",
   "dependencies": [
     "@radix-ui/react-select",
+    "clsx",
     "lucide-react",
     "react",
-    "clsx",
     "tailwind-merge"
   ],
   "files": [

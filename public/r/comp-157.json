@@ -3,12 +3,12 @@
   "name": "comp-157",
   "type": "registry:component",
   "dependencies": [
-    "@remixicon/react",
-    "react",
     "@radix-ui/react-label",
+    "@radix-ui/react-radio-group",
+    "@remixicon/react",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-radio-group"
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

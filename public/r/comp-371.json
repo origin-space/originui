@@ -4,11 +4,11 @@
   "type": "registry:component",
   "dependencies": [
     "@radix-ui/react-dropdown-menu",
-    "lucide-react",
-    "react",
     "@radix-ui/react-slot",
     "class-variance-authority",
     "clsx",
+    "lucide-react",
+    "react",
     "tailwind-merge"
   ],
   "files": [

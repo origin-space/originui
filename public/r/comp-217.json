@@ -3,10 +3,10 @@
   "name": "comp-217",
   "type": "registry:component",
   "dependencies": [
-    "react",
     "@radix-ui/react-select",
-    "lucide-react",
     "clsx",
+    "lucide-react",
+    "react",
     "tailwind-merge"
   ],
   "files": [

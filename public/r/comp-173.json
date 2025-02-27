@@ -3,11 +3,11 @@
   "name": "comp-173",
   "type": "registry:component",
   "dependencies": [
-    "react",
     "@radix-ui/react-label",
+    "@radix-ui/react-switch",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-switch"
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

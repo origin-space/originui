@@ -3,15 +3,15 @@
   "name": "comp-323",
   "type": "registry:component",
   "dependencies": [
+    "@radix-ui/react-dialog",
+    "@radix-ui/react-label",
+    "@radix-ui/react-radio-group",
     "@radix-ui/react-slot",
     "class-variance-authority",
-    "react",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-dialog",
     "lucide-react",
-    "@radix-ui/react-label",
-    "@radix-ui/react-radio-group"
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

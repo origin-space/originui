@@ -3,14 +3,14 @@
   "name": "comp-500",
   "type": "registry:component",
   "dependencies": [
-    "date-fns",
-    "react",
     "@radix-ui/react-slot",
     "class-variance-authority",
     "clsx",
-    "tailwind-merge",
+    "date-fns",
     "lucide-react",
-    "react-day-picker"
+    "react",
+    "react-day-picker",
+    "tailwind-merge"
   ],
   "files": [
     {

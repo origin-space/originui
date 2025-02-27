@@ -3,12 +3,12 @@
   "name": "comp-22",
   "type": "registry:component",
   "dependencies": [
-    "react",
+    "@radix-ui/react-label",
     "@radix-ui/react-slot",
     "class-variance-authority",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-label"
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

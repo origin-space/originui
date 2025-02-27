@@ -3,15 +3,15 @@
   "name": "comp-326",
   "type": "registry:component",
   "dependencies": [
-    "react",
+    "@radix-ui/react-checkbox",
+    "@radix-ui/react-dialog",
+    "@radix-ui/react-label",
     "@radix-ui/react-slot",
     "class-variance-authority",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-checkbox",
-    "@radix-ui/react-dialog",
     "lucide-react",
-    "@radix-ui/react-label"
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

@@ -3,11 +3,11 @@
   "name": "toaster",
   "type": "registry:ui",
   "dependencies": [
-    "react",
     "@radix-ui/react-toast",
     "class-variance-authority",
-    "lucide-react",
     "clsx",
+    "lucide-react",
+    "react",
     "tailwind-merge"
   ],
   "files": [

@@ -4,8 +4,8 @@
   "type": "registry:ui",
   "dependencies": [
     "@radix-ui/react-hover-card",
-    "react",
     "clsx",
+    "react",
     "tailwind-merge"
   ],
   "files": [

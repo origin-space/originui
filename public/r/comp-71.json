@@ -3,9 +3,9 @@
   "name": "comp-71",
   "type": "registry:component",
   "dependencies": [
-    "react",
     "@radix-ui/react-label",
     "clsx",
+    "react",
     "tailwind-merge"
   ],
   "files": [

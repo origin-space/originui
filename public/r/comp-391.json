@@ -4,8 +4,8 @@
   "type": "registry:component",
   "dependencies": [
     "@radix-ui/react-avatar",
-    "react",
     "clsx",
+    "react",
     "tailwind-merge"
   ],
   "files": [

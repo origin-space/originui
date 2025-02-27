@@ -4,8 +4,8 @@
   "type": "registry:component",
   "dependencies": [
     "@radix-ui/react-tabs",
-    "react",
     "clsx",
+    "react",
     "tailwind-merge"
   ],
   "files": [

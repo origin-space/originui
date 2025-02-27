@@ -3,10 +3,10 @@
   "name": "comp-438",
   "type": "registry:component",
   "dependencies": [
-    "lucide-react",
     "@radix-ui/react-tabs",
-    "react",
     "clsx",
+    "lucide-react",
+    "react",
     "tailwind-merge"
   ],
   "files": [

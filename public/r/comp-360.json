@@ -3,13 +3,13 @@
   "name": "comp-360",
   "type": "registry:component",
   "dependencies": [
-    "lucide-react",
     "@radix-ui/react-slot",
+    "@radix-ui/react-tooltip",
     "class-variance-authority",
-    "react",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-tooltip"
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

@@ -3,15 +3,15 @@
   "name": "comp-381",
   "type": "registry:component",
   "dependencies": [
-    "react",
-    "lucide-react",
+    "@radix-ui/react-checkbox",
+    "@radix-ui/react-label",
+    "@radix-ui/react-popover",
     "@radix-ui/react-slot",
     "class-variance-authority",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-checkbox",
-    "@radix-ui/react-label",
-    "@radix-ui/react-popover"
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

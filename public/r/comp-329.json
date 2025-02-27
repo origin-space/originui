@@ -3,16 +3,16 @@
   "name": "comp-329",
   "type": "registry:component",
   "dependencies": [
-    "lucide-react",
-    "react",
-    "react-payment-inputs",
+    "@radix-ui/react-dialog",
+    "@radix-ui/react-label",
+    "@radix-ui/react-radio-group",
     "@radix-ui/react-slot",
     "class-variance-authority",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-dialog",
-    "@radix-ui/react-label",
-    "@radix-ui/react-radio-group"
+    "lucide-react",
+    "react",
+    "react-payment-inputs",
+    "tailwind-merge"
   ],
   "files": [
     {

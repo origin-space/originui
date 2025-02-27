@@ -3,12 +3,12 @@
   "name": "comp-147",
   "type": "registry:component",
   "dependencies": [
+    "@radix-ui/react-checkbox",
+    "@radix-ui/react-label",
+    "clsx",
     "lucide-react",
     "react",
-    "@radix-ui/react-checkbox",
-    "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-label"
+    "tailwind-merge"
   ],
   "files": [
     {

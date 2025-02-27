@@ -3,9 +3,9 @@
   "name": "comp-38",
   "type": "registry:component",
   "dependencies": [
+    "clsx",
     "lucide-react",
     "react-aria-components",
-    "clsx",
     "tailwind-merge"
   ],
   "files": [

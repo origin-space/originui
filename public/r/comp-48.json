@@ -3,11 +3,11 @@
   "name": "comp-48",
   "type": "registry:component",
   "dependencies": [
+    "@radix-ui/react-label",
+    "clsx",
     "react",
     "react-payment-inputs",
-    "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-label"
+    "tailwind-merge"
   ],
   "files": [
     {

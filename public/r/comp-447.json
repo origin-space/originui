@@ -3,12 +3,12 @@
   "name": "comp-447",
   "type": "registry:component",
   "dependencies": [
-    "lucide-react",
+    "@radix-ui/react-dropdown-menu",
     "@radix-ui/react-slot",
-    "react",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-dropdown-menu"
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

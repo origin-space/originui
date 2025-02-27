@@ -3,12 +3,12 @@
   "name": "comp-363",
   "type": "registry:component",
   "dependencies": [
+    "@radix-ui/react-hover-card",
     "@radix-ui/react-slot",
     "class-variance-authority",
-    "react",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-hover-card"
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

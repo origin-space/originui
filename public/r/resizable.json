@@ -3,9 +3,9 @@
   "name": "resizable",
   "type": "registry:ui",
   "dependencies": [
+    "clsx",
     "lucide-react",
     "react-resizable-panels",
-    "clsx",
     "tailwind-merge"
   ],
   "files": [

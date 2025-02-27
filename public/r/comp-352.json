@@ -3,12 +3,12 @@
   "name": "comp-352",
   "type": "registry:component",
   "dependencies": [
-    "lucide-react",
     "@radix-ui/react-accordion",
-    "react",
+    "@radix-ui/react-collapsible",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-collapsible"
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

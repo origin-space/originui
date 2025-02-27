@@ -3,12 +3,12 @@
   "name": "comp-436",
   "type": "registry:component",
   "dependencies": [
-    "lucide-react",
     "@radix-ui/react-scroll-area",
-    "react",
+    "@radix-ui/react-tabs",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-tabs"
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

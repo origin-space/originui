@@ -3,13 +3,13 @@
   "name": "comp-383",
   "type": "registry:component",
   "dependencies": [
-    "lucide-react",
-    "react",
+    "@radix-ui/react-popover",
     "@radix-ui/react-slot",
     "class-variance-authority",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-popover"
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

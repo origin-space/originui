@@ -3,13 +3,13 @@
   "name": "comp-423",
   "type": "registry:component",
   "dependencies": [
-    "lucide-react",
-    "react",
+    "@radix-ui/react-checkbox",
     "@radix-ui/react-slot",
     "class-variance-authority",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-checkbox"
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

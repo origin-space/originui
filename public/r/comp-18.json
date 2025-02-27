@@ -3,11 +3,11 @@
   "name": "comp-18",
   "type": "registry:component",
   "dependencies": [
-    "react",
-    "clsx",
-    "tailwind-merge",
     "@radix-ui/react-label",
-    "lucide-react"
+    "clsx",
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

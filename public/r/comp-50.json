@@ -3,10 +3,10 @@
   "name": "comp-50",
   "type": "registry:component",
   "dependencies": [
+    "clsx",
     "lucide-react",
     "react",
     "react-payment-inputs",
-    "clsx",
     "tailwind-merge"
   ],
   "files": [

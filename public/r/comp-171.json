@@ -3,10 +3,10 @@
   "name": "comp-171",
   "type": "registry:component",
   "dependencies": [
-    "@remixicon/react",
-    "react",
     "@radix-ui/react-radio-group",
+    "@remixicon/react",
     "clsx",
+    "react",
     "tailwind-merge"
   ],
   "files": [

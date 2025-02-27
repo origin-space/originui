@@ -5,9 +5,9 @@
   "dependencies": [
     "@radix-ui/react-toast",
     "class-variance-authority",
+    "clsx",
     "lucide-react",
     "react",
-    "clsx",
     "tailwind-merge"
   ],
   "files": [
@@ -18,16 +18,16 @@
       "path": "registry/default/ui/toast.tsx"
     },
     {
-      "type": "registry:lib",
-      "target": "lib/utils.ts",
-      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
-      "path": "registry/default/lib/utils.ts"
-    },
-    {
       "type": "registry:ui",
       "target": "components/ui/toaster.tsx",
       "content": "\"use client\";\n\nimport { useToast } from \"@/hooks/use-toast\";\nimport {\n  Toast,\n  ToastClose,\n  ToastDescription,\n  ToastProvider,\n  ToastTitle,\n  ToastViewport,\n} from \"@/components/ui/toast\";\n\nexport function Toaster() {\n  const { toasts } = useToast();\n\n  return (\n    <ToastProvider>\n      {toasts.map(function ({ id, title, description, action, ...props }) {\n        return (\n          <Toast key={id} {...props}>\n            <div className=\"flex w-full justify-between gap-2\">\n              <div className=\"flex flex-col gap-3\">\n                <div className=\"space-y-1\">\n                  {title && <ToastTitle>{title}</ToastTitle>}\n                  {description && <ToastDescription>{description}</ToastDescription>}\n                </div>\n                <div>{action}</div>\n              </div>\n              <div>\n                <ToastClose />\n              </div>\n            </div>\n          </Toast>\n        );\n      })}\n      <ToastViewport />\n    </ToastProvider>\n  );\n}\n",
       "path": "registry/default/ui/toaster.tsx"
+    },
+    {
+      "type": "registry:lib",
+      "target": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "path": "registry/default/lib/utils.ts"
     },
     {
       "type": "registry:hook",

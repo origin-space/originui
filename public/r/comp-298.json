@@ -3,13 +3,13 @@
   "name": "comp-298",
   "type": "registry:component",
   "dependencies": [
-    "lucide-react",
-    "react",
     "@radix-ui/react-slot",
+    "@radix-ui/react-toast",
     "class-variance-authority",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-toast"
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

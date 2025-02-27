@@ -4,10 +4,10 @@
   "type": "registry:component",
   "dependencies": [
     "@internationalized/date",
+    "clsx",
+    "lucide-react",
     "react",
     "react-aria-components",
-    "lucide-react",
-    "clsx",
     "tailwind-merge"
   ],
   "files": [

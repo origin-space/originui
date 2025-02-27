@@ -3,15 +3,15 @@
   "name": "comp-505",
   "type": "registry:component",
   "dependencies": [
-    "date-fns",
-    "react",
+    "@radix-ui/react-scroll-area",
     "@radix-ui/react-slot",
     "class-variance-authority",
     "clsx",
-    "tailwind-merge",
+    "date-fns",
     "lucide-react",
+    "react",
     "react-day-picker",
-    "@radix-ui/react-scroll-area"
+    "tailwind-merge"
   ],
   "files": [
     {

@@ -3,13 +3,13 @@
   "name": "comp-166",
   "type": "registry:component",
   "dependencies": [
-    "react",
+    "@radix-ui/react-label",
+    "@radix-ui/react-radio-group",
     "@radix-ui/react-slot",
     "class-variance-authority",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-label",
-    "@radix-ui/react-radio-group"
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

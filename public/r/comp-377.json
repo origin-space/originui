@@ -3,14 +3,14 @@
   "name": "comp-377",
   "type": "registry:component",
   "dependencies": [
-    "lucide-react",
     "@radix-ui/react-avatar",
-    "react",
-    "clsx",
-    "tailwind-merge",
+    "@radix-ui/react-dropdown-menu",
     "@radix-ui/react-slot",
     "class-variance-authority",
-    "@radix-ui/react-dropdown-menu"
+    "clsx",
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

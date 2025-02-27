@@ -3,13 +3,13 @@
   "name": "comp-319",
   "type": "registry:component",
   "dependencies": [
-    "react",
+    "@radix-ui/react-dialog",
     "@radix-ui/react-slot",
     "class-variance-authority",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-dialog",
-    "lucide-react"
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

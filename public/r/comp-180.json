@@ -3,9 +3,9 @@
   "name": "comp-180",
   "type": "registry:component",
   "dependencies": [
-    "react",
     "@radix-ui/react-switch",
     "clsx",
+    "react",
     "tailwind-merge"
   ],
   "files": [

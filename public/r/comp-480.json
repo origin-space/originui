@@ -3,14 +3,14 @@
   "name": "comp-480",
   "type": "registry:component",
   "dependencies": [
-    "@tanstack/react-table",
-    "lucide-react",
-    "react",
+    "@radix-ui/react-dropdown-menu",
     "@radix-ui/react-slot",
+    "@tanstack/react-table",
     "class-variance-authority",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-dropdown-menu"
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

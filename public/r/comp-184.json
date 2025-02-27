@@ -3,12 +3,12 @@
   "name": "comp-184",
   "type": "registry:component",
   "dependencies": [
+    "@radix-ui/react-label",
+    "@radix-ui/react-switch",
+    "clsx",
     "lucide-react",
     "react",
-    "@radix-ui/react-label",
-    "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-switch"
+    "tailwind-merge"
   ],
   "files": [
     {

@@ -3,11 +3,11 @@
   "name": "comp-296",
   "type": "registry:component",
   "dependencies": [
-    "lucide-react",
     "@radix-ui/react-slot",
     "class-variance-authority",
-    "react",
     "clsx",
+    "lucide-react",
+    "react",
     "tailwind-merge"
   ],
   "files": [

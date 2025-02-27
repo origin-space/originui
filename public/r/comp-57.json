@@ -3,10 +3,10 @@
   "name": "comp-57",
   "type": "registry:component",
   "dependencies": [
-    "emblor",
-    "react",
     "@radix-ui/react-label",
     "clsx",
+    "emblor",
+    "react",
     "tailwind-merge"
   ],
   "files": [

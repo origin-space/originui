@@ -5,8 +5,8 @@
   "dependencies": [
     "@radix-ui/react-toggle",
     "class-variance-authority",
-    "react",
     "clsx",
+    "react",
     "tailwind-merge"
   ],
   "files": [

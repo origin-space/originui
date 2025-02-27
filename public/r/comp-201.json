@@ -3,9 +3,9 @@
   "name": "comp-201",
   "type": "registry:component",
   "dependencies": [
-    "react",
-    "lucide-react",
     "clsx",
+    "lucide-react",
+    "react",
     "tailwind-merge"
   ],
   "files": [

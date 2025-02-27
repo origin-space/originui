@@ -3,8 +3,8 @@
   "name": "comp-471",
   "type": "registry:component",
   "dependencies": [
-    "react",
     "clsx",
+    "react",
     "tailwind-merge"
   ],
   "files": [

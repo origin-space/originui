@@ -3,13 +3,13 @@
   "name": "comp-95",
   "type": "registry:component",
   "dependencies": [
-    "lucide-react",
     "@radix-ui/react-avatar",
-    "react",
-    "clsx",
-    "tailwind-merge",
     "@radix-ui/react-slot",
-    "class-variance-authority"
+    "class-variance-authority",
+    "clsx",
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

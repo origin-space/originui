@@ -3,10 +3,10 @@
   "name": "comp-100",
   "type": "registry:component",
   "dependencies": [
-    "react",
     "@radix-ui/react-slot",
     "class-variance-authority",
     "clsx",
+    "react",
     "tailwind-merge"
   ],
   "files": [

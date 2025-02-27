@@ -3,11 +3,11 @@
   "name": "comp-41",
   "type": "registry:component",
   "dependencies": [
-    "lucide-react",
-    "react-aria-components",
     "@internationalized/date",
-    "react",
     "clsx",
+    "lucide-react",
+    "react",
+    "react-aria-components",
     "tailwind-merge"
   ],
   "files": [

@@ -3,9 +3,9 @@
   "name": "comp-476",
   "type": "registry:component",
   "dependencies": [
+    "clsx",
     "lucide-react",
     "react",
-    "clsx",
     "tailwind-merge"
   ],
   "files": [

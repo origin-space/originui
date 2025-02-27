@@ -3,11 +3,11 @@
   "name": "comp-54",
   "type": "registry:component",
   "dependencies": [
-    "react",
-    "use-mask-input",
+    "@radix-ui/react-label",
     "clsx",
+    "react",
     "tailwind-merge",
-    "@radix-ui/react-label"
+    "use-mask-input"
   ],
   "files": [
     {

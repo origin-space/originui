@@ -4,11 +4,11 @@
   "type": "registry:component",
   "dependencies": [
     "@radix-ui/react-slot",
+    "@radix-ui/react-tooltip",
     "class-variance-authority",
-    "react",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-tooltip"
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

@@ -3,9 +3,9 @@
   "name": "select-native",
   "type": "registry:ui",
   "dependencies": [
+    "clsx",
     "lucide-react",
     "react",
-    "clsx",
     "tailwind-merge"
   ],
   "files": [

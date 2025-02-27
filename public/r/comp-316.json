@@ -3,14 +3,14 @@
   "name": "comp-316",
   "type": "registry:component",
   "dependencies": [
+    "@radix-ui/react-dialog",
+    "@radix-ui/react-scroll-area",
     "@radix-ui/react-slot",
     "class-variance-authority",
-    "react",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-dialog",
     "lucide-react",
-    "@radix-ui/react-scroll-area"
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

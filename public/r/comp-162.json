@@ -3,12 +3,12 @@
   "name": "comp-162",
   "type": "registry:component",
   "dependencies": [
+    "@radix-ui/react-label",
+    "@radix-ui/react-radio-group",
+    "clsx",
     "lucide-react",
     "react",
-    "@radix-ui/react-label",
-    "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-radio-group"
+    "tailwind-merge"
   ],
   "files": [
     {

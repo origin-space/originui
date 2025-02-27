@@ -3,8 +3,8 @@
   "name": "comp-36",
   "type": "registry:component",
   "dependencies": [
-    "react-aria-components",
     "clsx",
+    "react-aria-components",
     "tailwind-merge"
   ],
   "files": [

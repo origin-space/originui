@@ -4,11 +4,11 @@
   "type": "registry:component",
   "dependencies": [
     "@internationalized/date",
-    "react-aria",
-    "react-aria-components",
+    "clsx",
     "lucide-react",
     "react",
-    "clsx",
+    "react-aria",
+    "react-aria-components",
     "tailwind-merge"
   ],
   "files": [

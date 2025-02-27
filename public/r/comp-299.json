@@ -3,11 +3,11 @@
   "name": "comp-299",
   "type": "registry:component",
   "dependencies": [
-    "sonner",
     "@radix-ui/react-slot",
     "class-variance-authority",
-    "react",
     "clsx",
+    "react",
+    "sonner",
     "tailwind-merge"
   ],
   "files": [

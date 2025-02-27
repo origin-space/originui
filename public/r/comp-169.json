@@ -3,10 +3,10 @@
   "name": "comp-169",
   "type": "registry:component",
   "dependencies": [
-    "lucide-react",
-    "react",
     "@radix-ui/react-radio-group",
     "clsx",
+    "lucide-react",
+    "react",
     "tailwind-merge"
   ],
   "files": [

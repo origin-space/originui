@@ -4,11 +4,11 @@
   "type": "registry:component",
   "dependencies": [
     "@radix-ui/react-alert-dialog",
-    "react",
-    "clsx",
-    "tailwind-merge",
     "@radix-ui/react-slot",
-    "class-variance-authority"
+    "class-variance-authority",
+    "clsx",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

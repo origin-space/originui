@@ -4,9 +4,9 @@
   "type": "registry:component",
   "dependencies": [
     "@radix-ui/react-slot",
+    "clsx",
     "lucide-react",
     "react",
-    "clsx",
     "tailwind-merge"
   ],
   "files": [

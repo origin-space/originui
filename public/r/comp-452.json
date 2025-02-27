@@ -3,10 +3,10 @@
   "name": "comp-452",
   "type": "registry:component",
   "dependencies": [
-    "lucide-react",
     "@radix-ui/react-slot",
-    "react",
     "clsx",
+    "lucide-react",
+    "react",
     "tailwind-merge"
   ],
   "files": [

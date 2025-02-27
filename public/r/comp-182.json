@@ -3,10 +3,10 @@
   "name": "comp-182",
   "type": "registry:component",
   "dependencies": [
-    "lucide-react",
-    "react",
     "@radix-ui/react-switch",
     "clsx",
+    "lucide-react",
+    "react",
     "tailwind-merge"
   ],
   "files": [

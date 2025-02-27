@@ -3,12 +3,12 @@
   "name": "comp-385",
   "type": "registry:component",
   "dependencies": [
-    "react",
+    "@radix-ui/react-popover",
     "@radix-ui/react-slot",
     "class-variance-authority",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-popover"
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

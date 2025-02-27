@@ -3,11 +3,11 @@
   "name": "use-toast",
   "type": "registry:hook",
   "dependencies": [
-    "react",
     "@radix-ui/react-toast",
     "class-variance-authority",
-    "lucide-react",
     "clsx",
+    "lucide-react",
+    "react",
     "tailwind-merge"
   ],
   "files": [

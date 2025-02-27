@@ -3,13 +3,13 @@
   "name": "comp-222",
   "type": "registry:component",
   "dependencies": [
-    "@remixicon/react",
-    "react",
     "@radix-ui/react-label",
-    "clsx",
-    "tailwind-merge",
     "@radix-ui/react-select",
-    "lucide-react"
+    "@remixicon/react",
+    "clsx",
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

@@ -3,12 +3,12 @@
   "name": "comp-207",
   "type": "registry:component",
   "dependencies": [
-    "react",
     "@radix-ui/react-label",
-    "clsx",
-    "tailwind-merge",
     "@radix-ui/react-select",
-    "lucide-react"
+    "clsx",
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

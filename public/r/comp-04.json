@@ -3,10 +3,10 @@
   "name": "comp-04",
   "type": "registry:component",
   "dependencies": [
-    "react",
+    "@radix-ui/react-label",
     "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-label"
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {
