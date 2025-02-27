@@ -10,8 +10,10 @@ export default function CliCommands({ name }: { name: string }) {
 
   const siteUrl =
     process.env.NODE_ENV === "production"
-      ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-      : "http://localhost:3000";
+      ? `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}`
+      : process.env.NODE_ENV === "development"
+        ? "http://localhost:3000"
+        : "https://originui.com";
 
   const commands = {
     pnpm: `pnpm dlx shadcn@latest add ${siteUrl}/r/${name}.json`,

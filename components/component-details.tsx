@@ -68,7 +68,7 @@ export default function ComponentDetails({ component }: { component: RegistryIte
       <OpenInV0
         componentSource={`${
           process.env.NODE_ENV === "production"
-            ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+            ? `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}`
             : "https://originui.com"
         }/r/${component.name}.json`}
       />
