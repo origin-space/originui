@@ -2,7 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-474",
   "type": "registry:component",
-  "dependencies": ["clsx", "react", "tailwind-merge"],
+  "dependencies": [
+    "clsx",
+    "react",
+    "tailwind-merge"
+  ],
   "files": [
     {
       "type": "registry:component",
@@ -24,7 +28,10 @@
     }
   ],
   "meta": {
-    "tags": ["table", "vertical table"],
+    "tags": [
+      "table",
+      "vertical table"
+    ],
     "colSpan": 3
   }
 }

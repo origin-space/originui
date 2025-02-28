@@ -37,7 +37,14 @@
     }
   ],
   "meta": {
-    "tags": ["tooltip", "hover card", "user", "avatar", "profile", "radix"],
+    "tags": [
+      "tooltip",
+      "hover card",
+      "user",
+      "avatar",
+      "profile",
+      "radix"
+    ],
     "style": 1
   }
 }

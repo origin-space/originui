@@ -2,7 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "tooltip",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-tooltip", "clsx", "react", "tailwind-merge"],
+  "dependencies": [
+    "@radix-ui/react-tooltip",
+    "clsx",
+    "react",
+    "tailwind-merge"
+  ],
   "files": [
     {
       "type": "registry:ui",

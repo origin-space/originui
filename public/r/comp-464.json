@@ -44,7 +44,11 @@
     }
   ],
   "meta": {
-    "tags": ["pagination", "select", "radix"],
+    "tags": [
+      "pagination",
+      "select",
+      "radix"
+    ],
     "colSpan": 2
   }
 }

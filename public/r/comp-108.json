@@ -31,7 +31,11 @@
     }
   ],
   "meta": {
-    "tags": ["button", "toggle group", "dropdown"],
+    "tags": [
+      "button",
+      "toggle group",
+      "dropdown"
+    ],
     "style": 2
   }
 }

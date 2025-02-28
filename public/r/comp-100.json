@@ -30,7 +30,11 @@
     }
   ],
   "meta": {
-    "tags": ["button", "menu", "hamburger"],
+    "tags": [
+      "button",
+      "menu",
+      "hamburger"
+    ],
     "style": 2
   }
 }

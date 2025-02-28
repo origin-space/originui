@@ -31,7 +31,11 @@
     }
   ],
   "meta": {
-    "tags": ["button", "toggle", "darkmode"],
+    "tags": [
+      "button",
+      "toggle",
+      "darkmode"
+    ],
     "style": 2
   }
 }

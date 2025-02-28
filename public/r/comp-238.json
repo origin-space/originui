@@ -30,6 +30,11 @@
     }
   ],
   "meta": {
-    "tags": ["label", "select", "multiselect", "react aria"]
+    "tags": [
+      "label",
+      "select",
+      "multiselect",
+      "react aria"
+    ]
   }
 }

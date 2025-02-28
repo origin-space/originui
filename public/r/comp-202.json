@@ -2,7 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-202",
   "type": "registry:component",
-  "dependencies": ["clsx", "lucide-react", "react", "tailwind-merge"],
+  "dependencies": [
+    "clsx",
+    "lucide-react",
+    "react",
+    "tailwind-merge"
+  ],
   "files": [
     {
       "type": "registry:component",
@@ -24,6 +29,10 @@
     }
   ],
   "meta": {
-    "tags": ["label", "select", "native select"]
+    "tags": [
+      "label",
+      "select",
+      "native select"
+    ]
   }
 }

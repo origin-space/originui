@@ -37,7 +37,13 @@
     }
   ],
   "meta": {
-    "tags": ["dialog", "modal", "alert", "alert dialog", "radix"],
+    "tags": [
+      "dialog",
+      "modal",
+      "alert",
+      "alert dialog",
+      "radix"
+    ],
     "style": 1
   }
 }

@@ -2,7 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-479",
   "type": "registry:component",
-  "dependencies": ["@tanstack/react-table", "clsx", "lucide-react", "react", "tailwind-merge"],
+  "dependencies": [
+    "@tanstack/react-table",
+    "clsx",
+    "lucide-react",
+    "react",
+    "tailwind-merge"
+  ],
   "files": [
     {
       "type": "registry:component",
@@ -24,7 +30,13 @@
     }
   ],
   "meta": {
-    "tags": ["table", "tanstack", "flag", "sort", "resize"],
+    "tags": [
+      "table",
+      "tanstack",
+      "flag",
+      "sort",
+      "resize"
+    ],
     "colSpan": 3
   }
 }

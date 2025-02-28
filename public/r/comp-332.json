@@ -38,7 +38,12 @@
     }
   ],
   "meta": {
-    "tags": ["dialog", "modal", "onboarding", "radix"],
+    "tags": [
+      "dialog",
+      "modal",
+      "onboarding",
+      "radix"
+    ],
     "style": 1
   }
 }

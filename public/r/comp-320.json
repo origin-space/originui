@@ -51,7 +51,12 @@
     }
   ],
   "meta": {
-    "tags": ["dialog", "modal", "delete", "radix"],
+    "tags": [
+      "dialog",
+      "modal",
+      "delete",
+      "radix"
+    ],
     "style": 1
   }
 }

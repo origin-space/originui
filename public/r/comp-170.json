@@ -2,7 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-170",
   "type": "registry:component",
-  "dependencies": ["@radix-ui/react-radio-group", "clsx", "react", "tailwind-merge"],
+  "dependencies": [
+    "@radix-ui/react-radio-group",
+    "clsx",
+    "react",
+    "tailwind-merge"
+  ],
   "files": [
     {
       "type": "registry:component",
@@ -24,7 +29,13 @@
     }
   ],
   "meta": {
-    "tags": ["radio", "label", "pricing", "switch", "radix"],
+    "tags": [
+      "radio",
+      "label",
+      "pricing",
+      "switch",
+      "radix"
+    ],
     "style": 1
   }
 }

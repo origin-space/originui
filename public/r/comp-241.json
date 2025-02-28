@@ -43,6 +43,11 @@
     }
   ],
   "meta": {
-    "tags": ["slider", "label", "disabled", "radix"]
+    "tags": [
+      "slider",
+      "label",
+      "disabled",
+      "radix"
+    ]
   }
 }

@@ -38,7 +38,10 @@
     }
   ],
   "meta": {
-    "tags": ["button", "copy"],
+    "tags": [
+      "button",
+      "copy"
+    ],
     "style": 2
   }
 }

@@ -37,7 +37,9 @@
     }
   ],
   "meta": {
-    "tags": ["stepper"],
+    "tags": [
+      "stepper"
+    ],
     "colSpan": 3
   }
 }

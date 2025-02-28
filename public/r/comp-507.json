@@ -39,7 +39,13 @@
     }
   ],
   "meta": {
-    "tags": ["calendar", "range calendar", "date", "button", "react daypicker"],
+    "tags": [
+      "calendar",
+      "range calendar",
+      "date",
+      "button",
+      "react daypicker"
+    ],
     "colSpan": 3,
     "style": 1
   }

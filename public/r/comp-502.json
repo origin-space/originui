@@ -52,7 +52,12 @@
     }
   ],
   "meta": {
-    "tags": ["calendar", "date", "input", "react daypicker"],
+    "tags": [
+      "calendar",
+      "date",
+      "input",
+      "react daypicker"
+    ],
     "style": 1
   }
 }

@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-273",
   "type": "registry:component",
-  "dependencies": ["lucide-react"],
+  "dependencies": [
+    "lucide-react"
+  ],
   "files": [
     {
       "type": "registry:component",
@@ -12,7 +14,10 @@
     }
   ],
   "meta": {
-    "tags": ["alert", "info"],
+    "tags": [
+      "alert",
+      "info"
+    ],
     "colSpan": 2
   }
 }

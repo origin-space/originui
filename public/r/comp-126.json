@@ -37,7 +37,14 @@
     }
   ],
   "meta": {
-    "tags": ["button", "upload", "user", "avatar", "profile", "image"],
+    "tags": [
+      "button",
+      "upload",
+      "user",
+      "avatar",
+      "profile",
+      "image"
+    ],
     "style": 2
   }
 }

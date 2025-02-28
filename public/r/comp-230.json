@@ -59,6 +59,15 @@
     }
   ],
   "meta": {
-    "tags": ["label", "select", "command", "combobox", "popover", "search", "autocomplete", "radix"]
+    "tags": [
+      "label",
+      "select",
+      "command",
+      "combobox",
+      "popover",
+      "search",
+      "autocomplete",
+      "radix"
+    ]
   }
 }

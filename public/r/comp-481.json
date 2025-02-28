@@ -42,7 +42,13 @@
     }
   ],
   "meta": {
-    "tags": ["table", "tanstack", "flag", "sort", "drag and drop"],
+    "tags": [
+      "table",
+      "tanstack",
+      "flag",
+      "sort",
+      "drag and drop"
+    ],
     "colSpan": 3
   }
 }

@@ -31,7 +31,11 @@
     }
   ],
   "meta": {
-    "tags": ["badge", "chip", "tag"],
+    "tags": [
+      "badge",
+      "chip",
+      "tag"
+    ],
     "style": 1
   }
 }

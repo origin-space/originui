@@ -36,7 +36,10 @@
     }
   ],
   "meta": {
-    "tags": ["switch", "radix"],
+    "tags": [
+      "switch",
+      "radix"
+    ],
     "style": 1
   }
 }

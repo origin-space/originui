@@ -38,6 +38,14 @@
     }
   ],
   "meta": {
-    "tags": ["input", "label", "date", "calendar", "range calendar", "picker", "react aria"]
+    "tags": [
+      "input",
+      "label",
+      "date",
+      "calendar",
+      "range calendar",
+      "picker",
+      "react aria"
+    ]
   }
 }

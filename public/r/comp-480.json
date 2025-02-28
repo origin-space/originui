@@ -45,7 +45,13 @@
     }
   ],
   "meta": {
-    "tags": ["table", "tanstack", "flag", "sticky", "resize"],
+    "tags": [
+      "table",
+      "tanstack",
+      "flag",
+      "sticky",
+      "resize"
+    ],
     "colSpan": 3
   }
 }

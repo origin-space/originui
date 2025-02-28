@@ -2,7 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-392",
   "type": "registry:component",
-  "dependencies": ["@radix-ui/react-avatar", "clsx", "lucide-react", "react", "tailwind-merge"],
+  "dependencies": [
+    "@radix-ui/react-avatar",
+    "clsx",
+    "lucide-react",
+    "react",
+    "tailwind-merge"
+  ],
   "files": [
     {
       "type": "registry:component",
@@ -24,7 +30,11 @@
     }
   ],
   "meta": {
-    "tags": ["avatar", "user", "profile"],
+    "tags": [
+      "avatar",
+      "user",
+      "profile"
+    ],
     "style": 1
   }
 }

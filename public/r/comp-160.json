@@ -36,6 +36,11 @@
     }
   ],
   "meta": {
-    "tags": ["radio", "label", "card", "radix"]
+    "tags": [
+      "radio",
+      "label",
+      "card",
+      "radix"
+    ]
   }
 }

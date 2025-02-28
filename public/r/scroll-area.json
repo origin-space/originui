@@ -2,7 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "scroll-area",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-scroll-area", "clsx", "react", "tailwind-merge"],
+  "dependencies": [
+    "@radix-ui/react-scroll-area",
+    "clsx",
+    "react",
+    "tailwind-merge"
+  ],
   "files": [
     {
       "type": "registry:ui",

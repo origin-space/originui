@@ -58,7 +58,14 @@
     }
   ],
   "meta": {
-    "tags": ["dialog", "modal", "form", "user", "team", "radix"],
+    "tags": [
+      "dialog",
+      "modal",
+      "form",
+      "user",
+      "team",
+      "radix"
+    ],
     "style": 1
   }
 }

@@ -43,6 +43,11 @@
     }
   ],
   "meta": {
-    "tags": ["slider", "label", "tooltip", "radix"]
+    "tags": [
+      "slider",
+      "label",
+      "tooltip",
+      "radix"
+    ]
   }
 }

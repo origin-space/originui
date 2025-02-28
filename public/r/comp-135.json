@@ -36,6 +36,11 @@
     }
   ],
   "meta": {
-    "tags": ["checkbox", "label", "disabled", "radix"]
+    "tags": [
+      "checkbox",
+      "label",
+      "disabled",
+      "radix"
+    ]
   }
 }

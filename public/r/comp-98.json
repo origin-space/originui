@@ -31,7 +31,10 @@
     }
   ],
   "meta": {
-    "tags": ["button", "menu"],
+    "tags": [
+      "button",
+      "menu"
+    ],
     "style": 2
   }
 }

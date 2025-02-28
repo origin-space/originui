@@ -30,6 +30,13 @@
     }
   ],
   "meta": {
-    "tags": ["radio", "label", "card", "checkout", "payment", "radix"]
+    "tags": [
+      "radio",
+      "label",
+      "card",
+      "checkout",
+      "payment",
+      "radix"
+    ]
   }
 }

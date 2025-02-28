@@ -2,7 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-13",
   "type": "registry:component",
-  "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
+  "dependencies": [
+    "@radix-ui/react-label",
+    "clsx",
+    "react",
+    "tailwind-merge"
+  ],
   "files": [
     {
       "type": "registry:component",
@@ -30,6 +35,9 @@
     }
   ],
   "meta": {
-    "tags": ["input", "label"]
+    "tags": [
+      "input",
+      "label"
+    ]
   }
 }

@@ -30,7 +30,10 @@
     }
   ],
   "meta": {
-    "tags": ["badge", "chip"],
+    "tags": [
+      "badge",
+      "chip"
+    ],
     "style": 1
   }
 }

@@ -44,7 +44,14 @@
     }
   ],
   "meta": {
-    "tags": ["table", "tanstack", "checkbox", "badge", "chip", "flag"],
+    "tags": [
+      "table",
+      "tanstack",
+      "checkbox",
+      "badge",
+      "chip",
+      "flag"
+    ],
     "colSpan": 3
   }
 }

@@ -37,6 +37,13 @@
     }
   ],
   "meta": {
-    "tags": ["input", "label", "date", "calendar", "picker", "react aria"]
+    "tags": [
+      "input",
+      "label",
+      "date",
+      "calendar",
+      "picker",
+      "react aria"
+    ]
   }
 }

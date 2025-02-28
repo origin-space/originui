@@ -38,7 +38,12 @@
     }
   ],
   "meta": {
-    "tags": ["tooltip", "button", "kbd", "radix"],
+    "tags": [
+      "tooltip",
+      "button",
+      "kbd",
+      "radix"
+    ],
     "style": 1
   }
 }

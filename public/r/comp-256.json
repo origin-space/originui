@@ -43,6 +43,12 @@
     }
   ],
   "meta": {
-    "tags": ["slider", "label", "vote", "rating", "radix"]
+    "tags": [
+      "slider",
+      "label",
+      "vote",
+      "rating",
+      "radix"
+    ]
   }
 }

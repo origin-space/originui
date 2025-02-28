@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-slider-with-input",
   "type": "registry:hook",
-  "dependencies": ["react"],
+  "dependencies": [
+    "react"
+  ],
   "files": [
     {
       "type": "registry:hook",

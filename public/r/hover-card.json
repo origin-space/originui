@@ -2,7 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "hover-card",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-hover-card", "clsx", "react", "tailwind-merge"],
+  "dependencies": [
+    "@radix-ui/react-hover-card",
+    "clsx",
+    "react",
+    "tailwind-merge"
+  ],
   "files": [
     {
       "type": "registry:ui",

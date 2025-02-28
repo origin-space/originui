@@ -44,7 +44,11 @@
     }
   ],
   "meta": {
-    "tags": ["popover", "notification", "radix"],
+    "tags": [
+      "popover",
+      "notification",
+      "radix"
+    ],
     "style": 1
   }
 }

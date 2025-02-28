@@ -11,7 +11,10 @@
     }
   ],
   "meta": {
-    "tags": ["avatar", "avatar group"],
+    "tags": [
+      "avatar",
+      "avatar group"
+    ],
     "style": 1
   }
 }

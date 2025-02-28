@@ -31,7 +31,10 @@
     }
   ],
   "meta": {
-    "tags": ["notification", "warning"],
+    "tags": [
+      "notification",
+      "warning"
+    ],
     "colSpan": 2,
     "style": 1
   }

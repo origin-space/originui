@@ -2,7 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-442",
   "type": "registry:component",
-  "dependencies": ["@radix-ui/react-tabs", "clsx", "react", "tailwind-merge"],
+  "dependencies": [
+    "@radix-ui/react-tabs",
+    "clsx",
+    "react",
+    "tailwind-merge"
+  ],
   "files": [
     {
       "type": "registry:component",
@@ -24,7 +29,11 @@
     }
   ],
   "meta": {
-    "tags": ["tabs", "vertical tabs", "radix"],
+    "tags": [
+      "tabs",
+      "vertical tabs",
+      "radix"
+    ],
     "colSpan": 2,
     "style": 2
   }

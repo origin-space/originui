@@ -2,7 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "table",
   "type": "registry:ui",
-  "dependencies": ["clsx", "react", "tailwind-merge"],
+  "dependencies": [
+    "clsx",
+    "react",
+    "tailwind-merge"
+  ],
   "files": [
     {
       "type": "registry:ui",

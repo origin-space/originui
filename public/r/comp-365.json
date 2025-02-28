@@ -2,7 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-365",
   "type": "registry:component",
-  "dependencies": ["@radix-ui/react-hover-card", "clsx", "react", "tailwind-merge"],
+  "dependencies": [
+    "@radix-ui/react-hover-card",
+    "clsx",
+    "react",
+    "tailwind-merge"
+  ],
   "files": [
     {
       "type": "registry:component",
@@ -24,7 +29,12 @@
     }
   ],
   "meta": {
-    "tags": ["tooltip", "hover card", "image", "radix"],
+    "tags": [
+      "tooltip",
+      "hover card",
+      "image",
+      "radix"
+    ],
     "style": 1
   }
 }

@@ -45,7 +45,11 @@
     }
   ],
   "meta": {
-    "tags": ["calendar", "date", "react daypicker"],
+    "tags": [
+      "calendar",
+      "date",
+      "react daypicker"
+    ],
     "style": 1
   }
 }

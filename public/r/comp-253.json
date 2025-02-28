@@ -43,6 +43,12 @@
     }
   ],
   "meta": {
-    "tags": ["slider", "range slider", "label", "range", "radix"]
+    "tags": [
+      "slider",
+      "range slider",
+      "label",
+      "range",
+      "radix"
+    ]
   }
 }

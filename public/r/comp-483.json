@@ -71,7 +71,16 @@
     }
   ],
   "meta": {
-    "tags": ["table", "tanstack", "checkbox", "sort", "flag", "badge", "chip", "pagination"],
+    "tags": [
+      "table",
+      "tanstack",
+      "checkbox",
+      "sort",
+      "flag",
+      "badge",
+      "chip",
+      "pagination"
+    ],
     "colSpan": 3
   }
 }

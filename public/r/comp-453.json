@@ -37,7 +37,11 @@
     }
   ],
   "meta": {
-    "tags": ["breadcrumb", "select", "radix"],
+    "tags": [
+      "breadcrumb",
+      "select",
+      "radix"
+    ],
     "colSpan": 2,
     "style": 1
   }

@@ -56,7 +56,10 @@
     }
   ],
   "meta": {
-    "tags": ["pagination", "input"],
+    "tags": [
+      "pagination",
+      "input"
+    ],
     "colSpan": 2
   }
 }

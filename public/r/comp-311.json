@@ -11,7 +11,11 @@
     }
   ],
   "meta": {
-    "tags": ["banner", "newsletter", "subscribe"],
+    "tags": [
+      "banner",
+      "newsletter",
+      "subscribe"
+    ],
     "colSpan": 3
   }
 }

@@ -32,7 +32,13 @@
     }
   ],
   "meta": {
-    "tags": ["calendar", "range calendar", "date", "disabled", "react aria"],
+    "tags": [
+      "calendar",
+      "range calendar",
+      "date",
+      "disabled",
+      "react aria"
+    ],
     "style": 1
   }
 }

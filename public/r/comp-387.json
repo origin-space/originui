@@ -52,7 +52,13 @@
     }
   ],
   "meta": {
-    "tags": ["popover", "share", "social", "copy", "radix"],
+    "tags": [
+      "popover",
+      "share",
+      "social",
+      "copy",
+      "radix"
+    ],
     "style": 1
   }
 }

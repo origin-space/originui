@@ -31,7 +31,11 @@
     }
   ],
   "meta": {
-    "tags": ["button", "like", "counter"],
+    "tags": [
+      "button",
+      "like",
+      "counter"
+    ],
     "style": 2
   }
 }
