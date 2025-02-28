@@ -22,6 +22,14 @@
     }
   ],
   "meta": {
-    "tags": ["slider", "label", "button", "input", "tooltip", "reset", "radix"]
+    "tags": [
+      "slider",
+      "label",
+      "button",
+      "input",
+      "tooltip",
+      "reset",
+      "radix"
+    ]
   }
 }

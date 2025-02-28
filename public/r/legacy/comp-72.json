@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-72",
   "type": "registry:component",
-  "registryDependencies": ["https://originui.com/r/textarea.json"],
+  "registryDependencies": [
+    "https://originui.com/r/textarea.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-72.tsx",
@@ -11,6 +13,9 @@
     }
   ],
   "meta": {
-    "tags": ["label", "textarea"]
+    "tags": [
+      "label",
+      "textarea"
+    ]
   }
 }

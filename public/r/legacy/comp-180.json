@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-180",
   "type": "registry:component",
-  "registryDependencies": ["https://originui.com/r/switch.json"],
+  "registryDependencies": [
+    "https://originui.com/r/switch.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-180.tsx",
@@ -11,7 +13,11 @@
     }
   ],
   "meta": {
-    "tags": ["switch", "label", "radix"],
+    "tags": [
+      "switch",
+      "label",
+      "radix"
+    ],
     "style": 1
   }
 }

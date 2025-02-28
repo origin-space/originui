@@ -10,7 +10,9 @@
     }
   ],
   "meta": {
-    "tags": ["banner"],
+    "tags": [
+      "banner"
+    ],
     "colSpan": 3
   }
 }

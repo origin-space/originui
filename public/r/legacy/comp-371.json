@@ -14,7 +14,11 @@
     }
   ],
   "meta": {
-    "tags": ["dropdown", "checkbox", "radix"],
+    "tags": [
+      "dropdown",
+      "checkbox",
+      "radix"
+    ],
     "style": 1
   }
 }

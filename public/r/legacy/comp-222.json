@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-222",
   "type": "registry:component",
-  "dependencies": ["@remixicon/react"],
+  "dependencies": [
+    "@remixicon/react"
+  ],
   "registryDependencies": [
     "https://originui.com/r/select.json",
     "https://originui.com/r/label.json"
@@ -15,6 +17,10 @@
     }
   ],
   "meta": {
-    "tags": ["label", "select", "radix"]
+    "tags": [
+      "label",
+      "select",
+      "radix"
+    ]
   }
 }

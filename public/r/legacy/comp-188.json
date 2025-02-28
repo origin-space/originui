@@ -14,7 +14,12 @@
     }
   ],
   "meta": {
-    "tags": ["switch", "label", "card", "radix"],
+    "tags": [
+      "switch",
+      "label",
+      "card",
+      "radix"
+    ],
     "style": 1
   }
 }

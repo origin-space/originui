@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-521",
   "type": "registry:component",
-  "registryDependencies": ["https://originui.com/r/stepper.json"],
+  "registryDependencies": [
+    "https://originui.com/r/stepper.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-521.tsx",
@@ -11,7 +13,9 @@
     }
   ],
   "meta": {
-    "tags": ["stepper"],
+    "tags": [
+      "stepper"
+    ],
     "colSpan": 3
   }
 }

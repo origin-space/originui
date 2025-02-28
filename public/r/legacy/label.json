@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "label",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-label"],
+  "dependencies": [
+    "@radix-ui/react-label"
+  ],
   "files": [
     {
       "path": "registry/default/ui/label.tsx",

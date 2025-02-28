@@ -14,7 +14,13 @@
     }
   ],
   "meta": {
-    "tags": ["dropdown", "checkbox", "radio", "delete", "radix"],
+    "tags": [
+      "dropdown",
+      "checkbox",
+      "radio",
+      "delete",
+      "radix"
+    ],
     "style": 1
   }
 }

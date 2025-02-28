@@ -14,6 +14,11 @@
     }
   ],
   "meta": {
-    "tags": ["label", "select", "multiselect", "native select"]
+    "tags": [
+      "label",
+      "select",
+      "multiselect",
+      "native select"
+    ]
   }
 }

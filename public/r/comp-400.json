@@ -2,7 +2,6 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-400",
   "type": "registry:component",
-  "dependencies": [],
   "files": [
     {
       "type": "registry:component",

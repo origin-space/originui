@@ -2,8 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "calendar",
   "type": "registry:ui",
-  "dependencies": ["react-day-picker", "date-fns"],
-  "registryDependencies": ["button"],
+  "dependencies": [
+    "react-day-picker",
+    "date-fns"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
   "files": [
     {
       "path": "registry/default/ui/calendar.tsx",

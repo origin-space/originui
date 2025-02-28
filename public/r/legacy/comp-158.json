@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-158",
   "type": "registry:component",
-  "registryDependencies": ["https://originui.com/r/radio-group.json"],
+  "registryDependencies": [
+    "https://originui.com/r/radio-group.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-158.tsx",
@@ -11,6 +13,12 @@
     }
   ],
   "meta": {
-    "tags": ["radio", "label", "color", "picker", "radix"]
+    "tags": [
+      "radio",
+      "label",
+      "color",
+      "picker",
+      "radix"
+    ]
   }
 }

@@ -14,7 +14,11 @@
     }
   ],
   "meta": {
-    "tags": ["popover", "tour", "radix"],
+    "tags": [
+      "popover",
+      "tour",
+      "radix"
+    ],
     "style": 1
   }
 }

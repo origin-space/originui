@@ -10,7 +10,10 @@
     }
   ],
   "meta": {
-    "tags": ["alert", "info"],
+    "tags": [
+      "alert",
+      "info"
+    ],
     "colSpan": 2
   }
 }

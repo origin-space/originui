@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-345",
   "type": "registry:component",
-  "registryDependencies": ["https://originui.com/r/accordion.json"],
+  "registryDependencies": [
+    "https://originui.com/r/accordion.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-345.tsx",
@@ -11,7 +13,10 @@
     }
   ],
   "meta": {
-    "tags": ["accordion", "radix"],
+    "tags": [
+      "accordion",
+      "radix"
+    ],
     "colSpan": 2
   }
 }

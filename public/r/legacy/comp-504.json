@@ -16,7 +16,13 @@
     }
   ],
   "meta": {
-    "tags": ["calendar", "date", "collapsible", "react daypicker", "radix"],
+    "tags": [
+      "calendar",
+      "date",
+      "collapsible",
+      "react daypicker",
+      "radix"
+    ],
     "style": 1
   }
 }

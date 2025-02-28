@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dialog",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-dialog"],
+  "dependencies": [
+    "@radix-ui/react-dialog"
+  ],
   "files": [
     {
       "path": "registry/default/ui/dialog.tsx",

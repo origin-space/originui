@@ -20,6 +20,11 @@
     }
   ],
   "meta": {
-    "tags": ["slider", "label", "input", "radix"]
+    "tags": [
+      "slider",
+      "label",
+      "input",
+      "radix"
+    ]
   }
 }

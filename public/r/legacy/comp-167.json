@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-167",
   "type": "registry:component",
-  "registryDependencies": ["https://originui.com/r/radio-group.json"],
+  "registryDependencies": [
+    "https://originui.com/r/radio-group.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-167.tsx",
@@ -11,6 +13,12 @@
     }
   ],
   "meta": {
-    "tags": ["radio", "label", "rating", "vote", "radix"]
+    "tags": [
+      "radio",
+      "label",
+      "rating",
+      "vote",
+      "radix"
+    ]
   }
 }

@@ -2,8 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-300",
   "type": "registry:component",
-  "dependencies": ["sonner"],
-  "registryDependencies": ["https://originui.com/r/button.json"],
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [
+    "https://originui.com/r/button.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-300.tsx",
@@ -12,7 +16,12 @@
     }
   ],
   "meta": {
-    "tags": ["notification", "toast", "success", "radix"],
+    "tags": [
+      "notification",
+      "toast",
+      "success",
+      "radix"
+    ],
     "colSpan": 2,
     "style": 1
   }

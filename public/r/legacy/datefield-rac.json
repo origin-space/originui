@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "datefield-rac",
   "type": "registry:ui",
-  "dependencies": ["react-aria-components"],
+  "dependencies": [
+    "react-aria-components"
+  ],
   "files": [
     {
       "path": "registry/default/ui/datefield-rac.tsx",

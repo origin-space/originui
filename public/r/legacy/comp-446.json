@@ -14,7 +14,10 @@
     }
   ],
   "meta": {
-    "tags": ["breadcrumb", "radix"],
+    "tags": [
+      "breadcrumb",
+      "radix"
+    ],
     "colSpan": 2,
     "style": 1
   }

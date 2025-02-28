@@ -2,8 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-239",
   "type": "registry:component",
-  "dependencies": ["react-aria-components"],
-  "registryDependencies": ["https://originui.com/r/label.json"],
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "https://originui.com/r/label.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-239.tsx",
@@ -12,6 +16,11 @@
     }
   ],
   "meta": {
-    "tags": ["label", "select", "multiselect", "react aria"]
+    "tags": [
+      "label",
+      "select",
+      "multiselect",
+      "react aria"
+    ]
   }
 }

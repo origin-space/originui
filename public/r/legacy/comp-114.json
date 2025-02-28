@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-114",
   "type": "registry:component",
-  "registryDependencies": ["https://originui.com/r/button.json"],
+  "registryDependencies": [
+    "https://originui.com/r/button.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-114.tsx",
@@ -11,7 +13,11 @@
     }
   ],
   "meta": {
-    "tags": ["button", "dropdown", "counter"],
+    "tags": [
+      "button",
+      "dropdown",
+      "counter"
+    ],
     "style": 2
   }
 }

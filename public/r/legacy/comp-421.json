@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-421",
   "type": "registry:component",
-  "registryDependencies": ["https://originui.com/r/badge.json"],
+  "registryDependencies": [
+    "https://originui.com/r/badge.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-421.tsx",
@@ -11,7 +13,11 @@
     }
   ],
   "meta": {
-    "tags": ["badge", "chip", "status"],
+    "tags": [
+      "badge",
+      "chip",
+      "status"
+    ],
     "style": 1
   }
 }

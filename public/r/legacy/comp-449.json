@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-449",
   "type": "registry:component",
-  "registryDependencies": ["https://originui.com/r/breadcrumb.json"],
+  "registryDependencies": [
+    "https://originui.com/r/breadcrumb.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-449.tsx",
@@ -11,7 +13,10 @@
     }
   ],
   "meta": {
-    "tags": ["breadcrumb", "radix"],
+    "tags": [
+      "breadcrumb",
+      "radix"
+    ],
     "colSpan": 2,
     "style": 1
   }

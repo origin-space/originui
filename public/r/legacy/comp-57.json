@@ -2,8 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-57",
   "type": "registry:component",
-  "dependencies": ["emblor"],
-  "registryDependencies": ["https://originui.com/r/label.json"],
+  "dependencies": [
+    "emblor"
+  ],
+  "registryDependencies": [
+    "https://originui.com/r/label.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-57.tsx",
@@ -12,6 +16,11 @@
     }
   ],
   "meta": {
-    "tags": ["input", "label", "tag", "emblor"]
+    "tags": [
+      "input",
+      "label",
+      "tag",
+      "emblor"
+    ]
   }
 }

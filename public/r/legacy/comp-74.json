@@ -19,6 +19,9 @@
     }
   ],
   "meta": {
-    "tags": ["label", "textarea"]
+    "tags": [
+      "label",
+      "textarea"
+    ]
   }
 }

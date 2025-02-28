@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-364",
   "type": "registry:component",
-  "registryDependencies": ["https://originui.com/r/hover-card.json"],
+  "registryDependencies": [
+    "https://originui.com/r/hover-card.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-364.tsx",
@@ -11,7 +13,14 @@
     }
   ],
   "meta": {
-    "tags": ["tooltip", "hover card", "user", "avatar", "profile", "radix"],
+    "tags": [
+      "tooltip",
+      "hover card",
+      "user",
+      "avatar",
+      "profile",
+      "radix"
+    ],
     "style": 1
   }
 }

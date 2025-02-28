@@ -17,7 +17,14 @@
     }
   ],
   "meta": {
-    "tags": ["dialog", "modal", "rating", "feedback", "form", "radix"],
+    "tags": [
+      "dialog",
+      "modal",
+      "rating",
+      "feedback",
+      "form",
+      "radix"
+    ],
     "style": 1
   }
 }

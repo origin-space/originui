@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-508",
   "type": "registry:component",
-  "registryDependencies": ["https://originui.com/r/calendar.json"],
+  "registryDependencies": [
+    "https://originui.com/r/calendar.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-508.tsx",
@@ -11,7 +13,12 @@
     }
   ],
   "meta": {
-    "tags": ["calendar", "range calendar", "date", "react daypicker"],
+    "tags": [
+      "calendar",
+      "range calendar",
+      "date",
+      "react daypicker"
+    ],
     "colSpan": 3,
     "style": 1
   }

@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-493",
   "type": "registry:component",
-  "registryDependencies": ["https://originui.com/r/calendar.json"],
+  "registryDependencies": [
+    "https://originui.com/r/calendar.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-493.tsx",
@@ -11,7 +13,11 @@
     }
   ],
   "meta": {
-    "tags": ["calendar", "date", "react daypicker"],
+    "tags": [
+      "calendar",
+      "date",
+      "react daypicker"
+    ],
     "style": 1
   }
 }

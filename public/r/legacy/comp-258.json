@@ -20,6 +20,13 @@
     }
   ],
   "meta": {
-    "tags": ["slider", "range slider", "label", "input", "range", "radix"]
+    "tags": [
+      "slider",
+      "range slider",
+      "label",
+      "input",
+      "range",
+      "radix"
+    ]
   }
 }

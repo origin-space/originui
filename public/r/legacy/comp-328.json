@@ -2,8 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-328",
   "type": "registry:component",
-  "dependencies": ["react-payment-inputs"],
-  "devDependencies": ["@types/react-payment-inputs"],
+  "dependencies": [
+    "react-payment-inputs"
+  ],
+  "devDependencies": [
+    "@types/react-payment-inputs"
+  ],
   "registryDependencies": [
     "https://originui.com/r/button.json",
     "https://originui.com/r/checkbox.json",
@@ -19,7 +23,15 @@
     }
   ],
   "meta": {
-    "tags": ["dialog", "modal", "checkout", "payment", "credit card", "form", "radix"],
+    "tags": [
+      "dialog",
+      "modal",
+      "checkout",
+      "payment",
+      "credit card",
+      "form",
+      "radix"
+    ],
     "style": 1
   }
 }

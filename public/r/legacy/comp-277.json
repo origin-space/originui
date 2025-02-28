@@ -10,7 +10,12 @@
     }
   ],
   "meta": {
-    "tags": ["alert", "error", "signup", "authentication"],
+    "tags": [
+      "alert",
+      "error",
+      "signup",
+      "authentication"
+    ],
     "colSpan": 2
   }
 }

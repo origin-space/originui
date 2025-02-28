@@ -14,6 +14,11 @@
     }
   ],
   "meta": {
-    "tags": ["slider", "label", "equalizer", "radix"]
+    "tags": [
+      "slider",
+      "label",
+      "equalizer",
+      "radix"
+    ]
   }
 }

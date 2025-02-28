@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-324",
   "type": "registry:component",
-  "dependencies": ["input-otp"],
+  "dependencies": [
+    "input-otp"
+  ],
   "registryDependencies": [
     "https://originui.com/r/button.json",
     "https://originui.com/r/dialog.json"
@@ -15,7 +17,12 @@
     }
   ],
   "meta": {
-    "tags": ["dialog", "modal", "otp", "radix"],
+    "tags": [
+      "dialog",
+      "modal",
+      "otp",
+      "radix"
+    ],
     "style": 1
   }
 }

@@ -14,6 +14,13 @@
     }
   ],
   "meta": {
-    "tags": ["label", "select", "user", "avatar", "profile", "radix"]
+    "tags": [
+      "label",
+      "select",
+      "user",
+      "avatar",
+      "profile",
+      "radix"
+    ]
   }
 }

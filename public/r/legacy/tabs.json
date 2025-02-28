@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "tabs",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-tabs"],
+  "dependencies": [
+    "@radix-ui/react-tabs"
+  ],
   "files": [
     {
       "path": "registry/default/ui/tabs.tsx",

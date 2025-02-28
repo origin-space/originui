@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-426",
   "type": "registry:component",
-  "registryDependencies": ["https://originui.com/r/tabs.json"],
+  "registryDependencies": [
+    "https://originui.com/r/tabs.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-426.tsx",
@@ -11,7 +13,10 @@
     }
   ],
   "meta": {
-    "tags": ["tabs", "radix"],
+    "tags": [
+      "tabs",
+      "radix"
+    ],
     "colSpan": 2,
     "style": 2
   }

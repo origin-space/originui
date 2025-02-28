@@ -15,7 +15,12 @@
     }
   ],
   "meta": {
-    "tags": ["popover", "notification", "user", "radix"],
+    "tags": [
+      "popover",
+      "notification",
+      "user",
+      "radix"
+    ],
     "style": 1
   }
 }

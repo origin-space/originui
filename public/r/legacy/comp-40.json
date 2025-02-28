@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-40",
   "type": "registry:component",
-  "registryDependencies": ["https://originui.com/r/datefield-rac.json"],
+  "registryDependencies": [
+    "https://originui.com/r/datefield-rac.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-40.tsx",
@@ -11,6 +13,11 @@
     }
   ],
   "meta": {
-    "tags": ["input", "label", "date", "react aria"]
+    "tags": [
+      "input",
+      "label",
+      "date",
+      "react aria"
+    ]
   }
 }

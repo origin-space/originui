@@ -15,6 +15,12 @@
     }
   ],
   "meta": {
-    "tags": ["slider", "range slider", "label", "button", "radix"]
+    "tags": [
+      "slider",
+      "range slider",
+      "label",
+      "button",
+      "radix"
+    ]
   }
 }

@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-477",
   "type": "registry:component",
-  "dependencies": ["@tanstack/react-table"],
+  "dependencies": [
+    "@tanstack/react-table"
+  ],
   "registryDependencies": [
     "https://originui.com/r/badge.json",
     "https://originui.com/r/checkbox.json",
@@ -16,7 +18,14 @@
     }
   ],
   "meta": {
-    "tags": ["table", "tanstack", "checkbox", "badge", "chip", "flag"],
+    "tags": [
+      "table",
+      "tanstack",
+      "checkbox",
+      "badge",
+      "chip",
+      "flag"
+    ],
     "colSpan": 3
   }
 }

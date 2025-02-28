@@ -2,8 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert-dialog",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-alert-dialog"],
-  "registryDependencies": ["https://originui.com/r/button.json"],
+  "dependencies": [
+    "@radix-ui/react-alert-dialog"
+  ],
+  "registryDependencies": [
+    "https://originui.com/r/button.json"
+  ],
   "files": [
     {
       "path": "registry/default/ui/alert-dialog.tsx",

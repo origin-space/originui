@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-202",
   "type": "registry:component",
-  "registryDependencies": ["https://originui.com/r/select-native.json"],
+  "registryDependencies": [
+    "https://originui.com/r/select-native.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-202.tsx",
@@ -11,6 +13,10 @@
     }
   ],
   "meta": {
-    "tags": ["label", "select", "native select"]
+    "tags": [
+      "label",
+      "select",
+      "native select"
+    ]
   }
 }

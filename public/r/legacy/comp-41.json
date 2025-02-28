@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-41",
   "type": "registry:component",
-  "dependencies": ["react-aria-components"],
+  "dependencies": [
+    "react-aria-components"
+  ],
   "registryDependencies": [
     "https://originui.com/r/calendar-rac.json",
     "https://originui.com/r/datefield-rac.json"
@@ -15,6 +17,13 @@
     }
   ],
   "meta": {
-    "tags": ["input", "label", "date", "calendar", "picker", "react aria"]
+    "tags": [
+      "input",
+      "label",
+      "date",
+      "calendar",
+      "picker",
+      "react aria"
+    ]
   }
 }

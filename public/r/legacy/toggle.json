@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "toggle",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-toggle"],
+  "dependencies": [
+    "@radix-ui/react-toggle"
+  ],
   "files": [
     {
       "path": "registry/default/ui/toggle.tsx",

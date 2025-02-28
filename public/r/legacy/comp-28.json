@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-28",
   "type": "registry:component",
-  "dependencies": ["react-aria-components"],
+  "dependencies": [
+    "react-aria-components"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-28.tsx",
@@ -11,6 +13,12 @@
     }
   ],
   "meta": {
-    "tags": ["input", "label", "button", "number", "react aria"]
+    "tags": [
+      "input",
+      "label",
+      "button",
+      "number",
+      "react aria"
+    ]
   }
 }

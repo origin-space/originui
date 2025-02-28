@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-392",
   "type": "registry:component",
-  "registryDependencies": ["https://originui.com/r/avatar.json"],
+  "registryDependencies": [
+    "https://originui.com/r/avatar.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-392.tsx",
@@ -11,7 +13,11 @@
     }
   ],
   "meta": {
-    "tags": ["avatar", "user", "profile"],
+    "tags": [
+      "avatar",
+      "user",
+      "profile"
+    ],
     "style": 1
   }
 }

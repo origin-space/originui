@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "pagination",
   "type": "registry:ui",
-  "registryDependencies": ["button"],
+  "registryDependencies": [
+    "button"
+  ],
   "files": [
     {
       "path": "registry/default/ui/pagination.tsx",

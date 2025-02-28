@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "multiselect",
   "type": "registry:ui",
-  "registryDependencies": ["https://originui.com/r/command.json"],
+  "registryDependencies": [
+    "https://originui.com/r/command.json"
+  ],
   "files": [
     {
       "path": "registry/default/ui/multiselect.tsx",
