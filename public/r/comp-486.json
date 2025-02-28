@@ -11,7 +11,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-486.tsx",
+      "target": "components/comp-486.tsx",
       "content": "import { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"*:not-first:mt-2\">\n      <Label className=\"flex-1\">Range</Label>\n      <div className=\"flex\">\n        <Input\n          id={`${id}-1`}\n          className=\"flex-1 rounded-e-none [-moz-appearance:_textfield] focus:z-10 [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none\"\n          placeholder=\"From\"\n          type=\"number\"\n          aria-label=\"Min Value\"\n        />\n        <Input\n          id={`${id}-2`}\n          className=\"-ms-px flex-1 rounded-s-none [-moz-appearance:_textfield] focus:z-10 [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none\"\n          placeholder=\"To\"\n          type=\"number\"\n          aria-label=\"Max Value\"\n        />\n      </div>\n    </div>\n  );\n}\n",
       "path": "registry/default/components/comp-486.tsx"
     },

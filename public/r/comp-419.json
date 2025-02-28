@@ -13,7 +13,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-419.tsx",
+      "target": "components/comp-419.tsx",
       "content": "import { Badge } from \"@/components/ui/badge\";\nimport { CheckIcon } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Badge variant=\"outline\" className=\"gap-1\">\n      <CheckIcon className=\"text-emerald-500\" size={12} aria-hidden=\"true\" />\n      Badge\n    </Badge>\n  );\n}\n",
       "path": "registry/default/components/comp-419.tsx"
     },

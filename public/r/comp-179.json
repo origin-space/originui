@@ -12,7 +12,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-179.tsx",
+      "target": "components/comp-179.tsx",
       "content": "\"use client\";\n\nimport { Label } from \"@/components/ui/label\";\nimport { Switch } from \"@/components/ui/switch\";\nimport { useId, useState } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  const [checked, setChecked] = useState<boolean>(true);\n\n  return (\n    <div className=\"inline-flex items-center gap-2\">\n      <Switch id={id} checked={checked} onCheckedChange={setChecked} aria-label=\"Toggle switch\" />\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        {checked ? \"On\" : \"Off\"}\n      </Label>\n    </div>\n  );\n}\n",
       "path": "registry/default/components/comp-179.tsx"
     },

@@ -11,7 +11,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-390.tsx",
+      "target": "components/comp-390.tsx",
       "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\n\nexport default function Component() {\n  return (\n    <Avatar>\n      <AvatarImage src=\"./avatar-80-07.jpg\" alt=\"Kelly King\" />\n      <AvatarFallback>KK</AvatarFallback>\n    </Avatar>\n  );\n}\n",
       "path": "registry/default/components/comp-390.tsx"
     },

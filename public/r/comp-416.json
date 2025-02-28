@@ -12,7 +12,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-416.tsx",
+      "target": "components/comp-416.tsx",
       "content": "import { Badge } from \"@/components/ui/badge\";\n\nexport default function Component() {\n  return <Badge className=\"min-w-5 px-1\">6</Badge>;\n}\n",
       "path": "registry/default/components/comp-416.tsx"
     },

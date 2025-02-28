@@ -13,7 +13,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-86.tsx",
+      "target": "components/comp-86.tsx",
       "content": "import { Button } from \"@/components/ui/button\";\nimport { ArrowRightIcon } from \"lucide-react\";\nexport default function Component() {\n  return (\n    <Button className=\"group\">\n      Button\n      <ArrowRightIcon\n        className=\"-me-1 opacity-60 transition-transform group-hover:translate-x-0.5\"\n        size={16}\n        aria-hidden=\"true\"\n      />\n    </Button>\n  );\n}\n",
       "path": "registry/default/components/comp-86.tsx"
     },

@@ -11,7 +11,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-35.tsx",
+      "target": "components/comp-35.tsx",
       "content": "\"use client\";\n\nimport { useCharacterLimit } from \"@/hooks/use-character-limit\";\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  const maxLength = 8;\n  const {\n    value,\n    characterCount,\n    handleChange,\n    maxLength: limit,\n  } = useCharacterLimit({ maxLength });\n\n  return (\n    <div className=\"*:not-first:mt-2\">\n      <Label htmlFor={id}>Input with characters left</Label>\n      <Input\n        id={id}\n        type=\"text\"\n        value={value}\n        maxLength={maxLength}\n        onChange={handleChange}\n        aria-describedby={`${id}-description`}\n      />\n      <p\n        id={`${id}-description`}\n        className=\"text-muted-foreground mt-2 text-xs\"\n        role=\"status\"\n        aria-live=\"polite\"\n      >\n        <span className=\"tabular-nums\">{limit - characterCount}</span> characters left\n      </p>\n    </div>\n  );\n}\n",
       "path": "registry/default/components/comp-35.tsx"
     },

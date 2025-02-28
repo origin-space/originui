@@ -13,7 +13,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-261.tsx",
+      "target": "components/comp-261.tsx",
       "content": "import { Label } from \"@/components/ui/label\";\nimport { Slider } from \"@/components/ui/slider\";\n\nexport default function Component() {\n  return (\n    <div className=\"*:not-first:mt-4\">\n      <Label>Vertical slider</Label>\n      <div className=\"flex h-40 justify-center\">\n        <Slider defaultValue={[5]} max={10} orientation=\"vertical\" aria-label=\"Vertical slider\" />\n      </div>\n    </div>\n  );\n}\n",
       "path": "registry/default/components/comp-261.tsx"
     },

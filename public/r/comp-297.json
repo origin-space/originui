@@ -14,7 +14,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-297.tsx",
+      "target": "components/comp-297.tsx",
       "content": "\"use client\";\n\nimport { useToast } from \"@/hooks/use-toast\";\nimport { Button } from \"@/components/ui/button\";\nimport { ToastAction } from \"@/components/ui/toast\";\n\nexport default function Component() {\n  const { toast } = useToast();\n\n  return (\n    <Button\n      variant=\"outline\"\n      onClick={() => {\n        toast({\n          title: \"We couldn't complete your request!\",\n          description: \"There was a problem with your request.\",\n          action: <ToastAction altText=\"Try again\">Try again</ToastAction>,\n        });\n      }}\n    >\n      Show toast\n    </Button>\n  );\n}\n",
       "path": "registry/default/components/comp-297.tsx"
     },

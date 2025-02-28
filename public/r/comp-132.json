@@ -12,7 +12,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-132.tsx",
+      "target": "components/comp-132.tsx",
       "content": "import { Checkbox } from \"@/components/ui/checkbox\";\nimport { Label } from \"@/components/ui/label\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"flex items-center gap-2\">\n      <Checkbox id={id} />\n      <Label htmlFor={id}>Simple checkbox</Label>\n    </div>\n  );\n}\n",
       "path": "registry/default/components/comp-132.tsx"
     },

@@ -13,7 +13,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-398.tsx",
+      "target": "components/comp-398.tsx",
       "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\nimport { Badge } from \"@/components/ui/badge\";\n\nexport default function Component() {\n  return (\n    <div className=\"relative\">\n      <Avatar>\n        <AvatarImage src=\"./avatar-80-07.jpg\" alt=\"Kelly King\" />\n        <AvatarFallback>KK</AvatarFallback>\n      </Avatar>\n      <Badge className=\"border-background absolute -top-1.5 left-full min-w-5 -translate-x-3.5 px-1\">\n        6\n      </Badge>\n    </div>\n  );\n}\n",
       "path": "registry/default/components/comp-398.tsx"
     },

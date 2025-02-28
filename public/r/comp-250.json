@@ -13,7 +13,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-250.tsx",
+      "target": "components/comp-250.tsx",
       "content": "import { Label } from \"@/components/ui/label\";\nimport { Slider } from \"@/components/ui/slider\";\n\nexport default function Component() {\n  return (\n    <div className=\"*:not-first:mt-4\">\n      <Label>Dual range slider</Label>\n      <Slider defaultValue={[25, 75]} step={10} aria-label=\"Dual range slider\" />\n    </div>\n  );\n}\n",
       "path": "registry/default/components/comp-250.tsx"
     },

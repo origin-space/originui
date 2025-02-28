@@ -12,7 +12,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-140.tsx",
+      "target": "components/comp-140.tsx",
       "content": "import { Checkbox } from \"@/components/ui/checkbox\";\nimport { Label } from \"@/components/ui/label\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"flex items-center justify-between gap-2\">\n      <Checkbox id={id} className=\"order-1\" />\n      <Label htmlFor={id}>Right aligned checkbox</Label>\n    </div>\n  );\n}\n",
       "path": "registry/default/components/comp-140.tsx"
     },

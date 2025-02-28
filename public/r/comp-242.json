@@ -13,7 +13,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-242.tsx",
+      "target": "components/comp-242.tsx",
       "content": "import { Label } from \"@/components/ui/label\";\nimport { Slider } from \"@/components/ui/slider\";\n\nexport default function Component() {\n  return (\n    <div className=\"*:not-first:mt-4\">\n      <Label>Slider with square thumb</Label>\n      <Slider\n        defaultValue={[25]}\n        max={100}\n        step={10}\n        className=\"[&>:last-child>span]:rounded\"\n        aria-label=\"Slider with square thumb\"\n      />\n    </div>\n  );\n}\n",
       "path": "registry/default/components/comp-242.tsx"
     },

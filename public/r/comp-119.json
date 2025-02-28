@@ -13,7 +13,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-119.tsx",
+      "target": "components/comp-119.tsx",
       "content": "import { Button } from \"@/components/ui/button\";\nimport { RiFacebookFill, RiGithubFill, RiGoogleFill, RiTwitterXFill } from \"@remixicon/react\";\n\nexport default function Component() {\n  return (\n    <div className=\"inline-flex flex-wrap gap-2\">\n      <Button variant=\"outline\" aria-label=\"Login with Google\" size=\"icon\">\n        <RiGoogleFill size={16} aria-hidden=\"true\" />\n      </Button>\n      <Button variant=\"outline\" aria-label=\"Login with Facebook\" size=\"icon\">\n        <RiFacebookFill size={16} aria-hidden=\"true\" />\n      </Button>\n      <Button variant=\"outline\" aria-label=\"Login with X\" size=\"icon\">\n        <RiTwitterXFill size={16} aria-hidden=\"true\" />\n      </Button>\n      <Button variant=\"outline\" aria-label=\"Login with GitHub\" size=\"icon\">\n        <RiGithubFill size={16} aria-hidden=\"true\" />\n      </Button>\n    </div>\n  );\n}\n",
       "path": "registry/default/components/comp-119.tsx"
     },

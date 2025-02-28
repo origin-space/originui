@@ -12,7 +12,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-133.tsx",
+      "target": "components/comp-133.tsx",
       "content": "\"use client\";\n\nimport { Checkbox } from \"@/components/ui/checkbox\";\nimport { Label } from \"@/components/ui/label\";\nimport { useId, useState } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  const [checked, setChecked] = useState<boolean | \"indeterminate\">(\"indeterminate\");\n\n  return (\n    <div className=\"flex items-center gap-2\">\n      <Checkbox id={id} checked={checked} onCheckedChange={setChecked} />\n      <Label htmlFor={id}>Indeterminate checkbox</Label>\n    </div>\n  );\n}\n",
       "path": "registry/default/components/comp-133.tsx"
     },

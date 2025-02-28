@@ -12,7 +12,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-420.tsx",
+      "target": "components/comp-420.tsx",
       "content": "import { Badge } from \"@/components/ui/badge\";\n\nexport default function Component() {\n  return (\n    <Badge variant=\"outline\" className=\"gap-1.5\">\n      <span className=\"size-1.5 rounded-full bg-emerald-500\" aria-hidden=\"true\"></span>\n      Badge\n    </Badge>\n  );\n}\n",
       "path": "registry/default/components/comp-420.tsx"
     },

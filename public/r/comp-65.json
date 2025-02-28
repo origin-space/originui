@@ -11,7 +11,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-65.tsx",
+      "target": "components/comp-65.tsx",
       "content": "import { Label } from \"@/components/ui/label\";\nimport { Textarea } from \"@/components/ui/textarea\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"*:not-first:mt-2\">\n      <Label htmlFor={id}>Textarea with gray background</Label>\n      <Textarea\n        id={id}\n        className=\"bg-muted border-transparent shadow-none\"\n        placeholder=\"Leave a comment\"\n      />\n    </div>\n  );\n}\n",
       "path": "registry/default/components/comp-65.tsx"
     },

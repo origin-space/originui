@@ -13,7 +13,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-240.tsx",
+      "target": "components/comp-240.tsx",
       "content": "import { Label } from \"@/components/ui/label\";\nimport { Slider } from \"@/components/ui/slider\";\n\nexport default function Component() {\n  return (\n    <div className=\"*:not-first:mt-4\">\n      <Label>Simple slider</Label>\n      <Slider defaultValue={[25]} aria-label=\"Simple slider\" />\n    </div>\n  );\n}\n",
       "path": "registry/default/components/comp-240.tsx"
     },

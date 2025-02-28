@@ -12,7 +12,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-177.tsx",
+      "target": "components/comp-177.tsx",
       "content": "import { Label } from \"@/components/ui/label\";\nimport { Switch } from \"@/components/ui/switch\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"inline-flex items-center gap-2\">\n      <Switch\n        id={id}\n        className=\"[&_span]:border-input h-3 w-9 border-none outline-offset-[6px] [&_span]:border\"\n      />\n      <Label htmlFor={id} className=\"sr-only\">\n        M2-style switch\n      </Label>\n    </div>\n  );\n}\n",
       "path": "registry/default/components/comp-177.tsx"
     },

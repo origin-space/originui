@@ -14,7 +14,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-95.tsx",
+      "target": "components/comp-95.tsx",
       "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\nimport { Button } from \"@/components/ui/button\";\nimport { ChevronDownIcon } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Button variant=\"ghost\" className=\"h-auto p-0 hover:bg-transparent\">\n      <Avatar>\n        <AvatarImage src=\"./avatar.jpg\" alt=\"Profile image\" />\n        <AvatarFallback>KK</AvatarFallback>\n      </Avatar>\n      <ChevronDownIcon size={16} className=\"opacity-60\" aria-hidden=\"true\" />\n    </Button>\n  );\n}\n",
       "path": "registry/default/components/comp-95.tsx"
     },

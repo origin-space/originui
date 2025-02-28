@@ -13,7 +13,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-116.tsx",
+      "target": "components/comp-116.tsx",
       "content": "import { Button } from \"@/components/ui/button\";\nimport { ChevronRightIcon } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Button className=\"relative pe-12\">\n      Next\n      <span className=\"bg-primary-foreground/15 pointer-events-none absolute inset-y-0 end-0 flex w-9 items-center justify-center\">\n        <ChevronRightIcon className=\"opacity-60\" size={16} aria-hidden=\"true\" />\n      </span>\n    </Button>\n  );\n}\n",
       "path": "registry/default/components/comp-116.tsx"
     },

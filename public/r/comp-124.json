@@ -13,7 +13,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-124.tsx",
+      "target": "components/comp-124.tsx",
       "content": "import { Button } from \"@/components/ui/button\";\nimport { ChevronLeftIcon } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Button variant=\"link\" className=\"gap-1\">\n      <ChevronLeftIcon className=\"opacity-60\" size={16} aria-hidden=\"true\" />\n      Go back\n    </Button>\n  );\n}\n",
       "path": "registry/default/components/comp-124.tsx"
     },

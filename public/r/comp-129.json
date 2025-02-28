@@ -13,7 +13,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-129.tsx",
+      "target": "components/comp-129.tsx",
       "content": "\"use client\";\n\nimport { Badge } from \"@/components/ui/badge\";\nimport { Button } from \"@/components/ui/button\";\nimport { BellIcon } from \"lucide-react\";\nimport { useState } from \"react\";\n\nexport default function Component() {\n  const [count, setCount] = useState(3);\n\n  const handleClick = () => {\n    setCount(0);\n  };\n\n  return (\n    <Button\n      variant=\"outline\"\n      size=\"icon\"\n      className=\"relative\"\n      onClick={handleClick}\n      aria-label=\"Notifications\"\n    >\n      <BellIcon size={16} aria-hidden=\"true\" />\n      {count > 0 && (\n        <Badge className=\"absolute -top-2 left-full min-w-5 -translate-x-1/2 px-1\">\n          {count > 99 ? \"99+\" : count}\n        </Badge>\n      )}\n    </Button>\n  );\n}\n",
       "path": "registry/default/components/comp-129.tsx"
     },

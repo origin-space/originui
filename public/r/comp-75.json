@@ -11,7 +11,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-75.tsx",
+      "target": "components/comp-75.tsx",
       "content": "import { Label } from \"@/components/ui/label\";\nimport { Textarea } from \"@/components/ui/textarea\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"*:not-first:mt-2\">\n      <Label htmlFor={id}>Textarea with no resize</Label>\n      <Textarea id={id} className=\"[resize:none]\" placeholder=\"Leave a comment\" />\n    </div>\n  );\n}\n",
       "path": "registry/default/components/comp-75.tsx"
     },

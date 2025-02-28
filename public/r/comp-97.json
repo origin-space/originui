@@ -13,7 +13,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-97.tsx",
+      "target": "components/comp-97.tsx",
       "content": "import { Button } from \"@/components/ui/button\";\nimport { PlusIcon } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Button className=\"rounded-full\" variant=\"outline\" size=\"icon\" aria-label=\"Add new item\">\n      <PlusIcon size={16} aria-hidden=\"true\" />\n    </Button>\n  );\n}\n",
       "path": "registry/default/components/comp-97.tsx"
     },

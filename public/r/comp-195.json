@@ -12,7 +12,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-195.tsx",
+      "target": "components/comp-195.tsx",
       "content": "import { Label } from \"@/components/ui/label\";\nimport { SelectNative } from \"@/components/ui/select-native\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"*:not-first:mt-2\">\n      <Label htmlFor={id}>Select with gray background (native)</Label>\n      <SelectNative id={id} className=\"bg-muted border-transparent shadow-none\">\n        <option value=\"1\">React</option>\n        <option value=\"2\">Next.js</option>\n        <option value=\"3\">Astro</option>\n        <option value=\"4\">Gatsby</option>\n      </SelectNative>\n    </div>\n  );\n}\n",
       "path": "registry/default/components/comp-195.tsx"
     },

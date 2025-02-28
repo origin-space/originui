@@ -13,7 +13,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-103.tsx",
+      "target": "components/comp-103.tsx",
       "content": "import { Button } from \"@/components/ui/button\";\nimport { ChevronDownIcon, ChevronUpIcon } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <div className=\"inline-flex -space-x-px rounded-full shadow-xs rtl:space-x-reverse\">\n      <Button\n        className=\"rounded-none shadow-none first:rounded-s-full last:rounded-e-full focus-visible:z-10\"\n        size=\"icon\"\n        aria-label=\"Upvote\"\n      >\n        <ChevronUpIcon size={16} aria-hidden=\"true\" />\n      </Button>\n      <span className=\"bg-primary text-primary-foreground flex items-center px-1 text-sm font-medium\">\n        235\n      </span>\n      <Button\n        className=\"rounded-none shadow-none first:rounded-s-full last:rounded-e-full focus-visible:z-10\"\n        size=\"icon\"\n        aria-label=\"Downvote\"\n      >\n        <ChevronDownIcon size={16} aria-hidden=\"true\" />\n      </Button>\n    </div>\n  );\n}\n",
       "path": "registry/default/components/comp-103.tsx"
     },

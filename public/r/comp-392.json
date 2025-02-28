@@ -12,7 +12,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-392.tsx",
+      "target": "components/comp-392.tsx",
       "content": "import { Avatar, AvatarFallback } from \"@/components/ui/avatar\";\nimport { UserRoundIcon } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Avatar>\n      <AvatarFallback>\n        <UserRoundIcon size={16} className=\"opacity-60\" aria-hidden=\"true\" />\n      </AvatarFallback>\n    </Avatar>\n  );\n}\n",
       "path": "registry/default/components/comp-392.tsx"
     },

@@ -12,7 +12,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-136.tsx",
+      "target": "components/comp-136.tsx",
       "content": "import { Checkbox } from \"@/components/ui/checkbox\";\nimport { Label } from \"@/components/ui/label\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"flex items-center gap-2\">\n      <Checkbox id={id} defaultChecked />\n      <Label htmlFor={id} className=\"peer-data-[state=checked]:line-through\">\n        Simple todo item\n      </Label>\n    </div>\n  );\n}\n",
       "path": "registry/default/components/comp-136.tsx"
     },

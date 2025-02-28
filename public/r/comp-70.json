@@ -13,7 +13,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-70.tsx",
+      "target": "components/comp-70.tsx",
       "content": "import { Button } from \"@/components/ui/button\";\nimport { Label } from \"@/components/ui/label\";\nimport { Textarea } from \"@/components/ui/textarea\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"*:not-first:mt-2\">\n      <Label htmlFor={id}>Textarea with button</Label>\n      <Textarea id={id} placeholder=\"Leave a comment\" />\n      <Button variant=\"outline\" className=\"w-full\">\n        Send\n      </Button>\n    </div>\n  );\n}\n",
       "path": "registry/default/components/comp-70.tsx"
     },

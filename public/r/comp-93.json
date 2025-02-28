@@ -13,7 +13,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-93.tsx",
+      "target": "components/comp-93.tsx",
       "content": "import { Button } from \"@/components/ui/button\";\nimport { PrinterIcon } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Button variant=\"outline\">\n      <PrinterIcon className=\"-ms-1 opacity-60\" size={16} aria-hidden=\"true\" />\n      Print\n      <kbd className=\"bg-background text-muted-foreground/70 ms-1 -me-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium\">\n        ⌘P\n      </kbd>\n    </Button>\n  );\n}\n",
       "path": "registry/default/components/comp-93.tsx"
     },

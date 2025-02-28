@@ -14,7 +14,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-99.tsx",
+      "target": "components/comp-99.tsx",
       "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/components/ui/tooltip\";\nimport { PlusIcon } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <TooltipProvider delayDuration={0}>\n      <Tooltip>\n        <TooltipTrigger asChild>\n          <Button variant=\"outline\" size=\"icon\" aria-label=\"Add new item\">\n            <PlusIcon size={16} aria-hidden=\"true\" />\n          </Button>\n        </TooltipTrigger>\n        <TooltipContent className=\"px-2 py-1 text-xs\">Tooltip</TooltipContent>\n      </Tooltip>\n    </TooltipProvider>\n  );\n}\n",
       "path": "registry/default/components/comp-99.tsx"
     },

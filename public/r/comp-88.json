@@ -13,7 +13,7 @@
   "files": [
     {
       "type": "registry:component",
-      "target": "components/originui/comp-88.tsx",
+      "target": "components/comp-88.tsx",
       "content": "import { Button } from \"@/components/ui/button\";\nimport { ChevronDownIcon } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Button>\n      Button\n      <ChevronDownIcon className=\"-me-1 opacity-60\" size={16} aria-hidden=\"true\" />\n    </Button>\n  );\n}\n",
       "path": "registry/default/components/comp-88.tsx"
     },
