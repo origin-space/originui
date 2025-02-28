@@ -2,14 +2,30 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-202",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/select-native.json"
+  "dependencies": [
+    "clsx",
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {
-      "path": "registry/default/components/comp-202.tsx",
-      "content": "import { SelectNative } from \"@/registry/default/ui/select-native\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"border-input bg-background focus-within:border-ring focus-within:ring-ring/50 has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40 has-aria-invalid:border-destructive relative rounded-md border shadow-xs transition-[color,box-shadow] outline-none focus-within:ring-[3px] has-[select:disabled]:cursor-not-allowed has-[select:disabled]:opacity-50 has-[select:is(:disabled)_*]:pointer-events-none\">\n      <label htmlFor={id} className=\"text-foreground block px-3 pt-2 text-xs font-medium\">\n        Select with inset label (native)\n      </label>\n      <SelectNative\n        id={id}\n        defaultValue=\"\"\n        className=\"border-none bg-transparent shadow-none focus-visible:ring-0 focus-visible:ring-offset-0\"\n      >\n        <option value=\"\" disabled>\n          Select framework\n        </option>\n        <option value=\"1\">React</option>\n        <option value=\"2\">Next.js</option>\n        <option value=\"3\">Astro</option>\n        <option value=\"4\">Gatsby</option>\n      </SelectNative>\n    </div>\n  );\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/comp-202.tsx",
+      "content": "import { SelectNative } from \"@/components/ui/select-native\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"border-input bg-background focus-within:border-ring focus-within:ring-ring/50 has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40 has-aria-invalid:border-destructive relative rounded-md border shadow-xs transition-[color,box-shadow] outline-none focus-within:ring-[3px] has-[select:disabled]:cursor-not-allowed has-[select:disabled]:opacity-50 has-[select:is(:disabled)_*]:pointer-events-none\">\n      <label htmlFor={id} className=\"text-foreground block px-3 pt-2 text-xs font-medium\">\n        Select with inset label (native)\n      </label>\n      <SelectNative\n        id={id}\n        defaultValue=\"\"\n        className=\"border-none bg-transparent shadow-none focus-visible:ring-0 focus-visible:ring-offset-0\"\n      >\n        <option value=\"\" disabled>\n          Select framework\n        </option>\n        <option value=\"1\">React</option>\n        <option value=\"2\">Next.js</option>\n        <option value=\"3\">Astro</option>\n        <option value=\"4\">Gatsby</option>\n      </SelectNative>\n    </div>\n  );\n}\n",
+      "path": "registry/default/components/comp-202.tsx"
+    },
+    {
+      "type": "registry:ui",
+      "target": "components/ui/select-native.tsx",
+      "content": "import { cn } from \"@/lib/utils\";\nimport { ChevronDownIcon } from \"lucide-react\";\nimport * as React from \"react\";\n\nconst SelectNative = ({ className, children, ...props }: React.ComponentProps<\"select\">) => {\n  return (\n    <div className=\"relative flex\">\n      <select\n        data-slot=\"select-native\"\n        className={cn(\n          \"peer border-input text-foreground focus-visible:border-ring focus-visible:ring-ring/50 has-[option[disabled]:checked]:text-muted-foreground aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex w-full cursor-pointer appearance-none items-center rounded-md border text-sm shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50\",\n          props.multiple ? \"[&_option:checked]:bg-accent py-1 *:px-3 *:py-1\" : \"h-9 ps-3 pe-8\",\n          className,\n        )}\n        {...props}\n      >\n        {children}\n      </select>\n      {!props.multiple && (\n        <span className=\"text-muted-foreground/80 peer-aria-invalid:text-destructive/80 pointer-events-none absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center peer-disabled:opacity-50\">\n          <ChevronDownIcon size={16} aria-hidden=\"true\" />\n        </span>\n      )}\n    </div>\n  );\n};\n\nexport { SelectNative };\n",
+      "path": "registry/default/ui/select-native.tsx"
+    },
+    {
+      "type": "registry:lib",
+      "target": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "path": "registry/default/lib/utils.ts"
     }
   ],
   "meta": {
