@@ -6147,8 +6147,7 @@
           "search",
           "radix",
           "autocomplete",
-          "radix",
-          null
+          "radix"
         ],
         "style": 1
       }
@@ -8748,8 +8747,7 @@
           "chip",
           "pagination",
           "filter",
-          "select",
-          null
+          "select"
         ],
         "colSpan": 3
       }

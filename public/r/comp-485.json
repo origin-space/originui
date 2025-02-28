@@ -36,8 +36,7 @@
       "chip",
       "pagination",
       "filter",
-      "select",
-      null
+      "select"
     ],
     "colSpan": 3
   }
