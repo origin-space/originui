@@ -2,13 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-54",
   "type": "registry:component",
-  "dependencies": [
-    "@radix-ui/react-label",
-    "clsx",
-    "react",
-    "tailwind-merge",
-    "use-mask-input"
-  ],
+  "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge", "use-mask-input"],
   "files": [
     {
       "type": "registry:component",
@@ -36,10 +30,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "input",
-      "label",
-      "mask"
-    ]
+    "tags": ["input", "label", "mask"]
   }
 }

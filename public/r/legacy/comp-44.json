@@ -2,12 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-44",
   "type": "registry:component",
-  "dependencies": [
-    "input-otp"
-  ],
-  "registryDependencies": [
-    "https://originui.com/r/label.json"
-  ],
+  "dependencies": ["input-otp"],
+  "registryDependencies": ["https://originui.com/r/label.json"],
   "files": [
     {
       "path": "registry/default/components/comp-44.tsx",
@@ -16,10 +12,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "input",
-      "label",
-      "otp"
-    ]
+    "tags": ["input", "label", "otp"]
   }
 }

@@ -2,12 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-163",
   "type": "registry:component",
-  "dependencies": [
-    "@remixicon/react"
-  ],
-  "registryDependencies": [
-    "https://originui.com/r/radio-group.json"
-  ],
+  "dependencies": ["@remixicon/react"],
+  "registryDependencies": ["https://originui.com/r/radio-group.json"],
   "files": [
     {
       "path": "registry/default/components/comp-163.tsx",
@@ -16,13 +12,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "radio",
-      "label",
-      "card",
-      "checkout",
-      "payment",
-      "radix"
-    ]
+    "tags": ["radio", "label", "card", "checkout", "payment", "radix"]
   }
 }

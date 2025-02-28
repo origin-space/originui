@@ -30,11 +30,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "badge",
-      "chip",
-      "counter"
-    ],
+    "tags": ["badge", "chip", "counter"],
     "style": 1
   }
 }

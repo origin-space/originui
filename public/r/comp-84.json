@@ -31,9 +31,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "button"
-    ],
+    "tags": ["button"],
     "style": 2
   }
 }

@@ -2,12 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "resizable",
   "type": "registry:ui",
-  "dependencies": [
-    "clsx",
-    "lucide-react",
-    "react-resizable-panels",
-    "tailwind-merge"
-  ],
+  "dependencies": ["clsx", "lucide-react", "react-resizable-panels", "tailwind-merge"],
   "files": [
     {
       "type": "registry:ui",

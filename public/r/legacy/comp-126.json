@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-126",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/button.json"
-  ],
+  "registryDependencies": ["https://originui.com/r/button.json"],
   "files": [
     {
       "path": "registry/default/components/comp-126.tsx",
@@ -18,14 +16,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "button",
-      "upload",
-      "user",
-      "avatar",
-      "profile",
-      "image"
-    ],
+    "tags": ["button", "upload", "user", "avatar", "profile", "image"],
     "style": 2
   }
 }

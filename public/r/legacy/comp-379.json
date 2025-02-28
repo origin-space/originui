@@ -14,11 +14,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "dropdown",
-      "text editor",
-      "radix"
-    ],
+    "tags": ["dropdown", "text editor", "radix"],
     "style": 1
   }
 }

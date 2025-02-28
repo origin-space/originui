@@ -2,13 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "select",
   "type": "registry:ui",
-  "dependencies": [
-    "@radix-ui/react-select",
-    "clsx",
-    "lucide-react",
-    "react",
-    "tailwind-merge"
-  ],
+  "dependencies": ["@radix-ui/react-select", "clsx", "lucide-react", "react", "tailwind-merge"],
   "files": [
     {
       "type": "registry:ui",

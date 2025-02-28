@@ -37,11 +37,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "popover",
-      "tooltip",
-      "radix"
-    ],
+    "tags": ["popover", "tooltip", "radix"],
     "style": 1
   }
 }

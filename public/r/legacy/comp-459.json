@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-459",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/pagination.json"
-  ],
+  "registryDependencies": ["https://originui.com/r/pagination.json"],
   "files": [
     {
       "path": "registry/default/components/comp-459.tsx",
@@ -18,9 +16,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "pagination"
-    ],
+    "tags": ["pagination"],
     "colSpan": 2
   }
 }

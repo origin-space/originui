@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-216",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/select.json"
-  ],
+  "registryDependencies": ["https://originui.com/r/select.json"],
   "files": [
     {
       "path": "registry/default/components/comp-216.tsx",
@@ -13,10 +11,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "label",
-      "select",
-      "radix"
-    ]
+    "tags": ["label", "select", "radix"]
   }
 }

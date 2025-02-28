@@ -10,11 +10,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "avatar",
-      "user",
-      "profile"
-    ],
+    "tags": ["avatar", "user", "profile"],
     "style": 1
   }
 }

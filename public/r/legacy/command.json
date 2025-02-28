@@ -2,12 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "command",
   "type": "registry:ui",
-  "dependencies": [
-    "cmdk@1.0.0"
-  ],
-  "registryDependencies": [
-    "dialog"
-  ],
+  "dependencies": ["cmdk@1.0.0"],
+  "registryDependencies": ["dialog"],
   "files": [
     {
       "path": "registry/default/ui/command.tsx",

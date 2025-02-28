@@ -31,11 +31,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "button",
-      "volume",
-      "controls"
-    ],
+    "tags": ["button", "volume", "controls"],
     "style": 2
   }
 }

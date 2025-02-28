@@ -14,10 +14,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "input",
-      "label",
-      "password"
-    ]
+    "tags": ["input", "label", "password"]
   }
 }

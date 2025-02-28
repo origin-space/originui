@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-279",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/button.json"
-  ],
+  "registryDependencies": ["https://originui.com/r/button.json"],
   "files": [
     {
       "path": "registry/default/components/comp-279.tsx",
@@ -13,10 +11,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "notification",
-      "warning"
-    ],
+    "tags": ["notification", "warning"],
     "colSpan": 2,
     "style": 1
   }

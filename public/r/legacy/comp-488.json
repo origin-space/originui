@@ -2,12 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-488",
   "type": "registry:component",
-  "dependencies": [
-    "react-aria-components"
-  ],
-  "registryDependencies": [
-    "https://originui.com/r/calendar-rac.json"
-  ],
+  "dependencies": ["react-aria-components"],
+  "registryDependencies": ["https://originui.com/r/calendar-rac.json"],
   "files": [
     {
       "path": "registry/default/components/comp-488.tsx",
@@ -16,12 +12,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "calendar",
-      "range calendar",
-      "date",
-      "react aria"
-    ],
+    "tags": ["calendar", "range calendar", "date", "react aria"],
     "style": 1
   }
 }

@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-130",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/toggle.json"
-  ],
+  "registryDependencies": ["https://originui.com/r/toggle.json"],
   "files": [
     {
       "path": "registry/default/components/comp-130.tsx",
@@ -13,11 +11,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "button",
-      "toggle",
-      "darkmode"
-    ],
+    "tags": ["button", "toggle", "darkmode"],
     "style": 2
   }
 }

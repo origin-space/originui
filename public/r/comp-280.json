@@ -31,10 +31,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "notification",
-      "error"
-    ],
+    "tags": ["notification", "error"],
     "colSpan": 2,
     "style": 1
   }

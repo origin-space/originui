@@ -36,17 +36,8 @@
       "path": "registry/default/lib/utils.ts"
     }
   ],
-  "devDependencies": [
-    "@types/react-payment-inputs"
-  ],
+  "devDependencies": ["@types/react-payment-inputs"],
   "meta": {
-    "tags": [
-      "input",
-      "label",
-      "checkout",
-      "payment",
-      "credit card",
-      "form"
-    ]
+    "tags": ["input", "label", "checkout", "payment", "credit card", "form"]
   }
 }

@@ -2,12 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-48",
   "type": "registry:component",
-  "dependencies": [
-    "react-payment-inputs"
-  ],
-  "devDependencies": [
-    "@types/react-payment-inputs"
-  ],
+  "dependencies": ["react-payment-inputs"],
+  "devDependencies": ["@types/react-payment-inputs"],
   "registryDependencies": [
     "https://originui.com/r/input.json",
     "https://originui.com/r/label.json"
@@ -20,13 +16,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "input",
-      "label",
-      "checkout",
-      "payment",
-      "credit card",
-      "form"
-    ]
+    "tags": ["input", "label", "checkout", "payment", "credit card", "form"]
   }
 }

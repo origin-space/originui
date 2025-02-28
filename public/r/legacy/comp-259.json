@@ -15,12 +15,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "slider",
-      "label",
-      "button",
-      "pricing",
-      "radix"
-    ]
+    "tags": ["slider", "label", "button", "pricing", "radix"]
   }
 }

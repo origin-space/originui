@@ -14,12 +14,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "label",
-      "select",
-      "native select",
-      "timezone",
-      "time"
-    ]
+    "tags": ["label", "select", "native select", "timezone", "time"]
   }
 }

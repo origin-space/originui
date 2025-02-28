@@ -37,11 +37,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "accordion",
-      "collapsible",
-      "radix"
-    ],
+    "tags": ["accordion", "collapsible", "radix"],
     "colSpan": 2
   }
 }

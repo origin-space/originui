@@ -38,11 +38,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "dropdown",
-      "darkmode",
-      "radix"
-    ],
+    "tags": ["dropdown", "darkmode", "radix"],
     "style": 1
   }
 }

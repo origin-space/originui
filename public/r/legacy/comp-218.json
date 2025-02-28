@@ -14,12 +14,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "label",
-      "select",
-      "timezone",
-      "time",
-      "radix"
-    ]
+    "tags": ["label", "select", "timezone", "time", "radix"]
   }
 }

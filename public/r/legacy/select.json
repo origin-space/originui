@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "select",
   "type": "registry:ui",
-  "dependencies": [
-    "@radix-ui/react-select"
-  ],
+  "dependencies": ["@radix-ui/react-select"],
   "files": [
     {
       "path": "registry/default/ui/select.tsx",

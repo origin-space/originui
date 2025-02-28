@@ -2,13 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-529",
   "type": "registry:component",
-  "dependencies": [
-    "@radix-ui/react-slot",
-    "clsx",
-    "lucide-react",
-    "react",
-    "tailwind-merge"
-  ],
+  "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
   "files": [
     {
       "type": "registry:component",
@@ -30,10 +24,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "stepper",
-      "vertical stepper"
-    ],
+    "tags": ["stepper", "vertical stepper"],
     "colSpan": 2
   }
 }

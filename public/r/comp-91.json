@@ -31,10 +31,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "button",
-      "loading"
-    ],
+    "tags": ["button", "loading"],
     "style": 2
   }
 }

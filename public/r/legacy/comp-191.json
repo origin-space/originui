@@ -14,11 +14,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "label",
-      "select",
-      "native select",
-      "time"
-    ]
+    "tags": ["label", "select", "native select", "time"]
   }
 }

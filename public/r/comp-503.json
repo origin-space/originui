@@ -51,13 +51,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "calendar",
-      "date",
-      "input",
-      "time",
-      "react daypicker"
-    ],
+    "tags": ["calendar", "date", "input", "time", "react daypicker"],
     "style": 1
   }
 }

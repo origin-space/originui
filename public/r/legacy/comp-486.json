@@ -14,10 +14,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "input",
-      "label",
-      "range"
-    ]
+    "tags": ["input", "label", "range"]
   }
 }

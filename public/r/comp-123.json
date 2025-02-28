@@ -31,10 +31,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "button",
-      "collapsible"
-    ],
+    "tags": ["button", "collapsible"],
     "style": 2
   }
 }

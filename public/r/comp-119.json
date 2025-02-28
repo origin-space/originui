@@ -31,12 +31,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "button",
-      "social",
-      "login",
-      "authentication"
-    ],
+    "tags": ["button", "social", "login", "authentication"],
     "style": 2
   }
 }

@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-444",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/tabs.json"
-  ],
+  "registryDependencies": ["https://originui.com/r/tabs.json"],
   "files": [
     {
       "path": "registry/default/components/comp-444.tsx",
@@ -13,11 +11,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "tabs",
-      "vertical tabs",
-      "radix"
-    ],
+    "tags": ["tabs", "vertical tabs", "radix"],
     "colSpan": 2,
     "style": 2
   }

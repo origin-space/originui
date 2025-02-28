@@ -2,12 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-479",
   "type": "registry:component",
-  "dependencies": [
-    "@tanstack/react-table"
-  ],
-  "registryDependencies": [
-    "https://originui.com/r/table.json"
-  ],
+  "dependencies": ["@tanstack/react-table"],
+  "registryDependencies": ["https://originui.com/r/table.json"],
   "files": [
     {
       "path": "registry/default/components/comp-479.tsx",
@@ -16,13 +12,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "table",
-      "tanstack",
-      "flag",
-      "sort",
-      "resize"
-    ],
+    "tags": ["table", "tanstack", "flag", "sort", "resize"],
     "colSpan": 3
   }
 }

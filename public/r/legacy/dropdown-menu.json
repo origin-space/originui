@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dropdown-menu",
   "type": "registry:ui",
-  "dependencies": [
-    "@radix-ui/react-dropdown-menu"
-  ],
+  "dependencies": ["@radix-ui/react-dropdown-menu"],
   "files": [
     {
       "path": "registry/default/ui/dropdown-menu.tsx",

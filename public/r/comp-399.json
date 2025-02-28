@@ -37,13 +37,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "avatar",
-      "user",
-      "profile",
-      "badge",
-      "chip"
-    ],
+    "tags": ["avatar", "user", "profile", "badge", "chip"],
     "style": 1
   }
 }

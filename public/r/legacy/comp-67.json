@@ -14,10 +14,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "label",
-      "textarea",
-      "disabled"
-    ]
+    "tags": ["label", "textarea", "disabled"]
   }
 }

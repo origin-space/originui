@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-character-limit",
   "type": "registry:hook",
-  "dependencies": [
-    "react"
-  ],
+  "dependencies": ["react"],
   "files": [
     {
       "type": "registry:hook",

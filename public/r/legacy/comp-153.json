@@ -14,10 +14,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "radio",
-      "label",
-      "radix"
-    ]
+    "tags": ["radio", "label", "radix"]
   }
 }

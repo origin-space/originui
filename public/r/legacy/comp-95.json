@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-95",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/button.json"
-  ],
+  "registryDependencies": ["https://originui.com/r/button.json"],
   "files": [
     {
       "path": "registry/default/components/comp-95.tsx",
@@ -13,13 +11,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "button",
-      "user",
-      "avatar",
-      "profile",
-      "dropdown"
-    ],
+    "tags": ["button", "user", "avatar", "profile", "dropdown"],
     "style": 2
   }
 }

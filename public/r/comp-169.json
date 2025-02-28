@@ -30,11 +30,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "radio",
-      "label",
-      "darkmode",
-      "radix"
-    ]
+    "tags": ["radio", "label", "darkmode", "radix"]
   }
 }

@@ -2,10 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-150",
   "type": "registry:component",
-  "dependencies": [
-    "lucide-react",
-    "react"
-  ],
+  "dependencies": ["lucide-react", "react"],
   "files": [
     {
       "type": "registry:component",
@@ -15,12 +12,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "checkbox",
-      "label",
-      "toggle",
-      "darkmode",
-      "radix"
-    ]
+    "tags": ["checkbox", "label", "toggle", "darkmode", "radix"]
   }
 }

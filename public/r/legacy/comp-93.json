@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-93",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/button.json"
-  ],
+  "registryDependencies": ["https://originui.com/r/button.json"],
   "files": [
     {
       "path": "registry/default/components/comp-93.tsx",
@@ -13,10 +11,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "button",
-      "kbd"
-    ],
+    "tags": ["button", "kbd"],
     "style": 2
   }
 }

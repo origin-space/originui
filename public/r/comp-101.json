@@ -38,10 +38,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "button",
-      "toggle"
-    ],
+    "tags": ["button", "toggle"],
     "style": 2
   }
 }

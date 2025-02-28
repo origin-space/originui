@@ -2,12 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-120",
   "type": "registry:component",
-  "dependencies": [
-    "@remixicon/react"
-  ],
-  "registryDependencies": [
-    "https://originui.com/r/button.json"
-  ],
+  "dependencies": ["@remixicon/react"],
+  "registryDependencies": ["https://originui.com/r/button.json"],
   "files": [
     {
       "path": "registry/default/components/comp-120.tsx",
@@ -16,12 +12,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "button",
-      "social",
-      "login",
-      "authentication"
-    ],
+    "tags": ["button", "social", "login", "authentication"],
     "style": 2
   }
 }

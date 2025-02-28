@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-54",
   "type": "registry:component",
-  "dependencies": [
-    "use-mask-input"
-  ],
+  "dependencies": ["use-mask-input"],
   "registryDependencies": [
     "https://originui.com/r/input.json",
     "https://originui.com/r/label.json"
@@ -17,10 +15,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "input",
-      "label",
-      "mask"
-    ]
+    "tags": ["input", "label", "mask"]
   }
 }

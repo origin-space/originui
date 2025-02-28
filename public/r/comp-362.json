@@ -37,11 +37,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "tooltip",
-      "chart",
-      "radix"
-    ],
+    "tags": ["tooltip", "chart", "radix"],
     "style": 1
   }
 }

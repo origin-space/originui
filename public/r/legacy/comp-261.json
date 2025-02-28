@@ -14,11 +14,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "slider",
-      "vertical slider",
-      "label",
-      "radix"
-    ]
+    "tags": ["slider", "vertical slider", "label", "radix"]
   }
 }

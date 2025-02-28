@@ -31,10 +31,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "button",
-      "back"
-    ],
+    "tags": ["button", "back"],
     "style": 2
   }
 }

@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-333",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/command.json"
-  ],
+  "registryDependencies": ["https://originui.com/r/command.json"],
   "files": [
     {
       "path": "registry/default/components/comp-333.tsx",

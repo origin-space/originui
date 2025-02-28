@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "collapsible",
   "type": "registry:ui",
-  "dependencies": [
-    "@radix-ui/react-collapsible"
-  ],
+  "dependencies": ["@radix-ui/react-collapsible"],
   "files": [
     {
       "path": "registry/default/ui/collapsible.tsx",

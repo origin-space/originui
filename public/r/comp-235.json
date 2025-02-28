@@ -50,15 +50,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "label",
-      "select",
-      "multiselect",
-      "tag",
-      "input",
-      "search",
-      "autocomplete",
-      "radix"
-    ]
+    "tags": ["label", "select", "multiselect", "tag", "input", "search", "autocomplete", "radix"]
   }
 }

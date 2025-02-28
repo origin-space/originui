@@ -2,12 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "radio-group",
   "type": "registry:ui",
-  "dependencies": [
-    "@radix-ui/react-radio-group",
-    "clsx",
-    "react",
-    "tailwind-merge"
-  ],
+  "dependencies": ["@radix-ui/react-radio-group", "clsx", "react", "tailwind-merge"],
   "files": [
     {
       "type": "registry:ui",

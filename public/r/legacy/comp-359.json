@@ -14,11 +14,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "tooltip",
-      "image",
-      "radix"
-    ],
+    "tags": ["tooltip", "image", "radix"],
     "style": 1
   }
 }

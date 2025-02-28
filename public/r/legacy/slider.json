@@ -2,12 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "slider",
   "type": "registry:ui",
-  "dependencies": [
-    "@radix-ui/react-slider"
-  ],
-  "registryDependencies": [
-    "https://originui.com/r/tooltip.json"
-  ],
+  "dependencies": ["@radix-ui/react-slider"],
+  "registryDependencies": ["https://originui.com/r/tooltip.json"],
   "files": [
     {
       "path": "registry/default/ui/slider.tsx",

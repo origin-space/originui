@@ -2,12 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-39",
   "type": "registry:component",
-  "dependencies": [
-    "clsx",
-    "lucide-react",
-    "react-aria-components",
-    "tailwind-merge"
-  ],
+  "dependencies": ["clsx", "lucide-react", "react-aria-components", "tailwind-merge"],
   "files": [
     {
       "type": "registry:component",
@@ -29,11 +24,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "input",
-      "label",
-      "date",
-      "react aria"
-    ]
+    "tags": ["input", "label", "date", "react aria"]
   }
 }

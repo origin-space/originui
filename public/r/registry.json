@@ -89,12 +89,7 @@
     {
       "name": "avatar",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-avatar",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-avatar", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -134,13 +129,7 @@
     {
       "name": "breadcrumb",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -234,12 +223,7 @@
     {
       "name": "checkbox",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-checkbox",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-checkbox", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -256,9 +240,7 @@
     {
       "name": "checkbox-tree",
       "type": "registry:ui",
-      "dependencies": [
-        "react"
-      ],
+      "dependencies": ["react"],
       "files": [
         {
           "type": "registry:ui",
@@ -270,9 +252,7 @@
     {
       "name": "collapsible",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-collapsible"
-      ],
+      "dependencies": ["@radix-ui/react-collapsible"],
       "files": [
         {
           "type": "registry:ui",
@@ -313,12 +293,7 @@
     {
       "name": "comp-01",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -342,21 +317,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label"
-        ]
+        "tags": ["input", "label"]
       }
     },
     {
       "name": "comp-02",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -380,22 +347,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "required"
-        ]
+        "tags": ["input", "label", "required"]
       }
     },
     {
       "name": "comp-03",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -419,22 +377,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "helper"
-        ]
+        "tags": ["input", "label", "helper"]
       }
     },
     {
       "name": "comp-04",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -458,22 +407,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "hint"
-        ]
+        "tags": ["input", "label", "hint"]
       }
     },
     {
       "name": "comp-05",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -497,21 +437,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label"
-        ]
+        "tags": ["input", "label"]
       }
     },
     {
       "name": "comp-06",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -535,22 +467,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "error"
-        ]
+        "tags": ["input", "label", "error"]
       }
     },
     {
       "name": "comp-07",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -574,21 +497,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label"
-        ]
+        "tags": ["input", "label"]
       }
     },
     {
       "name": "comp-08",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -612,23 +527,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "disabled"
-        ]
+        "tags": ["input", "label", "disabled"]
       }
     },
     {
       "name": "comp-09",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -652,22 +557,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label"
-        ]
+        "tags": ["input", "label"]
       }
     },
     {
       "name": "comp-10",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -691,10 +587,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label"
-        ]
+        "tags": ["input", "label"]
       }
     },
     {
@@ -725,11 +618,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "menu",
-          "hamburger"
-        ],
+        "tags": ["button", "menu", "hamburger"],
         "style": 2
       }
     },
@@ -768,10 +657,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "toggle"
-        ],
+        "tags": ["button", "toggle"],
         "style": 2
       }
     },
@@ -804,11 +690,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "vote",
-          "counter"
-        ],
+        "tags": ["button", "vote", "counter"],
         "style": 2
       }
     },
@@ -841,11 +723,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "vote",
-          "counter"
-        ],
+        "tags": ["button", "vote", "counter"],
         "style": 2
       }
     },
@@ -878,11 +756,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "volume",
-          "controls"
-        ],
+        "tags": ["button", "volume", "controls"],
         "style": 2
       }
     },
@@ -921,10 +795,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "copy"
-        ],
+        "tags": ["button", "copy"],
         "style": 2
       }
     },
@@ -957,10 +828,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "toggle group"
-        ],
+        "tags": ["button", "toggle group"],
         "style": 2
       }
     },
@@ -999,10 +867,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "toggle group"
-        ],
+        "tags": ["button", "toggle group"],
         "style": 2
       }
     },
@@ -1035,11 +900,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "toggle group",
-          "dropdown"
-        ],
+        "tags": ["button", "toggle group", "dropdown"],
         "style": 2
       }
     },
@@ -1077,22 +938,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "toggle group"
-        ],
+        "tags": ["button", "toggle group"],
         "style": 2
       }
     },
     {
       "name": "comp-11",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -1116,10 +969,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label"
-        ]
+        "tags": ["input", "label"]
       }
     },
     {
@@ -1156,10 +1006,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "toggle group"
-        ],
+        "tags": ["button", "toggle group"],
         "style": 2
       }
     },
@@ -1192,9 +1039,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button"
-        ],
+        "tags": ["button"],
         "style": 2
       }
     },
@@ -1227,9 +1072,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button"
-        ],
+        "tags": ["button"],
         "style": 2
       }
     },
@@ -1262,10 +1105,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "dropdown"
-        ],
+        "tags": ["button", "dropdown"],
         "style": 2
       }
     },
@@ -1298,11 +1138,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "dropdown",
-          "counter"
-        ],
+        "tags": ["button", "dropdown", "counter"],
         "style": 2
       }
     },
@@ -1335,10 +1171,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "previous"
-        ],
+        "tags": ["button", "previous"],
         "style": 2
       }
     },
@@ -1371,10 +1204,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "next"
-        ],
+        "tags": ["button", "next"],
         "style": 2
       }
     },
@@ -1407,11 +1237,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "like",
-          "counter"
-        ],
+        "tags": ["button", "like", "counter"],
         "style": 2
       }
     },
@@ -1444,11 +1270,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "like",
-          "counter"
-        ],
+        "tags": ["button", "like", "counter"],
         "style": 2
       }
     },
@@ -1481,24 +1303,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "social",
-          "login",
-          "authentication"
-        ],
+        "tags": ["button", "social", "login", "authentication"],
         "style": 2
       }
     },
     {
       "name": "comp-12",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -1522,10 +1334,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label"
-        ]
+        "tags": ["input", "label"]
       }
     },
     {
@@ -1557,12 +1366,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "social",
-          "login",
-          "authentication"
-        ],
+        "tags": ["button", "social", "login", "authentication"],
         "style": 2
       }
     },
@@ -1595,12 +1399,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "social",
-          "login",
-          "authentication"
-        ],
+        "tags": ["button", "social", "login", "authentication"],
         "style": 2
       }
     },
@@ -1633,12 +1432,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "social",
-          "login",
-          "authentication"
-        ],
+        "tags": ["button", "social", "login", "authentication"],
         "style": 2
       }
     },
@@ -1671,10 +1465,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "collapsible"
-        ],
+        "tags": ["button", "collapsible"],
         "style": 2
       }
     },
@@ -1707,10 +1498,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "back"
-        ],
+        "tags": ["button", "back"],
         "style": 2
       }
     },
@@ -1748,14 +1536,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "upload",
-          "user",
-          "avatar",
-          "profile",
-          "image"
-        ],
+        "tags": ["button", "upload", "user", "avatar", "profile", "image"],
         "style": 2
       }
     },
@@ -1793,14 +1574,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "upload",
-          "user",
-          "avatar",
-          "profile",
-          "image"
-        ],
+        "tags": ["button", "upload", "user", "avatar", "profile", "image"],
         "style": 2
       }
     },
@@ -1833,9 +1607,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button"
-        ],
+        "tags": ["button"],
         "style": 2
       }
     },
@@ -1868,9 +1640,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button"
-        ],
+        "tags": ["button"],
         "style": 2
       }
     },
@@ -1908,23 +1678,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "dropdown",
-          "notification"
-        ],
+        "tags": ["button", "dropdown", "notification"],
         "style": 2
       }
     },
     {
       "name": "comp-13",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -1948,10 +1709,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label"
-        ]
+        "tags": ["input", "label"]
       }
     },
     {
@@ -1983,11 +1741,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "toggle",
-          "darkmode"
-        ],
+        "tags": ["button", "toggle", "darkmode"],
         "style": 2
       }
     },
@@ -2026,10 +1780,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "dropdown"
-        ],
+        "tags": ["button", "dropdown"],
         "style": 2
       }
     },
@@ -2066,11 +1817,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "radix"]
       }
     },
     {
@@ -2106,11 +1853,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "radix"]
       }
     },
     {
@@ -2146,11 +1889,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "radix"]
       }
     },
     {
@@ -2186,12 +1925,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "disabled",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "disabled", "radix"]
       }
     },
     {
@@ -2227,11 +1961,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "radix"]
       }
     },
     {
@@ -2267,11 +1997,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "radix"]
       }
     },
     {
@@ -2307,13 +2033,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "login",
-          "authentication",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "login", "authentication", "radix"]
       }
     },
     {
@@ -2349,22 +2069,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "radix"]
       }
     },
     {
       "name": "comp-14",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -2388,10 +2099,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label"
-        ]
+        "tags": ["input", "label"]
       }
     },
     {
@@ -2427,11 +2135,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "radix"]
       }
     },
     {
@@ -2467,11 +2171,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "radix"]
       }
     },
     {
@@ -2512,12 +2212,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "collapsible",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "collapsible", "radix"]
       }
     },
     {
@@ -2553,11 +2248,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "radix"]
       }
     },
     {
@@ -2593,12 +2284,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "card",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "card", "radix"]
       }
     },
     {
@@ -2634,12 +2320,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "card",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "card", "radix"]
       }
     },
     {
@@ -2675,12 +2356,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "card",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "card", "radix"]
       }
     },
     {
@@ -2717,12 +2393,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "card",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "card", "radix"]
       }
     },
     {
@@ -2763,23 +2434,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "tree",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "tree", "radix"]
       }
     },
     {
       "name": "comp-149",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-checkbox",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-checkbox", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -2798,24 +2459,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "week",
-          "calendar",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "week", "calendar", "radix"]
       }
     },
     {
       "name": "comp-15",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -2839,19 +2489,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label"
-        ]
+        "tags": ["input", "label"]
       }
     },
     {
       "name": "comp-150",
       "type": "registry:component",
-      "dependencies": [
-        "lucide-react",
-        "react"
-      ],
+      "dependencies": ["lucide-react", "react"],
       "files": [
         {
           "type": "registry:component",
@@ -2860,13 +2504,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "toggle",
-          "darkmode",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "toggle", "darkmode", "radix"]
       }
     },
     {
@@ -2902,11 +2540,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "checkbox",
-          "label",
-          "radix"
-        ]
+        "tags": ["checkbox", "label", "radix"]
       }
     },
     {
@@ -2942,11 +2576,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "radix"
-        ]
+        "tags": ["radio", "label", "radix"]
       }
     },
     {
@@ -2982,11 +2612,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "radix"
-        ]
+        "tags": ["radio", "label", "radix"]
       }
     },
     {
@@ -3022,11 +2648,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "radix"
-        ]
+        "tags": ["radio", "label", "radix"]
       }
     },
     {
@@ -3062,11 +2684,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "radix"
-        ]
+        "tags": ["radio", "label", "radix"]
       }
     },
     {
@@ -3107,12 +2725,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "collapsible",
-          "radix"
-        ]
+        "tags": ["radio", "label", "collapsible", "radix"]
       }
     },
     {
@@ -3149,23 +2762,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "rating",
-          "radix"
-        ]
+        "tags": ["radio", "label", "rating", "radix"]
       }
     },
     {
       "name": "comp-158",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-radio-group",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-radio-group", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -3184,13 +2787,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "color",
-          "picker",
-          "radix"
-        ]
+        "tags": ["radio", "label", "color", "picker", "radix"]
       }
     },
     {
@@ -3226,23 +2823,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "card",
-          "radix"
-        ]
+        "tags": ["radio", "label", "card", "radix"]
       }
     },
     {
       "name": "comp-16",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -3266,10 +2853,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label"
-        ]
+        "tags": ["input", "label"]
       }
     },
     {
@@ -3305,12 +2889,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "card",
-          "radix"
-        ]
+        "tags": ["radio", "label", "card", "radix"]
       }
     },
     {
@@ -3346,12 +2925,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "card",
-          "radix"
-        ]
+        "tags": ["radio", "label", "card", "radix"]
       }
     },
     {
@@ -3388,12 +2962,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "card",
-          "radix"
-        ]
+        "tags": ["radio", "label", "card", "radix"]
       }
     },
     {
@@ -3424,25 +2993,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "card",
-          "checkout",
-          "payment",
-          "radix"
-        ]
+        "tags": ["radio", "label", "card", "checkout", "payment", "radix"]
       }
     },
     {
       "name": "comp-164",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-radio-group",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-radio-group", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -3461,13 +3018,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "card",
-          "pricing",
-          "radix"
-        ]
+        "tags": ["radio", "label", "card", "pricing", "radix"]
       }
     },
     {
@@ -3503,12 +3054,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "card",
-          "radix"
-        ]
+        "tags": ["radio", "label", "card", "radix"]
       }
     },
     {
@@ -3551,23 +3097,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "pricing",
-          "radix"
-        ]
+        "tags": ["radio", "label", "pricing", "radix"]
       }
     },
     {
       "name": "comp-167",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-radio-group",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-radio-group", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -3586,24 +3122,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "rating",
-          "vote",
-          "radix"
-        ]
+        "tags": ["radio", "label", "rating", "vote", "radix"]
       }
     },
     {
       "name": "comp-168",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-radio-group",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-radio-group", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -3622,13 +3147,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "rating",
-          "vote",
-          "radix"
-        ]
+        "tags": ["radio", "label", "rating", "vote", "radix"]
       }
     },
     {
@@ -3659,24 +3178,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "darkmode",
-          "radix"
-        ]
+        "tags": ["radio", "label", "darkmode", "radix"]
       }
     },
     {
       "name": "comp-17",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -3705,23 +3213,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "select",
-          "native select"
-        ]
+        "tags": ["input", "label", "select", "native select"]
       }
     },
     {
       "name": "comp-170",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-radio-group",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-radio-group", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -3740,13 +3238,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "pricing",
-          "switch",
-          "radix"
-        ],
+        "tags": ["radio", "label", "pricing", "switch", "radix"],
         "style": 1
       }
     },
@@ -3778,13 +3270,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "radio",
-          "label",
-          "rating",
-          "vote",
-          "radix"
-        ],
+        "tags": ["radio", "label", "rating", "vote", "radix"],
         "style": 1
       }
     },
@@ -3821,10 +3307,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "switch",
-          "radix"
-        ],
+        "tags": ["switch", "radix"],
         "style": 1
       }
     },
@@ -3861,10 +3344,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "switch",
-          "radix"
-        ],
+        "tags": ["switch", "radix"],
         "style": 1
       }
     },
@@ -3901,10 +3381,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "switch",
-          "radix"
-        ],
+        "tags": ["switch", "radix"],
         "style": 1
       }
     },
@@ -3941,10 +3418,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "switch",
-          "radix"
-        ],
+        "tags": ["switch", "radix"],
         "style": 1
       }
     },
@@ -3981,10 +3455,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "switch",
-          "radix"
-        ],
+        "tags": ["switch", "radix"],
         "style": 1
       }
     },
@@ -4021,10 +3492,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "switch",
-          "radix"
-        ],
+        "tags": ["switch", "radix"],
         "style": 1
       }
     },
@@ -4061,10 +3529,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "switch",
-          "radix"
-        ],
+        "tags": ["switch", "radix"],
         "style": 1
       }
     },
@@ -4101,24 +3566,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "switch",
-          "label",
-          "radix"
-        ],
+        "tags": ["switch", "label", "radix"],
         "style": 1
       }
     },
     {
       "name": "comp-18",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -4147,23 +3602,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "select",
-          "native select"
-        ]
+        "tags": ["input", "label", "select", "native select"]
       }
     },
     {
       "name": "comp-180",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-switch",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-switch", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -4182,11 +3627,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "switch",
-          "label",
-          "radix"
-        ],
+        "tags": ["switch", "label", "radix"],
         "style": 1
       }
     },
@@ -4224,25 +3665,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "switch",
-          "label",
-          "darkmode",
-          "radix"
-        ],
+        "tags": ["switch", "label", "darkmode", "radix"],
         "style": 1
       }
     },
     {
       "name": "comp-182",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-switch",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-switch", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -4261,12 +3691,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "switch",
-          "label",
-          "darkmode",
-          "radix"
-        ],
+        "tags": ["switch", "label", "darkmode", "radix"],
         "style": 1
       }
     },
@@ -4304,12 +3729,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "switch",
-          "label",
-          "darkmode",
-          "radix"
-        ],
+        "tags": ["switch", "label", "darkmode", "radix"],
         "style": 1
       }
     },
@@ -4347,12 +3767,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "switch",
-          "label",
-          "darkmode",
-          "radix"
-        ],
+        "tags": ["switch", "label", "darkmode", "radix"],
         "style": 1
       }
     },
@@ -4389,11 +3804,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "switch",
-          "label",
-          "radix"
-        ],
+        "tags": ["switch", "label", "radix"],
         "style": 1
       }
     },
@@ -4430,12 +3841,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "switch",
-          "label",
-          "card",
-          "radix"
-        ],
+        "tags": ["switch", "label", "card", "radix"],
         "style": 1
       }
     },
@@ -4472,12 +3878,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "switch",
-          "label",
-          "card",
-          "radix"
-        ],
+        "tags": ["switch", "label", "card", "radix"],
         "style": 1
       }
     },
@@ -4514,25 +3915,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "switch",
-          "label",
-          "card",
-          "radix"
-        ],
+        "tags": ["switch", "label", "card", "radix"],
         "style": 1
       }
     },
     {
       "name": "comp-189",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -4556,23 +3946,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "native select"
-        ]
+        "tags": ["label", "select", "native select"]
       }
     },
     {
       "name": "comp-19",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -4596,23 +3976,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "button"
-        ]
+        "tags": ["input", "label", "button"]
       }
     },
     {
       "name": "comp-190",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -4636,23 +4006,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "native select"
-        ]
+        "tags": ["label", "select", "native select"]
       }
     },
     {
       "name": "comp-191",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -4676,24 +4036,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "native select",
-          "time"
-        ]
+        "tags": ["label", "select", "native select", "time"]
       }
     },
     {
       "name": "comp-192",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -4717,23 +4066,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "native select"
-        ]
+        "tags": ["label", "select", "native select"]
       }
     },
     {
       "name": "comp-193",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -4757,23 +4096,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "native select"
-        ]
+        "tags": ["label", "select", "native select"]
       }
     },
     {
       "name": "comp-194",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -4797,24 +4126,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "native select",
-          "error"
-        ]
+        "tags": ["label", "select", "native select", "error"]
       }
     },
     {
       "name": "comp-195",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -4838,23 +4156,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "native select"
-        ]
+        "tags": ["label", "select", "native select"]
       }
     },
     {
       "name": "comp-196",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -4878,24 +4186,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "native select",
-          "disabled"
-        ]
+        "tags": ["label", "select", "native select", "disabled"]
       }
     },
     {
       "name": "comp-197",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -4919,23 +4216,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "native select"
-        ]
+        "tags": ["label", "select", "native select"]
       }
     },
     {
       "name": "comp-198",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -4959,23 +4246,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "native select"
-        ]
+        "tags": ["label", "select", "native select"]
       }
     },
     {
       "name": "comp-199",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -4999,23 +4276,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "native select"
-        ]
+        "tags": ["label", "select", "native select"]
       }
     },
     {
       "name": "comp-20",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -5039,23 +4306,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "button"
-        ]
+        "tags": ["input", "label", "button"]
       }
     },
     {
       "name": "comp-200",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -5079,24 +4336,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "native select",
-          "timezone",
-          "time"
-        ]
+        "tags": ["label", "select", "native select", "timezone", "time"]
       }
     },
     {
       "name": "comp-201",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -5115,22 +4361,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "native select"
-        ]
+        "tags": ["label", "select", "native select"]
       }
     },
     {
       "name": "comp-202",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -5149,11 +4386,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "native select"
-        ]
+        "tags": ["label", "select", "native select"]
       }
     },
     {
@@ -5190,11 +4423,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "radix"
-        ]
+        "tags": ["label", "select", "radix"]
       }
     },
     {
@@ -5231,11 +4460,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "radix"
-        ]
+        "tags": ["label", "select", "radix"]
       }
     },
     {
@@ -5272,11 +4497,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "radix"
-        ]
+        "tags": ["label", "select", "radix"]
       }
     },
     {
@@ -5313,12 +4534,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "helper",
-          "radix"
-        ]
+        "tags": ["label", "select", "helper", "radix"]
       }
     },
     {
@@ -5355,11 +4571,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "radix"
-        ]
+        "tags": ["label", "select", "radix"]
       }
     },
     {
@@ -5396,11 +4608,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "radix"
-        ]
+        "tags": ["label", "select", "radix"]
       }
     },
     {
@@ -5437,22 +4645,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "radix"
-        ]
+        "tags": ["label", "select", "radix"]
       }
     },
     {
       "name": "comp-21",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -5476,11 +4675,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "button"
-        ]
+        "tags": ["input", "label", "button"]
       }
     },
     {
@@ -5517,12 +4712,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "disabled",
-          "radix"
-        ]
+        "tags": ["label", "select", "disabled", "radix"]
       }
     },
     {
@@ -5559,12 +4749,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "required",
-          "radix"
-        ]
+        "tags": ["label", "select", "required", "radix"]
       }
     },
     {
@@ -5601,11 +4786,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "radix"
-        ]
+        "tags": ["label", "select", "radix"]
       }
     },
     {
@@ -5642,11 +4823,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "radix"
-        ]
+        "tags": ["label", "select", "radix"]
       }
     },
     {
@@ -5683,11 +4860,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "radix"
-        ]
+        "tags": ["label", "select", "radix"]
       }
     },
     {
@@ -5724,24 +4897,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "disabled",
-          "radix"
-        ]
+        "tags": ["label", "select", "disabled", "radix"]
       }
     },
     {
       "name": "comp-216",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-select",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-select", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -5760,23 +4922,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "radix"
-        ]
+        "tags": ["label", "select", "radix"]
       }
     },
     {
       "name": "comp-217",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-select",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-select", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -5795,11 +4947,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "radix"
-        ]
+        "tags": ["label", "select", "radix"]
       }
     },
     {
@@ -5836,13 +4984,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "timezone",
-          "time",
-          "radix"
-        ]
+        "tags": ["label", "select", "timezone", "time", "radix"]
       }
     },
     {
@@ -5879,11 +5021,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "radix"
-        ]
+        "tags": ["label", "select", "radix"]
       }
     },
     {
@@ -5925,11 +5063,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "button"
-        ]
+        "tags": ["input", "label", "button"]
       }
     },
     {
@@ -5966,12 +5100,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "status",
-          "radix"
-        ]
+        "tags": ["label", "select", "status", "radix"]
       }
     },
     {
@@ -6008,11 +5137,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "radix"
-        ]
+        "tags": ["label", "select", "radix"]
       }
     },
     {
@@ -6050,11 +5175,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "radix"
-        ]
+        "tags": ["label", "select", "radix"]
       }
     },
     {
@@ -6092,11 +5213,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "radix"
-        ]
+        "tags": ["label", "select", "radix"]
       }
     },
     {
@@ -6133,11 +5250,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "radix"
-        ]
+        "tags": ["label", "select", "radix"]
       }
     },
     {
@@ -6174,12 +5287,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "flag",
-          "radix"
-        ]
+        "tags": ["label", "select", "flag", "radix"]
       }
     },
     {
@@ -6216,14 +5324,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "user",
-          "avatar",
-          "profile",
-          "radix"
-        ]
+        "tags": ["label", "select", "user", "avatar", "profile", "radix"]
       }
     },
     {
@@ -6260,14 +5361,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "user",
-          "avatar",
-          "profile",
-          "radix"
-        ]
+        "tags": ["label", "select", "user", "avatar", "profile", "radix"]
       }
     },
     {
@@ -6304,14 +5398,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "user",
-          "avatar",
-          "profile",
-          "radix"
-        ]
+        "tags": ["label", "select", "user", "avatar", "profile", "radix"]
       }
     },
     {
@@ -6382,13 +5469,7 @@
     {
       "name": "comp-23",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -6412,12 +5493,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "button",
-          "password"
-        ]
+        "tags": ["input", "label", "button", "password"]
       }
     },
     {
@@ -6800,13 +5876,7 @@
     {
       "name": "comp-236",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -6830,12 +5900,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "multiselect",
-          "native select"
-        ]
+        "tags": ["label", "select", "multiselect", "native select"]
       }
     },
     {
@@ -6866,12 +5931,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "multiselect",
-          "react aria"
-        ]
+        "tags": ["label", "select", "multiselect", "react aria"]
       }
     },
     {
@@ -6902,12 +5962,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "multiselect",
-          "react aria"
-        ]
+        "tags": ["label", "select", "multiselect", "react aria"]
       }
     },
     {
@@ -6938,24 +5993,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "select",
-          "multiselect",
-          "react aria"
-        ]
+        "tags": ["label", "select", "multiselect", "react aria"]
       }
     },
     {
       "name": "comp-24",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -6979,11 +6023,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "button"
-        ]
+        "tags": ["input", "label", "button"]
       }
     },
     {
@@ -7025,11 +6065,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "label",
-          "radix"
-        ]
+        "tags": ["slider", "label", "radix"]
       }
     },
     {
@@ -7071,12 +6107,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "label",
-          "disabled",
-          "radix"
-        ]
+        "tags": ["slider", "label", "disabled", "radix"]
       }
     },
     {
@@ -7118,11 +6149,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "label",
-          "radix"
-        ]
+        "tags": ["slider", "label", "radix"]
       }
     },
     {
@@ -7164,11 +6191,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "label",
-          "radix"
-        ]
+        "tags": ["slider", "label", "radix"]
       }
     },
     {
@@ -7210,11 +6233,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "label",
-          "radix"
-        ]
+        "tags": ["slider", "label", "radix"]
       }
     },
     {
@@ -7256,11 +6275,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "label",
-          "radix"
-        ]
+        "tags": ["slider", "label", "radix"]
       }
     },
     {
@@ -7302,11 +6317,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "label",
-          "radix"
-        ]
+        "tags": ["slider", "label", "radix"]
       }
     },
     {
@@ -7348,11 +6359,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "label",
-          "radix"
-        ]
+        "tags": ["slider", "label", "radix"]
       }
     },
     {
@@ -7394,11 +6401,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "label",
-          "radix"
-        ]
+        "tags": ["slider", "label", "radix"]
       }
     },
     {
@@ -7440,23 +6443,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "label",
-          "tooltip",
-          "radix"
-        ]
+        "tags": ["slider", "label", "tooltip", "radix"]
       }
     },
     {
       "name": "comp-25",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -7480,12 +6473,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "search",
-          "kbd"
-        ]
+        "tags": ["input", "label", "search", "kbd"]
       }
     },
     {
@@ -7527,13 +6515,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "range slider",
-          "label",
-          "range",
-          "radix"
-        ]
+        "tags": ["slider", "range slider", "label", "range", "radix"]
       }
     },
     {
@@ -7575,13 +6557,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "range slider",
-          "label",
-          "range",
-          "radix"
-        ]
+        "tags": ["slider", "range slider", "label", "range", "radix"]
       }
     },
     {
@@ -7624,13 +6600,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "label",
-          "volume",
-          "controls",
-          "radix"
-        ]
+        "tags": ["slider", "label", "volume", "controls", "radix"]
       }
     },
     {
@@ -7672,13 +6642,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "range slider",
-          "label",
-          "range",
-          "radix"
-        ]
+        "tags": ["slider", "range slider", "label", "range", "radix"]
       }
     },
     {
@@ -7738,15 +6702,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "label",
-          "button",
-          "input",
-          "tooltip",
-          "reset",
-          "radix"
-        ]
+        "tags": ["slider", "label", "button", "input", "tooltip", "reset", "radix"]
       }
     },
     {
@@ -7798,12 +6754,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "label",
-          "input",
-          "radix"
-        ]
+        "tags": ["slider", "label", "input", "radix"]
       }
     },
     {
@@ -7845,13 +6796,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "label",
-          "vote",
-          "rating",
-          "radix"
-        ]
+        "tags": ["slider", "label", "vote", "rating", "radix"]
       }
     },
     {
@@ -7893,13 +6838,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "label",
-          "vote",
-          "rating",
-          "radix"
-        ]
+        "tags": ["slider", "label", "vote", "rating", "radix"]
       }
     },
     {
@@ -7951,14 +6890,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "range slider",
-          "label",
-          "input",
-          "range",
-          "radix"
-        ]
+        "tags": ["slider", "range slider", "label", "input", "range", "radix"]
       }
     },
     {
@@ -8008,25 +6940,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "label",
-          "button",
-          "pricing",
-          "radix"
-        ]
+        "tags": ["slider", "label", "button", "pricing", "radix"]
       }
     },
     {
       "name": "comp-26",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -8050,12 +6970,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "button",
-          "search"
-        ]
+        "tags": ["input", "label", "button", "search"]
       }
     },
     {
@@ -8104,13 +7019,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "range slider",
-          "label",
-          "button",
-          "radix"
-        ]
+        "tags": ["slider", "range slider", "label", "button", "radix"]
       }
     },
     {
@@ -8152,12 +7061,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "vertical slider",
-          "label",
-          "radix"
-        ]
+        "tags": ["slider", "vertical slider", "label", "radix"]
       }
     },
     {
@@ -8209,13 +7113,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "vertical slider",
-          "label",
-          "input",
-          "radix"
-        ]
+        "tags": ["slider", "vertical slider", "label", "input", "radix"]
       }
     },
     {
@@ -8257,13 +7155,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "vertical slider",
-          "range slider",
-          "label",
-          "radix"
-        ]
+        "tags": ["slider", "vertical slider", "range slider", "label", "radix"]
       }
     },
     {
@@ -8323,14 +7215,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "label",
-          "input",
-          "button",
-          "reset",
-          "radix"
-        ]
+        "tags": ["slider", "label", "input", "button", "reset", "radix"]
       }
     },
     {
@@ -8389,13 +7274,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "label",
-          "input",
-          "button",
-          "radix"
-        ]
+        "tags": ["slider", "label", "input", "button", "radix"]
       }
     },
     {
@@ -8437,20 +7316,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "slider",
-          "label",
-          "equalizer",
-          "radix"
-        ]
+        "tags": ["slider", "label", "equalizer", "radix"]
       }
     },
     {
       "name": "comp-267",
       "type": "registry:component",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "type": "registry:component",
@@ -8459,19 +7331,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "alert",
-          "warning"
-        ],
+        "tags": ["alert", "warning"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-268",
       "type": "registry:component",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "type": "registry:component",
@@ -8480,19 +7347,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "alert",
-          "warning"
-        ],
+        "tags": ["alert", "warning"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-269",
       "type": "registry:component",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "type": "registry:component",
@@ -8501,23 +7363,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "alert",
-          "error"
-        ],
+        "tags": ["alert", "error"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-27",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -8541,20 +7394,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "button",
-          "search"
-        ]
+        "tags": ["input", "label", "button", "search"]
       }
     },
     {
       "name": "comp-270",
       "type": "registry:component",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "type": "registry:component",
@@ -8563,19 +7409,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "alert",
-          "error"
-        ],
+        "tags": ["alert", "error"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-271",
       "type": "registry:component",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "type": "registry:component",
@@ -8584,19 +7425,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "alert",
-          "success"
-        ],
+        "tags": ["alert", "success"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-272",
       "type": "registry:component",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "type": "registry:component",
@@ -8605,19 +7441,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "alert",
-          "success"
-        ],
+        "tags": ["alert", "success"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-273",
       "type": "registry:component",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "type": "registry:component",
@@ -8626,19 +7457,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "alert",
-          "info"
-        ],
+        "tags": ["alert", "info"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-274",
       "type": "registry:component",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "type": "registry:component",
@@ -8647,19 +7473,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "alert",
-          "info"
-        ],
+        "tags": ["alert", "info"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-275",
       "type": "registry:component",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "type": "registry:component",
@@ -8668,19 +7489,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "alert",
-          "warning"
-        ],
+        "tags": ["alert", "warning"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-276",
       "type": "registry:component",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "type": "registry:component",
@@ -8689,19 +7505,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "alert",
-          "warning"
-        ],
+        "tags": ["alert", "warning"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-277",
       "type": "registry:component",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "type": "registry:component",
@@ -8710,21 +7521,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "alert",
-          "error",
-          "signup",
-          "authentication"
-        ],
+        "tags": ["alert", "error", "signup", "authentication"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-278",
       "type": "registry:component",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "type": "registry:component",
@@ -8733,12 +7537,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "alert",
-          "error",
-          "signup",
-          "authentication"
-        ],
+        "tags": ["alert", "error", "signup", "authentication"],
         "colSpan": 2
       }
     },
@@ -8771,10 +7570,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "warning"
-        ],
+        "tags": ["notification", "warning"],
         "colSpan": 2,
         "style": 1
       }
@@ -8782,10 +7578,7 @@
     {
       "name": "comp-28",
       "type": "registry:component",
-      "dependencies": [
-        "lucide-react",
-        "react-aria-components"
-      ],
+      "dependencies": ["lucide-react", "react-aria-components"],
       "files": [
         {
           "type": "registry:component",
@@ -8794,13 +7587,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "button",
-          "number",
-          "react aria"
-        ]
+        "tags": ["input", "label", "button", "number", "react aria"]
       }
     },
     {
@@ -8832,10 +7619,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "error"
-        ],
+        "tags": ["notification", "error"],
         "colSpan": 2,
         "style": 1
       }
@@ -8869,10 +7653,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "success"
-        ],
+        "tags": ["notification", "success"],
         "colSpan": 2,
         "style": 1
       }
@@ -8906,10 +7687,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "info"
-        ],
+        "tags": ["notification", "info"],
         "colSpan": 2,
         "style": 1
       }
@@ -8943,10 +7721,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "warning"
-        ],
+        "tags": ["notification", "warning"],
         "colSpan": 2,
         "style": 1
       }
@@ -8980,10 +7755,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "error"
-        ],
+        "tags": ["notification", "error"],
         "colSpan": 2,
         "style": 1
       }
@@ -9017,10 +7789,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "success"
-        ],
+        "tags": ["notification", "success"],
         "colSpan": 2,
         "style": 1
       }
@@ -9054,10 +7823,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "info"
-        ],
+        "tags": ["notification", "info"],
         "colSpan": 2,
         "style": 1
       }
@@ -9091,11 +7857,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "button",
-          "success"
-        ],
+        "tags": ["notification", "button", "success"],
         "colSpan": 2,
         "style": 1
       }
@@ -9129,10 +7891,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "success"
-        ],
+        "tags": ["notification", "success"],
         "colSpan": 2,
         "style": 1
       }
@@ -9166,11 +7925,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "button",
-          "warning"
-        ],
+        "tags": ["notification", "button", "warning"],
         "colSpan": 2,
         "style": 1
       }
@@ -9178,10 +7933,7 @@
     {
       "name": "comp-29",
       "type": "registry:component",
-      "dependencies": [
-        "lucide-react",
-        "react-aria-components"
-      ],
+      "dependencies": ["lucide-react", "react-aria-components"],
       "files": [
         {
           "type": "registry:component",
@@ -9190,13 +7942,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "button",
-          "number",
-          "react aria"
-        ]
+        "tags": ["input", "label", "button", "number", "react aria"]
       }
     },
     {
@@ -9228,11 +7974,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "button",
-          "error"
-        ],
+        "tags": ["notification", "button", "error"],
         "colSpan": 2,
         "style": 1
       }
@@ -9266,11 +8008,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "button",
-          "success"
-        ],
+        "tags": ["notification", "button", "success"],
         "colSpan": 2,
         "style": 1
       }
@@ -9304,11 +8042,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "button",
-          "info"
-        ],
+        "tags": ["notification", "button", "info"],
         "colSpan": 2,
         "style": 1
       }
@@ -9342,13 +8076,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "button",
-          "cookies",
-          "gdpr",
-          "privacy"
-        ],
+        "tags": ["notification", "button", "cookies", "gdpr", "privacy"],
         "colSpan": 2,
         "style": 1
       }
@@ -9382,11 +8110,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "button",
-          "info"
-        ],
+        "tags": ["notification", "button", "info"],
         "colSpan": 2,
         "style": 1
       }
@@ -9420,10 +8144,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "button"
-        ],
+        "tags": ["notification", "button"],
         "colSpan": 2,
         "style": 1
       }
@@ -9457,10 +8178,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "button"
-        ],
+        "tags": ["notification", "button"],
         "colSpan": 2,
         "style": 1
       }
@@ -9505,11 +8223,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "toast",
-          "radix"
-        ],
+        "tags": ["notification", "toast", "radix"],
         "colSpan": 2,
         "style": 1
       }
@@ -9549,12 +8263,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "toast",
-          "success",
-          "radix"
-        ],
+        "tags": ["notification", "toast", "success", "radix"],
         "colSpan": 2,
         "style": 1
       }
@@ -9588,11 +8297,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "toast",
-          "radix"
-        ],
+        "tags": ["notification", "toast", "radix"],
         "colSpan": 2,
         "style": 1
       }
@@ -9600,12 +8305,7 @@
     {
       "name": "comp-30",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -9629,11 +8329,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "file"
-        ]
+        "tags": ["input", "label", "file"]
       }
     },
     {
@@ -9666,12 +8362,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "notification",
-          "toast",
-          "success",
-          "radix"
-        ],
+        "tags": ["notification", "toast", "success", "radix"],
         "colSpan": 2,
         "style": 1
       }
@@ -9704,21 +8395,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "banner",
-          "cookies",
-          "gdpr",
-          "privacy"
-        ],
+        "tags": ["banner", "cookies", "gdpr", "privacy"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-302",
       "type": "registry:component",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "type": "registry:component",
@@ -9727,18 +8411,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "banner"
-        ],
+        "tags": ["banner"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-303",
       "type": "registry:component",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "type": "registry:component",
@@ -9747,18 +8427,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "banner"
-        ],
+        "tags": ["banner"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-304",
       "type": "registry:component",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "type": "registry:component",
@@ -9767,9 +8443,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "banner"
-        ],
+        "tags": ["banner"],
         "colSpan": 3
       }
     },
@@ -9802,9 +8476,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "banner"
-        ],
+        "tags": ["banner"],
         "colSpan": 3
       }
     },
@@ -9837,9 +8509,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "banner"
-        ],
+        "tags": ["banner"],
         "colSpan": 3
       }
     },
@@ -9872,9 +8542,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "banner"
-        ],
+        "tags": ["banner"],
         "colSpan": 3
       }
     },
@@ -9907,9 +8575,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "banner"
-        ],
+        "tags": ["banner"],
         "colSpan": 3
       }
     },
@@ -9942,20 +8608,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "banner"
-        ],
+        "tags": ["banner"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-31",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -9974,10 +8634,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label"
-        ]
+        "tags": ["input", "label"]
       }
     },
     {
@@ -10009,11 +8666,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "banner",
-          "countdown",
-          "sale"
-        ],
+        "tags": ["banner", "countdown", "sale"],
         "colSpan": 3
       }
     },
@@ -10028,11 +8681,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "banner",
-          "newsletter",
-          "subscribe"
-        ],
+        "tags": ["banner", "newsletter", "subscribe"],
         "colSpan": 3
       }
     },
@@ -10065,9 +8714,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "banner"
-        ],
+        "tags": ["banner"],
         "colSpan": 3
       }
     },
@@ -10105,13 +8752,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "alert",
-          "alert dialog",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "alert", "alert dialog", "radix"],
         "style": 1
       }
     },
@@ -10150,13 +8791,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "alert",
-          "alert dialog",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "alert", "alert dialog", "radix"],
         "style": 1
       }
     },
@@ -10195,11 +8830,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "radix"],
         "style": 1
       }
     },
@@ -10244,11 +8875,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "radix"],
         "style": 1
       }
     },
@@ -10287,11 +8914,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "radix"],
         "style": 1
       }
     },
@@ -10330,11 +8953,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "radix"],
         "style": 1
       }
     },
@@ -10373,22 +8992,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "radix"],
         "style": 1
       }
     },
     {
       "name": "comp-32",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -10407,10 +9018,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label"
-        ]
+        "tags": ["input", "label"]
       }
     },
     {
@@ -10459,12 +9067,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "delete",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "delete", "radix"],
         "style": 1
       }
     },
@@ -10508,14 +9111,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "newsletter",
-          "subscribe",
-          "form",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "newsletter", "subscribe", "form", "radix"],
         "style": 1
       }
     },
@@ -10559,13 +9155,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "feedback",
-          "form",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "feedback", "form", "radix"],
         "style": 1
       }
     },
@@ -10621,14 +9211,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "rating",
-          "feedback",
-          "form",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "rating", "feedback", "form", "radix"],
         "style": 1
       }
     },
@@ -10668,12 +9251,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "otp",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "otp", "radix"],
         "style": 1
       }
     },
@@ -10723,14 +9301,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "signup",
-          "authentication",
-          "form",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "signup", "authentication", "form", "radix"],
         "style": 1
       }
     },
@@ -10786,14 +9357,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "login",
-          "authentication",
-          "form",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "login", "authentication", "form", "radix"],
         "style": 1
       }
     },
@@ -10849,14 +9413,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "form",
-          "user",
-          "team",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "form", "user", "team", "radix"],
         "style": 1
       }
     },
@@ -10912,19 +9469,9 @@
           "path": "registry/default/lib/utils.ts"
         }
       ],
-      "devDependencies": [
-        "@types/react-payment-inputs"
-      ],
+      "devDependencies": ["@types/react-payment-inputs"],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "checkout",
-          "payment",
-          "credit card",
-          "form",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "checkout", "payment", "credit card", "form", "radix"],
         "style": 1
       }
     },
@@ -10985,28 +9532,16 @@
           "path": "registry/default/lib/utils.ts"
         }
       ],
-      "devDependencies": [
-        "@types/react-payment-inputs"
-      ],
+      "devDependencies": ["@types/react-payment-inputs"],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "checkout",
-          "payment",
-          "credit card",
-          "form",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "checkout", "payment", "credit card", "form", "radix"],
         "style": 1
       }
     },
     {
       "name": "comp-33",
       "type": "registry:component",
-      "dependencies": [
-        "react"
-      ],
+      "dependencies": ["react"],
       "files": [
         {
           "type": "registry:component",
@@ -11015,10 +9550,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label"
-        ]
+        "tags": ["input", "label"]
       }
     },
     {
@@ -11068,12 +9600,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "user",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "user", "radix"],
         "style": 1
       }
     },
@@ -11138,16 +9665,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "user",
-          "profile",
-          "image",
-          "avatar",
-          "form",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "user", "profile", "image", "avatar", "form", "radix"],
         "style": 1
       }
     },
@@ -11186,12 +9704,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dialog",
-          "modal",
-          "onboarding",
-          "radix"
-        ],
+        "tags": ["dialog", "modal", "onboarding", "radix"],
         "style": 1
       }
     },
@@ -11272,10 +9785,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "radix"
-        ],
+        "tags": ["accordion", "radix"],
         "colSpan": 2
       }
     },
@@ -11307,10 +9817,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "radix"
-        ],
+        "tags": ["accordion", "radix"],
         "colSpan": 2
       }
     },
@@ -11342,10 +9849,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "radix"
-        ],
+        "tags": ["accordion", "radix"],
         "colSpan": 2
       }
     },
@@ -11377,10 +9881,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "radix"
-        ],
+        "tags": ["accordion", "radix"],
         "colSpan": 2
       }
     },
@@ -11412,10 +9913,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "radix"
-        ],
+        "tags": ["accordion", "radix"],
         "colSpan": 2
       }
     },
@@ -11447,22 +9945,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "radix"
-        ],
+        "tags": ["accordion", "radix"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-34",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -11491,10 +9981,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label"
-        ]
+        "tags": ["input", "label"]
       }
     },
     {
@@ -11525,10 +10012,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "radix"
-        ],
+        "tags": ["accordion", "radix"],
         "colSpan": 2
       }
     },
@@ -11560,10 +10044,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "radix"
-        ],
+        "tags": ["accordion", "radix"],
         "colSpan": 2
       }
     },
@@ -11595,10 +10076,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "radix"
-        ],
+        "tags": ["accordion", "radix"],
         "colSpan": 2
       }
     },
@@ -11630,10 +10108,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "radix"
-        ],
+        "tags": ["accordion", "radix"],
         "colSpan": 2
       }
     },
@@ -11665,10 +10140,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "radix"
-        ],
+        "tags": ["accordion", "radix"],
         "colSpan": 2
       }
     },
@@ -11700,10 +10172,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "radix"
-        ],
+        "tags": ["accordion", "radix"],
         "colSpan": 2
       }
     },
@@ -11735,10 +10204,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "radix"
-        ],
+        "tags": ["accordion", "radix"],
         "colSpan": 2
       }
     },
@@ -11770,10 +10236,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "radix"
-        ],
+        "tags": ["accordion", "radix"],
         "colSpan": 2
       }
     },
@@ -11805,10 +10268,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "radix"
-        ],
+        "tags": ["accordion", "radix"],
         "colSpan": 2
       }
     },
@@ -11840,22 +10300,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "radix"
-        ],
+        "tags": ["accordion", "radix"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-35",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -11884,10 +10336,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label"
-        ]
+        "tags": ["input", "label"]
       }
     },
     {
@@ -11918,10 +10367,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "radix"
-        ],
+        "tags": ["accordion", "radix"],
         "colSpan": 2
       }
     },
@@ -11953,10 +10399,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "radix"
-        ],
+        "tags": ["accordion", "radix"],
         "colSpan": 2
       }
     },
@@ -11994,11 +10437,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "collapsible",
-          "radix"
-        ],
+        "tags": ["accordion", "collapsible", "radix"],
         "colSpan": 2
       }
     },
@@ -12036,11 +10475,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "accordion",
-          "collapsible",
-          "radix"
-        ],
+        "tags": ["accordion", "collapsible", "radix"],
         "colSpan": 2
       }
     },
@@ -12078,10 +10513,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tooltip",
-          "radix"
-        ],
+        "tags": ["tooltip", "radix"],
         "style": 1
       }
     },
@@ -12119,10 +10551,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tooltip",
-          "radix"
-        ],
+        "tags": ["tooltip", "radix"],
         "style": 1
       }
     },
@@ -12160,10 +10589,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tooltip",
-          "radix"
-        ],
+        "tags": ["tooltip", "radix"],
         "style": 1
       }
     },
@@ -12201,10 +10627,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tooltip",
-          "radix"
-        ],
+        "tags": ["tooltip", "radix"],
         "style": 1
       }
     },
@@ -12243,10 +10666,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tooltip",
-          "radix"
-        ],
+        "tags": ["tooltip", "radix"],
         "style": 1
       }
     },
@@ -12284,22 +10704,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tooltip",
-          "image",
-          "radix"
-        ],
+        "tags": ["tooltip", "image", "radix"],
         "style": 1
       }
     },
     {
       "name": "comp-36",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "react-aria-components", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -12318,12 +10730,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "date",
-          "react aria"
-        ]
+        "tags": ["input", "label", "date", "react aria"]
       }
     },
     {
@@ -12361,12 +10768,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tooltip",
-          "button",
-          "kbd",
-          "radix"
-        ],
+        "tags": ["tooltip", "button", "kbd", "radix"],
         "style": 1
       }
     },
@@ -12404,10 +10806,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tooltip",
-          "radix"
-        ],
+        "tags": ["tooltip", "radix"],
         "style": 1
       }
     },
@@ -12445,11 +10844,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tooltip",
-          "chart",
-          "radix"
-        ],
+        "tags": ["tooltip", "chart", "radix"],
         "style": 1
       }
     },
@@ -12487,26 +10882,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tooltip",
-          "hover card",
-          "user",
-          "avatar",
-          "profile",
-          "radix"
-        ],
+        "tags": ["tooltip", "hover card", "user", "avatar", "profile", "radix"],
         "style": 1
       }
     },
     {
       "name": "comp-364",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-hover-card",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-hover-card", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -12525,26 +10908,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tooltip",
-          "hover card",
-          "user",
-          "avatar",
-          "profile",
-          "radix"
-        ],
+        "tags": ["tooltip", "hover card", "user", "avatar", "profile", "radix"],
         "style": 1
       }
     },
     {
       "name": "comp-365",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-hover-card",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-hover-card", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -12563,12 +10934,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tooltip",
-          "hover card",
-          "image",
-          "radix"
-        ],
+        "tags": ["tooltip", "hover card", "image", "radix"],
         "style": 1
       }
     },
@@ -12607,10 +10973,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dropdown",
-          "radix"
-        ],
+        "tags": ["dropdown", "radix"],
         "style": 1
       }
     },
@@ -12649,10 +11012,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dropdown",
-          "radix"
-        ],
+        "tags": ["dropdown", "radix"],
         "style": 1
       }
     },
@@ -12691,10 +11051,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dropdown",
-          "radix"
-        ],
+        "tags": ["dropdown", "radix"],
         "style": 1
       }
     },
@@ -12733,21 +11090,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dropdown",
-          "radix"
-        ],
+        "tags": ["dropdown", "radix"],
         "style": 1
       }
     },
     {
       "name": "comp-37",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "react-aria-components", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -12766,12 +11116,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "date",
-          "react aria"
-        ]
+        "tags": ["input", "label", "date", "react aria"]
       }
     },
     {
@@ -12809,10 +11154,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dropdown",
-          "radix"
-        ],
+        "tags": ["dropdown", "radix"],
         "style": 1
       }
     },
@@ -12851,11 +11193,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dropdown",
-          "checkbox",
-          "radix"
-        ],
+        "tags": ["dropdown", "checkbox", "radix"],
         "style": 1
       }
     },
@@ -12894,11 +11232,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dropdown",
-          "radio",
-          "radix"
-        ],
+        "tags": ["dropdown", "radio", "radix"],
         "style": 1
       }
     },
@@ -12937,12 +11271,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dropdown",
-          "kbd",
-          "delete",
-          "radix"
-        ],
+        "tags": ["dropdown", "kbd", "delete", "radix"],
         "style": 1
       }
     },
@@ -12981,13 +11310,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dropdown",
-          "checkbox",
-          "radio",
-          "delete",
-          "radix"
-        ],
+        "tags": ["dropdown", "checkbox", "radio", "delete", "radix"],
         "style": 1
       }
     },
@@ -13026,12 +11349,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dropdown",
-          "user",
-          "profile",
-          "radix"
-        ],
+        "tags": ["dropdown", "user", "profile", "radix"],
         "style": 1
       }
     },
@@ -13070,13 +11388,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dropdown",
-          "user",
-          "profile",
-          "avatar",
-          "radix"
-        ],
+        "tags": ["dropdown", "user", "profile", "avatar", "radix"],
         "style": 1
       }
     },
@@ -13121,13 +11433,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dropdown",
-          "user",
-          "avatar",
-          "profile",
-          "radix"
-        ],
+        "tags": ["dropdown", "user", "avatar", "profile", "radix"],
         "style": 1
       }
     },
@@ -13166,11 +11472,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dropdown",
-          "info",
-          "radix"
-        ],
+        "tags": ["dropdown", "info", "radix"],
         "style": 1
       }
     },
@@ -13209,23 +11511,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dropdown",
-          "text editor",
-          "radix"
-        ],
+        "tags": ["dropdown", "text editor", "radix"],
         "style": 1
       }
     },
     {
       "name": "comp-38",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "lucide-react",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "lucide-react", "react-aria-components", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -13244,12 +11537,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "date",
-          "react aria"
-        ]
+        "tags": ["input", "label", "date", "react aria"]
       }
     },
     {
@@ -13287,11 +11575,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "dropdown",
-          "darkmode",
-          "radix"
-        ],
+        "tags": ["dropdown", "darkmode", "radix"],
         "style": 1
       }
     },
@@ -13342,11 +11626,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "popover",
-          "filter",
-          "radix"
-        ],
+        "tags": ["popover", "filter", "radix"],
         "style": 1
       }
     },
@@ -13390,11 +11670,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "popover",
-          "notification",
-          "radix"
-        ],
+        "tags": ["popover", "notification", "radix"],
         "style": 1
       }
     },
@@ -13438,12 +11714,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "popover",
-          "notification",
-          "user",
-          "radix"
-        ],
+        "tags": ["popover", "notification", "user", "radix"],
         "style": 1
       }
     },
@@ -13481,11 +11752,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "popover",
-          "tooltip",
-          "radix"
-        ],
+        "tags": ["popover", "tooltip", "radix"],
         "style": 1
       }
     },
@@ -13523,11 +11790,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "popover",
-          "tooltip",
-          "radix"
-        ],
+        "tags": ["popover", "tooltip", "radix"],
         "style": 1
       }
     },
@@ -13566,11 +11829,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "popover",
-          "tooltip",
-          "radix"
-        ],
+        "tags": ["popover", "tooltip", "radix"],
         "style": 1
       }
     },
@@ -13621,13 +11880,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "popover",
-          "share",
-          "social",
-          "copy",
-          "radix"
-        ],
+        "tags": ["popover", "share", "social", "copy", "radix"],
         "style": 1
       }
     },
@@ -13670,12 +11923,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "popover",
-          "feedback",
-          "form",
-          "radix"
-        ],
+        "tags": ["popover", "feedback", "form", "radix"],
         "style": 1
       }
     },
@@ -13714,23 +11962,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "popover",
-          "tour",
-          "radix"
-        ],
+        "tags": ["popover", "tour", "radix"],
         "style": 1
       }
     },
     {
       "name": "comp-39",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "lucide-react",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "lucide-react", "react-aria-components", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -13749,23 +11988,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "date",
-          "react aria"
-        ]
+        "tags": ["input", "label", "date", "react aria"]
       }
     },
     {
       "name": "comp-390",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-avatar",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-avatar", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -13784,23 +12013,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "user",
-          "profile"
-        ],
+        "tags": ["avatar", "user", "profile"],
         "style": 1
       }
     },
     {
       "name": "comp-391",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-avatar",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-avatar", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -13819,24 +12039,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "user",
-          "profile"
-        ],
+        "tags": ["avatar", "user", "profile"],
         "style": 1
       }
     },
     {
       "name": "comp-392",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-avatar",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-avatar", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -13855,23 +12065,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "user",
-          "profile"
-        ],
+        "tags": ["avatar", "user", "profile"],
         "style": 1
       }
     },
     {
       "name": "comp-393",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-avatar",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-avatar", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -13890,23 +12091,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "user",
-          "profile"
-        ],
+        "tags": ["avatar", "user", "profile"],
         "style": 1
       }
     },
     {
       "name": "comp-394",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-avatar",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-avatar", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -13925,24 +12117,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "user",
-          "profile",
-          "status"
-        ],
+        "tags": ["avatar", "user", "profile", "status"],
         "style": 1
       }
     },
     {
       "name": "comp-395",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-avatar",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-avatar", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -13961,24 +12143,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "user",
-          "profile",
-          "status"
-        ],
+        "tags": ["avatar", "user", "profile", "status"],
         "style": 1
       }
     },
     {
       "name": "comp-396",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-avatar",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-avatar", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -13997,24 +12169,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "user",
-          "profile",
-          "status"
-        ],
+        "tags": ["avatar", "user", "profile", "status"],
         "style": 1
       }
     },
     {
       "name": "comp-397",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-avatar",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-avatar", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -14033,13 +12195,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "user",
-          "profile",
-          "badge",
-          "chip"
-        ],
+        "tags": ["avatar", "user", "profile", "badge", "chip"],
         "style": 1
       }
     },
@@ -14077,13 +12233,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "user",
-          "profile",
-          "badge",
-          "chip"
-        ],
+        "tags": ["avatar", "user", "profile", "badge", "chip"],
         "style": 1
       }
     },
@@ -14121,24 +12271,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "user",
-          "profile",
-          "badge",
-          "chip"
-        ],
+        "tags": ["avatar", "user", "profile", "badge", "chip"],
         "style": 1
       }
     },
     {
       "name": "comp-40",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "react-aria-components", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -14157,12 +12297,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "date",
-          "react aria"
-        ]
+        "tags": ["input", "label", "date", "react aria"]
       }
     },
     {
@@ -14176,11 +12311,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "user",
-          "profile"
-        ],
+        "tags": ["avatar", "user", "profile"],
         "style": 1
       }
     },
@@ -14195,10 +12326,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "avatar group"
-        ],
+        "tags": ["avatar", "avatar group"],
         "style": 1
       }
     },
@@ -14213,10 +12341,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "avatar group"
-        ],
+        "tags": ["avatar", "avatar group"],
         "style": 1
       }
     },
@@ -14231,10 +12356,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "avatar group"
-        ],
+        "tags": ["avatar", "avatar group"],
         "style": 1
       }
     },
@@ -14249,10 +12371,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "avatar group"
-        ],
+        "tags": ["avatar", "avatar group"],
         "style": 1
       }
     },
@@ -14267,10 +12386,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "avatar group"
-        ],
+        "tags": ["avatar", "avatar group"],
         "style": 1
       }
     },
@@ -14285,10 +12401,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "avatar group"
-        ],
+        "tags": ["avatar", "avatar group"],
         "style": 1
       }
     },
@@ -14303,10 +12416,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "avatar group"
-        ],
+        "tags": ["avatar", "avatar group"],
         "style": 1
       }
     },
@@ -14321,10 +12431,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "avatar group"
-        ],
+        "tags": ["avatar", "avatar group"],
         "style": 1
       }
     },
@@ -14356,10 +12463,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "avatar group"
-        ],
+        "tags": ["avatar", "avatar group"],
         "style": 1
       }
     },
@@ -14397,14 +12501,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "date",
-          "calendar",
-          "picker",
-          "react aria"
-        ]
+        "tags": ["input", "label", "date", "calendar", "picker", "react aria"]
       }
     },
     {
@@ -14435,10 +12532,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "avatar group"
-        ],
+        "tags": ["avatar", "avatar group"],
         "style": 1
       }
     },
@@ -14470,10 +12564,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "avatar group"
-        ],
+        "tags": ["avatar", "avatar group"],
         "style": 1
       }
     },
@@ -14488,10 +12579,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "avatar",
-          "avatar group"
-        ],
+        "tags": ["avatar", "avatar group"],
         "style": 1
       }
     },
@@ -14523,10 +12611,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "badge",
-          "chip"
-        ],
+        "tags": ["badge", "chip"],
         "style": 1
       }
     },
@@ -14558,10 +12643,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "badge",
-          "chip"
-        ],
+        "tags": ["badge", "chip"],
         "style": 1
       }
     },
@@ -14594,10 +12676,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "badge",
-          "chip"
-        ],
+        "tags": ["badge", "chip"],
         "style": 1
       }
     },
@@ -14629,11 +12708,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "badge",
-          "chip",
-          "counter"
-        ],
+        "tags": ["badge", "chip", "counter"],
         "style": 1
       }
     },
@@ -14665,10 +12740,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "badge",
-          "chip"
-        ],
+        "tags": ["badge", "chip"],
         "style": 1
       }
     },
@@ -14700,11 +12772,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "badge",
-          "chip",
-          "counter"
-        ],
+        "tags": ["badge", "chip", "counter"],
         "style": 1
       }
     },
@@ -14737,11 +12805,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "badge",
-          "chip",
-          "status"
-        ],
+        "tags": ["badge", "chip", "status"],
         "style": 1
       }
     },
@@ -14779,15 +12843,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "date",
-          "calendar",
-          "range calendar",
-          "picker",
-          "react aria"
-        ]
+        "tags": ["input", "label", "date", "calendar", "range calendar", "picker", "react aria"]
       }
     },
     {
@@ -14818,11 +12874,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "badge",
-          "chip",
-          "status"
-        ],
+        "tags": ["badge", "chip", "status"],
         "style": 1
       }
     },
@@ -14854,11 +12906,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "badge",
-          "chip",
-          "status"
-        ],
+        "tags": ["badge", "chip", "status"],
         "style": 1
       }
     },
@@ -14890,11 +12938,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "badge",
-          "chip",
-          "status"
-        ],
+        "tags": ["badge", "chip", "status"],
         "style": 1
       }
     },
@@ -14933,11 +12977,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "badge",
-          "chip",
-          "checkbox"
-        ],
+        "tags": ["badge", "chip", "checkbox"],
         "style": 1
       }
     },
@@ -14970,10 +13010,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "badge",
-          "chip"
-        ],
+        "tags": ["badge", "chip"],
         "style": 1
       }
     },
@@ -15006,23 +13043,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "badge",
-          "chip",
-          "tag"
-        ],
+        "tags": ["badge", "chip", "tag"],
         "style": 1
       }
     },
     {
       "name": "comp-426",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-tabs",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-tabs", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -15041,10 +13069,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15052,12 +13077,7 @@
     {
       "name": "comp-427",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-tabs",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-tabs", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -15076,10 +13096,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15087,12 +13104,7 @@
     {
       "name": "comp-428",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-tabs",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-tabs", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -15111,10 +13123,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15122,12 +13131,7 @@
     {
       "name": "comp-429",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-tabs",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-tabs", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -15146,10 +13150,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15189,26 +13190,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "date",
-          "calendar",
-          "range calendar",
-          "picker",
-          "react aria"
-        ]
+        "tags": ["input", "label", "date", "calendar", "range calendar", "picker", "react aria"]
       }
     },
     {
       "name": "comp-430",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-tabs",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-tabs", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -15227,10 +13215,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15238,12 +13223,7 @@
     {
       "name": "comp-431",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-tabs",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-tabs", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -15262,10 +13242,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15273,12 +13250,7 @@
     {
       "name": "comp-432",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-tabs",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-tabs", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -15297,10 +13269,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15346,10 +13315,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15388,10 +13354,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15430,10 +13393,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15472,10 +13432,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15521,10 +13478,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15532,13 +13486,7 @@
     {
       "name": "comp-438",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-tabs",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-tabs", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -15557,10 +13505,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15599,10 +13544,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15610,13 +13552,7 @@
     {
       "name": "comp-44",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "input-otp",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "input-otp", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -15635,11 +13571,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "otp"
-        ]
+        "tags": ["input", "label", "otp"]
       }
     },
     {
@@ -15683,10 +13615,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15732,10 +13661,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15743,12 +13669,7 @@
     {
       "name": "comp-442",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-tabs",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-tabs", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -15767,11 +13688,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "vertical tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "vertical tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15779,12 +13696,7 @@
     {
       "name": "comp-443",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-tabs",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-tabs", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -15803,11 +13715,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "vertical tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "vertical tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15815,13 +13723,7 @@
     {
       "name": "comp-444",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-tabs",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-tabs", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -15840,11 +13742,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "vertical tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "vertical tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15852,12 +13750,7 @@
     {
       "name": "comp-445",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-tabs",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-tabs", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -15876,11 +13769,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "tabs",
-          "vertical tabs",
-          "radix"
-        ],
+        "tags": ["tabs", "vertical tabs", "radix"],
         "colSpan": 2,
         "style": 2
       }
@@ -15919,10 +13808,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "breadcrumb",
-          "radix"
-        ],
+        "tags": ["breadcrumb", "radix"],
         "colSpan": 2,
         "style": 1
       }
@@ -15961,11 +13847,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "breadcrumb",
-          "dropdown",
-          "radix"
-        ],
+        "tags": ["breadcrumb", "dropdown", "radix"],
         "colSpan": 2,
         "style": 1
       }
@@ -15973,13 +13855,7 @@
     {
       "name": "comp-448",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -15998,10 +13874,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "breadcrumb",
-          "radix"
-        ],
+        "tags": ["breadcrumb", "radix"],
         "colSpan": 2,
         "style": 1
       }
@@ -16009,13 +13882,7 @@
     {
       "name": "comp-449",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -16034,10 +13901,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "breadcrumb",
-          "radix"
-        ],
+        "tags": ["breadcrumb", "radix"],
         "colSpan": 2,
         "style": 1
       }
@@ -16071,23 +13935,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "otp"
-        ]
+        "tags": ["input", "label", "otp"]
       }
     },
     {
       "name": "comp-450",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -16106,10 +13960,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "breadcrumb",
-          "radix"
-        ],
+        "tags": ["breadcrumb", "radix"],
         "colSpan": 2,
         "style": 1
       }
@@ -16117,13 +13968,7 @@
     {
       "name": "comp-451",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -16142,10 +13987,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "breadcrumb",
-          "radix"
-        ],
+        "tags": ["breadcrumb", "radix"],
         "colSpan": 2,
         "style": 1
       }
@@ -16153,13 +13995,7 @@
     {
       "name": "comp-452",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -16178,10 +14014,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "breadcrumb",
-          "radix"
-        ],
+        "tags": ["breadcrumb", "radix"],
         "colSpan": 2,
         "style": 1
       }
@@ -16220,11 +14053,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "breadcrumb",
-          "select",
-          "radix"
-        ],
+        "tags": ["breadcrumb", "select", "radix"],
         "colSpan": 2,
         "style": 1
       }
@@ -16263,9 +14092,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "pagination"
-        ],
+        "tags": ["pagination"],
         "colSpan": 2
       }
     },
@@ -16303,9 +14130,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "pagination"
-        ],
+        "tags": ["pagination"],
         "colSpan": 2
       }
     },
@@ -16343,9 +14168,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "pagination"
-        ],
+        "tags": ["pagination"],
         "colSpan": 2
       }
     },
@@ -16383,9 +14206,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "pagination"
-        ],
+        "tags": ["pagination"],
         "colSpan": 2
       }
     },
@@ -16423,9 +14244,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "pagination"
-        ],
+        "tags": ["pagination"],
         "colSpan": 2
       }
     },
@@ -16468,9 +14287,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "pagination"
-        ],
+        "tags": ["pagination"],
         "colSpan": 2
       }
     },
@@ -16508,11 +14325,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "phone"
-        ]
+        "tags": ["input", "label", "phone"]
       }
     },
     {
@@ -16554,9 +14367,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "pagination"
-        ],
+        "tags": ["pagination"],
         "colSpan": 2
       }
     },
@@ -16599,9 +14410,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "pagination"
-        ],
+        "tags": ["pagination"],
         "colSpan": 2
       }
     },
@@ -16650,9 +14459,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "pagination"
-        ],
+        "tags": ["pagination"],
         "colSpan": 2
       }
     },
@@ -16702,11 +14509,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "pagination",
-          "select",
-          "radix"
-        ],
+        "tags": ["pagination", "select", "radix"],
         "colSpan": 2
       }
     },
@@ -16750,11 +14553,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "pagination",
-          "select",
-          "radix"
-        ],
+        "tags": ["pagination", "select", "radix"],
         "colSpan": 2
       }
     },
@@ -16808,21 +14607,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "pagination",
-          "input"
-        ],
+        "tags": ["pagination", "input"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-466",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -16841,20 +14633,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "table"
-        ],
+        "tags": ["table"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-467",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -16873,22 +14659,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "table",
-          "user",
-          "avatar"
-        ],
+        "tags": ["table", "user", "avatar"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-468",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -16907,20 +14685,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "table"
-        ],
+        "tags": ["table"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-469",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -16939,9 +14711,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "table"
-        ],
+        "tags": ["table"],
         "colSpan": 3
       }
     },
@@ -16978,28 +14748,15 @@
           "path": "registry/default/lib/utils.ts"
         }
       ],
-      "devDependencies": [
-        "@types/react-payment-inputs"
-      ],
+      "devDependencies": ["@types/react-payment-inputs"],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "checkout",
-          "payment",
-          "credit card",
-          "form"
-        ]
+        "tags": ["input", "label", "checkout", "payment", "credit card", "form"]
       }
     },
     {
       "name": "comp-470",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -17018,20 +14775,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "table"
-        ],
+        "tags": ["table"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-471",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -17050,21 +14801,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "table"
-        ],
+        "tags": ["table"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-472",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-checkbox",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-checkbox", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -17088,22 +14832,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "table",
-          "checkbox"
-        ],
+        "tags": ["table", "checkbox"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-473",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-checkbox",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-checkbox", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -17127,22 +14863,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "table",
-          "checkbox",
-          "card"
-        ],
+        "tags": ["table", "checkbox", "card"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-474",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -17161,21 +14889,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "table",
-          "vertical table"
-        ],
+        "tags": ["table", "vertical table"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-475",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -17194,22 +14915,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "table",
-          "sticky"
-        ],
+        "tags": ["table", "sticky"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-476",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -17228,9 +14941,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "table"
-        ],
+        "tags": ["table"],
         "colSpan": 3
       }
     },
@@ -17274,14 +14985,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "table",
-          "tanstack",
-          "checkbox",
-          "badge",
-          "chip",
-          "flag"
-        ],
+        "tags": ["table", "tanstack", "checkbox", "badge", "chip", "flag"],
         "colSpan": 3
       }
     },
@@ -17353,13 +15057,7 @@
     {
       "name": "comp-479",
       "type": "registry:component",
-      "dependencies": [
-        "@tanstack/react-table",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@tanstack/react-table", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -17378,13 +15076,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "table",
-          "tanstack",
-          "flag",
-          "sort",
-          "resize"
-        ],
+        "tags": ["table", "tanstack", "flag", "sort", "resize"],
         "colSpan": 3
       }
     },
@@ -17420,18 +15112,9 @@
           "path": "registry/default/lib/utils.ts"
         }
       ],
-      "devDependencies": [
-        "@types/react-payment-inputs"
-      ],
+      "devDependencies": ["@types/react-payment-inputs"],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "checkout",
-          "payment",
-          "credit card",
-          "form"
-        ]
+        "tags": ["input", "label", "checkout", "payment", "credit card", "form"]
       }
     },
     {
@@ -17475,13 +15158,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "table",
-          "tanstack",
-          "flag",
-          "sticky",
-          "resize"
-        ],
+        "tags": ["table", "tanstack", "flag", "sticky", "resize"],
         "colSpan": 3
       }
     },
@@ -17524,13 +15201,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "table",
-          "tanstack",
-          "flag",
-          "sort",
-          "drag and drop"
-        ],
+        "tags": ["table", "tanstack", "flag", "sort", "drag and drop"],
         "colSpan": 3
       }
     },
@@ -17580,15 +15251,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "table",
-          "tanstack",
-          "checkbox",
-          "collapsible",
-          "flag",
-          "badge",
-          "chip"
-        ],
+        "tags": ["table", "tanstack", "checkbox", "collapsible", "flag", "badge", "chip"],
         "colSpan": 3
       }
     },
@@ -17655,16 +15318,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "table",
-          "tanstack",
-          "checkbox",
-          "sort",
-          "flag",
-          "badge",
-          "chip",
-          "pagination"
-        ],
+        "tags": ["table", "tanstack", "checkbox", "sort", "flag", "badge", "chip", "pagination"],
         "colSpan": 3
       }
     },
@@ -17730,16 +15384,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "table",
-          "tanstack",
-          "checkbox",
-          "sort",
-          "flag",
-          "badge",
-          "chip",
-          "pagination"
-        ],
+        "tags": ["table", "tanstack", "checkbox", "sort", "flag", "badge", "chip", "pagination"],
         "colSpan": 3
       }
     },
@@ -17848,12 +15493,7 @@
     {
       "name": "comp-486",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -17877,11 +15517,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "range"
-        ]
+        "tags": ["input", "label", "range"]
       }
     },
     {
@@ -17913,11 +15549,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "date",
-          "react aria"
-        ],
+        "tags": ["calendar", "date", "react aria"],
         "style": 1
       }
     },
@@ -17950,12 +15582,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "range calendar",
-          "date",
-          "react aria"
-        ],
+        "tags": ["calendar", "range calendar", "date", "react aria"],
         "style": 1
       }
     },
@@ -17989,13 +15616,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "range calendar",
-          "date",
-          "disabled",
-          "react aria"
-        ],
+        "tags": ["calendar", "range calendar", "date", "disabled", "react aria"],
         "style": 1
       }
     },
@@ -18031,18 +15652,9 @@
           "path": "registry/default/lib/utils.ts"
         }
       ],
-      "devDependencies": [
-        "@types/react-payment-inputs"
-      ],
+      "devDependencies": ["@types/react-payment-inputs"],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "checkout",
-          "payment",
-          "credit card",
-          "form"
-        ]
+        "tags": ["input", "label", "checkout", "payment", "credit card", "form"]
       }
     },
     {
@@ -18080,11 +15692,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "date",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "date", "react daypicker"],
         "style": 1
       }
     },
@@ -18124,12 +15732,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "range calendar",
-          "date",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "range calendar", "date", "react daypicker"],
         "style": 1
       }
     },
@@ -18169,13 +15772,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "range calendar",
-          "date",
-          "disabled",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "range calendar", "date", "disabled", "react daypicker"],
         "style": 1
       }
     },
@@ -18215,11 +15812,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "date",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "date", "react daypicker"],
         "style": 1
       }
     },
@@ -18258,11 +15851,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "date",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "date", "react daypicker"],
         "style": 1
       }
     },
@@ -18302,12 +15891,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "range calendar",
-          "date",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "range calendar", "date", "react daypicker"],
         "style": 1
       }
     },
@@ -18346,11 +15930,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "date",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "date", "react daypicker"],
         "style": 1
       }
     },
@@ -18395,11 +15975,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "date",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "date", "react daypicker"],
         "style": 1
       }
     },
@@ -18444,11 +16020,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "date",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "date", "react daypicker"],
         "style": 1
       }
     },
@@ -18487,25 +16059,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "date",
-          "week",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "date", "week", "react daypicker"],
         "style": 1
       }
     },
     {
       "name": "comp-50",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "lucide-react",
-        "react",
-        "react-payment-inputs",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "lucide-react", "react", "react-payment-inputs", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -18523,18 +16084,9 @@
           "path": "registry/default/lib/utils.ts"
         }
       ],
-      "devDependencies": [
-        "@types/react-payment-inputs"
-      ],
+      "devDependencies": ["@types/react-payment-inputs"],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "checkout",
-          "payment",
-          "credit card",
-          "form"
-        ]
+        "tags": ["input", "label", "checkout", "payment", "credit card", "form"]
       }
     },
     {
@@ -18573,12 +16125,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "date",
-          "button",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "date", "button", "react daypicker"],
         "style": 1
       }
     },
@@ -18618,12 +16165,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "date",
-          "button",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "date", "button", "react daypicker"],
         "style": 1
       }
     },
@@ -18674,12 +16216,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "date",
-          "input",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "date", "input", "react daypicker"],
         "style": 1
       }
     },
@@ -18729,13 +16266,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "date",
-          "input",
-          "time",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "date", "input", "time", "react daypicker"],
         "style": 1
       }
     },
@@ -18787,13 +16318,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "date",
-          "collapsible",
-          "react daypicker",
-          "radix"
-        ],
+        "tags": ["calendar", "date", "collapsible", "react daypicker", "radix"],
         "style": 1
       }
     },
@@ -18839,13 +16364,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "date",
-          "time",
-          "button",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "date", "time", "button", "react daypicker"],
         "colSpan": 3,
         "style": 1
       }
@@ -18886,12 +16405,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "date",
-          "button",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "date", "button", "react daypicker"],
         "colSpan": 3,
         "style": 1
       }
@@ -18932,13 +16446,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "range calendar",
-          "date",
-          "button",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "range calendar", "date", "button", "react daypicker"],
         "colSpan": 3,
         "style": 1
       }
@@ -18979,12 +16487,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "range calendar",
-          "date",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "range calendar", "date", "react daypicker"],
         "colSpan": 3,
         "style": 1
       }
@@ -19025,12 +16528,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "range calendar",
-          "date",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "range calendar", "date", "react daypicker"],
         "colSpan": 3,
         "style": 1
       }
@@ -19038,13 +16536,7 @@
     {
       "name": "comp-51",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -19068,11 +16560,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "password"
-        ]
+        "tags": ["input", "label", "password"]
       }
     },
     {
@@ -19111,11 +16599,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "date",
-          "react daypicker"
-        ],
+        "tags": ["calendar", "date", "react daypicker"],
         "colSpan": 3,
         "style": 1
       }
@@ -19168,13 +16652,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "date",
-          "button",
-          "picker",
-          "react daypicker"
-        ]
+        "tags": ["calendar", "date", "button", "picker", "react daypicker"]
       }
     },
     {
@@ -19225,25 +16703,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "calendar",
-          "date",
-          "button",
-          "picker",
-          "react daypicker"
-        ]
+        "tags": ["calendar", "date", "button", "picker", "react daypicker"]
       }
     },
     {
       "name": "comp-513",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -19262,22 +16728,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "stepper"
-        ],
+        "tags": ["stepper"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-514",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -19296,22 +16754,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "stepper"
-        ],
+        "tags": ["stepper"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-515",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -19330,9 +16780,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "stepper"
-        ],
+        "tags": ["stepper"],
         "colSpan": 3
       }
     },
@@ -19370,9 +16818,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "stepper"
-        ],
+        "tags": ["stepper"],
         "colSpan": 3
       }
     },
@@ -19410,22 +16856,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "stepper"
-        ],
+        "tags": ["stepper"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-518",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -19444,22 +16882,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "stepper"
-        ],
+        "tags": ["stepper"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-519",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -19478,21 +16908,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "stepper"
-        ],
+        "tags": ["stepper"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-52",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -19516,11 +16939,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "read-only"
-        ]
+        "tags": ["input", "label", "read-only"]
       }
     },
     {
@@ -19557,9 +16976,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "stepper"
-        ],
+        "tags": ["stepper"],
         "colSpan": 3
       }
     },
@@ -19597,22 +17014,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "stepper"
-        ],
+        "tags": ["stepper"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-522",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -19631,22 +17040,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "stepper"
-        ],
+        "tags": ["stepper"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-523",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -19665,22 +17066,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "stepper"
-        ],
+        "tags": ["stepper"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-524",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -19699,22 +17092,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "stepper"
-        ],
+        "tags": ["stepper"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-525",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -19733,22 +17118,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "stepper"
-        ],
+        "tags": ["stepper"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-526",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -19767,10 +17144,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "stepper",
-          "vertical stepper"
-        ],
+        "tags": ["stepper", "vertical stepper"],
         "colSpan": 2
       }
     },
@@ -19808,23 +17182,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "stepper",
-          "vertical stepper"
-        ],
+        "tags": ["stepper", "vertical stepper"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-528",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -19843,23 +17208,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "stepper",
-          "vertical stepper"
-        ],
+        "tags": ["stepper", "vertical stepper"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-529",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -19878,10 +17234,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "stepper",
-          "vertical stepper"
-        ],
+        "tags": ["stepper", "vertical stepper"],
         "colSpan": 2
       }
     },
@@ -19924,22 +17277,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "copy"
-        ]
+        "tags": ["input", "label", "copy"]
       }
     },
     {
       "name": "comp-530",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -19958,22 +17302,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "timeline",
-          "vertical timeline"
-        ],
+        "tags": ["timeline", "vertical timeline"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-531",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -19992,22 +17328,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "timeline",
-          "vertical timeline"
-        ],
+        "tags": ["timeline", "vertical timeline"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-532",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20026,22 +17354,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "timeline",
-          "vertical timeline"
-        ],
+        "tags": ["timeline", "vertical timeline"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-533",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20060,23 +17380,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "timeline",
-          "vertical timeline"
-        ],
+        "tags": ["timeline", "vertical timeline"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-534",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20095,23 +17406,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "timeline",
-          "vertical timeline"
-        ],
+        "tags": ["timeline", "vertical timeline"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-535",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20130,22 +17432,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "timeline",
-          "vertical timeline"
-        ],
+        "tags": ["timeline", "vertical timeline"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-536",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20164,22 +17458,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "timeline",
-          "vertical timeline"
-        ],
+        "tags": ["timeline", "vertical timeline"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-537",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20198,22 +17484,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "timeline",
-          "vertical timeline"
-        ],
+        "tags": ["timeline", "vertical timeline"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-538",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20232,23 +17510,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "timeline",
-          "vertical timeline"
-        ],
+        "tags": ["timeline", "vertical timeline"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-539",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20267,10 +17536,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "timeline",
-          "vertical timeline"
-        ],
+        "tags": ["timeline", "vertical timeline"],
         "colSpan": 2
       }
     },
@@ -20307,22 +17573,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "mask"
-        ]
+        "tags": ["input", "label", "mask"]
       }
     },
     {
       "name": "comp-540",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20341,21 +17598,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "timeline"
-        ],
+        "tags": ["timeline"],
         "colSpan": 3
       }
     },
     {
       "name": "comp-541",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20374,9 +17624,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "timeline"
-        ],
+        "tags": ["timeline"],
         "colSpan": 3
       }
     },
@@ -20413,24 +17661,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "mask",
-          "time"
-        ]
+        "tags": ["input", "label", "mask", "time"]
       }
     },
     {
       "name": "comp-56",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "emblor",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "emblor", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20449,24 +17686,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "tag",
-          "emblor"
-        ]
+        "tags": ["input", "label", "tag", "emblor"]
       }
     },
     {
       "name": "comp-57",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "emblor",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "emblor", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20485,24 +17711,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "tag",
-          "emblor"
-        ]
+        "tags": ["input", "label", "tag", "emblor"]
       }
     },
     {
       "name": "comp-58",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "input-otp",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "input-otp", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20521,22 +17736,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "input",
-          "label",
-          "otp"
-        ]
+        "tags": ["input", "label", "otp"]
       }
     },
     {
       "name": "comp-59",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20560,21 +17766,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "textarea"
-        ]
+        "tags": ["label", "textarea"]
       }
     },
     {
       "name": "comp-60",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20598,22 +17796,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "textarea",
-          "required"
-        ]
+        "tags": ["label", "textarea", "required"]
       }
     },
     {
       "name": "comp-61",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20637,22 +17826,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "textarea",
-          "helper"
-        ]
+        "tags": ["label", "textarea", "helper"]
       }
     },
     {
       "name": "comp-62",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20676,22 +17856,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "textarea",
-          "hint"
-        ]
+        "tags": ["label", "textarea", "hint"]
       }
     },
     {
       "name": "comp-63",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20715,21 +17886,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "textarea"
-        ]
+        "tags": ["label", "textarea"]
       }
     },
     {
       "name": "comp-64",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20753,22 +17916,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "textarea",
-          "error"
-        ]
+        "tags": ["label", "textarea", "error"]
       }
     },
     {
       "name": "comp-65",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20792,21 +17946,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "textarea"
-        ]
+        "tags": ["label", "textarea"]
       }
     },
     {
       "name": "comp-66",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20830,21 +17976,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "textarea"
-        ]
+        "tags": ["label", "textarea"]
       }
     },
     {
       "name": "comp-67",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -20868,11 +18006,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "textarea",
-          "disabled"
-        ]
+        "tags": ["label", "textarea", "disabled"]
       }
     },
     {
@@ -20914,11 +18048,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "textarea",
-          "button"
-        ]
+        "tags": ["label", "textarea", "button"]
       }
     },
     {
@@ -20960,11 +18090,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "textarea",
-          "button"
-        ]
+        "tags": ["label", "textarea", "button"]
       }
     },
     {
@@ -21006,22 +18132,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "textarea",
-          "button"
-        ]
+        "tags": ["label", "textarea", "button"]
       }
     },
     {
       "name": "comp-71",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -21045,20 +18162,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "textarea"
-        ]
+        "tags": ["label", "textarea"]
       }
     },
     {
       "name": "comp-72",
       "type": "registry:component",
-      "dependencies": [
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -21077,18 +18187,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "textarea"
-        ]
+        "tags": ["label", "textarea"]
       }
     },
     {
       "name": "comp-73",
       "type": "registry:component",
-      "dependencies": [
-        "react"
-      ],
+      "dependencies": ["react"],
       "files": [
         {
           "type": "registry:component",
@@ -21097,21 +18202,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "textarea"
-        ]
+        "tags": ["label", "textarea"]
       }
     },
     {
       "name": "comp-74",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -21140,21 +18237,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "textarea"
-        ]
+        "tags": ["label", "textarea"]
       }
     },
     {
       "name": "comp-75",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -21178,21 +18267,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "textarea"
-        ]
+        "tags": ["label", "textarea"]
       }
     },
     {
       "name": "comp-76",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -21216,22 +18297,13 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "textarea",
-          "read-only"
-        ]
+        "tags": ["label", "textarea", "read-only"]
       }
     },
     {
       "name": "comp-77",
       "type": "registry:component",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:component",
@@ -21255,10 +18327,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "label",
-          "textarea"
-        ]
+        "tags": ["label", "textarea"]
       }
     },
     {
@@ -21289,9 +18358,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button"
-        ],
+        "tags": ["button"],
         "style": 2
       }
     },
@@ -21323,10 +18390,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "disabled"
-        ],
+        "tags": ["button", "disabled"],
         "style": 2
       }
     },
@@ -21358,9 +18422,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button"
-        ],
+        "tags": ["button"],
         "style": 2
       }
     },
@@ -21393,9 +18455,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button"
-        ],
+        "tags": ["button"],
         "style": 2
       }
     },
@@ -21428,10 +18488,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "delete"
-        ],
+        "tags": ["button", "delete"],
         "style": 2
       }
     },
@@ -21464,9 +18521,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button"
-        ],
+        "tags": ["button"],
         "style": 2
       }
     },
@@ -21499,9 +18554,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button"
-        ],
+        "tags": ["button"],
         "style": 2
       }
     },
@@ -21534,10 +18587,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "back"
-        ],
+        "tags": ["button", "back"],
         "style": 2
       }
     },
@@ -21570,10 +18620,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "next"
-        ],
+        "tags": ["button", "next"],
         "style": 2
       }
     },
@@ -21606,9 +18653,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button"
-        ],
+        "tags": ["button"],
         "style": 2
       }
     },
@@ -21641,10 +18686,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "dropdown"
-        ],
+        "tags": ["button", "dropdown"],
         "style": 2
       }
     },
@@ -21676,9 +18718,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button"
-        ],
+        "tags": ["button"],
         "style": 2
       }
     },
@@ -21711,10 +18751,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "loading"
-        ],
+        "tags": ["button", "loading"],
         "style": 2
       }
     },
@@ -21747,10 +18784,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "loading"
-        ],
+        "tags": ["button", "loading"],
         "style": 2
       }
     },
@@ -21782,10 +18816,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "counter"
-        ],
+        "tags": ["button", "counter"],
         "style": 2
       }
     },
@@ -21818,10 +18849,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "kbd"
-        ],
+        "tags": ["button", "kbd"],
         "style": 2
       }
     },
@@ -21853,12 +18881,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "user",
-          "avatar",
-          "profile"
-        ],
+        "tags": ["button", "user", "avatar", "profile"],
         "style": 2
       }
     },
@@ -21897,13 +18920,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "user",
-          "avatar",
-          "profile",
-          "dropdown"
-        ],
+        "tags": ["button", "user", "avatar", "profile", "dropdown"],
         "style": 2
       }
     },
@@ -21936,9 +18953,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button"
-        ],
+        "tags": ["button"],
         "style": 2
       }
     },
@@ -21971,9 +18986,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button"
-        ],
+        "tags": ["button"],
         "style": 2
       }
     },
@@ -22006,10 +19019,7 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "menu"
-        ],
+        "tags": ["button", "menu"],
         "style": 2
       }
     },
@@ -22048,21 +19058,14 @@
         }
       ],
       "meta": {
-        "tags": [
-          "button",
-          "tooltip"
-        ],
+        "tags": ["button", "tooltip"],
         "style": 2
       }
     },
     {
       "name": "datefield-rac",
       "type": "registry:ui",
-      "dependencies": [
-        "clsx",
-        "react-aria-components",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "react-aria-components", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -22079,13 +19082,7 @@
     {
       "name": "dialog",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-dialog",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-dialog", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -22125,12 +19122,7 @@
     {
       "name": "hover-card",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-hover-card",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-hover-card", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -22147,11 +19139,7 @@
     {
       "name": "input",
       "type": "registry:ui",
-      "dependencies": [
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -22168,12 +19156,7 @@
     {
       "name": "label",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-label", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -22253,12 +19236,7 @@
     {
       "name": "popover",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-popover",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-popover", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -22275,12 +19253,7 @@
     {
       "name": "radio-group",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-radio-group",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-radio-group", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -22308,12 +19281,7 @@
     {
       "name": "resizable",
       "type": "registry:ui",
-      "dependencies": [
-        "clsx",
-        "lucide-react",
-        "react-resizable-panels",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "lucide-react", "react-resizable-panels", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -22330,12 +19298,7 @@
     {
       "name": "scroll-area",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-scroll-area",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-scroll-area", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -22352,13 +19315,7 @@
     {
       "name": "select",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-select",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-select", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -22375,12 +19332,7 @@
     {
       "name": "select-native",
       "type": "registry:ui",
-      "dependencies": [
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -22425,10 +19377,7 @@
     {
       "name": "sonner",
       "type": "registry:ui",
-      "dependencies": [
-        "next-themes",
-        "sonner"
-      ],
+      "dependencies": ["next-themes", "sonner"],
       "files": [
         {
           "type": "registry:ui",
@@ -22440,13 +19389,7 @@
     {
       "name": "stepper",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "lucide-react",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "lucide-react", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -22463,12 +19406,7 @@
     {
       "name": "switch",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-switch",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-switch", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -22485,11 +19423,7 @@
     {
       "name": "table",
       "type": "registry:ui",
-      "dependencies": [
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -22506,12 +19440,7 @@
     {
       "name": "tabs",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-tabs",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-tabs", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -22528,11 +19457,7 @@
     {
       "name": "textarea",
       "type": "registry:ui",
-      "dependencies": [
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -22549,12 +19474,7 @@
     {
       "name": "timeline",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -22691,12 +19611,7 @@
     {
       "name": "tooltip",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-tooltip",
-        "clsx",
-        "react",
-        "tailwind-merge"
-      ],
+      "dependencies": ["@radix-ui/react-tooltip", "clsx", "react", "tailwind-merge"],
       "files": [
         {
           "type": "registry:ui",
@@ -22713,9 +19628,7 @@
     {
       "name": "use-character-limit",
       "type": "registry:hook",
-      "dependencies": [
-        "react"
-      ],
+      "dependencies": ["react"],
       "files": [
         {
           "type": "registry:hook",
@@ -22727,9 +19640,7 @@
     {
       "name": "use-image-upload",
       "type": "registry:hook",
-      "dependencies": [
-        "react"
-      ],
+      "dependencies": ["react"],
       "files": [
         {
           "type": "registry:hook",
@@ -22752,9 +19663,7 @@
     {
       "name": "use-slider-with-input",
       "type": "registry:hook",
-      "dependencies": [
-        "react"
-      ],
+      "dependencies": ["react"],
       "files": [
         {
           "type": "registry:hook",
@@ -22795,10 +19704,7 @@
     {
       "name": "utils",
       "type": "registry:lib",
-      "dependencies": [
-        "clsx",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "tailwind-merge"],
       "files": [
         {
           "type": "registry:lib",

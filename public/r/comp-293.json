@@ -31,13 +31,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "notification",
-      "button",
-      "cookies",
-      "gdpr",
-      "privacy"
-    ],
+    "tags": ["notification", "button", "cookies", "gdpr", "privacy"],
     "colSpan": 2,
     "style": 1
   }

@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-310",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/button.json"
-  ],
+  "registryDependencies": ["https://originui.com/r/button.json"],
   "files": [
     {
       "path": "registry/default/components/comp-310.tsx",
@@ -13,11 +11,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "banner",
-      "countdown",
-      "sale"
-    ],
+    "tags": ["banner", "countdown", "sale"],
     "colSpan": 3
   }
 }

@@ -14,11 +14,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "dropdown",
-      "info",
-      "radix"
-    ],
+    "tags": ["dropdown", "info", "radix"],
     "style": 1
   }
 }

@@ -30,10 +30,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "button",
-      "disabled"
-    ],
+    "tags": ["button", "disabled"],
     "style": 2
   }
 }

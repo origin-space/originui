@@ -45,13 +45,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "dropdown",
-      "user",
-      "avatar",
-      "profile",
-      "radix"
-    ],
+    "tags": ["dropdown", "user", "avatar", "profile", "radix"],
     "style": 1
   }
 }

@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "accordion",
   "type": "registry:ui",
-  "dependencies": [
-    "@radix-ui/react-accordion"
-  ],
+  "dependencies": ["@radix-ui/react-accordion"],
   "files": [
     {
       "path": "registry/default/ui/accordion.tsx",

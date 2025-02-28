@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-308",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/button.json"
-  ],
+  "registryDependencies": ["https://originui.com/r/button.json"],
   "files": [
     {
       "path": "registry/default/components/comp-308.tsx",
@@ -13,9 +11,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "banner"
-    ],
+    "tags": ["banner"],
     "colSpan": 3
   }
 }

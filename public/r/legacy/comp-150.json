@@ -10,12 +10,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "checkbox",
-      "label",
-      "toggle",
-      "darkmode",
-      "radix"
-    ]
+    "tags": ["checkbox", "label", "toggle", "darkmode", "radix"]
   }
 }

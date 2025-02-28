@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-32",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/input.json"
-  ],
+  "registryDependencies": ["https://originui.com/r/input.json"],
   "files": [
     {
       "path": "registry/default/components/comp-32.tsx",
@@ -13,9 +11,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "input",
-      "label"
-    ]
+    "tags": ["input", "label"]
   }
 }

@@ -14,11 +14,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "label",
-      "select",
-      "status",
-      "radix"
-    ]
+    "tags": ["label", "select", "status", "radix"]
   }
 }

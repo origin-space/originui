@@ -37,11 +37,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "label",
-      "select",
-      "disabled",
-      "radix"
-    ]
+    "tags": ["label", "select", "disabled", "radix"]
   }
 }

@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-109",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/toggle-group.json"
-  ],
+  "registryDependencies": ["https://originui.com/r/toggle-group.json"],
   "files": [
     {
       "path": "registry/default/components/comp-109.tsx",
@@ -13,10 +11,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "button",
-      "toggle group"
-    ],
+    "tags": ["button", "toggle group"],
     "style": 2
   }
 }

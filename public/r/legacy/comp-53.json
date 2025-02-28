@@ -15,10 +15,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "input",
-      "label",
-      "copy"
-    ]
+    "tags": ["input", "label", "copy"]
   }
 }

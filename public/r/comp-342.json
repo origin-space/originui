@@ -2,13 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-342",
   "type": "registry:component",
-  "dependencies": [
-    "@radix-ui/react-accordion",
-    "clsx",
-    "lucide-react",
-    "react",
-    "tailwind-merge"
-  ],
+  "dependencies": ["@radix-ui/react-accordion", "clsx", "lucide-react", "react", "tailwind-merge"],
   "files": [
     {
       "type": "registry:component",
@@ -30,10 +24,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "accordion",
-      "radix"
-    ],
+    "tags": ["accordion", "radix"],
     "colSpan": 2
   }
 }

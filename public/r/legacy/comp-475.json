@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-475",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/table.json"
-  ],
+  "registryDependencies": ["https://originui.com/r/table.json"],
   "files": [
     {
       "path": "registry/default/components/comp-475.tsx",
@@ -13,10 +11,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "table",
-      "sticky"
-    ],
+    "tags": ["table", "sticky"],
     "colSpan": 3
   }
 }

@@ -14,12 +14,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "dropdown",
-      "user",
-      "profile",
-      "radix"
-    ],
+    "tags": ["dropdown", "user", "profile", "radix"],
     "style": 1
   }
 }

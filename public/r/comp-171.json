@@ -30,13 +30,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "radio",
-      "label",
-      "rating",
-      "vote",
-      "radix"
-    ],
+    "tags": ["radio", "label", "rating", "vote", "radix"],
     "style": 1
   }
 }

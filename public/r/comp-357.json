@@ -37,10 +37,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "tooltip",
-      "radix"
-    ],
+    "tags": ["tooltip", "radix"],
     "style": 1
   }
 }

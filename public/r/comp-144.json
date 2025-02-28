@@ -36,11 +36,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "checkbox",
-      "label",
-      "card",
-      "radix"
-    ]
+    "tags": ["checkbox", "label", "card", "radix"]
   }
 }

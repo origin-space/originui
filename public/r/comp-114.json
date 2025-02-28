@@ -31,11 +31,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "button",
-      "dropdown",
-      "counter"
-    ],
+    "tags": ["button", "dropdown", "counter"],
     "style": 2
   }
 }

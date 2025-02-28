@@ -14,10 +14,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "input",
-      "label",
-      "file"
-    ]
+    "tags": ["input", "label", "file"]
   }
 }

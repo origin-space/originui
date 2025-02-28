@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-33",
   "type": "registry:component",
-  "dependencies": [
-    "react"
-  ],
+  "dependencies": ["react"],
   "files": [
     {
       "type": "registry:component",
@@ -14,9 +12,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "input",
-      "label"
-    ]
+    "tags": ["input", "label"]
   }
 }

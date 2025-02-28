@@ -30,12 +30,7 @@
     }
   ],
   "meta": {
-    "tags": [
-      "button",
-      "user",
-      "avatar",
-      "profile"
-    ],
+    "tags": ["button", "user", "avatar", "profile"],
     "style": 2
   }
 }

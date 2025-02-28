@@ -63,12 +63,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "slider",
-      "label",
-      "input",
-      "button",
-      "radix"
-    ]
+    "tags": ["slider", "label", "input", "button", "radix"]
   }
 }

@@ -2,12 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-149",
   "type": "registry:component",
-  "dependencies": [
-    "@radix-ui/react-checkbox",
-    "clsx",
-    "react",
-    "tailwind-merge"
-  ],
+  "dependencies": ["@radix-ui/react-checkbox", "clsx", "react", "tailwind-merge"],
   "files": [
     {
       "type": "registry:component",
@@ -29,12 +24,6 @@
     }
   ],
   "meta": {
-    "tags": [
-      "checkbox",
-      "label",
-      "week",
-      "calendar",
-      "radix"
-    ]
+    "tags": ["checkbox", "label", "week", "calendar", "radix"]
   }
 }
