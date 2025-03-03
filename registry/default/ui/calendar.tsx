@@ -56,7 +56,12 @@ function Calendar({
   );
 
   const defaultComponents = {
-    Chevron: (props: any) => {
+    Chevron: (props: {
+      className?: string;
+      size?: number;
+      disabled?: boolean;
+      orientation?: "left" | "right" | "up" | "down";
+    }) => {
       if (props.orientation === "left") {
         return <ChevronLeftIcon size={16} {...props} aria-hidden="true" />;
       }
