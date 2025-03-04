@@ -1,11 +1,29 @@
-import ExternalLink from "@/components/external-link";
+"use client";
+
+import HeaderLink from "@/components/header-link";
 import ThemeToggle from "@/components/theme-toggle";
 import LogoDark from "@/public/logo-dark.svg";
 import Logo from "@/public/logo.svg";
+import { RiGithubFill, RiMenu2Line, RiTwitterXFill } from "@remixicon/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/registry/default/ui/dropdown-menu";
+
+const links = [
+  { text: "Layouts", href: "/layouts", isNew: true },
+  // { text: "Colors", href: "/colors" },
+  { text: "Easing Classes", href: "/easings" },
+];
 
 export default function Header() {
+  const isMobile = useIsMobile();
+
   return (
     <header className="before:bg-[linear-gradient(to_right,--theme(--color-border/.3),--theme(--color-border)_200px,--theme(--color-border)_calc(100%-200px),--theme(--color-border/.3))] relative mb-14 before:absolute before:-inset-x-32 before:bottom-0 before:h-px">
       <div
@@ -13,7 +31,7 @@ export default function Header() {
         aria-hidden="true"
       ></div>
       <div className="mx-auto flex h-[72px] w-full max-w-6xl items-center justify-between gap-3">
-        <Link href="/" aria-label="Home">
+        <Link className="shrink-0" href="/" aria-label="Home">
           <span className="sr-only">Origin UI</span>
           <Image
             src={Logo}
@@ -32,10 +50,44 @@ export default function Header() {
             priority={true}
           />
         </Link>
-        <div className="flex items-center gap-4 sm:gap-8">
-          <ExternalLink text="GitHub" href="https://github.com/origin-space/originui" />
-          <ExternalLink text="Follow us" href="https://x.com/origin_ui" />
-          <ThemeToggle />
+        <div className="flex items-center">
+          {!isMobile && (
+            <>
+              <div className="flex items-center gap-4 md:gap-10">
+                {links.map((link) => (
+                  <HeaderLink key={link.href} text={link.text} href={link.href} isNew={link.isNew} />
+                ))}
+              </div>
+              <div className="w-px h-5 bg-input ms-4 md:ms-10 me-4" aria-hidden="true"></div>
+            </>
+          )}
+          <div className="flex items-center gap-1">
+            <a className="inline-flex size-9 items-center justify-center text-muted-foreground hover:text-foreground/80 rounded focus-visible:border-ring focus-visible:ring-ring/50 outline-none focus-visible:ring-[3px]" href="https://x.com/origin_ui" target="_blank" rel="noopener noreferrer">
+              <span className="sr-only">X</span>
+              <RiTwitterXFill size={20} />
+            </a>
+            <a className="inline-flex size-9 items-center justify-center text-muted-foreground hover:text-foreground/80 rounded focus-visible:border-ring focus-visible:ring-ring/50 outline-none focus-visible:ring-[3px]" href="https://github.com/origin-space/originui" target="_blank" rel="noopener noreferrer">
+              <span className="sr-only">GitHub</span>
+              <RiGithubFill size={20} />
+            </a>
+            <ThemeToggle />
+            {isMobile && (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button className="inline-flex size-9 items-center justify-center text-muted-foreground hover:text-foreground/80 rounded focus-visible:border-ring focus-visible:ring-ring/50 outline-none focus-visible:ring-[3px]">
+                    <RiMenu2Line className="size-5" size={20} />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  {links.map((link) => (
+                    <DropdownMenuItem className="cursor-pointer focus:bg-transparent focus:underline" key={link.href} asChild>
+                      <HeaderLink text={link.text} href={link.href} />
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            )}
+          </div>
         </div>
       </div>
     </header>
