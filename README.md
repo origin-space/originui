@@ -1,3 +1,7 @@
+# Origin UI
+
+**Beautiful UI components built with Tailwind CSS and React.**
+
 Origin UI is an extensive collection of copy-and-paste components for quickly building app UIs. It includes hundreds of components and is constantly updated with new designs.
 
 **Demo** → [https://originui.com](https://originui.com)
