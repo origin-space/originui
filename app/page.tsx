@@ -12,7 +12,7 @@ export default function Page() {
           Beautiful UI components built with Tailwind CSS and React.
         </h1>
         <p className="text-muted-foreground mb-8 text-lg">
-          A collection of copy-and-paste components for quickly build application UIs.
+          An open-source collection of copy-and-paste components for quickly build application UIs.
         </p>
         <SearchButton />
       </div>
@@ -34,7 +34,6 @@ export default function Page() {
                 isNew={category.isNew}
               />
             ))}
-          <CategoryCard slug="easings" name="Easing Classes" isEasing={true} />
         </div>
       </div>
 
@@ -47,7 +46,6 @@ type CategoryCardProps = {
   slug: string;
   name: string;
   componentsCount?: number;
-  isEasing?: boolean;
   isNew?: boolean;
 };
 
@@ -55,13 +53,12 @@ function CategoryCard({
   slug,
   name,
   componentsCount,
-  isEasing = false,
   isNew = false,
 }: CategoryCardProps) {
   const href = `/${slug}`;
   const imageBasePath = `/thumbs/${slug}`;
-  const alt = isEasing ? "Tailwind CSS easing classes" : `${name} components`;
-  const isComingSoon = componentsCount === undefined && !isEasing;
+  const alt = `${name} components`;
+  const isComingSoon = componentsCount === undefined;
 
   return (
     <div className="space-y-3 text-center">
@@ -112,11 +109,9 @@ function CategoryCard({
           )}
         </h2>
         <p className="text-muted-foreground text-[13px]">
-          {isEasing
-            ? "29 Examples"
-            : !isComingSoon
-              ? `${componentsCount} ${componentsCount === 1 ? "Component" : "Components"}`
-              : "-"}
+          {!isComingSoon
+            ? `${componentsCount} ${componentsCount === 1 ? "Component" : "Components"}`
+            : "-"}
         </p>
       </div>
     </div>

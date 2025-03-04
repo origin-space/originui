@@ -35,12 +35,12 @@ const cards = [
 export default function Page() {
   return (
     <>
-      <PageHeader title="Layouts">
-        Lorem Ipsum has been the industry's standard dummy text ever since, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+      <PageHeader title="Layouts &amp; Experiments">
+        Beautifully designed open-source layouts and UI experiments built with Origin UI and shadcn/ui.
       </PageHeader>
 
       {/* Cards */}
-      <div className="space-y-12">
+      <div className="space-y-16">
         {cards.map(card => (
           <Card key={card.id} card={card} />
         ))}
