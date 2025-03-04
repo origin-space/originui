@@ -12,7 +12,7 @@ export default function PageHeader({ title, className, children }: PageHeaderPro
       <h1 className="font-heading text-foreground mb-3 text-4xl/[1.1] font-bold tracking-tight md:text-5xl/[1.1]">
         {title}
       </h1>
-      <p className="text-muted-foreground text-lg">{children}</p>
+      <p className="text-muted-foreground text-lg max-w-3xl mx-auto">{children}</p>
     </div>
   );
 }
