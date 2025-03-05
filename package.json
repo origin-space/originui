@@ -4,8 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "next build",
+    "build": "pnpm format && next build",
     "dev": "next dev --turbopack",
+    "format": "prettier --write --ignore-unknown .",
     "lint": "next lint",
     "prepare": "if [ -z \"$VERCEL_ENV\" ]; then simple-git-hooks; fi",
     "registry:build": "shadcn build",
