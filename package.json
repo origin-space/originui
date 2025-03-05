@@ -24,7 +24,7 @@
     "*": "prettier --write --ignore-unknown",
     "package.json": "sort-package-json",
     "registry.json": "shadcn build",
-    "public/r/**": "prettier --ignore"
+    "public/r/*": "prettier --ignore"
   },
   "prettier": {
     "plugins": [
