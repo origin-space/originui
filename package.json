@@ -23,8 +23,8 @@
   "lint-staged": {
     "*": "prettier --write --ignore-unknown",
     "package.json": "sort-package-json",
-    "registry.json": "shadcn build",
-    "public/r/*": "prettier --ignore"
+    "pnpm-lock.yaml|public/r/*": "prettier --ignore",
+    "registry.json": "shadcn build"
   },
   "prettier": {
     "plugins": [
