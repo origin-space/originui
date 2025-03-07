@@ -18,7 +18,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/registry/default/ui/tooltip";
-import { CheckIcon, CopyIcon, UserRoundPlusIcon } from "lucide-react";
+import { CheckIcon, CopyIcon, UserRoundPlusIcon, SendIcon } from "lucide-react";
 import { useId, useRef, useState } from "react";
 
 export default function Component() {
@@ -99,7 +99,7 @@ export default function Component() {
             </button>
           </div>
           <Button type="button" className="w-full">
-            SendIcon invites
+            <SendIcon className="opacity-80" size={16} /> Send invites
           </Button>
         </form>
 
