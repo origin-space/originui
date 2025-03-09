@@ -18,6 +18,12 @@
       "path": "registry/default/components/comp-439.tsx"
     },
     {
+      "type": "registry:lib",
+      "target": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "path": "registry/default/lib/utils.ts"
+    },
+    {
       "type": "registry:ui",
       "target": "components/ui/badge.tsx",
       "content": "import { Slot } from \"@radix-ui/react-slot\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst badgeVariants = cva(\n  \"inline-flex items-center justify-center rounded-full border px-1.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] transition-[color,box-shadow] [&>svg]:shrink-0 leading-normal\",\n  {\n    variants: {\n      variant: {\n        default: \"border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90\",\n        secondary:\n          \"border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90\",\n        destructive:\n          \"border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40\",\n        outline: \"text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  },\n);\n\nfunction Badge({\n  className,\n  variant,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"span\"> & VariantProps<typeof badgeVariants> & { asChild?: boolean }) {\n  const Comp = asChild ? Slot : \"span\";\n\n  return (\n    <Comp data-slot=\"badge\" className={cn(badgeVariants({ variant }), className)} {...props} />\n  );\n}\n\nexport { Badge, badgeVariants };\n",
@@ -28,12 +34,6 @@
       "target": "components/ui/tabs.tsx",
       "content": "\"use client\";\n\nimport * as TabsPrimitive from \"@radix-ui/react-tabs\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nfunction Tabs({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.Root>) {\n  return (\n    <TabsPrimitive.Root\n      data-slot=\"tabs\"\n      className={cn(\"flex flex-col gap-2\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction TabsList({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.List>) {\n  return (\n    <TabsPrimitive.List\n      data-slot=\"tabs-list\"\n      className={cn(\n        \"bg-muted text-muted-foreground/70 inline-flex w-fit items-center justify-center rounded-md p-0.5\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction TabsTrigger({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.Trigger>) {\n  return (\n    <TabsPrimitive.Trigger\n      data-slot=\"tabs-trigger\"\n      className={cn(\n        \"hover:text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 inline-flex items-center justify-center rounded-sm px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-xs [&_svg]:shrink-0\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction TabsContent({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.Content>) {\n  return (\n    <TabsPrimitive.Content\n      data-slot=\"tabs-content\"\n      className={cn(\"flex-1 outline-none\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Tabs, TabsContent, TabsList, TabsTrigger };\n",
       "path": "registry/default/ui/tabs.tsx"
-    },
-    {
-      "type": "registry:lib",
-      "target": "lib/utils.ts",
-      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
-      "path": "registry/default/lib/utils.ts"
     }
   ],
   "meta": {

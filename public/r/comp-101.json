@@ -19,6 +19,12 @@
       "path": "registry/default/components/comp-101.tsx"
     },
     {
+      "type": "registry:lib",
+      "target": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "path": "registry/default/lib/utils.ts"
+    },
+    {
       "type": "registry:ui",
       "target": "components/ui/toggle.tsx",
       "content": "\"use client\";\n\nimport * as TogglePrimitive from \"@radix-ui/react-toggle\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst toggleVariants = cva(\n  \"inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-[color,box-shadow] hover:bg-muted hover:text-muted-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-transparent\",\n        outline:\n          \"border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground\",\n      },\n      size: {\n        default: \"h-9 px-3\",\n        sm: \"h-8 px-2\",\n        lg: \"h-10 px-3\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  },\n);\n\nfunction Toggle({\n  className,\n  variant,\n  size,\n  ...props\n}: React.ComponentProps<typeof TogglePrimitive.Root> & VariantProps<typeof toggleVariants>) {\n  return (\n    <TogglePrimitive.Root\n      data-slot=\"toggle\"\n      className={cn(toggleVariants({ variant, size, className }))}\n      {...props}\n    />\n  );\n}\n\nexport { Toggle, toggleVariants };\n",
@@ -29,12 +35,6 @@
       "target": "components/ui/tooltip.tsx",
       "content": "\"use client\";\n\nimport * as TooltipPrimitive from \"@radix-ui/react-tooltip\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nfunction TooltipProvider({\n  delayDuration = 0,\n  ...props\n}: React.ComponentProps<typeof TooltipPrimitive.Provider>) {\n  return (\n    <TooltipPrimitive.Provider\n      data-slot=\"tooltip-provider\"\n      delayDuration={delayDuration}\n      {...props}\n    />\n  );\n}\n\nfunction Tooltip({ ...props }: React.ComponentProps<typeof TooltipPrimitive.Root>) {\n  return (\n    <TooltipProvider>\n      <TooltipPrimitive.Root data-slot=\"tooltip\" {...props} />\n    </TooltipProvider>\n  );\n}\n\nfunction TooltipTrigger({ ...props }: React.ComponentProps<typeof TooltipPrimitive.Trigger>) {\n  return <TooltipPrimitive.Trigger data-slot=\"tooltip-trigger\" {...props} />;\n}\n\nfunction TooltipContent({\n  className,\n  sideOffset = 4,\n  showArrow = false,\n  children,\n  ...props\n}: React.ComponentProps<typeof TooltipPrimitive.Content> & {\n  showArrow?: boolean;\n}) {\n  return (\n    <TooltipPrimitive.Portal>\n      <TooltipPrimitive.Content\n        data-slot=\"tooltip-content\"\n        sideOffset={sideOffset}\n        className={cn(\n          \"bg-popover text-popover-foreground animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative z-50 max-w-70 rounded-md border px-3 py-1.5 text-sm\",\n          className,\n        )}\n        {...props}\n      >\n        {children}\n        {showArrow && (\n          <TooltipPrimitive.Arrow className=\"fill-popover -my-px drop-shadow-[0_1px_0_hsl(var(--border))]\" />\n        )}\n      </TooltipPrimitive.Content>\n    </TooltipPrimitive.Portal>\n  );\n}\n\nexport { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger };\n",
       "path": "registry/default/ui/tooltip.tsx"
-    },
-    {
-      "type": "registry:lib",
-      "target": "lib/utils.ts",
-      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
-      "path": "registry/default/lib/utils.ts"
     }
   ],
   "meta": {

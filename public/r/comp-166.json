@@ -19,6 +19,12 @@
       "path": "registry/default/components/comp-166.tsx"
     },
     {
+      "type": "registry:lib",
+      "target": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "path": "registry/default/lib/utils.ts"
+    },
+    {
       "type": "registry:ui",
       "target": "components/ui/badge.tsx",
       "content": "import { Slot } from \"@radix-ui/react-slot\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst badgeVariants = cva(\n  \"inline-flex items-center justify-center rounded-full border px-1.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] transition-[color,box-shadow] [&>svg]:shrink-0 leading-normal\",\n  {\n    variants: {\n      variant: {\n        default: \"border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90\",\n        secondary:\n          \"border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90\",\n        destructive:\n          \"border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40\",\n        outline: \"text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  },\n);\n\nfunction Badge({\n  className,\n  variant,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"span\"> & VariantProps<typeof badgeVariants> & { asChild?: boolean }) {\n  const Comp = asChild ? Slot : \"span\";\n\n  return (\n    <Comp data-slot=\"badge\" className={cn(badgeVariants({ variant }), className)} {...props} />\n  );\n}\n\nexport { Badge, badgeVariants };\n",
@@ -35,12 +41,6 @@
       "target": "components/ui/radio-group.tsx",
       "content": "\"use client\";\n\nimport * as RadioGroupPrimitive from \"@radix-ui/react-radio-group\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nfunction RadioGroup({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Root>) {\n  return (\n    <RadioGroupPrimitive.Root\n      data-slot=\"radio-group\"\n      className={cn(\"grid gap-3\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction RadioGroupItem({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Item>) {\n  return (\n    <RadioGroupPrimitive.Item\n      data-slot=\"radio-group-item\"\n      className={cn(\n        \"border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground data-[state=checked]:border-primary focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive aspect-square size-4 shrink-0 rounded-full border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50\",\n        className,\n      )}\n      {...props}\n    >\n      <RadioGroupPrimitive.Indicator className=\"flex items-center justify-center text-current\">\n        <svg\n          width=\"6\"\n          height=\"6\"\n          viewBox=\"0 0 6 6\"\n          fill=\"currentcolor\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <circle cx=\"3\" cy=\"3\" r=\"3\" />\n        </svg>\n      </RadioGroupPrimitive.Indicator>\n    </RadioGroupPrimitive.Item>\n  );\n}\n\nexport { RadioGroup, RadioGroupItem };\n",
       "path": "registry/default/ui/radio-group.tsx"
-    },
-    {
-      "type": "registry:lib",
-      "target": "lib/utils.ts",
-      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
-      "path": "registry/default/lib/utils.ts"
     }
   ],
   "meta": {
