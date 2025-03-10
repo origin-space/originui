@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "registry-tags",
+  "type": "registry:file",
+  "files": [
+    {
+      "type": "registry:file",
+      "target": "registry-tags.ts",
+      "content": "// Before adding a new tag, ensure it doesn't already exist in the array.\nexport const registryTags = [\n  // Component tags\n  \"accordion\",\n  \"alert\",\n  \"avatar\",\n  \"badge\",\n  \"banner\",\n  \"breadcrumb\",\n  \"button\",\n  \"calendar\",\n  \"checkbox\",\n  \"collapsible\",\n  \"combobox\",\n  \"command\",\n  \"dialog\",\n  \"dropdown\",\n  \"input\",\n  \"label\",\n  \"notification\",\n  \"otp\",\n  \"pagination\",\n  \"popover\",\n  \"radio\",\n  \"select\",\n  \"slider\",\n  \"stepper\",\n  \"table\",\n  \"tabs\",\n  \"textarea\",\n  \"timeline\",\n  \"switch\",\n  \"tooltip\",\n  // Generic tags\n  \"alert dialog\",\n  \"authentication\",\n  \"autocomplete\",\n  \"avatar group\",\n  \"back\",\n  \"card\",\n  \"chart\",\n  \"checkout\",\n  \"chip\",\n  \"color\",\n  \"controls\",\n  \"cookies\",\n  \"countdown\",\n  \"counter\",\n  \"copy\",\n  \"credit card\",\n  \"darkmode\",\n  \"date\",\n  \"delete\",\n  \"disabled\",\n  \"drag and drop\",\n  \"emblor\",\n  \"equalizer\",\n  \"error\",\n  \"feedback\",\n  \"file\",\n  \"filter\",\n  \"flag\",\n  \"form\",\n  \"gdpr\",\n  \"hamburger\",\n  \"helper\",\n  \"hint\",\n  \"hover card\",\n  \"image\",\n  \"info\",\n  \"kbd\",\n  \"like\",\n  \"loading\",\n  \"login\",\n  \"mask\",\n  \"menu\",\n  \"modal\",\n  \"multiselect\",\n  \"native select\",\n  \"newsletter\",\n  \"next\",\n  \"number\",\n  \"onboarding\",\n  \"password\",\n  \"payment\",\n  \"phone\",\n  \"picker\",\n  \"previous\",\n  \"pricing\",\n  \"privacy\",\n  \"profile\",\n  \"radix\",\n  \"range\",\n  \"range calendar\",\n  \"range slider\",\n  \"rating\",\n  \"react aria\",\n  \"react daypicker\",\n  \"read-only\",\n  \"required\",\n  \"reset\",\n  \"resize\",\n  \"sale\",\n  \"search\",\n  \"share\",\n  \"signup\",\n  \"social\",\n  \"sort\",\n  \"status\",\n  \"sticky\",\n  \"subscribe\",\n  \"success\",\n  \"tag\",\n  \"tanstack\",\n  \"team\",\n  \"text editor\",\n  \"time\",\n  \"timezone\",\n  \"toast\",\n  \"toggle\",\n  \"toggle group\",\n  \"tour\",\n  \"tree\",\n  \"upload\",\n  \"user\",\n  \"vertical slider\",\n  \"vertical stepper\",\n  \"vertical table\",\n  \"vertical tabs\",\n  \"vertical timeline\",\n  \"volume\",\n  \"vote\",\n  \"warning\",\n  \"week\",\n] as const;\n\nexport type RegistryTag = (typeof registryTags)[number];\n",
+      "path": "registry/registry-tags.ts"
+    }
+  ]
+}
