@@ -30,7 +30,7 @@ export default function Component() {
         Built with{" "}
         <a
           className="hover:text-foreground underline"
-          href="https://react-spectrum.adobe.com/react-aria/DateField.html"
+          href="https://react-spectrum.adobe.com/react-spectrum/NumberField.html"
           target="_blank"
           rel="noopener nofollow"
         >
