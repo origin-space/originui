@@ -10,6 +10,13 @@ export const metadata: Metadata = {
 
 const cards = [
   {
+    id: 4,
+    title: "Crypto Wallet",
+    demoUrl: "https://ui-experiment-04.vercel.app/",
+    repoUrl: "https://github.com/origin-space/ui-experiments/tree/main/apps/experiment-04",
+    imgHeight: 894,
+  },  
+  {
     id: 3,
     title: "SaaS Dashboard",
     demoUrl: "https://ui-experiment-03.vercel.app/",
