@@ -56,7 +56,7 @@ function Calendar({
   );
 
   const defaultComponents = {
-    Chevron: (props: { 
+    Chevron: (props: {
       className?: string;
       size?: number;
       disabled?: boolean;

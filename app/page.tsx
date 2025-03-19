@@ -49,12 +49,7 @@ type CategoryCardProps = {
   isNew?: boolean;
 };
 
-function CategoryCard({
-  slug,
-  name,
-  componentsCount,
-  isNew = false,
-}: CategoryCardProps) {
+function CategoryCard({ slug, name, componentsCount, isNew = false }: CategoryCardProps) {
   const href = `/${slug}`;
   const imageBasePath = `/thumbs/${slug}`;
   const alt = `${name} components`;

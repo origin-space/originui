@@ -1,6 +1,6 @@
 import PageHeader from "@/components/page-header";
-import Card from "./card";
 import type { Metadata } from "next";
+import Card from "./card";
 
 export const metadata: Metadata = {
   title: "UI Layouts built with Tailwind CSS and React - Origin UI",
@@ -15,7 +15,7 @@ const cards = [
     demoUrl: "https://ui-experiment-04.vercel.app/",
     repoUrl: "https://github.com/origin-space/ui-experiments/tree/main/apps/experiment-04",
     imgHeight: 894,
-  },  
+  },
   {
     id: 3,
     title: "SaaS Dashboard",
@@ -43,16 +43,16 @@ export default function Page() {
   return (
     <>
       <PageHeader title="Layouts &amp; Experiments">
-        Beautifully designed open-source layouts and UI experiments built with Origin UI and shadcn/ui.
+        Beautifully designed open-source layouts and UI experiments built with Origin UI and
+        shadcn/ui.
       </PageHeader>
 
       {/* Cards */}
       <div className="space-y-16">
-        {cards.map(card => (
+        {cards.map((card) => (
           <Card key={card.id} card={card} />
         ))}
-      </div>      
-
+      </div>
     </>
   );
 }

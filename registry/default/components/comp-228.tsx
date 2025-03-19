@@ -16,7 +16,7 @@ export default function Component() {
       <Select defaultValue="1">
         <SelectTrigger
           id={id}
-          className="h-auto ps-2 [&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_img]:shrink-0"
+          className="h-auto ps-2 text-left [&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_img]:shrink-0"
         >
           <SelectValue placeholder="Choose a plan" />
         </SelectTrigger>
