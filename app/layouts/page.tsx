@@ -10,30 +10,37 @@ export const metadata: Metadata = {
 
 const cards = [
   {
+    id: 5,
+    title: "Candlestick Chart",
+    demoUrl: "https://crafted.is/exp5",
+    repoUrl: "https://github.com/origin-space/ui-experiments/tree/main/apps/experiment-05",
+    imgHeight: 770,
+  },
+  {
     id: 4,
     title: "Crypto Wallet",
-    demoUrl: "https://ui-experiment-04.vercel.app/",
+    demoUrl: "https://crafted.is/exp4",
     repoUrl: "https://github.com/origin-space/ui-experiments/tree/main/apps/experiment-04",
     imgHeight: 894,
   },
   {
     id: 3,
     title: "SaaS Dashboard",
-    demoUrl: "https://ui-experiment-03.vercel.app/",
+    demoUrl: "https://crafted.is/exp3",
     repoUrl: "https://github.com/origin-space/ui-experiments/tree/main/apps/experiment-03",
     imgHeight: 829,
   },
   {
     id: 2,
     title: "AI Chat",
-    demoUrl: "https://ui-experiment-02.vercel.app/",
+    demoUrl: "https://crafted.is/exp2",
     repoUrl: "https://github.com/origin-space/ui-experiments/tree/main/apps/experiment-02",
     imgHeight: 700,
   },
   {
     id: 1,
     title: "Dark Table",
-    demoUrl: "https://ui-experiments-green.vercel.app/",
+    demoUrl: "https://crafted.is/exp1",
     repoUrl: "https://github.com/origin-space/ui-experiments/tree/main/apps/experiment-01",
     imgHeight: 894,
   },
