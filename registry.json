@@ -5528,7 +5528,7 @@
         }
       ],
       "meta": {
-        "tags": ["notification", "toast", "radix"],
+        "tags": ["notification", "toast", "sonner", "radix"],
         "colSpan": 2,
         "style": 1
       }
@@ -5545,7 +5545,7 @@
         }
       ],
       "meta": {
-        "tags": ["notification", "toast", "success", "radix"],
+        "tags": ["notification", "toast", "sonner", "success", "radix"],
         "colSpan": 2,
         "style": 1
       }
