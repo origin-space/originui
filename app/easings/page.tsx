@@ -30,99 +30,99 @@ const easings = [
     points: [0.42, 0, 0.58, 1],
   },
   {
-    name: "easeInSine",
+    name: "ease-in-sine",
     points: [0.12, 0, 0.39, 0],
   },
   {
-    name: "easeOutSine",
+    name: "ease-out-sine",
     points: [0.61, 1, 0.88, 1],
   },
   {
-    name: "easeInOutSine",
+    name: "ease-in-out-sine",
     points: [0.37, 0, 0.63, 1],
   },
   {
-    name: "easeInQuad",
+    name: "ease-in-quad",
     points: [0.11, 0, 0.5, 0],
   },
   {
-    name: "easeOutQuad",
+    name: "ease-out-quad",
     points: [0.5, 1, 0.89, 1],
   },
   {
-    name: "easeInOutQuad",
+    name: "ease-in-out-quad",
     points: [0.45, 0, 0.55, 1],
   },
   {
-    name: "easeInCubic",
+    name: "ease-in-cubic",
     points: [0.32, 0, 0.67, 0],
   },
   {
-    name: "easeOutCubic",
+    name: "ease-out-cubic",
     points: [0.33, 1, 0.68, 1],
   },
   {
-    name: "easeInOutCubic",
+    name: "ease-in-out-cubic",
     points: [0.65, 0, 0.35, 1],
   },
   {
-    name: "easeInQuart",
+    name: "ease-in-quart",
     points: [0.5, 0, 0.75, 0],
   },
   {
-    name: "easeOutQuart",
+    name: "ease-out-quart",
     points: [0.25, 1, 0.5, 1],
   },
   {
-    name: "easeInOutQuart",
+    name: "ease-in-out-quart",
     points: [0.76, 0, 0.24, 1],
   },
   {
-    name: "easeInQuint",
+    name: "ease-in-quint",
     points: [0.64, 0, 0.78, 0],
   },
   {
-    name: "easeOutQuint",
+    name: "ease-out-quint",
     points: [0.22, 1, 0.36, 1],
   },
   {
-    name: "easeInOutQuint",
+    name: "ease-in-out-quint",
     points: [0.83, 0, 0.17, 1],
   },
   {
-    name: "easeInExpo",
+    name: "ease-in-expo",
     points: [0.7, 0, 0.84, 0],
   },
   {
-    name: "easeOutExpo",
+    name: "ease-out-expo",
     points: [0.16, 1, 0.3, 1],
   },
   {
-    name: "easeInOutExpo",
+    name: "ease-in-out-expo",
     points: [0.87, 0, 0.13, 1],
   },
   {
-    name: "easeInCirc",
+    name: "ease-in-circ",
     points: [0.55, 0, 1, 0.45],
   },
   {
-    name: "easeOutCirc",
+    name: "ease-out-circ",
     points: [0, 0.55, 0.45, 1],
   },
   {
-    name: "easeInOutCirc",
+    name: "ease-in-out-circ",
     points: [0.85, 0, 0.15, 1],
   },
   {
-    name: "easeInBack",
+    name: "ease-in-back",
     points: [0.36, 0, 0.66, -0.56],
   },
   {
-    name: "easeOutBack",
+    name: "ease-out-back",
     points: [0.34, 1.56, 0.64, 1],
   },
   {
-    name: "easeInOutBack",
+    name: "ease-in-out-back",
     points: [0.68, -0.6, 0.32, 1.6],
   },
 ];
