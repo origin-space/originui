@@ -1,7 +1,10 @@
-"use client";
+"use client"
 
-import { cn } from "@/registry/default/lib/utils";
-import { Button } from "@/registry/default/ui/button";
+import { useId, useRef, useState } from "react"
+import { CheckIcon, CopyIcon, UserRoundPlusIcon } from "lucide-react"
+
+import { cn } from "@/registry/default/lib/utils"
+import { Button } from "@/registry/default/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -9,42 +12,44 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/default/ui/dialog";
-import { Input } from "@/registry/default/ui/input";
-import { Label } from "@/registry/default/ui/label";
+} from "@/registry/default/ui/dialog"
+import { Input } from "@/registry/default/ui/input"
+import { Label } from "@/registry/default/ui/label"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/registry/default/ui/tooltip";
-import { CheckIcon, CopyIcon, UserRoundPlusIcon } from "lucide-react";
-import { useId, useRef, useState } from "react";
+} from "@/registry/default/ui/tooltip"
 
 export default function Component() {
-  const id = useId();
-  const [emails, setEmails] = useState(["mark@yourcompany.com", "jane@yourcompany.com", ""]);
-  const [copied, setCopied] = useState<boolean>(false);
-  const inputRef = useRef<HTMLInputElement>(null);
-  const lastInputRef = useRef<HTMLInputElement>(null);
+  const id = useId()
+  const [emails, setEmails] = useState([
+    "mark@yourcompany.com",
+    "jane@yourcompany.com",
+    "",
+  ])
+  const [copied, setCopied] = useState<boolean>(false)
+  const inputRef = useRef<HTMLInputElement>(null)
+  const lastInputRef = useRef<HTMLInputElement>(null)
 
   const addEmail = () => {
-    setEmails([...emails, ""]);
-  };
+    setEmails([...emails, ""])
+  }
 
   const handleEmailChange = (index: number, value: string) => {
-    const newEmails = [...emails];
-    newEmails[index] = value;
-    setEmails(newEmails);
-  };
+    const newEmails = [...emails]
+    newEmails[index] = value
+    setEmails(newEmails)
+  }
 
   const handleCopy = () => {
     if (inputRef.current) {
-      navigator.clipboard.writeText(inputRef.current.value);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
+      navigator.clipboard.writeText(inputRef.current.value)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
     }
-  };
+  }
 
   return (
     <Dialog>
@@ -53,8 +58,8 @@ export default function Component() {
       </DialogTrigger>
       <DialogContent
         onOpenAutoFocus={(e) => {
-          e.preventDefault();
-          lastInputRef.current?.focus();
+          e.preventDefault()
+          lastInputRef.current?.focus()
         }}
       >
         <div className="flex flex-col gap-2">
@@ -128,27 +133,33 @@ export default function Component() {
                     <div
                       className={cn(
                         "transition-all",
-                        copied ? "scale-100 opacity-100" : "scale-0 opacity-0",
+                        copied ? "scale-100 opacity-100" : "scale-0 opacity-0"
                       )}
                     >
-                      <CheckIcon className="stroke-emerald-500" size={16} aria-hidden="true" />
+                      <CheckIcon
+                        className="stroke-emerald-500"
+                        size={16}
+                        aria-hidden="true"
+                      />
                     </div>
                     <div
                       className={cn(
                         "absolute transition-all",
-                        copied ? "scale-0 opacity-0" : "scale-100 opacity-100",
+                        copied ? "scale-0 opacity-0" : "scale-100 opacity-100"
                       )}
                     >
                       <CopyIcon size={16} aria-hidden="true" />
                     </div>
                   </button>
                 </TooltipTrigger>
-                <TooltipContent className="px-2 py-1 text-xs">Copy to clipboard</TooltipContent>
+                <TooltipContent className="px-2 py-1 text-xs">
+                  Copy to clipboard
+                </TooltipContent>
               </Tooltip>
             </TooltipProvider>
           </div>
         </div>
       </DialogContent>
     </Dialog>
-  );
+  )
 }

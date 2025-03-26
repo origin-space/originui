@@ -1,13 +1,17 @@
-import { Button } from "@/registry/default/ui/button";
-import { Checkbox } from "@/registry/default/ui/checkbox";
-import { Label } from "@/registry/default/ui/label";
-import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
-import { useId } from "react";
+import { useId } from "react"
+import { ListFilterIcon } from "lucide-react"
 
-import { ListFilterIcon } from "lucide-react";
+import { Button } from "@/registry/default/ui/button"
+import { Checkbox } from "@/registry/default/ui/checkbox"
+import { Label } from "@/registry/default/ui/label"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/registry/default/ui/popover"
 
 export default function Component() {
-  const id = useId();
+  const id = useId()
   return (
     <div className="flex flex-col gap-4">
       <Popover>
@@ -18,7 +22,9 @@ export default function Component() {
         </PopoverTrigger>
         <PopoverContent className="w-36 p-3">
           <div className="space-y-3">
-            <div className="text-muted-foreground text-xs font-medium">Filters</div>
+            <div className="text-muted-foreground text-xs font-medium">
+              Filters
+            </div>
             <form>
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
@@ -64,5 +70,5 @@ export default function Component() {
         </PopoverContent>
       </Popover>
     </div>
-  );
+  )
 }

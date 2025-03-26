@@ -6,7 +6,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table";
+} from "@/registry/default/ui/table"
 
 const items = [
   {
@@ -129,7 +129,7 @@ const items = [
     status: "Active",
     balance: "$1,800.00",
   },
-];
+]
 
 export default function Component() {
   return (
@@ -164,7 +164,9 @@ export default function Component() {
           </TableFooter>
         </Table>
       </div>
-      <p className="text-muted-foreground mt-8 text-center text-sm">Table with sticky header</p>
+      <p className="text-muted-foreground mt-8 text-center text-sm">
+        Table with sticky header
+      </p>
     </div>
-  );
+  )
 }

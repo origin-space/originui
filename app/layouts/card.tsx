@@ -1,13 +1,14 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
+
 interface CardProps {
   card: {
-    id: number;
-    title: string;
-    demoUrl?: string;
-    repoUrl?: string;
-    imgHeight: number;
-  };
+    id: number
+    title: string
+    demoUrl?: string
+    repoUrl?: string
+    imgHeight: number
+  }
 }
 
 export default function Card({ card }: CardProps) {
@@ -68,5 +69,5 @@ export default function Card({ card }: CardProps) {
         )}
       </div>
     </article>
-  );
+  )
 }

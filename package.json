@@ -3,32 +3,15 @@
   "version": "0.1.0",
   "type": "module",
   "private": true,
-  "prettier": {
-    "semi": true,
-    "singleQuote": false,
-    "printWidth": 100,
-    "plugins": [
-      "prettier-plugin-organize-imports",
-      "prettier-plugin-tailwindcss"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "tsconfig.json"
-        ],
-        "options": {
-          "parser": "jsonc"
-        }
-      }
-    ]
-  },
   "scripts": {
-    "format": "prettier --write .",
     "dev": "next dev --turbopack",
     "build": "pnpm format && next build",
     "registry:build": "shadcn build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
+    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"    
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
@@ -91,6 +74,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
     "@tailwindcss/postcss": "^4.0.5",
     "@types/node": "^22.13.1",
     "@types/react": "^19.0.8",
@@ -100,11 +84,49 @@
     "eslint-config-next": "15.1.6",
     "postcss": "^8.5.1",
     "prettier": "^3.4.2",
-    "prettier-plugin-organize-imports": "^4.1.0",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "rimraf": "^6.0.1",
     "shiki": "^2.3.2",
     "tailwindcss": "^4.0.5",
     "typescript": "^5.7.3"
+  },
+  "prettier": {
+    "endOfLine": "lf",
+    "semi": false,
+    "singleQuote": false,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "importOrder": [
+      "^(react/(.*)$)|^(react$)",
+      "^(next/(.*)$)|^(next$)",
+      "<THIRD_PARTY_MODULES>",
+      "",
+      "^types$",
+      "^@/types/(.*)$",
+      "^@/config/(.*)$",
+      "^@/lib/(.*)$",
+      "^@/hooks/(.*)$",
+      "^@/components/ui/(.*)$",
+      "^@/components/(.*)$",
+      "^@/registry/(.*)$",
+      "^@/styles/(.*)$",
+      "^@/app/(.*)$",
+      "",
+      "^[./]"
+    ],
+    "importOrderSeparation": false,
+    "importOrderSortSpecifiers": true,
+    "importOrderBuiltinModulesToTop": true,
+    "importOrderParserPlugins": [
+      "typescript",
+      "jsx",
+      "decorators-legacy"
+    ],
+    "importOrderMergeDuplicateImports": true,
+    "importOrderCombineTypeAndValueImports": true,
+    "plugins": [
+      "@ianvs/prettier-plugin-sort-imports",
+      "prettier-plugin-tailwindcss"
+    ]
   }
 }

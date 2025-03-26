@@ -1,7 +1,8 @@
-"use client";
+"use client"
 
-import { Label } from "@/registry/default/ui/label";
-import { ListBox, ListBoxItem } from "react-aria-components";
+import { ListBox, ListBoxItem } from "react-aria-components"
+
+import { Label } from "@/registry/default/ui/label"
 
 export default function Component() {
   return (
@@ -41,7 +42,11 @@ export default function Component() {
           </ListBoxItem>
         </ListBox>
       </div>
-      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
+      <p
+        className="text-muted-foreground mt-2 text-xs"
+        role="region"
+        aria-live="polite"
+      >
         Built with{" "}
         <a
           className="hover:text-foreground underline"
@@ -53,5 +58,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
+  )
 }

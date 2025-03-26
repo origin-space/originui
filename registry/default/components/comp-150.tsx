@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import { MoonIcon, SunIcon } from "lucide-react";
-import { useId, useState } from "react";
+import { useId, useState } from "react"
+import { MoonIcon, SunIcon } from "lucide-react"
 
 export default function Component() {
-  const id = useId();
-  const [theme, setTheme] = useState<string>("light");
+  const id = useId()
+  const [theme, setTheme] = useState<string>("light")
 
   return (
     <div className="space-y-4">
@@ -19,7 +19,9 @@ export default function Component() {
           id={id}
           className="peer sr-only"
           checked={theme === "dark"}
-          onChange={() => setTheme((prev) => (prev === "dark" ? "light" : "dark"))}
+          onChange={() =>
+            setTheme((prev) => (prev === "dark" ? "light" : "dark"))
+          }
         />
         <label
           className="group border-input bg-background text-foreground hover:bg-accent hover:text-accent-foreground peer-focus-visible:border-ring peer-focus-visible:ring-ring/50 relative inline-flex size-9 items-center justify-center rounded-md border shadow-xs transition-[color,box-shadow] outline-none peer-focus-visible:ring-[3px]"
@@ -40,5 +42,5 @@ export default function Component() {
         </label>
       </div>
     </div>
-  );
+  )
 }

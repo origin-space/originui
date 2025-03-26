@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/components/comp-109.tsx",
-      "content": "import { ToggleGroup, ToggleGroupItem } from \"@/registry/default/ui/toggle-group\";\n\nexport default function Component() {\n  return (\n    <ToggleGroup variant=\"outline\" className=\"inline-flex\" type=\"single\">\n      <ToggleGroupItem value=\"left\">Left</ToggleGroupItem>\n      <ToggleGroupItem value=\"center\">Center</ToggleGroupItem>\n      <ToggleGroupItem value=\"right\">Right</ToggleGroupItem>\n    </ToggleGroup>\n  );\n}\n",
+      "content": "import {\n  ToggleGroup,\n  ToggleGroupItem,\n} from \"@/registry/default/ui/toggle-group\"\n\nexport default function Component() {\n  return (\n    <ToggleGroup variant=\"outline\" className=\"inline-flex\" type=\"single\">\n      <ToggleGroupItem value=\"left\">Left</ToggleGroupItem>\n      <ToggleGroupItem value=\"center\">Center</ToggleGroupItem>\n      <ToggleGroupItem value=\"right\">Right</ToggleGroupItem>\n    </ToggleGroup>\n  )\n}\n",
       "type": "registry:component"
     }
   ],

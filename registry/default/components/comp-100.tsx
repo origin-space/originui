@@ -1,10 +1,11 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
-import { useState } from "react";
+import { useState } from "react"
+
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
-  const [open, setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false)
 
   return (
     <Button
@@ -41,5 +42,5 @@ export default function Component() {
         />
       </svg>
     </Button>
-  );
+  )
 }

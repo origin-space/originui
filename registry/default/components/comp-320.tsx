@@ -1,6 +1,9 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
+import { useId, useState } from "react"
+import { CircleAlertIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -10,17 +13,15 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/default/ui/dialog";
-import { Input } from "@/registry/default/ui/input";
-import { Label } from "@/registry/default/ui/label";
-import { CircleAlertIcon } from "lucide-react";
-import { useId, useState } from "react";
+} from "@/registry/default/ui/dialog"
+import { Input } from "@/registry/default/ui/input"
+import { Label } from "@/registry/default/ui/label"
 
-const PROJECT_NAME = "Origin UI";
+const PROJECT_NAME = "Origin UI"
 
 export default function Component() {
-  const id = useId();
-  const [inputValue, setInputValue] = useState("");
+  const id = useId()
+  const [inputValue, setInputValue] = useState("")
 
   return (
     <Dialog>
@@ -36,10 +37,12 @@ export default function Component() {
             <CircleAlertIcon className="opacity-80" size={16} />
           </div>
           <DialogHeader>
-            <DialogTitle className="sm:text-center">Final confirmation</DialogTitle>
+            <DialogTitle className="sm:text-center">
+              Final confirmation
+            </DialogTitle>
             <DialogDescription className="sm:text-center">
-              This action cannot be undone. To confirm, please enter the project name{" "}
-              <span className="text-foreground">Origin UI</span>.
+              This action cannot be undone. To confirm, please enter the project
+              name <span className="text-foreground">Origin UI</span>.
             </DialogDescription>
           </DialogHeader>
         </div>
@@ -61,12 +64,16 @@ export default function Component() {
                 Cancel
               </Button>
             </DialogClose>
-            <Button type="button" className="flex-1" disabled={inputValue !== PROJECT_NAME}>
+            <Button
+              type="button"
+              className="flex-1"
+              disabled={inputValue !== PROJECT_NAME}
+            >
               Delete
             </Button>
           </DialogFooter>
         </form>
       </DialogContent>
     </Dialog>
-  );
+  )
 }

@@ -1,7 +1,12 @@
-"use client";
+"use client"
 
-import { Badge } from "@/registry/default/ui/badge";
-import { Button } from "@/registry/default/ui/button";
+import { useEffect, useId, useRef, useState } from "react"
+import { CreditCardIcon, StoreIcon } from "lucide-react"
+import { usePaymentInputs } from "react-payment-inputs"
+import images, { type CardImages } from "react-payment-inputs/images"
+
+import { Badge } from "@/registry/default/ui/badge"
+import { Button } from "@/registry/default/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -9,29 +14,30 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/default/ui/dialog";
-import { Input } from "@/registry/default/ui/input";
-import { Label } from "@/registry/default/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
-import { CreditCardIcon, StoreIcon } from "lucide-react";
-import { useEffect, useId, useRef, useState } from "react";
-import { usePaymentInputs } from "react-payment-inputs";
-import images, { type CardImages } from "react-payment-inputs/images";
+} from "@/registry/default/ui/dialog"
+import { Input } from "@/registry/default/ui/input"
+import { Label } from "@/registry/default/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
 
 export default function Component() {
-  const id = useId();
-  const { meta, getCardNumberProps, getExpiryDateProps, getCVCProps, getCardImageProps } =
-    usePaymentInputs();
-  const couponInputRef = useRef<HTMLInputElement>(null);
-  const [showCouponInput, setShowCouponInput] = useState(false);
-  const [couponCode, setCouponCode] = useState("");
+  const id = useId()
+  const {
+    meta,
+    getCardNumberProps,
+    getExpiryDateProps,
+    getCVCProps,
+    getCardImageProps,
+  } = usePaymentInputs()
+  const couponInputRef = useRef<HTMLInputElement>(null)
+  const [showCouponInput, setShowCouponInput] = useState(false)
+  const [couponCode, setCouponCode] = useState("")
 
   // Auto-focus the coupon input when it's shown
   useEffect(() => {
     if (showCouponInput && couponInputRef.current) {
-      couponInputRef.current.focus();
+      couponInputRef.current.focus()
     }
-  }, [showCouponInput]);
+  }, [showCouponInput])
 
   return (
     <Dialog>
@@ -86,7 +92,9 @@ export default function Component() {
               <Input id={`name-${id}`} type="text" required />
             </div>
             <div className="*:not-first:mt-2">
-              <legend className="text-foreground text-sm font-medium">Card Details</legend>
+              <legend className="text-foreground text-sm font-medium">
+                Card Details
+              </legend>
               <div className="rounded-md shadow-xs">
                 <div className="relative focus-within:z-10">
                   <Input
@@ -97,7 +105,9 @@ export default function Component() {
                     {meta.cardType ? (
                       <svg
                         className="overflow-hidden rounded-sm"
-                        {...getCardImageProps({ images: images as unknown as CardImages })}
+                        {...getCardImageProps({
+                          images: images as unknown as CardImages,
+                        })}
                         width={20}
                       />
                     ) : (
@@ -152,5 +162,5 @@ export default function Component() {
         </p>
       </DialogContent>
     </Dialog>
-  );
+  )
 }

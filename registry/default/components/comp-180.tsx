@@ -1,13 +1,14 @@
-"use client";
+"use client"
 
-import { Switch } from "@/registry/default/ui/switch";
-import { useId, useState } from "react";
+import { useId, useState } from "react"
+
+import { Switch } from "@/registry/default/ui/switch"
 
 export default function Component() {
-  const id = useId();
-  const [checked, setChecked] = useState(false);
+  const id = useId()
+  const [checked, setChecked] = useState(false)
 
-  const toggleSwitch = () => setChecked((prev) => !prev);
+  const toggleSwitch = () => setChecked((prev) => !prev)
 
   return (
     <div
@@ -37,5 +38,5 @@ export default function Component() {
         On
       </span>
     </div>
-  );
+  )
 }

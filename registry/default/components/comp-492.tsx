@@ -1,8 +1,9 @@
-import { Calendar } from "@/registry/default/ui/calendar";
-import { addDays } from "date-fns";
+import { addDays } from "date-fns"
+
+import { Calendar } from "@/registry/default/ui/calendar"
 
 export default function Component() {
-  const today = new Date();
+  const today = new Date()
 
   return (
     <div>
@@ -40,5 +41,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
+  )
 }

@@ -1,15 +1,16 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
-import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
-import { useState } from "react";
+import { useState } from "react"
+import { ChevronDownIcon, ChevronUpIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
-  const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  const [isExpanded, setIsExpanded] = useState<boolean>(false)
 
   const toggleExpand = () => {
-    setIsExpanded((prevState) => !prevState);
-  };
+    setIsExpanded((prevState) => !prevState)
+  }
 
   return (
     <Button
@@ -26,5 +27,5 @@ export default function Component() {
         <ChevronDownIcon className="-me-1" size={16} aria-hidden="true" />
       )}
     </Button>
-  );
+  )
 }

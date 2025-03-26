@@ -1,19 +1,20 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
+import { useState } from "react"
+
+import { Button } from "@/registry/default/ui/button"
 import {
   Stepper,
   StepperIndicator,
   StepperItem,
   StepperSeparator,
   StepperTrigger,
-} from "@/registry/default/ui/stepper";
-import { useState } from "react";
+} from "@/registry/default/ui/stepper"
 
-const steps = [1, 2, 3, 4];
+const steps = [1, 2, 3, 4]
 
 export default function Component() {
-  const [currentStep, setCurrentStep] = useState(2);
+  const [currentStep, setCurrentStep] = useState(2)
 
   return (
     <div className="mx-auto max-w-xl space-y-8 text-center">
@@ -45,9 +46,13 @@ export default function Component() {
           Next step
         </Button>
       </div>
-      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
+      <p
+        className="text-muted-foreground mt-2 text-xs"
+        role="region"
+        aria-live="polite"
+      >
         Controlled stepper with checkmarks
       </p>
     </div>
-  );
+  )
 }

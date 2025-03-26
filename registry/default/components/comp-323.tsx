@@ -1,14 +1,14 @@
-import { Button } from "@/registry/default/ui/button";
+import { Button } from "@/registry/default/ui/button"
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/default/ui/dialog";
-import { Label } from "@/registry/default/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
-import { Textarea } from "@/registry/default/ui/textarea";
+} from "@/registry/default/ui/dialog"
+import { Label } from "@/registry/default/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
+import { Textarea } from "@/registry/default/ui/textarea"
 
 export default function Component() {
   return (
@@ -18,7 +18,9 @@ export default function Component() {
       </DialogTrigger>
       <DialogContent className="flex flex-col gap-0 p-0 [&>button:last-child]:top-3.5">
         <DialogHeader className="contents space-y-0 text-left">
-          <DialogTitle className="border-b px-6 py-4 text-base">Help us improve</DialogTitle>
+          <DialogTitle className="border-b px-6 py-4 text-base">
+            Help us improve
+          </DialogTitle>
         </DialogHeader>
         <div className="px-6 py-4">
           <form className="space-y-5">
@@ -66,5 +68,5 @@ export default function Component() {
         </div>
       </DialogContent>
     </Dialog>
-  );
+  )
 }

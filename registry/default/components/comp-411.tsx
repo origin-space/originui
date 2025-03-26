@@ -1,4 +1,4 @@
-import { Button } from "@/registry/default/ui/button";
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
   return (
@@ -40,5 +40,5 @@ export default function Component() {
         +3
       </Button>
     </div>
-  );
+  )
 }

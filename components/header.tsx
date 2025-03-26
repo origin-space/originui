@@ -1,28 +1,29 @@
-"use client";
+"use client"
 
-import HeaderLink from "@/components/header-link";
-import ThemeToggle from "@/components/theme-toggle";
-import { useIsMobile } from "@/hooks/use-mobile";
-import LogoDark from "@/public/logo-dark.svg";
-import Logo from "@/public/logo.svg";
+import Image from "next/image"
+import Link from "next/link"
+import LogoDark from "@/public/logo-dark.svg"
+import Logo from "@/public/logo.svg"
+import { RiGithubFill, RiMenu2Line, RiTwitterXFill } from "@remixicon/react"
+
+import { useIsMobile } from "@/hooks/use-mobile"
+import HeaderLink from "@/components/header-link"
+import ThemeToggle from "@/components/theme-toggle"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu";
-import { RiGithubFill, RiMenu2Line, RiTwitterXFill } from "@remixicon/react";
-import Image from "next/image";
-import Link from "next/link";
+} from "@/registry/default/ui/dropdown-menu"
 
 const links = [
   { text: "Layouts", href: "/layouts", isNew: true },
   // { text: "Colors", href: "/colors" },
   { text: "Easing Classes", href: "/easings" },
-];
+]
 
 export default function Header() {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile()
 
   return (
     <header className="before:bg-[linear-gradient(to_right,--theme(--color-border/.3),--theme(--color-border)_200px,--theme(--color-border)_calc(100%-200px),--theme(--color-border/.3))] relative mb-14 before:absolute before:-inset-x-32 before:bottom-0 before:h-px">
@@ -63,7 +64,10 @@ export default function Header() {
                   />
                 ))}
               </div>
-              <div className="bg-input ms-4 me-4 h-5 w-px md:ms-10" aria-hidden="true"></div>
+              <div
+                className="bg-input ms-4 me-4 h-5 w-px md:ms-10"
+                aria-hidden="true"
+              ></div>
             </>
           )}
           <div className="flex items-center gap-1">
@@ -110,5 +114,5 @@ export default function Header() {
         </div>
       </div>
     </header>
-  );
+  )
 }

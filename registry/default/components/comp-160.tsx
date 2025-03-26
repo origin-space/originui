@@ -1,9 +1,10 @@
-import { Label } from "@/registry/default/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
-import { useId } from "react";
+import { useId } from "react"
+
+import { Label } from "@/registry/default/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
 
 export default function Component() {
-  const id = useId();
+  const id = useId()
   return (
     <RadioGroup className="gap-2" defaultValue="1">
       {/* Radio card #1 */}
@@ -24,7 +25,10 @@ export default function Component() {
             aria-hidden="true"
           >
             <rect width="32" height="24" rx="4" fill="#252525" />
-            <path d="M19.0537 6.49742H12.9282V17.5026H19.0537V6.49742Z" fill="#FF5A00" />
+            <path
+              d="M19.0537 6.49742H12.9282V17.5026H19.0537V6.49742Z"
+              fill="#FF5A00"
+            />
             <path
               d="M13.3359 12C13.3359 9.76408 14.3871 7.77961 16 6.49741C14.8129 5.56408 13.3155 5 11.6822 5C7.81295 5 4.68221 8.13074 4.68221 12C4.68221 15.8693 7.81295 19 11.6822 19C13.3155 19 14.8129 18.4359 16 17.5026C14.3848 16.2385 13.3359 14.2359 13.3359 12Z"
               fill="#EB001B"
@@ -41,7 +45,10 @@ export default function Component() {
                 (Sublabel)
               </span>
             </Label>
-            <p id={`${id}-1-description`} className="text-muted-foreground text-xs">
+            <p
+              id={`${id}-1-description`}
+              className="text-muted-foreground text-xs"
+            >
               You can use this card with a label and a description.
             </p>
           </div>
@@ -69,7 +76,10 @@ export default function Component() {
                 fill="#252525"
                 d="M28 0H4a4 4 0 0 0-4 4v16a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4Z"
               />
-              <path fill="#fff" d="m15.884 8.262-1.604 7.496h-1.94l1.604-7.496h1.94Z" />
+              <path
+                fill="#fff"
+                d="m15.884 8.262-1.604 7.496h-1.94l1.604-7.496h1.94Z"
+              />
               <path
                 fill="#fff"
                 fillRule="evenodd"
@@ -94,12 +104,15 @@ export default function Component() {
                 (Sublabel)
               </span>
             </Label>
-            <p id={`${id}-2-description`} className="text-muted-foreground text-xs">
+            <p
+              id={`${id}-2-description`}
+              className="text-muted-foreground text-xs"
+            >
               You can use this card with a label and a description.
             </p>
           </div>
         </div>
       </div>
     </RadioGroup>
-  );
+  )
 }

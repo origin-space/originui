@@ -1,17 +1,19 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
+import { useState } from "react"
+
+import { Button } from "@/registry/default/ui/button"
 import {
   Stepper,
   StepperIndicator,
   StepperItem,
   StepperTrigger,
-} from "@/registry/default/ui/stepper";
-import { useState } from "react";
-const steps = [1, 2, 3, 4];
+} from "@/registry/default/ui/stepper"
+
+const steps = [1, 2, 3, 4]
 
 export default function Component() {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(1)
 
   return (
     <div className="mx-auto max-w-xl space-y-8 text-center">
@@ -19,8 +21,14 @@ export default function Component() {
         <Stepper value={currentStep} onValueChange={setCurrentStep}>
           {steps.map((step) => (
             <StepperItem key={step} step={step} className="flex-1">
-              <StepperTrigger className="w-full flex-col items-start gap-2" asChild>
-                <StepperIndicator asChild className="bg-border h-2 w-full rounded-none">
+              <StepperTrigger
+                className="w-full flex-col items-start gap-2"
+                asChild
+              >
+                <StepperIndicator
+                  asChild
+                  className="bg-border h-2 w-full rounded-none"
+                >
                   <span className="sr-only">{step}</span>
                 </StepperIndicator>
               </StepperTrigger>
@@ -49,9 +57,13 @@ export default function Component() {
           Next step
         </Button>
       </div>
-      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
+      <p
+        className="text-muted-foreground mt-2 text-xs"
+        role="region"
+        aria-live="polite"
+      >
         Progress stepper
       </p>
     </div>
-  );
+  )
 }

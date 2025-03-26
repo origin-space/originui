@@ -1,23 +1,23 @@
-"use client";
+"use client"
 
-import { useCopy } from "@/hooks/use-copy";
-import { cn } from "@/registry/default/lib/utils";
-import { Button } from "@/registry/default/ui/button";
+import { useCopy } from "@/hooks/use-copy"
+import { cn } from "@/registry/default/lib/utils"
+import { Button } from "@/registry/default/ui/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/registry/default/ui/tooltip";
+} from "@/registry/default/ui/tooltip"
 
 const CopyButton = ({
   componentSource,
   className,
 }: {
-  componentSource: string | null;
-  className?: string;
+  componentSource: string | null
+  className?: string
 }) => {
-  const { copied, copy } = useCopy();
+  const { copied, copy } = useCopy()
 
   return (
     <div className={cn("dark absolute top-2 right-2", className)}>
@@ -35,7 +35,7 @@ const CopyButton = ({
               <div
                 className={cn(
                   "transition-all",
-                  copied ? "scale-100 opacity-100" : "scale-0 opacity-0",
+                  copied ? "scale-100 opacity-100" : "scale-0 opacity-0"
                 )}
               >
                 <svg
@@ -54,7 +54,7 @@ const CopyButton = ({
               <div
                 className={cn(
                   "absolute transition-all",
-                  copied ? "scale-0 opacity-0" : "scale-100 opacity-100",
+                  copied ? "scale-0 opacity-0" : "scale-100 opacity-100"
                 )}
               >
                 <svg
@@ -70,11 +70,13 @@ const CopyButton = ({
               </div>
             </Button>
           </TooltipTrigger>
-          <TooltipContent className="text-muted-foreground px-2 py-1 text-xs">Copy</TooltipContent>
+          <TooltipContent className="text-muted-foreground px-2 py-1 text-xs">
+            Copy
+          </TooltipContent>
         </Tooltip>
       </TooltipProvider>
     </div>
-  );
-};
+  )
+}
 
-export default CopyButton;
+export default CopyButton

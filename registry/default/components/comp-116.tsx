@@ -1,5 +1,6 @@
-import { Button } from "@/registry/default/ui/button";
-import { ChevronRightIcon } from "lucide-react";
+import { ChevronRightIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
   return (
@@ -9,5 +10,5 @@ export default function Component() {
         <ChevronRightIcon className="opacity-60" size={16} aria-hidden="true" />
       </span>
     </Button>
-  );
+  )
 }

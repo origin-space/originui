@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import { useToast } from "@/registry/default/hooks/use-toast";
+import { useToast } from "@/registry/default/hooks/use-toast"
 import {
   Toast,
   ToastClose,
@@ -8,10 +8,10 @@ import {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from "@/registry/default/ui/toast";
+} from "@/registry/default/ui/toast"
 
 export function Toaster() {
-  const { toasts } = useToast();
+  const { toasts } = useToast()
 
   return (
     <ToastProvider>
@@ -22,7 +22,9 @@ export function Toaster() {
               <div className="flex flex-col gap-3">
                 <div className="space-y-1">
                   {title && <ToastTitle>{title}</ToastTitle>}
-                  {description && <ToastDescription>{description}</ToastDescription>}
+                  {description && (
+                    <ToastDescription>{description}</ToastDescription>
+                  )}
                 </div>
                 <div>{action}</div>
               </div>
@@ -31,9 +33,9 @@ export function Toaster() {
               </div>
             </div>
           </Toast>
-        );
+        )
       })}
       <ToastViewport />
     </ToastProvider>
-  );
+  )
 }

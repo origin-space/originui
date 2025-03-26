@@ -1,4 +1,8 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/registry/default/ui/avatar";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/registry/default/ui/avatar"
 
 export default function Component() {
   return (
@@ -6,5 +10,5 @@ export default function Component() {
       <AvatarImage src="./avatar-80-07.jpg" alt="Kelly King" />
       <AvatarFallback>KK</AvatarFallback>
     </Avatar>
-  );
+  )
 }

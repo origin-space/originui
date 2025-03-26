@@ -1,12 +1,13 @@
-"use client";
+"use client"
 
-import { Label } from "@/registry/default/ui/label";
-import { Switch } from "@/registry/default/ui/switch";
-import { useId, useState } from "react";
+import { useId, useState } from "react"
+
+import { Label } from "@/registry/default/ui/label"
+import { Switch } from "@/registry/default/ui/switch"
 
 export default function Component() {
-  const id = useId();
-  const [checked, setChecked] = useState<boolean>(true);
+  const id = useId()
+  const [checked, setChecked] = useState<boolean>(true)
 
   return (
     <div>
@@ -28,5 +29,5 @@ export default function Component() {
         Labeled switch
       </Label>
     </div>
-  );
+  )
 }

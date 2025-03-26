@@ -1,5 +1,6 @@
-import { Button } from "@/registry/default/ui/button";
-import { ArrowRightIcon, InfoIcon, XIcon } from "lucide-react";
+import { ArrowRightIcon, InfoIcon, XIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
   return (
@@ -7,7 +8,11 @@ export default function Component() {
     <div className="bg-background z-50 max-w-[400px] rounded-md border px-4 py-3 shadow-lg">
       <div className="flex gap-2">
         <div className="flex grow gap-3">
-          <InfoIcon className="mt-0.5 shrink-0 text-blue-500" size={16} aria-hidden="true" />
+          <InfoIcon
+            className="mt-0.5 shrink-0 text-blue-500"
+            size={16}
+            aria-hidden="true"
+          />
           <div className="flex grow justify-between gap-12">
             <p className="text-sm">Just a quick note!</p>
             <a href="#" className="group text-sm font-medium whitespace-nowrap">
@@ -33,5 +38,5 @@ export default function Component() {
         </Button>
       </div>
     </div>
-  );
+  )
 }

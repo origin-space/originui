@@ -1,5 +1,6 @@
-import { Button } from "@/registry/default/ui/button";
-import { PrinterIcon } from "lucide-react";
+import { PrinterIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
   return (
@@ -10,5 +11,5 @@ export default function Component() {
         ⌘P
       </kbd>
     </Button>
-  );
+  )
 }

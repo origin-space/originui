@@ -1,12 +1,14 @@
-import PageHeader from "@/components/page-header";
-import type { Metadata } from "next";
-import Easings from "./easings";
+import type { Metadata } from "next"
+
+import PageHeader from "@/components/page-header"
+
+import Easings from "./easings"
 
 export const metadata: Metadata = {
   title: "Tailwind CSS Easing Classes - Origin UI",
   description:
     "A collection of easing utility classes to enhance your Tailwind CSS animations and transitions.",
-};
+}
 
 const easings = [
   {
@@ -125,16 +127,17 @@ const easings = [
     name: "easeInOutBack",
     points: [0.68, -0.6, 0.32, 1.6],
   },
-];
+]
 
 export default function Page() {
   return (
     <>
       <PageHeader title="Tailwind CSS easing classes">
-        A set of easing functions ready to copy and paste into your Tailwind CSS project.
+        A set of easing functions ready to copy and paste into your Tailwind CSS
+        project.
       </PageHeader>
 
       <Easings easings={easings} />
     </>
-  );
+  )
 }

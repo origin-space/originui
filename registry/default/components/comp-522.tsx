@@ -6,7 +6,7 @@ import {
   StepperSeparator,
   StepperTitle,
   StepperTrigger,
-} from "@/registry/default/ui/stepper";
+} from "@/registry/default/ui/stepper"
 
 const steps = [
   {
@@ -24,19 +24,25 @@ const steps = [
     title: "Step Three",
     description: "Desc for step three",
   },
-];
+]
 
 export default function Component() {
   return (
     <div className="space-y-8 text-center">
       <Stepper defaultValue={2}>
         {steps.map(({ step, title, description }) => (
-          <StepperItem key={step} step={step} className="relative flex-1 flex-col!">
+          <StepperItem
+            key={step}
+            step={step}
+            className="relative flex-1 flex-col!"
+          >
             <StepperTrigger className="flex-col gap-3 rounded">
               <StepperIndicator />
               <div className="space-y-0.5 px-2">
                 <StepperTitle>{title}</StepperTitle>
-                <StepperDescription className="max-sm:hidden">{description}</StepperDescription>
+                <StepperDescription className="max-sm:hidden">
+                  {description}
+                </StepperDescription>
               </div>
             </StepperTrigger>
             {step < steps.length && (
@@ -45,9 +51,13 @@ export default function Component() {
           </StepperItem>
         ))}
       </Stepper>
-      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
+      <p
+        className="text-muted-foreground mt-2 text-xs"
+        role="region"
+        aria-live="polite"
+      >
         Stepper with titles and descriptions
       </p>
     </div>
-  );
+  )
 }

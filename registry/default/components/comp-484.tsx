@@ -1,23 +1,41 @@
-"use client";
+"use client"
 
-import { usePagination } from "@/registry/default/hooks/use-pagination";
-import { cn } from "@/registry/default/lib/utils";
-import { Badge } from "@/registry/default/ui/badge";
-import { Button } from "@/registry/default/ui/button";
-import { Checkbox } from "@/registry/default/ui/checkbox";
+import { useEffect, useState } from "react"
+import {
+  ColumnDef,
+  flexRender,
+  getCoreRowModel,
+  getPaginationRowModel,
+  getSortedRowModel,
+  PaginationState,
+  SortingState,
+  useReactTable,
+} from "@tanstack/react-table"
+import {
+  ChevronDownIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ChevronUpIcon,
+} from "lucide-react"
+
+import { usePagination } from "@/registry/default/hooks/use-pagination"
+import { cn } from "@/registry/default/lib/utils"
+import { Badge } from "@/registry/default/ui/badge"
+import { Button } from "@/registry/default/ui/button"
+import { Checkbox } from "@/registry/default/ui/checkbox"
 import {
   Pagination,
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,
-} from "@/registry/default/ui/pagination";
+} from "@/registry/default/ui/pagination"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/default/ui/select";
+} from "@/registry/default/ui/select"
 import {
   Table,
   TableBody,
@@ -25,29 +43,17 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table";
-import {
-  ColumnDef,
-  PaginationState,
-  SortingState,
-  flexRender,
-  getCoreRowModel,
-  getPaginationRowModel,
-  getSortedRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
-import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon, ChevronUpIcon } from "lucide-react";
-import { useEffect, useState } from "react";
+} from "@/registry/default/ui/table"
 
 type Item = {
-  id: string;
-  name: string;
-  email: string;
-  location: string;
-  flag: string;
-  status: "Active" | "Inactive" | "Pending";
-  balance: number;
-};
+  id: string
+  name: string
+  email: string
+  location: string
+  flag: string
+  status: "Active" | "Inactive" | "Pending"
+  balance: number
+}
 
 const columns: ColumnDef<Item>[] = [
   {
@@ -55,7 +61,8 @@ const columns: ColumnDef<Item>[] = [
     header: ({ table }) => (
       <Checkbox
         checked={
-          table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && "indeterminate")
+          table.getIsAllPageRowsSelected() ||
+          (table.getIsSomePageRowsSelected() && "indeterminate")
         }
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all rows"
@@ -74,7 +81,9 @@ const columns: ColumnDef<Item>[] = [
   {
     header: "Name",
     accessorKey: "name",
-    cell: ({ row }) => <div className="font-medium">{row.getValue("name")}</div>,
+    cell: ({ row }) => (
+      <div className="font-medium">{row.getValue("name")}</div>
+    ),
     size: 180,
   },
   {
@@ -87,7 +96,8 @@ const columns: ColumnDef<Item>[] = [
     accessorKey: "location",
     cell: ({ row }) => (
       <div>
-        <span className="text-lg leading-none">{row.original.flag}</span> {row.getValue("location")}
+        <span className="text-lg leading-none">{row.original.flag}</span>{" "}
+        {row.getValue("location")}
       </div>
     ),
     size: 180,
@@ -98,7 +108,8 @@ const columns: ColumnDef<Item>[] = [
     cell: ({ row }) => (
       <Badge
         className={cn(
-          row.getValue("status") === "Inactive" && "bg-muted-foreground/60 text-primary-foreground",
+          row.getValue("status") === "Inactive" &&
+            "bg-muted-foreground/60 text-primary-foreground"
         )}
       >
         {row.getValue("status")}
@@ -110,43 +121,43 @@ const columns: ColumnDef<Item>[] = [
     header: "Balance",
     accessorKey: "balance",
     cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("balance"));
+      const amount = parseFloat(row.getValue("balance"))
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
-      }).format(amount);
-      return formatted;
+      }).format(amount)
+      return formatted
     },
     size: 120,
   },
-];
+]
 
 export default function Component() {
-  const pageSize = 5;
+  const pageSize = 5
 
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
     pageSize: pageSize,
-  });
+  })
 
   const [sorting, setSorting] = useState<SortingState>([
     {
       id: "name",
       desc: false,
     },
-  ]);
+  ])
 
-  const [data, setData] = useState<Item[]>([]);
+  const [data, setData] = useState<Item[]>([])
   useEffect(() => {
     async function fetchPosts() {
       const res = await fetch(
-        "https://res.cloudinary.com/dlzlfasou/raw/upload/users-01_fertyx.json",
-      );
-      const data = await res.json();
-      setData(data);
+        "https://res.cloudinary.com/dlzlfasou/raw/upload/users-01_fertyx.json"
+      )
+      const data = await res.json()
+      setData(data)
     }
-    fetchPosts();
-  }, []);
+    fetchPosts()
+  }, [])
 
   const table = useReactTable({
     data,
@@ -161,13 +172,13 @@ export default function Component() {
       sorting,
       pagination,
     },
-  });
+  })
 
   const { pages, showLeftEllipsis, showRightEllipsis } = usePagination({
     currentPage: table.getState().pagination.pageIndex + 1,
     totalPages: table.getPageCount(),
     paginationItemsToDisplay: 5,
-  });
+  })
 
   return (
     <div className="space-y-4">
@@ -187,7 +198,7 @@ export default function Component() {
                         <div
                           className={cn(
                             header.column.getCanSort() &&
-                              "flex h-full cursor-pointer items-center justify-between gap-2 select-none",
+                              "flex h-full cursor-pointer items-center justify-between gap-2 select-none"
                           )}
                           onClick={header.column.getToggleSortingHandler()}
                           onKeyDown={(e) => {
@@ -196,13 +207,16 @@ export default function Component() {
                               header.column.getCanSort() &&
                               (e.key === "Enter" || e.key === " ")
                             ) {
-                              e.preventDefault();
-                              header.column.getToggleSortingHandler()?.(e);
+                              e.preventDefault()
+                              header.column.getToggleSortingHandler()?.(e)
                             }
                           }}
                           tabIndex={header.column.getCanSort() ? 0 : undefined}
                         >
-                          {flexRender(header.column.columnDef.header, header.getContext())}
+                          {flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
                           {{
                             asc: (
                               <ChevronUpIcon
@@ -221,10 +235,13 @@ export default function Component() {
                           }[header.column.getIsSorted() as string] ?? null}
                         </div>
                       ) : (
-                        flexRender(header.column.columnDef.header, header.getContext())
+                        flexRender(
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )
                       )}
                     </TableHead>
-                  );
+                  )
                 })}
               </TableRow>
             ))}
@@ -232,17 +249,26 @@ export default function Component() {
           <TableBody>
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
-                <TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
+                <TableRow
+                  key={row.id}
+                  data-state={row.getIsSelected() && "selected"}
+                >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext()
+                      )}
                     </TableCell>
                   ))}
                 </TableRow>
               ))
             ) : (
               <TableRow>
-                <TableCell colSpan={columns.length} className="h-24 text-center">
+                <TableCell
+                  colSpan={columns.length}
+                  className="h-24 text-center"
+                >
                   No results.
                 </TableCell>
               </TableRow>
@@ -254,8 +280,14 @@ export default function Component() {
       {/* Pagination */}
       <div className="flex items-center justify-between gap-3 max-sm:flex-col">
         {/* Page number information */}
-        <p className="text-muted-foreground flex-1 text-sm whitespace-nowrap" aria-live="polite">
-          Page <span className="text-foreground">{table.getState().pagination.pageIndex + 1}</span>{" "}
+        <p
+          className="text-muted-foreground flex-1 text-sm whitespace-nowrap"
+          aria-live="polite"
+        >
+          Page{" "}
+          <span className="text-foreground">
+            {table.getState().pagination.pageIndex + 1}
+          </span>{" "}
           of <span className="text-foreground">{table.getPageCount()}</span>
         </p>
 
@@ -286,7 +318,8 @@ export default function Component() {
 
               {/* Page number buttons */}
               {pages.map((page) => {
-                const isActive = page === table.getState().pagination.pageIndex + 1;
+                const isActive =
+                  page === table.getState().pagination.pageIndex + 1
                 return (
                   <PaginationItem key={page}>
                     <Button
@@ -298,7 +331,7 @@ export default function Component() {
                       {page}
                     </Button>
                   </PaginationItem>
-                );
+                )
               })}
 
               {/* Right ellipsis (...) */}
@@ -330,11 +363,14 @@ export default function Component() {
           <Select
             value={table.getState().pagination.pageSize.toString()}
             onValueChange={(value) => {
-              table.setPageSize(Number(value));
+              table.setPageSize(Number(value))
             }}
             aria-label="Results per page"
           >
-            <SelectTrigger id="results-per-page" className="w-fit whitespace-nowrap">
+            <SelectTrigger
+              id="results-per-page"
+              className="w-fit whitespace-nowrap"
+            >
               <SelectValue placeholder="Select number of results" />
             </SelectTrigger>
             <SelectContent>
@@ -359,5 +395,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
+  )
 }

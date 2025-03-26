@@ -1,9 +1,10 @@
-import { Input } from "@/registry/default/ui/input";
-import { Label } from "@/registry/default/ui/label";
-import { useId } from "react";
+import { useId } from "react"
+
+import { Input } from "@/registry/default/ui/input"
+import { Label } from "@/registry/default/ui/label"
 
 export default function Component() {
-  const id = useId();
+  const id = useId()
   return (
     <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Read-only input</Label>
@@ -16,5 +17,5 @@ export default function Component() {
         type="email"
       />
     </div>
-  );
+  )
 }

@@ -5,5 +5,5 @@ export default function PageGrid({ children }: { children: React.ReactNode }) {
         {children}
       </div>
     </div>
-  );
+  )
 }

@@ -1,8 +1,9 @@
-import { Input } from "@/registry/default/ui/input";
-import { useId } from "react";
+import { useId } from "react"
+
+import { Input } from "@/registry/default/ui/input"
 
 export default function Component() {
-  const id = useId();
+  const id = useId()
   return (
     <div className="group relative">
       <label
@@ -13,5 +14,5 @@ export default function Component() {
       </label>
       <Input id={id} className="h-10" placeholder="Email" type="email" />
     </div>
-  );
+  )
 }

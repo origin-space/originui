@@ -7,7 +7,7 @@ import {
   TimelineItem,
   TimelineSeparator,
   TimelineTitle,
-} from "@/registry/default/ui/timeline";
+} from "@/registry/default/ui/timeline"
 
 const items = [
   {
@@ -34,7 +34,7 @@ const items = [
     title: "Testing & Deployment",
     description: "Performance optimization.",
   },
-];
+]
 
 export default function Component() {
   return (
@@ -55,5 +55,5 @@ export default function Component() {
         </TimelineItem>
       ))}
     </Timeline>
-  );
+  )
 }

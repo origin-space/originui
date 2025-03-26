@@ -1,18 +1,21 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
-import { Label } from "@/registry/default/ui/label";
-import { Slider } from "@/registry/default/ui/slider";
-import { useState } from "react";
+import { useState } from "react"
+
+import { Button } from "@/registry/default/ui/button"
+import { Label } from "@/registry/default/ui/label"
+import { Slider } from "@/registry/default/ui/slider"
 
 export default function Component() {
-  const min_price = 5;
-  const max_price = 1240;
-  const [value, setValue] = useState([min_price, max_price]);
+  const min_price = 5
+  const max_price = 1240
+  const [value, setValue] = useState([min_price, max_price])
 
   const formatPrice = (price: number) => {
-    return price === max_price ? `$${price.toLocaleString()}+` : `$${price.toLocaleString()}`;
-  };
+    return price === max_price
+      ? `$${price.toLocaleString()}+`
+      : `$${price.toLocaleString()}`
+  }
 
   return (
     <div className="*:not-first:mt-3">
@@ -30,5 +33,5 @@ export default function Component() {
         <Button variant="outline">Go</Button>
       </div>
     </div>
-  );
+  )
 }

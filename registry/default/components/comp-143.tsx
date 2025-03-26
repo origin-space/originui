@@ -1,12 +1,17 @@
-import { Checkbox } from "@/registry/default/ui/checkbox";
-import { Label } from "@/registry/default/ui/label";
-import { useId } from "react";
+import { useId } from "react"
+
+import { Checkbox } from "@/registry/default/ui/checkbox"
+import { Label } from "@/registry/default/ui/label"
 
 export default function Component() {
-  const id = useId();
+  const id = useId()
   return (
     <div className="flex items-start gap-2">
-      <Checkbox id={id} className="order-1" aria-describedby={`${id}-description`} />
+      <Checkbox
+        id={id}
+        className="order-1"
+        aria-describedby={`${id}-description`}
+      />
       <div className="grid grow gap-2">
         <Label htmlFor={id}>
           Label{" "}
@@ -19,5 +24,5 @@ export default function Component() {
         </p>
       </div>
     </div>
-  );
+  )
 }

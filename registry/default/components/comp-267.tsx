@@ -1,4 +1,4 @@
-import { TriangleAlert } from "lucide-react";
+import { TriangleAlert } from "lucide-react"
 
 export default function Component() {
   return (
@@ -12,5 +12,5 @@ export default function Component() {
         Some information is missing!
       </p>
     </div>
-  );
+  )
 }

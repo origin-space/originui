@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/default/components/comp-30.tsx",
-      "content": "import { Input } from \"@/registry/default/ui/input\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"*:not-first:mt-2\">\n      <Label htmlFor={id}>File input</Label>\n      <Input id={id} className=\"p-0 pe-3 file:me-3 file:border-0 file:border-e\" type=\"file\" />\n    </div>\n  );\n}\n",
+      "content": "import { useId } from \"react\"\n\nimport { Input } from \"@/registry/default/ui/input\"\nimport { Label } from \"@/registry/default/ui/label\"\n\nexport default function Component() {\n  const id = useId()\n  return (\n    <div className=\"*:not-first:mt-2\">\n      <Label htmlFor={id}>File input</Label>\n      <Input\n        id={id}\n        className=\"p-0 pe-3 file:me-3 file:border-0 file:border-e\"\n        type=\"file\"\n      />\n    </div>\n  )\n}\n",
       "type": "registry:component"
     }
   ],

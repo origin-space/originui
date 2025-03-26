@@ -1,27 +1,36 @@
-import { Label } from "@/registry/default/ui/label";
+import { useId } from "react"
+import {
+  ChevronFirstIcon,
+  ChevronLastIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "lucide-react"
+
+import { Label } from "@/registry/default/ui/label"
 import {
   Pagination,
   PaginationContent,
   PaginationItem,
   PaginationLink,
-} from "@/registry/default/ui/pagination";
+} from "@/registry/default/ui/pagination"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/default/ui/select";
-import { ChevronFirstIcon, ChevronLastIcon, ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-import { useId } from "react";
+} from "@/registry/default/ui/select"
 
 type PaginationProps = {
-  currentPage: number;
-  totalPages: number;
-};
+  currentPage: number
+  totalPages: number
+}
 
-export default function Component({ currentPage, totalPages }: PaginationProps) {
-  const id = useId();
+export default function Component({
+  currentPage,
+  totalPages,
+}: PaginationProps) {
+  const id = useId()
   return (
     <div className="flex items-center justify-between gap-8">
       {/* Results per page */}
@@ -42,7 +51,10 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
 
       {/* Page number information */}
       <div className="text-muted-foreground flex grow justify-end text-sm whitespace-nowrap">
-        <p className="text-muted-foreground text-sm whitespace-nowrap" aria-live="polite">
+        <p
+          className="text-muted-foreground text-sm whitespace-nowrap"
+          aria-live="polite"
+        >
           <span className="text-foreground">1-25</span> of{" "}
           <span className="text-foreground">100</span>
         </p>
@@ -56,7 +68,9 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
             <PaginationItem>
               <PaginationLink
                 className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
-                href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}
+                href={
+                  currentPage === 1 ? undefined : `#/page/${currentPage - 1}`
+                }
                 aria-label="Go to first page"
                 aria-disabled={currentPage === 1 ? true : undefined}
                 role={currentPage === 1 ? "link" : undefined}
@@ -69,7 +83,9 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
             <PaginationItem>
               <PaginationLink
                 className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
-                href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}
+                href={
+                  currentPage === 1 ? undefined : `#/page/${currentPage - 1}`
+                }
                 aria-label="Go to previous page"
                 aria-disabled={currentPage === 1 ? true : undefined}
                 role={currentPage === 1 ? "link" : undefined}
@@ -82,7 +98,11 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
             <PaginationItem>
               <PaginationLink
                 className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
-                href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}
+                href={
+                  currentPage === totalPages
+                    ? undefined
+                    : `#/page/${currentPage + 1}`
+                }
                 aria-label="Go to next page"
                 aria-disabled={currentPage === totalPages ? true : undefined}
                 role={currentPage === totalPages ? "link" : undefined}
@@ -95,7 +115,11 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
             <PaginationItem>
               <PaginationLink
                 className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
-                href={currentPage === totalPages ? undefined : `#/page/${totalPages}`}
+                href={
+                  currentPage === totalPages
+                    ? undefined
+                    : `#/page/${totalPages}`
+                }
                 aria-label="Go to last page"
                 aria-disabled={currentPage === totalPages ? true : undefined}
                 role={currentPage === totalPages ? "link" : undefined}
@@ -107,5 +131,5 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
         </Pagination>
       </div>
     </div>
-  );
+  )
 }

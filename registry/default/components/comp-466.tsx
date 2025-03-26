@@ -6,7 +6,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table";
+} from "@/registry/default/ui/table"
 
 const items = [
   {
@@ -49,7 +49,7 @@ const items = [
     status: "Active",
     balance: "-$1,000.00",
   },
-];
+]
 
 export default function Component() {
   return (
@@ -82,7 +82,9 @@ export default function Component() {
           </TableRow>
         </TableFooter>
       </Table>
-      <p className="text-muted-foreground mt-4 text-center text-sm">Basic table</p>
+      <p className="text-muted-foreground mt-4 text-center text-sm">
+        Basic table
+      </p>
     </div>
-  );
+  )
 }

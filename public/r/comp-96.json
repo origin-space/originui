@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/components/comp-96.tsx",
-      "content": "import { Button } from \"@/registry/default/ui/button\";\nimport { PlusIcon } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Button variant=\"outline\" className=\"aspect-square max-sm:p-0\">\n      <PlusIcon className=\"opacity-60 sm:-ms-1\" size={16} aria-hidden=\"true\" />\n      <span className=\"max-sm:sr-only\">Add new</span>\n    </Button>\n  );\n}\n",
+      "content": "import { PlusIcon } from \"lucide-react\"\n\nimport { Button } from \"@/registry/default/ui/button\"\n\nexport default function Component() {\n  return (\n    <Button variant=\"outline\" className=\"aspect-square max-sm:p-0\">\n      <PlusIcon className=\"opacity-60 sm:-ms-1\" size={16} aria-hidden=\"true\" />\n      <span className=\"max-sm:sr-only\">Add new</span>\n    </Button>\n  )\n}\n",
       "type": "registry:component"
     }
   ],

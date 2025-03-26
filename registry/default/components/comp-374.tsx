@@ -1,6 +1,15 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
+import { useState } from "react"
+import {
+  ArchiveRestoreIcon,
+  ChevronDownIcon,
+  PlusIcon,
+  Share2Icon,
+  TrashIcon,
+} from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -16,21 +25,23 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu";
-import { ArchiveRestoreIcon, ChevronDownIcon, PlusIcon, Share2Icon, TrashIcon } from "lucide-react";
-import { useState } from "react";
+} from "@/registry/default/ui/dropdown-menu"
 
 export default function Component() {
-  const [framework, setFramework] = useState("nextjs");
-  const [emailNotifications, setEmailNotifications] = useState(false);
-  const [pushNotifications, setPushNotifications] = useState(true);
+  const [framework, setFramework] = useState("nextjs")
+  const [emailNotifications, setEmailNotifications] = useState(false)
+  const [pushNotifications, setPushNotifications] = useState(true)
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
           Rich menu with icons
-          <ChevronDownIcon className="-me-1 opacity-60" size={16} aria-hidden="true" />
+          <ChevronDownIcon
+            className="-me-1 opacity-60"
+            size={16}
+            aria-hidden="true"
+          />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
@@ -47,13 +58,22 @@ export default function Component() {
             <DropdownMenuSubTrigger inset>Framework</DropdownMenuSubTrigger>
             <DropdownMenuPortal>
               <DropdownMenuSubContent>
-                <DropdownMenuRadioGroup value={framework} onValueChange={setFramework}>
-                  <DropdownMenuRadioItem value="nextjs">Next.js</DropdownMenuRadioItem>
+                <DropdownMenuRadioGroup
+                  value={framework}
+                  onValueChange={setFramework}
+                >
+                  <DropdownMenuRadioItem value="nextjs">
+                    Next.js
+                  </DropdownMenuRadioItem>
                   <DropdownMenuRadioItem value="sveltekit" disabled>
                     SvelteKit
                   </DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="remix">Remix</DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="astro">Astro</DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="remix">
+                    Remix
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="astro">
+                    Astro
+                  </DropdownMenuRadioItem>
                 </DropdownMenuRadioGroup>
               </DropdownMenuSubContent>
             </DropdownMenuPortal>
@@ -85,7 +105,11 @@ export default function Component() {
             <span>Share</span>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <ArchiveRestoreIcon size={16} className="opacity-60" aria-hidden="true" />
+            <ArchiveRestoreIcon
+              size={16}
+              className="opacity-60"
+              aria-hidden="true"
+            />
             <span>Archive</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
@@ -97,5 +121,5 @@ export default function Component() {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }

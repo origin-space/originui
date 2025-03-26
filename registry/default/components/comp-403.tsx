@@ -30,5 +30,5 @@ export default function Component() {
         alt="Avatar 04"
       />
     </div>
-  );
+  )
 }

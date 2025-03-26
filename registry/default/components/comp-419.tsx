@@ -1,5 +1,6 @@
-import { Badge } from "@/registry/default/ui/badge";
-import { CheckIcon } from "lucide-react";
+import { CheckIcon } from "lucide-react"
+
+import { Badge } from "@/registry/default/ui/badge"
 
 export default function Component() {
   return (
@@ -7,5 +8,5 @@ export default function Component() {
       <CheckIcon className="text-emerald-500" size={12} aria-hidden="true" />
       Badge
     </Badge>
-  );
+  )
 }

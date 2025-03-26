@@ -1,16 +1,26 @@
-import { Badge } from "@/registry/default/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/default/ui/tabs";
+import { BoxIcon, HouseIcon, PanelsTopLeftIcon } from "lucide-react"
+
+import { Badge } from "@/registry/default/ui/badge"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/registry/default/ui/tabs"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/registry/default/ui/tooltip";
-import { BoxIcon, HouseIcon, PanelsTopLeftIcon } from "lucide-react";
+} from "@/registry/default/ui/tooltip"
 
 export default function Component() {
   return (
-    <Tabs defaultValue="tab-1" orientation="vertical" className="w-full flex-row">
+    <Tabs
+      defaultValue="tab-1"
+      orientation="vertical"
+      className="w-full flex-row"
+    >
       <TabsList className="flex-col">
         <TooltipProvider delayDuration={0}>
           <Tooltip>
@@ -62,15 +72,21 @@ export default function Component() {
       </TabsList>
       <div className="grow rounded-md border text-start">
         <TabsContent value="tab-1">
-          <p className="text-muted-foreground px-4 py-3 text-xs">Content for Tab 1</p>
+          <p className="text-muted-foreground px-4 py-3 text-xs">
+            Content for Tab 1
+          </p>
         </TabsContent>
         <TabsContent value="tab-2">
-          <p className="text-muted-foreground px-4 py-3 text-xs">Content for Tab 2</p>
+          <p className="text-muted-foreground px-4 py-3 text-xs">
+            Content for Tab 2
+          </p>
         </TabsContent>
         <TabsContent value="tab-3">
-          <p className="text-muted-foreground px-4 py-3 text-xs">Content for Tab 3</p>
+          <p className="text-muted-foreground px-4 py-3 text-xs">
+            Content for Tab 3
+          </p>
         </TabsContent>
       </div>
     </Tabs>
-  );
+  )
 }

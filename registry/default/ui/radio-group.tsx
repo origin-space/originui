@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
-import * as React from "react";
+import * as React from "react"
+import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
 
-import { cn } from "@/registry/default/lib/utils";
+import { cn } from "@/registry/default/lib/utils"
 
 function RadioGroup({
   className,
@@ -15,7 +15,7 @@ function RadioGroup({
       className={cn("grid gap-3", className)}
       {...props}
     />
-  );
+  )
 }
 
 function RadioGroupItem({
@@ -27,7 +27,7 @@ function RadioGroupItem({
       data-slot="radio-group-item"
       className={cn(
         "border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground data-[state=checked]:border-primary focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive aspect-square size-4 shrink-0 rounded-full border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50",
-        className,
+        className
       )}
       {...props}
     >
@@ -43,7 +43,7 @@ function RadioGroupItem({
         </svg>
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
-  );
+  )
 }
 
-export { RadioGroup, RadioGroupItem };
+export { RadioGroup, RadioGroupItem }

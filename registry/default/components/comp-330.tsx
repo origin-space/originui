@@ -1,4 +1,7 @@
-import { Button } from "@/registry/default/ui/button";
+import { useId } from "react"
+import { CheckIcon, RefreshCcwIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -7,14 +10,12 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/default/ui/dialog";
-import { Label } from "@/registry/default/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
-import { CheckIcon, RefreshCcwIcon } from "lucide-react";
-import { useId } from "react";
+} from "@/registry/default/ui/dialog"
+import { Label } from "@/registry/default/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
 
 export default function Component() {
-  const id = useId();
+  const id = useId()
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -48,7 +49,10 @@ export default function Component() {
               />
               <div className="grid grow gap-1">
                 <Label htmlFor={`${id}-1`}>Essential</Label>
-                <p id={`${id}-1-description`} className="text-muted-foreground text-xs">
+                <p
+                  id={`${id}-1-description`}
+                  className="text-muted-foreground text-xs"
+                >
                   $4 per member/month
                 </p>
               </div>
@@ -63,7 +67,10 @@ export default function Component() {
               />
               <div className="grid grow gap-1">
                 <Label htmlFor={`${id}-2`}>Standard</Label>
-                <p id={`${id}-2-description`} className="text-muted-foreground text-xs">
+                <p
+                  id={`${id}-2-description`}
+                  className="text-muted-foreground text-xs"
+                >
                   $19 per member/month
                 </p>
               </div>
@@ -78,7 +85,10 @@ export default function Component() {
               />
               <div className="grid grow gap-1">
                 <Label htmlFor={`${id}-3`}>Enterprise</Label>
-                <p id={`${id}-3-description`} className="text-muted-foreground text-xs">
+                <p
+                  id={`${id}-3-description`}
+                  className="text-muted-foreground text-xs"
+                >
                   $32 per member/month
                 </p>
               </div>
@@ -91,27 +101,51 @@ export default function Component() {
             </p>
             <ul className="text-muted-foreground space-y-2 text-sm">
               <li className="flex gap-2">
-                <CheckIcon size={16} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
+                <CheckIcon
+                  size={16}
+                  className="text-primary mt-0.5 shrink-0"
+                  aria-hidden="true"
+                />
                 Create unlimited projects.
               </li>
               <li className="flex gap-2">
-                <CheckIcon size={16} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
+                <CheckIcon
+                  size={16}
+                  className="text-primary mt-0.5 shrink-0"
+                  aria-hidden="true"
+                />
                 Remove watermarks.
               </li>
               <li className="flex gap-2">
-                <CheckIcon size={16} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
+                <CheckIcon
+                  size={16}
+                  className="text-primary mt-0.5 shrink-0"
+                  aria-hidden="true"
+                />
                 Add unlimited users and free viewers.
               </li>
               <li className="flex gap-2">
-                <CheckIcon size={16} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
+                <CheckIcon
+                  size={16}
+                  className="text-primary mt-0.5 shrink-0"
+                  aria-hidden="true"
+                />
                 Upload unlimited files.
               </li>
               <li className="flex gap-2">
-                <CheckIcon size={16} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
+                <CheckIcon
+                  size={16}
+                  className="text-primary mt-0.5 shrink-0"
+                  aria-hidden="true"
+                />
                 7-day money back guarantee.
               </li>
               <li className="flex gap-2">
-                <CheckIcon size={16} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
+                <CheckIcon
+                  size={16}
+                  className="text-primary mt-0.5 shrink-0"
+                  aria-hidden="true"
+                />
                 Advanced permissions.
               </li>
             </ul>
@@ -130,5 +164,5 @@ export default function Component() {
         </form>
       </DialogContent>
     </Dialog>
-  );
+  )
 }

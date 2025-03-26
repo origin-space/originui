@@ -1,4 +1,13 @@
-import { Button } from "@/registry/default/ui/button";
+import {
+  BoltIcon,
+  ChevronDownIcon,
+  CopyPlusIcon,
+  FilesIcon,
+  Layers2Icon,
+  TrashIcon,
+} from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -7,15 +16,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu";
-import {
-  BoltIcon,
-  ChevronDownIcon,
-  CopyPlusIcon,
-  FilesIcon,
-  Layers2Icon,
-  TrashIcon,
-} from "lucide-react";
+} from "@/registry/default/ui/dropdown-menu"
 
 export default function Component() {
   return (
@@ -23,7 +24,11 @@ export default function Component() {
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
           Labeled grouped items
-          <ChevronDownIcon className="-me-1 opacity-60" size={16} aria-hidden="true" />
+          <ChevronDownIcon
+            className="-me-1 opacity-60"
+            size={16}
+            aria-hidden="true"
+          />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
@@ -56,5 +61,5 @@ export default function Component() {
         </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }

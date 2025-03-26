@@ -1,11 +1,3 @@
-import { Button } from "@/registry/default/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu";
 import {
   Heading1Icon,
   Heading2Icon,
@@ -13,7 +5,16 @@ import {
   PlusIcon,
   TextQuoteIcon,
   TypeIcon,
-} from "lucide-react";
+} from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuTrigger,
+} from "@/registry/default/ui/dropdown-menu"
 
 export default function Component() {
   return (
@@ -39,7 +40,9 @@ export default function Component() {
           </div>
           <div>
             <div className="text-sm font-medium">Text</div>
-            <div className="text-muted-foreground text-xs">Start writing with plain text</div>
+            <div className="text-muted-foreground text-xs">
+              Start writing with plain text
+            </div>
           </div>
         </DropdownMenuItem>
         <DropdownMenuItem>
@@ -63,7 +66,9 @@ export default function Component() {
           </div>
           <div>
             <div className="text-sm font-medium">Divider</div>
-            <div className="text-muted-foreground text-xs">Visually divide blocks</div>
+            <div className="text-muted-foreground text-xs">
+              Visually divide blocks
+            </div>
           </div>
         </DropdownMenuItem>
         <DropdownMenuItem>
@@ -75,7 +80,9 @@ export default function Component() {
           </div>
           <div>
             <div className="text-sm font-medium">Heading 1</div>
-            <div className="text-muted-foreground text-xs">Big section heading</div>
+            <div className="text-muted-foreground text-xs">
+              Big section heading
+            </div>
           </div>
         </DropdownMenuItem>
         <DropdownMenuItem>
@@ -87,10 +94,12 @@ export default function Component() {
           </div>
           <div>
             <div className="text-sm font-medium">Heading 2</div>
-            <div className="text-muted-foreground text-xs">Medium section subheading</div>
+            <div className="text-muted-foreground text-xs">
+              Medium section subheading
+            </div>
           </div>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }

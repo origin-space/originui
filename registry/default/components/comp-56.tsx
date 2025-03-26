@@ -1,8 +1,9 @@
-"use client";
+"use client"
 
-import { Label } from "@/registry/default/ui/label";
-import { Tag, TagInput } from "emblor";
-import { useId, useState } from "react";
+import { useId, useState } from "react"
+import { Tag, TagInput } from "emblor"
+
+import { Label } from "@/registry/default/ui/label"
 
 const tags = [
   {
@@ -17,12 +18,12 @@ const tags = [
     id: "3",
     text: "Travel",
   },
-];
+]
 
 export default function Component() {
-  const id = useId();
-  const [exampleTags, setExampleTags] = useState<Tag[]>(tags);
-  const [activeTagIndex, setActiveTagIndex] = useState<number | null>(null);
+  const id = useId()
+  const [exampleTags, setExampleTags] = useState<Tag[]>(tags)
+  const [activeTagIndex, setActiveTagIndex] = useState<number | null>(null)
 
   return (
     <div className="*:not-first:mt-2">
@@ -31,7 +32,7 @@ export default function Component() {
         id={id}
         tags={exampleTags}
         setTags={(newTags) => {
-          setExampleTags(newTags);
+          setExampleTags(newTags)
         }}
         placeholder="Add a tag"
         styleClasses={{
@@ -51,7 +52,11 @@ export default function Component() {
         inlineTags={false}
         inputFieldPosition="top"
       />
-      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
+      <p
+        className="text-muted-foreground mt-2 text-xs"
+        role="region"
+        aria-live="polite"
+      >
         Built with{" "}
         <a
           className="hover:text-foreground underline"
@@ -63,5 +68,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
+  )
 }

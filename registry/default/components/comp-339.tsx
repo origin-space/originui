@@ -1,7 +1,17 @@
-import { Accordion, AccordionContent, AccordionItem } from "@/registry/default/ui/accordion";
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import * as AccordionPrimitive from "@radix-ui/react-accordion"
+import {
+  AtSignIcon,
+  CommandIcon,
+  EclipseIcon,
+  PlusIcon,
+  ZapIcon,
+} from "lucide-react"
 
-import { AtSignIcon, CommandIcon, EclipseIcon, PlusIcon, ZapIcon } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+} from "@/registry/default/ui/accordion"
 
 const items = [
   {
@@ -32,7 +42,7 @@ const items = [
     content:
       "All components follow WAI-ARIA standards, featuring proper ARIA attributes, keyboard navigation, and screen reader support. Regular testing ensures compatibility with NVDA, VoiceOver, and JAWS.",
   },
-];
+]
 
 export default function Component() {
   return (
@@ -44,7 +54,11 @@ export default function Component() {
             <AccordionPrimitive.Header className="flex">
               <AccordionPrimitive.Trigger className="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center justify-between gap-4 rounded-md py-2 text-left text-sm text-[15px] leading-6 font-semibold transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&>svg>path:last-child]:origin-center [&>svg>path:last-child]:transition-all [&>svg>path:last-child]:duration-200 [&[data-state=open]>svg]:rotate-180 [&[data-state=open]>svg>path:last-child]:rotate-90 [&[data-state=open]>svg>path:last-child]:opacity-0">
                 <span className="flex items-center gap-3">
-                  <item.icon size={16} className="shrink-0 opacity-60" aria-hidden="true" />
+                  <item.icon
+                    size={16}
+                    className="shrink-0 opacity-60"
+                    aria-hidden="true"
+                  />
                   <span>{item.title}</span>
                 </span>
                 <PlusIcon
@@ -61,5 +75,5 @@ export default function Component() {
         ))}
       </Accordion>
     </div>
-  );
+  )
 }

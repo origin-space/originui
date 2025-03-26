@@ -1,22 +1,27 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
+import { useState } from "react"
+
+import { Button } from "@/registry/default/ui/button"
 import {
   Stepper,
   StepperIndicator,
   StepperItem,
   StepperSeparator,
   StepperTrigger,
-} from "@/registry/default/ui/stepper";
-import { useState } from "react";
+} from "@/registry/default/ui/stepper"
 
-const steps = [1, 2, 3, 4];
+const steps = [1, 2, 3, 4]
 
 export default function Component() {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(1)
   return (
     <div className="space-y-8 text-center">
-      <Stepper value={currentStep} onValueChange={setCurrentStep} orientation="vertical">
+      <Stepper
+        value={currentStep}
+        onValueChange={setCurrentStep}
+        orientation="vertical"
+      >
         {steps.map((step) => (
           <StepperItem key={step} step={step} className="not-last:flex-1">
             <StepperTrigger asChild>
@@ -44,9 +49,13 @@ export default function Component() {
           Next step
         </Button>
       </div>
-      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
+      <p
+        className="text-muted-foreground mt-2 text-xs"
+        role="region"
+        aria-live="polite"
+      >
         Controlled vertical stepper with checkmarks
       </p>
     </div>
-  );
+  )
 }

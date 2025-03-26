@@ -1,18 +1,24 @@
-import { usePagination } from "@/registry/default/hooks/use-pagination";
+import {
+  ChevronFirstIcon,
+  ChevronLastIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "lucide-react"
+
+import { usePagination } from "@/registry/default/hooks/use-pagination"
 import {
   Pagination,
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,
   PaginationLink,
-} from "@/registry/default/ui/pagination";
-import { ChevronFirstIcon, ChevronLastIcon, ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
+} from "@/registry/default/ui/pagination"
 
 type PaginationProps = {
-  currentPage: number;
-  totalPages: number;
-  paginationItemsToDisplay?: number;
-};
+  currentPage: number
+  totalPages: number
+  paginationItemsToDisplay?: number
+}
 
 export default function Component({
   currentPage,
@@ -23,7 +29,7 @@ export default function Component({
     currentPage,
     totalPages,
     paginationItemsToDisplay,
-  });
+  })
 
   return (
     <Pagination>
@@ -64,7 +70,10 @@ export default function Component({
         {/* Page number links */}
         {pages.map((page) => (
           <PaginationItem key={page}>
-            <PaginationLink href={`#/page/${page}`} isActive={page === currentPage}>
+            <PaginationLink
+              href={`#/page/${page}`}
+              isActive={page === currentPage}
+            >
               {page}
             </PaginationLink>
           </PaginationItem>
@@ -81,7 +90,11 @@ export default function Component({
         <PaginationItem>
           <PaginationLink
             className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
-            href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}
+            href={
+              currentPage === totalPages
+                ? undefined
+                : `#/page/${currentPage + 1}`
+            }
             aria-label="Go to next page"
             aria-disabled={currentPage === totalPages ? true : undefined}
             role={currentPage === totalPages ? "link" : undefined}
@@ -94,7 +107,9 @@ export default function Component({
         <PaginationItem>
           <PaginationLink
             className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
-            href={currentPage === totalPages ? undefined : `#/page/${totalPages}`}
+            href={
+              currentPage === totalPages ? undefined : `#/page/${totalPages}`
+            }
             aria-label="Go to last page"
             aria-disabled={currentPage === totalPages ? true : undefined}
             role={currentPage === totalPages ? "link" : undefined}
@@ -104,5 +119,5 @@ export default function Component({
         </PaginationItem>
       </PaginationContent>
     </Pagination>
-  );
+  )
 }

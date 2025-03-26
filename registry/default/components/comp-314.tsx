@@ -1,3 +1,5 @@
+import { CircleAlertIcon } from "lucide-react"
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -8,9 +10,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/registry/default/ui/alert-dialog";
-import { Button } from "@/registry/default/ui/button";
-import { CircleAlertIcon } from "lucide-react";
+} from "@/registry/default/ui/alert-dialog"
+import { Button } from "@/registry/default/ui/button"
 
 export default function AlertComponent() {
   return (
@@ -29,7 +30,8 @@ export default function AlertComponent() {
           <AlertDialogHeader>
             <AlertDialogTitle>Are you sure?</AlertDialogTitle>
             <AlertDialogDescription>
-              Are you sure you want to delete your account? All your data will be removed.
+              Are you sure you want to delete your account? All your data will
+              be removed.
             </AlertDialogDescription>
           </AlertDialogHeader>
         </div>
@@ -39,5 +41,5 @@ export default function AlertComponent() {
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
-  );
+  )
 }

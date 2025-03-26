@@ -1,12 +1,13 @@
-"use client";
+"use client"
 
-import { Input } from "@/registry/default/ui/input";
-import { Label } from "@/registry/default/ui/label";
-import { useId } from "react";
-import { withMask } from "use-mask-input";
+import { useId } from "react"
+import { withMask } from "use-mask-input"
+
+import { Input } from "@/registry/default/ui/input"
+import { Label } from "@/registry/default/ui/label"
 
 export default function Component() {
-  const id = useId();
+  const id = useId()
   return (
     <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Input with mask</Label>
@@ -19,7 +20,11 @@ export default function Component() {
           showMaskOnHover: false,
         })}
       />
-      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
+      <p
+        className="text-muted-foreground mt-2 text-xs"
+        role="region"
+        aria-live="polite"
+      >
         Built with{" "}
         <a
           className="hover:text-foreground underline"
@@ -31,5 +36,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
+  )
 }

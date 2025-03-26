@@ -1,26 +1,6 @@
-"use client";
+"use client"
 
-import { cn } from "@/registry/default/lib/utils";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/registry/default/ui/table";
-import { useId, useMemo, useState } from "react";
-
-import { Checkbox } from "@/registry/default/ui/checkbox";
-import { Input } from "@/registry/default/ui/input";
-import { Label } from "@/registry/default/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/registry/default/ui/select";
+import { useId, useMemo, useState } from "react"
 import {
   Column,
   ColumnDef,
@@ -35,25 +15,52 @@ import {
   RowData,
   SortingState,
   useReactTable,
-} from "@tanstack/react-table";
-import { ChevronDownIcon, ChevronUpIcon, ExternalLinkIcon, SearchIcon } from "lucide-react";
+} from "@tanstack/react-table"
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  ExternalLinkIcon,
+  SearchIcon,
+} from "lucide-react"
+
+import { cn } from "@/registry/default/lib/utils"
+import { Checkbox } from "@/registry/default/ui/checkbox"
+import { Input } from "@/registry/default/ui/input"
+import { Label } from "@/registry/default/ui/label"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/registry/default/ui/select"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/registry/default/ui/table"
 
 declare module "@tanstack/react-table" {
   //allows us to define custom properties for our columns
   interface ColumnMeta<TData extends RowData, TValue> {
-    filterVariant?: "text" | "range" | "select";
+    filterVariant?: "text" | "range" | "select"
   }
 }
 
 type Item = {
-  id: string;
-  keyword: string;
-  intents: Array<"Informational" | "Navigational" | "Commercial" | "Transactional">;
-  volume: number;
-  cpc: number;
-  traffic: number;
-  link: string;
-};
+  id: string
+  keyword: string
+  intents: Array<
+    "Informational" | "Navigational" | "Commercial" | "Transactional"
+  >
+  volume: number
+  cpc: number
+  traffic: number
+  link: string
+}
 
 const columns: ColumnDef<Item>[] = [
   {
@@ -61,7 +68,8 @@ const columns: ColumnDef<Item>[] = [
     header: ({ table }) => (
       <Checkbox
         checked={
-          table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && "indeterminate")
+          table.getIsAllPageRowsSelected() ||
+          (table.getIsSomePageRowsSelected() && "indeterminate")
         }
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all"
@@ -78,13 +86,15 @@ const columns: ColumnDef<Item>[] = [
   {
     header: "Keyword",
     accessorKey: "keyword",
-    cell: ({ row }) => <div className="font-medium">{row.getValue("keyword")}</div>,
+    cell: ({ row }) => (
+      <div className="font-medium">{row.getValue("keyword")}</div>
+    ),
   },
   {
     header: "Intents",
     accessorKey: "intents",
     cell: ({ row }) => {
-      const intents = row.getValue("intents") as string[];
+      const intents = row.getValue("intents") as string[]
       return (
         <div className="flex gap-1">
           {intents.map((intent) => {
@@ -93,41 +103,41 @@ const columns: ColumnDef<Item>[] = [
               Navigational: "bg-emerald-400/20 text-emerald-500",
               Commercial: "bg-amber-400/20 text-amber-500",
               Transactional: "bg-rose-400/20 text-rose-500",
-            }[intent];
+            }[intent]
 
             return (
               <div
                 key={intent}
                 className={cn(
                   "flex size-5 items-center justify-center rounded text-xs font-medium",
-                  styles,
+                  styles
                 )}
               >
                 {intent.charAt(0)}
               </div>
-            );
+            )
           })}
         </div>
-      );
+      )
     },
     enableSorting: false,
     meta: {
       filterVariant: "select",
     },
     filterFn: (row, id, filterValue) => {
-      const rowValue = row.getValue(id);
-      return Array.isArray(rowValue) && rowValue.includes(filterValue);
+      const rowValue = row.getValue(id)
+      return Array.isArray(rowValue) && rowValue.includes(filterValue)
     },
   },
   {
     header: "Volume",
     accessorKey: "volume",
     cell: ({ row }) => {
-      const volume = parseInt(row.getValue("volume"));
+      const volume = parseInt(row.getValue("volume"))
       return new Intl.NumberFormat("en-US", {
         notation: "compact",
         maximumFractionDigits: 1,
-      }).format(volume);
+      }).format(volume)
     },
     meta: {
       filterVariant: "range",
@@ -145,11 +155,11 @@ const columns: ColumnDef<Item>[] = [
     header: "Traffic",
     accessorKey: "traffic",
     cell: ({ row }) => {
-      const traffic = parseInt(row.getValue("traffic"));
+      const traffic = parseInt(row.getValue("traffic"))
       return new Intl.NumberFormat("en-US", {
         notation: "compact",
         maximumFractionDigits: 1,
-      }).format(traffic);
+      }).format(traffic)
     },
     meta: {
       filterVariant: "range",
@@ -165,7 +175,7 @@ const columns: ColumnDef<Item>[] = [
     ),
     enableSorting: false,
   },
-];
+]
 
 const items: Item[] = [
   {
@@ -240,16 +250,16 @@ const items: Item[] = [
     traffic: 35,
     link: "https://originui.com",
   },
-];
+]
 
 export default function Component() {
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
   const [sorting, setSorting] = useState<SortingState>([
     {
       id: "traffic",
       desc: false,
     },
-  ]);
+  ])
 
   const table = useReactTable({
     data: items,
@@ -267,7 +277,7 @@ export default function Component() {
     getFacetedMinMaxValues: getFacetedMinMaxValues(), // generate min/max values for range filter
     onSortingChange: setSorting,
     enableSortingRemoval: false,
-  });
+  })
 
   return (
     <div className="space-y-6">
@@ -316,19 +326,25 @@ export default function Component() {
                       <div
                         className={cn(
                           header.column.getCanSort() &&
-                            "flex h-full cursor-pointer items-center justify-between gap-2 select-none",
+                            "flex h-full cursor-pointer items-center justify-between gap-2 select-none"
                         )}
                         onClick={header.column.getToggleSortingHandler()}
                         onKeyDown={(e) => {
                           // Enhanced keyboard handling for sorting
-                          if (header.column.getCanSort() && (e.key === "Enter" || e.key === " ")) {
-                            e.preventDefault();
-                            header.column.getToggleSortingHandler()?.(e);
+                          if (
+                            header.column.getCanSort() &&
+                            (e.key === "Enter" || e.key === " ")
+                          ) {
+                            e.preventDefault()
+                            header.column.getToggleSortingHandler()?.(e)
                           }
                         }}
                         tabIndex={header.column.getCanSort() ? 0 : undefined}
                       >
-                        {flexRender(header.column.columnDef.header, header.getContext())}
+                        {flexRender(
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
                         {{
                           asc: (
                             <ChevronUpIcon
@@ -349,10 +365,13 @@ export default function Component() {
                         )}
                       </div>
                     ) : (
-                      flexRender(header.column.columnDef.header, header.getContext())
+                      flexRender(
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )
                     )}
                   </TableHead>
-                );
+                )
               })}
             </TableRow>
           ))}
@@ -360,7 +379,10 @@ export default function Component() {
         <TableBody>
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
-              <TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
+              <TableRow
+                key={row.id}
+                data-state={row.getIsSelected() && "selected"}
+              >
                 {row.getVisibleCells().map((cell) => (
                   <TableCell key={cell.id}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -389,31 +411,32 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
+  )
 }
 
 function Filter({ column }: { column: Column<any, unknown> }) {
-  const id = useId();
-  const columnFilterValue = column.getFilterValue();
-  const { filterVariant } = column.columnDef.meta ?? {};
-  const columnHeader = typeof column.columnDef.header === "string" ? column.columnDef.header : "";
+  const id = useId()
+  const columnFilterValue = column.getFilterValue()
+  const { filterVariant } = column.columnDef.meta ?? {}
+  const columnHeader =
+    typeof column.columnDef.header === "string" ? column.columnDef.header : ""
   const sortedUniqueValues = useMemo(() => {
-    if (filterVariant === "range") return [];
+    if (filterVariant === "range") return []
 
     // Get all unique values from the column
-    const values = Array.from(column.getFacetedUniqueValues().keys());
+    const values = Array.from(column.getFacetedUniqueValues().keys())
 
     // If the values are arrays, flatten them and get unique items
     const flattenedValues = values.reduce((acc: string[], curr) => {
       if (Array.isArray(curr)) {
-        return [...acc, ...curr];
+        return [...acc, ...curr]
       }
-      return [...acc, curr];
-    }, []);
+      return [...acc, curr]
+    }, [])
 
     // Get unique values and sort them
-    return Array.from(new Set(flattenedValues)).sort();
-  }, [column.getFacetedUniqueValues(), filterVariant]);
+    return Array.from(new Set(flattenedValues)).sort()
+  }, [column.getFacetedUniqueValues(), filterVariant])
 
   if (filterVariant === "range") {
     return (
@@ -450,7 +473,7 @@ function Filter({ column }: { column: Column<any, unknown> }) {
           />
         </div>
       </div>
-    );
+    )
   }
 
   if (filterVariant === "select") {
@@ -460,7 +483,7 @@ function Filter({ column }: { column: Column<any, unknown> }) {
         <Select
           value={columnFilterValue?.toString() ?? "all"}
           onValueChange={(value) => {
-            column.setFilterValue(value === "all" ? undefined : value);
+            column.setFilterValue(value === "all" ? undefined : value)
           }}
         >
           <SelectTrigger id={`${id}-select`}>
@@ -476,7 +499,7 @@ function Filter({ column }: { column: Column<any, unknown> }) {
           </SelectContent>
         </Select>
       </div>
-    );
+    )
   }
 
   return (
@@ -496,5 +519,5 @@ function Filter({ column }: { column: Column<any, unknown> }) {
         </div>
       </div>
     </div>
-  );
+  )
 }

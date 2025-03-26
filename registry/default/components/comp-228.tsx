@@ -1,15 +1,16 @@
-import { Label } from "@/registry/default/ui/label";
+import { useId } from "react"
+
+import { Label } from "@/registry/default/ui/label"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/default/ui/select";
-import { useId } from "react";
+} from "@/registry/default/ui/select"
 
 export default function Component() {
-  const id = useId();
+  const id = useId()
   return (
     <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Options with portrait</Label>
@@ -32,7 +33,9 @@ export default function Component() {
               />
               <span>
                 <span className="block font-medium">Jenny Hamilton</span>
-                <span className="text-muted-foreground mt-0.5 block text-xs">@jennycodes</span>
+                <span className="text-muted-foreground mt-0.5 block text-xs">
+                  @jennycodes
+                </span>
               </span>
             </span>
           </SelectItem>
@@ -47,7 +50,9 @@ export default function Component() {
               />
               <span>
                 <span className="block font-medium">Paul Smith</span>
-                <span className="text-muted-foreground mt-0.5 block text-xs">@paulsmith</span>
+                <span className="text-muted-foreground mt-0.5 block text-xs">
+                  @paulsmith
+                </span>
               </span>
             </span>
           </SelectItem>
@@ -62,12 +67,14 @@ export default function Component() {
               />
               <span>
                 <span className="block font-medium">Luna Wyen</span>
-                <span className="text-muted-foreground mt-0.5 block text-xs">@wyen.luna</span>
+                <span className="text-muted-foreground mt-0.5 block text-xs">
+                  @wyen.luna
+                </span>
               </span>
             </span>
           </SelectItem>
         </SelectContent>
       </Select>
     </div>
-  );
+  )
 }

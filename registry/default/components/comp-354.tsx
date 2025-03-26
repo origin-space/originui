@@ -1,10 +1,10 @@
-import { Button } from "@/registry/default/ui/button";
+import { Button } from "@/registry/default/ui/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/registry/default/ui/tooltip";
+} from "@/registry/default/ui/tooltip"
 
 export default function Component() {
   return (
@@ -15,8 +15,10 @@ export default function Component() {
             Tiny
           </Button>
         </TooltipTrigger>
-        <TooltipContent className="px-2 py-1 text-xs">This is a simple tooltip</TooltipContent>
+        <TooltipContent className="px-2 py-1 text-xs">
+          This is a simple tooltip
+        </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  );
+  )
 }

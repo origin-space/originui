@@ -1,14 +1,18 @@
-import { Button } from "@/registry/default/ui/button";
+import {
+  BookIcon,
+  Info,
+  LifeBuoyIcon,
+  MessageCircleMoreIcon,
+} from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu";
-import { Info } from "lucide-react";
-
-import { BookIcon, LifeBuoyIcon, MessageCircleMoreIcon } from "lucide-react";
+} from "@/registry/default/ui/dropdown-menu"
 
 export default function Component() {
   return (
@@ -48,11 +52,15 @@ export default function Component() {
           asChild
         >
           <a href="#">
-            <MessageCircleMoreIcon size={16} className="opacity-60" aria-hidden="true" />
+            <MessageCircleMoreIcon
+              size={16}
+              className="opacity-60"
+              aria-hidden="true"
+            />
             Contact us
           </a>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }

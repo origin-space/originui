@@ -6,7 +6,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table";
+} from "@/registry/default/ui/table"
 
 const items = [
   {
@@ -49,7 +49,7 @@ const items = [
     status: "Active",
     balance: "-$1,000.00",
   },
-];
+]
 
 export default function Component() {
   return (
@@ -72,7 +72,9 @@ export default function Component() {
               <TableCell className="py-2.5">{item.email}</TableCell>
               <TableCell className="py-2.5">{item.location}</TableCell>
               <TableCell className="py-2.5">{item.status}</TableCell>
-              <TableCell className="py-2.5 text-right">{item.balance}</TableCell>
+              <TableCell className="py-2.5 text-right">
+                {item.balance}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -88,5 +90,5 @@ export default function Component() {
         Table without horizontal dividers
       </p>
     </div>
-  );
+  )
 }

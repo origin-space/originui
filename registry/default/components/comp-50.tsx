@@ -1,19 +1,27 @@
-"use client";
+"use client"
 
-import { Input } from "@/registry/default/ui/input";
-import { CreditCardIcon } from "lucide-react";
-import { useId } from "react";
-import { usePaymentInputs } from "react-payment-inputs";
-import images, { type CardImages } from "react-payment-inputs/images";
+import { useId } from "react"
+import { CreditCardIcon } from "lucide-react"
+import { usePaymentInputs } from "react-payment-inputs"
+import images, { type CardImages } from "react-payment-inputs/images"
+
+import { Input } from "@/registry/default/ui/input"
 
 export default function Component() {
-  const id = useId();
-  const { meta, getCardNumberProps, getExpiryDateProps, getCVCProps, getCardImageProps } =
-    usePaymentInputs();
+  const id = useId()
+  const {
+    meta,
+    getCardNumberProps,
+    getExpiryDateProps,
+    getCVCProps,
+    getCardImageProps,
+  } = usePaymentInputs()
 
   return (
     <div className="*:not-first:mt-2">
-      <legend className="text-foreground text-sm font-medium">Card Details</legend>
+      <legend className="text-foreground text-sm font-medium">
+        Card Details
+      </legend>
       <div className="rounded-md shadow-xs">
         <div className="relative focus-within:z-10">
           <Input
@@ -25,7 +33,9 @@ export default function Component() {
             {meta.cardType ? (
               <svg
                 className="overflow-hidden rounded-sm"
-                {...getCardImageProps({ images: images as unknown as CardImages })}
+                {...getCardImageProps({
+                  images: images as unknown as CardImages,
+                })}
                 width={20}
               />
             ) : (
@@ -50,7 +60,11 @@ export default function Component() {
           </div>
         </div>
       </div>
-      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
+      <p
+        className="text-muted-foreground mt-2 text-xs"
+        role="region"
+        aria-live="polite"
+      >
         Built with{" "}
         <a
           className="hover:text-foreground underline"
@@ -62,5 +76,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
+  )
 }

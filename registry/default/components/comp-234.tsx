@@ -1,6 +1,7 @@
-import { Label } from "@/registry/default/ui/label";
-import MultipleSelector, { Option } from "@/registry/default/ui/multiselect";
-import { useId } from "react";
+import { useId } from "react"
+
+import { Label } from "@/registry/default/ui/label"
+import MultipleSelector, { Option } from "@/registry/default/ui/multiselect"
 
 const frameworks: Option[] = [
   {
@@ -69,10 +70,10 @@ const frameworks: Option[] = [
     value: "lit",
     label: "Lit",
   },
-];
+]
 
 export default function Component() {
-  const id = useId();
+  const id = useId()
   return (
     <div className="*:not-first:mt-2">
       <Label>Multiselect</Label>
@@ -87,7 +88,11 @@ export default function Component() {
         hidePlaceholderWhenSelected
         emptyIndicator={<p className="text-center text-sm">No results found</p>}
       />
-      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
+      <p
+        className="text-muted-foreground mt-2 text-xs"
+        role="region"
+        aria-live="polite"
+      >
         Inspired by{" "}
         <a
           className="hover:text-foreground underline"
@@ -99,5 +104,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
+  )
 }

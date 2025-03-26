@@ -1,4 +1,4 @@
-import { Button } from "@/registry/default/ui/button";
+import { Button } from "@/registry/default/ui/button"
 
 export default function Cta() {
   return (
@@ -15,5 +15,5 @@ export default function Cta() {
         </a>
       </Button>
     </div>
-  );
+  )
 }

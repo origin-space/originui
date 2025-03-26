@@ -1,5 +1,7 @@
-import { cn } from "@/registry/default/lib/utils";
-import { Label } from "@/registry/default/ui/label";
+import { useId } from "react"
+
+import { cn } from "@/registry/default/lib/utils"
+import { Label } from "@/registry/default/ui/label"
 import {
   Select,
   SelectContent,
@@ -8,24 +10,29 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/registry/default/ui/select";
-import { useId } from "react";
+} from "@/registry/default/ui/select"
 
-const Square = ({ className, children }: { className?: string; children: React.ReactNode }) => (
+const Square = ({
+  className,
+  children,
+}: {
+  className?: string
+  children: React.ReactNode
+}) => (
   <span
     data-square
     className={cn(
       "bg-muted text-muted-foreground flex size-5 items-center justify-center rounded text-xs font-medium",
-      className,
+      className
     )}
     aria-hidden="true"
   >
     {children}
   </span>
-);
+)
 
 export default function Component() {
-  const id = useId();
+  const id = useId()
   return (
     <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Options with placeholder avatar</Label>
@@ -55,5 +62,5 @@ export default function Component() {
         </SelectContent>
       </Select>
     </div>
-  );
+  )
 }

@@ -1,5 +1,9 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/registry/default/ui/avatar";
-import { Badge } from "@/registry/default/ui/badge";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/registry/default/ui/avatar"
+import { Badge } from "@/registry/default/ui/badge"
 
 export default function Component() {
   return (
@@ -12,5 +16,5 @@ export default function Component() {
         6
       </Badge>
     </div>
-  );
+  )
 }

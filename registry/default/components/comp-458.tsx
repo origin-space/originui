@@ -1,12 +1,19 @@
-import { Button } from "@/registry/default/ui/button";
-import { Pagination, PaginationContent, PaginationItem } from "@/registry/default/ui/pagination";
+import { Button } from "@/registry/default/ui/button"
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+} from "@/registry/default/ui/pagination"
 
 type PaginationProps = {
-  currentPage: number;
-  totalPages: number;
-};
+  currentPage: number
+  totalPages: number
+}
 
-export default function Component({ currentPage, totalPages }: PaginationProps) {
+export default function Component({
+  currentPage,
+  totalPages,
+}: PaginationProps) {
   return (
     <div className="flex items-center justify-between gap-3">
       <p className="text-muted-foreground grow text-sm" aria-live="polite">
@@ -23,7 +30,13 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
               role={currentPage === 1 ? "link" : undefined}
               asChild
             >
-              <a href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}>Previous</a>
+              <a
+                href={
+                  currentPage === 1 ? undefined : `#/page/${currentPage - 1}`
+                }
+              >
+                Previous
+              </a>
             </Button>
           </PaginationItem>
           <PaginationItem>
@@ -34,7 +47,13 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
               role={currentPage === totalPages ? "link" : undefined}
               asChild
             >
-              <a href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}>
+              <a
+                href={
+                  currentPage === totalPages
+                    ? undefined
+                    : `#/page/${currentPage + 1}`
+                }
+              >
                 Next
               </a>
             </Button>
@@ -42,5 +61,5 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
         </PaginationContent>
       </Pagination>
     </div>
-  );
+  )
 }

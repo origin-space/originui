@@ -1,20 +1,6 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/registry/default/ui/table";
+import { CSSProperties, useEffect, useState } from "react"
 import {
   Column,
   ColumnDef,
@@ -23,42 +9,64 @@ import {
   getSortedRowModel,
   SortingState,
   useReactTable,
-} from "@tanstack/react-table";
-import { ArrowLeftToLineIcon, ArrowRightToLineIcon, EllipsisIcon, PinOffIcon } from "lucide-react";
-import { CSSProperties, useEffect, useState } from "react";
+} from "@tanstack/react-table"
+import {
+  ArrowLeftToLineIcon,
+  ArrowRightToLineIcon,
+  EllipsisIcon,
+  PinOffIcon,
+} from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/registry/default/ui/dropdown-menu"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/registry/default/ui/table"
 
 type Item = {
-  id: string;
-  name: string;
-  email: string;
-  location: string;
-  flag: string;
-  status: "Active" | "Inactive" | "Pending";
-  balance: number;
-  department: string;
-  role: string;
-  joinDate: string;
-  lastActive: string;
-  performance: "Good" | "Very Good" | "Excellent" | "Outstanding";
-};
+  id: string
+  name: string
+  email: string
+  location: string
+  flag: string
+  status: "Active" | "Inactive" | "Pending"
+  balance: number
+  department: string
+  role: string
+  joinDate: string
+  lastActive: string
+  performance: "Good" | "Very Good" | "Excellent" | "Outstanding"
+}
 
 // Helper function to compute pinning styles for columns
 const getPinningStyles = (column: Column<Item>): CSSProperties => {
-  const isPinned = column.getIsPinned();
+  const isPinned = column.getIsPinned()
   return {
     left: isPinned === "left" ? `${column.getStart("left")}px` : undefined,
     right: isPinned === "right" ? `${column.getAfter("right")}px` : undefined,
     position: isPinned ? "sticky" : "relative",
     width: column.getSize(),
     zIndex: isPinned ? 1 : 0,
-  };
-};
+  }
+}
 
 const columns: ColumnDef<Item>[] = [
   {
     header: "Name",
     accessorKey: "name",
-    cell: ({ row }) => <div className="truncate font-medium">{row.getValue("name")}</div>,
+    cell: ({ row }) => (
+      <div className="truncate font-medium">{row.getValue("name")}</div>
+    ),
   },
   {
     header: "Email",
@@ -69,7 +77,8 @@ const columns: ColumnDef<Item>[] = [
     accessorKey: "location",
     cell: ({ row }) => (
       <div className="truncate">
-        <span className="text-lg leading-none">{row.original.flag}</span> {row.getValue("location")}
+        <span className="text-lg leading-none">{row.original.flag}</span>{" "}
+        {row.getValue("location")}
       </div>
     ),
   },
@@ -81,12 +90,12 @@ const columns: ColumnDef<Item>[] = [
     header: "Balance",
     accessorKey: "balance",
     cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("balance"));
+      const amount = parseFloat(row.getValue("balance"))
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
-      }).format(amount);
-      return formatted;
+      }).format(amount)
+      return formatted
     },
   },
   {
@@ -109,22 +118,22 @@ const columns: ColumnDef<Item>[] = [
     header: "Performance",
     accessorKey: "performance",
   },
-];
+]
 
 export default function Component() {
-  const [data, setData] = useState<Item[]>([]);
-  const [sorting, setSorting] = useState<SortingState>([]);
+  const [data, setData] = useState<Item[]>([])
+  const [sorting, setSorting] = useState<SortingState>([])
 
   useEffect(() => {
     async function fetchPosts() {
       const res = await fetch(
-        "https://res.cloudinary.com/dlzlfasou/raw/upload/users-01_fertyx.json",
-      );
-      const data = await res.json();
-      setData(data.slice(0, 5)); // Limit to 5 items
+        "https://res.cloudinary.com/dlzlfasou/raw/upload/users-01_fertyx.json"
+      )
+      const data = await res.json()
+      setData(data.slice(0, 5)) // Limit to 5 items
     }
-    fetchPosts();
-  }, []);
+    fetchPosts()
+  }, [])
 
   const table = useReactTable({
     data,
@@ -137,7 +146,7 @@ export default function Component() {
       sorting,
     },
     enableSortingRemoval: false,
-  });
+  })
 
   return (
     <div>
@@ -151,10 +160,12 @@ export default function Component() {
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id} className="bg-muted/50">
               {headerGroup.headers.map((header) => {
-                const { column } = header;
-                const isPinned = column.getIsPinned();
-                const isLastLeftPinned = isPinned === "left" && column.getIsLastColumn("left");
-                const isFirstRightPinned = isPinned === "right" && column.getIsFirstColumn("right");
+                const { column } = header
+                const isPinned = column.getIsPinned()
+                const isLastLeftPinned =
+                  isPinned === "left" && column.getIsLastColumn("left")
+                const isFirstRightPinned =
+                  isPinned === "right" && column.getIsFirstColumn("right")
 
                 return (
                   <TableHead
@@ -164,14 +175,21 @@ export default function Component() {
                     style={{ ...getPinningStyles(column) }}
                     data-pinned={isPinned || undefined}
                     data-last-col={
-                      isLastLeftPinned ? "left" : isFirstRightPinned ? "right" : undefined
+                      isLastLeftPinned
+                        ? "left"
+                        : isFirstRightPinned
+                          ? "right"
+                          : undefined
                     }
                   >
                     <div className="flex items-center justify-between gap-2">
                       <span className="truncate">
                         {header.isPlaceholder
                           ? null
-                          : flexRender(header.column.columnDef.header, header.getContext())}
+                          : flexRender(
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
                       </span>
                       {/* Pin/Unpin column controls with enhanced accessibility */}
                       {!header.isPlaceholder &&
@@ -185,7 +203,11 @@ export default function Component() {
                             aria-label={`Unpin ${header.column.columnDef.header as string} column`}
                             title={`Unpin ${header.column.columnDef.header as string} column`}
                           >
-                            <PinOffIcon className="opacity-60" size={16} aria-hidden="true" />
+                            <PinOffIcon
+                              className="opacity-60"
+                              size={16}
+                              aria-hidden="true"
+                            />
                           </Button>
                         ) : (
                           <DropdownMenu>
@@ -197,11 +219,17 @@ export default function Component() {
                                 aria-label={`Pin options for ${header.column.columnDef.header as string} column`}
                                 title={`Pin options for ${header.column.columnDef.header as string} column`}
                               >
-                                <EllipsisIcon className="opacity-60" size={16} aria-hidden="true" />
+                                <EllipsisIcon
+                                  className="opacity-60"
+                                  size={16}
+                                  aria-hidden="true"
+                                />
                               </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">
-                              <DropdownMenuItem onClick={() => header.column.pin("left")}>
+                              <DropdownMenuItem
+                                onClick={() => header.column.pin("left")}
+                              >
                                 <ArrowLeftToLineIcon
                                   size={16}
                                   className="opacity-60"
@@ -209,7 +237,9 @@ export default function Component() {
                                 />
                                 Stick to left
                               </DropdownMenuItem>
-                              <DropdownMenuItem onClick={() => header.column.pin("right")}>
+                              <DropdownMenuItem
+                                onClick={() => header.column.pin("right")}
+                              >
                                 <ArrowRightToLineIcon
                                   size={16}
                                   className="opacity-60"
@@ -233,7 +263,7 @@ export default function Component() {
                       )}
                     </div>
                   </TableHead>
-                );
+                )
               })}
             </TableRow>
           ))}
@@ -241,13 +271,17 @@ export default function Component() {
         <TableBody>
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
-              <TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
+              <TableRow
+                key={row.id}
+                data-state={row.getIsSelected() && "selected"}
+              >
                 {row.getVisibleCells().map((cell) => {
-                  const { column } = cell;
-                  const isPinned = column.getIsPinned();
-                  const isLastLeftPinned = isPinned === "left" && column.getIsLastColumn("left");
+                  const { column } = cell
+                  const isPinned = column.getIsPinned()
+                  const isLastLeftPinned =
+                    isPinned === "left" && column.getIsLastColumn("left")
                   const isFirstRightPinned =
-                    isPinned === "right" && column.getIsFirstColumn("right");
+                    isPinned === "right" && column.getIsFirstColumn("right")
 
                   return (
                     <TableCell
@@ -256,12 +290,19 @@ export default function Component() {
                       style={{ ...getPinningStyles(column) }}
                       data-pinned={isPinned || undefined}
                       data-last-col={
-                        isLastLeftPinned ? "left" : isFirstRightPinned ? "right" : undefined
+                        isLastLeftPinned
+                          ? "left"
+                          : isFirstRightPinned
+                            ? "right"
+                            : undefined
                       }
                     >
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext()
+                      )}
                     </TableCell>
-                  );
+                  )
                 })}
               </TableRow>
             ))
@@ -286,5 +327,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
+  )
 }

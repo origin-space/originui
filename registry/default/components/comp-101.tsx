@@ -1,17 +1,18 @@
-"use client";
+"use client"
 
-import { Toggle } from "@/registry/default/ui/toggle";
+import { useState } from "react"
+import { BookmarkIcon } from "lucide-react"
+
+import { Toggle } from "@/registry/default/ui/toggle"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/registry/default/ui/tooltip";
-import { BookmarkIcon } from "lucide-react";
-import { useState } from "react";
+} from "@/registry/default/ui/tooltip"
 
 export default function Component() {
-  const [bookmarked, setBookmarked] = useState<boolean>(false);
+  const [bookmarked, setBookmarked] = useState<boolean>(false)
   return (
     <TooltipProvider>
       <Tooltip>
@@ -32,5 +33,5 @@ export default function Component() {
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  );
+  )
 }

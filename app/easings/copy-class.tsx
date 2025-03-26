@@ -1,21 +1,22 @@
-"use client";
+"use client"
 
-import { cn } from "@/registry/default/lib/utils";
-import { Button } from "@/registry/default/ui/button";
-import { useState } from "react";
+import { useState } from "react"
+
+import { cn } from "@/registry/default/lib/utils"
+import { Button } from "@/registry/default/ui/button"
 
 const CopyClass = ({ value }: { value: string }) => {
-  const [copied, setCopied] = useState<boolean>(false);
+  const [copied, setCopied] = useState<boolean>(false)
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(value);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
+      await navigator.clipboard.writeText(value)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
     } catch (err) {
-      console.error("Failed to copy text: ", err);
+      console.error("Failed to copy text: ", err)
     }
-  };
+  }
 
   return (
     <div>
@@ -27,11 +28,18 @@ const CopyClass = ({ value }: { value: string }) => {
         disabled={copied}
       >
         <div className="flex-1">
-          {copied ? "Copied" : <span className="transition-colors">Copy class</span>}
+          {copied ? (
+            "Copied"
+          ) : (
+            <span className="transition-colors">Copy class</span>
+          )}
         </div>
         <div className="relative">
           <div
-            className={cn("transition-all", copied ? "scale-100 opacity-100" : "scale-0 opacity-0")}
+            className={cn(
+              "transition-all",
+              copied ? "scale-100 opacity-100" : "scale-0 opacity-0"
+            )}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +57,7 @@ const CopyClass = ({ value }: { value: string }) => {
           <div
             className={cn(
               "absolute -top-0.5 transition-all",
-              copied ? "scale-0 opacity-0" : "scale-100 opacity-80",
+              copied ? "scale-0 opacity-0" : "scale-100 opacity-80"
             )}
           >
             <svg
@@ -66,7 +74,7 @@ const CopyClass = ({ value }: { value: string }) => {
         </div>
       </Button>
     </div>
-  );
-};
+  )
+}
 
-export default CopyClass;
+export default CopyClass

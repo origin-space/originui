@@ -1,8 +1,9 @@
-"use client";
+"use client"
 
-import { useImageUpload } from "@/registry/default/hooks/use-image-upload";
-import { Button } from "@/registry/default/ui/button";
-import { CircleUserRoundIcon } from "lucide-react";
+import { CircleUserRoundIcon } from "lucide-react"
+
+import { useImageUpload } from "@/registry/default/hooks/use-image-upload"
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
   const {
@@ -12,14 +13,16 @@ export default function Component() {
     handleFileChange,
     handleRemove,
     fileName,
-  } = useImageUpload();
+  } = useImageUpload()
 
   return (
     <div>
       <div className="inline-flex items-center gap-2 align-top">
         <div
           className="border-input relative flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-md border"
-          aria-label={previewUrl ? "Preview of uploaded image" : "Default user avatar"}
+          aria-label={
+            previewUrl ? "Preview of uploaded image" : "Default user avatar"
+          }
         >
           {previewUrl ? (
             <img
@@ -66,8 +69,10 @@ export default function Component() {
         </div>
       )}
       <div className="sr-only" aria-live="polite" role="status">
-        {previewUrl ? "Image uploaded and preview available" : "No image uploaded"}
+        {previewUrl
+          ? "Image uploaded and preview available"
+          : "No image uploaded"}
       </div>
     </div>
-  );
+  )
 }

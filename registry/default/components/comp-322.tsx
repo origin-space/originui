@@ -1,4 +1,4 @@
-import { Button } from "@/registry/default/ui/button";
+import { Button } from "@/registry/default/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -6,8 +6,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/default/ui/dialog";
-import { Textarea } from "@/registry/default/ui/textarea";
+} from "@/registry/default/ui/dialog"
+import { Textarea } from "@/registry/default/ui/textarea"
 
 export default function Component() {
   return (
@@ -46,5 +46,5 @@ export default function Component() {
         </form>
       </DialogContent>
     </Dialog>
-  );
+  )
 }

@@ -3,7 +3,7 @@ import {
   TimelineContent,
   TimelineDate,
   TimelineItem,
-} from "@/registry/default/ui/timeline";
+} from "@/registry/default/ui/timeline"
 
 const items = [
   {
@@ -14,7 +14,8 @@ const items = [
   {
     id: 2,
     date: new Date("2024-01-09T10:50:00"),
-    description: "User authentication service restarted due to configuration update.",
+    description:
+      "User authentication service restarted due to configuration update.",
   },
   {
     id: 3,
@@ -26,7 +27,7 @@ const items = [
     date: new Date("2024-01-09T10:40:00"),
     description: "New deployment initiated for api-service v2.1.0.",
   },
-];
+]
 
 export default function Component() {
   return (
@@ -52,5 +53,5 @@ export default function Component() {
         </TimelineItem>
       ))}
     </Timeline>
-  );
+  )
 }

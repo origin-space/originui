@@ -1,9 +1,14 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
-import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
-import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
-import { useState } from "react";
+import { useState } from "react"
+import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/registry/default/ui/popover"
 
 const tips = [
   {
@@ -31,25 +36,25 @@ const tips = [
     description:
       "Enable notifications to receive updates about your projects, team activity, and important deadlines.",
   },
-];
+]
 
 export default function Component() {
-  const [currentTip, setCurrentTip] = useState(0);
+  const [currentTip, setCurrentTip] = useState(0)
 
   const handleNext = () => {
     if (currentTip < tips.length - 1) {
-      setCurrentTip(currentTip + 1);
+      setCurrentTip(currentTip + 1)
     }
-  };
+  }
 
   const handlePrev = () => {
     if (currentTip > 0) {
-      setCurrentTip(currentTip - 1);
+      setCurrentTip(currentTip - 1)
     }
-  };
+  }
 
-  const isFirstTip = currentTip === 0;
-  const isLastTip = currentTip === tips.length - 1;
+  const isFirstTip = currentTip === 0
+  const isLastTip = currentTip === tips.length - 1
 
   return (
     <Popover>
@@ -60,7 +65,9 @@ export default function Component() {
         <div className="space-y-3">
           <div className="space-y-1">
             <p className="text-[13px] font-medium">{tips[currentTip].title}</p>
-            <p className="text-muted-foreground text-xs">{tips[currentTip].description}</p>
+            <p className="text-muted-foreground text-xs">
+              {tips[currentTip].description}
+            </p>
           </div>
           <div className="flex items-center justify-between">
             <span className="text-muted-foreground text-xs">
@@ -92,5 +99,5 @@ export default function Component() {
         </div>
       </PopoverContent>
     </Popover>
-  );
+  )
 }

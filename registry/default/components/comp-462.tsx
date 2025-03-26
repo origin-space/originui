@@ -1,25 +1,26 @@
-import { usePagination } from "@/registry/default/hooks/use-pagination";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
+
+import { usePagination } from "@/registry/default/hooks/use-pagination"
 import {
   Pagination,
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,
   PaginationLink,
-} from "@/registry/default/ui/pagination";
+} from "@/registry/default/ui/pagination"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/default/ui/select";
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
+} from "@/registry/default/ui/select"
 
 type PaginationProps = {
-  currentPage: number;
-  totalPages: number;
-  paginationItemsToDisplay?: number;
-};
+  currentPage: number
+  totalPages: number
+  paginationItemsToDisplay?: number
+}
 
 export default function Component({
   currentPage,
@@ -30,12 +31,15 @@ export default function Component({
     currentPage,
     totalPages,
     paginationItemsToDisplay,
-  });
+  })
 
   return (
     <div className="flex items-center justify-between gap-3">
       {/* Page number information */}
-      <p className="text-muted-foreground flex-1 text-sm whitespace-nowrap" aria-live="polite">
+      <p
+        className="text-muted-foreground flex-1 text-sm whitespace-nowrap"
+        aria-live="polite"
+      >
         Page <span className="text-foreground">{currentPage}</span> of{" "}
         <span className="text-foreground">{totalPages}</span>
       </p>
@@ -48,7 +52,9 @@ export default function Component({
             <PaginationItem>
               <PaginationLink
                 className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
-                href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}
+                href={
+                  currentPage === 1 ? undefined : `#/page/${currentPage - 1}`
+                }
                 aria-label="Go to previous page"
                 aria-disabled={currentPage === 1 ? true : undefined}
                 role={currentPage === 1 ? "link" : undefined}
@@ -67,7 +73,10 @@ export default function Component({
             {/* Page number links */}
             {pages.map((page) => (
               <PaginationItem key={page}>
-                <PaginationLink href={`#/page/${page}`} isActive={page === currentPage}>
+                <PaginationLink
+                  href={`#/page/${page}`}
+                  isActive={page === currentPage}
+                >
                   {page}
                 </PaginationLink>
               </PaginationItem>
@@ -84,7 +93,11 @@ export default function Component({
             <PaginationItem>
               <PaginationLink
                 className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
-                href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}
+                href={
+                  currentPage === totalPages
+                    ? undefined
+                    : `#/page/${currentPage + 1}`
+                }
                 aria-label="Go to next page"
                 aria-disabled={currentPage === totalPages ? true : undefined}
                 role={currentPage === totalPages ? "link" : undefined}
@@ -99,7 +112,10 @@ export default function Component({
       {/* Results per page */}
       <div className="flex flex-1 justify-end">
         <Select defaultValue="10" aria-label="Results per page">
-          <SelectTrigger id="results-per-page" className="w-fit whitespace-nowrap">
+          <SelectTrigger
+            id="results-per-page"
+            className="w-fit whitespace-nowrap"
+          >
             <SelectValue placeholder="Select number of results" />
           </SelectTrigger>
           <SelectContent>
@@ -111,5 +127,5 @@ export default function Component({
         </Select>
       </div>
     </div>
-  );
+  )
 }

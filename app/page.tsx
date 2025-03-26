@@ -1,8 +1,9 @@
-import SearchButton from "@/components/search-button";
-import { SubscribeBottom } from "@/components/subscribe-form";
-import { categories } from "@/config/components";
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
+
+import { categories } from "@/config/components"
+import SearchButton from "@/components/search-button"
+import { SubscribeBottom } from "@/components/subscribe-form"
 
 export default function Page() {
   return (
@@ -12,7 +13,8 @@ export default function Page() {
           Beautiful UI components built with Tailwind CSS and React.
         </h1>
         <p className="text-muted-foreground mb-8 text-lg">
-          An open-source collection of copy-and-paste components for quickly build application UIs.
+          An open-source collection of copy-and-paste components for quickly
+          build application UIs.
         </p>
         <SearchButton />
       </div>
@@ -21,9 +23,9 @@ export default function Page() {
         <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {categories
             .sort((a, b) => {
-              if (a.isNew && !b.isNew) return -1;
-              if (!a.isNew && b.isNew) return 1;
-              return 0;
+              if (a.isNew && !b.isNew) return -1
+              if (!a.isNew && b.isNew) return 1
+              return 0
             })
             .map((category) => (
               <CategoryCard
@@ -39,21 +41,26 @@ export default function Page() {
 
       <SubscribeBottom />
     </div>
-  );
+  )
 }
 
 type CategoryCardProps = {
-  slug: string;
-  name: string;
-  componentsCount?: number;
-  isNew?: boolean;
-};
+  slug: string
+  name: string
+  componentsCount?: number
+  isNew?: boolean
+}
 
-function CategoryCard({ slug, name, componentsCount, isNew = false }: CategoryCardProps) {
-  const href = `/${slug}`;
-  const imageBasePath = `/thumbs/${slug}`;
-  const alt = `${name} components`;
-  const isComingSoon = componentsCount === undefined;
+function CategoryCard({
+  slug,
+  name,
+  componentsCount,
+  isNew = false,
+}: CategoryCardProps) {
+  const href = `/${slug}`
+  const imageBasePath = `/thumbs/${slug}`
+  const alt = `${name} components`
+  const isComingSoon = componentsCount === undefined
 
   return (
     <div className="space-y-3 text-center">
@@ -110,13 +117,13 @@ function CategoryCard({ slug, name, componentsCount, isNew = false }: CategoryCa
         </p>
       </div>
     </div>
-  );
+  )
 }
 
 type ImageComponentProps = {
-  imageBasePath: string;
-  alt: string;
-};
+  imageBasePath: string
+  alt: string
+}
 
 function ImageComponent({ imageBasePath, alt }: ImageComponentProps) {
   return (
@@ -136,5 +143,5 @@ function ImageComponent({ imageBasePath, alt }: ImageComponentProps) {
         height={198}
       />
     </>
-  );
+  )
 }

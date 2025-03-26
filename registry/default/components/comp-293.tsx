@@ -1,5 +1,6 @@
-import { Button } from "@/registry/default/ui/button";
-import { XIcon } from "lucide-react";
+import { XIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
   return (
@@ -10,7 +11,8 @@ export default function Component() {
           <div className="space-y-1">
             <p className="text-sm font-medium">We Value Your Privacy 🍪</p>
             <p className="text-muted-foreground text-sm">
-              We use cookies to improve your experience, and show personalized content.
+              We use cookies to improve your experience, and show personalized
+              content.
             </p>
           </div>
           <div className="flex gap-2">
@@ -33,5 +35,5 @@ export default function Component() {
         </Button>
       </div>
     </div>
-  );
+  )
 }

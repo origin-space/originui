@@ -1,35 +1,46 @@
-"use client";
+"use client"
 
-import { cn } from "@/registry/default/lib/utils";
-import { RangeCalendar } from "@/registry/default/ui/calendar-rac";
-import { DateInput, dateInputStyle } from "@/registry/default/ui/datefield-rac";
-import { getLocalTimeZone, isWeekend, today } from "@internationalized/date";
-import { CalendarIcon } from "lucide-react";
-import { useLocale } from "react-aria";
-import type { DateValue } from "react-aria-components";
-import { Button, DateRangePicker, Dialog, Group, Label, Popover } from "react-aria-components";
+import { getLocalTimeZone, isWeekend, today } from "@internationalized/date"
+import { CalendarIcon } from "lucide-react"
+import { useLocale } from "react-aria"
+import type { DateValue } from "react-aria-components"
+import {
+  Button,
+  DateRangePicker,
+  Dialog,
+  Group,
+  Label,
+  Popover,
+} from "react-aria-components"
+
+import { cn } from "@/registry/default/lib/utils"
+import { RangeCalendar } from "@/registry/default/ui/calendar-rac"
+import { DateInput, dateInputStyle } from "@/registry/default/ui/datefield-rac"
 
 export default function Component() {
-  const now = today(getLocalTimeZone());
+  const now = today(getLocalTimeZone())
   const disabledRanges = [
     [now, now.add({ days: 5 })],
     [now.add({ days: 14 }), now.add({ days: 16 })],
     [now.add({ days: 23 }), now.add({ days: 24 })],
-  ];
+  ]
 
-  const { locale } = useLocale();
+  const { locale } = useLocale()
   const isDateUnavailable = (date: DateValue) =>
     isWeekend(date, locale) ||
     disabledRanges.some(
-      (interval) => date.compare(interval[0]) >= 0 && date.compare(interval[1]) <= 0,
-    );
+      (interval) =>
+        date.compare(interval[0]) >= 0 && date.compare(interval[1]) <= 0
+    )
   const validate = (value: { start: DateValue; end: DateValue } | null) =>
     disabledRanges.some(
       (interval) =>
-        value && value.end.compare(interval[0]) >= 0 && value.start.compare(interval[1]) <= 0,
+        value &&
+        value.end.compare(interval[0]) >= 0 &&
+        value.start.compare(interval[1]) <= 0
     )
       ? "Selected date range may not include unavailable dates."
-      : null;
+      : null
 
   return (
     <DateRangePicker
@@ -60,7 +71,11 @@ export default function Component() {
           <RangeCalendar minValue={now} isDateUnavailable={isDateUnavailable} />
         </Dialog>
       </Popover>
-      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
+      <p
+        className="text-muted-foreground mt-2 text-xs"
+        role="region"
+        aria-live="polite"
+      >
         Built with{" "}
         <a
           className="hover:text-foreground underline"
@@ -72,5 +87,5 @@ export default function Component() {
         </a>
       </p>
     </DateRangePicker>
-  );
+  )
 }

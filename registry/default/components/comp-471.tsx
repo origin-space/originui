@@ -5,7 +5,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table";
+} from "@/registry/default/ui/table"
 
 const programmingLanguages = [
   {
@@ -63,7 +63,7 @@ const programmingLanguages = [
     latestVersion: "3.0",
     popularity: "Low",
   },
-];
+]
 
 export default function Component() {
   return (
@@ -85,7 +85,9 @@ export default function Component() {
           <TableBody>
             {programmingLanguages.map((language) => (
               <TableRow key={language.id}>
-                <TableCell className="py-2 font-medium">{language.name}</TableCell>
+                <TableCell className="py-2 font-medium">
+                  {language.name}
+                </TableCell>
                 <TableCell className="py-2">{language.releaseYear}</TableCell>
                 <TableCell className="py-2">{language.developer}</TableCell>
                 <TableCell className="py-2">{language.typing}</TableCell>
@@ -98,7 +100,9 @@ export default function Component() {
           </TableBody>
         </Table>
       </div>
-      <p className="text-muted-foreground mt-4 text-center text-sm">Dense table</p>
+      <p className="text-muted-foreground mt-4 text-center text-sm">
+        Dense table
+      </p>
     </div>
-  );
+  )
 }

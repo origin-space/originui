@@ -1,5 +1,5 @@
-import { Label } from "@/registry/default/ui/label";
-import { Slider } from "@/registry/default/ui/slider";
+import { Label } from "@/registry/default/ui/label"
+import { Slider } from "@/registry/default/ui/slider"
 
 export default function Component() {
   return (
@@ -21,5 +21,5 @@ export default function Component() {
         />
       </div>
     </div>
-  );
+  )
 }

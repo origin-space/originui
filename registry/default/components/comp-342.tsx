@@ -1,6 +1,17 @@
-import { Accordion, AccordionContent, AccordionItem } from "@/registry/default/ui/accordion";
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { BellIcon, ChevronDownIcon, LifeBuoyIcon, Link2Icon, ShieldCheckIcon } from "lucide-react";
+import * as AccordionPrimitive from "@radix-ui/react-accordion"
+import {
+  BellIcon,
+  ChevronDownIcon,
+  LifeBuoyIcon,
+  Link2Icon,
+  ShieldCheckIcon,
+} from "lucide-react"
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+} from "@/registry/default/ui/accordion"
 
 const items = [
   {
@@ -35,7 +46,7 @@ const items = [
     content:
       "Our support team is available around the ClockIcon to assist you. For billing inquiries, technical issues, or general questions, you can reach us through live chat, email at support@example.com, or schedule a call with our technical team. Premium support is available for enterprise customers.",
   },
-];
+]
 
 export default function Component() {
   return (
@@ -55,7 +66,9 @@ export default function Component() {
                   </span>
                   <span className="flex flex-col space-y-1">
                     <span>{item.title}</span>
-                    {item.sub && <span className="text-sm font-normal">{item.sub}</span>}
+                    {item.sub && (
+                      <span className="text-sm font-normal">{item.sub}</span>
+                    )}
                   </span>
                 </span>
                 <ChevronDownIcon
@@ -72,5 +85,5 @@ export default function Component() {
         ))}
       </Accordion>
     </div>
-  );
+  )
 }

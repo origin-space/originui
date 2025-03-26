@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-import * as React from "react";
-import { DayPicker } from "react-day-picker";
+import * as React from "react"
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
+import { DayPicker } from "react-day-picker"
 
-import { cn } from "@/registry/default/lib/utils";
-import { buttonVariants } from "@/registry/default/ui/button";
+import { cn } from "@/registry/default/lib/utils"
+import { buttonVariants } from "@/registry/default/ui/button"
 
 function Calendar({
   className,
@@ -17,16 +17,17 @@ function Calendar({
   const defaultClassNames = {
     months: "relative flex flex-col sm:flex-row gap-4",
     month: "w-full",
-    month_caption: "relative mx-10 mb-1 flex h-9 items-center justify-center z-20",
+    month_caption:
+      "relative mx-10 mb-1 flex h-9 items-center justify-center z-20",
     caption_label: "text-sm font-medium",
     nav: "absolute top-0 flex w-full justify-between z-10",
     button_previous: cn(
       buttonVariants({ variant: "ghost" }),
-      "size-9 text-muted-foreground/80 hover:text-foreground p-0",
+      "size-9 text-muted-foreground/80 hover:text-foreground p-0"
     ),
     button_next: cn(
       buttonVariants({ variant: "ghost" }),
-      "size-9 text-muted-foreground/80 hover:text-foreground p-0",
+      "size-9 text-muted-foreground/80 hover:text-foreground p-0"
     ),
     weekday: "size-9 p-0 text-xs font-medium text-muted-foreground/80",
     day_button:
@@ -37,42 +38,45 @@ function Calendar({
     range_middle: "range-middle",
     today:
       "*:after:pointer-events-none *:after:absolute *:after:bottom-1 *:after:start-1/2 *:after:z-10 *:after:size-[3px] *:after:-translate-x-1/2 *:after:rounded-full *:after:bg-primary [&[data-selected]:not(.range-middle)>*]:after:bg-background [&[data-disabled]>*]:after:bg-foreground/30 *:after:transition-colors",
-    outside: "text-muted-foreground data-selected:bg-accent/50 data-selected:text-muted-foreground",
+    outside:
+      "text-muted-foreground data-selected:bg-accent/50 data-selected:text-muted-foreground",
     hidden: "invisible",
     week_number: "size-9 p-0 text-xs font-medium text-muted-foreground/80",
-  };
+  }
 
-  const mergedClassNames: typeof defaultClassNames = Object.keys(defaultClassNames).reduce(
+  const mergedClassNames: typeof defaultClassNames = Object.keys(
+    defaultClassNames
+  ).reduce(
     (acc, key) => ({
       ...acc,
       [key]: classNames?.[key as keyof typeof classNames]
         ? cn(
             defaultClassNames[key as keyof typeof defaultClassNames],
-            classNames[key as keyof typeof classNames],
+            classNames[key as keyof typeof classNames]
           )
         : defaultClassNames[key as keyof typeof defaultClassNames],
     }),
-    {} as typeof defaultClassNames,
-  );
+    {} as typeof defaultClassNames
+  )
 
   const defaultComponents = {
     Chevron: (props: {
-      className?: string;
-      size?: number;
-      disabled?: boolean;
-      orientation?: "left" | "right" | "up" | "down";
+      className?: string
+      size?: number
+      disabled?: boolean
+      orientation?: "left" | "right" | "up" | "down"
     }) => {
       if (props.orientation === "left") {
-        return <ChevronLeftIcon size={16} {...props} aria-hidden="true" />;
+        return <ChevronLeftIcon size={16} {...props} aria-hidden="true" />
       }
-      return <ChevronRightIcon size={16} {...props} aria-hidden="true" />;
+      return <ChevronRightIcon size={16} {...props} aria-hidden="true" />
     },
-  };
+  }
 
   const mergedComponents = {
     ...defaultComponents,
     ...userComponents,
-  };
+  }
 
   return (
     <DayPicker
@@ -82,7 +86,7 @@ function Calendar({
       components={mergedComponents}
       {...props}
     />
-  );
+  )
 }
 
-export { Calendar };
+export { Calendar }

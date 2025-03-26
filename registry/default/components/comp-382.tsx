@@ -1,10 +1,15 @@
-"use client";
+"use client"
 
-import { Badge } from "@/registry/default/ui/badge";
-import { Button } from "@/registry/default/ui/button";
-import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
-import { BellIcon } from "lucide-react";
-import { useState } from "react";
+import { useState } from "react"
+import { BellIcon } from "lucide-react"
+
+import { Badge } from "@/registry/default/ui/badge"
+import { Button } from "@/registry/default/ui/button"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/registry/default/ui/popover"
 
 const initialNotifications = [
   {
@@ -55,7 +60,7 @@ const initialNotifications = [
     timestamp: "2 weeks ago",
     unread: false,
   },
-];
+]
 
 function Dot({ className }: { className?: string }) {
   return (
@@ -70,34 +75,41 @@ function Dot({ className }: { className?: string }) {
     >
       <circle cx="3" cy="3" r="3" />
     </svg>
-  );
+  )
 }
 
 export default function Component() {
-  const [notifications, setNotifications] = useState(initialNotifications);
-  const unreadCount = notifications.filter((n) => n.unread).length;
+  const [notifications, setNotifications] = useState(initialNotifications)
+  const unreadCount = notifications.filter((n) => n.unread).length
 
   const handleMarkAllAsRead = () => {
     setNotifications(
       notifications.map((notification) => ({
         ...notification,
         unread: false,
-      })),
-    );
-  };
+      }))
+    )
+  }
 
   const handleNotificationClick = (id: number) => {
     setNotifications(
       notifications.map((notification) =>
-        notification.id === id ? { ...notification, unread: false } : notification,
-      ),
-    );
-  };
+        notification.id === id
+          ? { ...notification, unread: false }
+          : notification
+      )
+    )
+  }
 
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button size="icon" variant="outline" className="relative" aria-label="Open notifications">
+        <Button
+          size="icon"
+          variant="outline"
+          className="relative"
+          aria-label="Open notifications"
+        >
           <BellIcon size={16} aria-hidden="true" />
           {unreadCount > 0 && (
             <Badge className="absolute -top-2 left-full min-w-5 -translate-x-1/2 px-1">
@@ -110,7 +122,10 @@ export default function Component() {
         <div className="flex items-baseline justify-between gap-4 px-3 py-2">
           <div className="text-sm font-semibold">Notifications</div>
           {unreadCount > 0 && (
-            <button className="text-xs font-medium hover:underline" onClick={handleMarkAllAsRead}>
+            <button
+              className="text-xs font-medium hover:underline"
+              onClick={handleMarkAllAsRead}
+            >
               Mark all as read
             </button>
           )}
@@ -140,7 +155,9 @@ export default function Component() {
                   </span>
                   .
                 </button>
-                <div className="text-muted-foreground text-xs">{notification.timestamp}</div>
+                <div className="text-muted-foreground text-xs">
+                  {notification.timestamp}
+                </div>
               </div>
               {notification.unread && (
                 <div className="absolute end-0 self-center">
@@ -153,5 +170,5 @@ export default function Component() {
         ))}
       </PopoverContent>
     </Popover>
-  );
+  )
 }

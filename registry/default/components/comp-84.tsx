@@ -1,5 +1,6 @@
-import { Button } from "@/registry/default/ui/button";
-import { SparklesIcon } from "lucide-react";
+import { SparklesIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
   return (
@@ -7,5 +8,5 @@ export default function Component() {
       Button
       <SparklesIcon className="-me-1 opacity-60" size={16} aria-hidden="true" />
     </Button>
-  );
+  )
 }

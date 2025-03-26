@@ -32,8 +32,9 @@ export default function Component() {
         />
       </div>
       <p className="text-muted-foreground px-2 text-xs">
-        Trusted by <strong className="text-foreground font-medium">60K+</strong> developers.
+        Trusted by <strong className="text-foreground font-medium">60K+</strong>{" "}
+        developers.
       </p>
     </div>
-  );
+  )
 }

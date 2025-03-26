@@ -1,5 +1,6 @@
-import { Avatar, AvatarFallback } from "@/registry/default/ui/avatar";
-import { UserRoundIcon } from "lucide-react";
+import { UserRoundIcon } from "lucide-react"
+
+import { Avatar, AvatarFallback } from "@/registry/default/ui/avatar"
 
 export default function Component() {
   return (
@@ -8,5 +9,5 @@ export default function Component() {
         <UserRoundIcon size={16} className="opacity-60" aria-hidden="true" />
       </AvatarFallback>
     </Avatar>
-  );
+  )
 }

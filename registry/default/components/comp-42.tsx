@@ -1,15 +1,25 @@
-"use client";
+"use client"
 
-import { cn } from "@/registry/default/lib/utils";
-import { RangeCalendar } from "@/registry/default/ui/calendar-rac";
-import { DateInput, dateInputStyle } from "@/registry/default/ui/datefield-rac";
-import { CalendarIcon } from "lucide-react";
-import { Button, DateRangePicker, Dialog, Group, Label, Popover } from "react-aria-components";
+import { CalendarIcon } from "lucide-react"
+import {
+  Button,
+  DateRangePicker,
+  Dialog,
+  Group,
+  Label,
+  Popover,
+} from "react-aria-components"
+
+import { cn } from "@/registry/default/lib/utils"
+import { RangeCalendar } from "@/registry/default/ui/calendar-rac"
+import { DateInput, dateInputStyle } from "@/registry/default/ui/datefield-rac"
 
 export default function Component() {
   return (
     <DateRangePicker className="*:not-first:mt-2">
-      <Label className="text-foreground text-sm font-medium">Date range picker</Label>
+      <Label className="text-foreground text-sm font-medium">
+        Date range picker
+      </Label>
       <div className="flex">
         <Group className={cn(dateInputStyle, "pe-9")}>
           <DateInput slot="start" unstyled />
@@ -30,7 +40,11 @@ export default function Component() {
           <RangeCalendar />
         </Dialog>
       </Popover>
-      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
+      <p
+        className="text-muted-foreground mt-2 text-xs"
+        role="region"
+        aria-live="polite"
+      >
         Built with{" "}
         <a
           className="hover:text-foreground underline"
@@ -42,5 +56,5 @@ export default function Component() {
         </a>
       </p>
     </DateRangePicker>
-  );
+  )
 }

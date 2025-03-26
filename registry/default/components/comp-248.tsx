@@ -1,5 +1,5 @@
-import { Label } from "@/registry/default/ui/label";
-import { Slider } from "@/registry/default/ui/slider";
+import { Label } from "@/registry/default/ui/label"
+import { Slider } from "@/registry/default/ui/slider"
 
 export default function Component() {
   return (
@@ -16,5 +16,5 @@ export default function Component() {
         <Slider defaultValue={[50]} step={10} aria-label="Slider with labels" />
       </div>
     </div>
-  );
+  )
 }

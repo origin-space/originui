@@ -1,28 +1,30 @@
-"use client";
+"use client"
 
-import { Input } from "@/registry/default/ui/input";
-import { Label } from "@/registry/default/ui/label";
+import React, { useEffect, useState } from "react"
+
+import { Input } from "@/registry/default/ui/input"
+import { Label } from "@/registry/default/ui/label"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/default/ui/select";
-import { Slider } from "@/registry/default/ui/slider";
-import React, { useEffect, useState } from "react";
-import CopyClass from "./copy-class";
+} from "@/registry/default/ui/select"
+import { Slider } from "@/registry/default/ui/slider"
+
+import CopyClass from "./copy-class"
 
 interface Easing {
-  name: string;
-  points: number[];
+  name: string
+  points: number[]
 }
 
 interface EasingsProps {
-  easings: Easing[];
+  easings: Easing[]
 }
 
-type EasingFilter = "all" | "in" | "out" | "in-out";
+type EasingFilter = "all" | "in" | "out" | "in-out"
 
 const defaultConfig = {
   width: 140,
@@ -31,25 +33,29 @@ const defaultConfig = {
   plotSize: 100,
   animationDuration: 1000,
   pauseDuration: 1000,
-};
+}
 
-type AnimationType = "translate" | "scale" | "rotate";
+type AnimationType = "translate" | "scale" | "rotate"
 
-function useAnimationKey(duration: number, pauseDuration: number, animationType: AnimationType) {
-  const [key, setKey] = useState(0);
+function useAnimationKey(
+  duration: number,
+  pauseDuration: number,
+  animationType: AnimationType
+) {
+  const [key, setKey] = useState(0)
 
   useEffect(() => {
     const timer = setInterval(
       () => {
-        setKey((prevKey) => prevKey + 1);
+        setKey((prevKey) => prevKey + 1)
       },
-      (duration + pauseDuration) * 1000,
-    );
+      (duration + pauseDuration) * 1000
+    )
 
-    return () => clearInterval(timer);
-  }, [duration, pauseDuration, animationType]);
+    return () => clearInterval(timer)
+  }, [duration, pauseDuration, animationType])
 
-  return key;
+  return key
 }
 
 const EasingSVG = ({
@@ -59,16 +65,16 @@ const EasingSVG = ({
   animationType,
   pauseDuration,
 }: {
-  easing: Easing;
-  config: typeof defaultConfig;
-  duration: number;
-  animationType: AnimationType;
-  pauseDuration: number;
+  easing: Easing
+  config: typeof defaultConfig
+  duration: number
+  animationType: AnimationType
+  pauseDuration: number
 }) => {
-  const key = useAnimationKey(duration, pauseDuration, animationType);
+  const key = useAnimationKey(duration, pauseDuration, animationType)
 
   const getAnimationStyle = () => {
-    if (!easing.points.length || duration <= 0) return {};
+    if (!easing.points.length || duration <= 0) return {}
 
     return {
       ["--bezier-coordinates" as string]: easing.points.join(","),
@@ -80,8 +86,8 @@ const EasingSVG = ({
       animationIterationCount: "1",
       animationFillMode: "forwards",
       animationDelay: "0s",
-    };
-  };
+    }
+  }
 
   return (
     <svg
@@ -178,8 +184,8 @@ const EasingSVG = ({
         }
       `}</style>
     </svg>
-  );
-};
+  )
+}
 
 const AnimatedSquare = ({
   easing,
@@ -187,27 +193,27 @@ const AnimatedSquare = ({
   animationType,
   pauseDuration,
 }: {
-  easing: Easing;
-  duration: number;
-  animationType: AnimationType;
-  pauseDuration: number;
+  easing: Easing
+  duration: number
+  animationType: AnimationType
+  pauseDuration: number
 }) => {
-  const key = useAnimationKey(duration, pauseDuration, animationType);
+  const key = useAnimationKey(duration, pauseDuration, animationType)
 
   const getAnimationStyle = () => {
-    if (!easing.points.length || duration <= 0) return {};
+    if (!easing.points.length || duration <= 0) return {}
 
     const baseStyle = {
       ["--bezier-coordinates" as string]: easing.points.join(","),
       ["--animation-duration" as string]: `${duration}s`,
       ["--total-duration" as string]: `${duration + pauseDuration}s`,
-    };
+    }
 
     const animationName = {
       translate: "translateSquare",
       scale: "scaleSquare",
       rotate: "rotateSquare",
-    }[animationType];
+    }[animationType]
 
     return {
       ...baseStyle,
@@ -217,10 +223,10 @@ const AnimatedSquare = ({
       animationIterationCount: "1",
       animationFillMode: "forwards",
       animationDelay: "0s",
-    };
-  };
+    }
+  }
 
-  const animationStyle = getAnimationStyle();
+  const animationStyle = getAnimationStyle()
 
   return (
     <div
@@ -259,56 +265,65 @@ const AnimatedSquare = ({
         }
       `}</style>
     </div>
-  );
-};
+  )
+}
 
 export default function Easings({ easings }: EasingsProps) {
-  const [duration, setDuration] = useState(defaultConfig.animationDuration);
-  const [tempDuration, setTempDuration] = useState(defaultConfig.animationDuration);
-  const pauseDuration = defaultConfig.pauseDuration;
-  const [animationType, setAnimationType] = useState<AnimationType>("translate");
-  const [easingFilter, setEasingFilter] = useState<EasingFilter>("all");
+  const [duration, setDuration] = useState(defaultConfig.animationDuration)
+  const [tempDuration, setTempDuration] = useState(
+    defaultConfig.animationDuration
+  )
+  const pauseDuration = defaultConfig.pauseDuration
+  const [animationType, setAnimationType] = useState<AnimationType>("translate")
+  const [easingFilter, setEasingFilter] = useState<EasingFilter>("all")
 
   const handleSliderChangeEnd = (value: number[]) => {
-    setDuration(value[0]);
-  };
+    setDuration(value[0])
+  }
 
   const handleSliderChange = (value: number[]) => {
-    setTempDuration(value[0]);
-  };
+    setTempDuration(value[0])
+  }
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseInt(event.target.value, 10);
+    const value = parseInt(event.target.value, 10)
     if (!isNaN(value) && value >= 0 && value <= 5000) {
-      setTempDuration(value);
+      setTempDuration(value)
     }
-  };
+  }
 
   const handleInputBlur = () => {
     if (tempDuration >= 0 && tempDuration <= 5000) {
-      setDuration(tempDuration);
+      setDuration(tempDuration)
     } else {
-      setTempDuration(duration);
+      setTempDuration(duration)
     }
-  };
+  }
 
   const getFilteredEasings = () => {
-    if (easingFilter === "all") return easings;
+    if (easingFilter === "all") return easings
 
     return easings.filter((easing) => {
-      const name = easing.name.toLowerCase();
+      const name = easing.name.toLowerCase()
       switch (easingFilter) {
         case "in":
-          return (name.startsWith("easein") && !name.includes("inout")) || name === "ease-in";
+          return (
+            (name.startsWith("easein") && !name.includes("inout")) ||
+            name === "ease-in"
+          )
         case "out":
-          return name.startsWith("easeout") || name === "ease-out";
+          return name.startsWith("easeout") || name === "ease-out"
         case "in-out":
-          return name.startsWith("easeinout") || name === "ease-in-out" || name === "ease";
+          return (
+            name.startsWith("easeinout") ||
+            name === "ease-in-out" ||
+            name === "ease"
+          )
         default:
-          return true;
+          return true
       }
-    });
-  };
+    })
+  }
 
   return (
     <div className="mb-12 space-y-6">
@@ -361,7 +376,9 @@ export default function Easings({ easings }: EasingsProps) {
               <Label>Animation type</Label>
               <Select
                 value={animationType}
-                onValueChange={(value: AnimationType) => setAnimationType(value)}
+                onValueChange={(value: AnimationType) =>
+                  setAnimationType(value)
+                }
               >
                 <SelectTrigger className="h-9 w-[180px]">
                   <SelectValue placeholder="Select animation type" />
@@ -386,7 +403,9 @@ export default function Easings({ easings }: EasingsProps) {
             key={`${easing.name}-${easingFilter}`}
             className="group bg-muted/65 relative flex aspect-square flex-col items-center justify-center gap-4 rounded-xl"
           >
-            <div className="pt-6 text-center text-sm font-medium">{easing.name}</div>
+            <div className="pt-6 text-center text-sm font-medium">
+              {easing.name}
+            </div>
 
             <div className="flex w-full grow flex-col items-start justify-center px-8">
               <div className="mb-4 flex w-full justify-center">
@@ -419,7 +438,9 @@ export default function Easings({ easings }: EasingsProps) {
         ))}
         <div className="bg-muted/65 relative rounded-xl p-6">
           <p className="mb-4">
-            <strong className="text-foreground block text-sm font-medium">Note</strong>
+            <strong className="text-foreground block text-sm font-medium">
+              Note
+            </strong>
           </p>
           <p className="text-muted-foreground text-sm leading-relaxed">
             We use class names with arbitrary properties like{" "}
@@ -430,8 +451,8 @@ export default function Easings({ easings }: EasingsProps) {
             <code className="text-foreground font-mono text-[13px]">
               ease-&#91;cubic-bezier(...)&#93;
             </code>{" "}
-            as recommended in the Tailwind CSS documentation, because the latter won&lsquo;t work
-            with the tailwindcss-animate plugin. See{" "}
+            as recommended in the Tailwind CSS documentation, because the latter
+            won&lsquo;t work with the tailwindcss-animate plugin. See{" "}
             <a
               href="https://github.com/jamiebuilds/tailwindcss-animate/pull/46"
               className="underline hover:no-underline"
@@ -466,5 +487,5 @@ export default function Easings({ easings }: EasingsProps) {
         }
       `}</style>
     </div>
-  );
+  )
 }

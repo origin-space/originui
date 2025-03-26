@@ -1,4 +1,4 @@
-import { Button } from "@/registry/default/ui/button";
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
   return (
@@ -6,8 +6,8 @@ export default function Component() {
     <div className="bg-background z-50 rounded-md border px-4 py-3 shadow-lg">
       <div className="flex flex-col justify-between gap-3 md:flex-row md:items-center">
         <p className="text-sm">
-          We use cookies to improve your experience, analyze site usage, and show personalized
-          content.
+          We use cookies to improve your experience, analyze site usage, and
+          show personalized content.
         </p>
         <div className="flex gap-2 max-md:flex-wrap">
           <Button size="sm">Accept</Button>
@@ -17,5 +17,5 @@ export default function Component() {
         </div>
       </div>
     </div>
-  );
+  )
 }

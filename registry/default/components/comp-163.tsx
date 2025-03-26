@@ -1,9 +1,10 @@
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
-import { RiAppleLine, RiBankCardLine, RiPaypalLine } from "@remixicon/react";
-import { useId } from "react";
+import { useId } from "react"
+import { RiAppleLine, RiBankCardLine, RiPaypalLine } from "@remixicon/react"
+
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
 
 export default function Component() {
-  const id = useId();
+  const id = useId()
   return (
     <RadioGroup className="grid-cols-3" defaultValue="1">
       {/* Credit card */}
@@ -40,5 +41,5 @@ export default function Component() {
         </label>
       </div>
     </RadioGroup>
-  );
+  )
 }

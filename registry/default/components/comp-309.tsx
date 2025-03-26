@@ -1,13 +1,14 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
-import { RocketIcon, XIcon } from "lucide-react";
-import { useState } from "react";
+import { useState } from "react"
+import { RocketIcon, XIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(true)
 
-  if (!isVisible) return null;
+  if (!isVisible) return null
 
   return (
     <div className="dark bg-muted text-foreground px-4 py-3">
@@ -21,9 +22,12 @@ export default function Component() {
           </div>
           <div className="flex grow flex-col justify-between gap-3 md:flex-row md:items-center">
             <div className="space-y-0.5">
-              <p className="text-sm font-medium">Boost your experience with Origin UI</p>
+              <p className="text-sm font-medium">
+                Boost your experience with Origin UI
+              </p>
               <p className="text-muted-foreground text-sm">
-                The new feature is live! Try it out and let us know what you think.
+                The new feature is live! Try it out and let us know what you
+                think.
               </p>
             </div>
             <div className="flex gap-2 max-md:flex-wrap">
@@ -47,5 +51,5 @@ export default function Component() {
         </Button>
       </div>
     </div>
-  );
+  )
 }

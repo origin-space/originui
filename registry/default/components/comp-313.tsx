@@ -8,8 +8,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/registry/default/ui/alert-dialog";
-import { Button } from "@/registry/default/ui/button";
+} from "@/registry/default/ui/alert-dialog"
+import { Button } from "@/registry/default/ui/button"
 
 export default function AlertComponent() {
   return (
@@ -21,7 +21,8 @@ export default function AlertComponent() {
         <AlertDialogHeader>
           <AlertDialogTitle>Are you sure?</AlertDialogTitle>
           <AlertDialogDescription>
-            Take a moment to review the details provided to ensure you understand the implications.
+            Take a moment to review the details provided to ensure you
+            understand the implications.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
@@ -30,5 +31,5 @@ export default function AlertComponent() {
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
-  );
+  )
 }

@@ -1,8 +1,9 @@
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
-import { useId } from "react";
+import { useId } from "react"
+
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
 
 export default function Component() {
-  const id = useId();
+  const id = useId()
   return (
     <>
       <fieldset className="space-y-4">
@@ -34,5 +35,5 @@ export default function Component() {
         </p>
       </div>
     </>
-  );
+  )
 }

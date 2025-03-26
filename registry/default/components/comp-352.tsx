@@ -1,15 +1,16 @@
+import { ChevronDownIcon } from "lucide-react"
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/registry/default/ui/accordion";
+} from "@/registry/default/ui/accordion"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/registry/default/ui/collapsible";
-import { ChevronDownIcon } from "lucide-react";
+} from "@/registry/default/ui/collapsible"
 
 const items = [
   {
@@ -18,7 +19,8 @@ const items = [
     collapsibles: [
       {
         title: "What about performance?",
-        content: "We optimize every component for maximum performance and minimal bundle size.",
+        content:
+          "We optimize every component for maximum performance and minimal bundle size.",
       },
       {
         title: "How is the documentation?",
@@ -38,7 +40,8 @@ const items = [
       },
       {
         title: "What about Tailwind support?",
-        content: "We have first-class support for Tailwind CSS with custom utility classes.",
+        content:
+          "We have first-class support for Tailwind CSS with custom utility classes.",
       },
     ],
   },
@@ -54,7 +57,8 @@ const items = [
       },
       {
         title: "How is code splitting handled?",
-        content: "We support automatic code splitting for optimal loading performance.",
+        content:
+          "We support automatic code splitting for optimal loading performance.",
       },
     ],
   },
@@ -64,7 +68,8 @@ const items = [
     collapsibles: [
       {
         title: "Which screen readers are supported?",
-        content: "We test with NVDA, VoiceOver, and JAWS to ensure broad compatibility.",
+        content:
+          "We test with NVDA, VoiceOver, and JAWS to ensure broad compatibility.",
       },
       {
         title: "What about keyboard navigation?",
@@ -73,13 +78,18 @@ const items = [
       },
     ],
   },
-];
+]
 
 export default function Component() {
   return (
     <div className="space-y-4">
       <h2 className="text-xl font-bold">Multi-level</h2>
-      <Accordion type="single" collapsible className="w-full -space-y-px" defaultValue="3">
+      <Accordion
+        type="single"
+        collapsible
+        className="w-full -space-y-px"
+        defaultValue="3"
+      >
         {items.map((item) => (
           <AccordionItem
             value={item.id}
@@ -103,7 +113,7 @@ export default function Component() {
         ))}
       </Accordion>
     </div>
-  );
+  )
 }
 
 function CollapsibleDemo({
@@ -111,9 +121,9 @@ function CollapsibleDemo({
   content,
   open,
 }: {
-  title: string;
-  content: string;
-  open?: boolean;
+  title: string
+  content: string
+  open?: boolean
 }) {
   return (
     <Collapsible className="bg-accent border-t px-4 py-3" defaultOpen={open}>
@@ -129,5 +139,5 @@ function CollapsibleDemo({
         {content}
       </CollapsibleContent>
     </Collapsible>
-  );
+  )
 }

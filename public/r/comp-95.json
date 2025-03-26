@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/components/comp-95.tsx",
-      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/registry/default/ui/avatar\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { ChevronDownIcon } from \"lucide-react\";\n\nexport default function Component() {\n  return (\n    <Button variant=\"ghost\" className=\"h-auto p-0 hover:bg-transparent\">\n      <Avatar>\n        <AvatarImage src=\"./avatar.jpg\" alt=\"Profile image\" />\n        <AvatarFallback>KK</AvatarFallback>\n      </Avatar>\n      <ChevronDownIcon size={16} className=\"opacity-60\" aria-hidden=\"true\" />\n    </Button>\n  );\n}\n",
+      "content": "import { ChevronDownIcon } from \"lucide-react\"\n\nimport {\n  Avatar,\n  AvatarFallback,\n  AvatarImage,\n} from \"@/registry/default/ui/avatar\"\nimport { Button } from \"@/registry/default/ui/button\"\n\nexport default function Component() {\n  return (\n    <Button variant=\"ghost\" className=\"h-auto p-0 hover:bg-transparent\">\n      <Avatar>\n        <AvatarImage src=\"./avatar.jpg\" alt=\"Profile image\" />\n        <AvatarFallback>KK</AvatarFallback>\n      </Avatar>\n      <ChevronDownIcon size={16} className=\"opacity-60\" aria-hidden=\"true\" />\n    </Button>\n  )\n}\n",
       "type": "registry:component"
     }
   ],

@@ -1,3 +1,5 @@
+import { FoldersIcon } from "lucide-react"
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -5,14 +7,13 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/default/ui/breadcrumb";
+} from "@/registry/default/ui/breadcrumb"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu";
-import { FoldersIcon } from "lucide-react";
+} from "@/registry/default/ui/dropdown-menu"
 
 export default function Component() {
   return (
@@ -53,5 +54,5 @@ export default function Component() {
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
-  );
+  )
 }

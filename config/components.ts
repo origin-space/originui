@@ -1,8 +1,8 @@
 export interface ComponentCategory {
-  slug: string;
-  name: string;
-  components: { name: string }[];
-  isNew?: boolean;
+  slug: string
+  name: string
+  components: { name: string }[]
+  isNew?: boolean
 }
 
 export const categories: ComponentCategory[] = [
@@ -700,8 +700,8 @@ export const categories: ComponentCategory[] = [
       { name: "comp-365" },
     ],
   },
-];
+]
 
 export function getCategory(slug: string): ComponentCategory | undefined {
-  return categories.find((category) => category.slug === slug);
+  return categories.find((category) => category.slug === slug)
 }

@@ -1,15 +1,16 @@
-"use client";
+"use client"
 
-import { Input } from "@/registry/default/ui/input";
-import { Label } from "@/registry/default/ui/label";
-import { EyeIcon, EyeOffIcon } from "lucide-react";
-import { useId, useState } from "react";
+import { useId, useState } from "react"
+import { EyeIcon, EyeOffIcon } from "lucide-react"
+
+import { Input } from "@/registry/default/ui/input"
+import { Label } from "@/registry/default/ui/label"
 
 export default function Component() {
-  const id = useId();
-  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const id = useId()
+  const [isVisible, setIsVisible] = useState<boolean>(false)
 
-  const toggleVisibility = () => setIsVisible((prevState) => !prevState);
+  const toggleVisibility = () => setIsVisible((prevState) => !prevState)
 
   return (
     <div className="*:not-first:mt-2">
@@ -37,5 +38,5 @@ export default function Component() {
         </button>
       </div>
     </div>
-  );
+  )
 }

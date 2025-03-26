@@ -1,9 +1,10 @@
-import { Label } from "@/registry/default/ui/label";
-import { SelectNative } from "@/registry/default/ui/select-native";
-import { useId } from "react";
+import { useId } from "react"
+
+import { Label } from "@/registry/default/ui/label"
+import { SelectNative } from "@/registry/default/ui/select-native"
 
 export default function Component() {
-  const id = useId();
+  const id = useId()
   return (
     <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Select with option groups (native)</Label>
@@ -20,5 +21,5 @@ export default function Component() {
         </optgroup>
       </SelectNative>
     </div>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import { CircleAlert } from "lucide-react";
+import { CircleAlert } from "lucide-react"
 
 export default function Component() {
   return (
@@ -12,5 +12,5 @@ export default function Component() {
         An error occurred!
       </p>
     </div>
-  );
+  )
 }

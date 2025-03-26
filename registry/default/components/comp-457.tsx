@@ -1,17 +1,21 @@
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
+
 import {
   Pagination,
   PaginationContent,
   PaginationItem,
   PaginationLink,
-} from "@/registry/default/ui/pagination";
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
+} from "@/registry/default/ui/pagination"
 
 type PaginationProps = {
-  currentPage: number;
-  totalPages: number;
-};
+  currentPage: number
+  totalPages: number
+}
 
-export default function Component({ currentPage, totalPages }: PaginationProps) {
+export default function Component({
+  currentPage,
+  totalPages,
+}: PaginationProps) {
   return (
     <Pagination>
       <PaginationContent className="gap-3">
@@ -35,7 +39,11 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
         <PaginationItem>
           <PaginationLink
             className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
-            href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}
+            href={
+              currentPage === totalPages
+                ? undefined
+                : `#/page/${currentPage + 1}`
+            }
             aria-label="Go to next page"
             aria-disabled={currentPage === totalPages ? true : undefined}
             role={currentPage === totalPages ? "link" : undefined}
@@ -45,5 +53,5 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
         </PaginationItem>
       </PaginationContent>
     </Pagination>
-  );
+  )
 }

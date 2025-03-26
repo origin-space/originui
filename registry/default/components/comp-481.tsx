@@ -1,6 +1,37 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
+import { CSSProperties, useEffect, useId, useState } from "react"
+import {
+  closestCenter,
+  DndContext,
+  KeyboardSensor,
+  MouseSensor,
+  TouchSensor,
+  useSensor,
+  useSensors,
+  type DragEndEvent,
+} from "@dnd-kit/core"
+import { restrictToHorizontalAxis } from "@dnd-kit/modifiers"
+import {
+  arrayMove,
+  horizontalListSortingStrategy,
+  SortableContext,
+  useSortable,
+} from "@dnd-kit/sortable"
+import { CSS } from "@dnd-kit/utilities"
+import {
+  Cell,
+  ColumnDef,
+  flexRender,
+  getCoreRowModel,
+  getSortedRowModel,
+  Header,
+  SortingState,
+  useReactTable,
+} from "@tanstack/react-table"
+import { ChevronDownIcon, ChevronUpIcon, GripVerticalIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 import {
   Table,
   TableBody,
@@ -8,54 +39,26 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table";
-import {
-  DndContext,
-  KeyboardSensor,
-  MouseSensor,
-  TouchSensor,
-  closestCenter,
-  useSensor,
-  useSensors,
-  type DragEndEvent,
-} from "@dnd-kit/core";
-import { restrictToHorizontalAxis } from "@dnd-kit/modifiers";
-import {
-  SortableContext,
-  arrayMove,
-  horizontalListSortingStrategy,
-  useSortable,
-} from "@dnd-kit/sortable";
-import { CSS } from "@dnd-kit/utilities";
-import {
-  Cell,
-  ColumnDef,
-  Header,
-  SortingState,
-  flexRender,
-  getCoreRowModel,
-  getSortedRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
-import { ChevronDownIcon, ChevronUpIcon, GripVerticalIcon } from "lucide-react";
-import { CSSProperties, useEffect, useId, useState } from "react";
+} from "@/registry/default/ui/table"
 
 type Item = {
-  id: string;
-  name: string;
-  email: string;
-  location: string;
-  flag: string;
-  status: "Active" | "Inactive" | "Pending";
-  balance: number;
-};
+  id: string
+  name: string
+  email: string
+  location: string
+  flag: string
+  status: "Active" | "Inactive" | "Pending"
+  balance: number
+}
 
 const columns: ColumnDef<Item>[] = [
   {
     id: "name",
     header: "Name",
     accessorKey: "name",
-    cell: ({ row }) => <div className="truncate font-medium">{row.getValue("name")}</div>,
+    cell: ({ row }) => (
+      <div className="truncate font-medium">{row.getValue("name")}</div>
+    ),
     sortUndefined: "last",
     sortDescFirst: false,
   },
@@ -70,7 +73,8 @@ const columns: ColumnDef<Item>[] = [
     accessorKey: "location",
     cell: ({ row }) => (
       <div className="truncate">
-        <span className="text-lg leading-none">{row.original.flag}</span> {row.getValue("location")}
+        <span className="text-lg leading-none">{row.original.flag}</span>{" "}
+        {row.getValue("location")}
       </div>
     ),
   },
@@ -84,33 +88,33 @@ const columns: ColumnDef<Item>[] = [
     header: "Balance",
     accessorKey: "balance",
     cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("balance"));
+      const amount = parseFloat(row.getValue("balance"))
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
-      }).format(amount);
-      return formatted;
+      }).format(amount)
+      return formatted
     },
   },
-];
+]
 
 export default function Component() {
-  const [data, setData] = useState<Item[]>([]);
-  const [sorting, setSorting] = useState<SortingState>([]);
+  const [data, setData] = useState<Item[]>([])
+  const [sorting, setSorting] = useState<SortingState>([])
   const [columnOrder, setColumnOrder] = useState<string[]>(
-    columns.map((column) => column.id as string),
-  );
+    columns.map((column) => column.id as string)
+  )
 
   useEffect(() => {
     async function fetchPosts() {
       const res = await fetch(
-        "https://res.cloudinary.com/dlzlfasou/raw/upload/users-01_fertyx.json",
-      );
-      const data = await res.json();
-      setData(data.slice(0, 5)); // Limit to 5 items
+        "https://res.cloudinary.com/dlzlfasou/raw/upload/users-01_fertyx.json"
+      )
+      const data = await res.json()
+      setData(data.slice(0, 5)) // Limit to 5 items
     }
-    fetchPosts();
-  }, []);
+    fetchPosts()
+  }, [])
 
   const table = useReactTable({
     data,
@@ -125,25 +129,25 @@ export default function Component() {
     },
     onColumnOrderChange: setColumnOrder,
     enableSortingRemoval: false,
-  });
+  })
 
   // reorder columns after drag & drop
   function handleDragEnd(event: DragEndEvent) {
-    const { active, over } = event;
+    const { active, over } = event
     if (active && over && active.id !== over.id) {
       setColumnOrder((columnOrder) => {
-        const oldIndex = columnOrder.indexOf(active.id as string);
-        const newIndex = columnOrder.indexOf(over.id as string);
-        return arrayMove(columnOrder, oldIndex, newIndex); //this is just a splice util
-      });
+        const oldIndex = columnOrder.indexOf(active.id as string)
+        const newIndex = columnOrder.indexOf(over.id as string)
+        return arrayMove(columnOrder, oldIndex, newIndex) //this is just a splice util
+      })
     }
   }
 
   const sensors = useSensors(
     useSensor(MouseSensor, {}),
     useSensor(TouchSensor, {}),
-    useSensor(KeyboardSensor, {}),
-  );
+    useSensor(KeyboardSensor, {})
+  )
 
   return (
     <DndContext
@@ -157,7 +161,10 @@ export default function Component() {
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id} className="bg-muted/50">
-              <SortableContext items={columnOrder} strategy={horizontalListSortingStrategy}>
+              <SortableContext
+                items={columnOrder}
+                strategy={horizontalListSortingStrategy}
+              >
                 {headerGroup.headers.map((header) => (
                   <DraggableTableHeader key={header.id} header={header} />
                 ))}
@@ -168,7 +175,10 @@ export default function Component() {
         <TableBody>
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
-              <TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
+              <TableRow
+                key={row.id}
+                data-state={row.getIsSelected() && "selected"}
+              >
                 {row.getVisibleCells().map((cell) => (
                   <SortableContext
                     key={cell.id}
@@ -205,13 +215,24 @@ export default function Component() {
         </a>
       </p>
     </DndContext>
-  );
+  )
 }
 
-const DraggableTableHeader = ({ header }: { header: Header<Item, unknown> }) => {
-  const { attributes, isDragging, listeners, setNodeRef, transform, transition } = useSortable({
+const DraggableTableHeader = ({
+  header,
+}: {
+  header: Header<Item, unknown>
+}) => {
+  const {
+    attributes,
+    isDragging,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+  } = useSortable({
     id: header.column.id,
-  });
+  })
 
   const style: CSSProperties = {
     opacity: isDragging ? 0.8 : 1,
@@ -221,7 +242,7 @@ const DraggableTableHeader = ({ header }: { header: Header<Item, unknown> }) => 
     whiteSpace: "nowrap",
     width: header.column.getSize(),
     zIndex: isDragging ? 1 : 0,
-  };
+  }
 
   return (
     <TableHead
@@ -245,7 +266,11 @@ const DraggableTableHeader = ({ header }: { header: Header<Item, unknown> }) => 
           {...listeners}
           aria-label="Drag to reorder"
         >
-          <GripVerticalIcon className="opacity-60" size={16} aria-hidden="true" />
+          <GripVerticalIcon
+            className="opacity-60"
+            size={16}
+            aria-hidden="true"
+          />
         </Button>
         <span className="grow truncate">
           {header.isPlaceholder
@@ -259,15 +284,30 @@ const DraggableTableHeader = ({ header }: { header: Header<Item, unknown> }) => 
           onClick={header.column.getToggleSortingHandler()}
           onKeyDown={(e) => {
             // Enhanced keyboard handling for sorting
-            if (header.column.getCanSort() && (e.key === "Enter" || e.key === " ")) {
-              e.preventDefault();
-              header.column.getToggleSortingHandler()?.(e);
+            if (
+              header.column.getCanSort() &&
+              (e.key === "Enter" || e.key === " ")
+            ) {
+              e.preventDefault()
+              header.column.getToggleSortingHandler()?.(e)
             }
           }}
         >
           {{
-            asc: <ChevronUpIcon className="shrink-0 opacity-60" size={16} aria-hidden="true" />,
-            desc: <ChevronDownIcon className="shrink-0 opacity-60" size={16} aria-hidden="true" />,
+            asc: (
+              <ChevronUpIcon
+                className="shrink-0 opacity-60"
+                size={16}
+                aria-hidden="true"
+              />
+            ),
+            desc: (
+              <ChevronDownIcon
+                className="shrink-0 opacity-60"
+                size={16}
+                aria-hidden="true"
+              />
+            ),
           }[header.column.getIsSorted() as string] ?? (
             <ChevronUpIcon
               className="shrink-0 opacity-0 group-hover:opacity-60"
@@ -278,13 +318,13 @@ const DraggableTableHeader = ({ header }: { header: Header<Item, unknown> }) => 
         </Button>
       </div>
     </TableHead>
-  );
-};
+  )
+}
 
 const DragAlongCell = ({ cell }: { cell: Cell<Item, unknown> }) => {
   const { isDragging, setNodeRef, transform, transition } = useSortable({
     id: cell.column.id,
-  });
+  })
 
   const style: CSSProperties = {
     opacity: isDragging ? 0.8 : 1,
@@ -293,11 +333,11 @@ const DragAlongCell = ({ cell }: { cell: Cell<Item, unknown> }) => {
     transition,
     width: cell.column.getSize(),
     zIndex: isDragging ? 1 : 0,
-  };
+  }
 
   return (
     <TableCell ref={setNodeRef} className="truncate" style={style}>
       {flexRender(cell.column.columnDef.cell, cell.getContext())}
     </TableCell>
-  );
-};
+  )
+}

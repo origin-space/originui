@@ -1,13 +1,14 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
+import { PlusIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/registry/default/ui/tooltip";
-import { PlusIcon } from "lucide-react";
+} from "@/registry/default/ui/tooltip"
 
 export default function Component() {
   return (
@@ -21,5 +22,5 @@ export default function Component() {
         <TooltipContent className="px-2 py-1 text-xs">Tooltip</TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  );
+  )
 }

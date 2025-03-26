@@ -5,7 +5,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table";
+} from "@/registry/default/ui/table"
 
 const items = [
   {
@@ -48,7 +48,7 @@ const items = [
     status: "Active",
     balance: "-$1,000.00",
   },
-];
+]
 
 export default function Component() {
   return (
@@ -78,7 +78,9 @@ export default function Component() {
           ))}
         </TableBody>
       </Table>
-      <p className="text-muted-foreground mt-4 text-center text-sm">Table with vertical lines</p>
+      <p className="text-muted-foreground mt-4 text-center text-sm">
+        Table with vertical lines
+      </p>
     </div>
-  );
+  )
 }

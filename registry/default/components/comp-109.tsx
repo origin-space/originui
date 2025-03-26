@@ -1,4 +1,7 @@
-import { ToggleGroup, ToggleGroupItem } from "@/registry/default/ui/toggle-group";
+import {
+  ToggleGroup,
+  ToggleGroupItem,
+} from "@/registry/default/ui/toggle-group"
 
 export default function Component() {
   return (
@@ -7,5 +10,5 @@ export default function Component() {
       <ToggleGroupItem value="center">Center</ToggleGroupItem>
       <ToggleGroupItem value="right">Right</ToggleGroupItem>
     </ToggleGroup>
-  );
+  )
 }

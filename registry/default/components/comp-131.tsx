@@ -1,15 +1,16 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
+import { useState } from "react"
+import { ChevronDownIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu";
-import { ChevronDownIcon } from "lucide-react";
-import { useState } from "react";
+} from "@/registry/default/ui/dropdown-menu"
 
 const options = [
   {
@@ -24,12 +25,13 @@ const options = [
   },
   {
     label: "Rebase and merge",
-    description: "The 6 commits from this branch will be rebased and added to the base branch.",
+    description:
+      "The 6 commits from this branch will be rebased and added to the base branch.",
   },
-];
+]
 
 export default function Component() {
-  const [selectedIndex, setSelectedIndex] = useState("0");
+  const [selectedIndex, setSelectedIndex] = useState("0")
 
   return (
     <div className="divide-primary-foreground/30 inline-flex divide-x rounded-md shadow-xs rtl:space-x-reverse">
@@ -52,7 +54,10 @@ export default function Component() {
           sideOffset={4}
           align="end"
         >
-          <DropdownMenuRadioGroup value={selectedIndex} onValueChange={setSelectedIndex}>
+          <DropdownMenuRadioGroup
+            value={selectedIndex}
+            onValueChange={setSelectedIndex}
+          >
             {options.map((option, index) => (
               <DropdownMenuRadioItem
                 key={option.label}
@@ -61,7 +66,9 @@ export default function Component() {
               >
                 <div className="flex flex-col gap-1">
                   <span className="text-sm font-medium">{option.label}</span>
-                  <span className="text-muted-foreground text-xs">{option.description}</span>
+                  <span className="text-muted-foreground text-xs">
+                    {option.description}
+                  </span>
                 </div>
               </DropdownMenuRadioItem>
             ))}
@@ -69,5 +76,5 @@ export default function Component() {
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
-  );
+  )
 }

@@ -1,7 +1,10 @@
-"use client";
+"use client"
 
-import { cn } from "@/registry/default/lib/utils";
-import { Button } from "@/registry/default/ui/button";
+import { useId, useState } from "react"
+import { CheckIcon, ChevronDownIcon, PlusIcon } from "lucide-react"
+
+import { cn } from "@/registry/default/lib/utils"
+import { Button } from "@/registry/default/ui/button"
 import {
   Command,
   CommandEmpty,
@@ -10,11 +13,13 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "@/registry/default/ui/command";
-import { Label } from "@/registry/default/ui/label";
-import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
-import { CheckIcon, ChevronDownIcon, PlusIcon } from "lucide-react";
-import { useId, useState } from "react";
+} from "@/registry/default/ui/command"
+import { Label } from "@/registry/default/ui/label"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/registry/default/ui/popover"
 
 const organizations = [
   {
@@ -25,12 +30,12 @@ const organizations = [
     value: "cruip",
     label: "Cruip",
   },
-];
+]
 
 export default function Component() {
-  const id = useId();
-  const [open, setOpen] = useState<boolean>(false);
-  const [value, setValue] = useState<string>("originui");
+  const id = useId()
+  const [open, setOpen] = useState<boolean>(false)
+  const [value, setValue] = useState<string>("originui")
 
   return (
     <div className="*:not-first:mt-2">
@@ -46,7 +51,9 @@ export default function Component() {
           >
             <span className={cn("truncate", !value && "text-muted-foreground")}>
               {value
-                ? organizations.find((organization) => organization.value === value)?.label
+                ? organizations.find(
+                    (organization) => organization.value === value
+                  )?.label
                 : "Select organization"}
             </span>
             <ChevronDownIcon
@@ -70,19 +77,28 @@ export default function Component() {
                     key={organization.value}
                     value={organization.value}
                     onSelect={(currentValue) => {
-                      setValue(currentValue === value ? "" : currentValue);
-                      setOpen(false);
+                      setValue(currentValue === value ? "" : currentValue)
+                      setOpen(false)
                     }}
                   >
                     {organization.label}
-                    {value === organization.value && <CheckIcon size={16} className="ml-auto" />}
+                    {value === organization.value && (
+                      <CheckIcon size={16} className="ml-auto" />
+                    )}
                   </CommandItem>
                 ))}
               </CommandGroup>
               <CommandSeparator />
               <CommandGroup>
-                <Button variant="ghost" className="w-full justify-start font-normal">
-                  <PlusIcon size={16} className="-ms-2 opacity-60" aria-hidden="true" />
+                <Button
+                  variant="ghost"
+                  className="w-full justify-start font-normal"
+                >
+                  <PlusIcon
+                    size={16}
+                    className="-ms-2 opacity-60"
+                    aria-hidden="true"
+                  />
                   New organization
                 </Button>
               </CommandGroup>
@@ -91,5 +107,5 @@ export default function Component() {
         </PopoverContent>
       </Popover>
     </div>
-  );
+  )
 }

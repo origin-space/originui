@@ -1,10 +1,11 @@
-"use client";
+"use client"
 
-import { Calendar } from "@/registry/default/ui/calendar";
-import { useState } from "react";
+import { useState } from "react"
+
+import { Calendar } from "@/registry/default/ui/calendar"
 
 export default function Component() {
-  const [date, setDate] = useState<Date | undefined>(new Date());
+  const [date, setDate] = useState<Date | undefined>(new Date())
 
   return (
     <div>
@@ -33,5 +34,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
+  )
 }

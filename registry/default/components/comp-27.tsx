@@ -1,25 +1,26 @@
-"use client";
+"use client"
 
-import { Input } from "@/registry/default/ui/input";
-import { Label } from "@/registry/default/ui/label";
-import { LoaderCircleIcon, MicIcon, SearchIcon } from "lucide-react";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useState } from "react"
+import { LoaderCircleIcon, MicIcon, SearchIcon } from "lucide-react"
+
+import { Input } from "@/registry/default/ui/input"
+import { Label } from "@/registry/default/ui/label"
 
 export default function Component() {
-  const id = useId();
-  const [inputValue, setInputValue] = useState("");
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const id = useId()
+  const [inputValue, setInputValue] = useState("")
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
   useEffect(() => {
     if (inputValue) {
-      setIsLoading(true);
+      setIsLoading(true)
       const timer = setTimeout(() => {
-        setIsLoading(false);
-      }, 500);
-      return () => clearTimeout(timer);
+        setIsLoading(false)
+      }, 500)
+      return () => clearTimeout(timer)
     }
-    setIsLoading(false);
-  }, [inputValue]);
+    setIsLoading(false)
+  }, [inputValue])
 
   return (
     <div className="*:not-first:mt-2">
@@ -54,5 +55,5 @@ export default function Component() {
         </button>
       </div>
     </div>
-  );
+  )
 }

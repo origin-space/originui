@@ -1,5 +1,6 @@
-import { Button } from "@/registry/default/ui/button";
-import { StarIcon } from "lucide-react";
+import { StarIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
   return (
@@ -10,5 +11,5 @@ export default function Component() {
         <span className="text-primary-foreground/60 text-xs">729</span>
       </span>
     </Button>
-  );
+  )
 }

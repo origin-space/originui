@@ -1,34 +1,35 @@
-import { usePagination } from "@/registry/default/hooks/use-pagination";
-import { Input } from "@/registry/default/ui/input";
-import { Label } from "@/registry/default/ui/label";
+import { useId } from "react"
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
+
+import { usePagination } from "@/registry/default/hooks/use-pagination"
+import { Input } from "@/registry/default/ui/input"
+import { Label } from "@/registry/default/ui/label"
 import {
   Pagination,
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,
   PaginationLink,
-} from "@/registry/default/ui/pagination";
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-import { useId } from "react";
+} from "@/registry/default/ui/pagination"
 
 type PaginationProps = {
-  currentPage: number;
-  totalPages: number;
-  paginationItemsToDisplay?: number;
-};
+  currentPage: number
+  totalPages: number
+  paginationItemsToDisplay?: number
+}
 
 export default function Component({
   currentPage,
   totalPages,
   paginationItemsToDisplay = 5,
 }: PaginationProps) {
-  const id = useId();
+  const id = useId()
 
   const { pages, showLeftEllipsis, showRightEllipsis } = usePagination({
     currentPage,
     totalPages,
     paginationItemsToDisplay,
-  });
+  })
 
   return (
     <div className="flex items-center justify-between gap-4">
@@ -40,7 +41,9 @@ export default function Component({
             <PaginationItem>
               <PaginationLink
                 className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
-                href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}
+                href={
+                  currentPage === 1 ? undefined : `#/page/${currentPage - 1}`
+                }
                 aria-label="Go to previous page"
                 aria-disabled={currentPage === 1 ? true : undefined}
                 role={currentPage === 1 ? "link" : undefined}
@@ -59,7 +62,10 @@ export default function Component({
             {/* Page number links */}
             {pages.map((page) => (
               <PaginationItem key={page}>
-                <PaginationLink href={`#/page/${page}`} isActive={page === currentPage}>
+                <PaginationLink
+                  href={`#/page/${page}`}
+                  isActive={page === currentPage}
+                >
                   {page}
                 </PaginationLink>
               </PaginationItem>
@@ -76,7 +82,11 @@ export default function Component({
             <PaginationItem>
               <PaginationLink
                 className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
-                href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}
+                href={
+                  currentPage === totalPages
+                    ? undefined
+                    : `#/page/${currentPage + 1}`
+                }
                 aria-label="Go to next page"
                 aria-disabled={currentPage === totalPages ? true : undefined}
                 role={currentPage === totalPages ? "link" : undefined}
@@ -93,8 +103,13 @@ export default function Component({
         <Label htmlFor={id} className="whitespace-nowrap">
           Go to page
         </Label>
-        <Input id={id} type="text" className="w-14" defaultValue={String(currentPage)} />
+        <Input
+          id={id}
+          type="text"
+          className="w-14"
+          defaultValue={String(currentPage)}
+        />
       </div>
     </div>
-  );
+  )
 }

@@ -1,22 +1,28 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
-import { ArrowRightIcon, Eclipse, XIcon } from "lucide-react";
-import { useState } from "react";
+import { useState } from "react"
+import { ArrowRightIcon, Eclipse, XIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(true)
 
-  if (!isVisible) return null;
+  if (!isVisible) return null
 
   return (
     <div className="dark bg-muted text-foreground px-4 py-3">
       <div className="flex gap-2">
         <div className="flex grow gap-3">
-          <Eclipse className="mt-0.5 shrink-0 opacity-60" size={16} aria-hidden="true" />
+          <Eclipse
+            className="mt-0.5 shrink-0 opacity-60"
+            size={16}
+            aria-hidden="true"
+          />
           <div className="flex grow flex-col justify-between gap-2 md:flex-row">
             <p className="text-sm">
-              We just added something awesome to make your experience even better.
+              We just added something awesome to make your experience even
+              better.
             </p>
             <a href="#" className="group text-sm font-medium whitespace-nowrap">
               Learn more
@@ -42,5 +48,5 @@ export default function Component() {
         </Button>
       </div>
     </div>
-  );
+  )
 }

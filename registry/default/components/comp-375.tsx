@@ -1,4 +1,6 @@
-import { Button } from "@/registry/default/ui/button";
+import { CircleUserRoundIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -7,8 +9,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu";
-import { CircleUserRoundIcon } from "lucide-react";
+} from "@/registry/default/ui/dropdown-menu"
 
 export default function Component() {
   return (
@@ -21,7 +22,9 @@ export default function Component() {
       <DropdownMenuContent className="max-w-64">
         <DropdownMenuLabel className="flex flex-col">
           <span>Signed in as</span>
-          <span className="text-foreground text-xs font-normal">k.kennedy@originui.com</span>
+          <span className="text-foreground text-xs font-normal">
+            k.kennedy@originui.com
+          </span>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
@@ -33,5 +36,5 @@ export default function Component() {
         <DropdownMenuItem>Logout</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }

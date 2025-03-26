@@ -1,22 +1,28 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
-import { Eclipse, XIcon } from "lucide-react";
-import { useState } from "react";
+import { useState } from "react"
+import { Eclipse, XIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(true)
 
-  if (!isVisible) return null;
+  if (!isVisible) return null
 
   return (
     <div className="dark bg-muted text-foreground px-4 py-3 md:py-2">
       <div className="flex gap-2 md:items-center">
         <div className="flex grow gap-3 md:items-center md:justify-center">
-          <Eclipse className="shrink-0 opacity-60 max-md:mt-0.5" size={16} aria-hidden="true" />
+          <Eclipse
+            className="shrink-0 opacity-60 max-md:mt-0.5"
+            size={16}
+            aria-hidden="true"
+          />
           <div className="flex flex-col justify-between gap-3 md:flex-row md:items-center">
             <p className="text-sm">
-              It&lsquo;s live and ready to use! Start exploring the latest addition to your toolkit.
+              It&lsquo;s live and ready to use! Start exploring the latest
+              addition to your toolkit.
             </p>
             <div className="flex gap-2 max-md:flex-wrap">
               <Button size="sm" className="rounded-full">
@@ -39,5 +45,5 @@ export default function Component() {
         </Button>
       </div>
     </div>
-  );
+  )
 }

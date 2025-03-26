@@ -1,11 +1,12 @@
-"use client";
+"use client"
 
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
-import { useId, useState } from "react";
+import { useId, useState } from "react"
+
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
 
 export default function Component() {
-  const id = useId();
-  const [selectedValue, setSelectedValue] = useState("on");
+  const id = useId()
+  const [selectedValue, setSelectedValue] = useState("on")
 
   return (
     <div className="bg-input/50 inline-flex h-9 rounded-md p-0.5">
@@ -30,5 +31,5 @@ export default function Component() {
         </label>
       </RadioGroup>
     </div>
-  );
+  )
 }

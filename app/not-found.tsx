@@ -1,6 +1,7 @@
-import PageHeader from "@/components/page-header";
-import { Button } from "@/registry/default/ui/button";
-import Link from "next/link";
+import Link from "next/link"
+
+import PageHeader from "@/components/page-header"
+import { Button } from "@/registry/default/ui/button"
 
 export default function NotFound() {
   return (
@@ -14,5 +15,5 @@ export default function NotFound() {
         </Button>
       </div>
     </>
-  );
+  )
 }

@@ -6,7 +6,9 @@ export default function Footer() {
         aria-hidden="true"
       ></div>
       <div className="flex justify-between gap-2 max-sm:flex-col max-sm:text-center">
-        <p className="text-muted-foreground text-sm">&copy; {new Date().getFullYear()} Origin UI</p>
+        <p className="text-muted-foreground text-sm">
+          &copy; {new Date().getFullYear()} Origin UI
+        </p>
         <p className="text-muted-foreground text-sm">
           A project by{" "}
           <a
@@ -30,5 +32,5 @@ export default function Footer() {
         </p>
       </div>
     </footer>
-  );
+  )
 }

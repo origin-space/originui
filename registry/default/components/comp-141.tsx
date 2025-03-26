@@ -1,9 +1,10 @@
-import { Checkbox } from "@/registry/default/ui/checkbox";
-import { Label } from "@/registry/default/ui/label";
-import { useId } from "react";
+import { useId } from "react"
+
+import { Checkbox } from "@/registry/default/ui/checkbox"
+import { Label } from "@/registry/default/ui/label"
 
 export default function Component() {
-  const id = useId();
+  const id = useId()
   return (
     <div className="flex items-start gap-2">
       <Checkbox id={id} aria-describedby={`${id}-description`} />
@@ -19,5 +20,5 @@ export default function Component() {
         </p>
       </div>
     </div>
-  );
+  )
 }

@@ -1,9 +1,19 @@
-"use client";
+"use client"
 
-import { cn } from "@/registry/default/lib/utils";
-import { Badge } from "@/registry/default/ui/badge";
-import { Button } from "@/registry/default/ui/button";
-import { Checkbox } from "@/registry/default/ui/checkbox";
+import { Fragment, useEffect, useState } from "react"
+import {
+  ColumnDef,
+  flexRender,
+  getCoreRowModel,
+  getExpandedRowModel,
+  useReactTable,
+} from "@tanstack/react-table"
+import { ChevronDownIcon, ChevronUpIcon, InfoIcon } from "lucide-react"
+
+import { cn } from "@/registry/default/lib/utils"
+import { Badge } from "@/registry/default/ui/badge"
+import { Button } from "@/registry/default/ui/button"
+import { Checkbox } from "@/registry/default/ui/checkbox"
 import {
   Table,
   TableBody,
@@ -11,27 +21,18 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table";
-import {
-  ColumnDef,
-  flexRender,
-  getCoreRowModel,
-  getExpandedRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
-import { ChevronDownIcon, ChevronUpIcon, InfoIcon } from "lucide-react";
-import { Fragment, useEffect, useState } from "react";
+} from "@/registry/default/ui/table"
 
 type Item = {
-  id: string;
-  name: string;
-  email: string;
-  location: string;
-  flag: string;
-  status: "Active" | "Inactive" | "Pending";
-  balance: number;
-  note?: string;
-};
+  id: string
+  name: string
+  email: string
+  location: string
+  flag: string
+  status: "Active" | "Inactive" | "Pending"
+  balance: number
+  note?: string
+}
 
 const columns: ColumnDef<Item>[] = [
   {
@@ -52,12 +53,20 @@ const columns: ColumnDef<Item>[] = [
           }}
         >
           {row.getIsExpanded() ? (
-            <ChevronUpIcon className="opacity-60" size={16} aria-hidden="true" />
+            <ChevronUpIcon
+              className="opacity-60"
+              size={16}
+              aria-hidden="true"
+            />
           ) : (
-            <ChevronDownIcon className="opacity-60" size={16} aria-hidden="true" />
+            <ChevronDownIcon
+              className="opacity-60"
+              size={16}
+              aria-hidden="true"
+            />
           )}
         </Button>
-      ) : undefined;
+      ) : undefined
     },
   },
   {
@@ -65,7 +74,8 @@ const columns: ColumnDef<Item>[] = [
     header: ({ table }) => (
       <Checkbox
         checked={
-          table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && "indeterminate")
+          table.getIsAllPageRowsSelected() ||
+          (table.getIsSomePageRowsSelected() && "indeterminate")
         }
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all"
@@ -82,7 +92,9 @@ const columns: ColumnDef<Item>[] = [
   {
     header: "Name",
     accessorKey: "name",
-    cell: ({ row }) => <div className="font-medium">{row.getValue("name")}</div>,
+    cell: ({ row }) => (
+      <div className="font-medium">{row.getValue("name")}</div>
+    ),
   },
   {
     header: "Email",
@@ -93,7 +105,8 @@ const columns: ColumnDef<Item>[] = [
     accessorKey: "location",
     cell: ({ row }) => (
       <div>
-        <span className="text-lg leading-none">{row.original.flag}</span> {row.getValue("location")}
+        <span className="text-lg leading-none">{row.original.flag}</span>{" "}
+        {row.getValue("location")}
       </div>
     ),
   },
@@ -103,7 +116,8 @@ const columns: ColumnDef<Item>[] = [
     cell: ({ row }) => (
       <Badge
         className={cn(
-          row.getValue("status") === "Inactive" && "bg-muted-foreground/60 text-primary-foreground",
+          row.getValue("status") === "Inactive" &&
+            "bg-muted-foreground/60 text-primary-foreground"
         )}
       >
         {row.getValue("status")}
@@ -114,29 +128,29 @@ const columns: ColumnDef<Item>[] = [
     header: () => <div className="text-right">Balance</div>,
     accessorKey: "balance",
     cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("balance"));
+      const amount = parseFloat(row.getValue("balance"))
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
-      }).format(amount);
-      return <div className="text-right">{formatted}</div>;
+      }).format(amount)
+      return <div className="text-right">{formatted}</div>
     },
   },
-];
+]
 
 export default function Component() {
-  const [data, setData] = useState<Item[]>([]);
+  const [data, setData] = useState<Item[]>([])
 
   useEffect(() => {
     async function fetchPosts() {
       const res = await fetch(
-        "https://res.cloudinary.com/dlzlfasou/raw/upload/users-01_fertyx.json",
-      );
-      const data = await res.json();
-      setData(data.slice(0, 5)); // Limit to 5 items
+        "https://res.cloudinary.com/dlzlfasou/raw/upload/users-01_fertyx.json"
+      )
+      const data = await res.json()
+      setData(data.slice(0, 5)) // Limit to 5 items
     }
-    fetchPosts();
-  }, []);
+    fetchPosts()
+  }, [])
 
   const table = useReactTable({
     data,
@@ -144,7 +158,7 @@ export default function Component() {
     getRowCanExpand: (row) => Boolean(row.original.note),
     getCoreRowModel: getCoreRowModel(),
     getExpandedRowModel: getExpandedRowModel(),
-  });
+  })
 
   return (
     <div>
@@ -157,9 +171,12 @@ export default function Component() {
                   <TableHead key={header.id}>
                     {header.isPlaceholder
                       ? null
-                      : flexRender(header.column.columnDef.header, header.getContext())}
+                      : flexRender(
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
                   </TableHead>
-                );
+                )
               })}
             </TableRow>
           ))}
@@ -168,13 +185,19 @@ export default function Component() {
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
               <Fragment key={row.id}>
-                <TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
+                <TableRow
+                  key={row.id}
+                  data-state={row.getIsSelected() && "selected"}
+                >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
                       className="whitespace-nowrap [&:has([aria-expanded])]:w-px [&:has([aria-expanded])]:py-0 [&:has([aria-expanded])]:pr-0"
                     >
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext()
+                      )}
                     </TableCell>
                   ))}
                 </TableRow>
@@ -216,5 +239,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
+  )
 }

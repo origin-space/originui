@@ -1,7 +1,11 @@
-import { Accordion, AccordionContent, AccordionItem } from "@/registry/default/ui/accordion";
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import * as AccordionPrimitive from "@radix-ui/react-accordion"
+import { ChevronDownIcon } from "lucide-react"
 
-import { ChevronDownIcon } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+} from "@/registry/default/ui/accordion"
 
 const items = [
   {
@@ -32,7 +36,7 @@ const items = [
     content:
       "Our support team is available around the ClockIcon to assist you. For billing inquiries, technical issues, or general questions, you can reach us through live chat, email at support@example.com, or schedule a call with our technical team. Premium support is available for enterprise customers.",
   },
-];
+]
 
 export default function Component() {
   return (
@@ -45,7 +49,9 @@ export default function Component() {
               <AccordionPrimitive.Trigger className="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center justify-between rounded-md py-2 text-left text-[15px] leading-6 font-semibold transition-all outline-none focus-visible:ring-[3px] [&[data-state=open]>svg]:rotate-180">
                 <span className="flex flex-col space-y-1">
                   <span>{item.title}</span>
-                  {item.sub && <span className="text-sm font-normal">{item.sub}</span>}
+                  {item.sub && (
+                    <span className="text-sm font-normal">{item.sub}</span>
+                  )}
                 </span>
                 <ChevronDownIcon
                   size={16}
@@ -61,5 +67,5 @@ export default function Component() {
         ))}
       </Accordion>
     </div>
-  );
+  )
 }

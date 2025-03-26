@@ -6,7 +6,7 @@ import {
   TimelineItem,
   TimelineSeparator,
   TimelineTitle,
-} from "@/registry/default/ui/timeline";
+} from "@/registry/default/ui/timeline"
 
 const items = [
   {
@@ -39,7 +39,7 @@ const items = [
     date: "May 17, 2024",
     title: "Project Handover",
   },
-];
+]
 
 export default function Component() {
   return (
@@ -59,5 +59,5 @@ export default function Component() {
         </TimelineItem>
       ))}
     </Timeline>
-  );
+  )
 }

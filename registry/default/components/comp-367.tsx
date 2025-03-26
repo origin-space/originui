@@ -1,11 +1,12 @@
-import { Button } from "@/registry/default/ui/button";
+import { ChevronDownIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu";
-import { ChevronDownIcon } from "lucide-react";
+} from "@/registry/default/ui/dropdown-menu"
 
 export default function Component() {
   return (
@@ -13,7 +14,11 @@ export default function Component() {
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
           Same width of trigger
-          <ChevronDownIcon className="-me-1 opacity-60" size={16} aria-hidden="true" />
+          <ChevronDownIcon
+            className="-me-1 opacity-60"
+            size={16}
+            aria-hidden="true"
+          />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="min-w-(--radix-dropdown-menu-trigger-width)">
@@ -23,5 +28,5 @@ export default function Component() {
         <DropdownMenuItem>Option 4</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }

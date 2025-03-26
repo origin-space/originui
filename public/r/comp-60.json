@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/default/components/comp-60.tsx",
-      "content": "import { Label } from \"@/registry/default/ui/label\";\nimport { Textarea } from \"@/registry/default/ui/textarea\";\nimport { useId } from \"react\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"*:not-first:mt-2\">\n      <Label htmlFor={id}>\n        Required textarea <span className=\"text-destructive\">*</span>\n      </Label>\n      <Textarea id={id} placeholder=\"Leave a message\" required />\n    </div>\n  );\n}\n",
+      "content": "import { useId } from \"react\"\n\nimport { Label } from \"@/registry/default/ui/label\"\nimport { Textarea } from \"@/registry/default/ui/textarea\"\n\nexport default function Component() {\n  const id = useId()\n  return (\n    <div className=\"*:not-first:mt-2\">\n      <Label htmlFor={id}>\n        Required textarea <span className=\"text-destructive\">*</span>\n      </Label>\n      <Textarea id={id} placeholder=\"Leave a message\" required />\n    </div>\n  )\n}\n",
       "type": "registry:component"
     }
   ],

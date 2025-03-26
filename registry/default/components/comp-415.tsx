@@ -1,5 +1,6 @@
-import { Badge } from "@/registry/default/ui/badge";
-import { ZapIcon } from "lucide-react";
+import { ZapIcon } from "lucide-react"
+
+import { Badge } from "@/registry/default/ui/badge"
 
 export default function Component() {
   return (
@@ -7,5 +8,5 @@ export default function Component() {
       <ZapIcon className="-ms-0.5 opacity-60" size={12} aria-hidden="true" />
       Badge
     </Badge>
-  );
+  )
 }

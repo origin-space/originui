@@ -1,10 +1,11 @@
+import { AtSignIcon, CommandIcon, EclipseIcon, ZapIcon } from "lucide-react"
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/registry/default/ui/accordion";
-import { AtSignIcon, CommandIcon, EclipseIcon, ZapIcon } from "lucide-react";
+} from "@/registry/default/ui/accordion"
 
 const items = [
   {
@@ -35,7 +36,7 @@ const items = [
     content:
       "All components follow WAI-ARIA standards, featuring proper ARIA attributes, keyboard navigation, and screen reader support. Regular testing ensures compatibility with NVDA, VoiceOver, and JAWS.",
   },
-];
+]
 
 export default function Component() {
   return (
@@ -46,7 +47,11 @@ export default function Component() {
           <AccordionItem value={item.id} key={item.id} className="py-2">
             <AccordionTrigger className="py-2 text-[15px] leading-6 hover:no-underline">
               <span className="flex items-center gap-3">
-                <item.icon size={16} className="shrink-0 opacity-60" aria-hidden="true" />
+                <item.icon
+                  size={16}
+                  className="shrink-0 opacity-60"
+                  aria-hidden="true"
+                />
                 <span>{item.title}</span>
               </span>
             </AccordionTrigger>
@@ -57,5 +62,5 @@ export default function Component() {
         ))}
       </Accordion>
     </div>
-  );
+  )
 }

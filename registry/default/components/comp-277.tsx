@@ -1,4 +1,4 @@
-import { CircleAlertIcon } from "lucide-react";
+import { CircleAlertIcon } from "lucide-react"
 
 export default function Component() {
   return (
@@ -10,7 +10,9 @@ export default function Component() {
           aria-hidden="true"
         />
         <div className="grow space-y-1">
-          <p className="text-sm font-medium">Password does not meet requirements:</p>
+          <p className="text-sm font-medium">
+            Password does not meet requirements:
+          </p>
           <ul className="text-muted-foreground list-inside list-disc text-sm">
             <li>Minimum 8 characters</li>
             <li>Inlcude a special character</li>
@@ -18,5 +20,5 @@ export default function Component() {
         </div>
       </div>
     </div>
-  );
+  )
 }

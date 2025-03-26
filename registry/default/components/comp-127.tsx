@@ -1,19 +1,30 @@
-import { Button } from "@/registry/default/ui/button";
 import {
   ChevronDownIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
   ChevronUpIcon,
   CircleIcon,
-} from "lucide-react";
+} from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
   return (
     <div className="inline-grid w-fit grid-cols-3 gap-1">
-      <Button className="col-start-2" variant="outline" size="icon" aria-label="Pan camera up">
+      <Button
+        className="col-start-2"
+        variant="outline"
+        size="icon"
+        aria-label="Pan camera up"
+      >
         <ChevronUpIcon size={16} aria-hidden="true" />
       </Button>
-      <Button className="col-start-1" variant="outline" size="icon" aria-label="Pan camera left">
+      <Button
+        className="col-start-1"
+        variant="outline"
+        size="icon"
+        aria-label="Pan camera left"
+      >
         <ChevronLeftIcon size={16} aria-hidden="true" />
       </Button>
       <div className="flex items-center justify-center" aria-hidden="true">
@@ -22,9 +33,14 @@ export default function Component() {
       <Button variant="outline" size="icon" aria-label="Pan camera right">
         <ChevronRightIcon size={16} aria-hidden="true" />
       </Button>
-      <Button className="col-start-2" variant="outline" size="icon" aria-label="Pan camera down">
+      <Button
+        className="col-start-2"
+        variant="outline"
+        size="icon"
+        aria-label="Pan camera down"
+      >
         <ChevronDownIcon size={16} aria-hidden="true" />
       </Button>
     </div>
-  );
+  )
 }

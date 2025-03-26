@@ -1,11 +1,12 @@
+import { Shuffle } from "lucide-react"
+
 import {
   Stepper,
   StepperIndicator,
   StepperItem,
   StepperSeparator,
   StepperTrigger,
-} from "@/registry/default/ui/stepper";
-import { Shuffle } from "lucide-react";
+} from "@/registry/default/ui/stepper"
 
 export default function Component() {
   return (
@@ -40,9 +41,13 @@ export default function Component() {
           </StepperTrigger>
         </StepperItem>
       </Stepper>
-      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
+      <p
+        className="text-muted-foreground mt-2 text-xs"
+        role="region"
+        aria-live="polite"
+      >
         Stepper with mixed elements
       </p>
     </div>
-  );
+  )
 }

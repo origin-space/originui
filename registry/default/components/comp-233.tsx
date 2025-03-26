@@ -1,16 +1,6 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/registry/default/ui/command";
-import { Label } from "@/registry/default/ui/label";
-import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover";
+import { useId, useState } from "react"
 import {
   BlocksIcon,
   BrainIcon,
@@ -23,8 +13,23 @@ import {
   NetworkIcon,
   SearchIcon,
   ServerIcon,
-} from "lucide-react";
-import { useId, useState } from "react";
+} from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/registry/default/ui/command"
+import { Label } from "@/registry/default/ui/label"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/registry/default/ui/popover"
 
 const items = [
   {
@@ -87,12 +92,12 @@ const items = [
     icon: LayoutIcon,
     number: 123,
   },
-];
+]
 
 export default function Component() {
-  const id = useId();
-  const [open, setOpen] = useState<boolean>(false);
-  const [value, setValue] = useState<string>("");
+  const id = useId()
+  const [open, setOpen] = useState<boolean>(false)
+  const [value, setValue] = useState<string>("")
 
   return (
     <div className="*:not-first:mt-2">
@@ -109,19 +114,23 @@ export default function Component() {
             {value ? (
               <span className="flex min-w-0 items-center gap-2">
                 {(() => {
-                  const selectedItem = items.find((item) => item.value === value);
+                  const selectedItem = items.find(
+                    (item) => item.value === value
+                  )
                   if (selectedItem) {
-                    const Icon = selectedItem.icon;
-                    return <Icon className="text-muted-foreground size-4" />;
+                    const Icon = selectedItem.icon
+                    return <Icon className="text-muted-foreground size-4" />
                   }
-                  return null;
+                  return null
                 })()}
                 <span className="truncate">
                   {items.find((item) => item.value === value)?.label}
                 </span>
               </span>
             ) : (
-              <span className="text-muted-foreground">Select service category</span>
+              <span className="text-muted-foreground">
+                Select service category
+              </span>
             )}
             <ChevronDownIcon
               size={16}
@@ -144,8 +153,8 @@ export default function Component() {
                     key={item.value}
                     value={item.value}
                     onSelect={(currentValue) => {
-                      setValue(currentValue === value ? "" : currentValue);
-                      setOpen(false);
+                      setValue(currentValue === value ? "" : currentValue)
+                      setOpen(false)
                     }}
                     className="flex items-center justify-between"
                   >
@@ -164,5 +173,5 @@ export default function Component() {
         </PopoverContent>
       </Popover>
     </div>
-  );
+  )
 }

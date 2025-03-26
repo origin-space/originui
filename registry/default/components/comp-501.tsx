@@ -1,15 +1,16 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
-import { Calendar } from "@/registry/default/ui/calendar";
-import { addDays } from "date-fns";
-import { useState } from "react";
+import { useState } from "react"
+import { addDays } from "date-fns"
+
+import { Button } from "@/registry/default/ui/button"
+import { Calendar } from "@/registry/default/ui/calendar"
 
 export default function Component() {
-  const today = new Date();
-  const selectedDay = addDays(today, -28);
-  const [month, setMonth] = useState(selectedDay);
-  const [date, setDate] = useState<Date | undefined>(selectedDay);
+  const today = new Date()
+  const selectedDay = addDays(today, -28)
+  const [month, setMonth] = useState(selectedDay)
+  const [date, setDate] = useState<Date | undefined>(selectedDay)
 
   return (
     <div>
@@ -26,8 +27,8 @@ export default function Component() {
           size="sm"
           className="mt-2 mb-1"
           onClick={() => {
-            setDate(today);
-            setMonth(today);
+            setDate(today)
+            setMonth(today)
           }}
         >
           Today
@@ -49,5 +50,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
+  )
 }

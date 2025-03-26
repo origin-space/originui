@@ -1,17 +1,18 @@
-import { Label } from "@/registry/default/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
-import { Brush, Eraser, Scissors, SwatchBook } from "lucide-react";
-import { useId } from "react";
+import { useId } from "react"
+import { Brush, Eraser, Scissors, SwatchBook } from "lucide-react"
+
+import { Label } from "@/registry/default/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
 
 export default function Component() {
-  const id = useId();
+  const id = useId()
 
   const items = [
     { value: "1", label: "Palette", Icon: SwatchBook },
     { value: "2", label: "Brush", Icon: Brush },
     { value: "3", label: "Eraser", Icon: Eraser },
     { value: "4", label: "Cut", Icon: Scissors },
-  ];
+  ]
 
   return (
     <RadioGroup className="grid-cols-2" defaultValue="1">
@@ -32,5 +33,5 @@ export default function Component() {
         </div>
       ))}
     </RadioGroup>
-  );
+  )
 }

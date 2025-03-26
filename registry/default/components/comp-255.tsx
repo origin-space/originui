@@ -1,14 +1,14 @@
-"use client";
+"use client"
 
-import { useSliderWithInput } from "@/registry/default/hooks/use-slider-with-input";
-import { Input } from "@/registry/default/ui/input";
-import { Label } from "@/registry/default/ui/label";
-import { Slider } from "@/registry/default/ui/slider";
+import { useSliderWithInput } from "@/registry/default/hooks/use-slider-with-input"
+import { Input } from "@/registry/default/ui/input"
+import { Label } from "@/registry/default/ui/label"
+import { Slider } from "@/registry/default/ui/slider"
 
 export default function Component() {
-  const minValue = 0;
-  const maxValue = 100;
-  const initialValue = [25];
+  const minValue = 0
+  const maxValue = 100
+  const initialValue = [25]
 
   const {
     sliderValue,
@@ -16,7 +16,7 @@ export default function Component() {
     validateAndUpdateValue,
     handleInputChange,
     handleSliderChange,
-  } = useSliderWithInput({ minValue, maxValue, initialValue });
+  } = useSliderWithInput({ minValue, maxValue, initialValue })
 
   return (
     <div className="*:not-first:mt-3">
@@ -39,12 +39,12 @@ export default function Component() {
           onBlur={() => validateAndUpdateValue(inputValues[0], 0)}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
-              validateAndUpdateValue(inputValues[0], 0);
+              validateAndUpdateValue(inputValues[0], 0)
             }
           }}
           aria-label="Enter value"
         />
       </div>
     </div>
-  );
+  )
 }

@@ -1,18 +1,19 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
-import { Calendar } from "@/registry/default/ui/calendar";
-import { subDays, subMonths, subYears } from "date-fns";
-import { useState } from "react";
+import { useState } from "react"
+import { subDays, subMonths, subYears } from "date-fns"
+
+import { Button } from "@/registry/default/ui/button"
+import { Calendar } from "@/registry/default/ui/calendar"
 
 export default function Component() {
-  const today = new Date();
-  const yesterday = subDays(today, 1);
-  const lastWeek = subDays(today, 7);
-  const lastMonth = subMonths(today, 1);
-  const lastYear = subYears(today, 1);
-  const [month, setMonth] = useState(today);
-  const [date, setDate] = useState<Date>(today);
+  const today = new Date()
+  const yesterday = subDays(today, 1)
+  const lastWeek = subDays(today, 7)
+  const lastMonth = subMonths(today, 1)
+  const lastYear = subYears(today, 1)
+  const [month, setMonth] = useState(today)
+  const [date, setDate] = useState<Date>(today)
 
   return (
     <div>
@@ -26,8 +27,8 @@ export default function Component() {
                   size="sm"
                   className="w-full justify-start"
                   onClick={() => {
-                    setDate(today);
-                    setMonth(today);
+                    setDate(today)
+                    setMonth(today)
                   }}
                 >
                   Today
@@ -37,8 +38,8 @@ export default function Component() {
                   size="sm"
                   className="w-full justify-start"
                   onClick={() => {
-                    setDate(yesterday);
-                    setMonth(yesterday);
+                    setDate(yesterday)
+                    setMonth(yesterday)
                   }}
                 >
                   Yesterday
@@ -48,8 +49,8 @@ export default function Component() {
                   size="sm"
                   className="w-full justify-start"
                   onClick={() => {
-                    setDate(lastWeek);
-                    setMonth(lastWeek);
+                    setDate(lastWeek)
+                    setMonth(lastWeek)
                   }}
                 >
                   Last week
@@ -59,8 +60,8 @@ export default function Component() {
                   size="sm"
                   className="w-full justify-start"
                   onClick={() => {
-                    setDate(lastMonth);
-                    setMonth(lastMonth);
+                    setDate(lastMonth)
+                    setMonth(lastMonth)
                   }}
                 >
                   Last month
@@ -70,8 +71,8 @@ export default function Component() {
                   size="sm"
                   className="w-full justify-start"
                   onClick={() => {
-                    setDate(lastYear);
-                    setMonth(lastYear);
+                    setDate(lastYear)
+                    setMonth(lastYear)
                   }}
                 >
                   Last year
@@ -84,7 +85,7 @@ export default function Component() {
             selected={date}
             onSelect={(newDate) => {
               if (newDate) {
-                setDate(newDate);
+                setDate(newDate)
               }
             }}
             month={month}
@@ -112,5 +113,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
+  )
 }

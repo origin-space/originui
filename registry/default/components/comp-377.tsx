@@ -1,15 +1,3 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/registry/default/ui/avatar";
-import { Button } from "@/registry/default/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu";
-
 import {
   BoltIcon,
   BookOpenIcon,
@@ -18,7 +6,23 @@ import {
   LogOutIcon,
   PinIcon,
   UserPenIcon,
-} from "lucide-react";
+} from "lucide-react"
+
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/registry/default/ui/avatar"
+import { Button } from "@/registry/default/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/registry/default/ui/dropdown-menu"
 
 export default function Component() {
   return (
@@ -29,12 +33,18 @@ export default function Component() {
             <AvatarImage src="./avatar.jpg" alt="Profile image" />
             <AvatarFallback>KK</AvatarFallback>
           </Avatar>
-          <ChevronDownIcon size={16} className="opacity-60" aria-hidden="true" />
+          <ChevronDownIcon
+            size={16}
+            className="opacity-60"
+            aria-hidden="true"
+          />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="max-w-64">
         <DropdownMenuLabel className="flex min-w-0 flex-col">
-          <span className="text-foreground truncate text-sm font-medium">Keith Kennedy</span>
+          <span className="text-foreground truncate text-sm font-medium">
+            Keith Kennedy
+          </span>
           <span className="text-muted-foreground truncate text-xs font-normal">
             k.kennedy@originui.com
           </span>
@@ -72,5 +82,5 @@ export default function Component() {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }

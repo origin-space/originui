@@ -1,15 +1,16 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
-import { Calendar } from "@/registry/default/ui/calendar";
-import { ScrollArea } from "@/registry/default/ui/scroll-area";
-import { format } from "date-fns";
-import { useState } from "react";
+import { useState } from "react"
+import { format } from "date-fns"
+
+import { Button } from "@/registry/default/ui/button"
+import { Calendar } from "@/registry/default/ui/calendar"
+import { ScrollArea } from "@/registry/default/ui/scroll-area"
 
 export default function Component() {
-  const today = new Date();
-  const [date, setDate] = useState<Date>(today);
-  const [time, setTime] = useState<string | null>(null);
+  const today = new Date()
+  const [date, setDate] = useState<Date>(today)
+  const [time, setTime] = useState<string | null>(null)
 
   // Mock time slots data
   const timeSlots = [
@@ -31,7 +32,7 @@ export default function Component() {
     { time: "16:30", available: true },
     { time: "17:00", available: true },
     { time: "17:30", available: true },
-  ];
+  ]
 
   return (
     <div>
@@ -42,8 +43,8 @@ export default function Component() {
             selected={date}
             onSelect={(newDate) => {
               if (newDate) {
-                setDate(newDate);
-                setTime(null);
+                setDate(newDate)
+                setTime(null)
               }
             }}
             className="p-2 sm:pe-5"
@@ -56,7 +57,9 @@ export default function Component() {
               <ScrollArea className="h-full sm:border-s">
                 <div className="space-y-3">
                   <div className="flex h-5 shrink-0 items-center px-5">
-                    <p className="text-sm font-medium">{format(date, "EEEE, d")}</p>
+                    <p className="text-sm font-medium">
+                      {format(date, "EEEE, d")}
+                    </p>
                   </div>
                   <div className="grid gap-1.5 px-5 max-sm:grid-cols-2">
                     {timeSlots.map(({ time: timeSlot, available }) => (
@@ -94,5 +97,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
+  )
 }

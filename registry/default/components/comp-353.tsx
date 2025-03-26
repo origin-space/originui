@@ -1,15 +1,4 @@
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/registry/default/ui/accordion";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/registry/default/ui/collapsible";
-import {
   AtSignIcon,
   ChevronDownIcon,
   CircleDashedIcon,
@@ -18,7 +7,19 @@ import {
   GaugeIcon,
   LucideIcon,
   ZapIcon,
-} from "lucide-react";
+} from "lucide-react"
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/registry/default/ui/accordion"
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/registry/default/ui/collapsible"
 
 const items = [
   {
@@ -28,7 +29,8 @@ const items = [
     collapsibles: [
       {
         title: "What about performance?",
-        content: "We optimize every component for maximum performance and minimal bundle size.",
+        content:
+          "We optimize every component for maximum performance and minimal bundle size.",
         icon: GaugeIcon,
       },
       {
@@ -52,7 +54,8 @@ const items = [
       },
       {
         title: "What about Tailwind support?",
-        content: "We have first-class support for Tailwind CSS with custom utility classes.",
+        content:
+          "We have first-class support for Tailwind CSS with custom utility classes.",
         icon: CircleDashedIcon,
       },
     ],
@@ -71,7 +74,8 @@ const items = [
       },
       {
         title: "How is code splitting handled?",
-        content: "We support automatic code splitting for optimal loading performance.",
+        content:
+          "We support automatic code splitting for optimal loading performance.",
         icon: CircleDashedIcon,
       },
     ],
@@ -83,7 +87,8 @@ const items = [
     collapsibles: [
       {
         title: "Which screen readers are supported?",
-        content: "We test with NVDA, VoiceOver, and JAWS to ensure broad compatibility.",
+        content:
+          "We test with NVDA, VoiceOver, and JAWS to ensure broad compatibility.",
         icon: GaugeIcon,
       },
       {
@@ -94,7 +99,7 @@ const items = [
       },
     ],
   },
-];
+]
 
 export default function Component() {
   return (
@@ -109,7 +114,11 @@ export default function Component() {
           >
             <AccordionTrigger className="justify-start gap-3 rounded-md text-[15px] leading-6 outline-none hover:no-underline focus-visible:ring-0 [&>svg]:-order-1">
               <span className="flex items-center gap-3">
-                <item.icon size={16} className="shrink-0 opacity-60" aria-hidden="true" />
+                <item.icon
+                  size={16}
+                  className="shrink-0 opacity-60"
+                  aria-hidden="true"
+                />
                 <span>{item.title}</span>
               </span>
             </AccordionTrigger>
@@ -128,7 +137,7 @@ export default function Component() {
         ))}
       </Accordion>
     </div>
-  );
+  )
 }
 
 function CollapsibleDemo({
@@ -137,10 +146,10 @@ function CollapsibleDemo({
   open,
   icon: Icon,
 }: {
-  title: string;
-  content: string;
-  open?: boolean;
-  icon: LucideIcon;
+  title: string
+  content: string
+  open?: boolean
+  icon: LucideIcon
 }) {
   return (
     <Collapsible className="border-t py-3 ps-6 pe-4" defaultOpen={open}>
@@ -159,5 +168,5 @@ function CollapsibleDemo({
         {content}
       </CollapsibleContent>
     </Collapsible>
-  );
+  )
 }

@@ -4,7 +4,7 @@ import {
   StepperItem,
   StepperTitle,
   StepperTrigger,
-} from "@/registry/default/ui/stepper";
+} from "@/registry/default/ui/stepper"
 
 const steps = [
   {
@@ -23,7 +23,7 @@ const steps = [
     step: 4,
     title: "Step Four",
   },
-];
+]
 
 export default function Component() {
   return (
@@ -42,9 +42,13 @@ export default function Component() {
           </StepperItem>
         ))}
       </Stepper>
-      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
+      <p
+        className="text-muted-foreground mt-2 text-xs"
+        role="region"
+        aria-live="polite"
+      >
         Stepper with labels
       </p>
     </div>
-  );
+  )
 }

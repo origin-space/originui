@@ -1,5 +1,6 @@
-import { Button } from "@/registry/default/ui/button";
-import { FlipHorizontalIcon, FlipVerticalIcon } from "lucide-react";
+import { FlipHorizontalIcon, FlipVerticalIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
   return (
@@ -21,5 +22,5 @@ export default function Component() {
         <FlipVerticalIcon size={16} aria-hidden="true" />
       </Button>
     </div>
-  );
+  )
 }

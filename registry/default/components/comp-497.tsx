@@ -1,30 +1,31 @@
-"use client";
+"use client"
 
-import { Calendar } from "@/registry/default/ui/calendar";
+import { useState } from "react"
+import { DropdownNavProps, DropdownProps } from "react-day-picker"
+
+import { Calendar } from "@/registry/default/ui/calendar"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/default/ui/select";
-import { useState } from "react";
-import { DropdownNavProps, DropdownProps } from "react-day-picker";
+} from "@/registry/default/ui/select"
 
 export default function Component() {
-  const [date, setDate] = useState<Date | undefined>(new Date());
+  const [date, setDate] = useState<Date | undefined>(new Date())
 
   const handleCalendarChange = (
     _value: string | number,
-    _e: React.ChangeEventHandler<HTMLSelectElement>,
+    _e: React.ChangeEventHandler<HTMLSelectElement>
   ) => {
     const _event = {
       target: {
         value: String(_value),
       },
-    } as React.ChangeEvent<HTMLSelectElement>;
-    _e(_event);
-  };
+    } as React.ChangeEvent<HTMLSelectElement>
+    _e(_event)
+  }
 
   return (
     <div>
@@ -42,7 +43,11 @@ export default function Component() {
         hideNavigation
         components={{
           DropdownNav: (props: DropdownNavProps) => {
-            return <div className="flex w-full items-center gap-2">{props.children}</div>;
+            return (
+              <div className="flex w-full items-center gap-2">
+                {props.children}
+              </div>
+            )
           },
           Dropdown: (props: DropdownProps) => {
             return (
@@ -50,7 +55,7 @@ export default function Component() {
                 value={String(props.value)}
                 onValueChange={(value) => {
                   if (props.onChange) {
-                    handleCalendarChange(value, props.onChange);
+                    handleCalendarChange(value, props.onChange)
                   }
                 }}
               >
@@ -69,7 +74,7 @@ export default function Component() {
                   ))}
                 </SelectContent>
               </Select>
-            );
+            )
           },
         }}
       />
@@ -89,5 +94,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
+  )
 }

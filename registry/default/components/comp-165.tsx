@@ -1,19 +1,22 @@
-import { Label } from "@/registry/default/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
-import { useId } from "react";
+import { useId } from "react"
+
+import { Label } from "@/registry/default/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
 
 export default function Component() {
-  const id = useId();
+  const id = useId()
 
   const items = [
     { value: "1", label: "USA" },
     { value: "2", label: "UK" },
     { value: "3", label: "France" },
-  ];
+  ]
 
   return (
     <fieldset className="space-y-4">
-      <legend className="text-foreground text-sm leading-none font-medium">Server location</legend>
+      <legend className="text-foreground text-sm leading-none font-medium">
+        Server location
+      </legend>
       <RadioGroup className="flex flex-wrap gap-2" defaultValue="1">
         {items.map((item) => (
           <div
@@ -32,5 +35,5 @@ export default function Component() {
         ))}
       </RadioGroup>
     </fieldset>
-  );
+  )
 }

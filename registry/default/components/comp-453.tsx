@@ -1,18 +1,19 @@
+import { DatabaseIcon } from "lucide-react"
+
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbSeparator,
-} from "@/registry/default/ui/breadcrumb";
+} from "@/registry/default/ui/breadcrumb"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/default/ui/select";
-import { DatabaseIcon } from "lucide-react";
+} from "@/registry/default/ui/select"
 
 export default function Component() {
   return (
@@ -43,5 +44,5 @@ export default function Component() {
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
-  );
+  )
 }

@@ -1,10 +1,11 @@
-import { Label } from "@/registry/default/ui/label";
-import { SelectNative } from "@/registry/default/ui/select-native";
-import { ClockIcon } from "lucide-react";
-import { useId } from "react";
+import { useId } from "react"
+import { ClockIcon } from "lucide-react"
+
+import { Label } from "@/registry/default/ui/label"
+import { SelectNative } from "@/registry/default/ui/select-native"
 
 export default function Component() {
-  const id = useId();
+  const id = useId()
   return (
     <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Select with icon (native)</Label>
@@ -20,5 +21,5 @@ export default function Component() {
         </div>
       </div>
     </div>
-  );
+  )
 }

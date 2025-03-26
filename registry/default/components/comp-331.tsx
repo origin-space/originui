@@ -1,8 +1,11 @@
-"use client";
+"use client"
 
-import { useCharacterLimit } from "@/registry/default/hooks/use-character-limit";
-import { useImageUpload } from "@/registry/default/hooks/use-image-upload";
-import { Button } from "@/registry/default/ui/button";
+import { useId, useState } from "react"
+import { CheckIcon, ImagePlusIcon, XIcon } from "lucide-react"
+
+import { useCharacterLimit } from "@/registry/default/hooks/use-character-limit"
+import { useImageUpload } from "@/registry/default/hooks/use-image-upload"
+import { Button } from "@/registry/default/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -12,17 +15,15 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/default/ui/dialog";
-import { Input } from "@/registry/default/ui/input";
-import { Label } from "@/registry/default/ui/label";
-import { Textarea } from "@/registry/default/ui/textarea";
-import { CheckIcon, ImagePlusIcon, XIcon } from "lucide-react";
-import { useId, useState } from "react";
+} from "@/registry/default/ui/dialog"
+import { Input } from "@/registry/default/ui/input"
+import { Label } from "@/registry/default/ui/label"
+import { Textarea } from "@/registry/default/ui/textarea"
 
 export default function Component() {
-  const id = useId();
+  const id = useId()
 
-  const maxLength = 180;
+  const maxLength = 180
   const {
     value,
     characterCount,
@@ -32,7 +33,7 @@ export default function Component() {
     maxLength,
     initialValue:
       "Hey, I am Margaret, a web developer who loves turning ideas into amazing websites!",
-  });
+  })
 
   return (
     <Dialog>
@@ -41,10 +42,13 @@ export default function Component() {
       </DialogTrigger>
       <DialogContent className="flex flex-col gap-0 overflow-y-visible p-0 sm:max-w-lg [&>button:last-child]:top-3.5">
         <DialogHeader className="contents space-y-0 text-left">
-          <DialogTitle className="border-b px-6 py-4 text-base">Edit profile</DialogTitle>
+          <DialogTitle className="border-b px-6 py-4 text-base">
+            Edit profile
+          </DialogTitle>
         </DialogHeader>
         <DialogDescription className="sr-only">
-          Make changes to your profile here. You can change your photo and set a username.
+          Make changes to your profile here. You can change your photo and set a
+          username.
         </DialogDescription>
         <div className="overflow-y-auto">
           <ProfileBg defaultImage="/profile-bg.jpg" />
@@ -85,7 +89,11 @@ export default function Component() {
                     required
                   />
                   <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 peer-disabled:opacity-50">
-                    <CheckIcon size={16} className="text-emerald-500" aria-hidden="true" />
+                    <CheckIcon
+                      size={16}
+                      className="text-emerald-500"
+                      aria-hidden="true"
+                    />
                   </div>
                 </div>
               </div>
@@ -120,7 +128,8 @@ export default function Component() {
                   role="status"
                   aria-live="polite"
                 >
-                  <span className="tabular-nums">{limit - characterCount}</span> characters left
+                  <span className="tabular-nums">{limit - characterCount}</span>{" "}
+                  characters left
                 </p>
               </div>
             </form>
@@ -138,20 +147,25 @@ export default function Component() {
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  );
+  )
 }
 
 function ProfileBg({ defaultImage }: { defaultImage?: string }) {
-  const [hideDefault, setHideDefault] = useState(false);
-  const { previewUrl, fileInputRef, handleThumbnailClick, handleFileChange, handleRemove } =
-    useImageUpload();
+  const [hideDefault, setHideDefault] = useState(false)
+  const {
+    previewUrl,
+    fileInputRef,
+    handleThumbnailClick,
+    handleFileChange,
+    handleRemove,
+  } = useImageUpload()
 
-  const currentImage = previewUrl || (!hideDefault ? defaultImage : null);
+  const currentImage = previewUrl || (!hideDefault ? defaultImage : null)
 
   const handleImageRemove = () => {
-    handleRemove();
-    setHideDefault(true);
-  };
+    handleRemove()
+    setHideDefault(true)
+  }
 
   return (
     <div className="h-32">
@@ -160,7 +174,11 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
           <img
             className="h-full w-full object-cover"
             src={currentImage}
-            alt={previewUrl ? "Preview of uploaded image" : "Default profile background"}
+            alt={
+              previewUrl
+                ? "Preview of uploaded image"
+                : "Default profile background"
+            }
             width={512}
             height={96}
           />
@@ -195,13 +213,14 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
         aria-label="Upload image file"
       />
     </div>
-  );
+  )
 }
 
 function Avatar({ defaultImage }: { defaultImage?: string }) {
-  const { previewUrl, fileInputRef, handleThumbnailClick, handleFileChange } = useImageUpload();
+  const { previewUrl, fileInputRef, handleThumbnailClick, handleFileChange } =
+    useImageUpload()
 
-  const currentImage = previewUrl || defaultImage;
+  const currentImage = previewUrl || defaultImage
 
   return (
     <div className="-mt-10 px-6">
@@ -233,5 +252,5 @@ function Avatar({ defaultImage }: { defaultImage?: string }) {
         />
       </div>
     </div>
-  );
+  )
 }

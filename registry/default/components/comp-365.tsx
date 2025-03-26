@@ -1,4 +1,8 @@
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/registry/default/ui/hover-card";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/registry/default/ui/hover-card"
 
 export default function HoverCardDemo() {
   return (
@@ -22,8 +26,8 @@ export default function HoverCardDemo() {
                 Building a Design System with Next.js and Tailwind CSS
               </h2>
               <p className="text-muted-foreground text-sm">
-                Learn how to build a comprehensive design system using Tailwind CSS, including
-                component architecture, and theme customization.
+                Learn how to build a comprehensive design system using Tailwind
+                CSS, including component architecture, and theme customization.
               </p>
             </div>
             <div className="text-muted-foreground flex items-center gap-2 text-xs">
@@ -35,5 +39,5 @@ export default function HoverCardDemo() {
         </HoverCardContent>
       </HoverCard>
     </div>
-  );
+  )
 }

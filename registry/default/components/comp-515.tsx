@@ -4,9 +4,9 @@ import {
   StepperItem,
   StepperSeparator,
   StepperTrigger,
-} from "@/registry/default/ui/stepper";
+} from "@/registry/default/ui/stepper"
 
-const steps = [1, 2, 3, 4];
+const steps = [1, 2, 3, 4]
 
 export default function Component() {
   return (
@@ -21,9 +21,13 @@ export default function Component() {
           </StepperItem>
         ))}
       </Stepper>
-      <p className="text-muted-foreground mt-2 text-xs" role="region" aria-live="polite">
+      <p
+        className="text-muted-foreground mt-2 text-xs"
+        role="region"
+        aria-live="polite"
+      >
         Stepper with tiny buttons and checkmarks
       </p>
     </div>
-  );
+  )
 }

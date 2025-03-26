@@ -1,17 +1,18 @@
-"use client";
+"use client"
 
-import { Calendar } from "@/registry/default/ui/calendar";
-import { addDays, subDays } from "date-fns";
-import { useState } from "react";
+import { useState } from "react"
+import { addDays, subDays } from "date-fns"
+
+import { Calendar } from "@/registry/default/ui/calendar"
 
 export default function Component() {
-  const today = new Date();
+  const today = new Date()
   const [date, setDate] = useState<Date[] | undefined>([
     subDays(today, 17),
     addDays(today, 2),
     addDays(today, 6),
     addDays(today, 8),
-  ]);
+  ])
 
   return (
     <div>
@@ -37,5 +38,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
+  )
 }

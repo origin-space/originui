@@ -1,5 +1,6 @@
-import { Button } from "@/registry/default/ui/button";
-import { XIcon } from "lucide-react";
+import { XIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
   return (
@@ -16,11 +17,17 @@ export default function Component() {
         <div className="flex grow flex-col gap-3">
           <div className="space-y-1">
             <p className="text-muted-foreground text-sm">
-              <a className="text-foreground font-medium hover:underline" href="#">
+              <a
+                className="text-foreground font-medium hover:underline"
+                href="#"
+              >
                 Mary Palmer
               </a>{" "}
               mentioned you in{" "}
-              <a className="text-foreground font-medium hover:underline" href="#">
+              <a
+                className="text-foreground font-medium hover:underline"
+                href="#"
+              >
                 project-campaign-02
               </a>
               .
@@ -47,5 +54,5 @@ export default function Component() {
         </Button>
       </div>
     </div>
-  );
+  )
 }

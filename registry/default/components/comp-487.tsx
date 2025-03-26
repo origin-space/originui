@@ -1,16 +1,21 @@
-"use client";
+"use client"
 
-import { Calendar } from "@/registry/default/ui/calendar-rac";
-import { getLocalTimeZone, today } from "@internationalized/date";
-import { useState } from "react";
-import type { DateValue } from "react-aria-components";
+import { useState } from "react"
+import { getLocalTimeZone, today } from "@internationalized/date"
+import type { DateValue } from "react-aria-components"
+
+import { Calendar } from "@/registry/default/ui/calendar-rac"
 
 export default function Component() {
-  const [date, setDate] = useState<DateValue | null>(today(getLocalTimeZone()));
+  const [date, setDate] = useState<DateValue | null>(today(getLocalTimeZone()))
 
   return (
     <div>
-      <Calendar className="rounded-md border p-2" value={date} onChange={setDate} />
+      <Calendar
+        className="rounded-md border p-2"
+        value={date}
+        onChange={setDate}
+      />
       <p
         className="text-muted-foreground mt-4 text-center text-xs"
         role="region"
@@ -27,5 +32,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
+  )
 }

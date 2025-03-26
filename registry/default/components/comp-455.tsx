@@ -1,13 +1,21 @@
-import { Button } from "@/registry/default/ui/button";
-import { Pagination, PaginationContent, PaginationItem } from "@/registry/default/ui/pagination";
-import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
+import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+} from "@/registry/default/ui/pagination"
 
 type PaginationProps = {
-  currentPage: number;
-  totalPages: number;
-};
+  currentPage: number
+  totalPages: number
+}
 
-export default function Component({ currentPage, totalPages }: PaginationProps) {
+export default function Component({
+  currentPage,
+  totalPages,
+}: PaginationProps) {
   return (
     <Pagination>
       <PaginationContent className="w-full justify-between gap-3">
@@ -43,5 +51,5 @@ export default function Component({ currentPage, totalPages }: PaginationProps) 
         </PaginationItem>
       </PaginationContent>
     </Pagination>
-  );
+  )
 }

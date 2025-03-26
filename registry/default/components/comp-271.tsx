@@ -1,4 +1,4 @@
-import { CircleCheckIcon } from "lucide-react";
+import { CircleCheckIcon } from "lucide-react"
 
 export default function Component() {
   return (
@@ -12,5 +12,5 @@ export default function Component() {
         Completed successfully!
       </p>
     </div>
-  );
+  )
 }

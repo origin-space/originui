@@ -1,13 +1,6 @@
-"use client";
+"use client"
 
-import { Button } from "@/registry/default/ui/button";
-import { Calendar } from "@/registry/default/ui/calendar";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/registry/default/ui/collapsible";
-import { ScrollArea } from "@/registry/default/ui/scroll-area";
+import { useEffect, useRef, useState } from "react"
 import {
   eachMonthOfInterval,
   eachYearOfInterval,
@@ -16,23 +9,31 @@ import {
   isAfter,
   isBefore,
   startOfYear,
-} from "date-fns";
-import { ChevronDownIcon } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import { CaptionLabelProps, MonthGridProps } from "react-day-picker";
+} from "date-fns"
+import { ChevronDownIcon } from "lucide-react"
+import { CaptionLabelProps, MonthGridProps } from "react-day-picker"
+
+import { Button } from "@/registry/default/ui/button"
+import { Calendar } from "@/registry/default/ui/calendar"
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/registry/default/ui/collapsible"
+import { ScrollArea } from "@/registry/default/ui/scroll-area"
 
 export default function Component() {
-  const today = new Date();
-  const [month, setMonth] = useState(today);
-  const [date, setDate] = useState<Date | undefined>(today);
-  const [isYearView, setIsYearView] = useState(false);
-  const startDate = new Date(1980, 6);
-  const endDate = new Date(2030, 6);
+  const today = new Date()
+  const [month, setMonth] = useState(today)
+  const [date, setDate] = useState<Date | undefined>(today)
+  const [isYearView, setIsYearView] = useState(false)
+  const startDate = new Date(1980, 6)
+  const endDate = new Date(2030, 6)
 
   const years = eachYearOfInterval({
     start: startOfYear(startDate),
     end: endOfYear(endDate),
-  });
+  })
 
   return (
     <div>
@@ -52,7 +53,11 @@ export default function Component() {
         }}
         components={{
           CaptionLabel: (props: CaptionLabelProps) => (
-            <CaptionLabel isYearView={isYearView} setIsYearView={setIsYearView} {...props} />
+            <CaptionLabel
+              isYearView={isYearView}
+              setIsYearView={setIsYearView}
+              {...props}
+            />
           ),
           MonthGrid: (props: MonthGridProps) => {
             return (
@@ -66,13 +71,13 @@ export default function Component() {
                 currentYear={month.getFullYear()}
                 currentMonth={month.getMonth()}
                 onMonthSelect={(selectedMonth: Date) => {
-                  setMonth(selectedMonth);
-                  setIsYearView(false);
+                  setMonth(selectedMonth)
+                  setIsYearView(false)
                 }}
               >
                 {props.children}
               </MonthGrid>
-            );
+            )
           },
         }}
       />
@@ -92,7 +97,7 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
+  )
 }
 
 function MonthGrid({
@@ -106,35 +111,35 @@ function MonthGrid({
   currentMonth,
   onMonthSelect,
 }: {
-  className?: string;
-  children: React.ReactNode;
-  isYearView: boolean;
-  setIsYearView: React.Dispatch<React.SetStateAction<boolean>>;
-  startDate: Date;
-  endDate: Date;
-  years: Date[];
-  currentYear: number;
-  currentMonth: number;
-  onMonthSelect: (date: Date) => void;
+  className?: string
+  children: React.ReactNode
+  isYearView: boolean
+  setIsYearView: React.Dispatch<React.SetStateAction<boolean>>
+  startDate: Date
+  endDate: Date
+  years: Date[]
+  currentYear: number
+  currentMonth: number
+  onMonthSelect: (date: Date) => void
 }) {
-  const currentYearRef = useRef<HTMLDivElement>(null);
-  const currentMonthButtonRef = useRef<HTMLButtonElement>(null);
-  const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const currentYearRef = useRef<HTMLDivElement>(null)
+  const currentMonthButtonRef = useRef<HTMLButtonElement>(null)
+  const scrollAreaRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (isYearView && currentYearRef.current && scrollAreaRef.current) {
       const viewport = scrollAreaRef.current.querySelector(
-        "[data-radix-scroll-area-viewport]",
-      ) as HTMLElement;
+        "[data-radix-scroll-area-viewport]"
+      ) as HTMLElement
       if (viewport) {
-        const yearTop = currentYearRef.current.offsetTop;
-        viewport.scrollTop = yearTop;
+        const yearTop = currentYearRef.current.offsetTop
+        viewport.scrollTop = yearTop
       }
       setTimeout(() => {
-        currentMonthButtonRef.current?.focus();
-      }, 100);
+        currentMonthButtonRef.current?.focus()
+      }, 100)
     }
-  }, [isYearView]);
+  }, [isYearView])
 
   return (
     <div className="relative">
@@ -146,22 +151,32 @@ function MonthGrid({
               const months = eachMonthOfInterval({
                 start: startOfYear(year),
                 end: endOfYear(year),
-              });
-              const isCurrentYear = year.getFullYear() === currentYear;
+              })
+              const isCurrentYear = year.getFullYear() === currentYear
 
               return (
-                <div key={year.getFullYear()} ref={isCurrentYear ? currentYearRef : undefined}>
-                  <CollapsibleYear title={year.getFullYear().toString()} open={isCurrentYear}>
+                <div
+                  key={year.getFullYear()}
+                  ref={isCurrentYear ? currentYearRef : undefined}
+                >
+                  <CollapsibleYear
+                    title={year.getFullYear().toString()}
+                    open={isCurrentYear}
+                  >
                     <div className="grid grid-cols-3 gap-2">
                       {months.map((month) => {
-                        const isDisabled = isBefore(month, startDate) || isAfter(month, endDate);
+                        const isDisabled =
+                          isBefore(month, startDate) || isAfter(month, endDate)
                         const isCurrentMonth =
-                          month.getMonth() === currentMonth && year.getFullYear() === currentYear;
+                          month.getMonth() === currentMonth &&
+                          year.getFullYear() === currentYear
 
                         return (
                           <Button
                             key={month.getTime()}
-                            ref={isCurrentMonth ? currentMonthButtonRef : undefined}
+                            ref={
+                              isCurrentMonth ? currentMonthButtonRef : undefined
+                            }
                             variant={isCurrentMonth ? "default" : "outline"}
                             size="sm"
                             className="h-7"
@@ -170,18 +185,18 @@ function MonthGrid({
                           >
                             {format(month, "MMM")}
                           </Button>
-                        );
+                        )
                       })}
                     </div>
                   </CollapsibleYear>
                 </div>
-              );
+              )
             })}
           </ScrollArea>
         </div>
       )}
     </div>
-  );
+  )
 }
 
 function CaptionLabel({
@@ -189,8 +204,8 @@ function CaptionLabel({
   isYearView,
   setIsYearView,
 }: {
-  isYearView: boolean;
-  setIsYearView: React.Dispatch<React.SetStateAction<boolean>>;
+  isYearView: boolean
+  setIsYearView: React.Dispatch<React.SetStateAction<boolean>>
 } & React.HTMLAttributes<HTMLSpanElement>) {
   return (
     <Button
@@ -207,7 +222,7 @@ function CaptionLabel({
         aria-hidden="true"
       />
     </Button>
-  );
+  )
 }
 
 function CollapsibleYear({
@@ -215,9 +230,9 @@ function CollapsibleYear({
   children,
   open,
 }: {
-  title: string;
-  children: React.ReactNode;
-  open?: boolean;
+  title: string
+  children: React.ReactNode
+  open?: boolean
 }) {
   return (
     <Collapsible className="border-t px-2 py-1.5" defaultOpen={open}>
@@ -239,5 +254,5 @@ function CollapsibleYear({
         {children}
       </CollapsibleContent>
     </Collapsible>
-  );
+  )
 }

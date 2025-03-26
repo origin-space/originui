@@ -1,11 +1,12 @@
-"use client";
+"use client"
 
-import { Label } from "@/registry/default/ui/label";
-import { Slider } from "@/registry/default/ui/slider";
-import { useState } from "react";
+import { useState } from "react"
+
+import { Label } from "@/registry/default/ui/label"
+import { Slider } from "@/registry/default/ui/slider"
 
 export default function Component() {
-  const [value, setValue] = useState([25, 75]);
+  const [value, setValue] = useState([25, 75])
 
   return (
     <div className="space-y-4">
@@ -15,7 +16,11 @@ export default function Component() {
           {value[0]} - {value[1]}
         </output>
       </div>
-      <Slider value={value} onValueChange={setValue} aria-label="Dual range slider with output" />
+      <Slider
+        value={value}
+        onValueChange={setValue}
+        aria-label="Dual range slider with output"
+      />
     </div>
-  );
+  )
 }

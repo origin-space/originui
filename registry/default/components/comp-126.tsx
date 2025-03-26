@@ -1,8 +1,9 @@
-"use client";
+"use client"
 
-import { useImageUpload } from "@/registry/default/hooks/use-image-upload";
-import { Button } from "@/registry/default/ui/button";
-import { CircleUserRoundIcon, XIcon } from "lucide-react";
+import { CircleUserRoundIcon, XIcon } from "lucide-react"
+
+import { useImageUpload } from "@/registry/default/hooks/use-image-upload"
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
   const {
@@ -12,7 +13,7 @@ export default function Component() {
     handleFileChange,
     handleRemove,
     fileName,
-  } = useImageUpload();
+  } = useImageUpload()
 
   return (
     <div>
@@ -58,10 +59,14 @@ export default function Component() {
           aria-label="Upload image file"
         />
       </div>
-      {fileName && <p className="text-muted-foreground mt-2 text-xs">{fileName}</p>}
+      {fileName && (
+        <p className="text-muted-foreground mt-2 text-xs">{fileName}</p>
+      )}
       <div className="sr-only" aria-live="polite" role="status">
-        {previewUrl ? "Image uploaded and preview available" : "No image uploaded"}
+        {previewUrl
+          ? "Image uploaded and preview available"
+          : "No image uploaded"}
       </div>
     </div>
-  );
+  )
 }

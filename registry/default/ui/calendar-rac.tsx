@@ -1,9 +1,8 @@
-"use client";
+"use client"
 
-import { cn } from "@/registry/default/lib/utils";
-import { getLocalTimeZone, today } from "@internationalized/date";
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-import { ComponentProps } from "react";
+import { ComponentProps } from "react"
+import { getLocalTimeZone, today } from "@internationalized/date"
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
 import {
   Button,
   CalendarCell as CalendarCellRac,
@@ -12,17 +11,20 @@ import {
   CalendarGrid as CalendarGridRac,
   CalendarHeaderCell as CalendarHeaderCellRac,
   Calendar as CalendarRac,
+  composeRenderProps,
   Heading as HeadingRac,
   RangeCalendar as RangeCalendarRac,
-  composeRenderProps,
-} from "react-aria-components";
+} from "react-aria-components"
+
+import { cn } from "@/registry/default/lib/utils"
 
 interface BaseCalendarProps {
-  className?: string;
+  className?: string
 }
 
-type CalendarProps = ComponentProps<typeof CalendarRac> & BaseCalendarProps;
-type RangeCalendarProps = ComponentProps<typeof RangeCalendarRac> & BaseCalendarProps;
+type CalendarProps = ComponentProps<typeof CalendarRac> & BaseCalendarProps
+type RangeCalendarProps = ComponentProps<typeof RangeCalendarRac> &
+  BaseCalendarProps
 
 function CalendarHeader() {
   return (
@@ -41,11 +43,11 @@ function CalendarHeader() {
         <ChevronRightIcon size={16} />
       </Button>
     </header>
-  );
+  )
 }
 
 function CalendarGridComponent({ isRange = false }: { isRange?: boolean }) {
-  const now = today(getLocalTimeZone());
+  const now = today(getLocalTimeZone())
 
   return (
     <CalendarGridRac>
@@ -71,38 +73,42 @@ function CalendarGridComponent({ isRange = false }: { isRange?: boolean }) {
                   "after:bg-primary after:pointer-events-none after:absolute after:start-1/2 after:bottom-1 after:z-10 after:size-[3px] after:-translate-x-1/2 after:rounded-full",
                   isRange
                     ? "data-selection-end:after:bg-background data-selection-start:after:bg-background"
-                    : "data-selected:after:bg-background",
-                ),
+                    : "data-selected:after:bg-background"
+                )
             )}
           />
         )}
       </CalendarGridBodyRac>
     </CalendarGridRac>
-  );
+  )
 }
 
 function Calendar({ className, ...props }: CalendarProps) {
   return (
     <CalendarRac
       {...props}
-      className={composeRenderProps(className, (className) => cn("w-fit", className))}
+      className={composeRenderProps(className, (className) =>
+        cn("w-fit", className)
+      )}
     >
       <CalendarHeader />
       <CalendarGridComponent />
     </CalendarRac>
-  );
+  )
 }
 
 function RangeCalendar({ className, ...props }: RangeCalendarProps) {
   return (
     <RangeCalendarRac
       {...props}
-      className={composeRenderProps(className, (className) => cn("w-fit", className))}
+      className={composeRenderProps(className, (className) =>
+        cn("w-fit", className)
+      )}
     >
       <CalendarHeader />
       <CalendarGridComponent isRange />
     </RangeCalendarRac>
-  );
+  )
 }
 
-export { Calendar, RangeCalendar };
+export { Calendar, RangeCalendar }

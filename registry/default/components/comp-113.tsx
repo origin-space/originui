@@ -1,5 +1,6 @@
-import { Button } from "@/registry/default/ui/button";
-import { ChevronDownIcon, PinIcon } from "lucide-react";
+import { ChevronDownIcon, PinIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
   return (
@@ -16,5 +17,5 @@ export default function Component() {
         Pinned
       </Button>
     </div>
-  );
+  )
 }
