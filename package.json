@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "pnpm format && next build",
+    "build": "pnpm format:write && next build",
     "registry:build": "shadcn build",
     "start": "next start",
     "lint": "next lint",
