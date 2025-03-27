@@ -9645,6 +9645,103 @@
         "tags": ["timeline"],
         "colSpan": 3
       }
+    },
+    {
+      "name": "comp-542",
+      "type": "registry:component",
+      "dependencies": ["date-fns", "@dnd-kit/core", "@dnd-kit/modifiers", "@dnd-kit/utilities", "@remixicon/react"],
+      "registryDependencies": [
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/calendar.json",
+        "https://originui.com/r/checkbox.json",
+        "https://originui.com/r/dropdown-menu.json",
+        "https://originui.com/r/dialog.json",
+        "https://originui.com/r/input.json",
+        "https://originui.com/r/textarea.json",
+        "https://originui.com/r/label.json",
+        "https://originui.com/r/popover.json",
+        "https://originui.com/r/radio-group.json",
+        "https://originui.com/r/select.json",
+        "https://originui.com/r/sonner.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-542.tsx",
+          "type": "registry:component"
+        },        
+        {
+          "path": "registry/default/components/full-calendar/agenda-view.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/full-calendar/calendar-dnd-context.tsx",
+          "type": "registry:component"
+        },         
+        {
+          "path": "registry/default/components/full-calendar/constants.ts",
+          "type": "registry:component"
+        },                
+        {
+          "path": "registry/default/components/full-calendar/day-view.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/full-calendar/draggable-event.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/full-calendar/droppable-cell.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/full-calendar/event-dialog.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/full-calendar/event-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/full-calendar/events-popup.tsx",
+          "type": "registry:component"
+        },        
+        {
+          "path": "registry/default/components/full-calendar/full-calendar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/full-calendar/index.ts",
+          "type": "registry:component"
+        },        
+        {
+          "path": "registry/default/components/full-calendar/month-view.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/full-calendar/types.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/full-calendar/utils.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/full-calendar/week-view.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/full-calendar/hooks/use-current-time-indicator.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/full-calendar/hooks/use-event-visibility.ts",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["calendar"],
+        "colSpan": 3
+      }
     }
   ]
 }

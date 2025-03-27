@@ -299,6 +299,12 @@ export const categories: ComponentCategory[] = [
     ],
   },
   {
+    slug: "full-calendar",
+    name: "Full Calendar",
+    isNew: true,    
+    components: [{ name: "comp-542" }],
+  },
+  {
     slug: "input",
     name: "Input",
     components: [
@@ -666,7 +672,6 @@ export const categories: ComponentCategory[] = [
   {
     slug: "timeline",
     name: "Timeline",
-    isNew: true,
     components: [
       { name: "comp-530" },
       { name: "comp-531" },
