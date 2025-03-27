@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
-import { ExternalLink } from "lucide-react"
 
 import { categories, getCategory } from "@/config/components"
 import { getComponentsByNames } from "@/lib/utils"
@@ -10,15 +9,6 @@ import ComponentLoader from "@/components/component-loader-server"
 import Cta from "@/components/cta"
 import PageGrid from "@/components/page-grid"
 import PageHeader from "@/components/page-header"
-import { Button } from "@/registry/default/ui/button"
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/registry/default/ui/table"
 
 type Props = {
   params: Promise<{ category: string }>
