@@ -4,9 +4,9 @@ import { useState } from "react"
 import { addDays, setHours, setMinutes } from "date-fns"
 
 import {
-  FullCalendar,
+  EventCalendar,
   type CalendarEvent,
-} from "@/registry/default/components/full-calendar"
+} from "@/registry/default/components/event-calendar"
 
 // Sample events data with hardcoded times
 const sampleEvents: CalendarEvent[] = [
@@ -95,7 +95,7 @@ export default function Component() {
   }
 
   return (
-    <FullCalendar
+    <EventCalendar
       events={events}
       onEventAdd={handleEventAdd}
       onEventUpdate={handleEventUpdate}

@@ -9,7 +9,7 @@ import {
   CalendarEvent,
   EventItem,
   useCalendarDnd,
-} from "@/registry/default/components/full-calendar"
+} from "@/registry/default/components/event-calendar"
 
 interface DraggableEventProps {
   event: CalendarEvent

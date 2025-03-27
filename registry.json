@@ -9670,71 +9670,71 @@
           "type": "registry:component"
         },        
         {
-          "path": "registry/default/components/full-calendar/agenda-view.tsx",
+          "path": "registry/default/components/event-calendar/agenda-view.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/default/components/full-calendar/calendar-dnd-context.tsx",
+          "path": "registry/default/components/event-calendar/calendar-dnd-context.tsx",
           "type": "registry:component"
         },         
         {
-          "path": "registry/default/components/full-calendar/constants.ts",
+          "path": "registry/default/components/event-calendar/constants.ts",
           "type": "registry:component"
         },                
         {
-          "path": "registry/default/components/full-calendar/day-view.tsx",
+          "path": "registry/default/components/event-calendar/day-view.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/default/components/full-calendar/draggable-event.tsx",
+          "path": "registry/default/components/event-calendar/draggable-event.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/default/components/full-calendar/droppable-cell.tsx",
+          "path": "registry/default/components/event-calendar/droppable-cell.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/default/components/full-calendar/event-dialog.tsx",
+          "path": "registry/default/components/event-calendar/event-dialog.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/default/components/full-calendar/event-item.tsx",
+          "path": "registry/default/components/event-calendar/event-item.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/default/components/full-calendar/events-popup.tsx",
+          "path": "registry/default/components/event-calendar/events-popup.tsx",
           "type": "registry:component"
         },        
         {
-          "path": "registry/default/components/full-calendar/full-calendar.tsx",
+          "path": "registry/default/components/event-calendar/event-calendar.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/default/components/full-calendar/index.ts",
+          "path": "registry/default/components/event-calendar/index.ts",
           "type": "registry:component"
         },        
         {
-          "path": "registry/default/components/full-calendar/month-view.tsx",
+          "path": "registry/default/components/event-calendar/month-view.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/default/components/full-calendar/types.ts",
+          "path": "registry/default/components/event-calendar/types.ts",
           "type": "registry:component"
         },
         {
-          "path": "registry/default/components/full-calendar/utils.ts",
+          "path": "registry/default/components/event-calendar/utils.ts",
           "type": "registry:component"
         },
         {
-          "path": "registry/default/components/full-calendar/week-view.tsx",
+          "path": "registry/default/components/event-calendar/week-view.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/default/components/full-calendar/hooks/use-current-time-indicator.ts",
+          "path": "registry/default/components/event-calendar/hooks/use-current-time-indicator.ts",
           "type": "registry:component"
         },
         {
-          "path": "registry/default/components/full-calendar/hooks/use-event-visibility.ts",
+          "path": "registry/default/components/event-calendar/hooks/use-event-visibility.ts",
           "type": "registry:component"
         }
       ],

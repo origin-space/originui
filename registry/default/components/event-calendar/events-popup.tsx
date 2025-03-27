@@ -7,7 +7,7 @@ import { XIcon } from "lucide-react"
 import {
   EventItem,
   type CalendarEvent,
-} from "@/registry/default/components/full-calendar"
+} from "@/registry/default/components/event-calendar"
 
 interface EventsPopupProps {
   date: Date

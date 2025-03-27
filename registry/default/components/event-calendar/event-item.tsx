@@ -9,7 +9,7 @@ import {
   getBorderRadiusClasses,
   getEventColorClasses,
   type CalendarEvent,
-} from "@/registry/default/components/full-calendar"
+} from "@/registry/default/components/event-calendar"
 import { cn } from "@/registry/default/lib/utils"
 
 // Using date-fns format with custom formatting:

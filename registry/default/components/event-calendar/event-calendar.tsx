@@ -35,7 +35,7 @@ import {
   MonthView,
   WeekCellsHeight,
   WeekView,
-} from "@/registry/default/components/full-calendar"
+} from "@/registry/default/components/event-calendar"
 import { cn } from "@/registry/default/lib/utils"
 import { Button } from "@/registry/default/ui/button"
 import {
@@ -46,7 +46,7 @@ import {
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu"
 
-export interface FullCalendarProps {
+export interface EventCalendarProps {
   events?: CalendarEvent[]
   onEventAdd?: (event: CalendarEvent) => void
   onEventUpdate?: (event: CalendarEvent) => void
@@ -55,14 +55,14 @@ export interface FullCalendarProps {
   initialView?: CalendarView
 }
 
-export function FullCalendar({
+export function EventCalendar({
   events = [],
   onEventAdd,
   onEventUpdate,
   onEventDelete,
   className,
   initialView = "month",
-}: FullCalendarProps) {
+}: EventCalendarProps) {
   const [currentDate, setCurrentDate] = useState(new Date())
   const [view, setView] = useState<CalendarView>(initialView)
   const [isEventDialogOpen, setIsEventDialogOpen] = useState(false)

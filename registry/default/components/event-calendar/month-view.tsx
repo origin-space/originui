@@ -26,7 +26,7 @@ import {
   sortEvents,
   useEventVisibility,
   type CalendarEvent,
-} from "@/registry/default/components/full-calendar"
+} from "@/registry/default/components/event-calendar"
 import {
   Popover,
   PopoverContent,
