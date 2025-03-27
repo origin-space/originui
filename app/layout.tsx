@@ -60,9 +60,9 @@ export default function RootLayout({
               </div>
             </div>
           </div>
+          <Toaster />
+          <Sonner />
         </ThemeProvider>
-        <Toaster />
-        <Sonner />
         <Script
           src="https://plausible.cruip.com/js/script.js"
           data-domain="originui.com"
