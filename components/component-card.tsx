@@ -6,10 +6,12 @@ export default function ComponentCard({
   isSearchPage = false,
   children,
   component,
+  className,
 }: {
   isSearchPage?: boolean
   children: React.ReactNode
   component: RegistryItem
+  className?: string
 }) {
   const getColSpanClasses = (includeStart = false) => {
     const baseClasses =
@@ -42,8 +44,10 @@ export default function ComponentCard({
         "group/item relative border has-[[data-comp-loading=true]]:border-none",
         isSearchPage
           ? "col-span-12 grid grid-cols-12"
-          : cn(getColSpanClasses(), styleClasses)
+          : cn(getColSpanClasses(), styleClasses),
+        className
       )}
+      data-slot={component.name}
     >
       {isSearchPage ? (
         <div className={cn(getColSpanClasses(true), styleClasses)}>

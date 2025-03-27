@@ -38,6 +38,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const isSingleComponent = components.length === 1
 
+  // Custom title and description for event-calendar
+  if (category.slug === "event-calendar") {
+    return {
+      title:
+        "Event calendar component built with React and Tailwind CSS - Origin UI",
+      description:
+        "An event calendar component built with React and Tailwind CSS. Originally built in v0 and currently in early alpha stage.",
+    }
+  }
+
   return {
     title: isSingleComponent
       ? `${category.name} component built with React and Tailwind CSS - Origin UI`
@@ -65,183 +75,64 @@ export default async function Page({ params }: Props) {
     category.components.map((item) => item.name)
   )
 
+  // Determine the description text based on category
+  const getDescriptionText = () => {
+    // Special case for event-calendar
+    if (category.slug === "event-calendar") {
+      return (
+        <span className="block text-balance">
+          An event calendar component built with React and Tailwind CSS.
+          Originally built in{" "}
+          <a
+            href="https://v0.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+          >
+            v0
+          </a>{" "}
+          and currently in early alpha stage.{" "}
+          <a
+            href="https://github.com/origin-space/event-calendar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary inline-flex items-center gap-1 hover:underline"
+          >
+            Docs
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="9"
+              height="9"
+              className="-mt-1 fill-current"
+            >
+              <path d="m1.55 8.445-.776-.776 5.767-5.777H2.087l.01-1.074H8.39v6.304H7.307l.01-4.454L1.55 8.445Z" />
+            </svg>
+          </a>
+        </span>
+      )
+    }
+
+    // Default case based on component count
+    return components.length === 1
+      ? `A ${category.name.toLowerCase()} component built with React and Tailwind CSS.`
+      : `A growing collection of ${components.length} ${category.name.toLowerCase()} components built with React and Tailwind CSS.`
+  }
+
   return (
     <>
-      <PageHeader title={category.name}>
-        {components.length === 1
-          ? `A ${category.name.toLowerCase()} component built with React and Tailwind CSS.`
-          : `A growing collection of ${components.length} ${category.name.toLowerCase()} components built with React and Tailwind CSS.`}
-      </PageHeader>
+      <PageHeader title={category.name}>{getDescriptionText()}</PageHeader>
       <PageGrid>
         {components.map((component) => (
-          <ComponentCard key={component.name} component={component}>
+          <ComponentCard
+            key={component.name}
+            component={component}
+            className="data-[slot=comp-542]:px-0"
+          >
             <ComponentLoader component={component} />
             <ComponentDetails component={component} />
           </ComponentCard>
         ))}
       </PageGrid>
-
-      {/* Notes for full calendar component */}
-      {components[0].name === "comp-542" && (
-        <div className="container mx-auto px-4 py-10">
-          <h2 className="font-heading text-foreground mb-2 text-2xl font-bold">
-            Notes
-          </h2>
-          <p className="text-muted-foreground mb-4 text-lg">
-            This calendar component is in early alpha stage. We are actively
-            working on improving it.
-          </p>
-          <Button
-            variant="outline"
-            size="sm"
-            className="h-7 gap-1 px-2"
-            asChild
-          >
-            <a
-              href="https://github.com/origin-space/full-calendar"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Docs
-              <ExternalLink
-                className="-me-0.5 -mt-[3px] size-3 opacity-60"
-                aria-hidden="true"
-              />
-            </a>
-          </Button>
-
-          <h2 className="font-heading text-foreground mt-12 mb-2 text-2xl font-bold">
-            Props
-          </h2>
-          <Table>
-            <TableHeader>
-              <TableRow className="hover:bg-transparent">
-                <TableHead>Prop</TableHead>
-                <TableHead>Type</TableHead>
-                <TableHead>Default</TableHead>
-                <TableHead>Description</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow>
-                <TableCell>
-                  <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">
-                    events
-                  </code>
-                </TableCell>
-                <TableCell>
-                  <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">
-                    CalendarEvent[]
-                  </code>
-                </TableCell>
-                <TableCell>
-                  <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">
-                    []
-                  </code>
-                </TableCell>
-                <TableCell>
-                  Array of events to display in the calendar
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>
-                  <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">
-                    onEventAdd
-                  </code>
-                </TableCell>
-                <TableCell>
-                  <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">
-                    (event: CalendarEvent) {"->"} void
-                  </code>
-                </TableCell>
-                <TableCell>
-                  <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">
-                    -
-                  </code>
-                </TableCell>
-                <TableCell>Callback function when an event is added</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>
-                  <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">
-                    onEventUpdate
-                  </code>
-                </TableCell>
-                <TableCell>
-                  <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">
-                    (event: CalendarEvent) {"->"} void
-                  </code>
-                </TableCell>
-                <TableCell>
-                  <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">
-                    -
-                  </code>
-                </TableCell>
-                <TableCell>
-                  Callback function when an event is updated
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>
-                  <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">
-                    onEventDelete
-                  </code>
-                </TableCell>
-                <TableCell>
-                  <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">
-                    (eventId: string) {"->"} void
-                  </code>
-                </TableCell>
-                <TableCell>
-                  <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">
-                    -
-                  </code>
-                </TableCell>
-                <TableCell>
-                  Callback function when an event is deleted
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>
-                  <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">
-                    className
-                  </code>
-                </TableCell>
-                <TableCell>
-                  <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">
-                    string
-                  </code>
-                </TableCell>
-                <TableCell>
-                  <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">
-                    -
-                  </code>
-                </TableCell>
-                <TableCell>Additional CSS class for styling</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>
-                  <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">
-                    initialView
-                  </code>
-                </TableCell>
-                <TableCell>
-                  <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">
-                    &quot;month&quot; | &quot;week&quot; | &quot;day&quot; |
-                    &quot;agenda&quot;
-                  </code>
-                </TableCell>
-                <TableCell>
-                  <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">
-                    &quot;month&quot;
-                  </code>
-                </TableCell>
-                <TableCell>Initial view mode of the calendar</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </div>
-      )}
       <Cta />
     </>
   )
