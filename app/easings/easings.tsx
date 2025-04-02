@@ -394,10 +394,7 @@ export default function Easings({ easings }: EasingsProps) {
         </div>
       </div>
 
-      <div
-        id="grid"
-        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:[&>*:last-child:nth-child(2n-1)]:col-span-2 lg:[&>*:last-child:nth-child(3n-1)]:col-start-2 lg:[&>*:last-child:nth-child(3n-2)]:col-span-3"
-      >
+      <div id="grid" className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {getFilteredEasings().map((easing) => (
           <div
             key={`${easing.name}-${easingFilter}`}
@@ -431,39 +428,11 @@ export default function Easings({ easings }: EasingsProps) {
               {/* Using decodeURIComponent to properly escape special characters in the class name.
                   Without this, Tailwind shows a warning: The class ... is ambiguous and matches multiple utilities. */}
               <CopyClass
-                value={`[transition-timing-function:cubic-bezier(${easing.points.join(",")})]`}
+                value={`ease-[cubic-bezier(${easing.points.join(",")})]`}
               />
             </div>
           </div>
         ))}
-        <div className="bg-muted/65 relative rounded-xl p-6">
-          <p className="mb-4">
-            <strong className="text-foreground block text-sm font-medium">
-              Note
-            </strong>
-          </p>
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            We use class names with arbitrary properties like{" "}
-            <code className="text-foreground font-mono text-[13px]">
-              &#91;transition-timing-function:cubic-bezier(...)&#93;
-            </code>{" "}
-            instead of{" "}
-            <code className="text-foreground font-mono text-[13px]">
-              ease-&#91;cubic-bezier(...)&#93;
-            </code>{" "}
-            as recommended in the Tailwind CSS documentation, because the latter
-            won&lsquo;t work with the tailwindcss-animate plugin. See{" "}
-            <a
-              href="https://github.com/jamiebuilds/tailwindcss-animate/pull/46"
-              className="underline hover:no-underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              this GitHub issue
-            </a>{" "}
-            for technical details.
-          </p>
-        </div>
       </div>
       <style global jsx>{`
         @media (min-width: 768px) {
