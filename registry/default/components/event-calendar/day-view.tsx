@@ -132,18 +132,17 @@ export function DayView({
       let placed = false
 
       while (!placed) {
-        if (!columns[columnIndex]) {
-          columns[columnIndex] = []
+        const col = columns[columnIndex] || []
+        if (col.length === 0) {
+          columns[columnIndex] = col
           placed = true
         } else {
-          // Check if this event overlaps with any event in this column
-          const overlaps = columns[columnIndex].some((col) =>
+          const overlaps = col.some((c) =>
             areIntervalsOverlapping(
               { start: adjustedStart, end: adjustedEnd },
-              { start: new Date(col.event.start), end: new Date(col.event.end) }
+              { start: new Date(c.event.start), end: new Date(c.event.end) }
             )
           )
-
           if (!overlaps) {
             placed = true
           } else {
@@ -152,8 +151,10 @@ export function DayView({
         }
       }
 
-      // Add event to its column
-      columns[columnIndex].push({ event, end: adjustedEnd })
+      // Ensure column is initialized before pushing
+      const currentColumn = columns[columnIndex] || []
+      columns[columnIndex] = currentColumn
+      currentColumn.push({ event, end: adjustedEnd })
 
       // First column takes full width, others are indented by 10% and take 90% width
       const width = columnIndex === 0 ? 1 : 0.9
