@@ -8,6 +8,12 @@ import type {
   CalendarEvent,
   EventColor,
 } from "@/registry/default/components/event-calendar"
+import {
+  DefaultEndHour,
+  DefaultStartHour,
+  EndHour,
+  StartHour,
+} from "@/registry/default/components/event-calendar/constants"
 import { cn } from "@/registry/default/lib/utils"
 import { Button } from "@/registry/default/ui/button"
 import { Calendar } from "@/registry/default/ui/calendar"
@@ -56,8 +62,8 @@ export function EventDialog({
   const [description, setDescription] = useState("")
   const [startDate, setStartDate] = useState<Date>(new Date())
   const [endDate, setEndDate] = useState<Date>(new Date())
-  const [startTime, setStartTime] = useState("09:00")
-  const [endTime, setEndTime] = useState("10:00")
+  const [startTime, setStartTime] = useState(`${DefaultStartHour}:00`)
+  const [endTime, setEndTime] = useState(`${DefaultEndHour}:00`)
   const [allDay, setAllDay] = useState(false)
   const [location, setLocation] = useState("")
   const [color, setColor] = useState<EventColor>("sky")
@@ -96,8 +102,8 @@ export function EventDialog({
     setDescription("")
     setStartDate(new Date())
     setEndDate(new Date())
-    setStartTime("09:00")
-    setEndTime("10:00")
+    setStartTime(`${DefaultStartHour}:00`)
+    setEndTime(`${DefaultEndHour}:00`)
     setAllDay(false)
     setLocation("")
     setColor("sky")
@@ -113,7 +119,7 @@ export function EventDialog({
   // Memoize time options so they're only calculated once
   const timeOptions = useMemo(() => {
     const options = []
-    for (let hour = 0; hour < 24; hour++) {
+    for (let hour = StartHour; hour <= EndHour; hour++) {
       for (let minute = 0; minute < 60; minute += 15) {
         const formattedHour = hour.toString().padStart(2, "0")
         const formattedMinute = minute.toString().padStart(2, "0")
@@ -136,6 +142,18 @@ export function EventDialog({
         .split(":")
         .map(Number)
       const [endHours = 0, endMinutes = 0] = endTime.split(":").map(Number)
+
+      if (
+        startHours < StartHour ||
+        startHours > EndHour ||
+        endHours < StartHour ||
+        endHours > EndHour
+      ) {
+        setError(
+          `Selected time must be between ${StartHour}:00 and ${EndHour}:00`
+        )
+        return
+      }
 
       start.setHours(startHours, startMinutes, 0)
       end.setHours(endHours, endMinutes, 0)

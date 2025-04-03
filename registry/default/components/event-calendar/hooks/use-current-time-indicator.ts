@@ -3,6 +3,11 @@
 import { useEffect, useState } from "react"
 import { endOfWeek, isSameDay, isWithinInterval, startOfWeek } from "date-fns"
 
+import {
+  EndHour,
+  StartHour,
+} from "@/registry/default/components/event-calendar/constants"
+
 export function useCurrentTimeIndicator(
   currentDate: Date,
   view: "day" | "week"
@@ -15,9 +20,9 @@ export function useCurrentTimeIndicator(
       const now = new Date()
       const hours = now.getHours()
       const minutes = now.getMinutes()
-      const totalMinutes = hours * 60 + minutes
+      const totalMinutes = (hours - StartHour) * 60 + minutes
       const dayStartMinutes = 0 // 12am
-      const dayEndMinutes = 24 * 60 // 12am next day
+      const dayEndMinutes = (EndHour - StartHour) * 60 // 12am next day
 
       // Calculate position as percentage of day
       const position =

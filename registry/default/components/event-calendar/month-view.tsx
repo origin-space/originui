@@ -27,6 +27,7 @@ import {
   useEventVisibility,
   type CalendarEvent,
 } from "@/registry/default/components/event-calendar"
+import { DefaultStartHour } from "@/registry/default/components/event-calendar/constants"
 import {
   Popover,
   PopoverContent,
@@ -93,7 +94,7 @@ export function MonthView({
   }, [])
 
   return (
-    <>
+    <div data-slot="month-view" className="contents">
       <div className="border-border/70 grid grid-cols-7 border-b">
         {weekdays.map((day) => (
           <div
@@ -142,7 +143,7 @@ export function MonthView({
                     date={day}
                     onClick={() => {
                       const startTime = new Date(day)
-                      startTime.setHours(9, 0, 0) // Default to 9:00 AM
+                      startTime.setHours(DefaultStartHour, 0, 0)
                       onEventCreate(startTime)
                     }}
                   >
@@ -270,6 +271,6 @@ export function MonthView({
           </div>
         ))}
       </div>
-    </>
+    </div>
   )
 }
