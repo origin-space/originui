@@ -132,8 +132,10 @@ export function EventDialog({
     const end = new Date(endDate)
 
     if (!allDay) {
-      const [startHours, startMinutes] = startTime.split(":").map(Number)
-      const [endHours, endMinutes] = endTime.split(":").map(Number)
+      const [startHours = 0, startMinutes = 0] = startTime
+        .split(":")
+        .map(Number)
+      const [endHours = 0, endMinutes = 0] = endTime.split(":").map(Number)
 
       start.setHours(startHours, startMinutes, 0)
       end.setHours(endHours, endMinutes, 0)
@@ -406,7 +408,7 @@ export function EventDialog({
             </legend>
             <RadioGroup
               className="flex gap-1.5"
-              defaultValue={colorOptions[0].value}
+              defaultValue={colorOptions[0]?.value}
               value={color}
               onValueChange={(value: EventColor) => setColor(value)}
             >
