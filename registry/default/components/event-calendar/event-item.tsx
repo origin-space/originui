@@ -168,7 +168,7 @@ export function EventItem({
         {children || (
           <span className="truncate">
             {!event.allDay && (
-              <span className="truncate text-[11px] font-normal opacity-70">
+              <span className="truncate font-normal opacity-70 sm:text-[11px]">
                 {formatTimeWithOptionalMinutes(displayStart)}{" "}
               </span>
             )}
@@ -203,12 +203,7 @@ export function EventItem({
           <div className="truncate">
             {event.title}{" "}
             {showTime && (
-              <span
-                className={cn(
-                  "opacity-70",
-                  view === "week" ? "sm:text-[11px]" : "text-[11px]"
-                )}
-              >
+              <span className="opacity-70">
                 {formatTimeWithOptionalMinutes(displayStart)}
               </span>
             )}
@@ -217,7 +212,7 @@ export function EventItem({
           <>
             <div className="truncate font-medium">{event.title}</div>
             {showTime && (
-              <div className="truncate text-[11px] font-normal opacity-70">
+              <div className="truncate font-normal opacity-70 sm:text-[11px]">
                 {getEventTime()}
               </div>
             )}
