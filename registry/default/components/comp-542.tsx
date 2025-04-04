@@ -52,8 +52,8 @@ const sampleEvents: CalendarEvent[] = [
     id: "5",
     title: "Lunch with Client",
     description: "Discuss new project requirements",
-    start: setMinutes(setHours(addDays(new Date(), 1), 12), 0), // 12:00 PM tomorrow
-    end: setMinutes(setHours(addDays(new Date(), 1), 13), 15), // 1:15 PM tomorrow
+    start: setMinutes(setHours(addDays(new Date(), 1), 12), 0), // 12:00 PM, 1 day from now
+    end: setMinutes(setHours(addDays(new Date(), 1), 13), 15), // 1:15 PM, 1 day from now
     color: "emerald",
     location: "Downtown Cafe",
   },
@@ -61,8 +61,8 @@ const sampleEvents: CalendarEvent[] = [
     id: "6",
     title: "Product Launch",
     description: "New product release",
-    start: addDays(new Date(), 3),
-    end: addDays(new Date(), 6),
+    start: addDays(new Date(), 3), // 3 days from now
+    end: addDays(new Date(), 6), // 6 days from now
     allDay: true,
     color: "violet",
   },
@@ -70,8 +70,8 @@ const sampleEvents: CalendarEvent[] = [
     id: "7",
     title: "Sales Conference",
     description: "Discuss about new clients",
-    start: setMinutes(setHours(addDays(new Date(), 4), 14), 30), // 2:30 PM
-    end: setMinutes(setHours(addDays(new Date(), 5), 14), 45), // 2:45 PM
+    start: setMinutes(setHours(addDays(new Date(), 4), 14), 30), // 2:30 PM, 4 days from now
+    end: setMinutes(setHours(addDays(new Date(), 5), 14), 45), // 2:45 PM, 5 days from now
     color: "rose",
     location: "Downtown Cafe",
   },
@@ -79,8 +79,8 @@ const sampleEvents: CalendarEvent[] = [
     id: "8",
     title: "Team Meeting",
     description: "Weekly team sync",
-    start: setMinutes(setHours(addDays(new Date(), 5), 9), 0), // 9:00 AM
-    end: setMinutes(setHours(addDays(new Date(), 5), 10), 30), // 10:30 AM
+    start: setMinutes(setHours(addDays(new Date(), 5), 9), 0), // 9:00 AM, 5 days from now
+    end: setMinutes(setHours(addDays(new Date(), 5), 10), 30), // 10:30 AM, 5 days from now
     color: "orange",
     location: "Conference Room A",
   },
@@ -88,8 +88,8 @@ const sampleEvents: CalendarEvent[] = [
     id: "9",
     title: "Review contracts",
     description: "Weekly team sync",
-    start: setMinutes(setHours(addDays(new Date(), 5), 14), 0), // 2:00 PM
-    end: setMinutes(setHours(addDays(new Date(), 5), 15), 30), // 3:30 PM
+    start: setMinutes(setHours(addDays(new Date(), 5), 14), 0), // 2:00 PM, 5 days from now
+    end: setMinutes(setHours(addDays(new Date(), 5), 15), 30), // 3:30 PM, 5 days from now
     color: "sky",
     location: "Conference Room A",
   },
@@ -97,8 +97,8 @@ const sampleEvents: CalendarEvent[] = [
     id: "10",
     title: "Team Meeting",
     description: "Weekly team sync",
-    start: setMinutes(setHours(addDays(new Date(), 5), 9), 45), // 9:45 AM
-    end: setMinutes(setHours(addDays(new Date(), 5), 11), 0), // 11:00 AM
+    start: setMinutes(setHours(addDays(new Date(), 5), 9), 45), // 9:45 AM, 5 days from now
+    end: setMinutes(setHours(addDays(new Date(), 5), 11), 0), // 11:00 AM, 5 days from now
     color: "amber",
     location: "Conference Room A",
   },
@@ -106,8 +106,8 @@ const sampleEvents: CalendarEvent[] = [
     id: "11",
     title: "Marketing Strategy Session",
     description: "Quarterly marketing planning",
-    start: new Date(2025, 3, 5, 10, 0), // April 5, 2025, 10:00 AM
-    end: new Date(2025, 3, 5, 15, 30), // April 5, 2025, 3:30 PM
+    start: setMinutes(setHours(addDays(new Date(), 9), 10), 0), // 10:00 AM, 9 days from now
+    end: setMinutes(setHours(addDays(new Date(), 9), 15), 30), // 3:30 PM, 9 days from now
     color: "emerald",
     location: "Marketing Department",
   },
@@ -115,8 +115,8 @@ const sampleEvents: CalendarEvent[] = [
     id: "12",
     title: "Annual Shareholders Meeting",
     description: "Presentation of yearly results",
-    start: new Date(2025, 3, 13), // April 13, 2025
-    end: new Date(2025, 3, 13),
+    start: addDays(new Date(), 17), // 17 days from now
+    end: addDays(new Date(), 17), // 17 days from now
     allDay: true,
     color: "sky",
     location: "Grand Conference Center",
@@ -125,8 +125,8 @@ const sampleEvents: CalendarEvent[] = [
     id: "13",
     title: "Product Development Workshop",
     description: "Brainstorming for new features",
-    start: new Date(2025, 3, 22, 9, 0), // April 22, 2025, 9:00 AM
-    end: new Date(2025, 3, 23, 17, 0), // April 23, 2025, 5:00 PM
+    start: setMinutes(setHours(addDays(new Date(), 26), 9), 0), // 9:00 AM, 26 days from now
+    end: setMinutes(setHours(addDays(new Date(), 27), 17), 0), // 5:00 PM, 27 days from now
     color: "rose",
     location: "Innovation Lab",
   },
