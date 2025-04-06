@@ -6,7 +6,7 @@ import { Label } from "@/registry/default/ui/label"
 export default function Component() {
   const id = useId()
   return (
-    <div className="border-input has-data-[state=checked]:border-ring relative flex w-full items-start gap-2 rounded-md border p-4 shadow-xs outline-none">
+    <div className="border-input has-data-[state=checked]:border-primary/50 relative flex w-full items-start gap-2 rounded-md border p-4 shadow-xs outline-none">
       <Checkbox
         id={id}
         className="order-1 after:absolute after:inset-0"

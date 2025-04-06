@@ -8,7 +8,7 @@ export default function Component() {
   return (
     <RadioGroup className="gap-2" defaultValue="1">
       {/* Radio card #1 */}
-      <div className="border-input has-data-[state=checked]:border-ring relative flex w-full items-start gap-2 rounded-md border p-4 shadow-xs outline-none">
+      <div className="border-input has-data-[state=checked]:border-primary/50 relative flex w-full items-start gap-2 rounded-md border p-4 shadow-xs outline-none">
         <RadioGroupItem
           value="1"
           id={`${id}-1`}
@@ -55,7 +55,7 @@ export default function Component() {
         </div>
       </div>
       {/* Radio card #2 */}
-      <div className="border-input has-data-[state=checked]:border-ring relative flex w-full items-start gap-2 rounded-md border p-4 shadow-xs outline-none">
+      <div className="border-input has-data-[state=checked]:border-primary/50 relative flex w-full items-start gap-2 rounded-md border p-4 shadow-xs outline-none">
         <RadioGroupItem
           value="2"
           id={`${id}-2`}
