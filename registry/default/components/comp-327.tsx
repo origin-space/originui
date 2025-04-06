@@ -104,7 +104,7 @@ export default function Component() {
             </button>
           </div>
           <Button type="button" className="w-full">
-            SendIcon invites
+            Send invites
           </Button>
         </form>
 
