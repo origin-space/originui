@@ -10,7 +10,7 @@ export default function Component() {
       <Label htmlFor={id}>Shorter textarea</Label>
       <Textarea
         id={id}
-        className="min-h-[none]"
+        className="min-h-0"
         placeholder="Leave a comment"
         rows={2}
       />
