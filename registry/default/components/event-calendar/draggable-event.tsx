@@ -104,10 +104,12 @@ export function DraggableEvent({
     if (elementRef.current) {
       const rect = elementRef.current.getBoundingClientRect()
       const touch = e.touches[0]
-      setDragHandlePosition({
-        x: touch.clientX - rect.left,
-        y: touch.clientY - rect.top,
-      })
+      if (touch) {
+        setDragHandlePosition({
+          x: touch.clientX - rect.left,
+          y: touch.clientY - rect.top,
+        })
+      }
     }
   }
 
