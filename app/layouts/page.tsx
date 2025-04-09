@@ -12,6 +12,14 @@ export const metadata: Metadata = {
 
 const cards = [
   {
+    id: 6,
+    title: "Event Calendar",
+    demoUrl: "https://crafted.is/exp6",
+    repoUrl:
+      "https://github.com/origin-space/ui-experiments/tree/main/apps/experiment-06",
+    imgHeight: 688,
+  },
+  {
     id: 5,
     title: "Candlestick Chart",
     demoUrl: "https://crafted.is/exp5",
