@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "acme",
-  "homepage": "https://acme.com",
+  "name": "originui",
+  "homepage": "https://originui.com",
   "items": [
     {
       "name": "accordion",
