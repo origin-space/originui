@@ -165,11 +165,6 @@ export const useFileUpload = (options: FileUploadOptions = {}): [FileUploadState
       const newFilesArray = Array.from(newFiles)
       const errors: string[] = []
 
-      // In single file mode, clear existing files first
-      if (maxFiles === 1) {
-        clearFiles()
-      }
-
       // Check if adding these files would exceed maxFiles
       if (maxFiles > 1 && state.files.length + newFilesArray.length > maxFiles) {
         errors.push(`You can only upload a maximum of ${maxFiles} files.`)
@@ -180,6 +175,18 @@ export const useFileUpload = (options: FileUploadOptions = {}): [FileUploadState
       const validFiles: FileWithPreview[] = []
 
       newFilesArray.forEach((file) => {
+        // Check for duplicates
+        const isDuplicate = state.files.some(
+          (existingFile) =>
+            existingFile.file.name === file.name && 
+            existingFile.file.size === file.size
+        )
+
+        // Skip duplicate files silently
+        if (isDuplicate) {
+          return
+        }
+
         const error = validateFile(file)
         if (error) {
           errors.push(error)
@@ -192,18 +199,39 @@ export const useFileUpload = (options: FileUploadOptions = {}): [FileUploadState
         }
       })
 
-      setState((prev) => ({
-        ...prev,
-        files: [...prev.files, ...validFiles],
-        errors: [...prev.errors, ...errors],
-      }))
+      // Only update state if we have valid files to add
+      if (validFiles.length > 0) {
+        setState((prev) => {
+          // In single file mode, replace existing files
+          if (maxFiles === 1) {
+            // Clean up old file previews
+            prev.files.forEach((file) => {
+              if (file.file.type.startsWith("image/")) {
+                URL.revokeObjectURL(file.preview)
+              }
+            })
+            return {
+              ...prev,
+              files: validFiles,
+              errors: [...prev.errors, ...errors],
+            }
+          }
+
+          // In multiple file mode, append new files
+          return {
+            ...prev,
+            files: [...prev.files, ...validFiles],
+            errors: [...prev.errors, ...errors],
+          }
+        })
+      }
 
       // Reset input value after handling files
       if (inputRef.current) {
         inputRef.current.value = ""
       }
     },
-    [state.files.length, maxFiles, validateFile, createPreview, generateUniqueId, clearFiles],
+    [state.files.length, maxFiles, validateFile, createPreview, generateUniqueId],
   )
 
   const removeFile = useCallback((id: string) => {
