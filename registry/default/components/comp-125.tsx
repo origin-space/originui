@@ -51,7 +51,7 @@ export default function Component() {
             </p>{" "}
             <button
               onClick={() => removeFile(files[0]?.id)}
-              className="font-medium text-red-500 hover:underline"
+              className="font-medium text-destructive hover:underline"
               aria-label={`Remove ${fileName}`}
             >
               Remove
