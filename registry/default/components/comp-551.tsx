@@ -11,9 +11,7 @@ export default function Component() {
     { files, isDragging, errors },
     { handleDragEnter, handleDragLeave, handleDragOver, handleDrop, openFileDialog, clearFiles, getInputProps },
   ] = useFileUpload({
-    maxFiles: 1,
     accept: "image/*",
-    multiple: false,
     maxSize: 5 * 1024 * 1024, // 5MB
   })
 
@@ -35,7 +33,7 @@ export default function Component() {
 
   return (
     <div className="relative">
-      <input {...getInputProps({ disabled: false, multiple: false })} />
+      <input {...getInputProps({ disabled: false })} />
 
       <div
         onClick={openFileDialog}

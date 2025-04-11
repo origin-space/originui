@@ -153,8 +153,7 @@ export default function Component() {
 function ProfileBg({ defaultImage }: { defaultImage?: string }) {
   const [hideDefault, setHideDefault] = useState(false)
   const [{ files }, { removeFile, openFileDialog, getInputProps }] = useFileUpload({
-    accept: "image/*",
-    multiple: false
+    accept: "image/*"
   })
 
   const currentImage = files[0]?.preview || (!hideDefault ? defaultImage : null)
@@ -208,8 +207,7 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
 
 function Avatar({ defaultImage }: { defaultImage?: string }) {
   const [{ files }, { openFileDialog, getInputProps }] = useFileUpload({
-    accept: "image/*",
-    multiple: false
+    accept: "image/*"
   })
 
   const currentImage = files[0]?.preview || defaultImage

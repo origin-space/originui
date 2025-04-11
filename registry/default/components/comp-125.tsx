@@ -7,8 +7,7 @@ import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
   const [{ files }, { handleFileChange, removeFile, openFileDialog, getInputProps }] = useFileUpload({
-    accept: "image/*",
-    multiple: false
+    accept: "image/*"
   })
 
   const previewUrl = files[0]?.preview || null
