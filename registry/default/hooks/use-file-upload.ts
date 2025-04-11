@@ -56,8 +56,8 @@ export type FileUploadActions = {
 
 export const useFileUpload = (options: FileUploadOptions = {}): [FileUploadState, FileUploadActions] => {
   const {
-    maxFiles = Infinity, // Default to unlimited files when multiple is true
-    maxSize = 10 * 1024 * 1024, // 10MB default
+    maxFiles = Infinity,
+    maxSize = Infinity,
     accept = "*",
     multiple = false,
     iconPaths = {

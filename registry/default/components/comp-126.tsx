@@ -18,7 +18,7 @@ export default function Component() {
       <div className="relative inline-flex">
         <Button
           variant="outline"
-          className="relative size-16 overflow-hidden p-0"
+          className="relative size-16 overflow-hidden p-0 shadow-none"
           onClick={openFileDialog}
           aria-label={previewUrl ? "Change image" : "Upload image"}
         >
