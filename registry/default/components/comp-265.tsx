@@ -210,7 +210,7 @@ export default function Component() {
                   priceStep,
                   sliderValue
                 )}
-                className="bg-primary/20 h-full w-full"
+                className="bg-primary/20 size-full"
               ></span>
             </div>
           ))}

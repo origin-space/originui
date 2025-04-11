@@ -18,7 +18,7 @@ export default function Component() {
       <div className="relative inline-flex">
         <Button
           variant="outline"
-          className="relative size-16 overflow-hidden p-0"
+          className="relative size-16 overflow-hidden rounded-full p-0"
           onClick={openFileDialog}
           aria-label={previewUrl ? "Change image" : "Upload image"}
         >
@@ -42,7 +42,7 @@ export default function Component() {
             onClick={() => removeFile(files[0]?.id)}
             size="icon"
             variant="destructive"
-            className="absolute -top-2 -right-2 size-6 rounded-full border-2 border-background shadow-none focus-visible:border-background"
+            className="absolute -top-1 -right-1 size-6 rounded-full border-2 border-background shadow-none focus-visible:border-background"
             aria-label="Remove image"
           >
             <XIcon className="size-3.5" />

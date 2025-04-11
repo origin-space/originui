@@ -9878,6 +9878,19 @@
       }
     },
     {
+      "name": "comp-550",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-550.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"]
+      }
+    },    
+    {
       "name": "comp-543",
       "type": "registry:component",
       "files": [

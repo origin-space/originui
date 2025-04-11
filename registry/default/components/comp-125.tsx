@@ -6,7 +6,7 @@ import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
-  const [{ files }, { handleFileChange, removeFile, openFileDialog, getInputProps }] = useFileUpload({
+  const [{ files }, { removeFile, openFileDialog, getInputProps }] = useFileUpload({
     accept: "image/*"
   })
 
@@ -24,7 +24,7 @@ export default function Component() {
         >
           {previewUrl ? (
             <img
-              className="h-full w-full object-cover"
+              className="size-full object-cover"
               src={previewUrl}
               alt="Preview of uploaded image"
               width={32}

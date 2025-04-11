@@ -165,10 +165,10 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
 
   return (
     <div className="h-32">
-      <div className="bg-muted relative flex h-full w-full items-center justify-center overflow-hidden">
+      <div className="bg-muted relative flex size-full items-center justify-center overflow-hidden">
         {currentImage && (
           <img
-            className="h-full w-full object-cover"
+            className="size-full object-cover"
             src={currentImage}
             alt={
               files[0]?.preview
@@ -218,7 +218,7 @@ function Avatar({ defaultImage }: { defaultImage?: string }) {
         {currentImage && (
           <img
             src={currentImage}
-            className="h-full w-full object-cover"
+            className="size-full object-cover"
             width={80}
             height={80}
             alt="Profile image"

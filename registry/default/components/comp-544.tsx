@@ -24,7 +24,7 @@ export default function Component() {
         >
           {previewUrl ? (
             <img
-              className="h-full w-full object-cover"
+              className="size-full object-cover"
               src={previewUrl}
               alt="Preview of uploaded avatar"
               width={96}

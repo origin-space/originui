@@ -137,10 +137,10 @@ export default function Component() {
                       <img 
                         src={file.url} 
                         alt={file.name}
-                        className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                        className="size-full object-cover transition-transform group-hover:scale-105"
                       />
                     ) : (
-                      <div className="flex h-full w-full items-center justify-center">
+                      <div className="flex size-full items-center justify-center">
                         {getFileIcon(file)}
                       </div>
                     )}

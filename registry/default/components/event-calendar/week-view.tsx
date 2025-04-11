@@ -339,7 +339,7 @@ export function WeekView({
                 }}
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="h-full w-full">
+                <div className="size-full">
                   <DraggableEvent
                     event={positionedEvent.event}
                     view="week"
