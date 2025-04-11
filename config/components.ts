@@ -305,6 +305,27 @@ export const categories: ComponentCategory[] = [
     components: [{ name: "comp-542" }],
   },
   {
+    slug: "file-upload",
+    name: "File upload",
+    isNew: true,
+    components: [
+      { name: "comp-125" },
+      { name: "comp-126" },
+      { name: "comp-545" },
+      { name: "comp-546" },
+      { name: "comp-547" },
+      { name: "comp-548" },
+      { name: "comp-549" },
+      { name: "comp-551" },
+      { name: "comp-552" },
+      { name: "comp-553" },
+      { name: "comp-554" },
+      { name: "comp-555" },
+      { name: "comp-556" },
+      { name: "comp-557" },
+    ],
+  },
+  {
     slug: "input",
     name: "Input",
     components: [

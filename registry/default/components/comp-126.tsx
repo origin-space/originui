@@ -2,7 +2,7 @@
 
 import { CircleUserRoundIcon, XIcon } from "lucide-react"
 
-import { useImageUpload } from "@/registry/default/hooks/use-image-upload"
+import { useFileUpload } from "@/registry/default/hooks/use-file-upload-p"
 import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
@@ -13,7 +13,9 @@ export default function Component() {
     handleFileChange,
     handleRemove,
     fileName,
-  } = useImageUpload()
+  } = useFileUpload({
+    accept: "image/*"
+  })
 
   return (
     <div>
@@ -41,7 +43,7 @@ export default function Component() {
         </Button>
         {previewUrl && (
           <Button
-            onClick={handleRemove}
+            onClick={() => handleRemove()}
             size="icon"
             variant="destructive"
             className="border-background absolute -top-2 -right-2 size-6 rounded-full border-2"

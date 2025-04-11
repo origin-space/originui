@@ -4,7 +4,7 @@ import { useId, useState } from "react"
 import { CheckIcon, ImagePlusIcon, XIcon } from "lucide-react"
 
 import { useCharacterLimit } from "@/registry/default/hooks/use-character-limit"
-import { useImageUpload } from "@/registry/default/hooks/use-image-upload"
+import { useFileUpload } from "@/registry/default/hooks/use-file-upload-p"
 import { Button } from "@/registry/default/ui/button"
 import {
   Dialog,
@@ -158,7 +158,7 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
     handleThumbnailClick,
     handleFileChange,
     handleRemove,
-  } = useImageUpload()
+  } = useFileUpload()
 
   const currentImage = previewUrl || (!hideDefault ? defaultImage : null)
 
@@ -218,7 +218,7 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
 
 function Avatar({ defaultImage }: { defaultImage?: string }) {
   const { previewUrl, fileInputRef, handleThumbnailClick, handleFileChange } =
-    useImageUpload()
+    useFileUpload()
 
   const currentImage = previewUrl || defaultImage
 

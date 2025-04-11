@@ -2,18 +2,20 @@
 
 import { CircleUserRoundIcon } from "lucide-react"
 
-import { useImageUpload } from "@/registry/default/hooks/use-image-upload"
+import { useFileUpload } from "@/registry/default/hooks/use-file-upload-p"
 import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
   const {
     previewUrl,
     fileInputRef,
-    handleThumbnailClick: handleButtonClick,
+    handleButtonClick,
     handleFileChange,
     handleRemove,
     fileName,
-  } = useImageUpload()
+  } = useFileUpload({
+    accept: "image/*"
+  })
 
   return (
     <div>
@@ -59,7 +61,7 @@ export default function Component() {
               {fileName}
             </p>{" "}
             <button
-              onClick={handleRemove}
+              onClick={() => handleRemove()}
               className="font-medium text-red-500 hover:underline"
               aria-label={`Remove ${fileName}`}
             >

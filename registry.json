@@ -4,6 +4,128 @@
   "homepage": "https://originui.com",
   "items": [
     {
+      "name": "comp-544",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-544.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "meta": {
+        "tags": ["file upload", "avatar", "image"]
+      }
+    },
+    {
+      "name": "comp-545",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-545.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "meta": {
+        "tags": ["file upload", "image", "drag and drop"]
+      }
+    },
+    {
+      "name": "comp-546",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-546.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "meta": {
+        "tags": ["file upload", "drag and drop"]
+      }
+    },
+    {
+      "name": "comp-547",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/progress.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-547.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "meta": {
+        "tags": ["file upload", "multiple", "drag and drop", "progress"]
+      }
+    },
+    {
+      "name": "comp-548",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-548.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "meta": {
+        "tags": ["file upload", "multiple", "list", "table"]
+      }
+    },
+    {
+      "name": "comp-549",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/dialog.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-549.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "meta": {
+        "tags": ["file upload", "multiple", "preview", "thumbnail", "gallery"]
+      }
+    },
+    {
       "name": "accordion",
       "type": "registry:ui",
       "dependencies": ["@radix-ui/react-accordion"],
@@ -265,6 +387,17 @@
       ]
     },
     {
+      "name": "progress",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-progress"],
+      "files": [
+        {
+          "path": "registry/default/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "radio-group",
       "type": "registry:ui",
       "dependencies": ["@radix-ui/react-radio-group"],
@@ -456,12 +589,13 @@
         }
       ]
     },
+
     {
-      "name": "use-image-upload",
+      "name": "use-file-upload",
       "type": "registry:hook",
       "files": [
         {
-          "path": "registry/default/hooks/use-image-upload.ts",
+          "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
         }
       ]
@@ -6100,7 +6234,7 @@
           "type": "registry:hook"
         },
         {
-          "path": "registry/default/hooks/use-image-upload.ts",
+          "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
         }
       ],
@@ -9668,7 +9802,7 @@
         {
           "path": "registry/default/components/comp-542.tsx",
           "type": "registry:component"
-        },        
+        },
         {
           "path": "registry/default/components/event-calendar/agenda-view.tsx",
           "type": "registry:component"
@@ -9676,11 +9810,11 @@
         {
           "path": "registry/default/components/event-calendar/calendar-dnd-context.tsx",
           "type": "registry:component"
-        },         
+        },
         {
           "path": "registry/default/components/event-calendar/constants.ts",
           "type": "registry:component"
-        },                
+        },
         {
           "path": "registry/default/components/event-calendar/day-view.tsx",
           "type": "registry:component"
@@ -9704,7 +9838,7 @@
         {
           "path": "registry/default/components/event-calendar/events-popup.tsx",
           "type": "registry:component"
-        },        
+        },
         {
           "path": "registry/default/components/event-calendar/event-calendar.tsx",
           "type": "registry:component"
@@ -9712,7 +9846,7 @@
         {
           "path": "registry/default/components/event-calendar/index.ts",
           "type": "registry:component"
-        },        
+        },
         {
           "path": "registry/default/components/event-calendar/month-view.tsx",
           "type": "registry:component"
@@ -9741,6 +9875,202 @@
       "meta": {
         "tags": ["calendar"],
         "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-543",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-543.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-544",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-544.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-545",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-545.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-546",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-546.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-547",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-547.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-548",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-548.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-549",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-549.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-551",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-551.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-552",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-552.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-553",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-553.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-554",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-554.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-555",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-555.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-556",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-556.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-557",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-557.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
       }
     }
   ]
