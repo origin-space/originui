@@ -14,7 +14,7 @@ export default function Component() {
   const fileName = files[0]?.file.name || null
 
   return (
-    <div>
+    <div className="flex items-center gap-4">
       <div className="relative inline-flex">
         <Button
           variant="outline"
@@ -33,7 +33,7 @@ export default function Component() {
             />
           ) : (
             <div aria-hidden="true">
-              <CircleUserRoundIcon className="opacity-60" size={16} />
+              <CircleUserRoundIcon className="size-6 opacity-60" size={16} />
             </div>
           )}
         </Button>
@@ -51,7 +51,7 @@ export default function Component() {
         <input {...getInputProps()} aria-label="Upload image file" />
       </div>
       {fileName && (
-        <p className="text-muted-foreground mt-2 text-xs">{fileName}</p>
+        <p className="text-sm font-medium">{fileName}</p>
       )}
       <div className="sr-only" aria-live="polite" role="status">
         {previewUrl

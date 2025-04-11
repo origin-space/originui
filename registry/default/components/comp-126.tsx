@@ -33,7 +33,7 @@ export default function Component() {
             />
           ) : (
             <div aria-hidden="true">
-              <CircleUserRoundIcon className="opacity-60" size={16} />
+              <CircleUserRoundIcon className="size-6 opacity-60" />
             </div>
           )}
         </Button>
