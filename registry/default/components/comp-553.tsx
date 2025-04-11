@@ -113,12 +113,13 @@ export default function Component() {
           {/* Remove all files button */}
           {files.length > 1 && (
             <div className="text-xs">
-              <button
+              <Button
+                size="sm"
+                variant="outline"
                 onClick={clearFiles}
-                className="font-medium text-destructive hover:underline"
               >
                 Remove all files
-              </button>
+              </Button>
             </div>
           )}
         </div>
