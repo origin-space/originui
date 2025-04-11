@@ -2,28 +2,25 @@
 
 import { CircleUserRoundIcon, XIcon } from "lucide-react"
 
-import { useFileUpload } from "@/registry/default/hooks/use-file-upload-p"
+import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
-  const {
-    previewUrl,
-    fileInputRef,
-    handleThumbnailClick,
-    handleFileChange,
-    handleRemove,
-    fileName,
-  } = useFileUpload({
-    accept: "image/*"
+  const [{ files }, { handleFileChange, removeFile, openFileDialog, getInputProps }] = useFileUpload({
+    accept: "image/*",
+    multiple: false
   })
+
+  const previewUrl = files[0]?.preview || null
+  const fileName = files[0]?.file.name || null
 
   return (
     <div>
       <div className="relative inline-flex">
         <Button
           variant="outline"
-          className="relative size-16 overflow-hidden"
-          onClick={handleThumbnailClick}
+          className="relative size-16 overflow-hidden p-0"
+          onClick={openFileDialog}
           aria-label={previewUrl ? "Change image" : "Upload image"}
         >
           {previewUrl ? (
@@ -43,23 +40,16 @@ export default function Component() {
         </Button>
         {previewUrl && (
           <Button
-            onClick={() => handleRemove()}
+            onClick={() => removeFile(files[0]?.id)}
             size="icon"
             variant="destructive"
-            className="border-background absolute -top-2 -right-2 size-6 rounded-full border-2"
+            className="border-background absolute -top-1.5 -right-1.5 size-5 rounded-full shadow-none"
             aria-label="Remove image"
           >
             <XIcon size={16} />
           </Button>
         )}
-        <input
-          type="file"
-          ref={fileInputRef}
-          onChange={handleFileChange}
-          className="hidden"
-          accept="image/*"
-          aria-label="Upload image file"
-        />
+        <input {...getInputProps()} aria-label="Upload image file" />
       </div>
       {fileName && (
         <p className="text-muted-foreground mt-2 text-xs">{fileName}</p>

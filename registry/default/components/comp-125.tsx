@@ -2,20 +2,17 @@
 
 import { CircleUserRoundIcon } from "lucide-react"
 
-import { useFileUpload } from "@/registry/default/hooks/use-file-upload-p"
+import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
-  const {
-    previewUrl,
-    fileInputRef,
-    handleButtonClick,
-    handleFileChange,
-    handleRemove,
-    fileName,
-  } = useFileUpload({
-    accept: "image/*"
+  const [{ files }, { handleFileChange, removeFile, openFileDialog, getInputProps }] = useFileUpload({
+    accept: "image/*",
+    multiple: false
   })
+
+  const previewUrl = files[0]?.preview || null
+  const fileName = files[0]?.file.name || null
 
   return (
     <div>
@@ -41,17 +38,10 @@ export default function Component() {
           )}
         </div>
         <div className="relative inline-block">
-          <Button onClick={handleButtonClick} aria-haspopup="dialog">
+          <Button onClick={openFileDialog} aria-haspopup="dialog">
             {fileName ? "Change image" : "Upload image"}
           </Button>
-          <input
-            type="file"
-            ref={fileInputRef}
-            onChange={handleFileChange}
-            className="hidden"
-            accept="image/*"
-            aria-label="Upload image file"
-          />
+          <input {...getInputProps()} aria-label="Upload image file" />
         </div>
       </div>
       {fileName && (
@@ -61,7 +51,7 @@ export default function Component() {
               {fileName}
             </p>{" "}
             <button
-              onClick={() => handleRemove()}
+              onClick={() => removeFile(files[0]?.id)}
               className="font-medium text-red-500 hover:underline"
               aria-label={`Remove ${fileName}`}
             >

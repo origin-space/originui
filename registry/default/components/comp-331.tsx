@@ -4,7 +4,7 @@ import { useId, useState } from "react"
 import { CheckIcon, ImagePlusIcon, XIcon } from "lucide-react"
 
 import { useCharacterLimit } from "@/registry/default/hooks/use-character-limit"
-import { useFileUpload } from "@/registry/default/hooks/use-file-upload-p"
+import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
 import {
   Dialog,
@@ -152,18 +152,15 @@ export default function Component() {
 
 function ProfileBg({ defaultImage }: { defaultImage?: string }) {
   const [hideDefault, setHideDefault] = useState(false)
-  const {
-    previewUrl,
-    fileInputRef,
-    handleThumbnailClick,
-    handleFileChange,
-    handleRemove,
-  } = useFileUpload()
+  const [{ files }, { removeFile, openFileDialog, getInputProps }] = useFileUpload({
+    accept: "image/*",
+    multiple: false
+  })
 
-  const currentImage = previewUrl || (!hideDefault ? defaultImage : null)
+  const currentImage = files[0]?.preview || (!hideDefault ? defaultImage : null)
 
   const handleImageRemove = () => {
-    handleRemove()
+    removeFile(files[0]?.id)
     setHideDefault(true)
   }
 
@@ -175,7 +172,7 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
             className="h-full w-full object-cover"
             src={currentImage}
             alt={
-              previewUrl
+              files[0]?.preview
                 ? "Preview of uploaded image"
                 : "Default profile background"
             }
@@ -187,7 +184,7 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
           <button
             type="button"
             className="focus-visible:border-ring focus-visible:ring-ring/50 z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white transition-[color,box-shadow] outline-none hover:bg-black/80 focus-visible:ring-[3px]"
-            onClick={handleThumbnailClick}
+            onClick={openFileDialog}
             aria-label={currentImage ? "Change image" : "Upload image"}
           >
             <ImagePlusIcon size={16} aria-hidden="true" />
@@ -204,23 +201,18 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
           )}
         </div>
       </div>
-      <input
-        type="file"
-        ref={fileInputRef}
-        onChange={handleFileChange}
-        className="hidden"
-        accept="image/*"
-        aria-label="Upload image file"
-      />
+      <input {...getInputProps()} aria-label="Upload image file" />
     </div>
   )
 }
 
 function Avatar({ defaultImage }: { defaultImage?: string }) {
-  const { previewUrl, fileInputRef, handleThumbnailClick, handleFileChange } =
-    useFileUpload()
+  const [{ files }, { openFileDialog, getInputProps }] = useFileUpload({
+    accept: "image/*",
+    multiple: false
+  })
 
-  const currentImage = previewUrl || defaultImage
+  const currentImage = files[0]?.preview || defaultImage
 
   return (
     <div className="-mt-10 px-6">
@@ -237,19 +229,12 @@ function Avatar({ defaultImage }: { defaultImage?: string }) {
         <button
           type="button"
           className="focus-visible:border-ring focus-visible:ring-ring/50 absolute flex size-8 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white transition-[color,box-shadow] outline-none hover:bg-black/80 focus-visible:ring-[3px]"
-          onClick={handleThumbnailClick}
+          onClick={openFileDialog}
           aria-label="Change profile picture"
         >
           <ImagePlusIcon size={16} aria-hidden="true" />
         </button>
-        <input
-          type="file"
-          ref={fileInputRef}
-          onChange={handleFileChange}
-          className="hidden"
-          accept="image/*"
-          aria-label="Upload profile picture"
-        />
+        <input {...getInputProps()} aria-label="Upload profile picture" />
       </div>
     </div>
   )
