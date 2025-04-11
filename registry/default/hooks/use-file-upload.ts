@@ -199,7 +199,11 @@ export const useFileUpload = (options: FileUploadOptions = {}): [FileUploadState
 
         // Check file size
         if (file.size > maxSize) {
-          errors.push(`Some files exceed the maximum size of ${formatBytes(maxSize)}.`)
+          errors.push(
+            multiple
+              ? `Some files exceed the maximum size of ${formatBytes(maxSize)}.`
+              : `File exceeds the maximum size of ${formatBytes(maxSize)}.`
+          )
           return
         }
 
@@ -307,6 +311,11 @@ export const useFileUpload = (options: FileUploadOptions = {}): [FileUploadState
       e.preventDefault()
       e.stopPropagation()
       setState((prev) => ({ ...prev, isDragging: false }))
+
+      // Don't process files if the input is disabled
+      if (inputRef.current?.disabled) {
+        return
+      }
 
       if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
         // In single file mode, only use the first file

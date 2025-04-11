@@ -56,8 +56,9 @@ export default function Component() {
         onDragOver={handleDragOver}
         onDrop={handleDrop}
         data-dragging={isDragging || undefined}
-        className="rounded-xl flex flex-col items-center justify-center border border-dashed border-input hover:bg-accent/50 transition-colors duration-200 px-4 py-5 data-[dragging=true]:bg-accent/50">
-        <input {...getInputProps({ disabled: false })} />
+        className="rounded-xl flex flex-col items-center justify-center border border-dashed border-input not-has-disabled:hover:bg-accent/50 transition-colors duration-200 px-4 py-5 data-[dragging=true]:bg-accent/50 has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
+      >
+        <input {...getInputProps()} />
 
         <div className="flex flex-col items-center justify-center text-center">
           <div className="bg-background flex size-11 shrink-0 items-center justify-center rounded-full border mb-2" aria-hidden="true">
@@ -112,7 +113,7 @@ export default function Component() {
 
           {/* Remove all files button */}
           {files.length > 1 && (
-            <div className="text-xs">
+            <div>
               <Button
                 size="sm"
                 variant="outline"
