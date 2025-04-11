@@ -7,9 +7,9 @@ import { X, Upload, AlertCircle, File } from "lucide-react"
 
 export default function Component() {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([])
-  const maxSize = 10 * 1024 * 1024 // 10MB default
+  const maxSize = 1 * 1024 * 1024 // 1MB default
   const accept = "*"
-  const maxFiles = 1
+  const maxFiles = 3
 
   const [
     { files, isDragging, errors },
@@ -24,9 +24,9 @@ export default function Component() {
       getInputProps,
     },
   ] = useFileUpload({
+    multiple: true,
     maxFiles,
     accept,
-    multiple: maxFiles > 1,
     maxSize,
   })
 
@@ -91,7 +91,7 @@ export default function Component() {
           cursor-pointer
         `}
       >
-        <input {...getInputProps({ disabled: false, multiple: maxFiles > 1 })} />
+        <input {...getInputProps({ disabled: false })} />
 
         <div className="flex flex-col items-center justify-center text-center">
           <div className="bg-gray-100 rounded-full p-3 mb-3">
