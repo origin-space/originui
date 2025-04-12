@@ -46,11 +46,11 @@ export default function Component() {
         onDragOver={handleDragOver}
         onDrop={handleDrop}
         data-dragging={isDragging || undefined}
-        className="rounded-xl flex flex-col items-center justify-center border border-dashed border-input has-[img]:border-none not-has-disabled:hover:bg-accent/50 transition-colors not-has-[img]:px-4 not-has-[img]:py-5 data-[dragging=true]:bg-accent/50 aspect-video overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
+        className="relative rounded-xl flex flex-col items-center justify-center border border-dashed border-input has-[img]:border-none not-has-disabled:hover:bg-accent/50 transition-colors px-4 py-5 data-[dragging=true]:bg-accent/50 min-h-60 overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
       >
         <input {...getInputProps()} />
         {image ? (
-          <div className="relative size-full">
+          <div className="absolute inset-0">
             <img src={image} alt="Uploaded image" className="size-full object-cover" />
             {image && (
               <div className="absolute top-4 right-4">

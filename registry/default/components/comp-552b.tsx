@@ -27,11 +27,11 @@ export default function Component() {
         onDragOver={handleDragOver}
         onDrop={handleDrop}
         data-dragging={isDragging || undefined}
-        className="rounded-xl flex flex-col items-center justify-center border border-dashed border-input transition-colors px-4 py-5 data-[dragging=true]:bg-accent/50 aspect-video overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
+        className="relative rounded-xl flex flex-col items-center justify-center border border-dashed border-input transition-colors px-4 py-5 data-[dragging=true]:bg-accent/50 min-h-60 overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
       >
         <input {...getInputProps()} />
         {previewUrl ? (
-          <div className="size-full flex items-center justify-center">
+          <div className="absolute inset-0 flex items-center justify-center p-4">
             <img src={previewUrl} alt="Uploaded image" className="max-h-full mx-auto object-contain rounded" />
           </div>
         ) : (
