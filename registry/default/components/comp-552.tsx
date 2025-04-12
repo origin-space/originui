@@ -60,7 +60,7 @@ export default function Component() {
                   onClick={handleRemove}
                   aria-label="Remove image"
                 >
-                  <XIcon size={16} aria-hidden="true" />
+                  <XIcon className="size-4" aria-hidden="true" />
                 </button>
               </div>
             )}
