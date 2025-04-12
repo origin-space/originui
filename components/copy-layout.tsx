@@ -1,7 +1,8 @@
 "use client"
 
+import { CheckIcon, TerminalIcon } from "lucide-react"
+
 import { useCopy } from "@/hooks/use-copy"
-import { TerminalIcon, CheckIcon } from "lucide-react"
 import {
   Tooltip,
   TooltipContent,
@@ -9,11 +10,7 @@ import {
   TooltipTrigger,
 } from "@/registry/default/ui/tooltip"
 
-const CopyLayout = ({
-  command
-}: {
-  command: string | undefined
-}) => {
+const CopyLayout = ({ command }: { command: string | undefined }) => {
   const { copied, copy } = useCopy()
 
   return (
@@ -21,13 +18,13 @@ const CopyLayout = ({
       <Tooltip>
         <TooltipTrigger asChild>
           <button
-            className="inline-flex items-center gap-1 text-sm hover:underline"
+            className="inline-flex items-center gap-1 text-sm hover:underline max-sm:hidden"
             onClick={() => copy(command || "")}
             aria-label={copied ? "Copied" : "Copy command"}
             disabled={copied}
           >
             {copied ? (
-              <CheckIcon className="text-emerald-600 size-4" />
+              <CheckIcon className="size-4 text-emerald-600" />
             ) : (
               <TerminalIcon className="text-muted-foreground size-4" />
             )}
