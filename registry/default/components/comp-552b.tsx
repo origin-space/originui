@@ -1,9 +1,8 @@
 "use client"
 
 import type React from "react"
-import { useCallback } from "react"
 import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
-import { XIcon, ImageIcon, AlertCircleIcon, UploadIcon } from "lucide-react"
+import { ImageIcon, AlertCircleIcon, UploadIcon } from "lucide-react"
 import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
