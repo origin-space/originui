@@ -56,7 +56,7 @@ export default function Component() {
         onDragOver={handleDragOver}
         onDrop={handleDrop}
         data-dragging={isDragging || undefined}
-        className="rounded-xl flex flex-col items-center justify-center border border-dashed border-input not-has-disabled:hover:bg-accent/50 transition-colors duration-200 px-4 py-5 data-[dragging=true]:bg-accent/50 has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
+        className="rounded-xl flex flex-col items-center justify-center border border-dashed border-input not-has-disabled:hover:bg-accent/50 transition-colors px-4 py-5 data-[dragging=true]:bg-accent/50 has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
       >
         <input {...getInputProps()} />
 

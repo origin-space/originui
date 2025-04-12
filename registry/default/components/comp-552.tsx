@@ -46,7 +46,7 @@ export default function Component() {
         onDragOver={handleDragOver}
         onDrop={handleDrop}
         data-dragging={isDragging || undefined}
-        className="rounded-xl flex flex-col items-center justify-center border border-dashed border-input has-[img]:border-none not-has-disabled:hover:bg-accent/50 transition-colors duration-200 not-has-[img]:px-4 not-has-[img]:py-5 data-[dragging=true]:bg-accent/50 aspect-video overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
+        className="rounded-xl flex flex-col items-center justify-center border border-dashed border-input has-[img]:border-none not-has-disabled:hover:bg-accent/50 transition-colors not-has-[img]:px-4 not-has-[img]:py-5 data-[dragging=true]:bg-accent/50 aspect-video overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
       >
         <input {...getInputProps()} />
         {image ? (
