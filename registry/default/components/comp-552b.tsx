@@ -7,14 +7,14 @@ import { XIcon, ImageIcon, AlertCircleIcon, UploadIcon } from "lucide-react"
 import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
-  const maxSize = 5 * 1024 * 1024 // 5MB default
+  const maxSize = 2 * 1024 * 1024 // 2MB default
 
   const [
     { files, isDragging, errors },
     { handleDragEnter, handleDragLeave, handleDragOver, handleDrop, openFileDialog, removeFile, getInputProps },
   ] = useFileUpload({
     maxFiles: 1,
-    accept: "image/*",
+    accept: "image/svg+xml,image/png,image/jpeg,image/jpg,image/gif",
     maxSize,
   })
   const previewUrl = files[0]?.preview || null
