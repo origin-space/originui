@@ -4,8 +4,16 @@ import type React from "react"
 
 import { useState, useRef, useCallback, type ChangeEvent, type DragEvent } from "react"
 
+export type FileMetadata = {
+  name: string
+  size: number
+  type: string
+  url: string
+  id: string
+}
+
 export type FileWithPreview = {
-  file: File
+  file: File | FileMetadata
   id: string
   preview?: string
 }
@@ -15,7 +23,7 @@ export type FileUploadOptions = {
   maxSize?: number // in bytes
   accept?: string
   multiple?: boolean // Defaults to false
-  initialFiles?: FileWithPreview[] // Files from API/database
+  initialFiles?: FileMetadata[]
   onFilesChange?: (files: FileWithPreview[]) => void // Callback when files change
 }
 
@@ -58,7 +66,11 @@ export const useFileUpload = (options: FileUploadOptions = {}): [FileUploadState
   } = options
 
   const [state, setState] = useState<FileUploadState>({
-    files: initialFiles,
+    files: initialFiles.map(file => ({
+      file,
+      id: file.id,
+      preview: file.url
+    })),
     isDragging: false,
     errors: [],
   })
@@ -66,15 +78,21 @@ export const useFileUpload = (options: FileUploadOptions = {}): [FileUploadState
   const inputRef = useRef<HTMLInputElement>(null)
 
   const validateFile = useCallback(
-    (file: File): string | null => {
-      if (file.size > maxSize) {
-        return `File "${file.name}" exceeds the maximum size of ${formatBytes(maxSize)}.`
+    (file: File | FileMetadata): string | null => {
+      if (file instanceof File) {
+        if (file.size > maxSize) {
+          return `File "${file.name}" exceeds the maximum size of ${formatBytes(maxSize)}.`
+        }
+      } else {
+        if (file.size > maxSize) {
+          return `File "${file.name}" exceeds the maximum size of ${formatBytes(maxSize)}.`
+        }
       }
 
       if (accept !== "*") {
         const acceptedTypes = accept.split(",").map((type) => type.trim())
-        const fileType = file.type || ""
-        const fileExtension = `.${file.name.split(".").pop()}`
+        const fileType = file instanceof File ? file.type || "" : file.type
+        const fileExtension = `.${file instanceof File ? file.name.split(".").pop() : file.name.split(".").pop()}`
 
         const isAccepted = acceptedTypes.some((type) => {
           if (type.startsWith(".")) {
@@ -88,7 +106,7 @@ export const useFileUpload = (options: FileUploadOptions = {}): [FileUploadState
         })
 
         if (!isAccepted) {
-          return `File "${file.name}" is not an accepted file type.`
+          return `File "${file instanceof File ? file.name : file.name}" is not an accepted file type.`
         }
       }
 
@@ -98,21 +116,27 @@ export const useFileUpload = (options: FileUploadOptions = {}): [FileUploadState
   )
 
   const createPreview = useCallback(
-    (file: File): string | undefined => {
-      return URL.createObjectURL(file)
+    (file: File | FileMetadata): string | undefined => {
+      if (file instanceof File) {
+        return URL.createObjectURL(file)
+      }
+      return file.url
     },
     [],
   )
 
-  const generateUniqueId = useCallback((file: File): string => {
-    return `${file.name}-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`
+  const generateUniqueId = useCallback((file: File | FileMetadata): string => {
+    if (file instanceof File) {
+      return `${file.name}-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`
+    }
+    return file.id
   }, [])
 
   const clearFiles = useCallback(() => {
     setState((prev) => {
       // Clean up object URLs
       prev.files.forEach((file) => {
-        if (file.preview && file.file.type.startsWith("image/")) {
+        if (file.preview && file.file instanceof File && file.file.type.startsWith("image/")) {
           URL.revokeObjectURL(file.preview)
         }
       })
@@ -220,7 +244,7 @@ export const useFileUpload = (options: FileUploadOptions = {}): [FileUploadState
   const removeFile = useCallback((id: string) => {
     setState((prev) => {
       const fileToRemove = prev.files.find((file) => file.id === id)
-      if (fileToRemove && fileToRemove.preview && fileToRemove.file.type.startsWith("image/")) {
+      if (fileToRemove && fileToRemove.preview && fileToRemove.file instanceof File && fileToRemove.file.type.startsWith("image/")) {
         URL.revokeObjectURL(fileToRemove.preview)
       }
 

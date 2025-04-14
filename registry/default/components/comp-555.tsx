@@ -10,13 +10,11 @@ export default function Component() {
 
   const initialFiles = [
     {
-      file: new File(
-        [new Blob([''], { type: 'application/pdf' })],
-        "document.pdf",
-        { type: "application/pdf" }
-      ),
-      id: "document.pdf-1744638436563-8u5xuls",
-      preview: "/icons/pdf.svg"
+      name: "document.pdf",
+      size: 1528737,
+      type: "application/pdf",
+      url: "https://picsum.photos/1000/800?grayscale&random=1",
+      id: "document.pdf-1744638436563-8u5xuls"
     }
   ]
 

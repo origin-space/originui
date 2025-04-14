@@ -23,25 +23,21 @@ import { Textarea } from "@/registry/default/ui/textarea"
 // Pretend we have initial image files
 const initialBgImage = [
   {
-    file: new File(
-      [new Blob([''], { type: 'image/jpeg' })],
-      "profile-bg.jpg",
-      { type: "image/jpeg" }
-    ),
-    id: "profile-bg-123456789",
-    preview: "/profile-bg.jpg"
+    name: "profile-bg.jpg",
+    size: 1528737,
+    type: "image/jpeg",
+    url: "/profile-bg.jpg",
+    id: "profile-bg-123456789"
   }
 ]
 
 const initialAvatarImage = [
   {
-    file: new File(
-      [new Blob([''], { type: 'image/jpeg' })],
-      "avatar-72-01.jpg", 
-      { type: "image/jpeg" }
-    ),
-    id: "avatar-123456789",
-    preview: "/avatar-72-01.jpg"
+    name: "avatar-72-01.jpg",
+    size: 1528737,
+    type: "image/jpeg",
+    url: "/avatar-72-01.jpg",
+    id: "avatar-123456789"
   }
 ]
 

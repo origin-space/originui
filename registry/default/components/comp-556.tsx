@@ -7,27 +7,24 @@ import { Button } from "@/registry/default/ui/button"
 
 const initialFiles = [
   {
-    file: new File(
-      [new Blob(['x'.repeat(528737)], { type: 'application/pdf' })],
-      "document.pdf",
-      { type: "application/pdf" }
-    ),
+    name: "document.pdf",
+    size: 528737,
+    type: "application/pdf",
+    url: "https://example.com/document.pdf",
     id: "document.pdf-1744638436563-8u5xuls"
   },
   {
-    file: new File(
-      [new Blob(['x'.repeat(252873)], { type: 'application/zip' })],
-      "intro.zip",
-      { type: "application/zip" }
-    ),
+    name: "intro.zip",
+    size: 252873,
+    type: "application/zip",
+    url: "https://example.com/intro.zip",
     id: "intro.zip-1744638436563-8u5xuls"
   },
   {
-    file: new File(
-      [new Blob(['x'.repeat(352873)], { type: 'application/xlsx' })],
-      "conclusion.xlsx",
-      { type: "application/xlsx" }
-    ),
+    name: "conclusion.xlsx",
+    size: 352873,
+    type: "application/xlsx",
+    url: "https://example.com/conclusion.xlsx",
     id: "conclusion.xlsx-1744638436563-8u5xuls"
   }
 ]
@@ -105,30 +102,33 @@ export default function Component() {
               <div className="flex items-center gap-3 overflow-hidden">
                 <div className="aspect-square size-10 shrink-0 border flex items-center justify-center rounded">
                   {(() => {
-                    if (file.file.type.includes("pdf") || file.file.name.endsWith(".pdf")) {
+                    const fileType = file.file instanceof File ? file.file.type : file.file.type
+                    const fileName = file.file instanceof File ? file.file.name : file.file.name
+
+                    if (fileType.includes("pdf") || fileName.endsWith(".pdf")) {
                       return <FileTextIcon className="size-4" />
-                    } else if (file.file.type.includes("zip") || file.file.type.includes("archive") ||
-                      file.file.name.endsWith(".zip") || file.file.name.endsWith(".rar")) {
+                    } else if (fileType.includes("zip") || fileType.includes("archive") || 
+                              fileName.endsWith(".zip") || fileName.endsWith(".rar")) {
                       return <FileArchiveIcon className="size-4" />
-                    } else if (file.file.type.includes("word") ||
-                      file.file.name.endsWith(".doc") || file.file.name.endsWith(".docx")) {
+                    } else if (fileType.includes("word") || 
+                              fileName.endsWith(".doc") || fileName.endsWith(".docx")) {
                       return <FileTextIcon className="size-4" />
-                    } else if (file.file.type.includes("excel") ||
-                      file.file.name.endsWith(".xls") || file.file.name.endsWith(".xlsx")) {
+                    } else if (fileType.includes("excel") || 
+                              fileName.endsWith(".xls") || fileName.endsWith(".xlsx")) {
                       return <FileSpreadsheetIcon className="size-4" />
-                    } else if (file.file.type.includes("video/")) {
+                    } else if (fileType.includes("video/")) {
                       return <FileVideoIcon className="size-4" />
-                    } else if (file.file.type.includes("audio/")) {
+                    } else if (fileType.includes("audio/")) {
                       return <FileAudioIcon className="size-4" />
-                    } else if (file.file.type.startsWith("image/")) {
+                    } else if (fileType.startsWith("image/")) {
                       return <ImageIcon className="size-4" />
                     }
                     return <FileIcon className="size-4" />
                   })()}
                 </div>
                 <div className="min-w-0 flex flex-col gap-0.5">
-                  <p className="text-[13px] font-medium truncate">{file.file.name}</p>
-                  <p className="text-xs text-muted-foreground">{formatBytes(file.file.size)}</p>
+                  <p className="text-[13px] font-medium truncate">{file.file instanceof File ? file.file.name : file.file.name}</p>
+                  <p className="text-xs text-muted-foreground">{formatBytes(file.file instanceof File ? file.file.size : file.file.size)}</p>
                 </div>
               </div>
 
