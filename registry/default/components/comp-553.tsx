@@ -24,6 +24,24 @@ const initialFiles = [
     ),
     id: "image-02-123456789",
     preview: "https://picsum.photos/1000/800?grayscale&random=2"
+  },
+  {
+    file: new File(
+      [new Blob([''], { type: 'image/jpeg' })],
+      "image-03.jpg",
+      { type: "image/jpeg" }
+    ),
+    id: "image-03-123456789",
+    preview: "https://picsum.photos/1000/800?grayscale&random=3"
+  },
+  {
+    file: new File(
+      [new Blob([''], { type: 'image/jpeg' })],
+      "image-04.jpg",
+      { type: "image/jpeg" }
+    ),
+    id: "image-04-123456789",
+    preview: "https://picsum.photos/1000/800?grayscale&random=4"
   }
 ]
 
