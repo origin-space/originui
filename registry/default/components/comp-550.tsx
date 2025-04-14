@@ -48,7 +48,6 @@ export default function Component() {
           <Button
             onClick={() => removeFile(files[0]?.id)}
             size="icon"
-            variant="destructive"
             className="absolute -top-1 -right-1 size-6 rounded-full border-2 border-background shadow-none focus-visible:border-background"
             aria-label="Remove image"
           >
