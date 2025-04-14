@@ -9989,11 +9989,11 @@
       }
     },
     {
-      "name": "comp-552",
+      "name": "comp-551",
       "type": "registry:component",
       "files": [
         {
-          "path": "registry/default/components/comp-552.tsx",
+          "path": "registry/default/components/comp-551.tsx",
           "type": "registry:component"
         }
       ],
@@ -10003,11 +10003,11 @@
       }
     },
     {
-      "name": "comp-552b",
+      "name": "comp-552",
       "type": "registry:component",
       "files": [
         {
-          "path": "registry/default/components/comp-552b.tsx",
+          "path": "registry/default/components/comp-552.tsx",
           "type": "registry:component"
         }
       ],

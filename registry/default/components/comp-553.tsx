@@ -69,9 +69,9 @@ export default function Component() {
           <p className="text-xs text-muted-foreground mb-3">Drag & drop or click to browse</p>
           <div className="flex flex-wrap justify-center gap-1 text-xs text-muted-foreground/70">
             <span>All files</span>
-            <span>•</span>
+            <span>∙</span>
             <span>Max {maxFiles > 1 ? `${maxFiles} files` : "1 file"}</span>
-            <span>•</span>
+            <span>∙</span>
             <span>Up to {formatBytes(maxSize)}</span>
           </div>
         </div>
@@ -126,6 +126,10 @@ export default function Component() {
           )}
         </div>
       )}
+
+      <p aria-live="polite" role="region" className="text-muted-foreground text-xs mt-2 text-center">
+        Multiple files uploader w/ max files and max size
+      </p>         
     </div>
   )
 }
