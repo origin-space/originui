@@ -71,7 +71,7 @@ export default function Component() {
       )}
       
       <p aria-live="polite" role="region" className="text-muted-foreground text-xs mt-2 text-center">
-        Multiple image uploader w/ max size (drop area + button)
+        Single image uploader w/ max size (drop area + button)
       </p>        
     </div>
   )
