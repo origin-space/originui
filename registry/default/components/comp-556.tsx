@@ -17,21 +17,21 @@ const initialFiles = [
   },
   {
     file: new File(
-      [new Blob(['x'.repeat(252873)], { type: 'application/pdf' })],
-      "intro.pdf",
-      { type: "application/pdf" }
+      [new Blob(['x'.repeat(252873)], { type: 'application/zip' })],
+      "intro.zip",
+      { type: "application/zip" }
     ),
-    id: "intro.pdf-1744638436563-8u5xuls",
-    preview: "/icons/pdf.svg"
+    id: "intro.zip-1744638436563-8u5xuls",
+    preview: "/icons/zip.svg"
   },
   {
     file: new File(
-      [new Blob(['x'.repeat(352873)], { type: 'application/pdf' })],
-      "conclusion.pdf",
-      { type: "application/pdf" }
+      [new Blob(['x'.repeat(352873)], { type: 'application/xlsx' })],
+      "conclusion.xlsx",
+      { type: "application/xlsx" }
     ),
-    id: "conclusion.pdf-1744638436563-8u5xuls",
-    preview: "/icons/pdf.svg"
+    id: "conclusion.xlsx-1744638436563-8u5xuls",
+    preview: "/icons/xls.svg"
   }
 ]
 
