@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useFileUpload, formatBytes } from "@/registry/default/hooks/use-file-upload"
-import { XIcon, FileUpIcon, AlertCircleIcon, FileIcon } from "lucide-react"
+import { XIcon, FileUpIcon, AlertCircleIcon, FileIcon, FileTextIcon, FileArchiveIcon, FileSpreadsheetIcon, FileVideoIcon, FileAudioIcon, ImageIcon } from "lucide-react"
 import { Button } from "@/registry/default/ui/button"
 
 const initialFiles = [
@@ -13,7 +13,7 @@ const initialFiles = [
       { type: "application/pdf" }
     ),
     id: "document.pdf-1744638436563-8u5xuls",
-    preview: "/icons/pdf.svg"
+    Icon: FileTextIcon
   },
   {
     file: new File(
@@ -22,7 +22,7 @@ const initialFiles = [
       { type: "application/zip" }
     ),
     id: "intro.zip-1744638436563-8u5xuls",
-    preview: "/icons/zip.svg"
+    Icon: FileArchiveIcon
   },
   {
     file: new File(
@@ -31,7 +31,7 @@ const initialFiles = [
       { type: "application/xlsx" }
     ),
     id: "conclusion.xlsx-1744638436563-8u5xuls",
-    preview: "/icons/xls.svg"
+    Icon: FileSpreadsheetIcon
   }
 ]
 
@@ -107,9 +107,29 @@ export default function Component() {
             >
               <div className="flex items-center gap-3 overflow-hidden">
                 <div className="aspect-square size-10 shrink-0 border flex items-center justify-center rounded">
-                  <FileIcon className="size-4" />
+                  {(() => {
+                    if (file.file.type.includes("pdf") || file.file.name.endsWith(".pdf")) {
+                      return <FileTextIcon className="size-4" />
+                    } else if (file.file.type.includes("zip") || file.file.type.includes("archive") ||
+                      file.file.name.endsWith(".zip") || file.file.name.endsWith(".rar")) {
+                      return <FileArchiveIcon className="size-4" />
+                    } else if (file.file.type.includes("word") ||
+                      file.file.name.endsWith(".doc") || file.file.name.endsWith(".docx")) {
+                      return <FileTextIcon className="size-4" />
+                    } else if (file.file.type.includes("excel") ||
+                      file.file.name.endsWith(".xls") || file.file.name.endsWith(".xlsx")) {
+                      return <FileSpreadsheetIcon className="size-4" />
+                    } else if (file.file.type.includes("video/")) {
+                      return <FileVideoIcon className="size-4" />
+                    } else if (file.file.type.includes("audio/")) {
+                      return <FileAudioIcon className="size-4" />
+                    } else if (file.file.type.startsWith("image/")) {
+                      return <ImageIcon className="size-4" />
+                    }
+                    return <FileIcon className="size-4" />
+                  })()}
                 </div>
-                <div className="min-w-0 flex flex-col gap-1">
+                <div className="min-w-0 flex flex-col gap-0.5">
                   <p className="text-[13px] font-medium truncate">{file.file.name}</p>
                   <p className="text-xs text-muted-foreground">{formatBytes(file.file.size)}</p>
                 </div>
@@ -144,7 +164,7 @@ export default function Component() {
 
       <p aria-live="polite" role="region" className="text-muted-foreground text-xs mt-2 text-center">
         Multiple files uploader w/ max files and max size
-      </p>         
+      </p>
     </div>
   )
 }

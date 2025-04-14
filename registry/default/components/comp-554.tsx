@@ -99,7 +99,7 @@ export default function Component() {
                     className="size-10 object-cover rounded-[inherit]"
                   />
                 </div>
-                <div className="min-w-0 flex flex-col gap-1">
+                <div className="min-w-0 flex flex-col gap-0.5">
                   <p className="text-[13px] font-medium truncate">{file.file.name}</p>
                   <p className="text-xs text-muted-foreground">{formatBytes(file.file.size)}</p>
                 </div>

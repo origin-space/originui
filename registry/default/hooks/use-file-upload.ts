@@ -7,7 +7,7 @@ import { useState, useRef, useCallback, type ChangeEvent, type DragEvent } from 
 export type FileWithPreview = {
   file: File
   id: string
-  preview: string
+  preview?: string
 }
 
 export type FileUploadOptions = {
@@ -15,16 +15,8 @@ export type FileUploadOptions = {
   maxSize?: number // in bytes
   accept?: string
   multiple?: boolean // Defaults to false
-  initialFiles?: FileWithPreview[]
-  iconPaths?: {
-    pdf?: string
-    zip?: string
-    doc?: string
-    xls?: string
-    video?: string
-    audio?: string
-    default?: string
-  }
+  initialFiles?: FileWithPreview[] // Files from API/database
+  onFilesChange?: (files: FileWithPreview[]) => void // Callback when files change
 }
 
 export type FileUploadState = {
@@ -62,15 +54,7 @@ export const useFileUpload = (options: FileUploadOptions = {}): [FileUploadState
     accept = "*",
     multiple = false,
     initialFiles = [],
-    iconPaths = {
-      pdf: "/icons/pdf.svg",
-      zip: "/icons/zip.svg",
-      doc: "/icons/doc.svg",
-      xls: "/icons/xls.svg",
-      video: "/icons/video.svg",
-      audio: "/icons/audio.svg",
-      default: "/icons/file.svg",
-    },
+    onFilesChange,
   } = options
 
   const [state, setState] = useState<FileUploadState>({
@@ -114,28 +98,10 @@ export const useFileUpload = (options: FileUploadOptions = {}): [FileUploadState
   )
 
   const createPreview = useCallback(
-    (file: File): string => {
-      if (file.type.startsWith("image/")) {
-        return URL.createObjectURL(file)
-      }
-
-      if (file.type.includes("pdf")) {
-        return iconPaths.pdf || "/icons/pdf.svg"
-      } else if (file.type.includes("zip") || file.type.includes("archive")) {
-        return iconPaths.zip || "/icons/zip.svg"
-      } else if (file.type.includes("word") || file.name.endsWith(".doc") || file.name.endsWith(".docx")) {
-        return iconPaths.doc || "/icons/doc.svg"
-      } else if (file.type.includes("excel") || file.name.endsWith(".xls") || file.name.endsWith(".xlsx")) {
-        return iconPaths.xls || "/icons/xls.svg"
-      } else if (file.type.includes("video/")) {
-        return iconPaths.video || "/icons/video.svg"
-      } else if (file.type.includes("audio/")) {
-        return iconPaths.audio || "/icons/audio.svg"
-      }
-
-      return iconPaths.default || "/icons/file.svg"
+    (file: File): string | undefined => {
+      return URL.createObjectURL(file)
     },
-    [iconPaths],
+    [],
   )
 
   const generateUniqueId = useCallback((file: File): string => {
@@ -144,8 +110,9 @@ export const useFileUpload = (options: FileUploadOptions = {}): [FileUploadState
 
   const clearFiles = useCallback(() => {
     setState((prev) => {
+      // Clean up object URLs
       prev.files.forEach((file) => {
-        if (file.file.type.startsWith("image/")) {
+        if (file.preview && file.file.type.startsWith("image/")) {
           URL.revokeObjectURL(file.preview)
         }
       })
@@ -154,13 +121,16 @@ export const useFileUpload = (options: FileUploadOptions = {}): [FileUploadState
         inputRef.current.value = ""
       }
 
-      return {
+      const newState = {
         ...prev,
         files: [],
         errors: [],
       }
+
+      onFilesChange?.(newState.files)
+      return newState
     })
-  }, [])
+  }, [onFilesChange])
 
   const addFiles = useCallback(
     (newFiles: FileList | File[]) => {
@@ -224,30 +194,15 @@ export const useFileUpload = (options: FileUploadOptions = {}): [FileUploadState
       // Only update state if we have valid files to add
       if (validFiles.length > 0) {
         setState((prev) => {
-          // In single file mode, replace existing files
-          if (!multiple) {
-            // Clean up old file previews
-            prev.files.forEach((file) => {
-              if (file.file.type.startsWith("image/")) {
-                URL.revokeObjectURL(file.preview)
-              }
-            })
-            return {
-              ...prev,
-              files: validFiles,
-              errors,
-            }
-          }
-
-          // In multiple file mode, append new files
+          const newFiles = !multiple ? validFiles : [...prev.files, ...validFiles]
+          onFilesChange?.(newFiles)
           return {
             ...prev,
-            files: [...prev.files, ...validFiles],
+            files: newFiles,
             errors,
           }
         })
       } else if (errors.length > 0) {
-        // If we have errors but no valid files, update the state with errors
         setState((prev) => ({
           ...prev,
           errors,
@@ -259,25 +214,26 @@ export const useFileUpload = (options: FileUploadOptions = {}): [FileUploadState
         inputRef.current.value = ""
       }
     },
-    [state.files.length, maxFiles, multiple, maxSize, validateFile, createPreview, generateUniqueId, clearFiles],
+    [state.files.length, maxFiles, multiple, maxSize, validateFile, createPreview, generateUniqueId, clearFiles, onFilesChange],
   )
 
   const removeFile = useCallback((id: string) => {
     setState((prev) => {
       const fileToRemove = prev.files.find((file) => file.id === id)
-      if (fileToRemove) {
-        if (fileToRemove.file.type.startsWith("image/")) {
-          URL.revokeObjectURL(fileToRemove.preview)
-        }
+      if (fileToRemove && fileToRemove.preview && fileToRemove.file.type.startsWith("image/")) {
+        URL.revokeObjectURL(fileToRemove.preview)
       }
+
+      const newFiles = prev.files.filter((file) => file.id !== id)
+      onFilesChange?.(newFiles)
 
       return {
         ...prev,
-        files: prev.files.filter((file) => file.id !== id),
-        errors: [], // Clear errors when a file is removed
+        files: newFiles,
+        errors: [],
       }
     })
-  }, [])
+  }, [onFilesChange])
 
   const clearErrors = useCallback(() => {
     setState((prev) => ({
