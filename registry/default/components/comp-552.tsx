@@ -12,9 +12,7 @@ export default function Component() {
     { files, isDragging, errors },
     { handleDragEnter, handleDragLeave, handleDragOver, handleDrop, openFileDialog, removeFile, getInputProps },
   ] = useFileUpload({
-    maxFiles: 1,
     accept: "image/*",
-    multiple: false,
     maxSize,
   })
 
@@ -39,45 +37,48 @@ export default function Component() {
 
   return (
     <div className="flex flex-col gap-2">
-      <div
-        onClick={openFileDialog}
-        onDragEnter={handleDragEnter}
-        onDragLeave={handleDragLeave}
-        onDragOver={handleDragOver}
-        onDrop={handleDrop}
-        data-dragging={isDragging || undefined}
-        className="relative rounded-xl flex flex-col items-center justify-center border border-dashed border-input has-[img]:border-none not-has-disabled:hover:bg-accent/50 transition-colors px-4 py-5 data-[dragging=true]:bg-accent/50 min-h-60 overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
-      >
-        <input {...getInputProps()} />
-        {image ? (
-          <div className="absolute inset-0">
-            <img src={image} alt="Uploaded image" className="size-full object-cover" />
-            {image && (
-              <div className="absolute top-4 right-4">
-                <button
-                  type="button"
-                  className="focus-visible:border-ring focus-visible:ring-ring/50 z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white transition-[color,box-shadow] outline-none hover:bg-black/80 focus-visible:ring-[3px]"
-                  onClick={handleRemove}
-                  aria-label="Remove image"
-                >
-                  <XIcon className="size-4" aria-hidden="true" />
-                </button>
-              </div>
-            )}
-          </div>
-        ) : (
-          <div className="flex flex-col items-center justify-center px-4 py-3 text-center">
-            <div className="bg-background flex size-11 shrink-0 items-center justify-center rounded-full border mb-2" aria-hidden="true">
-              <ImageUpIcon className="size-4 opacity-80" />
+      <div className="relative">
+        <div
+          role="button"
+          onClick={openFileDialog}
+          onDragEnter={handleDragEnter}
+          onDragLeave={handleDragLeave}
+          onDragOver={handleDragOver}
+          onDrop={handleDrop}
+          data-dragging={isDragging || undefined}
+          className="relative rounded-xl flex flex-col items-center justify-center border border-dashed border-input has-[img]:border-none not-has-disabled:hover:bg-accent/50 transition-colors px-4 py-5 data-[dragging=true]:bg-accent/50 min-h-60 overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
+        >
+          <input {...getInputProps()} aria-label="Upload file" />
+          {image ? (
+            <div className="absolute inset-0">
+              <img src={image} alt={files[0]?.file?.name || "Uploaded image"} className="size-full object-cover" />
             </div>
-            <p className="text-sm font-medium mb-1.5">Drop your image here or click to browse</p>
-            <p className="text-xs text-muted-foreground">Max size: {formatBytes(maxSize)}</p>
+          ) : (
+            <div className="flex flex-col items-center justify-center px-4 py-3 text-center">
+              <div className="bg-background flex size-11 shrink-0 items-center justify-center rounded-full border mb-2" aria-hidden="true">
+                <ImageUpIcon className="size-4 opacity-80" />
+              </div>
+              <p className="text-sm font-medium mb-1.5">Drop your image here or click to browse</p>
+              <p className="text-xs text-muted-foreground">Max size: {formatBytes(maxSize)}</p>
+            </div>
+          )}
+        </div>
+        {image && (
+          <div className="absolute top-4 right-4">
+            <button
+              type="button"
+              className="focus-visible:border-ring focus-visible:ring-ring/50 z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white transition-[color,box-shadow] outline-none hover:bg-black/80 focus-visible:ring-[3px]"
+              onClick={handleRemove}
+              aria-label="Remove image"
+            >
+              <XIcon className="size-4" aria-hidden="true" />
+            </button>
           </div>
-        )}
+        )}        
       </div>
 
       {errors.length > 0 && (
-        <div className="flex items-center text-destructive text-xs gap-1">
+        <div className="flex items-center text-destructive text-xs gap-1" role="alert">
           <AlertCircleIcon className="size-3 shrink-0" />
           <span>{errors[0]}</span>
         </div>

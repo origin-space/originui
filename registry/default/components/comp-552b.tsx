@@ -12,7 +12,6 @@ export default function Component() {
     { files, isDragging, errors },
     { handleDragEnter, handleDragLeave, handleDragOver, handleDrop, openFileDialog, removeFile, getInputProps },
   ] = useFileUpload({
-    maxFiles: 1,
     accept: "image/svg+xml,image/png,image/jpeg,image/jpg,image/gif",
     maxSize,
   })
@@ -29,10 +28,10 @@ export default function Component() {
         data-dragging={isDragging || undefined}
         className="relative rounded-xl flex flex-col items-center justify-center border border-dashed border-input transition-colors px-4 py-5 data-[dragging=true]:bg-accent/50 min-h-60 overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
       >
-        <input {...getInputProps()} />
+        <input {...getInputProps()} aria-label="Upload image file" />
         {previewUrl ? (
           <div className="absolute inset-0 flex items-center justify-center p-4">
-            <img src={previewUrl} alt="Uploaded image" className="max-h-full mx-auto object-contain rounded" />
+            <img src={previewUrl} alt={files[0]?.file?.name || "Uploaded image"} className="max-h-full mx-auto object-contain rounded" />
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center px-4 py-3 text-center">
@@ -50,7 +49,7 @@ export default function Component() {
       </div>
 
       {errors.length > 0 && (
-        <div className="flex items-center text-destructive text-xs gap-1">
+        <div className="flex items-center text-destructive text-xs gap-1" role="alert">
           <AlertCircleIcon className="size-3 shrink-0" />
           <span>{errors[0]}</span>
         </div>

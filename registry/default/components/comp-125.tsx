@@ -14,7 +14,7 @@ export default function Component() {
   const fileName = files[0]?.file.name || null
 
   return (
-    <div>
+    <div className="flex flex-col items-center gap-2">
       <div className="inline-flex items-center gap-2 align-top">
         <div
           className="border-input relative flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-md border"
@@ -44,26 +44,22 @@ export default function Component() {
         </div>
       </div>
       {fileName && (
-        <div className="mt-2">
-          <div className="inline-flex gap-2 text-xs">
-            <p className="text-muted-foreground truncate" aria-live="polite">
-              {fileName}
-            </p>{" "}
-            <button
-              onClick={() => removeFile(files[0]?.id)}
-              className="font-medium text-destructive hover:underline"
-              aria-label={`Remove ${fileName}`}
-            >
-              Remove
-            </button>
-          </div>
+        <div className="inline-flex gap-2 text-xs">
+          <p className="text-muted-foreground truncate" aria-live="polite">
+            {fileName}
+          </p>{" "}
+          <button
+            onClick={() => removeFile(files[0]?.id)}
+            className="font-medium text-destructive hover:underline"
+            aria-label={`Remove ${fileName}`}
+          >
+            Remove
+          </button>
         </div>
       )}
-      <div className="sr-only" aria-live="polite" role="status">
-        {previewUrl
-          ? "Image uploaded and preview available"
-          : "No image uploaded"}
-      </div>
+      <p aria-live="polite" role="region" className="text-muted-foreground text-xs mt-2">
+        Basic image uploader
+      </p>
     </div>
   )
 }

@@ -9989,20 +9989,6 @@
       }
     },
     {
-      "name": "comp-551",
-      "type": "registry:component",
-      "files": [
-        {
-          "path": "registry/default/components/comp-551.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "meta": {
-        "tags": ["upload", "file"],
-        "colSpan": 2
-      }
-    },
-    {
       "name": "comp-552",
       "type": "registry:component",
       "files": [

@@ -6,27 +6,32 @@ import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
-  const [{ files }, { removeFile, openFileDialog, getInputProps }] = useFileUpload({
+  const [{ files, isDragging },
+    { removeFile, openFileDialog, getInputProps, handleDragEnter, handleDragLeave, handleDragOver, handleDrop }] = useFileUpload({
     accept: "image/*"
   })
 
   const previewUrl = files[0]?.preview || null
-  const fileName = files[0]?.file.name || null
 
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex flex-col items-center gap-2">
       <div className="relative inline-flex">
-        <Button
-          variant="outline"
-          className="relative size-16 overflow-hidden rounded-full p-0 shadow-none"
+        <div
+          className="relative flex items-center justify-center size-16 rounded-full border border-dashed border-input has-[img]:border-none not-has-disabled:hover:bg-accent/50 transition-colors data-[dragging=true]:bg-accent/50 overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
+          role="button"
           onClick={openFileDialog}
+          onDragEnter={handleDragEnter}
+          onDragLeave={handleDragLeave}
+          onDragOver={handleDragOver}
+          onDrop={handleDrop}
+          data-dragging={isDragging || undefined}
           aria-label={previewUrl ? "Change image" : "Upload image"}
         >
           {previewUrl ? (
             <img
               className="size-full object-cover"
               src={previewUrl}
-              alt="Preview of uploaded image"
+              alt={files[0]?.file?.name || "Uploaded image"}
               width={64}
               height={64}
               style={{ objectFit: "cover" }}
@@ -36,7 +41,7 @@ export default function Component() {
               <CircleUserRoundIcon className="size-6 opacity-60" size={16} />
             </div>
           )}
-        </Button>
+        </div>
         {previewUrl && (
           <Button
             onClick={() => removeFile(files[0]?.id)}
@@ -50,14 +55,9 @@ export default function Component() {
         )}
         <input {...getInputProps()} aria-label="Upload image file" />
       </div>
-      {fileName && (
-        <p className="text-sm font-medium">{fileName}</p>
-      )}
-      <div className="sr-only" aria-live="polite" role="status">
-        {previewUrl
-          ? "Image uploaded and preview available"
-          : "No image uploaded"}
-      </div>
+      <p aria-live="polite" role="region" className="text-muted-foreground text-xs mt-2">
+        Avatar uploader with droppable area
+      </p>
     </div>
   )
 }

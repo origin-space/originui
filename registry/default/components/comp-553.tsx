@@ -50,6 +50,7 @@ export default function Component() {
 
       {/* Drop area */}
       <div
+        role="button"
         onClick={openFileDialog}
         onDragEnter={handleDragEnter}
         onDragLeave={handleDragLeave}
@@ -58,7 +59,7 @@ export default function Component() {
         data-dragging={isDragging || undefined}
         className="rounded-xl flex flex-col items-center justify-center border border-dashed border-input not-has-disabled:hover:bg-accent/50 transition-colors px-4 py-5 data-[dragging=true]:bg-accent/50 has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
       >
-        <input {...getInputProps()} />
+        <input {...getInputProps()} aria-label="Upload files" />
 
         <div className="flex flex-col items-center justify-center text-center">
           <div className="bg-background flex size-11 shrink-0 items-center justify-center rounded-full border mb-2" aria-hidden="true">
@@ -77,7 +78,7 @@ export default function Component() {
       </div>
 
       {errors.length > 0 && (
-        <div className="flex items-center text-destructive text-xs gap-1">
+        <div className="flex items-center text-destructive text-xs gap-1" role="alert">
           <AlertCircleIcon className="size-3 shrink-0" />
           <span>{errors[0]}</span>
         </div>
