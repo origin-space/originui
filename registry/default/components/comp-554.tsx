@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { formatBytes, useFileUpload } from "@/registry/default/hooks/use-file-upload"
-import { ImageIcon, AlertCircleIcon, UploadIcon, XIcon, FileIcon } from "lucide-react"
+import { ImageIcon, AlertCircleIcon, UploadIcon, XIcon } from "lucide-react"
 import { Button } from "@/registry/default/ui/button"
 import { useCallback } from "react"
 
