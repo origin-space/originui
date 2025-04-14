@@ -12,8 +12,7 @@ const initialFiles = [
       "document.pdf",
       { type: "application/pdf" }
     ),
-    id: "document.pdf-1744638436563-8u5xuls",
-    Icon: FileTextIcon
+    id: "document.pdf-1744638436563-8u5xuls"
   },
   {
     file: new File(
@@ -21,8 +20,7 @@ const initialFiles = [
       "intro.zip",
       { type: "application/zip" }
     ),
-    id: "intro.zip-1744638436563-8u5xuls",
-    Icon: FileArchiveIcon
+    id: "intro.zip-1744638436563-8u5xuls"
   },
   {
     file: new File(
@@ -30,8 +28,7 @@ const initialFiles = [
       "conclusion.xlsx",
       { type: "application/xlsx" }
     ),
-    id: "conclusion.xlsx-1744638436563-8u5xuls",
-    Icon: FileSpreadsheetIcon
+    id: "conclusion.xlsx-1744638436563-8u5xuls"
   }
 ]
 
