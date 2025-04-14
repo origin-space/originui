@@ -4,7 +4,6 @@ import type React from "react"
 import { formatBytes, useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { ImageIcon, AlertCircleIcon, UploadIcon, XIcon } from "lucide-react"
 import { Button } from "@/registry/default/ui/button"
-import { useCallback } from "react"
 
 // Create a dummy image file
 const initialFiles = [
@@ -49,16 +48,6 @@ export default function Component() {
     maxFiles,
     initialFiles,
   })
-  console.log(files);
-
-  const handleRemoveFile = useCallback(
-    (e: React.MouseEvent, id: string) => {
-      e.stopPropagation()
-      e.preventDefault()
-      removeFile(id)
-    },
-    [removeFile],
-  )  
 
   return (
     <div className="flex flex-col gap-2">
@@ -120,7 +109,7 @@ export default function Component() {
                 size="icon"
                 variant="ghost"
                 className="text-muted-foreground/80 hover:text-foreground hover:bg-transparent -me-2 size-8"
-                onClick={(e) => handleRemoveFile(e, file.id)}
+                onClick={() => removeFile(file.id)}
                 aria-label="Remove file"
               >
                 <XIcon aria-hidden="true" />

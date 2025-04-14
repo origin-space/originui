@@ -1,16 +1,14 @@
 "use client"
 
 import type React from "react"
-import { useCallback, useEffect, useState } from "react"
 import { useFileUpload, formatBytes } from "@/registry/default/hooks/use-file-upload"
 import { XIcon, UploadIcon, AlertCircleIcon, FileIcon } from "lucide-react"
 import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
-  const [selectedFiles, setSelectedFiles] = useState<File[]>([])
   const maxSize = 1 * 1024 * 1024 // 10MB default
   const accept = "*"
-  const maxFiles = 3
+  const maxFiles = 10
 
   const [
     { files, isDragging, errors },
@@ -30,20 +28,6 @@ export default function Component() {
     accept,
     maxSize,
   })
-
-  // Update selected files when files change
-  useEffect(() => {
-    setSelectedFiles(files.map((f) => f.file))
-  }, [files])
-
-  const handleRemoveFile = useCallback(
-    (e: React.MouseEvent, id: string) => {
-      e.stopPropagation()
-      e.preventDefault()
-      removeFile(id)
-    },
-    [removeFile],
-  )
 
   return (
     <div className="flex flex-col gap-2">
@@ -104,7 +88,7 @@ export default function Component() {
                 size="icon"
                 variant="ghost"
                 className="text-muted-foreground/80 hover:text-foreground hover:bg-transparent -me-2 size-8"
-                onClick={(e) => handleRemoveFile(e, file.id)}
+                onClick={() => removeFile(file.id)}
                 aria-label="Remove file"
               >
                 <XIcon className="size-4" aria-hidden="true" />
