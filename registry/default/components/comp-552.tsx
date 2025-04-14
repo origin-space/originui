@@ -26,7 +26,7 @@ export default function Component() {
         onDragOver={handleDragOver}
         onDrop={handleDrop}
         data-dragging={isDragging || undefined}
-        className="relative rounded-xl flex flex-col items-center justify-center border border-dashed border-input transition-colors px-4 py-5 data-[dragging=true]:bg-accent/50 min-h-60 overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
+        className="relative rounded-xl flex flex-col items-center justify-center border border-dashed border-input transition-colors p-4 data-[dragging=true]:bg-accent/50 min-h-52 overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
       >
         <input {...getInputProps()} aria-label="Upload image file" />
         {previewUrl ? (
@@ -41,7 +41,7 @@ export default function Component() {
             <p className="text-sm font-medium mb-1.5">Click to upload or drag and drop</p>
             <p className="text-xs text-muted-foreground">SVG, PNG, JPG or GIF (max. 2MB)</p>
             <Button variant="outline" className="mt-4" onClick={openFileDialog}>
-              <UploadIcon className="opacity-60 ms-1 size-4" aria-hidden="true" />
+              <UploadIcon className="opacity-60 -ms-1 size-4" aria-hidden="true" />
               Select image
             </Button>            
           </div>

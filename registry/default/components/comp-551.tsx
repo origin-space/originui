@@ -46,7 +46,7 @@ export default function Component() {
           onDragOver={handleDragOver}
           onDrop={handleDrop}
           data-dragging={isDragging || undefined}
-          className="relative rounded-xl flex flex-col items-center justify-center border border-dashed border-input has-[img]:border-none not-has-disabled:hover:bg-accent/50 transition-colors px-4 py-5 data-[dragging=true]:bg-accent/50 min-h-60 overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
+          className="relative rounded-xl flex flex-col items-center justify-center border border-dashed border-input has-[img]:border-none not-has-disabled:hover:bg-accent/50 transition-colors p-4 data-[dragging=true]:bg-accent/50 min-h-52 overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
         >
           <input {...getInputProps()} aria-label="Upload file" />
           {image ? (
