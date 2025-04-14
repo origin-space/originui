@@ -93,11 +93,11 @@ export default function Component() {
             
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {files.map((file) => (
-                <div key={file.id} className="relative aspect-square">
+                <div key={file.id} className="relative aspect-square rounded bg-accent">
                   <img 
                     src={file.preview} 
                     alt={file.file.name}
-                    className="size-full object-cover rounded"
+                    className="size-full object-cover rounded-[inherit]"
                   />
                   <Button
                     onClick={() => removeFile(file.id)}

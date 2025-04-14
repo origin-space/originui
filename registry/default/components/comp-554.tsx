@@ -89,18 +89,18 @@ export default function Component() {
           {files.map((file) => (
             <div
               key={file.id}
-              className="flex items-center justify-between gap-2 p-3 bg-background rounded-xl border"
+              className="flex items-center justify-between gap-2 p-3 pe-4 bg-background rounded-xl border"
             >
               <div className="flex items-center gap-3 overflow-hidden">
-                <div className="aspect-square shrink-0">
+                <div className="aspect-square shrink-0 rounded bg-accent">
                   <img 
                     src={file.preview} 
                     alt={file.file.name}
-                    className="size-10 object-cover rounded"
+                    className="size-10 object-cover rounded-[inherit]"
                   />
                 </div>
                 <div className="min-w-0 flex flex-col gap-1">
-                  <p className="text-xs font-medium truncate">{file.file.name}</p>
+                  <p className="text-[13px] font-medium truncate">{file.file.name}</p>
                   <p className="text-xs text-muted-foreground">{formatBytes(file.file.size)}</p>
                 </div>
               </div>

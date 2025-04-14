@@ -2,12 +2,41 @@
 
 import type React from "react"
 import { useFileUpload, formatBytes } from "@/registry/default/hooks/use-file-upload"
-import { XIcon, UploadIcon, AlertCircleIcon, FileIcon } from "lucide-react"
+import { XIcon, FileUpIcon, AlertCircleIcon, FileIcon } from "lucide-react"
 import { Button } from "@/registry/default/ui/button"
 
+const initialFiles = [
+  {
+    file: new File(
+      [new Blob(['x'.repeat(528737)], { type: 'application/pdf' })],
+      "document.pdf",
+      { type: "application/pdf" }
+    ),
+    id: "document.pdf-1744638436563-8u5xuls",
+    preview: "/icons/pdf.svg"
+  },
+  {
+    file: new File(
+      [new Blob(['x'.repeat(252873)], { type: 'application/pdf' })],
+      "intro.pdf",
+      { type: "application/pdf" }
+    ),
+    id: "intro.pdf-1744638436563-8u5xuls",
+    preview: "/icons/pdf.svg"
+  },
+  {
+    file: new File(
+      [new Blob(['x'.repeat(352873)], { type: 'application/pdf' })],
+      "conclusion.pdf",
+      { type: "application/pdf" }
+    ),
+    id: "conclusion.pdf-1744638436563-8u5xuls",
+    preview: "/icons/pdf.svg"
+  }
+]
+
 export default function Component() {
-  const maxSize = 1 * 1024 * 1024 // 10MB default
-  const accept = "*"
+  const maxSize = 10 * 1024 * 1024 // 10MB default
   const maxFiles = 10
 
   const [
@@ -25,8 +54,8 @@ export default function Component() {
   ] = useFileUpload({
     multiple: true,
     maxFiles,
-    accept,
     maxSize,
+    initialFiles,
   })
 
   return (
@@ -47,7 +76,7 @@ export default function Component() {
 
         <div className="flex flex-col items-center justify-center text-center">
           <div className="bg-background flex size-11 shrink-0 items-center justify-center rounded-full border mb-2" aria-hidden="true">
-            <UploadIcon className="size-4 opacity-80" />
+            <FileUpIcon className="size-4 opacity-80" />
           </div>
           <p className="text-sm font-medium mb-0.5">Upload files</p>
           <p className="text-xs text-muted-foreground mb-2">Drag & drop or click to browse</p>
@@ -74,12 +103,14 @@ export default function Component() {
           {files.map((file) => (
             <div
               key={file.id}
-              className="flex items-center justify-between gap-2 px-4 py-3 bg-accent/50 rounded-xl border"
+              className="flex items-center justify-between gap-2 p-3 pe-4 bg-background rounded-xl border"
             >
               <div className="flex items-center gap-3 overflow-hidden">
-                <FileIcon className="size-4 text-muted-foreground shrink-0" />
-                <div className="min-w-0">
-                  <p className="text-xs font-medium truncate">{file.file.name}</p>
+                <div className="aspect-square size-10 shrink-0 border flex items-center justify-center rounded">
+                  <FileIcon className="size-4" />
+                </div>
+                <div className="min-w-0 flex flex-col gap-1">
+                  <p className="text-[13px] font-medium truncate">{file.file.name}</p>
                   <p className="text-xs text-muted-foreground">{formatBytes(file.file.size)}</p>
                 </div>
               </div>
