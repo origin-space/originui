@@ -6,7 +6,8 @@ import { ImageIcon, AlertCircleIcon, UploadIcon } from "lucide-react"
 import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
-  const maxSize = 2 * 1024 * 1024 // 2MB default
+  const maxSizeMB = 2
+  const maxSize = maxSizeMB * 1024 * 1024 // 2MB default
 
   const [
     { files, isDragging, errors },
@@ -20,6 +21,8 @@ export default function Component() {
 
   return (
     <div className="flex flex-col gap-2">
+
+      {/* Drop area */}
       <div
         onDragEnter={handleDragEnter}
         onDragLeave={handleDragLeave}
@@ -39,7 +42,7 @@ export default function Component() {
               <ImageIcon className="size-4 opacity-80" />
             </div>
             <p className="text-sm font-medium mb-1.5">Click to upload or drag and drop</p>
-            <p className="text-xs text-muted-foreground">SVG, PNG, JPG or GIF (max. 2MB)</p>
+            <p className="text-xs text-muted-foreground">SVG, PNG, JPG or GIF (max. {maxSizeMB}MB)</p>
             <Button variant="outline" className="mt-4" onClick={openFileDialog}>
               <UploadIcon className="opacity-60 -ms-1 size-4" aria-hidden="true" />
               Select image

@@ -2,11 +2,13 @@
 
 import type React from "react"
 import { useState, useEffect, useCallback } from "react"
-import { useFileUpload, formatBytes } from "@/registry/default/hooks/use-file-upload"
+import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { XIcon, ImageUpIcon, AlertCircleIcon } from "lucide-react"
+
 export default function Component() {
   const [image, setImage] = useState<string | undefined>(undefined)
-  const maxSize = 5 * 1024 * 1024 // 5MB default
+  const maxSizeMB = 5
+  const maxSize = maxSizeMB * 1024 * 1024 // 5MB default
 
   const [
     { files, isDragging, errors },
@@ -38,6 +40,8 @@ export default function Component() {
   return (
     <div className="flex flex-col gap-2">
       <div className="relative">
+
+        {/* Drop area */}
         <div
           role="button"
           onClick={openFileDialog}
@@ -59,7 +63,7 @@ export default function Component() {
                 <ImageUpIcon className="size-4 opacity-80" />
               </div>
               <p className="text-sm font-medium mb-1.5">Drop your image here or click to browse</p>
-              <p className="text-xs text-muted-foreground">Max size: {formatBytes(maxSize)}</p>
+              <p className="text-xs text-muted-foreground">Max size: {maxSizeMB}MB</p>
             </div>
           )}
         </div>

@@ -16,6 +16,8 @@ export default function Component() {
   return (
     <div className="flex flex-col items-center gap-2">
       <div className="relative inline-flex">
+
+        {/* Drop area */}
         <div
           className="relative flex items-center justify-center size-16 rounded-full border border-dashed border-input has-[img]:border-none not-has-disabled:hover:bg-accent/50 transition-colors data-[dragging=true]:bg-accent/50 overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
           role="button"

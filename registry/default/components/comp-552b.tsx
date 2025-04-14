@@ -5,8 +5,10 @@ import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { ImageIcon, AlertCircleIcon, UploadIcon, XIcon } from "lucide-react"
 import { Button } from "@/registry/default/ui/button"
 import { useCallback } from "react"
+
 export default function Component() {
-  const maxSize = 2 * 1024 * 1024 // 2MB default
+  const maxSizeMB = 5
+  const maxSize = maxSizeMB * 1024 * 1024 // 5MB default
   const maxFiles = 6
 
   const [
@@ -30,6 +32,8 @@ export default function Component() {
 
   return (
     <div className="flex flex-col gap-2">
+
+      {/* Drop area */}
       <div
         onDragEnter={handleDragEnter}
         onDragLeave={handleDragLeave}
@@ -83,7 +87,7 @@ export default function Component() {
               <ImageIcon className="size-4 opacity-80" />
             </div>
             <p className="text-sm font-medium mb-1.5">Click to upload or drag and drop</p>
-            <p className="text-xs text-muted-foreground">SVG, PNG, JPG or GIF (max. 2MB)</p>
+            <p className="text-xs text-muted-foreground">SVG, PNG, JPG or GIF (max. {maxSizeMB}MB)</p>
             <Button variant="outline" className="mt-4" onClick={openFileDialog}>
               <UploadIcon className="opacity-60 -ms-1" aria-hidden="true" />
               Select images
@@ -100,7 +104,7 @@ export default function Component() {
       )}
       
       <p aria-live="polite" role="region" className="text-muted-foreground text-xs mt-2 text-center">
-        Multiple image uploader w/ max size (drop area + button)
+        Multiple image uploader w/ image grid
       </p>        
     </div>
   )
