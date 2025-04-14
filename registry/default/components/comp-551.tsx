@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect, useCallback } from "react"
 import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { XIcon, ImageUpIcon, AlertCircleIcon } from "lucide-react"
 
@@ -18,7 +17,6 @@ export default function Component() {
   })
 
   const previewUrl = files[0]?.preview || null
-  const fileName = files[0]?.file.name || null  
 
   return (
     <div className="flex flex-col gap-2">

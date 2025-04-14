@@ -20,6 +20,31 @@ import { Input } from "@/registry/default/ui/input"
 import { Label } from "@/registry/default/ui/label"
 import { Textarea } from "@/registry/default/ui/textarea"
 
+// Pretend we have initial image files
+const initialBgImage = [
+  {
+    file: new File(
+      [new Blob([''], { type: 'image/jpeg' })],
+      "profile-bg.jpg",
+      { type: "image/jpeg" }
+    ),
+    id: "profile-bg-123456789",
+    preview: "/profile-bg.jpg"
+  }
+]
+
+const initialAvatarImage = [
+  {
+    file: new File(
+      [new Blob([''], { type: 'image/jpeg' })],
+      "avatar-72-01.jpg", 
+      { type: "image/jpeg" }
+    ),
+    id: "avatar-123456789",
+    preview: "/avatar-72-01.jpg"
+  }
+]
+
 export default function Component() {
   const id = useId()
 
@@ -51,8 +76,8 @@ export default function Component() {
           username.
         </DialogDescription>
         <div className="overflow-y-auto">
-          <ProfileBg defaultImage="/profile-bg.jpg" />
-          <Avatar defaultImage="/avatar-72-01.jpg" />
+          <ProfileBg />
+          <Avatar />
           <div className="px-6 pt-4 pb-6">
             <form className="space-y-4">
               <div className="flex flex-col gap-4 sm:flex-row">
@@ -150,18 +175,13 @@ export default function Component() {
   )
 }
 
-function ProfileBg({ defaultImage }: { defaultImage?: string }) {
-  const [hideDefault, setHideDefault] = useState(false)
+function ProfileBg() {
   const [{ files }, { removeFile, openFileDialog, getInputProps }] = useFileUpload({
-    accept: "image/*"
+    accept: "image/*",
+    initialFiles: initialBgImage,
   })
 
-  const currentImage = files[0]?.preview || (!hideDefault ? defaultImage : null)
-
-  const handleImageRemove = () => {
-    removeFile(files[0]?.id)
-    setHideDefault(true)
-  }
+  const currentImage = files[0]?.preview || null
 
   return (
     <div className="h-32">
@@ -192,7 +212,7 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
             <button
               type="button"
               className="focus-visible:border-ring focus-visible:ring-ring/50 z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white transition-[color,box-shadow] outline-none hover:bg-black/80 focus-visible:ring-[3px]"
-              onClick={handleImageRemove}
+              onClick={() => removeFile(files[0]?.id)}
               aria-label="Remove image"
             >
               <XIcon size={16} aria-hidden="true" />
@@ -205,12 +225,13 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
   )
 }
 
-function Avatar({ defaultImage }: { defaultImage?: string }) {
+function Avatar() {
   const [{ files }, { openFileDialog, getInputProps }] = useFileUpload({
-    accept: "image/*"
+    accept: "image/*",
+    initialFiles: initialAvatarImage,
   })
 
-  const currentImage = files[0]?.preview || defaultImage
+  const currentImage = files[0]?.preview || null
 
   return (
     <div className="-mt-10 px-6">

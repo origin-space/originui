@@ -6,6 +6,28 @@ import { ImageIcon, AlertCircleIcon, UploadIcon, XIcon } from "lucide-react"
 import { Button } from "@/registry/default/ui/button"
 import { useCallback } from "react"
 
+// Create a dummy image file
+const initialFiles = [
+  {
+    file: new File(
+      [new Blob([''], { type: 'image/jpeg' })],
+      "image-01.jpg",
+      { type: "image/jpeg" }
+    ),
+    id: "image-01-123456789",
+    preview: "https://picsum.photos/1000/800?grayscale&random=1"
+  },
+  {
+    file: new File(
+      [new Blob([''], { type: 'image/jpeg' })],
+      "image-02.jpg",
+      { type: "image/jpeg" }
+    ),
+    id: "image-02-123456789",
+    preview: "https://picsum.photos/1000/800?grayscale&random=2"
+  }
+]
+
 export default function Component() {
   const maxSizeMB = 5
   const maxSize = maxSizeMB * 1024 * 1024 // 5MB default
@@ -19,6 +41,7 @@ export default function Component() {
     maxSize,
     multiple: true,
     maxFiles,
+    initialFiles,
   })
 
   const handleRemoveFile = useCallback(
