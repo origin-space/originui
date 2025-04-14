@@ -1,229 +1,135 @@
 "use client"
-import { formatBytes } from "@/registry/default/hooks/use-file-upload"
+
 import type React from "react"
-import { useState } from "react"
-
-import {
-  File,
-  FileText,
-  FileImage,
-  FileArchive,
-  FileAudio,
-  FileVideo,
-  FileIcon as FilePdf,
-  FileCode,
-  FileSpreadsheet,
-  X,
-  Download,
-  Eye,
-} from "lucide-react"
-
-export interface FileItem {
-  id: string
-  name: string
-  size: number
-  type: string
-  url?: string
-  preview?: string
-  createdAt?: Date
-  updatedAt?: Date
-}
+import { useCallback, useEffect, useState } from "react"
+import { useFileUpload, formatBytes } from "@/registry/default/hooks/use-file-upload"
+import { XIcon, UploadIcon, AlertCircleIcon, FileIcon } from "lucide-react"
+import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
-  // Sample files data - in a real app, this would come from a database or API
-  const [files, setFiles] = useState<FileItem[]>([
+  const [selectedFiles, setSelectedFiles] = useState<File[]>([])
+  const maxSize = 1 * 1024 * 1024 // 10MB default
+  const accept = "*"
+  const maxFiles = 3
+
+  const [
+    { files, isDragging, errors },
     {
-      id: "1",
-      name: "document.pdf",
-      size: 2500000,
-      type: "application/pdf",
-      url: "#",
-      createdAt: new Date(),
+      handleDragEnter,
+      handleDragLeave,
+      handleDragOver,
+      handleDrop,
+      openFileDialog,
+      removeFile,
+      clearFiles,
+      getInputProps,
     },
-    {
-      id: "2",
-      name: "image.jpg",
-      size: 1200000,
-      type: "image/jpeg",
-      url: "/placeholder.svg?height=400&width=400",
-      preview: "/placeholder.svg?height=400&width=400",
-      createdAt: new Date(),
+  ] = useFileUpload({
+    multiple: true,
+    maxFiles,
+    accept,
+    maxSize,
+  })
+
+  // Update selected files when files change
+  useEffect(() => {
+    setSelectedFiles(files.map((f) => f.file))
+  }, [files])
+
+  const handleRemoveFile = useCallback(
+    (e: React.MouseEvent, id: string) => {
+      e.stopPropagation()
+      e.preventDefault()
+      removeFile(id)
     },
-    {
-      id: "3",
-      name: "archive.zip",
-      size: 5600000,
-      type: "application/zip",
-      url: "#",
-      createdAt: new Date(),
-    },
-  ])
-
-  const [isPreviewOpen, setIsPreviewOpen] = useState(false)
-  const [selectedFile, setSelectedFile] = useState<FileItem | null>(null)
-
-  const layout = "list"
-  const showActions = true
-  const showSize = true
-  const showDate = false
-  const disabled = false
-  const className = ""
-  const showPreview = true
-
-  if (files.length === 0) {
-    return null
-  }
-
-  const getFileIcon = (fileType: string, fileName: string) => {
-    if (fileType.startsWith("image/")) {
-      return <FileImage className="w-5 h-5 text-blue-500" />
-    } else if (fileType.includes("pdf")) {
-      return <FilePdf className="w-5 h-5 text-red-500" />
-    } else if (
-      fileType.includes("zip") ||
-      fileType.includes("archive") ||
-      fileName.endsWith(".zip") ||
-      fileName.endsWith(".rar")
-    ) {
-      return <FileArchive className="w-5 h-5 text-yellow-500" />
-    } else if (fileType.includes("audio")) {
-      return <FileAudio className="w-5 h-5 text-purple-500" />
-    } else if (fileType.includes("video")) {
-      return <FileVideo className="w-5 h-5 text-pink-500" />
-    } else if (fileType.includes("text") || fileName.endsWith(".txt") || fileName.endsWith(".md")) {
-      return <FileText className="w-5 h-5 text-gray-500" />
-    } else if (
-      fileType.includes("javascript") ||
-      fileType.includes("typescript") ||
-      fileName.endsWith(".js") ||
-      fileName.endsWith(".ts") ||
-      fileName.endsWith(".jsx") ||
-      fileName.endsWith(".tsx") ||
-      fileName.endsWith(".html") ||
-      fileName.endsWith(".css")
-    ) {
-      return <FileCode className="w-5 h-5 text-green-500" />
-    } else if (
-      fileType.includes("excel") ||
-      fileType.includes("spreadsheet") ||
-      fileName.endsWith(".xls") ||
-      fileName.endsWith(".xlsx") ||
-      fileName.endsWith(".csv")
-    ) {
-      return <FileSpreadsheet className="w-5 h-5 text-green-600" />
-    }
-
-    return <File className="w-5 h-5 text-gray-400" />
-  }
-
-  const formatDate = (date?: Date) => {
-    if (!date) return ""
-    return new Intl.DateTimeFormat("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    }).format(date)
-  }
-
-  const handlePreview = (e: React.MouseEvent, file: FileItem) => {
-    e.preventDefault()
-    e.stopPropagation()
-    setSelectedFile(file)
-    setIsPreviewOpen(true)
-    // In a real app, you would show a preview modal or navigate to a preview page
-    console.log(`Previewing file: ${file.name}`)
-    alert(`Previewing ${file.name}`)
-  }
-
-  const handleDownload = (e: React.MouseEvent, file: FileItem) => {
-    e.preventDefault()
-    e.stopPropagation()
-    // In a real app, you would trigger a download
-    console.log(`Downloading file: ${file.name}`)
-    alert(`Downloading ${file.name}`)
-  }
-
-  const handleRemove = (e: React.MouseEvent, id: string) => {
-    e.preventDefault()
-    e.stopPropagation()
-    // Remove the file from the state
-    setFiles(files.filter((file) => file.id !== id))
-    console.log(`Removing file with id: ${id}`)
-  }
+    [removeFile],
+  )
 
   return (
-    <div className={`space-y-2 ${className}`}>
-      {files.map((file) => (
-        <div key={file.id} className="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-200">
-          <div className="flex items-center min-w-0 flex-1">
-            <div className="mr-3 flex-shrink-0">
-              {showPreview && file.preview && file.type.startsWith("image/") ? (
-                <div
-                  className="w-10 h-10 rounded overflow-hidden bg-gray-100 cursor-pointer"
-                  onClick={(e) => !disabled && handlePreview(e, file)}
-                >
-                  <img
-                    src={file.preview || "/placeholder.svg"}
-                    alt={file.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ) : (
-                <div className="w-10 h-10 rounded bg-gray-100 flex items-center justify-center">
-                  {getFileIcon(file.type, file.name)}
-                </div>
-              )}
-            </div>
+    <div className="flex flex-col gap-2">
 
-            <div className="min-w-0 flex-1">
-              <p className="text-sm font-medium text-gray-700 truncate" title={file.name}>
-                {file.name}
-              </p>
+      {/* Drop area */}
+      <div
+        role="button"
+        onClick={openFileDialog}
+        onDragEnter={handleDragEnter}
+        onDragLeave={handleDragLeave}
+        onDragOver={handleDragOver}
+        onDrop={handleDrop}
+        data-dragging={isDragging || undefined}
+        className="rounded-xl flex flex-col items-center justify-center border border-dashed border-input has-disabled:opacity-50 has-disabled:pointer-events-none hover:bg-accent/50 transition-colors p-4 data-[dragging=true]:bg-accent/50 min-h-40 has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
+      >
+        <input {...getInputProps()} aria-label="Upload files" />
 
-              <div className="flex items-center text-xs text-gray-500 mt-1 space-x-2">
-                {showSize && <span>{formatBytes(file.size)}</span>}
-
-                {showSize && showDate && file.createdAt && <span>•</span>}
-
-                {showDate && file.createdAt && <span>{formatDate(file.createdAt)}</span>}
-              </div>
-            </div>
+        <div className="flex flex-col items-center justify-center text-center">
+          <div className="bg-background flex size-11 shrink-0 items-center justify-center rounded-full border mb-2" aria-hidden="true">
+            <UploadIcon className="size-4 opacity-80" />
           </div>
+          <p className="text-sm font-medium mb-0.5">Upload files</p>
+          <p className="text-xs text-muted-foreground mb-2">Drag & drop or click to browse</p>
+          <div className="flex flex-wrap justify-center gap-1 text-xs text-muted-foreground/70">
+            <span>All files</span>
+            <span>∙</span>
+            <span>Max {maxFiles} files</span>
+            <span>∙</span>
+            <span>Up to {formatBytes(maxSize)}</span>
+          </div>
+        </div>
+      </div>
 
-          {showActions && !disabled && (
-            <div className="flex items-center ml-4 space-x-1">
-              <button
-                type="button"
-                onClick={(e) => handlePreview(e, file)}
-                className="p-1 text-gray-400 hover:text-gray-700 transition-colors rounded-full"
-                aria-label="Preview file"
-              >
-                <Eye className="w-4 h-4" />
-              </button>
+      {errors.length > 0 && (
+        <div className="flex items-center text-destructive text-xs gap-1" role="alert">
+          <AlertCircleIcon className="size-3 shrink-0" />
+          <span>{errors[0]}</span>
+        </div>
+      )}
 
-              {file.url && (
-                <button
-                  type="button"
-                  onClick={(e) => handleDownload(e, file)}
-                  className="p-1 text-gray-400 hover:text-gray-700 transition-colors rounded-full"
-                  aria-label="Download file"
-                >
-                  <Download className="w-4 h-4" />
-                </button>
-              )}
+      {/* File list */}
+      {files.length > 0 && (
+        <div className="space-y-2">
+          {files.map((file) => (
+            <div
+              key={file.id}
+              className="flex items-center justify-between gap-2 px-4 py-3 bg-accent/50 rounded-xl border"
+            >
+              <div className="flex items-center gap-3 overflow-hidden">
+                <FileIcon className="size-4 text-muted-foreground shrink-0" />
+                <div className="min-w-0">
+                  <p className="text-xs font-medium truncate">{file.file.name}</p>
+                  <p className="text-xs text-muted-foreground">{formatBytes(file.file.size)}</p>
+                </div>
+              </div>
 
-              <button
-                type="button"
-                onClick={(e) => handleRemove(e, file.id)}
-                className="p-1 text-gray-400 hover:text-red-500 transition-colors rounded-full"
+              <Button
+                size="icon"
+                variant="ghost"
+                className="text-muted-foreground/80 hover:text-foreground hover:bg-transparent -me-2 size-8"
+                onClick={(e) => handleRemoveFile(e, file.id)}
                 aria-label="Remove file"
               >
-                <X className="w-4 h-4" />
-              </button>
+                <XIcon className="size-4" aria-hidden="true" />
+              </Button>
+            </div>
+          ))}
+
+          {/* Remove all files button */}
+          {files.length > 1 && (
+            <div>
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={clearFiles}
+              >
+                Remove all files
+              </Button>
             </div>
           )}
         </div>
-      ))}
+      )}
+
+      <p aria-live="polite" role="region" className="text-muted-foreground text-xs mt-2 text-center">
+        Multiple files uploader w/ max files and max size
+      </p>         
     </div>
   )
 }

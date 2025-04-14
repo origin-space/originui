@@ -19,7 +19,7 @@ export default function Component() {
 
         {/* Drop area */}
         <div
-          className="relative flex items-center justify-center size-16 rounded-full border border-dashed border-input has-[img]:border-none not-has-disabled:hover:bg-accent/50 transition-colors data-[dragging=true]:bg-accent/50 overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
+          className="relative flex items-center justify-center size-16 rounded-full border border-dashed border-input has-[img]:border-none has-disabled:opacity-50 has-disabled:pointer-events-none hover:bg-accent/50 transition-colors data-[dragging=true]:bg-accent/50 overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
           role="button"
           onClick={openFileDialog}
           onDragEnter={handleDragEnter}

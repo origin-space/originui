@@ -10017,34 +10017,6 @@
       }
     },
     {
-      "name": "comp-552b",
-      "type": "registry:component",
-      "files": [
-        {
-          "path": "registry/default/components/comp-552b.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "meta": {
-        "tags": ["upload", "file"],
-        "colSpan": 2
-      }
-    },   
-    {
-      "name": "comp-552c",
-      "type": "registry:component",
-      "files": [
-        {
-          "path": "registry/default/components/comp-552c.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "meta": {
-        "tags": ["upload", "file"],
-        "colSpan": 2
-      }
-    },     
-    {
       "name": "comp-553",
       "type": "registry:component",
       "files": [
@@ -10057,7 +10029,7 @@
         "tags": ["upload", "file"],
         "colSpan": 2
       }
-    },
+    },   
     {
       "name": "comp-554",
       "type": "registry:component",
@@ -10071,7 +10043,7 @@
         "tags": ["upload", "file"],
         "colSpan": 2
       }
-    },
+    },     
     {
       "name": "comp-555",
       "type": "registry:component",
@@ -10091,7 +10063,7 @@
       "type": "registry:component",
       "files": [
         {
-          "path": "registry/default/components/comp-556.tsx",
+          "path": "registry/default/components/comp-554o.tsx",
           "type": "registry:component"
         }
       ],
@@ -10101,11 +10073,39 @@
       }
     },
     {
-      "name": "comp-557",
+      "name": "comp-555o",
       "type": "registry:component",
       "files": [
         {
-          "path": "registry/default/components/comp-557.tsx",
+          "path": "registry/default/components/comp-555o.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-556o",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-556o.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-557o",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-557o.tsx",
           "type": "registry:component"
         }
       ],
