@@ -24,46 +24,6 @@
       }
     },
     {
-      "name": "comp-545",
-      "type": "registry:component",
-      "registryDependencies": [
-        "https://originui.com/r/button.json"
-      ],
-      "files": [
-        {
-          "path": "registry/default/components/comp-545.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/default/hooks/use-file-upload.ts",
-          "type": "registry:hook"
-        }
-      ],
-      "meta": {
-        "tags": ["file upload", "image", "drag and drop"]
-      }
-    },
-    {
-      "name": "comp-546",
-      "type": "registry:component",
-      "registryDependencies": [
-        "https://originui.com/r/button.json"
-      ],
-      "files": [
-        {
-          "path": "registry/default/components/comp-546.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/default/hooks/use-file-upload.ts",
-          "type": "registry:hook"
-        }
-      ],
-      "meta": {
-        "tags": ["file upload", "drag and drop"]
-      }
-    },
-    {
       "name": "comp-547",
       "type": "registry:component",
       "registryDependencies": [
