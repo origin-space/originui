@@ -10033,6 +10033,20 @@
       }
     },
     {
+      "name": "comp-557",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-557.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
+    },
+    {
       "name": "comp-555o",
       "type": "registry:component",
       "files": [
