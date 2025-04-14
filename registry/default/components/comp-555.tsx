@@ -8,6 +8,18 @@ import { Button } from "@/registry/default/ui/button"
 export default function Component() {
   const maxSize = 10 * 1024 * 1024 // 10MB default
 
+  const initialFiles = [
+    {
+      file: new File(
+        [new Blob([''], { type: 'application/pdf' })],
+        "document.pdf",
+        { type: "application/pdf" }
+      ),
+      id: "document.pdf-1744638436563-8u5xuls",
+      preview: "/icons/pdf.svg"
+    }
+  ]
+
   const [
     { files, isDragging, errors },
     {
@@ -21,6 +33,7 @@ export default function Component() {
     },
   ] = useFileUpload({
     maxSize,
+    initialFiles,
   })
 
   const file = files[0]

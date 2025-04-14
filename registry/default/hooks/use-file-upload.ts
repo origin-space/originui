@@ -15,6 +15,7 @@ export type FileUploadOptions = {
   maxSize?: number // in bytes
   accept?: string
   multiple?: boolean // Defaults to false
+  initialFiles?: FileWithPreview[]
   iconPaths?: {
     pdf?: string
     zip?: string
@@ -60,6 +61,7 @@ export const useFileUpload = (options: FileUploadOptions = {}): [FileUploadState
     maxSize = Infinity,
     accept = "*",
     multiple = false,
+    initialFiles = [],
     iconPaths = {
       pdf: "/icons/pdf.svg",
       zip: "/icons/zip.svg",
@@ -72,7 +74,7 @@ export const useFileUpload = (options: FileUploadOptions = {}): [FileUploadState
   } = options
 
   const [state, setState] = useState<FileUploadState>({
-    files: [],
+    files: initialFiles,
     isDragging: false,
     errors: [],
   })
