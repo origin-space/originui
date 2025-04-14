@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useFileUpload, formatBytes } from "@/registry/default/hooks/use-file-upload"
-import { XIcon, AlertCircleIcon, FileIcon, FileTextIcon, FileArchiveIcon, FileSpreadsheetIcon, FileVideoIcon, FileAudioIcon, ImageIcon, UploadIcon } from "lucide-react"
+import { XIcon, AlertCircleIcon, FileIcon, FileTextIcon, FileArchiveIcon, FileSpreadsheetIcon, FileVideoIcon, FileAudioIcon, ImageIcon, UploadIcon, Trash2Icon } from "lucide-react"
 import { Button } from "@/registry/default/ui/button"
 
 const initialFiles = [
@@ -77,6 +77,7 @@ export default function Component() {
                 onClick={clearFiles}
                 className="text-xs h-8"
               >
+                <Trash2Icon className="opacity-60 -ms-0.5 size-3.5" aria-hidden="true" />
                 Remove all
               </Button>
             </div>
@@ -138,7 +139,7 @@ export default function Component() {
                   onClick={openFileDialog}
                 >
                   <UploadIcon className="opacity-60 -ms-1" aria-hidden="true" />
-                  Add more files
+                  Add more
                 </Button>
               )}
             </div>
@@ -167,7 +168,7 @@ export default function Component() {
       )}
 
       <p aria-live="polite" role="region" className="text-muted-foreground text-xs mt-2 text-center">
-        Multiple files uploader w/ max files and max size
+        Multiple files uploader w/ list inside
       </p>
     </div>
   )

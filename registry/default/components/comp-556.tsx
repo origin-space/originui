@@ -160,7 +160,7 @@ export default function Component() {
       )}
 
       <p aria-live="polite" role="region" className="text-muted-foreground text-xs mt-2 text-center">
-        Multiple files uploader w/ max files and max size
+        Multiple files uploader w/ list
       </p>
     </div>
   )
