@@ -29,6 +29,29 @@ const initialFiles = [
   }
 ]
 
+const getFileIcon = (file: { file: File | { type: string; name: string } }) => {
+  const fileType = file.file instanceof File ? file.file.type : file.file.type
+  const fileName = file.file instanceof File ? file.file.name : file.file.name
+
+  if ((fileType.includes("pdf") || fileName.endsWith(".pdf")) ||
+    (fileType.includes("word") || fileName.endsWith(".doc") || fileName.endsWith(".docx"))) {
+    return <FileTextIcon className="opacity-60 size-4" />
+  } else if (fileType.includes("zip") || fileType.includes("archive") ||
+    fileName.endsWith(".zip") || fileName.endsWith(".rar")) {
+    return <FileArchiveIcon className="opacity-60 size-4" />
+  } else if (fileType.includes("excel") ||
+    fileName.endsWith(".xls") || fileName.endsWith(".xlsx")) {
+    return <FileSpreadsheetIcon className="opacity-60 size-4" />
+  } else if (fileType.includes("video/")) {
+    return <VideoIcon className="opacity-60 size-4" />
+  } else if (fileType.includes("audio/")) {
+    return <HeadphonesIcon className="opacity-60 size-4" />
+  } else if (fileType.startsWith("image/")) {
+    return <ImageIcon className="opacity-60 size-4" />
+  }
+  return <FileIcon className="opacity-60 size-4" />
+}
+
 export default function Component() {
   const maxSize = 100 * 1024 * 1024 // 10MB default
   const maxFiles = 10
@@ -101,28 +124,7 @@ export default function Component() {
             >
               <div className="flex items-center gap-3 overflow-hidden">
                 <div className="aspect-square size-10 shrink-0 border flex items-center justify-center rounded">
-                  {(() => {
-                    const fileType = file.file instanceof File ? file.file.type : file.file.type
-                    const fileName = file.file instanceof File ? file.file.name : file.file.name
-
-                    if ((fileType.includes("pdf") || fileName.endsWith(".pdf")) ||
-                      (fileType.includes("word") || fileName.endsWith(".doc") || fileName.endsWith(".docx"))) {
-                      return <FileTextIcon className="opacity-60 size-4" />
-                    } else if (fileType.includes("zip") || fileType.includes("archive") ||
-                      fileName.endsWith(".zip") || fileName.endsWith(".rar")) {
-                      return <FileArchiveIcon className="opacity-60 size-4" />
-                    } else if (fileType.includes("excel") ||
-                      fileName.endsWith(".xls") || fileName.endsWith(".xlsx")) {
-                      return <FileSpreadsheetIcon className="opacity-60 size-4" />
-                    } else if (fileType.includes("video/")) {
-                      return <VideoIcon className="opacity-60 size-4" />
-                    } else if (fileType.includes("audio/")) {
-                      return <HeadphonesIcon className="opacity-60 size-4" />
-                    } else if (fileType.startsWith("image/")) {
-                      return <ImageIcon className="opacity-60 size-4" />
-                    }
-                    return <FileIcon className="opacity-60 size-4" />
-                  })()}
+                  {getFileIcon(file)}
                 </div>
                 <div className="min-w-0 flex flex-col gap-0.5">
                   <p className="text-[13px] font-medium truncate">{file.file instanceof File ? file.file.name : file.file.name}</p>

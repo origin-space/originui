@@ -56,7 +56,7 @@ export default function Component() {
           <div className="bg-background flex size-11 shrink-0 items-center justify-center rounded-full border mb-2" aria-hidden="true">
             <UploadIcon className="size-4 opacity-80" />
           </div>
-          <p className="text-sm font-medium mb-0.5">Upload file</p>
+          <p className="text-sm font-medium mb-1.5">Upload file</p>
           <p className="text-xs text-muted-foreground">Drag & drop or click to browse (max. {formatBytes(maxSize)})</p>
         </div>
       </div>

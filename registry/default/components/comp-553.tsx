@@ -69,13 +69,12 @@ export default function Component() {
         <input {...getInputProps()} aria-label="Upload image file" />
         {files.length > 0 ? (
           <div className="w-full flex flex-col gap-3">
-            <div className="flex items-center justify-between fap-2">
+            <div className="flex items-center justify-between gap-2">
               <h3 className="text-sm font-medium truncate">Uploaded Files ({files.length})</h3>
               <Button 
                 variant="outline" 
                 size="sm" 
                 onClick={openFileDialog}
-                className="text-xs h-8"
                 disabled={files.length >= maxFiles}
               >
                 <UploadIcon className="opacity-60 -ms-0.5 size-3.5" aria-hidden="true" />

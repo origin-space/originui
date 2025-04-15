@@ -24,26 +24,6 @@
       }
     },
     {
-      "name": "comp-548",
-      "type": "registry:component",
-      "registryDependencies": [
-        "https://originui.com/r/button.json"
-      ],
-      "files": [
-        {
-          "path": "registry/default/components/comp-548.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/default/hooks/use-file-upload.ts",
-          "type": "registry:hook"
-        }
-      ],
-      "meta": {
-        "tags": ["file upload", "multiple", "list", "table"]
-      }
-    },
-    {
       "name": "comp-549",
       "type": "registry:component",
       "registryDependencies": [
@@ -10017,6 +9997,20 @@
       "files": [
         {
           "path": "registry/default/components/comp-557.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-558",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-558.tsx",
           "type": "registry:component"
         }
       ],
