@@ -9893,6 +9893,20 @@
         "tags": ["upload", "file"],
         "colSpan": 2
       }
+    },
+    {
+      "name": "comp-553",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-553.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
     }
   ]
 }
