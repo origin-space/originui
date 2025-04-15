@@ -1,8 +1,9 @@
 "use client"
 
 import type React from "react"
+import { AlertCircleIcon, ImageUpIcon, XIcon } from "lucide-react"
+
 import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
-import { XIcon, ImageUpIcon, AlertCircleIcon } from "lucide-react"
 
 export default function Component() {
   const maxSizeMB = 5
@@ -10,7 +11,15 @@ export default function Component() {
 
   const [
     { files, isDragging, errors },
-    { handleDragEnter, handleDragLeave, handleDragOver, handleDrop, openFileDialog, removeFile, getInputProps },
+    {
+      handleDragEnter,
+      handleDragLeave,
+      handleDragOver,
+      handleDrop,
+      openFileDialog,
+      removeFile,
+      getInputProps,
+    },
   ] = useFileUpload({
     accept: "image/*",
     maxSize,
@@ -21,7 +30,6 @@ export default function Component() {
   return (
     <div className="flex flex-col gap-2">
       <div className="relative">
-
         {/* Drop area */}
         <div
           role="button"
@@ -31,20 +39,31 @@ export default function Component() {
           onDragOver={handleDragOver}
           onDrop={handleDrop}
           data-dragging={isDragging || undefined}
-          className="relative rounded-xl flex flex-col items-center justify-center border border-dashed border-input has-[img]:border-none has-disabled:opacity-50 has-disabled:pointer-events-none hover:bg-accent/50 transition-colors p-4 data-[dragging=true]:bg-accent/50 min-h-52 overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
+          className="border-input hover:bg-accent/50 data-[dragging=true]:bg-accent/50 has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 relative flex min-h-52 flex-col items-center justify-center overflow-hidden rounded-xl border border-dashed p-4 transition-colors has-disabled:pointer-events-none has-disabled:opacity-50 has-[img]:border-none has-[input:focus]:ring-[3px]"
         >
           <input {...getInputProps()} aria-label="Upload file" />
           {previewUrl ? (
             <div className="absolute inset-0">
-              <img src={previewUrl} alt={files[0]?.file?.name || "Uploaded image"} className="size-full object-cover" />
+              <img
+                src={previewUrl}
+                alt={files[0]?.file?.name || "Uploaded image"}
+                className="size-full object-cover"
+              />
             </div>
           ) : (
             <div className="flex flex-col items-center justify-center px-4 py-3 text-center">
-              <div className="bg-background flex size-11 shrink-0 items-center justify-center rounded-full border mb-2" aria-hidden="true">
+              <div
+                className="bg-background mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border"
+                aria-hidden="true"
+              >
                 <ImageUpIcon className="size-4 opacity-60" />
               </div>
-              <p className="text-sm font-medium mb-1.5">Drop your image here or click to browse</p>
-              <p className="text-xs text-muted-foreground">Max size: {maxSizeMB}MB</p>
+              <p className="mb-1.5 text-sm font-medium">
+                Drop your image here or click to browse
+              </p>
+              <p className="text-muted-foreground text-xs">
+                Max size: {maxSizeMB}MB
+              </p>
             </div>
           )}
         </div>
@@ -59,19 +78,26 @@ export default function Component() {
               <XIcon className="size-4" aria-hidden="true" />
             </button>
           </div>
-        )}        
+        )}
       </div>
 
       {errors.length > 0 && (
-        <div className="flex items-center text-destructive text-xs gap-1" role="alert">
+        <div
+          className="text-destructive flex items-center gap-1 text-xs"
+          role="alert"
+        >
           <AlertCircleIcon className="size-3 shrink-0" />
           <span>{errors[0]}</span>
         </div>
       )}
 
-      <p aria-live="polite" role="region" className="text-muted-foreground text-xs mt-2 text-center">
+      <p
+        aria-live="polite"
+        role="region"
+        className="text-muted-foreground mt-2 text-center text-xs"
+      >
         Single image uploader w/ max size
-      </p>      
+      </p>
     </div>
   )
 }

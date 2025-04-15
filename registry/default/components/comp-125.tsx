@@ -6,9 +6,10 @@ import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
-  const [{ files }, { removeFile, openFileDialog, getInputProps }] = useFileUpload({
-    accept: "image/*"
-  })
+  const [{ files }, { removeFile, openFileDialog, getInputProps }] =
+    useFileUpload({
+      accept: "image/*",
+    })
 
   const previewUrl = files[0]?.preview || null
   const fileName = files[0]?.file.name || null
@@ -50,14 +51,18 @@ export default function Component() {
           </p>{" "}
           <button
             onClick={() => removeFile(files[0]?.id)}
-            className="font-medium text-destructive hover:underline"
+            className="text-destructive font-medium hover:underline"
             aria-label={`Remove ${fileName}`}
           >
             Remove
           </button>
         </div>
       )}
-      <p aria-live="polite" role="region" className="text-muted-foreground text-xs mt-2">
+      <p
+        aria-live="polite"
+        role="region"
+        className="text-muted-foreground mt-2 text-xs"
+      >
         Basic image uploader
       </p>
     </div>

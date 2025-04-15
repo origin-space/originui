@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+
 import CopyLayout from "@/components/copy-layout"
 
 interface CardProps {
@@ -30,9 +31,13 @@ export default function Card({ card }: CardProps) {
         {card.demoUrl && card.repoUrl ? (
           <div className="flex items-center gap-6">
             <span className="max-sm:hidden">
-              <CopyLayout command={card.cmd} />      
+              <CopyLayout command={card.cmd} />
             </span>
-            <div data-orientation="vertical" role="none" className="max-sm:hidden shrink-0 bg-border h-4 w-px"></div>
+            <div
+              data-orientation="vertical"
+              role="none"
+              className="bg-border h-4 w-px shrink-0 max-sm:hidden"
+            ></div>
             <Link
               href={card.demoUrl}
               className="inline-flex items-center gap-1 text-sm hover:underline"

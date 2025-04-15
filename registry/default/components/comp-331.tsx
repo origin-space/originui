@@ -27,8 +27,8 @@ const initialBgImage = [
     size: 1528737,
     type: "image/jpeg",
     url: "/profile-bg.jpg",
-    id: "profile-bg-123456789"
-  }
+    id: "profile-bg-123456789",
+  },
 ]
 
 const initialAvatarImage = [
@@ -37,8 +37,8 @@ const initialAvatarImage = [
     size: 1528737,
     type: "image/jpeg",
     url: "/avatar-72-01.jpg",
-    id: "avatar-123456789"
-  }
+    id: "avatar-123456789",
+  },
 ]
 
 export default function Component() {
@@ -172,10 +172,11 @@ export default function Component() {
 }
 
 function ProfileBg() {
-  const [{ files }, { removeFile, openFileDialog, getInputProps }] = useFileUpload({
-    accept: "image/*",
-    initialFiles: initialBgImage,
-  })
+  const [{ files }, { removeFile, openFileDialog, getInputProps }] =
+    useFileUpload({
+      accept: "image/*",
+      initialFiles: initialBgImage,
+    })
 
   const currentImage = files[0]?.preview || null
 

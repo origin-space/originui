@@ -6,9 +6,19 @@ import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
 
 export default function Component() {
-  const [{ files, isDragging },
-    { removeFile, openFileDialog, getInputProps, handleDragEnter, handleDragLeave, handleDragOver, handleDrop }] = useFileUpload({
-    accept: "image/*"
+  const [
+    { files, isDragging },
+    {
+      removeFile,
+      openFileDialog,
+      getInputProps,
+      handleDragEnter,
+      handleDragLeave,
+      handleDragOver,
+      handleDrop,
+    },
+  ] = useFileUpload({
+    accept: "image/*",
   })
 
   const previewUrl = files[0]?.preview || null
@@ -16,10 +26,9 @@ export default function Component() {
   return (
     <div className="flex flex-col items-center gap-2">
       <div className="relative inline-flex">
-
         {/* Drop area */}
         <div
-          className="relative flex items-center justify-center size-16 rounded-full border border-dashed border-input has-[img]:border-none has-disabled:opacity-50 has-disabled:pointer-events-none hover:bg-accent/50 transition-colors data-[dragging=true]:bg-accent/50 overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
+          className="border-input hover:bg-accent/50 data-[dragging=true]:bg-accent/50 has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 relative flex size-16 items-center justify-center overflow-hidden rounded-full border border-dashed transition-colors has-disabled:pointer-events-none has-disabled:opacity-50 has-[img]:border-none has-[input:focus]:ring-[3px]"
           role="button"
           onClick={openFileDialog}
           onDragEnter={handleDragEnter}
@@ -48,7 +57,7 @@ export default function Component() {
           <Button
             onClick={() => removeFile(files[0]?.id)}
             size="icon"
-            className="absolute -top-1 -right-1 size-6 rounded-full border-2 border-background shadow-none focus-visible:border-background"
+            className="border-background focus-visible:border-background absolute -top-1 -right-1 size-6 rounded-full border-2 shadow-none"
             aria-label="Remove image"
           >
             <XIcon className="size-3.5" />
@@ -56,7 +65,11 @@ export default function Component() {
         )}
         <input {...getInputProps()} aria-label="Upload image file" />
       </div>
-      <p aria-live="polite" role="region" className="text-muted-foreground text-xs mt-2">
+      <p
+        aria-live="polite"
+        role="region"
+        className="text-muted-foreground mt-2 text-xs"
+      >
         Avatar uploader with droppable area
       </p>
     </div>

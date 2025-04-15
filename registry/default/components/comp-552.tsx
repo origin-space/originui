@@ -1,8 +1,24 @@
 "use client"
 
 import type React from "react"
-import { formatBytes, useFileUpload } from "@/registry/default/hooks/use-file-upload"
-import { ImageIcon, AlertCircleIcon, UploadIcon, XIcon, FileTextIcon, FileArchiveIcon, FileSpreadsheetIcon, VideoIcon, HeadphonesIcon, FileIcon, Trash2Icon } from "lucide-react"
+import {
+  AlertCircleIcon,
+  FileArchiveIcon,
+  FileIcon,
+  FileSpreadsheetIcon,
+  FileTextIcon,
+  HeadphonesIcon,
+  ImageIcon,
+  Trash2Icon,
+  UploadIcon,
+  VideoIcon,
+  XIcon,
+} from "lucide-react"
+
+import {
+  formatBytes,
+  useFileUpload,
+} from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
 
 // Create a dummy image file
@@ -12,22 +28,22 @@ const initialFiles = [
     size: 252873,
     type: "application/zip",
     url: "https://example.com/intro.zip",
-    id: "intro.zip-1744638436563-8u5xuls"
-  },  
+    id: "intro.zip-1744638436563-8u5xuls",
+  },
   {
     name: "image-01.jpg",
     size: 1528737,
     type: "image/jpeg",
     url: "https://picsum.photos/1000/800?grayscale&random=1",
-    id: "image-01-123456789"
+    id: "image-01-123456789",
   },
   {
     name: "audio.mp3",
     size: 1528737,
     type: "audio/mpeg",
     url: "https://example.com/audio.mp3",
-    id: "audio-123456789"
-  }
+    id: "audio-123456789",
+  },
 ]
 
 const getFileIcon = (file: { file: File | { type: string; name: string } }) => {
@@ -35,29 +51,56 @@ const getFileIcon = (file: { file: File | { type: string; name: string } }) => {
   const fileName = file.file instanceof File ? file.file.name : file.file.name
 
   const iconMap = {
-    pdf: { icon: FileTextIcon, conditions: (type: string, name: string) => 
-      type.includes("pdf") || name.endsWith(".pdf") || 
-      type.includes("word") || name.endsWith(".doc") || name.endsWith(".docx") },
-    archive: { icon: FileArchiveIcon, conditions: (type: string, name: string) => 
-      type.includes("zip") || type.includes("archive") || 
-      name.endsWith(".zip") || name.endsWith(".rar") },
-    excel: { icon: FileSpreadsheetIcon, conditions: (type: string, name: string) => 
-      type.includes("excel") || name.endsWith(".xls") || name.endsWith(".xlsx") },
-    video: { icon: VideoIcon, conditions: (type: string) => type.includes("video/") },
-    audio: { icon: HeadphonesIcon, conditions: (type: string) => type.includes("audio/") },
-    image: { icon: ImageIcon, conditions: (type: string) => type.startsWith("image/") }
+    pdf: {
+      icon: FileTextIcon,
+      conditions: (type: string, name: string) =>
+        type.includes("pdf") ||
+        name.endsWith(".pdf") ||
+        type.includes("word") ||
+        name.endsWith(".doc") ||
+        name.endsWith(".docx"),
+    },
+    archive: {
+      icon: FileArchiveIcon,
+      conditions: (type: string, name: string) =>
+        type.includes("zip") ||
+        type.includes("archive") ||
+        name.endsWith(".zip") ||
+        name.endsWith(".rar"),
+    },
+    excel: {
+      icon: FileSpreadsheetIcon,
+      conditions: (type: string, name: string) =>
+        type.includes("excel") ||
+        name.endsWith(".xls") ||
+        name.endsWith(".xlsx"),
+    },
+    video: {
+      icon: VideoIcon,
+      conditions: (type: string) => type.includes("video/"),
+    },
+    audio: {
+      icon: HeadphonesIcon,
+      conditions: (type: string) => type.includes("audio/"),
+    },
+    image: {
+      icon: ImageIcon,
+      conditions: (type: string) => type.startsWith("image/"),
+    },
   }
 
   for (const { icon: Icon, conditions } of Object.values(iconMap)) {
     if (conditions(fileType, fileName)) {
-      return <Icon className="opacity-60 size-5" />
+      return <Icon className="size-5 opacity-60" />
     }
   }
 
-  return <FileIcon className="opacity-60 size-5" />
+  return <FileIcon className="size-5 opacity-60" />
 }
 
-const getFilePreview = (file: { file: File | { type: string; name: string; url?: string } }) => {
+const getFilePreview = (file: {
+  file: File | { type: string; name: string; url?: string }
+}) => {
   const fileType = file.file instanceof File ? file.file.type : file.file.type
   const fileName = file.file instanceof File ? file.file.name : file.file.name
 
@@ -65,12 +108,12 @@ const getFilePreview = (file: { file: File | { type: string; name: string; url?:
     <img
       src={src}
       alt={fileName}
-      className="size-full object-cover rounded-t-[inherit]"
+      className="size-full rounded-t-[inherit] object-cover"
     />
   )
 
   return (
-    <div className="aspect-square bg-accent flex items-center justify-center rounded-t-[inherit] overflow-hidden">
+    <div className="bg-accent flex aspect-square items-center justify-center overflow-hidden rounded-t-[inherit]">
       {fileType.startsWith("image/") ? (
         file.file instanceof File ? (
           (() => {
@@ -80,7 +123,7 @@ const getFilePreview = (file: { file: File | { type: string; name: string; url?:
         ) : file.file.url ? (
           renderImage(file.file.url)
         ) : (
-          <ImageIcon className="opacity-60 size-5" />
+          <ImageIcon className="size-5 opacity-60" />
         )
       ) : (
         getFileIcon(file)
@@ -96,7 +139,16 @@ export default function Component() {
 
   const [
     { files, isDragging, errors },
-    { handleDragEnter, handleDragLeave, handleDragOver, handleDrop, openFileDialog, removeFile, clearFiles, getInputProps },
+    {
+      handleDragEnter,
+      handleDragLeave,
+      handleDragOver,
+      handleDrop,
+      openFileDialog,
+      removeFile,
+      clearFiles,
+      getInputProps,
+    },
   ] = useFileUpload({
     multiple: true,
     maxFiles,
@@ -106,7 +158,6 @@ export default function Component() {
 
   return (
     <div className="flex flex-col gap-2">
-
       {/* Drop area */}
       <div
         onDragEnter={handleDragEnter}
@@ -115,50 +166,53 @@ export default function Component() {
         onDrop={handleDrop}
         data-dragging={isDragging || undefined}
         data-files={files.length > 0 || undefined}
-        className="relative rounded-xl flex flex-col items-center not-data-[files]:justify-center border border-dashed border-input transition-colors p-4 data-[dragging=true]:bg-accent/50 min-h-52 overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
+        className="border-input data-[dragging=true]:bg-accent/50 has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 relative flex min-h-52 flex-col items-center overflow-hidden rounded-xl border border-dashed p-4 transition-colors not-data-[files]:justify-center has-[input:focus]:ring-[3px]"
       >
         <input {...getInputProps()} aria-label="Upload image file" />
         {files.length > 0 ? (
-          <div className="w-full flex flex-col gap-3">
+          <div className="flex w-full flex-col gap-3">
             <div className="flex items-center justify-between gap-2">
-              <h3 className="text-sm font-medium truncate">Files ({files.length})</h3>
+              <h3 className="truncate text-sm font-medium">
+                Files ({files.length})
+              </h3>
               <div className="flex gap-2">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={openFileDialog}
-              >
-                <UploadIcon className="opacity-60 -ms-0.5 size-3.5" aria-hidden="true" />
-                Add files
-              </Button>            
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={clearFiles}
-              >
-                <Trash2Icon className="opacity-60 -ms-0.5 size-3.5" aria-hidden="true" />
-                Remove all
-              </Button>
-            </div>
+                <Button variant="outline" size="sm" onClick={openFileDialog}>
+                  <UploadIcon
+                    className="-ms-0.5 size-3.5 opacity-60"
+                    aria-hidden="true"
+                  />
+                  Add files
+                </Button>
+                <Button variant="outline" size="sm" onClick={clearFiles}>
+                  <Trash2Icon
+                    className="-ms-0.5 size-3.5 opacity-60"
+                    aria-hidden="true"
+                  />
+                  Remove all
+                </Button>
+              </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
               {files.map((file) => (
-                <div key={file.id} className="relative flex flex-col border rounded-md bg-background">
+                <div
+                  key={file.id}
+                  className="bg-background relative flex flex-col rounded-md border"
+                >
                   {getFilePreview(file)}
                   <Button
                     onClick={() => removeFile(file.id)}
                     size="icon"
-                    className="absolute -top-2 -right-2 size-6 rounded-full border-2 border-background shadow-none focus-visible:border-background"
+                    className="border-background focus-visible:border-background absolute -top-2 -right-2 size-6 rounded-full border-2 shadow-none"
                     aria-label="Remove image"
                   >
                     <XIcon className="size-3.5" />
                   </Button>
-                  <div className="min-w-0 flex flex-col gap-0.5 p-3 border-t">
-                    <p className="text-[13px] font-medium truncate">
+                  <div className="flex min-w-0 flex-col gap-0.5 border-t p-3">
+                    <p className="truncate text-[13px] font-medium">
                       {file.file.name}
                     </p>
-                    <p className="text-xs text-muted-foreground truncate">
+                    <p className="text-muted-foreground truncate text-xs">
                       {formatBytes(file.file.size)}
                     </p>
                   </div>
@@ -168,13 +222,18 @@ export default function Component() {
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center px-4 py-3 text-center">
-            <div className="bg-background flex size-11 shrink-0 items-center justify-center rounded-full border mb-2" aria-hidden="true">
+            <div
+              className="bg-background mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border"
+              aria-hidden="true"
+            >
               <ImageIcon className="size-4 opacity-60" />
             </div>
-            <p className="text-sm font-medium mb-1.5">Drop your files here</p>
-            <p className="text-xs text-muted-foreground">Max {maxFiles} files ∙ Up to {maxSizeMB}MB</p>
+            <p className="mb-1.5 text-sm font-medium">Drop your files here</p>
+            <p className="text-muted-foreground text-xs">
+              Max {maxFiles} files ∙ Up to {maxSizeMB}MB
+            </p>
             <Button variant="outline" className="mt-4" onClick={openFileDialog}>
-              <UploadIcon className="opacity-60 -ms-1" aria-hidden="true" />
+              <UploadIcon className="-ms-1 opacity-60" aria-hidden="true" />
               Select images
             </Button>
           </div>
@@ -182,13 +241,20 @@ export default function Component() {
       </div>
 
       {errors.length > 0 && (
-        <div className="flex items-center text-destructive text-xs gap-1" role="alert">
+        <div
+          className="text-destructive flex items-center gap-1 text-xs"
+          role="alert"
+        >
           <AlertCircleIcon className="size-3 shrink-0" />
           <span>{errors[0]}</span>
         </div>
       )}
 
-      <p aria-live="polite" role="region" className="text-muted-foreground text-xs mt-2 text-center">
+      <p
+        aria-live="polite"
+        role="region"
+        className="text-muted-foreground mt-2 text-center text-xs"
+      >
         Mixed content w/ card
       </p>
     </div>
