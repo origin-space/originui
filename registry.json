@@ -2541,7 +2541,7 @@
           "type": "registry:component"
         },
         {
-          "path": "registry/default/hooks/use-image-upload.ts",
+          "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
         }
       ],
@@ -2560,7 +2560,7 @@
           "type": "registry:component"
         },
         {
-          "path": "registry/default/hooks/use-image-upload.ts",
+          "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
         }
       ],
