@@ -9756,11 +9756,11 @@
       }
     },
     {
-      "name": "comp-550",
+      "name": "comp-543",
       "type": "registry:component",
       "files": [
         {
-          "path": "registry/default/components/comp-550.tsx",
+          "path": "registry/default/components/comp-543.tsx",
           "type": "registry:component"
         }
       ],
@@ -9769,11 +9769,11 @@
       }
     },    
     {
-      "name": "comp-543",
+      "name": "comp-544",
       "type": "registry:component",
       "files": [
         {
-          "path": "registry/default/components/comp-543.tsx",
+          "path": "registry/default/components/comp-544.tsx",
           "type": "registry:component"
         }
       ],
@@ -9839,6 +9839,34 @@
       }
     },
     {
+      "name": "comp-549",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-549.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-550",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-550.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file"],
+        "colSpan": 2
+      }
+    },
+    {
       "name": "comp-551",
       "type": "registry:component",
       "files": [
@@ -9851,111 +9879,13 @@
         "tags": ["upload", "file"],
         "colSpan": 2
       }
-    },
+    },   
     {
       "name": "comp-552",
       "type": "registry:component",
       "files": [
         {
           "path": "registry/default/components/comp-552.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "meta": {
-        "tags": ["upload", "file"],
-        "colSpan": 2
-      }
-    },
-    {
-      "name": "comp-553",
-      "type": "registry:component",
-      "files": [
-        {
-          "path": "registry/default/components/comp-553.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "meta": {
-        "tags": ["upload", "file"],
-        "colSpan": 2
-      }
-    },   
-    {
-      "name": "comp-554",
-      "type": "registry:component",
-      "files": [
-        {
-          "path": "registry/default/components/comp-554.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "meta": {
-        "tags": ["upload", "file"],
-        "colSpan": 2
-      }
-    },     
-    {
-      "name": "comp-555",
-      "type": "registry:component",
-      "files": [
-        {
-          "path": "registry/default/components/comp-555.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "meta": {
-        "tags": ["upload", "file"],
-        "colSpan": 2
-      }
-    },
-    {
-      "name": "comp-556",
-      "type": "registry:component",
-      "files": [
-        {
-          "path": "registry/default/components/comp-554o.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "meta": {
-        "tags": ["upload", "file"],
-        "colSpan": 2
-      }
-    },
-    {
-      "name": "comp-557",
-      "type": "registry:component",
-      "files": [
-        {
-          "path": "registry/default/components/comp-557.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "meta": {
-        "tags": ["upload", "file"],
-        "colSpan": 2
-      }
-    },
-    {
-      "name": "comp-558",
-      "type": "registry:component",
-      "files": [
-        {
-          "path": "registry/default/components/comp-558.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "meta": {
-        "tags": ["upload", "file"],
-        "colSpan": 2
-      }
-    },
-    {
-      "name": "comp-559",
-      "type": "registry:component",
-      "files": [
-        {
-          "path": "registry/default/components/comp-559.tsx",
           "type": "registry:component"
         }
       ],

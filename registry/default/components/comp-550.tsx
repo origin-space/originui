@@ -1,63 +1,173 @@
 "use client"
 
-import { CircleUserRoundIcon, XIcon } from "lucide-react"
-
-import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
+import type React from "react"
+import { useFileUpload, formatBytes } from "@/registry/default/hooks/use-file-upload"
+import { XIcon, AlertCircleIcon, FileIcon, FileTextIcon, FileArchiveIcon, FileSpreadsheetIcon, VideoIcon, HeadphonesIcon, ImageIcon, UploadIcon, Trash2Icon } from "lucide-react"
 import { Button } from "@/registry/default/ui/button"
 
+const getFileIcon = (file: { file: File | { type: string; name: string } }) => {
+  const fileType = file.file instanceof File ? file.file.type : file.file.type
+  const fileName = file.file instanceof File ? file.file.name : file.file.name
+
+  if ((fileType.includes("pdf") || fileName.endsWith(".pdf")) ||
+    (fileType.includes("word") || fileName.endsWith(".doc") || fileName.endsWith(".docx"))) {
+    return <FileTextIcon className="opacity-60 size-4" />
+  } else if (fileType.includes("zip") || fileType.includes("archive") ||
+    fileName.endsWith(".zip") || fileName.endsWith(".rar")) {
+    return <FileArchiveIcon className="opacity-60 size-4" />
+  } else if (fileType.includes("excel") ||
+    fileName.endsWith(".xls") || fileName.endsWith(".xlsx")) {
+    return <FileSpreadsheetIcon className="opacity-60 size-4" />
+  } else if (fileType.includes("video/")) {
+    return <VideoIcon className="opacity-60 size-4" />
+  } else if (fileType.includes("audio/")) {
+    return <HeadphonesIcon className="opacity-60 size-4" />
+  } else if (fileType.startsWith("image/")) {
+    return <ImageIcon className="opacity-60 size-4" />
+  }
+  return <FileIcon className="opacity-60 size-4" />
+}
+
+const initialFiles = [
+  {
+    name: "document.pdf",
+    size: 528737,
+    type: "application/pdf",
+    url: "https://example.com/document.pdf",
+    id: "document.pdf-1744638436563-8u5xuls"
+  },
+  {
+    name: "intro.zip",
+    size: 252873,
+    type: "application/zip",
+    url: "https://example.com/intro.zip",
+    id: "intro.zip-1744638436563-8u5xuls"
+  },
+  {
+    name: "conclusion.xlsx",
+    size: 352873,
+    type: "application/xlsx",
+    url: "https://example.com/conclusion.xlsx",
+    id: "conclusion.xlsx-1744638436563-8u5xuls"
+  }
+]
+
 export default function Component() {
-  const [{ files, isDragging },
-    { removeFile, openFileDialog, getInputProps, handleDragEnter, handleDragLeave, handleDragOver, handleDrop }] = useFileUpload({
-    accept: "image/*"
+  const maxSize = 10 * 1024 * 1024 // 10MB default
+  const maxFiles = 10
+
+  const [
+    { files, isDragging, errors },
+    {
+      handleDragEnter,
+      handleDragLeave,
+      handleDragOver,
+      handleDrop,
+      openFileDialog,
+      removeFile,
+      clearFiles,
+      getInputProps,
+    },
+  ] = useFileUpload({
+    multiple: true,
+    maxFiles,
+    maxSize,
+    initialFiles,
   })
 
-  const previewUrl = files[0]?.preview || null
-
   return (
-    <div className="flex flex-col items-center gap-2">
-      <div className="relative inline-flex">
+    <div className="flex flex-col gap-2">
 
-        {/* Drop area */}
-        <div
-          className="relative flex items-center justify-center size-16 rounded-full border border-dashed border-input has-[img]:border-none has-disabled:opacity-50 has-disabled:pointer-events-none hover:bg-accent/50 transition-colors data-[dragging=true]:bg-accent/50 overflow-hidden has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
-          role="button"
-          onClick={openFileDialog}
-          onDragEnter={handleDragEnter}
-          onDragLeave={handleDragLeave}
-          onDragOver={handleDragOver}
-          onDrop={handleDrop}
-          data-dragging={isDragging || undefined}
-          aria-label={previewUrl ? "Change image" : "Upload image"}
-        >
-          {previewUrl ? (
-            <img
-              className="size-full object-cover"
-              src={previewUrl}
-              alt={files[0]?.file?.name || "Uploaded image"}
-              width={64}
-              height={64}
-              style={{ objectFit: "cover" }}
-            />
-          ) : (
-            <div aria-hidden="true">
-              <CircleUserRoundIcon className="size-4 opacity-60" />
+      {/* Drop area */}
+      <div
+        onDragEnter={handleDragEnter}
+        onDragLeave={handleDragLeave}
+        onDragOver={handleDragOver}
+        onDrop={handleDrop}
+        data-dragging={isDragging || undefined}
+        data-files={files.length > 0 || undefined}
+        className="rounded-xl flex flex-col items-center not-data-[files]:justify-center border border-dashed border-input transition-colors p-4 data-[dragging=true]:bg-accent/50 min-h-56 has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 has-[input:focus]:ring-[3px]"
+      >
+        <input {...getInputProps()} aria-label="Upload files" />
+
+        {files.length > 0 ? (
+          <div className="w-full flex flex-col gap-3">
+            <div className="flex items-center justify-between gap-2">
+              <h3 className="text-sm font-medium truncate">Uploaded Files ({files.length})</h3>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={clearFiles}
+              >
+                <Trash2Icon className="opacity-60 -ms-0.5 size-3.5" aria-hidden="true" />
+                Remove all
+              </Button>
             </div>
-          )}
-        </div>
-        {previewUrl && (
-          <Button
-            onClick={() => removeFile(files[0]?.id)}
-            size="icon"
-            className="absolute -top-1 -right-1 size-6 rounded-full border-2 border-background shadow-none focus-visible:border-background"
-            aria-label="Remove image"
-          >
-            <XIcon className="size-3.5" />
-          </Button>
+            <div className="w-full space-y-2">
+              {files.map((file) => (
+                <div
+                  key={file.id}
+                  className="flex items-center justify-between gap-2 p-2 pe-3 bg-background rounded-lg border"
+                >
+                  <div className="flex items-center gap-3 overflow-hidden">
+                    <div className="aspect-square size-10 shrink-0 border flex items-center justify-center rounded">
+                      {getFileIcon(file)}
+                    </div>
+                    <div className="min-w-0 flex flex-col gap-0.5">
+                      <p className="text-[13px] font-medium truncate">{file.file instanceof File ? file.file.name : file.file.name}</p>
+                      <p className="text-xs text-muted-foreground">{formatBytes(file.file instanceof File ? file.file.size : file.file.size)}</p>
+                    </div>
+                  </div>
+
+                  <Button
+                    size="icon"
+                    variant="ghost"
+                    className="text-muted-foreground/80 hover:text-foreground hover:bg-transparent -me-2 size-8"
+                    onClick={() => removeFile(file.id)}
+                    aria-label="Remove file"
+                  >
+                    <XIcon className="size-4" aria-hidden="true" />
+                  </Button>
+                </div>
+              ))}
+
+              {files.length < maxFiles && (
+                <Button
+                  variant="outline"
+                  className="w-full mt-2"
+                  onClick={openFileDialog}
+                >
+                  <UploadIcon className="opacity-60 -ms-1" aria-hidden="true" />
+                  Add more
+                </Button>
+              )}
+            </div>
+          </div>
+        ) : (
+          <div className="flex flex-col items-center justify-center text-center">
+            <div className="bg-background flex size-11 shrink-0 items-center justify-center rounded-full border mb-2" aria-hidden="true">
+              <FileIcon className="size-4 opacity-60" />
+            </div>
+            <p className="text-sm font-medium mb-1.5">Upload files</p>
+            <p className="text-xs text-muted-foreground">Max {maxFiles} files ∙ Up to {maxSize}MB</p>
+            <Button variant="outline" className="mt-4" onClick={openFileDialog}>
+              <UploadIcon className="opacity-60 -ms-1" aria-hidden="true" />
+              Select files
+            </Button>
+          </div>
         )}
-        <input {...getInputProps()} aria-label="Upload image file" />
+
       </div>
-      <p aria-live="polite" role="region" className="text-muted-foreground text-xs mt-2">
-        Avatar uploader with droppable area
+
+      {errors.length > 0 && (
+        <div className="flex items-center text-destructive text-xs gap-1" role="alert">
+          <AlertCircleIcon className="size-3 shrink-0" />
+          <span>{errors[0]}</span>
+        </div>
+      )}
+
+      <p aria-live="polite" role="region" className="text-muted-foreground text-xs mt-2 text-center">
+        Multiple files uploader w/ list inside
       </p>
     </div>
   )
