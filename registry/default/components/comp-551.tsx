@@ -41,7 +41,7 @@ export default function Component() {
           ) : (
             <div className="flex flex-col items-center justify-center px-4 py-3 text-center">
               <div className="bg-background flex size-11 shrink-0 items-center justify-center rounded-full border mb-2" aria-hidden="true">
-                <ImageUpIcon className="size-4 opacity-80" />
+                <ImageUpIcon className="size-4 opacity-60" />
               </div>
               <p className="text-sm font-medium mb-1.5">Drop your image here or click to browse</p>
               <p className="text-xs text-muted-foreground">Max size: {maxSizeMB}MB</p>

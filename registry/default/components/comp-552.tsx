@@ -40,9 +40,9 @@ export default function Component() {
           ) : (
             <div className="flex flex-col items-center justify-center px-4 py-3 text-center">
               <div className="bg-background flex size-11 shrink-0 items-center justify-center rounded-full border mb-2" aria-hidden="true">
-                <ImageIcon className="size-4 opacity-80" />
+                <ImageIcon className="size-4 opacity-60" />
               </div>
-              <p className="text-sm font-medium mb-1.5">Click to upload or drag and drop</p>
+              <p className="text-sm font-medium mb-1.5">Drop your image here</p>
               <p className="text-xs text-muted-foreground">SVG, PNG, JPG or GIF (max. {maxSizeMB}MB)</p>
               <Button variant="outline" className="mt-4" onClick={openFileDialog}>
                 <UploadIcon className="opacity-60 -ms-1 size-4" aria-hidden="true" />
