@@ -76,7 +76,7 @@ export default function Component() {
             className="flex items-center justify-between gap-2 px-4 py-2 rounded-xl border"
           >
             <div className="flex items-center gap-3 overflow-hidden">
-              <PaperclipIcon className="text-muted-foreground size-4 shrink-0" aria-hidden="true" />
+              <PaperclipIcon className="opacity-60 size-4 shrink-0" aria-hidden="true" />
               <div className="min-w-0">
                 <p className="text-[13px] font-medium truncate">{file.file.name}</p>
               </div>

@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useFileUpload, formatBytes } from "@/registry/default/hooks/use-file-upload"
-import { XIcon, FileUpIcon, AlertCircleIcon, FileIcon, FileTextIcon, FileArchiveIcon, FileSpreadsheetIcon, FileVideoIcon, FileAudioIcon, ImageIcon } from "lucide-react"
+import { XIcon, FileUpIcon, AlertCircleIcon, FileIcon, FileTextIcon, FileArchiveIcon, FileSpreadsheetIcon, VideoIcon, HeadphonesIcon, ImageIcon } from "lucide-react"
 import { Button } from "@/registry/default/ui/button"
 
 const initialFiles = [
@@ -30,7 +30,7 @@ const initialFiles = [
 ]
 
 export default function Component() {
-  const maxSize = 10 * 1024 * 1024 // 10MB default
+  const maxSize = 100 * 1024 * 1024 // 10MB default
   const maxFiles = 10
 
   const [
@@ -70,9 +70,9 @@ export default function Component() {
 
         <div className="flex flex-col items-center justify-center text-center">
           <div className="bg-background flex size-11 shrink-0 items-center justify-center rounded-full border mb-2" aria-hidden="true">
-            <FileUpIcon className="size-4 opacity-80" />
+            <FileUpIcon className="size-4 opacity-60" />
           </div>
-          <p className="text-sm font-medium mb-0.5">Upload files</p>
+          <p className="text-sm font-medium mb-1.5">Upload files</p>
           <p className="text-xs text-muted-foreground mb-2">Drag & drop or click to browse</p>
           <div className="flex flex-wrap justify-center gap-1 text-xs text-muted-foreground/70">
             <span>All files</span>
@@ -97,7 +97,7 @@ export default function Component() {
           {files.map((file) => (
             <div
               key={file.id}
-              className="flex items-center justify-between gap-2 p-3 pe-4 bg-background rounded-xl border"
+              className="flex items-center justify-between gap-2 p-2 pe-3 bg-background rounded-lg border"
             >
               <div className="flex items-center gap-3 overflow-hidden">
                 <div className="aspect-square size-10 shrink-0 border flex items-center justify-center rounded">
@@ -105,25 +105,23 @@ export default function Component() {
                     const fileType = file.file instanceof File ? file.file.type : file.file.type
                     const fileName = file.file instanceof File ? file.file.name : file.file.name
 
-                    if (fileType.includes("pdf") || fileName.endsWith(".pdf")) {
-                      return <FileTextIcon className="size-4" />
-                    } else if (fileType.includes("zip") || fileType.includes("archive") || 
-                              fileName.endsWith(".zip") || fileName.endsWith(".rar")) {
-                      return <FileArchiveIcon className="size-4" />
-                    } else if (fileType.includes("word") || 
-                              fileName.endsWith(".doc") || fileName.endsWith(".docx")) {
-                      return <FileTextIcon className="size-4" />
-                    } else if (fileType.includes("excel") || 
-                              fileName.endsWith(".xls") || fileName.endsWith(".xlsx")) {
-                      return <FileSpreadsheetIcon className="size-4" />
+                    if ((fileType.includes("pdf") || fileName.endsWith(".pdf")) ||
+                      (fileType.includes("word") || fileName.endsWith(".doc") || fileName.endsWith(".docx"))) {
+                      return <FileTextIcon className="opacity-60 size-4" />
+                    } else if (fileType.includes("zip") || fileType.includes("archive") ||
+                      fileName.endsWith(".zip") || fileName.endsWith(".rar")) {
+                      return <FileArchiveIcon className="opacity-60 size-4" />
+                    } else if (fileType.includes("excel") ||
+                      fileName.endsWith(".xls") || fileName.endsWith(".xlsx")) {
+                      return <FileSpreadsheetIcon className="opacity-60 size-4" />
                     } else if (fileType.includes("video/")) {
-                      return <FileVideoIcon className="size-4" />
+                      return <VideoIcon className="opacity-60 size-4" />
                     } else if (fileType.includes("audio/")) {
-                      return <FileAudioIcon className="size-4" />
+                      return <HeadphonesIcon className="opacity-60 size-4" />
                     } else if (fileType.startsWith("image/")) {
-                      return <ImageIcon className="size-4" />
+                      return <ImageIcon className="opacity-60 size-4" />
                     }
-                    return <FileIcon className="size-4" />
+                    return <FileIcon className="opacity-60 size-4" />
                   })()}
                 </div>
                 <div className="min-w-0 flex flex-col gap-0.5">

@@ -85,7 +85,7 @@ export default function Component() {
           {files.map((file) => (
             <div
               key={file.id}
-              className="flex items-center justify-between gap-2 p-3 pe-4 bg-background rounded-xl border"
+              className="flex items-center justify-between gap-2 p-2 pe-3 bg-background rounded-lg border"
             >
               <div className="flex items-center gap-3 overflow-hidden">
                 <div className="aspect-square shrink-0 rounded bg-accent">
