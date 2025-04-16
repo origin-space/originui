@@ -18,7 +18,7 @@ const CopyLayout = ({ command }: { command: string | undefined }) => {
       <Tooltip>
         <TooltipTrigger asChild>
           <button
-            className="inline-flex items-center gap-1 text-sm hover:underline"
+            className="inline-flex items-center gap-1 text-sm hover:underline max-sm:hidden"
             onClick={() => copy(command || "")}
             aria-label={copied ? "Copied" : "Copy command"}
             disabled={copied}

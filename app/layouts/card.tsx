@@ -30,14 +30,7 @@ export default function Card({ card }: CardProps) {
         <h2 className="text-sm font-medium">{card.title}</h2>
         {card.demoUrl && card.repoUrl ? (
           <div className="flex items-center gap-6">
-            <span className="max-sm:hidden">
-              <CopyLayout command={card.cmd} />
-            </span>
-            <div
-              data-orientation="vertical"
-              role="none"
-              className="bg-border h-4 w-px shrink-0 max-sm:hidden"
-            ></div>
+            <CopyLayout command={card.cmd} />
             <Link
               href={card.demoUrl}
               className="inline-flex items-center gap-1 text-sm hover:underline"
