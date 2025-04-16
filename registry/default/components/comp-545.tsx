@@ -40,7 +40,11 @@ export default function Component() {
           data-dragging={isDragging || undefined}
           className="border-input data-[dragging=true]:bg-accent/50 has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 relative flex min-h-52 flex-col items-center justify-center overflow-hidden rounded-xl border border-dashed p-4 transition-colors has-[input:focus]:ring-[3px]"
         >
-          <input {...getInputProps()} className="sr-only" aria-label="Upload image file" />
+          <input
+            {...getInputProps()}
+            className="sr-only"
+            aria-label="Upload image file"
+          />
           {previewUrl ? (
             <div className="absolute inset-0 flex items-center justify-center p-4">
               <img

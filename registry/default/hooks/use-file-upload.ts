@@ -51,7 +51,9 @@ export type FileUploadActions = {
   handleDrop: (e: DragEvent<HTMLElement>) => void
   handleFileChange: (e: ChangeEvent<HTMLInputElement>) => void
   openFileDialog: () => void
-  getInputProps: (props?: InputHTMLAttributes<HTMLInputElement>) => InputHTMLAttributes<HTMLInputElement> & {
+  getInputProps: (
+    props?: InputHTMLAttributes<HTMLInputElement>
+  ) => InputHTMLAttributes<HTMLInputElement> & {
     ref: React.Ref<HTMLInputElement>
   }
 }

@@ -74,7 +74,11 @@ export default function Component() {
         data-files={files.length > 0 || undefined}
         className="border-input data-[dragging=true]:bg-accent/50 has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 relative flex min-h-52 flex-col items-center overflow-hidden rounded-xl border border-dashed p-4 transition-colors not-data-[files]:justify-center has-[input:focus]:ring-[3px]"
       >
-        <input {...getInputProps()} className="sr-only" aria-label="Upload image file" />
+        <input
+          {...getInputProps()}
+          className="sr-only"
+          aria-label="Upload image file"
+        />
         {files.length > 0 ? (
           <div className="flex w-full flex-col gap-3">
             <div className="flex items-center justify-between gap-2">
