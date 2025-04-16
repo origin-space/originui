@@ -2,6 +2,8 @@
 
 A flexible and feature-rich React hook for handling file uploads with drag-and-drop support, file validation, and preview generation.
 
+> **Note:** This hook provides a solid foundation for file uploads but is designed to be extended. You can build upon it to implement additional features like pause/resume functionality, chunked uploads, retry mechanisms, or integration with specific backend services.
+
 ## Features
 
 - 📁 Single or multiple file uploads
@@ -447,6 +449,112 @@ formatBytes(1024) // "1 KB"
 formatBytes(1536, 1) // "1.5 KB"
 ```
 
+## Extending the Hook
+
+The `useFileUpload` hook is designed as a starting point that handles the core functionality of file selection and validation. You can extend it to build more advanced features:
+
+### Pause and Resume Uploads
+
+You can implement pause/resume functionality by using the XMLHttpRequest abort method and tracking upload progress:
+
+```tsx
+const uploadWithPauseResume = (file: File) => {
+  let xhr: XMLHttpRequest | null = new XMLHttpRequest();
+  let isPaused = false;
+  let uploadedBytes = 0;
+
+  const pause = () => {
+    if (xhr && !isPaused) {
+      xhr.abort();
+      isPaused = true;
+    }
+  };
+
+  const resume = () => {
+    if (isPaused) {
+      // Create a new request
+      xhr = new XMLHttpRequest();
+
+      // Set up a Content-Range header to resume from where we left off
+      const formData = new FormData();
+      formData.append('file', file);
+
+      xhr.open('POST', '/api/upload', true);
+      xhr.setRequestHeader('Content-Range', `bytes ${uploadedBytes}-${file.size-1}/${file.size}`);
+
+      // Set up progress tracking again
+      xhr.upload.addEventListener('progress', (event) => {
+        if (event.lengthComputable) {
+          uploadedBytes = event.loaded;
+          // Update progress UI
+        }
+      });
+
+      xhr.send(formData);
+      isPaused = false;
+    }
+  };
+
+  return { pause, resume };
+};
+```
+
+### Chunked Uploads
+
+For large files, you might want to implement chunked uploads:
+
+```tsx
+const uploadInChunks = (file: File, chunkSize = 1024 * 1024) => {
+  let currentChunk = 0;
+  const totalChunks = Math.ceil(file.size / chunkSize);
+
+  const uploadNextChunk = async () => {
+    if (currentChunk >= totalChunks) {
+      // All chunks uploaded
+      return;
+    }
+
+    const start = currentChunk * chunkSize;
+    const end = Math.min(file.size, start + chunkSize);
+    const chunk = file.slice(start, end);
+
+    const formData = new FormData();
+    formData.append('file', chunk);
+    formData.append('fileName', file.name);
+    formData.append('chunkIndex', currentChunk.toString());
+    formData.append('totalChunks', totalChunks.toString());
+
+    try {
+      await fetch('/api/upload-chunk', {
+        method: 'POST',
+        body: formData
+      });
+
+      currentChunk++;
+      // Update progress UI
+      const progress = Math.round((currentChunk / totalChunks) * 100);
+
+      // Continue with next chunk
+      uploadNextChunk();
+    } catch (error) {
+      // Handle error, implement retry logic
+    }
+  };
+
+  // Start the upload process
+  uploadNextChunk();
+};
+```
+
 ## More Examples
 
 For more examples and live demos of the `useFileUpload` hook in action, visit the [Origin UI File Uploader page](https://originui.com/file-uploader).
+
+The documentation site includes various implementations and use cases, including:
+
+- Basic file uploaders
+- Image galleries
+- Document uploaders with progress tracking
+- Drag and drop interfaces
+- Custom validation examples
+- And more

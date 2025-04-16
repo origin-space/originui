@@ -74,7 +74,13 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Avatar uploader with droppable area
+        Avatar uploader with droppable area ∙{" "}
+        <a
+          href="https://github.com/origin-space/originui/tree/main/docs/use-file-upload.md"
+          className="hover:text-foreground underline"
+        >
+          API
+        </a>
       </p>
     </div>
   )

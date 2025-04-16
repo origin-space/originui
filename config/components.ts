@@ -316,14 +316,14 @@ export const categories: ComponentCategory[] = [
       { name: "comp-552" },
       { name: "comp-553" },
     ],
-    isNew: true,    
+    isNew: true,
   },
   {
     slug: "event-calendar",
     name: "Event calendar",
     isNew: true,
     components: [{ name: "comp-542" }],
-  },  
+  },
   {
     slug: "input",
     name: "Input",

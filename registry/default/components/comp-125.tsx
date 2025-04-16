@@ -67,7 +67,13 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Basic image uploader
+        Basic image uploader ∙{" "}
+        <a
+          href="https://github.com/origin-space/originui/tree/main/docs/use-file-upload.md"
+          className="hover:text-foreground underline"
+        >
+          Docs
+        </a>
       </p>
     </div>
   )
