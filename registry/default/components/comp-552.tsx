@@ -21,7 +21,7 @@ import {
 } from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
 
-// Create a dummy image file
+// Create some dummy initial files
 const initialFiles = [
   {
     name: "intro.zip",

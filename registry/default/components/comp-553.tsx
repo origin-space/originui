@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import type React from "react"
 import {
   AlertCircleIcon,
@@ -18,10 +19,11 @@ import {
 import {
   formatBytes,
   useFileUpload,
+  type FileWithPreview,
 } from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
 
-// Create a dummy image file
+// Create some dummy initial files
 const initialFiles = [
   {
     name: "intro.zip",
@@ -132,10 +134,116 @@ const getFilePreview = (file: {
   )
 }
 
+// Type for tracking upload progress
+type UploadProgress = {
+  fileId: string
+  progress: number
+  completed: boolean
+}
+
+// Function to simulate file upload with more realistic timing and progress
+const simulateUpload = (totalBytes: number, onProgress: (progress: number) => void, onComplete: () => void) => {
+  let timeoutId: NodeJS.Timeout;
+  let uploadedBytes = 0;
+  let lastProgressReport = 0;
+
+  const simulateChunk = () => {
+    // Simulate variable network conditions with random chunk sizes
+    const chunkSize = Math.floor(Math.random() * 300000) + 2000;
+    uploadedBytes = Math.min(totalBytes, uploadedBytes + chunkSize);
+
+    // Calculate progress percentage (0-100)
+    const progressPercent = Math.floor((uploadedBytes / totalBytes) * 100);
+
+    // Only report progress if it's changed by at least 1%
+    if (progressPercent > lastProgressReport) {
+      lastProgressReport = progressPercent;
+      onProgress(progressPercent);
+    }
+
+    // Continue simulation if not complete
+    if (uploadedBytes < totalBytes) {
+      // Variable delay between 50ms and 500ms to simulate network fluctuations (reduced for faster uploads)
+      const delay = Math.floor(Math.random() * 450) + 50;
+
+      // Occasionally add a longer pause to simulate network congestion (5% chance, shorter duration)
+      const extraDelay = Math.random() < 0.05 ? 500 : 0;
+
+      timeoutId = setTimeout(simulateChunk, delay + extraDelay);
+    } else {
+      // Upload complete
+      onComplete();
+    }
+  };
+
+  // Start the simulation
+  timeoutId = setTimeout(simulateChunk, 100);
+
+  // Return a cleanup function to cancel the simulation
+  return () => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+  };
+}
+
 export default function Component() {
   const maxSizeMB = 5
   const maxSize = maxSizeMB * 1024 * 1024 // 5MB default
   const maxFiles = 6
+
+  // State to track upload progress for each file
+  const [uploadProgress, setUploadProgress] = useState<UploadProgress[]>([])
+
+  // Function to handle newly added files
+  const handleFilesAdded = (addedFiles: FileWithPreview[]) => {
+    // Initialize progress tracking for each new file
+    const newProgressItems = addedFiles.map(file => ({
+      fileId: file.id,
+      progress: 0,
+      completed: false
+    }))
+
+    // Add new progress items to state
+    setUploadProgress(prev => [...prev, ...newProgressItems])
+
+    // Store cleanup functions
+    const cleanupFunctions: Array<() => void> = []
+
+    // Start simulated upload for each file
+    addedFiles.forEach(file => {
+      const fileSize = file.file instanceof File ? file.file.size : file.file.size
+
+      // Start the upload simulation and store the cleanup function
+      const cleanup = simulateUpload(
+        fileSize,
+        // Progress callback
+        (progress) => {
+          setUploadProgress(prev => prev.map(item =>
+            item.fileId === file.id ? { ...item, progress } : item
+          ))
+        },
+        // Complete callback
+        () => {
+          setUploadProgress(prev => prev.map(item =>
+            item.fileId === file.id ? { ...item, completed: true } : item
+          ))
+        }
+      )
+
+      cleanupFunctions.push(cleanup)
+    })
+
+    // Return a cleanup function that cancels all animations
+    return () => {
+      cleanupFunctions.forEach(cleanup => cleanup())
+    }
+  }
+
+  // Remove the progress tracking for the file
+  const handleFileRemoved = (fileId: string) => {
+    setUploadProgress(prev => prev.filter(item => item.fileId !== fileId))
+  }
 
   const [
     { files, isDragging, errors },
@@ -154,6 +262,7 @@ export default function Component() {
     maxFiles,
     maxSize,
     initialFiles,
+    onFilesAdded: handleFilesAdded,
   })
 
   return (
@@ -183,7 +292,11 @@ export default function Component() {
                   />
                   Add files
                 </Button>
-                <Button variant="outline" size="sm" onClick={clearFiles}>
+                <Button variant="outline" size="sm" onClick={() => {
+                  // Clear all progress tracking
+                  setUploadProgress([])
+                  clearFiles()
+                }}>
                   <Trash2Icon
                     className="-ms-0.5 size-3.5 opacity-60"
                     aria-hidden="true"
@@ -193,31 +306,75 @@ export default function Component() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-              {files.map((file) => (
+            <div className="w-full space-y-2">
+              {files.map((file) => {
+                // Find the upload progress for this file once to avoid repeated lookups
+                const fileProgress = uploadProgress.find(p => p.fileId === file.id);
+                const isUploading = fileProgress && !fileProgress.completed;
+
+                return (
                 <div
                   key={file.id}
-                  className="bg-background relative flex flex-col rounded-md border"
+                  data-uploading={isUploading || undefined}
+                  className="bg-background flex flex-col gap-1 rounded-lg border p-2 pe-3 transition-opacity duration-300"
                 >
-                  {getFilePreview(file)}
-                  <Button
-                    onClick={() => removeFile(file.id)}
-                    size="icon"
-                    className="border-background focus-visible:border-background absolute -top-2 -right-2 size-6 rounded-full border-2 shadow-none"
-                    aria-label="Remove image"
-                  >
-                    <XIcon className="size-3.5" />
-                  </Button>
-                  <div className="flex min-w-0 flex-col gap-0.5 border-t p-3">
-                    <p className="truncate text-[13px] font-medium">
-                      {file.file.name}
-                    </p>
-                    <p className="text-muted-foreground truncate text-xs">
-                      {formatBytes(file.file.size)}
-                    </p>
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-3 overflow-hidden in-data-[uploading=true]:opacity-50">
+                      <div className="flex aspect-square size-10 shrink-0 items-center justify-center rounded border">
+                        {getFileIcon(file)}
+                      </div>
+                      <div className="flex min-w-0 flex-col gap-0.5">
+                        <p className="truncate text-[13px] font-medium">
+                          {file.file instanceof File
+                            ? file.file.name
+                            : file.file.name}
+                        </p>
+                        <p className="text-muted-foreground text-xs">
+                          {formatBytes(
+                            file.file instanceof File
+                              ? file.file.size
+                              : file.file.size
+                          )}
+                        </p>
+                      </div>
+                    </div>
+                    <Button
+                      size="icon"
+                      variant="ghost"
+                      className="text-muted-foreground/80 hover:text-foreground -me-2 size-8 hover:bg-transparent"
+                      onClick={() => {
+                        handleFileRemoved(file.id)
+                        removeFile(file.id)
+                      }}
+                      aria-label="Remove file"
+                    >
+                      <XIcon className="size-4" aria-hidden="true" />
+                    </Button>
                   </div>
+
+                  {/* Upload progress bar */}
+                  {fileProgress && (() => {
+                    const progress = fileProgress.progress || 0;
+                    const completed = fileProgress.completed || false;
+
+                    if (completed) return null;
+
+                    return (
+                      <div className="flex items-center gap-2 mt-1">
+                        <div className="h-1.5 w-full overflow-hidden rounded-full bg-gray-100">
+                          <div
+                            className="h-full bg-primary transition-all duration-300 ease-out"
+                            style={{ width: `${progress}%` }}
+                          />
+                        </div>
+                        <span className="w-10 text-xs text-muted-foreground tabular-nums">{progress}%</span>
+                      </div>
+                    );
+                  })()}
+
                 </div>
-              ))}
+              );
+              })}
             </div>
           </div>
         ) : (
@@ -255,7 +412,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-center text-xs"
       >
-        Mixed content w/ card
+        With simulated progress track
       </p>
     </div>
   )

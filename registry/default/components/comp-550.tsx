@@ -56,6 +56,7 @@ const getFileIcon = (file: { file: File | { type: string; name: string } }) => {
   return <FileIcon className="size-4 opacity-60" />
 }
 
+// Create some dummy initial files
 const initialFiles = [
   {
     name: "document.pdf",

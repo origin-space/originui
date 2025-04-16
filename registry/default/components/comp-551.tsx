@@ -31,6 +31,7 @@ import {
   TableRow,
 } from "@/registry/default/ui/table"
 
+// Create some dummy initial files
 const initialFiles = [
   {
     name: "document.pdf",

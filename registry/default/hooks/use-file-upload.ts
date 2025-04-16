@@ -30,6 +30,7 @@ export type FileUploadOptions = {
   multiple?: boolean // Defaults to false
   initialFiles?: FileMetadata[]
   onFilesChange?: (files: FileWithPreview[]) => void // Callback when files change
+  onFilesAdded?: (addedFiles: FileWithPreview[]) => void // Callback when new files are added
 }
 
 export type FileUploadState = {
@@ -70,6 +71,7 @@ export const useFileUpload = (
     multiple = false,
     initialFiles = [],
     onFilesChange,
+    onFilesAdded,
   } = options
 
   const [state, setState] = useState<FileUploadState>({
@@ -232,6 +234,9 @@ export const useFileUpload = (
 
       // Only update state if we have valid files to add
       if (validFiles.length > 0) {
+        // Call the onFilesAdded callback with the newly added valid files
+        onFilesAdded?.(validFiles)
+
         setState((prev) => {
           const newFiles = !multiple
             ? validFiles
@@ -265,6 +270,7 @@ export const useFileUpload = (
       generateUniqueId,
       clearFiles,
       onFilesChange,
+      onFilesAdded,
     ]
   )
 
