@@ -71,7 +71,7 @@ export default function Component() {
         data-files={files.length > 0 || undefined}
         className="border-input data-[dragging=true]:bg-accent/50 has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 relative flex min-h-52 flex-col items-center overflow-hidden rounded-xl border border-dashed p-4 transition-colors not-data-[files]:justify-center has-[input:focus]:ring-[3px]"
       >
-        <input {...getInputProps()} aria-label="Upload image file" />
+        <input {...getInputProps()} className="sr-only" aria-label="Upload image file" />
         <div className="flex flex-col items-center justify-center px-4 py-3 text-center">
           <div
             className="bg-background mb-2 flex size-11 shrink-0 items-center justify-center rounded-full border"

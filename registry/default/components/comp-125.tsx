@@ -41,7 +41,7 @@ export default function Component() {
           <Button onClick={openFileDialog} aria-haspopup="dialog">
             {fileName ? "Change image" : "Upload image"}
           </Button>
-          <input {...getInputProps()} aria-label="Upload image file" />
+          <input {...getInputProps()} className="sr-only" aria-label="Upload image file" />
         </div>
       </div>
       {fileName && (

@@ -48,7 +48,7 @@ export default function Component() {
             <XIcon className="size-3.5" />
           </Button>
         )}
-        <input {...getInputProps()} aria-label="Upload image file" />
+        <input {...getInputProps()} className="sr-only" aria-label="Upload image file" />
       </div>
       {fileName && <p className="text-muted-foreground text-xs">{fileName}</p>}
       <p

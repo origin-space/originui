@@ -7,6 +7,7 @@ import {
   useState,
   type ChangeEvent,
   type DragEvent,
+  type InputHTMLAttributes,
 } from "react"
 
 export type FileMetadata = {
@@ -50,13 +51,7 @@ export type FileUploadActions = {
   handleDrop: (e: DragEvent<HTMLElement>) => void
   handleFileChange: (e: ChangeEvent<HTMLInputElement>) => void
   openFileDialog: () => void
-  getInputProps: (props?: { disabled?: boolean }) => {
-    type: "file"
-    className: string
-    onChange: (e: ChangeEvent<HTMLInputElement>) => void
-    accept: string
-    multiple: boolean
-    disabled?: boolean
+  getInputProps: (props?: InputHTMLAttributes<HTMLInputElement>) => InputHTMLAttributes<HTMLInputElement> & {
     ref: React.Ref<HTMLInputElement>
   }
 }
@@ -369,14 +364,13 @@ export const useFileUpload = (
   }, [])
 
   const getInputProps = useCallback(
-    (props: { disabled?: boolean } = {}) => {
+    (props: InputHTMLAttributes<HTMLInputElement> = {}) => {
       return {
+        ...props,
         type: "file" as const,
-        className: "sr-only",
         onChange: handleFileChange,
-        accept,
-        multiple,
-        disabled: props.disabled,
+        accept: props.accept || accept,
+        multiple: props.multiple !== undefined ? props.multiple : multiple,
         ref: inputRef,
       }
     },

@@ -217,7 +217,7 @@ function ProfileBg() {
           )}
         </div>
       </div>
-      <input {...getInputProps()} aria-label="Upload image file" />
+      <input {...getInputProps()} className="sr-only" aria-label="Upload image file" />
     </div>
   )
 }
@@ -250,7 +250,7 @@ function Avatar() {
         >
           <ImagePlusIcon size={16} aria-hidden="true" />
         </button>
-        <input {...getInputProps()} aria-label="Upload profile picture" />
+        <input {...getInputProps()} className="sr-only" aria-label="Upload profile picture" />
       </div>
     </div>
   )
