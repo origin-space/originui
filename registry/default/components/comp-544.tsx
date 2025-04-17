@@ -1,6 +1,5 @@
 "use client"
 
-import type React from "react"
 import { AlertCircleIcon, ImageUpIcon, XIcon } from "lucide-react"
 
 import { useFileUpload } from "@/registry/default/hooks/use-file-upload"

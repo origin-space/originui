@@ -1,6 +1,5 @@
 "use client"
 
-import type React from "react"
 import { AlertCircleIcon, PaperclipIcon, UploadIcon, XIcon } from "lucide-react"
 
 import {

@@ -467,7 +467,6 @@
         }
       ]
     },
-
     {
       "name": "use-file-upload",
       "type": "registry:hook",
@@ -9758,14 +9757,21 @@
     {
       "name": "comp-543",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-543.tsx",
           "type": "registry:component"
-        }
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }        
       ],
       "meta": {
-        "tags": ["upload", "file"]
+        "tags": ["upload", "file", "drag and drop", "avatar"]
       }
     },    
     {
@@ -9775,136 +9781,204 @@
         {
           "path": "registry/default/components/comp-544.tsx",
           "type": "registry:component"
-        }
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }        
       ],
       "meta": {
-        "tags": ["upload", "file"],
+        "tags": ["upload", "file", "drag and drop"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-545",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json"
+      ],
       "files": [
         {
           "path": "registry/default/components/comp-545.tsx",
           "type": "registry:component"
-        }
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }        
       ],
       "meta": {
-        "tags": ["upload", "file"],
+        "tags": ["upload", "file", "drag and drop"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-546",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-546.tsx",
           "type": "registry:component"
-        }
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }        
       ],
       "meta": {
-        "tags": ["upload", "file"],
+        "tags": ["upload", "file", "drag and drop"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-547",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-547.tsx",
           "type": "registry:component"
-        }
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }        
       ],
       "meta": {
-        "tags": ["upload", "file"],
+        "tags": ["upload", "file", "drag and drop"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-548",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-548.tsx",
           "type": "registry:component"
-        }
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }        
       ],
       "meta": {
-        "tags": ["upload", "file"],
+        "tags": ["upload", "file", "drag and drop"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-549",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-549.tsx",
           "type": "registry:component"
-        }
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }        
       ],
       "meta": {
-        "tags": ["upload", "file"],
+        "tags": ["upload", "file", "drag and drop"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-550",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-550.tsx",
           "type": "registry:component"
-        }
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }        
       ],
       "meta": {
-        "tags": ["upload", "file"],
+        "tags": ["upload", "file", "drag and drop"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-551",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/table.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-551.tsx",
           "type": "registry:component"
-        }
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }        
       ],
       "meta": {
-        "tags": ["upload", "file"],
+        "tags": ["upload", "file", "drag and drop"],
         "colSpan": 2
       }
     },   
     {
       "name": "comp-552",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-552.tsx",
           "type": "registry:component"
-        }
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }        
       ],
       "meta": {
-        "tags": ["upload", "file"],
+        "tags": ["upload", "file", "drag and drop"],
         "colSpan": 2
       }
     },
     {
       "name": "comp-553",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-553.tsx",
           "type": "registry:component"
-        }
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }        
       ],
       "meta": {
-        "tags": ["upload", "file"],
+        "tags": ["upload", "file", "drag and drop"],
         "colSpan": 2
       }
     }

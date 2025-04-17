@@ -1,6 +1,5 @@
 "use client"
 
-import type React from "react"
 import {
   AlertCircleIcon,
   DownloadIcon,
@@ -14,7 +13,6 @@ import {
   UploadCloudIcon,
   UploadIcon,
   VideoIcon,
-  XIcon,
 } from "lucide-react"
 
 import {
