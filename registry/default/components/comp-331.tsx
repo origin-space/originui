@@ -4,7 +4,7 @@ import { useId, useState } from "react"
 import { CheckIcon, ImagePlusIcon, XIcon } from "lucide-react"
 
 import { useCharacterLimit } from "@/registry/default/hooks/use-character-limit"
-import { useImageUpload } from "@/registry/default/hooks/use-image-upload"
+import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
 import {
   Dialog,
@@ -19,6 +19,27 @@ import {
 import { Input } from "@/registry/default/ui/input"
 import { Label } from "@/registry/default/ui/label"
 import { Textarea } from "@/registry/default/ui/textarea"
+
+// Pretend we have initial image files
+const initialBgImage = [
+  {
+    name: "profile-bg.jpg",
+    size: 1528737,
+    type: "image/jpeg",
+    url: "/profile-bg.jpg",
+    id: "profile-bg-123456789",
+  },
+]
+
+const initialAvatarImage = [
+  {
+    name: "avatar-72-01.jpg",
+    size: 1528737,
+    type: "image/jpeg",
+    url: "/avatar-72-01.jpg",
+    id: "avatar-123456789",
+  },
+]
 
 export default function Component() {
   const id = useId()
@@ -51,8 +72,8 @@ export default function Component() {
           username.
         </DialogDescription>
         <div className="overflow-y-auto">
-          <ProfileBg defaultImage="/profile-bg.jpg" />
-          <Avatar defaultImage="/avatar-72-01.jpg" />
+          <ProfileBg />
+          <Avatar />
           <div className="px-6 pt-4 pb-6">
             <form className="space-y-4">
               <div className="flex flex-col gap-4 sm:flex-row">
@@ -150,32 +171,24 @@ export default function Component() {
   )
 }
 
-function ProfileBg({ defaultImage }: { defaultImage?: string }) {
-  const [hideDefault, setHideDefault] = useState(false)
-  const {
-    previewUrl,
-    fileInputRef,
-    handleThumbnailClick,
-    handleFileChange,
-    handleRemove,
-  } = useImageUpload()
+function ProfileBg() {
+  const [{ files }, { removeFile, openFileDialog, getInputProps }] =
+    useFileUpload({
+      accept: "image/*",
+      initialFiles: initialBgImage,
+    })
 
-  const currentImage = previewUrl || (!hideDefault ? defaultImage : null)
-
-  const handleImageRemove = () => {
-    handleRemove()
-    setHideDefault(true)
-  }
+  const currentImage = files[0]?.preview || null
 
   return (
     <div className="h-32">
-      <div className="bg-muted relative flex h-full w-full items-center justify-center overflow-hidden">
+      <div className="bg-muted relative flex size-full items-center justify-center overflow-hidden">
         {currentImage && (
           <img
-            className="h-full w-full object-cover"
+            className="size-full object-cover"
             src={currentImage}
             alt={
-              previewUrl
+              files[0]?.preview
                 ? "Preview of uploaded image"
                 : "Default profile background"
             }
@@ -187,7 +200,7 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
           <button
             type="button"
             className="focus-visible:border-ring focus-visible:ring-ring/50 z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white transition-[color,box-shadow] outline-none hover:bg-black/80 focus-visible:ring-[3px]"
-            onClick={handleThumbnailClick}
+            onClick={openFileDialog}
             aria-label={currentImage ? "Change image" : "Upload image"}
           >
             <ImagePlusIcon size={16} aria-hidden="true" />
@@ -196,7 +209,7 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
             <button
               type="button"
               className="focus-visible:border-ring focus-visible:ring-ring/50 z-50 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white transition-[color,box-shadow] outline-none hover:bg-black/80 focus-visible:ring-[3px]"
-              onClick={handleImageRemove}
+              onClick={() => removeFile(files[0]?.id)}
               aria-label="Remove image"
             >
               <XIcon size={16} aria-hidden="true" />
@@ -205,22 +218,21 @@ function ProfileBg({ defaultImage }: { defaultImage?: string }) {
         </div>
       </div>
       <input
-        type="file"
-        ref={fileInputRef}
-        onChange={handleFileChange}
-        className="hidden"
-        accept="image/*"
+        {...getInputProps()}
+        className="sr-only"
         aria-label="Upload image file"
       />
     </div>
   )
 }
 
-function Avatar({ defaultImage }: { defaultImage?: string }) {
-  const { previewUrl, fileInputRef, handleThumbnailClick, handleFileChange } =
-    useImageUpload()
+function Avatar() {
+  const [{ files }, { openFileDialog, getInputProps }] = useFileUpload({
+    accept: "image/*",
+    initialFiles: initialAvatarImage,
+  })
 
-  const currentImage = previewUrl || defaultImage
+  const currentImage = files[0]?.preview || null
 
   return (
     <div className="-mt-10 px-6">
@@ -228,7 +240,7 @@ function Avatar({ defaultImage }: { defaultImage?: string }) {
         {currentImage && (
           <img
             src={currentImage}
-            className="h-full w-full object-cover"
+            className="size-full object-cover"
             width={80}
             height={80}
             alt="Profile image"
@@ -237,17 +249,14 @@ function Avatar({ defaultImage }: { defaultImage?: string }) {
         <button
           type="button"
           className="focus-visible:border-ring focus-visible:ring-ring/50 absolute flex size-8 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white transition-[color,box-shadow] outline-none hover:bg-black/80 focus-visible:ring-[3px]"
-          onClick={handleThumbnailClick}
+          onClick={openFileDialog}
           aria-label="Change profile picture"
         >
           <ImagePlusIcon size={16} aria-hidden="true" />
         </button>
         <input
-          type="file"
-          ref={fileInputRef}
-          onChange={handleFileChange}
-          className="hidden"
-          accept="image/*"
+          {...getInputProps()}
+          className="sr-only"
           aria-label="Upload profile picture"
         />
       </div>

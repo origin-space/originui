@@ -11,7 +11,7 @@ export default function HoverCardDemo() {
         <HoverCardTrigger asChild>
           <a className="flex size-16 overflow-hidden rounded-md" href="#">
             <img
-              className="h-full w-full object-cover"
+              className="size-full object-cover"
               src="/dialog-content.png"
               width={382}
               height={216}

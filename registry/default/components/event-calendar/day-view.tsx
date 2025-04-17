@@ -254,7 +254,7 @@ export function DayView({
                 zIndex: positionedEvent.zIndex,
               }}
             >
-              <div className="h-full w-full">
+              <div className="size-full">
                 <DraggableEvent
                   event={positionedEvent.event}
                   view="day"
