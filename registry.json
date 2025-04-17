@@ -8117,7 +8117,10 @@
     {
       "name": "comp-453",
       "type": "registry:component",
-      "registryDependencies": ["https://originui.com/r/breadcrumb.json"],
+      "registryDependencies": [
+        "https://originui.com/r/breadcrumb.json",
+        "https://originui.com/r/select.json"
+      ],
       "files": [
         {
           "path": "registry/default/components/comp-453.tsx",
