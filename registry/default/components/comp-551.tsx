@@ -138,7 +138,7 @@ export default function Component() {
           </div>
           <p className="mb-1.5 text-sm font-medium">Upload files</p>
           <p className="text-muted-foreground text-xs">
-            Max {maxFiles} files ∙ Up to {maxSize}MB
+            Max {maxFiles} files ∙ Up to {formatBytes(maxSize)}
           </p>
           <Button variant="outline" className="mt-4" onClick={openFileDialog}>
             <UploadIcon className="-ms-1 opacity-60" aria-hidden="true" />
