@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@source '../node_modules/emblor/dist/index.mjs'; /* originui */
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
