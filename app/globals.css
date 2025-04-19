@@ -1,16 +1,16 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@source '../node_modules/emblor/dist/index.mjs';
+@source '../node_modules/emblor/dist/index.mjs'; /* originui */
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: var(--font-sans);
-  --font-heading: var(--font-heading);
-
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-heading: var(--font-heading); /* originui */
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -19,6 +19,11 @@
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -39,7 +44,7 @@
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
-  /* --radius-xl: calc(var(--radius) + 4px); */
+  --radius-xl: calc(var(--radius) + 4px);
 
   --animate-collapsible-down: collapsible-down 0.2s ease-out;
   --animate-collapsible-up: collapsible-up 0.2s ease-out;
@@ -63,6 +68,7 @@
 }
 
 :root {
+  --radius: 0.625rem;
   --background: oklch(1 0 0); /* --color-white */
   --foreground: oklch(0.141 0.005 285.823); /* --color-zinc-950 */
   --card: oklch(1 0 0); /* --color-white */
@@ -87,7 +93,6 @@
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
   --sidebar: oklch(0.985 0 0); /* --color-zinc-50 */
   --sidebar-foreground: oklch(0.141 0.005 285.823); /* --color-zinc-950 */
   --sidebar-primary: oklch(0.21 0.006 285.885); /* --color-zinc-900 */
@@ -133,14 +138,17 @@
   --sidebar-ring: oklch(0.442 0.017 285.786); /* --color-zinc-600 */
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
+/* originui css below */
+
 @layer base {
   *,
   ::after,
@@ -148,15 +156,6 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 
   /* Custom scrollbar styling. Thanks @pranathiperii. */
