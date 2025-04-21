@@ -57,12 +57,12 @@
   --secondary: oklch(0.967 0.001 286.375); /* --color-zinc-100 */
   --secondary-foreground: oklch(0.21 0.006 285.885); /* --color-zinc-900 */
   --muted: oklch(0.967 0.001 286.375); /* --color-zinc-100 */
-  --muted-foreground: oklch(0.552 0.016 285.94); /* close to --color-zinc-500 🔥 */
+  --muted-foreground: oklch(0.55 0.01 286); /* close to --color-zinc-500 🔥 */
   --accent: oklch(0.967 0.001 286.375); /* --color-zinc-100 */
   --accent-foreground: oklch(0.21 0.006 285.885); /* --color-zinc-900 */
   --destructive: oklch(0.637 0.237 25.331); /* --color-red-500 */
   --destructive-foreground: oklch(0.637 0.237 25.331); /* --color-red-500 */
-  --border: oklch(0.92 0.004 286.32); /* --color-zinc-200 */
+  --border: oklch(0.92 0 286); /* close to --color-zinc-200 🔥 */
   --input: oklch(0.871 0.006 286.286); /* --color-zinc-300 */
   --ring: oklch(0.871 0.006 286.286); /* --color-zinc-300 */
   --chart-1: oklch(0.646 0.222 41.116); /* --color-orange-600 */
