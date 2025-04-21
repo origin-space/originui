@@ -88,7 +88,7 @@
     "rimraf": "^6.0.1",
     "shiki": "^2.5.0",
     "tailwindcss": "^4.1.1",
-    "tw-animate-css": "^1.2.7",
+    "tw-animate-css": "^1.2.8",
     "typescript": "^5.8.2"
   },
   "prettier": {
@@ -129,5 +129,6 @@
       "@ianvs/prettier-plugin-sort-imports",
       "prettier-plugin-tailwindcss"
     ]
-  }
+  },
+  "packageManager": "pnpm@10.8.1+sha512.c50088ba998c67b8ca8c99df8a5e02fd2ae2e2b29aaf238feaa9e124248d3f48f9fb6db2424949ff901cffbb5e0f0cc1ad6aedb602cd29450751d11c35023677"
 }
