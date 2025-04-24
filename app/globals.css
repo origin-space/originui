@@ -128,7 +128,9 @@
 
 @theme inline {
   --font-heading: var(--font-heading);
-  --font-mono: var(--font-mono, monospace);
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
 }
 
 @layer base {
