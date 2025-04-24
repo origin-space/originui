@@ -131,14 +131,6 @@
 }
 
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
-
   /* Custom scrollbar styling. Thanks @pranathiperii. */
   pre::-webkit-scrollbar {
     width: 5px;
