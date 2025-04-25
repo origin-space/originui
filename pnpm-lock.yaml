@@ -183,6 +183,15 @@ importers:
         specifier: ^3.24.2
         version: 3.24.2
     devDependencies:
+      '@fontsource-variable/inter':
+        specifier: ^5.2.5
+        version: 5.2.5
+      '@fontsource-variable/jetbrains-mono':
+        specifier: ^5.2.5
+        version: 5.2.5
+      '@fontsource-variable/outfit':
+        specifier: ^5.2.5
+        version: 5.2.5
       '@ianvs/prettier-plugin-sort-imports':
         specifier: ^4.4.1
         version: 4.4.1(prettier@3.5.3)
@@ -612,6 +621,15 @@ packages:
 
   '@floating-ui/utils@0.2.9':
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
+
+  '@fontsource-variable/inter@5.2.5':
+    resolution: {integrity: sha512-TrWffUAFOnT8zroE9YmGybagoOgM/HjRqMQ8k9R0vVgXlnUh/vnpbGPAS/Caz1KIlOPnPGh6fvJbb7DHbFCncA==}
+
+  '@fontsource-variable/jetbrains-mono@5.2.5':
+    resolution: {integrity: sha512-G3sN1xq1moZd0JL+hFaA4MEdsiQS+JXC/z7m+EqA5/Fzn5CQlXGUaaNKFGQdDsFuLTnCfW0KOOSWHjygNfjEPw==}
+
+  '@fontsource-variable/outfit@5.2.5':
+    resolution: {integrity: sha512-MejrIp6Cbmd3u5AZtsot8kmhZiyQM5CATsdcBB2hktYIrv5CVekRSUmFDXL4FpF7K70IvFp2ZMfImm5VhnVf7Q==}
 
   '@formatjs/ecma402-abstract@2.3.4':
     resolution: {integrity: sha512-qrycXDeaORzIqNhBOx0btnhpD1c+/qFIHAN9znofuMJX6QBwtbrmlpWfD4oiUUD2vJUOIYFA/gYtg2KAMGG7sA==}
@@ -5139,6 +5157,12 @@ snapshots:
       react-dom: 19.1.0(react@19.1.0)
 
   '@floating-ui/utils@0.2.9': {}
+
+  '@fontsource-variable/inter@5.2.5': {}
+
+  '@fontsource-variable/jetbrains-mono@5.2.5': {}
+
+  '@fontsource-variable/outfit@5.2.5': {}
 
   '@formatjs/ecma402-abstract@2.3.4':
     dependencies:

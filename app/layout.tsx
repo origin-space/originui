@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next"
-import { Outfit as FontHeading, Inter as FontSans } from "next/font/google"
 import Script from "next/script"
 
 import Footer from "@/components/footer"
@@ -9,16 +8,6 @@ import { Toaster as Sonner } from "@/registry/default/ui/sonner"
 import { Toaster } from "@/registry/default/ui/toaster"
 
 import "./globals.css"
-
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
-
-const fontHeading = FontHeading({
-  subsets: ["latin"],
-  variable: "--font-heading",
-})
 
 export const viewport: Viewport = {
   initialScale: 1,
@@ -42,9 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${fontSans.variable} ${fontHeading.variable} font-sans tracking-[-0.25px] antialiased has-not-data-home:before:absolute has-not-data-home:before:inset-x-0 has-not-data-home:before:h-100 has-not-data-home:before:bg-linear-to-b has-not-data-home:before:from-zinc-100 has-data-home:bg-zinc-50 dark:has-not-data-home:before:hidden dark:has-data-home:bg-zinc-950`}
-      >
+      <body className="tracking-[-0.25px] antialiased has-not-data-home:before:absolute has-not-data-home:before:inset-x-0 has-not-data-home:before:h-100 has-not-data-home:before:bg-linear-to-b has-not-data-home:before:from-zinc-100 has-data-home:bg-zinc-50 dark:has-not-data-home:before:hidden dark:has-data-home:bg-zinc-950">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

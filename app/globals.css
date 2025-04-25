@@ -126,11 +126,14 @@
 
 /* originui css below */
 
+@import "@fontsource-variable/outfit";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+
 @theme inline {
-  --font-heading: var(--font-heading);
-  --font-mono:
-    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  --font-heading: "Outfit Variable", sans-serif;
+  --font-sans: "Inter Variable", sans-serif;
+  --font-mono: "JetBrains Mono Variable", monospace;
 }
 
 @layer base {
