@@ -9984,6 +9984,24 @@
         "tags": ["upload", "file", "drag and drop"],
         "colSpan": 2
       }
+    },
+    {
+      "name": "comp-554",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-554.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file", "drag and drop"],
+        "colSpan": 2
+      }
     }
   ]
 }

@@ -56,6 +56,7 @@
     "lucide-react": "^0.475.0",
     "next": "^15.2.4",
     "next-themes": "^0.4.6",
+    "normalize-wheel": "^1.0.1",
     "react": "^19.1.0",
     "react-aria": "^3.38.1",
     "react-aria-components": "^1.7.1",
@@ -77,6 +78,7 @@
     "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
     "@tailwindcss/postcss": "^4.1.1",
     "@types/node": "^22.13.17",
+    "@types/normalize-wheel": "^1.0.4",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.1",
     "@types/react-payment-inputs": "^1.1.4",
@@ -88,7 +90,7 @@
     "rimraf": "^6.0.1",
     "shiki": "^2.5.0",
     "tailwindcss": "^4.1.1",
-    "tw-animate-css": "^1.2.8",
+    "tw-animate-css": "^1.2.5",
     "typescript": "^5.8.2"
   },
   "prettier": {
