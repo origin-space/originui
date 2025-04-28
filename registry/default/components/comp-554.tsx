@@ -171,8 +171,20 @@ export default function Component() {
   }, [finalAvatarUrl]); // Dependency array ensures cleanup runs when URL changes
 
   return (
-    <div className="flex flex-col items-center gap-2">
-      <div className="relative inline-flex">
+    <div className="flex flex-col items-center gap-2">   
+          {/* <div className="relative h-60 w-full [&_img]:max-w-none">
+            <Cropper
+              image="https://placehold.co/800x400"
+              crop={crop}
+              zoom={zoom}
+              aspect={1}
+              objectFit="cover"
+              onCropChange={setCrop}
+              onCropComplete={onCropComplete}
+              onZoomChange={setZoom}
+            />
+          </div>     */}
+      <div className="relative inline-flex">  
         {/* Drop area - uses finalAvatarUrl */}
         <div
           className="border-input hover:bg-accent/50 data-[dragging=true]:bg-accent/50 has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 relative flex size-16 items-center justify-center overflow-hidden rounded-full border border-dashed transition-colors has-disabled:pointer-events-none has-disabled:opacity-50 has-[img]:border-none has-[input:focus]:ring-[3px]"
@@ -220,14 +232,15 @@ export default function Component() {
 
       {/* Cropper Dialog - uses previewUrlForCropper */}
       <Dialog open={showCropper} onOpenChange={(open) => !open && handleCropCancel()}>
-        <DialogContent className="sm:max-w-[600px]">
+        <DialogContent className="sm:max-w-[600px] animate-none! [&_img]:max-w-none">
           <DialogTitle>Crop image</DialogTitle>
-          <div className="relative aspect-square">
+          <div className="relative h-60 w-full">
             <Cropper
               image={previewUrlForCropper || ''}
               crop={crop}
               zoom={zoom}
               aspect={1}
+              objectFit="cover"
               onCropChange={setCrop}
               onCropComplete={onCropComplete}
               onZoomChange={setZoom}

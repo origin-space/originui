@@ -182,7 +182,7 @@ export function Cropper({
   const getObjectFit = useCallback(() => {
     if (objectFit === 'cover') {
       const mediaRefValue = imageDomRef.current || videoDomRef.current;
-      const containerRefValue = containerDomRef.current;
+      const containerRefValue = containerDomRef.current;      
 
       if (mediaRefValue && containerRefValue) {
           const containerRect = containerRefValue.getBoundingClientRect();
@@ -232,9 +232,8 @@ export function Cropper({
       : crop
     if (newPosition.x !== crop.x || newPosition.y !== crop.y) {
       onCropChange(newPosition)
-    } else {
-      emitCropData();
     }
+    emitCropData();
   })
 
   const computeSizes = useEventCallback(() => {
@@ -243,19 +242,17 @@ export function Cropper({
 
     if (mediaRefValue && containerRefValue) {
         const containerRect = containerRefValue.getBoundingClientRect();
-        // Ensure width/height > 0
         if (containerRect.width === 0 || containerRect.height === 0) return null;
 
         saveContainerPosition();
         const containerAspect = containerRect.width / containerRect.height;
         const naturalWidth = imageDomRef.current?.naturalWidth || videoDomRef.current?.videoWidth || 0;
         const naturalHeight = imageDomRef.current?.naturalHeight || videoDomRef.current?.videoHeight || 0;
-         // Ensure naturalHeight > 0
         const mediaAspect = naturalHeight === 0 ? 1 : naturalWidth / naturalHeight;
         const isMediaScaledDown = mediaRefValue.offsetWidth < naturalWidth || mediaRefValue.offsetHeight < naturalHeight;
 
         let renderedMediaSize: Size;
-        const currentObjectFit = getObjectFit(); // Use the helper
+        const currentObjectFit = getObjectFit();
 
         if (isMediaScaledDown) {
              switch (currentObjectFit) {
@@ -277,9 +274,7 @@ export function Cropper({
             renderedMediaSize = { width: mediaRefValue.offsetWidth, height: mediaRefValue.offsetHeight };
         }
 
-        // Ensure rendered sizes are valid numbers
         if (isNaN(renderedMediaSize.width) || isNaN(renderedMediaSize.height)) return null;
-
 
         mediaSizeRef.current = { ...renderedMediaSize, naturalWidth, naturalHeight };
 
@@ -296,16 +291,19 @@ export function Cropper({
                   rotation
               );
 
-        // Ensure newCropSize values are valid
         if (isNaN(newCropSize.width) || isNaN(newCropSize.height)) return null;
 
-
+        // Set state or compare with existing state
         if (cropSizeState?.height !== newCropSize.height || cropSizeState?.width !== newCropSize.width) {
             if (onCropSizeChange) onCropSizeChange(newCropSize);
             if (setCropSizeProp) setCropSizeProp(newCropSize);
             setCropSizeState(newCropSize);
         } else {
-            recomputeCropPosition();
+            // If size hasn't changed, but maybe other factors did, ensure position is restricted
+            // Recompute will be triggered by the useEffect watching cropSizeState if it *does* change.
+            // If it doesn't change state, we might need to manually trigger recompute here
+            // BUT let's rely on the effect first.
+            // recomputeCropPosition(); // REMOVED from here
         }
 
         return newCropSize;
@@ -657,8 +655,19 @@ export function Cropper({
   }, [aspect, objectFit, cropSizeProp, computeSizes]);
 
   useEffect(() => {
-    recomputeCropPosition();
-  }, [rotation, zoom, recomputeCropPosition]);
+    if (cropSizeState) {
+        if (!isInitialCropSetRef.current) {
+          // Handle initial setup only once after media load
+          setInitialCrop(cropSizeState);
+          emitCropData();
+          isInitialCropSetRef.current = true;
+        } else {
+          // If not initial setup, recompute position when cropSize changes
+          recomputeCropPosition();
+        }
+    }
+    // Keep dependency only on cropSizeState
+  }, [cropSizeState]);
 
   useEffect(() => {
     emitCropAreaChange();
@@ -674,19 +683,9 @@ export function Cropper({
     const calculatedFit = getObjectFit();
     if (calculatedFit !== internalMediaObjectFit) {
       setInternalMediaObjectFit(calculatedFit);
+      computeSizes();
     }
   }, [getObjectFit, internalMediaObjectFit, computeSizes]);
-
-  // Effect to set initial crop after cropSize is computed and emit data
-  useEffect(() => {
-    if (cropSizeState && !isInitialCropSetRef.current) {
-      setInitialCrop(cropSizeState);
-      emitCropData(); // Emit data once initial crop is set
-      isInitialCropSetRef.current = true; // Mark initial setup as complete
-    }
-    // Keep dependency only on cropSizeState to trigger after it's set
-    // setInitialCrop and emitCropData are stable due to useEventCallback
-  }, [cropSizeState]);
 
   // --- Render ---
   const { containerStyle, cropAreaStyle, mediaStyle } = style
