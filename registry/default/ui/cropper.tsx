@@ -2,6 +2,7 @@ import * as React from 'react'
 import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
 import normalizeWheel from 'normalize-wheel'
 import { Area, MediaSize, Point, Size } from './types'
+import { cn } from "../lib/utils"
 import {
   getCropSize,
   restrictPosition,
@@ -10,7 +11,6 @@ import {
   getCenter,
   getInitialCropFromCroppedAreaPixels,
   getInitialCropFromCroppedAreaPercentages,
-  classNames,
   clamp,
 } from './helpers'
 import './styles.css'
@@ -156,11 +156,8 @@ export function Cropper({
   })
 
   const getObjectFit = useCallback(() => {
-    // Always calculate cover behavior now
     const mediaRefValue = imageDomRef.current;
     const containerRefValue = containerDomRef.current;
-
-    console.log('getObjectFit', mediaRefValue, containerRefValue); // Keep for debug if needed
 
     if (mediaRefValue && containerRefValue) {
       const containerRect = containerRefValue.getBoundingClientRect();
@@ -618,12 +615,12 @@ export function Cropper({
       onTouchStart={handleTouchStart}
       data-testid="container"
       style={containerStyle}
-      className={classNames('reactEasyCrop_Container', containerClassName)}
+      className={cn('reactEasyCrop_Container', containerClassName)}
     >
       {image ? (
         <img
           alt=""
-          className={classNames(
+          className={cn(
             'reactEasyCrop_Image',
             finalObjectFit === 'horizontal-cover' && 'reactEasyCrop_Cover_Horizontal',
             finalObjectFit === 'vertical-cover' && 'reactEasyCrop_Cover_Vertical',
@@ -651,7 +648,7 @@ export function Cropper({
           onKeyDown={handleKeyDown}
           onKeyUp={handleKeyUp}
           data-testid="cropper"
-          className={classNames(
+          className={cn(
             'reactEasyCrop_CropArea reactEasyCrop_CropAreaGrid',
             cropAreaClassName
           )}

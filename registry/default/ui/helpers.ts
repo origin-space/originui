@@ -246,19 +246,3 @@ export function getCenter(a: Point, b: Point): Point {
 export function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max)
 }
-
-/**
- * Combine multiple class names into a single string.
- */
-export function classNames(...args: (boolean | string | number | undefined | void | null)[]) {
-  return args
-    .filter((value) => {
-      if (typeof value === 'string' && value.length > 0) {
-        return true
-      }
-
-      return false
-    })
-    .join(' ')
-    .trim()
-}
