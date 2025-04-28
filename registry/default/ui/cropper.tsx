@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState, useRef, useEffect, useCallback } from 'react'
+import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
 import normalizeWheel from 'normalize-wheel'
 import { Area, MediaSize, Point, Size, VideoSrc } from './types'
 import {
@@ -143,7 +143,7 @@ export function Cropper({
   const containerDomRef = useRef<HTMLDivElement>(null)
 
   // Mutable instance variables refs
-  const mediaSizeRef = useRef<MediaSize>({ width: 0, height: 0, naturalWidth: 0, naturalHeight: 0 })
+  const mediaSizeRef = useRef<MediaSize & { objectFit?: string }>({ width: 0, height: 0, naturalWidth: 0, naturalHeight: 0, objectFit: undefined })
   const containerPositionRef = useRef<Point>({ x: 0, y: 0 })
   const dragStartPositionRef = useRef<Point>({ x: 0, y: 0 })
   const dragStartCropRef = useRef<Point>({ x: 0, y: 0 })
@@ -183,6 +183,8 @@ export function Cropper({
       const mediaRefValue = imageDomRef.current || videoDomRef.current;
       const containerRefValue = containerDomRef.current;
 
+      console.log('getObjectFit', mediaRefValue, containerRefValue);
+      
       if (mediaRefValue && containerRefValue) {
         const containerRect = containerRefValue.getBoundingClientRect();
         if (containerRect.height === 0) return 'contain';
@@ -272,7 +274,7 @@ export function Cropper({
 
       if (isNaN(renderedMediaSize.width) || isNaN(renderedMediaSize.height)) return null;
 
-      mediaSizeRef.current = { ...renderedMediaSize, naturalWidth, naturalHeight };
+      mediaSizeRef.current = { ...renderedMediaSize, naturalWidth, naturalHeight, objectFit: currentObjectFit };
 
       if (setMediaSizeProp) setMediaSizeProp(mediaSizeRef.current);
 
@@ -664,7 +666,9 @@ export function Cropper({
   // --- Render ---
   const { containerStyle, cropAreaStyle, mediaStyle } = style
   const { containerClassName, cropAreaClassName, mediaClassName } = classes
-  const finalObjectFit = getObjectFit()
+
+  // Get finalObjectFit primarily from the ref, fallback to calculation if ref not ready
+  const finalObjectFit = mediaSizeRef.current.objectFit ?? getObjectFit();
 
   return (
     <div
