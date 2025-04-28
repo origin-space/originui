@@ -62,7 +62,6 @@
     "react-aria-components": "^1.7.1",
     "react-day-picker": "^9.6.4",
     "react-dom": "^19.1.0",
-    "react-easy-crop": "^5.4.1",
     "react-intersection-observer": "^9.16.0",
     "react-payment-inputs": "^1.2.0",
     "react-phone-number-input": "^3.4.12",

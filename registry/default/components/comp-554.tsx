@@ -234,7 +234,7 @@ export default function Component() {
       <Dialog open={showCropper} onOpenChange={(open) => !open && handleCropCancel()}>
         <DialogContent className="sm:max-w-[600px] animate-none! [&_img]:max-w-none">
           <DialogTitle>Crop image</DialogTitle>
-          <div className="relative h-60 w-full">
+          <div className="relative aspect-square">
             <Cropper
               image={previewUrlForCropper || ''}
               crop={crop}
