@@ -45,7 +45,6 @@ export type CropperProps = {
     mediaClassName?: string
     cropAreaClassName?: string
   }
-  restrictPosition?: boolean // Optional prop
   mediaProps?: React.ImgHTMLAttributes<HTMLElement>
   cropperProps?: React.HTMLAttributes<HTMLDivElement>
   disableAutomaticStylesInjection?: boolean
@@ -104,10 +103,8 @@ export function Cropper({
   onMediaLoaded,
   style = {}, // Default to empty object if not provided
   classes = {}, // Default to empty object
-  restrictPosition: shouldRestrictPosition = true,
   mediaProps = {}, // Default to empty object
   cropperProps = {}, // Default to empty object
-  disableAutomaticStylesInjection, // Keep optional, handle logic if needed
   initialCroppedAreaPixels,
   initialCroppedAreaPercentages,
   onTouchRequest,
@@ -116,7 +113,6 @@ export function Cropper({
   setImageRef,
   setMediaSize: setMediaSizeProp,
   setCropSize: setCropSizeProp,
-  nonce, // Keep optional
   keyboardStep = KEYBOARD_STEP, // Use default constant
 }: CropperProps) {
   const [cropSizeState, setCropSizeState] = useState<Size | null>(null)
@@ -187,11 +183,9 @@ export function Cropper({
   const getCropData = useCallback(() => {
     if (!cropSizeState) return null;
 
-    const restrictedPos = shouldRestrictPosition
-      ? restrictPosition(crop, mediaSizeRef.current, cropSizeState, zoom)
-      : crop
-    return computeCroppedArea(restrictedPos, mediaSizeRef.current, cropSizeState, aspect, zoom, shouldRestrictPosition)
-  }, [cropSizeState, crop, zoom, aspect, shouldRestrictPosition])
+    const restrictedPos = restrictPosition(crop, mediaSizeRef.current, cropSizeState, zoom);
+    return computeCroppedArea(restrictedPos, mediaSizeRef.current, cropSizeState, aspect, zoom)
+  }, [cropSizeState, crop, zoom, aspect])
 
   const emitCropData = useEventCallback(() => {
     const cropData = getCropData()
@@ -208,9 +202,7 @@ export function Cropper({
 
   const recomputeCropPosition = useEventCallback(() => {
     if (!cropSizeState) return
-    const newPosition = shouldRestrictPosition
-      ? restrictPosition(crop, mediaSizeRef.current, cropSizeState, zoom)
-      : crop
+    const newPosition = restrictPosition(crop, mediaSizeRef.current, cropSizeState, zoom);
     if (newPosition.x !== crop.x || newPosition.y !== crop.y) {
       onCropChange(newPosition)
     }
@@ -353,9 +345,7 @@ export function Cropper({
       const offsetX = point.x - dragStartPositionRef.current.x;
       const offsetY = point.y - dragStartPositionRef.current.y;
       const requestedPosition = { x: dragStartCropRef.current.x + offsetX, y: dragStartCropRef.current.y + offsetY };
-      const newPosition = shouldRestrictPosition
-        ? restrictPosition(requestedPosition, mediaSizeRef.current, cropSizeState, zoom)
-        : requestedPosition;
+      const newPosition = restrictPosition(requestedPosition, mediaSizeRef.current, cropSizeState, zoom);
       onCropChange(newPosition);
     });
   })
@@ -375,9 +365,7 @@ export function Cropper({
         x: zoomTarget.x * newZoomClamped - zoomPoint.x,
         y: zoomTarget.y * newZoomClamped - zoomPoint.y,
       };
-      const newPosition = shouldRestrictPosition
-        ? restrictPosition(requestedPosition, mediaSizeRef.current, cropSizeState, newZoomClamped)
-        : requestedPosition;
+      const newPosition = restrictPosition(requestedPosition, mediaSizeRef.current, cropSizeState, newZoomClamped);
       onCropChange(newPosition);
     }
     if (newZoomClamped !== zoom) {
@@ -534,9 +522,7 @@ export function Cropper({
       case 'ArrowRight': newCrop.x += step; event.preventDefault(); break;
       default: return;
     }
-    if (shouldRestrictPosition) {
-      newCrop = restrictPosition(newCrop, mediaSizeRef.current, cropSizeState, zoom);
-    }
+    newCrop = restrictPosition(newCrop, mediaSizeRef.current, cropSizeState, zoom);
     if (!event.repeat && onInteractionStart) onInteractionStart();
     onCropChange(newCrop);
   })

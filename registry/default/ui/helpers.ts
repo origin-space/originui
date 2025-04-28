@@ -76,35 +76,33 @@ export function computeCroppedArea(
   cropSize: Size,
   aspect: number,
   zoom: number,
-  restrictPosition = true
 ): { croppedAreaPercentages: Area; croppedAreaPixels: Area } {
-  const limitAreaFn = restrictPosition ? limitArea : noOp
 
   // calculate the crop area in percentages
   const croppedAreaPercentages = {
-    x: limitAreaFn(
+    x: limitArea(
       100,
       (((mediaSize.width - cropSize.width / zoom) / 2 - crop.x / zoom) / mediaSize.width) *
         100
     ),
-    y: limitAreaFn(
+    y: limitArea(
       100,
       (((mediaSize.height - cropSize.height / zoom) / 2 - crop.y / zoom) / mediaSize.height) *
         100
     ),
-    width: limitAreaFn(100, ((cropSize.width / mediaSize.width) * 100) / zoom),
-    height: limitAreaFn(100, ((cropSize.height / mediaSize.height) * 100) / zoom),
+    width: limitArea(100, ((cropSize.width / mediaSize.width) * 100) / zoom),
+    height: limitArea(100, ((cropSize.height / mediaSize.height) * 100) / zoom),
   }
 
   // we compute the pixels size naively
   const widthInPixels = Math.round(
-    limitAreaFn(
+    limitArea(
       mediaSize.naturalWidth,
       (croppedAreaPercentages.width * mediaSize.naturalWidth) / 100
     )
   )
   const heightInPixels = Math.round(
-    limitAreaFn(
+    limitArea(
       mediaSize.naturalHeight,
       (croppedAreaPercentages.height * mediaSize.naturalHeight) / 100
     )
@@ -128,13 +126,13 @@ export function computeCroppedArea(
   const croppedAreaPixels = {
     ...sizePixels,
     x: Math.round(
-      limitAreaFn(
+      limitArea(
         mediaSize.naturalWidth - sizePixels.width,
         (croppedAreaPercentages.x * mediaSize.naturalWidth) / 100
       )
     ),
     y: Math.round(
-      limitAreaFn(
+      limitArea(
         mediaSize.naturalHeight - sizePixels.height,
         (croppedAreaPercentages.y * mediaSize.naturalHeight) / 100
       )
@@ -149,10 +147,6 @@ export function computeCroppedArea(
  */
 function limitArea(max: number, value: number): number {
   return Math.min(max, Math.max(0, value))
-}
-
-function noOp(_max: number, value: number) {
-  return value
 }
 
 /**
