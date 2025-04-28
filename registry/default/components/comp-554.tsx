@@ -240,7 +240,6 @@ export default function Component() {
               crop={crop}
               zoom={zoom}
               aspect={1}
-              objectFit="cover"
               onCropChange={setCrop}
               onCropComplete={onCropComplete}
               onZoomChange={setZoom}

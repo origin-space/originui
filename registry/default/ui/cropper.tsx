@@ -24,7 +24,6 @@ export type CropperProps = {
   minZoom?: number
   maxZoom?: number
   cropSize?: Size
-  objectFit?: 'contain' | 'cover' | 'horizontal-cover' | 'vertical-cover'
   zoomSpeed?: number
   zoomWithScroll?: boolean
   onCropChange: (location: Point) => void
@@ -90,7 +89,6 @@ export function Cropper({
   minZoom = MIN_ZOOM,
   maxZoom = MAX_ZOOM,
   cropSize: cropSizeProp,
-  objectFit = 'contain',
   zoomSpeed = 1,
   zoomWithScroll = true,
   onCropChange, // Required prop
@@ -158,27 +156,28 @@ export function Cropper({
   })
 
   const getObjectFit = useCallback(() => {
-    if (objectFit === 'cover') {
-      const mediaRefValue = imageDomRef.current;
-      const containerRefValue = containerDomRef.current;
+    // Always calculate cover behavior now
+    const mediaRefValue = imageDomRef.current;
+    const containerRefValue = containerDomRef.current;
 
-      console.log('getObjectFit', mediaRefValue, containerRefValue);
-      
-      if (mediaRefValue && containerRefValue) {
-        const containerRect = containerRefValue.getBoundingClientRect();
-        if (containerRect.height === 0) return 'contain';
+    console.log('getObjectFit', mediaRefValue, containerRefValue); // Keep for debug if needed
 
-        const containerAspect = containerRect.width / containerRect.height;
-        const naturalWidth = imageDomRef.current?.naturalWidth || 0;
-        const naturalHeight = imageDomRef.current?.naturalHeight || 0;
-        const mediaAspect = naturalHeight === 0 ? 1 : naturalWidth / naturalHeight;
+    if (mediaRefValue && containerRefValue) {
+      const containerRect = containerRefValue.getBoundingClientRect();
+      // Default to horizontal cover if container has no height or width?
+      if (containerRect.height === 0 || containerRect.width === 0) return 'horizontal-cover';
 
-        return mediaAspect < containerAspect ? 'horizontal-cover' : 'vertical-cover';
-      }
-      return 'horizontal-cover';
+      const containerAspect = containerRect.width / containerRect.height;
+      const naturalWidth = imageDomRef.current?.naturalWidth || 0;
+      const naturalHeight = imageDomRef.current?.naturalHeight || 0;
+      // Avoid division by zero for media aspect
+      const mediaAspect = naturalHeight === 0 ? 1 : naturalWidth / naturalHeight;
+
+      return mediaAspect < containerAspect ? 'horizontal-cover' : 'vertical-cover';
     }
-    return objectFit;
-  }, [objectFit])
+    // Default if refs not ready
+    return 'horizontal-cover';
+  }, []); // Empty dependency array now
 
   const getCropData = useCallback(() => {
     if (!cropSizeState) return null;
@@ -229,18 +228,14 @@ export function Cropper({
 
       if (isMediaScaledDown) {
         switch (currentObjectFit) {
-          default:
-          case 'contain':
-            renderedMediaSize =
-              containerAspect > mediaAspect
-                ? { width: containerRect.height * mediaAspect, height: containerRect.height }
-                : { width: containerRect.width, height: containerRect.width / mediaAspect };
-            break;
           case 'horizontal-cover':
             renderedMediaSize = { width: containerRect.width, height: containerRect.width / mediaAspect };
             break;
           case 'vertical-cover':
             renderedMediaSize = { width: containerRect.height * mediaAspect, height: containerRect.height };
+            break;
+          default:
+            renderedMediaSize = { width: containerRect.width, height: containerRect.width / mediaAspect };
             break;
         }
       } else {
@@ -591,7 +586,7 @@ export function Cropper({
 
   useEffect(() => {
     computeSizes();
-  }, [aspect, objectFit, cropSizeProp, computeSizes]);
+  }, [aspect, cropSizeProp, computeSizes]);
 
   useEffect(() => {
     if (cropSizeState) {
@@ -630,7 +625,6 @@ export function Cropper({
           alt=""
           className={classNames(
             'reactEasyCrop_Image',
-            finalObjectFit === 'contain' && 'reactEasyCrop_Contain',
             finalObjectFit === 'horizontal-cover' && 'reactEasyCrop_Cover_Horizontal',
             finalObjectFit === 'vertical-cover' && 'reactEasyCrop_Cover_Vertical',
             mediaClassName
