@@ -1,8 +1,7 @@
 import { Area, MediaSize, Point, Size } from './types'
 
 /**
- * Compute the dimension of the crop area based on media size,
- * aspect ratio and optionally rotation
+ * Compute the dimension of the crop area based on media size and aspect ratio
  */
 export function getCropSize(
   mediaWidth: number,
@@ -10,9 +9,9 @@ export function getCropSize(
   containerWidth: number,
   containerHeight: number,
   aspect: number,
-  rotation = 0
 ): Size {
-  const { width, height } = rotateSize(mediaWidth, mediaHeight, rotation)
+  const width = mediaWidth;
+  const height = mediaHeight;
   const fittingWidth = Math.min(width, containerWidth)
   const fittingHeight = Math.min(height, containerHeight)
 
@@ -48,33 +47,23 @@ export function restrictPosition(
   mediaSize: Size,
   cropSize: Size,
   zoom: number,
-  rotation = 0
 ): Point {
-  const { width, height } = rotateSize(mediaSize.width, mediaSize.height, rotation)
-
   return {
-    x: restrictPositionCoord(position.x, width, cropSize.width, zoom),
-    y: restrictPositionCoord(position.y, height, cropSize.height, zoom),
+    x: clamp(
+      position.x,
+      -(mediaSize.width * zoom / 2 - cropSize.width / 2),
+      mediaSize.width * zoom / 2 - cropSize.width / 2
+    ),
+    y: clamp(
+      position.y,
+      -(mediaSize.height * zoom / 2 - cropSize.height / 2),
+      mediaSize.height * zoom / 2 - cropSize.height / 2
+    ),
   }
-}
-
-function restrictPositionCoord(
-  position: number,
-  mediaSize: number,
-  cropSize: number,
-  zoom: number
-): number {
-  const maxPosition = (mediaSize * zoom) / 2 - cropSize / 2
-
-  return clamp(position, -maxPosition, maxPosition)
 }
 
 export function getDistanceBetweenPoints(pointA: Point, pointB: Point) {
   return Math.sqrt(Math.pow(pointA.y - pointB.y, 2) + Math.pow(pointA.x - pointB.x, 2))
-}
-
-export function getRotationBetweenPoints(pointA: Point, pointB: Point) {
-  return (Math.atan2(pointB.y - pointA.y, pointB.x - pointA.x) * 180) / Math.PI
 }
 
 /**
@@ -87,48 +76,40 @@ export function computeCroppedArea(
   cropSize: Size,
   aspect: number,
   zoom: number,
-  rotation = 0,
   restrictPosition = true
 ): { croppedAreaPercentages: Area; croppedAreaPixels: Area } {
-  // if the media is rotated by the user, we cannot limit the position anymore
-  // as it might need to be negative.
   const limitAreaFn = restrictPosition ? limitArea : noOp
 
-  const mediaBBoxSize = rotateSize(mediaSize.width, mediaSize.height, rotation)
-  const mediaNaturalBBoxSize = rotateSize(mediaSize.naturalWidth, mediaSize.naturalHeight, rotation)
-
   // calculate the crop area in percentages
-  // in the rotated space
   const croppedAreaPercentages = {
     x: limitAreaFn(
       100,
-      (((mediaBBoxSize.width - cropSize.width / zoom) / 2 - crop.x / zoom) / mediaBBoxSize.width) *
+      (((mediaSize.width - cropSize.width / zoom) / 2 - crop.x / zoom) / mediaSize.width) *
         100
     ),
     y: limitAreaFn(
       100,
-      (((mediaBBoxSize.height - cropSize.height / zoom) / 2 - crop.y / zoom) /
-        mediaBBoxSize.height) *
+      (((mediaSize.height - cropSize.height / zoom) / 2 - crop.y / zoom) / mediaSize.height) *
         100
     ),
-    width: limitAreaFn(100, ((cropSize.width / mediaBBoxSize.width) * 100) / zoom),
-    height: limitAreaFn(100, ((cropSize.height / mediaBBoxSize.height) * 100) / zoom),
+    width: limitAreaFn(100, ((cropSize.width / mediaSize.width) * 100) / zoom),
+    height: limitAreaFn(100, ((cropSize.height / mediaSize.height) * 100) / zoom),
   }
 
   // we compute the pixels size naively
   const widthInPixels = Math.round(
     limitAreaFn(
-      mediaNaturalBBoxSize.width,
-      (croppedAreaPercentages.width * mediaNaturalBBoxSize.width) / 100
+      mediaSize.naturalWidth,
+      (croppedAreaPercentages.width * mediaSize.naturalWidth) / 100
     )
   )
   const heightInPixels = Math.round(
     limitAreaFn(
-      mediaNaturalBBoxSize.height,
-      (croppedAreaPercentages.height * mediaNaturalBBoxSize.height) / 100
+      mediaSize.naturalHeight,
+      (croppedAreaPercentages.height * mediaSize.naturalHeight) / 100
     )
   )
-  const isImgWiderThanHigh = mediaNaturalBBoxSize.width >= mediaNaturalBBoxSize.height * aspect
+  const isImgWiderThanHigh = mediaSize.naturalWidth >= mediaSize.naturalHeight * aspect
 
   // then we ensure the width and height exactly match the aspect (to avoid rounding approximations)
   // if the media is wider than high, when zoom is 0, the crop height will be equals to image height
@@ -148,14 +129,14 @@ export function computeCroppedArea(
     ...sizePixels,
     x: Math.round(
       limitAreaFn(
-        mediaNaturalBBoxSize.width - sizePixels.width,
-        (croppedAreaPercentages.x * mediaNaturalBBoxSize.width) / 100
+        mediaSize.naturalWidth - sizePixels.width,
+        (croppedAreaPercentages.x * mediaSize.naturalWidth) / 100
       )
     ),
     y: Math.round(
       limitAreaFn(
-        mediaNaturalBBoxSize.height - sizePixels.height,
-        (croppedAreaPercentages.y * mediaNaturalBBoxSize.height) / 100
+        mediaSize.naturalHeight - sizePixels.height,
+        (croppedAreaPercentages.y * mediaSize.naturalHeight) / 100
       )
     ),
   }
@@ -180,12 +161,11 @@ function noOp(_max: number, value: number) {
 export function getInitialCropFromCroppedAreaPercentages(
   croppedAreaPercentages: Area,
   mediaSize: MediaSize,
-  rotation: number,
   cropSize: Size,
   minZoom: number,
   maxZoom: number
 ) {
-  const mediaBBoxSize = rotateSize(mediaSize.width, mediaSize.height, rotation)
+  const mediaBBoxSize = { width: mediaSize.width, height: mediaSize.height }; // Use original dimensions
 
   // This is the inverse process of computeCroppedArea
   const zoom = clamp(
@@ -229,12 +209,11 @@ function getZoomFromCroppedAreaPixels(
 export function getInitialCropFromCroppedAreaPixels(
   croppedAreaPixels: Area,
   mediaSize: MediaSize,
-  rotation = 0,
   cropSize: Size,
   minZoom: number,
   maxZoom: number
 ): { crop: Point; zoom: number } {
-  const mediaNaturalBBoxSize = rotateSize(mediaSize.naturalWidth, mediaSize.naturalHeight, rotation)
+  const mediaNaturalBBoxSize = { width: mediaSize.naturalWidth, height: mediaSize.naturalHeight }; // Use original dimensions
 
   const zoom = clamp(
     getZoomFromCroppedAreaPixels(croppedAreaPixels, mediaSize, cropSize),
@@ -264,22 +243,6 @@ export function getCenter(a: Point, b: Point): Point {
   return {
     x: (b.x + a.x) / 2,
     y: (b.y + a.y) / 2,
-  }
-}
-
-export function getRadianAngle(degreeValue: number) {
-  return (degreeValue * Math.PI) / 180
-}
-
-/**
- * Returns the new bounding area of a rotated rectangle.
- */
-export function rotateSize(width: number, height: number, rotation: number): Size {
-  const rotRad = getRadianAngle(rotation)
-
-  return {
-    width: Math.abs(Math.cos(rotRad) * width) + Math.abs(Math.sin(rotRad) * height),
-    height: Math.abs(Math.sin(rotRad) * width) + Math.abs(Math.cos(rotRad) * height),
   }
 }
 

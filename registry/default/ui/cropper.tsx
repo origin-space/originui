@@ -1,12 +1,11 @@
 import * as React from 'react'
 import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
 import normalizeWheel from 'normalize-wheel'
-import { Area, MediaSize, Point, Size, VideoSrc } from './types'
+import { Area, MediaSize, Point, Size } from './types'
 import {
   getCropSize,
   restrictPosition,
   getDistanceBetweenPoints,
-  getRotationBetweenPoints,
   computeCroppedArea,
   getCenter,
   getInitialCropFromCroppedAreaPixels,
@@ -18,15 +17,12 @@ import './styles.css'
 
 export type CropperProps = {
   image?: string
-  video?: string | VideoSrc[]
   transform?: string
   crop: Point
   zoom?: number
-  rotation?: number
   aspect?: number
   minZoom?: number
   maxZoom?: number
-  cropShape?: 'rect' | 'round'
   cropSize?: Size
   objectFit?: 'contain' | 'cover' | 'horizontal-cover' | 'vertical-cover'
   showGrid?: boolean
@@ -34,7 +30,6 @@ export type CropperProps = {
   zoomWithScroll?: boolean
   onCropChange: (location: Point) => void
   onZoomChange?: (zoom: number) => void
-  onRotationChange?: (rotation: number) => void
   onCropComplete?: (croppedArea: Area, croppedAreaPixels: Area) => void
   onCropAreaChange?: (croppedArea: Area, croppedAreaPixels: Area) => void
   onCropSizeChange?: (cropSize: Size) => void
@@ -52,7 +47,7 @@ export type CropperProps = {
     cropAreaClassName?: string
   }
   restrictPosition?: boolean // Optional prop
-  mediaProps?: React.ImgHTMLAttributes<HTMLElement> | React.VideoHTMLAttributes<HTMLElement>
+  mediaProps?: React.ImgHTMLAttributes<HTMLElement>
   cropperProps?: React.HTMLAttributes<HTMLDivElement>
   disableAutomaticStylesInjection?: boolean
   initialCroppedAreaPixels?: Area
@@ -61,7 +56,6 @@ export type CropperProps = {
   onWheelRequest?: (e: WheelEvent) => boolean
   setCropperRef?: (ref: HTMLDivElement | null) => void
   setImageRef?: (ref: HTMLImageElement | null) => void
-  setVideoRef?: (ref: HTMLVideoElement | null) => void
   setMediaSize?: (size: MediaSize) => void
   setCropSize?: (size: Size) => void
   nonce?: string
@@ -73,7 +67,6 @@ const MAX_ZOOM = 3
 const KEYBOARD_STEP = 1
 
 type GestureEvent = UIEvent & {
-  rotation: number
   scale: number
   clientX: number
   clientY: number
@@ -92,15 +85,12 @@ function useEventCallback<T extends (...args: any[]) => any>(fn: T): T {
 
 export function Cropper({
   image,
-  video,
   transform,
   crop, // Required prop, no default here
   zoom = 1,
-  rotation = 0,
   aspect = 4 / 3,
   minZoom = MIN_ZOOM,
   maxZoom = MAX_ZOOM,
-  cropShape = 'rect',
   cropSize: cropSizeProp,
   objectFit = 'contain',
   showGrid = true,
@@ -108,7 +98,6 @@ export function Cropper({
   zoomWithScroll = true,
   onCropChange, // Required prop
   onZoomChange,
-  onRotationChange,
   onCropComplete,
   onCropAreaChange,
   onCropSizeChange,
@@ -127,7 +116,6 @@ export function Cropper({
   onWheelRequest,
   setCropperRef,
   setImageRef,
-  setVideoRef,
   setMediaSize: setMediaSizeProp,
   setCropSize: setCropSizeProp,
   nonce, // Keep optional
@@ -139,7 +127,6 @@ export function Cropper({
   // DOM Refs
   const cropperDomRef = useRef<HTMLDivElement>(null)
   const imageDomRef = useRef<HTMLImageElement>(null)
-  const videoDomRef = useRef<HTMLVideoElement>(null)
   const containerDomRef = useRef<HTMLDivElement>(null)
 
   // Mutable instance variables refs
@@ -148,10 +135,8 @@ export function Cropper({
   const dragStartPositionRef = useRef<Point>({ x: 0, y: 0 })
   const dragStartCropRef = useRef<Point>({ x: 0, y: 0 })
   const gestureZoomStartRef = useRef(0)
-  const gestureRotationStartRef = useRef(0)
   const isTouchingRef = useRef(false)
   const lastPinchDistanceRef = useRef(0)
-  const lastPinchRotationRef = useRef(0)
   const rafDragTimeoutRef = useRef<number | null>(null)
   const rafPinchTimeoutRef = useRef<number | null>(null)
   const wheelTimerRef = useRef<number | null>(null)
@@ -180,7 +165,7 @@ export function Cropper({
 
   const getObjectFit = useCallback(() => {
     if (objectFit === 'cover') {
-      const mediaRefValue = imageDomRef.current || videoDomRef.current;
+      const mediaRefValue = imageDomRef.current;
       const containerRefValue = containerDomRef.current;
 
       console.log('getObjectFit', mediaRefValue, containerRefValue);
@@ -190,8 +175,8 @@ export function Cropper({
         if (containerRect.height === 0) return 'contain';
 
         const containerAspect = containerRect.width / containerRect.height;
-        const naturalWidth = imageDomRef.current?.naturalWidth || videoDomRef.current?.videoWidth || 0;
-        const naturalHeight = imageDomRef.current?.naturalHeight || videoDomRef.current?.videoHeight || 0;
+        const naturalWidth = imageDomRef.current?.naturalWidth || 0;
+        const naturalHeight = imageDomRef.current?.naturalHeight || 0;
         const mediaAspect = naturalHeight === 0 ? 1 : naturalWidth / naturalHeight;
 
         return mediaAspect < containerAspect ? 'horizontal-cover' : 'vertical-cover';
@@ -205,10 +190,10 @@ export function Cropper({
     if (!cropSizeState) return null;
 
     const restrictedPos = shouldRestrictPosition
-      ? restrictPosition(crop, mediaSizeRef.current, cropSizeState, zoom, rotation)
+      ? restrictPosition(crop, mediaSizeRef.current, cropSizeState, zoom)
       : crop
-    return computeCroppedArea(restrictedPos, mediaSizeRef.current, cropSizeState, aspect, zoom, rotation, shouldRestrictPosition)
-  }, [cropSizeState, crop, zoom, rotation, aspect, shouldRestrictPosition])
+    return computeCroppedArea(restrictedPos, mediaSizeRef.current, cropSizeState, aspect, zoom, shouldRestrictPosition)
+  }, [cropSizeState, crop, zoom, aspect, shouldRestrictPosition])
 
   const emitCropData = useEventCallback(() => {
     const cropData = getCropData()
@@ -226,7 +211,7 @@ export function Cropper({
   const recomputeCropPosition = useEventCallback(() => {
     if (!cropSizeState) return
     const newPosition = shouldRestrictPosition
-      ? restrictPosition(crop, mediaSizeRef.current, cropSizeState, zoom, rotation)
+      ? restrictPosition(crop, mediaSizeRef.current, cropSizeState, zoom)
       : crop
     if (newPosition.x !== crop.x || newPosition.y !== crop.y) {
       onCropChange(newPosition)
@@ -235,7 +220,7 @@ export function Cropper({
   })
 
   const computeSizes = useEventCallback(() => {
-    const mediaRefValue = imageDomRef.current || videoDomRef.current;
+    const mediaRefValue = imageDomRef.current;
     const containerRefValue = containerDomRef.current;
 
     if (mediaRefValue && containerRefValue) {
@@ -244,8 +229,8 @@ export function Cropper({
 
       saveContainerPosition();
       const containerAspect = containerRect.width / containerRect.height;
-      const naturalWidth = imageDomRef.current?.naturalWidth || videoDomRef.current?.videoWidth || 0;
-      const naturalHeight = imageDomRef.current?.naturalHeight || videoDomRef.current?.videoHeight || 0;
+      const naturalWidth = imageDomRef.current?.naturalWidth || 0;
+      const naturalHeight = imageDomRef.current?.naturalHeight || 0;
       const mediaAspect = naturalHeight === 0 ? 1 : naturalWidth / naturalHeight;
       const isMediaScaledDown = mediaRefValue.offsetWidth < naturalWidth || mediaRefValue.offsetHeight < naturalHeight;
 
@@ -286,7 +271,6 @@ export function Cropper({
           containerRect.width,
           containerRect.height,
           aspect,
-          rotation
         );
 
       if (isNaN(newCropSize.width) || isNaN(newCropSize.height)) return null;
@@ -310,7 +294,6 @@ export function Cropper({
       const result = getInitialCropFromCroppedAreaPercentages(
         initialCroppedAreaPercentages,
         mediaSizeRef.current,
-        rotation,
         newCropSize,
         minZoom,
         maxZoom
@@ -321,7 +304,6 @@ export function Cropper({
       const result = getInitialCropFromCroppedAreaPixels(
         initialCroppedAreaPixels,
         mediaSizeRef.current,
-        rotation,
         newCropSize,
         minZoom,
         maxZoom
@@ -374,7 +356,7 @@ export function Cropper({
       const offsetY = point.y - dragStartPositionRef.current.y;
       const requestedPosition = { x: dragStartCropRef.current.x + offsetX, y: dragStartCropRef.current.y + offsetY };
       const newPosition = shouldRestrictPosition
-        ? restrictPosition(requestedPosition, mediaSizeRef.current, cropSizeState, zoom, rotation)
+        ? restrictPosition(requestedPosition, mediaSizeRef.current, cropSizeState, zoom)
         : requestedPosition;
       onCropChange(newPosition);
     });
@@ -396,7 +378,7 @@ export function Cropper({
         y: zoomTarget.y * newZoomClamped - zoomPoint.y,
       };
       const newPosition = shouldRestrictPosition
-        ? restrictPosition(requestedPosition, mediaSizeRef.current, cropSizeState, newZoomClamped, rotation)
+        ? restrictPosition(requestedPosition, mediaSizeRef.current, cropSizeState, newZoomClamped)
         : requestedPosition;
       onCropChange(newPosition);
     }
@@ -419,12 +401,6 @@ export function Cropper({
         setNewZoom(newZoom, center, { shouldUpdatePosition: false });
       }
       lastPinchDistanceRef.current = distance;
-      if (onRotationChange) {
-        const rotationVal = getRotationBetweenPoints(pointA, pointB);
-        const newRotation = rotation + (rotationVal - lastPinchRotationRef.current);
-        onRotationChange(newRotation);
-        lastPinchRotationRef.current = rotationVal;
-      }
     });
   })
 
@@ -444,10 +420,6 @@ export function Cropper({
     if (typeof e.scale === 'number' && isFinite(e.scale)) {
       const newZoom = gestureZoomStartRef.current - 1 + e.scale;
       setNewZoom(newZoom, point, { shouldUpdatePosition: true });
-    }
-    if (onRotationChange && typeof e.rotation === 'number' && isFinite(e.rotation)) {
-      const newRotation = gestureRotationStartRef.current + e.rotation;
-      onRotationChange(newRotation);
     }
   })
 
@@ -494,7 +466,6 @@ export function Cropper({
     const pointA = getTouchPoint(e.touches[0]);
     const pointB = getTouchPoint(e.touches[1]);
     lastPinchDistanceRef.current = getDistanceBetweenPoints(pointA, pointB);
-    lastPinchRotationRef.current = getRotationBetweenPoints(pointA, pointB);
     handleDragStart(getCenter(pointA, pointB));
   })
 
@@ -505,7 +476,6 @@ export function Cropper({
     currentDoc.addEventListener('gesturechange', handleGestureMove as EventListener);
     currentDoc.addEventListener('gestureend', handleGestureEnd as EventListener);
     gestureZoomStartRef.current = zoom;
-    gestureRotationStartRef.current = rotation;
   })
 
   const preventZoomSafari = useCallback((e: Event) => e.preventDefault(), []);
@@ -567,7 +537,7 @@ export function Cropper({
       default: return;
     }
     if (shouldRestrictPosition) {
-      newCrop = restrictPosition(newCrop, mediaSizeRef.current, cropSizeState, zoom, rotation);
+      newCrop = restrictPosition(newCrop, mediaSizeRef.current, cropSizeState, zoom);
     }
     if (!event.repeat && onInteractionStart) onInteractionStart();
     onCropChange(newCrop);
@@ -612,9 +582,8 @@ export function Cropper({
 
     if (setCropperRef) setCropperRef(cropperDomRef.current);
     if (setImageRef) setImageRef(imageDomRef.current);
-    if (setVideoRef) setVideoRef(videoDomRef.current);
 
-    if (imageDomRef.current?.complete || videoDomRef.current?.readyState === 4) {
+    if (imageDomRef.current?.complete) {
       handleMediaLoad();
     }
 
@@ -633,8 +602,7 @@ export function Cropper({
       cleanEvents();
     };
   }, [
-    zoomWithScroll, setCropperRef, setImageRef, setVideoRef, getObjectFit,
-    preventZoomSafari, handleMediaLoad, computeSizes, handleWheel, handleGestureStart, handleScroll, cleanEvents
+    zoomWithScroll, setCropperRef, setImageRef, preventZoomSafari, handleMediaLoad, computeSizes, handleWheel, handleGestureStart, handleScroll, cleanEvents
   ]);
 
   useEffect(() => {
@@ -656,12 +624,6 @@ export function Cropper({
   useEffect(() => {
     emitCropAreaChange();
   }, [crop, emitCropAreaChange]);
-
-  useEffect(() => {
-    if (videoDomRef.current && video) {
-      videoDomRef.current.load();
-    }
-  }, [video]);
 
   // --- Render ---
   const { containerStyle, cropAreaStyle, mediaStyle } = style
@@ -694,39 +656,11 @@ export function Cropper({
           ref={imageDomRef}
           style={{
             ...mediaStyle,
-            transform: transform || `translate(${crop.x}px, ${crop.y}px) rotate(${rotation}deg) scale(${zoom})`,
+            transform: transform || `translate(${crop.x}px, ${crop.y}px) scale(${zoom})`,
           }}
           onLoad={handleMediaLoad}
         />
-      ) : (
-        video && (
-          <video
-            autoPlay
-            playsInline
-            loop
-            muted={true}
-            className={classNames(
-              'reactEasyCrop_Video',
-              finalObjectFit === 'contain' && 'reactEasyCrop_Contain',
-              finalObjectFit === 'horizontal-cover' && 'reactEasyCrop_Cover_Horizontal',
-              finalObjectFit === 'vertical-cover' && 'reactEasyCrop_Cover_Vertical',
-              mediaClassName
-            )}
-            {...mediaProps}
-            ref={videoDomRef}
-            onLoadedMetadata={handleMediaLoad}
-            style={{
-              ...mediaStyle,
-              transform: transform || `translate(${crop.x}px, ${crop.y}px) rotate(${rotation}deg) scale(${zoom})`,
-            }}
-            controls={false}
-          >
-            {(Array.isArray(video) ? video : [{ src: video }]).map((item) => (
-              <source key={item.src} {...item} />
-            ))}
-          </video>
-        )
-      )}
+      ) : null}
       {cropSizeState && (
         <div
           ref={cropperDomRef}
@@ -741,7 +675,6 @@ export function Cropper({
           data-testid="cropper"
           className={classNames(
             'reactEasyCrop_CropArea',
-            cropShape === 'round' && 'reactEasyCrop_CropAreaRound',
             showGrid && 'reactEasyCrop_CropAreaGrid',
             cropAreaClassName
           )}
