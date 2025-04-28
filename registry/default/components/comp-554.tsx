@@ -82,7 +82,12 @@ export default function Component() {
     maxSize,
     multiple: false,
     onFilesAdded: () => {
-      // Open cropper when files are added (hook handles preview generation)
+      // Reset crop/zoom/pixels when a new file triggers the dialog
+      setCrop({ x: 0, y: 0 });
+      setZoom(1);
+      setCroppedAreaPixels(null);
+
+      // Open cropper when files are added through the input
       setShowCropper(true)
     },
   })
