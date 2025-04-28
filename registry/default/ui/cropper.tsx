@@ -135,7 +135,6 @@ export function Cropper({
 }: CropperProps) {
   const [cropSizeState, setCropSizeState] = useState<Size | null>(null)
   const [hasWheelJustStarted, setHasWheelJustStarted] = useState(false)
-  const [internalMediaObjectFit, setInternalMediaObjectFit] = useState<string | undefined>(objectFit) // Initialize with prop
 
   // DOM Refs
   const cropperDomRef = useRef<HTMLDivElement>(null)
@@ -170,7 +169,7 @@ export function Cropper({
     y: Number(touch.clientY),
   })
 
-   // --- Core Logic Callbacks (Memoized with useCallback or useEventCallback) ---
+  // --- Core Logic Callbacks (Memoized with useCallback or useEventCallback) ---
 
   const saveContainerPosition = useEventCallback(() => {
     if (containerDomRef.current) {
@@ -182,22 +181,19 @@ export function Cropper({
   const getObjectFit = useCallback(() => {
     if (objectFit === 'cover') {
       const mediaRefValue = imageDomRef.current || videoDomRef.current;
-      const containerRefValue = containerDomRef.current;      
+      const containerRefValue = containerDomRef.current;
 
       if (mediaRefValue && containerRefValue) {
-          const containerRect = containerRefValue.getBoundingClientRect();
-          // Ensure height is not zero to avoid division by zero
-          if (containerRect.height === 0) return 'contain'; // Or a default value
+        const containerRect = containerRefValue.getBoundingClientRect();
+        if (containerRect.height === 0) return 'contain';
 
-          const containerAspect = containerRect.width / containerRect.height;
-          const naturalWidth = imageDomRef.current?.naturalWidth || videoDomRef.current?.videoWidth || 0;
-          const naturalHeight = imageDomRef.current?.naturalHeight || videoDomRef.current?.videoHeight || 0;
-          // Ensure naturalHeight is not zero
-          const mediaAspect = naturalHeight === 0 ? 1 : naturalWidth / naturalHeight;
+        const containerAspect = containerRect.width / containerRect.height;
+        const naturalWidth = imageDomRef.current?.naturalWidth || videoDomRef.current?.videoWidth || 0;
+        const naturalHeight = imageDomRef.current?.naturalHeight || videoDomRef.current?.videoHeight || 0;
+        const mediaAspect = naturalHeight === 0 ? 1 : naturalWidth / naturalHeight;
 
-          return mediaAspect < containerAspect ? 'horizontal-cover' : 'vertical-cover';
+        return mediaAspect < containerAspect ? 'horizontal-cover' : 'vertical-cover';
       }
-      // Default if refs not ready
       return 'horizontal-cover';
     }
     return objectFit;
@@ -241,72 +237,65 @@ export function Cropper({
     const containerRefValue = containerDomRef.current;
 
     if (mediaRefValue && containerRefValue) {
-        const containerRect = containerRefValue.getBoundingClientRect();
-        if (containerRect.width === 0 || containerRect.height === 0) return null;
+      const containerRect = containerRefValue.getBoundingClientRect();
+      if (containerRect.width === 0 || containerRect.height === 0) return null;
 
-        saveContainerPosition();
-        const containerAspect = containerRect.width / containerRect.height;
-        const naturalWidth = imageDomRef.current?.naturalWidth || videoDomRef.current?.videoWidth || 0;
-        const naturalHeight = imageDomRef.current?.naturalHeight || videoDomRef.current?.videoHeight || 0;
-        const mediaAspect = naturalHeight === 0 ? 1 : naturalWidth / naturalHeight;
-        const isMediaScaledDown = mediaRefValue.offsetWidth < naturalWidth || mediaRefValue.offsetHeight < naturalHeight;
+      saveContainerPosition();
+      const containerAspect = containerRect.width / containerRect.height;
+      const naturalWidth = imageDomRef.current?.naturalWidth || videoDomRef.current?.videoWidth || 0;
+      const naturalHeight = imageDomRef.current?.naturalHeight || videoDomRef.current?.videoHeight || 0;
+      const mediaAspect = naturalHeight === 0 ? 1 : naturalWidth / naturalHeight;
+      const isMediaScaledDown = mediaRefValue.offsetWidth < naturalWidth || mediaRefValue.offsetHeight < naturalHeight;
 
-        let renderedMediaSize: Size;
-        const currentObjectFit = getObjectFit();
+      let renderedMediaSize: Size;
+      const currentObjectFit = getObjectFit();
 
-        if (isMediaScaledDown) {
-             switch (currentObjectFit) {
-                default:
-                case 'contain':
-                    renderedMediaSize =
-                        containerAspect > mediaAspect
-                            ? { width: containerRect.height * mediaAspect, height: containerRect.height }
-                            : { width: containerRect.width, height: containerRect.width / mediaAspect };
-                    break;
-                case 'horizontal-cover':
-                     renderedMediaSize = { width: containerRect.width, height: containerRect.width / mediaAspect };
-                    break;
-                case 'vertical-cover':
-                    renderedMediaSize = { width: containerRect.height * mediaAspect, height: containerRect.height };
-                    break;
-            }
-        } else {
-            renderedMediaSize = { width: mediaRefValue.offsetWidth, height: mediaRefValue.offsetHeight };
+      if (isMediaScaledDown) {
+        switch (currentObjectFit) {
+          default:
+          case 'contain':
+            renderedMediaSize =
+              containerAspect > mediaAspect
+                ? { width: containerRect.height * mediaAspect, height: containerRect.height }
+                : { width: containerRect.width, height: containerRect.width / mediaAspect };
+            break;
+          case 'horizontal-cover':
+            renderedMediaSize = { width: containerRect.width, height: containerRect.width / mediaAspect };
+            break;
+          case 'vertical-cover':
+            renderedMediaSize = { width: containerRect.height * mediaAspect, height: containerRect.height };
+            break;
         }
+      } else {
+        renderedMediaSize = { width: mediaRefValue.offsetWidth, height: mediaRefValue.offsetHeight };
+      }
 
-        if (isNaN(renderedMediaSize.width) || isNaN(renderedMediaSize.height)) return null;
+      if (isNaN(renderedMediaSize.width) || isNaN(renderedMediaSize.height)) return null;
 
-        mediaSizeRef.current = { ...renderedMediaSize, naturalWidth, naturalHeight };
+      mediaSizeRef.current = { ...renderedMediaSize, naturalWidth, naturalHeight };
 
-        if (setMediaSizeProp) setMediaSizeProp(mediaSizeRef.current);
+      if (setMediaSizeProp) setMediaSizeProp(mediaSizeRef.current);
 
-         const newCropSize = cropSizeProp
-            ? cropSizeProp
-            : getCropSize(
-                  mediaSizeRef.current.width,
-                  mediaSizeRef.current.height,
-                  containerRect.width,
-                  containerRect.height,
-                  aspect,
-                  rotation
-              );
+      const newCropSize = cropSizeProp
+        ? cropSizeProp
+        : getCropSize(
+          mediaSizeRef.current.width,
+          mediaSizeRef.current.height,
+          containerRect.width,
+          containerRect.height,
+          aspect,
+          rotation
+        );
 
-        if (isNaN(newCropSize.width) || isNaN(newCropSize.height)) return null;
+      if (isNaN(newCropSize.width) || isNaN(newCropSize.height)) return null;
 
-        // Set state or compare with existing state
-        if (cropSizeState?.height !== newCropSize.height || cropSizeState?.width !== newCropSize.width) {
-            if (onCropSizeChange) onCropSizeChange(newCropSize);
-            if (setCropSizeProp) setCropSizeProp(newCropSize);
-            setCropSizeState(newCropSize);
-        } else {
-            // If size hasn't changed, but maybe other factors did, ensure position is restricted
-            // Recompute will be triggered by the useEffect watching cropSizeState if it *does* change.
-            // If it doesn't change state, we might need to manually trigger recompute here
-            // BUT let's rely on the effect first.
-            // recomputeCropPosition(); // REMOVED from here
-        }
+      if (cropSizeState?.height !== newCropSize.height || cropSizeState?.width !== newCropSize.width) {
+        if (onCropSizeChange) onCropSizeChange(newCropSize);
+        if (setCropSizeProp) setCropSizeProp(newCropSize);
+        setCropSizeState(newCropSize);
+      }
 
-        return newCropSize;
+      return newCropSize;
     }
     return null;
   })
@@ -348,10 +337,8 @@ export function Cropper({
   })
 
   const handleMediaLoad = useEventCallback(() => {
-    isInitialCropSetRef.current = false; // Reset flag on new media load
+    isInitialCropSetRef.current = false;
     const newCropSize = computeSizes();
-    // Removed emitCropData() and setInitialCrop() from here
-    // They will now be called in the useEffect triggered by cropSizeState update
     if (onMediaLoaded) {
       onMediaLoaded(mediaSizeRef.current);
     }
@@ -369,10 +356,10 @@ export function Cropper({
   })
 
   const getPointOnMedia = useEventCallback((point: Point): Point => {
-     if (!cropSizeState) return point;
+    if (!cropSizeState) return point;
     return {
-        x: (point.x + crop.x) / zoom,
-        y: (point.y + crop.y) / zoom,
+      x: (point.x + crop.x) / zoom,
+      y: (point.y + crop.y) / zoom,
     };
   })
 
@@ -403,8 +390,8 @@ export function Cropper({
       const zoomPoint = getPointOnContainer(point);
       const zoomTarget = getPointOnMedia(zoomPoint);
       const requestedPosition = {
-          x: zoomTarget.x * newZoomClamped - zoomPoint.x,
-          y: zoomTarget.y * newZoomClamped - zoomPoint.y,
+        x: zoomTarget.x * newZoomClamped - zoomPoint.x,
+        y: zoomTarget.y * newZoomClamped - zoomPoint.y,
       };
       const newPosition = shouldRestrictPosition
         ? restrictPosition(requestedPosition, mediaSizeRef.current, cropSizeState, newZoomClamped, rotation)
@@ -412,7 +399,7 @@ export function Cropper({
       onCropChange(newPosition);
     }
     if (newZoomClamped !== zoom) {
-        onZoomChange(newZoomClamped);
+      onZoomChange(newZoomClamped);
     }
   })
 
@@ -426,15 +413,15 @@ export function Cropper({
     rafPinchTimeoutRef.current = window.requestAnimationFrame(() => {
       const distance = getDistanceBetweenPoints(pointA, pointB);
       if (lastPinchDistanceRef.current > 0) {
-          const newZoom = zoom * (distance / lastPinchDistanceRef.current);
-          setNewZoom(newZoom, center, { shouldUpdatePosition: false });
+        const newZoom = zoom * (distance / lastPinchDistanceRef.current);
+        setNewZoom(newZoom, center, { shouldUpdatePosition: false });
       }
       lastPinchDistanceRef.current = distance;
       if (onRotationChange) {
-          const rotationVal = getRotationBetweenPoints(pointA, pointB);
-          const newRotation = rotation + (rotationVal - lastPinchRotationRef.current);
-          onRotationChange(newRotation);
-          lastPinchRotationRef.current = rotationVal;
+        const rotationVal = getRotationBetweenPoints(pointA, pointB);
+        const newRotation = rotation + (rotationVal - lastPinchRotationRef.current);
+        onRotationChange(newRotation);
+        lastPinchRotationRef.current = rotationVal;
       }
     });
   })
@@ -453,12 +440,12 @@ export function Cropper({
     if (isTouchingRef.current) return;
     const point = getMousePoint(e);
     if (typeof e.scale === 'number' && isFinite(e.scale)) {
-        const newZoom = gestureZoomStartRef.current - 1 + e.scale;
-        setNewZoom(newZoom, point, { shouldUpdatePosition: true });
+      const newZoom = gestureZoomStartRef.current - 1 + e.scale;
+      setNewZoom(newZoom, point, { shouldUpdatePosition: true });
     }
     if (onRotationChange && typeof e.rotation === 'number' && isFinite(e.rotation)) {
-        const newRotation = gestureRotationStartRef.current + e.rotation;
-        onRotationChange(newRotation);
+      const newRotation = gestureRotationStartRef.current + e.rotation;
+      onRotationChange(newRotation);
     }
   })
 
@@ -600,14 +587,12 @@ export function Cropper({
     const currentDoc = currentContainer?.ownerDocument ?? document;
     const currentWindow = currentDoc?.defaultView ?? window;
 
-    setInternalMediaObjectFit(getObjectFit());
-
     if (currentContainer) {
       if (typeof ResizeObserver !== 'undefined') {
         let isFirstResize = true;
         resizeObserverRef.current = new ResizeObserver(() => {
-            if (isFirstResize) { isFirstResize = false; return; }
-            computeSizes();
+          if (isFirstResize) { isFirstResize = false; return; }
+          computeSizes();
         });
         resizeObserverRef.current.observe(currentContainer);
       } else {
@@ -646,9 +631,9 @@ export function Cropper({
       cleanEvents();
     };
   }, [
-      zoomWithScroll, setCropperRef, setImageRef, setVideoRef, getObjectFit,
-      preventZoomSafari, handleMediaLoad
-    ]);
+    zoomWithScroll, setCropperRef, setImageRef, setVideoRef, getObjectFit,
+    preventZoomSafari, handleMediaLoad, computeSizes, handleWheel, handleGestureStart, handleScroll, cleanEvents
+  ]);
 
   useEffect(() => {
     computeSizes();
@@ -656,17 +641,14 @@ export function Cropper({
 
   useEffect(() => {
     if (cropSizeState) {
-        if (!isInitialCropSetRef.current) {
-          // Handle initial setup only once after media load
-          setInitialCrop(cropSizeState);
-          emitCropData();
-          isInitialCropSetRef.current = true;
-        } else {
-          // If not initial setup, recompute position when cropSize changes
-          recomputeCropPosition();
-        }
+      if (!isInitialCropSetRef.current) {
+        setInitialCrop(cropSizeState);
+        emitCropData();
+        isInitialCropSetRef.current = true;
+      } else {
+        recomputeCropPosition();
+      }
     }
-    // Keep dependency only on cropSizeState
   }, [cropSizeState]);
 
   useEffect(() => {
@@ -679,18 +661,10 @@ export function Cropper({
     }
   }, [video]);
 
-  useEffect(() => {
-    const calculatedFit = getObjectFit();
-    if (calculatedFit !== internalMediaObjectFit) {
-      setInternalMediaObjectFit(calculatedFit);
-      computeSizes();
-    }
-  }, [getObjectFit, internalMediaObjectFit, computeSizes]);
-
   // --- Render ---
   const { containerStyle, cropAreaStyle, mediaStyle } = style
   const { containerClassName, cropAreaClassName, mediaClassName } = classes
-  const finalObjectFit = internalMediaObjectFit ?? objectFit
+  const finalObjectFit = getObjectFit()
 
   return (
     <div
