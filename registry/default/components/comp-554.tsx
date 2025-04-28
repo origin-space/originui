@@ -172,18 +172,6 @@ export default function Component() {
 
   return (
     <div className="flex flex-col items-center gap-2">   
-          {/* <div className="relative h-60 w-full [&_img]:max-w-none">
-            <Cropper
-              image="https://placehold.co/800x400"
-              crop={crop}
-              zoom={zoom}
-              aspect={1}
-              objectFit="cover"
-              onCropChange={setCrop}
-              onCropComplete={onCropComplete}
-              onZoomChange={setZoom}
-            />
-          </div>     */}
       <div className="relative inline-flex">  
         {/* Drop area - uses finalAvatarUrl */}
         <div
@@ -234,12 +222,13 @@ export default function Component() {
       <Dialog open={showCropper} onOpenChange={(open) => !open && handleCropCancel()}>
         <DialogContent className="sm:max-w-[600px] animate-none! [&_img]:max-w-none">
           <DialogTitle>Crop image</DialogTitle>
-          <div className="relative aspect-square">
+          <div className="relative h-120 w-full">
             <Cropper
               image={previewUrlForCropper || ''}
               crop={crop}
               zoom={zoom}
               aspect={1}
+              cropPadding={40}
               onCropChange={setCrop}
               onCropComplete={onCropComplete}
               onZoomChange={setZoom}

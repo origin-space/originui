@@ -23,7 +23,7 @@ export type CropperProps = {
   aspect?: number
   minZoom?: number
   maxZoom?: number
-  cropSize?: Size
+  cropPadding?: number
   zoomSpeed?: number
   zoomWithScroll?: boolean
   onCropChange: (location: Point) => void
@@ -88,7 +88,6 @@ export function Cropper({
   aspect = 4 / 3,
   minZoom = MIN_ZOOM,
   maxZoom = MAX_ZOOM,
-  cropSize: cropSizeProp,
   zoomSpeed = 1,
   zoomWithScroll = true,
   onCropChange, // Required prop
@@ -111,7 +110,9 @@ export function Cropper({
   setImageRef,
   setMediaSize: setMediaSizeProp,
   setCropSize: setCropSizeProp,
+  nonce, // Keep optional
   keyboardStep = KEYBOARD_STEP, // Use default constant
+  cropPadding = 0, // Default padding to 0
 }: CropperProps) {
   const [cropSizeState, setCropSizeState] = useState<Size | null>(null)
   const [hasWheelJustStarted, setHasWheelJustStarted] = useState(false)
@@ -245,15 +246,17 @@ export function Cropper({
 
       if (setMediaSizeProp) setMediaSizeProp(mediaSizeRef.current);
 
-      const newCropSize = cropSizeProp
-        ? cropSizeProp
-        : getCropSize(
-          mediaSizeRef.current.width,
-          mediaSizeRef.current.height,
-          containerRect.width,
-          containerRect.height,
-          aspect,
-        );
+      // Adjust container dimensions based on padding before calculating crop size
+      const paddedContainerWidth = Math.max(0, containerRect.width - 2 * cropPadding);
+      const paddedContainerHeight = Math.max(0, containerRect.height - 2 * cropPadding);
+
+      const newCropSize = getCropSize(
+        mediaSizeRef.current.width,
+        mediaSizeRef.current.height,
+        paddedContainerWidth,
+        paddedContainerHeight,
+        aspect,
+      );
 
       if (isNaN(newCropSize.width) || isNaN(newCropSize.height)) return null;
 
@@ -583,7 +586,7 @@ export function Cropper({
 
   useEffect(() => {
     computeSizes();
-  }, [aspect, cropSizeProp, computeSizes]);
+  }, [aspect, computeSizes]);
 
   useEffect(() => {
     if (cropSizeState) {
