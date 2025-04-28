@@ -25,7 +25,6 @@ export type CropperProps = {
   maxZoom?: number
   cropSize?: Size
   objectFit?: 'contain' | 'cover' | 'horizontal-cover' | 'vertical-cover'
-  showGrid?: boolean
   zoomSpeed?: number
   zoomWithScroll?: boolean
   onCropChange: (location: Point) => void
@@ -93,7 +92,6 @@ export function Cropper({
   maxZoom = MAX_ZOOM,
   cropSize: cropSizeProp,
   objectFit = 'contain',
-  showGrid = true,
   zoomSpeed = 1,
   zoomWithScroll = true,
   onCropChange, // Required prop
@@ -674,8 +672,7 @@ export function Cropper({
           onKeyUp={handleKeyUp}
           data-testid="cropper"
           className={classNames(
-            'reactEasyCrop_CropArea',
-            showGrid && 'reactEasyCrop_CropAreaGrid',
+            'reactEasyCrop_CropArea reactEasyCrop_CropAreaGrid',
             cropAreaClassName
           )}
           {...cropperProps}
