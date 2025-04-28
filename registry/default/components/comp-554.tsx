@@ -76,7 +76,6 @@ export default function Component() {
       openFileDialog,
       removeFile,
       getInputProps,
-      addFiles,
     },
   ] = useFileUpload({
     accept: "image/*",
