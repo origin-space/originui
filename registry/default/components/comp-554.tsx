@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
 import { Dialog, DialogContent, DialogTitle } from "@/registry/default/ui/dialog"
-
+import { Cropper } from "@/registry/default/ui/cropper"
 export default function Component() {
   const [
     { files, isDragging },
@@ -133,39 +133,32 @@ export default function Component() {
 
       {/* Cropper Dialog - Use previewUrl for open prop */}
       <Dialog open={previewUrl !== null} onOpenChange={handleOpenChange}>
-        <DialogContent className="sm:max-w-[600px] animate-none!">
+        <DialogContent className="sm:max-w-[600px]">
           <DialogTitle>Crop image</DialogTitle>
-          <div className="relative h-120 w-full [&_img]:max-w-none">
-            {previewUrl && (
-              <img src={previewUrl} alt="Crop image" />
-            )}
-            {/* <Cropper
-              image={previewUrlForCropper || ''}
-              crop={crop}
-              zoom={zoom}
-              aspect={1}
-              onCropChange={setCrop}
-              onCropComplete={onCropComplete}
-              onZoomChange={setZoom}
-            /> */}
-          </div>
-          <div className="mt-4 space-y-4">
-            <div className="px-4">
-              {/* <Slider
-                value={[zoom]}
-                min={1}
-                max={3}
-                step={0.1}
-                onValueChange={(value) => setZoom(value[0])}
-              /> */}
+          <div className="min-h-0 flex-1 flex flex-col">
+            <div className="min-h-0 h-full max-h-120 flex-1 flex items-center justify-center">
+              {previewUrl && (
+                <Cropper image={previewUrl} />
+              )}
             </div>
-            <div className="flex justify-end gap-2">
-              <Button variant="outline" onClick={() => handleOpenChange(false)}>
-                Cancel
-              </Button>
-              <Button onClick={handleApply} disabled={!previewUrl}>
-                 Apply
-               </Button>
+            <div className="space-y-4">
+              <div className="px-4">
+                {/* <Slider
+                  value={[zoom]}
+                  min={1}
+                  max={3}
+                  step={0.1}
+                  onValueChange={(value) => setZoom(value[0])}
+                /> */}
+              </div>
+              <div className="flex justify-end gap-2">
+                <Button variant="outline" onClick={() => handleOpenChange(false)}>
+                  Cancel
+                </Button>
+                <Button onClick={handleApply} disabled={!previewUrl}>
+                  Apply
+                </Button>
+              </div>
             </div>
           </div>
         </DialogContent>
