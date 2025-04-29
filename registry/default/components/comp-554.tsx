@@ -171,7 +171,19 @@ export default function Component() {
   }, [finalAvatarUrl]); // Dependency array ensures cleanup runs when URL changes
 
   return (
-    <div className="flex flex-col items-center gap-2">   
+    <div className="flex flex-col items-center gap-2">  
+    <div className="relative h-120 w-full [&_img]:max-w-none">
+
+            <Cropper
+              image="https://placehold.co/100x300"
+              crop={crop}
+              zoom={zoom}
+              aspect={1}
+              onCropChange={setCrop}
+              onCropComplete={onCropComplete}
+              onZoomChange={setZoom}
+            />     
+    </div>
       <div className="relative inline-flex">  
         {/* Drop area - uses finalAvatarUrl */}
         <div
@@ -223,16 +235,15 @@ export default function Component() {
         <DialogContent className="sm:max-w-[600px] animate-none! [&_img]:max-w-none">
           <DialogTitle>Crop image</DialogTitle>
           <div className="relative h-120 w-full">
-            <Cropper
+            {/* <Cropper
               image={previewUrlForCropper || ''}
               crop={crop}
               zoom={zoom}
               aspect={1}
-              cropPadding={40}
               onCropChange={setCrop}
               onCropComplete={onCropComplete}
               onZoomChange={setZoom}
-            />
+            /> */}
           </div>
           <div className="mt-4 space-y-4">
             <div className="px-4">
