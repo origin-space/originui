@@ -1,6 +1,11 @@
 "use client"
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+
+// Clamp utility function
+function clamp(value: number, min: number, max: number): number {
+  return Math.min(Math.max(value, min), max);
+}
 
 export function Cropper({
   image,
@@ -24,7 +29,18 @@ export function Cropper({
   const [imageWrapperWidth, setImageWrapperWidth] = useState<number>(0);
   const [imageWrapperHeight, setImageWrapperHeight] = useState<number>(0);
 
+  // State for dragging
+  const [offsetX, setOffsetX] = useState<number>(0);
+  const [offsetY, setOffsetY] = useState<number>(0);
+  const [isDragging, setIsDragging] = useState<boolean>(false);
+  const dragStartPointRef = useRef<{ x: number, y: number }>({ x: 0, y: 0 });
+  const dragStartOffsetRef = useRef<{ x: number, y: number }>({ x: 0, y: 0 });
+
   useEffect(() => {
+    // Reset offset immediately when image prop changes, before loading
+    setOffsetX(0);
+    setOffsetY(0);
+
     if (!image) {
       setImgWidth(null);
       setImgHeight(null);
@@ -118,14 +134,82 @@ export function Cropper({
     }
   }, [containerHeight, cropPadding, aspectRatio, imgWidth, imgHeight]); // Recalculate when these change
 
+  // Function to restrict the drag offset state (relative to center)
+  const restrictOffset = useCallback((dragOffsetX: number, dragOffsetY: number): { x: number, y: number } => {
+    if (imageWrapperWidth <= 0 || imageWrapperHeight <= 0 || cropAreaWidth <= 0 || cropAreaHeight <= 0) {
+      return { x: 0, y: 0 }; // Cannot restrict if dimensions are invalid
+    }
+
+    // Calculate maximum distance the center can move from the center point (0,0)
+    const maxDragX = (imageWrapperWidth - cropAreaWidth) / 2;
+    const maxDragY = (imageWrapperHeight - cropAreaHeight) / 2;
+
+    // Clamp the drag offset state
+    // If image wrapper is smaller than crop area, max drag is 0 (it stays centered)
+    const restrictedX = imageWrapperWidth >= cropAreaWidth ? clamp(dragOffsetX, -maxDragX, maxDragX) : 0;
+    const restrictedY = imageWrapperHeight >= cropAreaHeight ? clamp(dragOffsetY, -maxDragY, maxDragY) : 0;
+
+    return { x: restrictedX, y: restrictedY };
+  }, [imageWrapperWidth, imageWrapperHeight, cropAreaWidth, cropAreaHeight]);
+
+  // Mouse Drag Handlers
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault(); // Prevent text selection, etc.
+    setIsDragging(true);
+    dragStartPointRef.current = { x: e.clientX, y: e.clientY };
+    dragStartOffsetRef.current = { x: offsetX, y: offsetY };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
+  };
+
+  const handleMouseMove = (e: MouseEvent) => {
+    // No need to check isDragging state here as listener is removed on mouseup
+    const currentX = e.clientX;
+    const currentY = e.clientY;
+
+    const deltaX = currentX - dragStartPointRef.current.x;
+    const deltaY = currentY - dragStartPointRef.current.y;
+
+    const targetOffsetX = dragStartOffsetRef.current.x + deltaX;
+    const targetOffsetY = dragStartOffsetRef.current.y + deltaY;
+
+    const restricted = restrictOffset(targetOffsetX, targetOffsetY);
+
+    setOffsetX(restricted.x);
+    setOffsetY(restricted.y);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    window.removeEventListener('mousemove', handleMouseMove);
+    window.removeEventListener('mouseup', handleMouseUp);
+    // TODO: Potentially call an onCropChange/onDragEnd callback here
+  };
+
+  // Cleanup listeners on unmount
+  useEffect(() => {
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, []); // Empty dependency array ensures this runs only on unmount
+
   return (
-    <div ref={containerRef} className="relative h-120 w-full flex flex-col items-center justify-center bg-muted overflow-hidden cursor-move">
+    <div
+      ref={containerRef}
+      className="relative h-120 w-full flex flex-col items-center justify-center bg-muted overflow-hidden cursor-move"
+      onMouseDown={handleMouseDown}
+    >
       {(imageWrapperWidth > 0 && imageWrapperHeight > 0) && (
         <div
           style={{
             width: imageWrapperWidth,
             height: imageWrapperHeight,
-            transform: `translate3d(0px, 0px, 0px)`,
+            // Apply ONLY the drag offset state to transform (relative to CSS centered position)
+            transform: `translate3d(${offsetX}px, ${offsetY}px, 0px)`,
+            position: 'absolute',
+            left: `calc(50% - ${imageWrapperWidth / 2}px)`,
           } as React.CSSProperties}
         >
           <div
