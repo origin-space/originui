@@ -19,6 +19,7 @@
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
     "@internationalized/date": "^3.7.0",
+    "@radix-ui/react-dialog": "^1.1.11",
     "@radix-ui/react-icons": "^1.3.2",
     "@radix-ui/react-toast": "^1.2.6",
     "@remixicon/react": "^4.6.0",
@@ -109,6 +110,5 @@
       "@ianvs/prettier-plugin-sort-imports",
       "prettier-plugin-tailwindcss"
     ]
-  },
-  "packageManager": "pnpm@10.8.1+sha512.c50088ba998c67b8ca8c99df8a5e02fd2ae2e2b29aaf238feaa9e124248d3f48f9fb6db2424949ff901cffbb5e0f0cc1ad6aedb602cd29450751d11c35023677"
+  }
 }
