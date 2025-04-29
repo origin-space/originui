@@ -23,6 +23,7 @@ export type CropperProps = {
   aspect?: number
   minZoom?: number
   maxZoom?: number
+  cropPadding?: number
   zoomSpeed?: number
   zoomWithScroll?: boolean
   onCropChange: (location: Point) => void
@@ -111,6 +112,7 @@ export function Cropper({
   setCropSize: setCropSizeProp,
   nonce, // Keep optional
   keyboardStep = KEYBOARD_STEP, // Use default constant
+  cropPadding = 0, // Default padding to 0
 }: CropperProps) {
   const [cropSizeState, setCropSizeState] = useState<Size | null>(null)
   const [hasWheelJustStarted, setHasWheelJustStarted] = useState(false)
@@ -133,6 +135,8 @@ export function Cropper({
   const wheelTimerRef = useRef<number | null>(null)
   const resizeObserverRef = useRef<ResizeObserver | null>(null)
   const isInitialCropSetRef = useRef(false); // Ref to track initial crop setup
+  const isMediaReadyRef = useRef(false); // Ref to track if image onLoad fired
+  const hasComputedInitialSizeRef = useRef(false); // Ref to track if initial size calc ran
 
   // --- Static-like Helpers (defined outside or as simple functions) ---
   const getMousePoint = (e: MouseEvent | React.MouseEvent | GestureEvent): Point => ({
@@ -213,18 +217,29 @@ export function Cropper({
       if (containerRect.width === 0 || containerRect.height === 0) return null;
 
       saveContainerPosition();
+      const containerAspect = containerRect.width / containerRect.height;
       const naturalWidth = imageDomRef.current?.naturalWidth || 0;
       const naturalHeight = imageDomRef.current?.naturalHeight || 0;
       const mediaAspect = naturalHeight === 0 ? 1 : naturalWidth / naturalHeight;
+      const isMediaScaledDown = mediaRefValue.offsetWidth < naturalWidth || mediaRefValue.offsetHeight < naturalHeight;
 
       let renderedMediaSize: Size;
       const currentObjectFit = getObjectFit();
 
-      // Always calculate rendered size based on cover strategy to match visual rendering
-      if (currentObjectFit === 'horizontal-cover') {
-        renderedMediaSize = { width: containerRect.width, height: containerRect.width / mediaAspect };
-      } else { // 'vertical-cover'
-        renderedMediaSize = { width: containerRect.height * mediaAspect, height: containerRect.height };
+      if (isMediaScaledDown) {
+        switch (currentObjectFit) {
+          case 'horizontal-cover':
+            renderedMediaSize = { width: containerRect.width, height: containerRect.width / mediaAspect };
+            break;
+          case 'vertical-cover':
+            renderedMediaSize = { width: containerRect.height * mediaAspect, height: containerRect.height };
+            break;
+          default:
+            renderedMediaSize = { width: containerRect.width, height: containerRect.width / mediaAspect };
+            break;
+        }
+      } else {
+        renderedMediaSize = { width: mediaRefValue.offsetWidth, height: mediaRefValue.offsetHeight };
       }
 
       if (isNaN(renderedMediaSize.width) || isNaN(renderedMediaSize.height)) return null;
@@ -233,11 +248,15 @@ export function Cropper({
 
       if (setMediaSizeProp) setMediaSizeProp(mediaSizeRef.current);
 
+      // Adjust container dimensions based on padding before calculating crop size
+      const paddedContainerWidth = Math.max(0, containerRect.width - 2 * cropPadding);
+      const paddedContainerHeight = Math.max(0, containerRect.height - 2 * cropPadding);
+
       const newCropSize = getCropSize(
         mediaSizeRef.current.width,
         mediaSizeRef.current.height,
-        containerRect.width,
-        containerRect.height,
+        paddedContainerWidth,
+        paddedContainerHeight,
         aspect,
       );
 
@@ -289,8 +308,20 @@ export function Cropper({
   })
 
   const handleMediaLoad = useEventCallback(() => {
+    isMediaReadyRef.current = true;
     isInitialCropSetRef.current = false;
-    const newCropSize = computeSizes();
+    hasComputedInitialSizeRef.current = false; // Reset on new image load
+
+    // Don't compute sizes here directly.
+    // The ResizeObserver will handle the initial computation when the container is stable.
+
+    // Trigger a manual check in case ResizeObserver doesn't fire immediately
+    // This might still run computeSizes with old dimensions, but the observer *will* correct it.
+    const initialCropSize = computeSizes();
+    if(initialCropSize && !isInitialCropSetRef.current) {
+        setInitialCrop(initialCropSize);
+    }
+
     if (onMediaLoaded) {
       onMediaLoaded(mediaSizeRef.current);
     }
@@ -523,10 +554,28 @@ export function Cropper({
 
     if (currentContainer) {
       if (typeof ResizeObserver !== 'undefined') {
-        let isFirstResize = true;
         resizeObserverRef.current = new ResizeObserver(() => {
-          if (isFirstResize) { isFirstResize = false; return; }
-          computeSizes();
+            // Get current container dimensions
+            const containerRect = currentContainer.getBoundingClientRect();
+
+            // Wait for valid dimensions
+            if (containerRect.width === 0 || containerRect.height === 0) {
+                return;
+            }
+
+            // Perform the computation
+            const computedCropSize = computeSizes();
+
+            // Handle initial computation logic
+            if (isMediaReadyRef.current && !hasComputedInitialSizeRef.current) {
+                hasComputedInitialSizeRef.current = true;
+                // Re-trigger initial crop setting if computeSizes resulted in a valid crop size
+                if (computedCropSize && !isInitialCropSetRef.current) {
+                    setInitialCrop(computedCropSize);
+                }
+            }
+            // Subsequent resizes are handled by computeSizes setting state normally
+            // which triggers useEffects for recomputeCropPosition etc.
         });
         resizeObserverRef.current.observe(currentContainer);
       } else {
