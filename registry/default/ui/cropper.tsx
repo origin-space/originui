@@ -215,29 +215,18 @@ export function Cropper({
       if (containerRect.width === 0 || containerRect.height === 0) return null;
 
       saveContainerPosition();
-      const containerAspect = containerRect.width / containerRect.height;
       const naturalWidth = imageDomRef.current?.naturalWidth || 0;
       const naturalHeight = imageDomRef.current?.naturalHeight || 0;
       const mediaAspect = naturalHeight === 0 ? 1 : naturalWidth / naturalHeight;
-      const isMediaScaledDown = mediaRefValue.offsetWidth < naturalWidth || mediaRefValue.offsetHeight < naturalHeight;
 
       let renderedMediaSize: Size;
       const currentObjectFit = getObjectFit();
 
-      if (isMediaScaledDown) {
-        switch (currentObjectFit) {
-          case 'horizontal-cover':
-            renderedMediaSize = { width: containerRect.width, height: containerRect.width / mediaAspect };
-            break;
-          case 'vertical-cover':
-            renderedMediaSize = { width: containerRect.height * mediaAspect, height: containerRect.height };
-            break;
-          default:
-            renderedMediaSize = { width: containerRect.width, height: containerRect.width / mediaAspect };
-            break;
-        }
-      } else {
-        renderedMediaSize = { width: mediaRefValue.offsetWidth, height: mediaRefValue.offsetHeight };
+      // Always calculate rendered size based on cover strategy to match visual rendering
+      if (currentObjectFit === 'horizontal-cover') {
+        renderedMediaSize = { width: containerRect.width, height: containerRect.width / mediaAspect };
+      } else { // 'vertical-cover'
+        renderedMediaSize = { width: containerRect.height * mediaAspect, height: containerRect.height };
       }
 
       if (isNaN(renderedMediaSize.width) || isNaN(renderedMediaSize.height)) return null;
