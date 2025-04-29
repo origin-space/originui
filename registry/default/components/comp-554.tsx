@@ -1,71 +1,12 @@
 "use client"
 
 import { CircleUserRoundIcon, XIcon } from "lucide-react"
-import { useState, useCallback, useEffect } from 'react'
-import Cropper from '@/registry/default/ui/cropper'
+import { useState, useEffect } from 'react'
 import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
-import { Slider } from "@/registry/default/ui/slider"
 import { Dialog, DialogContent, DialogTitle } from "@/registry/default/ui/dialog"
 
-const createImage = (url: string): Promise<HTMLImageElement> =>
-  new Promise((resolve, reject) => {
-    const image = new Image()
-    image.addEventListener('load', () => resolve(image))
-    image.addEventListener('error', (error) => reject(error))
-    image.src = url
-  })
-
-async function getCroppedImg(
-  imageSrc: string,
-  pixelCrop: { x: number; y: number; width: number; height: number }
-): Promise<Blob> {
-  const image = await createImage(imageSrc)
-  const canvas = document.createElement('canvas')
-  const ctx = canvas.getContext('2d')
-
-  if (!ctx) {
-    throw new Error('No 2d context')
-  }
-
-  // Set canvas size to match the desired crop size
-  canvas.width = pixelCrop.width
-  canvas.height = pixelCrop.height
-
-  // Draw the cropped image onto the canvas
-  ctx.drawImage(
-    image,
-    pixelCrop.x,
-    pixelCrop.y,
-    pixelCrop.width,
-    pixelCrop.height,
-    0,
-    0,
-    pixelCrop.width,
-    pixelCrop.height
-  )
-
-  // Convert canvas to blob
-  return new Promise((resolve) => {
-    canvas.toBlob((blob) => {
-      if (!blob) throw new Error('Canvas is empty')
-      resolve(blob)
-    }, 'image/jpeg')
-  })
-}
-
 export default function Component() {
-  const maxSizeMB = 5
-  const maxSize = maxSizeMB * 1024 * 1024 // 5MB default
-
-  const [showCropper, setShowCropper] = useState(false)
-  const [crop, setCrop] = useState({ x: 0, y: 0 })
-  const [zoom, setZoom] = useState(1)
-  const [croppedAreaPixels, setCroppedAreaPixels] = useState<{ x: number; y: number; width: number; height: number } | null>(null)
-
-  // State for the final displayed avatar URL
-  const [finalAvatarUrl, setFinalAvatarUrl] = useState<string | null>(null);
-
   const [
     { files, isDragging },
     {
@@ -79,113 +20,73 @@ export default function Component() {
     },
   ] = useFileUpload({
     accept: "image/*",
-    maxSize,
-    multiple: false,
-    onFilesAdded: () => {
-      // Reset crop/zoom/pixels when a new file triggers the dialog
-      setCrop({ x: 0, y: 0 });
-      setZoom(1);
-      setCroppedAreaPixels(null);
-
-      // Open cropper when files are added through the input
-      setShowCropper(true)
-    },
   })
 
-  // Use the hook's preview URL only for the cropper
-  const previewUrlForCropper = files[0]?.preview || null
+  const previewUrl = files[0]?.preview || null
+  const fileId = files[0]?.id
 
-  const onCropComplete = useCallback((croppedArea: any, croppedAreaPixels: any) => {
-    setCroppedAreaPixels(croppedAreaPixels)
-  }, [])
+  const [finalImageUrl, setFinalImageUrl] = useState<string | null>(null);
 
-  const handleCropConfirm = async () => {
+  const handleOpenChange = (open: boolean) => {
+    if (!open) {
+      if (fileId) {
+        removeFile(fileId);
+      }
+    }
+  };
+
+  const handleApply = async () => {
+    if (!previewUrl || !fileId) return;
+
     try {
-      if (!previewUrlForCropper || !croppedAreaPixels || !files[0]?.id) {
-          console.error("Missing data for confirmation: preview, pixels, or file ID")
-          return;
+      // 1. Fetch the blob data from the preview URL
+      const response = await fetch(previewUrl);
+      const blob = await response.blob();
+
+      // 2. Create a NEW object URL from the fetched blob
+      const newFinalUrl = URL.createObjectURL(blob);
+
+      // 3. Revoke the OLD finalImageUrl if it exists
+      if (finalImageUrl) {
+        URL.revokeObjectURL(finalImageUrl);
       }
 
-      // 1. Get the cropped blob
-      const croppedBlob = await getCroppedImg(previewUrlForCropper, croppedAreaPixels)
+      // 4. Set the final avatar state to the NEW URL
+      setFinalImageUrl(newFinalUrl);
 
-      // 2. Create a *new* object URL for the final display
-      const finalUrl = URL.createObjectURL(croppedBlob)
+      // 5. Remove the original file (revokes original previewUrl)
+      removeFile(fileId);
 
-      // 3. Revoke previous final URL if it exists
-      if (finalAvatarUrl) {
-        URL.revokeObjectURL(finalAvatarUrl);
-      }
+    } catch (error) {
+      console.error("Error creating final avatar URL:", error);
+      // Optionally handle the error (e.g., show a message)
 
-      // 4. Set the final URL state for the main avatar display
-      setFinalAvatarUrl(finalUrl);
-
-      // 5. Remove the original uncropped file from the hook's state
-      //    (The hook should handle revoking its previewUrl)
-      removeFile(files[0].id);
-
-      // 6. Close the dialog
-      setShowCropper(false)
-
-      // NOTE: We are NOT adding the cropped file back to the hook's state here
-      // This component only cares about displaying the finalAvatarUrl
-
-    } catch (e) {
-      console.error("Error during crop confirmation:", e)
-      // Optionally clear states or show error message
-       setShowCropper(false) // Close dialog even on error
-    }
-  }
-
-  // Handles closing the dialog via backdrop click or cancel button
-  const handleCropCancel = () => {
-      setShowCropper(false);
-      // Remove the temporary file from the hook if it exists
-      if (files.length > 0 && files[0]?.id) {
-        removeFile(files[0].id);
-      }
-  };
-
-  // Handles removing the final displayed avatar
-  const handleRemoveImage = () => {
-    if (finalAvatarUrl) {
-      URL.revokeObjectURL(finalAvatarUrl); // Clean up object URL
-    }
-    setFinalAvatarUrl(null);
-    // Ensure hook state is clear too
-    if (files.length > 0 && files[0]?.id) {
-      removeFile(files[0].id);
+      // Still remove the original file even if fetch/create fails
+      removeFile(fileId);
     }
   };
 
-  // Effect to cleanup the finalAvatarUrl object URL on unmount or change
+  const handleRemoveFinalImage = () => {
+    if (finalImageUrl) {
+      URL.revokeObjectURL(finalImageUrl);
+    }
+    setFinalImageUrl(null);
+  };
+
   useEffect(() => {
-      const currentUrl = finalAvatarUrl;
-      // Return cleanup function
-      return () => {
-        if (currentUrl) {
-          URL.revokeObjectURL(currentUrl);
-          console.log("Revoked finalAvatarUrl:", currentUrl); // For debugging
-        }
-      };
-  }, [finalAvatarUrl]); // Dependency array ensures cleanup runs when URL changes
+    const currentFinalUrl = finalImageUrl;
+    // Cleanup function
+    return () => {
+      if (currentFinalUrl && currentFinalUrl.startsWith('blob:')) {
+        URL.revokeObjectURL(currentFinalUrl);
+      }
+    };
+  }, [finalImageUrl]);
 
   return (
     <div className="flex flex-col items-center gap-2">  
-    {/* <div className="relative h-120 w-full [&_img]:max-w-none">
-
-            <Cropper
-              image="https://placehold.co/100x300"
-              crop={crop}
-              zoom={zoom}
-              aspect={1}
-              onCropChange={setCrop}
-              onCropComplete={onCropComplete}
-              onZoomChange={setZoom}
-            />     
-    </div> */}
       <div className="relative inline-flex">  
-        {/* Drop area - uses finalAvatarUrl */}
+        {/* Drop area - uses finalImageUrl */}
         <div
           className="border-input hover:bg-accent/50 data-[dragging=true]:bg-accent/50 has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 relative flex size-16 items-center justify-center overflow-hidden rounded-full border border-dashed transition-colors has-disabled:pointer-events-none has-disabled:opacity-50 has-[img]:border-none has-[input:focus]:ring-[3px]"
           role="button"
@@ -195,12 +96,12 @@ export default function Component() {
           onDragOver={handleDragOver}
           onDrop={handleDrop}
           data-dragging={isDragging || undefined}
-          aria-label={finalAvatarUrl ? "Change image" : "Upload image"}
+          aria-label={finalImageUrl ? "Change image" : "Upload image"}
         >
-          {finalAvatarUrl ? (
+          {finalImageUrl ? (
             <img
               className="size-full object-cover"
-              src={finalAvatarUrl}
+              src={finalImageUrl}
               alt="User avatar"
               width={64}
               height={64}
@@ -212,10 +113,10 @@ export default function Component() {
             </div>
           )}
         </div>
-        {/* Remove button - depends on finalAvatarUrl */}
-        {finalAvatarUrl && (
+        {/* Remove button - depends on finalImageUrl */}
+        {finalImageUrl && (
           <Button
-            onClick={handleRemoveImage}
+            onClick={handleRemoveFinalImage}
             size="icon"
             className="border-background focus-visible:border-background absolute -top-1 -right-1 size-6 rounded-full border-2 shadow-none"
             aria-label="Remove image"
@@ -230,12 +131,15 @@ export default function Component() {
         />
       </div>
 
-      {/* Cropper Dialog - uses previewUrlForCropper */}
-      <Dialog open={showCropper} onOpenChange={(open) => !open && handleCropCancel()}>
+      {/* Cropper Dialog - Use previewUrl for open prop */}
+      <Dialog open={previewUrl !== null} onOpenChange={handleOpenChange}>
         <DialogContent className="sm:max-w-[600px] animate-none!">
           <DialogTitle>Crop image</DialogTitle>
           <div className="relative h-120 w-full [&_img]:max-w-none">
-            <Cropper
+            {previewUrl && (
+              <img src={previewUrl} alt="Crop image" />
+            )}
+            {/* <Cropper
               image={previewUrlForCropper || ''}
               crop={crop}
               zoom={zoom}
@@ -243,23 +147,23 @@ export default function Component() {
               onCropChange={setCrop}
               onCropComplete={onCropComplete}
               onZoomChange={setZoom}
-            />
+            /> */}
           </div>
           <div className="mt-4 space-y-4">
             <div className="px-4">
-              <Slider
+              {/* <Slider
                 value={[zoom]}
                 min={1}
                 max={3}
                 step={0.1}
                 onValueChange={(value) => setZoom(value[0])}
-              />
+              /> */}
             </div>
             <div className="flex justify-end gap-2">
-              <Button variant="outline" onClick={handleCropCancel}>
+              <Button variant="outline" onClick={() => handleOpenChange(false)}>
                 Cancel
               </Button>
-              <Button onClick={handleCropConfirm} disabled={!previewUrlForCropper || !croppedAreaPixels}>
+              <Button onClick={handleApply} disabled={!previewUrl}>
                  Apply
                </Button>
             </div>
