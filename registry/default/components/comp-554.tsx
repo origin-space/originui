@@ -23,7 +23,7 @@ export default function Component() {
   })
 
   const previewUrl = files[0]?.preview || null
-  const fileId = files[0]?.id
+  const fileId = files[0]?.id  
 
   const [finalImageUrl, setFinalImageUrl] = useState<string | null>(null);
 
@@ -131,12 +131,17 @@ export default function Component() {
         />
       </div>
 
+      {previewUrl && (
+        <Cropper image={previewUrl} />
+      )}
+
       {/* Cropper Dialog - Use previewUrl for open prop */}
-      <Dialog open={previewUrl !== null} onOpenChange={handleOpenChange}>
+      {/* open={previewUrl !== null} onOpenChange={handleOpenChange} */}
+      <Dialog>
         <DialogContent className="sm:max-w-[600px]">
           <DialogTitle>Crop image</DialogTitle>
           <div className="min-h-0 flex-1 flex flex-col">
-            <div className="min-h-0 h-full max-h-120 flex-1 flex items-center justify-center">
+            <div className="min-h-0 h-120 flex-1 flex items-center justify-center">
               {previewUrl && (
                 <Cropper image={previewUrl} />
               )}
