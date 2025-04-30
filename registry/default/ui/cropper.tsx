@@ -1,6 +1,5 @@
 "use client"
 
-// Removed WheelEvent import from 'react'
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 // Clamp utility function
@@ -50,6 +49,9 @@ export function Cropper({
   const dragStartOffsetRef = useRef<{ x: number, y: number }>({ x: 0, y: 0 });
   const latestRestrictedOffsetRef = useRef<{ x: number, y: number }>({ x: offsetX, y: offsetY }); // Ref for latest offset
   const latestZoomRef = useRef<number>(zoom); // Ref for latest zoom
+  const initialPinchDistanceRef = useRef<number>(0); // Ref for initial pinch distance
+  const initialPinchZoomRef = useRef<number>(1); // Ref for zoom level at pinch start
+  const isPinchingRef = useRef<boolean>(false); // Ref to track if currently pinching
 
   // Update latest zoom ref whenever zoom state changes
   useEffect(() => {
@@ -391,8 +393,170 @@ export function Cropper({
     imageWrapperHeight,
     onCropComplete,
     // Refs are stable and don't need to be dependencies
-    // State values (zoom, offsetX, offsetY) are accessed via refs inside or passed as args
+    minZoom, // Added minZoom
+    maxZoom, // Added maxZoom
+    zoomSensitivity, // Added zoomSensitivity
+    restrictOffset,
+    calculateCropData,
+    imageWrapperWidth,
+    imageWrapperHeight,
+    onCropComplete,
+    // Refs are stable and don't need to be dependencies
+    // State values (zoom, offsetX, offsetY) are accessed via refs inside, passed as args, or read from latest refs
   ]);
+
+  // --- Touch Event Handlers ---
+
+  // Helper function to calculate distance between two touches
+  const getPinchDistance = (touches: TouchList): number => {
+    const touch1 = touches[0];
+    const touch2 = touches[1];
+    return Math.sqrt(
+      Math.pow(touch2.clientX - touch1.clientX, 2) +
+      Math.pow(touch2.clientY - touch1.clientY, 2)
+    );
+  };
+
+  // Helper function to calculate the center point between two touches
+  const getPinchCenter = (touches: TouchList): { x: number, y: number } => {
+    const touch1 = touches[0];
+    const touch2 = touches[1];
+    return {
+      x: (touch1.clientX + touch2.clientX) / 2,
+      y: (touch1.clientY + touch2.clientY) / 2,
+    };
+  };
+
+
+  const handleTouchStart = useCallback((e: TouchEvent) => {
+    if (!containerRef.current || imageWrapperWidth <= 0 || imageWrapperHeight <= 0) return;
+
+    const touches = e.touches;
+
+    if (touches.length === 1) {
+      // Start panning (drag)
+      setIsDragging(true);
+      isPinchingRef.current = false; // Ensure not pinching
+      const touch = touches[0];
+      dragStartPointRef.current = { x: touch.clientX, y: touch.clientY };
+      dragStartOffsetRef.current = { x: latestRestrictedOffsetRef.current.x, y: latestRestrictedOffsetRef.current.y }; // Use latest offset
+    } else if (touches.length === 2) {
+      // Start pinching (zoom)
+      setIsDragging(false); // Stop any single-finger drag
+      isPinchingRef.current = true;
+      initialPinchDistanceRef.current = getPinchDistance(touches);
+      initialPinchZoomRef.current = latestZoomRef.current; // Store zoom at pinch start
+      // Store offset at pinch start as well, might be needed if combining pan/pinch later
+      dragStartOffsetRef.current = { x: latestRestrictedOffsetRef.current.x, y: latestRestrictedOffsetRef.current.y };
+    }
+  }, [imageWrapperWidth, imageWrapperHeight]); // Dependencies
+
+
+  const handleTouchMove = useCallback((e: TouchEvent) => { // Use global TouchEvent
+    // No need for e.preventDefault() here if touch-action: none is set
+    // e.preventDefault();
+
+    if (!containerRef.current || imageWrapperWidth <= 0 || imageWrapperHeight <= 0) return;
+
+    const touches = e.touches;
+
+    if (touches.length === 1 && isDragging && !isPinchingRef.current) {
+      // Panning (single finger drag)
+      const touch = touches[0];
+      const currentX = touch.clientX;
+      const currentY = touch.clientY;
+
+      const deltaX = currentX - dragStartPointRef.current.x;
+      const deltaY = currentY - dragStartPointRef.current.y;
+
+      const targetOffsetX = dragStartOffsetRef.current.x + deltaX;
+      const targetOffsetY = dragStartOffsetRef.current.y + deltaY;
+
+      const restricted = restrictOffset(targetOffsetX, targetOffsetY, latestZoomRef.current);
+      latestRestrictedOffsetRef.current = restricted; // Update ref immediately
+
+      // Update state for visual feedback
+      setOffsetX(restricted.x);
+      setOffsetY(restricted.y);
+
+    } else if (touches.length === 2 && isPinchingRef.current) {
+      // Pinching (two fingers zoom)
+      const currentPinchDistance = getPinchDistance(touches);
+      const scale = currentPinchDistance / initialPinchDistanceRef.current;
+      const newZoom = clamp(initialPinchZoomRef.current * scale, minZoom, maxZoom);
+
+      if (newZoom === latestZoomRef.current) return; // No change in zoom
+
+      // Calculate pinch center relative to the container center
+      const pinchCenter = getPinchCenter(touches);
+      const rect = containerRef.current.getBoundingClientRect();
+      const pinchCenterX = pinchCenter.x - rect.left - rect.width / 2;
+      const pinchCenterY = pinchCenter.y - rect.top - rect.height / 2;
+
+      // Calculate the point on the image wrapper (relative to its center) under the pinch center
+      const currentZoom = latestZoomRef.current;
+      const currentOffsetX = latestRestrictedOffsetRef.current.x;
+      const currentOffsetY = latestRestrictedOffsetRef.current.y;
+      const imagePointX = (pinchCenterX - currentOffsetX) / currentZoom;
+      const imagePointY = (pinchCenterY - currentOffsetY) / currentZoom;
+
+      // Calculate the new offset required to keep the image point under the pinch center after zoom
+      const newOffsetX = pinchCenterX - (imagePointX * newZoom);
+      const newOffsetY = pinchCenterY - (imagePointY * newZoom);
+
+      const restrictedNewOffset = restrictOffset(newOffsetX, newOffsetY, newZoom);
+
+      // Update state and refs
+      setZoom(newZoom); // Update zoom state
+      setOffsetX(restrictedNewOffset.x); // Update offset state
+      latestZoomRef.current = newZoom; // Update zoom ref immediately
+      latestRestrictedOffsetRef.current = restrictedNewOffset; // Update offset ref immediately
+    }
+  }, [isDragging, restrictOffset, minZoom, maxZoom, imageWrapperWidth, imageWrapperHeight]); // Dependencies
+
+
+  const handleTouchEnd = useCallback((e: TouchEvent) => {
+    const touches = e.touches;
+
+    if (isPinchingRef.current && touches.length < 2) {
+      // Pinch ended, potentially transitioning to drag if one finger remains
+      isPinchingRef.current = false;
+      if (touches.length === 1) {
+        // Transition to drag: Reset drag start based on the remaining finger
+        setIsDragging(true);
+        const touch = touches[0];
+        dragStartPointRef.current = { x: touch.clientX, y: touch.clientY };
+        // Use the *very latest* offset and zoom from the pinch operation
+        dragStartOffsetRef.current = { x: latestRestrictedOffsetRef.current.x, y: latestRestrictedOffsetRef.current.y };
+      } else {
+        // Pinch ended, zero fingers remain
+        setIsDragging(false);
+        if (onCropComplete) {
+          const finalData = calculateCropData(
+            latestRestrictedOffsetRef.current.x,
+            latestRestrictedOffsetRef.current.y,
+            latestZoomRef.current
+          );
+          onCropComplete(finalData);
+        }
+      }
+    } else if (isDragging && touches.length === 0) {
+      // Drag ended
+      setIsDragging(false);
+      if (onCropComplete) {
+        const finalData = calculateCropData(
+          latestRestrictedOffsetRef.current.x,
+          latestRestrictedOffsetRef.current.y,
+          latestZoomRef.current
+        );
+        onCropComplete(finalData);
+      }
+    }
+    // If touches.length >= 2, pinch continues or starts, handled by touchstart/touchmove
+    // If touches.length === 1 and was dragging, drag continues, handled by touchmove
+
+  }, [isDragging, onCropComplete, calculateCropData]); // Dependencies
+
 
   // Cleanup drag listeners on unmount
   useEffect(() => {
@@ -420,12 +584,36 @@ export function Cropper({
     };
   }, [handleWheel]); // Re-attach if handleWheel changes (due to useCallback dependencies)
 
+  // Effect to attach non-passive touch listeners
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node) return;
+
+    // Attach touch listeners manually with passive: false
+    // Cast options to 'any' to bypass potential TS errors
+    node.addEventListener('touchstart', handleTouchStart, { passive: false } as any);
+    node.addEventListener('touchmove', handleTouchMove, { passive: false } as any);
+    node.addEventListener('touchend', handleTouchEnd, { passive: false } as any);
+    node.addEventListener('touchcancel', handleTouchEnd, { passive: false } as any); // Handle cancellation too
+
+    // Cleanup function to remove the listeners
+    return () => {
+      node.removeEventListener('touchstart', handleTouchStart, { passive: false } as any);
+      node.removeEventListener('touchmove', handleTouchMove, { passive: false } as any);
+      node.removeEventListener('touchend', handleTouchEnd, { passive: false } as any);
+      node.removeEventListener('touchcancel', handleTouchEnd, { passive: false } as any);
+    };
+    // Add handlers to dependency array
+  }, [handleTouchStart, handleTouchMove, handleTouchEnd]);
+
 
   return (
     <div
       ref={containerRef}
       className={`relative h-120 w-full flex flex-col items-center justify-center bg-muted overflow-hidden cursor-move ${className ?? ''}`}
       onMouseDown={handleMouseDown}
+      // Touch handlers are now managed by useEffect
+      style={{ touchAction: 'none' }} // Prevent default browser touch actions like scroll/zoom
       // onWheel is removed here - managed by useEffect now
     >
       {(imageWrapperWidth > 0 && imageWrapperHeight > 0) && (
