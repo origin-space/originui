@@ -59,8 +59,8 @@ async function getCroppedImg(
       }, 'image/jpeg'); // Specify format and quality if needed
     });
   } catch (error) {
-      console.error("Error in getCroppedImg:", error);
-      return null;
+    console.error("Error in getCroppedImg:", error);
+    return null;
   }
 }
 
@@ -81,7 +81,7 @@ export default function Component() {
   })
 
   const previewUrl = files[0]?.preview || null
-  const fileId = files[0]?.id  
+  const fileId = files[0]?.id
 
   const [finalImageUrl, setFinalImageUrl] = useState<string | null>(null);
 
@@ -106,13 +106,13 @@ export default function Component() {
   const handleApply = async () => {
     // Check if we have the necessary data
     if (!previewUrl || !fileId || !croppedAreaPixels) {
-        console.error("Missing data for apply:", { previewUrl, fileId, croppedAreaPixels });
-        // Remove file if apply is clicked without crop data?
-        if (fileId) {
-            removeFile(fileId);
-            setCroppedAreaPixels(null);
-        }
-        return;
+      console.error("Missing data for apply:", { previewUrl, fileId, croppedAreaPixels });
+      // Remove file if apply is clicked without crop data?
+      if (fileId) {
+        removeFile(fileId);
+        setCroppedAreaPixels(null);
+      }
+      return;
     }
 
     try {
@@ -120,7 +120,7 @@ export default function Component() {
       const croppedBlob = await getCroppedImg(previewUrl, croppedAreaPixels);
 
       if (!croppedBlob) {
-          throw new Error("Failed to generate cropped image blob.");
+        throw new Error("Failed to generate cropped image blob.");
       }
 
       // 2. Create a NEW object URL from the cropped blob
@@ -142,8 +142,8 @@ export default function Component() {
       console.error("Error during apply:", error);
       // Still remove the original file even if cropping fails
       if (fileId) {
-          removeFile(fileId);
-          setCroppedAreaPixels(null);
+        removeFile(fileId);
+        setCroppedAreaPixels(null);
       }
     }
   };
@@ -166,8 +166,8 @@ export default function Component() {
   }, [finalImageUrl]);
 
   return (
-    <div className="flex flex-col items-center gap-2">  
-      <div className="relative inline-flex">  
+    <div className="flex flex-col items-center gap-2">
+      <div className="relative inline-flex">
         {/* Drop area - uses finalImageUrl */}
         <div
           className="border-input hover:bg-accent/50 data-[dragging=true]:bg-accent/50 has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 relative flex size-16 items-center justify-center overflow-hidden rounded-full border border-dashed transition-colors has-disabled:pointer-events-none has-disabled:opacity-50 has-[img]:border-none has-[input:focus]:ring-[3px]"

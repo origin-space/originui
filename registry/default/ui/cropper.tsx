@@ -727,7 +727,7 @@ export function Cropper({
     >
       <div id={id} className="sr-only">
         Use mouse wheel or pinch gesture to zoom. Drag with mouse or touch, or use arrow keys to pan the image within the crop area.
-      </div>      
+      </div>
       {(imageWrapperWidth > 0 && imageWrapperHeight > 0) && (
         <div
           data-slot="crop-image"
