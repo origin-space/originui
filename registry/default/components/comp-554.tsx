@@ -217,17 +217,16 @@ export default function Component() {
 
       {/* Cropper Dialog - Use isDialogOpen for open prop */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="sm:max-w-[600px]">
+        <DialogContent className="sm:max-w-140">
           <DialogTitle>Crop image</DialogTitle>
-          <div className="min-h-0 flex-1 flex flex-col">
-            <div className="min-h-0 h-120 flex-1 flex items-center justify-center">
-              {previewUrl && (
-                <Cropper
-                  image={previewUrl}
-                  onCropChange={handleCropChange}
-                />
-              )}
-            </div>
+          <div className="flex flex-col">
+            {previewUrl && (
+              <Cropper
+                className="h-96 sm:h-120"
+                image={previewUrl}
+                onCropChange={handleCropChange}
+              />
+            )}
             <div className="space-y-4">
               <div className="px-4">
                 {/* <Slider

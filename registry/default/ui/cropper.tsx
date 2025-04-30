@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef, useCallback, useId } from 'react';
+import { cn } from '@/registry/default/lib/utils';
 
 // Clamp utility function
 function clamp(value: number, min: number, max: number): number {
@@ -711,7 +712,10 @@ export function Cropper({
     <div
       ref={containerRef}
       data-slot="crop-container"
-      className={`relative h-120 w-full flex flex-col items-center justify-center bg-muted overflow-hidden cursor-move focus:outline-none ${className ?? ''}`}
+      className={cn(
+        'relative h-full w-full flex flex-col items-center justify-center overflow-hidden cursor-move focus:outline-none',
+        className
+      )}
       onMouseDown={handleMouseDown}
       tabIndex={0}
       onKeyDown={handleKeyDown}
@@ -728,42 +732,44 @@ export function Cropper({
       <div id={id} className="sr-only">
         Use mouse wheel or pinch gesture to zoom. Drag with mouse or touch, or use arrow keys to pan the image within the crop area.
       </div>
-      {(imageWrapperWidth > 0 && imageWrapperHeight > 0) && (
-        <div
-          data-slot="crop-image"
-          style={{
-            width: imageWrapperWidth,
-            height: imageWrapperHeight,
-            transform: `translate3d(${offsetX}px, ${offsetY}px, 0px) scale(${zoom})`,
-            position: 'absolute',
-            left: `calc(50% - ${imageWrapperWidth / 2}px)`,
-            top: `calc(50% - ${imageWrapperHeight / 2}px)`,
-            willChange: 'transform',
-          } as React.CSSProperties}
-        >
-          <img
-            src={image}
-            alt="Image being cropped"
-            draggable="false"
+      {image && (
+        <>
+          <div
+            data-slot="crop-image"
             style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              pointerEvents: 'none',
-            }}
-            aria-hidden="true"
-          />
-        </div>
-      )}
-      {(cropAreaWidth > 0 && cropAreaHeight > 0) && (
-        <div
-          data-slot="crop-area"
-          className="border-2 border-blue-500 absolute rounded-xs shadow-[0_0_0_9999px_rgba(0,0,0,0.2)] pointer-events-none in-[[data-slot=crop-container]:focus-visible]:ring-[3px] in-[[data-slot=crop-container]:focus-visible]:ring-white/50"
-          style={{
-            width: cropAreaWidth,
-            height: cropAreaHeight,
-          }}
-        ></div>
+              width: imageWrapperWidth,
+              height: imageWrapperHeight,
+              transform: `translate3d(${offsetX}px, ${offsetY}px, 0px) scale(${zoom})`,
+              position: 'absolute',
+              left: `calc(50% - ${imageWrapperWidth / 2}px)`,
+              top: `calc(50% - ${imageWrapperHeight / 2}px)`,
+              willChange: 'transform',
+            } as React.CSSProperties}
+          >
+            <img
+              src={image}
+              alt="Image being cropped"
+              draggable="false"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                pointerEvents: 'none',
+              }}
+              aria-hidden="true"
+            />
+          </div>
+          {(cropAreaWidth > 0 && cropAreaHeight > 0) && (
+            <div
+              data-slot="crop-area"
+              className="border-2 border-blue-500 absolute rounded-xs shadow-[0_0_0_9999px_rgba(0,0,0,0.3)] pointer-events-none in-[[data-slot=crop-container]:focus-visible]:ring-[3px] in-[[data-slot=crop-container]:focus-visible]:ring-white/50"
+              style={{
+                width: cropAreaWidth,
+                height: cropAreaHeight,
+              }}
+            ></div>
+          )}
+        </>
       )}
     </div>
   )
