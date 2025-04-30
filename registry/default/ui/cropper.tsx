@@ -17,16 +17,18 @@ export function Cropper({
   minZoom = 1,
   maxZoom = 3,
   zoomSensitivity = 0.005,
+  keyboardStep = 10,
   className,
   onCropComplete
 }: {
   image: string
   cropPadding?: number
   aspectRatio?: number
-  className?: string
   minZoom?: number
   maxZoom?: number
   zoomSensitivity?: number
+  keyboardStep?: number
+  className?: string
   onCropComplete?: (pixels: Area | null) => void
 }) {
   const [imgWidth, setImgWidth] = useState<number | null>(null);
@@ -158,10 +160,10 @@ export function Cropper({
   useEffect(() => {
     // Now depends on cropAreaWidth and cropAreaHeight instead of containerHeight
     if (cropAreaWidth <= 0 || cropAreaHeight <= 0) {
-       // Reset if crop area dimensions are invalid
-       setImageWrapperWidth(0);
-       setImageWrapperHeight(0);
-       return;
+      // Reset if crop area dimensions are invalid
+      setImageWrapperWidth(0);
+      setImageWrapperHeight(0);
+      return;
     }
 
     // Calculate Image Wrapper Dimensions (if image loaded)
@@ -278,7 +280,7 @@ export function Cropper({
 
       if (!isInitialSetupDoneRef.current) {
         // --- Initial Setup Path --- 
-        const initialX = 0; 
+        const initialX = 0;
         const initialY = 0;
         const initialZoom = minZoom; // Start at minZoom
 
@@ -301,20 +303,20 @@ export function Cropper({
       } else {
         // --- Resize Path (after initial setup) --- 
         // Dimensions changed, recalculate crop data with current offset/zoom
-        
+
         // First, ensure the current offset is still valid for the new dimensions/zoom
         const restrictedCurrent = restrictOffset(
-            latestRestrictedOffsetRef.current.x, 
-            latestRestrictedOffsetRef.current.y, 
-            latestZoomRef.current
+          latestRestrictedOffsetRef.current.x,
+          latestRestrictedOffsetRef.current.y,
+          latestZoomRef.current
         );
-        
+
         // Update state/refs if restriction changed something (optional, but safer)
         if (restrictedCurrent.x !== latestRestrictedOffsetRef.current.x || restrictedCurrent.y !== latestRestrictedOffsetRef.current.y) {
-            setOffsetX(restrictedCurrent.x);
-            setOffsetY(restrictedCurrent.y);
-            latestRestrictedOffsetRef.current = restrictedCurrent;
-            dragStartOffsetRef.current = restrictedCurrent; // Keep drag start consistent
+          setOffsetX(restrictedCurrent.x);
+          setOffsetY(restrictedCurrent.y);
+          latestRestrictedOffsetRef.current = restrictedCurrent;
+          dragStartOffsetRef.current = restrictedCurrent; // Keep drag start consistent
         }
 
         // Now, recalculate and emit crop data based on potentially re-restricted offset and current zoom
@@ -330,7 +332,7 @@ export function Cropper({
 
     } else {
       // Reset if dimensions become invalid - also reset initial setup flag
-      isInitialSetupDoneRef.current = false; 
+      isInitialSetupDoneRef.current = false;
       setOffsetX(0);
       setOffsetY(0);
       setZoom(minZoom);
@@ -338,19 +340,19 @@ export function Cropper({
       latestRestrictedOffsetRef.current = { x: 0, y: 0 };
       latestZoomRef.current = minZoom;
       if (onCropComplete) {
-         onCropComplete(null);
+        onCropComplete(null);
       }
     }
   }, [
-       imageWrapperWidth,
-       imageWrapperHeight,
-       cropAreaWidth,
-       cropAreaHeight,
-       restrictOffset,
-       onCropComplete,
-       calculateCropData,
-       minZoom // Added minZoom as it affects initial state
-    ]);
+    imageWrapperWidth,
+    imageWrapperHeight,
+    cropAreaWidth,
+    cropAreaHeight,
+    restrictOffset,
+    onCropComplete,
+    calculateCropData,
+    minZoom // Added minZoom as it affects initial state
+  ]);
 
   // Mouse Drag Handlers
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -672,15 +674,79 @@ export function Cropper({
     // Add handlers to dependency array
   }, [handleTouchStart, handleTouchMove, handleTouchEnd]);
 
+  // Keyboard Handlers
+  const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
+    // Require focus on the container and valid dimensions
+    if (document.activeElement !== containerRef.current || imageWrapperWidth <= 0) {
+      return;
+    }
+
+    let targetOffsetX = latestRestrictedOffsetRef.current.x;
+    let targetOffsetY = latestRestrictedOffsetRef.current.y;
+    let moved = false;
+
+    switch (e.key) {
+      case 'ArrowUp':
+        targetOffsetY += keyboardStep;
+        moved = true;
+        break;
+      case 'ArrowDown':
+        targetOffsetY -= keyboardStep;
+        moved = true;
+        break;
+      case 'ArrowLeft':
+        targetOffsetX += keyboardStep;
+        moved = true;
+        break;
+      case 'ArrowRight':
+        targetOffsetX -= keyboardStep;
+        moved = true;
+        break;
+      default:
+        return;
+    }
+
+    if (moved) {
+      e.preventDefault(); // Prevent default arrow key scroll
+
+      const currentZoom = latestZoomRef.current;
+      const restricted = restrictOffset(targetOffsetX, targetOffsetY, currentZoom);
+
+      // Only update if position actually changed after restriction
+      if (restricted.x !== latestRestrictedOffsetRef.current.x || restricted.y !== latestRestrictedOffsetRef.current.y) {
+        latestRestrictedOffsetRef.current = restricted;
+        setOffsetX(restricted.x);
+        setOffsetY(restricted.y);
+      }
+    }
+
+  }, [keyboardStep, imageWrapperWidth, restrictOffset, onCropComplete, calculateCropData]); // Dependencies: Add zoom later if step depends on zoom
+
+  const handleKeyUp = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
+    // Only trigger on arrow keys
+    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+      if (onCropComplete) {
+        // Use latest refs for final data calculation
+        const finalData = calculateCropData(
+          latestRestrictedOffsetRef.current.x,
+          latestRestrictedOffsetRef.current.y,
+          latestZoomRef.current
+        );
+        onCropComplete(finalData);
+      }
+    }
+  }, [onCropComplete, calculateCropData]);
 
   return (
     <div
       ref={containerRef}
+      data-slot="crop-container"
       className={`relative h-120 w-full flex flex-col items-center justify-center bg-muted overflow-hidden cursor-move ${className ?? ''}`}
       onMouseDown={handleMouseDown}
-      // Touch handlers are now managed by useEffect
-      style={{ touchAction: 'none' }} // Prevent default browser touch actions like scroll/zoom
-      // onWheel is removed here - managed by useEffect now
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
+      onKeyUp={handleKeyUp}
+      style={{ touchAction: 'none' }}
     >
       {(imageWrapperWidth > 0 && imageWrapperHeight > 0) && (
         <div
@@ -709,7 +775,8 @@ export function Cropper({
       )}
       {(cropAreaWidth > 0 && cropAreaHeight > 0) && (
         <div
-          className="border-2 border-blue-500 absolute rounded-xs shadow-[0_0_0_9999px_rgba(0,0,0,0.2)] pointer-events-none"
+          data-slot="crop-area"
+          className="border-2 border-blue-500 absolute rounded-xs shadow-[0_0_0_9999px_rgba(0,0,0,0.2)] pointer-events-none in-[[data-slot=crop-container]:focus]:ring-[3px] in-[[data-slot=crop-container]:focus]:ring-white/50"
           style={{
             width: cropAreaWidth,
             height: cropAreaHeight,
