@@ -1,7 +1,7 @@
 "use client"
 
 import { CircleUserRoundIcon, XIcon } from "lucide-react"
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
 import { Dialog, DialogContent, DialogTitle } from "@/registry/default/ui/dialog"
@@ -84,18 +84,13 @@ export default function Component() {
   const fileId = files[0]?.id
 
   const [finalImageUrl, setFinalImageUrl] = useState<string | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  // Ref to track the previous file ID to detect new uploads
+  const previousFileIdRef = useRef<string | undefined | null>(null);
 
   // State to store the desired crop area in pixels
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null);
-
-  const handleOpenChange = (open: boolean) => {
-    if (!open) {
-      if (fileId) {
-        removeFile(fileId);
-        setCroppedAreaPixels(null);
-      }
-    }
-  };
 
   // Callback for Cropper to provide crop data - Wrap with useCallback
   const handleCropChange = useCallback((pixels: Area | null) => {
@@ -134,17 +129,13 @@ export default function Component() {
       // 4. Set the final avatar state to the NEW URL
       setFinalImageUrl(newFinalUrl);
 
-      // 5. Remove the original file (revokes original previewUrl)
-      removeFile(fileId);
-      setCroppedAreaPixels(null);
+      // 5. Close the dialog (don't remove the file yet)
+      setIsDialogOpen(false);
 
     } catch (error) {
       console.error("Error during apply:", error);
-      // Still remove the original file even if cropping fails
-      if (fileId) {
-        removeFile(fileId);
-        setCroppedAreaPixels(null);
-      }
+      // Close the dialog even if cropping fails
+      setIsDialogOpen(false);
     }
   };
 
@@ -164,6 +155,17 @@ export default function Component() {
       }
     };
   }, [finalImageUrl]);
+
+  // Effect to open dialog when a *new* file is ready
+  useEffect(() => {
+    // Check if fileId exists and is different from the previous one
+    if (fileId && fileId !== previousFileIdRef.current) {
+      setIsDialogOpen(true); // Open dialog for the new file
+      setCroppedAreaPixels(null); // Reset crop area for the new file
+    }
+    // Update the ref to the current fileId for the next render
+    previousFileIdRef.current = fileId;
+  }, [fileId]); // Depend only on fileId
 
   return (
     <div className="flex flex-col items-center gap-2">
@@ -213,8 +215,8 @@ export default function Component() {
         />
       </div>
 
-      {/* Cropper Dialog - Use previewUrl for open prop */}
-      <Dialog open={previewUrl !== null} onOpenChange={handleOpenChange}>
+      {/* Cropper Dialog - Use isDialogOpen for open prop */}
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent className="sm:max-w-[600px]">
           <DialogTitle>Crop image</DialogTitle>
           <div className="min-h-0 flex-1 flex flex-col">
@@ -237,7 +239,7 @@ export default function Component() {
                 /> */}
               </div>
               <div className="flex justify-end gap-2">
-                <Button variant="outline" onClick={() => handleOpenChange(false)}>
+                <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
                   Cancel
                 </Button>
                 <Button onClick={handleApply} disabled={!previewUrl} autoFocus>
