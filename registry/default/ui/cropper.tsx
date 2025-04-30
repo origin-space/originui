@@ -44,28 +44,28 @@ export function Cropper({
   // State for dragging
   const [offsetX, setOffsetX] = useState<number>(0);
   const [offsetY, setOffsetY] = useState<number>(0);
-  const [zoom, setZoom] = useState<number>(minZoom); // Zoom state
+  const [zoom, setZoom] = useState<number>(minZoom);
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const dragStartPointRef = useRef<{ x: number, y: number }>({ x: 0, y: 0 });
   const dragStartOffsetRef = useRef<{ x: number, y: number }>({ x: 0, y: 0 });
-  const latestRestrictedOffsetRef = useRef<{ x: number, y: number }>({ x: offsetX, y: offsetY }); // Ref for latest offset
-  const latestZoomRef = useRef<number>(zoom); // Ref for latest zoom
-  const isInitialSetupDoneRef = useRef<boolean>(false); // Ref to track initial setup
-  const initialPinchDistanceRef = useRef<number>(0); // Ref for initial pinch distance
-  const initialPinchZoomRef = useRef<number>(1); // Ref for zoom level at pinch start
-  const isPinchingRef = useRef<boolean>(false); // Ref to track if currently pinching
+  const latestRestrictedOffsetRef = useRef<{ x: number, y: number }>({ x: offsetX, y: offsetY });
+  const latestZoomRef = useRef<number>(zoom);
+  const isInitialSetupDoneRef = useRef<boolean>(false);
+  const initialPinchDistanceRef = useRef<number>(0);
+  const initialPinchZoomRef = useRef<number>(1);
+  const isPinchingRef = useRef<boolean>(false);
 
   // Update latest zoom ref whenever zoom state changes
   useEffect(() => {
     latestZoomRef.current = zoom;
   }, [zoom]);
 
+  // Effect to reset state when image changes
   useEffect(() => {
-    // Reset offset and zoom immediately when image prop changes, before loading
     setOffsetX(0);
     setOffsetY(0);
     setZoom(minZoom);
-    isInitialSetupDoneRef.current = false; // Reset initial setup flag
+    isInitialSetupDoneRef.current = false;
 
     if (!image) {
       setImgWidth(null);
@@ -95,7 +95,7 @@ export function Cropper({
     return () => {
       isMounted = false;
     };
-  }, [image, minZoom]); // Added minZoom dependency
+  }, [image, minZoom]);
 
   // Callback to calculate and set crop area dimensions based on container size
   const updateCropAreaDimensions = useCallback((containerWidth: number, containerHeight: number) => {
@@ -127,7 +127,6 @@ export function Cropper({
 
   }, [aspectRatio, cropPadding]);
 
-
   // Effect to observe container size and update crop area dimensions
   useEffect(() => {
     const element = containerRef.current;
@@ -153,12 +152,10 @@ export function Cropper({
     }
 
     return () => observer.disconnect();
-  }, [updateCropAreaDimensions]); // Depend on the callback
-
+  }, [updateCropAreaDimensions]);
 
   // Effect to calculate image wrapper sizes based on crop area size
   useEffect(() => {
-    // Now depends on cropAreaWidth and cropAreaHeight instead of containerHeight
     if (cropAreaWidth <= 0 || cropAreaHeight <= 0) {
       // Reset if crop area dimensions are invalid
       setImageWrapperWidth(0);
@@ -191,7 +188,6 @@ export function Cropper({
       setImageWrapperWidth(0);
       setImageWrapperHeight(0);
     }
-    // Depend on cropArea dimensions and image dimensions
   }, [cropAreaWidth, cropAreaHeight, imgWidth, imgHeight]);
 
   // Function to restrict the drag offset state (relative to center), considering zoom
@@ -216,7 +212,6 @@ export function Cropper({
     return { x: restrictedX, y: restrictedY };
   }, [imageWrapperWidth, imageWrapperHeight, cropAreaWidth, cropAreaHeight]);
 
-  // Function to calculate the crop area in pixels relative to the original image
   // Function to calculate the crop area in pixels relative to the original image, considering zoom
   const calculateCropData = useCallback((
     finalOffsetX?: number, // Optional final offset X
@@ -366,7 +361,6 @@ export function Cropper({
   };
 
   const handleMouseMove = (e: MouseEvent) => {
-    // No need to check isDragging state here as listener is removed on mouseup
     const currentX = e.clientX;
     const currentY = e.clientY;
 
@@ -376,13 +370,10 @@ export function Cropper({
     const targetOffsetX = dragStartOffsetRef.current.x + deltaX;
     const targetOffsetY = dragStartOffsetRef.current.y + deltaY;
 
-    // Restrict using the *current* zoom level from the ref
     const restricted = restrictOffset(targetOffsetX, targetOffsetY, latestZoomRef.current);
 
-    // Update ref with the latest restricted offset
     latestRestrictedOffsetRef.current = restricted;
 
-    // Update state for visual feedback
     setOffsetX(restricted.x);
     setOffsetY(restricted.y);
   };
@@ -391,19 +382,19 @@ export function Cropper({
     setIsDragging(false);
     window.removeEventListener('mousemove', handleMouseMove);
     window.removeEventListener('mouseup', handleMouseUp);
-    // Call onCropComplete when dragging stops, using the latest offset and zoom from refs
+    // Call onCropComplete when dragging stops
     if (onCropComplete) {
       const finalData = calculateCropData(
         latestRestrictedOffsetRef.current.x,
         latestRestrictedOffsetRef.current.y,
-        latestZoomRef.current // Pass the current zoom
+        latestZoomRef.current
       );
       onCropComplete(finalData);
     }
   };
 
-  // Wheel Handler for Zoom - Use DOM WheelEvent type for addEventListener
-  const handleWheel = useCallback((e: WheelEvent) => { // Changed type here
+  // Wheel Handler for Zoom
+  const handleWheel = useCallback((e: WheelEvent) => {
     e.preventDefault(); // Prevent default scroll behavior
     e.stopPropagation(); // Stop the event from bubbling up
 
@@ -442,10 +433,10 @@ export function Cropper({
     setZoom(newZoom);
     setOffsetX(restrictedNewOffset.x);
     setOffsetY(restrictedNewOffset.y);
-    latestZoomRef.current = newZoom; // Update ref immediately for next potential event
-    latestRestrictedOffsetRef.current = restrictedNewOffset; // Update ref immediately
+    latestZoomRef.current = newZoom;
+    latestRestrictedOffsetRef.current = restrictedNewOffset;
 
-    // Trigger crop complete callback with the final state after zoom
+    // Trigger crop complete callback during zoom
     if (onCropComplete) {
       const finalData = calculateCropData(
         restrictedNewOffset.x,
@@ -454,23 +445,15 @@ export function Cropper({
       );
       onCropComplete(finalData);
     }
-  }, [ // Added useCallback and dependencies for handleWheel
+  }, [
     restrictOffset,
     calculateCropData,
     imageWrapperWidth,
     imageWrapperHeight,
     onCropComplete,
-    // Refs are stable and don't need to be dependencies
-    minZoom, // Added minZoom
-    maxZoom, // Added maxZoom
-    zoomSensitivity, // Added zoomSensitivity
-    restrictOffset,
-    calculateCropData,
-    imageWrapperWidth,
-    imageWrapperHeight,
-    onCropComplete,
-    // Refs are stable and don't need to be dependencies
-    // State values (zoom, offsetX, offsetY) are accessed via refs inside, passed as args, or read from latest refs
+    minZoom,
+    maxZoom,
+    zoomSensitivity
   ]);
 
   // --- Touch Event Handlers ---
@@ -495,7 +478,6 @@ export function Cropper({
     };
   };
 
-
   const handleTouchStart = useCallback((e: TouchEvent) => {
     if (!containerRef.current || imageWrapperWidth <= 0 || imageWrapperHeight <= 0) return;
 
@@ -504,32 +486,28 @@ export function Cropper({
     if (touches.length === 1) {
       // Start panning (drag)
       setIsDragging(true);
-      isPinchingRef.current = false; // Ensure not pinching
+      isPinchingRef.current = false;
       const touch = touches[0];
       dragStartPointRef.current = { x: touch.clientX, y: touch.clientY };
-      dragStartOffsetRef.current = { x: latestRestrictedOffsetRef.current.x, y: latestRestrictedOffsetRef.current.y }; // Use latest offset
+      dragStartOffsetRef.current = { x: latestRestrictedOffsetRef.current.x, y: latestRestrictedOffsetRef.current.y };
     } else if (touches.length === 2) {
       // Start pinching (zoom)
-      setIsDragging(false); // Stop any single-finger drag
+      setIsDragging(false);
       isPinchingRef.current = true;
       initialPinchDistanceRef.current = getPinchDistance(touches);
-      initialPinchZoomRef.current = latestZoomRef.current; // Store zoom at pinch start
-      // Store offset at pinch start as well, might be needed if combining pan/pinch later
+      initialPinchZoomRef.current = latestZoomRef.current;
       dragStartOffsetRef.current = { x: latestRestrictedOffsetRef.current.x, y: latestRestrictedOffsetRef.current.y };
     }
-  }, [imageWrapperWidth, imageWrapperHeight]); // Dependencies
+  }, [imageWrapperWidth, imageWrapperHeight]);
 
 
-  const handleTouchMove = useCallback((e: TouchEvent) => { // Use global TouchEvent
-    // No need for e.preventDefault() here if touch-action: none is set
-    // e.preventDefault();
-
+  const handleTouchMove = useCallback((e: TouchEvent) => {
     if (!containerRef.current || imageWrapperWidth <= 0 || imageWrapperHeight <= 0) return;
 
     const touches = e.touches;
 
     if (touches.length === 1 && isDragging && !isPinchingRef.current) {
-      // Panning (single finger drag)
+      // Panning
       const touch = touches[0];
       const currentX = touch.clientX;
       const currentY = touch.clientY;
@@ -541,60 +519,54 @@ export function Cropper({
       const targetOffsetY = dragStartOffsetRef.current.y + deltaY;
 
       const restricted = restrictOffset(targetOffsetX, targetOffsetY, latestZoomRef.current);
-      latestRestrictedOffsetRef.current = restricted; // Update ref immediately
+      latestRestrictedOffsetRef.current = restricted;
 
-      // Update state for visual feedback
       setOffsetX(restricted.x);
       setOffsetY(restricted.y);
 
     } else if (touches.length === 2 && isPinchingRef.current) {
-      // Pinching (two fingers zoom)
+      // Pinching
       const currentPinchDistance = getPinchDistance(touches);
       const scale = currentPinchDistance / initialPinchDistanceRef.current;
       const newZoom = clamp(initialPinchZoomRef.current * scale, minZoom, maxZoom);
 
-      if (newZoom === latestZoomRef.current) return; // No change in zoom
+      if (newZoom === latestZoomRef.current) return;
 
-      // Calculate pinch center relative to the container center
       const pinchCenter = getPinchCenter(touches);
       const rect = containerRef.current.getBoundingClientRect();
       const pinchCenterX = pinchCenter.x - rect.left - rect.width / 2;
       const pinchCenterY = pinchCenter.y - rect.top - rect.height / 2;
 
-      // Calculate the point on the image wrapper (relative to its center) under the pinch center
       const currentZoom = latestZoomRef.current;
       const currentOffsetX = latestRestrictedOffsetRef.current.x;
       const currentOffsetY = latestRestrictedOffsetRef.current.y;
       const imagePointX = (pinchCenterX - currentOffsetX) / currentZoom;
       const imagePointY = (pinchCenterY - currentOffsetY) / currentZoom;
 
-      // Calculate the new offset required to keep the image point under the pinch center after zoom
       const newOffsetX = pinchCenterX - (imagePointX * newZoom);
       const newOffsetY = pinchCenterY - (imagePointY * newZoom);
 
       const restrictedNewOffset = restrictOffset(newOffsetX, newOffsetY, newZoom);
 
-      // Update state and refs
-      setZoom(newZoom); // Update zoom state
-      setOffsetX(restrictedNewOffset.x); // Update offset state
-      latestZoomRef.current = newZoom; // Update zoom ref immediately
-      latestRestrictedOffsetRef.current = restrictedNewOffset; // Update offset ref immediately
+      setZoom(newZoom);
+      setOffsetX(restrictedNewOffset.x);
+      latestZoomRef.current = newZoom;
+      latestRestrictedOffsetRef.current = restrictedNewOffset;
     }
-  }, [isDragging, restrictOffset, minZoom, maxZoom, imageWrapperWidth, imageWrapperHeight]); // Dependencies
+  }, [isDragging, restrictOffset, minZoom, maxZoom, imageWrapperWidth, imageWrapperHeight]);
 
 
   const handleTouchEnd = useCallback((e: TouchEvent) => {
     const touches = e.touches;
 
     if (isPinchingRef.current && touches.length < 2) {
-      // Pinch ended, potentially transitioning to drag if one finger remains
+      // Pinch ended
       isPinchingRef.current = false;
       if (touches.length === 1) {
-        // Transition to drag: Reset drag start based on the remaining finger
+        // Transition to drag
         setIsDragging(true);
         const touch = touches[0];
         dragStartPointRef.current = { x: touch.clientX, y: touch.clientY };
-        // Use the *very latest* offset and zoom from the pinch operation
         dragStartOffsetRef.current = { x: latestRestrictedOffsetRef.current.x, y: latestRestrictedOffsetRef.current.y };
       } else {
         // Pinch ended, zero fingers remain
@@ -620,10 +592,8 @@ export function Cropper({
         onCropComplete(finalData);
       }
     }
-    // If touches.length >= 2, pinch continues or starts, handled by touchstart/touchmove
-    // If touches.length === 1 and was dragging, drag continues, handled by touchmove
 
-  }, [isDragging, onCropComplete, calculateCropData]); // Dependencies
+  }, [isDragging, onCropComplete, calculateCropData]);
 
 
   // Cleanup drag listeners on unmount
@@ -634,7 +604,7 @@ export function Cropper({
       window.removeEventListener('mouseup', handleMouseUp);
     };
     return removeDragListeners;
-  }, []); // Empty dependency array ensures this runs only on mount/unmount
+  }, []);
 
   // Effect to attach non-passive wheel listener
   useEffect(() => {
@@ -650,7 +620,7 @@ export function Cropper({
       // Cast options to 'any' here too for consistency
       node.removeEventListener('wheel', handleWheel, { passive: false } as any);
     };
-  }, [handleWheel]); // Re-attach if handleWheel changes (due to useCallback dependencies)
+  }, [handleWheel]);
 
   // Effect to attach non-passive touch listeners
   useEffect(() => {
@@ -671,7 +641,6 @@ export function Cropper({
       node.removeEventListener('touchend', handleTouchEnd, { passive: false } as any);
       node.removeEventListener('touchcancel', handleTouchEnd, { passive: false } as any);
     };
-    // Add handlers to dependency array
   }, [handleTouchStart, handleTouchMove, handleTouchEnd]);
 
   // Keyboard Handlers
@@ -720,7 +689,7 @@ export function Cropper({
       }
     }
 
-  }, [keyboardStep, imageWrapperWidth, restrictOffset, onCropComplete, calculateCropData]); // Dependencies: Add zoom later if step depends on zoom
+  }, [keyboardStep, imageWrapperWidth, restrictOffset, onCropComplete, calculateCropData]);
 
   const handleKeyUp = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
     // Only trigger on arrow keys
@@ -783,10 +752,6 @@ export function Cropper({
           }}
         ></div>
       )}
-      {/* Debug display - remove later */}
-      {/* <div className="absolute bottom-2 left-2 bg-black/50 text-white p-1 text-xs rounded">
-        Zoom: {zoom.toFixed(2)} | Offset: ({offsetX.toFixed(1)}, {offsetY.toFixed(1)})
-      </div> */}
     </div>
   )
 }
