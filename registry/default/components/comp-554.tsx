@@ -4,7 +4,7 @@ import { CircleUserRoundIcon, XIcon } from "lucide-react"
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
-import { Dialog, DialogContent, DialogTitle } from "@/registry/default/ui/dialog"
+import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/registry/default/ui/dialog"
 import { Cropper } from "@/registry/default/ui/cropper"
 
 // Define type for pixel crop area
@@ -217,8 +217,12 @@ export default function Component() {
 
       {/* Cropper Dialog - Use isDialogOpen for open prop */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="sm:max-w-140">
-          <DialogTitle>Crop image</DialogTitle>
+        <DialogContent className="sm:max-w-140 p-0 gap-0">
+          <DialogHeader className="contents space-y-0 text-left">
+            <DialogTitle className="border-b px-6 py-4 text-base">
+            Crop image
+            </DialogTitle>
+          </DialogHeader>          
           <div className="flex flex-col">
             {previewUrl && (
               <Cropper
@@ -237,16 +241,16 @@ export default function Component() {
                   onValueChange={(value) => setZoom(value[0])}
                 /> */}
               </div>
-              <div className="flex justify-end gap-2">
-                <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
-                  Cancel
-                </Button>
-                <Button onClick={handleApply} disabled={!previewUrl} autoFocus>
-                  Apply crop
-                </Button>
-              </div>
             </div>
           </div>
+          <DialogFooter className="border-t px-6 py-4">
+            <Button type="button" variant="outline" onClick={() => setIsDialogOpen(false)}>
+              Cancel
+            </Button>
+            <Button onClick={handleApply} disabled={!previewUrl}>
+              Apply
+            </Button>
+          </DialogFooter>          
         </DialogContent>
       </Dialog>
 

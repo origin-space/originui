@@ -762,7 +762,7 @@ export function Cropper({
           {(cropAreaWidth > 0 && cropAreaHeight > 0) && (
             <div
               data-slot="crop-area"
-              className="border-2 border-blue-500 absolute rounded-xs shadow-[0_0_0_9999px_rgba(0,0,0,0.3)] pointer-events-none in-[[data-slot=crop-container]:focus-visible]:ring-[3px] in-[[data-slot=crop-container]:focus-visible]:ring-white/50"
+              className="border-2 border-white absolute shadow-[0_0_0_9999px_rgba(0,0,0,0.7)] pointer-events-none in-[[data-slot=crop-container]:focus-visible]:ring-[3px] in-[[data-slot=crop-container]:focus-visible]:ring-white/50"
               style={{
                 width: cropAreaWidth,
                 height: cropAreaHeight,
