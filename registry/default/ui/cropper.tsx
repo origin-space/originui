@@ -761,14 +761,13 @@ export function Cropper({
       ref={containerRef}
       data-slot="crop-container"
       className={cn(
-        'relative h-full w-full flex flex-col items-center justify-center overflow-hidden cursor-move focus:outline-none',
+        'relative h-full w-full flex flex-col items-center justify-center overflow-hidden cursor-move focus:outline-none touch-none',
         className
       )}
       onMouseDown={handleMouseDown}
       tabIndex={0}
       onKeyDown={handleKeyDown}
       onKeyUp={handleKeyUp}
-      style={{ touchAction: 'none' }}
       role="application"
       aria-label="Interactive image cropper"
       aria-describedby={id}
@@ -798,12 +797,7 @@ export function Cropper({
               src={image}
               alt="Image being cropped"
               draggable="false"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                pointerEvents: 'none',
-              }}
+              className="w-full h-full object-cover pointer-events-none"
               aria-hidden="true"
             />
           </div>
