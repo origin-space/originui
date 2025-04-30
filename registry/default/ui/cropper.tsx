@@ -719,6 +719,7 @@ export function Cropper({
     >
       {(imageWrapperWidth > 0 && imageWrapperHeight > 0) && (
         <div
+          data-slot="crop-image"
           style={{
             width: imageWrapperWidth,
             height: imageWrapperHeight,
