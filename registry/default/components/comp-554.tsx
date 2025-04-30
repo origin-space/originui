@@ -100,10 +100,10 @@ export default function Component() {
   };
 
   // Callback for Cropper to provide crop data - Wrap with useCallback
-  const handleCropComplete = useCallback((pixels: Area | null) => {
-    console.log("Crop Complete (Pixels):", pixels);
+  const handleCropChange = useCallback((pixels: Area | null) => {
+    console.log("Crop Change (Pixels):", pixels);
     setCroppedAreaPixels(pixels);
-  }, []); // Empty dependency array - this function doesn't depend on component state/props
+  }, []);
 
   const handleApply = async () => {
     // Check if we have the necessary data
@@ -222,7 +222,7 @@ export default function Component() {
       {previewUrl && (
         <Cropper
           image={previewUrl}
-          onCropComplete={handleCropComplete}
+          onCropChange={handleCropChange}
         />
       )}
 
@@ -236,7 +236,7 @@ export default function Component() {
               {previewUrl && (
                 <Cropper
                   image={previewUrl}
-                  onCropComplete={handleCropComplete}
+                  onCropChange={handleCropChange}
                 />
               )}
             </div>

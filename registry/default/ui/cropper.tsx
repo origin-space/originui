@@ -19,7 +19,7 @@ export function Cropper({
   zoomSensitivity = 0.005,
   keyboardStep = 10,
   className,
-  onCropComplete
+  onCropChange
 }: {
   image: string
   cropPadding?: number
@@ -29,7 +29,7 @@ export function Cropper({
   zoomSensitivity?: number
   keyboardStep?: number
   className?: string
-  onCropComplete?: (pixels: Area | null) => void
+  onCropChange?: (pixels: Area | null) => void
 }) {
   const [imgWidth, setImgWidth] = useState<number | null>(null);
   const [imgHeight, setImgHeight] = useState<number | null>(null);
@@ -289,9 +289,9 @@ export function Cropper({
         latestRestrictedOffsetRef.current = { x: restrictedInitial.x, y: restrictedInitial.y };
         latestZoomRef.current = initialZoom;
 
-        if (onCropComplete) {
+        if (onCropChange) {
           const initialCropData = calculateCropData(restrictedInitial.x, restrictedInitial.y, initialZoom);
-          onCropComplete(initialCropData);
+          onCropChange(initialCropData);
         }
         isInitialSetupDoneRef.current = true; // Mark initial setup as done
 
@@ -315,13 +315,13 @@ export function Cropper({
         }
 
         // Now, recalculate and emit crop data based on potentially re-restricted offset and current zoom
-        if (onCropComplete) {
+        if (onCropChange) {
           const updatedCropData = calculateCropData(
             latestRestrictedOffsetRef.current.x,
             latestRestrictedOffsetRef.current.y,
             latestZoomRef.current
           );
-          onCropComplete(updatedCropData);
+          onCropChange(updatedCropData);
         }
       }
 
@@ -334,8 +334,8 @@ export function Cropper({
       dragStartOffsetRef.current = { x: 0, y: 0 };
       latestRestrictedOffsetRef.current = { x: 0, y: 0 };
       latestZoomRef.current = minZoom;
-      if (onCropComplete) {
-        onCropComplete(null);
+      if (onCropChange) {
+        onCropChange(null);
       }
     }
   }, [
@@ -344,7 +344,7 @@ export function Cropper({
     cropAreaWidth,
     cropAreaHeight,
     restrictOffset,
-    onCropComplete,
+    onCropChange,
     calculateCropData,
     minZoom // Added minZoom as it affects initial state
   ]);
@@ -382,14 +382,14 @@ export function Cropper({
     setIsDragging(false);
     window.removeEventListener('mousemove', handleMouseMove);
     window.removeEventListener('mouseup', handleMouseUp);
-    // Call onCropComplete when dragging stops
-    if (onCropComplete) {
+    // Call onCropChange when dragging stops
+    if (onCropChange) {
       const finalData = calculateCropData(
         latestRestrictedOffsetRef.current.x,
         latestRestrictedOffsetRef.current.y,
         latestZoomRef.current
       );
-      onCropComplete(finalData);
+      onCropChange(finalData);
     }
   };
 
@@ -437,20 +437,20 @@ export function Cropper({
     latestRestrictedOffsetRef.current = restrictedNewOffset;
 
     // Trigger crop complete callback during zoom
-    if (onCropComplete) {
+    if (onCropChange) {
       const finalData = calculateCropData(
         restrictedNewOffset.x,
         restrictedNewOffset.y,
         newZoom
       );
-      onCropComplete(finalData);
+      onCropChange(finalData);
     }
   }, [
     restrictOffset,
     calculateCropData,
     imageWrapperWidth,
     imageWrapperHeight,
-    onCropComplete,
+    onCropChange,
     minZoom,
     maxZoom,
     zoomSensitivity
@@ -571,29 +571,29 @@ export function Cropper({
       } else {
         // Pinch ended, zero fingers remain
         setIsDragging(false);
-        if (onCropComplete) {
+        if (onCropChange) {
           const finalData = calculateCropData(
             latestRestrictedOffsetRef.current.x,
             latestRestrictedOffsetRef.current.y,
             latestZoomRef.current
           );
-          onCropComplete(finalData);
+          onCropChange(finalData);
         }
       }
     } else if (isDragging && touches.length === 0) {
       // Drag ended
       setIsDragging(false);
-      if (onCropComplete) {
+      if (onCropChange) {
         const finalData = calculateCropData(
           latestRestrictedOffsetRef.current.x,
           latestRestrictedOffsetRef.current.y,
           latestZoomRef.current
         );
-        onCropComplete(finalData);
+        onCropChange(finalData);
       }
     }
 
-  }, [isDragging, onCropComplete, calculateCropData]);
+  }, [isDragging, onCropChange, calculateCropData]);
 
 
   // Cleanup drag listeners on unmount
@@ -689,22 +689,22 @@ export function Cropper({
       }
     }
 
-  }, [keyboardStep, imageWrapperWidth, restrictOffset, onCropComplete, calculateCropData]);
+  }, [keyboardStep, imageWrapperWidth, restrictOffset, onCropChange, calculateCropData]);
 
   const handleKeyUp = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
     // Only trigger on arrow keys
     if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
-      if (onCropComplete) {
+      if (onCropChange) {
         // Use latest refs for final data calculation
         const finalData = calculateCropData(
           latestRestrictedOffsetRef.current.x,
           latestRestrictedOffsetRef.current.y,
           latestZoomRef.current
         );
-        onCropComplete(finalData);
+        onCropChange(finalData);
       }
     }
-  }, [onCropComplete, calculateCropData]);
+  }, [onCropChange, calculateCropData]);
 
   return (
     <div
