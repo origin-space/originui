@@ -1,11 +1,69 @@
 "use client"
 
 import { CircleUserRoundIcon, XIcon } from "lucide-react"
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
 import { Dialog, DialogContent, DialogTitle } from "@/registry/default/ui/dialog"
 import { Cropper } from "@/registry/default/ui/cropper"
+
+// Define type for pixel crop area
+type Area = { x: number; y: number; width: number; height: number };
+
+// Helper function to create a cropped image blob
+const createImage = (url: string): Promise<HTMLImageElement> =>
+  new Promise((resolve, reject) => {
+    const image = new Image();
+    image.addEventListener('load', () => resolve(image));
+    image.addEventListener('error', (error) => reject(error));
+    image.setAttribute('crossOrigin', 'anonymous'); // Needed for canvas Tainted check
+    image.src = url;
+  });
+
+async function getCroppedImg(
+  imageSrc: string,
+  pixelCrop: Area,
+  outputWidth: number = pixelCrop.width, // Optional: specify output size
+  outputHeight: number = pixelCrop.height
+): Promise<Blob | null> {
+  try {
+    const image = await createImage(imageSrc);
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+
+    if (!ctx) {
+      return null;
+    }
+
+    // Set canvas size to desired output size
+    canvas.width = outputWidth;
+    canvas.height = outputHeight;
+
+    // Draw the cropped image onto the canvas
+    ctx.drawImage(
+      image,
+      pixelCrop.x,
+      pixelCrop.y,
+      pixelCrop.width,
+      pixelCrop.height,
+      0,
+      0,
+      outputWidth, // Draw onto the output size
+      outputHeight
+    );
+
+    // Convert canvas to blob
+    return new Promise((resolve) => {
+      canvas.toBlob((blob) => {
+        resolve(blob);
+      }, 'image/jpeg'); // Specify format and quality if needed
+    });
+  } catch (error) {
+      console.error("Error in getCroppedImg:", error);
+      return null;
+  }
+}
+
 export default function Component() {
   const [
     { files, isDragging },
@@ -22,29 +80,53 @@ export default function Component() {
     accept: "image/*",
   })
 
+  const [crop, setCrop] = useState({ x: 0, y: 0 })
+
   const previewUrl = files[0]?.preview || null
   const fileId = files[0]?.id  
 
   const [finalImageUrl, setFinalImageUrl] = useState<string | null>(null);
 
+  // State to store the desired crop area in pixels
+  const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null);
+
   const handleOpenChange = (open: boolean) => {
     if (!open) {
       if (fileId) {
         removeFile(fileId);
+        setCroppedAreaPixels(null);
       }
     }
   };
 
+  // Callback for Cropper to provide crop data - Wrap with useCallback
+  const handleCropComplete = useCallback((pixels: Area | null) => {
+    console.log("Crop Complete (Pixels):", pixels);
+    setCroppedAreaPixels(pixels);
+  }, []); // Empty dependency array - this function doesn't depend on component state/props
+
   const handleApply = async () => {
-    if (!previewUrl || !fileId) return;
+    // Check if we have the necessary data
+    if (!previewUrl || !fileId || !croppedAreaPixels) {
+        console.error("Missing data for apply:", { previewUrl, fileId, croppedAreaPixels });
+        // Remove file if apply is clicked without crop data?
+        if (fileId) {
+            removeFile(fileId);
+            setCroppedAreaPixels(null);
+        }
+        return;
+    }
 
     try {
-      // 1. Fetch the blob data from the preview URL
-      const response = await fetch(previewUrl);
-      const blob = await response.blob();
+      // 1. Get the cropped image blob using the helper
+      const croppedBlob = await getCroppedImg(previewUrl, croppedAreaPixels);
 
-      // 2. Create a NEW object URL from the fetched blob
-      const newFinalUrl = URL.createObjectURL(blob);
+      if (!croppedBlob) {
+          throw new Error("Failed to generate cropped image blob.");
+      }
+
+      // 2. Create a NEW object URL from the cropped blob
+      const newFinalUrl = URL.createObjectURL(croppedBlob);
 
       // 3. Revoke the OLD finalImageUrl if it exists
       if (finalImageUrl) {
@@ -56,13 +138,15 @@ export default function Component() {
 
       // 5. Remove the original file (revokes original previewUrl)
       removeFile(fileId);
+      setCroppedAreaPixels(null);
 
     } catch (error) {
-      console.error("Error creating final avatar URL:", error);
-      // Optionally handle the error (e.g., show a message)
-
-      // Still remove the original file even if fetch/create fails
-      removeFile(fileId);
+      console.error("Error during apply:", error);
+      // Still remove the original file even if cropping fails
+      if (fileId) {
+          removeFile(fileId);
+          setCroppedAreaPixels(null);
+      }
     }
   };
 
@@ -131,8 +215,15 @@ export default function Component() {
         />
       </div>
 
+                <Button onClick={handleApply} disabled={!previewUrl}>
+                  Apply
+                </Button>      
+
       {previewUrl && (
-        <Cropper image={previewUrl} />
+        <Cropper
+          image={previewUrl}
+          onCropComplete={handleCropComplete}
+        />
       )}
 
       {/* Cropper Dialog - Use previewUrl for open prop */}
@@ -143,7 +234,10 @@ export default function Component() {
           <div className="min-h-0 flex-1 flex flex-col">
             <div className="min-h-0 h-120 flex-1 flex items-center justify-center">
               {previewUrl && (
-                <Cropper image={previewUrl} />
+                <Cropper
+                  image={previewUrl}
+                  onCropComplete={handleCropComplete}
+                />
               )}
             </div>
             <div className="space-y-4">
@@ -161,7 +255,7 @@ export default function Component() {
                   Cancel
                 </Button>
                 <Button onClick={handleApply} disabled={!previewUrl}>
-                  Apply
+                  Apply crop
                 </Button>
               </div>
             </div>

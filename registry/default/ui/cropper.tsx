@@ -7,16 +7,21 @@ function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max);
 }
 
+// Define type for pixel crop area passed to callback
+type Area = { x: number; y: number; width: number; height: number };
+
 export function Cropper({
   image,
   cropPadding = 25,
   aspectRatio = 1,
-  className
+  className,
+  onCropComplete
 }: {
   image: string
   cropPadding?: number
   aspectRatio?: number
   className?: string
+  onCropComplete?: (pixels: Area | null) => void
 }) {
   const [imgWidth, setImgWidth] = useState<number | null>(null);
   const [imgHeight, setImgHeight] = useState<number | null>(null);
@@ -35,6 +40,7 @@ export function Cropper({
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const dragStartPointRef = useRef<{ x: number, y: number }>({ x: 0, y: 0 });
   const dragStartOffsetRef = useRef<{ x: number, y: number }>({ x: 0, y: 0 });
+  const latestRestrictedOffsetRef = useRef<{ x: number, y: number }>({ x: offsetX, y: offsetY }); // Ref for latest offset
 
   useEffect(() => {
     // Reset offset immediately when image prop changes, before loading
@@ -152,6 +158,106 @@ export function Cropper({
     return { x: restrictedX, y: restrictedY };
   }, [imageWrapperWidth, imageWrapperHeight, cropAreaWidth, cropAreaHeight]);
 
+  // Function to calculate the crop area in pixels relative to the original image
+  const calculateCropData = useCallback((
+    finalOffsetX?: number, // Optional final offset X
+    finalOffsetY?: number  // Optional final offset Y
+  ): Area | null => {
+    // Use provided final offsets if available, otherwise use state (fallback)
+    const currentOffsetX = finalOffsetX !== undefined ? finalOffsetX : offsetX;
+    const currentOffsetY = finalOffsetY !== undefined ? finalOffsetY : offsetY;
+
+    // Need all dimensions and the *current zoom* (assuming zoom=1 for now)
+    // TODO: Add zoom state and factor it in
+    const zoom = 1;
+    if (!imgWidth || !imgHeight || imageWrapperWidth <= 0 || cropAreaWidth <= 0) {
+      return null;
+    }
+
+    // Calculate the top-left position of the image wrapper relative to the crop area center
+    const topLeftOffsetX = currentOffsetX + (cropAreaWidth - imageWrapperWidth) / 2; // Use currentOffsetX
+    const topLeftOffsetY = currentOffsetY + (cropAreaHeight - imageWrapperHeight) / 2; // Use currentOffsetY
+
+    // Calculate the scale factor between the wrapper and the natural image size
+    // This assumes the wrapper was calculated correctly to cover the crop area
+    const scale = imgWidth > imgHeight
+      ? imageWrapperWidth / imgWidth // Scaled by width
+      : imageWrapperHeight / imgHeight; // Scaled by height
+
+    // If scale is somehow invalid, exit
+    if (isNaN(scale) || scale === 0) return null;
+
+    // Calculate the source rectangle (sx, sy, sWidth, sHeight) on the original image
+    // sx/sy: top-left corner of crop area relative to top-left of image, scaled back to original dims
+    // sWidth/sHeight: size of crop area, scaled back to original dims
+    const sx = (-topLeftOffsetX / scale) / zoom; // Adjust for zoom
+    const sy = (-topLeftOffsetY / scale) / zoom; // Adjust for zoom
+    const sWidth = (cropAreaWidth / scale) / zoom; // Adjust for zoom
+    const sHeight = (cropAreaHeight / scale) / zoom; // Adjust for zoom
+
+    // Clamp/round values to be within natural image bounds
+    const finalX = clamp(Math.round(sx), 0, imgWidth);
+    const finalY = clamp(Math.round(sy), 0, imgHeight);
+    const finalWidth = clamp(Math.round(sWidth), 0, imgWidth - finalX);
+    const finalHeight = clamp(Math.round(sHeight), 0, imgHeight - finalY);
+
+    if (finalWidth <= 0 || finalHeight <= 0) return null;
+
+    return {
+      x: finalX,
+      y: finalY,
+      width: finalWidth,
+      height: finalHeight
+    };
+
+  }, [
+    imgWidth, imgHeight, imageWrapperWidth, imageWrapperHeight, cropAreaWidth, cropAreaHeight
+  ]);
+
+  // Effect to calculate and set the initial centered offset AND trigger initial crop complete
+  useEffect(() => {
+    if (imageWrapperWidth > 0 && imageWrapperHeight > 0 && cropAreaWidth > 0 && cropAreaHeight > 0) {
+      // Calculate initial centered offset
+      const initialX = (cropAreaWidth - imageWrapperWidth) / 2;
+      const initialY = (cropAreaHeight - imageWrapperHeight) / 2;
+
+      // Restrict initial offset (though centering should be within bounds if image covers crop area)
+      const restrictedInitial = restrictOffset(initialX, initialY);
+
+      // Set the initial state for offset
+      setOffsetX(restrictedInitial.x);
+      setOffsetY(restrictedInitial.y);
+
+      // Update refs for dragging consistency
+      dragStartOffsetRef.current = { x: restrictedInitial.x, y: restrictedInitial.y };
+      latestRestrictedOffsetRef.current = { x: restrictedInitial.x, y: restrictedInitial.y };
+
+      // Trigger initial crop complete callback
+      if (onCropComplete) {
+        const initialCropData = calculateCropData(restrictedInitial.x, restrictedInitial.y);
+        onCropComplete(initialCropData);
+      }
+    } else {
+      // Reset offsets if dimensions become invalid
+      setOffsetX(0);
+      setOffsetY(0);
+      dragStartOffsetRef.current = { x: 0, y: 0 };
+      latestRestrictedOffsetRef.current = { x: 0, y: 0 };
+      // Optionally call onCropComplete with null if dimensions are lost?
+      // if (onCropComplete) {
+      //   onCropComplete(null);
+      // }
+    }
+  }, [
+    imageWrapperWidth,
+    imageWrapperHeight,
+    cropAreaWidth,
+    cropAreaHeight,
+    restrictOffset,
+    onCropComplete,
+    calculateCropData
+  ]); // Dependencies
+
   // Mouse Drag Handlers
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault(); // Prevent text selection, etc.
@@ -176,6 +282,10 @@ export function Cropper({
 
     const restricted = restrictOffset(targetOffsetX, targetOffsetY);
 
+    // Update ref with the latest restricted offset
+    latestRestrictedOffsetRef.current = restricted;
+
+    // Update state for visual feedback
     setOffsetX(restricted.x);
     setOffsetY(restricted.y);
   };
@@ -184,7 +294,14 @@ export function Cropper({
     setIsDragging(false);
     window.removeEventListener('mousemove', handleMouseMove);
     window.removeEventListener('mouseup', handleMouseUp);
-    // TODO: Potentially call an onCropChange/onDragEnd callback here
+    // Call onCropComplete when dragging stops, using the latest offset from the ref
+    if (onCropComplete) {
+      const finalData = calculateCropData(
+        latestRestrictedOffsetRef.current.x,
+        latestRestrictedOffsetRef.current.y
+      );
+      onCropComplete(finalData);
+    }
   };
 
   // Cleanup listeners on unmount

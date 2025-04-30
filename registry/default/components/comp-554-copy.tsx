@@ -2,7 +2,7 @@
 
 import { CircleUserRoundIcon, XIcon } from "lucide-react"
 import { useState, useCallback, useEffect } from 'react'
-import { Cropper } from '@/registry/default/ui/cropper'
+import { Cropper } from '@/registry/default/ui/cropper-copy'
 import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
 import { Slider } from "@/registry/default/ui/slider"
