@@ -1,6 +1,6 @@
 "use client"
 
-import { CircleUserRoundIcon, Volume2Icon, XIcon, ZoomInIcon, ZoomOutIcon } from "lucide-react"
+import { ArrowLeftIcon, CircleUserRoundIcon, XIcon, ZoomInIcon, ZoomOutIcon } from "lucide-react"
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
@@ -222,53 +222,51 @@ export default function Component() {
 
       {/* Cropper Dialog - Use isDialogOpen for open prop */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="sm:max-w-140 p-0 gap-0">
+        <DialogContent className="sm:max-w-140 p-0 gap-0 *:[button]:hidden">
           <DialogHeader className="contents space-y-0 text-left">
-            <DialogTitle className="border-b px-6 py-4 text-base">
-            Crop image
-            </DialogTitle>
+            <DialogTitle className="border-b p-4 text-base flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Button type="button" variant="ghost" size="icon" className="opacity-60 -my-1" onClick={() => setIsDialogOpen(false)} aria-label="Cancel">
+                  <ArrowLeftIcon aria-hidden="true" />
+                </Button> 
+                <span>Crop image</span>         
+              </div>
+              <Button className="-my-1" onClick={handleApply} disabled={!previewUrl}>
+                Apply
+              </Button>                
+            </DialogTitle>    
           </DialogHeader>          
-          <div className="flex flex-col">
-            {previewUrl && (
-              <Cropper
-                className="h-96 sm:h-120"
-                image={previewUrl}
-                zoom={zoom}
-                onCropChange={handleCropChange}
-                onZoomChange={setZoom}
+          {previewUrl && (
+            <Cropper
+              className="h-96 sm:h-120"
+              image={previewUrl}
+              zoom={zoom}
+              onCropChange={handleCropChange}
+              onZoomChange={setZoom}
+            />
+          )}
+          <DialogFooter className="border-t px-4 py-6">
+            <div className="w-full flex items-center gap-4 max-w-80 mx-auto">
+              <ZoomOutIcon
+                className="shrink-0 opacity-60"
+                size={16}
+                aria-hidden="true"
               />
-            )}
-            <div className="px-6 py-4">
-              <div className="flex items-center gap-4 max-w-80 mx-auto">
-                <ZoomOutIcon
-                  className="shrink-0 opacity-60"
-                  size={16}
-                  aria-hidden="true"
-                />
-                <Slider
-                  defaultValue={[1]}
-                  value={[zoom]}
-                  min={1}
-                  max={3}
-                  step={0.1}
-                  onValueChange={(value) => setZoom(value[0])}
-                  aria-label="Zoom slider"
-                />
-                <ZoomInIcon
-                  className="shrink-0 opacity-60"
-                  size={16}
-                  aria-hidden="true"
-                />
-              </div>              
-            </div>
-          </div>
-          <DialogFooter className="border-t px-6 py-4">
-            <Button type="button" variant="outline" onClick={() => setIsDialogOpen(false)}>
-              Cancel
-            </Button>
-            <Button onClick={handleApply} disabled={!previewUrl}>
-              Apply
-            </Button>
+              <Slider
+                defaultValue={[1]}
+                value={[zoom]}
+                min={1}
+                max={3}
+                step={0.1}
+                onValueChange={(value) => setZoom(value[0])}
+                aria-label="Zoom slider"
+              />
+              <ZoomInIcon
+                className="shrink-0 opacity-60"
+                size={16}
+                aria-hidden="true"
+              />
+            </div>             
           </DialogFooter>          
         </DialogContent>
       </Dialog>
