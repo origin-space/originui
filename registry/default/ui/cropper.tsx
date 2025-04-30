@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useId } from 'react';
 
 // Clamp utility function
 function clamp(value: number, min: number, max: number): number {
@@ -31,6 +31,7 @@ export function Cropper({
   className?: string
   onCropChange?: (pixels: Area | null) => void
 }) {
+  const id = useId();
   const [imgWidth, setImgWidth] = useState<number | null>(null);
   const [imgHeight, setImgHeight] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -716,7 +717,17 @@ export function Cropper({
       onKeyDown={handleKeyDown}
       onKeyUp={handleKeyUp}
       style={{ touchAction: 'none' }}
+      role="application"
+      aria-label="Interactive image cropper"
+      aria-describedby={id}
+      aria-valuemin={minZoom}
+      aria-valuemax={maxZoom}
+      aria-valuenow={zoom}
+      aria-valuetext={`Zoom: ${Math.round(zoom * 100)}%`}
     >
+      <div id={id} className="sr-only">
+        Use mouse wheel or pinch gesture to zoom. Drag with mouse or touch, or use arrow keys to pan the image within the crop area.
+      </div>      
       {(imageWrapperWidth > 0 && imageWrapperHeight > 0) && (
         <div
           data-slot="crop-image"
@@ -732,7 +743,7 @@ export function Cropper({
         >
           <img
             src={image}
-            alt="Image to crop"
+            alt="Image being cropped"
             draggable="false"
             style={{
               width: '100%',
@@ -740,6 +751,7 @@ export function Cropper({
               objectFit: 'cover',
               pointerEvents: 'none',
             }}
+            aria-hidden="true"
           />
         </div>
       )}
