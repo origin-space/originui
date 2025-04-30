@@ -711,7 +711,7 @@ export function Cropper({
     <div
       ref={containerRef}
       data-slot="crop-container"
-      className={`relative h-120 w-full flex flex-col items-center justify-center bg-muted overflow-hidden cursor-move ${className ?? ''}`}
+      className={`relative h-120 w-full flex flex-col items-center justify-center bg-muted overflow-hidden cursor-move focus:outline-none ${className ?? ''}`}
       onMouseDown={handleMouseDown}
       tabIndex={0}
       onKeyDown={handleKeyDown}
@@ -758,7 +758,7 @@ export function Cropper({
       {(cropAreaWidth > 0 && cropAreaHeight > 0) && (
         <div
           data-slot="crop-area"
-          className="border-2 border-blue-500 absolute rounded-xs shadow-[0_0_0_9999px_rgba(0,0,0,0.2)] pointer-events-none in-[[data-slot=crop-container]:focus]:ring-[3px] in-[[data-slot=crop-container]:focus]:ring-white/50"
+          className="border-2 border-blue-500 absolute rounded-xs shadow-[0_0_0_9999px_rgba(0,0,0,0.2)] pointer-events-none in-[[data-slot=crop-container]:focus-visible]:ring-[3px] in-[[data-slot=crop-container]:focus-visible]:ring-white/50"
           style={{
             width: cropAreaWidth,
             height: cropAreaHeight,

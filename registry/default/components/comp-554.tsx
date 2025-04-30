@@ -80,8 +80,6 @@ export default function Component() {
     accept: "image/*",
   })
 
-  const [crop, setCrop] = useState({ x: 0, y: 0 })
-
   const previewUrl = files[0]?.preview || null
   const fileId = files[0]?.id  
 
@@ -215,20 +213,8 @@ export default function Component() {
         />
       </div>
 
-                <Button onClick={handleApply} disabled={!previewUrl}>
-                  Apply
-                </Button>      
-
-      {previewUrl && (
-        <Cropper
-          image={previewUrl}
-          onCropChange={handleCropChange}
-        />
-      )}
-
       {/* Cropper Dialog - Use previewUrl for open prop */}
-      {/* open={previewUrl !== null} onOpenChange={handleOpenChange} */}
-      <Dialog>
+      <Dialog open={previewUrl !== null} onOpenChange={handleOpenChange}>
         <DialogContent className="sm:max-w-[600px]">
           <DialogTitle>Crop image</DialogTitle>
           <div className="min-h-0 flex-1 flex flex-col">
@@ -254,7 +240,7 @@ export default function Component() {
                 <Button variant="outline" onClick={() => handleOpenChange(false)}>
                   Cancel
                 </Button>
-                <Button onClick={handleApply} disabled={!previewUrl}>
+                <Button onClick={handleApply} disabled={!previewUrl} autoFocus>
                   Apply crop
                 </Button>
               </div>
