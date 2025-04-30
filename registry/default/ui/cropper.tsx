@@ -20,7 +20,9 @@ export function Cropper({
   zoomSensitivity = 0.005,
   keyboardStep = 10,
   className,
-  onCropChange
+  zoom: zoomProp,
+  onCropChange,
+  onZoomChange,
 }: {
   image: string
   cropPadding?: number
@@ -30,7 +32,9 @@ export function Cropper({
   zoomSensitivity?: number
   keyboardStep?: number
   className?: string
+  zoom?: number; // Optional: Controlled zoom value
   onCropChange?: (pixels: Area | null) => void
+  onZoomChange?: (zoom: number) => void; // Optional: Callback for zoom changes
 }) {
   const id = useId();
   const [imgWidth, setImgWidth] = useState<number | null>(null);
@@ -46,27 +50,50 @@ export function Cropper({
   // State for dragging
   const [offsetX, setOffsetX] = useState<number>(0);
   const [offsetY, setOffsetY] = useState<number>(0);
-  const [zoom, setZoom] = useState<number>(minZoom);
+  // Internal zoom state, used when zoom prop is not provided
+  const [internalZoom, setInternalZoom] = useState<number>(minZoom);
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const dragStartPointRef = useRef<{ x: number, y: number }>({ x: 0, y: 0 });
   const dragStartOffsetRef = useRef<{ x: number, y: number }>({ x: 0, y: 0 });
   const latestRestrictedOffsetRef = useRef<{ x: number, y: number }>({ x: offsetX, y: offsetY });
-  const latestZoomRef = useRef<number>(zoom);
+  const latestZoomRef = useRef<number>(internalZoom);
   const isInitialSetupDoneRef = useRef<boolean>(false);
   const initialPinchDistanceRef = useRef<number>(0);
   const initialPinchZoomRef = useRef<number>(1);
   const isPinchingRef = useRef<boolean>(false);
 
+  // Determine effective zoom: Use controlled prop if provided, otherwise internal state
+  const isZoomControlled = zoomProp !== undefined;
+  const effectiveZoom = isZoomControlled ? zoomProp : internalZoom;
+
+  // Function to update zoom: Calls prop callback or sets internal state
+  const updateZoom = useCallback((newZoomValue: number) => {
+    const clampedZoom = clamp(newZoomValue, minZoom, maxZoom);
+    if (onZoomChange) {
+      onZoomChange(clampedZoom);
+    } else {
+      setInternalZoom(clampedZoom);
+    }
+    return clampedZoom; // Return the clamped value for immediate use
+  }, [minZoom, maxZoom, onZoomChange]);
+
   // Update latest zoom ref whenever zoom state changes
   useEffect(() => {
-    latestZoomRef.current = zoom;
-  }, [zoom]);
+    latestZoomRef.current = effectiveZoom;
+  }, [effectiveZoom]);
 
   // Effect to reset state when image changes
   useEffect(() => {
     setOffsetX(0);
     setOffsetY(0);
-    setZoom(minZoom);
+    // Reset internal zoom if uncontrolled, or suggest reset via callback if controlled
+    if (isZoomControlled) {
+      // If controlled, the parent should handle resetting zoom if desired.
+      // We could call onZoomChange(minZoom) here, but it might be unexpected.
+      // For now, we only reset internal state.
+    } else {
+      setInternalZoom(minZoom);
+    }
     isInitialSetupDoneRef.current = false;
 
     if (!image) {
@@ -97,7 +124,7 @@ export function Cropper({
     return () => {
       isMounted = false;
     };
-  }, [image, minZoom]);
+  }, [image, minZoom, isZoomControlled]);
 
   // Callback to calculate and set crop area dimensions based on container size
   const updateCropAreaDimensions = useCallback((containerWidth: number, containerHeight: number) => {
@@ -223,7 +250,8 @@ export function Cropper({
     // Use provided final values if available, otherwise use state/ref (fallback)
     const currentOffsetX = finalOffsetX !== undefined ? finalOffsetX : latestRestrictedOffsetRef.current.x;
     const currentOffsetY = finalOffsetY !== undefined ? finalOffsetY : latestRestrictedOffsetRef.current.y;
-    const currentZoom = finalZoom !== undefined ? finalZoom : latestZoomRef.current; // Use latest zoom ref
+    // Use effectiveZoom if finalZoom isn't explicitly passed
+    const currentZoom = finalZoom !== undefined ? finalZoom : effectiveZoom;
 
     if (!imgWidth || !imgHeight || imageWrapperWidth <= 0 || imageWrapperHeight <= 0 || cropAreaWidth <= 0 || cropAreaHeight <= 0) {
       return null;
@@ -268,7 +296,8 @@ export function Cropper({
     };
 
   }, [
-    imgWidth, imgHeight, imageWrapperWidth, imageWrapperHeight, cropAreaWidth, cropAreaHeight
+    imgWidth, imgHeight, imageWrapperWidth, imageWrapperHeight, cropAreaWidth, cropAreaHeight,
+    effectiveZoom, // Add effectiveZoom dependency
   ]);
 
   // Effect to handle initial setup AND recalculate crop on dimension changes
@@ -279,13 +308,18 @@ export function Cropper({
         // --- Initial Setup Path --- 
         const initialX = 0;
         const initialY = 0;
-        const initialZoom = minZoom; // Start at minZoom
+        // Use the initial effectiveZoom (prop or default)
+        const initialZoom = effectiveZoom;
 
         const restrictedInitial = restrictOffset(initialX, initialY, initialZoom);
 
         setOffsetX(restrictedInitial.x);
         setOffsetY(restrictedInitial.y);
-        setZoom(initialZoom); // Set initial zoom state
+        // If uncontrolled, set the initial internal zoom state explicitly
+        // This covers the case where minZoom might change after initial render but before this effect runs
+        if (!isZoomControlled) {
+          setInternalZoom(initialZoom);
+        }
 
         dragStartOffsetRef.current = { x: restrictedInitial.x, y: restrictedInitial.y };
         latestRestrictedOffsetRef.current = { x: restrictedInitial.x, y: restrictedInitial.y };
@@ -305,7 +339,7 @@ export function Cropper({
         const restrictedCurrent = restrictOffset(
           latestRestrictedOffsetRef.current.x,
           latestRestrictedOffsetRef.current.y,
-          latestZoomRef.current
+          effectiveZoom // Use effectiveZoom
         );
 
         // Update state/refs if restriction changed something (optional, but safer)
@@ -321,7 +355,7 @@ export function Cropper({
           const updatedCropData = calculateCropData(
             latestRestrictedOffsetRef.current.x,
             latestRestrictedOffsetRef.current.y,
-            latestZoomRef.current
+            effectiveZoom // Use effectiveZoom
           );
           onCropChange(updatedCropData);
         }
@@ -332,10 +366,13 @@ export function Cropper({
       isInitialSetupDoneRef.current = false;
       setOffsetX(0);
       setOffsetY(0);
-      setZoom(minZoom);
+      // Reset internal zoom or suggest reset via callback
+      if (!isZoomControlled) {
+        setInternalZoom(minZoom);
+      } // Else parent controls reset
       dragStartOffsetRef.current = { x: 0, y: 0 };
       latestRestrictedOffsetRef.current = { x: 0, y: 0 };
-      latestZoomRef.current = minZoom;
+      latestZoomRef.current = effectiveZoom; // Reflects prop or default
       if (onCropChange) {
         onCropChange(null);
       }
@@ -348,7 +385,10 @@ export function Cropper({
     restrictOffset,
     onCropChange,
     calculateCropData,
-    minZoom // Added minZoom as it affects initial state
+    minZoom,
+    effectiveZoom, // Add effectiveZoom
+    isZoomControlled, // Add isZoomControlled
+    updateZoom, // Add updateZoom
   ]);
 
   // Mouse Drag Handlers
@@ -372,7 +412,8 @@ export function Cropper({
     const targetOffsetX = dragStartOffsetRef.current.x + deltaX;
     const targetOffsetY = dragStartOffsetRef.current.y + deltaY;
 
-    const restricted = restrictOffset(targetOffsetX, targetOffsetY, latestZoomRef.current);
+    // Use effectiveZoom for restriction check
+    const restricted = restrictOffset(targetOffsetX, targetOffsetY, effectiveZoom);
 
     latestRestrictedOffsetRef.current = restricted;
 
@@ -389,7 +430,7 @@ export function Cropper({
       const finalData = calculateCropData(
         latestRestrictedOffsetRef.current.x,
         latestRestrictedOffsetRef.current.y,
-        latestZoomRef.current
+        effectiveZoom // Use effectiveZoom
       );
       onCropChange(finalData);
     }
@@ -402,16 +443,16 @@ export function Cropper({
 
     if (!containerRef.current || imageWrapperWidth <= 0 || imageWrapperHeight <= 0) return;
 
-    const currentZoom = latestZoomRef.current;
+    const currentZoom = effectiveZoom;
     const currentOffsetX = latestRestrictedOffsetRef.current.x;
     const currentOffsetY = latestRestrictedOffsetRef.current.y;
 
     // Calculate new zoom level
     const delta = e.deltaY * -zoomSensitivity;
-    const newZoom = clamp(currentZoom + delta, minZoom, maxZoom);
+    const targetZoom = currentZoom + delta;
 
-    // If zoom didn't change, do nothing
-    if (newZoom === currentZoom) return;
+    // If zoom would not change after clamping, do nothing
+    if (clamp(targetZoom, minZoom, maxZoom) === currentZoom) return;
 
     // Calculate pointer position relative to the container center
     const rect = containerRef.current.getBoundingClientRect();
@@ -423,19 +464,20 @@ export function Cropper({
     const imagePointX = (pointerX - currentOffsetX) / currentZoom;
     const imagePointY = (pointerY - currentOffsetY) / currentZoom;
 
+    // Call updateZoom, which handles clamping and setting state/calling prop
+    const finalNewZoom = updateZoom(targetZoom);
+
     // Calculate the new offset required to keep the image point under the pointer after zoom
     // New Offset = Pointer Position - (Image Point Position * New Zoom)
-    const newOffsetX = pointerX - (imagePointX * newZoom);
-    const newOffsetY = pointerY - (imagePointY * newZoom);
+    const newOffsetX = pointerX - (imagePointX * finalNewZoom);
+    const newOffsetY = pointerY - (imagePointY * finalNewZoom);
 
     // Restrict the calculated new offset based on the new zoom level
-    const restrictedNewOffset = restrictOffset(newOffsetX, newOffsetY, newZoom);
+    const restrictedNewOffset = restrictOffset(newOffsetX, newOffsetY, finalNewZoom);
 
     // Update state and refs
-    setZoom(newZoom);
     setOffsetX(restrictedNewOffset.x);
     setOffsetY(restrictedNewOffset.y);
-    latestZoomRef.current = newZoom;
     latestRestrictedOffsetRef.current = restrictedNewOffset;
 
     // Trigger crop complete callback during zoom
@@ -443,7 +485,7 @@ export function Cropper({
       const finalData = calculateCropData(
         restrictedNewOffset.x,
         restrictedNewOffset.y,
-        newZoom
+        finalNewZoom
       );
       onCropChange(finalData);
     }
@@ -455,7 +497,9 @@ export function Cropper({
     onCropChange,
     minZoom,
     maxZoom,
-    zoomSensitivity
+    zoomSensitivity,
+    effectiveZoom, // Add effectiveZoom
+    updateZoom, // Add updateZoom
   ]);
 
   // --- Touch Event Handlers ---
@@ -520,7 +564,8 @@ export function Cropper({
       const targetOffsetX = dragStartOffsetRef.current.x + deltaX;
       const targetOffsetY = dragStartOffsetRef.current.y + deltaY;
 
-      const restricted = restrictOffset(targetOffsetX, targetOffsetY, latestZoomRef.current);
+      // Use effectiveZoom for restriction
+      const restricted = restrictOffset(targetOffsetX, targetOffsetY, effectiveZoom);
       latestRestrictedOffsetRef.current = restricted;
 
       setOffsetX(restricted.x);
@@ -530,32 +575,35 @@ export function Cropper({
       // Pinching
       const currentPinchDistance = getPinchDistance(touches);
       const scale = currentPinchDistance / initialPinchDistanceRef.current;
-      const newZoom = clamp(initialPinchZoomRef.current * scale, minZoom, maxZoom);
+      const currentZoom = effectiveZoom; // Use effectiveZoom for starting point
+      const targetZoom = initialPinchZoomRef.current * scale;
 
-      if (newZoom === latestZoomRef.current) return;
+      // If zoom would not change after clamping, do nothing
+      if (clamp(targetZoom, minZoom, maxZoom) === currentZoom) return;
 
       const pinchCenter = getPinchCenter(touches);
       const rect = containerRef.current.getBoundingClientRect();
       const pinchCenterX = pinchCenter.x - rect.left - rect.width / 2;
       const pinchCenterY = pinchCenter.y - rect.top - rect.height / 2;
 
-      const currentZoom = latestZoomRef.current;
       const currentOffsetX = latestRestrictedOffsetRef.current.x;
       const currentOffsetY = latestRestrictedOffsetRef.current.y;
       const imagePointX = (pinchCenterX - currentOffsetX) / currentZoom;
       const imagePointY = (pinchCenterY - currentOffsetY) / currentZoom;
 
-      const newOffsetX = pinchCenterX - (imagePointX * newZoom);
-      const newOffsetY = pinchCenterY - (imagePointY * newZoom);
+      // Call updateZoom, which handles clamping and setting state/calling prop
+      const finalNewZoom = updateZoom(targetZoom);
 
-      const restrictedNewOffset = restrictOffset(newOffsetX, newOffsetY, newZoom);
+      const newOffsetX = pinchCenterX - (imagePointX * finalNewZoom);
+      const newOffsetY = pinchCenterY - (imagePointY * finalNewZoom);
 
-      setZoom(newZoom);
+      const restrictedNewOffset = restrictOffset(newOffsetX, newOffsetY, finalNewZoom);
+
       setOffsetX(restrictedNewOffset.x);
-      latestZoomRef.current = newZoom;
+      setOffsetY(restrictedNewOffset.y);
       latestRestrictedOffsetRef.current = restrictedNewOffset;
     }
-  }, [isDragging, restrictOffset, minZoom, maxZoom, imageWrapperWidth, imageWrapperHeight]);
+  }, [isDragging, restrictOffset, minZoom, maxZoom, imageWrapperWidth, imageWrapperHeight, effectiveZoom, updateZoom]);
 
 
   const handleTouchEnd = useCallback((e: TouchEvent) => {
@@ -577,7 +625,7 @@ export function Cropper({
           const finalData = calculateCropData(
             latestRestrictedOffsetRef.current.x,
             latestRestrictedOffsetRef.current.y,
-            latestZoomRef.current
+            effectiveZoom // Use effectiveZoom
           );
           onCropChange(finalData);
         }
@@ -589,13 +637,13 @@ export function Cropper({
         const finalData = calculateCropData(
           latestRestrictedOffsetRef.current.x,
           latestRestrictedOffsetRef.current.y,
-          latestZoomRef.current
+          effectiveZoom // Use effectiveZoom
         );
         onCropChange(finalData);
       }
     }
 
-  }, [isDragging, onCropChange, calculateCropData]);
+  }, [isDragging, onCropChange, calculateCropData, effectiveZoom]);
 
 
   // Cleanup drag listeners on unmount
@@ -680,7 +728,7 @@ export function Cropper({
     if (moved) {
       e.preventDefault(); // Prevent default arrow key scroll
 
-      const currentZoom = latestZoomRef.current;
+      const currentZoom = effectiveZoom;
       const restricted = restrictOffset(targetOffsetX, targetOffsetY, currentZoom);
 
       // Only update if position actually changed after restriction
@@ -691,7 +739,7 @@ export function Cropper({
       }
     }
 
-  }, [keyboardStep, imageWrapperWidth, restrictOffset, onCropChange, calculateCropData]);
+  }, [keyboardStep, imageWrapperWidth, restrictOffset, onCropChange, calculateCropData, effectiveZoom]);
 
   const handleKeyUp = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
     // Only trigger on arrow keys
@@ -701,12 +749,12 @@ export function Cropper({
         const finalData = calculateCropData(
           latestRestrictedOffsetRef.current.x,
           latestRestrictedOffsetRef.current.y,
-          latestZoomRef.current
+          effectiveZoom // Use effectiveZoom
         );
         onCropChange(finalData);
       }
     }
-  }, [onCropChange, calculateCropData]);
+  }, [onCropChange, calculateCropData, effectiveZoom]);
 
   return (
     <div
@@ -726,8 +774,8 @@ export function Cropper({
       aria-describedby={id}
       aria-valuemin={minZoom}
       aria-valuemax={maxZoom}
-      aria-valuenow={zoom}
-      aria-valuetext={`Zoom: ${Math.round(zoom * 100)}%`}
+      aria-valuenow={effectiveZoom}
+      aria-valuetext={`Zoom: ${Math.round(effectiveZoom * 100)}%`}
     >
       <div id={id} className="sr-only">
         Use mouse wheel or pinch gesture to zoom. Drag with mouse or touch, or use arrow keys to pan the image within the crop area.
@@ -739,7 +787,7 @@ export function Cropper({
             style={{
               width: imageWrapperWidth,
               height: imageWrapperHeight,
-              transform: `translate3d(${offsetX}px, ${offsetY}px, 0px) scale(${zoom})`,
+              transform: `translate3d(${offsetX}px, ${offsetY}px, 0px) scale(${effectiveZoom})`,
               position: 'absolute',
               left: `calc(50% - ${imageWrapperWidth / 2}px)`,
               top: `calc(50% - ${imageWrapperHeight / 2}px)`,

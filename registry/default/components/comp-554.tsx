@@ -1,11 +1,12 @@
 "use client"
 
-import { CircleUserRoundIcon, XIcon } from "lucide-react"
+import { CircleUserRoundIcon, Volume2Icon, XIcon, ZoomInIcon, ZoomOutIcon } from "lucide-react"
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
 import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/registry/default/ui/dialog"
 import { Cropper } from "@/registry/default/ui/cropper"
+import { Slider } from "@/registry/default/ui/slider"
 
 // Define type for pixel crop area
 type Area = { x: number; y: number; width: number; height: number };
@@ -92,6 +93,9 @@ export default function Component() {
   // State to store the desired crop area in pixels
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null);
 
+  // State for zoom level
+  const [zoom, setZoom] = useState(1);
+
   // Callback for Cropper to provide crop data - Wrap with useCallback
   const handleCropChange = useCallback((pixels: Area | null) => {
     console.log("Crop Change (Pixels):", pixels);
@@ -162,6 +166,7 @@ export default function Component() {
     if (fileId && fileId !== previousFileIdRef.current) {
       setIsDialogOpen(true); // Open dialog for the new file
       setCroppedAreaPixels(null); // Reset crop area for the new file
+      setZoom(1); // Reset zoom for the new file
     }
     // Update the ref to the current fileId for the next render
     previousFileIdRef.current = fileId;
@@ -228,19 +233,33 @@ export default function Component() {
               <Cropper
                 className="h-96 sm:h-120"
                 image={previewUrl}
+                zoom={zoom}
                 onCropChange={handleCropChange}
+                onZoomChange={setZoom}
               />
             )}
-            <div className="space-y-4">
-              <div className="px-4">
-                {/* <Slider
+            <div className="px-6 py-4">
+              <div className="flex items-center gap-4 max-w-80 mx-auto">
+                <ZoomOutIcon
+                  className="shrink-0 opacity-60"
+                  size={16}
+                  aria-hidden="true"
+                />
+                <Slider
+                  defaultValue={[1]}
                   value={[zoom]}
                   min={1}
                   max={3}
                   step={0.1}
                   onValueChange={(value) => setZoom(value[0])}
-                /> */}
-              </div>
+                  aria-label="Zoom slider"
+                />
+                <ZoomInIcon
+                  className="shrink-0 opacity-60"
+                  size={16}
+                  aria-hidden="true"
+                />
+              </div>              
             </div>
           </div>
           <DialogFooter className="border-t px-6 py-4">
