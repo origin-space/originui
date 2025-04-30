@@ -34,7 +34,6 @@ export function Cropper({
   const containerRef = useRef<HTMLDivElement>(null);
 
   // State for calculated dimensions
-  const [containerHeight, setContainerHeight] = useState<number>(0);
   const [cropAreaWidth, setCropAreaWidth] = useState<number>(0);
   const [cropAreaHeight, setCropAreaHeight] = useState<number>(0);
   const [imageWrapperWidth, setImageWrapperWidth] = useState<number>(0);
@@ -49,6 +48,7 @@ export function Cropper({
   const dragStartOffsetRef = useRef<{ x: number, y: number }>({ x: 0, y: 0 });
   const latestRestrictedOffsetRef = useRef<{ x: number, y: number }>({ x: offsetX, y: offsetY }); // Ref for latest offset
   const latestZoomRef = useRef<number>(zoom); // Ref for latest zoom
+  const isInitialSetupDoneRef = useRef<boolean>(false); // Ref to track initial setup
   const initialPinchDistanceRef = useRef<number>(0); // Ref for initial pinch distance
   const initialPinchZoomRef = useRef<number>(1); // Ref for zoom level at pinch start
   const isPinchingRef = useRef<boolean>(false); // Ref to track if currently pinching
@@ -63,6 +63,7 @@ export function Cropper({
     setOffsetX(0);
     setOffsetY(0);
     setZoom(minZoom);
+    isInitialSetupDoneRef.current = false; // Reset initial setup flag
 
     if (!image) {
       setImgWidth(null);
@@ -92,70 +93,104 @@ export function Cropper({
     return () => {
       isMounted = false;
     };
-  }, [image]);
+  }, [image, minZoom]); // Added minZoom dependency
 
-  // Effect to observe container size and calculate dimensions
+  // Callback to calculate and set crop area dimensions based on container size
+  const updateCropAreaDimensions = useCallback((containerWidth: number, containerHeight: number) => {
+    if (containerWidth <= 0 || containerHeight <= 0) {
+      setCropAreaWidth(0);
+      setCropAreaHeight(0);
+      return;
+    }
+
+    const maxPossibleWidth = Math.max(0, containerWidth - cropPadding * 2);
+    const maxPossibleHeight = Math.max(0, containerHeight - cropPadding * 2);
+
+    let targetCropW = 0;
+    let targetCropH = 0;
+
+    // Determine limiting dimension based on aspect ratio
+    if (maxPossibleWidth / aspectRatio >= maxPossibleHeight) {
+      // Height is limiting
+      targetCropH = maxPossibleHeight;
+      targetCropW = targetCropH * aspectRatio;
+    } else {
+      // Width is limiting
+      targetCropW = maxPossibleWidth;
+      targetCropH = targetCropW / aspectRatio;
+    }
+
+    setCropAreaWidth(targetCropW);
+    setCropAreaHeight(targetCropH);
+
+  }, [aspectRatio, cropPadding]);
+
+
+  // Effect to observe container size and update crop area dimensions
   useEffect(() => {
     const element = containerRef.current;
     if (!element) return;
 
     const observer = new ResizeObserver(entries => {
       for (let entry of entries) {
-        const { height } = entry.contentRect;
-        if (height > 0) {
-          setContainerHeight(height); // Update container height state
+        // Get width and height from contentRect
+        const { width, height } = entry.contentRect;
+        if (width > 0 && height > 0) {
+          updateCropAreaDimensions(width, height);
         }
       }
     });
 
     observer.observe(element);
 
-    // Initial check in case observer doesn't fire immediately
+    // Initial check
+    const initialWidth = element.clientWidth;
     const initialHeight = element.clientHeight;
-    if (initialHeight > 0) {
-      setContainerHeight(initialHeight);
+    if (initialWidth > 0 && initialHeight > 0) {
+      updateCropAreaDimensions(initialWidth, initialHeight);
     }
 
     return () => observer.disconnect();
-  }, []); // Run only once on mount
+  }, [updateCropAreaDimensions]); // Depend on the callback
 
-  // Effect to calculate crop area and image wrapper sizes
+
+  // Effect to calculate image wrapper sizes based on crop area size
   useEffect(() => {
-    if (containerHeight <= 0) return; // Wait for container height
+    // Now depends on cropAreaWidth and cropAreaHeight instead of containerHeight
+    if (cropAreaWidth <= 0 || cropAreaHeight <= 0) {
+       // Reset if crop area dimensions are invalid
+       setImageWrapperWidth(0);
+       setImageWrapperHeight(0);
+       return;
+    }
 
-    // 1. Calculate Crop Area Dimensions
-    const targetCropHeight = Math.max(0, containerHeight - cropPadding * 2);
-    const targetCropWidth = Math.max(0, targetCropHeight * aspectRatio);
-
-    setCropAreaHeight(targetCropHeight);
-    setCropAreaWidth(targetCropWidth);
-
-    // 2. Calculate Image Wrapper Dimensions (if image loaded)
-    if (imgWidth && imgHeight && targetCropWidth > 0 && targetCropHeight > 0) {
+    // Calculate Image Wrapper Dimensions (if image loaded)
+    if (imgWidth && imgHeight) {
       const naturalAspect = imgWidth / imgHeight;
-      const cropAspect = targetCropWidth / targetCropHeight;
+      const cropAspect = cropAreaWidth / cropAreaHeight; // Use crop area aspect
 
       let targetWrapperWidth = 0;
       let targetWrapperHeight = 0;
 
       if (naturalAspect >= cropAspect) {
         // Image is wider or same aspect as crop area: Match height
-        targetWrapperHeight = targetCropHeight;
+        targetWrapperHeight = cropAreaHeight; // Use state variable
         targetWrapperWidth = targetWrapperHeight * naturalAspect;
       } else {
         // Image is taller than crop area: Match width
-        targetWrapperWidth = targetCropWidth;
+        targetWrapperWidth = cropAreaWidth; // Use state variable
         targetWrapperHeight = targetWrapperWidth / naturalAspect;
       }
 
       setImageWrapperWidth(targetWrapperWidth);
       setImageWrapperHeight(targetWrapperHeight);
     } else {
-      // Reset if image dimensions are not available
+      // Reset if image dimensions are not available (e.g., image not loaded yet)
       setImageWrapperWidth(0);
       setImageWrapperHeight(0);
     }
-  }, [containerHeight, cropPadding, aspectRatio, imgWidth, imgHeight]); // Recalculate when these change
+    // Depend on cropArea dimensions and image dimensions
+  }, [cropAreaWidth, cropAreaHeight, imgWidth, imgHeight]);
 
   // Function to restrict the drag offset state (relative to center), considering zoom
   const restrictOffset = useCallback((dragOffsetX: number, dragOffsetY: number, currentZoom: number): { x: number, y: number } => {
@@ -237,54 +272,85 @@ export function Cropper({
     imgWidth, imgHeight, imageWrapperWidth, imageWrapperHeight, cropAreaWidth, cropAreaHeight
   ]);
 
-  // Effect to calculate and set the initial centered offset AND trigger initial crop complete
+  // Effect to handle initial setup AND recalculate crop on dimension changes
   useEffect(() => {
     if (imageWrapperWidth > 0 && imageWrapperHeight > 0 && cropAreaWidth > 0 && cropAreaHeight > 0) {
-      // Calculate initial centered offset (relative to unzoomed wrapper)
-      // Note: Centering logic might need adjustment if initial zoom isn't 1
-      const initialX = 0; // Center X offset is 0 when zoom is 1 and wrapper covers crop area
-      const initialY = 0; // Center Y offset is 0 when zoom is 1 and wrapper covers crop area
 
-      // Restrict initial offset based on initial zoom (minZoom)
-      const restrictedInitial = restrictOffset(initialX, initialY, minZoom);
+      if (!isInitialSetupDoneRef.current) {
+        // --- Initial Setup Path --- 
+        const initialX = 0; 
+        const initialY = 0;
+        const initialZoom = minZoom; // Start at minZoom
 
-      // Set the initial state for offset
-      setOffsetX(restrictedInitial.x);
-      setOffsetY(restrictedInitial.y);
+        const restrictedInitial = restrictOffset(initialX, initialY, initialZoom);
 
-      // Update refs for dragging and zooming consistency
-      dragStartOffsetRef.current = { x: restrictedInitial.x, y: restrictedInitial.y };
-      latestRestrictedOffsetRef.current = { x: restrictedInitial.x, y: restrictedInitial.y };
-      latestZoomRef.current = minZoom; // Ensure zoom ref is also reset
+        setOffsetX(restrictedInitial.x);
+        setOffsetY(restrictedInitial.y);
+        setZoom(initialZoom); // Set initial zoom state
 
-      // Trigger initial crop complete callback with initial offset and zoom
-      if (onCropComplete) {
-        const initialCropData = calculateCropData(restrictedInitial.x, restrictedInitial.y, minZoom);
-        onCropComplete(initialCropData);
+        dragStartOffsetRef.current = { x: restrictedInitial.x, y: restrictedInitial.y };
+        latestRestrictedOffsetRef.current = { x: restrictedInitial.x, y: restrictedInitial.y };
+        latestZoomRef.current = initialZoom;
+
+        if (onCropComplete) {
+          const initialCropData = calculateCropData(restrictedInitial.x, restrictedInitial.y, initialZoom);
+          onCropComplete(initialCropData);
+        }
+        isInitialSetupDoneRef.current = true; // Mark initial setup as done
+
+      } else {
+        // --- Resize Path (after initial setup) --- 
+        // Dimensions changed, recalculate crop data with current offset/zoom
+        
+        // First, ensure the current offset is still valid for the new dimensions/zoom
+        const restrictedCurrent = restrictOffset(
+            latestRestrictedOffsetRef.current.x, 
+            latestRestrictedOffsetRef.current.y, 
+            latestZoomRef.current
+        );
+        
+        // Update state/refs if restriction changed something (optional, but safer)
+        if (restrictedCurrent.x !== latestRestrictedOffsetRef.current.x || restrictedCurrent.y !== latestRestrictedOffsetRef.current.y) {
+            setOffsetX(restrictedCurrent.x);
+            setOffsetY(restrictedCurrent.y);
+            latestRestrictedOffsetRef.current = restrictedCurrent;
+            dragStartOffsetRef.current = restrictedCurrent; // Keep drag start consistent
+        }
+
+        // Now, recalculate and emit crop data based on potentially re-restricted offset and current zoom
+        if (onCropComplete) {
+          const updatedCropData = calculateCropData(
+            latestRestrictedOffsetRef.current.x,
+            latestRestrictedOffsetRef.current.y,
+            latestZoomRef.current
+          );
+          onCropComplete(updatedCropData);
+        }
       }
+
     } else {
-      // Reset offsets and zoom if dimensions become invalid
+      // Reset if dimensions become invalid - also reset initial setup flag
+      isInitialSetupDoneRef.current = false; 
       setOffsetX(0);
       setOffsetY(0);
-      setZoom(minZoom); // Reset zoom state
+      setZoom(minZoom);
       dragStartOffsetRef.current = { x: 0, y: 0 };
       latestRestrictedOffsetRef.current = { x: 0, y: 0 };
-      latestZoomRef.current = minZoom; // Reset zoom ref
-      // Optionally call onCropComplete with null if dimensions are lost?
-      // if (onCropComplete) {
-      //   onCropComplete(null);
-      // }
+      latestZoomRef.current = minZoom;
+      if (onCropComplete) {
+         onCropComplete(null);
+      }
     }
   }, [
-    imageWrapperWidth,
-    imageWrapperHeight,
-    cropAreaWidth,
-    cropAreaWidth, // Added cropAreaWidth as it's used in calculation now
-    cropAreaHeight,
-    restrictOffset, // restrictOffset dependency list includes zoom now indirectly
-    onCropComplete,
-    calculateCropData // calculateCropData dependency list includes zoom now indirectly
-  ]); // Dependencies - zoom state is implicitly handled via refs/initial value
+       imageWrapperWidth,
+       imageWrapperHeight,
+       cropAreaWidth,
+       cropAreaHeight,
+       restrictOffset,
+       onCropComplete,
+       calculateCropData,
+       minZoom // Added minZoom as it affects initial state
+    ]);
 
   // Mouse Drag Handlers
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
