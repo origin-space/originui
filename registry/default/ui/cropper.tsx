@@ -1,5 +1,6 @@
 "use client"
 
+// Removed WheelEvent import from 'react'
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 // Clamp utility function
@@ -14,6 +15,9 @@ export function Cropper({
   image,
   cropPadding = 25,
   aspectRatio = 1,
+  minZoom = 1,
+  maxZoom = 3,
+  zoomSensitivity = 0.005,
   className,
   onCropComplete
 }: {
@@ -21,6 +25,9 @@ export function Cropper({
   cropPadding?: number
   aspectRatio?: number
   className?: string
+  minZoom?: number
+  maxZoom?: number
+  zoomSensitivity?: number
   onCropComplete?: (pixels: Area | null) => void
 }) {
   const [imgWidth, setImgWidth] = useState<number | null>(null);
@@ -37,15 +44,23 @@ export function Cropper({
   // State for dragging
   const [offsetX, setOffsetX] = useState<number>(0);
   const [offsetY, setOffsetY] = useState<number>(0);
+  const [zoom, setZoom] = useState<number>(minZoom); // Zoom state
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const dragStartPointRef = useRef<{ x: number, y: number }>({ x: 0, y: 0 });
   const dragStartOffsetRef = useRef<{ x: number, y: number }>({ x: 0, y: 0 });
   const latestRestrictedOffsetRef = useRef<{ x: number, y: number }>({ x: offsetX, y: offsetY }); // Ref for latest offset
+  const latestZoomRef = useRef<number>(zoom); // Ref for latest zoom
+
+  // Update latest zoom ref whenever zoom state changes
+  useEffect(() => {
+    latestZoomRef.current = zoom;
+  }, [zoom]);
 
   useEffect(() => {
-    // Reset offset immediately when image prop changes, before loading
+    // Reset offset and zoom immediately when image prop changes, before loading
     setOffsetX(0);
     setOffsetY(0);
+    setZoom(minZoom);
 
     if (!image) {
       setImgWidth(null);
@@ -140,60 +155,66 @@ export function Cropper({
     }
   }, [containerHeight, cropPadding, aspectRatio, imgWidth, imgHeight]); // Recalculate when these change
 
-  // Function to restrict the drag offset state (relative to center)
-  const restrictOffset = useCallback((dragOffsetX: number, dragOffsetY: number): { x: number, y: number } => {
+  // Function to restrict the drag offset state (relative to center), considering zoom
+  const restrictOffset = useCallback((dragOffsetX: number, dragOffsetY: number, currentZoom: number): { x: number, y: number } => {
     if (imageWrapperWidth <= 0 || imageWrapperHeight <= 0 || cropAreaWidth <= 0 || cropAreaHeight <= 0) {
       return { x: 0, y: 0 }; // Cannot restrict if dimensions are invalid
     }
 
+    // Calculate the *effective* size of the image wrapper at the current zoom level
+    const effectiveWrapperWidth = imageWrapperWidth * currentZoom;
+    const effectiveWrapperHeight = imageWrapperHeight * currentZoom;
+
     // Calculate maximum distance the center can move from the center point (0,0)
-    const maxDragX = (imageWrapperWidth - cropAreaWidth) / 2;
-    const maxDragY = (imageWrapperHeight - cropAreaHeight) / 2;
+    // This is half the difference between the effective wrapper size and the crop area size
+    const maxDragX = Math.max(0, (effectiveWrapperWidth - cropAreaWidth) / 2);
+    const maxDragY = Math.max(0, (effectiveWrapperHeight - cropAreaHeight) / 2);
 
     // Clamp the drag offset state
-    // If image wrapper is smaller than crop area, max drag is 0 (it stays centered)
-    const restrictedX = imageWrapperWidth >= cropAreaWidth ? clamp(dragOffsetX, -maxDragX, maxDragX) : 0;
-    const restrictedY = imageWrapperHeight >= cropAreaHeight ? clamp(dragOffsetY, -maxDragY, maxDragY) : 0;
+    const restrictedX = clamp(dragOffsetX, -maxDragX, maxDragX);
+    const restrictedY = clamp(dragOffsetY, -maxDragY, maxDragY);
 
     return { x: restrictedX, y: restrictedY };
   }, [imageWrapperWidth, imageWrapperHeight, cropAreaWidth, cropAreaHeight]);
 
   // Function to calculate the crop area in pixels relative to the original image
+  // Function to calculate the crop area in pixels relative to the original image, considering zoom
   const calculateCropData = useCallback((
     finalOffsetX?: number, // Optional final offset X
-    finalOffsetY?: number  // Optional final offset Y
+    finalOffsetY?: number, // Optional final offset Y
+    finalZoom?: number     // Optional final zoom
   ): Area | null => {
-    // Use provided final offsets if available, otherwise use state (fallback)
-    const currentOffsetX = finalOffsetX !== undefined ? finalOffsetX : offsetX;
-    const currentOffsetY = finalOffsetY !== undefined ? finalOffsetY : offsetY;
+    // Use provided final values if available, otherwise use state/ref (fallback)
+    const currentOffsetX = finalOffsetX !== undefined ? finalOffsetX : latestRestrictedOffsetRef.current.x;
+    const currentOffsetY = finalOffsetY !== undefined ? finalOffsetY : latestRestrictedOffsetRef.current.y;
+    const currentZoom = finalZoom !== undefined ? finalZoom : latestZoomRef.current; // Use latest zoom ref
 
-    // Need all dimensions and the *current zoom* (assuming zoom=1 for now)
-    // TODO: Add zoom state and factor it in
-    const zoom = 1;
-    if (!imgWidth || !imgHeight || imageWrapperWidth <= 0 || cropAreaWidth <= 0) {
+    if (!imgWidth || !imgHeight || imageWrapperWidth <= 0 || imageWrapperHeight <= 0 || cropAreaWidth <= 0 || cropAreaHeight <= 0) {
       return null;
     }
 
-    // Calculate the top-left position of the image wrapper relative to the crop area center
-    const topLeftOffsetX = currentOffsetX + (cropAreaWidth - imageWrapperWidth) / 2; // Use currentOffsetX
-    const topLeftOffsetY = currentOffsetY + (cropAreaHeight - imageWrapperHeight) / 2; // Use currentOffsetY
+    // Calculate the top-left position of the *scaled* image wrapper relative to the crop area center
+    // The wrapper's visual top-left corner shifts due to both offset and scaling from its center
+    const scaledWrapperWidth = imageWrapperWidth * currentZoom;
+    const scaledWrapperHeight = imageWrapperHeight * currentZoom;
+    const topLeftOffsetX = currentOffsetX + (cropAreaWidth - scaledWrapperWidth) / 2;
+    const topLeftOffsetY = currentOffsetY + (cropAreaHeight - scaledWrapperHeight) / 2;
 
-    // Calculate the scale factor between the wrapper and the natural image size
-    // This assumes the wrapper was calculated correctly to cover the crop area
-    const scale = imgWidth > imgHeight
-      ? imageWrapperWidth / imgWidth // Scaled by width
-      : imageWrapperHeight / imgHeight; // Scaled by height
+    // Calculate the scale factor between the *unscaled* wrapper and the natural image size
+    // This determines how much the base wrapper was scaled down from the original image
+    const baseScale = imgWidth / imageWrapperWidth; // Assuming width determines scale, adjust if needed
 
-    // If scale is somehow invalid, exit
-    if (isNaN(scale) || scale === 0) return null;
+    // If baseScale is somehow invalid, exit
+    if (isNaN(baseScale) || baseScale === 0) return null;
 
     // Calculate the source rectangle (sx, sy, sWidth, sHeight) on the original image
-    // sx/sy: top-left corner of crop area relative to top-left of image, scaled back to original dims
-    // sWidth/sHeight: size of crop area, scaled back to original dims
-    const sx = (-topLeftOffsetX / scale) / zoom; // Adjust for zoom
-    const sy = (-topLeftOffsetY / scale) / zoom; // Adjust for zoom
-    const sWidth = (cropAreaWidth / scale) / zoom; // Adjust for zoom
-    const sHeight = (cropAreaHeight / scale) / zoom; // Adjust for zoom
+    // sx/sy: top-left corner of crop area relative to top-left of the *scaled* image wrapper,
+    //        then scaled back to original image dimensions.
+    // sWidth/sHeight: size of crop area, scaled back to original image dimensions.
+    const sx = -topLeftOffsetX * baseScale / currentZoom;
+    const sy = -topLeftOffsetY * baseScale / currentZoom;
+    const sWidth = cropAreaWidth * baseScale / currentZoom;
+    const sHeight = cropAreaHeight * baseScale / currentZoom;
 
     // Clamp/round values to be within natural image bounds
     const finalX = clamp(Math.round(sx), 0, imgWidth);
@@ -217,32 +238,36 @@ export function Cropper({
   // Effect to calculate and set the initial centered offset AND trigger initial crop complete
   useEffect(() => {
     if (imageWrapperWidth > 0 && imageWrapperHeight > 0 && cropAreaWidth > 0 && cropAreaHeight > 0) {
-      // Calculate initial centered offset
-      const initialX = (cropAreaWidth - imageWrapperWidth) / 2;
-      const initialY = (cropAreaHeight - imageWrapperHeight) / 2;
+      // Calculate initial centered offset (relative to unzoomed wrapper)
+      // Note: Centering logic might need adjustment if initial zoom isn't 1
+      const initialX = 0; // Center X offset is 0 when zoom is 1 and wrapper covers crop area
+      const initialY = 0; // Center Y offset is 0 when zoom is 1 and wrapper covers crop area
 
-      // Restrict initial offset (though centering should be within bounds if image covers crop area)
-      const restrictedInitial = restrictOffset(initialX, initialY);
+      // Restrict initial offset based on initial zoom (minZoom)
+      const restrictedInitial = restrictOffset(initialX, initialY, minZoom);
 
       // Set the initial state for offset
       setOffsetX(restrictedInitial.x);
       setOffsetY(restrictedInitial.y);
 
-      // Update refs for dragging consistency
+      // Update refs for dragging and zooming consistency
       dragStartOffsetRef.current = { x: restrictedInitial.x, y: restrictedInitial.y };
       latestRestrictedOffsetRef.current = { x: restrictedInitial.x, y: restrictedInitial.y };
+      latestZoomRef.current = minZoom; // Ensure zoom ref is also reset
 
-      // Trigger initial crop complete callback
+      // Trigger initial crop complete callback with initial offset and zoom
       if (onCropComplete) {
-        const initialCropData = calculateCropData(restrictedInitial.x, restrictedInitial.y);
+        const initialCropData = calculateCropData(restrictedInitial.x, restrictedInitial.y, minZoom);
         onCropComplete(initialCropData);
       }
     } else {
-      // Reset offsets if dimensions become invalid
+      // Reset offsets and zoom if dimensions become invalid
       setOffsetX(0);
       setOffsetY(0);
+      setZoom(minZoom); // Reset zoom state
       dragStartOffsetRef.current = { x: 0, y: 0 };
       latestRestrictedOffsetRef.current = { x: 0, y: 0 };
+      latestZoomRef.current = minZoom; // Reset zoom ref
       // Optionally call onCropComplete with null if dimensions are lost?
       // if (onCropComplete) {
       //   onCropComplete(null);
@@ -252,11 +277,12 @@ export function Cropper({
     imageWrapperWidth,
     imageWrapperHeight,
     cropAreaWidth,
+    cropAreaWidth, // Added cropAreaWidth as it's used in calculation now
     cropAreaHeight,
-    restrictOffset,
+    restrictOffset, // restrictOffset dependency list includes zoom now indirectly
     onCropComplete,
-    calculateCropData
-  ]); // Dependencies
+    calculateCropData // calculateCropData dependency list includes zoom now indirectly
+  ]); // Dependencies - zoom state is implicitly handled via refs/initial value
 
   // Mouse Drag Handlers
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -280,7 +306,8 @@ export function Cropper({
     const targetOffsetX = dragStartOffsetRef.current.x + deltaX;
     const targetOffsetY = dragStartOffsetRef.current.y + deltaY;
 
-    const restricted = restrictOffset(targetOffsetX, targetOffsetY);
+    // Restrict using the *current* zoom level from the ref
+    const restricted = restrictOffset(targetOffsetX, targetOffsetY, latestZoomRef.current);
 
     // Update ref with the latest restricted offset
     latestRestrictedOffsetRef.current = restricted;
@@ -294,48 +321,136 @@ export function Cropper({
     setIsDragging(false);
     window.removeEventListener('mousemove', handleMouseMove);
     window.removeEventListener('mouseup', handleMouseUp);
-    // Call onCropComplete when dragging stops, using the latest offset from the ref
+    // Call onCropComplete when dragging stops, using the latest offset and zoom from refs
     if (onCropComplete) {
       const finalData = calculateCropData(
         latestRestrictedOffsetRef.current.x,
-        latestRestrictedOffsetRef.current.y
+        latestRestrictedOffsetRef.current.y,
+        latestZoomRef.current // Pass the current zoom
       );
       onCropComplete(finalData);
     }
   };
 
-  // Cleanup listeners on unmount
+  // Wheel Handler for Zoom - Use DOM WheelEvent type for addEventListener
+  const handleWheel = useCallback((e: WheelEvent) => { // Changed type here
+    e.preventDefault(); // Prevent default scroll behavior
+    e.stopPropagation(); // Stop the event from bubbling up
+
+    if (!containerRef.current || imageWrapperWidth <= 0 || imageWrapperHeight <= 0) return;
+
+    const currentZoom = latestZoomRef.current;
+    const currentOffsetX = latestRestrictedOffsetRef.current.x;
+    const currentOffsetY = latestRestrictedOffsetRef.current.y;
+
+    // Calculate new zoom level
+    const delta = e.deltaY * -zoomSensitivity;
+    const newZoom = clamp(currentZoom + delta, minZoom, maxZoom);
+
+    // If zoom didn't change, do nothing
+    if (newZoom === currentZoom) return;
+
+    // Calculate pointer position relative to the container center
+    const rect = containerRef.current.getBoundingClientRect();
+    const pointerX = e.clientX - rect.left - rect.width / 2;
+    const pointerY = e.clientY - rect.top - rect.height / 2;
+
+    // Calculate the point on the image wrapper (relative to its center) that is under the pointer
+    // Adjust for current offset and zoom
+    const imagePointX = (pointerX - currentOffsetX) / currentZoom;
+    const imagePointY = (pointerY - currentOffsetY) / currentZoom;
+
+    // Calculate the new offset required to keep the image point under the pointer after zoom
+    // New Offset = Pointer Position - (Image Point Position * New Zoom)
+    const newOffsetX = pointerX - (imagePointX * newZoom);
+    const newOffsetY = pointerY - (imagePointY * newZoom);
+
+    // Restrict the calculated new offset based on the new zoom level
+    const restrictedNewOffset = restrictOffset(newOffsetX, newOffsetY, newZoom);
+
+    // Update state and refs
+    setZoom(newZoom);
+    setOffsetX(restrictedNewOffset.x);
+    setOffsetY(restrictedNewOffset.y);
+    latestZoomRef.current = newZoom; // Update ref immediately for next potential event
+    latestRestrictedOffsetRef.current = restrictedNewOffset; // Update ref immediately
+
+    // Trigger crop complete callback with the final state after zoom
+    if (onCropComplete) {
+      const finalData = calculateCropData(
+        restrictedNewOffset.x,
+        restrictedNewOffset.y,
+        newZoom
+      );
+      onCropComplete(finalData);
+    }
+  }, [ // Added useCallback and dependencies for handleWheel
+    restrictOffset,
+    calculateCropData,
+    imageWrapperWidth,
+    imageWrapperHeight,
+    onCropComplete,
+    // Refs are stable and don't need to be dependencies
+    // State values (zoom, offsetX, offsetY) are accessed via refs inside or passed as args
+  ]);
+
+  // Cleanup drag listeners on unmount
   useEffect(() => {
-    return () => {
+    // Ensure listeners are removed if component unmounts during drag
+    const removeDragListeners = () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseup', handleMouseUp);
     };
-  }, []); // Empty dependency array ensures this runs only on unmount
+    return removeDragListeners;
+  }, []); // Empty dependency array ensures this runs only on mount/unmount
+
+  // Effect to attach non-passive wheel listener
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node) return;
+
+    // Attach the wheel listener manually with passive: false
+    // Cast options to 'any' to bypass TS error about 'passive' property
+    node.addEventListener('wheel', handleWheel, { passive: false } as any);
+
+    // Cleanup function to remove the listener
+    return () => {
+      // Cast options to 'any' here too for consistency
+      node.removeEventListener('wheel', handleWheel, { passive: false } as any);
+    };
+  }, [handleWheel]); // Re-attach if handleWheel changes (due to useCallback dependencies)
+
 
   return (
     <div
       ref={containerRef}
-      className="relative h-120 w-full flex flex-col items-center justify-center bg-muted overflow-hidden cursor-move"
+      className={`relative h-120 w-full flex flex-col items-center justify-center bg-muted overflow-hidden cursor-move ${className ?? ''}`}
       onMouseDown={handleMouseDown}
+      // onWheel is removed here - managed by useEffect now
     >
       {(imageWrapperWidth > 0 && imageWrapperHeight > 0) && (
         <div
           style={{
             width: imageWrapperWidth,
             height: imageWrapperHeight,
-            // Apply ONLY the drag offset state to transform (relative to CSS centered position)
-            transform: `translate3d(${offsetX}px, ${offsetY}px, 0px)`,
+            transform: `translate3d(${offsetX}px, ${offsetY}px, 0px) scale(${zoom})`,
             position: 'absolute',
             left: `calc(50% - ${imageWrapperWidth / 2}px)`,
+            top: `calc(50% - ${imageWrapperHeight / 2}px)`,
+            willChange: 'transform',
           } as React.CSSProperties}
         >
-          <div
+          <img
+            src={image}
+            alt="Image to crop"
+            draggable="false"
             style={{
-              backgroundImage: `url(${image})`,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              pointerEvents: 'none',
             }}
-            className="bg-cover bg-center bg-no-repeat absolute inset-0"
-          ></div>
-          <img src={image} draggable="false" alt="Crop image" className="sr-only" />
+          />
         </div>
       )}
       {(cropAreaWidth > 0 && cropAreaHeight > 0) && (
@@ -347,6 +462,10 @@ export function Cropper({
           }}
         ></div>
       )}
+      {/* Debug display - remove later */}
+      {/* <div className="absolute bottom-2 left-2 bg-black/50 text-white p-1 text-xs rounded">
+        Zoom: {zoom.toFixed(2)} | Offset: ({offsetX.toFixed(1)}, {offsetY.toFixed(1)})
+      </div> */}
     </div>
   )
 }
