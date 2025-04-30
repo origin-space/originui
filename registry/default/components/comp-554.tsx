@@ -171,9 +171,8 @@ export default function Component() {
     <div className="flex flex-col items-center gap-2">
       <div className="relative inline-flex">
         {/* Drop area - uses finalImageUrl */}
-        <div
-          className="border-input hover:bg-accent/50 data-[dragging=true]:bg-accent/50 has-[input:focus]:border-ring has-[input:focus]:ring-ring/50 relative flex size-16 items-center justify-center overflow-hidden rounded-full border border-dashed transition-colors has-disabled:pointer-events-none has-disabled:opacity-50 has-[img]:border-none has-[input:focus]:ring-[3px]"
-          role="button"
+        <button
+          className="border-input hover:bg-accent/50 data-[dragging=true]:bg-accent/50 focus-visible:border-ring focus-visible:ring-ring/50 relative flex size-16 items-center justify-center overflow-hidden rounded-full border border-dashed transition-colors has-disabled:pointer-events-none has-disabled:opacity-50 has-[img]:border-none focus-visible:ring-[3px] outline-none"
           onClick={openFileDialog}
           onDragEnter={handleDragEnter}
           onDragLeave={handleDragLeave}
@@ -196,7 +195,7 @@ export default function Component() {
               <CircleUserRoundIcon className="size-4 opacity-60" />
             </div>
           )}
-        </div>
+        </button>
         {/* Remove button - depends on finalImageUrl */}
         {finalImageUrl && (
           <Button
@@ -212,6 +211,7 @@ export default function Component() {
           {...getInputProps()}
           className="sr-only"
           aria-label="Upload image file"
+          tabIndex={-1}
         />
       </div>
 

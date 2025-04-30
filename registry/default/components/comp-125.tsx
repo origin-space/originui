@@ -45,6 +45,7 @@ export default function Component() {
             {...getInputProps()}
             className="sr-only"
             aria-label="Upload image file"
+            tabIndex={-1}
           />
         </div>
       </div>
