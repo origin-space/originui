@@ -32,9 +32,9 @@ export function Cropper({
   zoomSensitivity?: number
   keyboardStep?: number
   className?: string
-  zoom?: number; // Optional: Controlled zoom value
+  zoom?: number;
   onCropChange?: (pixels: Area | null) => void
-  onZoomChange?: (zoom: number) => void; // Optional: Callback for zoom changes
+  onZoomChange?: (zoom: number) => void;
 }) {
   const id = useId();
   const [imgWidth, setImgWidth] = useState<number | null>(null);
