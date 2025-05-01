@@ -10058,6 +10058,62 @@
         "tags": ["upload", "file", "drag and drop"],
         "colSpan": 2
       }
+    },
+    {
+      "name": "comp-559",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-559.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file", "drag and drop"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-560",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-560.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file", "drag and drop"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-561",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-561.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file", "drag and drop"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-562",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-562.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file", "drag and drop"],
+        "colSpan": 2
+      }
     }
   ]
 }

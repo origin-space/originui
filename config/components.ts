@@ -255,9 +255,13 @@ export const categories: ComponentCategory[] = [
     name: "Image Cropper",
     components: [
       { name: "comp-555" },
+      { name: "comp-560" },
       { name: "comp-558" },
       { name: "comp-556" },
       { name: "comp-557" },
+      { name: "comp-559" },
+      { name: "comp-561" },
+      { name: "comp-562" },
       { name: "comp-554" }
     ],
     isNew: true,
