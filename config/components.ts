@@ -251,6 +251,18 @@ export const categories: ComponentCategory[] = [
     ],
   },
   {
+    slug: "image-cropper",
+    name: "Image Cropper",
+    components: [
+      { name: "comp-555" },
+      { name: "comp-558" },
+      { name: "comp-556" },
+      { name: "comp-557" },
+      { name: "comp-554" }
+    ],
+    isNew: true,
+  },
+  {
     slug: "dialog",
     name: "Dialog",
     components: [
@@ -322,7 +334,6 @@ export const categories: ComponentCategory[] = [
   {
     slug: "event-calendar",
     name: "Event calendar",
-    isNew: true,
     components: [{ name: "comp-542" }],
   },
   {

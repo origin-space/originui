@@ -273,6 +273,7 @@ export default function Component() {
           </DialogHeader>
           {previewUrl && (
             <Cropper
+              className="h-96 sm:h-120"
               image={previewUrl}
               zoom={zoom}
               onCropChange={handleCropChange}
@@ -318,6 +319,7 @@ export default function Component() {
         <a
           href="https://github.com/origin-space/originui/tree/main/docs/use-file-upload.md"
           className="hover:text-foreground underline"
+          target="_blank"
         >
           uploader
         </a>{" "}
@@ -325,10 +327,10 @@ export default function Component() {
         <a
           href="https://github.com/origin-space/image-cropper"
           className="hover:text-foreground underline"
+          target="_blank"
         >
           cropper
-        </a>{" "}
-        ∙{" "}
+        </a>
       </p>
     </div>
   )
