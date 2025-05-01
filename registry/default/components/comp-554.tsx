@@ -4,7 +4,7 @@ import { ArrowLeftIcon, CircleUserRoundIcon, XIcon, ZoomInIcon, ZoomOutIcon } fr
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
 import { Button } from "@/registry/default/ui/button"
-import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/registry/default/ui/dialog"
+import { Dialog, DialogDescription, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/registry/default/ui/dialog"
 import { Cropper } from "@/registry/default/ui/cropper"
 import { Slider } from "@/registry/default/ui/slider"
 
@@ -98,7 +98,6 @@ export default function Component() {
 
   // Callback for Cropper to provide crop data - Wrap with useCallback
   const handleCropChange = useCallback((pixels: Area | null) => {
-    console.log("Crop Change (Pixels):", pixels);
     setCroppedAreaPixels(pixels);
   }, []);
 
@@ -223,6 +222,7 @@ export default function Component() {
       {/* Cropper Dialog - Use isDialogOpen for open prop */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent className="sm:max-w-140 p-0 gap-0 *:[button]:hidden">
+          <DialogDescription className="sr-only">Crop image dialog</DialogDescription>
           <DialogHeader className="contents space-y-0 text-left">
             <DialogTitle className="border-b p-4 text-base flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -237,13 +237,18 @@ export default function Component() {
             </DialogTitle>    
           </DialogHeader>          
           {previewUrl && (
-            <Cropper
-              className="h-96 sm:h-120"
+            <Cropper.Root
+              data-slot="cropper-container"
+              className="relative h-96 sm:h-120 w-full flex items-center justify-center overflow-hidden cursor-move focus:outline-none touch-none"
               image={previewUrl}
               zoom={zoom}
               onCropChange={handleCropChange}
               onZoomChange={setZoom}
-            />
+            >
+              <Cropper.Description>Use mouse wheel or pinch gesture to zoom. Drag with mouse or touch, or use arrow keys to pan the image within the crop area.</Cropper.Description>
+              <Cropper.Image data-slot="cropper-image" className="w-full h-full object-cover pointer-events-none" />
+              <Cropper.CropArea data-slot="cropper-crop-area" className="border-3 border-white absolute shadow-[0_0_0_9999px_rgba(0,0,0,0.7)] pointer-events-none in-[[data-slot=cropper-container]:focus-visible]:ring-[3px] in-[[data-slot=cropper-container]:focus-visible]:ring-white/50" />
+            </Cropper.Root>
           )}
           <DialogFooter className="border-t px-4 py-6">
             <div className="w-full flex items-center gap-4 max-w-80 mx-auto">

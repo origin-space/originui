@@ -1,17 +1,73 @@
-"use client"
+import * as React from 'react';
+import { useState, useEffect, useRef, useCallback, useId, createContext, useContext } from 'react';
 
-import { useState, useEffect, useRef, useCallback, useId } from 'react';
-import { cn } from '@/registry/default/lib/utils';
-
-// Clamp utility function
 function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max);
 }
 
-// Define type for pixel crop area passed to callback
 type Area = { x: number; y: number; width: number; height: number };
 
-export function Cropper({
+interface CropperContextValue {
+  containerRef: React.RefObject<HTMLDivElement | null>;
+  image: string | null;
+  imgWidth: number | null;
+  imgHeight: number | null;
+  cropAreaWidth: number;
+  cropAreaHeight: number;
+  imageWrapperWidth: number;
+  imageWrapperHeight: number;
+  offsetX: number;
+  offsetY: number;
+  effectiveZoom: number;
+  minZoom: number;
+  maxZoom: number;
+  getRootProps: () => React.HTMLAttributes<HTMLDivElement>;
+  getImageProps: () => React.ImgHTMLAttributes<HTMLImageElement>;
+  getImageWrapperStyle: () => React.CSSProperties;
+  getCropAreaProps: () => React.HTMLAttributes<HTMLDivElement>;
+  getCropAreaStyle: () => React.CSSProperties;
+  descriptionId: string;
+}
+
+const CropperContext = createContext<CropperContextValue | null>(null);
+
+const useCropperContext = () => {
+  const context = useContext(CropperContext);
+  if (!context) {
+    throw new Error('useCropperContext must be used within a Cropper.Root');
+  }
+  return context;
+};
+
+const CROPPPER_DESC_WARN_MESSAGE = `Warning: \`Cropper.Root\` requires a \`Cropper.Description\` child for the component to be accessible for screen reader users.
+
+If you want to hide the description visually, you can either pass your own className with sr-only styles.
+
+Example:
+<Cropper.Root>
+  ...
+  <Cropper.Description className="sr-only">
+    Instructions for using the cropper.
+  </Cropper.Description>
+  ...
+</Cropper.Root>
+`;
+
+interface CropperRootProps extends React.HTMLAttributes<HTMLDivElement> {
+  image: string;
+  cropPadding?: number;
+  aspectRatio?: number;
+  minZoom?: number;
+  maxZoom?: number;
+  zoomSensitivity?: number;
+  keyboardStep?: number;
+  zoom?: number; // Controlled zoom
+  onCropChange?: (pixels: Area | null) => void;
+  onZoomChange?: (zoom: number) => void;
+  children: React.ReactNode;
+}
+
+const CropperRoot: React.FC<CropperRootProps> = ({
   image,
   cropPadding = 25,
   aspectRatio = 1,
@@ -20,37 +76,25 @@ export function Cropper({
   zoomSensitivity = 0.005,
   keyboardStep = 10,
   className,
+  style,
   zoom: zoomProp,
   onCropChange,
   onZoomChange,
-}: {
-  image: string
-  cropPadding?: number
-  aspectRatio?: number
-  minZoom?: number
-  maxZoom?: number
-  zoomSensitivity?: number
-  keyboardStep?: number
-  className?: string
-  zoom?: number;
-  onCropChange?: (pixels: Area | null) => void
-  onZoomChange?: (zoom: number) => void;
-}) {
-  const id = useId();
+  children,
+  ...restProps
+}) => {
+  const descriptionId = useId();
   const [imgWidth, setImgWidth] = useState<number | null>(null);
   const [imgHeight, setImgHeight] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // State for calculated dimensions
   const [cropAreaWidth, setCropAreaWidth] = useState<number>(0);
   const [cropAreaHeight, setCropAreaHeight] = useState<number>(0);
   const [imageWrapperWidth, setImageWrapperWidth] = useState<number>(0);
   const [imageWrapperHeight, setImageWrapperHeight] = useState<number>(0);
 
-  // State for dragging
   const [offsetX, setOffsetX] = useState<number>(0);
   const [offsetY, setOffsetY] = useState<number>(0);
-  // Internal zoom state, used when zoom prop is not provided
   const [internalZoom, setInternalZoom] = useState<number>(minZoom);
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const dragStartPointRef = useRef<{ x: number, y: number }>({ x: 0, y: 0 });
@@ -62,36 +106,30 @@ export function Cropper({
   const initialPinchZoomRef = useRef<number>(1);
   const isPinchingRef = useRef<boolean>(false);
 
-  // Determine effective zoom: Use controlled prop if provided, otherwise internal state
+  // Warning state
+  const hasWarnedRef = useRef(false);
+
   const isZoomControlled = zoomProp !== undefined;
   const effectiveZoom = isZoomControlled ? zoomProp : internalZoom;
 
-  // Function to update zoom: Calls prop callback or sets internal state
   const updateZoom = useCallback((newZoomValue: number) => {
     const clampedZoom = clamp(newZoomValue, minZoom, maxZoom);
     if (onZoomChange) {
       onZoomChange(clampedZoom);
-    } else {
+    } else if (!isZoomControlled) {
       setInternalZoom(clampedZoom);
     }
-    return clampedZoom; // Return the clamped value for immediate use
-  }, [minZoom, maxZoom, onZoomChange]);
+    return clampedZoom;
+  }, [minZoom, maxZoom, onZoomChange, isZoomControlled]);
 
-  // Update latest zoom ref whenever zoom state changes
   useEffect(() => {
     latestZoomRef.current = effectiveZoom;
   }, [effectiveZoom]);
 
-  // Effect to reset state when image changes
   useEffect(() => {
     setOffsetX(0);
     setOffsetY(0);
-    // Reset internal zoom if uncontrolled, or suggest reset via callback if controlled
-    if (isZoomControlled) {
-      // If controlled, the parent should handle resetting zoom if desired.
-      // We could call onZoomChange(minZoom) here, but it might be unexpected.
-      // For now, we only reset internal state.
-    } else {
+    if (!isZoomControlled) {
       setInternalZoom(minZoom);
     }
     isInitialSetupDoneRef.current = false;
@@ -104,715 +142,494 @@ export function Cropper({
 
     let isMounted = true;
     const img = new Image();
-
     img.onload = () => {
       if (isMounted) {
         setImgWidth(img.naturalWidth);
         setImgHeight(img.naturalHeight);
       }
     };
-
     img.onerror = () => {
       if (isMounted) {
         setImgWidth(null);
         setImgHeight(null);
       }
     };
-
     img.src = image;
 
-    return () => {
-      isMounted = false;
-    };
+    return () => { isMounted = false; };
   }, [image, minZoom, isZoomControlled]);
 
-  // Callback to calculate and set crop area dimensions based on container size
   const updateCropAreaDimensions = useCallback((containerWidth: number, containerHeight: number) => {
     if (containerWidth <= 0 || containerHeight <= 0) {
-      setCropAreaWidth(0);
-      setCropAreaHeight(0);
-      return;
+      setCropAreaWidth(0); setCropAreaHeight(0); return;
     }
-
     const maxPossibleWidth = Math.max(0, containerWidth - cropPadding * 2);
     const maxPossibleHeight = Math.max(0, containerHeight - cropPadding * 2);
-
-    let targetCropW = 0;
-    let targetCropH = 0;
-
-    // Determine limiting dimension based on aspect ratio
+    let targetCropW = 0, targetCropH = 0;
     if (maxPossibleWidth / aspectRatio >= maxPossibleHeight) {
-      // Height is limiting
-      targetCropH = maxPossibleHeight;
-      targetCropW = targetCropH * aspectRatio;
+      targetCropH = maxPossibleHeight; targetCropW = targetCropH * aspectRatio;
     } else {
-      // Width is limiting
-      targetCropW = maxPossibleWidth;
-      targetCropH = targetCropW / aspectRatio;
+      targetCropW = maxPossibleWidth; targetCropH = targetCropW / aspectRatio;
     }
-
-    setCropAreaWidth(targetCropW);
-    setCropAreaHeight(targetCropH);
-
+    setCropAreaWidth(targetCropW); setCropAreaHeight(targetCropH);
   }, [aspectRatio, cropPadding]);
 
-  // Effect to observe container size and update crop area dimensions
   useEffect(() => {
     const element = containerRef.current;
     if (!element) return;
-
     const observer = new ResizeObserver(entries => {
       for (let entry of entries) {
-        // Get width and height from contentRect
         const { width, height } = entry.contentRect;
-        if (width > 0 && height > 0) {
-          updateCropAreaDimensions(width, height);
-        }
+        if (width > 0 && height > 0) updateCropAreaDimensions(width, height);
       }
     });
-
     observer.observe(element);
-
-    // Initial check
     const initialWidth = element.clientWidth;
     const initialHeight = element.clientHeight;
-    if (initialWidth > 0 && initialHeight > 0) {
-      updateCropAreaDimensions(initialWidth, initialHeight);
-    }
-
+    if (initialWidth > 0 && initialHeight > 0) updateCropAreaDimensions(initialWidth, initialHeight);
     return () => observer.disconnect();
   }, [updateCropAreaDimensions]);
 
-  // Effect to calculate image wrapper sizes based on crop area size
   useEffect(() => {
-    if (cropAreaWidth <= 0 || cropAreaHeight <= 0) {
-      // Reset if crop area dimensions are invalid
-      setImageWrapperWidth(0);
-      setImageWrapperHeight(0);
-      return;
+    if (cropAreaWidth <= 0 || cropAreaHeight <= 0 || !imgWidth || !imgHeight) {
+      setImageWrapperWidth(0); setImageWrapperHeight(0); return;
     }
-
-    // Calculate Image Wrapper Dimensions (if image loaded)
-    if (imgWidth && imgHeight) {
-      const naturalAspect = imgWidth / imgHeight;
-      const cropAspect = cropAreaWidth / cropAreaHeight; // Use crop area aspect
-
-      let targetWrapperWidth = 0;
-      let targetWrapperHeight = 0;
-
-      if (naturalAspect >= cropAspect) {
-        // Image is wider or same aspect as crop area: Match height
-        targetWrapperHeight = cropAreaHeight; // Use state variable
-        targetWrapperWidth = targetWrapperHeight * naturalAspect;
-      } else {
-        // Image is taller than crop area: Match width
-        targetWrapperWidth = cropAreaWidth; // Use state variable
-        targetWrapperHeight = targetWrapperWidth / naturalAspect;
-      }
-
-      setImageWrapperWidth(targetWrapperWidth);
-      setImageWrapperHeight(targetWrapperHeight);
+    const naturalAspect = imgWidth / imgHeight;
+    const cropAspect = cropAreaWidth / cropAreaHeight;
+    let targetWrapperWidth = 0, targetWrapperHeight = 0;
+    if (naturalAspect >= cropAspect) {
+      targetWrapperHeight = cropAreaHeight; targetWrapperWidth = targetWrapperHeight * naturalAspect;
     } else {
-      // Reset if image dimensions are not available (e.g., image not loaded yet)
-      setImageWrapperWidth(0);
-      setImageWrapperHeight(0);
+      targetWrapperWidth = cropAreaWidth; targetWrapperHeight = targetWrapperWidth / naturalAspect;
     }
+    setImageWrapperWidth(targetWrapperWidth); setImageWrapperHeight(targetWrapperHeight);
   }, [cropAreaWidth, cropAreaHeight, imgWidth, imgHeight]);
 
-  // Function to restrict the drag offset state (relative to center), considering zoom
   const restrictOffset = useCallback((dragOffsetX: number, dragOffsetY: number, currentZoom: number): { x: number, y: number } => {
-    if (imageWrapperWidth <= 0 || imageWrapperHeight <= 0 || cropAreaWidth <= 0 || cropAreaHeight <= 0) {
-      return { x: 0, y: 0 }; // Cannot restrict if dimensions are invalid
-    }
-
-    // Calculate the *effective* size of the image wrapper at the current zoom level
+    if (imageWrapperWidth <= 0 || imageWrapperHeight <= 0 || cropAreaWidth <= 0 || cropAreaHeight <= 0) return { x: 0, y: 0 };
     const effectiveWrapperWidth = imageWrapperWidth * currentZoom;
     const effectiveWrapperHeight = imageWrapperHeight * currentZoom;
-
-    // Calculate maximum distance the center can move from the center point (0,0)
-    // This is half the difference between the effective wrapper size and the crop area size
     const maxDragX = Math.max(0, (effectiveWrapperWidth - cropAreaWidth) / 2);
     const maxDragY = Math.max(0, (effectiveWrapperHeight - cropAreaHeight) / 2);
-
-    // Clamp the drag offset state
-    const restrictedX = clamp(dragOffsetX, -maxDragX, maxDragX);
-    const restrictedY = clamp(dragOffsetY, -maxDragY, maxDragY);
-
-    return { x: restrictedX, y: restrictedY };
+    return { x: clamp(dragOffsetX, -maxDragX, maxDragX), y: clamp(dragOffsetY, -maxDragY, maxDragY) };
   }, [imageWrapperWidth, imageWrapperHeight, cropAreaWidth, cropAreaHeight]);
 
-  // Function to calculate the crop area in pixels relative to the original image, considering zoom
   const calculateCropData = useCallback((
-    finalOffsetX?: number, // Optional final offset X
-    finalOffsetY?: number, // Optional final offset Y
-    finalZoom?: number     // Optional final zoom
+    finalOffsetX?: number, finalOffsetY?: number, finalZoom?: number
   ): Area | null => {
-    // Use provided final values if available, otherwise use state/ref (fallback)
     const currentOffsetX = finalOffsetX !== undefined ? finalOffsetX : latestRestrictedOffsetRef.current.x;
     const currentOffsetY = finalOffsetY !== undefined ? finalOffsetY : latestRestrictedOffsetRef.current.y;
-    // Use effectiveZoom if finalZoom isn't explicitly passed
     const currentZoom = finalZoom !== undefined ? finalZoom : effectiveZoom;
+    if (!imgWidth || !imgHeight || imageWrapperWidth <= 0 || imageWrapperHeight <= 0 || cropAreaWidth <= 0 || cropAreaHeight <= 0) return null;
 
-    if (!imgWidth || !imgHeight || imageWrapperWidth <= 0 || imageWrapperHeight <= 0 || cropAreaWidth <= 0 || cropAreaHeight <= 0) {
-      return null;
-    }
-
-    // Calculate the top-left position of the *scaled* image wrapper relative to the crop area center
-    // The wrapper's visual top-left corner shifts due to both offset and scaling from its center
     const scaledWrapperWidth = imageWrapperWidth * currentZoom;
     const scaledWrapperHeight = imageWrapperHeight * currentZoom;
     const topLeftOffsetX = currentOffsetX + (cropAreaWidth - scaledWrapperWidth) / 2;
     const topLeftOffsetY = currentOffsetY + (cropAreaHeight - scaledWrapperHeight) / 2;
-
-    // Calculate the scale factor between the *unscaled* wrapper and the natural image size
-    // This determines how much the base wrapper was scaled down from the original image
-    const baseScale = imgWidth / imageWrapperWidth; // Assuming width determines scale, adjust if needed
-
-    // If baseScale is somehow invalid, exit
+    const baseScale = imgWidth / imageWrapperWidth;
     if (isNaN(baseScale) || baseScale === 0) return null;
 
-    // Calculate the source rectangle (sx, sy, sWidth, sHeight) on the original image
-    // sx/sy: top-left corner of crop area relative to top-left of the *scaled* image wrapper,
-    //        then scaled back to original image dimensions.
-    // sWidth/sHeight: size of crop area, scaled back to original image dimensions.
     const sx = -topLeftOffsetX * baseScale / currentZoom;
     const sy = -topLeftOffsetY * baseScale / currentZoom;
     const sWidth = cropAreaWidth * baseScale / currentZoom;
     const sHeight = cropAreaHeight * baseScale / currentZoom;
 
-    // Clamp/round values to be within natural image bounds
     const finalX = clamp(Math.round(sx), 0, imgWidth);
     const finalY = clamp(Math.round(sy), 0, imgHeight);
     const finalWidth = clamp(Math.round(sWidth), 0, imgWidth - finalX);
     const finalHeight = clamp(Math.round(sHeight), 0, imgHeight - finalY);
 
     if (finalWidth <= 0 || finalHeight <= 0) return null;
+    return { x: finalX, y: finalY, width: finalWidth, height: finalHeight };
+  }, [imgWidth, imgHeight, imageWrapperWidth, imageWrapperHeight, cropAreaWidth, cropAreaHeight, effectiveZoom]);
 
-    return {
-      x: finalX,
-      y: finalY,
-      width: finalWidth,
-      height: finalHeight
-    };
-
-  }, [
-    imgWidth, imgHeight, imageWrapperWidth, imageWrapperHeight, cropAreaWidth, cropAreaHeight,
-    effectiveZoom, // Add effectiveZoom dependency
-  ]);
-
-  // Effect to handle initial setup AND recalculate crop on dimension changes
   useEffect(() => {
     if (imageWrapperWidth > 0 && imageWrapperHeight > 0 && cropAreaWidth > 0 && cropAreaHeight > 0) {
-
+      const currentZoomForSetup = effectiveZoom;
       if (!isInitialSetupDoneRef.current) {
-        // --- Initial Setup Path --- 
-        const initialX = 0;
-        const initialY = 0;
-        // Use the initial effectiveZoom (prop or default)
-        const initialZoom = effectiveZoom;
-
-        const restrictedInitial = restrictOffset(initialX, initialY, initialZoom);
-
-        setOffsetX(restrictedInitial.x);
-        setOffsetY(restrictedInitial.y);
-        // If uncontrolled, set the initial internal zoom state explicitly
-        // This covers the case where minZoom might change after initial render but before this effect runs
-        if (!isZoomControlled) {
-          setInternalZoom(initialZoom);
-        }
-
-        dragStartOffsetRef.current = { x: restrictedInitial.x, y: restrictedInitial.y };
-        latestRestrictedOffsetRef.current = { x: restrictedInitial.x, y: restrictedInitial.y };
-        latestZoomRef.current = initialZoom;
-
-        if (onCropChange) {
-          const initialCropData = calculateCropData(restrictedInitial.x, restrictedInitial.y, initialZoom);
-          onCropChange(initialCropData);
-        }
-        isInitialSetupDoneRef.current = true; // Mark initial setup as done
-
+        const initialX = 0, initialY = 0;
+        const restrictedInitial = restrictOffset(initialX, initialY, currentZoomForSetup);
+        setOffsetX(restrictedInitial.x); setOffsetY(restrictedInitial.y);
+        if (!isZoomControlled) setInternalZoom(currentZoomForSetup);
+        dragStartOffsetRef.current = restrictedInitial;
+        latestRestrictedOffsetRef.current = restrictedInitial;
+        latestZoomRef.current = currentZoomForSetup;
+        if (onCropChange) onCropChange(calculateCropData(restrictedInitial.x, restrictedInitial.y, currentZoomForSetup));
+        isInitialSetupDoneRef.current = true;
       } else {
-        // --- Resize Path (after initial setup) --- 
-        // Dimensions changed, recalculate crop data with current offset/zoom
-
-        // First, ensure the current offset is still valid for the new dimensions/zoom
-        const restrictedCurrent = restrictOffset(
-          latestRestrictedOffsetRef.current.x,
-          latestRestrictedOffsetRef.current.y,
-          effectiveZoom // Use effectiveZoom
-        );
-
-        // Update state/refs if restriction changed something (optional, but safer)
+        const restrictedCurrent = restrictOffset(latestRestrictedOffsetRef.current.x, latestRestrictedOffsetRef.current.y, currentZoomForSetup);
         if (restrictedCurrent.x !== latestRestrictedOffsetRef.current.x || restrictedCurrent.y !== latestRestrictedOffsetRef.current.y) {
-          setOffsetX(restrictedCurrent.x);
-          setOffsetY(restrictedCurrent.y);
+          setOffsetX(restrictedCurrent.x); setOffsetY(restrictedCurrent.y);
           latestRestrictedOffsetRef.current = restrictedCurrent;
-          dragStartOffsetRef.current = restrictedCurrent; // Keep drag start consistent
+          dragStartOffsetRef.current = restrictedCurrent;
         }
-
-        // Now, recalculate and emit crop data based on potentially re-restricted offset and current zoom
-        if (onCropChange) {
-          const updatedCropData = calculateCropData(
-            latestRestrictedOffsetRef.current.x,
-            latestRestrictedOffsetRef.current.y,
-            effectiveZoom // Use effectiveZoom
-          );
-          onCropChange(updatedCropData);
-        }
+        if (onCropChange) onCropChange(calculateCropData(restrictedCurrent.x, restrictedCurrent.y, currentZoomForSetup));
       }
-
     } else {
-      // Reset if dimensions become invalid - also reset initial setup flag
       isInitialSetupDoneRef.current = false;
-      setOffsetX(0);
-      setOffsetY(0);
-      // Reset internal zoom or suggest reset via callback
-      if (!isZoomControlled) {
-        setInternalZoom(minZoom);
-      } // Else parent controls reset
+      setOffsetX(0); setOffsetY(0);
+      if (!isZoomControlled) setInternalZoom(minZoom);
       dragStartOffsetRef.current = { x: 0, y: 0 };
       latestRestrictedOffsetRef.current = { x: 0, y: 0 };
-      latestZoomRef.current = effectiveZoom; // Reflects prop or default
-      if (onCropChange) {
-        onCropChange(null);
-      }
+      latestZoomRef.current = effectiveZoom;
+      if (onCropChange) onCropChange(null);
     }
-  }, [
-    imageWrapperWidth,
-    imageWrapperHeight,
-    cropAreaWidth,
-    cropAreaHeight,
-    restrictOffset,
-    onCropChange,
-    calculateCropData,
-    minZoom,
-    effectiveZoom, // Add effectiveZoom
-    isZoomControlled, // Add isZoomControlled
-    updateZoom, // Add updateZoom
-  ]);
+  }, [imageWrapperWidth, imgHeight, cropAreaWidth, cropAreaHeight, restrictOffset, onCropChange, calculateCropData, minZoom, effectiveZoom, isZoomControlled, updateZoom]);
 
-  // Mouse Drag Handlers
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.preventDefault(); // Prevent text selection, etc.
-    setIsDragging(true);
-    dragStartPointRef.current = { x: e.clientX, y: e.clientY };
-    dragStartOffsetRef.current = { x: offsetX, y: offsetY };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseup', handleMouseUp);
-  };
+  // Effect to check for Description component
+  useEffect(() => {
+    // Check only once after initial mount and layout effects
+    const checkTimeout = setTimeout(() => {
+      if (containerRef.current && !hasWarnedRef.current) {
+        const hasDescription = document.getElementById(descriptionId);
+        if (!hasDescription) {
+          console.warn(CROPPPER_DESC_WARN_MESSAGE);
+          hasWarnedRef.current = true; // Prevent repeated warnings
+        }
+      }
+    }, 100); // Small delay to allow children to render
 
-  const handleMouseMove = (e: MouseEvent) => {
-    const currentX = e.clientX;
-    const currentY = e.clientY;
+    return () => clearTimeout(checkTimeout);
+  }, [descriptionId]); // Only depends on descriptionId
 
-    const deltaX = currentX - dragStartPointRef.current.x;
-    const deltaY = currentY - dragStartPointRef.current.y;
 
-    const targetOffsetX = dragStartOffsetRef.current.x + deltaX;
-    const targetOffsetY = dragStartOffsetRef.current.y + deltaY;
-
-    // Use effectiveZoom for restriction check
-    const restricted = restrictOffset(targetOffsetX, targetOffsetY, effectiveZoom);
-
-    latestRestrictedOffsetRef.current = restricted;
-
-    setOffsetX(restricted.x);
-    setOffsetY(restricted.y);
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-    window.removeEventListener('mousemove', handleMouseMove);
-    window.removeEventListener('mouseup', handleMouseUp);
-    // Call onCropChange when dragging stops
+  const handleInteractionEnd = useCallback(() => {
     if (onCropChange) {
       const finalData = calculateCropData(
         latestRestrictedOffsetRef.current.x,
         latestRestrictedOffsetRef.current.y,
-        effectiveZoom // Use effectiveZoom
+        effectiveZoom
       );
       onCropChange(finalData);
     }
-  };
+  }, [onCropChange, calculateCropData, effectiveZoom]);
 
-  // Wheel Handler for Zoom
+  const handleMouseDown = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.button !== 0 || !containerRef.current) return;
+    e.preventDefault();
+    setIsDragging(true);
+    isPinchingRef.current = false;
+    dragStartPointRef.current = { x: e.clientX, y: e.clientY };
+    dragStartOffsetRef.current = { x: latestRestrictedOffsetRef.current.x, y: latestRestrictedOffsetRef.current.y };
+    containerRef.current?.focus();
+
+    const handleMouseMove = (ev: MouseEvent) => {
+      const deltaX = ev.clientX - dragStartPointRef.current.x;
+      const deltaY = ev.clientY - dragStartPointRef.current.y;
+      const targetOffsetX = dragStartOffsetRef.current.x + deltaX;
+      const targetOffsetY = dragStartOffsetRef.current.y + deltaY;
+      const restricted = restrictOffset(targetOffsetX, targetOffsetY, effectiveZoom);
+      latestRestrictedOffsetRef.current = restricted;
+      setOffsetX(restricted.x); setOffsetY(restricted.y);
+    };
+
+    const handleMouseUp = () => {
+      setIsDragging(false);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+      handleInteractionEnd();
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
+  }, [restrictOffset, effectiveZoom, handleInteractionEnd]);
+
   const handleWheel = useCallback((e: WheelEvent) => {
-    e.preventDefault(); // Prevent default scroll behavior
-    e.stopPropagation(); // Stop the event from bubbling up
-
+    e.preventDefault(); e.stopPropagation();
     if (!containerRef.current || imageWrapperWidth <= 0 || imageWrapperHeight <= 0) return;
 
-    const currentZoom = effectiveZoom;
+    const currentZoom = latestZoomRef.current;
     const currentOffsetX = latestRestrictedOffsetRef.current.x;
     const currentOffsetY = latestRestrictedOffsetRef.current.y;
-
-    // Calculate new zoom level
     const delta = e.deltaY * -zoomSensitivity;
     const targetZoom = currentZoom + delta;
 
-    // If zoom would not change after clamping, do nothing
     if (clamp(targetZoom, minZoom, maxZoom) === currentZoom) return;
 
-    // Calculate pointer position relative to the container center
     const rect = containerRef.current.getBoundingClientRect();
     const pointerX = e.clientX - rect.left - rect.width / 2;
     const pointerY = e.clientY - rect.top - rect.height / 2;
-
-    // Calculate the point on the image wrapper (relative to its center) that is under the pointer
-    // Adjust for current offset and zoom
     const imagePointX = (pointerX - currentOffsetX) / currentZoom;
     const imagePointY = (pointerY - currentOffsetY) / currentZoom;
 
-    // Call updateZoom, which handles clamping and setting state/calling prop
     const finalNewZoom = updateZoom(targetZoom);
 
-    // Calculate the new offset required to keep the image point under the pointer after zoom
-    // New Offset = Pointer Position - (Image Point Position * New Zoom)
     const newOffsetX = pointerX - (imagePointX * finalNewZoom);
     const newOffsetY = pointerY - (imagePointY * finalNewZoom);
-
-    // Restrict the calculated new offset based on the new zoom level
     const restrictedNewOffset = restrictOffset(newOffsetX, newOffsetY, finalNewZoom);
 
-    // Update state and refs
-    setOffsetX(restrictedNewOffset.x);
-    setOffsetY(restrictedNewOffset.y);
+    setOffsetX(restrictedNewOffset.x); setOffsetY(restrictedNewOffset.y);
     latestRestrictedOffsetRef.current = restrictedNewOffset;
 
-    // Trigger crop complete callback during zoom
     if (onCropChange) {
-      const finalData = calculateCropData(
-        restrictedNewOffset.x,
-        restrictedNewOffset.y,
-        finalNewZoom
-      );
+      const finalData = calculateCropData(restrictedNewOffset.x, restrictedNewOffset.y, finalNewZoom);
       onCropChange(finalData);
     }
-  }, [
-    restrictOffset,
-    calculateCropData,
-    imageWrapperWidth,
-    imageWrapperHeight,
-    onCropChange,
-    minZoom,
-    maxZoom,
-    zoomSensitivity,
-    effectiveZoom, // Add effectiveZoom
-    updateZoom, // Add updateZoom
-  ]);
 
-  // --- Touch Event Handlers ---
+  }, [restrictOffset, calculateCropData, imageWrapperWidth, imageWrapperHeight, onCropChange, minZoom, maxZoom, zoomSensitivity, updateZoom]);
 
-  // Helper function to calculate distance between two touches
-  const getPinchDistance = (touches: TouchList): number => {
-    const touch1 = touches[0];
-    const touch2 = touches[1];
-    return Math.sqrt(
-      Math.pow(touch2.clientX - touch1.clientX, 2) +
-      Math.pow(touch2.clientY - touch1.clientY, 2)
-    );
-  };
-
-  // Helper function to calculate the center point between two touches
-  const getPinchCenter = (touches: TouchList): { x: number, y: number } => {
-    const touch1 = touches[0];
-    const touch2 = touches[1];
-    return {
-      x: (touch1.clientX + touch2.clientX) / 2,
-      y: (touch1.clientY + touch2.clientY) / 2,
-    };
-  };
+  const getPinchDistance = (touches: TouchList): number => Math.sqrt(Math.pow(touches[1].clientX - touches[0].clientX, 2) + Math.pow(touches[1].clientY - touches[0].clientY, 2));
+  const getPinchCenter = (touches: TouchList): { x: number, y: number } => ({ x: (touches[0].clientX + touches[1].clientX) / 2, y: (touches[0].clientY + touches[1].clientY) / 2 });
 
   const handleTouchStart = useCallback((e: TouchEvent) => {
     if (!containerRef.current || imageWrapperWidth <= 0 || imageWrapperHeight <= 0) return;
-
+    e.preventDefault();
     const touches = e.touches;
+    containerRef.current?.focus();
 
     if (touches.length === 1) {
-      // Start panning (drag)
-      setIsDragging(true);
-      isPinchingRef.current = false;
-      const touch = touches[0];
-      dragStartPointRef.current = { x: touch.clientX, y: touch.clientY };
+      setIsDragging(true); isPinchingRef.current = false;
+      dragStartPointRef.current = { x: touches[0].clientX, y: touches[0].clientY };
       dragStartOffsetRef.current = { x: latestRestrictedOffsetRef.current.x, y: latestRestrictedOffsetRef.current.y };
     } else if (touches.length === 2) {
-      // Start pinching (zoom)
-      setIsDragging(false);
-      isPinchingRef.current = true;
+      setIsDragging(false); isPinchingRef.current = true;
       initialPinchDistanceRef.current = getPinchDistance(touches);
       initialPinchZoomRef.current = latestZoomRef.current;
       dragStartOffsetRef.current = { x: latestRestrictedOffsetRef.current.x, y: latestRestrictedOffsetRef.current.y };
     }
   }, [imageWrapperWidth, imageWrapperHeight]);
 
-
   const handleTouchMove = useCallback((e: TouchEvent) => {
     if (!containerRef.current || imageWrapperWidth <= 0 || imageWrapperHeight <= 0) return;
-
+    e.preventDefault();
     const touches = e.touches;
 
-    if (touches.length === 1 && isDragging && !isPinchingRef.current) {
-      // Panning
-      const touch = touches[0];
-      const currentX = touch.clientX;
-      const currentY = touch.clientY;
-
-      const deltaX = currentX - dragStartPointRef.current.x;
-      const deltaY = currentY - dragStartPointRef.current.y;
-
+    if (touches.length === 1 && isDragging && !isPinchingRef.current) { // Panning
+      const deltaX = touches[0].clientX - dragStartPointRef.current.x;
+      const deltaY = touches[0].clientY - dragStartPointRef.current.y;
       const targetOffsetX = dragStartOffsetRef.current.x + deltaX;
       const targetOffsetY = dragStartOffsetRef.current.y + deltaY;
-
-      // Use effectiveZoom for restriction
       const restricted = restrictOffset(targetOffsetX, targetOffsetY, effectiveZoom);
       latestRestrictedOffsetRef.current = restricted;
-
-      setOffsetX(restricted.x);
-      setOffsetY(restricted.y);
-
-    } else if (touches.length === 2 && isPinchingRef.current) {
-      // Pinching
+      setOffsetX(restricted.x); setOffsetY(restricted.y);
+    } else if (touches.length === 2 && isPinchingRef.current) { // Pinching
       const currentPinchDistance = getPinchDistance(touches);
       const scale = currentPinchDistance / initialPinchDistanceRef.current;
-      const currentZoom = effectiveZoom; // Use effectiveZoom for starting point
-      const targetZoom = initialPinchZoomRef.current * scale;
+      const currentZoom = initialPinchZoomRef.current;
+      const targetZoom = currentZoom * scale;
 
-      // If zoom would not change after clamping, do nothing
-      if (clamp(targetZoom, minZoom, maxZoom) === currentZoom) return;
+      if (clamp(targetZoom, minZoom, maxZoom) === latestZoomRef.current) return;
 
       const pinchCenter = getPinchCenter(touches);
       const rect = containerRef.current.getBoundingClientRect();
       const pinchCenterX = pinchCenter.x - rect.left - rect.width / 2;
       const pinchCenterY = pinchCenter.y - rect.top - rect.height / 2;
-
-      const currentOffsetX = latestRestrictedOffsetRef.current.x;
-      const currentOffsetY = latestRestrictedOffsetRef.current.y;
+      const currentOffsetX = dragStartOffsetRef.current.x;
+      const currentOffsetY = dragStartOffsetRef.current.y;
       const imagePointX = (pinchCenterX - currentOffsetX) / currentZoom;
       const imagePointY = (pinchCenterY - currentOffsetY) / currentZoom;
 
-      // Call updateZoom, which handles clamping and setting state/calling prop
       const finalNewZoom = updateZoom(targetZoom);
 
       const newOffsetX = pinchCenterX - (imagePointX * finalNewZoom);
       const newOffsetY = pinchCenterY - (imagePointY * finalNewZoom);
-
       const restrictedNewOffset = restrictOffset(newOffsetX, newOffsetY, finalNewZoom);
 
-      setOffsetX(restrictedNewOffset.x);
-      setOffsetY(restrictedNewOffset.y);
+      setOffsetX(restrictedNewOffset.x); setOffsetY(restrictedNewOffset.y);
       latestRestrictedOffsetRef.current = restrictedNewOffset;
-    }
-  }, [isDragging, restrictOffset, minZoom, maxZoom, imageWrapperWidth, imageWrapperHeight, effectiveZoom, updateZoom]);
 
-
-  const handleTouchEnd = useCallback((e: TouchEvent) => {
-    const touches = e.touches;
-
-    if (isPinchingRef.current && touches.length < 2) {
-      // Pinch ended
-      isPinchingRef.current = false;
-      if (touches.length === 1) {
-        // Transition to drag
-        setIsDragging(true);
-        const touch = touches[0];
-        dragStartPointRef.current = { x: touch.clientX, y: touch.clientY };
-        dragStartOffsetRef.current = { x: latestRestrictedOffsetRef.current.x, y: latestRestrictedOffsetRef.current.y };
-      } else {
-        // Pinch ended, zero fingers remain
-        setIsDragging(false);
-        if (onCropChange) {
-          const finalData = calculateCropData(
-            latestRestrictedOffsetRef.current.x,
-            latestRestrictedOffsetRef.current.y,
-            effectiveZoom // Use effectiveZoom
-          );
-          onCropChange(finalData);
-        }
-      }
-    } else if (isDragging && touches.length === 0) {
-      // Drag ended
-      setIsDragging(false);
       if (onCropChange) {
-        const finalData = calculateCropData(
-          latestRestrictedOffsetRef.current.x,
-          latestRestrictedOffsetRef.current.y,
-          effectiveZoom // Use effectiveZoom
-        );
+        const finalData = calculateCropData(restrictedNewOffset.x, restrictedNewOffset.y, finalNewZoom);
         onCropChange(finalData);
       }
     }
+  }, [isDragging, restrictOffset, minZoom, maxZoom, imageWrapperWidth, imageWrapperHeight, effectiveZoom, updateZoom, onCropChange, calculateCropData]);
 
-  }, [isDragging, onCropChange, calculateCropData, effectiveZoom]);
-
-
-  // Cleanup drag listeners on unmount
-  useEffect(() => {
-    // Ensure listeners are removed if component unmounts during drag
-    const removeDragListeners = () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseup', handleMouseUp);
-    };
-    return removeDragListeners;
-  }, []);
-
-  // Effect to attach non-passive wheel listener
-  useEffect(() => {
-    const node = containerRef.current;
-    if (!node) return;
-
-    // Attach the wheel listener manually with passive: false
-    // Cast options to 'any' to bypass TS error about 'passive' property
-    node.addEventListener('wheel', handleWheel, { passive: false } as any);
-
-    // Cleanup function to remove the listener
-    return () => {
-      // Cast options to 'any' here too for consistency
-      node.removeEventListener('wheel', handleWheel, { passive: false } as any);
-    };
-  }, [handleWheel]);
-
-  // Effect to attach non-passive touch listeners
-  useEffect(() => {
-    const node = containerRef.current;
-    if (!node) return;
-
-    // Attach touch listeners manually with passive: false
-    // Cast options to 'any' to bypass potential TS errors
-    node.addEventListener('touchstart', handleTouchStart, { passive: false } as any);
-    node.addEventListener('touchmove', handleTouchMove, { passive: false } as any);
-    node.addEventListener('touchend', handleTouchEnd, { passive: false } as any);
-    node.addEventListener('touchcancel', handleTouchEnd, { passive: false } as any); // Handle cancellation too
-
-    // Cleanup function to remove the listeners
-    return () => {
-      node.removeEventListener('touchstart', handleTouchStart, { passive: false } as any);
-      node.removeEventListener('touchmove', handleTouchMove, { passive: false } as any);
-      node.removeEventListener('touchend', handleTouchEnd, { passive: false } as any);
-      node.removeEventListener('touchcancel', handleTouchEnd, { passive: false } as any);
-    };
-  }, [handleTouchStart, handleTouchMove, handleTouchEnd]);
-
-  // Keyboard Handlers
-  const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
-    // Require focus on the container and valid dimensions
-    if (document.activeElement !== containerRef.current || imageWrapperWidth <= 0) {
-      return;
+  const handleTouchEnd = useCallback((e: TouchEvent) => {
+    e.preventDefault();
+    const touches = e.touches;
+    if (isPinchingRef.current && touches.length < 2) {
+      isPinchingRef.current = false;
+      if (touches.length === 1) { // Transition to drag
+        setIsDragging(true);
+        dragStartPointRef.current = { x: touches[0].clientX, y: touches[0].clientY };
+        dragStartOffsetRef.current = { x: latestRestrictedOffsetRef.current.x, y: latestRestrictedOffsetRef.current.y };
+      } else { // Pinch ended
+        setIsDragging(false);
+        handleInteractionEnd();
+      }
+    } else if (isDragging && touches.length === 0) { // Drag ended
+      setIsDragging(false);
+      handleInteractionEnd();
     }
+  }, [isDragging, handleInteractionEnd]);
 
+  const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (imageWrapperWidth <= 0) return;
     let targetOffsetX = latestRestrictedOffsetRef.current.x;
     let targetOffsetY = latestRestrictedOffsetRef.current.y;
     let moved = false;
-
     switch (e.key) {
-      case 'ArrowUp':
-        targetOffsetY += keyboardStep;
-        moved = true;
-        break;
-      case 'ArrowDown':
-        targetOffsetY -= keyboardStep;
-        moved = true;
-        break;
-      case 'ArrowLeft':
-        targetOffsetX += keyboardStep;
-        moved = true;
-        break;
-      case 'ArrowRight':
-        targetOffsetX -= keyboardStep;
-        moved = true;
-        break;
-      default:
-        return;
+      case 'ArrowUp': targetOffsetY += keyboardStep; moved = true; break;
+      case 'ArrowDown': targetOffsetY -= keyboardStep; moved = true; break;
+      case 'ArrowLeft': targetOffsetX += keyboardStep; moved = true; break;
+      case 'ArrowRight': targetOffsetX -= keyboardStep; moved = true; break;
+      default: return;
     }
-
     if (moved) {
-      e.preventDefault(); // Prevent default arrow key scroll
-
-      const currentZoom = effectiveZoom;
-      const restricted = restrictOffset(targetOffsetX, targetOffsetY, currentZoom);
-
-      // Only update if position actually changed after restriction
+      e.preventDefault();
+      const restricted = restrictOffset(targetOffsetX, targetOffsetY, effectiveZoom);
       if (restricted.x !== latestRestrictedOffsetRef.current.x || restricted.y !== latestRestrictedOffsetRef.current.y) {
         latestRestrictedOffsetRef.current = restricted;
-        setOffsetX(restricted.x);
-        setOffsetY(restricted.y);
+        setOffsetX(restricted.x); setOffsetY(restricted.y);
       }
     }
-
-  }, [keyboardStep, imageWrapperWidth, restrictOffset, onCropChange, calculateCropData, effectiveZoom]);
+  }, [keyboardStep, imageWrapperWidth, restrictOffset, effectiveZoom]);
 
   const handleKeyUp = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
-    // Only trigger on arrow keys
     if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
-      if (onCropChange) {
-        // Use latest refs for final data calculation
-        const finalData = calculateCropData(
-          latestRestrictedOffsetRef.current.x,
-          latestRestrictedOffsetRef.current.y,
-          effectiveZoom // Use effectiveZoom
-        );
-        onCropChange(finalData);
-      }
+      handleInteractionEnd();
     }
-  }, [onCropChange, calculateCropData, effectiveZoom]);
+  }, [handleInteractionEnd]);
+
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node) return;
+    const options = { passive: false } as any;
+    node.addEventListener('wheel', handleWheel, options);
+    node.addEventListener('touchstart', handleTouchStart, options);
+    node.addEventListener('touchmove', handleTouchMove, options);
+    node.addEventListener('touchend', handleTouchEnd, options);
+    node.addEventListener('touchcancel', handleTouchEnd, options);
+    return () => {
+      node.removeEventListener('wheel', handleWheel, options);
+      node.removeEventListener('touchstart', handleTouchStart, options);
+      node.removeEventListener('touchmove', handleTouchMove, options);
+      node.removeEventListener('touchend', handleTouchEnd, options);
+      node.removeEventListener('touchcancel', handleTouchEnd, options);
+    };
+  }, [handleWheel, handleTouchStart, handleTouchMove, handleTouchEnd]);
+
+  const getRootProps = useCallback((): Omit<React.HTMLAttributes<HTMLDivElement>, 'ref'> => ({
+    className: className,
+    style: style,
+    onMouseDown: handleMouseDown,
+    onKeyDown: handleKeyDown,
+    onKeyUp: handleKeyUp,
+    tabIndex: 0,
+    role: "application",
+    "aria-label": "Interactive image cropper",
+    "aria-describedby": descriptionId,
+    "aria-valuemin": minZoom,
+    "aria-valuemax": maxZoom,
+    "aria-valuenow": effectiveZoom,
+    "aria-valuetext": `Zoom: ${Math.round(effectiveZoom * 100)}%`,
+  }), [className, style, handleMouseDown, handleKeyDown, handleKeyUp, descriptionId, minZoom, maxZoom, effectiveZoom]);
+
+  const getImageWrapperStyle = useCallback((): React.CSSProperties => ({
+    width: imageWrapperWidth,
+    height: imageWrapperHeight,
+    transform: `translate3d(${offsetX}px, ${offsetY}px, 0px) scale(${effectiveZoom})`,
+    position: 'absolute',
+    left: `calc(50% - ${imageWrapperWidth / 2}px)`,
+    top: `calc(50% - ${imageWrapperHeight / 2}px)`,
+    willChange: 'transform',
+  }), [imageWrapperWidth, imageWrapperHeight, offsetX, offsetY, effectiveZoom]);
+
+  const getImageProps = useCallback((): React.ImgHTMLAttributes<HTMLImageElement> => ({
+    src: image,
+    alt: "Image being cropped",
+    draggable: false,
+    "aria-hidden": true,
+  }), [image]);
+
+  const getCropAreaStyle = useCallback((): React.CSSProperties => ({
+    width: cropAreaWidth,
+    height: cropAreaHeight,
+  }), [cropAreaWidth, cropAreaHeight]);
+
+  const getCropAreaProps = useCallback((): React.HTMLAttributes<HTMLDivElement> => ({
+    style: getCropAreaStyle(),
+    "aria-hidden": true,
+  }), [getCropAreaStyle]);
+
+  const contextValue: CropperContextValue = {
+    containerRef,
+    image,
+    imgWidth,
+    imgHeight,
+    cropAreaWidth,
+    cropAreaHeight,
+    imageWrapperWidth,
+    imageWrapperHeight,
+    offsetX,
+    offsetY,
+    effectiveZoom,
+    minZoom,
+    maxZoom,
+    getRootProps,
+    getImageProps,
+    getImageWrapperStyle,
+    getCropAreaProps,
+    getCropAreaStyle,
+    descriptionId,
+  };
+
+  return (
+    <CropperContext.Provider value={contextValue}>
+      <div ref={containerRef} {...getRootProps()} {...restProps}>
+        {/* Children are rendered here, including the expected Cropper.Description */}
+        {children}
+      </div>
+    </CropperContext.Provider>
+  );
+};
+
+const CropperImage: React.FC<Omit<React.ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt' | 'draggable' | 'style'>> = ({ className, ...restProps }) => {
+  const { image, getImageProps, getImageWrapperStyle } = useCropperContext();
+
+  if (!image) return null;
+
+  const imageProps = getImageProps();
+
+  return (
+    <div data-slot="crop-image-wrapper" style={getImageWrapperStyle()}>
+      <img
+        {...imageProps}
+        className={className}
+        {...restProps}
+      />
+    </div>
+  );
+};
+
+const CropperCropArea: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className, style, ...restProps }) => {
+  const { cropAreaWidth, cropAreaHeight, getCropAreaProps, getCropAreaStyle } = useCropperContext();
+
+  if (cropAreaWidth <= 0 || cropAreaHeight <= 0) return null;
+
+  const areaProps = getCropAreaProps();
+  const areaStyle = getCropAreaStyle();
 
   return (
     <div
-      ref={containerRef}
-      data-slot="crop-container"
-      className={cn(
-        'relative h-full w-full flex flex-col items-center justify-center overflow-hidden cursor-move focus:outline-none touch-none',
-        className
-      )}
-      onMouseDown={handleMouseDown}
-      tabIndex={0}
-      onKeyDown={handleKeyDown}
-      onKeyUp={handleKeyUp}
-      role="application"
-      aria-label="Interactive image cropper"
-      aria-describedby={id}
-      aria-valuemin={minZoom}
-      aria-valuemax={maxZoom}
-      aria-valuenow={effectiveZoom}
-      aria-valuetext={`Zoom: ${Math.round(effectiveZoom * 100)}%`}
-    >
-      <div id={id} className="sr-only">
-        Use mouse wheel or pinch gesture to zoom. Drag with mouse or touch, or use arrow keys to pan the image within the crop area.
-      </div>
-      {image && (
-        <>
-          <div
-            data-slot="crop-image"
-            style={{
-              width: imageWrapperWidth,
-              height: imageWrapperHeight,
-              transform: `translate3d(${offsetX}px, ${offsetY}px, 0px) scale(${effectiveZoom})`,
-              position: 'absolute',
-              left: `calc(50% - ${imageWrapperWidth / 2}px)`,
-              top: `calc(50% - ${imageWrapperHeight / 2}px)`,
-              willChange: 'transform',
-            } as React.CSSProperties}
-          >
-            <img
-              src={image}
-              alt="Image being cropped"
-              draggable="false"
-              className="w-full h-full object-cover pointer-events-none"
-              aria-hidden="true"
-            />
-          </div>
-          {(cropAreaWidth > 0 && cropAreaHeight > 0) && (
-            <div
-              data-slot="crop-area"
-              className="border-3 border-white absolute shadow-[0_0_0_9999px_rgba(0,0,0,0.7)] pointer-events-none in-[[data-slot=crop-container]:focus-visible]:ring-[3px] in-[[data-slot=crop-container]:focus-visible]:ring-white/50"
-              style={{
-                width: cropAreaWidth,
-                height: cropAreaHeight,
-              }}
-            ></div>
-          )}
-        </>
+      data-slot="crop-area"
+      {...areaProps}
+      style={{ ...areaProps.style, ...style, ...areaStyle }}
+      className={className}
+      {...restProps}
+    ></div>
+  );
+};
+
+const CropperDescription: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ children, className, ...restProps }) => {
+  const { descriptionId } = useCropperContext();
+
+  return (
+    <div id={descriptionId} className={className} {...restProps}>
+      {children ?? (
+        // Default description if none provided by user
+        "Use mouse wheel or pinch gesture to zoom. Drag with mouse or touch, or use arrow keys to pan the image within the crop area."
       )}
     </div>
-  )
-}
+  );
+};
+
+
+export const Cropper = {
+  Root: CropperRoot,
+  Image: CropperImage,
+  CropArea: CropperCropArea,
+  Description: CropperDescription,
+};
