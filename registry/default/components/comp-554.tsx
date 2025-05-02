@@ -266,6 +266,7 @@ export default function Component() {
                 className="-my-1"
                 onClick={handleApply}
                 disabled={!previewUrl}
+                autoFocus
               >
                 Apply
               </Button>
