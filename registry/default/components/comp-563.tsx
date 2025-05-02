@@ -19,7 +19,6 @@ export default function Component() {
         <Cropper
           className="h-80"
           image="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
-          aspectRatio={1}
           onCropChange={setCropData}
         >
           <CropperDescription />
