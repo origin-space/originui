@@ -9988,6 +9988,11 @@
     {
       "name": "comp-554",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/dialog.json",
+        "https://originui.com/r/select.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-554.tsx",
@@ -10090,6 +10095,9 @@
     {
       "name": "comp-561",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/select.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-561.tsx",
