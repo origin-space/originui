@@ -35,7 +35,7 @@ export default function Component() {
             onValueChange={(value) => setZoom(value[0])}
             aria-label="Zoom slider"
           />
-          <output className="text-sm font-medium tabular-nums block shrink-0 text-right w-10">{zoom}x</output>
+          <output className="text-sm font-medium tabular-nums block shrink-0 text-right w-10">{parseFloat(zoom.toFixed(1))}x</output>
         </div>
       </div>
 
