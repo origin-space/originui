@@ -10,7 +10,7 @@ export default function Component() {
     <div className="flex flex-col items-center gap-2">
       <Cropper
         className="h-80 bg-black"
-        image="https://images.unsplash.com/photo-1463171515643-952cee54d42a"
+        image="https://images.unsplash.com/photo-1612128961739-2551681a0575"
       >
         <CropperDescription />
         <CropperImage />
@@ -30,7 +30,7 @@ export default function Component() {
         >
           API
         </a>
-      </p>      
+      </p>
     </div>
   )
 }

@@ -12,7 +12,7 @@ export default function Component() {
         className="h-80"
         minZoom={2}
         maxZoom={10}
-        image="https://images.unsplash.com/photo-1524230572899-a752b3835840"
+        image="https://images.unsplash.com/photo-1496124248071-3e497bb1696c"
       >
         <CropperDescription />
         <CropperImage />
@@ -32,7 +32,7 @@ export default function Component() {
         >
           API
         </a>
-      </p>      
+      </p>
     </div>
   )
 }

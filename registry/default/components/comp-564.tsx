@@ -1,13 +1,14 @@
 "use client"
 
-import { useState, useCallback, useEffect } from "react"
+import { useCallback, useEffect, useState } from "react"
+
+import { Button } from "@/registry/default/ui/button"
 import {
   Cropper,
   CropperCropArea,
   CropperDescription,
   CropperImage,
 } from "@/registry/default/ui/cropper"
-import { Button } from "@/registry/default/ui/button"
 
 // Define type for pixel crop area
 type Area = { x: number; y: number; width: number; height: number }
@@ -67,69 +68,72 @@ async function getCroppedImg(
 }
 // --- End: Copied Helper Functions ---
 
-const ORIGINAL_IMAGE_URL = "https://images.unsplash.com/photo-1548207775-a7676e36f20a";
+const ORIGINAL_IMAGE_URL =
+  "https://images.unsplash.com/photo-1548207775-a7676e36f20a"
 
 export default function Component() {
-  const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null);
-  const [croppedImageUrl, setCroppedImageUrl] = useState<string | null>(null);
+  const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null)
+  const [croppedImageUrl, setCroppedImageUrl] = useState<string | null>(null)
 
   // Callback to update crop area state
   const handleCropChange = useCallback((pixels: Area | null) => {
-    setCroppedAreaPixels(pixels);
-  }, []);
+    setCroppedAreaPixels(pixels)
+  }, [])
 
   // Function to handle the crop button click
   const handleCrop = async () => {
     if (!croppedAreaPixels) {
-      console.error("No crop area selected.");
-      return;
+      console.error("No crop area selected.")
+      return
     }
 
     try {
-      const croppedBlob = await getCroppedImg(ORIGINAL_IMAGE_URL, croppedAreaPixels);
+      const croppedBlob = await getCroppedImg(
+        ORIGINAL_IMAGE_URL,
+        croppedAreaPixels
+      )
       if (!croppedBlob) {
-        throw new Error("Failed to generate cropped image blob.");
+        throw new Error("Failed to generate cropped image blob.")
       }
 
       // Create a new object URL
-      const newCroppedUrl = URL.createObjectURL(croppedBlob);
+      const newCroppedUrl = URL.createObjectURL(croppedBlob)
 
       // Revoke the old URL if it exists
       if (croppedImageUrl) {
-        URL.revokeObjectURL(croppedImageUrl);
+        URL.revokeObjectURL(croppedImageUrl)
       }
 
       // Set the new URL
-      setCroppedImageUrl(newCroppedUrl);
-
+      setCroppedImageUrl(newCroppedUrl)
     } catch (error) {
-      console.error("Error during cropping:", error);
+      console.error("Error during cropping:", error)
       // Optionally: Clear the old image URL on error
       if (croppedImageUrl) {
-        URL.revokeObjectURL(croppedImageUrl);
+        URL.revokeObjectURL(croppedImageUrl)
       }
-      setCroppedImageUrl(null);
+      setCroppedImageUrl(null)
     }
-  };
+  }
 
   // Effect for cleaning up the object URL
   useEffect(() => {
     // This is the cleanup function that runs when the component unmounts
     // or when croppedImageUrl changes before the next effect runs.
-    const currentUrl = croppedImageUrl;
+    const currentUrl = croppedImageUrl
     return () => {
       if (currentUrl && currentUrl.startsWith("blob:")) {
-        URL.revokeObjectURL(currentUrl);
-        console.log("Revoked URL:", currentUrl); // Optional: for debugging
+        URL.revokeObjectURL(currentUrl)
+        console.log("Revoked URL:", currentUrl) // Optional: for debugging
       }
-    };
-  }, [croppedImageUrl]); // Dependency array ensures cleanup runs when URL changes
+    }
+  }, [croppedImageUrl]) // Dependency array ensures cleanup runs when URL changes
 
   return (
     <div className="flex flex-col items-center gap-2">
-      <div className="flex w-full gap-4">
+      <div className="flex w-full flex-col gap-4 md:flex-row">
         <Cropper
-          className="h-64 w-2/3"
+          className="h-64 md:flex-1"
           image={ORIGINAL_IMAGE_URL}
           onCropChange={handleCropChange}
         >
@@ -137,7 +141,7 @@ export default function Component() {
           <CropperImage />
           <CropperCropArea />
         </Cropper>
-        <div className="flex w-1/3 flex-col gap-4">
+        <div className="flex w-26 flex-col gap-4">
           <Button onClick={handleCrop} disabled={!croppedAreaPixels}>
             Crop preview
           </Button>
@@ -150,7 +154,7 @@ export default function Component() {
                 className="h-full w-full object-cover"
               />
             ) : (
-              <div className="flex h-full w-full items-center justify-center bg-muted text-xs text-muted-foreground/80 text-center p-2">
+              <div className="bg-muted text-muted-foreground/80 flex h-full w-full items-center justify-center p-2 text-center text-xs">
                 Image preview
               </div>
             )}
@@ -174,5 +178,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
+  )
 }

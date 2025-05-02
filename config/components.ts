@@ -254,6 +254,7 @@ export const categories: ComponentCategory[] = [
     slug: "image-cropper",
     name: "Image Cropper",
     components: [
+      { name: "comp-554" },
       { name: "comp-555" },
       { name: "comp-556" },
       { name: "comp-557" },
@@ -264,7 +265,6 @@ export const categories: ComponentCategory[] = [
       { name: "comp-562" },
       { name: "comp-563" },
       { name: "comp-564" },
-      { name: "comp-554" }
     ],
     isNew: true,
   },

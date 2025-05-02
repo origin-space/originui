@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react"
+
 import {
   Cropper,
   CropperCropArea,
@@ -15,10 +16,11 @@ export default function Component() {
 
   return (
     <div className="flex flex-col items-center gap-2">
-      <div className="flex flex-col gap-4 w-full">
+      <div className="flex w-full flex-col gap-4">
         <Cropper
           className="h-80"
-          image="https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2"
+          cropPadding={20}
+          image="https://images.unsplash.com/photo-1492045379936-abb525f8dacb"
           onCropChange={setCropData}
         >
           <CropperDescription />
@@ -27,7 +29,7 @@ export default function Component() {
         </Cropper>
 
         {cropData && (
-          <pre className="overflow-auto rounded-md bg-muted border py-3 px-4 text-xs font-mono text-foreground/80">
+          <pre className="bg-muted text-foreground/80 overflow-auto rounded-md border px-4 py-3 font-mono text-xs">
             <code>{JSON.stringify(cropData, null, 2)}</code>
           </pre>
         )}
@@ -47,7 +49,7 @@ export default function Component() {
         >
           API
         </a>
-      </p>      
+      </p>
     </div>
   )
 }

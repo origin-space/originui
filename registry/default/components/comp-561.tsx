@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+
 import {
   Cropper,
   CropperCropArea,
@@ -14,7 +15,7 @@ export default function Component() {
 
   return (
     <div className="flex flex-col items-center gap-2">
-      <div className="flex flex-col gap-4 w-full">
+      <div className="flex w-full flex-col gap-4">
         <Cropper
           className="h-80"
           image="https://images.unsplash.com/photo-1532517308734-0565178471d2"
@@ -25,7 +26,7 @@ export default function Component() {
           <CropperImage />
           <CropperCropArea />
         </Cropper>
-        <div className="flex items-center gap-1 max-w-80 w-full mx-auto">
+        <div className="mx-auto flex w-full max-w-80 items-center gap-1">
           <Slider
             defaultValue={[1]}
             value={[zoom]}
@@ -35,7 +36,9 @@ export default function Component() {
             onValueChange={(value) => setZoom(value[0])}
             aria-label="Zoom slider"
           />
-          <output className="text-sm font-medium tabular-nums block shrink-0 text-right w-10">{parseFloat(zoom.toFixed(1))}x</output>
+          <output className="block w-10 shrink-0 text-right text-sm font-medium tabular-nums">
+            {parseFloat(zoom.toFixed(1))}x
+          </output>
         </div>
       </div>
 
@@ -52,7 +55,7 @@ export default function Component() {
         >
           API
         </a>
-      </p>      
+      </p>
     </div>
   )
 }

@@ -9,7 +9,7 @@ export default function Component() {
   return (
     <div className="flex flex-col items-center gap-2">
       <Cropper
-        className="size-80 aspect-square"
+        className="aspect-square size-80"
         cropPadding={0}
         image="https://images.unsplash.com/photo-1538898780761-268f71f67675"
       >
@@ -31,7 +31,7 @@ export default function Component() {
         >
           API
         </a>
-      </p>      
+      </p>
     </div>
   )
 }
