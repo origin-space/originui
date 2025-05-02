@@ -13,6 +13,7 @@ export const registryTags = [
   "collapsible",
   "combobox",
   "command",
+  "crop",
   "dialog",
   "dropdown",
   "input",
@@ -133,6 +134,7 @@ export const registryTags = [
   "vote",
   "warning",
   "week",
+  "zoom",
 ] as const
 
 export type RegistryTag = (typeof registryTags)[number]

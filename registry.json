@@ -9774,7 +9774,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop", "avatar"]
+        "tags": ["upload", "file", "image", "drag and drop", "avatar"]
       }
     },    
     {
@@ -9791,7 +9791,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
     },
@@ -9812,7 +9812,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
     },
@@ -9833,7 +9833,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
     },
@@ -9854,7 +9854,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
     },
@@ -9875,7 +9875,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
     },
@@ -9896,7 +9896,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
     },
@@ -9917,7 +9917,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
     },
@@ -9939,7 +9939,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
     },   
@@ -9960,7 +9960,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
     },
@@ -9981,7 +9981,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
     },
@@ -9999,7 +9999,7 @@
         }
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop", "crop", "dialog", "slider", "zoom"],
         "colSpan": 3
       }
     },
@@ -10013,7 +10013,7 @@
         }
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["image", "crop", "zoom"],
         "colSpan": 2  
       }
     },
@@ -10027,7 +10027,7 @@
         }
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["image", "crop", "zoom"],
         "colSpan": 2 
       }
     },
@@ -10041,7 +10041,7 @@
         }
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["image", "crop", "zoom"],
         "colSpan": 2
       }
     },
@@ -10055,7 +10055,7 @@
         }
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["image", "crop", "zoom"],
         "colSpan": 2
       }
     },
@@ -10069,7 +10069,7 @@
         }
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["image", "crop", "zoom"],
         "colSpan": 2
       }
     },
@@ -10083,7 +10083,7 @@
         }
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["image", "crop", "zoom"],
         "colSpan": 2
       }
     },
@@ -10097,7 +10097,7 @@
         }
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["image", "crop", "zoom", "slider"],
         "colSpan": 2
       }
     },
@@ -10111,7 +10111,7 @@
         }
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["image", "crop", "zoom"],
         "colSpan": 2
       }
     },
@@ -10125,7 +10125,7 @@
         }
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["image", "crop", "zoom"],
         "colSpan": 2
       }
     },
@@ -10139,7 +10139,7 @@
         }
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["image", "crop", "zoom"],
         "colSpan": 2
       }
     }

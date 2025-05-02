@@ -38,7 +38,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Cropper with crop data ∙{" "}
+        Cropper with crop data output ∙{" "}
         <a
           href="https://github.com/origin-space/image-cropper"
           className="hover:text-foreground underline"
