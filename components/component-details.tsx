@@ -60,7 +60,7 @@ export default function ComponentDetails({
         setCode(codeContent)
 
         // Pre-highlight the code
-        const highlighted = await highlight(codeContent, "ts")
+        const highlighted = await highlight(codeContent, "tsx")
         setHighlightedCode(highlighted)
       } catch (error) {
         console.error("Failed to load code:", error)
@@ -126,7 +126,7 @@ export default function ComponentDetails({
                   <>
                     <CodeBlock
                       code={code}
-                      lang="ts"
+                      lang="tsx"
                       preHighlighted={highlightedCode}
                     />
                     <CopyButton componentSource={code} />
