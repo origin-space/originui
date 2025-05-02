@@ -24,8 +24,8 @@ importers:
         specifier: ^3.7.0
         version: 3.7.0
       '@origin-space/image-cropper':
-        specifier: ^0.1.6
-        version: 0.1.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: ^0.1.8
+        version: 0.1.8(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-accordion':
         specifier: ^1.2.3
         version: 1.2.3(@types/react-dom@19.1.1(@types/react@19.1.0))(@types/react@19.1.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -878,8 +878,8 @@ packages:
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
 
-  '@origin-space/image-cropper@0.1.6':
-    resolution: {integrity: sha512-ivURddm2MIKUlzI1+hTyNY7X9gw8J1e+Jlr4uOkDSA4NGDgmwDQL9AHGvhah2o1MQZrjvufyxJIPl73K1XTayA==}
+  '@origin-space/image-cropper@0.1.8':
+    resolution: {integrity: sha512-xO+0m/urkjW2E1IYRFLTRfJYXeqJi3YVz7WtWnKamiInI6MIKOPbKt22HUL5mwmxWuCJOmxZ5APTBWXPiauJFg==}
     peerDependencies:
       react: ^19.1.0
       react-dom: ^19.1.0
@@ -5380,7 +5380,7 @@ snapshots:
 
   '@nolyfill/is-core-module@1.0.39': {}
 
-  '@origin-space/image-cropper@0.1.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@origin-space/image-cropper@0.1.8(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
