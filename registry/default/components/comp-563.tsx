@@ -18,7 +18,7 @@ export default function Component() {
       <div className="flex flex-col gap-4 w-full">
         <Cropper
           className="h-80"
-          image="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+          image="https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2"
           onCropChange={setCropData}
         >
           <CropperDescription />

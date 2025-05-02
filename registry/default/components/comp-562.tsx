@@ -12,7 +12,7 @@ export default function Component() {
         className="h-80"
         minZoom={2}
         maxZoom={10}
-        image="https://images.unsplash.com/photo-1589018671571-e3cbff39d7ad"
+        image="https://images.unsplash.com/photo-1524230572899-a752b3835840"
       >
         <CropperDescription />
         <CropperImage />

@@ -67,7 +67,7 @@ async function getCroppedImg(
 }
 // --- End: Copied Helper Functions ---
 
-const ORIGINAL_IMAGE_URL = "https://images.unsplash.com/photo-1589018671571-e3cbff39d7ad";
+const ORIGINAL_IMAGE_URL = "https://images.unsplash.com/photo-1548207775-a7676e36f20a";
 
 export default function Component() {
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null);
