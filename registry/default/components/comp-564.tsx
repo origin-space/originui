@@ -10,11 +10,13 @@ export default function Component() {
     <div className="flex flex-col items-center gap-2">
       <Cropper
         className="h-80"
-        image="https://images.unsplash.com/photo-1653682849712-a490b4e75601"
+        minZoom={2}
+        maxZoom={10}
+        image="https://images.unsplash.com/photo-1589018671571-e3cbff39d7ad"
       >
         <CropperDescription />
         <CropperImage />
-        <CropperCropArea className="rounded-full" />
+        <CropperCropArea />
       </Cropper>
 
       <p
@@ -22,7 +24,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Cropper with full-rounded mask ∙{" "}
+        Cropper with custom zoom limits ∙{" "}
         <a
           href="https://github.com/origin-space/image-cropper"
           className="hover:text-foreground underline"

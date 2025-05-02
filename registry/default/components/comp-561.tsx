@@ -44,7 +44,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Basic cropper ∙{" "}
+        Cropper with zoom slider ∙{" "}
         <a
           href="https://github.com/origin-space/image-cropper"
           className="hover:text-foreground underline"

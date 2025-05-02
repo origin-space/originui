@@ -11,7 +11,7 @@ export default function Component() {
       <Cropper
         className="h-80"
         image="https://images.unsplash.com/photo-1668972258700-fd222ee851e1"
-        aspectRatio={2}
+        aspectRatio={16 / 9}
       >
         <CropperDescription />
         <CropperImage />
@@ -23,7 +23,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Basic cropper ∙{" "}
+        Cropper with aspect ratio 16:9 ∙{" "}
         <a
           href="https://github.com/origin-space/image-cropper"
           className="hover:text-foreground underline"

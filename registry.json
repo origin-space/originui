@@ -10128,6 +10128,20 @@
         "tags": ["upload", "file", "drag and drop"],
         "colSpan": 2
       }
+    },
+    {
+      "name": "comp-564",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-564.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file", "drag and drop"],
+        "colSpan": 2
+      }
     }
   ]
 }

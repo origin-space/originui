@@ -131,7 +131,7 @@ export default function Component() {
         <Cropper
           className="h-64 w-2/3"
           image={ORIGINAL_IMAGE_URL}
-          onCropChange={handleCropChange} // Pass the callback
+          onCropChange={handleCropChange}
         >
           <CropperDescription />
           <CropperImage />
@@ -139,7 +139,7 @@ export default function Component() {
         </Cropper>
         <div className="flex w-1/3 flex-col gap-4">
           <Button onClick={handleCrop} disabled={!croppedAreaPixels}>
-            Crop
+            Crop preview
           </Button>
           {/* Display Area */}
           <div className="aspect-square w-full shrink-0 overflow-hidden rounded-lg border">
@@ -147,7 +147,7 @@ export default function Component() {
               <img
                 src={croppedImageUrl}
                 alt="Cropped result"
-                className="h-full w-full object-cover" // Use object-cover to fill the square
+                className="h-full w-full object-cover"
               />
             ) : (
               <div className="flex h-full w-full items-center justify-center bg-muted text-xs text-muted-foreground/80 text-center p-2">
@@ -163,12 +163,12 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Basic cropper ∙{" "}
+        Cropper with image preview ∙{" "}
         <a
           href="https://github.com/origin-space/image-cropper"
           className="hover:text-foreground underline"
           target="_blank"
-          rel="noopener noreferrer" // Added for security
+          rel="noopener noreferrer"
         >
           API
         </a>
