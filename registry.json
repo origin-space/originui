@@ -6,48 +6,18 @@
     {
       "name": "accordion",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-accordion"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/accordion.tsx",
           "type": "registry:ui"
         }
-      ],
-      "tailwind": {
-        "config": {
-          "theme": {
-            "extend": {
-              "keyframes": {
-                "accordion-down": {
-                  "from": {
-                    "height": "0"
-                  },
-                  "to": {
-                    "height": "var(--radix-accordion-content-height)"
-                  }
-                },
-                "accordion-up": {
-                  "from": {
-                    "height": "var(--radix-accordion-content-height)"
-                  },
-                  "to": {
-                    "height": "0"
-                  }
-                }
-              },
-              "animation": {
-                "accordion-down": "accordion-down 0.2s ease-out",
-                "accordion-up": "accordion-up 0.2s ease-out"
-              }
-            }
-          }
-        }
-      }
+      ]
     },
     {
       "name": "alert-dialog",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-alert-dialog"],
+      "dependencies": ["radix-ui"],
       "registryDependencies": ["https://originui.com/r/button.json"],
       "files": [
         {
@@ -59,7 +29,7 @@
     {
       "name": "avatar",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-avatar"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/avatar.tsx",
@@ -80,7 +50,7 @@
     {
       "name": "breadcrumb",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-slot"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/breadcrumb.tsx",
@@ -91,7 +61,7 @@
     {
       "name": "button",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-slot"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/button.tsx",
@@ -125,7 +95,7 @@
     {
       "name": "checkbox",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-checkbox"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/checkbox.tsx",
@@ -146,7 +116,7 @@
     {
       "name": "collapsible",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-collapsible"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/collapsible.tsx",
@@ -180,7 +150,7 @@
     {
       "name": "dialog",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-dialog"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/dialog.tsx",
@@ -191,7 +161,7 @@
     {
       "name": "dropdown-menu",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-dropdown-menu"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/dropdown-menu.tsx",
@@ -202,7 +172,7 @@
     {
       "name": "hover-card",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-hover-card"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/hover-card.tsx",
@@ -223,7 +193,7 @@
     {
       "name": "label",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-label"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/label.tsx",
@@ -256,7 +226,7 @@
     {
       "name": "popover",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-popover"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/popover.tsx",
@@ -267,7 +237,7 @@
     {
       "name": "progress",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-progress"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/progress.tsx",
@@ -278,7 +248,7 @@
     {
       "name": "radio-group",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-radio-group"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/radio-group.tsx",
@@ -289,7 +259,7 @@
     {
       "name": "scroll-area",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-scroll-area"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/scroll-area.tsx",
@@ -310,7 +280,7 @@
     {
       "name": "select",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-select"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/select.tsx",
@@ -321,7 +291,7 @@
     {
       "name": "slider",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-slider"],
+      "dependencies": ["radix-ui"],
       "registryDependencies": ["https://originui.com/r/tooltip.json"],
       "files": [
         {
@@ -354,7 +324,7 @@
     {
       "name": "switch",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-switch"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/switch.tsx",
@@ -375,7 +345,7 @@
     {
       "name": "tabs",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-tabs"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/tabs.tsx",
@@ -396,7 +366,7 @@
     {
       "name": "timeline",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-slot"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/timeline.tsx",
@@ -407,7 +377,7 @@
     {
       "name": "toast",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-toast"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/toast.tsx",
@@ -426,7 +396,7 @@
     {
       "name": "toggle",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-toggle"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/toggle.tsx",
@@ -437,7 +407,7 @@
     {
       "name": "toggle-group",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-toggle-group"],
+      "dependencies": ["radix-ui"],
       "registryDependencies": ["toggle"],
       "files": [
         {
@@ -449,7 +419,7 @@
     {
       "name": "tooltip",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-tooltip"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/tooltip.tsx",
@@ -1211,7 +1181,15 @@
         }
       ],
       "meta": {
-        "tags": ["input", "label", "date", "calendar", "range calendar", "picker", "react aria"]
+        "tags": [
+          "input",
+          "label",
+          "date",
+          "calendar",
+          "range calendar",
+          "picker",
+          "react aria"
+        ]
       }
     },
     {
@@ -1221,7 +1199,11 @@
         "https://originui.com/r/calendar-rac.json",
         "https://originui.com/r/datefield-rac.json"
       ],
-      "dependencies": ["react-aria-components", "react-aria", "@internationalized/date"],
+      "dependencies": [
+        "react-aria-components",
+        "react-aria",
+        "@internationalized/date"
+      ],
       "files": [
         {
           "path": "registry/default/components/comp-43.tsx",
@@ -1229,7 +1211,15 @@
         }
       ],
       "meta": {
-        "tags": ["input", "label", "date", "calendar", "range calendar", "picker", "react aria"]
+        "tags": [
+          "input",
+          "label",
+          "date",
+          "calendar",
+          "range calendar",
+          "picker",
+          "react aria"
+        ]
       }
     },
     {
@@ -4793,7 +4783,15 @@
         }
       ],
       "meta": {
-        "tags": ["slider", "label", "button", "input", "tooltip", "reset", "radix"]
+        "tags": [
+          "slider",
+          "label",
+          "button",
+          "input",
+          "tooltip",
+          "reset",
+          "radix"
+        ]
       }
     },
     {
@@ -5978,7 +5976,14 @@
         }
       ],
       "meta": {
-        "tags": ["dialog", "modal", "signup", "authentication", "form", "radix"],
+        "tags": [
+          "dialog",
+          "modal",
+          "signup",
+          "authentication",
+          "form",
+          "radix"
+        ],
         "style": 1
       }
     },
@@ -6043,7 +6048,15 @@
         }
       ],
       "meta": {
-        "tags": ["dialog", "modal", "checkout", "payment", "credit card", "form", "radix"],
+        "tags": [
+          "dialog",
+          "modal",
+          "checkout",
+          "payment",
+          "credit card",
+          "form",
+          "radix"
+        ],
         "style": 1
       }
     },
@@ -6067,7 +6080,15 @@
         }
       ],
       "meta": {
-        "tags": ["dialog", "modal", "checkout", "payment", "credit card", "form", "radix"],
+        "tags": [
+          "dialog",
+          "modal",
+          "checkout",
+          "payment",
+          "credit card",
+          "form",
+          "radix"
+        ],
         "style": 1
       }
     },
@@ -6116,7 +6137,16 @@
         }
       ],
       "meta": {
-        "tags": ["dialog", "modal", "user", "profile", "image", "avatar", "form", "radix"],
+        "tags": [
+          "dialog",
+          "modal",
+          "user",
+          "profile",
+          "image",
+          "avatar",
+          "form",
+          "radix"
+        ],
         "style": 1
       }
     },
@@ -8672,7 +8702,15 @@
         }
       ],
       "meta": {
-        "tags": ["table", "tanstack", "checkbox", "collapsible", "flag", "badge", "chip"],
+        "tags": [
+          "table",
+          "tanstack",
+          "checkbox",
+          "collapsible",
+          "flag",
+          "badge",
+          "chip"
+        ],
         "colSpan": 3
       }
     },
@@ -8696,7 +8734,16 @@
         }
       ],
       "meta": {
-        "tags": ["table", "tanstack", "checkbox", "sort", "flag", "badge", "chip", "pagination"],
+        "tags": [
+          "table",
+          "tanstack",
+          "checkbox",
+          "sort",
+          "flag",
+          "badge",
+          "chip",
+          "pagination"
+        ],
         "colSpan": 3
       }
     },
@@ -8723,7 +8770,16 @@
         }
       ],
       "meta": {
-        "tags": ["table", "tanstack", "checkbox", "sort", "flag", "badge", "chip", "pagination"],
+        "tags": [
+          "table",
+          "tanstack",
+          "checkbox",
+          "sort",
+          "flag",
+          "badge",
+          "chip",
+          "pagination"
+        ],
         "colSpan": 3
       }
     },
@@ -8827,7 +8883,13 @@
         }
       ],
       "meta": {
-        "tags": ["calendar", "range calendar", "date", "disabled", "react aria"],
+        "tags": [
+          "calendar",
+          "range calendar",
+          "date",
+          "disabled",
+          "react aria"
+        ],
         "style": 1
       }
     },
@@ -8872,7 +8934,13 @@
         }
       ],
       "meta": {
-        "tags": ["calendar", "range calendar", "date", "disabled", "react daypicker"],
+        "tags": [
+          "calendar",
+          "range calendar",
+          "date",
+          "disabled",
+          "react daypicker"
+        ],
         "style": 1
       }
     },
@@ -9134,7 +9202,13 @@
         }
       ],
       "meta": {
-        "tags": ["calendar", "range calendar", "date", "button", "react daypicker"],
+        "tags": [
+          "calendar",
+          "range calendar",
+          "date",
+          "button",
+          "react daypicker"
+        ],
         "colSpan": 3,
         "style": 1
       }
@@ -9663,7 +9737,13 @@
     {
       "name": "comp-542",
       "type": "registry:component",
-      "dependencies": ["date-fns", "@dnd-kit/core", "@dnd-kit/modifiers", "@dnd-kit/utilities", "@remixicon/react"],
+      "dependencies": [
+        "date-fns",
+        "@dnd-kit/core",
+        "@dnd-kit/modifiers",
+        "@dnd-kit/utilities",
+        "@remixicon/react"
+      ],
       "registryDependencies": [
         "https://originui.com/r/button.json",
         "https://originui.com/r/calendar.json",
@@ -9760,9 +9840,7 @@
     {
       "name": "comp-543",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://originui.com/r/button.json"
-      ],      
+      "registryDependencies": ["https://originui.com/r/button.json"],
       "files": [
         {
           "path": "registry/default/components/comp-543.tsx",
@@ -9771,12 +9849,12 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "drag and drop", "avatar"]
       }
-    },    
+    },
     {
       "name": "comp-544",
       "type": "registry:component",
@@ -9788,7 +9866,7 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "drag and drop"],
@@ -9798,9 +9876,7 @@
     {
       "name": "comp-545",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://originui.com/r/button.json"
-      ],
+      "registryDependencies": ["https://originui.com/r/button.json"],
       "files": [
         {
           "path": "registry/default/components/comp-545.tsx",
@@ -9809,7 +9885,7 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "drag and drop"],
@@ -9819,9 +9895,7 @@
     {
       "name": "comp-546",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://originui.com/r/button.json"
-      ],      
+      "registryDependencies": ["https://originui.com/r/button.json"],
       "files": [
         {
           "path": "registry/default/components/comp-546.tsx",
@@ -9830,7 +9904,7 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "drag and drop"],
@@ -9840,9 +9914,7 @@
     {
       "name": "comp-547",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://originui.com/r/button.json"
-      ],      
+      "registryDependencies": ["https://originui.com/r/button.json"],
       "files": [
         {
           "path": "registry/default/components/comp-547.tsx",
@@ -9851,7 +9923,7 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "drag and drop"],
@@ -9861,9 +9933,7 @@
     {
       "name": "comp-548",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://originui.com/r/button.json"
-      ],      
+      "registryDependencies": ["https://originui.com/r/button.json"],
       "files": [
         {
           "path": "registry/default/components/comp-548.tsx",
@@ -9872,7 +9942,7 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "drag and drop"],
@@ -9882,9 +9952,7 @@
     {
       "name": "comp-549",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://originui.com/r/button.json"
-      ],      
+      "registryDependencies": ["https://originui.com/r/button.json"],
       "files": [
         {
           "path": "registry/default/components/comp-549.tsx",
@@ -9893,7 +9961,7 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "drag and drop"],
@@ -9903,9 +9971,7 @@
     {
       "name": "comp-550",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://originui.com/r/button.json"
-      ],      
+      "registryDependencies": ["https://originui.com/r/button.json"],
       "files": [
         {
           "path": "registry/default/components/comp-550.tsx",
@@ -9914,7 +9980,7 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "drag and drop"],
@@ -9927,7 +9993,7 @@
       "registryDependencies": [
         "https://originui.com/r/button.json",
         "https://originui.com/r/table.json"
-      ],      
+      ],
       "files": [
         {
           "path": "registry/default/components/comp-551.tsx",
@@ -9936,19 +10002,17 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "drag and drop"],
         "colSpan": 2
       }
-    },   
+    },
     {
       "name": "comp-552",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://originui.com/r/button.json"
-      ],      
+      "registryDependencies": ["https://originui.com/r/button.json"],
       "files": [
         {
           "path": "registry/default/components/comp-552.tsx",
@@ -9957,7 +10021,7 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "drag and drop"],
@@ -9967,9 +10031,7 @@
     {
       "name": "comp-553",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://originui.com/r/button.json"
-      ],      
+      "registryDependencies": ["https://originui.com/r/button.json"],
       "files": [
         {
           "path": "registry/default/components/comp-553.tsx",
@@ -9978,7 +10040,7 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "drag and drop"],

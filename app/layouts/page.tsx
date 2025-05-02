@@ -19,7 +19,7 @@ const cards = [
       "https://github.com/origin-space/ui-experiments/tree/main/apps/experiment-07",
     cmd: "npx shadcn init https://ui-experiment-07.vercel.app/r/experiment-07.json",
     imgHeight: 700,
-  },  
+  },
   {
     id: 6,
     title: "Event Calendar",
