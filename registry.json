@@ -1242,7 +1242,7 @@
       "type": "registry:component",
       "files": [
         {
-          "path": "registry/default/components/comp-63.tsx",
+          "path": "registry/default/components/comp-62.tsx",
           "type": "registry:component"
         }
       ],
@@ -3491,7 +3491,16 @@
         }
       ],
       "meta": {
-        "tags": ["label", "select", "command", "combobox", "popover", "search", "autocomplete", "radix"]
+        "tags": [
+          "label",
+          "select",
+          "command",
+          "combobox",
+          "popover",
+          "search",
+          "autocomplete",
+          "radix"
+        ]
       }
     },
     {
@@ -3504,7 +3513,16 @@
         }
       ],
       "meta": {
-        "tags": ["label", "select", "command", "combobox", "popover", "search", "autocomplete", "radix"]
+        "tags": [
+          "label",
+          "select",
+          "command",
+          "combobox",
+          "popover",
+          "search",
+          "autocomplete",
+          "radix"
+        ]
       }
     },
     {
@@ -3517,7 +3535,18 @@
         }
       ],
       "meta": {
-        "tags": ["label", "select", "command", "combobox", "popover", "search", "autocomplete", "timezone", "time", "radix"]
+        "tags": [
+          "label",
+          "select",
+          "command",
+          "combobox",
+          "popover",
+          "search",
+          "autocomplete",
+          "timezone",
+          "time",
+          "radix"
+        ]
       }
     },
     {
@@ -3530,7 +3559,17 @@
         }
       ],
       "meta": {
-        "tags": ["label", "select", "command", "combobox", "popover", "search", "autocomplete", "flag", "radix"]
+        "tags": [
+          "label",
+          "select",
+          "command",
+          "combobox",
+          "popover",
+          "search",
+          "autocomplete",
+          "flag",
+          "radix"
+        ]
       }
     },
     {
@@ -3543,7 +3582,16 @@
         }
       ],
       "meta": {
-        "tags": ["label", "select", "command", "combobox", "popover", "search", "autocomplete", "radix"]
+        "tags": [
+          "label",
+          "select",
+          "command",
+          "combobox",
+          "popover",
+          "search",
+          "autocomplete",
+          "radix"
+        ]
       }
     },
     {
@@ -3556,7 +3604,16 @@
         }
       ],
       "meta": {
-        "tags": ["label", "select", "multiselect", "tag", "input", "search", "autocomplete", "radix"]
+        "tags": [
+          "label",
+          "select",
+          "multiselect",
+          "tag",
+          "input",
+          "search",
+          "autocomplete",
+          "radix"
+        ]
       }
     },
     {
@@ -3569,7 +3626,16 @@
         }
       ],
       "meta": {
-        "tags": ["label", "select", "multiselect", "tag", "input", "search", "autocomplete", "radix"]
+        "tags": [
+          "label",
+          "select",
+          "multiselect",
+          "tag",
+          "input",
+          "search",
+          "autocomplete",
+          "radix"
+        ]
       }
     },
     {
@@ -4931,7 +4997,17 @@
         }
       ],
       "meta": {
-        "tags": ["dialog", "modal", "command", "combobox", "popover", "search", "radix", "autocomplete", "radix"],
+        "tags": [
+          "dialog",
+          "modal",
+          "command",
+          "combobox",
+          "popover",
+          "search",
+          "radix",
+          "autocomplete",
+          "radix"
+        ],
         "style": 1
       }
     },
@@ -6989,7 +7065,17 @@
         }
       ],
       "meta": {
-        "tags": ["table", "tanstack", "checkbox", "search", "select", "range", "input", "filter", "sort"],
+        "tags": [
+          "table",
+          "tanstack",
+          "checkbox",
+          "search",
+          "select",
+          "range",
+          "input",
+          "filter",
+          "sort"
+        ],
         "colSpan": 3
       }
     },
@@ -7087,7 +7173,18 @@
         }
       ],
       "meta": {
-        "tags": ["table", "tanstack", "checkbox", "sort", "flag", "badge", "chip", "pagination", "filter", "select"],
+        "tags": [
+          "table",
+          "tanstack",
+          "checkbox",
+          "sort",
+          "flag",
+          "badge",
+          "chip",
+          "pagination",
+          "filter",
+          "select"
+        ],
         "colSpan": 3
       }
     },

@@ -22670,11 +22670,6 @@
           "path": "registry/default/components/comp-62.tsx"
         },
         {
-          "type": "registry:component",
-          "target": "components/comp-63.tsx",
-          "path": "registry/default/components/comp-63.tsx"
-        },
-        {
           "type": "registry:lib",
           "target": "lib/utils.ts",
           "path": "registry/default/lib/utils.ts"

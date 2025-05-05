@@ -16,12 +16,6 @@
       "path": "registry/default/components/comp-62.tsx"
     },
     {
-      "type": "registry:component",
-      "target": "components/comp-63.tsx",
-      "content": "import { useId } from \"react\"\n\nimport { Label } from \"@/components/ui/label\"\nimport { Textarea } from \"@/components/ui/textarea\"\n\nexport default function Component() {\n  const id = useId()\n  return (\n    <div className=\"[--ring:var(--color-indigo-300)] *:not-first:mt-2 in-[.dark]:[--ring:var(--color-indigo-900)]\">\n      <Label htmlFor={id}>Textarea with colored border and ring</Label>\n      <Textarea id={id} placeholder=\"Leave a comment\" />\n    </div>\n  )\n}\n",
-      "path": "registry/default/components/comp-63.tsx"
-    },
-    {
       "type": "registry:lib",
       "target": "lib/utils.ts",
       "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
