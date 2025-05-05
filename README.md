@@ -21,6 +21,14 @@ Note: If you're using shadcn, you may likely already have these files - however,
 
 **2. Add the following CSS variables to your stylesheet (you don't need to overwrite them if you already have them):**
 
+- Automatically add by running the following command:
+
+```sh
+npx shadcn add https://originui.com/r/style.json
+```
+
+- Or manually add the CSS variables to your `globals.css` file:
+
 ```
 :root {
   --radius: 0.625rem;
