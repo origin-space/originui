@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "event-calendar-types",
+  "type": "registry:component",
+  "files": [
+    {
+      "type": "registry:component",
+      "target": "components/event-calendar/types.ts",
+      "content": "export type CalendarView = \"month\" | \"week\" | \"day\" | \"agenda\"\n\nexport interface CalendarEvent {\n  id: string\n  title: string\n  description?: string\n  start: Date\n  end: Date\n  allDay?: boolean\n  color?: EventColor\n  location?: string\n}\n\nexport type EventColor =\n  | \"sky\"\n  | \"amber\"\n  | \"violet\"\n  | \"rose\"\n  | \"emerald\"\n  | \"orange\"\n",
+      "path": "registry/default/components/event-calendar/types.ts"
+    }
+  ]
+}

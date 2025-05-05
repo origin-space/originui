@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "event-calendar-use-current-time-indicator",
+  "type": "registry:component",
+  "dependencies": [
+    "date-fns",
+    "react"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "target": "components/event-calendar/hooks/use-current-time-indicator.ts",
+      "content": "\"use client\"\n\nimport { useEffect, useState } from \"react\"\nimport { endOfWeek, isSameDay, isWithinInterval, startOfWeek } from \"date-fns\"\n\nimport {\n  EndHour,\n  StartHour,\n} from \"@/components/event-calendar/constants\"\n\nexport function useCurrentTimeIndicator(\n  currentDate: Date,\n  view: \"day\" | \"week\"\n) {\n  const [currentTimePosition, setCurrentTimePosition] = useState<number>(0)\n  const [currentTimeVisible, setCurrentTimeVisible] = useState<boolean>(false)\n\n  useEffect(() => {\n    const calculateTimePosition = () => {\n      const now = new Date()\n      const hours = now.getHours()\n      const minutes = now.getMinutes()\n      const totalMinutes = (hours - StartHour) * 60 + minutes\n      const dayStartMinutes = 0 // 12am\n      const dayEndMinutes = (EndHour - StartHour) * 60 // 12am next day\n\n      // Calculate position as percentage of day\n      const position =\n        ((totalMinutes - dayStartMinutes) / (dayEndMinutes - dayStartMinutes)) *\n        100\n\n      // Check if current day is in view based on the calendar view\n      let isCurrentTimeVisible = false\n\n      if (view === \"day\") {\n        isCurrentTimeVisible = isSameDay(now, currentDate)\n      } else if (view === \"week\") {\n        const startOfWeekDate = startOfWeek(currentDate, { weekStartsOn: 0 })\n        const endOfWeekDate = endOfWeek(currentDate, { weekStartsOn: 0 })\n        isCurrentTimeVisible = isWithinInterval(now, {\n          start: startOfWeekDate,\n          end: endOfWeekDate,\n        })\n      }\n\n      setCurrentTimePosition(position)\n      setCurrentTimeVisible(isCurrentTimeVisible)\n    }\n\n    // Calculate immediately\n    calculateTimePosition()\n\n    // Update every minute\n    const interval = setInterval(calculateTimePosition, 60000)\n\n    return () => clearInterval(interval)\n  }, [currentDate, view])\n\n  return { currentTimePosition, currentTimeVisible }\n}\n",
+      "path": "registry/default/components/event-calendar/hooks/use-current-time-indicator.ts"
+    },
+    {
+      "type": "registry:component",
+      "target": "components/event-calendar/constants.ts",
+      "content": "// Height of calendar events in pixels - used in month, week and day views\nexport const EventHeight = 24\n\n// Vertical gap between events in pixels - controls spacing in month view\nexport const EventGap = 4\n\n// Height of hour cells in week and day views - controls the scale of time display\nexport const WeekCellsHeight = 64\n\n// Number of days to show in the agenda view\nexport const AgendaDaysToShow = 30\n\n// Start and end hours for the week and day views\nexport const StartHour = 0\nexport const EndHour = 24\n\n// Default start and end times\nexport const DefaultStartHour = 9 // 9 AM\nexport const DefaultEndHour = 10 // 10 AM\n",
+      "path": "registry/default/components/event-calendar/constants.ts"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "event-calendar-droppable-cell",
+  "type": "registry:component",
+  "dependencies": [
+    "@dnd-kit/core",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "target": "components/event-calendar/droppable-cell.tsx",
+      "content": "\"use client\"\n\nimport { useDroppable } from \"@dnd-kit/core\"\n\nimport { useCalendarDnd } from \"@/components/event-calendar\"\nimport { cn } from \"@/lib/utils\"\n\ninterface DroppableCellProps {\n  id: string\n  date: Date\n  time?: number // For week/day views, represents hours (e.g., 9.25 for 9:15)\n  children?: React.ReactNode\n  className?: string\n  onClick?: () => void\n}\n\nexport function DroppableCell({\n  id,\n  date,\n  time,\n  children,\n  className,\n  onClick,\n}: DroppableCellProps) {\n  const { activeEvent } = useCalendarDnd()\n\n  const { setNodeRef, isOver } = useDroppable({\n    id,\n    data: {\n      date,\n      time,\n    },\n  })\n\n  // Format time for display in tooltip (only for debugging)\n  const formattedTime =\n    time !== undefined\n      ? `${Math.floor(time)}:${Math.round((time - Math.floor(time)) * 60)\n          .toString()\n          .padStart(2, \"0\")}`\n      : null\n\n  return (\n    <div\n      ref={setNodeRef}\n      onClick={onClick}\n      className={cn(\n        \"data-dragging:bg-accent flex h-full flex-col overflow-hidden px-0.5 py-1 sm:px-1\",\n        className\n      )}\n      title={formattedTime ? `${formattedTime}` : undefined}\n      data-dragging={isOver && activeEvent ? true : undefined}\n    >\n      {children}\n    </div>\n  )\n}\n",
+      "path": "registry/default/components/event-calendar/droppable-cell.tsx"
+    },
+    {
+      "type": "registry:component",
+      "target": "components/event-calendar/index.ts",
+      "content": "\"use client\"\n\n// Component exports\nexport { AgendaView } from \"./agenda-view\"\nexport { DayView } from \"./day-view\"\nexport { DraggableEvent } from \"./draggable-event\"\nexport { DroppableCell } from \"./droppable-cell\"\nexport { EventDialog } from \"./event-dialog\"\nexport { EventItem } from \"./event-item\"\nexport { EventsPopup } from \"./events-popup\"\nexport { EventCalendar } from \"./event-calendar\"\nexport { MonthView } from \"./month-view\"\nexport { WeekView } from \"./week-view\"\nexport { CalendarDndProvider, useCalendarDnd } from \"./calendar-dnd-context\"\n\n// Constants and utility exports\nexport * from \"./constants\"\nexport * from \"./utils\"\n\n// Hook exports\nexport * from \"./hooks/use-current-time-indicator\"\nexport * from \"./hooks/use-event-visibility\"\n\n// Type exports\nexport type { CalendarEvent, CalendarView, EventColor } from \"./types\"\n",
+      "path": "registry/default/components/event-calendar/index.ts"
+    },
+    {
+      "type": "registry:lib",
+      "target": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "path": "registry/default/lib/utils.ts"
+    }
+  ]
+}

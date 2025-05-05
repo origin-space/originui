@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "event-calendar-agenda-view",
+  "type": "registry:component",
+  "dependencies": [
+    "@remixicon/react",
+    "date-fns",
+    "react"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "target": "components/event-calendar/agenda-view.tsx",
+      "content": "\"use client\"\n\nimport { useMemo } from \"react\"\nimport { RiCalendarEventLine } from \"@remixicon/react\"\nimport { addDays, format, isToday } from \"date-fns\"\n\nimport {\n  AgendaDaysToShow,\n  CalendarEvent,\n  EventItem,\n  getAgendaEventsForDay,\n} from \"@/components/event-calendar\"\n\ninterface AgendaViewProps {\n  currentDate: Date\n  events: CalendarEvent[]\n  onEventSelect: (event: CalendarEvent) => void\n}\n\nexport function AgendaView({\n  currentDate,\n  events,\n  onEventSelect,\n}: AgendaViewProps) {\n  // Show events for the next days based on constant\n  const days = useMemo(() => {\n    console.log(\"Agenda view updating with date:\", currentDate.toISOString())\n    return Array.from({ length: AgendaDaysToShow }, (_, i) =>\n      addDays(new Date(currentDate), i)\n    )\n  }, [currentDate])\n\n  const handleEventClick = (event: CalendarEvent, e: React.MouseEvent) => {\n    e.stopPropagation()\n    console.log(\"Agenda view event clicked:\", event)\n    onEventSelect(event)\n  }\n\n  // Check if there are any days with events\n  const hasEvents = days.some(\n    (day) => getAgendaEventsForDay(events, day).length > 0\n  )\n\n  return (\n    <div className=\"border-border/70 border-t px-4\">\n      {!hasEvents ? (\n        <div className=\"flex min-h-[70svh] flex-col items-center justify-center py-16 text-center\">\n          <RiCalendarEventLine\n            size={32}\n            className=\"text-muted-foreground/50 mb-2\"\n          />\n          <h3 className=\"text-lg font-medium\">No events found</h3>\n          <p className=\"text-muted-foreground\">\n            There are no events scheduled for this time period.\n          </p>\n        </div>\n      ) : (\n        days.map((day) => {\n          const dayEvents = getAgendaEventsForDay(events, day)\n\n          if (dayEvents.length === 0) return null\n\n          return (\n            <div\n              key={day.toString()}\n              className=\"border-border/70 relative my-12 border-t\"\n            >\n              <span\n                className=\"bg-background absolute -top-3 left-0 flex h-6 items-center pe-4 text-[10px] uppercase data-today:font-medium sm:pe-4 sm:text-xs\"\n                data-today={isToday(day) || undefined}\n              >\n                {format(day, \"d MMM, EEEE\")}\n              </span>\n              <div className=\"mt-6 space-y-2\">\n                {dayEvents.map((event) => (\n                  <EventItem\n                    key={event.id}\n                    event={event}\n                    view=\"agenda\"\n                    onClick={(e) => handleEventClick(event, e)}\n                  />\n                ))}\n              </div>\n            </div>\n          )\n        })\n      )}\n    </div>\n  )\n}\n",
+      "path": "registry/default/components/event-calendar/agenda-view.tsx"
+    },
+    {
+      "type": "registry:component",
+      "target": "components/event-calendar/index.ts",
+      "content": "\"use client\"\n\n// Component exports\nexport { AgendaView } from \"./agenda-view\"\nexport { DayView } from \"./day-view\"\nexport { DraggableEvent } from \"./draggable-event\"\nexport { DroppableCell } from \"./droppable-cell\"\nexport { EventDialog } from \"./event-dialog\"\nexport { EventItem } from \"./event-item\"\nexport { EventsPopup } from \"./events-popup\"\nexport { EventCalendar } from \"./event-calendar\"\nexport { MonthView } from \"./month-view\"\nexport { WeekView } from \"./week-view\"\nexport { CalendarDndProvider, useCalendarDnd } from \"./calendar-dnd-context\"\n\n// Constants and utility exports\nexport * from \"./constants\"\nexport * from \"./utils\"\n\n// Hook exports\nexport * from \"./hooks/use-current-time-indicator\"\nexport * from \"./hooks/use-event-visibility\"\n\n// Type exports\nexport type { CalendarEvent, CalendarView, EventColor } from \"./types\"\n",
+      "path": "registry/default/components/event-calendar/index.ts"
+    }
+  ]
+}
