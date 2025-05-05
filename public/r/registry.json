@@ -7,7 +7,6 @@
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "style",
       "type": "registry:style",
-      "files": [],
       "cssVars": {
         "light": {
           "radius": "0.625rem",
