@@ -743,6 +743,17 @@ export const categories: ComponentCategory[] = [
       { name: "comp-365" },
     ],
   },
+  {
+    slug: "tree",
+    name: "Tree",
+    components: [
+      { name: "comp-565" },
+      { name: "comp-566" },
+      { name: "comp-567" },
+      { name: "comp-568" },
+      { name: "comp-569" },
+    ],
+  },
 ]
 
 export function getCategory(slug: string): ComponentCategory | undefined {

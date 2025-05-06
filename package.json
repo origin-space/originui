@@ -18,6 +18,8 @@
     "@dnd-kit/modifiers": "^9.0.0",
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
+    "@headless-tree/core": "^1.0.0",
+    "@headless-tree/react": "^1.0.0",
     "@internationalized/date": "^3.7.0",
     "@origin-space/image-cropper": "^0.1.8",
     "@radix-ui/react-accordion": "^1.2.3",

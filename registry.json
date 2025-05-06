@@ -10150,6 +10150,71 @@
         "tags": ["image", "crop", "zoom"],
         "colSpan": 2
       }
+    },
+    {
+      "name": "comp-565",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-565.tsx",
+          "type": "registry:component"
+        } 
+      ],
+      "meta": {
+        "tags": ["tree"]
+      }
+    },
+    {
+      "name": "comp-566",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-566.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree"]
+      }
+    },
+    {
+      "name": "comp-567",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-567.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree"]
+      }
+    },
+    {
+      "name": "comp-568",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-568.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree"]
+      }
+    },
+    {
+      "name": "comp-569",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-569.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree"]
+      }
     }
   ]
 }

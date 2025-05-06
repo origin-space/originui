@@ -20,6 +20,12 @@ importers:
       '@dnd-kit/utilities':
         specifier: ^3.2.2
         version: 3.2.2(react@19.1.0)
+      '@headless-tree/core':
+        specifier: ^1.0.0
+        version: 1.0.0
+      '@headless-tree/react':
+        specifier: ^1.0.0
+        version: 1.0.0(@headless-tree/core@1.0.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@internationalized/date':
         specifier: ^3.7.0
         version: 3.7.0
@@ -636,6 +642,16 @@ packages:
 
   '@formatjs/intl-localematcher@0.6.1':
     resolution: {integrity: sha512-ePEgLgVCqi2BBFnTMWPfIghu6FkbZnnBVhO2sSxvLfrdFw7wCHAHiDoM2h4NRgjbaY7+B7HgOLZGkK187pZTZg==}
+
+  '@headless-tree/core@1.0.0':
+    resolution: {integrity: sha512-IXlcLe2SF/RcHOPyua3ix4QORsb9AA01VknZeWxMzYLGT6zovvMGTgj69TA6w74iGLIG5wSnnzOZM9l8cCUh1A==}
+
+  '@headless-tree/react@1.0.0':
+    resolution: {integrity: sha512-LE3Unq5e4cBcR5J5rYQY6Nya2y0/bfryXXsou0NeiFMumZCC82T50Dx/RPP4ObWl/CU84+fDZOF5x6029B55gQ==}
+    peerDependencies:
+      '@headless-tree/core': '*'
+      react: '*'
+      react-dom: '*'
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -5186,6 +5202,14 @@ snapshots:
   '@formatjs/intl-localematcher@0.6.1':
     dependencies:
       tslib: 2.8.1
+
+  '@headless-tree/core@1.0.0': {}
+
+  '@headless-tree/react@1.0.0(@headless-tree/core@1.0.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      '@headless-tree/core': 1.0.0
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
 
   '@humanfs/core@0.19.1': {}
 
