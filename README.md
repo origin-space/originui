@@ -27,7 +27,7 @@ Note: If you're using shadcn, you may likely already have these files - however,
 npx shadcn add https://originui.com/r/style.json
 ```
 
-- Or manually update the CSS variables to your `globals.css` file:
+- Or manually update the CSS variables to your `app/globals.css` file:
 
 ```
 :root {
