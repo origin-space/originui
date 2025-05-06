@@ -4,7 +4,6 @@
   "homepage": "https://originui.com",
   "items": [
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "style",
       "type": "registry:style",
       "cssVars": {
@@ -80,7 +79,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "accordion",
       "type": "registry:ui",
       "dependencies": [
@@ -104,7 +102,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "alert-dialog",
       "type": "registry:ui",
       "dependencies": [
@@ -134,7 +131,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "avatar",
       "type": "registry:ui",
       "dependencies": [
@@ -157,7 +153,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "badge",
       "type": "registry:ui",
       "dependencies": [
@@ -181,7 +176,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "breadcrumb",
       "type": "registry:ui",
       "dependencies": [
@@ -205,7 +199,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "button",
       "type": "registry:ui",
       "dependencies": [
@@ -229,7 +222,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "calendar",
       "type": "registry:ui",
       "dependencies": [
@@ -260,7 +252,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "calendar-rac",
       "type": "registry:ui",
       "dependencies": [
@@ -285,7 +276,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "checkbox",
       "type": "registry:ui",
       "dependencies": [
@@ -308,7 +298,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "checkbox-tree",
       "type": "registry:ui",
       "dependencies": [
@@ -323,7 +312,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "collapsible",
       "type": "registry:ui",
       "dependencies": [
@@ -338,7 +326,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "command",
       "type": "registry:ui",
       "dependencies": [
@@ -368,7 +355,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "datefield-rac",
       "type": "registry:ui",
       "dependencies": [
@@ -390,7 +376,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "dialog",
       "type": "registry:ui",
       "dependencies": [
@@ -414,7 +399,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "dropdown-menu",
       "type": "registry:ui",
       "dependencies": [
@@ -438,7 +422,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "hover-card",
       "type": "registry:ui",
       "dependencies": [
@@ -461,7 +444,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "input",
       "type": "registry:ui",
       "dependencies": [
@@ -483,7 +465,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "label",
       "type": "registry:ui",
       "dependencies": [
@@ -506,7 +487,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "multiselect",
       "type": "registry:ui",
       "dependencies": [
@@ -541,7 +521,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "pagination",
       "type": "registry:ui",
       "dependencies": [
@@ -571,7 +550,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "popover",
       "type": "registry:ui",
       "dependencies": [
@@ -594,7 +572,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "progress",
       "type": "registry:ui",
       "dependencies": [
@@ -617,7 +594,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "radio-group",
       "type": "registry:ui",
       "dependencies": [
@@ -640,7 +616,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "resizable",
       "type": "registry:ui",
       "dependencies": [
@@ -663,7 +638,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "scroll-area",
       "type": "registry:ui",
       "dependencies": [
@@ -686,7 +660,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "select",
       "type": "registry:ui",
       "dependencies": [
@@ -710,7 +683,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "select-native",
       "type": "registry:ui",
       "dependencies": [
@@ -733,7 +705,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "slider",
       "type": "registry:ui",
       "dependencies": [
@@ -762,7 +733,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "sonner",
       "type": "registry:ui",
       "dependencies": [
@@ -778,7 +748,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "stepper",
       "type": "registry:ui",
       "dependencies": [
@@ -802,7 +771,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "switch",
       "type": "registry:ui",
       "dependencies": [
@@ -825,7 +793,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "table",
       "type": "registry:ui",
       "dependencies": [
@@ -847,7 +814,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "tabs",
       "type": "registry:ui",
       "dependencies": [
@@ -870,7 +836,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "textarea",
       "type": "registry:ui",
       "dependencies": [
@@ -892,7 +857,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "timeline",
       "type": "registry:ui",
       "dependencies": [
@@ -915,7 +879,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "toast",
       "type": "registry:ui",
       "dependencies": [
@@ -940,7 +903,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "toaster",
       "type": "registry:ui",
       "dependencies": [
@@ -975,7 +937,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "toggle",
       "type": "registry:ui",
       "dependencies": [
@@ -999,7 +960,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "toggle-group",
       "type": "registry:ui",
       "dependencies": [
@@ -1029,7 +989,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "tooltip",
       "type": "registry:ui",
       "dependencies": [
@@ -1052,7 +1011,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "ui",
       "type": "registry:ui",
       "dependencies": [
@@ -1305,7 +1263,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "use-character-limit",
       "type": "registry:hook",
       "dependencies": [
@@ -1320,7 +1277,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "use-file-upload",
       "type": "registry:hook",
       "dependencies": [
@@ -1335,7 +1291,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "use-pagination",
       "type": "registry:hook",
       "files": [
@@ -1347,7 +1302,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "use-slider-with-input",
       "type": "registry:hook",
       "dependencies": [
@@ -1362,7 +1316,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "use-toast",
       "type": "registry:hook",
       "dependencies": [
@@ -1392,7 +1345,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "utils",
       "type": "registry:lib",
       "dependencies": [
@@ -1408,7 +1360,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "registry-tags",
       "type": "registry:file",
       "files": [
@@ -1420,7 +1371,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-01",
       "type": "registry:component",
       "dependencies": [
@@ -1459,7 +1409,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-02",
       "type": "registry:component",
       "dependencies": [
@@ -1499,7 +1448,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-03",
       "type": "registry:component",
       "dependencies": [
@@ -1539,7 +1487,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-04",
       "type": "registry:component",
       "dependencies": [
@@ -1579,7 +1526,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-05",
       "type": "registry:component",
       "dependencies": [
@@ -1618,7 +1564,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-06",
       "type": "registry:component",
       "dependencies": [
@@ -1658,7 +1603,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-07",
       "type": "registry:component",
       "dependencies": [
@@ -1697,7 +1641,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-08",
       "type": "registry:component",
       "dependencies": [
@@ -1737,7 +1680,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-09",
       "type": "registry:component",
       "dependencies": [
@@ -1777,7 +1719,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-10",
       "type": "registry:component",
       "dependencies": [
@@ -1817,7 +1758,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-11",
       "type": "registry:component",
       "dependencies": [
@@ -1856,7 +1796,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-12",
       "type": "registry:component",
       "dependencies": [
@@ -1895,7 +1834,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-13",
       "type": "registry:component",
       "dependencies": [
@@ -1934,7 +1872,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-14",
       "type": "registry:component",
       "dependencies": [
@@ -1973,7 +1910,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-15",
       "type": "registry:component",
       "dependencies": [
@@ -2012,7 +1948,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-16",
       "type": "registry:component",
       "dependencies": [
@@ -2051,7 +1986,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-17",
       "type": "registry:component",
       "dependencies": [
@@ -2098,7 +2032,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-18",
       "type": "registry:component",
       "dependencies": [
@@ -2145,7 +2078,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-19",
       "type": "registry:component",
       "dependencies": [
@@ -2186,7 +2118,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-20",
       "type": "registry:component",
       "dependencies": [
@@ -2227,7 +2158,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-21",
       "type": "registry:component",
       "dependencies": [
@@ -2267,7 +2197,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-22",
       "type": "registry:component",
       "dependencies": [
@@ -2314,7 +2243,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-23",
       "type": "registry:component",
       "dependencies": [
@@ -2356,7 +2284,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-24",
       "type": "registry:component",
       "dependencies": [
@@ -2397,7 +2324,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-25",
       "type": "registry:component",
       "dependencies": [
@@ -2438,7 +2364,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-26",
       "type": "registry:component",
       "dependencies": [
@@ -2480,7 +2405,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-27",
       "type": "registry:component",
       "dependencies": [
@@ -2522,7 +2446,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-28",
       "type": "registry:component",
       "dependencies": [
@@ -2547,7 +2470,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-29",
       "type": "registry:component",
       "dependencies": [
@@ -2572,7 +2494,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-30",
       "type": "registry:component",
       "dependencies": [
@@ -2612,7 +2533,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-31",
       "type": "registry:component",
       "dependencies": [
@@ -2645,7 +2565,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-32",
       "type": "registry:component",
       "dependencies": [
@@ -2678,7 +2597,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-33",
       "type": "registry:component",
       "dependencies": [
@@ -2699,7 +2617,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-34",
       "type": "registry:component",
       "dependencies": [
@@ -2743,7 +2660,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-35",
       "type": "registry:component",
       "dependencies": [
@@ -2787,7 +2703,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-36",
       "type": "registry:component",
       "dependencies": [
@@ -2822,7 +2737,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-37",
       "type": "registry:component",
       "dependencies": [
@@ -2857,7 +2771,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-38",
       "type": "registry:component",
       "dependencies": [
@@ -2893,7 +2806,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-39",
       "type": "registry:component",
       "dependencies": [
@@ -2929,7 +2841,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-40",
       "type": "registry:component",
       "dependencies": [
@@ -2964,7 +2875,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-41",
       "type": "registry:component",
       "dependencies": [
@@ -3009,7 +2919,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-42",
       "type": "registry:component",
       "dependencies": [
@@ -3055,7 +2964,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-43",
       "type": "registry:component",
       "dependencies": [
@@ -3102,7 +3010,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-44",
       "type": "registry:component",
       "dependencies": [
@@ -3138,7 +3045,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-45",
       "type": "registry:component",
       "dependencies": [
@@ -3175,7 +3081,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-46",
       "type": "registry:component",
       "dependencies": [
@@ -3217,7 +3122,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-47",
       "type": "registry:component",
       "dependencies": [
@@ -3262,7 +3166,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-48",
       "type": "registry:component",
       "dependencies": [
@@ -3306,7 +3209,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-49",
       "type": "registry:component",
       "dependencies": [
@@ -3350,7 +3252,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-50",
       "type": "registry:component",
       "dependencies": [
@@ -3389,7 +3290,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-51",
       "type": "registry:component",
       "dependencies": [
@@ -3430,7 +3330,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-52",
       "type": "registry:component",
       "dependencies": [
@@ -3470,7 +3369,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-53",
       "type": "registry:component",
       "dependencies": [
@@ -3517,7 +3415,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-54",
       "type": "registry:component",
       "dependencies": [
@@ -3558,7 +3455,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-55",
       "type": "registry:component",
       "dependencies": [
@@ -3600,7 +3496,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-56",
       "type": "registry:component",
       "dependencies": [
@@ -3637,7 +3532,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-57",
       "type": "registry:component",
       "dependencies": [
@@ -3674,7 +3568,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-58",
       "type": "registry:component",
       "dependencies": [
@@ -3710,7 +3603,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-59",
       "type": "registry:component",
       "dependencies": [
@@ -3749,7 +3641,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-60",
       "type": "registry:component",
       "dependencies": [
@@ -3789,7 +3680,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-61",
       "type": "registry:component",
       "dependencies": [
@@ -3829,7 +3719,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-62",
       "type": "registry:component",
       "dependencies": [
@@ -3869,7 +3758,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-63",
       "type": "registry:component",
       "dependencies": [
@@ -3908,7 +3796,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-64",
       "type": "registry:component",
       "dependencies": [
@@ -3948,7 +3835,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-65",
       "type": "registry:component",
       "dependencies": [
@@ -3987,7 +3873,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-66",
       "type": "registry:component",
       "dependencies": [
@@ -4026,7 +3911,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-67",
       "type": "registry:component",
       "dependencies": [
@@ -4066,7 +3950,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-68",
       "type": "registry:component",
       "dependencies": [
@@ -4113,7 +3996,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-69",
       "type": "registry:component",
       "dependencies": [
@@ -4160,7 +4042,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-70",
       "type": "registry:component",
       "dependencies": [
@@ -4207,7 +4088,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-71",
       "type": "registry:component",
       "dependencies": [
@@ -4246,7 +4126,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-72",
       "type": "registry:component",
       "dependencies": [
@@ -4279,7 +4158,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-73",
       "type": "registry:component",
       "dependencies": [
@@ -4300,7 +4178,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-74",
       "type": "registry:component",
       "dependencies": [
@@ -4344,7 +4221,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-75",
       "type": "registry:component",
       "dependencies": [
@@ -4383,7 +4259,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-76",
       "type": "registry:component",
       "dependencies": [
@@ -4423,7 +4298,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-77",
       "type": "registry:component",
       "dependencies": [
@@ -4462,7 +4336,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-78",
       "type": "registry:component",
       "dependencies": [
@@ -4497,7 +4370,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-79",
       "type": "registry:component",
       "dependencies": [
@@ -4533,7 +4405,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-80",
       "type": "registry:component",
       "dependencies": [
@@ -4568,7 +4439,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-81",
       "type": "registry:component",
       "dependencies": [
@@ -4604,7 +4474,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-82",
       "type": "registry:component",
       "dependencies": [
@@ -4641,7 +4510,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-83",
       "type": "registry:component",
       "dependencies": [
@@ -4677,7 +4545,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-84",
       "type": "registry:component",
       "dependencies": [
@@ -4713,7 +4580,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-85",
       "type": "registry:component",
       "dependencies": [
@@ -4750,7 +4616,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-86",
       "type": "registry:component",
       "dependencies": [
@@ -4787,7 +4652,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-87",
       "type": "registry:component",
       "dependencies": [
@@ -4823,7 +4687,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-88",
       "type": "registry:component",
       "dependencies": [
@@ -4860,7 +4723,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-89",
       "type": "registry:component",
       "dependencies": [
@@ -4895,7 +4757,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-90",
       "type": "registry:component",
       "dependencies": [
@@ -4932,7 +4793,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-91",
       "type": "registry:component",
       "dependencies": [
@@ -4969,7 +4829,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-92",
       "type": "registry:component",
       "dependencies": [
@@ -5005,7 +4864,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-93",
       "type": "registry:component",
       "dependencies": [
@@ -5042,7 +4900,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-94",
       "type": "registry:component",
       "dependencies": [
@@ -5080,7 +4937,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-95",
       "type": "registry:component",
       "dependencies": [
@@ -5126,7 +4982,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-96",
       "type": "registry:component",
       "dependencies": [
@@ -5162,7 +5017,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-97",
       "type": "registry:component",
       "dependencies": [
@@ -5198,7 +5052,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-98",
       "type": "registry:component",
       "dependencies": [
@@ -5235,7 +5088,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-99",
       "type": "registry:component",
       "dependencies": [
@@ -5278,7 +5130,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-100",
       "type": "registry:component",
       "dependencies": [
@@ -5315,7 +5166,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-101",
       "type": "registry:component",
       "dependencies": [
@@ -5358,7 +5208,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-102",
       "type": "registry:component",
       "dependencies": [
@@ -5396,7 +5245,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-103",
       "type": "registry:component",
       "dependencies": [
@@ -5434,7 +5282,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-104",
       "type": "registry:component",
       "dependencies": [
@@ -5472,7 +5319,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-105",
       "type": "registry:component",
       "dependencies": [
@@ -5515,7 +5361,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-106",
       "type": "registry:component",
       "dependencies": [
@@ -5552,7 +5397,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-107",
       "type": "registry:component",
       "dependencies": [
@@ -5595,7 +5439,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-108",
       "type": "registry:component",
       "dependencies": [
@@ -5633,7 +5476,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-109",
       "type": "registry:component",
       "dependencies": [
@@ -5675,7 +5517,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-110",
       "type": "registry:component",
       "dependencies": [
@@ -5717,7 +5558,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-111",
       "type": "registry:component",
       "dependencies": [
@@ -5753,7 +5593,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-112",
       "type": "registry:component",
       "dependencies": [
@@ -5789,7 +5628,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-113",
       "type": "registry:component",
       "dependencies": [
@@ -5826,7 +5664,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-114",
       "type": "registry:component",
       "dependencies": [
@@ -5864,7 +5701,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-115",
       "type": "registry:component",
       "dependencies": [
@@ -5901,7 +5737,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-116",
       "type": "registry:component",
       "dependencies": [
@@ -5938,7 +5773,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-117",
       "type": "registry:component",
       "dependencies": [
@@ -5976,7 +5810,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-118",
       "type": "registry:component",
       "dependencies": [
@@ -6014,7 +5847,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-119",
       "type": "registry:component",
       "dependencies": [
@@ -6053,7 +5885,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-120",
       "type": "registry:component",
       "dependencies": [
@@ -6092,7 +5923,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-121",
       "type": "registry:component",
       "dependencies": [
@@ -6131,7 +5961,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-122",
       "type": "registry:component",
       "dependencies": [
@@ -6170,7 +5999,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-123",
       "type": "registry:component",
       "dependencies": [
@@ -6207,7 +6035,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-124",
       "type": "registry:component",
       "dependencies": [
@@ -6244,7 +6071,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-125",
       "type": "registry:component",
       "dependencies": [
@@ -6290,7 +6116,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-126",
       "type": "registry:component",
       "dependencies": [
@@ -6336,7 +6161,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-127",
       "type": "registry:component",
       "dependencies": [
@@ -6372,7 +6196,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-128",
       "type": "registry:component",
       "dependencies": [
@@ -6408,7 +6231,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-129",
       "type": "registry:component",
       "dependencies": [
@@ -6451,7 +6273,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-130",
       "type": "registry:component",
       "dependencies": [
@@ -6489,7 +6310,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-131",
       "type": "registry:component",
       "dependencies": [
@@ -6532,7 +6352,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-132",
       "type": "registry:component",
       "dependencies": [
@@ -6573,7 +6392,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-133",
       "type": "registry:component",
       "dependencies": [
@@ -6614,7 +6432,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-134",
       "type": "registry:component",
       "dependencies": [
@@ -6655,7 +6472,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-135",
       "type": "registry:component",
       "dependencies": [
@@ -6697,7 +6513,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-136",
       "type": "registry:component",
       "dependencies": [
@@ -6738,7 +6553,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-137",
       "type": "registry:component",
       "dependencies": [
@@ -6779,7 +6593,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-138",
       "type": "registry:component",
       "dependencies": [
@@ -6822,7 +6635,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-139",
       "type": "registry:component",
       "dependencies": [
@@ -6863,7 +6675,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-140",
       "type": "registry:component",
       "dependencies": [
@@ -6904,7 +6715,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-141",
       "type": "registry:component",
       "dependencies": [
@@ -6945,7 +6755,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-142",
       "type": "registry:component",
       "dependencies": [
@@ -6992,7 +6801,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-143",
       "type": "registry:component",
       "dependencies": [
@@ -7033,7 +6841,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-144",
       "type": "registry:component",
       "dependencies": [
@@ -7075,7 +6882,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-145",
       "type": "registry:component",
       "dependencies": [
@@ -7117,7 +6923,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-146",
       "type": "registry:component",
       "dependencies": [
@@ -7159,7 +6964,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-147",
       "type": "registry:component",
       "dependencies": [
@@ -7202,7 +7006,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-148",
       "type": "registry:component",
       "dependencies": [
@@ -7249,7 +7052,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-149",
       "type": "registry:component",
       "dependencies": [
@@ -7286,7 +7088,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-150",
       "type": "registry:component",
       "dependencies": [
@@ -7311,7 +7112,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-151",
       "type": "registry:component",
       "dependencies": [
@@ -7352,7 +7152,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-152",
       "type": "registry:component",
       "dependencies": [
@@ -7393,7 +7192,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-153",
       "type": "registry:component",
       "dependencies": [
@@ -7434,7 +7232,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-154",
       "type": "registry:component",
       "dependencies": [
@@ -7475,7 +7272,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-155",
       "type": "registry:component",
       "dependencies": [
@@ -7516,7 +7312,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-156",
       "type": "registry:component",
       "dependencies": [
@@ -7563,7 +7358,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-157",
       "type": "registry:component",
       "dependencies": [
@@ -7606,7 +7400,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-158",
       "type": "registry:component",
       "dependencies": [
@@ -7643,7 +7436,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-159",
       "type": "registry:component",
       "dependencies": [
@@ -7685,7 +7477,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-160",
       "type": "registry:component",
       "dependencies": [
@@ -7727,7 +7518,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-161",
       "type": "registry:component",
       "dependencies": [
@@ -7769,7 +7559,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-162",
       "type": "registry:component",
       "dependencies": [
@@ -7812,7 +7601,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-163",
       "type": "registry:component",
       "dependencies": [
@@ -7851,7 +7639,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-164",
       "type": "registry:component",
       "dependencies": [
@@ -7888,7 +7675,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-165",
       "type": "registry:component",
       "dependencies": [
@@ -7930,7 +7716,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-166",
       "type": "registry:component",
       "dependencies": [
@@ -7979,7 +7764,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-167",
       "type": "registry:component",
       "dependencies": [
@@ -8016,7 +7800,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-168",
       "type": "registry:component",
       "dependencies": [
@@ -8053,7 +7836,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-169",
       "type": "registry:component",
       "dependencies": [
@@ -8090,7 +7872,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-170",
       "type": "registry:component",
       "dependencies": [
@@ -8128,7 +7909,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-171",
       "type": "registry:component",
       "dependencies": [
@@ -8167,7 +7947,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-172",
       "type": "registry:component",
       "dependencies": [
@@ -8208,7 +7987,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-173",
       "type": "registry:component",
       "dependencies": [
@@ -8249,7 +8027,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-174",
       "type": "registry:component",
       "dependencies": [
@@ -8290,7 +8067,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-175",
       "type": "registry:component",
       "dependencies": [
@@ -8331,7 +8107,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-176",
       "type": "registry:component",
       "dependencies": [
@@ -8372,7 +8147,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-177",
       "type": "registry:component",
       "dependencies": [
@@ -8413,7 +8187,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-178",
       "type": "registry:component",
       "dependencies": [
@@ -8454,7 +8227,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-179",
       "type": "registry:component",
       "dependencies": [
@@ -8496,7 +8268,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-180",
       "type": "registry:component",
       "dependencies": [
@@ -8532,7 +8303,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-181",
       "type": "registry:component",
       "dependencies": [
@@ -8576,7 +8346,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-182",
       "type": "registry:component",
       "dependencies": [
@@ -8614,7 +8383,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-183",
       "type": "registry:component",
       "dependencies": [
@@ -8658,7 +8426,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-184",
       "type": "registry:component",
       "dependencies": [
@@ -8702,7 +8469,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-185",
       "type": "registry:component",
       "dependencies": [
@@ -8744,7 +8510,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-186",
       "type": "registry:component",
       "dependencies": [
@@ -8787,7 +8552,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-187",
       "type": "registry:component",
       "dependencies": [
@@ -8830,7 +8594,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-188",
       "type": "registry:component",
       "dependencies": [
@@ -8873,7 +8636,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-189",
       "type": "registry:component",
       "dependencies": [
@@ -8914,7 +8676,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-190",
       "type": "registry:component",
       "dependencies": [
@@ -8955,7 +8716,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-191",
       "type": "registry:component",
       "dependencies": [
@@ -8997,7 +8757,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-192",
       "type": "registry:component",
       "dependencies": [
@@ -9038,7 +8797,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-193",
       "type": "registry:component",
       "dependencies": [
@@ -9079,7 +8837,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-194",
       "type": "registry:component",
       "dependencies": [
@@ -9121,7 +8878,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-195",
       "type": "registry:component",
       "dependencies": [
@@ -9162,7 +8918,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-196",
       "type": "registry:component",
       "dependencies": [
@@ -9204,7 +8959,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-197",
       "type": "registry:component",
       "dependencies": [
@@ -9245,7 +8999,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-198",
       "type": "registry:component",
       "dependencies": [
@@ -9286,7 +9039,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-199",
       "type": "registry:component",
       "dependencies": [
@@ -9327,7 +9079,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-200",
       "type": "registry:component",
       "dependencies": [
@@ -9370,7 +9121,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-201",
       "type": "registry:component",
       "dependencies": [
@@ -9405,7 +9155,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-202",
       "type": "registry:component",
       "dependencies": [
@@ -9440,7 +9189,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-203",
       "type": "registry:component",
       "dependencies": [
@@ -9482,7 +9230,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-204",
       "type": "registry:component",
       "dependencies": [
@@ -9524,7 +9271,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-205",
       "type": "registry:component",
       "dependencies": [
@@ -9566,7 +9312,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-206",
       "type": "registry:component",
       "dependencies": [
@@ -9609,7 +9354,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-207",
       "type": "registry:component",
       "dependencies": [
@@ -9651,7 +9395,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-208",
       "type": "registry:component",
       "dependencies": [
@@ -9693,7 +9436,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-209",
       "type": "registry:component",
       "dependencies": [
@@ -9735,7 +9477,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-210",
       "type": "registry:component",
       "dependencies": [
@@ -9778,7 +9519,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-211",
       "type": "registry:component",
       "dependencies": [
@@ -9821,7 +9561,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-212",
       "type": "registry:component",
       "dependencies": [
@@ -9863,7 +9602,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-213",
       "type": "registry:component",
       "dependencies": [
@@ -9905,7 +9643,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-214",
       "type": "registry:component",
       "dependencies": [
@@ -9947,7 +9684,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-215",
       "type": "registry:component",
       "dependencies": [
@@ -9990,7 +9726,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-216",
       "type": "registry:component",
       "dependencies": [
@@ -10026,7 +9761,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-217",
       "type": "registry:component",
       "dependencies": [
@@ -10062,7 +9796,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-218",
       "type": "registry:component",
       "dependencies": [
@@ -10106,7 +9839,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-219",
       "type": "registry:component",
       "dependencies": [
@@ -10148,7 +9880,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-220",
       "type": "registry:component",
       "dependencies": [
@@ -10191,7 +9922,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-221",
       "type": "registry:component",
       "dependencies": [
@@ -10233,7 +9963,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-222",
       "type": "registry:component",
       "dependencies": [
@@ -10276,7 +10005,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-223",
       "type": "registry:component",
       "dependencies": [
@@ -10319,7 +10047,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-224",
       "type": "registry:component",
       "dependencies": [
@@ -10361,7 +10088,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-225",
       "type": "registry:component",
       "dependencies": [
@@ -10404,7 +10130,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-226",
       "type": "registry:component",
       "dependencies": [
@@ -10449,7 +10174,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-227",
       "type": "registry:component",
       "dependencies": [
@@ -10494,7 +10218,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-228",
       "type": "registry:component",
       "dependencies": [
@@ -10539,7 +10262,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-229",
       "type": "registry:component",
       "dependencies": [
@@ -10605,7 +10327,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-230",
       "type": "registry:component",
       "dependencies": [
@@ -10671,7 +10392,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-231",
       "type": "registry:component",
       "dependencies": [
@@ -10739,7 +10459,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-232",
       "type": "registry:component",
       "dependencies": [
@@ -10806,7 +10525,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-233",
       "type": "registry:component",
       "dependencies": [
@@ -10872,7 +10590,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-234",
       "type": "registry:component",
       "dependencies": [
@@ -10930,7 +10647,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-235",
       "type": "registry:component",
       "dependencies": [
@@ -10988,7 +10704,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-236",
       "type": "registry:component",
       "dependencies": [
@@ -11030,7 +10745,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-237",
       "type": "registry:component",
       "dependencies": [
@@ -11067,7 +10781,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-238",
       "type": "registry:component",
       "dependencies": [
@@ -11104,7 +10817,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-239",
       "type": "registry:component",
       "dependencies": [
@@ -11141,7 +10853,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-240",
       "type": "registry:component",
       "dependencies": [
@@ -11188,7 +10899,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-241",
       "type": "registry:component",
       "dependencies": [
@@ -11236,7 +10946,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-242",
       "type": "registry:component",
       "dependencies": [
@@ -11283,7 +10992,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-243",
       "type": "registry:component",
       "dependencies": [
@@ -11330,7 +11038,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-244",
       "type": "registry:component",
       "dependencies": [
@@ -11377,7 +11084,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-245",
       "type": "registry:component",
       "dependencies": [
@@ -11424,7 +11130,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-246",
       "type": "registry:component",
       "dependencies": [
@@ -11471,7 +11176,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-247",
       "type": "registry:component",
       "dependencies": [
@@ -11518,7 +11222,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-248",
       "type": "registry:component",
       "dependencies": [
@@ -11565,7 +11268,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-249",
       "type": "registry:component",
       "dependencies": [
@@ -11613,7 +11315,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-250",
       "type": "registry:component",
       "dependencies": [
@@ -11662,7 +11363,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-251",
       "type": "registry:component",
       "dependencies": [
@@ -11711,7 +11411,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-252",
       "type": "registry:component",
       "dependencies": [
@@ -11761,7 +11460,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-253",
       "type": "registry:component",
       "dependencies": [
@@ -11810,7 +11508,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-254",
       "type": "registry:component",
       "dependencies": [
@@ -11879,7 +11576,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-255",
       "type": "registry:component",
       "dependencies": [
@@ -11937,7 +11633,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-256",
       "type": "registry:component",
       "dependencies": [
@@ -11986,7 +11681,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-257",
       "type": "registry:component",
       "dependencies": [
@@ -12035,7 +11729,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-258",
       "type": "registry:component",
       "dependencies": [
@@ -12095,7 +11788,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-259",
       "type": "registry:component",
       "dependencies": [
@@ -12152,7 +11844,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-260",
       "type": "registry:component",
       "dependencies": [
@@ -12208,7 +11899,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-261",
       "type": "registry:component",
       "dependencies": [
@@ -12256,7 +11946,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-262",
       "type": "registry:component",
       "dependencies": [
@@ -12315,7 +12004,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-263",
       "type": "registry:component",
       "dependencies": [
@@ -12364,7 +12052,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-264",
       "type": "registry:component",
       "dependencies": [
@@ -12432,7 +12119,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-265",
       "type": "registry:component",
       "dependencies": [
@@ -12498,7 +12184,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-266",
       "type": "registry:component",
       "dependencies": [
@@ -12546,7 +12231,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-267",
       "type": "registry:component",
       "dependencies": [
@@ -12568,7 +12252,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-268",
       "type": "registry:component",
       "dependencies": [
@@ -12590,7 +12273,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-269",
       "type": "registry:component",
       "dependencies": [
@@ -12612,7 +12294,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-270",
       "type": "registry:component",
       "dependencies": [
@@ -12634,7 +12315,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-271",
       "type": "registry:component",
       "dependencies": [
@@ -12656,7 +12336,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-272",
       "type": "registry:component",
       "dependencies": [
@@ -12678,7 +12357,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-273",
       "type": "registry:component",
       "dependencies": [
@@ -12700,7 +12378,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-274",
       "type": "registry:component",
       "dependencies": [
@@ -12722,7 +12399,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-275",
       "type": "registry:component",
       "dependencies": [
@@ -12744,7 +12420,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-276",
       "type": "registry:component",
       "dependencies": [
@@ -12766,7 +12441,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-277",
       "type": "registry:component",
       "dependencies": [
@@ -12790,7 +12464,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-278",
       "type": "registry:component",
       "dependencies": [
@@ -12814,7 +12487,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-279",
       "type": "registry:component",
       "dependencies": [
@@ -12852,7 +12524,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-280",
       "type": "registry:component",
       "dependencies": [
@@ -12890,7 +12561,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-281",
       "type": "registry:component",
       "dependencies": [
@@ -12928,7 +12598,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-282",
       "type": "registry:component",
       "dependencies": [
@@ -12966,7 +12635,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-283",
       "type": "registry:component",
       "dependencies": [
@@ -13004,7 +12672,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-284",
       "type": "registry:component",
       "dependencies": [
@@ -13042,7 +12709,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-285",
       "type": "registry:component",
       "dependencies": [
@@ -13080,7 +12746,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-286",
       "type": "registry:component",
       "dependencies": [
@@ -13118,7 +12783,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-287",
       "type": "registry:component",
       "dependencies": [
@@ -13157,7 +12821,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-288",
       "type": "registry:component",
       "dependencies": [
@@ -13195,7 +12858,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-289",
       "type": "registry:component",
       "dependencies": [
@@ -13234,7 +12896,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-290",
       "type": "registry:component",
       "dependencies": [
@@ -13273,7 +12934,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-291",
       "type": "registry:component",
       "dependencies": [
@@ -13312,7 +12972,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-292",
       "type": "registry:component",
       "dependencies": [
@@ -13351,7 +13010,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-293",
       "type": "registry:component",
       "dependencies": [
@@ -13392,7 +13050,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-294",
       "type": "registry:component",
       "dependencies": [
@@ -13431,7 +13088,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-295",
       "type": "registry:component",
       "dependencies": [
@@ -13469,7 +13125,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-296",
       "type": "registry:component",
       "dependencies": [
@@ -13507,7 +13162,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-297",
       "type": "registry:component",
       "dependencies": [
@@ -13557,7 +13211,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-298",
       "type": "registry:component",
       "dependencies": [
@@ -13603,7 +13256,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-299",
       "type": "registry:component",
       "dependencies": [
@@ -13643,7 +13295,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-300",
       "type": "registry:component",
       "dependencies": [
@@ -13685,7 +13336,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-301",
       "type": "registry:component",
       "dependencies": [
@@ -13723,7 +13373,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-302",
       "type": "registry:component",
       "dependencies": [
@@ -13744,7 +13393,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-303",
       "type": "registry:component",
       "dependencies": [
@@ -13765,7 +13413,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-304",
       "type": "registry:component",
       "dependencies": [
@@ -13786,7 +13433,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-305",
       "type": "registry:component",
       "dependencies": [
@@ -13822,7 +13468,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-306",
       "type": "registry:component",
       "dependencies": [
@@ -13858,7 +13503,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-307",
       "type": "registry:component",
       "dependencies": [
@@ -13894,7 +13538,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-308",
       "type": "registry:component",
       "dependencies": [
@@ -13930,7 +13573,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-309",
       "type": "registry:component",
       "dependencies": [
@@ -13966,7 +13608,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-310",
       "type": "registry:component",
       "dependencies": [
@@ -14004,7 +13645,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-311",
       "type": "registry:component",
       "files": [
@@ -14024,7 +13664,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-312",
       "type": "registry:component",
       "dependencies": [
@@ -14060,7 +13699,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-313",
       "type": "registry:component",
       "dependencies": [
@@ -14105,7 +13743,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-314",
       "type": "registry:component",
       "dependencies": [
@@ -14151,7 +13788,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-315",
       "type": "registry:component",
       "dependencies": [
@@ -14195,7 +13831,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-316",
       "type": "registry:component",
       "dependencies": [
@@ -14245,7 +13880,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-317",
       "type": "registry:component",
       "dependencies": [
@@ -14289,7 +13923,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-318",
       "type": "registry:component",
       "dependencies": [
@@ -14333,7 +13966,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-319",
       "type": "registry:component",
       "dependencies": [
@@ -14377,7 +14009,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-320",
       "type": "registry:component",
       "dependencies": [
@@ -14433,7 +14064,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-321",
       "type": "registry:component",
       "dependencies": [
@@ -14485,7 +14115,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-322",
       "type": "registry:component",
       "dependencies": [
@@ -14536,7 +14165,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-323",
       "type": "registry:component",
       "dependencies": [
@@ -14600,7 +14228,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-324",
       "type": "registry:component",
       "dependencies": [
@@ -14646,7 +14273,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-325",
       "type": "registry:component",
       "dependencies": [
@@ -14704,7 +14330,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-326",
       "type": "registry:component",
       "dependencies": [
@@ -14768,7 +14393,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-327",
       "type": "registry:component",
       "dependencies": [
@@ -14832,7 +14456,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-328",
       "type": "registry:component",
       "dependencies": [
@@ -14898,7 +14521,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-329",
       "type": "registry:component",
       "dependencies": [
@@ -14969,7 +14591,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-330",
       "type": "registry:component",
       "dependencies": [
@@ -15026,7 +14647,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-331",
       "type": "registry:component",
       "dependencies": [
@@ -15101,7 +14721,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-332",
       "type": "registry:component",
       "dependencies": [
@@ -15146,7 +14765,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-333",
       "type": "registry:component",
       "dependencies": [
@@ -15195,7 +14813,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-334",
       "type": "registry:component",
       "dependencies": [
@@ -15231,7 +14848,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-335",
       "type": "registry:component",
       "dependencies": [
@@ -15267,7 +14883,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-336",
       "type": "registry:component",
       "dependencies": [
@@ -15303,7 +14918,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-337",
       "type": "registry:component",
       "dependencies": [
@@ -15339,7 +14953,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-338",
       "type": "registry:component",
       "dependencies": [
@@ -15375,7 +14988,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-339",
       "type": "registry:component",
       "dependencies": [
@@ -15411,7 +15023,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-340",
       "type": "registry:component",
       "dependencies": [
@@ -15447,7 +15058,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-341",
       "type": "registry:component",
       "dependencies": [
@@ -15483,7 +15093,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-342",
       "type": "registry:component",
       "dependencies": [
@@ -15519,7 +15128,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-343",
       "type": "registry:component",
       "dependencies": [
@@ -15555,7 +15163,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-344",
       "type": "registry:component",
       "dependencies": [
@@ -15591,7 +15198,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-345",
       "type": "registry:component",
       "dependencies": [
@@ -15627,7 +15233,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-346",
       "type": "registry:component",
       "dependencies": [
@@ -15663,7 +15268,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-347",
       "type": "registry:component",
       "dependencies": [
@@ -15699,7 +15303,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-348",
       "type": "registry:component",
       "dependencies": [
@@ -15735,7 +15338,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-349",
       "type": "registry:component",
       "dependencies": [
@@ -15771,7 +15373,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-350",
       "type": "registry:component",
       "dependencies": [
@@ -15807,7 +15408,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-351",
       "type": "registry:component",
       "dependencies": [
@@ -15843,7 +15443,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-352",
       "type": "registry:component",
       "dependencies": [
@@ -15886,7 +15485,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-353",
       "type": "registry:component",
       "dependencies": [
@@ -15929,7 +15527,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-354",
       "type": "registry:component",
       "dependencies": [
@@ -15971,7 +15568,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-355",
       "type": "registry:component",
       "dependencies": [
@@ -16013,7 +15609,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-356",
       "type": "registry:component",
       "dependencies": [
@@ -16055,7 +15650,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-357",
       "type": "registry:component",
       "dependencies": [
@@ -16097,7 +15691,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-358",
       "type": "registry:component",
       "dependencies": [
@@ -16140,7 +15733,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-359",
       "type": "registry:component",
       "dependencies": [
@@ -16183,7 +15775,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-360",
       "type": "registry:component",
       "dependencies": [
@@ -16228,7 +15819,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-361",
       "type": "registry:component",
       "dependencies": [
@@ -16270,7 +15860,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-362",
       "type": "registry:component",
       "dependencies": [
@@ -16313,7 +15902,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-363",
       "type": "registry:component",
       "dependencies": [
@@ -16359,7 +15947,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-364",
       "type": "registry:component",
       "dependencies": [
@@ -16398,7 +15985,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-365",
       "type": "registry:component",
       "dependencies": [
@@ -16435,7 +16021,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-366",
       "type": "registry:component",
       "dependencies": [
@@ -16478,7 +16063,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-367",
       "type": "registry:component",
       "dependencies": [
@@ -16521,7 +16105,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-368",
       "type": "registry:component",
       "dependencies": [
@@ -16564,7 +16147,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-369",
       "type": "registry:component",
       "dependencies": [
@@ -16607,7 +16189,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-370",
       "type": "registry:component",
       "dependencies": [
@@ -16650,7 +16231,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-371",
       "type": "registry:component",
       "dependencies": [
@@ -16694,7 +16274,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-372",
       "type": "registry:component",
       "dependencies": [
@@ -16738,7 +16317,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-373",
       "type": "registry:component",
       "dependencies": [
@@ -16783,7 +16361,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-374",
       "type": "registry:component",
       "dependencies": [
@@ -16829,7 +16406,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-375",
       "type": "registry:component",
       "dependencies": [
@@ -16874,7 +16450,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-376",
       "type": "registry:component",
       "dependencies": [
@@ -16920,7 +16495,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-377",
       "type": "registry:component",
       "dependencies": [
@@ -16972,7 +16546,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-378",
       "type": "registry:component",
       "dependencies": [
@@ -17016,7 +16589,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-379",
       "type": "registry:component",
       "dependencies": [
@@ -17060,7 +16632,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-380",
       "type": "registry:component",
       "dependencies": [
@@ -17104,7 +16675,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-381",
       "type": "registry:component",
       "dependencies": [
@@ -17160,7 +16730,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-382",
       "type": "registry:component",
       "dependencies": [
@@ -17209,7 +16778,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-383",
       "type": "registry:component",
       "dependencies": [
@@ -17259,7 +16827,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-384",
       "type": "registry:component",
       "dependencies": [
@@ -17302,7 +16869,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-385",
       "type": "registry:component",
       "dependencies": [
@@ -17345,7 +16911,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-386",
       "type": "registry:component",
       "dependencies": [
@@ -17389,7 +16954,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-387",
       "type": "registry:component",
       "dependencies": [
@@ -17447,7 +17011,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-388",
       "type": "registry:component",
       "dependencies": [
@@ -17496,7 +17059,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-389",
       "type": "registry:component",
       "dependencies": [
@@ -17540,7 +17102,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-390",
       "type": "registry:component",
       "dependencies": [
@@ -17576,7 +17137,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-391",
       "type": "registry:component",
       "dependencies": [
@@ -17612,7 +17172,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-392",
       "type": "registry:component",
       "dependencies": [
@@ -17649,7 +17208,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-393",
       "type": "registry:component",
       "dependencies": [
@@ -17685,7 +17243,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-394",
       "type": "registry:component",
       "dependencies": [
@@ -17722,7 +17279,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-395",
       "type": "registry:component",
       "dependencies": [
@@ -17759,7 +17315,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-396",
       "type": "registry:component",
       "dependencies": [
@@ -17796,7 +17351,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-397",
       "type": "registry:component",
       "dependencies": [
@@ -17834,7 +17388,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-398",
       "type": "registry:component",
       "dependencies": [
@@ -17879,7 +17432,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-399",
       "type": "registry:component",
       "dependencies": [
@@ -17924,7 +17476,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-400",
       "type": "registry:component",
       "files": [
@@ -17944,7 +17495,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-401",
       "type": "registry:component",
       "files": [
@@ -17963,7 +17513,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-402",
       "type": "registry:component",
       "files": [
@@ -17982,7 +17531,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-403",
       "type": "registry:component",
       "files": [
@@ -18001,7 +17549,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-404",
       "type": "registry:component",
       "files": [
@@ -18020,7 +17567,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-405",
       "type": "registry:component",
       "files": [
@@ -18039,7 +17585,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-406",
       "type": "registry:component",
       "files": [
@@ -18058,7 +17603,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-407",
       "type": "registry:component",
       "files": [
@@ -18077,7 +17621,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-408",
       "type": "registry:component",
       "files": [
@@ -18096,7 +17639,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-409",
       "type": "registry:component",
       "dependencies": [
@@ -18132,7 +17674,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-410",
       "type": "registry:component",
       "dependencies": [
@@ -18168,7 +17709,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-411",
       "type": "registry:component",
       "dependencies": [
@@ -18204,7 +17744,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-412",
       "type": "registry:component",
       "files": [
@@ -18223,7 +17762,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-413",
       "type": "registry:component",
       "dependencies": [
@@ -18259,7 +17797,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-414",
       "type": "registry:component",
       "dependencies": [
@@ -18295,7 +17832,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-415",
       "type": "registry:component",
       "dependencies": [
@@ -18332,7 +17868,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-416",
       "type": "registry:component",
       "dependencies": [
@@ -18369,7 +17904,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-417",
       "type": "registry:component",
       "dependencies": [
@@ -18405,7 +17939,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-418",
       "type": "registry:component",
       "dependencies": [
@@ -18442,7 +17975,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-419",
       "type": "registry:component",
       "dependencies": [
@@ -18480,7 +18012,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-420",
       "type": "registry:component",
       "dependencies": [
@@ -18517,7 +18048,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-421",
       "type": "registry:component",
       "dependencies": [
@@ -18554,7 +18084,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-422",
       "type": "registry:component",
       "dependencies": [
@@ -18591,7 +18120,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-423",
       "type": "registry:component",
       "dependencies": [
@@ -18635,7 +18163,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-424",
       "type": "registry:component",
       "dependencies": [
@@ -18672,7 +18199,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-425",
       "type": "registry:component",
       "dependencies": [
@@ -18710,7 +18236,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-426",
       "type": "registry:component",
       "dependencies": [
@@ -18746,7 +18271,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-427",
       "type": "registry:component",
       "dependencies": [
@@ -18782,7 +18306,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-428",
       "type": "registry:component",
       "dependencies": [
@@ -18818,7 +18341,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-429",
       "type": "registry:component",
       "dependencies": [
@@ -18854,7 +18376,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-430",
       "type": "registry:component",
       "dependencies": [
@@ -18890,7 +18411,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-431",
       "type": "registry:component",
       "dependencies": [
@@ -18926,7 +18446,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-432",
       "type": "registry:component",
       "dependencies": [
@@ -18962,7 +18481,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-433",
       "type": "registry:component",
       "dependencies": [
@@ -19012,7 +18530,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-434",
       "type": "registry:component",
       "dependencies": [
@@ -19055,7 +18572,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-435",
       "type": "registry:component",
       "dependencies": [
@@ -19098,7 +18614,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-436",
       "type": "registry:component",
       "dependencies": [
@@ -19141,7 +18656,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-437",
       "type": "registry:component",
       "dependencies": [
@@ -19191,7 +18705,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-438",
       "type": "registry:component",
       "dependencies": [
@@ -19228,7 +18741,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-439",
       "type": "registry:component",
       "dependencies": [
@@ -19271,7 +18783,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-440",
       "type": "registry:component",
       "dependencies": [
@@ -19321,7 +18832,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-441",
       "type": "registry:component",
       "dependencies": [
@@ -19371,7 +18881,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-442",
       "type": "registry:component",
       "dependencies": [
@@ -19408,7 +18917,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-443",
       "type": "registry:component",
       "dependencies": [
@@ -19445,7 +18953,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-444",
       "type": "registry:component",
       "dependencies": [
@@ -19483,7 +18990,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-445",
       "type": "registry:component",
       "dependencies": [
@@ -19520,7 +19026,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-446",
       "type": "registry:component",
       "dependencies": [
@@ -19563,7 +19068,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-447",
       "type": "registry:component",
       "dependencies": [
@@ -19607,7 +19111,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-448",
       "type": "registry:component",
       "dependencies": [
@@ -19644,7 +19147,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-449",
       "type": "registry:component",
       "dependencies": [
@@ -19681,7 +19183,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-450",
       "type": "registry:component",
       "dependencies": [
@@ -19718,7 +19219,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-451",
       "type": "registry:component",
       "dependencies": [
@@ -19755,7 +19255,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-452",
       "type": "registry:component",
       "dependencies": [
@@ -19792,7 +19291,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-453",
       "type": "registry:component",
       "dependencies": [
@@ -19836,7 +19334,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-454",
       "type": "registry:component",
       "dependencies": [
@@ -19877,7 +19374,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-455",
       "type": "registry:component",
       "dependencies": [
@@ -19918,7 +19414,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-456",
       "type": "registry:component",
       "dependencies": [
@@ -19959,7 +19454,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-457",
       "type": "registry:component",
       "dependencies": [
@@ -20000,7 +19494,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-458",
       "type": "registry:component",
       "dependencies": [
@@ -20041,7 +19534,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-459",
       "type": "registry:component",
       "dependencies": [
@@ -20087,7 +19579,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-460",
       "type": "registry:component",
       "dependencies": [
@@ -20133,7 +19624,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-461",
       "type": "registry:component",
       "dependencies": [
@@ -20179,7 +19669,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-462",
       "type": "registry:component",
       "dependencies": [
@@ -20231,7 +19720,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-463",
       "type": "registry:component",
       "dependencies": [
@@ -20286,7 +19774,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-464",
       "type": "registry:component",
       "dependencies": [
@@ -20335,7 +19822,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-465",
       "type": "registry:component",
       "dependencies": [
@@ -20393,7 +19879,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-466",
       "type": "registry:component",
       "dependencies": [
@@ -20426,7 +19911,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-467",
       "type": "registry:component",
       "dependencies": [
@@ -20461,7 +19945,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-468",
       "type": "registry:component",
       "dependencies": [
@@ -20494,7 +19977,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-469",
       "type": "registry:component",
       "dependencies": [
@@ -20527,7 +20009,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-470",
       "type": "registry:component",
       "dependencies": [
@@ -20560,7 +20041,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-471",
       "type": "registry:component",
       "dependencies": [
@@ -20593,7 +20073,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-472",
       "type": "registry:component",
       "dependencies": [
@@ -20633,7 +20112,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-473",
       "type": "registry:component",
       "dependencies": [
@@ -20674,7 +20152,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-474",
       "type": "registry:component",
       "dependencies": [
@@ -20708,7 +20185,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-475",
       "type": "registry:component",
       "dependencies": [
@@ -20742,7 +20218,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-476",
       "type": "registry:component",
       "dependencies": [
@@ -20776,7 +20251,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-477",
       "type": "registry:component",
       "dependencies": [
@@ -20828,7 +20302,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-478",
       "type": "registry:component",
       "dependencies": [
@@ -20894,7 +20367,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-479",
       "type": "registry:component",
       "dependencies": [
@@ -20933,7 +20405,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-480",
       "type": "registry:component",
       "dependencies": [
@@ -20985,7 +20456,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-481",
       "type": "registry:component",
       "dependencies": [
@@ -21035,7 +20505,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-482",
       "type": "registry:component",
       "dependencies": [
@@ -21094,7 +20563,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-483",
       "type": "registry:component",
       "dependencies": [
@@ -21171,7 +20639,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-484",
       "type": "registry:component",
       "dependencies": [
@@ -21247,7 +20714,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-485",
       "type": "registry:component",
       "dependencies": [
@@ -21349,7 +20815,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-486",
       "type": "registry:component",
       "dependencies": [
@@ -21389,7 +20854,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-487",
       "type": "registry:component",
       "dependencies": [
@@ -21427,7 +20891,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-488",
       "type": "registry:component",
       "dependencies": [
@@ -21466,7 +20929,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-489",
       "type": "registry:component",
       "dependencies": [
@@ -21507,7 +20969,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-490",
       "type": "registry:component",
       "dependencies": [
@@ -21551,7 +21012,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-491",
       "type": "registry:component",
       "dependencies": [
@@ -21597,7 +21057,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-492",
       "type": "registry:component",
       "dependencies": [
@@ -21644,7 +21103,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-493",
       "type": "registry:component",
       "dependencies": [
@@ -21689,7 +21147,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-494",
       "type": "registry:component",
       "dependencies": [
@@ -21733,7 +21190,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-495",
       "type": "registry:component",
       "dependencies": [
@@ -21779,7 +21235,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-496",
       "type": "registry:component",
       "dependencies": [
@@ -21823,7 +21278,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-497",
       "type": "registry:component",
       "dependencies": [
@@ -21873,7 +21327,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-498",
       "type": "registry:component",
       "dependencies": [
@@ -21923,7 +21376,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-499",
       "type": "registry:component",
       "dependencies": [
@@ -21968,7 +21420,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-500",
       "type": "registry:component",
       "dependencies": [
@@ -22014,7 +21465,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-501",
       "type": "registry:component",
       "dependencies": [
@@ -22060,7 +21510,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-502",
       "type": "registry:component",
       "dependencies": [
@@ -22117,7 +21566,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-503",
       "type": "registry:component",
       "dependencies": [
@@ -22174,7 +21622,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-504",
       "type": "registry:component",
       "dependencies": [
@@ -22233,7 +21680,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-505",
       "type": "registry:component",
       "dependencies": [
@@ -22287,7 +21733,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-506",
       "type": "registry:component",
       "dependencies": [
@@ -22334,7 +21779,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-507",
       "type": "registry:component",
       "dependencies": [
@@ -22382,7 +21826,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-508",
       "type": "registry:component",
       "dependencies": [
@@ -22429,7 +21872,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-509",
       "type": "registry:component",
       "dependencies": [
@@ -22476,7 +21918,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-510",
       "type": "registry:component",
       "dependencies": [
@@ -22522,7 +21963,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-511",
       "type": "registry:component",
       "dependencies": [
@@ -22580,7 +22020,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-512",
       "type": "registry:component",
       "dependencies": [
@@ -22638,7 +22077,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-513",
       "type": "registry:component",
       "dependencies": [
@@ -22673,7 +22111,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-514",
       "type": "registry:component",
       "dependencies": [
@@ -22708,7 +22145,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-515",
       "type": "registry:component",
       "dependencies": [
@@ -22743,7 +22179,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-516",
       "type": "registry:component",
       "dependencies": [
@@ -22784,7 +22219,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-517",
       "type": "registry:component",
       "dependencies": [
@@ -22825,7 +22259,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-518",
       "type": "registry:component",
       "dependencies": [
@@ -22860,7 +22293,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-519",
       "type": "registry:component",
       "dependencies": [
@@ -22895,7 +22327,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-520",
       "type": "registry:component",
       "dependencies": [
@@ -22936,7 +22367,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-521",
       "type": "registry:component",
       "dependencies": [
@@ -22977,7 +22407,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-522",
       "type": "registry:component",
       "dependencies": [
@@ -23012,7 +22441,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-523",
       "type": "registry:component",
       "dependencies": [
@@ -23047,7 +22475,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-524",
       "type": "registry:component",
       "dependencies": [
@@ -23082,7 +22509,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-525",
       "type": "registry:component",
       "dependencies": [
@@ -23117,7 +22543,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-526",
       "type": "registry:component",
       "dependencies": [
@@ -23153,7 +22578,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-527",
       "type": "registry:component",
       "dependencies": [
@@ -23195,7 +22619,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-528",
       "type": "registry:component",
       "dependencies": [
@@ -23231,7 +22654,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-529",
       "type": "registry:component",
       "dependencies": [
@@ -23267,7 +22689,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-530",
       "type": "registry:component",
       "dependencies": [
@@ -23302,7 +22723,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-531",
       "type": "registry:component",
       "dependencies": [
@@ -23337,7 +22757,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-532",
       "type": "registry:component",
       "dependencies": [
@@ -23372,7 +22791,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-533",
       "type": "registry:component",
       "dependencies": [
@@ -23407,7 +22825,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-534",
       "type": "registry:component",
       "dependencies": [
@@ -23443,7 +22860,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-535",
       "type": "registry:component",
       "dependencies": [
@@ -23479,7 +22895,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-536",
       "type": "registry:component",
       "dependencies": [
@@ -23514,7 +22929,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-537",
       "type": "registry:component",
       "dependencies": [
@@ -23549,7 +22963,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-538",
       "type": "registry:component",
       "dependencies": [
@@ -23584,7 +22997,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-539",
       "type": "registry:component",
       "dependencies": [
@@ -23620,7 +23032,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-540",
       "type": "registry:component",
       "dependencies": [
@@ -23654,7 +23065,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-541",
       "type": "registry:component",
       "dependencies": [
@@ -23688,7 +23098,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-542",
       "type": "registry:component",
       "dependencies": [
@@ -23715,7 +23124,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-543",
       "type": "registry:component",
       "dependencies": [
@@ -23758,7 +23166,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-544",
       "type": "registry:component",
       "dependencies": [
@@ -23787,7 +23194,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-545",
       "type": "registry:component",
       "dependencies": [
@@ -23830,7 +23236,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-546",
       "type": "registry:component",
       "dependencies": [
@@ -23873,7 +23278,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-547",
       "type": "registry:component",
       "dependencies": [
@@ -23916,7 +23320,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-548",
       "type": "registry:component",
       "dependencies": [
@@ -23959,7 +23362,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-549",
       "type": "registry:component",
       "dependencies": [
@@ -24002,7 +23404,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-550",
       "type": "registry:component",
       "dependencies": [
@@ -24045,7 +23446,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-551",
       "type": "registry:component",
       "dependencies": [
@@ -24093,7 +23493,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-552",
       "type": "registry:component",
       "dependencies": [
@@ -24136,7 +23535,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "comp-553",
       "type": "registry:component",
       "dependencies": [
@@ -24179,7 +23577,6 @@
       }
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "event-calendar",
       "type": "registry:component",
       "files": [
@@ -24191,7 +23588,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "event-calendar-agenda-view",
       "type": "registry:component",
       "dependencies": [
@@ -24213,7 +23609,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "event-calendar-constants",
       "type": "registry:component",
       "files": [
@@ -24225,7 +23620,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "event-calendar-day-view",
       "type": "registry:component",
       "dependencies": [
@@ -24258,7 +23652,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "event-calendar-dnd-context",
       "type": "registry:component",
       "dependencies": [
@@ -24280,7 +23673,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "event-calendar-draggable-event",
       "type": "registry:component",
       "dependencies": [
@@ -24303,7 +23695,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "event-calendar-droppable-cell",
       "type": "registry:component",
       "dependencies": [
@@ -24330,7 +23721,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "event-calendar-event-calendar",
       "type": "registry:component",
       "dependencies": [
@@ -24374,7 +23764,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "event-calendar-event-dialog",
       "type": "registry:component",
       "dependencies": [
@@ -24468,7 +23857,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "event-calendar-event-item",
       "type": "registry:component",
       "dependencies": [
@@ -24497,7 +23885,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "event-calendar-events-popup",
       "type": "registry:component",
       "dependencies": [
@@ -24519,7 +23906,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "event-calendar-month-view",
       "type": "registry:component",
       "dependencies": [
@@ -24558,7 +23944,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "event-calendar-types",
       "type": "registry:component",
       "files": [
@@ -24570,7 +23955,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "event-calendar-use-current-time-indicator",
       "type": "registry:component",
       "dependencies": [
@@ -24591,7 +23975,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "event-calendar-use-event-visibility",
       "type": "registry:component",
       "dependencies": [
@@ -24606,7 +23989,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "event-calendar-utils",
       "type": "registry:component",
       "dependencies": [
@@ -24626,7 +24008,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "event-calendar-week-view",
       "type": "registry:component",
       "dependencies": [
