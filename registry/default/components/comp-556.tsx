@@ -10,7 +10,7 @@ export default function Component() {
     <div className="flex flex-col items-center gap-2">
       <Cropper
         className="h-80"
-        image="https://images.unsplash.com/photo-1532759627329-f664e1222001"
+        image="https://res.cloudinary.com/dlzlfasou/image/upload/v1746526165/cropper-02_a2xwtd.jpg"
         aspectRatio={16 / 9}
       >
         <CropperDescription />

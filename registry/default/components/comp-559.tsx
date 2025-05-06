@@ -11,7 +11,7 @@ export default function Component() {
       <Cropper
         className="aspect-square size-80"
         cropPadding={0}
-        image="https://images.unsplash.com/photo-1538898780761-268f71f67675"
+        image="https://res.cloudinary.com/dlzlfasou/image/upload/v1746526165/cropper-05_evczb3.jpg"
       >
         <CropperDescription />
         <CropperImage />
