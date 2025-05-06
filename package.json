@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "pnpm format:write && next build",
-    "registry:build": "shadcn build",
+    "registry:build": "npx smart-registry",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
@@ -93,6 +93,7 @@
     "typescript": "^5.8.2"
   },
   "prettier": {
+    "printWidth": 120,
     "endOfLine": "lf",
     "semi": false,
     "singleQuote": false,
