@@ -21,13 +21,13 @@ Note: If you're using shadcn, you may likely already have these files - however,
 
 **2. Add the following CSS variables to your stylesheet (you don't need to overwrite them if you already have them):**
 
-- Automatically update `globals.css` by running the following command:
+- Automatically update by running the following command:
 
 ```sh
 npx shadcn add https://originui.com/r/style.json
 ```
 
-- Or manually update the CSS variables to your `app/globals.css` file:
+- Or manually update the CSS variables in your stylesheet:
 
 ```
 :root {
