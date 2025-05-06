@@ -93,7 +93,6 @@
     "typescript": "^5.8.2"
   },
   "prettier": {
-    "printWidth": 120,
     "endOfLine": "lf",
     "semi": false,
     "singleQuote": false,
