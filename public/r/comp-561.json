@@ -3,6 +3,7 @@
   "name": "comp-561",
   "type": "registry:component",
   "registryDependencies": [
+    "https://originui.com/r/cropper.json",
     "https://originui.com/r/select.json"
   ],
   "files": [

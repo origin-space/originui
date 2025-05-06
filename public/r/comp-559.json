@@ -2,6 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-559",
   "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/cropper.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-559.tsx",

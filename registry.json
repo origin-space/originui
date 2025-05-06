@@ -167,6 +167,17 @@
       ]
     },
     {
+      "name": "cropper",
+      "type": "registry:ui",
+      "dependencies": ["@origin-space/image-cropper"],
+      "files": [
+        {
+          "path": "registry/default/ui/cropper.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },    
+    {
       "name": "datefield-rac",
       "type": "registry:ui",
       "dependencies": ["react-aria-components"],
@@ -9990,8 +10001,10 @@
       "type": "registry:component",
       "registryDependencies": [
         "https://originui.com/r/button.json",
+        "https://originui.com/r/cropper.json",
         "https://originui.com/r/dialog.json",
-        "https://originui.com/r/select.json"
+        "https://originui.com/r/select.json",
+        "https://originui.com/r/slider.json"
       ],      
       "files": [
         {
@@ -10011,6 +10024,9 @@
     {
       "name": "comp-555",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/cropper.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-555.tsx",
@@ -10025,6 +10041,9 @@
     {
       "name": "comp-556",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/cropper.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-556.tsx",
@@ -10039,6 +10058,9 @@
     {
       "name": "comp-557",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/cropper.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-557.tsx",
@@ -10053,6 +10075,9 @@
     {
       "name": "comp-558",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/cropper.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-558.tsx",
@@ -10067,6 +10092,9 @@
     {
       "name": "comp-559",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/cropper.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-559.tsx",
@@ -10081,6 +10109,9 @@
     {
       "name": "comp-560",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/cropper.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-560.tsx",
@@ -10096,6 +10127,7 @@
       "name": "comp-561",
       "type": "registry:component",
       "registryDependencies": [
+        "https://originui.com/r/cropper.json",
         "https://originui.com/r/select.json"
       ],      
       "files": [
@@ -10112,6 +10144,9 @@
     {
       "name": "comp-562",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/cropper.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-562.tsx",
@@ -10126,6 +10161,9 @@
     {
       "name": "comp-563",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/cropper.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-563.tsx",
@@ -10140,6 +10178,9 @@
     {
       "name": "comp-564",
       "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/cropper.json"
+      ],      
       "files": [
         {
           "path": "registry/default/components/comp-564.tsx",
