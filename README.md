@@ -102,7 +102,10 @@ npx shadcn add https://originui.com/r/style.json
 }
 ```
 
-After completing these steps, you can copy and use the components in your project. Note that some components (e.g., number inputs, date pickers, time pickers, phone number inputs) may require additional libraries.
+After completing these steps, you can copy/install and use the components in your project.
+
+> [!Note]
+> Some components (e.g., number inputs, date pickers, time pickers, phone number inputs) may require additional libraries (therefore `shadcn add comp` is preffered).
 
 ## Tailwind v4 support
 
