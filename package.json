@@ -19,6 +19,7 @@
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
     "@internationalized/date": "^3.7.0",
+    "@origin-space/image-cropper": "^0.1.8",
     "@radix-ui/react-accordion": "^1.2.3",
     "@radix-ui/react-alert-dialog": "^1.1.6",
     "@radix-ui/react-avatar": "^1.1.3",
@@ -88,7 +89,7 @@
     "rimraf": "^6.0.1",
     "shiki": "^2.5.0",
     "tailwindcss": "^4.1.1",
-    "tw-animate-css": "^1.2.8",
+    "tw-animate-css": "^1.2.5",
     "typescript": "^5.8.2"
   },
   "prettier": {

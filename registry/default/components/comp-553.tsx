@@ -436,6 +436,7 @@ export default function Component() {
         <a
           href="https://github.com/origin-space/originui/tree/main/docs/use-file-upload.md"
           className="hover:text-foreground underline"
+          target="_blank"
         >
           API
         </a>

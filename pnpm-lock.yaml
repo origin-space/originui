@@ -23,6 +23,9 @@ importers:
       '@internationalized/date':
         specifier: ^3.7.0
         version: 3.7.0
+      '@origin-space/image-cropper':
+        specifier: ^0.1.8
+        version: 0.1.8(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-accordion':
         specifier: ^1.2.3
         version: 1.2.3(@types/react-dom@19.1.1(@types/react@19.1.0))(@types/react@19.1.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -226,8 +229,8 @@ importers:
         specifier: ^4.1.1
         version: 4.1.1
       tw-animate-css:
-        specifier: ^1.2.8
-        version: 1.2.8
+        specifier: ^1.2.5
+        version: 1.2.5
       typescript:
         specifier: ^5.8.2
         version: 5.8.2
@@ -868,6 +871,12 @@ packages:
   '@nolyfill/is-core-module@1.0.39':
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
+
+  '@origin-space/image-cropper@0.1.8':
+    resolution: {integrity: sha512-xO+0m/urkjW2E1IYRFLTRfJYXeqJi3YVz7WtWnKamiInI6MIKOPbKt22HUL5mwmxWuCJOmxZ5APTBWXPiauJFg==}
+    peerDependencies:
+      react: ^19.1.0
+      react-dom: ^19.1.0
 
   '@radix-ui/number@1.1.0':
     resolution: {integrity: sha512-V3gRzhVNU1ldS5XhAPTom1fOIo4ccrjjJgmE+LI2h/WaFpHmx0MQApT+KZHnx8abG6Avtfcz4WoEciMnpFT3HQ==}
@@ -4607,8 +4616,8 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
-  tw-animate-css@1.2.8:
-    resolution: {integrity: sha512-AxSnYRvyFnAiZCUndS3zQZhNfV/B77ZhJ+O7d3K6wfg/jKJY+yv6ahuyXwnyaYA9UdLqnpCwhTRv9pPTBnPR2g==}
+  tw-animate-css@1.2.5:
+    resolution: {integrity: sha512-ABzjfgVo+fDbhRREGL4KQZUqqdPgvc5zVrLyeW9/6mVqvaDepXc7EvedA+pYmMnIOsUAQMwcWzNvom26J2qYvQ==}
 
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -5358,6 +5367,11 @@ snapshots:
       fastq: 1.19.1
 
   '@nolyfill/is-core-module@1.0.39': {}
+
+  '@origin-space/image-cropper@0.1.8(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
 
   '@radix-ui/number@1.1.0': {}
 
@@ -10063,7 +10077,7 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  tw-animate-css@1.2.8: {}
+  tw-animate-css@1.2.5: {}
 
   type-check@0.4.0:
     dependencies:

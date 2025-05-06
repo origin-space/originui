@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-558",
+  "type": "registry:component",
+  "files": [
+    {
+      "path": "registry/default/components/comp-558.tsx",
+      "content": "import {\n  Cropper,\n  CropperCropArea,\n  CropperDescription,\n  CropperImage,\n} from \"@/registry/default/ui/cropper\"\n\nexport default function Component() {\n  return (\n    <div className=\"flex flex-col items-center gap-2\">\n      <Cropper\n        className=\"h-80 bg-black\"\n        image=\"https://images.unsplash.com/photo-1612128961739-2551681a0575\"\n      >\n        <CropperDescription />\n        <CropperImage />\n        <CropperCropArea className=\"shadow-[0_0_0_9999px_rgba(255,255,255,0.5)]\" />\n      </Cropper>\n\n      <p\n        aria-live=\"polite\"\n        role=\"region\"\n        className=\"text-muted-foreground mt-2 text-xs\"\n      >\n        Cropper with custom mask overlay ∙{\" \"}\n        <a\n          href=\"https://github.com/origin-space/image-cropper\"\n          className=\"hover:text-foreground underline\"\n          target=\"_blank\"\n        >\n          API\n        </a>\n      </p>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "image",
+      "crop",
+      "zoom"
+    ],
+    "colSpan": 2
+  }
+}

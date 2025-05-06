@@ -195,16 +195,18 @@ export const useFileUpload = (
       const validFiles: FileWithPreview[] = []
 
       newFilesArray.forEach((file) => {
-        // Check for duplicates
-        const isDuplicate = state.files.some(
-          (existingFile) =>
-            existingFile.file.name === file.name &&
-            existingFile.file.size === file.size
-        )
+        // Only check for duplicates if multiple files are allowed
+        if (multiple) {
+          const isDuplicate = state.files.some(
+            (existingFile) =>
+              existingFile.file.name === file.name &&
+              existingFile.file.size === file.size
+          )
 
-        // Skip duplicate files silently
-        if (isDuplicate) {
-          return
+          // Skip duplicate files silently
+          if (isDuplicate) {
+            return
+          }
         }
 
         // Check file size

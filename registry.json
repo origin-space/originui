@@ -9774,7 +9774,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop", "avatar"]
+        "tags": ["upload", "file", "image", "drag and drop", "avatar"]
       }
     },    
     {
@@ -9791,7 +9791,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
     },
@@ -9812,7 +9812,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
     },
@@ -9833,7 +9833,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
     },
@@ -9854,7 +9854,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
     },
@@ -9875,7 +9875,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
     },
@@ -9896,7 +9896,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
     },
@@ -9917,7 +9917,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
     },
@@ -9939,7 +9939,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
     },   
@@ -9960,7 +9960,7 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
     },
@@ -9981,7 +9981,173 @@
         }        
       ],
       "meta": {
-        "tags": ["upload", "file", "drag and drop"],
+        "tags": ["upload", "file", "image", "drag and drop"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-554",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/dialog.json",
+        "https://originui.com/r/select.json"
+      ],      
+      "files": [
+        {
+          "path": "registry/default/components/comp-554.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file", "image", "drag and drop", "crop", "dialog", "slider", "zoom"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-555",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-555.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["image", "crop", "zoom"],
+        "colSpan": 2  
+      }
+    },
+    {
+      "name": "comp-556",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-556.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["image", "crop", "zoom"],
+        "colSpan": 2 
+      }
+    },
+    {
+      "name": "comp-557",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-557.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["image", "crop", "zoom"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-558",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-558.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["image", "crop", "zoom"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-559",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-559.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["image", "crop", "zoom"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-560",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-560.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["image", "crop", "zoom"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-561",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/select.json"
+      ],      
+      "files": [
+        {
+          "path": "registry/default/components/comp-561.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["image", "crop", "zoom", "slider"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-562",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-562.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["image", "crop", "zoom"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-563",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-563.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["image", "crop", "zoom"],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-564",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-564.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["image", "crop", "zoom"],
         "colSpan": 2
       }
     }

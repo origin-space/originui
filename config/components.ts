@@ -251,6 +251,24 @@ export const categories: ComponentCategory[] = [
     ],
   },
   {
+    slug: "image-cropper",
+    name: "Image Cropper",
+    components: [
+      { name: "comp-554" },
+      { name: "comp-555" },
+      { name: "comp-556" },
+      { name: "comp-557" },
+      { name: "comp-558" },
+      { name: "comp-559" },
+      { name: "comp-560" },
+      { name: "comp-561" },
+      { name: "comp-562" },
+      { name: "comp-563" },
+      { name: "comp-564" },
+    ],
+    isNew: true,
+  },
+  {
     slug: "dialog",
     name: "Dialog",
     components: [
@@ -315,13 +333,13 @@ export const categories: ComponentCategory[] = [
       { name: "comp-551" },
       { name: "comp-552" },
       { name: "comp-553" },
+      { name: "comp-554" },
     ],
     isNew: true,
   },
   {
     slug: "event-calendar",
     name: "Event calendar",
-    isNew: true,
     components: [{ name: "comp-542" }],
   },
   {
