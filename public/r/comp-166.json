@@ -2,16 +2,45 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-166",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/radio-group.json",
-    "https://originui.com/r/label.json",
-    "https://originui.com/r/badge.json"
+  "dependencies": [
+    "@radix-ui/react-label",
+    "@radix-ui/react-radio-group",
+    "@radix-ui/react-slot",
+    "class-variance-authority",
+    "clsx",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {
-      "path": "registry/default/components/comp-166.tsx",
-      "content": "import { useId } from \"react\"\n\nimport { Badge } from \"@/registry/default/ui/badge\"\nimport { Label } from \"@/registry/default/ui/label\"\nimport { RadioGroup, RadioGroupItem } from \"@/registry/default/ui/radio-group\"\n\nexport default function Component() {\n  const id = useId()\n\n  const items = [\n    { value: \"1\", label: \"Hobby\", price: \"$9/mo\" },\n    { value: \"2\", label: \"Plus\", price: \"$29/mo\" },\n    { value: \"3\", label: \"Team\", price: \"$49/mo\" },\n    { value: \"4\", label: \"Enterprise\", price: \"Custom\" },\n  ]\n\n  return (\n    <fieldset className=\"space-y-4\">\n      <legend className=\"text-foreground text-sm leading-none font-medium\">\n        Choose plan\n      </legend>\n      <RadioGroup\n        className=\"gap-0 -space-y-px rounded-md shadow-xs\"\n        defaultValue=\"2\"\n      >\n        {items.map((item) => (\n          <div\n            key={`${id}-${item.value}`}\n            className=\"border-input has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-accent relative flex flex-col gap-4 border p-4 outline-none first:rounded-t-md last:rounded-b-md has-data-[state=checked]:z-10\"\n          >\n            <div className=\"flex items-center justify-between\">\n              <div className=\"flex items-center gap-2\">\n                <RadioGroupItem\n                  id={`${id}-${item.value}`}\n                  value={item.value}\n                  className=\"after:absolute after:inset-0\"\n                  aria-describedby={`${`${id}-${item.value}`}-price`}\n                />\n                <Label\n                  className=\"inline-flex items-start\"\n                  htmlFor={`${id}-${item.value}`}\n                >\n                  {item.label}\n                  {item.value === \"2\" && (\n                    <Badge className=\"ms-2 -mt-1\">Popular</Badge>\n                  )}\n                </Label>\n              </div>\n              <div\n                id={`${`${id}-${item.value}`}-price`}\n                className=\"text-muted-foreground text-xs leading-[inherit]\"\n              >\n                {item.price}\n              </div>\n            </div>\n          </div>\n        ))}\n      </RadioGroup>\n    </fieldset>\n  )\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/comp-166.tsx",
+      "content": "import { useId } from \"react\"\n\nimport { Badge } from \"@/components/ui/badge\"\nimport { Label } from \"@/components/ui/label\"\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\"\n\nexport default function Component() {\n  const id = useId()\n\n  const items = [\n    { value: \"1\", label: \"Hobby\", price: \"$9/mo\" },\n    { value: \"2\", label: \"Plus\", price: \"$29/mo\" },\n    { value: \"3\", label: \"Team\", price: \"$49/mo\" },\n    { value: \"4\", label: \"Enterprise\", price: \"Custom\" },\n  ]\n\n  return (\n    <fieldset className=\"space-y-4\">\n      <legend className=\"text-foreground text-sm leading-none font-medium\">\n        Choose plan\n      </legend>\n      <RadioGroup\n        className=\"gap-0 -space-y-px rounded-md shadow-xs\"\n        defaultValue=\"2\"\n      >\n        {items.map((item) => (\n          <div\n            key={`${id}-${item.value}`}\n            className=\"border-input has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-accent relative flex flex-col gap-4 border p-4 outline-none first:rounded-t-md last:rounded-b-md has-data-[state=checked]:z-10\"\n          >\n            <div className=\"flex items-center justify-between\">\n              <div className=\"flex items-center gap-2\">\n                <RadioGroupItem\n                  id={`${id}-${item.value}`}\n                  value={item.value}\n                  className=\"after:absolute after:inset-0\"\n                  aria-describedby={`${`${id}-${item.value}`}-price`}\n                />\n                <Label\n                  className=\"inline-flex items-start\"\n                  htmlFor={`${id}-${item.value}`}\n                >\n                  {item.label}\n                  {item.value === \"2\" && (\n                    <Badge className=\"ms-2 -mt-1\">Popular</Badge>\n                  )}\n                </Label>\n              </div>\n              <div\n                id={`${`${id}-${item.value}`}-price`}\n                className=\"text-muted-foreground text-xs leading-[inherit]\"\n              >\n                {item.price}\n              </div>\n            </div>\n          </div>\n        ))}\n      </RadioGroup>\n    </fieldset>\n  )\n}\n",
+      "path": "registry/default/components/comp-166.tsx"
+    },
+    {
+      "type": "registry:lib",
+      "target": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "path": "registry/default/lib/utils.ts"
+    },
+    {
+      "type": "registry:ui",
+      "target": "components/ui/badge.tsx",
+      "content": "import * as React from \"react\"\nimport { Slot } from \"@radix-ui/react-slot\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst badgeVariants = cva(\n  \"inline-flex items-center justify-center rounded-full border px-1.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] transition-[color,box-shadow] [&>svg]:shrink-0 leading-normal\",\n  {\n    variants: {\n      variant: {\n        default:\n          \"border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90\",\n        secondary:\n          \"border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90\",\n        destructive:\n          \"border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40\",\n        outline:\n          \"text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  }\n)\n\nfunction Badge({\n  className,\n  variant,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"span\"> &\n  VariantProps<typeof badgeVariants> & { asChild?: boolean }) {\n  const Comp = asChild ? Slot : \"span\"\n\n  return (\n    <Comp\n      data-slot=\"badge\"\n      className={cn(badgeVariants({ variant }), className)}\n      {...props}\n    />\n  )\n}\n\nexport { Badge, badgeVariants }\n",
+      "path": "registry/default/ui/badge.tsx"
+    },
+    {
+      "type": "registry:ui",
+      "target": "components/ui/label.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport * as LabelPrimitive from \"@radix-ui/react-label\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction Label({\n  className,\n  ...props\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\n  return (\n    <LabelPrimitive.Root\n      data-slot=\"label\"\n      className={cn(\n        \"text-foreground text-sm leading-4 font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Label }\n",
+      "path": "registry/default/ui/label.tsx"
+    },
+    {
+      "type": "registry:ui",
+      "target": "components/ui/radio-group.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport * as RadioGroupPrimitive from \"@radix-ui/react-radio-group\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction RadioGroup({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Root>) {\n  return (\n    <RadioGroupPrimitive.Root\n      data-slot=\"radio-group\"\n      className={cn(\"grid gap-3\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction RadioGroupItem({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Item>) {\n  return (\n    <RadioGroupPrimitive.Item\n      data-slot=\"radio-group-item\"\n      className={cn(\n        \"border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground data-[state=checked]:border-primary focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive aspect-square size-4 shrink-0 rounded-full border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50\",\n        className\n      )}\n      {...props}\n    >\n      <RadioGroupPrimitive.Indicator className=\"flex items-center justify-center text-current\">\n        <svg\n          width=\"6\"\n          height=\"6\"\n          viewBox=\"0 0 6 6\"\n          fill=\"currentcolor\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <circle cx=\"3\" cy=\"3\" r=\"3\" />\n        </svg>\n      </RadioGroupPrimitive.Indicator>\n    </RadioGroupPrimitive.Item>\n  )\n}\n\nexport { RadioGroup, RadioGroupItem }\n",
+      "path": "registry/default/ui/radio-group.tsx"
     }
   ],
   "meta": {

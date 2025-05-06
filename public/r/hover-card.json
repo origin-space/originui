@@ -3,7 +3,10 @@
   "name": "hover-card",
   "type": "registry:ui",
   "dependencies": [
-    "@radix-ui/react-hover-card"
+    "@radix-ui/react-hover-card",
+    "clsx",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

@@ -2,8 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-126",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/button.json"
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority",
+    "clsx",
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

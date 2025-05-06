@@ -21,6 +21,14 @@ Note: If you're using shadcn, you may likely already have these files - however,
 
 **2. Add the following CSS variables to your stylesheet (you don't need to overwrite them if you already have them):**
 
+- Automatically update by running the following command:
+
+```sh
+npx shadcn add https://originui.com/r/style.json
+```
+
+- Or manually update the CSS variables in your stylesheet:
+
 ```
 :root {
   --radius: 0.625rem;
@@ -94,7 +102,10 @@ Note: If you're using shadcn, you may likely already have these files - however,
 }
 ```
 
-After completing these steps, you can copy and use the components in your project. Note that some components (e.g., number inputs, date pickers, time pickers, phone number inputs) may require additional libraries.
+After completing these steps, you can copy/install and use the components in your project.
+
+> [!Note]
+> Some components (e.g. number inputs, date pickers, time pickers, phone number inputs) may require additional libraries (therefore `shadcn add ...` is preffered).
 
 ## Tailwind v4 support
 

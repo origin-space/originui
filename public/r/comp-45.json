@@ -3,16 +3,31 @@
   "name": "comp-45",
   "type": "registry:component",
   "dependencies": [
-    "input-otp"
-  ],
-  "registryDependencies": [
-    "https://originui.com/r/label.json"
+    "@radix-ui/react-label",
+    "clsx",
+    "input-otp",
+    "lucide-react",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {
-      "path": "registry/default/components/comp-45.tsx",
-      "content": "\"use client\"\n\nimport { useId } from \"react\"\nimport { OTPInput, SlotProps } from \"input-otp\"\nimport { MinusIcon } from \"lucide-react\"\n\nimport { cn } from \"@/registry/default/lib/utils\"\nimport { Label } from \"@/registry/default/ui/label\"\n\nexport default function Component() {\n  const id = useId()\n  return (\n    <div className=\"*:not-first:mt-2\">\n      <Label htmlFor={id}>OTP input double</Label>\n      <OTPInput\n        id={id}\n        containerClassName=\"flex items-center gap-3 has-disabled:opacity-50\"\n        maxLength={6}\n        render={({ slots }) => (\n          <>\n            <div className=\"flex\">\n              {slots.slice(0, 3).map((slot, idx) => (\n                <Slot key={idx} {...slot} />\n              ))}\n            </div>\n\n            <div className=\"text-muted-foreground/80\">\n              <MinusIcon size={16} aria-hidden=\"true\" />\n            </div>\n\n            <div className=\"flex\">\n              {slots.slice(3).map((slot, idx) => (\n                <Slot key={idx} {...slot} />\n              ))}\n            </div>\n          </>\n        )}\n      />\n      <p\n        className=\"text-muted-foreground mt-2 text-xs\"\n        role=\"region\"\n        aria-live=\"polite\"\n      >\n        Built with{\" \"}\n        <a\n          className=\"hover:text-foreground underline\"\n          href=\"https://github.com/guilhermerodz/input-otp\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          Input OTP\n        </a>\n      </p>\n    </div>\n  )\n}\n\nfunction Slot(props: SlotProps) {\n  return (\n    <div\n      className={cn(\n        \"border-input bg-background text-foreground relative -ms-px flex size-9 items-center justify-center border font-medium shadow-xs transition-[color,box-shadow] first:ms-0 first:rounded-s-md last:rounded-e-md\",\n        { \"border-ring ring-ring/50 z-10 ring-[3px]\": props.isActive }\n      )}\n    >\n      {props.char !== null && <div>{props.char}</div>}\n    </div>\n  )\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/comp-45.tsx",
+      "content": "\"use client\"\n\nimport { useId } from \"react\"\nimport { OTPInput, SlotProps } from \"input-otp\"\nimport { MinusIcon } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Label } from \"@/components/ui/label\"\n\nexport default function Component() {\n  const id = useId()\n  return (\n    <div className=\"*:not-first:mt-2\">\n      <Label htmlFor={id}>OTP input double</Label>\n      <OTPInput\n        id={id}\n        containerClassName=\"flex items-center gap-3 has-disabled:opacity-50\"\n        maxLength={6}\n        render={({ slots }) => (\n          <>\n            <div className=\"flex\">\n              {slots.slice(0, 3).map((slot, idx) => (\n                <Slot key={idx} {...slot} />\n              ))}\n            </div>\n\n            <div className=\"text-muted-foreground/80\">\n              <MinusIcon size={16} aria-hidden=\"true\" />\n            </div>\n\n            <div className=\"flex\">\n              {slots.slice(3).map((slot, idx) => (\n                <Slot key={idx} {...slot} />\n              ))}\n            </div>\n          </>\n        )}\n      />\n      <p\n        className=\"text-muted-foreground mt-2 text-xs\"\n        role=\"region\"\n        aria-live=\"polite\"\n      >\n        Built with{\" \"}\n        <a\n          className=\"hover:text-foreground underline\"\n          href=\"https://github.com/guilhermerodz/input-otp\"\n          target=\"_blank\"\n          rel=\"noopener nofollow\"\n        >\n          Input OTP\n        </a>\n      </p>\n    </div>\n  )\n}\n\nfunction Slot(props: SlotProps) {\n  return (\n    <div\n      className={cn(\n        \"border-input bg-background text-foreground relative -ms-px flex size-9 items-center justify-center border font-medium shadow-xs transition-[color,box-shadow] first:ms-0 first:rounded-s-md last:rounded-e-md\",\n        { \"border-ring ring-ring/50 z-10 ring-[3px]\": props.isActive }\n      )}\n    >\n      {props.char !== null && <div>{props.char}</div>}\n    </div>\n  )\n}\n",
+      "path": "registry/default/components/comp-45.tsx"
+    },
+    {
+      "type": "registry:lib",
+      "target": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "path": "registry/default/lib/utils.ts"
+    },
+    {
+      "type": "registry:ui",
+      "target": "components/ui/label.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport * as LabelPrimitive from \"@radix-ui/react-label\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction Label({\n  className,\n  ...props\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\n  return (\n    <LabelPrimitive.Root\n      data-slot=\"label\"\n      className={cn(\n        \"text-foreground text-sm leading-4 font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Label }\n",
+      "path": "registry/default/ui/label.tsx"
     }
   ],
   "meta": {

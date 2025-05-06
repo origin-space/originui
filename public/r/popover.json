@@ -3,7 +3,10 @@
   "name": "popover",
   "type": "registry:ui",
   "dependencies": [
-    "@radix-ui/react-popover"
+    "@radix-ui/react-popover",
+    "clsx",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {

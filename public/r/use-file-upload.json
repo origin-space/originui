@@ -2,6 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-file-upload",
   "type": "registry:hook",
+  "dependencies": [
+    "react"
+  ],
   "files": [
     {
       "path": "registry/default/hooks/use-file-upload.ts",

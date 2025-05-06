@@ -2,20 +2,42 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-74",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/label.json",
-    "https://originui.com/r/textarea.json"
+  "dependencies": [
+    "@radix-ui/react-label",
+    "clsx",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {
-      "path": "registry/default/components/comp-74.tsx",
-      "content": "\"use client\"\n\nimport { useId } from \"react\"\n\nimport { useCharacterLimit } from \"@/registry/default/hooks/use-character-limit\"\nimport { Label } from \"@/registry/default/ui/label\"\nimport { Textarea } from \"@/registry/default/ui/textarea\"\n\nexport default function Component() {\n  const id = useId()\n  const maxLength = 180\n  const {\n    value,\n    characterCount,\n    handleChange,\n    maxLength: limit,\n  } = useCharacterLimit({ maxLength })\n\n  return (\n    <div className=\"*:not-first:mt-2\">\n      <Label htmlFor={id}>Textarea with characters left</Label>\n      <Textarea\n        id={id}\n        value={value}\n        maxLength={maxLength}\n        onChange={handleChange}\n        aria-describedby={`${id}-description`}\n      />\n      <p\n        id={`${id}-description`}\n        className=\"text-muted-foreground mt-2 text-right text-xs\"\n        role=\"status\"\n        aria-live=\"polite\"\n      >\n        <span className=\"tabular-nums\">{limit - characterCount}</span>{\" \"}\n        characters left\n      </p>\n    </div>\n  )\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/comp-74.tsx",
+      "content": "\"use client\"\n\nimport { useId } from \"react\"\n\nimport { useCharacterLimit } from \"@/hooks/use-character-limit\"\nimport { Label } from \"@/components/ui/label\"\nimport { Textarea } from \"@/components/ui/textarea\"\n\nexport default function Component() {\n  const id = useId()\n  const maxLength = 180\n  const {\n    value,\n    characterCount,\n    handleChange,\n    maxLength: limit,\n  } = useCharacterLimit({ maxLength })\n\n  return (\n    <div className=\"*:not-first:mt-2\">\n      <Label htmlFor={id}>Textarea with characters left</Label>\n      <Textarea\n        id={id}\n        value={value}\n        maxLength={maxLength}\n        onChange={handleChange}\n        aria-describedby={`${id}-description`}\n      />\n      <p\n        id={`${id}-description`}\n        className=\"text-muted-foreground mt-2 text-right text-xs\"\n        role=\"status\"\n        aria-live=\"polite\"\n      >\n        <span className=\"tabular-nums\">{limit - characterCount}</span>{\" \"}\n        characters left\n      </p>\n    </div>\n  )\n}\n",
+      "path": "registry/default/components/comp-74.tsx"
     },
     {
-      "path": "registry/default/hooks/use-character-limit.ts",
+      "type": "registry:lib",
+      "target": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "path": "registry/default/lib/utils.ts"
+    },
+    {
+      "type": "registry:hook",
+      "target": "hooks/use-character-limit.ts",
       "content": "\"use client\"\n\nimport { ChangeEvent, useState } from \"react\"\n\ntype UseCharacterLimitProps = {\n  maxLength: number\n  initialValue?: string\n}\n\nexport function useCharacterLimit({\n  maxLength,\n  initialValue = \"\",\n}: UseCharacterLimitProps) {\n  const [value, setValue] = useState(initialValue)\n  const [characterCount, setCharacterCount] = useState(initialValue.length)\n\n  const handleChange = (\n    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>\n  ) => {\n    const newValue = e.target.value\n    if (newValue.length <= maxLength) {\n      setValue(newValue)\n      setCharacterCount(newValue.length)\n    }\n  }\n\n  return {\n    value,\n    characterCount,\n    handleChange,\n    maxLength,\n  }\n}\n",
-      "type": "registry:hook"
+      "path": "registry/default/hooks/use-character-limit.ts"
+    },
+    {
+      "type": "registry:ui",
+      "target": "components/ui/label.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport * as LabelPrimitive from \"@radix-ui/react-label\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction Label({\n  className,\n  ...props\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\n  return (\n    <LabelPrimitive.Root\n      data-slot=\"label\"\n      className={cn(\n        \"text-foreground text-sm leading-4 font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Label }\n",
+      "path": "registry/default/ui/label.tsx"
+    },
+    {
+      "type": "registry:ui",
+      "target": "components/ui/textarea.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction Textarea({ className, ...props }: React.ComponentProps<\"textarea\">) {\n  return (\n    <textarea\n      data-slot=\"textarea\"\n      className={cn(\n        \"border-input placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive flex min-h-19.5 w-full rounded-md border bg-transparent px-3 py-2 text-sm shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\nTextarea.displayName = \"Textarea\"\n\nexport { Textarea }\n",
+      "path": "registry/default/ui/textarea.tsx"
     }
   ],
   "meta": {
