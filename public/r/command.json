@@ -5,7 +5,7 @@
   "dependencies": [
     "@radix-ui/react-dialog",
     "clsx",
-    "cmdk@1.0.0",
+    "cmdk",
     "lucide-react",
     "react",
     "tailwind-merge"

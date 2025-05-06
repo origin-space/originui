@@ -331,7 +331,7 @@
       "dependencies": [
         "@radix-ui/react-dialog",
         "clsx",
-        "cmdk@1.0.0",
+        "cmdk",
         "lucide-react",
         "react",
         "tailwind-merge"
@@ -351,6 +351,27 @@
           "type": "registry:ui",
           "target": "components/ui/dialog.tsx",
           "path": "registry/default/ui/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cropper",
+      "type": "registry:ui",
+      "dependencies": [
+        "@origin-space/image-cropper",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "type": "registry:ui",
+          "target": "components/ui/cropper.tsx",
+          "path": "registry/default/ui/cropper.tsx"
+        },
+        {
+          "type": "registry:lib",
+          "target": "lib/utils.ts",
+          "path": "registry/default/lib/utils.ts"
         }
       ]
     },
@@ -771,6 +792,17 @@
       ]
     },
     {
+      "name": "styles",
+      "type": "registry:ui",
+      "files": [
+        {
+          "type": "registry:ui",
+          "target": "components/ui/styles.css",
+          "path": "registry/default/ui/styles.css"
+        }
+      ]
+    },
+    {
       "name": "switch",
       "type": "registry:ui",
       "dependencies": [
@@ -1015,6 +1047,7 @@
       "type": "registry:ui",
       "dependencies": [
         "@internationalized/date",
+        "@origin-space/image-cropper",
         "@radix-ui/react-accordion",
         "@radix-ui/react-alert-dialog",
         "@radix-ui/react-avatar",
@@ -1122,6 +1155,11 @@
         },
         {
           "type": "registry:ui",
+          "target": "components/ui/cropper.tsx",
+          "path": "registry/default/ui/cropper.tsx"
+        },
+        {
+          "type": "registry:ui",
           "target": "components/ui/datefield-rac.tsx",
           "path": "registry/default/ui/datefield-rac.tsx"
         },
@@ -1209,6 +1247,11 @@
           "type": "registry:ui",
           "target": "components/ui/stepper.tsx",
           "path": "registry/default/ui/stepper.tsx"
+        },
+        {
+          "type": "registry:ui",
+          "target": "components/ui/styles.css",
+          "path": "registry/default/ui/styles.css"
         },
         {
           "type": "registry:ui",
@@ -23160,6 +23203,7 @@
         "tags": [
           "upload",
           "file",
+          "image",
           "drag and drop",
           "avatar"
         ]
@@ -23188,6 +23232,7 @@
         "tags": [
           "upload",
           "file",
+          "image",
           "drag and drop"
         ],
         "colSpan": 2
@@ -23230,6 +23275,7 @@
         "tags": [
           "upload",
           "file",
+          "image",
           "drag and drop"
         ],
         "colSpan": 2
@@ -23272,6 +23318,7 @@
         "tags": [
           "upload",
           "file",
+          "image",
           "drag and drop"
         ],
         "colSpan": 2
@@ -23314,6 +23361,7 @@
         "tags": [
           "upload",
           "file",
+          "image",
           "drag and drop"
         ],
         "colSpan": 2
@@ -23356,6 +23404,7 @@
         "tags": [
           "upload",
           "file",
+          "image",
           "drag and drop"
         ],
         "colSpan": 2
@@ -23398,6 +23447,7 @@
         "tags": [
           "upload",
           "file",
+          "image",
           "drag and drop"
         ],
         "colSpan": 2
@@ -23440,6 +23490,7 @@
         "tags": [
           "upload",
           "file",
+          "image",
           "drag and drop"
         ],
         "colSpan": 2
@@ -23487,6 +23538,7 @@
         "tags": [
           "upload",
           "file",
+          "image",
           "drag and drop"
         ],
         "colSpan": 2
@@ -23529,6 +23581,7 @@
         "tags": [
           "upload",
           "file",
+          "image",
           "drag and drop"
         ],
         "colSpan": 2
@@ -23571,7 +23624,442 @@
         "tags": [
           "upload",
           "file",
+          "image",
           "drag and drop"
+        ],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-554",
+      "type": "registry:component",
+      "dependencies": [
+        "@origin-space/image-cropper",
+        "@radix-ui/react-dialog",
+        "@radix-ui/react-slider",
+        "@radix-ui/react-slot",
+        "@radix-ui/react-tooltip",
+        "class-variance-authority",
+        "clsx",
+        "lucide-react",
+        "react",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "components/comp-554.tsx",
+          "path": "registry/default/components/comp-554.tsx"
+        },
+        {
+          "type": "registry:lib",
+          "target": "lib/utils.ts",
+          "path": "registry/default/lib/utils.ts"
+        },
+        {
+          "type": "registry:hook",
+          "target": "hooks/use-file-upload.ts",
+          "path": "registry/default/hooks/use-file-upload.ts"
+        },
+        {
+          "type": "registry:ui",
+          "target": "components/ui/button.tsx",
+          "path": "registry/default/ui/button.tsx"
+        },
+        {
+          "type": "registry:ui",
+          "target": "components/ui/cropper.tsx",
+          "path": "registry/default/ui/cropper.tsx"
+        },
+        {
+          "type": "registry:ui",
+          "target": "components/ui/dialog.tsx",
+          "path": "registry/default/ui/dialog.tsx"
+        },
+        {
+          "type": "registry:ui",
+          "target": "components/ui/slider.tsx",
+          "path": "registry/default/ui/slider.tsx"
+        },
+        {
+          "type": "registry:ui",
+          "target": "components/ui/tooltip.tsx",
+          "path": "registry/default/ui/tooltip.tsx"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "upload",
+          "file",
+          "image",
+          "drag and drop",
+          "crop",
+          "dialog",
+          "slider",
+          "zoom"
+        ],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-555",
+      "type": "registry:component",
+      "dependencies": [
+        "@origin-space/image-cropper",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "components/comp-555.tsx",
+          "path": "registry/default/components/comp-555.tsx"
+        },
+        {
+          "type": "registry:lib",
+          "target": "lib/utils.ts",
+          "path": "registry/default/lib/utils.ts"
+        },
+        {
+          "type": "registry:ui",
+          "target": "components/ui/cropper.tsx",
+          "path": "registry/default/ui/cropper.tsx"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "image",
+          "crop",
+          "zoom"
+        ],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-556",
+      "type": "registry:component",
+      "dependencies": [
+        "@origin-space/image-cropper",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "components/comp-556.tsx",
+          "path": "registry/default/components/comp-556.tsx"
+        },
+        {
+          "type": "registry:lib",
+          "target": "lib/utils.ts",
+          "path": "registry/default/lib/utils.ts"
+        },
+        {
+          "type": "registry:ui",
+          "target": "components/ui/cropper.tsx",
+          "path": "registry/default/ui/cropper.tsx"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "image",
+          "crop",
+          "zoom"
+        ],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-557",
+      "type": "registry:component",
+      "dependencies": [
+        "@origin-space/image-cropper",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "components/comp-557.tsx",
+          "path": "registry/default/components/comp-557.tsx"
+        },
+        {
+          "type": "registry:lib",
+          "target": "lib/utils.ts",
+          "path": "registry/default/lib/utils.ts"
+        },
+        {
+          "type": "registry:ui",
+          "target": "components/ui/cropper.tsx",
+          "path": "registry/default/ui/cropper.tsx"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "image",
+          "crop",
+          "zoom"
+        ],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-558",
+      "type": "registry:component",
+      "dependencies": [
+        "@origin-space/image-cropper",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "components/comp-558.tsx",
+          "path": "registry/default/components/comp-558.tsx"
+        },
+        {
+          "type": "registry:lib",
+          "target": "lib/utils.ts",
+          "path": "registry/default/lib/utils.ts"
+        },
+        {
+          "type": "registry:ui",
+          "target": "components/ui/cropper.tsx",
+          "path": "registry/default/ui/cropper.tsx"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "image",
+          "crop",
+          "zoom"
+        ],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-559",
+      "type": "registry:component",
+      "dependencies": [
+        "@origin-space/image-cropper",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "components/comp-559.tsx",
+          "path": "registry/default/components/comp-559.tsx"
+        },
+        {
+          "type": "registry:lib",
+          "target": "lib/utils.ts",
+          "path": "registry/default/lib/utils.ts"
+        },
+        {
+          "type": "registry:ui",
+          "target": "components/ui/cropper.tsx",
+          "path": "registry/default/ui/cropper.tsx"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "image",
+          "crop",
+          "zoom"
+        ],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-560",
+      "type": "registry:component",
+      "dependencies": [
+        "@origin-space/image-cropper",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "components/comp-560.tsx",
+          "path": "registry/default/components/comp-560.tsx"
+        },
+        {
+          "type": "registry:lib",
+          "target": "lib/utils.ts",
+          "path": "registry/default/lib/utils.ts"
+        },
+        {
+          "type": "registry:ui",
+          "target": "components/ui/cropper.tsx",
+          "path": "registry/default/ui/cropper.tsx"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "image",
+          "crop",
+          "zoom"
+        ],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-561",
+      "type": "registry:component",
+      "dependencies": [
+        "@origin-space/image-cropper",
+        "@radix-ui/react-slider",
+        "@radix-ui/react-tooltip",
+        "clsx",
+        "react",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "components/comp-561.tsx",
+          "path": "registry/default/components/comp-561.tsx"
+        },
+        {
+          "type": "registry:lib",
+          "target": "lib/utils.ts",
+          "path": "registry/default/lib/utils.ts"
+        },
+        {
+          "type": "registry:ui",
+          "target": "components/ui/cropper.tsx",
+          "path": "registry/default/ui/cropper.tsx"
+        },
+        {
+          "type": "registry:ui",
+          "target": "components/ui/slider.tsx",
+          "path": "registry/default/ui/slider.tsx"
+        },
+        {
+          "type": "registry:ui",
+          "target": "components/ui/tooltip.tsx",
+          "path": "registry/default/ui/tooltip.tsx"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "image",
+          "crop",
+          "zoom",
+          "slider"
+        ],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-562",
+      "type": "registry:component",
+      "dependencies": [
+        "@origin-space/image-cropper",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "components/comp-562.tsx",
+          "path": "registry/default/components/comp-562.tsx"
+        },
+        {
+          "type": "registry:lib",
+          "target": "lib/utils.ts",
+          "path": "registry/default/lib/utils.ts"
+        },
+        {
+          "type": "registry:ui",
+          "target": "components/ui/cropper.tsx",
+          "path": "registry/default/ui/cropper.tsx"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "image",
+          "crop",
+          "zoom"
+        ],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-563",
+      "type": "registry:component",
+      "dependencies": [
+        "@origin-space/image-cropper",
+        "clsx",
+        "react",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "components/comp-563.tsx",
+          "path": "registry/default/components/comp-563.tsx"
+        },
+        {
+          "type": "registry:lib",
+          "target": "lib/utils.ts",
+          "path": "registry/default/lib/utils.ts"
+        },
+        {
+          "type": "registry:ui",
+          "target": "components/ui/cropper.tsx",
+          "path": "registry/default/ui/cropper.tsx"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "image",
+          "crop",
+          "zoom"
+        ],
+        "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-564",
+      "type": "registry:component",
+      "dependencies": [
+        "@origin-space/image-cropper",
+        "@radix-ui/react-slot",
+        "class-variance-authority",
+        "clsx",
+        "react",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "components/comp-564.tsx",
+          "path": "registry/default/components/comp-564.tsx"
+        },
+        {
+          "type": "registry:lib",
+          "target": "lib/utils.ts",
+          "path": "registry/default/lib/utils.ts"
+        },
+        {
+          "type": "registry:ui",
+          "target": "components/ui/button.tsx",
+          "path": "registry/default/ui/button.tsx"
+        },
+        {
+          "type": "registry:ui",
+          "target": "components/ui/cropper.tsx",
+          "path": "registry/default/ui/cropper.tsx"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "image",
+          "crop",
+          "zoom"
         ],
         "colSpan": 2
       }
