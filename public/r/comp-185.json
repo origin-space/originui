@@ -2,15 +2,37 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-185",
   "type": "registry:component",
-  "registryDependencies": [
-    "https://originui.com/r/switch.json",
-    "https://originui.com/r/label.json"
+  "dependencies": [
+    "@radix-ui/react-label",
+    "@radix-ui/react-switch",
+    "clsx",
+    "react",
+    "tailwind-merge"
   ],
   "files": [
     {
-      "path": "registry/default/components/comp-185.tsx",
-      "content": "\"use client\"\n\nimport { useId, useState } from \"react\"\n\nimport { Label } from \"@/registry/default/ui/label\"\nimport { Switch } from \"@/registry/default/ui/switch\"\n\nexport default function Component() {\n  const id = useId()\n  const [checked, setChecked] = useState<boolean>(true)\n\n  return (\n    <div>\n      <div className=\"relative inline-grid h-9 grid-cols-[1fr_1fr] items-center text-sm font-medium\">\n        <Switch\n          id={id}\n          checked={checked}\n          onCheckedChange={setChecked}\n          className=\"peer data-[state=unchecked]:bg-input/50 absolute inset-0 h-[inherit] w-auto rounded-md [&_span]:z-10 [&_span]:h-full [&_span]:w-1/2 [&_span]:rounded-sm [&_span]:transition-transform [&_span]:duration-300 [&_span]:ease-[cubic-bezier(0.16,1,0.3,1)] [&_span]:data-[state=checked]:translate-x-full [&_span]:data-[state=checked]:rtl:-translate-x-full\"\n        />\n        <span className=\"pointer-events-none relative ms-0.5 flex items-center justify-center px-2 text-center transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] peer-data-[state=checked]:invisible peer-data-[state=unchecked]:translate-x-full peer-data-[state=unchecked]:rtl:-translate-x-full\">\n          <span className=\"text-[10px] font-medium uppercase\">Off</span>\n        </span>\n        <span className=\"peer-data-[state=checked]:text-background pointer-events-none relative me-0.5 flex items-center justify-center px-2 text-center transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] peer-data-[state=checked]:-translate-x-full peer-data-[state=unchecked]:invisible peer-data-[state=checked]:rtl:translate-x-full\">\n          <span className=\"text-[10px] font-medium uppercase\">On</span>\n        </span>\n      </div>\n      <Label htmlFor={id} className=\"sr-only\">\n        Labeled switch\n      </Label>\n    </div>\n  )\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/comp-185.tsx",
+      "content": "\"use client\"\n\nimport { useId, useState } from \"react\"\n\nimport { Label } from \"@/components/ui/label\"\nimport { Switch } from \"@/components/ui/switch\"\n\nexport default function Component() {\n  const id = useId()\n  const [checked, setChecked] = useState<boolean>(true)\n\n  return (\n    <div>\n      <div className=\"relative inline-grid h-9 grid-cols-[1fr_1fr] items-center text-sm font-medium\">\n        <Switch\n          id={id}\n          checked={checked}\n          onCheckedChange={setChecked}\n          className=\"peer data-[state=unchecked]:bg-input/50 absolute inset-0 h-[inherit] w-auto rounded-md [&_span]:z-10 [&_span]:h-full [&_span]:w-1/2 [&_span]:rounded-sm [&_span]:transition-transform [&_span]:duration-300 [&_span]:ease-[cubic-bezier(0.16,1,0.3,1)] [&_span]:data-[state=checked]:translate-x-full [&_span]:data-[state=checked]:rtl:-translate-x-full\"\n        />\n        <span className=\"pointer-events-none relative ms-0.5 flex items-center justify-center px-2 text-center transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] peer-data-[state=checked]:invisible peer-data-[state=unchecked]:translate-x-full peer-data-[state=unchecked]:rtl:-translate-x-full\">\n          <span className=\"text-[10px] font-medium uppercase\">Off</span>\n        </span>\n        <span className=\"peer-data-[state=checked]:text-background pointer-events-none relative me-0.5 flex items-center justify-center px-2 text-center transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] peer-data-[state=checked]:-translate-x-full peer-data-[state=unchecked]:invisible peer-data-[state=checked]:rtl:translate-x-full\">\n          <span className=\"text-[10px] font-medium uppercase\">On</span>\n        </span>\n      </div>\n      <Label htmlFor={id} className=\"sr-only\">\n        Labeled switch\n      </Label>\n    </div>\n  )\n}\n",
+      "path": "registry/default/components/comp-185.tsx"
+    },
+    {
+      "type": "registry:lib",
+      "target": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "path": "registry/default/lib/utils.ts"
+    },
+    {
+      "type": "registry:ui",
+      "target": "components/ui/label.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport * as LabelPrimitive from \"@radix-ui/react-label\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction Label({\n  className,\n  ...props\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\n  return (\n    <LabelPrimitive.Root\n      data-slot=\"label\"\n      className={cn(\n        \"text-foreground text-sm leading-4 font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Label }\n",
+      "path": "registry/default/ui/label.tsx"
+    },
+    {
+      "type": "registry:ui",
+      "target": "components/ui/switch.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport * as SwitchPrimitive from \"@radix-ui/react-switch\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction Switch({\n  className,\n  ...props\n}: React.ComponentProps<typeof SwitchPrimitive.Root>) {\n  return (\n    <SwitchPrimitive.Root\n      data-slot=\"switch\"\n      className={cn(\n        \"peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input focus-visible:ring-ring/50 inline-flex h-6 w-10 shrink-0 items-center rounded-full border-2 border-transparent transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50\",\n        className\n      )}\n      {...props}\n    >\n      <SwitchPrimitive.Thumb\n        data-slot=\"switch-thumb\"\n        className={cn(\n          \"bg-background pointer-events-none block size-5 rounded-full shadow-xs ring-0 transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0 data-[state=checked]:rtl:-translate-x-4\"\n        )}\n      />\n    </SwitchPrimitive.Root>\n  )\n}\n\nexport { Switch }\n",
+      "path": "registry/default/ui/switch.tsx"
     }
   ],
   "meta": {

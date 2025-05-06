@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "event-calendar-use-event-visibility",
+  "type": "registry:component",
+  "dependencies": [
+    "react"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "target": "components/event-calendar/hooks/use-event-visibility.ts",
+      "content": "\"use client\"\n\nimport { useLayoutEffect, useMemo, useRef, useState } from \"react\"\n\ninterface EventVisibilityOptions {\n  eventHeight: number\n  eventGap: number\n}\n\ninterface EventVisibilityResult {\n  contentRef: React.RefObject<HTMLDivElement>\n  contentHeight: number | null\n  getVisibleEventCount: (totalEvents: number) => number\n}\n\n/**\n * Hook for calculating event visibility based on container height\n * Uses ResizeObserver for efficient updates\n */\nexport function useEventVisibility({\n  eventHeight,\n  eventGap,\n}: EventVisibilityOptions): EventVisibilityResult {\n  // Use the standard pattern for React refs\n  const contentRef = useRef<HTMLDivElement>(null)\n  const observerRef = useRef<ResizeObserver | null>(null)\n  const [contentHeight, setContentHeight] = useState<number | null>(null)\n\n  // Use layout effect for synchronous measurement before paint\n  useLayoutEffect(() => {\n    if (!contentRef.current) return\n\n    // Function to update the content height\n    const updateHeight = () => {\n      if (contentRef.current) {\n        setContentHeight(contentRef.current.clientHeight)\n      }\n    }\n\n    // Initial measurement (synchronous)\n    updateHeight()\n\n    // Create observer only once and reuse it\n    if (!observerRef.current) {\n      observerRef.current = new ResizeObserver(() => {\n        // Just call updateHeight when resize is detected\n        updateHeight()\n      })\n    }\n\n    // Start observing the content container\n    observerRef.current.observe(contentRef.current)\n\n    // Clean up function\n    return () => {\n      if (observerRef.current) {\n        observerRef.current.disconnect()\n      }\n    }\n  }, [])\n\n  // Function to calculate visible events for a cell\n  const getVisibleEventCount = useMemo(() => {\n    return (totalEvents: number): number => {\n      if (!contentHeight) return totalEvents\n\n      // Calculate how many events can fit in the container\n      const maxEvents = Math.floor(contentHeight / (eventHeight + eventGap))\n\n      // If all events fit, show them all\n      if (totalEvents <= maxEvents) {\n        return totalEvents\n      } else {\n        // Otherwise, reserve space for \"more\" button by showing one less\n        return maxEvents > 0 ? maxEvents - 1 : 0\n      }\n    }\n  }, [contentHeight, eventHeight, eventGap])\n\n  // Use type assertion to satisfy TypeScript\n  return {\n    contentRef,\n    contentHeight,\n    getVisibleEventCount,\n  } as EventVisibilityResult\n}\n",
+      "path": "registry/default/components/event-calendar/hooks/use-event-visibility.ts"
+    }
+  ]
+}

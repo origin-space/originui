@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "event-calendar",
+  "type": "registry:component",
+  "files": [
+    {
+      "type": "registry:component",
+      "target": "components/event-calendar/index.ts",
+      "content": "\"use client\"\n\n// Component exports\nexport { AgendaView } from \"./agenda-view\"\nexport { DayView } from \"./day-view\"\nexport { DraggableEvent } from \"./draggable-event\"\nexport { DroppableCell } from \"./droppable-cell\"\nexport { EventDialog } from \"./event-dialog\"\nexport { EventItem } from \"./event-item\"\nexport { EventsPopup } from \"./events-popup\"\nexport { EventCalendar } from \"./event-calendar\"\nexport { MonthView } from \"./month-view\"\nexport { WeekView } from \"./week-view\"\nexport { CalendarDndProvider, useCalendarDnd } from \"./calendar-dnd-context\"\n\n// Constants and utility exports\nexport * from \"./constants\"\nexport * from \"./utils\"\n\n// Hook exports\nexport * from \"./hooks/use-current-time-indicator\"\nexport * from \"./hooks/use-event-visibility\"\n\n// Type exports\nexport type { CalendarEvent, CalendarView, EventColor } from \"./types\"\n",
+      "path": "registry/default/components/event-calendar/index.ts"
+    }
+  ]
+}

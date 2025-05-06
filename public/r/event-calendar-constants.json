@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "event-calendar-constants",
+  "type": "registry:component",
+  "files": [
+    {
+      "type": "registry:component",
+      "target": "components/event-calendar/constants.ts",
+      "content": "// Height of calendar events in pixels - used in month, week and day views\nexport const EventHeight = 24\n\n// Vertical gap between events in pixels - controls spacing in month view\nexport const EventGap = 4\n\n// Height of hour cells in week and day views - controls the scale of time display\nexport const WeekCellsHeight = 64\n\n// Number of days to show in the agenda view\nexport const AgendaDaysToShow = 30\n\n// Start and end hours for the week and day views\nexport const StartHour = 0\nexport const EndHour = 24\n\n// Default start and end times\nexport const DefaultStartHour = 9 // 9 AM\nexport const DefaultEndHour = 10 // 10 AM\n",
+      "path": "registry/default/components/event-calendar/constants.ts"
+    }
+  ]
+}
