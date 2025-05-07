@@ -166,6 +166,7 @@ function TreeItem({
           </span>
         )}        
         {selectionMode === 'checkbox' && (
+          // se qui troveremo un modo per iniettare un component radix, dovremo anche fare in modo di passare gli attr aria-checked (mixed, true, false)
           <input 
             type="checkbox" 
             ref={checkboxRef} // Enable if needed for indeterminate state later
