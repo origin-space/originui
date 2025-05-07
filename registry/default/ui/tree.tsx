@@ -12,7 +12,7 @@ export interface TreeNode {
 
 interface TreeProps {
   data: TreeNode[];
-  expandBehavior?: 'icon' | 'item';
+  expandTrigger?: 'icon' | 'item';
   selectionMode?: 'single' | 'multiple' | 'checkbox'; // Added selectionMode
   // defaultExpandedIds?: string[]; // For uncontrolled expansion later
   // expandedIds?: string[];        // For controlled expansion later
@@ -23,7 +23,7 @@ interface TreeItemProps {
   node: TreeNode;
   expandedIds: Set<string>; 
   onToggleExpand: (nodeId: string) => void;
-  expandBehavior: 'icon' | 'item';
+  expandTrigger: 'icon' | 'item';
   // Selection related props
   isSelected: boolean; // This specific node's selection state
   onSelectNode: (nodeId: string, mode: 'toggle' | 'replace' | 'addRange' | 'checkbox', isChecked?: boolean) => void; // Updated signature
@@ -39,7 +39,7 @@ interface TreeItemProps {
    * @param node The node to be rendered.
    * @param expandedIds Set of expanded node IDs.
    * @param onToggleExpand Function to call when the item's expansion state changes.
-   * @param expandBehavior Whether the item's expansion state should be toggled on item click.
+   * @param expandTrigger Whether the item's expansion state should be toggled on item click.
    * @param isSelected Whether the item is selected.
    * @param onSelectNode Function to call when the item's selection state changes.
    * @param selectionMode The selection mode of the tree.
@@ -51,7 +51,7 @@ function TreeItem({
   node,
   expandedIds,
   onToggleExpand,
-  expandBehavior,
+  expandTrigger,
   // Selection props
   isSelected,
   onSelectNode,
@@ -72,12 +72,12 @@ function TreeItem({
 
   const handleItemClick = (event: React.MouseEvent) => { 
     if (selectionMode === 'checkbox') {
-      if (expandBehavior === 'icon') {
-        // When expandBehavior is 'icon', item click toggles the checkbox selection.
+      if (expandTrigger === 'icon') {
+        // When expandTrigger is 'icon', item click toggles the checkbox selection.
         // Expansion is handled by the icon itself.
         onSelectNode(node.id, 'checkbox', !isSelected);
-      } else if (expandBehavior === 'item') {
-        // For 'item' behavior, item click ONLY toggles expansion (if has children).
+      } else if (expandTrigger === 'item') {
+        // For 'item' trigger, item click ONLY toggles expansion (if has children).
         // Checkbox selection is handled by direct click on the checkbox input.
         if (hasChildren) {
           onToggleExpand(node.id);
@@ -104,7 +104,7 @@ function TreeItem({
       }
     }
 
-    if (hasChildren && expandBehavior === 'item' && !selectionHandledByModifier) {
+    if (hasChildren && expandTrigger === 'item' && !selectionHandledByModifier) {
       onToggleExpand(node.id);
     }
   };
@@ -125,7 +125,7 @@ function TreeItem({
           onToggleExpand(node.id);
       }
     }
-    // If expandBehavior is 'item' and selectionMode is 'single' or 'multiple', 
+    // If expandTrigger is 'item' and selectionMode is 'single' or 'multiple', 
     // the selection part is already covered by handleItemClick (which covers the icon area).
     // No explicit selection call needed here to avoid double-processing or conflicts with checkbox mode.
   };
@@ -143,7 +143,7 @@ function TreeItem({
       className="[&[aria-selected=true]>div]:bg-accent"
     >
       <div
-        className="flex items-center in-data-[expand-behaviour=item]:cursor-pointer" 
+        className="flex items-center in-data-[expand-trigger=item]:cursor-pointer" 
         onClick={handleItemClick} 
       >
         {hasChildren && (
@@ -190,7 +190,7 @@ function TreeItem({
                 node={childNode} 
                 expandedIds={expandedIds} 
                 onToggleExpand={onToggleExpand} 
-                expandBehavior={expandBehavior} // Pass down the actual expand behavior
+                expandTrigger={expandTrigger} // Pass down the actual expand trigger
                 isSelected={childSelectionState.isSelected} 
                 onSelectNode={onSelectNode}
                 selectionMode={selectionMode}
@@ -206,9 +206,9 @@ function TreeItem({
   );
 }
 
-function Tree({ data, expandBehavior, selectionMode }: TreeProps) {
-  // Determine actual expandBehavior based on selectionMode if not explicitly provided
-  const actualExpandBehavior = expandBehavior ?? 
+function Tree({ data, expandTrigger, selectionMode }: TreeProps) {
+  // Determine actual expandTrigger based on selectionMode if not explicitly provided
+  const actualExpandTrigger = expandTrigger ?? 
     (selectionMode === 'checkbox' || selectionMode === 'multiple' ? 'icon' : 'item');
 
   const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
@@ -404,7 +404,7 @@ function Tree({ data, expandBehavior, selectionMode }: TreeProps) {
   };
 
   return (
-    <ul role="tree" data-expand-behaviour={actualExpandBehavior}>
+    <ul role="tree" data-expand-trigger={actualExpandTrigger}>
       {data.map(node => {
         const selectionState = selectionStatesMap.get(node.id) ?? { isSelected: false, isIndeterminate: false };
         return (
@@ -413,7 +413,7 @@ function Tree({ data, expandBehavior, selectionMode }: TreeProps) {
             node={node} 
             expandedIds={expandedIds} 
             onToggleExpand={toggleExpand} 
-            expandBehavior={actualExpandBehavior} // Pass the calculated behavior
+            expandTrigger={actualExpandTrigger} // Pass the calculated trigger
             isSelected={selectionState.isSelected} 
             onSelectNode={handleSelectNode}
             selectionMode={selectionMode}
