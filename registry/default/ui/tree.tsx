@@ -36,7 +36,7 @@
 // We will proceed steps by steps, so don't delete or edit this comment, we'll use it as a reference to track progresses.
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { ChevronDownIcon } from 'lucide-react';
 
 export interface TreeNode {
@@ -62,7 +62,7 @@ interface TreeItemProps {
   expandBehavior: 'icon' | 'item';
   // Selection related props
   isSelected: boolean; // This specific node's selection state
-  onSelectNode: (nodeId: string) => void;
+  onSelectNode: (nodeId: string, mode: 'toggle' | 'replace' | 'addRange') => void; // Updated signature
   selectionMode?: 'single' | 'multiple' | 'checkbox';
   selectedIds: Set<string>; // Pass the whole set for children
 }
@@ -74,28 +74,64 @@ function TreeItem({
   expandBehavior,
   // Selection props
   isSelected,
-  onSelectNode,
+  onSelectNode, // Updated signature
   selectionMode,
   selectedIds, // Receive the set
 }: TreeItemProps) {
   const isNodeExpanded = expandedIds.has(node.id);
   const hasChildren = node.children && node.children.length > 0;
 
-  const handleItemClick = () => {
-    if (selectionMode === 'single') {
-      onSelectNode(node.id);
+  const handleItemClick = (event: React.MouseEvent) => { 
+    let selectionHandledByModifier = false;
+
+    if (selectionMode === 'multiple') {
+      if (event.shiftKey) {
+        onSelectNode(node.id, 'addRange');
+        selectionHandledByModifier = true;
+      } else if (event.metaKey || event.ctrlKey) {
+        onSelectNode(node.id, 'toggle');
+        selectionHandledByModifier = true;
+      }
     }
-    if (hasChildren && expandBehavior === 'item') {
+
+    if (!selectionHandledByModifier) {
+      if (selectionMode === 'single' || selectionMode === 'multiple') {
+        onSelectNode(node.id, 'replace');
+      }
+    }
+    // TODO: Handle 'checkbox' selection later
+
+    // Only proceed to expand/collapse if selection was NOT handled by a modifier key pressing
+    if (hasChildren && expandBehavior === 'item' && !selectionHandledByModifier) {
       onToggleExpand(node.id);
     }
   };
   
   const handleIconClick = (event: React.MouseEvent) => {    
     event.stopPropagation(); 
-    onToggleExpand(node.id);
-    if (selectionMode === 'single' && expandBehavior === 'item') {
-      onSelectNode(node.id);
+    let selectionHandledByModifier = false;
+
+    // Icon click might also participate in selection if expandBehavior is 'item'
+    if (expandBehavior === 'item') {
+      if (selectionMode === 'multiple') {
+        if (event.shiftKey) {
+          onSelectNode(node.id, 'addRange');
+          selectionHandledByModifier = true;
+        } else if (event.metaKey || event.ctrlKey) {
+          onSelectNode(node.id, 'toggle');
+          selectionHandledByModifier = true;
+        }
+      }
+      if (!selectionHandledByModifier && (selectionMode === 'single' || selectionMode === 'multiple')){
+        onSelectNode(node.id, 'replace');
+      }
     }
+    
+    // Expansion is always handled by icon click, regardless of modifiers for selection above
+    // unless a specific UX choice is made to prevent expansion when e.g. shift-clicking icon.
+    // For now, icon click primarily toggles expansion.
+    onToggleExpand(node.id);
+    // If selection was also part of the icon click (due to expandBehavior='item'), it's already handled.
   };
 
   return (
@@ -108,7 +144,7 @@ function TreeItem({
     >
       <div
         className="flex items-center in-data-[expand-behaviour=item]:cursor-pointer" 
-        onClick={handleItemClick} 
+        onClick={handleItemClick}
       >
         {hasChildren && (
           <button 
@@ -123,7 +159,7 @@ function TreeItem({
             />
           </button>
         )}
-        <span>
+        <span className="select-none">
           {node.label}
         </span>
       </div>
@@ -152,6 +188,7 @@ function TreeItem({
 function Tree({ data, expandBehavior = 'item', selectionMode }: TreeProps) {
   const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+  const [lastSelectedId, setLastSelectedId] = useState<string | null>(null); // For Shift+Click anchor
 
   const toggleExpand = (nodeId: string) => {
     setExpandedIds(prevExpandedIds => {
@@ -165,11 +202,63 @@ function Tree({ data, expandBehavior = 'item', selectionMode }: TreeProps) {
     });
   };
 
-  const handleSelectNode = (nodeId: string) => {
+  // Helper function to get flat list of visible node IDs
+  // Using useCallback to potentially memoize if data/expandedIds don't change, though maybe overkill here
+  const getVisibleNodeIds = useCallback((nodes: TreeNode[], currentExpandedIds: Set<string>): string[] => {
+    let visibleIds: string[] = [];
+    nodes.forEach(node => {
+      visibleIds.push(node.id);
+      if (currentExpandedIds.has(node.id) && node.children) {
+        visibleIds = visibleIds.concat(getVisibleNodeIds(node.children, currentExpandedIds));
+      }
+    });
+    return visibleIds;
+  }, []); // Depends only on the function logic itself
+
+  const handleSelectNode = (nodeId: string, mode: 'toggle' | 'replace' | 'addRange') => { 
     if (selectionMode === 'single') {
       setSelectedIds(new Set([nodeId]));
+      setLastSelectedId(nodeId);
+    } else if (selectionMode === 'multiple') {
+      if (mode === 'replace') {
+        setSelectedIds(new Set([nodeId]));
+        setLastSelectedId(nodeId);
+      } else if (mode === 'toggle') {
+        setSelectedIds(prevSelectedIds => {
+          const newSelectedIds = new Set(prevSelectedIds);
+          if (newSelectedIds.has(nodeId)) {
+            newSelectedIds.delete(nodeId);
+            if (lastSelectedId === nodeId) setLastSelectedId(null);
+          } else {
+            newSelectedIds.add(nodeId);
+            setLastSelectedId(nodeId);
+          }
+          return newSelectedIds;
+        });
+      } else if (mode === 'addRange') {
+        if (lastSelectedId) {
+          const visibleIds = getVisibleNodeIds(data, expandedIds);
+          const anchorIndex = visibleIds.indexOf(lastSelectedId);
+          const targetIndex = visibleIds.indexOf(nodeId);
+
+          if (anchorIndex !== -1 && targetIndex !== -1) {
+            const start = Math.min(anchorIndex, targetIndex);
+            const end = Math.max(anchorIndex, targetIndex);
+            const rangeIds = visibleIds.slice(start, end + 1);
+            setSelectedIds(new Set(rangeIds)); // Replace selection with the range
+          } else {
+            // Anchor or target not visible, treat as replace
+            setSelectedIds(new Set([nodeId]));
+            setLastSelectedId(nodeId);
+          }
+        } else {
+          // If no anchor, Shift+Click behaves like a normal click/replace
+          setSelectedIds(new Set([nodeId]));
+          setLastSelectedId(nodeId);
+        }
+      }
     }
-    // TODO: Handle 'multiple' and 'checkbox' later
+    // TODO: Handle 'checkbox' later
   };
 
   return (
@@ -184,7 +273,7 @@ function Tree({ data, expandBehavior = 'item', selectionMode }: TreeProps) {
           isSelected={selectedIds.has(node.id)} 
           onSelectNode={handleSelectNode}
           selectionMode={selectionMode}
-          selectedIds={selectedIds} // Pass the set for children
+          selectedIds={selectedIds} 
         />
       ))}
     </ul>

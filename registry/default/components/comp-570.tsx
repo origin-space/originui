@@ -37,7 +37,8 @@ const data: TreeNode[] = [
         label: 'Albums',
         children: [
           { id: '10', label: 'Album1.mp3' },
-          { id: '11', label: 'Album2.flac' }
+          { id: '11', label: 'Album2.flac' },
+          { id: '13', label: 'Album4.flac' },
         ]
       }
     ]
@@ -49,7 +50,7 @@ const data: TreeNode[] = [
 ];
 
 export default function Component() {
-  return <Tree data={data} expandBehavior="item" selectionMode="single" />;
+  return <Tree data={data} expandBehavior="item" selectionMode="multiple" />;
 }
 
 
