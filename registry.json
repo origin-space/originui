@@ -10215,6 +10215,19 @@
       "meta": {
         "tags": ["tree"]
       }
+    },
+    {
+      "name": "comp-570", 
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-570.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree"]
+      }
     }
   ]
 }
