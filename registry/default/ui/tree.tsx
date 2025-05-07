@@ -34,6 +34,11 @@ interface TreeItemProps {
   // ARIA positional attributes
   levelSize?: number;
   itemIndex?: number;
+  // Keyboard navigation & focus
+  focusableId: string | null;
+  setFocusableId: (id: string | null) => void;
+  itemRef?: (element: HTMLLIElement | null) => void;
+  registerNodeRef: (id: string, el: HTMLLIElement | null) => void; // Added to pass down ref registration
 }
 
   /**
@@ -51,6 +56,10 @@ interface TreeItemProps {
    * @param selectionStatesMap A map of node IDs to their selection states.
    * @param levelSize The size of the current level.
    * @param itemIndex The index of the item in the current level.
+   * @param focusableId The ID of the currently focusable item.
+   * @param setFocusableId Function to set the focusable ID.
+   * @param itemRef Optional ref callback for the item.
+   * @param registerNodeRef Function to register the node ref.
    */
 function TreeItem({
   node,
@@ -67,6 +76,11 @@ function TreeItem({
   // ARIA positional attributes
   levelSize,
   itemIndex,
+  // Keyboard navigation & focus
+  focusableId,
+  setFocusableId,
+  itemRef,
+  registerNodeRef, // Added
 }: TreeItemProps) {
   const isNodeExpanded = expandedIds.has(node.id);
   const hasChildren = node.children && node.children.length > 0;
@@ -79,6 +93,7 @@ function TreeItem({
   }, [isIndeterminate, selectionMode]);
 
   const handleItemClick = (event: React.MouseEvent) => { 
+    setFocusableId(node.id);
     if (selectionMode === 'checkbox') {
       if (expandTrigger === 'icon') {
         // When expandTrigger is 'icon', item click toggles the checkbox selection.
@@ -118,6 +133,7 @@ function TreeItem({
   };
 
   const handleIconClick = (event: React.MouseEvent) => {    
+    setFocusableId(node.id);
     event.stopPropagation(); 
 
     if (selectionMode === 'multiple' && (event.shiftKey || event.metaKey || event.ctrlKey)) {
@@ -139,13 +155,16 @@ function TreeItem({
   };
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFocusableId(node.id);
     onSelectNode(node.id, 'checkbox', event.target.checked);
   };
 
   return (
     <li 
       key={node.id} 
+      ref={itemRef} // For focus management. itemRef is already (el) => registerNodeRef(node.id, el)
       role="treeitem" 
+      tabIndex={node.id === focusableId ? 0 : -1} // Roving tabindex
       aria-expanded={hasChildren ? isNodeExpanded : undefined}
       aria-selected={selectionMode && selectionMode !== 'checkbox' ? isSelected : undefined}
       aria-setsize={levelSize}
@@ -162,6 +181,7 @@ function TreeItem({
             onClick={handleIconClick} 
             aria-label={isNodeExpanded ? `Collapse ${node.label}` : `Expand ${node.label}`}
             className="mr-1 p-0.5 border-0 bg-transparent cursor-pointer"
+            tabIndex={-1}
           >
             <ChevronDownIcon 
               className={`transition-transform duration-100 ease-in-out ${isNodeExpanded ? 'rotate-0' : '-rotate-90'}`} 
@@ -185,6 +205,7 @@ function TreeItem({
             onClick={(e) => e.stopPropagation()} // Prevent item click on div from firing
             aria-label={`Select ${node.label}`}
             className="mr-2" // Minimal styling
+            tabIndex={-1}
           />
         )}        
         <span className="select-none">
@@ -210,6 +231,10 @@ function TreeItem({
                 selectionStatesMap={selectionStatesMap} // Pass the map down recursively
                 levelSize={node.children!.length} // Pass levelSize for children
                 itemIndex={childIndex + 1} // Pass itemIndex for children (1-based)
+                focusableId={focusableId} // Pass focusableId down
+                setFocusableId={setFocusableId} // Pass setFocusableId down
+                itemRef={(el: HTMLLIElement | null) => registerNodeRef(childNode.id, el)} // Use passed registerNodeRef for children
+                registerNodeRef={registerNodeRef} // Pass down registerNodeRef
               />
             );
           })}
@@ -227,8 +252,9 @@ function Tree({ data, expandTrigger, selectionMode }: TreeProps) {
   const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [lastSelectedId, setLastSelectedId] = useState<string | null>(null); // For Shift+Click anchor
+  const [focusableId, setFocusableId] = useState<string | null>(null); // For roving tabindex
+  const nodeRefs = useRef(new Map<string, HTMLLIElement | null>()); // To store refs to LI elements
 
-  // --- Start: Node mapping and descendant helpers ---
   const { nodeMap, parentIdMap } = useMemo(() => {
     const newParentIdMap = new Map<string, string>();
     const newNodeMap = new Map<string, TreeNode>();
@@ -247,50 +273,67 @@ function Tree({ data, expandTrigger, selectionMode }: TreeProps) {
     return { nodeMap: newNodeMap, parentIdMap: newParentIdMap };
   }, [data]);
 
+  // Function to get all descendant IDs, needed for checkbox selection logic
   const getAllDescendantIds = useCallback((nodeId: string, includeSelf = false): string[] => {
     const descendants: string[] = [];
-    const node = nodeMap.get(nodeId);
-    if (includeSelf) {
+    const currentProcessingNode = nodeMap.get(nodeId); // Renamed to avoid conflict with 'node' prop in TreeItem
+    if (includeSelf && currentProcessingNode) {
       descendants.push(nodeId);
     }
-    function findDescendantsRecursive(currentNode: TreeNode) {
-      if (currentNode.children) {
-        for (const child of currentNode.children) {
+    function findDescendantsRecursive(n: TreeNode) { // Renamed param to avoid conflict
+      if (n.children) {
+        for (const child of n.children) {
           descendants.push(child.id);
           findDescendantsRecursive(child);
         }
       }
     }
-    if (node) {
-      findDescendantsRecursive(node);
+    if (currentProcessingNode) {
+      findDescendantsRecursive(currentProcessingNode);
     }
     return descendants;
   }, [nodeMap]);
 
-  const toggleExpand = (nodeId: string) => {
-    setExpandedIds(prevExpandedIds => {
-      const newExpandedIds = new Set(prevExpandedIds);
-      if (newExpandedIds.has(nodeId)) {
-        newExpandedIds.delete(nodeId);
-      } else {
-        newExpandedIds.add(nodeId);
-      }
-      return newExpandedIds;
-    });
-  };
-
-  const getVisibleNodeIds = useCallback((nodes: TreeNode[], currentExpandedIds: Set<string>): string[] => {
+  const getVisibleNodeIds = useCallback((nodesToScan: TreeNode[], currentExpandedIds: Set<string>): string[] => { // Renamed 'nodes' param
     let visibleIds: string[] = [];
-    nodes.forEach(node => {
-      visibleIds.push(node.id);
-      if (currentExpandedIds.has(node.id) && node.children) {
-        visibleIds = visibleIds.concat(getVisibleNodeIds(node.children, currentExpandedIds));
+    nodesToScan.forEach(n => { // Renamed 'node' param
+      visibleIds.push(n.id);
+      if (currentExpandedIds.has(n.id) && n.children) {
+        visibleIds = visibleIds.concat(getVisibleNodeIds(n.children, currentExpandedIds));
       }
     });
     return visibleIds;
   }, []);
 
-  // --- Start: Selection States (isSelected, isIndeterminate) Calculation ---
+  useEffect(() => {
+    // Initialize or update focusableId if data changes or current focusableId becomes invalid
+    const visibleIds = getVisibleNodeIds(data, expandedIds);
+    if (visibleIds.length > 0) {
+      if (!focusableId || !visibleIds.includes(focusableId)) {
+        setFocusableId(visibleIds[0]);
+      }
+    } else {
+      setFocusableId(null);
+    }
+  }, [data, expandedIds, focusableId, getVisibleNodeIds]); // Re-run if data or expansion changes
+
+  useEffect(() => {
+    // Focus the element when focusableId changes
+    if (focusableId) {
+      const elementToFocus = nodeRefs.current.get(focusableId);
+      elementToFocus?.focus();
+    }
+  }, [focusableId]);
+
+  // Callback to register node refs, passed down to TreeItem
+  const registerNodeRef = useCallback((id: string, el: HTMLLIElement | null) => {
+    if (el) {
+      nodeRefs.current.set(id, el);
+    } else {
+      nodeRefs.current.delete(id);
+    }
+  }, []);
+
   const selectionStatesMap = useMemo(() => {
     const newSelectionStates = new Map<string, { isSelected: boolean; isIndeterminate: boolean }>();
 
@@ -345,7 +388,25 @@ function Tree({ data, expandTrigger, selectionMode }: TreeProps) {
   }, [selectedIds, nodeMap, data]); // Removed parentIdMap as it's not directly used in this refined calculation
   // --- End: Selection States Calculation ---
 
+  const toggleExpand = (nodeId: string) => {
+    setExpandedIds(prevExpandedIds => {
+      const newExpandedIds = new Set(prevExpandedIds);
+      if (newExpandedIds.has(nodeId)) {
+        newExpandedIds.delete(nodeId);
+      } else {
+        newExpandedIds.add(nodeId);
+      }
+      return newExpandedIds;
+    });
+  };
+
   const handleSelectNode = (nodeId: string, mode: 'toggle' | 'replace' | 'addRange' | 'checkbox', isChecked?: boolean) => { 
+    // Ensure focusableId is updated when a node is selected programmatically or via interaction
+    // This might already be handled by individual click handlers, but good for programmatic changes too.
+    if (nodeMap.has(nodeId)) { // Check if node is valid before setting focus
+        setFocusableId(nodeId);
+    }
+
     if (selectionMode === 'checkbox' && mode === 'checkbox') {
       const descendantIds = getAllDescendantIds(nodeId, true); // include self
       const newSelectedIds = new Set(selectedIds);
@@ -416,8 +477,74 @@ function Tree({ data, expandTrigger, selectionMode }: TreeProps) {
     // is now addressed by the 'selectionMode === 'checkbox' && mode === 'checkbox'' block above.
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLUListElement>) => {
+    if (!focusableId) return;
+    const currentFocusedNode = nodeMap.get(focusableId);
+    if (!currentFocusedNode) return;
+
+    let preventDefault = true;
+
+    switch (event.key) {
+      case 'ArrowDown': {
+        const visibleIds = getVisibleNodeIds(data, expandedIds);
+        const currentIndex = visibleIds.indexOf(focusableId);
+        if (currentIndex < visibleIds.length - 1) {
+          setFocusableId(visibleIds[currentIndex + 1]);
+        }
+        break;
+      }
+      case 'ArrowUp': {
+        const visibleIds = getVisibleNodeIds(data, expandedIds);
+        const currentIndex = visibleIds.indexOf(focusableId);
+        if (currentIndex > 0) {
+          setFocusableId(visibleIds[currentIndex - 1]);
+        }
+        break;
+      }
+      case 'ArrowRight': {
+        if (currentFocusedNode.children && currentFocusedNode.children.length > 0) {
+          if (!expandedIds.has(focusableId)) {
+            toggleExpand(focusableId); // Expand if collapsed
+          } else {
+            setFocusableId(currentFocusedNode.children[0].id); // Move to first child if expanded
+          }
+        }
+        break;
+      }
+      case 'ArrowLeft': {
+        if (currentFocusedNode.children && currentFocusedNode.children.length > 0 && expandedIds.has(focusableId)) {
+          toggleExpand(focusableId); // Collapse if expanded
+        } else {
+          const parentId = parentIdMap.get(focusableId);
+          if (parentId) {
+            setFocusableId(parentId); // Move to parent if collapsed or leaf
+          }
+        }
+        break;
+      }
+      case 'Enter':
+      case ' ':
+        if (selectionMode === 'checkbox'){
+          const currentSelectionState = selectionStatesMap.get(focusableId);
+          handleSelectNode(focusableId, 'checkbox', !(currentSelectionState?.isSelected));
+        } else if (selectionMode === 'single') {
+          handleSelectNode(focusableId, 'replace');
+        } else if (selectionMode === 'multiple'){
+          handleSelectNode(focusableId, 'toggle');
+        }
+        // If not selectable, space/enter might still expand/collapse as per some patterns, but ARIA spec focuses on selection.
+        break;
+      default:
+        preventDefault = false;
+        break;
+    }
+    if (preventDefault) {
+      event.preventDefault();
+    }
+  };
+
   return (
-    <ul role="tree" data-expand-trigger={actualExpandTrigger}>
+    <ul role="tree" data-expand-trigger={actualExpandTrigger} onKeyDown={handleKeyDown}>
       {data.map((node, index) => { 
         const selectionState = selectionStatesMap.get(node.id) ?? { isSelected: false, isIndeterminate: false };
         return (
@@ -426,15 +553,19 @@ function Tree({ data, expandTrigger, selectionMode }: TreeProps) {
             node={node} 
             expandedIds={expandedIds} 
             onToggleExpand={toggleExpand} 
-            expandTrigger={actualExpandTrigger} // Pass the calculated trigger
+            expandTrigger={actualExpandTrigger} 
             isSelected={selectionState.isSelected} 
             onSelectNode={handleSelectNode}
             selectionMode={selectionMode}
-            selectedIds={selectedIds} // Still needed for TreeItem's children processing
+            selectedIds={selectedIds} 
             isIndeterminate={selectionState.isIndeterminate}
-            selectionStatesMap={selectionStatesMap} // Pass the map to top-level items
-            levelSize={data.length} // Pass levelSize for top-level items
-            itemIndex={index + 1} // Pass itemIndex for top-level items (1-based)
+            selectionStatesMap={selectionStatesMap} 
+            levelSize={data.length} 
+            itemIndex={index + 1} 
+            focusableId={focusableId}
+            setFocusableId={setFocusableId}
+            itemRef={(el: HTMLLIElement | null) => registerNodeRef(node.id, el)} // Register top-level item's ref
+            registerNodeRef={registerNodeRef} // Pass down the function for children to use
           />
         );
       })}
