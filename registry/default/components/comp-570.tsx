@@ -50,7 +50,18 @@ const data: TreeNode[] = [
 ];
 
 export default function Component() {
-  return <Tree data={data} expandBehavior="item" selectionMode="checkbox" />;
+  return (
+    <div className="flex flex-col gap-4">
+      <Tree data={data} expandBehavior="icon" />
+      <Tree data={data} expandBehavior="icon" selectionMode="single" />
+      <Tree data={data} expandBehavior="icon" selectionMode="multiple" />
+      <Tree data={data} expandBehavior="icon" selectionMode="checkbox" /> 
+      <Tree data={data} expandBehavior="item" />
+      <Tree data={data} expandBehavior="item" selectionMode="single" />
+      <Tree data={data} expandBehavior="item" selectionMode="multiple" />
+      <Tree data={data} expandBehavior="item" selectionMode="checkbox" />
+    </div>
+  )
 }
 
 

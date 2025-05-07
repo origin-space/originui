@@ -111,11 +111,19 @@ function TreeItem({
 
   const handleIconClick = (event: React.MouseEvent) => {    
     event.stopPropagation(); 
-    // Icon click always toggles expansion.
-    // For 'item' expandBehavior in non-checkbox modes, selection is handled by handleItemClick.
-    // In 'checkbox' mode, icon click should not affect selection.
-    if (hasChildren) { 
-        onToggleExpand(node.id);
+
+    if (selectionMode === 'multiple' && (event.shiftKey || event.metaKey || event.ctrlKey)) {
+      // Modifier key is pressed in multiple selection mode: PERFORM SELECTION, DO NOT EXPAND
+      if (event.shiftKey) {
+        onSelectNode(node.id, 'addRange');
+      } else { // metaKey or ctrlKey
+        onSelectNode(node.id, 'toggle');
+      }
+    } else {
+      // No modifier key in multi-select, OR not in multi-select mode: PERFORM EXPANSION if applicable
+      if (hasChildren) { 
+          onToggleExpand(node.id);
+      }
     }
     // If expandBehavior is 'item' and selectionMode is 'single' or 'multiple', 
     // the selection part is already covered by handleItemClick (which covers the icon area).
