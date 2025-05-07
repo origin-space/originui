@@ -140,7 +140,7 @@ function TreeItem({
       role="treeitem" 
       aria-expanded={hasChildren ? isNodeExpanded : undefined}
       aria-selected={selectionMode && selectionMode !== 'checkbox' ? isSelected : undefined}
-      className={selectionMode && selectionMode !== 'checkbox' && isSelected ? "[&[aria-selected=true]>div]:bg-accent" : ""}
+      className="[&[aria-selected=true]>div]:bg-accent"
     >
       <div
         className="flex items-center in-data-[expand-behaviour=item]:cursor-pointer" 
