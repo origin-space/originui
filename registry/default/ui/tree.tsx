@@ -31,6 +31,9 @@ interface TreeItemProps {
   selectedIds: Set<string>; // Pass the whole set for children
   isIndeterminate?: boolean; // Will be added in a future step for checkbox indeterminate state
   selectionStatesMap: Map<string, { isSelected: boolean; isIndeterminate: boolean }>; // Added selectionStatesMap
+  // ARIA positional attributes
+  levelSize?: number;
+  itemIndex?: number;
 }
 
   /**
@@ -46,6 +49,8 @@ interface TreeItemProps {
    * @param selectedIds Set of selected node IDs.
    * @param isIndeterminate Whether the item's checkbox is in an indeterminate state.
    * @param selectionStatesMap A map of node IDs to their selection states.
+   * @param levelSize The size of the current level.
+   * @param itemIndex The index of the item in the current level.
    */
 function TreeItem({
   node,
@@ -59,6 +64,9 @@ function TreeItem({
   selectedIds,
   isIndeterminate, 
   selectionStatesMap, // Added selectionStatesMap
+  // ARIA positional attributes
+  levelSize,
+  itemIndex,
 }: TreeItemProps) {
   const isNodeExpanded = expandedIds.has(node.id);
   const hasChildren = node.children && node.children.length > 0;
@@ -140,6 +148,8 @@ function TreeItem({
       role="treeitem" 
       aria-expanded={hasChildren ? isNodeExpanded : undefined}
       aria-selected={selectionMode && selectionMode !== 'checkbox' ? isSelected : undefined}
+      aria-setsize={levelSize}
+      aria-posinset={itemIndex}
       className="[&[aria-selected=true]>div]:bg-accent"
     >
       <div
@@ -183,7 +193,7 @@ function TreeItem({
       </div>
       {hasChildren && isNodeExpanded && (
         <ul role="group" className="ms-4">
-          {node.children!.map(childNode => {
+          {node.children!.map((childNode, childIndex) => { 
             const childSelectionState = selectionStatesMap.get(childNode.id) ?? { isSelected: false, isIndeterminate: false };
             return (
               <TreeItem 
@@ -198,6 +208,8 @@ function TreeItem({
                 selectedIds={selectedIds} // Pass down for consistency, though child's state comes from map
                 isIndeterminate={childSelectionState.isIndeterminate}
                 selectionStatesMap={selectionStatesMap} // Pass the map down recursively
+                levelSize={node.children!.length} // Pass levelSize for children
+                itemIndex={childIndex + 1} // Pass itemIndex for children (1-based)
               />
             );
           })}
@@ -406,7 +418,7 @@ function Tree({ data, expandTrigger, selectionMode }: TreeProps) {
 
   return (
     <ul role="tree" data-expand-trigger={actualExpandTrigger}>
-      {data.map(node => {
+      {data.map((node, index) => { 
         const selectionState = selectionStatesMap.get(node.id) ?? { isSelected: false, isIndeterminate: false };
         return (
           <TreeItem 
@@ -421,6 +433,8 @@ function Tree({ data, expandTrigger, selectionMode }: TreeProps) {
             selectedIds={selectedIds} // Still needed for TreeItem's children processing
             isIndeterminate={selectionState.isIndeterminate}
             selectionStatesMap={selectionStatesMap} // Pass the map to top-level items
+            levelSize={data.length} // Pass levelSize for top-level items
+            itemIndex={index + 1} // Pass itemIndex for top-level items (1-based)
           />
         );
       })}
