@@ -49,6 +49,7 @@ export interface TreeNode {
 interface TreeProps {
   data: TreeNode[];
   expandBehavior?: 'icon' | 'item';
+  selectionMode?: 'single' | 'multiple' | 'checkbox'; // Added selectionMode
   // defaultExpandedIds?: string[]; // For uncontrolled expansion later
   // expandedIds?: string[];        // For controlled expansion later
   // onExpand?: (nodeId: string, isExpanded: boolean) => void; // Event handler later
@@ -56,35 +57,54 @@ interface TreeProps {
 
 interface TreeItemProps {
   node: TreeNode;
-  expandedIds: Set<string>; // Pass the whole set
+  expandedIds: Set<string>; 
   onToggleExpand: (nodeId: string) => void;
   expandBehavior: 'icon' | 'item';
+  // Selection related props
+  isSelected: boolean; // This specific node's selection state
+  onSelectNode: (nodeId: string) => void;
+  selectionMode?: 'single' | 'multiple' | 'checkbox';
+  selectedIds: Set<string>; // Pass the whole set for children
 }
 
-function TreeItem({ node, expandedIds, onToggleExpand, expandBehavior }: TreeItemProps) {
-  const isExpanded = expandedIds.has(node.id);
+function TreeItem({
+  node,
+  expandedIds,
+  onToggleExpand,
+  expandBehavior,
+  // Selection props
+  isSelected,
+  onSelectNode,
+  selectionMode,
+  selectedIds, // Receive the set
+}: TreeItemProps) {
+  const isNodeExpanded = expandedIds.has(node.id);
   const hasChildren = node.children && node.children.length > 0;
 
-  const handleItemClick = () => {    
+  const handleItemClick = () => {
+    if (selectionMode === 'single') {
+      onSelectNode(node.id);
+    }
     if (hasChildren && expandBehavior === 'item') {
       onToggleExpand(node.id);
     }
-    // Later, this click will also handle selection based on props
   };
-
+  
   const handleIconClick = (event: React.MouseEvent) => {    
-    event.stopPropagation(); // Prevent label click if icon is part of the same clickable area
+    event.stopPropagation(); 
     onToggleExpand(node.id);
+    if (selectionMode === 'single' && expandBehavior === 'item') {
+      onSelectNode(node.id);
+    }
   };
 
   return (
     <li 
       key={node.id} 
       role="treeitem" 
-      aria-expanded={hasChildren ? isExpanded : undefined}
-      // If expandBehavior is 'item', the whole li could be clickable in theory,
-      // but current setup has click on span (label) and icon.
-      // We might consolidate this later if the LI itself should capture the click for 'item' behavior.
+      aria-expanded={hasChildren ? isNodeExpanded : undefined}
+      aria-selected={selectionMode && selectionMode !== 'checkbox' ? isSelected : undefined}
+      className="[&[aria-selected=true]>div]:bg-accent"
     >
       <div
         className="flex items-center in-data-[expand-behaviour=item]:cursor-pointer" 
@@ -92,13 +112,13 @@ function TreeItem({ node, expandedIds, onToggleExpand, expandBehavior }: TreeIte
       >
         {hasChildren && (
           <button 
-            type="button" // Good practice for non-submit buttons
+            type="button"
             onClick={handleIconClick} 
-            aria-label={isExpanded ? `Collapse ${node.label}` : `Expand ${node.label}`}
+            aria-label={isNodeExpanded ? `Collapse ${node.label}` : `Expand ${node.label}`}
             className="mr-1 p-0.5 border-0 bg-transparent cursor-pointer"
           >
             <ChevronDownIcon 
-              className={`transition-transform duration-100 ease-in-out ${isExpanded ? 'rotate-0' : '-rotate-90'}`} 
+              className={`transition-transform duration-100 ease-in-out ${isNodeExpanded ? 'rotate-0' : '-rotate-90'}`} 
               size={16}
             />
           </button>
@@ -107,7 +127,7 @@ function TreeItem({ node, expandedIds, onToggleExpand, expandBehavior }: TreeIte
           {node.label}
         </span>
       </div>
-      {hasChildren && isExpanded && (
+      {hasChildren && isNodeExpanded && (
         <ul role="group" className="ms-4">
           {node.children!.map(childNode => (
             <TreeItem 
@@ -116,6 +136,11 @@ function TreeItem({ node, expandedIds, onToggleExpand, expandBehavior }: TreeIte
               expandedIds={expandedIds} 
               onToggleExpand={onToggleExpand} 
               expandBehavior={expandBehavior}
+              // Correctly pass selection props for children
+              isSelected={selectedIds.has(childNode.id)} // Determine child's selection status
+              onSelectNode={onSelectNode}
+              selectionMode={selectionMode}
+              selectedIds={selectedIds} // Pass the set down for further recursion
             />
           ))}
         </ul>
@@ -124,8 +149,9 @@ function TreeItem({ node, expandedIds, onToggleExpand, expandBehavior }: TreeIte
   );
 }
 
-function Tree({ data, expandBehavior = 'item' }: TreeProps) {
+function Tree({ data, expandBehavior = 'item', selectionMode }: TreeProps) {
   const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
 
   const toggleExpand = (nodeId: string) => {
     setExpandedIds(prevExpandedIds => {
@@ -139,6 +165,13 @@ function Tree({ data, expandBehavior = 'item' }: TreeProps) {
     });
   };
 
+  const handleSelectNode = (nodeId: string) => {
+    if (selectionMode === 'single') {
+      setSelectedIds(new Set([nodeId]));
+    }
+    // TODO: Handle 'multiple' and 'checkbox' later
+  };
+
   return (
     <ul role="tree" data-expand-behaviour={expandBehavior}>
       {data.map(node => (
@@ -148,6 +181,10 @@ function Tree({ data, expandBehavior = 'item' }: TreeProps) {
           expandedIds={expandedIds} 
           onToggleExpand={toggleExpand} 
           expandBehavior={expandBehavior}
+          isSelected={selectedIds.has(node.id)} 
+          onSelectNode={handleSelectNode}
+          selectionMode={selectionMode}
+          selectedIds={selectedIds} // Pass the set for children
         />
       ))}
     </ul>

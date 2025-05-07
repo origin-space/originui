@@ -49,5 +49,7 @@ const data: TreeNode[] = [
 ];
 
 export default function Component() {
-  return <Tree data={data} expandBehavior="icon" />;
+  return <Tree data={data} expandBehavior="item" selectionMode="single" />;
 }
+
+
