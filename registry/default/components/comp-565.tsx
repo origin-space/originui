@@ -63,7 +63,7 @@ export default function Component() {
             data-selected={item.isSelected()}
             data-folder={item.isFolder()}
             aria-expanded={item.isExpanded()}
-            className="outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] hover:bg-accent data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 ms-[calc(var(--tree-level)*1.5rem)] data-[folder=false]:ps-3 data-[folder=false]:ms-[calc(var(--tree-level)*1.5rem-0.25rem)] focus:z-10"
+            className="focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] hover:bg-accent data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 ms-[calc(var(--tree-level)*var(--spacing)*6)] data-[folder=false]:ps-3 data-[folder=false]:ms-[calc(var(--tree-level)*var(--spacing)*6-var(--spacing))] focus:z-10"
           >
               {item.isFolder() && (
                 <ChevronDownIcon className="text-muted-foreground pointer-events-none size-4 in-aria-[expanded=false]:-rotate-90" />

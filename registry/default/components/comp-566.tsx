@@ -52,7 +52,7 @@ export default function Component() {
   });
 
   return (
-    <div {...tree.getContainerProps()} className="flex flex-col relative before:absolute before:inset-0 before:bg-[repeating-linear-gradient(to_right,transparent_0,transparent_calc(1.5rem-1px),var(--border)_calc(1.5rem-1px),var(--border)_1.5rem)] before:-ms-2">
+    <div {...tree.getContainerProps()} className="flex flex-col relative before:absolute before:inset-0 before:bg-[repeating-linear-gradient(to_right,transparent_0,transparent_calc(var(--spacing)*6-1px),var(--border)_calc(var(--spacing)*6-1px),var(--border)_calc(var(--spacing)*6))] before:-ms-2">
       {tree.getItems().map((item) => {
         return (
           <button
@@ -63,7 +63,7 @@ export default function Component() {
             data-selected={item.isSelected()}
             data-folder={item.isFolder()}
             aria-expanded={item.isExpanded()}
-            className="border-y border-background bg-background outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] hover:bg-accent data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 ms-[calc(var(--tree-level)*1.5rem)] focus:z-10"
+            className="border-y border-background bg-background focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] hover:bg-accent data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 ms-[calc(var(--tree-level)*var(--spacing)*6)] focus:z-10"
           >
               {item.isFolder() && (
                 <ChevronDownIcon className="text-muted-foreground pointer-events-none size-4 in-aria-[expanded=false]:-rotate-90" />

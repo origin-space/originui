@@ -48,15 +48,14 @@ function TreeItem({ itemInstance }: RecursiveRenderProps) {
   const childrenInstances = itemInstance.getChildren();
 
   return (
-    <React.Fragment key={itemInstance.getId()}>
+    <React.Fragment>
       <button
         {...itemInstance.getProps()}
-        style={{ '--tree-level': itemInstance.getItemMeta().level } as React.CSSProperties}
         data-focus={itemInstance.isFocused()}
         data-selected={itemInstance.isSelected()}
         data-folder={isFolder}
         aria-expanded={isExpanded}
-        className="outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] hover:bg-accent data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 focus:z-10"
+        className="focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] hover:bg-accent data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 focus:z-10"
       >
         {isFolder && (
           <ChevronDownIcon className="text-muted-foreground pointer-events-none size-4 in-aria-[expanded=false]:-rotate-90" />
