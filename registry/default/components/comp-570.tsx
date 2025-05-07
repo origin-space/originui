@@ -50,7 +50,7 @@ const data: TreeNode[] = [
 ];
 
 export default function Component() {
-  return <Tree data={data} expandBehavior="item" selectionMode="multiple" />;
+  return <Tree data={data} expandBehavior="item" selectionMode="checkbox" />;
 }
 
 
