@@ -485,19 +485,57 @@ function Tree({ data, expandTrigger, selectionMode }: TreeProps) {
     let preventDefault = true;
 
     switch (event.key) {
-      case 'ArrowDown': {
-        const visibleIds = getVisibleNodeIds(data, expandedIds);
-        const currentIndex = visibleIds.indexOf(focusableId);
-        if (currentIndex < visibleIds.length - 1) {
-          setFocusableId(visibleIds[currentIndex + 1]);
-        }
-        break;
-      }
+      case 'ArrowDown':
       case 'ArrowUp': {
         const visibleIds = getVisibleNodeIds(data, expandedIds);
         const currentIndex = visibleIds.indexOf(focusableId);
-        if (currentIndex > 0) {
-          setFocusableId(visibleIds[currentIndex - 1]);
+        let newFocusableId: string | null = null;
+
+        if (event.key === 'ArrowDown' && currentIndex < visibleIds.length - 1) {
+          newFocusableId = visibleIds[currentIndex + 1];
+        } else if (event.key === 'ArrowUp' && currentIndex > 0) {
+          newFocusableId = visibleIds[currentIndex - 1];
+        }
+
+        if (newFocusableId) {
+          if (selectionMode === 'multiple' && event.shiftKey) {
+            let anchorId = lastSelectedId;
+            if (!anchorId) { 
+              // No existing anchor, the item *before* moving becomes the anchor.
+              // This first Shift+Arrow action selects from current focus to new focus.
+              anchorId = focusableId; // The item we are moving FROM.
+              setLastSelectedId(focusableId); // Set it as the persistent anchor.
+
+              // Select both the anchor and the new item as the initial range.
+              const initialRangeSelection = new Set<string>();
+              initialRangeSelection.add(anchorId);
+              initialRangeSelection.add(newFocusableId);
+              setSelectedIds(initialRangeSelection);
+            } else {
+              // Existing anchor, select range from anchorId to newFocusableId.
+              const anchorIndex = visibleIds.indexOf(anchorId);
+              const targetIndex = visibleIds.indexOf(newFocusableId);
+
+              if (anchorIndex !== -1 && targetIndex !== -1) {
+                const start = Math.min(anchorIndex, targetIndex);
+                const end = Math.max(anchorIndex, targetIndex);
+                const rangeIdsToSelect = visibleIds.slice(start, end + 1);
+                setSelectedIds(new Set(rangeIdsToSelect)); // This replaces the current selection with the new range.
+              } else {
+                // Fallback: if anchor/target is somehow not in visibleIds (shouldn't happen).
+                // Select just the new focusable ID and set it as the new anchor.
+                setSelectedIds(new Set([newFocusableId]));
+                setLastSelectedId(newFocusableId);
+              }
+            }
+          } else if (!event.shiftKey && selectionMode === 'multiple') {
+            // If moving without shift in multiple selection mode, clear the anchor 
+            // because the next selection (e.g. Space) should start a new selection / anchor.
+            // However, standard behavior usually keeps the selection until a new selection action (like space/enter or click) happens.
+            // For now, we only move focus if not shift-selecting. Actual selection change happens with Space/Enter.
+          }
+          // Always move focus, regardless of Shift or selection mode during arrow navigation.
+          setFocusableId(newFocusableId);
         }
         break;
       }
@@ -523,16 +561,17 @@ function Tree({ data, expandTrigger, selectionMode }: TreeProps) {
         break;
       }
       case 'Enter':
-      case ' ':
+      case ' ': // Space key
         if (selectionMode === 'checkbox'){
           const currentSelectionState = selectionStatesMap.get(focusableId);
           handleSelectNode(focusableId, 'checkbox', !(currentSelectionState?.isSelected));
         } else if (selectionMode === 'single') {
-          handleSelectNode(focusableId, 'replace');
+          handleSelectNode(focusableId, 'replace'); // replace sets lastSelectedId
         } else if (selectionMode === 'multiple'){
-          handleSelectNode(focusableId, 'toggle');
+          handleSelectNode(focusableId, 'toggle'); // toggle sets lastSelectedId
         }
         // If not selectable, space/enter might still expand/collapse as per some patterns, but ARIA spec focuses on selection.
+        // preventDefault = true; // Already set by default for handled keys
         break;
       default:
         preventDefault = false;
