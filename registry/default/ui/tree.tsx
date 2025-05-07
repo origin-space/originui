@@ -66,7 +66,7 @@ function TreeItem({ node, expandedIds, onToggleExpand, expandBehavior }: TreeIte
   const hasChildren = node.children && node.children.length > 0;
 
   const handleItemClick = () => {    
-    if (hasChildren) {
+    if (hasChildren && expandBehavior === 'item') {
       onToggleExpand(node.id);
     }
     // Later, this click will also handle selection based on props
@@ -87,21 +87,28 @@ function TreeItem({ node, expandedIds, onToggleExpand, expandBehavior }: TreeIte
       // We might consolidate this later if the LI itself should capture the click for 'item' behavior.
     >
       <div
-        className="flex items-center in-data-[expand-behaviour=item]:cursor-pointer"
+        className="flex items-center in-data-[expand-behaviour=item]:cursor-pointer" 
         onClick={handleItemClick} 
       >
         {hasChildren && (
-          <ChevronDownIcon 
+          <button 
+            type="button" // Good practice for non-submit buttons
             onClick={handleIconClick} 
-            size={16}
-          />
+            aria-label={isExpanded ? `Collapse ${node.label}` : `Expand ${node.label}`}
+            className="mr-1 p-0.5 border-0 bg-transparent cursor-pointer"
+          >
+            <ChevronDownIcon 
+              className={`transition-transform duration-100 ease-in-out ${isExpanded ? 'rotate-0' : '-rotate-90'}`} 
+              size={16}
+            />
+          </button>
         )}
         <span>
           {node.label}
         </span>
       </div>
       {hasChildren && isExpanded && (
-        <ul role="group" className="ms-4"> 
+        <ul role="group" className="ms-4">
           {node.children!.map(childNode => (
             <TreeItem 
               key={childNode.id} 
