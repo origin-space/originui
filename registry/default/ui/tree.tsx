@@ -92,8 +92,8 @@ function TreeItem<T = any>({
         data-slot="tree-item"
         style={mergedStyle}      
         className={cn("outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 ps-(--tree-padding) not-last:pb-0.5 z-10 focus:z-20", className)}
-        data-focus={typeof item.isFocused === 'function' ? item.isFocused() : false }
-        data-folder={typeof item.isFolder === 'function' ? item.isFolder() : false }
+        data-focus={typeof item.isFocused === 'function' ? item.isFocused() : false}
+        data-folder={typeof item.isFolder === 'function' ? item.isFolder() : false}
         data-selected={typeof item.isSelected === 'function' ? item.isSelected() : false}
         data-drag-target={typeof item.isDragTarget === 'function' ? item.isDragTarget() : false}
         aria-expanded={item.isExpanded()}      
