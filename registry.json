@@ -10241,6 +10241,19 @@
       "meta": {
         "tags": ["tree"]
       }
+    },
+    {
+      "name": "comp-572", 
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-572.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree"]
+      }
     }
   ]
 }
