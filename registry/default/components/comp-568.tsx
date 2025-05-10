@@ -3,101 +3,125 @@
 import React from "react";
 import {
   hotkeysCoreFeature,
-  selectionFeature,
   syncDataLoaderFeature,
-  type ItemInstance,
 } from "@headless-tree/core";
 import { useTree } from "@headless-tree/react";
-import { ChevronDownIcon } from "lucide-react";
+import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree";
 
 interface Item {
   name: string;
+  href?: string;
   children?: string[];
+  current?: boolean;
 }
 
 const items: Record<string, Item> = {
-  "company": { name: "Company", children: ["engineering", "marketing", "operations"] },
-  "engineering": { name: "Engineering", children: ["frontend", "backend", "platform-team"] },
-  "frontend": { name: "Frontend", children: ["design-system", "web-platform"] },
-  "design-system": { name: "Design System", children: ["components", "tokens", "guidelines"] },
-  "components": { name: "Components" },
-  "tokens": { name: "Tokens" },
-  "guidelines": { name: "Guidelines" },
-  "web-platform": { name: "Web Platform" },
-  "backend": { name: "Backend", children: ["apis", "infrastructure"] },
-  "apis": { name: "APIs" },
-  "infrastructure": { name: "Infrastructure" },
-  "platform-team": { name: "Platform Team" },
-  "marketing": { name: "Marketing", children: ["content", "seo"] },
-  "content": { name: "Content" },
-  "seo": { name: "SEO" },
-  "operations": { name: "Operations", children: ["hr", "finance"] },
-  "hr": { name: "HR" },
-  "finance": { name: "Finance" },
+  "main": { name: "Documentation", children: ["guides", "api", "resources"] },
+  "guides": { name: "User Guides", children: ["getting-started", "advanced"] },
+  "getting-started": { name: "Getting Started", children: ["installation", "setup"] },
+  "installation": { name: "Installation", href: "#", current: true },
+  "setup": { name: "Configuration", href: "#" },
+  "advanced": { name: "Advanced Usage", href: "#" },
+  "api": { name: "API Reference", children: ["endpoints", "models"] },
+  "endpoints": { name: "Endpoints", href: "#" },
+  "models": { name: "Data Models", href: "#" },
+  "resources": { name: "Resources", children: ["examples", "faq"] },
+  "examples": { name: "Code Examples", href: "#" },
+  "faq": { name: "FAQ", href: "#" }
 };
 
-interface RecursiveRenderProps {
-  itemInstance: ItemInstance<Item>;
+const indent = 20;
+
+// Find the path from root to the current item
+function findPathToCurrent(items: Record<string, Item>, rootId: string): string[] {
+  const path: string[] = [];
+  
+  function findPath(itemId: string): boolean {
+    const item = items[itemId];
+    if (!item) return false;
+    
+    // If this is the current item, we found the path
+    if (item.current) {
+      path.unshift(itemId);
+      return true;
+    }
+    
+    // If this item has children, search them
+    if (item.children?.length) {
+      for (const childId of item.children) {
+        if (findPath(childId)) {
+          // If we found the path in this branch, add this item to the path
+          path.unshift(itemId);
+          return true;
+        }
+      }
+    }
+    
+    return false;
+  }
+  
+  findPath(rootId);
+  return path;
 }
 
-function TreeItem({ itemInstance }: RecursiveRenderProps) {
-  if (!itemInstance) return null;
-
-  const isFolder = itemInstance.isFolder();
-  const isExpanded = itemInstance.isExpanded();
-  const childrenInstances = itemInstance.getChildren();
-
-  return (
-    <React.Fragment>
-      <button
-        {...itemInstance.getProps()}
-        data-focus={itemInstance.isFocused()}
-        data-selected={itemInstance.isSelected()}
-        data-folder={isFolder}
-        aria-expanded={isExpanded}
-        className="focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] hover:bg-accent data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 focus:z-10"
-      >
-        {isFolder && (
-          <ChevronDownIcon className="text-muted-foreground pointer-events-none size-4 in-aria-[expanded=false]:-rotate-90" />
-        )}
-        {itemInstance.getItemName()}
-      </button>
-
-      {isFolder && isExpanded && childrenInstances.length > 0 && (
-        <div className="flex flex-col gap-0.5 ms-6 relative before:w-px before:h-full before:bg-border before:absolute before:-start-2 before:top-0">
-          {childrenInstances.map(childInstance => (
-            <TreeItem key={childInstance.getId()} itemInstance={childInstance} />
-          ))}
-        </div>
-      )}
-    </React.Fragment>
-  );
-}
+// Get all parent IDs that need to be expanded
+const pathToCurrent = findPathToCurrent(items, "main");
+// Remove the current item from the path if it's a leaf node
+const expandedItems = pathToCurrent.filter(id => items[id].children?.length);
 
 export default function Component() {
   const tree = useTree<Item>({
     initialState: {
-      expandedItems: ["engineering", "frontend", "design-system"],
-      selectedItems: ["components"],
+      expandedItems,
     },
-    rootItemId: "company",
+    indent,
+    rootItemId: "main",
     getItemName: (item) => item.getItemData().name,
     isItemFolder: (item) => (item.getItemData()?.children?.length ?? 0) > 0,
     dataLoader: {
       getItem: (itemId) => items[itemId],
       getChildren: (itemId) => items[itemId].children ?? [],
     },
-    features: [syncDataLoaderFeature, selectionFeature, hotkeysCoreFeature],
+    features: [syncDataLoaderFeature, hotkeysCoreFeature],
   });
 
-  const rootItemInstance = tree.getItemInstance("company");
-  const rootChildrenInstances = rootItemInstance?.getChildren() ?? [];
-
   return (
-    <div {...tree.getContainerProps()} className="flex flex-col gap-0.5">
-      {rootChildrenInstances.map(childInstance => (
-        <TreeItem key={childInstance.getId()} itemInstance={childInstance} />
-      ))}
+    <div className="flex flex-col gap-2 h-full *:first:grow">
+      <Tree indent={indent} tree={tree}>
+        {tree.getItems().map((item) => {
+          return (
+            <TreeItem
+              key={item.getId()}
+              item={item}
+              asChild={!!item.getItemData()?.href}
+            >
+              {item.getItemData()?.href ? (
+                <a href={item.getItemData().href} data-current={item.getItemData().current}>
+                  <TreeItemLabel className="in-data-[current=true]:bg-accent in-data-[current=true]:text-accent-foreground" />            
+                </a>
+              ) : (
+                <TreeItemLabel />
+              )}
+            </TreeItem>
+          );
+        })}
+      </Tree>
+
+      <p
+        aria-live="polite"
+        role="region"
+        className="text-muted-foreground mt-2 text-xs"
+      >
+        Menu navigation tree ∙{" "}
+        <a
+          href="https://github.com/origin-space/image-cropper"
+          className="hover:text-foreground underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          API
+        </a>
+      </p>      
     </div>
   );
 };

@@ -1,67 +1,114 @@
-import Tree, { type TreeNode } from "@/registry/default/ui/tree";
+"use client"
 
-const data: TreeNode[] = [
-  {
-    id: '0',
-    label: 'Documents',
-    children: [
-      {
-        id: '1',
-        label: 'Work',
-        children: [
-          { id: '2', label: 'Expenses.doc' },
-          { id: '3', label: 'Resume.doc' },
-        ],
-      },
-      {
-        id: '4',
-        label: 'Home',
-        children: [
-          { id: '5', label: 'VacationPictures.jpg' },
-          { id: '6', label: 'Recipes.txt' },
-        ]
-      },
-      {
-        id: '7',
-        label: 'Empty Folder',
-        children: []
-      }
-    ],
-  },
-  {
-    id: '8',
-    label: 'Music',
-    children: [
-      {
-        id: '9',
-        label: 'Albums',
-        children: [
-          { id: '10', label: 'Album1.mp3' },
-          { id: '11', label: 'Album2.flac' },
-          { id: '13', label: 'Album4.flac' },
-        ]
-      }
-    ]
-  },
-  {
-    id: '12',
-    label: 'Movies',
-  },
-];
+import React, { useState } from "react";
+import {
+  dragAndDropFeature,
+  hotkeysCoreFeature,
+  keyboardDragAndDropFeature,
+  selectionFeature,
+  syncDataLoaderFeature,
+  createOnDropHandler,
+} from "@headless-tree/core";
+import { useTree, AssistiveTreeDescription } from "@headless-tree/react";
+import { Tree, TreeItem, TreeItemLabel, TreeDragLine } from "@/registry/default/ui/tree";
+import { FolderIcon } from "lucide-react";
 
-export default function Component() {
-  return (
-    <div className="flex flex-col gap-4">
-      <Tree data={data} expandTrigger="icon" />
-      <Tree data={data} expandTrigger="item" />
-      <Tree data={data} expandTrigger="icon" selectionMode="single" />
-      <Tree data={data} expandTrigger="item" selectionMode="single" />
-      <Tree data={data} expandTrigger="icon" selectionMode="multiple" />
-      <Tree data={data} expandTrigger="item" selectionMode="multiple" />
-      <Tree data={data} expandTrigger="icon" selectionMode="checkbox" /> 
-      <Tree data={data} expandTrigger="item" selectionMode="checkbox" />
-    </div>
-  )
+interface Item {
+  name: string;
+  children?: string[];
 }
 
+const initialItems: Record<string, Item> = {
+  "company": { name: "Company", children: ["engineering", "marketing", "operations"] },
+  "engineering": { name: "Engineering", children: ["frontend", "backend", "platform-team"] },
+  "frontend": { name: "Frontend", children: ["design-system", "web-platform"] },
+  "design-system": { name: "Design System", children: ["components", "tokens", "guidelines"] },
+  "components": { name: "Components" },
+  "tokens": { name: "Tokens" },
+  "guidelines": { name: "Guidelines" },
+  "web-platform": { name: "Web Platform" },
+  "backend": { name: "Backend", children: ["apis", "infrastructure"] },
+  "apis": { name: "APIs" },
+  "infrastructure": { name: "Infrastructure" },
+  "platform-team": { name: "Platform Team" },
+  "marketing": { name: "Marketing", children: ["content", "seo"] },
+  "content": { name: "Content" },
+  "seo": { name: "SEO" },
+  "operations": { name: "Operations", children: ["hr", "finance"] },
+  "hr": { name: "HR" },
+  "finance": { name: "Finance" },
+};
 
+const indent = 20;
+
+export default function Component() {
+  const [items, setItems] = useState(initialItems);
+  
+  const tree = useTree<Item>({
+    initialState: {
+      expandedItems: ["engineering", "frontend", "design-system"],
+      selectedItems: ["components"],
+    },
+    indent,
+    rootItemId: "company",
+    getItemName: (item) => item.getItemData().name,
+    isItemFolder: (item) => (item.getItemData()?.children?.length ?? 0) > 0,
+    canReorder: true,
+    onDrop: createOnDropHandler((parentItem, newChildrenIds) => {
+      setItems(prevItems => ({
+        ...prevItems,
+        [parentItem.getId()]: {
+          ...prevItems[parentItem.getId()],
+          children: newChildrenIds,
+        },
+      }));
+    }),    
+    dataLoader: {
+      getItem: (itemId) => items[itemId],
+      getChildren: (itemId) => items[itemId].children ?? [],
+    },
+    features: [syncDataLoaderFeature, selectionFeature, hotkeysCoreFeature, dragAndDropFeature,keyboardDragAndDropFeature],
+  });
+
+  return (
+    <div className="flex flex-col gap-2 h-full *:first:grow">
+      <Tree indent={indent} tree={tree}>
+        <AssistiveTreeDescription tree={tree} />
+        {tree.getItems().map((item) => {
+          return (
+            <TreeItem
+              key={item.getId()}
+              item={item}
+            >
+              <TreeItemLabel>
+                <span className="flex items-center gap-2">
+                  {item.isFolder() && (
+                    <FolderIcon className="text-muted-foreground pointer-events-none size-4" />
+                  )}
+                  {item.getItemName()}
+                </span>
+              </TreeItemLabel>
+            </TreeItem>
+          );
+        })}
+        <TreeDragLine />
+      </Tree>
+
+      <p
+        aria-live="polite"
+        role="region"
+        className="text-muted-foreground mt-2 text-xs"
+      >
+        Tee with multi-select and drag and drop ∙{" "}
+        <a
+          href="https://github.com/origin-space/image-cropper"
+          className="hover:text-foreground underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          API
+        </a>
+      </p>         
+    </div>
+  );
+};

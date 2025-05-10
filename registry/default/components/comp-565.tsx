@@ -3,11 +3,10 @@
 import React from "react";
 import {
   hotkeysCoreFeature,
-  selectionFeature,
   syncDataLoaderFeature,
 } from "@headless-tree/core";
 import { useTree } from "@headless-tree/react";
-import { ChevronDownIcon } from "lucide-react";
+import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree";
 
 interface Item {
   name: string;
@@ -35,12 +34,14 @@ const items: Record<string, Item> = {
   "finance": { name: "Finance" },
 };
 
+const indent = 20;
+
 export default function Component() {
   const tree = useTree<Item>({
     initialState: {
       expandedItems: ["engineering", "frontend", "design-system"],
-      selectedItems: ["components"],
     },
+    indent,
     rootItemId: "company",
     getItemName: (item) => item.getItemData().name,
     isItemFolder: (item) => (item.getItemData()?.children?.length ?? 0) > 0,
@@ -48,30 +49,39 @@ export default function Component() {
       getItem: (itemId) => items[itemId],
       getChildren: (itemId) => items[itemId].children ?? [],
     },
-    features: [syncDataLoaderFeature, selectionFeature, hotkeysCoreFeature],
+    features: [syncDataLoaderFeature, hotkeysCoreFeature],
   });
 
   return (
-    <div {...tree.getContainerProps()} className="flex flex-col gap-0.5">
-      {tree.getItems().map((item) => {
-        return (
-          <button
-            key={item.getId()}
-            {...item.getProps()}
-            style={{ '--tree-level': item.getItemMeta().level } as React.CSSProperties}
-            data-focus={item.isFocused()}
-            data-selected={item.isSelected()}
-            data-folder={item.isFolder()}
-            aria-expanded={item.isExpanded()}
-            className="focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] hover:bg-accent data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 ms-[calc(var(--tree-level)*var(--spacing)*6)] data-[folder=false]:ps-3 data-[folder=false]:ms-[calc(var(--tree-level)*var(--spacing)*6-var(--spacing))] focus:z-10"
-          >
-              {item.isFolder() && (
-                <ChevronDownIcon className="text-muted-foreground pointer-events-none size-4 in-aria-[expanded=false]:-rotate-90" />
-              )}
-              {item.getItemName()}
-          </button>
-        );
-      })}
+    <div className="flex flex-col gap-2 h-full *:first:grow">
+      <Tree indent={indent} tree={tree}>
+        {tree.getItems().map((item) => {
+          return (
+            <TreeItem
+              key={item.getId()}
+              item={item}
+            >
+              <TreeItemLabel />
+            </TreeItem>
+          );
+        })}
+      </Tree>
+
+      <p
+        aria-live="polite"
+        role="region"
+        className="text-muted-foreground mt-2 text-xs"
+      >
+        Basic tree with no extra features ∙{" "}
+        <a
+          href="https://github.com/origin-space/image-cropper"
+          className="hover:text-foreground underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          API
+        </a>
+      </p>      
     </div>
   );
 };
