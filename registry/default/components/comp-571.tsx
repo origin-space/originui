@@ -68,7 +68,7 @@ export default function Component() {
                 item={item}
               >
                 <TreeItemLabel className="relative before:absolute before:inset-x-0 before:-inset-y-0.5 before:bg-background before:-z-10">            
-                  <span className="flex items-center gap-2">
+                  <span className="flex items-center gap-2 -order-1 flex-1">
                     {item.isFolder() ? (
                       item.isExpanded() ? (
                         <FolderOpenIcon className="text-muted-foreground pointer-events-none size-4" />
@@ -92,7 +92,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Basic tree with icons ∙{" "}
+        Basic tree with caret icon on the right ∙{" "}
         <a
           href="https://github.com/origin-space/image-cropper"
           className="hover:text-foreground underline"

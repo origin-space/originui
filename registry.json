@@ -10228,6 +10228,19 @@
       "meta": {
         "tags": ["tree"]
       }
+    },
+    {
+      "name": "comp-571", 
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-571.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree"]
+      }
     }
   ]
 }

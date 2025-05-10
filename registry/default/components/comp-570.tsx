@@ -11,7 +11,7 @@ import {
 } from "@headless-tree/core";
 import { useTree, AssistiveTreeDescription } from "@headless-tree/react";
 import { Tree, TreeItem, TreeItemLabel, TreeDragLine } from "@/registry/default/ui/tree";
-import { FolderIcon } from "lucide-react";
+import { FolderIcon, FolderOpenIcon } from "lucide-react";
 
 interface Item {
   name: string;
@@ -43,7 +43,7 @@ const indent = 20;
 
 export default function Component() {
   const [items, setItems] = useState(initialItems);
-  
+
   const tree = useTree<Item>({
     initialState: {
       expandedItems: ["engineering", "frontend", "design-system"],
@@ -62,12 +62,12 @@ export default function Component() {
           children: newChildrenIds,
         },
       }));
-    }),    
+    }),
     dataLoader: {
       getItem: (itemId) => items[itemId],
       getChildren: (itemId) => items[itemId].children ?? [],
     },
-    features: [syncDataLoaderFeature, selectionFeature, hotkeysCoreFeature, dragAndDropFeature,keyboardDragAndDropFeature],
+    features: [syncDataLoaderFeature, selectionFeature, hotkeysCoreFeature, dragAndDropFeature, keyboardDragAndDropFeature],
   });
 
   return (
@@ -83,8 +83,11 @@ export default function Component() {
               <TreeItemLabel>
                 <span className="flex items-center gap-2">
                   {item.isFolder() && (
-                    <FolderIcon className="text-muted-foreground pointer-events-none size-4" />
-                  )}
+                    item.isExpanded() ? (
+                      <FolderOpenIcon className="text-muted-foreground pointer-events-none size-4" />
+                    ) : (
+                      <FolderIcon className="text-muted-foreground pointer-events-none size-4" />
+                    ))}
                   {item.getItemName()}
                 </span>
               </TreeItemLabel>
@@ -108,7 +111,7 @@ export default function Component() {
         >
           API
         </a>
-      </p>         
+      </p>
     </div>
   );
 };
