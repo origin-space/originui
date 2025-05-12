@@ -2,22 +2,22 @@
 
 import React, { useState } from "react";
 import {
-  dragAndDropFeature,
   hotkeysCoreFeature,
-  keyboardDragAndDropFeature,
+  renamingFeature,
   selectionFeature,
   syncDataLoaderFeature,
-  createOnDropHandler,
 } from "@headless-tree/core";
-import { useTree, AssistiveTreeDescription } from "@headless-tree/react";
-import { Tree, TreeItem, TreeItemLabel, TreeDragLine } from "@/registry/default/ui/tree";
-import { FolderIcon, FolderOpenIcon } from "lucide-react";
+import { useTree } from "@headless-tree/react";
+import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree";
+import { FolderIcon, FolderOpenIcon, FileIcon } from "lucide-react";
+import { Input } from "@/registry/default/ui/input";
 
 interface Item {
   name: string;
   children?: string[];
 }
 
+// Initial data
 const initialItems: Record<string, Item> = {
   "company": { name: "Company", children: ["engineering", "marketing", "operations"] },
   "engineering": { name: "Engineering", children: ["frontend", "backend", "platform-team"] },
@@ -47,33 +47,32 @@ export default function Component() {
   const tree = useTree<Item>({
     initialState: {
       expandedItems: ["engineering", "frontend", "design-system"],
-      selectedItems: ["components"],
     },
     indent,
     rootItemId: "company",
     getItemName: (item) => item.getItemData().name,
     isItemFolder: (item) => (item.getItemData()?.children?.length ?? 0) > 0,
-    canReorder: true,
-    onDrop: createOnDropHandler((parentItem, newChildrenIds) => {
-      setItems(prevItems => ({
-        ...prevItems,
-        [parentItem.getId()]: {
-          ...prevItems[parentItem.getId()],
-          children: newChildrenIds,
-        },
-      }));
-    }),
     dataLoader: {
       getItem: (itemId) => items[itemId],
       getChildren: (itemId) => items[itemId].children ?? [],
     },
-    features: [syncDataLoaderFeature, selectionFeature, hotkeysCoreFeature, dragAndDropFeature, keyboardDragAndDropFeature],
+    onRename: (item, newName) => {
+      // Update the item name in our state
+      const itemId = item.getId();
+      setItems(prevItems => ({
+        ...prevItems,
+        [itemId]: {
+          ...prevItems[itemId],
+          name: newName,
+        },
+      }));
+    },
+    features: [syncDataLoaderFeature, hotkeysCoreFeature, renamingFeature, selectionFeature],
   });
 
   return (
     <div className="flex flex-col gap-2 h-full *:first:grow">
       <Tree indent={indent} tree={tree}>
-        <AssistiveTreeDescription tree={tree} />
         {tree.getItems().map((item) => {
           return (
             <TreeItem
@@ -82,19 +81,30 @@ export default function Component() {
             >
               <TreeItemLabel>
                 <span className="flex items-center gap-2">
-                  {item.isFolder() && (
+                  {item.isFolder() ? (
                     item.isExpanded() ? (
                       <FolderOpenIcon className="text-muted-foreground pointer-events-none size-4" />
                     ) : (
                       <FolderIcon className="text-muted-foreground pointer-events-none size-4" />
-                    ))}
-                  {item.getItemName()}
+                    )
+                  ) : (
+                    <FileIcon className="text-muted-foreground pointer-events-none size-4" />
+                  )}
+                  {item.isRenaming() ?
+                    (
+                      <Input
+                        {...item.getRenameInputProps()}
+                        autoFocus
+                        className="h-6 px-1 -my-0.5"
+                      />
+                    ) : (
+                      item.getItemName()
+                    )}
                 </span>
               </TreeItemLabel>
             </TreeItem>
           );
         })}
-        <TreeDragLine />
       </Tree>
 
       <p
@@ -102,7 +112,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Tee with multi-select and drag and drop ∙{" "}
+        Tree with renaming (press F2 to rename) ∙{" "}
         <a
           href="https://headless-tree.lukasbach.co"
           className="hover:text-foreground underline"

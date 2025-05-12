@@ -1,13 +1,18 @@
 "use client"
 
-import React from "react";
+import React, { useState } from "react";
 import {
+  TreeState,
+  expandAllFeature,
   hotkeysCoreFeature,
+  searchFeature,
+  selectionFeature,
   syncDataLoaderFeature,
 } from "@headless-tree/core";
 import { useTree } from "@headless-tree/react";
 import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree";
-import { FolderIcon, FileIcon, FolderOpenIcon } from "lucide-react";
+import { FolderIcon, FolderOpenIcon, SearchIcon } from "lucide-react";
+import { Input } from "@/registry/default/ui/input";
 
 interface Item {
   name: string;
@@ -38,9 +43,15 @@ const items: Record<string, Item> = {
 const indent = 20;
 
 export default function Component() {
+  // Store the initial expanded items to reset when search is cleared
+  const initialExpandedItems = ["engineering", "frontend", "design-system"];
+  const [state, setState] = useState<Partial<TreeState<Item>>>({});
+  
   const tree = useTree<Item>({
+    state,
+    setState,
     initialState: {
-      expandedItems: ["engineering", "frontend", "design-system"],
+      expandedItems: initialExpandedItems,
     },
     indent,
     rootItemId: "company",
@@ -50,49 +61,77 @@ export default function Component() {
       getItem: (itemId) => items[itemId],
       getChildren: (itemId) => items[itemId].children ?? [],
     },
-    features: [syncDataLoaderFeature, hotkeysCoreFeature],
+    features: [syncDataLoaderFeature, hotkeysCoreFeature, selectionFeature, searchFeature, expandAllFeature],
   });
 
   return (
-    <div className="flex flex-col gap-2 h-full *:first:grow">
-      <div>
-        <Tree 
-          className="relative before:absolute before:inset-0 before:bg-[repeating-linear-gradient(to_right,transparent_0,transparent_calc(var(--tree-indent)-1px),var(--border)_calc(var(--tree-indent)-1px),var(--border)_calc(var(--tree-indent)))] before:-ms-1" 
-          indent={indent}
-          tree={tree}
-        >
-          {tree.getItems().map((item) => {
-            return (
-              <TreeItem
-                key={item.getId()}
-                item={item}
-              >
-                <TreeItemLabel className="relative before:absolute before:inset-x-0 before:-inset-y-0.5 before:bg-background before:-z-10">            
-                  <span className="flex items-center gap-2 -order-1 flex-1">
-                    {item.isFolder() ? (
-                      item.isExpanded() ? (
-                        <FolderOpenIcon className="text-muted-foreground pointer-events-none size-4" />
-                      ) : (
-                        <FolderIcon className="text-muted-foreground pointer-events-none size-4" />
-                      )
-                    ) : (
-                      <FileIcon className="text-muted-foreground pointer-events-none size-4" />
-                    )}
-                    {item.getItemName()}
-                  </span>
-                </TreeItemLabel>
-              </TreeItem>
-            );
-          })}
-        </Tree>  
+    <div className="flex flex-col gap-2 h-full *:nth-2:grow">
+      <div className="relative">
+        <Input 
+          className="peer ps-9"
+          {...{
+            ...tree.getSearchInputElementProps(),
+            onChange: (e) => {
+              // First call the original onChange handler from getSearchInputElementProps
+              const originalProps = tree.getSearchInputElementProps();
+              if (originalProps.onChange) {
+                originalProps.onChange(e);
+              }
+              
+              // Then handle our custom logic
+              const value = e.target.value;
+              
+              if (value.length > 0) {
+                // If input has at least one character, expand all items
+                tree.expandAll();
+              } else {
+                // If input is cleared, reset to initial expanded state
+                setState((prevState) => {
+                  return {
+                    ...prevState,
+                    expandedItems: initialExpandedItems
+                  };
+                });
+              }
+            }
+          }}
+          type="search" 
+          placeholder="Quick search..." 
+        />
+        <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 peer-disabled:opacity-50">
+          <SearchIcon className="size-4" aria-hidden="true" />
+        </div>        
       </div>
+
+      <Tree indent={indent} tree={tree}>
+        {tree.getItems().map((item) => {
+          return (
+            <TreeItem
+              key={item.getId()}
+              item={item}
+            >
+              <TreeItemLabel>
+                <span className="flex items-center gap-2">
+                  {item.isFolder() && (
+                    item.isExpanded() ? (
+                      <FolderOpenIcon className="text-muted-foreground pointer-events-none size-4" />
+                    ) : (
+                      <FolderIcon className="text-muted-foreground pointer-events-none size-4" />
+                    ))}
+                  {item.getItemName()}
+                </span>
+              </TreeItemLabel>
+            </TreeItem>
+          );
+        })}
+      </Tree>
 
       <p
         aria-live="polite"
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Basic tree with caret icon on the right ∙{" "}
+        Tree with search highlight ∙{" "}
         <a
           href="https://headless-tree.lukasbach.co"
           className="hover:text-foreground underline"
@@ -101,7 +140,7 @@ export default function Component() {
         >
           API
         </a>
-      </p>          
+      </p>
     </div>
   );
 };

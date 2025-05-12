@@ -1,19 +1,24 @@
 "use client"
 
-import React from "react";
+import React, { useState } from "react";
 import {
+  dragAndDropFeature,
   hotkeysCoreFeature,
+  keyboardDragAndDropFeature,
+  selectionFeature,
   syncDataLoaderFeature,
+  createOnDropHandler,
 } from "@headless-tree/core";
-import { useTree } from "@headless-tree/react";
-import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree";
+import { useTree, AssistiveTreeDescription } from "@headless-tree/react";
+import { Tree, TreeItem, TreeItemLabel, TreeDragLine } from "@/registry/default/ui/tree";
+import { FolderIcon, FolderOpenIcon } from "lucide-react";
 
 interface Item {
   name: string;
   children?: string[];
 }
 
-const items: Record<string, Item> = {
+const initialItems: Record<string, Item> = {
   "company": { name: "Company", children: ["engineering", "marketing", "operations"] },
   "engineering": { name: "Engineering", children: ["frontend", "backend", "platform-team"] },
   "frontend": { name: "Frontend", children: ["design-system", "web-platform"] },
@@ -37,48 +42,67 @@ const items: Record<string, Item> = {
 const indent = 20;
 
 export default function Component() {
+  const [items, setItems] = useState(initialItems);
+
   const tree = useTree<Item>({
     initialState: {
       expandedItems: ["engineering", "frontend", "design-system"],
+      selectedItems: ["components"],
     },
     indent,
     rootItemId: "company",
     getItemName: (item) => item.getItemData().name,
     isItemFolder: (item) => (item.getItemData()?.children?.length ?? 0) > 0,
+    canReorder: true,
+    onDrop: createOnDropHandler((parentItem, newChildrenIds) => {
+      setItems(prevItems => ({
+        ...prevItems,
+        [parentItem.getId()]: {
+          ...prevItems[parentItem.getId()],
+          children: newChildrenIds,
+        },
+      }));
+    }),
     dataLoader: {
       getItem: (itemId) => items[itemId],
       getChildren: (itemId) => items[itemId].children ?? [],
     },
-    features: [syncDataLoaderFeature, hotkeysCoreFeature],
+    features: [syncDataLoaderFeature, selectionFeature, hotkeysCoreFeature, dragAndDropFeature, keyboardDragAndDropFeature],
   });
 
   return (
     <div className="flex flex-col gap-2 h-full *:first:grow">
-      <div>
-        <Tree 
-          className="relative before:absolute before:inset-0 before:bg-[repeating-linear-gradient(to_right,transparent_0,transparent_calc(var(--tree-indent)-1px),var(--border)_calc(var(--tree-indent)-1px),var(--border)_calc(var(--tree-indent)))] before:-ms-1" 
-          indent={indent}
-          tree={tree}
-        >
-          {tree.getItems().map((item) => {
-            return (
-              <TreeItem
-                key={item.getId()}
-                item={item}
-              >
-                <TreeItemLabel className="relative before:absolute before:inset-x-0 before:-inset-y-0.5 before:bg-background before:-z-10" />
-              </TreeItem>
-            );
-          })}
-        </Tree>
-      </div>
+      <Tree indent={indent} tree={tree}>
+        <AssistiveTreeDescription tree={tree} />
+        {tree.getItems().map((item) => {
+          return (
+            <TreeItem
+              key={item.getId()}
+              item={item}
+            >
+              <TreeItemLabel>
+                <span className="flex items-center gap-2">
+                  {item.isFolder() && (
+                    item.isExpanded() ? (
+                      <FolderOpenIcon className="text-muted-foreground pointer-events-none size-4" />
+                    ) : (
+                      <FolderIcon className="text-muted-foreground pointer-events-none size-4" />
+                    ))}
+                  {item.getItemName()}
+                </span>
+              </TreeItemLabel>
+            </TreeItem>
+          );
+        })}
+        <TreeDragLine />
+      </Tree>
 
       <p
         aria-live="polite"
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Basic tree with vertical lines ∙{" "}
+        Tee with multi-select and drag and drop ∙{" "}
         <a
           href="https://headless-tree.lukasbach.co"
           className="hover:text-foreground underline"
@@ -87,7 +111,7 @@ export default function Component() {
         >
           API
         </a>
-      </p>      
+      </p>
     </div>
   );
 };

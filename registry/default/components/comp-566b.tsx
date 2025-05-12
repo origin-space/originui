@@ -7,7 +7,6 @@ import {
 } from "@headless-tree/core";
 import { useTree } from "@headless-tree/react";
 import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree";
-import { FolderIcon, FileIcon, FolderOpenIcon } from "lucide-react";
 
 interface Item {
   name: string;
@@ -67,24 +66,11 @@ export default function Component() {
                 key={item.getId()}
                 item={item}
               >
-                <TreeItemLabel className="relative before:absolute before:inset-x-0 before:-inset-y-0.5 before:bg-background before:-z-10">            
-                  <span className="flex items-center gap-2">
-                    {item.isFolder() ? (
-                      item.isExpanded() ? (
-                        <FolderOpenIcon className="text-muted-foreground pointer-events-none size-4" />
-                      ) : (
-                        <FolderIcon className="text-muted-foreground pointer-events-none size-4" />
-                      )
-                    ) : (
-                      <FileIcon className="text-muted-foreground pointer-events-none size-4" />
-                    )}
-                    {item.getItemName()}
-                  </span>
-                </TreeItemLabel>
+                <TreeItemLabel className="relative before:absolute before:inset-x-0 before:-inset-y-0.5 before:bg-background before:-z-10" />
               </TreeItem>
             );
           })}
-        </Tree>  
+        </Tree>
       </div>
 
       <p
@@ -92,7 +78,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Basic tree with icons ∙{" "}
+        Basic tree with vertical lines ∙{" "}
         <a
           href="https://headless-tree.lukasbach.co"
           className="hover:text-foreground underline"
@@ -101,7 +87,7 @@ export default function Component() {
         >
           API
         </a>
-      </p>          
+      </p>      
     </div>
   );
 };

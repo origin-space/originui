@@ -1,18 +1,15 @@
 "use client"
 
-import React, { useState } from "react";
+import React from "react";
 import {
-  TreeState,
-  expandAllFeature,
+  FeatureImplementation,
   hotkeysCoreFeature,
-  searchFeature,
   selectionFeature,
   syncDataLoaderFeature,
 } from "@headless-tree/core";
 import { useTree } from "@headless-tree/react";
 import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree";
-import { FolderIcon, FolderOpenIcon, SearchIcon } from "lucide-react";
-import { Input } from "@/registry/default/ui/input";
+import { FolderIcon, FolderOpenIcon } from "lucide-react";
 
 interface Item {
   name: string;
@@ -42,16 +39,43 @@ const items: Record<string, Item> = {
 
 const indent = 20;
 
+const doubleClickExpandFeature: FeatureImplementation = {
+  itemInstance: {
+    getProps: ({ tree, item, prev }) => ({
+      ...prev?.(),
+      onDoubleClick: (e: React.MouseEvent) => {
+        item.primaryAction();
+
+        if (!item.isFolder()) {
+          return;
+        }
+
+        if (item.isExpanded()) {
+          item.collapse();
+        } else {
+          item.expand();
+        }
+      },
+      onClick: (e: React.MouseEvent) => {
+        if (e.shiftKey) {
+          item.selectUpTo(e.ctrlKey || e.metaKey);
+        } else if (e.ctrlKey || e.metaKey) {
+          item.toggleSelect();
+        } else {
+          tree.setSelectedItems([item.getItemMeta().itemId]);
+        }
+
+        item.setFocused();
+      },
+    }),
+  },
+};
+
 export default function Component() {
-  // Store the initial expanded items to reset when search is cleared
-  const initialExpandedItems = ["engineering", "frontend", "design-system"];
-  const [state, setState] = useState<Partial<TreeState<Item>>>({});
-  
   const tree = useTree<Item>({
-    state,
-    setState,
     initialState: {
-      expandedItems: initialExpandedItems,
+      expandedItems: ["engineering", "frontend", "design-system"],
+      selectedItems: ["components"],
     },
     indent,
     rootItemId: "company",
@@ -61,48 +85,16 @@ export default function Component() {
       getItem: (itemId) => items[itemId],
       getChildren: (itemId) => items[itemId].children ?? [],
     },
-    features: [syncDataLoaderFeature, hotkeysCoreFeature, selectionFeature, searchFeature, expandAllFeature],
+    features: [
+      syncDataLoaderFeature, 
+      selectionFeature, 
+      hotkeysCoreFeature,
+      doubleClickExpandFeature,
+    ],
   });
 
   return (
-    <div className="flex flex-col gap-2 h-full *:nth-2:grow">
-      <div className="relative">
-        <Input 
-          className="peer ps-9"
-          {...{
-            ...tree.getSearchInputElementProps(),
-            onChange: (e) => {
-              // First call the original onChange handler from getSearchInputElementProps
-              const originalProps = tree.getSearchInputElementProps();
-              if (originalProps.onChange) {
-                originalProps.onChange(e);
-              }
-              
-              // Then handle our custom logic
-              const value = e.target.value;
-              
-              if (value.length > 0) {
-                // If input has at least one character, expand all items
-                tree.expandAll();
-              } else {
-                // If input is cleared, reset to initial expanded state
-                setState((prevState) => {
-                  return {
-                    ...prevState,
-                    expandedItems: initialExpandedItems
-                  };
-                });
-              }
-            }
-          }}
-          type="search" 
-          placeholder="Quick search..." 
-        />
-        <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 peer-disabled:opacity-50">
-          <SearchIcon className="size-4" aria-hidden="true" />
-        </div>        
-      </div>
-
+    <div className="flex flex-col gap-2 h-full *:first:grow">
       <Tree indent={indent} tree={tree}>
         {tree.getItems().map((item) => {
           return (
@@ -131,7 +123,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Tree with search highlight ∙{" "}
+        Tree with items expandable on double click ∙{" "}
         <a
           href="https://headless-tree.lukasbach.co"
           className="hover:text-foreground underline"

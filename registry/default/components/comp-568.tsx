@@ -7,75 +7,43 @@ import {
 } from "@headless-tree/core";
 import { useTree } from "@headless-tree/react";
 import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree";
+import { FolderIcon, FileIcon, FolderOpenIcon } from "lucide-react";
 
 interface Item {
   name: string;
-  href?: string;
   children?: string[];
-  current?: boolean;
 }
 
 const items: Record<string, Item> = {
-  "main": { name: "Documentation", children: ["guides", "api", "resources"] },
-  "guides": { name: "User Guides", children: ["getting-started", "advanced"] },
-  "getting-started": { name: "Getting Started", children: ["installation", "setup"] },
-  "installation": { name: "Installation", href: "#", current: true },
-  "setup": { name: "Configuration", href: "#" },
-  "advanced": { name: "Advanced Usage", href: "#" },
-  "api": { name: "API Reference", children: ["endpoints", "models"] },
-  "endpoints": { name: "Endpoints", href: "#" },
-  "models": { name: "Data Models", href: "#" },
-  "resources": { name: "Resources", children: ["examples", "faq"] },
-  "examples": { name: "Code Examples", href: "#" },
-  "faq": { name: "FAQ", href: "#" }
+  "company": { name: "Company", children: ["engineering", "marketing", "operations"] },
+  "engineering": { name: "Engineering", children: ["frontend", "backend", "platform-team"] },
+  "frontend": { name: "Frontend", children: ["design-system", "web-platform"] },
+  "design-system": { name: "Design System", children: ["components", "tokens", "guidelines"] },
+  "components": { name: "Components" },
+  "tokens": { name: "Tokens" },
+  "guidelines": { name: "Guidelines" },
+  "web-platform": { name: "Web Platform" },
+  "backend": { name: "Backend", children: ["apis", "infrastructure"] },
+  "apis": { name: "APIs" },
+  "infrastructure": { name: "Infrastructure" },
+  "platform-team": { name: "Platform Team" },
+  "marketing": { name: "Marketing", children: ["content", "seo"] },
+  "content": { name: "Content" },
+  "seo": { name: "SEO" },
+  "operations": { name: "Operations", children: ["hr", "finance"] },
+  "hr": { name: "HR" },
+  "finance": { name: "Finance" },
 };
 
 const indent = 20;
 
-// Find the path from root to the current item
-function findPathToCurrent(items: Record<string, Item>, rootId: string): string[] {
-  const path: string[] = [];
-  
-  function findPath(itemId: string): boolean {
-    const item = items[itemId];
-    if (!item) return false;
-    
-    // If this is the current item, we found the path
-    if (item.current) {
-      path.unshift(itemId);
-      return true;
-    }
-    
-    // If this item has children, search them
-    if (item.children?.length) {
-      for (const childId of item.children) {
-        if (findPath(childId)) {
-          // If we found the path in this branch, add this item to the path
-          path.unshift(itemId);
-          return true;
-        }
-      }
-    }
-    
-    return false;
-  }
-  
-  findPath(rootId);
-  return path;
-}
-
-// Get all parent IDs that need to be expanded
-const pathToCurrent = findPathToCurrent(items, "main");
-// Remove the current item from the path if it's a leaf node
-const expandedItems = pathToCurrent.filter(id => items[id].children?.length);
-
 export default function Component() {
   const tree = useTree<Item>({
     initialState: {
-      expandedItems,
+      expandedItems: ["engineering", "frontend", "design-system"],
     },
     indent,
-    rootItemId: "main",
+    rootItemId: "company",
     getItemName: (item) => item.getItemData().name,
     isItemFolder: (item) => (item.getItemData()?.children?.length ?? 0) > 0,
     dataLoader: {
@@ -87,32 +55,44 @@ export default function Component() {
 
   return (
     <div className="flex flex-col gap-2 h-full *:first:grow">
-      <Tree indent={indent} tree={tree}>
-        {tree.getItems().map((item) => {
-          return (
-            <TreeItem
-              key={item.getId()}
-              item={item}
-              asChild={!!item.getItemData()?.href}
-            >
-              {item.getItemData()?.href ? (
-                <a href={item.getItemData().href} data-current={item.getItemData().current}>
-                  <TreeItemLabel className="in-data-[current=true]:bg-accent in-data-[current=true]:text-accent-foreground" />            
-                </a>
-              ) : (
-                <TreeItemLabel />
-              )}
-            </TreeItem>
-          );
-        })}
-      </Tree>
+      <div>
+        <Tree 
+          className="relative before:absolute before:inset-0 before:bg-[repeating-linear-gradient(to_right,transparent_0,transparent_calc(var(--tree-indent)-1px),var(--border)_calc(var(--tree-indent)-1px),var(--border)_calc(var(--tree-indent)))] before:-ms-1" 
+          indent={indent}
+          tree={tree}
+        >
+          {tree.getItems().map((item) => {
+            return (
+              <TreeItem
+                key={item.getId()}
+                item={item}
+              >
+                <TreeItemLabel className="relative before:absolute before:inset-x-0 before:-inset-y-0.5 before:bg-background before:-z-10">            
+                  <span className="flex items-center gap-2 -order-1 flex-1">
+                    {item.isFolder() ? (
+                      item.isExpanded() ? (
+                        <FolderOpenIcon className="text-muted-foreground pointer-events-none size-4" />
+                      ) : (
+                        <FolderIcon className="text-muted-foreground pointer-events-none size-4" />
+                      )
+                    ) : (
+                      <FileIcon className="text-muted-foreground pointer-events-none size-4" />
+                    )}
+                    {item.getItemName()}
+                  </span>
+                </TreeItemLabel>
+              </TreeItem>
+            );
+          })}
+        </Tree>  
+      </div>
 
       <p
         aria-live="polite"
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Menu navigation tree ∙{" "}
+        Basic tree with caret icon on the right ∙{" "}
         <a
           href="https://headless-tree.lukasbach.co"
           className="hover:text-foreground underline"
@@ -121,7 +101,7 @@ export default function Component() {
         >
           API
         </a>
-      </p>      
+      </p>          
     </div>
   );
 };
