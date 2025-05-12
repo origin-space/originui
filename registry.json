@@ -458,6 +458,17 @@
       ]
     },
     {
+      "name": "tree",
+      "type": "registry:component",
+      "dependencies": ["@headless-tree/core", "@headless-tree/react"],
+      "files": [
+        {
+          "path": "registry/default/components/tree.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "use-character-limit",
       "type": "registry:hook",
       "files": [
@@ -10154,6 +10165,7 @@
     {
       "name": "comp-565",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json"],
       "files": [
         {
           "path": "registry/default/components/comp-565.tsx",
@@ -10167,6 +10179,7 @@
     {
       "name": "comp-566",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json"],
       "files": [
         {
           "path": "registry/default/components/comp-566.tsx",
@@ -10180,6 +10193,7 @@
     {
       "name": "comp-567",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json"],
       "files": [
         {
           "path": "registry/default/components/comp-567.tsx",
@@ -10193,6 +10207,7 @@
     {
       "name": "comp-568",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json"],
       "files": [
         {
           "path": "registry/default/components/comp-568.tsx",
@@ -10206,6 +10221,7 @@
     {
       "name": "comp-569",
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json"],
       "files": [
         {
           "path": "registry/default/components/comp-569.tsx",
@@ -10219,6 +10235,7 @@
     {
       "name": "comp-570", 
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json"],
       "files": [
         {
           "path": "registry/default/components/comp-570.tsx",
@@ -10232,6 +10249,7 @@
     {
       "name": "comp-571", 
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json", "https://originui.com/r/input.json"],
       "files": [
         {
           "path": "registry/default/components/comp-571.tsx",
@@ -10239,12 +10257,13 @@
         }
       ],
       "meta": {
-        "tags": ["tree"]
+        "tags": ["tree", "filter", "search"]
       }
     },
     {
       "name": "comp-572", 
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json", "https://originui.com/r/input.json"],
       "files": [
         {
           "path": "registry/default/components/comp-572.tsx",
@@ -10252,12 +10271,13 @@
         }
       ],
       "meta": {
-        "tags": ["tree"]
+        "tags": ["tree", "filter", "search"]
       }
     },
     {
       "name": "comp-573", 
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json"],
       "files": [
         {
           "path": "registry/default/components/comp-573.tsx",
@@ -10271,6 +10291,7 @@
     {
       "name": "comp-574", 
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json", "https://originui.com/r/button.json"],
       "files": [
         {
           "path": "registry/default/components/comp-574.tsx",
@@ -10278,12 +10299,13 @@
         }
       ],
       "meta": {
-        "tags": ["tree"]
+        "tags": ["tree", "button"]
       }
     },
     {
       "name": "comp-575", 
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json"],
       "files": [
         {
           "path": "registry/default/components/comp-575.tsx",
@@ -10297,6 +10319,7 @@
     {
       "name": "comp-576", 
       "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json"],
       "files": [
         {
           "path": "registry/default/components/comp-576.tsx",
@@ -10304,7 +10327,7 @@
         }
       ],
       "meta": {
-        "tags": ["tree"]
+        "tags": ["tree", "menu"]
       }
     }
   ]

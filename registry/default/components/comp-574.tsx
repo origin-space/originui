@@ -103,7 +103,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Tree with items with expand/collapse all buttons ∙{" "}
+        Tree with expand/collapse all buttons ∙{" "}
         <a
           href="https://headless-tree.lukasbach.com/"
           className="hover:text-foreground underline"

@@ -335,7 +335,6 @@ export const categories: ComponentCategory[] = [
       { name: "comp-553" },
       { name: "comp-554" },
     ],
-    isNew: true,
   },
   {
     slug: "event-calendar",
@@ -760,6 +759,7 @@ export const categories: ComponentCategory[] = [
       { name: "comp-575" },
       { name: "comp-576" },
     ],
+    isNew: true,
   },
 ]
 
