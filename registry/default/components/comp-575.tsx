@@ -39,7 +39,6 @@ const items: Record<string, Item> = {
 
 const indent = 20;
 
-// Custom feature implementation for double-click expand/collapse
 const doubleClickExpandFeature: FeatureImplementation = {
   itemInstance: {
     getProps: ({ tree, item, prev }) => ({
