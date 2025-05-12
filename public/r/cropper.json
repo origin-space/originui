@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cropper",
+  "type": "registry:ui",
+  "dependencies": [
+    "@origin-space/image-cropper"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/cropper.tsx",
+      "content": "\"use client\"\n\nimport { Cropper as CropperPrimitive } from \"@origin-space/image-cropper\"\n\nimport { cn } from \"@/registry/default/lib/utils\"\n\nfunction Cropper({\n  className,\n  ...props\n}: React.ComponentProps<typeof CropperPrimitive.Root>) {\n  return (\n    <CropperPrimitive.Root\n      data-slot=\"cropper\"\n      className={cn(\n        \"relative flex w-full cursor-move touch-none items-center justify-center overflow-hidden focus:outline-none\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction CropperDescription({\n  className,\n  ...props\n}: React.ComponentProps<typeof CropperPrimitive.Description>) {\n  return (\n    <CropperPrimitive.Description\n      data-slot=\"cropper-description\"\n      className={cn(\"sr-only\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction CropperImage({\n  className,\n  ...props\n}: React.ComponentProps<typeof CropperPrimitive.Image>) {\n  return (\n    <CropperPrimitive.Image\n      data-slot=\"cropper-image\"\n      className={cn(\n        \"pointer-events-none h-full w-full object-cover\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction CropperCropArea({\n  className,\n  ...props\n}: React.ComponentProps<typeof CropperPrimitive.CropArea>) {\n  return (\n    <CropperPrimitive.CropArea\n      data-slot=\"cropper-crop-area\"\n      className={cn(\n        \"pointer-events-none absolute border-3 border-white shadow-[0_0_0_9999px_rgba(0,0,0,0.3)] in-[[data-slot=cropper]:focus-visible]:ring-[3px] in-[[data-slot=cropper]:focus-visible]:ring-white/50\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Cropper, CropperDescription, CropperImage, CropperCropArea }\n",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -18,7 +18,7 @@ export default function Component() {
       <div className="flex w-full flex-col gap-4">
         <Cropper
           className="h-80"
-          image="https://images.unsplash.com/photo-1532517308734-0565178471d2"
+          image="https://res.cloudinary.com/dlzlfasou/image/upload/v1746526188/cropper-07_scsejv.jpg"
           zoom={zoom}
           onZoomChange={setZoom}
         >

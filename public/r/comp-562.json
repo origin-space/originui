@@ -2,10 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "comp-562",
   "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/cropper.json"
+  ],
   "files": [
     {
       "path": "registry/default/components/comp-562.tsx",
-      "content": "import {\n  Cropper,\n  CropperCropArea,\n  CropperDescription,\n  CropperImage,\n} from \"@/registry/default/ui/cropper\"\n\nexport default function Component() {\n  return (\n    <div className=\"flex flex-col items-center gap-2\">\n      <Cropper\n        className=\"h-80\"\n        minZoom={2}\n        maxZoom={10}\n        image=\"https://images.unsplash.com/photo-1496124248071-3e497bb1696c\"\n      >\n        <CropperDescription />\n        <CropperImage />\n        <CropperCropArea />\n      </Cropper>\n\n      <p\n        aria-live=\"polite\"\n        role=\"region\"\n        className=\"text-muted-foreground mt-2 text-xs\"\n      >\n        Cropper with custom zoom limits ∙{\" \"}\n        <a\n          href=\"https://github.com/origin-space/image-cropper\"\n          className=\"hover:text-foreground underline\"\n          target=\"_blank\"\n        >\n          API\n        </a>\n      </p>\n    </div>\n  )\n}\n",
+      "content": "import {\n  Cropper,\n  CropperCropArea,\n  CropperDescription,\n  CropperImage,\n} from \"@/registry/default/ui/cropper\"\n\nexport default function Component() {\n  return (\n    <div className=\"flex flex-col items-center gap-2\">\n      <Cropper\n        className=\"h-80\"\n        minZoom={2}\n        maxZoom={10}\n        image=\"https://res.cloudinary.com/dlzlfasou/image/upload/v1746526187/cropper-08_wneftq.jpg\"\n      >\n        <CropperDescription />\n        <CropperImage />\n        <CropperCropArea />\n      </Cropper>\n\n      <p\n        aria-live=\"polite\"\n        role=\"region\"\n        className=\"text-muted-foreground mt-2 text-xs\"\n      >\n        Cropper with custom zoom limits ∙{\" \"}\n        <a\n          href=\"https://github.com/origin-space/image-cropper\"\n          className=\"hover:text-foreground underline\"\n          target=\"_blank\"\n        >\n          API\n        </a>\n      </p>\n    </div>\n  )\n}\n",
       "type": "registry:component"
     }
   ],

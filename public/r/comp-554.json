@@ -4,8 +4,10 @@
   "type": "registry:component",
   "registryDependencies": [
     "https://originui.com/r/button.json",
+    "https://originui.com/r/cropper.json",
     "https://originui.com/r/dialog.json",
-    "https://originui.com/r/select.json"
+    "https://originui.com/r/select.json",
+    "https://originui.com/r/slider.json"
   ],
   "files": [
     {
