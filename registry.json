@@ -474,7 +474,7 @@
       "dependencies": ["@headless-tree/core", "@headless-tree/react"],
       "files": [
         {
-          "path": "registry/default/components/tree.tsx",
+          "path": "registry/default/ui/tree.tsx",
           "type": "registry:component"
         }
       ]
