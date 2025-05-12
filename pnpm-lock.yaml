@@ -135,8 +135,8 @@ importers:
         specifier: ^4.17.21
         version: 4.17.21
       lucide-react:
-        specifier: ^0.475.0
-        version: 0.475.0(react@19.1.0)
+        specifier: ^0.509.0
+        version: 0.509.0(react@19.1.0)
       next:
         specifier: ^15.2.4
         version: 15.2.4(@babel/core@7.26.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -3767,8 +3767,8 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-react@0.475.0:
-    resolution: {integrity: sha512-NJzvVu1HwFVeZ+Gwq2q00KygM1aBhy/ZrhY9FsAgJtpB+E4R7uxRk9M2iKvHa6/vNxZydIB59htha4c2vvwvVg==}
+  lucide-react@0.509.0:
+    resolution: {integrity: sha512-xCJHn6Uh5qF6PGml25vveCTrHJZcqS1G1MVzWZK54ZQsOiCVJk4fwY3oyo5EXS2S+aqvTpWYIfJN+PesJ0quxg==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -4587,8 +4587,8 @@ packages:
   tailwind-merge@3.1.0:
     resolution: {integrity: sha512-aV27Oj8B7U/tAOMhJsSGdWqelfmudnGMdXIlMnk1JfsjwSjts6o8HyfN7SFH3EztzH4YH8kk6GbLTHzITJO39Q==}
 
-  tailwind-merge@3.2.0:
-    resolution: {integrity: sha512-FQT/OVqCD+7edmmJpsgCsY820RTD5AkBryuG5IUqR5YQZSdj5xlH5nLgH7YPths7WsLPSpSBNneJdM8aS8aeFA==}
+  tailwind-merge@3.3.0:
+    resolution: {integrity: sha512-fyW/pEfcQSiigd5SNn0nApUOxx0zB/dm6UDU/rEwc2c3sX2smWUNbapHv+QRqLGVp9GWX3THIa7MUGPo+YkDzQ==}
 
   tailwindcss@4.1.1:
     resolution: {integrity: sha512-QNbdmeS979Efzim2g/bEvfuh+fTcIdp1y7gA+sb6OYSW74rt7Cr7M78AKdf6HqWT3d5AiTb7SwTT3sLQxr4/qw==}
@@ -8034,7 +8034,7 @@ snapshots:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
       react-easy-sort: 1.6.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      tailwind-merge: 3.2.0
+      tailwind-merge: 3.3.0
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-dom'
@@ -8955,7 +8955,7 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-react@0.475.0(react@19.1.0):
+  lucide-react@0.509.0(react@19.1.0):
     dependencies:
       react: 19.1.0
 
@@ -10058,7 +10058,7 @@ snapshots:
 
   tailwind-merge@3.1.0: {}
 
-  tailwind-merge@3.2.0: {}
+  tailwind-merge@3.3.0: {}
 
   tailwindcss@4.1.1: {}
 

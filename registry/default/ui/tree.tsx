@@ -92,10 +92,11 @@ function TreeItem<T = any>({
         data-slot="tree-item"
         style={mergedStyle}      
         className={cn("outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 ps-(--tree-padding) not-last:pb-0.5 z-10 focus:z-20", className)}
-        data-focus={typeof item.isFocused === 'function' ? item.isFocused() : false}
-        data-folder={typeof item.isFolder === 'function' ? item.isFolder() : false}
-        data-selected={typeof item.isSelected === 'function' ? item.isSelected() : false}
-        data-drag-target={typeof item.isDragTarget === 'function' ? item.isDragTarget() : false}
+        data-focus={typeof item.isFocused === 'function' ? item.isFocused() || false : undefined}
+        data-folder={typeof item.isFolder === 'function' ? item.isFolder() || false : undefined}
+        data-selected={typeof item.isSelected === 'function' ? item.isSelected() || false : undefined}
+        data-drag-target={typeof item.isDragTarget === 'function' ? item.isDragTarget() || false : undefined}
+        data-search-match={typeof item.isMatchingSearch === 'function' ? item.isMatchingSearch() || false : undefined}
         aria-expanded={item.isExpanded()}      
         {...otherProps}
       >
@@ -127,7 +128,7 @@ function TreeItemLabel<T = any>({
     <span
       data-slot="tree-item-label"
       className={cn(
-        "in-focus-visible:ring-ring/50 in-focus-visible:ring-[3px] bg-background hover:bg-accent transition-colors in-data-[selected=true]:bg-accent in-data-[selected=true]:text-accent-foreground rounded-sm px-2 py-1.5 text-sm flex items-center gap-1 [&_svg]:pointer-events-none [&_svg]:shrink-0 in-data-[drag-target=true]:bg-accent",
+        "in-focus-visible:ring-ring/50 in-focus-visible:ring-[3px] bg-background hover:bg-accent transition-colors in-data-[selected=true]:bg-accent in-data-[selected=true]:text-accent-foreground rounded-sm px-2 py-1.5 text-sm flex items-center gap-1 [&_svg]:pointer-events-none [&_svg]:shrink-0 in-data-[drag-target=true]:bg-accent in-data-[search-match=true]:bg-blue-50!",
         className
       )}
       {...props}
