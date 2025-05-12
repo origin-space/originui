@@ -10280,6 +10280,32 @@
       "meta": {
         "tags": ["tree"]
       }
+    },
+    {
+      "name": "comp-575", 
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-575.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree"]
+      }
+    },
+    {
+      "name": "comp-576", 
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-576.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree"]
+      }
     }
   ]
 }

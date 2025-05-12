@@ -94,7 +94,7 @@ export default function Component() {
       >
         Basic tree with caret icon on the right ∙{" "}
         <a
-          href="https://github.com/origin-space/image-cropper"
+          href="https://headless-tree.lukasbach.co"
           className="hover:text-foreground underline"
           target="_blank"
           rel="noopener noreferrer"

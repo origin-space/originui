@@ -2,11 +2,14 @@
 
 import React from "react";
 import {
+  FeatureImplementation,
   hotkeysCoreFeature,
+  selectionFeature,
   syncDataLoaderFeature,
 } from "@headless-tree/core";
 import { useTree } from "@headless-tree/react";
 import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree";
+import { FolderIcon, FolderOpenIcon } from "lucide-react";
 
 interface Item {
   name: string;
@@ -36,10 +39,44 @@ const items: Record<string, Item> = {
 
 const indent = 20;
 
+// Custom feature implementation for double-click expand/collapse
+const doubleClickExpandFeature: FeatureImplementation = {
+  itemInstance: {
+    getProps: ({ tree, item, prev }) => ({
+      ...prev?.(),
+      onDoubleClick: (e: React.MouseEvent) => {
+        item.primaryAction();
+
+        if (!item.isFolder()) {
+          return;
+        }
+
+        if (item.isExpanded()) {
+          item.collapse();
+        } else {
+          item.expand();
+        }
+      },
+      onClick: (e: React.MouseEvent) => {
+        if (e.shiftKey) {
+          item.selectUpTo(e.ctrlKey || e.metaKey);
+        } else if (e.ctrlKey || e.metaKey) {
+          item.toggleSelect();
+        } else {
+          tree.setSelectedItems([item.getItemMeta().itemId]);
+        }
+
+        item.setFocused();
+      },
+    }),
+  },
+};
+
 export default function Component() {
   const tree = useTree<Item>({
     initialState: {
       expandedItems: ["engineering", "frontend", "design-system"],
+      selectedItems: ["components"],
     },
     indent,
     rootItemId: "company",
@@ -49,7 +86,12 @@ export default function Component() {
       getItem: (itemId) => items[itemId],
       getChildren: (itemId) => items[itemId].children ?? [],
     },
-    features: [syncDataLoaderFeature, hotkeysCoreFeature],
+    features: [
+      syncDataLoaderFeature, 
+      selectionFeature, 
+      hotkeysCoreFeature,
+      doubleClickExpandFeature,
+    ],
   });
 
   return (
@@ -61,7 +103,17 @@ export default function Component() {
               key={item.getId()}
               item={item}
             >
-              <TreeItemLabel />
+              <TreeItemLabel>
+                <span className="flex items-center gap-2">
+                  {item.isFolder() && (
+                    item.isExpanded() ? (
+                      <FolderOpenIcon className="text-muted-foreground pointer-events-none size-4" />
+                    ) : (
+                      <FolderIcon className="text-muted-foreground pointer-events-none size-4" />
+                    ))}
+                  {item.getItemName()}
+                </span>
+              </TreeItemLabel>
             </TreeItem>
           );
         })}
@@ -72,7 +124,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Basic tree with no extra features ∙{" "}
+        Tree with items expandable on double click ∙{" "}
         <a
           href="https://headless-tree.lukasbach.co"
           className="hover:text-foreground underline"
@@ -81,7 +133,7 @@ export default function Component() {
         >
           API
         </a>
-      </p>      
+      </p>
     </div>
   );
 };

@@ -104,7 +104,7 @@ export default function Component() {
       >
         Tee with multi-select and drag and drop ∙{" "}
         <a
-          href="https://github.com/origin-space/image-cropper"
+          href="https://headless-tree.lukasbach.co"
           className="hover:text-foreground underline"
           target="_blank"
           rel="noopener noreferrer"

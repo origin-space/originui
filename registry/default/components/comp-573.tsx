@@ -133,7 +133,7 @@ export default function Component() {
       >
         Tree with search highlight ∙{" "}
         <a
-          href="https://github.com/origin-space/image-cropper"
+          href="https://headless-tree.lukasbach.co"
           className="hover:text-foreground underline"
           target="_blank"
           rel="noopener noreferrer"

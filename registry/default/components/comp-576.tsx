@@ -2,11 +2,15 @@
 
 import React from "react";
 import {
+  expandAllFeature,
   hotkeysCoreFeature,
+  selectionFeature,
   syncDataLoaderFeature,
 } from "@headless-tree/core";
 import { useTree } from "@headless-tree/react";
 import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree";
+import { FolderIcon, FolderOpenIcon, ListCollapseIcon, ListTreeIcon } from "lucide-react";
+import { Button } from "@/registry/default/ui/button";
 
 interface Item {
   name: string;
@@ -40,6 +44,7 @@ export default function Component() {
   const tree = useTree<Item>({
     initialState: {
       expandedItems: ["engineering", "frontend", "design-system"],
+      selectedItems: ["components"],
     },
     indent,
     rootItemId: "company",
@@ -49,19 +54,45 @@ export default function Component() {
       getItem: (itemId) => items[itemId],
       getChildren: (itemId) => items[itemId].children ?? [],
     },
-    features: [syncDataLoaderFeature, hotkeysCoreFeature],
+    features: [syncDataLoaderFeature, selectionFeature, hotkeysCoreFeature, expandAllFeature],
   });
 
   return (
-    <div className="flex flex-col gap-2 h-full *:first:grow">
+    <div className="flex flex-col gap-2 h-full *:nth-2:grow">
+      <div className="flex items-center gap-2">
+        <Button size="sm" variant="outline" onClick={() => tree.expandAll()}>
+          <ListTreeIcon className="-ms-1 opacity-60" size={16} aria-hidden="true" />
+          Expand all
+        </Button>
+        <Button size="sm" variant="outline" onClick={tree.collapseAll}>
+          <ListCollapseIcon className="-ms-1 opacity-60" size={16} aria-hidden="true" />
+          Collapse all
+        </Button>
+      </div>
+
       <Tree indent={indent} tree={tree}>
-        {tree.getItems().map((item) => {
+        {tree.getItems().map((item) => {          
           return (
             <TreeItem
               key={item.getId()}
               item={item}
             >
-              <TreeItemLabel />
+              <TreeItemLabel>
+                <span className="flex items-center gap-2">
+                  {item.isFolder() && (
+                    item.isExpanded() ? (
+                      <FolderOpenIcon className="text-muted-foreground pointer-events-none size-4" />
+                    ) : (
+                      <FolderIcon className="text-muted-foreground pointer-events-none size-4" />
+                    ))}
+                  {item.getItemName()}
+                  {item.isFolder() && (
+                    <span className="text-muted-foreground -ms-1">
+                      {`(${item.getChildren().length})`}
+                    </span>
+                  )}
+                </span>
+              </TreeItemLabel>
             </TreeItem>
           );
         })}
@@ -72,16 +103,16 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Basic tree with no extra features ∙{" "}
+        Tree with items with expand/collapse all buttons ∙{" "}
         <a
-          href="https://headless-tree.lukasbach.co"
+          href="https://headless-tree.lukasbach.com/"
           className="hover:text-foreground underline"
           target="_blank"
           rel="noopener noreferrer"
         >
           API
         </a>
-      </p>      
+      </p>
     </div>
   );
 };

@@ -155,7 +155,7 @@ export default function Component() {
       >
         File editor with drag and drop ∙{" "}
         <a
-          href="https://github.com/origin-space/image-cropper"
+          href="https://headless-tree.lukasbach.co"
           className="hover:text-foreground underline"
           target="_blank"
           rel="noopener noreferrer"

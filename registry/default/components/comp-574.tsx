@@ -267,7 +267,7 @@ export default function Component() {
       >
         Tree with filtering ∙{" "}
         <a
-          href="https://github.com/origin-space/image-cropper"
+          href="https://headless-tree.lukasbach.co"
           className="hover:text-foreground underline"
           target="_blank"
           rel="noopener noreferrer"
