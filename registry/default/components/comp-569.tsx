@@ -1,48 +1,63 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useState } from "react"
 import {
+  createOnDropHandler,
   dragAndDropFeature,
   hotkeysCoreFeature,
   keyboardDragAndDropFeature,
   selectionFeature,
   syncDataLoaderFeature,
-  createOnDropHandler,
-} from "@headless-tree/core";
-import { useTree, AssistiveTreeDescription } from "@headless-tree/react";
-import { Tree, TreeItem, TreeItemLabel, TreeDragLine } from "@/registry/default/ui/tree";
-import { FolderIcon, FolderOpenIcon } from "lucide-react";
+} from "@headless-tree/core"
+import { AssistiveTreeDescription, useTree } from "@headless-tree/react"
+import { FolderIcon, FolderOpenIcon } from "lucide-react"
+
+import {
+  Tree,
+  TreeDragLine,
+  TreeItem,
+  TreeItemLabel,
+} from "@/registry/default/ui/tree"
 
 interface Item {
-  name: string;
-  children?: string[];
+  name: string
+  children?: string[]
 }
 
 const initialItems: Record<string, Item> = {
-  "company": { name: "Company", children: ["engineering", "marketing", "operations"] },
-  "engineering": { name: "Engineering", children: ["frontend", "backend", "platform-team"] },
-  "frontend": { name: "Frontend", children: ["design-system", "web-platform"] },
-  "design-system": { name: "Design System", children: ["components", "tokens", "guidelines"] },
-  "components": { name: "Components" },
-  "tokens": { name: "Tokens" },
-  "guidelines": { name: "Guidelines" },
+  company: {
+    name: "Company",
+    children: ["engineering", "marketing", "operations"],
+  },
+  engineering: {
+    name: "Engineering",
+    children: ["frontend", "backend", "platform-team"],
+  },
+  frontend: { name: "Frontend", children: ["design-system", "web-platform"] },
+  "design-system": {
+    name: "Design System",
+    children: ["components", "tokens", "guidelines"],
+  },
+  components: { name: "Components" },
+  tokens: { name: "Tokens" },
+  guidelines: { name: "Guidelines" },
   "web-platform": { name: "Web Platform" },
-  "backend": { name: "Backend", children: ["apis", "infrastructure"] },
-  "apis": { name: "APIs" },
-  "infrastructure": { name: "Infrastructure" },
+  backend: { name: "Backend", children: ["apis", "infrastructure"] },
+  apis: { name: "APIs" },
+  infrastructure: { name: "Infrastructure" },
   "platform-team": { name: "Platform Team" },
-  "marketing": { name: "Marketing", children: ["content", "seo"] },
-  "content": { name: "Content" },
-  "seo": { name: "SEO" },
-  "operations": { name: "Operations", children: ["hr", "finance"] },
-  "hr": { name: "HR" },
-  "finance": { name: "Finance" },
-};
+  marketing: { name: "Marketing", children: ["content", "seo"] },
+  content: { name: "Content" },
+  seo: { name: "SEO" },
+  operations: { name: "Operations", children: ["hr", "finance"] },
+  hr: { name: "HR" },
+  finance: { name: "Finance" },
+}
 
-const indent = 20;
+const indent = 20
 
 export default function Component() {
-  const [items, setItems] = useState(initialItems);
+  const [items, setItems] = useState(initialItems)
 
   const tree = useTree<Item>({
     initialState: {
@@ -55,35 +70,38 @@ export default function Component() {
     isItemFolder: (item) => (item.getItemData()?.children?.length ?? 0) > 0,
     canReorder: true,
     onDrop: createOnDropHandler((parentItem, newChildrenIds) => {
-      setItems(prevItems => ({
+      setItems((prevItems) => ({
         ...prevItems,
         [parentItem.getId()]: {
           ...prevItems[parentItem.getId()],
           children: newChildrenIds,
         },
-      }));
+      }))
     }),
     dataLoader: {
       getItem: (itemId) => items[itemId],
       getChildren: (itemId) => items[itemId].children ?? [],
     },
-    features: [syncDataLoaderFeature, selectionFeature, hotkeysCoreFeature, dragAndDropFeature, keyboardDragAndDropFeature],
-  });
+    features: [
+      syncDataLoaderFeature,
+      selectionFeature,
+      hotkeysCoreFeature,
+      dragAndDropFeature,
+      keyboardDragAndDropFeature,
+    ],
+  })
 
   return (
-    <div className="flex flex-col gap-2 h-full *:first:grow">
+    <div className="flex h-full flex-col gap-2 *:first:grow">
       <Tree indent={indent} tree={tree}>
         <AssistiveTreeDescription tree={tree} />
         {tree.getItems().map((item) => {
           return (
-            <TreeItem
-              key={item.getId()}
-              item={item}
-            >
+            <TreeItem key={item.getId()} item={item}>
               <TreeItemLabel>
                 <span className="flex items-center gap-2">
-                  {item.isFolder() && (
-                    item.isExpanded() ? (
+                  {item.isFolder() &&
+                    (item.isExpanded() ? (
                       <FolderOpenIcon className="text-muted-foreground pointer-events-none size-4" />
                     ) : (
                       <FolderIcon className="text-muted-foreground pointer-events-none size-4" />
@@ -92,7 +110,7 @@ export default function Component() {
                 </span>
               </TreeItemLabel>
             </TreeItem>
-          );
+          )
         })}
         <TreeDragLine />
       </Tree>
@@ -113,5 +131,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
-};
+  )
+}

@@ -1,48 +1,58 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useState } from "react"
 import {
   hotkeysCoreFeature,
   renamingFeature,
   selectionFeature,
   syncDataLoaderFeature,
-} from "@headless-tree/core";
-import { useTree } from "@headless-tree/react";
-import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree";
-import { FolderIcon, FolderOpenIcon, FileIcon } from "lucide-react";
-import { Input } from "@/registry/default/ui/input";
+} from "@headless-tree/core"
+import { useTree } from "@headless-tree/react"
+import { FileIcon, FolderIcon, FolderOpenIcon } from "lucide-react"
+
+import { Input } from "@/registry/default/ui/input"
+import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree"
 
 interface Item {
-  name: string;
-  children?: string[];
+  name: string
+  children?: string[]
 }
 
 // Initial data
 const initialItems: Record<string, Item> = {
-  "company": { name: "Company", children: ["engineering", "marketing", "operations"] },
-  "engineering": { name: "Engineering", children: ["frontend", "backend", "platform-team"] },
-  "frontend": { name: "Frontend", children: ["design-system", "web-platform"] },
-  "design-system": { name: "Design System", children: ["components", "tokens", "guidelines"] },
-  "components": { name: "Components" },
-  "tokens": { name: "Tokens" },
-  "guidelines": { name: "Guidelines" },
+  company: {
+    name: "Company",
+    children: ["engineering", "marketing", "operations"],
+  },
+  engineering: {
+    name: "Engineering",
+    children: ["frontend", "backend", "platform-team"],
+  },
+  frontend: { name: "Frontend", children: ["design-system", "web-platform"] },
+  "design-system": {
+    name: "Design System",
+    children: ["components", "tokens", "guidelines"],
+  },
+  components: { name: "Components" },
+  tokens: { name: "Tokens" },
+  guidelines: { name: "Guidelines" },
   "web-platform": { name: "Web Platform" },
-  "backend": { name: "Backend", children: ["apis", "infrastructure"] },
-  "apis": { name: "APIs" },
-  "infrastructure": { name: "Infrastructure" },
+  backend: { name: "Backend", children: ["apis", "infrastructure"] },
+  apis: { name: "APIs" },
+  infrastructure: { name: "Infrastructure" },
   "platform-team": { name: "Platform Team" },
-  "marketing": { name: "Marketing", children: ["content", "seo"] },
-  "content": { name: "Content" },
-  "seo": { name: "SEO" },
-  "operations": { name: "Operations", children: ["hr", "finance"] },
-  "hr": { name: "HR" },
-  "finance": { name: "Finance" },
-};
+  marketing: { name: "Marketing", children: ["content", "seo"] },
+  content: { name: "Content" },
+  seo: { name: "SEO" },
+  operations: { name: "Operations", children: ["hr", "finance"] },
+  hr: { name: "HR" },
+  finance: { name: "Finance" },
+}
 
-const indent = 20;
+const indent = 20
 
 export default function Component() {
-  const [items, setItems] = useState(initialItems);
+  const [items, setItems] = useState(initialItems)
 
   const tree = useTree<Item>({
     initialState: {
@@ -58,27 +68,29 @@ export default function Component() {
     },
     onRename: (item, newName) => {
       // Update the item name in our state
-      const itemId = item.getId();
-      setItems(prevItems => ({
+      const itemId = item.getId()
+      setItems((prevItems) => ({
         ...prevItems,
         [itemId]: {
           ...prevItems[itemId],
           name: newName,
         },
-      }));
+      }))
     },
-    features: [syncDataLoaderFeature, hotkeysCoreFeature, renamingFeature, selectionFeature],
-  });
+    features: [
+      syncDataLoaderFeature,
+      hotkeysCoreFeature,
+      renamingFeature,
+      selectionFeature,
+    ],
+  })
 
   return (
-    <div className="flex flex-col gap-2 h-full *:first:grow">
+    <div className="flex h-full flex-col gap-2 *:first:grow">
       <Tree indent={indent} tree={tree}>
         {tree.getItems().map((item) => {
           return (
-            <TreeItem
-              key={item.getId()}
-              item={item}
-            >
+            <TreeItem key={item.getId()} item={item}>
               <TreeItemLabel>
                 <span className="flex items-center gap-2">
                   {item.isFolder() ? (
@@ -90,20 +102,19 @@ export default function Component() {
                   ) : (
                     <FileIcon className="text-muted-foreground pointer-events-none size-4" />
                   )}
-                  {item.isRenaming() ?
-                    (
-                      <Input
-                        {...item.getRenameInputProps()}
-                        autoFocus
-                        className="h-6 px-1 -my-0.5"
-                      />
-                    ) : (
-                      item.getItemName()
-                    )}
+                  {item.isRenaming() ? (
+                    <Input
+                      {...item.getRenameInputProps()}
+                      autoFocus
+                      className="-my-0.5 h-6 px-1"
+                    />
+                  ) : (
+                    item.getItemName()
+                  )}
                 </span>
               </TreeItemLabel>
             </TreeItem>
-          );
+          )
         })}
       </Tree>
 
@@ -123,5 +134,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
-};
+  )
+}

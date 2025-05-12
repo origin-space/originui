@@ -1,44 +1,59 @@
 "use client"
 
-import React from "react";
+import React from "react"
 import {
   expandAllFeature,
   hotkeysCoreFeature,
   selectionFeature,
   syncDataLoaderFeature,
-} from "@headless-tree/core";
-import { useTree } from "@headless-tree/react";
-import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree";
-import { FolderIcon, FolderOpenIcon, ListCollapseIcon, ListTreeIcon } from "lucide-react";
-import { Button } from "@/registry/default/ui/button";
+} from "@headless-tree/core"
+import { useTree } from "@headless-tree/react"
+import {
+  FolderIcon,
+  FolderOpenIcon,
+  ListCollapseIcon,
+  ListTreeIcon,
+} from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
+import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree"
 
 interface Item {
-  name: string;
-  children?: string[];
+  name: string
+  children?: string[]
 }
 
 const items: Record<string, Item> = {
-  "company": { name: "Company", children: ["engineering", "marketing", "operations"] },
-  "engineering": { name: "Engineering", children: ["frontend", "backend", "platform-team"] },
-  "frontend": { name: "Frontend", children: ["design-system", "web-platform"] },
-  "design-system": { name: "Design System", children: ["components", "tokens", "guidelines"] },
-  "components": { name: "Components" },
-  "tokens": { name: "Tokens" },
-  "guidelines": { name: "Guidelines" },
+  company: {
+    name: "Company",
+    children: ["engineering", "marketing", "operations"],
+  },
+  engineering: {
+    name: "Engineering",
+    children: ["frontend", "backend", "platform-team"],
+  },
+  frontend: { name: "Frontend", children: ["design-system", "web-platform"] },
+  "design-system": {
+    name: "Design System",
+    children: ["components", "tokens", "guidelines"],
+  },
+  components: { name: "Components" },
+  tokens: { name: "Tokens" },
+  guidelines: { name: "Guidelines" },
   "web-platform": { name: "Web Platform" },
-  "backend": { name: "Backend", children: ["apis", "infrastructure"] },
-  "apis": { name: "APIs" },
-  "infrastructure": { name: "Infrastructure" },
+  backend: { name: "Backend", children: ["apis", "infrastructure"] },
+  apis: { name: "APIs" },
+  infrastructure: { name: "Infrastructure" },
   "platform-team": { name: "Platform Team" },
-  "marketing": { name: "Marketing", children: ["content", "seo"] },
-  "content": { name: "Content" },
-  "seo": { name: "SEO" },
-  "operations": { name: "Operations", children: ["hr", "finance"] },
-  "hr": { name: "HR" },
-  "finance": { name: "Finance" },
-};
+  marketing: { name: "Marketing", children: ["content", "seo"] },
+  content: { name: "Content" },
+  seo: { name: "SEO" },
+  operations: { name: "Operations", children: ["hr", "finance"] },
+  hr: { name: "HR" },
+  finance: { name: "Finance" },
+}
 
-const indent = 20;
+const indent = 20
 
 export default function Component() {
   const tree = useTree<Item>({
@@ -54,33 +69,43 @@ export default function Component() {
       getItem: (itemId) => items[itemId],
       getChildren: (itemId) => items[itemId].children ?? [],
     },
-    features: [syncDataLoaderFeature, selectionFeature, hotkeysCoreFeature, expandAllFeature],
-  });
+    features: [
+      syncDataLoaderFeature,
+      selectionFeature,
+      hotkeysCoreFeature,
+      expandAllFeature,
+    ],
+  })
 
   return (
-    <div className="flex flex-col gap-2 h-full *:nth-2:grow">
+    <div className="flex h-full flex-col gap-2 *:nth-2:grow">
       <div className="flex items-center gap-2">
         <Button size="sm" variant="outline" onClick={() => tree.expandAll()}>
-          <ListTreeIcon className="-ms-1 opacity-60" size={16} aria-hidden="true" />
+          <ListTreeIcon
+            className="-ms-1 opacity-60"
+            size={16}
+            aria-hidden="true"
+          />
           Expand all
         </Button>
         <Button size="sm" variant="outline" onClick={tree.collapseAll}>
-          <ListCollapseIcon className="-ms-1 opacity-60" size={16} aria-hidden="true" />
+          <ListCollapseIcon
+            className="-ms-1 opacity-60"
+            size={16}
+            aria-hidden="true"
+          />
           Collapse all
         </Button>
       </div>
 
       <Tree indent={indent} tree={tree}>
-        {tree.getItems().map((item) => {          
+        {tree.getItems().map((item) => {
           return (
-            <TreeItem
-              key={item.getId()}
-              item={item}
-            >
+            <TreeItem key={item.getId()} item={item}>
               <TreeItemLabel>
                 <span className="flex items-center gap-2">
-                  {item.isFolder() && (
-                    item.isExpanded() ? (
+                  {item.isFolder() &&
+                    (item.isExpanded() ? (
                       <FolderOpenIcon className="text-muted-foreground pointer-events-none size-4" />
                     ) : (
                       <FolderIcon className="text-muted-foreground pointer-events-none size-4" />
@@ -94,7 +119,7 @@ export default function Component() {
                 </span>
               </TreeItemLabel>
             </TreeItem>
-          );
+          )
         })}
       </Tree>
 
@@ -114,5 +139,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  );
-};
+  )
+}
