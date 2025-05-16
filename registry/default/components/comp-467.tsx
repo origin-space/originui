@@ -13,7 +13,7 @@ const items = [
     name: "Alex Thompson",
     username: "@alexthompson",
     image:
-      "https://res.cloudinary.com/dlzlfasou/image/upload/v1736358071/avatar-40-02_upqrxi.jpg",
+      "https://raw.githubusercontent.com/origin-space/origin-images/refs/heads/main/exp1/avatar-40-02_upqrxi.jpg",
     email: "alex.t@company.com",
     location: "San Francisco, US",
     status: "Active",
@@ -24,7 +24,7 @@ const items = [
     name: "Sarah Chen",
     username: "@sarahchen",
     image:
-      "https://res.cloudinary.com/dlzlfasou/image/upload/v1736358073/avatar-40-01_ij9v7j.jpg",
+      "https://raw.githubusercontent.com/origin-space/origin-images/refs/heads/main/exp1/avatar-40-01_ij9v7j.jpg",
     email: "sarah.c@company.com",
     location: "Singapore",
     status: "Active",
@@ -35,7 +35,7 @@ const items = [
     name: "Maria Garcia",
     username: "@mariagarcia",
     image:
-      "https://res.cloudinary.com/dlzlfasou/image/upload/v1736358072/avatar-40-03_dkeufx.jpg",
+      "https://raw.githubusercontent.com/origin-space/origin-images/refs/heads/main/exp1/avatar-40-03_dkeufx.jpg",
     email: "m.garcia@company.com",
     location: "Madrid, Spain",
     status: "Active",
@@ -46,7 +46,7 @@ const items = [
     name: "David Kim",
     username: "@davidkim",
     image:
-      "https://res.cloudinary.com/dlzlfasou/image/upload/v1736358070/avatar-40-05_cmz0mg.jpg",
+      "https://raw.githubusercontent.com/origin-space/origin-images/refs/heads/main/exp1/avatar-40-05_cmz0mg.jpg",
     email: "d.kim@company.com",
     location: "Seoul, KR",
     status: "Active",

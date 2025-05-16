@@ -69,7 +69,7 @@ async function getCroppedImg(
 // --- End: Copied Helper Functions ---
 
 const ORIGINAL_IMAGE_URL =
-  "https://res.cloudinary.com/dlzlfasou/image/upload/v1746526187/cropper-10_k24zxk.jpg"
+  "https://raw.githubusercontent.com/origin-space/origin-images/refs/heads/main/cropper-10_k24zxk.jpg"
 
 export default function Component() {
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null)
