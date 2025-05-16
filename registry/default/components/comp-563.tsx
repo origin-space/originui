@@ -20,7 +20,7 @@ export default function Component() {
         <Cropper
           className="h-80"
           cropPadding={20}
-          image="https://res.cloudinary.com/dlzlfasou/image/upload/v1746526186/cropper-09_qskkln.jpg"
+          image="https://raw.githubusercontent.com/origin-space/origin-images/refs/heads/main/cropper-09_qskkln.jpg"
           onCropChange={setCropData}
         >
           <CropperDescription />

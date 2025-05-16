@@ -107,7 +107,7 @@ export default function Component() {
   useEffect(() => {
     async function fetchPosts() {
       const res = await fetch(
-        "https://res.cloudinary.com/dlzlfasou/raw/upload/users-01_fertyx.json"
+        "https://raw.githubusercontent.com/origin-space/origin-images/refs/heads/main/users-01_fertyx.json"
       )
       const data = await res.json()
       setData(data.slice(0, 5)) // Limit to 5 items
