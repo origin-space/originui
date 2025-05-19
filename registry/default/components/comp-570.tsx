@@ -125,7 +125,7 @@ export default function Component() {
       >
         Tree with renaming (press F2 to rename) ∙{" "}
         <a
-          href="https://headless-tree.lukasbach.co"
+          href="https://headless-tree.lukasbach.com"
           className="hover:text-foreground underline"
           target="_blank"
           rel="noopener noreferrer"
