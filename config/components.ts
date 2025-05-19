@@ -266,7 +266,6 @@ export const categories: ComponentCategory[] = [
       { name: "comp-563" },
       { name: "comp-564" },
     ],
-    isNew: true,
   },
   {
     slug: "dialog",
