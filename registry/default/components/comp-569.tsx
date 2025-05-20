@@ -120,7 +120,7 @@ export default function Component() {
         role="region"
         className="text-muted-foreground mt-2 text-xs"
       >
-        Tee with multi-select and drag and drop ∙{" "}
+        Tree with multi-select and drag and drop ∙{" "}
         <a
           href="https://headless-tree.lukasbach.com"
           className="hover:text-foreground underline"
