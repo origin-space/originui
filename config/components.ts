@@ -266,7 +266,6 @@ export const categories: ComponentCategory[] = [
       { name: "comp-563" },
       { name: "comp-564" },
     ],
-    isNew: true,
   },
   {
     slug: "dialog",
@@ -335,7 +334,6 @@ export const categories: ComponentCategory[] = [
       { name: "comp-553" },
       { name: "comp-554" },
     ],
-    isNew: true,
   },
   {
     slug: "event-calendar",
@@ -742,6 +740,25 @@ export const categories: ComponentCategory[] = [
       { name: "comp-364" },
       { name: "comp-365" },
     ],
+  },
+  {
+    slug: "tree",
+    name: "Tree",
+    components: [
+      { name: "comp-565" },
+      { name: "comp-566" },
+      { name: "comp-567" },
+      { name: "comp-568" },
+      { name: "comp-569" },
+      { name: "comp-570" },
+      { name: "comp-571" },
+      { name: "comp-572" },
+      { name: "comp-573" },
+      { name: "comp-574" },
+      { name: "comp-575" },
+      { name: "comp-576" },
+    ],
+    isNew: true,
   },
 ]
 

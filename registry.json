@@ -469,6 +469,17 @@
       ]
     },
     {
+      "name": "tree",
+      "type": "registry:component",
+      "dependencies": ["@headless-tree/core", "@headless-tree/react"],
+      "files": [
+        {
+          "path": "registry/default/ui/tree.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "use-character-limit",
       "type": "registry:hook",
       "files": [
@@ -10190,6 +10201,174 @@
       "meta": {
         "tags": ["image", "crop", "zoom"],
         "colSpan": 2
+      }
+    },
+    {
+      "name": "comp-565",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-565.tsx",
+          "type": "registry:component"
+        } 
+      ],
+      "meta": {
+        "tags": ["tree"]
+      }
+    },
+    {
+      "name": "comp-566",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-566.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree"]
+      }
+    },
+    {
+      "name": "comp-567",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-567.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree"]
+      }
+    },
+    {
+      "name": "comp-568",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-568.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree"]
+      }
+    },
+    {
+      "name": "comp-569",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-569.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree"]
+      }
+    },
+    {
+      "name": "comp-570", 
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-570.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree"]
+      }
+    },
+    {
+      "name": "comp-571", 
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json", "https://originui.com/r/input.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-571.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree", "filter", "search"]
+      }
+    },
+    {
+      "name": "comp-572", 
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json", "https://originui.com/r/input.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-572.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree", "filter", "search"]
+      }
+    },
+    {
+      "name": "comp-573", 
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-573.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree"]
+      }
+    },
+    {
+      "name": "comp-574", 
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json", "https://originui.com/r/button.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-574.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree", "button"]
+      }
+    },
+    {
+      "name": "comp-575", 
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-575.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree"]
+      }
+    },
+    {
+      "name": "comp-576", 
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-576.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree", "menu"]
       }
     }
   ]
