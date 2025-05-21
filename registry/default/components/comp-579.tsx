@@ -82,7 +82,7 @@ export default function Component() {
                   <NavigationMenuItem key={index} className="h-full">
                     <NavigationMenuLink
                       href={link.href}
-                      className="py-1.5 font-medium text-muted-foreground transition-colors hover:text-primary hover:bg-transparent h-full justify-center border-y-2 border-t-transparent not-hover:border-transparent rounded-none"
+                      className="py-1.5 font-medium text-muted-foreground transition-colors hover:text-primary hover:bg-transparent h-full justify-center border-y-2 border-t-transparent not-hover:border-transparent border-b-primary rounded-none"
                     >
                       {link.label}
                     </NavigationMenuLink>
