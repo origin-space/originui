@@ -18,7 +18,7 @@ export default function Component() {
   return (
     <header className="border-b bg-background px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-1">
           {/* Mobile menu trigger */}
           <Popover>
             <PopoverTrigger asChild>
@@ -67,12 +67,30 @@ export default function Component() {
                       </NavigationMenuLink>
                     </NavigationMenuItem>
                   ))}
+                  <NavigationMenuItem className="w-full" role="presentation" aria-hidden="true">
+                  <div role="separator" aria-orientation="horizontal" className="bg-border -mx-1 my-1 h-px"></div>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem className="w-full">
+                  <NavigationMenuLink
+                        href="#"
+                        className="py-1.5 font-medium text-muted-foreground transition-colors hover:text-primary"
+                      >
+                        Sign In
+                      </NavigationMenuLink>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem className="w-full">
+                    <Button asChild size="sm" className="text-sm w-full mt-0.5">
+                      <a href="#">
+                        Get Started
+                      </a>
+                    </Button>
+                  </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
             </PopoverContent>
           </Popover>
           {/* Left side */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 flex-1 max-md:justify-between">
             {/* Logo */}
             <a href="#" className="font-semibold">
               Brand
@@ -107,11 +125,17 @@ export default function Component() {
           </div>
         </div>
         {/* Right side */}
-        <div className="flex items-center gap-2">
-          <Button variant="ghost" size="sm" className="text-sm">
-            Sign In
+        <div className="max-md:hidden flex items-center gap-2">
+          <Button asChild variant="ghost" size="sm" className="text-sm">
+            <a href="#">
+              Sign In
+            </a>
           </Button>
-          <Button size="sm" className="text-sm">Get Started</Button>
+          <Button asChild size="sm" className="text-sm">
+            <a href="#">
+              Get Started
+            </a>
+          </Button>
         </div>
       </div>
     </header>

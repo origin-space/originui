@@ -92,10 +92,16 @@ export default function Component() {
         </div>
         {/* Right side */}
         <div className="flex items-center gap-2">
-          <Button variant="ghost" size="sm" className="text-sm">
-            Sign In
+          <Button asChild variant="ghost" size="sm" className="text-sm">
+            <a href="#">
+              Sign In
+            </a>
           </Button>
-          <Button size="sm" className="text-sm">Get Started</Button>
+          <Button asChild size="sm" className="text-sm">
+            <a href="#">
+              Get Started
+            </a>
+          </Button>
         </div>
       </div>
     </header>
