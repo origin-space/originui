@@ -9,7 +9,7 @@ import {
   selectionFeature,
   syncDataLoaderFeature,
 } from "@headless-tree/core"
-import { useTree } from "@headless-tree/react"
+import { AssistiveTreeDescription, useTree } from "@headless-tree/react"
 import {
   RiBracesLine,
   RiCodeSSlashLine,
@@ -21,7 +21,6 @@ import {
 
 import {
   Tree,
-  TreeDragLine,
   TreeItem,
   TreeItemLabel,
 } from "@/registry/default/ui/tree"
@@ -176,6 +175,7 @@ export default function Component() {
           indent={indent}
           tree={tree}
         >
+          <AssistiveTreeDescription tree={tree} />
           {tree.getItems().map((item) => {
             return (
               <TreeItem key={item.getId()} item={item} className="pb-0!">
@@ -192,7 +192,6 @@ export default function Component() {
               </TreeItem>
             )
           })}
-          <TreeDragLine />
         </Tree>
       </div>
 
