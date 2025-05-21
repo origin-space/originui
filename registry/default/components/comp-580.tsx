@@ -1,29 +1,39 @@
 import { useId } from "react"
-import { Button } from "@/registry/default/ui/button"
-import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink } from "@/registry/default/ui/navigation-menu"
-import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover"
 import { ArrowRightIcon, SearchIcon } from "lucide-react"
+
+import { Button } from "@/registry/default/ui/button"
 import { Input } from "@/registry/default/ui/input"
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/registry/default/ui/navigation-menu"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/registry/default/ui/popover"
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
   { href: "#", label: "Products" },
   { href: "#", label: "Categories" },
-  { href: "#", label: "Deals" }
+  { href: "#", label: "Deals" },
 ]
 
 export default function Component() {
   const id = useId()
-  
+
   return (
-    <header className="border-b bg-background px-4 md:px-6">
+    <header className="bg-background border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
-        <div className="flex items-center gap-2 flex-1">
+        <div className="flex flex-1 items-center gap-2">
           {/* Mobile menu trigger */}
           <Popover>
             <PopoverTrigger asChild>
               <Button
-                className="group md:hidden size-8"
+                className="group size-8 md:hidden"
                 variant="ghost"
                 size="icon"
               >
@@ -56,33 +66,39 @@ export default function Component() {
             </PopoverTrigger>
             <PopoverContent align="start" className="w-36 p-1">
               <NavigationMenu className="max-w-none *:w-full">
-                <NavigationMenuList className="gap-0 md:gap-2 flex-col items-start">
+                <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
                   {navigationLinks.map((link, index) => (
                     <NavigationMenuItem key={index} className="w-full">
                       <NavigationMenuLink
                         href={link.href}
-                        className="py-1.5 font-medium text-muted-foreground transition-colors hover:text-primary"
+                        className="text-muted-foreground hover:text-primary py-1.5 font-medium transition-colors"
                       >
                         {link.label}
                       </NavigationMenuLink>
                     </NavigationMenuItem>
                   ))}
-                  <NavigationMenuItem className="w-full" role="presentation" aria-hidden="true">
-                  <div role="separator" aria-orientation="horizontal" className="bg-border -mx-1 my-1 h-px"></div>
+                  <NavigationMenuItem
+                    className="w-full"
+                    role="presentation"
+                    aria-hidden="true"
+                  >
+                    <div
+                      role="separator"
+                      aria-orientation="horizontal"
+                      className="bg-border -mx-1 my-1 h-px"
+                    ></div>
                   </NavigationMenuItem>
                   <NavigationMenuItem className="w-full">
-                  <NavigationMenuLink
-                        href="#"
-                        className="py-1.5 font-medium text-muted-foreground transition-colors hover:text-primary"
-                      >
-                        Sign In
-                      </NavigationMenuLink>
+                    <NavigationMenuLink
+                      href="#"
+                      className="text-muted-foreground hover:text-primary py-1.5 font-medium transition-colors"
+                    >
+                      Sign In
+                    </NavigationMenuLink>
                   </NavigationMenuItem>
                   <NavigationMenuItem className="w-full">
-                    <Button asChild size="sm" className="text-sm w-full mt-0.5">
-                      <a href="#">
-                        Get Started
-                      </a>
+                    <Button asChild size="sm" className="mt-0.5 w-full text-sm">
+                      <a href="#">Get Started</a>
                     </Button>
                   </NavigationMenuItem>
                 </NavigationMenuList>
@@ -90,7 +106,7 @@ export default function Component() {
             </PopoverContent>
           </Popover>
           {/* Left side */}
-          <div className="flex items-center gap-6 flex-1 max-md:justify-between">
+          <div className="flex flex-1 items-center gap-6 max-md:justify-between">
             {/* Logo */}
             <a href="#" className="font-semibold">
               Brand
@@ -102,7 +118,7 @@ export default function Component() {
                   <NavigationMenuItem key={index}>
                     <NavigationMenuLink
                       href={link.href}
-                      className="py-1.5 font-medium text-muted-foreground transition-colors hover:text-primary"
+                      className="text-muted-foreground hover:text-primary py-1.5 font-medium transition-colors"
                     >
                       {link.label}
                     </NavigationMenuLink>
@@ -114,27 +130,23 @@ export default function Component() {
             <div className="relative">
               <Input
                 id={id}
-                className="peer ps-8 pe-2 h-8"
+                className="peer h-8 ps-8 pe-2"
                 placeholder="Search..."
                 type="search"
               />
               <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-2 peer-disabled:opacity-50">
                 <SearchIcon size={16} />
               </div>
-            </div>            
+            </div>
           </div>
         </div>
         {/* Right side */}
-        <div className="max-md:hidden flex items-center gap-2">
+        <div className="flex items-center gap-2 max-md:hidden">
           <Button asChild variant="ghost" size="sm" className="text-sm">
-            <a href="#">
-              Sign In
-            </a>
+            <a href="#">Sign In</a>
           </Button>
           <Button asChild size="sm" className="text-sm">
-            <a href="#">
-              Get Started
-            </a>
+            <a href="#">Get Started</a>
           </Button>
         </div>
       </div>

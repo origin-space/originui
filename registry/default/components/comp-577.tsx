@@ -1,25 +1,34 @@
 import { Button } from "@/registry/default/ui/button"
-import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink } from "@/registry/default/ui/navigation-menu"
-import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover"
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/registry/default/ui/navigation-menu"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/registry/default/ui/popover"
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
   { href: "#", label: "Home" },
   { href: "#", label: "Features" },
   { href: "#", label: "Pricing" },
-  { href: "#", label: "About" }
+  { href: "#", label: "About" },
 ]
 
 export default function Component() {
   return (
-    <header className="border-b bg-background px-4 md:px-6">
+    <header className="bg-background border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           {/* Mobile menu trigger */}
           <Popover>
             <PopoverTrigger asChild>
               <Button
-                className="group md:hidden size-8"
+                className="group size-8 md:hidden"
                 variant="ghost"
                 size="icon"
               >
@@ -52,12 +61,12 @@ export default function Component() {
             </PopoverTrigger>
             <PopoverContent align="start" className="w-36 p-1">
               <NavigationMenu className="max-w-none *:w-full">
-                <NavigationMenuList className="gap-0 md:gap-2 flex-col items-start">
+                <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
                   {navigationLinks.map((link, index) => (
                     <NavigationMenuItem key={index} className="w-full">
                       <NavigationMenuLink
                         href={link.href}
-                        className="py-1.5 font-medium text-muted-foreground transition-colors hover:text-primary"
+                        className="text-muted-foreground hover:text-primary py-1.5 font-medium transition-colors"
                       >
                         {link.label}
                       </NavigationMenuLink>
@@ -80,7 +89,7 @@ export default function Component() {
                   <NavigationMenuItem key={index}>
                     <NavigationMenuLink
                       href={link.href}
-                      className="py-1.5 font-medium text-muted-foreground transition-colors hover:text-primary"
+                      className="text-muted-foreground hover:text-primary py-1.5 font-medium transition-colors"
                     >
                       {link.label}
                     </NavigationMenuLink>
@@ -93,14 +102,10 @@ export default function Component() {
         {/* Right side */}
         <div className="flex items-center gap-2">
           <Button asChild variant="ghost" size="sm" className="text-sm">
-            <a href="#">
-              Sign In
-            </a>
+            <a href="#">Sign In</a>
           </Button>
           <Button asChild size="sm" className="text-sm">
-            <a href="#">
-              Get Started
-            </a>
+            <a href="#">Get Started</a>
           </Button>
         </div>
       </div>

@@ -89,33 +89,33 @@ export default function Component() {
 
   // Handle clearing the search
   const handleClearSearch = () => {
-    setSearchValue("");
+    setSearchValue("")
 
     // Manually trigger the tree's search onChange with an empty value
     // to ensure item.isMatchingSearch() is correctly updated.
-    const searchProps = tree.getSearchInputElementProps();
+    const searchProps = tree.getSearchInputElementProps()
     if (searchProps.onChange) {
       const syntheticEvent = {
         target: { value: "" },
-      } as React.ChangeEvent<HTMLInputElement>; // Cast to the expected event type
-      searchProps.onChange(syntheticEvent);
+      } as React.ChangeEvent<HTMLInputElement> // Cast to the expected event type
+      searchProps.onChange(syntheticEvent)
     }
 
     // Reset tree state to initial expanded items
     setState((prevState) => ({
       ...prevState,
       expandedItems: initialExpandedItems,
-    }));
+    }))
 
     // Clear custom filtered items
-    setFilteredItems([]);
+    setFilteredItems([])
 
     if (inputRef.current) {
-      inputRef.current.focus();
+      inputRef.current.focus()
       // Also clear the internal search input
-      inputRef.current.value = "";
+      inputRef.current.value = ""
     }
-  };
+  }
 
   // Keep track of filtered items separately from the tree's internal search state
   const [filteredItems, setFilteredItems] = useState<string[]>([])

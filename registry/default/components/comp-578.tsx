@@ -1,9 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/registry/default/ui/button"
-import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink } from "@/registry/default/ui/navigation-menu"
-import { Popover, PopoverContent, PopoverTrigger } from "@/registry/default/ui/popover"
 import {
   BellIcon,
   BoltIcon,
@@ -17,11 +14,14 @@ import {
   PinIcon,
   UserPenIcon,
 } from "lucide-react"
+
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
 } from "@/registry/default/ui/avatar"
+import { Badge } from "@/registry/default/ui/badge"
+import { Button } from "@/registry/default/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -31,14 +31,24 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu"
-import { Badge } from "@/registry/default/ui/badge"
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/registry/default/ui/navigation-menu"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/registry/default/ui/popover"
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
   { href: "#", label: "Home" },
   { href: "#", label: "Features" },
   { href: "#", label: "Pricing" },
-  { href: "#", label: "About" }
+  { href: "#", label: "About" },
 ]
 
 const initialNotifications = [
@@ -132,14 +142,14 @@ export default function Component() {
   }
 
   return (
-    <header className="border-b bg-background px-4 md:px-6">
+    <header className="bg-background border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           {/* Mobile menu trigger */}
           <Popover>
             <PopoverTrigger asChild>
               <Button
-                className="group md:hidden size-8"
+                className="group size-8 md:hidden"
                 variant="ghost"
                 size="icon"
               >
@@ -172,12 +182,12 @@ export default function Component() {
             </PopoverTrigger>
             <PopoverContent align="start" className="w-36 p-1">
               <NavigationMenu className="max-w-none *:w-full">
-                <NavigationMenuList className="gap-0 md:gap-2 flex-col items-start">
+                <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
                   {navigationLinks.map((link, index) => (
                     <NavigationMenuItem key={index} className="w-full">
                       <NavigationMenuLink
                         href={link.href}
-                        className="py-1.5 font-medium text-muted-foreground transition-colors hover:text-primary"
+                        className="text-muted-foreground hover:text-primary py-1.5 font-medium transition-colors"
                       >
                         {link.label}
                       </NavigationMenuLink>
@@ -200,7 +210,7 @@ export default function Component() {
                   <NavigationMenuItem key={index}>
                     <NavigationMenuLink
                       href={link.href}
-                      className="py-1.5 font-medium text-muted-foreground transition-colors hover:text-primary"
+                      className="text-muted-foreground hover:text-primary py-1.5 font-medium transition-colors"
                     >
                       {link.label}
                     </NavigationMenuLink>
@@ -219,7 +229,7 @@ export default function Component() {
                 <Button
                   size="icon"
                   variant="ghost"
-                  className="rounded-full shadow-none size-8"
+                  className="size-8 rounded-full shadow-none"
                   aria-label="Open edit menu"
                 >
                   <InfoIcon size={16} aria-hidden="true" />
@@ -232,7 +242,11 @@ export default function Component() {
                   asChild
                 >
                   <a href="#">
-                    <BookIcon size={16} className="opacity-60" aria-hidden="true" />
+                    <BookIcon
+                      size={16}
+                      className="opacity-60"
+                      aria-hidden="true"
+                    />
                     Documentation
                   </a>
                 </DropdownMenuItem>
@@ -241,7 +255,11 @@ export default function Component() {
                   asChild
                 >
                   <a href="#">
-                    <LifeBuoyIcon size={16} className="opacity-60" aria-hidden="true" />
+                    <LifeBuoyIcon
+                      size={16}
+                      className="opacity-60"
+                      aria-hidden="true"
+                    />
                     Support
                   </a>
                 </DropdownMenuItem>
@@ -259,14 +277,14 @@ export default function Component() {
                   </a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
-            </DropdownMenu>   
+            </DropdownMenu>
             {/* Notification */}
             <Popover>
               <PopoverTrigger asChild>
                 <Button
                   size="icon"
                   variant="ghost"
-                  className="relative rounded-full shadow-none size-8"
+                  className="relative size-8 rounded-full shadow-none"
                   aria-label="Open notifications"
                 >
                   <BellIcon size={16} aria-hidden="true" />
@@ -303,7 +321,9 @@ export default function Component() {
                       <div className="flex-1 space-y-1">
                         <button
                           className="text-foreground/80 text-left after:absolute after:inset-0"
-                          onClick={() => handleNotificationClick(notification.id)}
+                          onClick={() =>
+                            handleNotificationClick(notification.id)
+                          }
                         >
                           <span className="text-foreground font-medium hover:underline">
                             {notification.user}
@@ -333,7 +353,10 @@ export default function Component() {
           {/* User menu */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="h-auto p-0 hover:bg-transparent">
+              <Button
+                variant="ghost"
+                className="h-auto p-0 hover:bg-transparent"
+              >
                 <Avatar>
                   <AvatarImage src="./avatar.jpg" alt="Profile image" />
                   <AvatarFallback>KK</AvatarFallback>
@@ -352,32 +375,56 @@ export default function Component() {
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
                 <DropdownMenuItem>
-                  <BoltIcon size={16} className="opacity-60" aria-hidden="true" />
+                  <BoltIcon
+                    size={16}
+                    className="opacity-60"
+                    aria-hidden="true"
+                  />
                   <span>Option 1</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Layers2Icon size={16} className="opacity-60" aria-hidden="true" />
+                  <Layers2Icon
+                    size={16}
+                    className="opacity-60"
+                    aria-hidden="true"
+                  />
                   <span>Option 2</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <BookOpenIcon size={16} className="opacity-60" aria-hidden="true" />
+                  <BookOpenIcon
+                    size={16}
+                    className="opacity-60"
+                    aria-hidden="true"
+                  />
                   <span>Option 3</span>
                 </DropdownMenuItem>
               </DropdownMenuGroup>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
                 <DropdownMenuItem>
-                  <PinIcon size={16} className="opacity-60" aria-hidden="true" />
+                  <PinIcon
+                    size={16}
+                    className="opacity-60"
+                    aria-hidden="true"
+                  />
                   <span>Option 4</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <UserPenIcon size={16} className="opacity-60" aria-hidden="true" />
+                  <UserPenIcon
+                    size={16}
+                    className="opacity-60"
+                    aria-hidden="true"
+                  />
                   <span>Option 5</span>
                 </DropdownMenuItem>
               </DropdownMenuGroup>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
-                <LogOutIcon size={16} className="opacity-60" aria-hidden="true" />
+                <LogOutIcon
+                  size={16}
+                  className="opacity-60"
+                  aria-hidden="true"
+                />
                 <span>Logout</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
