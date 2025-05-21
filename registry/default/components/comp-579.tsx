@@ -21,7 +21,7 @@ const navigationLinks = [
 
 export default function Component() {
   return (
-    <header className="bg-background border-b px-4 md:px-6">
+    <header className="border-b px-4 md:px-6">
       <div className="flex h-16 justify-between gap-4">
         <div className="items flex gap-2">
           <div className="flex items-center">
@@ -65,10 +65,7 @@ export default function Component() {
                   <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
                     {navigationLinks.map((link, index) => (
                       <NavigationMenuItem key={index} className="w-full">
-                        <NavigationMenuLink
-                          href={link.href}
-                          className="text-muted-foreground hover:text-primary py-1.5 font-medium transition-colors"
-                        >
+                        <NavigationMenuLink href={link.href} className="py-1.5">
                           {link.label}
                         </NavigationMenuLink>
                       </NavigationMenuItem>
@@ -91,7 +88,7 @@ export default function Component() {
                   <NavigationMenuItem key={index} className="h-full">
                     <NavigationMenuLink
                       href={link.href}
-                      className="text-muted-foreground hover:text-primary border-b-primary h-full justify-center rounded-none border-y-2 border-t-transparent py-1.5 font-medium transition-colors not-hover:border-transparent hover:bg-transparent"
+                      className="text-muted-foreground hover:text-primary border-b-primary h-full justify-center rounded-none border-y-2 border-t-transparent py-1.5 font-medium not-hover:border-transparent hover:bg-transparent"
                     >
                       {link.label}
                     </NavigationMenuLink>
