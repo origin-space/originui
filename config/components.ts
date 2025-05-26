@@ -417,6 +417,7 @@ export const categories: ComponentCategory[] = [
       { name: "comp-578" },
       { name: "comp-582" },
       { name: "comp-583" },
+      { name: "comp-584" },
     ],
   },
   {

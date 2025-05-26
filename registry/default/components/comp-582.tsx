@@ -101,48 +101,46 @@ export default function Component() {
             </PopoverContent>
           </Popover>
           {/* Left side */}
-          <div className="flex items-center gap-6">
-            <Breadcrumb>
-              <BreadcrumbList>
-                <BreadcrumbItem>
-                  <Select defaultValue="personal">
-                    <SelectTrigger 
-                      aria-label="Select account type"
-                      asChild
-                    >
-                      <Button variant="ghost" className="p-1.5 h-8 focus-visible:ring-0 focus-visible:bg-accent text-foreground">
-                        <SelectValue placeholder="Select account type" />
-                        <ChevronsUpDown size={14} className="text-muted-foreground/80" />
-                      </Button>
-                    </SelectTrigger>
-                    <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
-                      <SelectItem value="personal">Personal</SelectItem>
-                      <SelectItem value="team">Team</SelectItem>
-                      <SelectItem value="business">Business</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator> / </BreadcrumbSeparator>
-                <BreadcrumbItem>
-                  <Select defaultValue="1">
-                    <SelectTrigger 
-                      aria-label="Select project"
-                      asChild
-                    >
-                      <Button variant="ghost" className="p-1.5 h-8 focus-visible:ring-0 focus-visible:bg-accent text-foreground">
-                        <SelectValue placeholder="Select project" />
-                        <ChevronsUpDown size={14} className="text-muted-foreground/80" />
-                      </Button>                      
-                    </SelectTrigger>
-                    <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
-                      <SelectItem value="1">Main project</SelectItem>
-                      <SelectItem value="2">Origin project</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
-          </div>
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <Select defaultValue="personal">
+                  <SelectTrigger 
+                    aria-label="Select account type"
+                    asChild
+                  >
+                    <Button variant="ghost" className="p-1.5 h-8 focus-visible:ring-0 focus-visible:bg-accent text-foreground">
+                      <SelectValue placeholder="Select account type" />
+                      <ChevronsUpDown size={14} className="text-muted-foreground/80" />
+                    </Button>
+                  </SelectTrigger>
+                  <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
+                    <SelectItem value="personal">Personal</SelectItem>
+                    <SelectItem value="team">Team</SelectItem>
+                    <SelectItem value="business">Business</SelectItem>
+                  </SelectContent>
+                </Select>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator> / </BreadcrumbSeparator>
+              <BreadcrumbItem>
+                <Select defaultValue="1">
+                  <SelectTrigger 
+                    aria-label="Select project"
+                    asChild
+                  >
+                    <Button variant="ghost" className="p-1.5 h-8 focus-visible:ring-0 focus-visible:bg-accent text-foreground">
+                      <SelectValue placeholder="Select project" />
+                      <ChevronsUpDown size={14} className="text-muted-foreground/80" />
+                    </Button>                      
+                  </SelectTrigger>
+                  <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
+                    <SelectItem value="1">Main project</SelectItem>
+                    <SelectItem value="2">Origin project</SelectItem>
+                  </SelectContent>
+                </Select>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
         </div>
         {/* Right side */}
         <div className="flex items-center gap-4">
