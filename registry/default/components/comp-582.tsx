@@ -110,9 +110,9 @@ export default function Component() {
                       aria-label="Select account type"
                       asChild
                     >
-                      <Button variant="ghost" className="px-1.5 py-0.5 h-auto focus-visible:ring-0 focus-visible:bg-accent text-foreground">
+                      <Button variant="ghost" className="p-1.5 h-8 focus-visible:ring-0 focus-visible:bg-accent text-foreground">
                         <SelectValue placeholder="Select account type" />
-                        <ChevronsUpDown size={14} className="text-muted-foreground/80 " />
+                        <ChevronsUpDown size={14} className="text-muted-foreground/80" />
                       </Button>
                     </SelectTrigger>
                     <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
@@ -129,9 +129,9 @@ export default function Component() {
                       aria-label="Select project"
                       asChild
                     >
-                      <Button variant="ghost" className="px-1.5 py-0.5 h-auto focus-visible:ring-0 focus-visible:bg-accent text-foreground">
+                      <Button variant="ghost" className="p-1.5 h-8 focus-visible:ring-0 focus-visible:bg-accent text-foreground">
                         <SelectValue placeholder="Select project" />
-                        <ChevronsUpDown size={14} className="text-muted-foreground/80 " />
+                        <ChevronsUpDown size={14} className="text-muted-foreground/80" />
                       </Button>                      
                     </SelectTrigger>
                     <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">

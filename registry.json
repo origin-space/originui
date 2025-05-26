@@ -10454,6 +10454,20 @@
         "tags": ["navbar, navigation"],
         "colSpan": 3
       }
+    },
+    {
+      "name": "comp-583", 
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-583.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
     }
   ]
 }
