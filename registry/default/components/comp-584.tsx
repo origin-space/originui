@@ -149,7 +149,7 @@ export default function Component() {
               id={`switch-${id}`}
               checked={checked}
               onCheckedChange={setChecked}
-              className="h-5 w-8 after:absolute after:inset-0 [&_span]:size-4 data-[state=checked]:[&_span]:translate-x-3 data-[state=checked]:[&_span]:rtl:-translate-x-3"
+              className="h-5 w-8 [&_span]:size-4 data-[state=checked]:[&_span]:translate-x-3 data-[state=checked]:[&_span]:rtl:-translate-x-3"
               aria-label="Toggle switch"
             />
           </div>            
