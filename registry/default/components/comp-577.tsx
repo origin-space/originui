@@ -84,7 +84,10 @@ export default function Component() {
               <NavigationMenuList className="gap-2">
                 {navigationLinks.map((link, index) => (
                   <NavigationMenuItem key={index}>
-                    <NavigationMenuLink href={link.href} className="py-1.5">
+                    <NavigationMenuLink
+                      href={link.href}
+                      className="text-muted-foreground hover:text-primary py-1.5 font-medium"
+                    >
                       {link.label}
                     </NavigationMenuLink>
                   </NavigationMenuItem>

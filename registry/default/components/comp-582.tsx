@@ -1,30 +1,15 @@
-import {
-  BoltIcon,
-  BookOpenIcon,
-  ChevronsUpDown,
-  Layers2Icon,
-  LogOutIcon,
-  PinIcon,
-  SettingsIcon,
-  UserPenIcon,
-} from "lucide-react"
+import { SelectTrigger } from "@radix-ui/react-select"
+import { ChevronsUpDown } from "lucide-react"
 
+import SettingsMenu from "@/registry/default/components/navbar-components/settings-menu"
+import UserMenu from "@/registry/default/components/navbar-components/user-menu"
 import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/registry/default/ui/avatar"
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/registry/default/ui/breadcrumb"
 import { Button } from "@/registry/default/ui/button"
-import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbSeparator } from "@/registry/default/ui/breadcrumb"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu"
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -36,8 +21,12 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/registry/default/ui/popover"
-import { Select, SelectContent, SelectItem, SelectValue } from "@/registry/default/ui/select"
-import { SelectTrigger } from "@radix-ui/react-select"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectValue,
+} from "@/registry/default/ui/select"
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
@@ -105,13 +94,16 @@ export default function Component() {
             <BreadcrumbList>
               <BreadcrumbItem>
                 <Select defaultValue="personal">
-                  <SelectTrigger 
-                    aria-label="Select account type"
-                    asChild
-                  >
-                    <Button variant="ghost" className="p-1.5 h-8 focus-visible:ring-0 focus-visible:bg-accent text-foreground">
+                  <SelectTrigger aria-label="Select account type" asChild>
+                    <Button
+                      variant="ghost"
+                      className="focus-visible:bg-accent text-foreground h-8 p-1.5 focus-visible:ring-0"
+                    >
                       <SelectValue placeholder="Select account type" />
-                      <ChevronsUpDown size={14} className="text-muted-foreground/80" />
+                      <ChevronsUpDown
+                        size={14}
+                        className="text-muted-foreground/80"
+                      />
                     </Button>
                   </SelectTrigger>
                   <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
@@ -124,14 +116,17 @@ export default function Component() {
               <BreadcrumbSeparator> / </BreadcrumbSeparator>
               <BreadcrumbItem>
                 <Select defaultValue="1">
-                  <SelectTrigger 
-                    aria-label="Select project"
-                    asChild
-                  >
-                    <Button variant="ghost" className="p-1.5 h-8 focus-visible:ring-0 focus-visible:bg-accent text-foreground">
+                  <SelectTrigger aria-label="Select project" asChild>
+                    <Button
+                      variant="ghost"
+                      className="focus-visible:bg-accent text-foreground h-8 p-1.5 focus-visible:ring-0"
+                    >
                       <SelectValue placeholder="Select project" />
-                      <ChevronsUpDown size={14} className="text-muted-foreground/80" />
-                    </Button>                      
+                      <ChevronsUpDown
+                        size={14}
+                        className="text-muted-foreground/80"
+                      />
+                    </Button>
                   </SelectTrigger>
                   <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
                     <SelectItem value="1">Main project</SelectItem>
@@ -161,104 +156,10 @@ export default function Component() {
               </NavigationMenuList>
             </NavigationMenu>
             {/* Settings */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  size="icon"
-                  variant="ghost"
-                  className="rounded-full shadow-none"
-                  aria-label="Open edit menu"
-                >
-                  <SettingsIcon size={16} aria-hidden="true" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="max-w-64">
-                <DropdownMenuItem>Option 1</DropdownMenuItem>
-                <DropdownMenuItem>Option 2</DropdownMenuItem>
-                <DropdownMenuItem>Option 3</DropdownMenuItem>
-                <DropdownMenuItem>Option 4</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <SettingsMenu />
           </div>
           {/* User menu */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="ghost"
-                className="h-auto p-0 hover:bg-transparent"
-              >
-                <Avatar>
-                  <AvatarImage src="./avatar.jpg" alt="Profile image" />
-                  <AvatarFallback>KK</AvatarFallback>
-                </Avatar>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="max-w-64" align="end">
-              <DropdownMenuLabel className="flex min-w-0 flex-col">
-                <span className="text-foreground truncate text-sm font-medium">
-                  Keith Kennedy
-                </span>
-                <span className="text-muted-foreground truncate text-xs font-normal">
-                  k.kennedy@originui.com
-                </span>
-              </DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuGroup>
-                <DropdownMenuItem>
-                  <BoltIcon
-                    size={16}
-                    className="opacity-60"
-                    aria-hidden="true"
-                  />
-                  <span>Option 1</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Layers2Icon
-                    size={16}
-                    className="opacity-60"
-                    aria-hidden="true"
-                  />
-                  <span>Option 2</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <BookOpenIcon
-                    size={16}
-                    className="opacity-60"
-                    aria-hidden="true"
-                  />
-                  <span>Option 3</span>
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-              <DropdownMenuSeparator />
-              <DropdownMenuGroup>
-                <DropdownMenuItem>
-                  <PinIcon
-                    size={16}
-                    className="opacity-60"
-                    aria-hidden="true"
-                  />
-                  <span>Option 4</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <UserPenIcon
-                    size={16}
-                    className="opacity-60"
-                    aria-hidden="true"
-                  />
-                  <span>Option 5</span>
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>
-                <LogOutIcon
-                  size={16}
-                  className="opacity-60"
-                  aria-hidden="true"
-                />
-                <span>Logout</span>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <UserMenu />
         </div>
       </div>
     </header>

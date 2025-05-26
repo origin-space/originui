@@ -14,14 +14,14 @@ import {
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu"
 
-export default function Component() {
+export default function InfoMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
           size="icon"
           variant="ghost"
-          className="rounded-full shadow-none"
+          className="size-8 rounded-full shadow-none"
           aria-label="Open edit menu"
         >
           <InfoIcon size={16} aria-hidden="true" />

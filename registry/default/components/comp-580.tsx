@@ -1,5 +1,5 @@
 import { useId } from "react"
-import { ArrowRightIcon, SearchIcon } from "lucide-react"
+import { SearchIcon } from "lucide-react"
 
 import { Button } from "@/registry/default/ui/button"
 import { Input } from "@/registry/default/ui/input"
