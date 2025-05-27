@@ -107,14 +107,12 @@ export default function NotificationMenu() {
         <Button
           size="icon"
           variant="ghost"
-          className="relative size-8 rounded-full shadow-none"
+          className="relative size-8 rounded-full shadow-none text-muted-foreground"
           aria-label="Open notifications"
         >
           <BellIcon size={16} aria-hidden="true" />
           {unreadCount > 0 && (
-            <Badge className="absolute -top-2 left-full min-w-5 -translate-x-1/2 px-1">
-              {unreadCount > 99 ? "99+" : unreadCount}
-            </Badge>
+            <div aria-hidden="true" className="absolute top-0.5 right-0.5 size-1 bg-primary rounded-full" />
           )}
         </Button>
       </PopoverTrigger>

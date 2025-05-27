@@ -18,7 +18,7 @@ export default function SettingsMenu() {
           className="rounded-full shadow-none"
           aria-label="Open edit menu"
         >
-          <SettingsIcon size={16} aria-hidden="true" />
+          <SettingsIcon className="text-muted-foreground" size={16} aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="max-w-64">

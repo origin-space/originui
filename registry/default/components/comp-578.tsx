@@ -13,6 +13,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/registry/default/ui/popover"
+import Logo from "@/registry/default/components/navbar-components/logo"
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
@@ -79,8 +80,8 @@ export default function Component() {
           {/* Left side */}
           <div className="flex items-center gap-6">
             {/* Logo */}
-            <a href="#" className="font-semibold">
-              Brand
+            <a href="#" className="text-primary hover:text-primary/90">
+              <Logo />
             </a>
             {/* Navigation menu */}
             <NavigationMenu className="max-md:hidden">

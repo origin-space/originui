@@ -10,10 +10,11 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/registry/default/ui/popover"
+import Logo from "@/registry/default/components/navbar-components/logo"
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-  { href: "#", label: "Home" },
+  { href: "#", label: "Home", active: true },
   { href: "#", label: "Features" },
   { href: "#", label: "Pricing" },
   { href: "#", label: "About" },
@@ -24,12 +25,12 @@ export default function Component() {
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 justify-between gap-4">
         <div className="items flex gap-2">
-          <div className="flex items-center">
+          <div className="flex items-center md:hidden">
             {/* Mobile menu trigger */}
             <Popover>
               <PopoverTrigger asChild>
                 <Button
-                  className="group size-8 md:hidden"
+                  className="group size-8"
                   variant="ghost"
                   size="icon"
                 >
@@ -65,7 +66,7 @@ export default function Component() {
                   <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
                     {navigationLinks.map((link, index) => (
                       <NavigationMenuItem key={index} className="w-full">
-                        <NavigationMenuLink href={link.href} className="py-1.5">
+                        <NavigationMenuLink href={link.href} className="py-1.5" active={link.active}>
                           {link.label}
                         </NavigationMenuLink>
                       </NavigationMenuItem>
@@ -78,8 +79,8 @@ export default function Component() {
           {/* Left side */}
           <div className="flex items-center gap-6">
             {/* Logo */}
-            <a href="#" className="font-semibold">
-              Brand
+            <a href="#" className="text-primary hover:text-primary/90">
+              <Logo />
             </a>
             {/* Navigation menu */}
             <NavigationMenu className="h-full *:h-full max-md:hidden">
@@ -87,8 +88,9 @@ export default function Component() {
                 {navigationLinks.map((link, index) => (
                   <NavigationMenuItem key={index} className="h-full">
                     <NavigationMenuLink
+                      active={link.active}
                       href={link.href}
-                      className="text-muted-foreground hover:text-primary border-b-primary h-full justify-center rounded-none border-y-2 border-t-transparent py-1.5 font-medium not-hover:border-transparent hover:bg-transparent"
+                      className="text-muted-foreground hover:text-primary border-b-primary h-full justify-center rounded-none border-y-2 border-transparent hover:border-b-primary data-[active]:border-b-primary py-1.5 font-medium hover:bg-transparent data-[active]:bg-transparent!"
                     >
                       {link.label}
                     </NavigationMenuLink>

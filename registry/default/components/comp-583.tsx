@@ -24,6 +24,7 @@ import {
   SelectItem,
   SelectValue,
 } from "@/registry/default/ui/select"
+import Logo from "@/registry/default/components/navbar-components/logo"
 
 export default function Component() {
   return (
@@ -35,14 +36,7 @@ export default function Component() {
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink href="#" className="text-foreground">
-                  <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle cx="16" cy="16" r="16" fill="currentColor" />
-                  </svg>
+                  <Logo />
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator> / </BreadcrumbSeparator>

@@ -24,7 +24,7 @@ export default function InfoMenu() {
           className="size-8 rounded-full shadow-none"
           aria-label="Open edit menu"
         >
-          <InfoIcon size={16} aria-hidden="true" />
+          <InfoIcon className="text-muted-foreground" size={16} aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="pb-2">
