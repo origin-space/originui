@@ -50,7 +50,7 @@ export default function Component() {
             <Button
               size="icon"
               variant="ghost"
-              className="size-8 rounded-full shadow-none text-muted-foreground"
+              className="text-muted-foreground size-8 rounded-full shadow-none"
               aria-label="Open layout menu"
             >
               <LayoutGridIcon size={16} aria-hidden="true" />

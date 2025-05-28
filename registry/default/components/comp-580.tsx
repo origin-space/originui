@@ -1,6 +1,7 @@
 import { useId } from "react"
 import { SearchIcon } from "lucide-react"
 
+import Logo from "@/registry/default/components/navbar-components/logo"
 import { Button } from "@/registry/default/ui/button"
 import { Input } from "@/registry/default/ui/input"
 import {
@@ -14,7 +15,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/registry/default/ui/popover"
-import Logo from "@/registry/default/components/navbar-components/logo"
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
@@ -29,6 +29,7 @@ export default function Component() {
   return (
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
+        {/* Left side */}
         <div className="flex flex-1 items-center gap-2">
           {/* Mobile menu trigger */}
           <Popover>
@@ -100,9 +101,8 @@ export default function Component() {
               </NavigationMenu>
             </PopoverContent>
           </Popover>
-          {/* Left side */}
+          {/* Logo */}
           <div className="flex flex-1 items-center gap-6 max-md:justify-between">
-            {/* Logo */}
             <a href="#" className="text-primary hover:text-primary/90">
               <Logo />
             </a>

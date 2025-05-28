@@ -1,5 +1,9 @@
 import { useId } from "react"
+import { HouseIcon, InboxIcon, SearchIcon, ZapIcon } from "lucide-react"
+
+import Logo from "@/registry/default/components/navbar-components/logo"
 import { Button } from "@/registry/default/ui/button"
+import { Input } from "@/registry/default/ui/input"
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -11,9 +15,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/registry/default/ui/popover"
-import Logo from "@/registry/default/components/navbar-components/logo"
-import { Input } from "@/registry/default/ui/input"
-import { HouseIcon, InboxIcon, SearchIcon, ZapIcon } from "lucide-react"
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
@@ -24,11 +25,12 @@ const navigationLinks = [
 
 export default function Component() {
   const id = useId()
-  
+
   return (
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
-        <div className="flex-1 flex items-center gap-2">
+        {/* Left side */}
+        <div className="flex flex-1 items-center gap-2">
           {/* Mobile menu trigger */}
           <Popover>
             <PopoverTrigger asChild>
@@ -68,23 +70,30 @@ export default function Component() {
               <NavigationMenu className="max-w-none *:w-full">
                 <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
                   {navigationLinks.map((link, index) => {
-                    const Icon = link.icon;
+                    const Icon = link.icon
                     return (
                       <NavigationMenuItem key={index} className="w-full">
-                        <NavigationMenuLink href={link.href} className="py-1.5 flex-row items-center gap-2" active={link.active}>
-                          <Icon size={16} className="text-muted-foreground" aria-hidden="true" />
+                        <NavigationMenuLink
+                          href={link.href}
+                          className="flex-row items-center gap-2 py-1.5"
+                          active={link.active}
+                        >
+                          <Icon
+                            size={16}
+                            className="text-muted-foreground"
+                            aria-hidden="true"
+                          />
                           <span>{link.label}</span>
                         </NavigationMenuLink>
                       </NavigationMenuItem>
-                    );
+                    )
                   })}
                 </NavigationMenuList>
               </NavigationMenu>
             </PopoverContent>
           </Popover>
-          {/* Left side */}
+          {/* Logo */}
           <div className="flex items-center">
-            {/* Logo */}
             <a href="#" className="text-primary hover:text-primary/90">
               <Logo />
             </a>
@@ -94,35 +103,39 @@ export default function Component() {
         <NavigationMenu className="max-md:hidden">
           <NavigationMenuList className="gap-2">
             {navigationLinks.map((link, index) => {
-              const Icon = link.icon;
+              const Icon = link.icon
               return (
                 <NavigationMenuItem key={index}>
                   <NavigationMenuLink
                     active={link.active}
                     href={link.href}
-                    className="text-foreground hover:text-primary py-1.5 font-medium flex-row items-center gap-2"
+                    className="text-foreground hover:text-primary flex-row items-center gap-2 py-1.5 font-medium"
                   >
-                    <Icon size={16} className="text-muted-foreground" aria-hidden="true" />
+                    <Icon
+                      size={16}
+                      className="text-muted-foreground"
+                      aria-hidden="true"
+                    />
                     <span>{link.label}</span>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
-              );
+              )
             })}
           </NavigationMenuList>
         </NavigationMenu>
         {/* Right side */}
-        <div className="flex-1 flex items-center justify-end gap-2">
-            <div className="relative">
-              <Input
-                id={id}
-                className="peer h-8 ps-8 pe-2"
-                placeholder="Search..."
-                type="search"
-              />
-              <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-2 peer-disabled:opacity-50">
-                <SearchIcon size={16} />
-              </div>
+        <div className="flex flex-1 items-center justify-end gap-2">
+          <div className="relative">
+            <Input
+              id={id}
+              className="peer h-8 ps-8 pe-2"
+              placeholder="Search..."
+              type="search"
+            />
+            <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-2 peer-disabled:opacity-50">
+              <SearchIcon size={16} />
             </div>
+          </div>
         </div>
       </div>
     </header>

@@ -1,6 +1,7 @@
 import { SelectTrigger } from "@radix-ui/react-select"
 import { ChevronsUpDown } from "lucide-react"
 
+import Logo from "@/registry/default/components/navbar-components/logo"
 import NotificationMenu from "@/registry/default/components/navbar-components/notification-menu"
 import UserMenu from "@/registry/default/components/navbar-components/user-menu"
 import {
@@ -24,14 +25,13 @@ import {
   SelectItem,
   SelectValue,
 } from "@/registry/default/ui/select"
-import Logo from "@/registry/default/components/navbar-components/logo"
 
 export default function Component() {
   return (
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
+        {/* Left side */}
         <div className="flex items-center gap-2">
-          {/* Left side */}
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>

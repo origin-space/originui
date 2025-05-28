@@ -107,12 +107,15 @@ export default function NotificationMenu() {
         <Button
           size="icon"
           variant="ghost"
-          className="relative size-8 rounded-full shadow-none text-muted-foreground"
+          className="text-muted-foreground relative size-8 rounded-full shadow-none"
           aria-label="Open notifications"
         >
           <BellIcon size={16} aria-hidden="true" />
           {unreadCount > 0 && (
-            <div aria-hidden="true" className="absolute top-0.5 right-0.5 size-1 bg-primary rounded-full" />
+            <div
+              aria-hidden="true"
+              className="bg-primary absolute top-0.5 right-0.5 size-1 rounded-full"
+            />
           )}
         </Button>
       </PopoverTrigger>
