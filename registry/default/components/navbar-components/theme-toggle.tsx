@@ -5,7 +5,7 @@ import { MoonIcon, SunIcon } from "lucide-react"
 
 import { Toggle } from "@/registry/default/ui/toggle"
 
-export default function Component() {
+export default function ThemeToggle() {
   const [theme, setTheme] = useState<string>("light")
 
   return (
