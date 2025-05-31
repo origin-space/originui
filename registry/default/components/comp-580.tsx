@@ -101,7 +101,7 @@ export default function Component() {
               </NavigationMenu>
             </PopoverContent>
           </Popover>
-          {/* Logo */}
+          {/* Main nav */}
           <div className="flex flex-1 items-center gap-6 max-md:justify-between">
             <a href="#" className="text-primary hover:text-primary/90">
               <Logo />

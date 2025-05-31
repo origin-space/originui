@@ -102,7 +102,7 @@ export default function Component() {
                 <NavigationMenuItem key={index}>
                   <NavigationMenuLink
                     href={link.href}
-                    className="flex size-8 items-center justify-center rounded-md p-1.5"
+                    className="flex size-8 items-center justify-center p-1.5"
                     title={link.label}
                   >
                     <Icon aria-hidden="true" />

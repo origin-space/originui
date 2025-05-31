@@ -61,7 +61,7 @@ export default function Component() {
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
         {/* Left side */}
-        <div className="flex items-center gap-4">
+        <div className="flex flex-1 items-center gap-2">
           {/* Mobile menu trigger */}
           <Popover>
             <PopoverTrigger asChild>
@@ -123,49 +123,42 @@ export default function Component() {
               </NavigationMenu>
             </PopoverContent>
           </Popover>
-
-          {/* Logo */}
-          <a href="#" className="text-primary hover:text-primary/90">
-            <Logo />
-          </a>
-
-          {/* Desktop navigation - icon only */}
-          <NavigationMenu className="hidden md:flex">
-            <NavigationMenuList className="gap-1">
-              <TooltipProvider>
-                {navigationLinks.map((link) => (
-                  <NavigationMenuItem key={link.label}>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <NavigationMenuLink
-                          href={link.href}
-                          className={`group inline-flex size-9 items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
-                            link.active
-                              ? "bg-accent text-accent-foreground"
-                              : "bg-transparent"
-                          }`}
-                        >
-                          <link.icon size={20} aria-hidden="true" />
-                          <span className="sr-only">{link.label}</span>
-                        </NavigationMenuLink>
-                      </TooltipTrigger>
-                      <TooltipContent side="bottom">
-                        <p>{link.label}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </NavigationMenuItem>
-                ))}
-              </TooltipProvider>
-            </NavigationMenuList>
-          </NavigationMenu>
+          <div className="flex items-center gap-6">
+            {/* Logo */}
+            <a href="#" className="text-primary hover:text-primary/90">
+              <Logo />
+            </a>
+            {/* Desktop navigation - icon only */}
+            <NavigationMenu className="hidden md:flex">
+              <NavigationMenuList className="gap-2">
+                <TooltipProvider>
+                  {navigationLinks.map((link) => (
+                    <NavigationMenuItem key={link.label}>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <NavigationMenuLink
+                            href={link.href}
+                            className="flex size-8 items-center justify-center p-1.5"
+                          >
+                            <link.icon size={20} aria-hidden="true" />
+                            <span className="sr-only">{link.label}</span>
+                          </NavigationMenuLink>
+                        </TooltipTrigger>
+                        <TooltipContent side="bottom" className="px-2 py-1 text-xs">
+                          <p>{link.label}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </NavigationMenuItem>
+                  ))}
+                </TooltipProvider>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
         </div>
-
         {/* Right side */}
         <div className="flex items-center gap-2">
-
           {/* Theme toggle */}
           <ThemeToggle />
-
           {/* Language selector */}
           <Select defaultValue="en">
             <SelectTrigger
@@ -186,7 +179,6 @@ export default function Component() {
               ))}
             </SelectContent>
           </Select>          
-
           {/* User menu */}
           <UserMenu />
         </div>
