@@ -80,7 +80,7 @@ export default function Component() {
                         >
                           <Icon
                             size={16}
-                            className="text-muted-foreground"
+                            className="text-muted-foreground/80"
                             aria-hidden="true"
                           />
                           <span>{link.label}</span>
@@ -113,7 +113,7 @@ export default function Component() {
                   >
                     <Icon
                       size={16}
-                      className="text-muted-foreground"
+                      className="text-muted-foreground/80"
                       aria-hidden="true"
                     />
                     <span>{link.label}</span>
