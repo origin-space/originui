@@ -1,5 +1,5 @@
 import { useId } from "react"
-import { SearchIcon } from "lucide-react"
+import { SearchIcon, MicIcon } from "lucide-react"
 
 import Logo from "@/registry/default/components/navbar-components/logo"
 import ThemeToggle from "@/registry/default/components/navbar-components/theme-toggle"
@@ -24,13 +24,20 @@ export default function Component() {
           <div className="relative mx-auto w-full max-w-xs">
             <Input
               id={id}
-              className="peer h-8 ps-8 pe-2"
+              className="peer h-8 px-8"
               placeholder="Search..."
               type="search"
             />
             <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-2 peer-disabled:opacity-50">
               <SearchIcon size={16} />
             </div>
+        <button
+          className="text-muted-foreground/80 hover:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-md transition-[color,box-shadow] outline-none focus:z-10 focus-visible:ring-[3px] disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+          aria-label="Press to speak"
+          type="submit"
+        >
+          <MicIcon size={16} aria-hidden="true" />
+        </button>            
           </div>
         </div>
         {/* Right side */}

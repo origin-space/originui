@@ -1,4 +1,4 @@
-import { HouseIcon, InboxIcon, MessageCircleDashedIcon, ZapIcon } from "lucide-react"
+import { BotMessageSquareIcon, HouseIcon, InboxIcon, MessageCircleDashedIcon, ZapIcon } from "lucide-react"
 import UserMenu from "@/registry/default/components/navbar-components/user-menu"
 import { Button } from "@/registry/default/ui/button"
 import {
@@ -25,7 +25,8 @@ export default function Component() {
         {/* Left side */}
         <div>
           <Select defaultValue="orion-alpha-45" aria-label="Select AI model">
-            <SelectTrigger className="**:data-desc:hidden">
+            <SelectTrigger className="**:data-desc:hidden [&>svg]:text-muted-foreground/80 [&>svg]:shrink-0">
+              <BotMessageSquareIcon size={16} aria-hidden="true" />
               <SelectValue placeholder="Choose an AI model" />
             </SelectTrigger>
             <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
