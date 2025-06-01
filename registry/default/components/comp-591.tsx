@@ -13,12 +13,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/registry/default/ui/popover"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/registry/default/ui/tooltip"
 
 // Navigation links array
 const navigationLinks = [
@@ -31,7 +25,7 @@ export default function Component() {
   return (
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
-        {/* Left side: Navigation */}
+        {/* Left side */}
         <div className="flex flex-1 items-center gap-2">
           {/* Mobile menu trigger */}
           <Popover>
@@ -129,7 +123,9 @@ export default function Component() {
 
         {/* Right side: Actions */}
         <div className="flex flex-1 items-center justify-end gap-4">
+          {/* User menu */}
           <UserMenu />
+          {/* Upgrade button */}
           <Button size="sm" className="aspect-square text-sm">
             <SparklesIcon
               className="opacity-60 sm:-ms-1 max-sm:hidden"

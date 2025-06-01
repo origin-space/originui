@@ -46,7 +46,7 @@ export default function Component() {
             />
           </div>
           <div className="flex items-center gap-2">
-            {/* Layout menu */}
+            {/* Layout button */}
             <Button
               size="icon"
               variant="ghost"
