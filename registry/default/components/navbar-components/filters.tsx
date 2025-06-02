@@ -17,15 +17,17 @@ export default function Component() {
       <Popover>
         <PopoverTrigger asChild>
           <Button variant="outline" size="sm" className="text-sm">
-            <ListFilterIcon size={16} className="text-muted-foreground/80 -ms-1" aria-hidden="true" />
+            <ListFilterIcon
+              size={16}
+              className="text-muted-foreground/80 -ms-1"
+              aria-hidden="true"
+            />
             Filters
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-36 p-3">
           <div className="space-y-3">
-            <div className="text-xs font-medium">
-              Filters
-            </div>
+            <div className="text-xs font-medium">Filters</div>
             <form>
               <div className="space-y-3">
                 <div className="flex items-center gap-2">

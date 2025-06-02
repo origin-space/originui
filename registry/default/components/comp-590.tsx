@@ -143,7 +143,10 @@ export default function Component() {
                             <span className="sr-only">{link.label}</span>
                           </NavigationMenuLink>
                         </TooltipTrigger>
-                        <TooltipContent side="bottom" className="px-2 py-1 text-xs">
+                        <TooltipContent
+                          side="bottom"
+                          className="px-2 py-1 text-xs"
+                        >
                           <p>{link.label}</p>
                         </TooltipContent>
                       </Tooltip>
@@ -162,7 +165,7 @@ export default function Component() {
           <Select defaultValue="en">
             <SelectTrigger
               id={`language-${id}`}
-              className="h-8 px-2 [&>svg]:text-muted-foreground/80 [&>svg]:shrink-0 border-none shadow-none hover:bg-accent hover:text-accent-foreground"
+              className="[&>svg]:text-muted-foreground/80 hover:bg-accent hover:text-accent-foreground h-8 border-none px-2 shadow-none [&>svg]:shrink-0"
               aria-label="Select language"
             >
               <GlobeIcon size={16} aria-hidden="true" />
@@ -177,7 +180,7 @@ export default function Component() {
                 </SelectItem>
               ))}
             </SelectContent>
-          </Select>          
+          </Select>
           {/* User menu */}
           <UserMenu />
         </div>

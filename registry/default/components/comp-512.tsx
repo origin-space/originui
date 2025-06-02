@@ -28,7 +28,8 @@ export default function Component() {
             <Button
               id={id}
               variant="outline"
-              className="group bg-background hover:bg-background border-input w-full justify-between px-3 font-normal outline-offset-0 outline-none focus-visible:outline-[3px]">
+              className="group bg-background hover:bg-background border-input w-full justify-between px-3 font-normal outline-offset-0 outline-none focus-visible:outline-[3px]"
+            >
               <span
                 className={cn("truncate", !date && "text-muted-foreground")}
               >

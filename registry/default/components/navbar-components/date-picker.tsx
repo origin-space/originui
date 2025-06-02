@@ -23,15 +23,14 @@ export default function DatePicker() {
         <Button
           variant="outline"
           size="sm"
-          className="group bg-background border-input w-full justify-between px-3 font-normal outline-offset-0 outline-none focus-visible:outline-[3px] text-sm">
+          className="group bg-background border-input w-full justify-between px-3 text-sm font-normal outline-offset-0 outline-none focus-visible:outline-[3px]"
+        >
           <CalendarIcon
             size={16}
-            className="text-muted-foreground/80 shrink-0 transition-colors -ms-1"
+            className="text-muted-foreground/80 -ms-1 shrink-0 transition-colors"
             aria-hidden="true"
-          />          
-          <span
-            className={cn("truncate", !date && "font-medium")}
-          >
+          />
+          <span className={cn("truncate", !date && "font-medium")}>
             {date?.from ? (
               date.to ? (
                 <>

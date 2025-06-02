@@ -1,4 +1,11 @@
-import { BotMessageSquareIcon, HouseIcon, InboxIcon, MessageCircleDashedIcon, ZapIcon } from "lucide-react"
+import {
+  BotMessageSquareIcon,
+  HouseIcon,
+  InboxIcon,
+  MessageCircleDashedIcon,
+  ZapIcon,
+} from "lucide-react"
+
 import UserMenu from "@/registry/default/components/navbar-components/user-menu"
 import { Button } from "@/registry/default/ui/button"
 import {
@@ -25,50 +32,50 @@ export default function Component() {
         {/* Left side */}
         <div>
           <Select defaultValue="orion-alpha-45" aria-label="Select AI model">
-            <SelectTrigger className="**:data-desc:hidden [&>svg]:text-muted-foreground/80 [&>svg]:shrink-0">
+            <SelectTrigger className="[&>svg]:text-muted-foreground/80 **:data-desc:hidden [&>svg]:shrink-0">
               <BotMessageSquareIcon size={16} aria-hidden="true" />
               <SelectValue placeholder="Choose an AI model" />
             </SelectTrigger>
             <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
-            <SelectGroup>
-              <SelectLabel className="ps-2">Models</SelectLabel>
-              <SelectItem value="orion-alpha-45">
-                Orion-Alpha 4.5
-                <span
-                  className="text-muted-foreground mt-1 block text-xs"
-                  data-desc
-                >
-                  Balanced performance and creativity
-                </span>
-              </SelectItem>
-              <SelectItem value="orion-code-4">
-                Orion-Code 4
-                <span
-                  className="text-muted-foreground mt-1 block text-xs"
-                  data-desc
-                >
-                  Optimized for code generation and understanding
-                </span>
-              </SelectItem>
-              <SelectItem value="nova-chat-4">
-                Nova-Chat 4
-                <span
-                  className="text-muted-foreground mt-1 block text-xs"
-                  data-desc
-                >
-                  Excels at natural, engaging conversations
-                </span>
-              </SelectItem>
-              <SelectItem value="galaxy-max-4">
-                Galaxy-Max 4
-                <span
-                  className="text-muted-foreground mt-1 block text-xs"
-                  data-desc
-                >
-                  Most powerful model for complex tasks
-                </span>
-              </SelectItem>
-            </SelectGroup>
+              <SelectGroup>
+                <SelectLabel className="ps-2">Models</SelectLabel>
+                <SelectItem value="orion-alpha-45">
+                  Orion-Alpha 4.5
+                  <span
+                    className="text-muted-foreground mt-1 block text-xs"
+                    data-desc
+                  >
+                    Balanced performance and creativity
+                  </span>
+                </SelectItem>
+                <SelectItem value="orion-code-4">
+                  Orion-Code 4
+                  <span
+                    className="text-muted-foreground mt-1 block text-xs"
+                    data-desc
+                  >
+                    Optimized for code generation and understanding
+                  </span>
+                </SelectItem>
+                <SelectItem value="nova-chat-4">
+                  Nova-Chat 4
+                  <span
+                    className="text-muted-foreground mt-1 block text-xs"
+                    data-desc
+                  >
+                    Excels at natural, engaging conversations
+                  </span>
+                </SelectItem>
+                <SelectItem value="galaxy-max-4">
+                  Galaxy-Max 4
+                  <span
+                    className="text-muted-foreground mt-1 block text-xs"
+                    data-desc
+                  >
+                    Most powerful model for complex tasks
+                  </span>
+                </SelectItem>
+              </SelectGroup>
             </SelectContent>
           </Select>
         </div>

@@ -1,4 +1,5 @@
 import { HouseIcon, InboxIcon, SparklesIcon, ZapIcon } from "lucide-react"
+
 import Logo from "@/registry/default/components/navbar-components/logo"
 import UserMenu from "@/registry/default/components/navbar-components/user-menu"
 import { Button } from "@/registry/default/ui/button"
@@ -128,7 +129,7 @@ export default function Component() {
           {/* Upgrade button */}
           <Button size="sm" className="aspect-square text-sm">
             <SparklesIcon
-              className="opacity-60 sm:-ms-1 max-sm:hidden"
+              className="opacity-60 max-sm:hidden sm:-ms-1"
               size={16}
               aria-hidden="true"
             />
