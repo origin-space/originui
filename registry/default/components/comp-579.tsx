@@ -25,7 +25,7 @@ export default function Component() {
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 justify-between gap-4">
         {/* Left side */}
-        <div className="items flex gap-2">
+        <div className="flex gap-2">
           <div className="flex items-center md:hidden">
             {/* Mobile menu trigger */}
             <Popover>

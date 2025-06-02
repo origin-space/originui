@@ -93,8 +93,11 @@ export default function Component() {
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                   <NavigationMenuItem className="w-full">
-                    <Button asChild size="sm" className="mt-0.5 w-full text-sm">
-                      <a href="#">Get Started</a>
+                    <Button asChild size="sm" className="mt-0.5 w-full text-sm text-left">
+                      <span className="flex items-baseline gap-2">
+                        Cart
+                        <span className="text-primary-foreground/60 text-xs">2</span>          
+                      </span>
                     </Button>
                   </NavigationMenuItem>
                 </NavigationMenuList>
@@ -141,7 +144,12 @@ export default function Component() {
             <a href="#">Sign In</a>
           </Button>
           <Button asChild size="sm" className="text-sm">
-            <a href="#">Get Started</a>
+            <a href="#">
+              <span className="flex items-baseline gap-2">
+                Cart
+                <span className="text-primary-foreground/60 text-xs">2</span>          
+              </span>
+            </a>
           </Button>
         </div>
       </div>
