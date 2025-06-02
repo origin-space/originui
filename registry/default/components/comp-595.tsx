@@ -1,7 +1,16 @@
-import { ChevronLeftIcon, HistoryIcon, MessageSquareText, UserRoundPlus } from "lucide-react"
+import {
+  ChevronLeftIcon,
+  HistoryIcon,
+  MessageSquareText,
+  UserRoundPlus,
+} from "lucide-react"
 
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/registry/default/ui/avatar"
 import { Button } from "@/registry/default/ui/button"
-import { Avatar, AvatarFallback, AvatarImage } from "@/registry/default/ui/avatar"
 
 export default function Component() {
   return (
@@ -52,7 +61,7 @@ export default function Component() {
             <UserRoundPlus size={16} aria-hidden="true" />
           </Button>
           {/* Online users */}
-          <div className="flex items-center gap-2 ml-2">
+          <div className="ml-2 flex items-center gap-2">
             <div className="relative">
               <Avatar>
                 <AvatarImage src="./avatar-80-07.jpg" alt="Kelly King" />
@@ -67,7 +76,7 @@ export default function Component() {
                 <AvatarImage src="./avatar-80-06.jpg" alt="Martha Johnson" />
                 <AvatarFallback>KK</AvatarFallback>
               </Avatar>
-              <span className="border-background absolute -end-0.5 -bottom-0.5 size-3 rounded-full border-2 bg-muted-foreground">
+              <span className="border-background bg-muted-foreground absolute -end-0.5 -bottom-0.5 size-3 rounded-full border-2">
                 <span className="sr-only">Online</span>
               </span>
             </div>
@@ -76,7 +85,7 @@ export default function Component() {
                 <AvatarImage src="./avatar-80-05.jpg" alt="Linda Green" />
                 <AvatarFallback>KK</AvatarFallback>
               </Avatar>
-              <span className="border-background absolute -end-0.5 -bottom-0.5 size-3 rounded-full border-2 bg-muted-foreground">
+              <span className="border-background bg-muted-foreground absolute -end-0.5 -bottom-0.5 size-3 rounded-full border-2">
                 <span className="sr-only">Online</span>
               </span>
             </div>
@@ -86,7 +95,7 @@ export default function Component() {
               size="icon"
             >
               +3
-            </Button>            
+            </Button>
           </div>
         </div>
       </div>

@@ -1,7 +1,9 @@
 "use client"
 
 import { useId, useState } from "react"
-import { Switch } from "@/registry/default/ui/switch"
+import { ClockIcon, PowerIcon, PowerOffIcon, ZapIcon } from "lucide-react"
+import { Label } from "react-aria-components"
+
 import Logo from "@/registry/default/components/navbar-components/logo"
 import { Badge } from "@/registry/default/ui/badge"
 import { Button } from "@/registry/default/ui/button"
@@ -16,8 +18,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/registry/default/ui/popover"
-import { ZapIcon, ClockIcon, PowerIcon, PowerOffIcon } from "lucide-react"
-import { Label } from "react-aria-components"
+import { Switch } from "@/registry/default/ui/switch"
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
@@ -39,11 +40,7 @@ export default function Component() {
             {/* Mobile menu trigger */}
             <Popover>
               <PopoverTrigger asChild>
-                <Button
-                  className="group size-8"
-                  variant="ghost"
-                  size="icon"
-                >
+                <Button className="group size-8" variant="ghost" size="icon">
                   <svg
                     className="pointer-events-none"
                     width={16}
@@ -117,11 +114,19 @@ export default function Component() {
               Online
             </Badge>
             <Badge variant="outline" className="gap-1.5">
-              <ZapIcon className="-ms-0.5 opacity-60" size={12} aria-hidden="true" />
+              <ZapIcon
+                className="-ms-0.5 opacity-60"
+                size={12}
+                aria-hidden="true"
+              />
               99.9%
             </Badge>
             <Badge variant="outline" className="gap-1.5">
-              <ClockIcon className="-ms-0.5 opacity-60" size={12} aria-hidden="true" />
+              <ClockIcon
+                className="-ms-0.5 opacity-60"
+                size={12}
+                aria-hidden="true"
+              />
               45ms
             </Badge>
           </div>
@@ -134,17 +139,17 @@ export default function Component() {
                 onCheckedChange={setChecked}
                 className="peer data-[state=unchecked]:bg-input/50 absolute inset-0 h-[inherit] w-auto [&_span]:z-10 [&_span]:h-full [&_span]:w-1/2 [&_span]:transition-transform [&_span]:duration-300 [&_span]:ease-[cubic-bezier(0.16,1,0.3,1)] [&_span]:data-[state=checked]:translate-x-full [&_span]:data-[state=checked]:rtl:-translate-x-full"
               />
-              <span className="pointer-events-none relative ms-0.5 flex items-center justify-center w-6 text-center transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] peer-data-[state=checked]:invisible peer-data-[state=unchecked]:translate-x-full peer-data-[state=unchecked]:rtl:-translate-x-full">
+              <span className="pointer-events-none relative ms-0.5 flex w-6 items-center justify-center text-center transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] peer-data-[state=checked]:invisible peer-data-[state=unchecked]:translate-x-full peer-data-[state=unchecked]:rtl:-translate-x-full">
                 <PowerOffIcon size={12} aria-hidden="true" />
               </span>
-              <span className="peer-data-[state=checked]:text-background pointer-events-none relative me-0.5 flex items-center justify-center w-6 text-center transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] peer-data-[state=checked]:-translate-x-full peer-data-[state=unchecked]:invisible peer-data-[state=checked]:rtl:translate-x-full">
+              <span className="peer-data-[state=checked]:text-background pointer-events-none relative me-0.5 flex w-6 items-center justify-center text-center transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] peer-data-[state=checked]:-translate-x-full peer-data-[state=unchecked]:invisible peer-data-[state=checked]:rtl:translate-x-full">
                 <PowerIcon size={12} aria-hidden="true" />
               </span>
             </div>
             <Label htmlFor={id} className="sr-only">
               Power
             </Label>
-          </div>          
+          </div>
         </div>
       </div>
     </header>

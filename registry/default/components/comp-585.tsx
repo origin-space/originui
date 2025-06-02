@@ -1,5 +1,11 @@
 import { useId } from "react"
-import { HashIcon, HouseIcon, MailIcon, SearchIcon, UsersRound } from "lucide-react"
+import {
+  HashIcon,
+  HouseIcon,
+  MailIcon,
+  SearchIcon,
+  UsersRound,
+} from "lucide-react"
 
 import Logo from "@/registry/default/components/navbar-components/logo"
 import NotificationMenu from "@/registry/default/components/navbar-components/notification-menu"
@@ -110,7 +116,7 @@ export default function Component() {
               <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-2 peer-disabled:opacity-50">
                 <SearchIcon size={16} />
               </div>
-            </div>            
+            </div>
           </div>
         </div>
         {/* Middle area */}
@@ -148,7 +154,7 @@ export default function Component() {
                 aria-hidden="true"
                 className="bg-primary absolute top-0.5 right-0.5 size-1 rounded-full"
               />
-            </Button>          
+            </Button>
             {/* Notification menu */}
             <NotificationMenu />
           </div>

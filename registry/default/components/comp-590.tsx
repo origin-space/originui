@@ -1,4 +1,10 @@
-import { CompassIcon, HouseIcon, PlusIcon, FeatherIcon, SearchIcon } from "lucide-react"
+import {
+  CompassIcon,
+  FeatherIcon,
+  HouseIcon,
+  PlusIcon,
+  SearchIcon,
+} from "lucide-react"
 
 import NotificationMenu from "@/registry/default/components/navbar-components/notification-menu"
 import TeamSwitcher from "@/registry/default/components/navbar-components/team-switcher"
