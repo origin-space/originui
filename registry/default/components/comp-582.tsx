@@ -1,14 +1,15 @@
-import { SelectTrigger } from "@radix-ui/react-select"
-import { ChevronsUpDown } from "lucide-react"
-
-import SettingsMenu from "@/registry/default/components/navbar-components/settings-menu"
-import UserMenu from "@/registry/default/components/navbar-components/user-menu"
+import { useId } from "react"
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbList,
-  BreadcrumbSeparator,
-} from "@/registry/default/ui/breadcrumb"
+  FileTextIcon,
+  GlobeIcon,
+  HomeIcon,
+  LayersIcon,
+  UsersIcon,
+} from "lucide-react"
+
+import Logo from "@/registry/default/components/navbar-components/logo"
+import ThemeToggle from "@/registry/default/components/navbar-components/theme-toggle"
+import UserMenu from "@/registry/default/components/navbar-components/user-menu"
 import { Button } from "@/registry/default/ui/button"
 import {
   NavigationMenu,
@@ -25,22 +26,41 @@ import {
   Select,
   SelectContent,
   SelectItem,
+  SelectTrigger,
   SelectValue,
 } from "@/registry/default/ui/select"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/registry/default/ui/tooltip"
 
-// Navigation links array to be used in both desktop and mobile menus
+// Navigation links with icons for desktop icon-only navigation
 const navigationLinks = [
-  { href: "#", label: "Dashboard" },
-  { href: "#", label: "Docs" },
-  { href: "#", label: "API reference" },
+  { href: "#", label: "Dashboard", icon: HomeIcon, active: true },
+  { href: "#", label: "Projects", icon: LayersIcon },
+  { href: "#", label: "Documentation", icon: FileTextIcon },
+  { href: "#", label: "Team", icon: UsersIcon },
+]
+
+// Language options
+const languages = [
+  { value: "en", label: "En" },
+  { value: "es", label: "Es" },
+  { value: "fr", label: "Fr" },
+  { value: "de", label: "De" },
+  { value: "ja", label: "Ja" },
 ]
 
 export default function Component() {
+  const id = useId()
+
   return (
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
         {/* Left side */}
-        <div className="flex items-center gap-2">
+        <div className="flex flex-1 items-center gap-2">
           {/* Mobile menu trigger */}
           <Popover>
             <PopoverTrigger asChild>
@@ -79,86 +99,88 @@ export default function Component() {
             <PopoverContent align="start" className="w-36 p-1 md:hidden">
               <NavigationMenu className="max-w-none *:w-full">
                 <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
-                  {navigationLinks.map((link, index) => (
-                    <NavigationMenuItem key={index} className="w-full">
-                      <NavigationMenuLink href={link.href} className="py-1.5">
-                        {link.label}
-                      </NavigationMenuLink>
-                    </NavigationMenuItem>
-                  ))}
+                  {navigationLinks.map((link, index) => {
+                    const Icon = link.icon
+                    return (
+                      <NavigationMenuItem key={index} className="w-full">
+                        <NavigationMenuLink
+                          href={link.href}
+                          className="flex-row items-center gap-2 py-1.5"
+                          active={link.active}
+                        >
+                          <Icon
+                            size={16}
+                            className="text-muted-foreground"
+                            aria-hidden="true"
+                          />
+                          <span>{link.label}</span>
+                        </NavigationMenuLink>
+                      </NavigationMenuItem>
+                    )
+                  })}
                 </NavigationMenuList>
               </NavigationMenu>
             </PopoverContent>
           </Popover>
-          {/* Breadcrumb */}
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <Select defaultValue="personal">
-                  <SelectTrigger aria-label="Select account type" asChild>
-                    <Button
-                      variant="ghost"
-                      className="focus-visible:bg-accent text-foreground h-8 p-1.5 focus-visible:ring-0"
-                    >
-                      <SelectValue placeholder="Select account type" />
-                      <ChevronsUpDown
-                        size={14}
-                        className="text-muted-foreground/80"
-                      />
-                    </Button>
-                  </SelectTrigger>
-                  <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
-                    <SelectItem value="personal">Personal</SelectItem>
-                    <SelectItem value="team">Team</SelectItem>
-                    <SelectItem value="business">Business</SelectItem>
-                  </SelectContent>
-                </Select>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator> / </BreadcrumbSeparator>
-              <BreadcrumbItem>
-                <Select defaultValue="1">
-                  <SelectTrigger aria-label="Select project" asChild>
-                    <Button
-                      variant="ghost"
-                      className="focus-visible:bg-accent text-foreground h-8 p-1.5 focus-visible:ring-0"
-                    >
-                      <SelectValue placeholder="Select project" />
-                      <ChevronsUpDown
-                        size={14}
-                        className="text-muted-foreground/80"
-                      />
-                    </Button>
-                  </SelectTrigger>
-                  <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
-                    <SelectItem value="1">Main project</SelectItem>
-                    <SelectItem value="2">Origin project</SelectItem>
-                  </SelectContent>
-                </Select>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-        </div>
-        {/* Right side */}
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2">
-            {/* Nav menu */}
-            <NavigationMenu className="max-md:hidden">
+          <div className="flex items-center gap-6">
+            {/* Logo */}
+            <a href="#" className="text-primary hover:text-primary/90">
+              <Logo />
+            </a>
+            {/* Desktop navigation - icon only */}
+            <NavigationMenu className="hidden md:flex">
               <NavigationMenuList className="gap-2">
-                {navigationLinks.map((link, index) => (
-                  <NavigationMenuItem key={index}>
-                    <NavigationMenuLink
-                      href={link.href}
-                      className="text-muted-foreground hover:text-primary py-1.5 font-medium"
-                    >
-                      {link.label}
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                ))}
+                <TooltipProvider>
+                  {navigationLinks.map((link) => (
+                    <NavigationMenuItem key={link.label}>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <NavigationMenuLink
+                            href={link.href}
+                            className="flex size-8 items-center justify-center p-1.5"
+                          >
+                            <link.icon size={20} aria-hidden="true" />
+                            <span className="sr-only">{link.label}</span>
+                          </NavigationMenuLink>
+                        </TooltipTrigger>
+                        <TooltipContent
+                          side="bottom"
+                          className="px-2 py-1 text-xs"
+                        >
+                          <p>{link.label}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </NavigationMenuItem>
+                  ))}
+                </TooltipProvider>
               </NavigationMenuList>
             </NavigationMenu>
-            {/* Settings */}
-            <SettingsMenu />
           </div>
+        </div>
+        {/* Right side */}
+        <div className="flex items-center gap-2">
+          {/* Theme toggle */}
+          <ThemeToggle />
+          {/* Language selector */}
+          <Select defaultValue="en">
+            <SelectTrigger
+              id={`language-${id}`}
+              className="[&>svg]:text-muted-foreground/80 hover:bg-accent hover:text-accent-foreground h-8 border-none px-2 shadow-none [&>svg]:shrink-0"
+              aria-label="Select language"
+            >
+              <GlobeIcon size={16} aria-hidden="true" />
+              <SelectValue className="hidden sm:inline-flex" />
+            </SelectTrigger>
+            <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2 [&_*[role=option]>span]:flex [&_*[role=option]>span]:items-center [&_*[role=option]>span]:gap-2">
+              {languages.map((lang) => (
+                <SelectItem key={lang.value} value={lang.value}>
+                  <span className="flex items-center gap-2">
+                    <span className="truncate">{lang.label}</span>
+                  </span>
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
           {/* User menu */}
           <UserMenu />
         </div>

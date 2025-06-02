@@ -1,19 +1,22 @@
-import { HouseIcon, InboxIcon, SparklesIcon, ZapIcon } from "lucide-react"
+import {
+  BotMessageSquareIcon,
+  HouseIcon,
+  InboxIcon,
+  MessageCircleDashedIcon,
+  ZapIcon,
+} from "lucide-react"
 
-import Logo from "@/registry/default/components/navbar-components/logo"
 import UserMenu from "@/registry/default/components/navbar-components/user-menu"
 import { Button } from "@/registry/default/ui/button"
 import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "@/registry/default/ui/navigation-menu"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/registry/default/ui/select"
 
 // Navigation links array
 const navigationLinks = [
@@ -27,114 +30,69 @@ export default function Component() {
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
         {/* Left side */}
-        <div className="flex flex-1 items-center gap-2">
-          {/* Mobile menu trigger */}
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button
-                className="group size-8 md:hidden"
-                variant="ghost"
-                size="icon"
-              >
-                <svg
-                  className="pointer-events-none"
-                  width={16}
-                  height={16}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M4 12L20 12"
-                    className="origin-center -translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-x-0 group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]"
-                  />
-                  <path
-                    d="M4 12H20"
-                    className="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-aria-expanded:rotate-45"
-                  />
-                  <path
-                    d="M4 12H20"
-                    className="origin-center translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]"
-                  />
-                </svg>
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent align="start" className="w-36 p-1 md:hidden">
-              <NavigationMenu className="max-w-none *:w-full">
-                <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
-                  {navigationLinks.map((link, index) => {
-                    const Icon = link.icon
-                    return (
-                      <NavigationMenuItem key={index} className="w-full">
-                        <NavigationMenuLink
-                          href={link.href}
-                          className="flex-row items-center gap-2 py-1.5"
-                          active={link.active}
-                        >
-                          <Icon
-                            size={16}
-                            className="text-muted-foreground/80"
-                            aria-hidden="true"
-                          />
-                          <span>{link.label}</span>
-                        </NavigationMenuLink>
-                      </NavigationMenuItem>
-                    )
-                  })}
-                </NavigationMenuList>
-              </NavigationMenu>
-            </PopoverContent>
-          </Popover>
-
-          <NavigationMenu className="max-md:hidden">
-            <NavigationMenuList className="gap-2">
-              {navigationLinks.map((link, index) => {
-                const Icon = link.icon
-                return (
-                  <NavigationMenuItem key={index}>
-                    <NavigationMenuLink
-                      active={link.active}
-                      href={link.href}
-                      className="text-foreground hover:text-primary flex-row items-center gap-2 py-1.5 font-medium"
-                    >
-                      <Icon
-                        size={16}
-                        className="text-muted-foreground/80"
-                        aria-hidden="true"
-                      />
-                      <span>{link.label}</span>
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                )
-              })}
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
-
-        {/* Middle side: Logo */}
-        <div className="flex items-center">
-          <a href="#" className="text-primary hover:text-primary/90">
-            <Logo />
-          </a>
+        <div>
+          <Select defaultValue="orion-alpha-45" aria-label="Select AI model">
+            <SelectTrigger className="[&>svg]:text-muted-foreground/80 **:data-desc:hidden [&>svg]:shrink-0">
+              <BotMessageSquareIcon size={16} aria-hidden="true" />
+              <SelectValue placeholder="Choose an AI model" />
+            </SelectTrigger>
+            <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
+              <SelectGroup>
+                <SelectLabel className="ps-2">Models</SelectLabel>
+                <SelectItem value="orion-alpha-45">
+                  Orion-Alpha 4.5
+                  <span
+                    className="text-muted-foreground mt-1 block text-xs"
+                    data-desc
+                  >
+                    Balanced performance and creativity
+                  </span>
+                </SelectItem>
+                <SelectItem value="orion-code-4">
+                  Orion-Code 4
+                  <span
+                    className="text-muted-foreground mt-1 block text-xs"
+                    data-desc
+                  >
+                    Optimized for code generation and understanding
+                  </span>
+                </SelectItem>
+                <SelectItem value="nova-chat-4">
+                  Nova-Chat 4
+                  <span
+                    className="text-muted-foreground mt-1 block text-xs"
+                    data-desc
+                  >
+                    Excels at natural, engaging conversations
+                  </span>
+                </SelectItem>
+                <SelectItem value="galaxy-max-4">
+                  Galaxy-Max 4
+                  <span
+                    className="text-muted-foreground mt-1 block text-xs"
+                    data-desc
+                  >
+                    Most powerful model for complex tasks
+                  </span>
+                </SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
         </div>
 
         {/* Right side: Actions */}
-        <div className="flex flex-1 items-center justify-end gap-4">
+        <div className="flex items-center justify-end gap-2">
+          {/* Layout button */}
+          <Button
+            size="icon"
+            variant="ghost"
+            className="text-muted-foreground size-8 rounded-full shadow-none"
+            aria-label="Temporary chat"
+          >
+            <MessageCircleDashedIcon size={16} aria-hidden="true" />
+          </Button>
           {/* User menu */}
           <UserMenu />
-          {/* Upgrade button */}
-          <Button size="sm" className="aspect-square text-sm">
-            <SparklesIcon
-              className="opacity-60 max-sm:hidden sm:-ms-1"
-              size={16}
-              aria-hidden="true"
-            />
-            Upgrade
-          </Button>
         </div>
       </div>
     </header>
