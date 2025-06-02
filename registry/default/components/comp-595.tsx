@@ -1,5 +1,8 @@
+"use client"
+
+import { useId, useState } from "react"
+import { Switch } from "@/registry/default/ui/switch"
 import Logo from "@/registry/default/components/navbar-components/logo"
-import UserMenu from "@/registry/default/components/navbar-components/user-menu"
 import { Badge } from "@/registry/default/ui/badge"
 import { Button } from "@/registry/default/ui/button"
 import {
@@ -13,7 +16,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/registry/default/ui/popover"
-import { ZapIcon, ClockIcon } from "lucide-react"
+import { ZapIcon, ClockIcon, PowerIcon, PowerOffIcon } from "lucide-react"
+import { Label } from "react-aria-components"
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
@@ -23,6 +27,9 @@ const navigationLinks = [
 ]
 
 export default function Component() {
+  const id = useId()
+  const [checked, setChecked] = useState<boolean>(true)
+
   return (
     <header className="border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
@@ -118,8 +125,26 @@ export default function Component() {
               45ms
             </Badge>
           </div>
-          {/* User menu */}
-          <UserMenu />
+          {/* Switch */}
+          <div>
+            <div className="relative inline-grid h-7 grid-cols-[1fr_1fr] items-center text-sm font-medium">
+              <Switch
+                id={id}
+                checked={checked}
+                onCheckedChange={setChecked}
+                className="peer data-[state=unchecked]:bg-input/50 absolute inset-0 h-[inherit] w-auto [&_span]:z-10 [&_span]:h-full [&_span]:w-1/2 [&_span]:transition-transform [&_span]:duration-300 [&_span]:ease-[cubic-bezier(0.16,1,0.3,1)] [&_span]:data-[state=checked]:translate-x-full [&_span]:data-[state=checked]:rtl:-translate-x-full"
+              />
+              <span className="pointer-events-none relative ms-0.5 flex items-center justify-center w-6 text-center transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] peer-data-[state=checked]:invisible peer-data-[state=unchecked]:translate-x-full peer-data-[state=unchecked]:rtl:-translate-x-full">
+                <PowerOffIcon size={14} aria-hidden="true" />
+              </span>
+              <span className="peer-data-[state=checked]:text-background pointer-events-none relative me-0.5 flex items-center justify-center w-6 text-center transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] peer-data-[state=checked]:-translate-x-full peer-data-[state=unchecked]:invisible peer-data-[state=checked]:rtl:translate-x-full">
+                <PowerIcon size={14} aria-hidden="true" />
+              </span>
+            </div>
+            <Label htmlFor={id} className="sr-only">
+              Power
+            </Label>
+          </div>          
         </div>
       </div>
     </header>
