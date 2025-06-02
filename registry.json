@@ -10622,6 +10622,20 @@
         "tags": ["navbar, navigation"],
         "colSpan": 3
       }
+    },
+    {
+      "name": "comp-595", 
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/comp-595.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
     }
   ]
 }
