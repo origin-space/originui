@@ -2,7 +2,6 @@ import { SparklesIcon, UploadIcon } from "lucide-react"
 
 import AppToggle from "@/registry/default/components/navbar-components/app-toggle"
 import TeamSwitcher from "@/registry/default/components/navbar-components/team-switcher"
-import UserMenu from "@/registry/default/components/navbar-components/user-menu"
 import { Button } from "@/registry/default/ui/button"
 
 const teams = ["Acme Inc.", "Origin UI", "Junon"]

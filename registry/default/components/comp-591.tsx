@@ -1,10 +1,4 @@
-import {
-  BotMessageSquareIcon,
-  HouseIcon,
-  InboxIcon,
-  MessageCircleDashedIcon,
-  ZapIcon,
-} from "lucide-react"
+import { BotMessageSquareIcon, MessageCircleDashedIcon } from "lucide-react"
 
 import UserMenu from "@/registry/default/components/navbar-components/user-menu"
 import { Button } from "@/registry/default/ui/button"
@@ -17,13 +11,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/registry/default/ui/select"
-
-// Navigation links array
-const navigationLinks = [
-  { href: "#", label: "Home", icon: HouseIcon, active: true },
-  { href: "#", label: "Inbox", icon: InboxIcon },
-  { href: "#", label: "Insights", icon: ZapIcon },
-]
 
 export default function Component() {
   return (

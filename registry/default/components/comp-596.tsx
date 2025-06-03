@@ -2,11 +2,10 @@
 
 import { useId, useState } from "react"
 import { ClockIcon, PowerIcon, PowerOffIcon, ZapIcon } from "lucide-react"
-import { Label } from "react-aria-components"
 
-import Logo from "@/registry/default/components/navbar-components/logo"
 import { Badge } from "@/registry/default/ui/badge"
 import { Button } from "@/registry/default/ui/button"
+import { Label } from "@/registry/default/ui/label"
 import {
   NavigationMenu,
   NavigationMenuItem,
