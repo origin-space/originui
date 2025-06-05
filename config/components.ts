@@ -265,7 +265,7 @@ export const categories: ComponentCategory[] = [
       { name: "comp-562" },
       { name: "comp-563" },
       { name: "comp-564" },
-    ]
+    ],
   },
   {
     slug: "dialog",
@@ -430,7 +430,7 @@ export const categories: ComponentCategory[] = [
       { name: "comp-595" },
       { name: "comp-596" },
     ],
-    isNew: true,    
+    isNew: true,
   },
   {
     slug: "notification",
