@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-586",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/avatar.json",
+    "https://originui.com/r/button.json",
+    "https://originui.com/r/dropdown-menu.json",
+    "https://originui.com/r/input.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-586.tsx",
+      "content": "import { useId } from \"react\"\nimport { MicIcon, SearchIcon } from \"lucide-react\"\n\nimport Logo from \"@/registry/default/components/navbar-components/logo\"\nimport ThemeToggle from \"@/registry/default/components/navbar-components/theme-toggle\"\nimport { Button } from \"@/registry/default/ui/button\"\nimport { Input } from \"@/registry/default/ui/input\"\n\nexport default function Component() {\n  const id = useId()\n\n  return (\n    <header className=\"border-b px-4 md:px-6\">\n      <div className=\"flex h-16 items-center justify-between gap-4\">\n        {/* Logo */}\n        <div className=\"flex-1\">\n          <a href=\"#\" className=\"text-primary hover:text-primary/90\">\n            <Logo />\n          </a>\n        </div>\n        {/* Middle area */}\n        <div className=\"grow max-sm:hidden\">\n          {/* Search form */}\n          <div className=\"relative mx-auto w-full max-w-xs\">\n            <Input\n              id={id}\n              className=\"peer h-8 px-8\"\n              placeholder=\"Search...\"\n              type=\"search\"\n            />\n            <div className=\"text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-2 peer-disabled:opacity-50\">\n              <SearchIcon size={16} />\n            </div>\n            <button\n              className=\"text-muted-foreground/80 hover:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-md transition-[color,box-shadow] outline-none focus:z-10 focus-visible:ring-[3px] disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50\"\n              aria-label=\"Press to speak\"\n              type=\"submit\"\n            >\n              <MicIcon size={16} aria-hidden=\"true\" />\n            </button>\n          </div>\n        </div>\n        {/* Right side */}\n        <div className=\"flex flex-1 items-center justify-end gap-2\">\n          <Button asChild variant=\"ghost\" size=\"sm\" className=\"text-sm\">\n            <a href=\"#\">Community</a>\n          </Button>\n          <Button asChild size=\"sm\" className=\"text-sm\">\n            <a href=\"#\">Get Started</a>\n          </Button>\n          <ThemeToggle />\n        </div>\n      </div>\n    </header>\n  )\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/default/components/navbar-components/logo.tsx",
+      "content": "export default function Logo() {\n  return (\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width=\"33\"\n      height=\"33\"\n      fill=\"currentColor\"\n    >\n      <path d=\"M20.46 1.766 17.303.923l-2.66 9.896-2.403-8.934-3.157.843 2.595 9.652-6.464-6.442-2.311 2.304 7.09 7.066-8.83-2.358-.846 3.146 9.648 2.577a6.516 6.516 0 0 1-.169-1.478c0-3.598 2.927-6.515 6.537-6.515s6.537 2.917 6.537 6.515c0 .505-.057.997-.167 1.468l8.768 2.342.846-3.147-9.686-2.586 8.83-2.358-.845-3.147-9.686 2.587 6.464-6.442-2.311-2.304-6.992 6.969 2.369-8.81Z\" />\n      <path d=\"M22.695 18.7a6.495 6.495 0 0 1-1.626 2.986l6.352 6.33 2.31-2.303-7.036-7.013ZM21.005 21.752a6.538 6.538 0 0 1-2.922 1.722l2.312 8.596 3.157-.843-2.547-9.475ZM17.965 23.505a6.569 6.569 0 0 1-1.632.205 6.566 6.566 0 0 1-1.743-.235l-2.314 8.605 3.157.843 2.532-9.418ZM14.478 23.444a6.54 6.54 0 0 1-2.87-1.747l-6.367 6.346 2.31 2.303 6.927-6.902ZM11.555 21.64a6.492 6.492 0 0 1-1.585-2.948L1.173 21.04l.846 3.146 9.536-2.546Z\" />\n    </svg>\n  )\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/default/components/navbar-components/theme-toggle.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\nimport { MoonIcon, SunIcon } from \"lucide-react\"\n\nimport { Toggle } from \"@/registry/default/ui/toggle\"\n\nexport default function ThemeToggle() {\n  const [theme, setTheme] = useState<string>(\"light\")\n\n  return (\n    <div>\n      <Toggle\n        variant=\"outline\"\n        className=\"group data-[state=on]:hover:bg-muted text-muted-foreground data-[state=on]:text-muted-foreground data-[state=on]:hover:text-foreground size-8 rounded-full border-none shadow-none data-[state=on]:bg-transparent\"\n        pressed={theme === \"dark\"}\n        onPressedChange={() =>\n          setTheme((prev) => (prev === \"dark\" ? \"light\" : \"dark\"))\n        }\n        aria-label={`Switch to ${theme === \"dark\" ? \"light\" : \"dark\"} mode`}\n      >\n        {/* Note: After dark mode implementation, rely on dark: prefix rather than group-data-[state=on]: */}\n        <MoonIcon\n          size={16}\n          className=\"shrink-0 scale-0 opacity-0 transition-all group-data-[state=on]:scale-100 group-data-[state=on]:opacity-100\"\n          aria-hidden=\"true\"\n        />\n        <SunIcon\n          size={16}\n          className=\"absolute shrink-0 scale-100 opacity-100 transition-all group-data-[state=on]:scale-0 group-data-[state=on]:opacity-0\"\n          aria-hidden=\"true\"\n        />\n      </Toggle>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "navbar, navigation"
+    ],
+    "colSpan": 3
+  }
+}
