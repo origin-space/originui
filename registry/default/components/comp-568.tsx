@@ -98,7 +98,7 @@ export default function Component() {
       >
         Basic tree with caret icon on the right ∙{" "}
         <a
-          href="https://headless-tree.lukasbach.co"
+          href="https://headless-tree.lukasbach.com"
           className="hover:text-foreground underline"
           target="_blank"
           rel="noopener noreferrer"

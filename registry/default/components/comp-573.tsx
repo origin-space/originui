@@ -132,7 +132,7 @@ export default function Component() {
       >
         Tree with items expandable on double click ∙{" "}
         <a
-          href="https://headless-tree.lukasbach.co"
+          href="https://headless-tree.lukasbach.com"
           className="hover:text-foreground underline"
           target="_blank"
           rel="noopener noreferrer"
