@@ -21,7 +21,7 @@ export default function Component() {
           <Button
             size="sm"
             variant="ghost"
-            className="aspect-square text-sm max-sm:p-0"
+            className="text-sm max-sm:aspect-square max-sm:p-0"
           >
             <UploadIcon
               className="opacity-60 sm:-ms-1"
@@ -30,7 +30,7 @@ export default function Component() {
             />
             <span className="max-sm:sr-only">Export</span>
           </Button>
-          <Button size="sm" className="aspect-square text-sm max-sm:p-0">
+          <Button size="sm" className="text-sm max-sm:aspect-square max-sm:p-0">
             <SparklesIcon
               className="opacity-60 sm:-ms-1"
               size={16}
