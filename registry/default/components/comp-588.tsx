@@ -133,7 +133,7 @@ export default function Component() {
               size={16}
               aria-hidden="true"
             />
-            <span className="max-sm:hidden">Upgrade</span>
+            <span className="max-sm:sr-only">Upgrade</span>
           </Button>
         </div>
       </div>
