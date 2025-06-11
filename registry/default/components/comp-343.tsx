@@ -1,4 +1,3 @@
-import * as AccordionPrimitive from "@radix-ui/react-accordion"
 import {
   BellIcon,
   LifeBuoyIcon,
@@ -6,6 +5,7 @@ import {
   PlusIcon,
   ShieldCheckIcon,
 } from "lucide-react"
+import { Accordion as AccordionPrimitive } from "radix-ui"
 
 import {
   Accordion,
