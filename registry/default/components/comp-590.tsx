@@ -122,7 +122,7 @@ export default function Component() {
         </NavigationMenu>
         {/* Right side */}
         <div className="flex flex-1 items-center justify-end gap-4">
-          <Button size="sm" className="aspect-square text-sm max-sm:p-0">
+          <Button size="sm" className="text-sm max-sm:aspect-square max-sm:p-0">
             <PlusIcon
               className="opacity-60 sm:-ms-1"
               size={16}
