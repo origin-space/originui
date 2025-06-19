@@ -1,5 +1,5 @@
-import { SelectTrigger } from "@radix-ui/react-select"
 import { ChevronsUpDown } from "lucide-react"
+import { Select as SelectPrimitive } from "radix-ui"
 
 import Logo from "@/registry/default/components/navbar-components/logo"
 import NotificationMenu from "@/registry/default/components/navbar-components/notification-menu"
@@ -69,7 +69,10 @@ export default function Component() {
               <BreadcrumbSeparator> / </BreadcrumbSeparator>
               <BreadcrumbItem>
                 <Select defaultValue="1">
-                  <SelectTrigger aria-label="Select project" asChild>
+                  <SelectPrimitive.SelectTrigger
+                    aria-label="Select project"
+                    asChild
+                  >
                     <Button
                       variant="ghost"
                       className="focus-visible:bg-accent text-foreground h-8 px-1.5 focus-visible:ring-0"
@@ -80,7 +83,7 @@ export default function Component() {
                         className="text-muted-foreground/80"
                       />
                     </Button>
-                  </SelectTrigger>
+                  </SelectPrimitive.SelectTrigger>
                   <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
                     <SelectItem value="1">Main project</SelectItem>
                     <SelectItem value="2">Origin project</SelectItem>

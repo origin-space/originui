@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu"
 import { ChevronDownIcon } from "lucide-react"
 
 import { Button } from "@/registry/default/ui/button"
@@ -12,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu"
 
-type Checked = DropdownMenuCheckboxItemProps["checked"]
+type Checked = boolean
 
 export default function Component() {
   const [nextjs, setNextjs] = useState<Checked>(false)

@@ -1,7 +1,6 @@
 "use client"
 
 import { JSX, useEffect, useState } from "react"
-import { DialogDescription } from "@radix-ui/react-dialog"
 import { CodeIcon } from "lucide-react"
 import type { RegistryItem } from "shadcn/registry"
 
@@ -14,6 +13,7 @@ import { Button } from "@/registry/default/ui/button"
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,

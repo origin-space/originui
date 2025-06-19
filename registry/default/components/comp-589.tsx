@@ -1,5 +1,5 @@
-import { SelectTrigger } from "@radix-ui/react-select"
 import { ChevronsUpDown } from "lucide-react"
+import { Select as SelectPrimitive } from "radix-ui"
 
 import SettingsMenu from "@/registry/default/components/navbar-components/settings-menu"
 import UserMenu from "@/registry/default/components/navbar-components/user-menu"
@@ -95,7 +95,10 @@ export default function Component() {
             <BreadcrumbList>
               <BreadcrumbItem>
                 <Select defaultValue="personal">
-                  <SelectTrigger aria-label="Select account type" asChild>
+                  <SelectPrimitive.SelectTrigger
+                    aria-label="Select account type"
+                    asChild
+                  >
                     <Button
                       variant="ghost"
                       className="focus-visible:bg-accent text-foreground h-8 p-1.5 focus-visible:ring-0"
@@ -106,7 +109,7 @@ export default function Component() {
                         className="text-muted-foreground/80"
                       />
                     </Button>
-                  </SelectTrigger>
+                  </SelectPrimitive.SelectTrigger>
                   <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
                     <SelectItem value="personal">Personal</SelectItem>
                     <SelectItem value="team">Team</SelectItem>
@@ -117,7 +120,10 @@ export default function Component() {
               <BreadcrumbSeparator> / </BreadcrumbSeparator>
               <BreadcrumbItem>
                 <Select defaultValue="1">
-                  <SelectTrigger aria-label="Select project" asChild>
+                  <SelectPrimitive.SelectTrigger
+                    aria-label="Select project"
+                    asChild
+                  >
                     <Button
                       variant="ghost"
                       className="focus-visible:bg-accent text-foreground h-8 p-1.5 focus-visible:ring-0"
@@ -128,7 +134,7 @@ export default function Component() {
                         className="text-muted-foreground/80"
                       />
                     </Button>
-                  </SelectTrigger>
+                  </SelectPrimitive.SelectTrigger>
                   <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
                     <SelectItem value="1">Main project</SelectItem>
                     <SelectItem value="2">Origin project</SelectItem>
