@@ -20,7 +20,7 @@ export default function Component() {
           <div>
             <Toggle
               className="group size-9 p-0 hover:bg-indigo-50 hover:text-indigo-500 data-[state=on]:bg-indigo-50 data-[state=on]:text-indigo-500"
-              aria-label="BookmarkIcon this"
+              aria-label="Bookmark this"
               pressed={bookmarked}
               onPressedChange={setBookmarked}
             >
@@ -29,7 +29,7 @@ export default function Component() {
           </div>
         </TooltipTrigger>
         <TooltipContent className="px-2 py-1 text-xs">
-          <p>{bookmarked ? "Remove bookmark" : "BookmarkIcon this"}</p>
+          <p>{bookmarked ? "Remove bookmark" : "Bookmark this"}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
