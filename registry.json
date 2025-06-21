@@ -70,6 +70,7 @@
     {
       "name": "badge",
       "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-slot"],
       "files": [
         {
           "path": "registry/default/ui/badge.tsx",
@@ -365,6 +366,7 @@
     {
       "name": "stepper",
       "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-slot"],
       "files": [
         {
           "path": "registry/default/ui/stepper.tsx",
@@ -481,7 +483,7 @@
     {
       "name": "tree",
       "type": "registry:component",
-      "dependencies": ["@headless-tree/core", "@headless-tree/react"],
+      "dependencies": ["@headless-tree/core", "@headless-tree/react", "@radix-ui/react-slot"],
       "files": [
         {
           "path": "registry/default/ui/tree.tsx",
@@ -10374,10 +10376,6 @@
       "files": [
         {
           "path": "registry/default/components/comp-576.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/default/components/navbar-components/logo.tsx",
           "type": "registry:component"
         }
       ],
