@@ -127,13 +127,13 @@ export default function Component() {
           {/* User menu */}
           <UserMenu />
           {/* Upgrade button */}
-          <Button size="sm" className="aspect-square text-sm">
+          <Button size="sm" className="text-sm sm:aspect-square">
             <SparklesIcon
-              className="opacity-60 max-sm:hidden sm:-ms-1"
+              className="opacity-60 sm:-ms-1"
               size={16}
               aria-hidden="true"
             />
-            Upgrade
+            <span className="sm:sr-only">Upgrade</span>
           </Button>
         </div>
       </div>

@@ -41,7 +41,7 @@ export default function Component() {
           <Button
             size="sm"
             variant="outline"
-            className="aspect-square text-sm max-sm:p-0"
+            className="text-sm max-sm:aspect-square max-sm:p-0"
           >
             <BookmarkIcon
               className="text-muted-foreground/80 sm:-ms-1"
