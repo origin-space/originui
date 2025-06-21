@@ -3,7 +3,7 @@
   "name": "accordion",
   "type": "registry:ui",
   "dependencies": [
-    "@radix-ui/react-accordion"
+    "radix-ui"
   ],
   "files": [
     {

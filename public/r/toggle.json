@@ -3,7 +3,7 @@
   "name": "toggle",
   "type": "registry:ui",
   "dependencies": [
-    "@radix-ui/react-toggle"
+    "radix-ui"
   ],
   "files": [
     {

@@ -3,7 +3,7 @@
   "name": "toast",
   "type": "registry:ui",
   "dependencies": [
-    "@radix-ui/react-toast"
+    "radix-ui"
   ],
   "files": [
     {

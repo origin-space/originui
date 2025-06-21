@@ -3,7 +3,7 @@
   "name": "stepper",
   "type": "registry:ui",
   "dependencies": [
-    "@radix-ui/react-slot"
+    "radix-ui"
   ],
   "files": [
     {

@@ -3,7 +3,7 @@
   "name": "progress",
   "type": "registry:ui",
   "dependencies": [
-    "@radix-ui/react-progress"
+    "radix-ui"
   ],
   "files": [
     {

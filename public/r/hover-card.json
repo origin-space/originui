@@ -3,7 +3,7 @@
   "name": "hover-card",
   "type": "registry:ui",
   "dependencies": [
-    "@radix-ui/react-hover-card"
+    "radix-ui"
   ],
   "files": [
     {

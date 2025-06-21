@@ -3,7 +3,7 @@
   "name": "collapsible",
   "type": "registry:ui",
   "dependencies": [
-    "@radix-ui/react-collapsible"
+    "radix-ui"
   ],
   "files": [
     {

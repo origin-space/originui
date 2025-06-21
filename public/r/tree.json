@@ -5,7 +5,7 @@
   "dependencies": [
     "@headless-tree/core",
     "@headless-tree/react",
-    "@radix-ui/react-slot"
+    "radix-ui"
   ],
   "files": [
     {

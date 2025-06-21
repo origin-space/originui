@@ -3,7 +3,7 @@
   "name": "alert-dialog",
   "type": "registry:ui",
   "dependencies": [
-    "@radix-ui/react-alert-dialog"
+    "radix-ui"
   ],
   "registryDependencies": [
     "https://originui.com/r/button.json"

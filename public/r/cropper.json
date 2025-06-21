@@ -3,7 +3,7 @@
   "name": "cropper",
   "type": "registry:ui",
   "dependencies": [
-    "@origin-space/image-cropper"
+    "origin-space"
   ],
   "files": [
     {
