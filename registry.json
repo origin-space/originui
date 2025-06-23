@@ -170,7 +170,7 @@
     {
       "name": "cropper",
       "type": "registry:ui",
-      "dependencies": ["origin-space"],
+      "dependencies": ["@origin-space/image-cropper"],
       "files": [
         {
           "path": "registry/default/ui/cropper.tsx",
