@@ -45,7 +45,7 @@ function CommandDialog({
         <DialogDescription>{description}</DialogDescription>
       </DialogHeader>
       <DialogContent className="overflow-hidden p-0 sm:max-w-lg [&>button:last-child]:hidden">
-        <Command className="[&_[cmdk-group-heading]]:text-muted-foreground **:data-[slot=command-input-wrapper]:h-12 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]]:px-2 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-3 [&_[cmdk-item]]:py-2">
+        <Command className="[&_[cmdk-group-heading]]:text-muted-foreground max-h-[100svh] **:data-[slot=command-input-wrapper]:h-12 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]]:px-2 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-3 [&_[cmdk-item]]:py-2">
           {children}
         </Command>
       </DialogContent>
@@ -82,7 +82,10 @@ function CommandList({
   return (
     <CommandPrimitive.List
       data-slot="command-list"
-      className={cn("max-h-80 overflow-x-hidden overflow-y-auto", className)}
+      className={cn(
+        "max-h-80 flex-1 overflow-x-hidden overflow-y-auto",
+        className
+      )}
       {...props}
     />
   )

@@ -8,8 +8,8 @@ import { convertRegistryPaths } from "@/lib/utils"
 import ComponentCli from "@/components/cli-commands"
 import CodeBlock, { highlight } from "@/components/code-block"
 import CopyButton from "@/components/copy-button"
-import OpenInV0 from "@/components/open-in-v0"
 import CopyRegistry from "@/components/copy-registry"
+import OpenInV0 from "@/components/open-in-v0"
 import { Button } from "@/registry/default/ui/button"
 import {
   Dialog,
