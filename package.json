@@ -43,6 +43,7 @@
     "react-aria-components": "^1.10.1",
     "react-day-picker": "^9.7.0",
     "react-dom": "^19.1.0",
+    "react-hook-form": "^7.59.0",
     "react-intersection-observer": "^9.16.0",
     "react-payment-inputs": "^1.2.0",
     "react-phone-number-input": "^3.4.12",
