@@ -19,11 +19,7 @@ import {
   RiReactjsLine,
 } from "@remixicon/react"
 
-import {
-  Tree,
-  TreeItem,
-  TreeItemLabel,
-} from "@/registry/default/ui/tree"
+import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree"
 
 interface Item {
   name: string

@@ -1,7 +1,6 @@
 "use client"
 
 import { JSX, useEffect, useState } from "react"
-import { DialogDescription } from "@radix-ui/react-dialog"
 import { CodeIcon } from "lucide-react"
 import type { RegistryItem } from "shadcn/registry"
 
@@ -9,11 +8,13 @@ import { convertRegistryPaths } from "@/lib/utils"
 import ComponentCli from "@/components/cli-commands"
 import CodeBlock, { highlight } from "@/components/code-block"
 import CopyButton from "@/components/copy-button"
+import CopyRegistry from "@/components/copy-registry"
 import OpenInV0 from "@/components/open-in-v0"
 import { Button } from "@/registry/default/ui/button"
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -72,7 +73,8 @@ export default function ComponentDetails({
   }, [component.name])
 
   return (
-    <div className="absolute top-2 right-2 flex gap-2 peer-data-comp-loading:hidden">
+    <div className="absolute top-2 right-2 flex gap-1 peer-data-comp-loading:hidden">
+      <CopyRegistry url={`https://originui.com/r/${component.name}.json`} />
       <OpenInV0
         componentSource={`https://originui.com/r/${component.name}.json`}
       />

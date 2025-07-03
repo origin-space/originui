@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-595",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/avatar.json",
+    "https://originui.com/r/button.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-595.tsx",
+      "content": "import {\n  ChevronLeftIcon,\n  HistoryIcon,\n  MessageSquareText,\n  UserRoundPlus,\n} from \"lucide-react\"\n\nimport {\n  Avatar,\n  AvatarFallback,\n  AvatarImage,\n} from \"@/registry/default/ui/avatar\"\nimport { Button } from \"@/registry/default/ui/button\"\n\nexport default function Component() {\n  return (\n    <header className=\"border-b px-4 md:px-6\">\n      <div className=\"flex h-16 items-center justify-between gap-4\">\n        {/* Left side */}\n        <div className=\"flex items-center gap-2\">\n          <Button\n            className=\"size-8\"\n            variant=\"ghost\"\n            size=\"icon\"\n            aria-label=\"Go back\"\n            asChild\n          >\n            <a href=\"#\">\n              <ChevronLeftIcon />\n            </a>\n          </Button>\n          <h1 className=\"text-sm font-medium\">Basic UI</h1>\n        </div>\n        {/* Right side */}\n        <div className=\"flex items-center gap-2\">\n          {/* History button */}\n          <Button\n            size=\"icon\"\n            variant=\"ghost\"\n            className=\"text-muted-foreground size-8 rounded-full shadow-none\"\n            aria-label=\"History\"\n          >\n            <HistoryIcon size={16} aria-hidden=\"true\" />\n          </Button>\n          {/* Comments button */}\n          <Button\n            size=\"icon\"\n            variant=\"ghost\"\n            className=\"text-muted-foreground size-8 rounded-full shadow-none\"\n            aria-label=\"Save\"\n          >\n            <MessageSquareText size={16} aria-hidden=\"true\" />\n          </Button>\n          {/* Add user */}\n          <Button\n            size=\"icon\"\n            variant=\"ghost\"\n            className=\"text-muted-foreground size-8 rounded-full shadow-none\"\n            aria-label=\"Add user\"\n          >\n            <UserRoundPlus size={16} aria-hidden=\"true\" />\n          </Button>\n          {/* Online users */}\n          <div className=\"ml-2 flex items-center gap-2\">\n            <div className=\"relative\">\n              <Avatar>\n                <AvatarImage src=\"./avatar-80-07.jpg\" alt=\"Kelly King\" />\n                <AvatarFallback>KK</AvatarFallback>\n              </Avatar>\n              <span className=\"border-background absolute -end-0.5 -bottom-0.5 size-3 rounded-full border-2 bg-emerald-500\">\n                <span className=\"sr-only\">Online</span>\n              </span>\n            </div>\n            <div className=\"relative\">\n              <Avatar>\n                <AvatarImage src=\"./avatar-80-06.jpg\" alt=\"Martha Johnson\" />\n                <AvatarFallback>KK</AvatarFallback>\n              </Avatar>\n              <span className=\"border-background bg-muted-foreground absolute -end-0.5 -bottom-0.5 size-3 rounded-full border-2\">\n                <span className=\"sr-only\">Online</span>\n              </span>\n            </div>\n            <div className=\"relative\">\n              <Avatar>\n                <AvatarImage src=\"./avatar-80-05.jpg\" alt=\"Linda Green\" />\n                <AvatarFallback>KK</AvatarFallback>\n              </Avatar>\n              <span className=\"border-background bg-muted-foreground absolute -end-0.5 -bottom-0.5 size-3 rounded-full border-2\">\n                <span className=\"sr-only\">Online</span>\n              </span>\n            </div>\n            <Button\n              variant=\"secondary\"\n              className=\"bg-secondary text-muted-foreground ring-background hover:bg-secondary hover:text-foreground flex size-8 items-center justify-center rounded-full text-xs\"\n              size=\"icon\"\n            >\n              +3\n            </Button>\n          </div>\n        </div>\n      </div>\n    </header>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "navbar, navigation"
+    ],
+    "colSpan": 3
+  }
+}

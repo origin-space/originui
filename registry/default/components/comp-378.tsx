@@ -1,6 +1,6 @@
 import {
   BookIcon,
-  Info,
+  InfoIcon,
   LifeBuoyIcon,
   MessageCircleMoreIcon,
 } from "lucide-react"
@@ -24,7 +24,7 @@ export default function Component() {
           className="rounded-full shadow-none"
           aria-label="Open edit menu"
         >
-          <Info size={16} aria-hidden="true" />
+          <InfoIcon size={16} aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="pb-2">

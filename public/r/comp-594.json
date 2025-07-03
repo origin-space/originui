@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-594",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/button.json",
+    "https://originui.com/r/dropdown-menu.json",
+    "https://originui.com/r/radio-group.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-594.tsx",
+      "content": "import { SparklesIcon, UploadIcon } from \"lucide-react\"\n\nimport AppToggle from \"@/registry/default/components/navbar-components/app-toggle\"\nimport TeamSwitcher from \"@/registry/default/components/navbar-components/team-switcher\"\nimport { Button } from \"@/registry/default/ui/button\"\n\nconst teams = [\"Acme Inc.\", \"Origin UI\", \"Junon\"]\n\nexport default function Component() {\n  return (\n    <header className=\"border-b px-4 md:px-6\">\n      <div className=\"flex h-16 items-center justify-between gap-4\">\n        {/* Left side */}\n        <div className=\"flex flex-1 items-center gap-2\">\n          <TeamSwitcher teams={teams} defaultTeam={teams[0]} />\n        </div>\n        {/* Middle area */}\n        <AppToggle />\n        {/* Right side */}\n        <div className=\"flex flex-1 items-center justify-end gap-2\">\n          <Button\n            size=\"sm\"\n            variant=\"ghost\"\n            className=\"text-sm max-sm:aspect-square max-sm:p-0\"\n          >\n            <UploadIcon\n              className=\"opacity-60 sm:-ms-1\"\n              size={16}\n              aria-hidden=\"true\"\n            />\n            <span className=\"max-sm:sr-only\">Export</span>\n          </Button>\n          <Button size=\"sm\" className=\"text-sm max-sm:aspect-square max-sm:p-0\">\n            <SparklesIcon\n              className=\"opacity-60 sm:-ms-1\"\n              size={16}\n              aria-hidden=\"true\"\n            />\n            <span className=\"max-sm:sr-only\">Upgrade</span>\n          </Button>\n        </div>\n      </div>\n    </header>\n  )\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/default/components/navbar-components/app-toggle.tsx",
+      "content": "\"use client\"\n\nimport { useId, useState } from \"react\"\n\nimport { RadioGroup, RadioGroupItem } from \"@/registry/default/ui/radio-group\"\n\nexport default function AppToggle() {\n  const id = useId()\n  const [selectedValue, setSelectedValue] = useState(\"on\")\n\n  return (\n    <div className=\"bg-input/50 inline-flex h-8 rounded-md p-0.5\">\n      <RadioGroup\n        value={selectedValue}\n        onValueChange={setSelectedValue}\n        className=\"group after:bg-background has-focus-visible:after:border-ring has-focus-visible:after:ring-ring/50 relative inline-grid grid-cols-[1fr_1fr] items-center gap-0 text-sm font-medium after:absolute after:inset-y-0 after:w-1/2 after:rounded-sm after:shadow-xs after:transition-[translate,box-shadow] after:duration-300 after:ease-[cubic-bezier(0.16,1,0.3,1)] has-focus-visible:after:ring-[3px] data-[state=off]:after:translate-x-0 data-[state=on]:after:translate-x-full\"\n        data-state={selectedValue}\n      >\n        <label className=\"group-data-[state=on]:text-muted-foreground/70 relative z-10 inline-flex h-full min-w-8 cursor-pointer items-center justify-center px-3 whitespace-nowrap transition-colors select-none\">\n          Sitemap\n          <RadioGroupItem id={`${id}-1`} value=\"off\" className=\"sr-only\" />\n        </label>\n        <label className=\"group-data-[state=off]:text-muted-foreground/70 relative z-10 inline-flex h-full min-w-8 cursor-pointer items-center justify-center px-3 whitespace-nowrap transition-colors select-none\">\n          Wireframe\n          <RadioGroupItem id={`${id}-2`} value=\"on\" className=\"sr-only\" />\n        </label>\n      </RadioGroup>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/default/components/navbar-components/team-switcher.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { ChevronsUpDown } from \"lucide-react\"\n\nimport { Button } from \"@/registry/default/ui/button\"\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuTrigger,\n} from \"@/registry/default/ui/dropdown-menu\"\n\nexport default function TeamSwitcher({\n  teams,\n  defaultTeam,\n}: {\n  teams: string[]\n  defaultTeam: string\n}) {\n  const [selectedProject, setSelectedProject] = React.useState(defaultTeam)\n\n  return (\n    <DropdownMenu>\n      <DropdownMenuTrigger asChild>\n        <Button variant=\"ghost\" className=\"p-0 hover:bg-transparent\">\n          <span className=\"bg-primary text-primary-foreground flex size-8 items-center justify-center rounded-full\">\n            {selectedProject.charAt(0).toUpperCase()}\n          </span>\n          <div className=\"flex flex-col gap-0.5 leading-none\">\n            <span className=\"\">{selectedProject}</span>\n          </div>\n          <ChevronsUpDown size={14} className=\"text-muted-foreground/80\" />\n        </Button>\n      </DropdownMenuTrigger>\n      <DropdownMenuContent align=\"start\">\n        {teams.map((project) => (\n          <DropdownMenuItem\n            key={project}\n            onSelect={() => setSelectedProject(project)}\n          >\n            {project}\n          </DropdownMenuItem>\n        ))}\n      </DropdownMenuContent>\n    </DropdownMenu>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "navbar, navigation"
+    ],
+    "colSpan": 3
+  }
+}

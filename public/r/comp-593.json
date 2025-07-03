@@ -1,0 +1,36 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-593",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/breadcrumb.json",
+    "https://originui.com/r/button.json",
+    "https://originui.com/r/calendar.json",
+    "https://originui.com/r/checkbox.json",
+    "https://originui.com/r/label.json",
+    "https://originui.com/r/popover.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-593.tsx",
+      "content": "import { BookmarkIcon, HomeIcon } from \"lucide-react\"\n\nimport DatePicker from \"@/registry/default/components/navbar-components/date-picker\"\nimport Filters from \"@/registry/default/components/navbar-components/filters\"\nimport {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/registry/default/ui/breadcrumb\"\nimport { Button } from \"@/registry/default/ui/button\"\n\nexport default function Component() {\n  return (\n    <header className=\"border-b px-4 md:px-6\">\n      <div className=\"flex h-16 items-center justify-between gap-4\">\n        {/* Left side */}\n        <Breadcrumb>\n          <BreadcrumbList>\n            <BreadcrumbItem>\n              <BreadcrumbLink href=\"#\">\n                <HomeIcon size={16} aria-hidden=\"true\" />\n                <span className=\"sr-only\">Home</span>\n              </BreadcrumbLink>\n            </BreadcrumbItem>\n            <BreadcrumbSeparator />\n            <BreadcrumbItem>\n              <BreadcrumbPage>Reports</BreadcrumbPage>\n            </BreadcrumbItem>\n          </BreadcrumbList>\n        </Breadcrumb>\n        {/* Right side */}\n        <div className=\"flex items-center gap-2\">\n          {/* Date picker */}\n          <DatePicker />\n          {/* Filters */}\n          <Filters />\n          {/* Saved button */}\n          <Button\n            size=\"sm\"\n            variant=\"outline\"\n            className=\"text-sm max-sm:aspect-square max-sm:p-0\"\n          >\n            <BookmarkIcon\n              className=\"text-muted-foreground/80 sm:-ms-1\"\n              size={16}\n              aria-hidden=\"true\"\n            />\n            <span className=\"max-sm:sr-only\">Saved</span>\n          </Button>\n        </div>\n      </div>\n    </header>\n  )\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/default/components/navbar-components/date-picker.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\nimport { format } from \"date-fns\"\nimport { CalendarIcon } from \"lucide-react\"\nimport { DateRange } from \"react-day-picker\"\n\nimport { cn } from \"@/registry/default/lib/utils\"\nimport { Button } from \"@/registry/default/ui/button\"\nimport { Calendar } from \"@/registry/default/ui/calendar\"\nimport {\n  Popover,\n  PopoverContent,\n  PopoverTrigger,\n} from \"@/registry/default/ui/popover\"\n\nexport default function DatePicker() {\n  const [date, setDate] = useState<DateRange | undefined>()\n\n  return (\n    <Popover>\n      <PopoverTrigger asChild>\n        <Button\n          variant=\"outline\"\n          size=\"sm\"\n          className=\"group bg-background border-input w-full justify-between px-3 text-sm font-normal outline-offset-0 outline-none focus-visible:outline-[3px]\"\n        >\n          <CalendarIcon\n            size={16}\n            className=\"text-muted-foreground/80 -ms-1 shrink-0 transition-colors\"\n            aria-hidden=\"true\"\n          />\n          <span className={cn(\"truncate\", !date && \"font-medium\")}>\n            {date?.from ? (\n              date.to ? (\n                <>\n                  {format(date.from, \"LLL dd, y\")} -{\" \"}\n                  {format(date.to, \"LLL dd, y\")}\n                </>\n              ) : (\n                format(date.from, \"LLL dd, y\")\n              )\n            ) : (\n              \"Date\"\n            )}\n          </span>\n        </Button>\n      </PopoverTrigger>\n      <PopoverContent className=\"w-auto p-2\" align=\"start\">\n        <Calendar mode=\"range\" selected={date} onSelect={setDate} />\n      </PopoverContent>\n    </Popover>\n  )\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/default/components/navbar-components/filters.tsx",
+      "content": "import { useId } from \"react\"\nimport { ListFilterIcon } from \"lucide-react\"\n\nimport { Button } from \"@/registry/default/ui/button\"\nimport { Checkbox } from \"@/registry/default/ui/checkbox\"\nimport { Label } from \"@/registry/default/ui/label\"\nimport {\n  Popover,\n  PopoverContent,\n  PopoverTrigger,\n} from \"@/registry/default/ui/popover\"\n\nexport default function Component() {\n  const id = useId()\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <Popover>\n        <PopoverTrigger asChild>\n          <Button variant=\"outline\" size=\"sm\" className=\"text-sm\">\n            <ListFilterIcon\n              size={16}\n              className=\"text-muted-foreground/80 -ms-1\"\n              aria-hidden=\"true\"\n            />\n            Filters\n          </Button>\n        </PopoverTrigger>\n        <PopoverContent className=\"w-36 p-3\">\n          <div className=\"space-y-3\">\n            <div className=\"text-xs font-medium\">Filters</div>\n            <form>\n              <div className=\"space-y-3\">\n                <div className=\"flex items-center gap-2\">\n                  <Checkbox id={`${id}-1`} />\n                  <Label htmlFor={`${id}-1`} className=\"font-normal\">\n                    Real Time\n                  </Label>\n                </div>\n                <div className=\"flex items-center gap-2\">\n                  <Checkbox id={`${id}-2`} />\n                  <Label htmlFor={`${id}-2`} className=\"font-normal\">\n                    Top Channels\n                  </Label>\n                </div>\n                <div className=\"flex items-center gap-2\">\n                  <Checkbox id={`${id}-3`} />\n                  <Label htmlFor={`${id}-3`} className=\"font-normal\">\n                    Last Orders\n                  </Label>\n                </div>\n                <div className=\"flex items-center gap-2\">\n                  <Checkbox id={`${id}-4`} />\n                  <Label htmlFor={`${id}-4`} className=\"font-normal\">\n                    Total Spent\n                  </Label>\n                </div>\n              </div>\n              <div\n                role=\"separator\"\n                aria-orientation=\"horizontal\"\n                className=\"bg-border -mx-3 my-3 h-px\"\n              ></div>\n              <div className=\"flex justify-between gap-2\">\n                <Button size=\"sm\" variant=\"outline\" className=\"h-7 px-2\">\n                  Clear\n                </Button>\n                <Button size=\"sm\" className=\"h-7 px-2\">\n                  Apply\n                </Button>\n              </div>\n            </form>\n          </div>\n        </PopoverContent>\n      </Popover>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "navbar, navigation"
+    ],
+    "colSpan": 3
+  }
+}

@@ -6,7 +6,7 @@
     {
       "name": "accordion",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-accordion"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/accordion.tsx",
@@ -47,7 +47,7 @@
     {
       "name": "alert-dialog",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-alert-dialog"],
+      "dependencies": ["radix-ui"],
       "registryDependencies": ["https://originui.com/r/button.json"],
       "files": [
         {
@@ -59,7 +59,7 @@
     {
       "name": "avatar",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-avatar"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/avatar.tsx",
@@ -70,6 +70,7 @@
     {
       "name": "badge",
       "type": "registry:ui",
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/badge.tsx",
@@ -80,7 +81,7 @@
     {
       "name": "breadcrumb",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-slot"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/breadcrumb.tsx",
@@ -91,7 +92,7 @@
     {
       "name": "button",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-slot"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/button.tsx",
@@ -125,7 +126,7 @@
     {
       "name": "checkbox",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-checkbox"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/checkbox.tsx",
@@ -146,7 +147,7 @@
     {
       "name": "collapsible",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-collapsible"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/collapsible.tsx",
@@ -157,7 +158,7 @@
     {
       "name": "command",
       "type": "registry:ui",
-      "dependencies": ["cmdk@1.0.0"],
+      "dependencies": ["cmdk"],
       "registryDependencies": ["dialog"],
       "files": [
         {
@@ -191,7 +192,7 @@
     {
       "name": "dialog",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-dialog"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/dialog.tsx",
@@ -202,7 +203,7 @@
     {
       "name": "dropdown-menu",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-dropdown-menu"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/dropdown-menu.tsx",
@@ -213,7 +214,7 @@
     {
       "name": "hover-card",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-hover-card"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/hover-card.tsx",
@@ -234,7 +235,7 @@
     {
       "name": "label",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-label"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/label.tsx",
@@ -254,6 +255,16 @@
       ]
     },
     {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/default/ui/navigation-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "pagination",
       "type": "registry:ui",
       "registryDependencies": ["button"],
@@ -267,7 +278,7 @@
     {
       "name": "popover",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-popover"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/popover.tsx",
@@ -278,7 +289,7 @@
     {
       "name": "progress",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-progress"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/progress.tsx",
@@ -289,7 +300,7 @@
     {
       "name": "radio-group",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-radio-group"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/radio-group.tsx",
@@ -300,7 +311,7 @@
     {
       "name": "scroll-area",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-scroll-area"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/scroll-area.tsx",
@@ -321,7 +332,7 @@
     {
       "name": "select",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-select"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/select.tsx",
@@ -332,7 +343,7 @@
     {
       "name": "slider",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-slider"],
+      "dependencies": ["radix-ui"],
       "registryDependencies": ["https://originui.com/r/tooltip.json"],
       "files": [
         {
@@ -355,6 +366,7 @@
     {
       "name": "stepper",
       "type": "registry:ui",
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/stepper.tsx",
@@ -365,7 +377,7 @@
     {
       "name": "switch",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-switch"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/switch.tsx",
@@ -386,7 +398,7 @@
     {
       "name": "tabs",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-tabs"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/tabs.tsx",
@@ -407,7 +419,7 @@
     {
       "name": "timeline",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-slot"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/timeline.tsx",
@@ -418,7 +430,7 @@
     {
       "name": "toast",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-toast"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/toast.tsx",
@@ -437,7 +449,7 @@
     {
       "name": "toggle",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-toggle"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/toggle.tsx",
@@ -448,7 +460,7 @@
     {
       "name": "toggle-group",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-toggle-group"],
+      "dependencies": ["radix-ui"],
       "registryDependencies": ["toggle"],
       "files": [
         {
@@ -460,7 +472,7 @@
     {
       "name": "tooltip",
       "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-tooltip"],
+      "dependencies": ["radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/tooltip.tsx",
@@ -471,7 +483,7 @@
     {
       "name": "tree",
       "type": "registry:component",
-      "dependencies": ["@headless-tree/core", "@headless-tree/react"],
+      "dependencies": ["@headless-tree/core", "@headless-tree/react", "radix-ui"],
       "files": [
         {
           "path": "registry/default/ui/tree.tsx",
@@ -10372,21 +10384,563 @@
       }
     },
     {
-      "name": "comp-577",
+      "name": "comp-577", 
       "type": "registry:component",
-      "registryDependencies": ["https://originui.com/r/button.json", "https://originui.com/r/button.json"],
+      "registryDependencies": [
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/navigation-menu.json",
+        "https://originui.com/r/popover.json"
+      ],
       "files": [
         {
           "path": "registry/default/components/comp-577.tsx",
           "type": "registry:component"
-        },
-        {
-          "path": "registry/default/hooks/use-file-upload.ts",
-          "type": "registry:hook"
         }
       ],
       "meta": {
-        "tags": ["upload", "file", "image", "drag and drop", "shadcn form", "zod file"],
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-578", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/navigation-menu.json",
+        "https://originui.com/r/popover.json"
+      ],      
+      "files": [
+        {
+          "path": "registry/default/components/comp-578.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/logo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-579", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/navigation-menu.json",
+        "https://originui.com/r/popover.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-579.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/logo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-580", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/navigation-menu.json",
+        "https://originui.com/r/popover.json",
+        "https://originui.com/r/input.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-580.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/logo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-581", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/avatar.json",
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/dropdown-menu.json",
+        "https://originui.com/r/navigation-menu.json",
+        "https://originui.com/r/popover.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-581.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/info-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/notification-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/user-menu.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-582", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/avatar.json",
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/dropdown-menu.json",
+        "https://originui.com/r/navigation-menu.json",
+        "https://originui.com/r/popover.json",
+        "https://originui.com/r/select.json",
+        "https://originui.com/r/tooltip.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-582.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/theme-toggle.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/user-menu.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },    
+    {
+      "name": "comp-583", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/avatar.json",
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/breadcrumb.json",
+        "https://originui.com/r/dropdown-menu.json",
+        "https://originui.com/r/popover.json",
+        "https://originui.com/r/select.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-583.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/notification-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/user-menu.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-584", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/avatar.json",
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/dropdown-menu.json",
+        "https://originui.com/r/input.json",
+        "https://originui.com/r/navigation-menu.json",
+        "https://originui.com/r/popover.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-584.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/notification-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/user-menu.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-585", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/avatar.json",
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/dropdown-menu.json",
+        "https://originui.com/r/input.json",
+        "https://originui.com/r/navigation-menu.json",
+        "https://originui.com/r/popover.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-585.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/notification-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/user-menu.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-586", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/avatar.json",
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/dropdown-menu.json",
+        "https://originui.com/r/input.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-586.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/theme-toggle.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-587", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/input.json",
+        "https://originui.com/r/navigation-menu.json",
+        "https://originui.com/r/popover.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-587.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/logo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-588", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/navigation-menu.json",
+        "https://originui.com/r/popover.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-588.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/user-menu.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-589", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/avatar.json",
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/breadcrumb.json",
+        "https://originui.com/r/dropdown-menu.json",
+        "https://originui.com/r/navigation-menu.json",
+        "https://originui.com/r/popover.json",
+        "https://originui.com/r/select.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-589.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/settings-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/user-menu.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-590", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/avatar.json",
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/dropdown-menu.json",
+        "https://originui.com/r/navigation-menu.json",
+        "https://originui.com/r/popover.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-590.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/notification-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/team-switcher.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/user-menu.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-591", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/avatar.json",
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/dropdown-menu.json",
+        "https://originui.com/r/select.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-591.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/user-menu.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },    
+    {
+      "name": "comp-592", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/dropdown-menu.json",
+        "https://originui.com/r/input.json",
+        "https://originui.com/r/label.json",
+        "https://originui.com/r/popover.json",
+        "https://originui.com/r/switch.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-592.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/info-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/notification-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/settings-menu.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-593", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/breadcrumb.json",
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/calendar.json",
+        "https://originui.com/r/checkbox.json",
+        "https://originui.com/r/label.json",
+        "https://originui.com/r/popover.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-593.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/date-picker.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/filters.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-594", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/dropdown-menu.json",
+        "https://originui.com/r/radio-group.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-594.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/app-toggle.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/navbar-components/team-switcher.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-595", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/avatar.json",
+        "https://originui.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-595.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-596", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/badge.json",
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/label.json",
+        "https://originui.com/r/navigation-menu.json",
+        "https://originui.com/r/popover.json",
+        "https://originui.com/r/switch.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-596.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
         "colSpan": 3
       }
     }
