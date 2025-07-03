@@ -10370,6 +10370,25 @@
       "meta": {
         "tags": ["tree", "menu"]
       }
+    },
+    {
+      "name": "comp-577",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/button.json", "https://originui.com/r/button.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-577.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/hooks/use-file-upload.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "meta": {
+        "tags": ["upload", "file", "image", "drag and drop", "shadcn form", "zod file"],
+        "colSpan": 3
+      }
     }
   ]
 }
