@@ -1,0 +1,38 @@
+To find more details about each component and see specific examples, take a look at the agent-guides folder. Depending on your use case, read the appropriate file and then check out the relevant *.tsx file in the registry that corresponds to the guide you just read.
+
+#### 1. Forms & Data Input
+- **For single-line text, passwords, or numbers (59 variants)** including payment, OTP, and phone inputs: `agent-guides/input.md`
+- **For multi-line text (19 variants)** like chat inputs or fields with character counters: `agent-guides/text-area.md`
+- **For lists of 4+ options (51 variants)** including comboboxes, multi-selects, and user pickers: `agent-guides/select.md`
+- **For selecting multiple options from a list (20 variants)** like to-do lists or checkbox trees: `agent-guides/checkbox.md`
+- **For selecting one option from a list (20 variants)** like color swatches or pricing plan cards: `agent-guides/radio-button.md`
+- **For on/off toggles (17 variants)** including iOS/Material styles and theme switchers: `agent-guides/switch-toggle.md`
+- **For numeric ranges (27 variants)** including range sliders and a `PriceHistogramSlider`: `agent-guides/slider.md`
+- **For dates, times, or ranges (26 variants)** from popovers to appointment schedulers: `agent-guides/date-picker.md`
+- **For file uploads (14 variants)** from simple buttons to an `AvatarUploaderWithCropper`: `agent-guides/file-uploader.md`
+
+#### 2. Displaying Data & Content
+- **For tables (20 variants)** from static to a full-featured `EnterpriseDataTable` (780 LoC): `agent-guides/tables.md`
+- **For avatars (23 variants)** with status badges or in stacked groups: `agent-guides/avatar.md`
+- **For badges (13 variants)** for status, counts, or categories, including interactive ones: `agent-guides/badge.md`
+- **For timelines (12 variants)** for project milestones, workflows, or activity feeds: `agent-guides/timeline.md`
+
+#### 3. Page Structure & Navigation
+- **For navbars (20 variants)** including SaaS dashboard layouts and a `MegaMenuNav`: `agent-guides/navbar.md`
+- **For breadcrumbs (8 variants)** with different separators and collapsing paths: `agent-guides/breadcrumb.md`
+- **For pagination (12 variants)** from simple buttons to a `TablePagination` component: `agent-guides/pagination.md`
+- **For tabs (20 variants)** for same-page views, including pill-style and vertical tabs: `agent-guides/tabs.md`
+- **For steppers (17 variants)** for multi-step processes like checkouts or onboarding: `agent-guides/stepper.md`
+- **For accordions (20 variants)** for collapsible sections like FAQs, including nested accordions: `agent-guides/accordion.md`
+- **For trees (12 variants)** for hierarchical data, including a `FileTree` and `DragDropTree`: `agent-guides/tree.md`
+
+#### 4. Actions, Feedback & Overlays
+- **For buttons (54 variants)** for actions, social logins, loading states, and a `SplitButton`: `agent-guides/button.md`
+- **For dropdowns (14 variants)** for action menus, including versions with checkboxes: `agent-guides/dropdown.md`
+- **For dialogs (21 variants)** for critical modals, from a simple `AlertDialog` to a `CommandDialog` (Cmd+K): `agent-guides/dialog.md`
+- **For notifications (22 static variants)** for temporary "toast" messages, with usage guides for libraries: `agent-guides/notification.md`
+- **For alerts (12 variants)** for persistent, inline messages (success, error, warning): `agent-guides/alert.md`
+- **For banners (12 variants)** for site-wide messages like cookie notices or promotions: `agent-guides/banner.md`
+- **For popovers (9 variants)** for displaying interactive content on click, like filter menus: `agent-guides/popover.md`
+- **For tooltips (12 variants)** for non-interactive tips on hover, with a "Hover Card" alternative: `agent-guides/tooltip.md`
+- **For image croppers (11 variants)** including a `CircularCropper` and an `AvatarUploaderCropper`: `agent-guides/image-cropper.md`
