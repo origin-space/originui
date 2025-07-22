@@ -10943,6 +10943,45 @@
         "tags": ["navbar, navigation"],
         "colSpan": 3
       }
+    },
+    {
+      "name": "comp-596", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/badge.json",
+        "https://originui.com/r/button.json",
+        "https://originui.com/r/label.json",
+        "https://originui.com/r/navigation-menu.json",
+        "https://originui.com/r/popover.json",
+        "https://originui.com/r/switch.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-596.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["navbar, navigation"],
+        "colSpan": 3
+      }
+    },
+    {
+      "name": "comp-597", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/icon-button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-597.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["button"],
+        "colSpan": 1
+      }
     }
   ]
 }
