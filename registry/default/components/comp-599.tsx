@@ -1,25 +1,26 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { Send, Loader2 } from "lucide-react";
-import { toast } from "sonner";
-import { IconButton } from "@/registry/default/ui/icon-button";
+import { useState } from "react"
+import { Loader2, Send } from "lucide-react"
+import { toast } from "sonner"
+
+import { IconButton } from "@/registry/default/ui/icon-button"
 
 export default function SubmitButton() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false)
 
   const handleClick = async () => {
-    if (loading) return;
-    setLoading(true);
+    if (loading) return
+    setLoading(true)
 
-    await new Promise((res) => setTimeout(res, 1500));
-    toast.success("Message sent!");
+    await new Promise((res) => setTimeout(res, 1500))
+    toast.success("Message sent!")
 
-    setLoading(false);
-  };
+    setLoading(false)
+  }
 
   return (
-    <div className="flex items-center justify-center w-full min-h-[120px]">
+    <div className="flex min-h-[120px] w-full items-center justify-center">
       <IconButton
         onClick={handleClick}
         disabled={loading}
@@ -27,14 +28,14 @@ export default function SubmitButton() {
         variant="outline"
         icon={
           loading ? (
-            <Loader2 className="w-4 h-4 animate-spin" />
+            <Loader2 className="h-4 w-4 animate-spin" />
           ) : (
-            <Send className="w-4 h-4" />
+            <Send className="h-4 w-4" />
           )
         }
       >
         {loading ? "Sending..." : "Send Message"}
       </IconButton>
     </div>
-  );
+  )
 }

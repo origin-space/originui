@@ -1,15 +1,16 @@
-import * as React from "react";
-import { Button, buttonVariants } from "@/registry/default/ui/button";
-import { type VariantProps } from "class-variance-authority";
-import { MoveRight } from "lucide-react";
-import { cn } from "@/registry/default/lib/utils";
+import * as React from "react"
+import { type VariantProps } from "class-variance-authority"
+import { MoveRight } from "lucide-react"
+
+import { cn } from "@/registry/default/lib/utils"
+import { Button, buttonVariants } from "@/registry/default/ui/button"
 
 const ICON_SIZES = {
   sm: 14,
   default: 16,
   lg: 18,
   xl: 20,
-} as const;
+} as const
 
 const ICON_BG_VARIANTS = {
   default: "bg-primary-foreground/15",
@@ -18,18 +19,18 @@ const ICON_BG_VARIANTS = {
   ghost: "bg-foreground/5",
   link: "bg-transparent",
   destructive: "bg-destructive-foreground/15",
-} as const;
+} as const
 
 export interface IconButtonProps
   extends React.ComponentProps<"button">,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-  icon?: React.ReactElement;
-  iconSize?: number;
-  iconStrokeWidth?: number;
-  label?: string;
-  hideLabel?: boolean;
-  iconPosition?: "left" | "right";
+  asChild?: boolean
+  icon?: React.ReactElement
+  iconSize?: number
+  iconStrokeWidth?: number
+  label?: string
+  hideLabel?: boolean
+  iconPosition?: "left" | "right"
 }
 
 export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
@@ -50,12 +51,15 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
     },
     ref
   ) => {
-    const buttonSize = size as keyof typeof ICON_SIZES;
-    const finalIconSize = iconSize ?? ICON_SIZES[buttonSize] ?? ICON_SIZES.default;
-    const iconBg = ICON_BG_VARIANTS[variant as keyof typeof ICON_BG_VARIANTS] ?? ICON_BG_VARIANTS.default;
-    
-    const isIconRight = iconPosition === "right";
-    const labelContent = children || label;
+    const buttonSize = size as keyof typeof ICON_SIZES
+    const finalIconSize =
+      iconSize ?? ICON_SIZES[buttonSize] ?? ICON_SIZES.default
+    const iconBg =
+      ICON_BG_VARIANTS[variant as keyof typeof ICON_BG_VARIANTS] ??
+      ICON_BG_VARIANTS.default
+
+    const isIconRight = iconPosition === "right"
+    const labelContent = children || label
 
     return (
       <Button
@@ -74,17 +78,18 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
         {!hideLabel && (
           <span
             className={cn(
-              "relative z-10 transition-all duration-300 ease-out text-center",
-              "group-hover/btn:opacity-0 group-hover/btn:scale-95"
+              "relative z-10 text-center transition-all duration-300 ease-out",
+              "group-hover/btn:scale-95 group-hover/btn:opacity-0"
             )}
             style={{
-              [isIconRight ? 'paddingRight' : 'paddingLeft']: 'calc(max(28%, 2.25rem) + 0.25rem)'
+              [isIconRight ? "paddingRight" : "paddingLeft"]:
+                "calc(max(28%, 2.25rem) + 0.25rem)",
             }}
           >
             {labelContent}
           </span>
         )}
-        
+
         {/* icon container */}
         <div
           className={cn(
@@ -106,8 +111,8 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
           </div>
         </div>
       </Button>
-    );
+    )
   }
-);
+)
 
-IconButton.displayName = "IconButton";
+IconButton.displayName = "IconButton"
