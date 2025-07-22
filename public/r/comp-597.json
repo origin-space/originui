@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-597",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/icon-button.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-597.tsx",
+      "content": "import { Download, Heart, Send } from \"lucide-react\";\n\nimport { IconButton } from \"@/registry/default/ui/icon-button\";\n\nexport default function Component() {\n  return (\n    <div className=\"flex gap-4\">\n      <IconButton label=\"Get Started\" />\n      <IconButton label=\"Download\" icon={<Download />} variant=\"outline\" />\n      <IconButton\n        label=\"Like\"\n        icon={<Heart />}\n        iconPosition=\"left\"\n        variant=\"ghost\"\n      />\n      <IconButton\n        label=\"Send message\"\n        icon={<Send />}\n        iconSize={20}\n        iconStrokeWidth={1.5}\n        variant=\"secondary\"\n      />\n    </div>\n  );\n}",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "button"
+    ],
+    "style": 2
+  }
+}
