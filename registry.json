@@ -10979,7 +10979,41 @@
         }
       ],
       "meta": {
-        "tags": ["button"],
+        "tags": ["button", "icon"],
+        "colSpan": 1
+      }
+    }, 
+    {
+      "name": "comp-598", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/icon-button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-598.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["button", "icon"],
+        "colSpan": 1
+      }
+    },
+    {
+      "name": "comp-599", 
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://originui.com/r/icon-button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-599.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["button", "icon"],
         "colSpan": 1
       }
     }

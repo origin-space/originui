@@ -69,7 +69,6 @@ export const registryTags = [
   "hint",
   "hover card",
   "icon",
-  "icon button",
   "image",
   "info",
   "kbd",
