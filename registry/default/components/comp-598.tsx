@@ -1,3 +1,5 @@
+"use client"
+
 import { Croissant, Github } from "lucide-react";
 import { toast } from "sonner";
 import { IconButton } from "@/registry/default/ui/icon-button";
