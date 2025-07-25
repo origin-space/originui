@@ -10947,7 +10947,7 @@
     {
       "name": "comp-597",
       "type": "registry:component",
-      "registryDependencies": ["https://originui.com/r/tree.json"],
+      "registryDependencies": ["https://originui.com/r/tree.json", "https://originui.com/r/checkbox.json"],
       "files": [
         {
           "path": "registry/default/components/comp-597.tsx",
@@ -10955,8 +10955,36 @@
         } 
       ],
       "meta": {
-        "tags": ["tree"]
+        "tags": ["tree", "checkbox"]
       }
-    }    
+    },
+    {
+      "name": "comp-598",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json", "https://originui.com/r/checkbox.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-598.tsx",
+          "type": "registry:component"
+        } 
+      ],
+      "meta": {
+        "tags": ["tree", "checkbox"]
+      }
+    },
+    {
+      "name": "comp-599",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json", "https://originui.com/r/checkbox.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-599.tsx",
+          "type": "registry:component"
+        } 
+      ],
+      "meta": {
+        "tags": ["tree", "checkbox"]
+      }
+    }        
   ]
 }

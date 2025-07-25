@@ -72,17 +72,14 @@ export default function Component() {
   })
 
   return (
-    <div className="flex h-full flex-col gap-1.5 *:first:grow">
+    <div className="flex h-full flex-col gap-2 *:first:grow">
       <Tree indent={indent} tree={tree}>
         {tree.getItems().map((item) => {
           return (
             <div
               key={item.getId()}
-              className="flex items-center gap-2 not-last:pb-0.5"
+              className="flex items-center gap-1.5 not-last:pb-0.5"
             >
-              <TreeItem item={item} className="flex-1 not-last:pb-0">
-                <TreeItemLabel />
-              </TreeItem>
               <Checkbox
                 checked={
                   {
@@ -96,6 +93,9 @@ export default function Component() {
                   checkboxProps.onChange?.({ target: { checked } })
                 }}
               />
+              <TreeItem item={item} className="flex-1 not-last:pb-0">
+                <TreeItemLabel />
+              </TreeItem>
             </div>
           )
         })}
@@ -107,7 +107,7 @@ export default function Component() {
           role="region"
           className="text-muted-foreground mt-2 text-xs"
         >
-          Tree with checkboxes on the right ∙{" "}
+          Tree with checkboxes on the left ∙{" "}
           <a
             href="https://headless-tree.lukasbach.com"
             className="hover:text-foreground underline"

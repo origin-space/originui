@@ -8,6 +8,7 @@ import {
   syncDataLoaderFeature,
 } from "@headless-tree/core"
 import { useTree } from "@headless-tree/react"
+import { FileIcon, FolderIcon, FolderOpenIcon } from "lucide-react"
 
 import { Checkbox } from "@/registry/default/ui/checkbox"
 import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree"
@@ -63,6 +64,7 @@ export default function Component() {
       getItem: (itemId) => items[itemId],
       getChildren: (itemId) => items[itemId].children ?? [],
     },
+    canCheckFolders: true,
     features: [
       syncDataLoaderFeature,
       selectionFeature,
@@ -72,34 +74,53 @@ export default function Component() {
   })
 
   return (
-    <div className="flex h-full flex-col gap-1.5 *:first:grow">
-      <Tree indent={indent} tree={tree}>
-        {tree.getItems().map((item) => {
-          return (
-            <div
-              key={item.getId()}
-              className="flex items-center gap-2 not-last:pb-0.5"
-            >
-              <TreeItem item={item} className="flex-1 not-last:pb-0">
-                <TreeItemLabel />
-              </TreeItem>
-              <Checkbox
-                checked={
-                  {
-                    checked: true,
-                    unchecked: false,
-                    indeterminate: "indeterminate" as const,
-                  }[item.getCheckedState()]
-                }
-                onCheckedChange={(checked) => {
-                  const checkboxProps = item.getCheckboxProps()
-                  checkboxProps.onChange?.({ target: { checked } })
-                }}
-              />
-            </div>
-          )
-        })}
-      </Tree>
+    <div className="flex h-full flex-col gap-2 *:first:grow">
+      <div>
+        <Tree
+          className="relative before:absolute before:inset-0 before:ms-4.5 before:bg-[repeating-linear-gradient(to_right,transparent_0,transparent_calc(var(--tree-indent)-1px),var(--border)_calc(var(--tree-indent)-1px),var(--border)_calc(var(--tree-indent)))]"
+          indent={indent}
+          tree={tree}
+        >
+          {tree.getItems().map((item) => {
+            return (
+              <div
+                key={item.getId()}
+                className="flex items-center gap-1.5 not-last:pb-0.5"
+              >
+                <Checkbox
+                  checked={
+                    {
+                      checked: true,
+                      unchecked: false,
+                      indeterminate: "indeterminate" as const,
+                    }[item.getCheckedState()]
+                  }
+                  onCheckedChange={(checked) => {
+                    const checkboxProps = item.getCheckboxProps()
+                    checkboxProps.onChange?.({ target: { checked } })
+                  }}
+                />
+                <TreeItem item={item} className="flex-1 not-last:pb-0">
+                  <TreeItemLabel className="before:bg-background relative before:absolute before:inset-x-0 before:-inset-y-0.5 before:-z-10">
+                    <span className="flex items-center gap-2">
+                      {item.isFolder() ? (
+                        item.isExpanded() ? (
+                          <FolderOpenIcon className="text-muted-foreground pointer-events-none size-4" />
+                        ) : (
+                          <FolderIcon className="text-muted-foreground pointer-events-none size-4" />
+                        )
+                      ) : (
+                        <FileIcon className="text-muted-foreground pointer-events-none size-4" />
+                      )}
+                      {item.getItemName()}
+                    </span>
+                  </TreeItemLabel>
+                </TreeItem>
+              </div>
+            )
+          })}
+        </Tree>
+      </div>
 
       <div className="space-y-2">
         <p
@@ -107,7 +128,7 @@ export default function Component() {
           role="region"
           className="text-muted-foreground mt-2 text-xs"
         >
-          Tree with checkboxes on the right ∙{" "}
+          Tree with canCheckFolders option ∙{" "}
           <a
             href="https://headless-tree.lukasbach.com"
             className="hover:text-foreground underline"
