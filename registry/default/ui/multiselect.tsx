@@ -29,6 +29,7 @@ interface GroupOption {
 interface MultipleSelectorProps {
   value?: Option[]
   defaultOptions?: Option[]
+  defaultValue?: Option[]
   /** manually controlled options */
   options?: Option[]
   placeholder?: string
@@ -172,6 +173,7 @@ const MultipleSelector = ({
   onChange,
   placeholder,
   defaultOptions: arrayDefaultOptions = [],
+  defaultValue,
   options: arrayOptions,
   delay,
   onSearch,
@@ -198,7 +200,10 @@ const MultipleSelector = ({
   const [isLoading, setIsLoading] = React.useState(false)
   const dropdownRef = React.useRef<HTMLDivElement>(null) // Added this
 
-  const [selected, setSelected] = React.useState<Option[]>(value || [])
+  const isControlled = value !== undefined
+  const [selected, setSelected] = React.useState<Option[]>(
+    isControlled ? value! : defaultValue || []
+  )
   const [options, setOptions] = React.useState<GroupOption>(
     transToGroupOption(arrayDefaultOptions, groupBy)
   )
@@ -264,10 +269,10 @@ const MultipleSelector = ({
   }, [open])
 
   useEffect(() => {
-    if (value) {
-      setSelected(value)
+    if (isControlled) {
+      setSelected(value!)
     }
-  }, [value])
+  }, [value, isControlled])
 
   useEffect(() => {
     /** If `onSearch` is provided, do not trigger options updated. */
