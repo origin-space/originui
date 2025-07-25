@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "icon-button",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "https://originui.com/r/button.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/icon-button.tsx",
+      "content": "import * as React from \"react\";\nimport { Button, buttonVariants } from \"@/registry/default/ui/button\";\nimport { type VariantProps } from \"class-variance-authority\";\nimport { MoveRight } from \"lucide-react\";\nimport { cn } from \"@/registry/default/lib/utils\";\n\nconst ICON_SIZES = {\n  sm: 14,\n  default: 16,\n  lg: 18,\n  xl: 20,\n} as const;\n\nconst ICON_BG_VARIANTS = {\n  default: \"bg-primary-foreground/15\",\n  outline: \"bg-foreground/10\",\n  secondary: \"bg-secondary-foreground/15\",\n  ghost: \"bg-foreground/5\",\n  link: \"bg-transparent\",\n  destructive: \"bg-destructive-foreground/15\",\n} as const;\n\nexport interface IconButtonProps\n  extends React.ComponentProps<\"button\">,\n    VariantProps<typeof buttonVariants> {\n  asChild?: boolean;\n  icon?: React.ReactElement;\n  iconSize?: number;\n  iconStrokeWidth?: number;\n  label?: string;\n  hideLabel?: boolean;\n  iconPosition?: \"left\" | \"right\";\n}\n\nexport const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(\n  (\n    {\n      className,\n      size = \"default\",\n      variant = \"default\",\n      label = \"Click\",\n      hideLabel = false,\n      icon = <MoveRight />,\n      iconSize,\n      iconStrokeWidth = 2,\n      iconPosition = \"right\",\n      children,\n      asChild = false,\n      ...props\n    },\n    ref\n  ) => {\n    const buttonSize = size as keyof typeof ICON_SIZES;\n    const finalIconSize = iconSize ?? ICON_SIZES[buttonSize] ?? ICON_SIZES.default;\n    const iconBg = ICON_BG_VARIANTS[variant as keyof typeof ICON_BG_VARIANTS] ?? ICON_BG_VARIANTS.default;\n    \n    const isIconRight = iconPosition === \"right\";\n    const labelContent = children || label;\n\n    return (\n      <Button\n        ref={ref}\n        size={size}\n        variant={variant}\n        asChild={asChild}\n        className={cn(\n          \"group/btn relative overflow-hidden\",\n          \"transition-all duration-300 ease-out\",\n          className\n        )}\n        {...props}\n      >\n        {/* label */}\n        {!hideLabel && (\n          <span\n            className={cn(\n              \"relative z-10 transition-all duration-300 ease-out text-center\",\n              \"group-hover/btn:opacity-0 group-hover/btn:scale-95\"\n            )}\n            style={{\n              [isIconRight ? 'paddingRight' : 'paddingLeft']: 'calc(max(28%, 2.25rem) + 0.25rem)'\n            }}\n          >\n            {labelContent}\n          </span>\n        )}\n        \n        {/* icon container */}\n        <div\n          className={cn(\n            \"absolute inset-y-1 flex items-center justify-center\",\n            \"rounded-[calc(var(--radius)-2px)]\",\n            \"transition-all duration-300 ease-out\",\n            \"w-[max(28%,2.25rem)] group-hover/btn:w-[calc(100%-0.5rem)]\",\n            \"group-active/btn:scale-95\",\n            isIconRight ? \"right-1\" : \"left-1\",\n            iconBg\n          )}\n          aria-hidden=\"true\"\n        >\n          <div className=\"transition-transform duration-300 ease-out group-hover/btn:scale-110\">\n            {React.cloneElement(icon, {\n              size: finalIconSize,\n              strokeWidth: iconStrokeWidth,\n            })}\n          </div>\n        </div>\n      </Button>\n    );\n  }\n);\n\nIconButton.displayName = \"IconButton\";",
+      "type": "registry:ui"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "button"
+    ]
+  }
+}

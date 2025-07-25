@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-597",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/icon-button.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-597.tsx",
+      "content": "import { IconButton } from \"@/registry/default/ui/icon-button\";\n\nexport default function Component() {\n  return (\n    <div className=\"flex min-h-[120px] w-full items-center justify-center\">\n      <IconButton label=\"Get Started\" />\n    </div>\n  );\n}",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "button"
+    ],
+    "style": 2
+  }
+}

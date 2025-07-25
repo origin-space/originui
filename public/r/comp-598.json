@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-598",
+  "type": "registry:component",
+  "registryDependencies": [
+    "https://originui.com/r/icon-button.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-598.tsx",
+      "content": "import { Croissant, Github } from \"lucide-react\";\nimport { toast } from \"sonner\";\nimport { IconButton } from \"@/registry/default/ui/icon-button\";\nimport { Avatar, AvatarImage, AvatarFallback } from \"@/registry/default/ui/avatar\";\n\nexport default function Component() {\n  const handleClick = () => {\n    toast.custom(\n      () => (\n        <div className=\"bg-background border border-border text-foreground rounded-lg shadow-lg p-4 flex items-center gap-3 min-w-[300px]\">\n          <Avatar className=\"h-10 w-10\">\n            <AvatarImage src=\"https://avatars.githubusercontent.com/u/162759797?v=4\" alt=\"GitHub Avatar\" />\n            <AvatarFallback>GH</AvatarFallback>\n          </Avatar>\n          <div className=\"flex-1\">\n            <p className=\"text-sm font-medium\">Let's connect.</p>\n          </div>\n          <IconButton\n            onClick={() => window.open(\"https://github.com/lyfe691\", \"_blank\")}\n            label=\"GitHub\"\n            icon={<Github className=\"h-4 w-4\" />}\n            variant=\"default\"\n            size=\"sm\"\n          />\n        </div>\n      ),\n      {\n        duration: 10000, // 10s\n      }\n    );\n  };\n\n  return (\n    <div className=\"flex min-h-[120px] w-full items-center justify-center\">\n      <div className=\"flex flex-col\">\n        <IconButton\n          onClick={handleClick}\n          label=\"Show toast\"\n          size=\"lg\"\n          icon={<Croissant />}\n          iconPosition=\"left\"\n          variant=\"outline\"\n        />\n      </div>\n    </div>\n  );\n}",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "button",
+      "icon"
+    ],
+    "style": 2
+  }
+}
