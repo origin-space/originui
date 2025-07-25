@@ -18,7 +18,6 @@ import {
 
 const links = [
   { text: "Layouts", href: "/layouts", isNew: true },
-  // { text: "Colors", href: "/colors" },
   { text: "Easing Classes", href: "/easings" },
 ]
 
