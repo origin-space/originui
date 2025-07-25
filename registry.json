@@ -10943,6 +10943,20 @@
         "tags": ["navbar, navigation"],
         "colSpan": 3
       }
-    }
+    },
+    {
+      "name": "comp-597",
+      "type": "registry:component",
+      "registryDependencies": ["https://originui.com/r/tree.json"],
+      "files": [
+        {
+          "path": "registry/default/components/comp-597.tsx",
+          "type": "registry:component"
+        } 
+      ],
+      "meta": {
+        "tags": ["tree"]
+      }
+    }    
   ]
 }
